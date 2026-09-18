@@ -1,9 +1,39 @@
 {
   "schema_version": 1,
-  "revision": 0,
-  "updated_at": "2026-09-18T19:46:00Z",
+  "revision": 1,
+  "updated_at": "2026-09-18T23:33:13.658911+00:00",
   "system_progress": {},
-  "stage_progress": {},
+  "stage_progress": {
+    "1": {
+      "status": "blocked",
+      "updated_at": "2026-09-18T23:33:13.657596+00:00"
+    },
+    "2": {
+      "status": "running",
+      "updated_at": "2026-09-18T23:33:13.657596+00:00"
+    }
+  },
   "runs": [],
-  "events": []
+  "events": [
+    {
+      "at": "2026-09-18T23:33:13.657596+00:00",
+      "kind": "evidence",
+      "text": "Etapa 1 parcial: inventario de ambiente conferido (Python 3.14.6, reportlab, numpy/scipy/pandas, sqlite 3.50.4, node v24.17.0; cargo ausente). ZIP de ledgers do Hermes nao localizado no disco; importacao bloqueada."
+    },
+    {
+      "at": "2026-09-18T23:33:13.657596+00:00",
+      "kind": "evidence",
+      "text": "Etapa 2 em execucao: executor financeiro implementado em executor/ledger.py e executor/pricing.py. Reserva atomica do pior caso em nanodolares inteiros, teto global e por bloco, timeout conserva reserva, liberacao so com evidencia de nao envio, retry com reserva propria e conciliacao por delta."
+    },
+    {
+      "at": "2026-09-18T23:33:13.657596+00:00",
+      "kind": "evidence",
+      "text": "Testes offline: 31 passaram (23 do executor + 8 do servidor). Cobrem concorrencia com 24 threads sem estourar teto, reinicio apos queda com reservas preservadas, timeout, resposta sem usage, usage parcial, arredondamento para cima e ausencia de preco. Nenhuma chamada de rede; custo novo US$ 0."
+    },
+    {
+      "at": "2026-09-18T23:33:13.657596+00:00",
+      "kind": "evidence",
+      "text": "Pendente para liberar chamadas pagas: tabela executor/prices.json esta vazia por decisao (sem preco verificado, o executor recusa despachar), conciliacao real com extrato do provedor, reducao do limite da chave no painel do provedor e esclarecimento da abrangencia do teto de US$ 5."
+    }
+  ]
 }
