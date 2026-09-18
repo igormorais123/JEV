@@ -1,0 +1,12 @@
+{
+  "usage": 0,
+  "limit": 50,
+  "limit_remaining": 50,
+  "limit_reset": null,
+  "usage_daily": 0,
+  "usage_weekly": 0,
+  "usage_monthly": 0,
+  "is_free_tier": false,
+  "queried_at_utc": "2026-09-18T19:20:40.456065+00:00",
+  "kind": "read_only_key_metadata_no_inference"
+}

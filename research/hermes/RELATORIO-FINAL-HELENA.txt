@@ -1,0 +1,218 @@
+=== PAGINA 1 ===
+RELATÓRIO DE INTELIGÊNCIA · ANÁLISE HELENA · SÍNTESE VERIFICADA PELO HERMES
+Jev: um auxiliar barato.
+Não um juiz da verdade.
+O melhor resultado desta etapa não foi consumir o orçamento: foi
+descobrir onde o Jev ajuda, onde pode induzir erro e como limitar
+suas consequências.
+18 de setembro de 2026 · Consolidação financeira às 17:29 UTC · Documento privado,
+sem publicação externa.
+1. A decisão para você
+Adotar como assessor, não como autoridade.
+Jev mostrou bom desempenho para sugerir a especialidade de um pedido. Pode
+também ajudar a organizar a leitura de fontes e oferecer uma segunda opinião. O
+Hermes continua responsável pelo contexto, pela conferência das fontes e pela
+decisão final.
+Disponível agora: integração consultiva pelo adaptador de execução do Hermes, com
+autorização de envio, controle de orçamento, reaproveitamento de respostas e retorno ao
+Hermes diante de falhas. O plugin nativo foi instalado, habilitado e exercitado em
+processo novo; sua chamada foi novamente verificada na consolidação, usando uma
+resposta armazenada e sem cobrança.
+Limite importante: não foi comprovado o carregamento da ferramenta nativa na
+conversa de WhatsApp já aberta. Não reiniciamos esse processo. Portanto, a entrega é de
+uso consultivo sob demanda, não de roteamento automático de todas as mensagens nem
+de produção autônoma integral.
+Jev não troca o modelo principal, não executa especialistas por conta própria, não apaga
+memória, não elimina fontes e não autoriza decisões jurídicas ou financeiras. O novo
+classificador de utilidade em três categorias foi experimentado, mas não foi promovido
+à ferramenta operacional.
+Jev no Hermes · Relatório final Helena · 1 / 7
+
+=== PAGINA 2 ===
+2. O que compramos com o orçamento
+A etapa anterior fez 12.513 chamadas bem-sucedidas e custou US$ 2,999678514. Ela
+demonstrou repetibilidade, mas milhares de repetições de poucos exemplos não
+equivalem a milhares de problemas reais diferentes. Nesta complementação, priorizamos
+situações novas, comparação de formatos e fronteiras de segurança.
+48 cenários sintéticos novos: 16 de triagem, 16 de seleção de passagens e 16 de
+confronto entre afirmação e evidência. Cada cenário foi testado individualmente e em
+lote: 96 avaliações, não 96 casos independentes.
+18 cenários adicionais: investigaram uma questão diferente — quando uma fonte
+não traz a resposta, mas revela uma ressalva que precisa ser preservada.
+Testes operacionais: três consultas pelo plugin real, reutilização sem cobrança,
+tratamento de entradas inválidas, privacidade e falhas.
+Usamos material sintético, sem enviar conversas particulares. Os rótulos foram definidos
+antes das consultas e separamos exemplos de desenvolvimento e de avaliação
+reservada. Ainda assim, os casos foram criados por nós, não por avaliadores humanos
+independentes nem por amostragem representativa da sua rotina.
+3. Resultados que importam
+Triagem: a aplicação mais convincente
+16 de 16 acertos individuais; 16 de 16 em lote. Nos oito casos reservados,
+acertou os oito nos dois formatos.
+Conseguiu distinguir a ação pedida do assunto mencionado. Escrever um
+comunicado sobre indisponibilidade foi classificado como comunicação, não como
+conserto de servidor.
+Decisão: usar para orientar filas e pedidos menos óbvios. Não adicionar uma
+consulta quando o próprio Hermes já identifica claramente o caminho.
+• 
+• 
+• 
+Jev no Hermes · Relatório final Helena · 2 / 7
+
+=== PAGINA 3 ===
+Seleção de passagens: não permitir descarte
+14 de 16 acertos individuais; 13 de 16 em lote. Nos casos reservados: oito de
+oito e sete de oito, respectivamente.
+Uma reserva de orçamento foi aceita como resposta à pergunta sobre quanto havia
+sido pago. Em outra situação, o aviso de que o sistema continuava fora do ar foi
+considerado irrelevante para a pergunta sobre quando fora restaurado — embora
+corrigisse a premissa da pergunta.
+Decisão: usar como apoio à ordem de leitura, nunca como permissão para excluir
+uma fonte.
+Afirmações: ausência de prova não é falsidade
+15 de 16 acertos individuais; 16 de 16 em lote. Nos casos reservados: sete de
+oito e oito de oito.
+“Pagamento agendado, sem confirmação de execução” levou o modelo a chamar de
+contradita a afirmação “o pagamento está quitado”. O correto era reconhecer
+informação insuficiente. Um teste operacional sobre uma proposta ainda não votada
+repetiu essa família de erro; a integração exigiu revisão, sem executar nada.
+Decisão: nenhuma conclusão de verdade ou falsidade deve depender apenas desse
+rótulo.
+O lote não foi universalmente melhor. T ambém mudamos ordem e inserimos distrações,
+portanto não podemos atribuir cada diferença apenas ao agrupamento.
+4. O avanço metodológico: preservar o que
+não sabemos
+A pergunta “este trecho responde?” não é igual a “este trecho ajuda?”. Uma fonte pode
+não trazer o dado final e ser essencial para evitar uma invenção.
+Resposta direta: resolve a pergunta, inclusive quando a resposta é “não”.• 
+Jev no Hermes · Relatório final Helena · 3 / 7
+
+=== PAGINA 4 ===
+Ressalva útil: revela informação ausente, incompleta, desatualizada ou ainda não
+confirmada.
+Sem relação: não contribui para aquela pergunta. O rótulo, sozinho, continua sem
+autorizar exclusão.
+Exemplo: existe registro de criação de um backup, mas não de teste de
+restauração. Isso não prova que a restauração foi testada — nem que nunca foi. A
+lacuna precisa acompanhar a resposta.
+Outro: uma proposta pede 250 unidades de verba, mas não há aprovação
+registrada. O pedido não pode virar valor aprovado.
+No teste exploratório, a distinção em três categorias acertou 18 de 18 casos, incluindo
+os 12 reservados. A classificação binária antiga coincidiu com seu gabarito em 13 de
+18, sendo oito de 12 reservados.
+Não é uma vitória diretamente comparável: as perguntas medem objetivos
+diferentes. O resultado favorece um desenho mais útil para preservar ressalvas, mas não
+demonstra superioridade geral ou segurança em situações novas. Os exemplos e
+gabaritos são sintéticos; as duas perguntas foram feitas juntas por caso, sem braços
+experimentais isolados.
+Confiança alta não é selo de acerto.
+Nos casos reservados, houve desacordos com o critério binário com confiança de
+0,94, 0,95 e 0,94. Portanto, o corte de 0,90 não basta para dispensar revisão. O
+número devolvido pelo modelo não é uma probabilidade de acerto validada na sua
+operação.
+5. Rapidez, lotes e a falha real
+No ensaio principal, a mediana das consultas individuais foi de aproximadamente 284
+milissegundos. Os lotes tiveram mediana de 263 milissegundos por chamada, cada
+uma com oito decisões. São resultados deste ensaio, não garantia de disponibilidade.
+As mesmas 48 decisões custaram US$ 0,000937272 individualmente e US$ 0,000496776
+em seis lotes — aproximadamente 47% menos por decisão. A qualidade variou,
+portanto custo menor não basta para escolher lote em qualquer tarefa.
+• 
+• 
+Jev no Hermes · Relatório final Helena · 4 / 7
+
+=== PAGINA 5 ===
+Reutilizar uma resposta idêntica evita uma nova chamada. Nos três testes iniciais pelo
+plugin, a mediana foi de aproximadamente 400 milissegundos ao vivo e 64 milissegundos
+com reutilização. É uma amostra muito pequena. A resposta guardada vale por até 24
+horas e exige conteúdo, modelo e critérios iguais.
+Também houve um timeout de cerca de 35 segundos.
+O suplemento teve 14 tentativas: 13 concluídas e uma sem resposta. A chamada
+problemática foi preservada na contabilidade. Após revisão manual, retomamos
+com pedidos menores; os 12 casos reservados foram concluídos. Não apagamos a
+falha nem assumimos que foi gratuita.
+Conclusão econômica: os maiores custos a controlar são espera, revisão e risco de
+erro. Não demonstramos economia líquida do atendimento do Hermes. Uma chamada
+desnecessária continua sendo desnecessária, mesmo quando custa muito pouco.
+6. Prestação de contas consolidada
+T eto adicional autorizado
+US$ 2,00
+Custo conhecido desta etapa
+US$ 0,001915032
+Reserva mantida para o timeout
+US$ 0,001344
+Saldo conservador no teto local
+US$ 1,996740968
+Foram 71 tentativas: 70 concluídas e uma falha, incluindo ensaio principal, testes
+operacionais e suplemento. O custo conhecido mais a reserva representa compromisso
+conservador de US$ 0,003259032. A reserva não é uma cobrança confirmada.
+Na conferência final, o aumento do consumo informado pelo provedor foi exatamente 
+US$ 0,001915032, igual à soma dos custos conhecidos. A diferença foi zero. Mesmo
+assim, mantivemos a reserva do timeout: o extrato agregado ainda não prova que essa
+chamada nunca será faturada.
+O registro antigo foi preservado, separado da autorização adicional. Os valores acima são
+desta complementação; o saldo mostrado é do teto local autorizado, não o saldo total da
+conta OpenRouter.
+Jev no Hermes · Relatório final Helena · 5 / 7
+
+=== PAGINA 6 ===
+Por que não gastar tudo? Porque volume repetido não compra diversidade nem
+elimina as falhas encontradas. Guardar quase toda a verba para perguntas realmente
+novas é mais inteligente do que produzir uma porcentagem impressionante com
+exemplos redundantes. Não há obrigação de consumir o saldo nem ampliação automática
+do escopo.
+7. Proteções e limites do uso
+Sem ações autônomas: sugestões não executam especialistas, apagam registros ou
+certificam fatos.
+Sem envio automático de histórico: novas consultas desta fase exigem
+autorização de envio e classificação como material público ou sintético. Essa
+declaração não substitui a revisão de privacidade.
+Sem cobrança repetida por conteúdo idêntico: reaproveitamento exato quando
+válido; mudança de conteúdo exige outra avaliação.
+Orçamento compartilhado e persistente: testes e operação usam o mesmo teto
+adicional. Custo desconhecido mantém reserva; uma falha incerta bloqueia novas
+chamadas até revisão.
+Continuidade: diante de indisponibilidade ou limite financeiro, a consulta retorna ao
+Hermes, sem insistência automática em gastos.
+O relatório de validação registra 17 verificações locais aprovadas. Na consolidação,
+reexecutamos os nove testes básicos e verificamos novamente a descoberta e a
+chamada da ferramenta nativa em processo novo, sem novo gasto. Esses testes não
+equivalem a tráfego produtivo observado continuamente.
+Os aprendizados foram registrados no procedimento de avaliação de ferramentas:
+separar resposta de ressalva útil, não confundir confiança com acerto, preservar falhas
+nos denominadores e nunca apagar uma reserva incerta para continuar gastando.
+8. Recomendação final da Helena
+Manter a triagem consultiva; tratar evidências e afirmações como segunda
+opinião; não promover autonomia. A classificação em três categorias merece um
+próximo piloto cego e limitado, antes de entrar na ferramenta operacional.
+• 
+• 
+• 
+• 
+• 
+Jev no Hermes · Relatório final Helena · 6 / 7
+
+=== PAGINA 7 ===
+O melhor argumento contrário à adoção é simples: se o Hermes já faria a tarefa
+diretamente, o Jev pode apenas acrescentar demora e manutenção. Para ampliar o uso, o
+próximo teste precisa comparar o atendimento com e sem Jev, observando revisão,
+qualidade final e tempo completo — não somente preço por chamada.
+A confiança na recomendação é moderada para uso consultivo restrito e insuficiente para
+autonomia decisória ou promessa de economia. Suspender o uso afetado se houver envio
+não autorizado, descarte de fontes, erros relevantes recorrentes ou tempo de revisão
+maior que a ajuda obtida.
+Em uma frase: o Jev já pode ajudar o Hermes a organizar trabalho; não deve
+receber a autoridade de decidir o que é verdadeiro ou o que pode ser esquecido.
+Nenhuma nova rodada, monitoramento ou ativação automática foi agendada por este
+relatório. A disponibilidade nativa na conversa de WhatsApp atual e o benefício em
+tráfego real permanecem não demonstrados.
+Base desta entrega
+Análise Helena dos resultados e respostas brutas das duas etapas, revisão independente do
+suplemento, registro financeiro persistente, conferência do consumo da chave e verificações
+executadas pelo Hermes. Casos, rótulos prévios, respostas, falha e pareceres foram
+preservados para auditoria. O documento não contém credenciais nem conteúdo de
+conversas particulares.
+Referências do mecanismo: modelo e preço na OpenRouter · significado de confiança segundo
+T ypeSafe · integração de plugins do Hermes. As fontes descrevem o produto; os registros de
+execução sustentam os resultados deste ensaio.
+Jev no Hermes · Relatório final Helena · 7 / 7

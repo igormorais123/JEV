@@ -1,0 +1,732 @@
+{
+  "version": "1.0",
+  "date": "2026-09-18",
+  "status": "Planejamento completo; execução dos sistemas pendente",
+  "seed": 20260918,
+  "paid_calls_this_stage": 0,
+  "new_spend_usd": 0,
+  "total_cap_usd": 5,
+  "historical_conservative_usd": 3.002937546,
+  "conservative_available_usd": 1.997062454,
+  "planned_active_ceiling_usd": 1.7,
+  "unresolved_budget_scope": true,
+  "budget": [
+    {
+      "stage": "Rodada simples dos 15 sistemas",
+      "cap_usd": 0.25
+    },
+    {
+      "stage": "Corpus central e desenho fatorial",
+      "cap_usd": 0.4
+    },
+    {
+      "stage": "Busca e código em profundidade",
+      "cap_usd": 0.25
+    },
+    {
+      "stage": "Agentes e simulações",
+      "cap_usd": 0.25
+    },
+    {
+      "stage": "Comparadores e confronto de provedores",
+      "cap_usd": 0.25
+    },
+    {
+      "stage": "Confirmação focalizada",
+      "cap_usd": 0.3
+    }
+  ],
+  "systems": [
+    {
+      "id": "S01",
+      "name": "Jev CLI",
+      "repo": "Nasrallah-AL/jev-cli",
+      "url": "https://github.com/Nasrallah-AL/jev-cli",
+      "sha": "02ca80177aaef0b30a897959207f99df1e0c8446",
+      "family": "Decisões",
+      "smoke_unit": "cenários",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 12,
+      "smoke_llm_call_cap": 0,
+      "question": "O CLI preserva a decisão, os erros e a cobrança da API sem criar retrabalho?",
+      "smoke": "12 cenários: classificação, rota, verificação, lote, JSON inválido, opções ambíguas, entrada vazia, Unicode, limite de tamanho, timeout, 429 e cache. Contratos/erros primeiro com transporte simulado; até 12 chamadas reais separadas.",
+      "deep": "840 casos do corpus central, em três tarefas; comparar saída normalizada com resposta original. Conferir todos os erros de transporte e integridade do registro. Reusar respostas para outras ferramentas apenas quando o payload for idêntico.",
+      "baseline": "HTTP mínimo com o mesmo payload; regras locais para a qualidade semântica.",
+      "gate": "Nenhuma decisão silenciosamente perdida; custo ausente fica desconhecido. Acurácia deve coincidir com a resposta original; diferença é falha do cliente.",
+      "dependencies": "Node >=20.12; OPENROUTER_API_KEY; rota Decisions. Inspecionar configuração e usar provedor explícito.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S02",
+      "name": "Jev Search",
+      "repo": "superagents-lab/jev-search",
+      "url": "https://github.com/superagents-lab/jev-search",
+      "sha": "f7e2d4b9f342b882726e49dd668fdc8336571eef",
+      "family": "Busca",
+      "smoke_unit": "consultas",
+      "smoke_units": 8,
+      "smoke_jev_call_cap": 16,
+      "smoke_llm_call_cap": 0,
+      "question": "Reordenar resultados melhora a recuperação de evidência útil por consulta?",
+      "smoke": "8 consultas com 10 resultados congelados cada: resposta, ressalva, sem resposta, duplicatas, data antiga, fonte oficial, homônimo e instrução maliciosa. Testar ranking e deduplicação com busca simulada; até dois formatos por consulta.",
+      "deep": "60 consultas x 10 candidatos, 20 dev e 40 teste; até dois formatos de ranking. Reaproveitar o banco do Rerank Bench. Depois 12 consultas com busca real, se Search1API estiver disponível e couber na verba.",
+      "baseline": "Ordem original, BM25 e deduplicação determinística com os mesmos candidatos.",
+      "gate": "Candidato a adoção se nDCG@5 melhora pelo menos 0,05, intervalo pareado favorece ganho e recall de ressalvas não cai mais de 2 pp. Sem evidência suficiente: continuar consultivo.",
+      "dependencies": "Node >=22.12, pnpm; TypeSafe direto e Search1API no aplicativo original. Teste com fontes congeladas não comprova a busca externa.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S03",
+      "name": "Janus",
+      "repo": "FirasSX914/Janus",
+      "url": "https://github.com/FirasSX914/Janus",
+      "sha": "9cb66c488cf884e5997356a0de45f75aa3148774",
+      "family": "Calibração",
+      "smoke_unit": "registros pareados",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 0,
+      "smoke_llm_call_cap": 0,
+      "question": "Uma cascata reduz custo mantendo a qualidade medida em gabarito externo?",
+      "smoke": "12 registros conhecidos de primário e fallback, incluindo erro com confiança alta, discordância, ausência de custo e grupo raro; executar escolha de limiar e conferir à mão. Sem novas inferências.",
+      "deep": "240 pares Jev/LLM do corpus central, 80 por tarefa: 20 dev, 20 calibração e 40 teste. Limiar escolhido antes do teste. Reusar exatamente os mesmos pares no jevcal.",
+      "baseline": "Sempre Jev, sempre LLM econômico, regra fixa e encaminhar tudo à revisão humana como limite de cobertura.",
+      "gate": "Economia líquida >=25% e limite inferior da diferença de acurácia acima de -5 pp no teste; amostra insuficiente produz conclusão inconclusiva. Medir erros graves separadamente.",
+      "dependencies": "Python/NumPy; obter previsões do fallback, sem tratá-lo como gabarito. A função de medição original precisa de avaliação externa independente.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S04",
+      "name": "pi-warden",
+      "repo": "DevMortimer/pi-warden",
+      "url": "https://github.com/DevMortimer/pi-warden",
+      "sha": "84a3bc9aa6c2807b608df42bc77a951d9531d70b",
+      "family": "Agentes",
+      "smoke_unit": "eventos",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 12,
+      "smoke_llm_call_cap": 0,
+      "question": "O alerta semântico detecta erros úteis além das regras e sem alarmes excessivos?",
+      "smoke": "12 eventos: seis problemas e seis ações legítimas, com tarefas concluídas/incompletas e loops. Executar extensão em contexto Pi simulado e verificar aviso, bloqueio e continuação como resultados distintos.",
+      "deep": "120 eventos de 40 episódios, estratificados por conclusão falsa, repetição e comportamento normal; 40 dev e 80 teste agrupados por episódio. A/B adicional em 24 tarefas com estado reiniciado.",
+      "baseline": "Regras/padrões do próprio projeto, sem Jev; agente sem extensão.",
+      "gate": "Precisão de alertas >=90%, ganho de recall >=10 pp sobre regras e aumento de interrupções indevidas <=5 pp, todos exploratórios até intervalos aceitáveis. Tempo por tarefa também precisa melhorar.",
+      "dependencies": "Pi e Node; TypeSafe direto no código. Aviso emitido não conta como dano evitado.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S05",
+      "name": "Jev Ultrafast",
+      "repo": "browser-use/jev-ultrafast",
+      "url": "https://github.com/browser-use/jev-ultrafast",
+      "sha": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+      "family": "Agentes",
+      "smoke_unit": "tarefas web",
+      "smoke_units": 6,
+      "smoke_jev_call_cap": 48,
+      "smoke_llm_call_cap": 6,
+      "question": "As decisões rápidas levam à conclusão correta da tarefa no navegador?",
+      "smoke": "6 tarefas em site local controlado, no máximo 8 decisões por tarefa e um auxílio de texto: selecionar, navegar, formulário, paginação, alvo ambíguo e caminho sem solução. Verificador de estado independente do modelo.",
+      "deep": "24 tarefas novas (8 dev e 16 teste), reiniciadas em cada braço. Limite 8 passos, uma chamada auxiliar por tarefa; medir conclusão, ações indevidas e tempo total. Falha por limite continua no denominador.",
+      "baseline": "Playwright determinístico nas tarefas roteirizáveis; agente sem Jev se disponível dentro da cota de comparadores.",
+      "gate": "Candidato se >=90% de sucesso no conjunto, sem ação indevida grave e tempo mediano pelo menos 20% menor que o braço comparável. Com 16 tarefas finais não declarar confiabilidade geral.",
+      "dependencies": "Python/uv, Chrome; TypeSafe nas ações; OpenRouter no auxílio textual. Fluxos com iframe, canvas e uploads são estratos de limitações explícitas.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S06",
+      "name": "jevcal",
+      "repo": "abhixhek/jevcal",
+      "url": "https://github.com/abhixhek/jevcal",
+      "sha": "ae8f3144d69c9cb0e5e0a2c17f70b9d14714cb9f",
+      "family": "Calibração",
+      "smoke_unit": "registros pareados",
+      "smoke_units": 24,
+      "smoke_jev_call_cap": 0,
+      "smoke_llm_call_cap": 0,
+      "question": "O compilador escolhe uma política que generaliza, ou apenas ajusta o conjunto observado?",
+      "smoke": "24 registros sintéticos para custo, cobertura, erro e suporte; incluir grupo sem holdout e desempenho abaixo da meta. Conferir a saída e identificar aprovação por folga do algoritmo.",
+      "deep": "Mesmos 240 pares do Janus. Ajuste em dev/calibração, avaliação única em teste externo. Política por tarefa só quando suporte permite; comparar corte global.",
+      "baseline": "Limiar global fixado na calibração; curvas risco-cobertura do Janus.",
+      "gate": "Nenhuma aprovação com suporte ausente. Usar nossa regra de intervalo, não apenas status ok ou folga de 2 pp. Preferir ferramenta mais simples quando decisões forem equivalentes.",
+      "dependencies": "Python >=3.10, PyYAML; demo offline. Provedor OpenRouter de LLM não é o transporte Jev Decisions.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S07",
+      "name": "Jev Rerank Bench",
+      "repo": "anessbelbati/jev-rerank-bench",
+      "url": "https://github.com/anessbelbati/jev-rerank-bench",
+      "sha": "cd9a35b22aeb4187334f7018a0ee1960a7470586",
+      "family": "Busca",
+      "smoke_unit": "consultas",
+      "smoke_units": 8,
+      "smoke_jev_call_cap": 16,
+      "smoke_llm_call_cap": 0,
+      "question": "Qual formato de decisão melhora ranking em português com custo menor?",
+      "smoke": "8 consultas x 10 candidatos compartilhadas com Search; conferir métrica com ranking conhecido e reproduzir um resultado existente sem rede. Até dois formatos Jev por consulta.",
+      "deep": "60 consultas compartilhadas, 600 rótulos de relevância e utilidade. Fixar 10 candidatos, comprimento e ordem. Comparar dois formatos selecionados no dev, reportando recall, nDCG@5 e estabilidade.",
+      "baseline": "BM25, ranking original e uma ordenação aleatória como controle de implementação.",
+      "gate": "Escolha por qualidade/custo por consulta, não por resultado médio de tarefas incompatíveis; ganho >=0,05 em nDCG@5 e intervalo pareado de consultas favorável.",
+      "dependencies": "Python e dados/cache publicados. Reproduzir saída armazenada não é repetir inferência; texto truncado deve ser registrado.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S08",
+      "name": "System One Adapter",
+      "repo": "typesafe-ai/system-one-adapter-python",
+      "url": "https://github.com/typesafe-ai/system-one-adapter-python",
+      "sha": "adffc2eab300a4fa3c0e92252d4ffd6ceaa53700",
+      "family": "Decisões",
+      "smoke_unit": "casos",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 0,
+      "smoke_llm_call_cap": 12,
+      "question": "Quanto custa obter decisões estruturadas de um modelo generalista comparável?",
+      "smoke": "12 casos cobrindo Choice, Noul e Score com esquema conhecido; validar JSON, número de tentativas e custo bruto de cada tentativa. Proibir correção silenciosa por novo modelo.",
+      "deep": "240 pares do corpus central, 80 por tarefa, usando Gemini 2.5 Flash-Lite como comparador econômico se continuar disponível ao preço fixado. Prompts próprios adequados ao modelo, congelados com o mesmo esforço de ajuste.",
+      "baseline": "Jev nativo e regras locais. O comparador econômico não representa o melhor modelo generalista possível.",
+      "gate": "100% de respostas conformes após política declarada; incluir respostas inválidas como falhas. Ganho de acurácia, latência e custo avaliados em conjunto.",
+      "dependencies": "Python; OpenAI-compatible provider/base_url e OpenRouter chat. Verificar suporte do adaptador ao modelo e registrar retries.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S09",
+      "name": "Jev Review",
+      "repo": "devagrawal09/jev-review",
+      "url": "https://github.com/devagrawal09/jev-review",
+      "sha": "31f89602797fb7bea007f8a480bf368bf564954e",
+      "family": "Código",
+      "smoke_unit": "diffs",
+      "smoke_units": 8,
+      "smoke_jev_call_cap": 8,
+      "smoke_llm_call_cap": 0,
+      "question": "A revisão identifica defeitos verificáveis sem acusar mudanças corretas?",
+      "smoke": "8 diffs pequenos: quatro com defeitos que um teste independente demonstra e quatro corretos; verificar associação entre alerta e trecho.",
+      "deep": "80 diffs (20 dev, 20 calibração, 40 teste), metade com defeitos, diversidade de linguagem e tipo de bug. Medir precisão/recall por defeito e minutos de triagem.",
+      "baseline": "Testes e analisadores estáticos pertinentes; revisão sem Jev. Não presumir substituição de análise estática.",
+      "gate": "Precisão >=80% e contribuição adicional comprovada em defeitos que a baseline não pega; alarme genérico sem localização e explicação verificável não conta como acerto.",
+      "dependencies": "Node24, TypeSafe SDK; repositório descartável sem conteúdo privado; testes do defeito separados do modelo.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S10",
+      "name": "Every",
+      "repo": "sufianetaouil/every",
+      "url": "https://github.com/sufianetaouil/every",
+      "sha": "aaa72d582a831420dfd23a788e3bc948c798c248",
+      "family": "Código",
+      "smoke_unit": "funções",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 2,
+      "smoke_llm_call_cap": 0,
+      "question": "Busca semântica por função encontra padrões que texto/AST deixam passar?",
+      "smoke": "12 funções rotuladas, com sinônimos, wrappers, comentários enganosos e negativas; duas chamadas de seis decisões. Testar cache com alteração de código, rubrica e versão.",
+      "deep": "80 funções (20 dev, 20 calibração, 40 teste), quatro perguntas semanticamente distintas. Até uma chamada por função com quatro questões. Separar resultados por pergunta.",
+      "baseline": "rg, busca textual e regra AST definida antes de olhar as respostas.",
+      "gate": "Precisão >=90% e recall >=10 pp acima da melhor baseline simples em ao menos uma tarefa útil; cache deve invalidar em toda mudança semântica.",
+      "dependencies": "Python/tree-sitter, TypeSafe direto. Corrigir ou isolar chave de cache sem versão de modelo antes de medir.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S11",
+      "name": "HEIST//ONE",
+      "repo": "AbdelStark/heist-one",
+      "url": "https://github.com/AbdelStark/heist-one",
+      "sha": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+      "family": "Simulação",
+      "smoke_unit": "sementes de jogo",
+      "smoke_units": 4,
+      "smoke_jev_call_cap": 24,
+      "smoke_llm_call_cap": 0,
+      "question": "Decisões locais tornam os guardas coerentes e úteis além de uma política roteirizada?",
+      "smoke": "4 sementes x 6 instantes de decisão; estado determinístico e validador de propostas. Repetir primeiro em modo scripted; até 24 chamadas Jev com múltiplos guardas por chamada.",
+      "deep": "12 novas sementes x 6 instantes, estados idênticos entre braços. Medir ações inválidas, consistência com percepção local, diversidade útil e objetivo do jogo definido previamente.",
+      "baseline": "Política scripted do projeto nos mesmos estados e sementes.",
+      "gate": "Zero propostas inválidas executadas; redução de incoerências sem ganho decorrente de informação privilegiada. Não usar entretenimento como evidência sobre triagem documental.",
+      "dependencies": "Node >=22.13, pnpm; modo offline existe. Limitar observação ao que cada guarda de fato recebe.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S12",
+      "name": "SemIf / OpenJev",
+      "repo": "TheoLeeCJ/openjev",
+      "url": "https://github.com/TheoLeeCJ/openjev",
+      "sha": "b9cb32537e78be65f19abfcb1de8fc504b627d84",
+      "family": "Modelo local",
+      "smoke_unit": "casos",
+      "smoke_units": 8,
+      "smoke_jev_call_cap": 0,
+      "smoke_llm_call_cap": 0,
+      "question": "Um modelo local atende tarefas estreitas com custo operacional aceitável?",
+      "smoke": "8 casos com decisão e saída verificáveis em CPU/GPU suportada ou WebGPU. Primeiro verificar hardware e licença. Teste real exige carregar pesos e inferir; replay só testa integração.",
+      "deep": "120 casos do corpus central, 40 por tarefa; medir acurácia, aquecimento, tokens/s, RAM/VRAM, tempo e energia estimada. Instalação e download registrados separadamente.",
+      "baseline": "Jev nos mesmos casos e regra local; comparar precisão/peso quando quantização mudar.",
+      "gate": "Qualidade a até 5 pp de Jev no conjunto e benefício local real. Sem hardware adequado: registrar bloqueio de inferência e manter ensaio offline, sem alegar conclusão.",
+      "dependencies": "CUDA ou WebGPU conforme implementação; verificar licença de código e pesos. Sem aluguel de GPU nem download grande automático; não é implementação dos pesos Jev.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S13",
+      "name": "pi-model-router",
+      "repo": "redrossa/pi-model-router",
+      "url": "https://github.com/redrossa/pi-model-router",
+      "sha": "31d8fc2441d5af458928040afbcc384314a34289",
+      "family": "Agentes",
+      "smoke_unit": "pedidos",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 12,
+      "smoke_llm_call_cap": 0,
+      "question": "A rota escolhida melhora resultado e custo da tarefa final?",
+      "smoke": "12 pedidos de ação clara/ambígua, pedidos mistos, negação, assunto enganoso e histórico longo. Testar seleção, fallback e restauração da configuração em Pi simulado; não chamar modelo roteado nesta etapa.",
+      "deep": "Reusar triagem central; executar 24 tarefas finais pareadas, 8 dev e 16 teste, dentro da cota de agentes/comparadores. Medir qualidade final e custo total do especialista acionado.",
+      "baseline": "Modelo fixo e roteador determinístico por tipo de tarefa, com o mesmo orçamento final.",
+      "gate": "Economia >=25%, sem queda maior que 5 pp em sucesso; intervalo ainda amplo mantém recomendação experimental. Classificação certa isoladamente não aprova roteamento.",
+      "dependencies": "Pi/Node e TypeSafe direto; histórico limitado/truncado. Fixar lista de modelos disponíveis e prioridade.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S14",
+      "name": "should-ai-kill-us-all",
+      "repo": "hellogumbo/should-ai-kill-us-all",
+      "url": "https://github.com/hellogumbo/should-ai-kill-us-all",
+      "sha": "6b6b55cbe05ec24c844db3a691e3521f65eae258",
+      "family": "Demonstração",
+      "smoke_unit": "feeds sintéticos",
+      "smoke_units": 6,
+      "smoke_jev_call_cap": 6,
+      "smoke_llm_call_cap": 0,
+      "question": "O painel reage de forma rastreável às fontes e seu cache funciona?",
+      "smoke": "6 feeds controlados: neutro, positivo, negativo, misto, duplicado e indisponível. Testar quatro perguntas, procedência, tempo e cache sem publicar.",
+      "deep": "12 conjuntos de manchetes x duas ordens usando reaproveitamento quando idênticos; contraste de seleção/editorial e ausência de fonte. Limite financeiro comporta até 24 chamadas.",
+      "baseline": "Saída fixa, regras de disponibilidade e permutação de manchetes.",
+      "gate": "Teste de software, sensibilidade e proveniência. Não existe gabarito observável para validar previsão de extermínio; aprovar componente técnico não aprova essa inferência.",
+      "dependencies": "Cloudflare Pages/KV no produto, transporte TypeSafe; emulador/fixtures locais na avaliação.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    },
+    {
+      "id": "S15",
+      "name": "Jeeves",
+      "repo": "Infrawrench/Jeeves",
+      "url": "https://github.com/Infrawrench/Jeeves",
+      "sha": "65bc21494e18fa7c2beca180c545eed6bc3ce4ce",
+      "family": "Agentes",
+      "smoke_unit": "mensagens",
+      "smoke_units": 12,
+      "smoke_jev_call_cap": 12,
+      "smoke_llm_call_cap": 0,
+      "question": "A classificação reduz trabalho de moderação mantendo contexto e poucos falsos alarmes?",
+      "smoke": "12 mensagens sintéticas contextualizadas com piada, citação, ambiguidade, menção, spam e casos legítimos. Núcleo Jev e dispatcher com ações simuladas; nenhum envio a Discord/Twitch.",
+      "deep": "120 eventos compartilháveis com a base de agentes, mas com rubrica própria; 40 dev e 80 teste agrupados por conversa. Medir precisão/recall, abstenção e resultado do dispatcher.",
+      "baseline": "Regras determinísticas e fila de revisão humana; interpretação Gemini é braço separado se for testada.",
+      "gate": "Precisão de alertas >=95%, ganho de recall >=10 pp sobre regras e zero execução de ação incorreta no simulador. Tamanho inicial não prova segurança para moderação automática.",
+      "dependencies": "Rust, PostgreSQL, QuickJS e tokens Discord/Twitch/Gemini para produto integral. Sem essas contas: núcleo executado e integração simulada ficam claramente identificados.",
+      "status": "Planejado — não executado",
+      "evidence_level": "Inspeção de código; ensaio do sistema pendente"
+    }
+  ],
+  "corpus": [
+    {
+      "name": "Piloto de desenho",
+      "units": 120,
+      "unit": "casos novos",
+      "split": "40 por tarefa; desenvolvimento, sem alegação confirmatória"
+    },
+    {
+      "name": "Decisões centrais",
+      "units": 840,
+      "unit": "casos novos",
+      "split": "280 por tarefa: 60 dev / 60 calibração / 160 teste"
+    },
+    {
+      "name": "Comparação com LLM",
+      "units": 240,
+      "unit": "pares, subconjunto dos 840",
+      "split": "80 por tarefa: 20 dev / 20 calibração / 40 teste"
+    },
+    {
+      "name": "Busca",
+      "units": 60,
+      "unit": "consultas, cada uma com 10 candidatos",
+      "split": "20 dev / 40 teste"
+    },
+    {
+      "name": "Código",
+      "units": 160,
+      "unit": "unidades: 80 funções + 80 diffs",
+      "split": "por tipo: 20 dev / 20 calibração / 40 teste"
+    },
+    {
+      "name": "Eventos de agentes",
+      "units": 120,
+      "unit": "eventos agrupados em episódios",
+      "split": "40 dev / 80 teste; grupo inteiro em um split"
+    },
+    {
+      "name": "Navegação",
+      "units": 24,
+      "unit": "tarefas web",
+      "split": "8 dev / 16 teste"
+    },
+    {
+      "name": "Roteamento de tarefas finais",
+      "units": 24,
+      "unit": "tarefas finais",
+      "split": "8 dev / 16 teste"
+    },
+    {
+      "name": "HEIST",
+      "units": 12,
+      "unit": "sementes novas",
+      "split": "4 dev / 8 teste"
+    },
+    {
+      "name": "Painel de manchetes",
+      "units": 12,
+      "unit": "feeds novos",
+      "split": "4 dev / 8 teste"
+    }
+  ],
+  "audit": {
+    "method": "offline_recalculation_from_pdf_tables",
+    "paid_calls": 0,
+    "new_cost_usd": "0",
+    "input_sha256": "bc8185131e1dddaa822864373f14d065b3af1403e02f4a5380de89dc3c62712d",
+    "source": "Jev-Dossie-Quantitativo.pdf, anexo F, paginas 43-47",
+    "n_rows": 96,
+    "n_unique_cases": 48,
+    "n_calls": 54,
+    "caveat": "Casos sinteticos autorais; independencia semantica externa nao demonstrada. Confidence arredondada no PDF. Nao valida ledger, payload ou custo original.",
+    "summary": [
+      {
+        "app": "triage",
+        "mode": "solo",
+        "split": "all",
+        "n": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.8063923194655637,
+          1
+        ]
+      },
+      {
+        "app": "triage",
+        "mode": "solo",
+        "split": "development",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "triage",
+        "mode": "solo",
+        "split": "holdout",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "triage",
+        "mode": "batch",
+        "split": "all",
+        "n": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.8063923194655637,
+          1
+        ]
+      },
+      {
+        "app": "triage",
+        "mode": "batch",
+        "split": "development",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "triage",
+        "mode": "batch",
+        "split": "holdout",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "solo",
+        "split": "all",
+        "n": 16,
+        "correct": 14,
+        "accuracy": 0.875,
+        "wilson_95": [
+          0.639771727342413,
+          0.9650225122567595
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "solo",
+        "split": "development",
+        "n": 8,
+        "correct": 6,
+        "accuracy": 0.75,
+        "wilson_95": [
+          0.40927543031016883,
+          0.9285207872478909
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "solo",
+        "split": "holdout",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "batch",
+        "split": "all",
+        "n": 16,
+        "correct": 13,
+        "accuracy": 0.8125,
+        "wilson_95": [
+          0.5699111903802586,
+          0.9340840092857187
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "batch",
+        "split": "development",
+        "n": 8,
+        "correct": 6,
+        "accuracy": 0.75,
+        "wilson_95": [
+          0.40927543031016883,
+          0.9285207872478909
+        ]
+      },
+      {
+        "app": "evidence",
+        "mode": "batch",
+        "split": "holdout",
+        "n": 8,
+        "correct": 7,
+        "accuracy": 0.875,
+        "wilson_95": [
+          0.5291118177871464,
+          0.9775825085499433
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "solo",
+        "split": "all",
+        "n": 16,
+        "correct": 15,
+        "accuracy": 0.9375,
+        "wilson_95": [
+          0.7167126242970107,
+          0.9888806552353576
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "solo",
+        "split": "development",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "solo",
+        "split": "holdout",
+        "n": 8,
+        "correct": 7,
+        "accuracy": 0.875,
+        "wilson_95": [
+          0.5291118177871464,
+          0.9775825085499433
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "batch",
+        "split": "all",
+        "n": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.8063923194655637,
+          1
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "batch",
+        "split": "development",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      },
+      {
+        "app": "claim",
+        "mode": "batch",
+        "split": "holdout",
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "wilson_95": [
+          0.6755924351161198,
+          1
+        ]
+      }
+    ],
+    "paired": [
+      {
+        "app": "triage",
+        "n_pairs": 16,
+        "solo_only_correct": 0,
+        "batch_only_correct": 0,
+        "delta_batch_minus_solo": 0.0,
+        "mcnemar_exact_two_sided": 1.0,
+        "prediction_changes": 0
+      },
+      {
+        "app": "evidence",
+        "n_pairs": 16,
+        "solo_only_correct": 2,
+        "batch_only_correct": 1,
+        "delta_batch_minus_solo": -0.0625,
+        "mcnemar_exact_two_sided": 1,
+        "prediction_changes": 3
+      },
+      {
+        "app": "claim",
+        "n_pairs": 16,
+        "solo_only_correct": 0,
+        "batch_only_correct": 1,
+        "delta_batch_minus_solo": 0.0625,
+        "mcnemar_exact_two_sided": 1,
+        "prediction_changes": 1
+      }
+    ],
+    "historical_budget_from_reports": {
+      "known_usd": "3.001593546",
+      "unresolved_reserved_usd": "0.001344",
+      "conservative_committed_usd": "3.002937546",
+      "remaining_under_5_usd": "1.997062454"
+    },
+    "batching_reported_cost_reduction": 0.46997669833303457,
+    "zero_error_examples": [
+      {
+        "n": 12,
+        "one_sided_95_upper_error": 0.22092219194555585
+      },
+      {
+        "n": 16,
+        "one_sided_95_upper_error": 0.17074972298248092
+      },
+      {
+        "n": 59,
+        "one_sided_95_upper_error": 0.049507609888227
+      },
+      {
+        "n": 299,
+        "one_sided_95_upper_error": 0.009969146792899286
+      },
+      {
+        "n": 598,
+        "one_sided_95_upper_error": 0.004997058694246492
+      }
+    ],
+    "planning_paired_noninferiority": [
+      {
+        "discordance": 0.1,
+        "margin": 0.05,
+        "alpha_one_sided": 0.05,
+        "power": 0.8,
+        "approximate_pairs": 248
+      },
+      {
+        "discordance": 0.1,
+        "margin": 0.02,
+        "alpha_one_sided": 0.05,
+        "power": 0.8,
+        "approximate_pairs": 1546
+      }
+    ]
+  },
+  "references": [
+    {
+      "repo": "AbdelStark/awesome-typesafe",
+      "url": "https://github.com/AbdelStark/awesome-typesafe",
+      "sha": "c2d5cf9d851e445fd50ae51fcae09bca5718e7c7",
+      "status": "Referência; validar um exemplo/documentação, não ranquear como produto"
+    },
+    {
+      "repo": "typesafe-ai/skills",
+      "url": "https://github.com/typesafe-ai/skills",
+      "sha": "65a39f393687675ce170e6094757de20370365b9",
+      "status": "Referência; validar um exemplo/documentação, não ranquear como produto"
+    },
+    {
+      "repo": "Anil-matcha/awesome-jev-by-typesafe",
+      "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+      "sha": "e0cd00b863841aaa2e7b6748b67704c6d39a566b",
+      "status": "Referência; validar um exemplo/documentação, não ranquear como produto"
+    }
+  ],
+  "smoke_totals": {
+    "systems": 15,
+    "heterogeneous_units": 156,
+    "jev_call_cap": 168,
+    "llm_call_cap": 18
+  }
+}

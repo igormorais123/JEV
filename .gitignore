@@ -22,3 +22,24 @@ artifacts/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Cópias externas consultadas na pesquisa (versões no manifesto)
+research/sources/
+
+# Arquivos temporarios e execucoes locais
+tmp/
+runs/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Fontes originais privadas e futuras importacoes do Hermes
+research/hermes/raw/
+
+# Recuperacao do acompanhamento local
+lab/data/execution.previous.json
+lab/data/*.tmp
+
+# Estado compartilhado do painel
+!lab/data/
+!lab/data/execution.json

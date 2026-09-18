@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<title>JEV / Terminal de testes</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%2325493d'/%3E%3Ctext x='12' y='29' font-size='28' fill='%23d5ee93'%3Ej%3C/text%3E%3C/svg%3E"><style>__CSS__</style></head>
+<body>
+<a href="#content" class="skip">Pular para o conteúdo</a>
+<aside class="sidebar">
+ <a class="brand" href="#overview" aria-label="JEV início"><span class="brand-symbol">j<span>ev</span></span><span class="brand-sub">LABORATÓRIO<br>DE AVALIAÇÃO</span></a>
+ <div class="workspace-label">PESQUISA / HELENA</div>
+ <nav aria-label="Navegação principal">
+  <button data-view="overview"><span class="nav-icon">◈</span> Terminal de execução</button>
+  <button data-view="execution"><span class="nav-icon">≋</span> Execução <span class="nav-number">15</span></button>
+  <button data-view="systems"><span class="nav-icon">⊞</span> Sistemas</button>
+  <button data-view="results"><span class="nav-icon">▥</span> Resultados</button>
+  <button data-view="metrics"><span class="nav-icon">∑</span> Métricas dos testes</button>
+  <button data-view="budget"><span class="nav-icon">◉</span> Orçamento</button>
+  <button data-view="files"><span class="nav-icon">↗</span> Arquivos e fontes</button>
+ </nav>
+ <div class="sidebar-bottom"><div class="connection"><i id="connectionDot"></i><span id="connectionText">Abrindo dados…</span></div><p id="saveHint">Carregando o acompanhamento.</p><button id="backupButton" class="quiet">↓ Exportar backup</button><div class="version">PROTOCOLO 1.0 <span>18 SET 2026</span></div></div>
+</aside>
+<div class="shell">
+ <header class="topbar"><div class="breadcrumb">JEV <span>/</span> <strong id="crumb">Terminal de execução</strong></div><div class="top-actions"><span id="updatedAt" class="small muted"></span><button id="refreshButton" class="icon-button" title="Atualizar dados" aria-label="Atualizar dados">↻</button><button id="importButton" class="button dark">↑ Importar resultados</button></div></header>
+ <div id="persistentNotice" class="notice" hidden role="status"></div>
+ <main id="content" tabindex="-1"></main>
+ <footer><span>Progresso, evidências e custos dos testes planejados.</span><span>JEV × HELENA</span></footer>
+</div>
+<dialog id="systemDialog" class="drawer"><form method="dialog" class="dialog-header"><span class="eyebrow">PROTOCOLO DO SISTEMA</span><button class="icon-button" aria-label="Fechar ficha">×</button></form><div id="systemDetail"></div></dialog>
+<dialog id="runDialog" class="wide-dialog"><form method="dialog" class="dialog-header"><span class="eyebrow">EVIDÊNCIA DA EXECUÇÃO</span><button class="icon-button" aria-label="Fechar resultado">×</button></form><div id="runDetail"></div></dialog>
+<dialog id="importDialog" class="wide-dialog"><form method="dialog" class="dialog-header"><span class="eyebrow">ADICIONAR EVIDÊNCIAS</span><button class="icon-button" aria-label="Fechar importação">×</button></form><h2>Importar resultados</h2><p class="muted">Selecione um pacote JSON do laboratório. A prévia mostra o que será adicionado antes de salvar. Registros já existentes não são duplicados.</p><label class="dropzone">↑<strong>Escolher arquivo JSON</strong><span>Até 8 MB · sem credenciais</span><input id="importFile" type="file" accept=".json,application/json"></label><div id="importPreview" aria-live="polite"></div><div class="dialog-actions"><button id="templateButton" class="button">Baixar estrutura vazia</button><button id="confirmImport" class="button dark" disabled>Importar pacote</button></div><p class="small muted">Backup também recupera anotações e status de acompanhamento. Importar dados não executa inferências e não altera o teto autorizado.</p></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<script>const PLAN=__PLAN__;const HISTORY=__HISTORY__;const INITIAL_STATE=__INITIAL_STATE__;
+__JS__
+</script></body></html>

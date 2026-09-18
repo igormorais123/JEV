@@ -1,0 +1,303 @@
+{
+  "method": "offline_recalculation_from_pdf_tables",
+  "paid_calls": 0,
+  "new_cost_usd": "0",
+  "input_sha256": "bc8185131e1dddaa822864373f14d065b3af1403e02f4a5380de89dc3c62712d",
+  "source": "Jev-Dossie-Quantitativo.pdf, anexo F, paginas 43-47",
+  "n_rows": 96,
+  "n_unique_cases": 48,
+  "n_calls": 54,
+  "caveat": "Casos sinteticos autorais; independencia semantica externa nao demonstrada. Confidence arredondada no PDF. Nao valida ledger, payload ou custo original.",
+  "summary": [
+    {
+      "app": "triage",
+      "mode": "solo",
+      "split": "all",
+      "n": 16,
+      "correct": 16,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8063923194655637,
+        1
+      ]
+    },
+    {
+      "app": "triage",
+      "mode": "solo",
+      "split": "development",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "triage",
+      "mode": "solo",
+      "split": "holdout",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "triage",
+      "mode": "batch",
+      "split": "all",
+      "n": 16,
+      "correct": 16,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8063923194655637,
+        1
+      ]
+    },
+    {
+      "app": "triage",
+      "mode": "batch",
+      "split": "development",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "triage",
+      "mode": "batch",
+      "split": "holdout",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "solo",
+      "split": "all",
+      "n": 16,
+      "correct": 14,
+      "accuracy": 0.875,
+      "wilson_95": [
+        0.639771727342413,
+        0.9650225122567595
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "solo",
+      "split": "development",
+      "n": 8,
+      "correct": 6,
+      "accuracy": 0.75,
+      "wilson_95": [
+        0.40927543031016883,
+        0.9285207872478909
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "solo",
+      "split": "holdout",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "batch",
+      "split": "all",
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "wilson_95": [
+        0.5699111903802586,
+        0.9340840092857187
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "batch",
+      "split": "development",
+      "n": 8,
+      "correct": 6,
+      "accuracy": 0.75,
+      "wilson_95": [
+        0.40927543031016883,
+        0.9285207872478909
+      ]
+    },
+    {
+      "app": "evidence",
+      "mode": "batch",
+      "split": "holdout",
+      "n": 8,
+      "correct": 7,
+      "accuracy": 0.875,
+      "wilson_95": [
+        0.5291118177871464,
+        0.9775825085499433
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "solo",
+      "split": "all",
+      "n": 16,
+      "correct": 15,
+      "accuracy": 0.9375,
+      "wilson_95": [
+        0.7167126242970107,
+        0.9888806552353576
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "solo",
+      "split": "development",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "solo",
+      "split": "holdout",
+      "n": 8,
+      "correct": 7,
+      "accuracy": 0.875,
+      "wilson_95": [
+        0.5291118177871464,
+        0.9775825085499433
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "batch",
+      "split": "all",
+      "n": 16,
+      "correct": 16,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8063923194655637,
+        1
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "batch",
+      "split": "development",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    },
+    {
+      "app": "claim",
+      "mode": "batch",
+      "split": "holdout",
+      "n": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755924351161198,
+        1
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "app": "triage",
+      "n_pairs": 16,
+      "solo_only_correct": 0,
+      "batch_only_correct": 0,
+      "delta_batch_minus_solo": 0.0,
+      "mcnemar_exact_two_sided": 1.0,
+      "prediction_changes": 0
+    },
+    {
+      "app": "evidence",
+      "n_pairs": 16,
+      "solo_only_correct": 2,
+      "batch_only_correct": 1,
+      "delta_batch_minus_solo": -0.0625,
+      "mcnemar_exact_two_sided": 1,
+      "prediction_changes": 3
+    },
+    {
+      "app": "claim",
+      "n_pairs": 16,
+      "solo_only_correct": 0,
+      "batch_only_correct": 1,
+      "delta_batch_minus_solo": 0.0625,
+      "mcnemar_exact_two_sided": 1,
+      "prediction_changes": 1
+    }
+  ],
+  "historical_budget_from_reports": {
+    "known_usd": "3.001593546",
+    "unresolved_reserved_usd": "0.001344",
+    "conservative_committed_usd": "3.002937546",
+    "remaining_under_5_usd": "1.997062454"
+  },
+  "batching_reported_cost_reduction": 0.46997669833303457,
+  "zero_error_examples": [
+    {
+      "n": 12,
+      "one_sided_95_upper_error": 0.22092219194555585
+    },
+    {
+      "n": 16,
+      "one_sided_95_upper_error": 0.17074972298248092
+    },
+    {
+      "n": 59,
+      "one_sided_95_upper_error": 0.049507609888227
+    },
+    {
+      "n": 299,
+      "one_sided_95_upper_error": 0.009969146792899286
+    },
+    {
+      "n": 598,
+      "one_sided_95_upper_error": 0.004997058694246492
+    }
+  ],
+  "planning_paired_noninferiority": [
+    {
+      "discordance": 0.1,
+      "margin": 0.05,
+      "alpha_one_sided": 0.05,
+      "power": 0.8,
+      "approximate_pairs": 248
+    },
+    {
+      "discordance": 0.1,
+      "margin": 0.02,
+      "alpha_one_sided": 0.05,
+      "power": 0.8,
+      "approximate_pairs": 1546
+    }
+  ]
+}

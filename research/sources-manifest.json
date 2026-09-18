@@ -1,0 +1,517 @@
+[
+  {
+    "repo": "Nasrallah-AL/jev-cli",
+    "sha": "02ca80177aaef0b30a897959207f99df1e0c8446",
+    "url": "https://github.com/Nasrallah-AL/jev-cli",
+    "path": "research\\sources\\jev-cli",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T17:27:48+03:00",
+    "root_entries": [
+      ".claude-plugin",
+      ".editorconfig",
+      ".env.example",
+      ".github",
+      ".gitignore",
+      ".npmignore",
+      ".nvmrc",
+      "CHANGELOG.md",
+      "CLAUDE.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "SECURITY.md",
+      "biome.json",
+      "docs",
+      "package-lock.json",
+      "package.json",
+      "plugin",
+      "scripts",
+      "src",
+      "test",
+      "tsconfig.build.json",
+      "tsconfig.json",
+      "vitest.config.ts"
+    ],
+    "test_files": 24,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "superagents-lab/jev-search",
+    "sha": "f7e2d4b9f342b882726e49dd668fdc8336571eef",
+    "url": "https://github.com/superagents-lab/jev-search",
+    "path": "research\\sources\\jev-search",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-19T00:41:40+08:00",
+    "root_entries": [
+      ".dev.vars.example",
+      ".env.example",
+      ".github",
+      ".gitignore",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "SECURITY.md",
+      "components.json",
+      "design-context.md",
+      "package.json",
+      "pnpm-lock.yaml",
+      "public",
+      "src",
+      "test",
+      "tsconfig.json",
+      "tsr.config.json",
+      "vite.config.ts",
+      "vitest.config.ts",
+      "worker-configuration.d.ts",
+      "wrangler.jsonc"
+    ],
+    "test_files": 12,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "FirasSX914/Janus",
+    "sha": "9cb66c488cf884e5997356a0de45f75aa3148774",
+    "url": "https://github.com/FirasSX914/Janus",
+    "path": "research\\sources\\Janus",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T15:54:36+02:00",
+    "root_entries": [
+      ".claude-plugin",
+      ".gitattributes",
+      ".github",
+      ".gitignore",
+      "CLAUDE.md",
+      "LICENSE",
+      "README.md",
+      "RESEARCH.md",
+      "data",
+      "docs",
+      "experiments",
+      "pyproject.toml",
+      "results",
+      "skills",
+      "src",
+      "tests"
+    ],
+    "test_files": 3,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "DevMortimer/pi-warden",
+    "sha": "84a3bc9aa6c2807b608df42bc77a951d9531d70b",
+    "url": "https://github.com/DevMortimer/pi-warden",
+    "path": "research\\sources\\pi-warden",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T23:44:23+08:00",
+    "root_entries": [
+      ".github",
+      ".gitignore",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "eval",
+      "examples",
+      "extensions",
+      "package-lock.json",
+      "package.json",
+      "scripts",
+      "src",
+      "tests",
+      "tsconfig.build.json",
+      "tsconfig.json"
+    ],
+    "test_files": 21,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "browser-use/jev-ultrafast",
+    "sha": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+    "url": "https://github.com/browser-use/jev-ultrafast",
+    "path": "research\\sources\\jev-ultrafast",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T09:28:35-07:00",
+    "root_entries": [
+      ".env.example",
+      ".gitignore",
+      "AGENTS.md",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "examples",
+      "jev_ultrafast",
+      "pyproject.toml",
+      "scripts",
+      "tests",
+      "uv.lock"
+    ],
+    "test_files": 1,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "abhixhek/jevcal",
+    "sha": "ae8f3144d69c9cb0e5e0a2c17f70b9d14714cb9f",
+    "url": "https://github.com/abhixhek/jevcal",
+    "path": "research\\sources\\jevcal",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T12:58:35+05:30",
+    "root_entries": [
+      ".github",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "examples",
+      "pyproject.toml",
+      "scripts",
+      "src",
+      "tests"
+    ],
+    "test_files": 3,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "anessbelbati/jev-rerank-bench",
+    "sha": "cd9a35b22aeb4187334f7018a0ee1960a7470586",
+    "url": "https://github.com/anessbelbati/jev-rerank-bench",
+    "path": "research\\sources\\jev-rerank-bench",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T02:01:15+01:00",
+    "root_entries": [
+      ".env.example",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "batching.py",
+      "blog.py",
+      "cache",
+      "candidates",
+      "coldstart.py",
+      "common.py",
+      "data",
+      "determinism.py",
+      "docs",
+      "eval.py",
+      "network.py",
+      "nevir_eval.py",
+      "pyproject.toml",
+      "rerankers",
+      "results",
+      "rlcd_check.py",
+      "rlcd_runner.py",
+      "run.py",
+      "scripts",
+      "significance.py",
+      "uv.lock"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "typesafe-ai/system-one-adapter-python",
+    "sha": "adffc2eab300a4fa3c0e92252d4ffd6ceaa53700",
+    "url": "https://github.com/typesafe-ai/system-one-adapter-python",
+    "path": "research\\sources\\system-one-adapter-python",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T10:47:43Z",
+    "root_entries": [
+      ".github",
+      ".gitignore",
+      ".python-version",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "pyproject.toml",
+      "pyrefly.toml",
+      "src",
+      "tests",
+      "uv.lock"
+    ],
+    "test_files": 39,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "devagrawal09/jev-review",
+    "sha": "31f89602797fb7bea007f8a480bf368bf564954e",
+    "url": "https://github.com/devagrawal09/jev-review",
+    "path": "research\\sources\\jev-review",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T05:59:22+05:30",
+    "root_entries": [
+      ".env.example",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "package-lock.json",
+      "package.json",
+      "scripts",
+      "src",
+      "tsconfig.json"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "sufianetaouil/every",
+    "sha": "aaa72d582a831420dfd23a788e3bc948c798c248",
+    "url": "https://github.com/sufianetaouil/every",
+    "path": "research\\sources\\every",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T07:02:19+01:00",
+    "root_entries": [
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "every",
+      "examples",
+      "pyproject.toml",
+      "reference",
+      "tests"
+    ],
+    "test_files": 20,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "AbdelStark/heist-one",
+    "sha": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+    "url": "https://github.com/AbdelStark/heist-one",
+    "path": "research\\sources\\heist-one",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T16:39:00+02:00",
+    "root_entries": [
+      ".env.example",
+      ".github",
+      ".gitignore",
+      ".markdownlint-cli2.jsonc",
+      ".nvmrc",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "PRD.md",
+      "README.md",
+      "SECURITY.md",
+      "SPEC.md",
+      "apps",
+      "biome.json",
+      "docs",
+      "package.json",
+      "packages",
+      "playwright.config.ts",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "scripts",
+      "tests",
+      "tsconfig.base.json",
+      "tsconfig.scripts.json",
+      "vitest.config.ts"
+    ],
+    "test_files": 3,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "TheoLeeCJ/openjev",
+    "sha": "b9cb32537e78be65f19abfcb1de8fc504b627d84",
+    "url": "https://github.com/TheoLeeCJ/openjev",
+    "path": "research\\sources\\openjev",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T23:33:38+08:00",
+    "root_entries": [
+      ".gitignore",
+      "AGENTS.md",
+      "LICENSE",
+      "README.md",
+      "THIRD_PARTY.md",
+      "assets",
+      "benchmarks",
+      "demo",
+      "docs",
+      "examples",
+      "manifests",
+      "pyproject.toml",
+      "requirements.txt",
+      "results",
+      "src",
+      "tests",
+      "webgpu-demo"
+    ],
+    "test_files": 4,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "AbdelStark/awesome-typesafe",
+    "sha": "c2d5cf9d851e445fd50ae51fcae09bca5718e7c7",
+    "url": "https://github.com/AbdelStark/awesome-typesafe",
+    "path": "research\\sources\\awesome-typesafe",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T20:08:08+02:00",
+    "root_entries": [
+      ".editorconfig",
+      ".github",
+      ".gitignore",
+      ".lycheeignore",
+      ".markdownlint-cli2.jsonc",
+      "404.html",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "_config.yml",
+      "_layouts",
+      "assets",
+      "index.md",
+      "scripts"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "typesafe-ai/skills",
+    "sha": "65a39f393687675ce170e6094757de20370365b9",
+    "url": "https://github.com/typesafe-ai/skills",
+    "path": "research\\sources\\skills",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-12T05:42:05Z",
+    "root_entries": [
+      ".claude-plugin",
+      "LICENSE",
+      "README.md",
+      "skills"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "Anil-matcha/awesome-jev-by-typesafe",
+    "sha": "e0cd00b863841aaa2e7b6748b67704c6d39a566b",
+    "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+    "path": "research\\sources\\awesome-jev-by-typesafe",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T23:59:43+05:30",
+    "root_entries": [
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "docs",
+      "examples",
+      "images",
+      "tests"
+    ],
+    "test_files": 1,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "redrossa/pi-model-router",
+    "sha": "31d8fc2441d5af458928040afbcc384314a34289",
+    "url": "https://github.com/redrossa/pi-model-router",
+    "path": "research\\sources\\pi-model-router",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T19:57:36-05:00",
+    "root_entries": [
+      ".env.example",
+      ".gitignore",
+      "AGENTS.md",
+      "LICENSE",
+      "README.md",
+      "config",
+      "examples",
+      "package-lock.json",
+      "package.json",
+      "src",
+      "test",
+      "tsconfig.json"
+    ],
+    "test_files": 5,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "hellogumbo/should-ai-kill-us-all",
+    "sha": "6b6b55cbe05ec24c844db3a691e3521f65eae258",
+    "url": "https://github.com/hellogumbo/should-ai-kill-us-all",
+    "path": "research\\sources\\should-ai-kill-us-all",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-17T20:54:46-04:00",
+    "root_entries": [
+      ".claude",
+      ".dev.vars.example",
+      ".github",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "functions",
+      "package.json",
+      "public",
+      "scripts",
+      "wrangler.toml"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "repo": "Infrawrench/Jeeves",
+    "sha": "65bc21494e18fa7c2beca180c545eed6bc3ce4ce",
+    "url": "https://github.com/Infrawrench/Jeeves",
+    "path": "research\\sources\\Jeeves",
+    "retrieved_date": "2026-09-18",
+    "commit_date": "2026-09-18T16:35:24+01:00",
+    "root_entries": [
+      ".dockerignore",
+      ".env.example",
+      ".github",
+      ".gitignore",
+      "Cargo.lock",
+      "Cargo.toml",
+      "Dockerfile",
+      "LICENSE",
+      "README.md",
+      "build.rs",
+      "compose.yaml",
+      "deploy",
+      "examples",
+      "migrations",
+      "scripts",
+      "src"
+    ],
+    "test_files": 0,
+    "license_files": [
+      "LICENSE"
+    ]
+  }
+]
