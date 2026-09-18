@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Ambientes e segredos
+.env
+.env.*
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Dados e modelos locais
+data/
+models/
+artifacts/
+
+# Editores e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
