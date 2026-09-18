@@ -230,7 +230,9 @@ class Ledger:
                 (attempt_id,),
             ).fetchone()
             provider = provider or arm['provider']
-            model = model_resolved or model or arm['model']
+            # Precifica pelo modelo solicitado, que e o id com tarifa publicada; o resolvido
+            # (versao datada) fica registrado como evidencia, nao como base de cobranca.
+            model = model or arm['model']
             input_tokens = output_tokens = None
             if provider_reported_cost_nusd is not None:
                 cost = int(provider_reported_cost_nusd)

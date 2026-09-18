@@ -14,7 +14,7 @@ Projeto experimental para testes com o modelo de classificação JEV.
 
 A rodada simples cobre todos os 15 sistemas. Rodadas aprofundadas, critérios, corpus, orçamento e guia TypeSafe/OpenRouter estão no plano. Os testes dos sistemas ainda estão planejados; somente a auditoria offline do PDF foi executada. Custo novo de inferência: **US$ 0**.
 
-O cenário conservador considera US$ 3,002937546 do histórico dentro do teto total de US$ 5, restando US$ 1,997062454. A abrangência desse teto está pendente de esclarecimento; o limite de US$ 50 informado pela chave não amplia a autorização. Executor e bloqueio financeiro devem ser implementados antes de chamadas pagas.
+O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, dentro do teto. O limite de US$ 50 informado pela chave continua sendo apenas uma segunda barreira do provedor, não uma autorização. O executor financeiro em `executor/` aplica o teto por reserva atômica antes de cada chamada; nenhuma chamada paga foi feita até aqui.
 
 Para reproduzir os cálculos e documentos, usar Python com ReportLab instalado:
 

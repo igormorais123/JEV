@@ -1,7 +1,21 @@
 {
   "schema_version": 1,
-  "snapshot_id": "prices-2026-09-18",
-  "captured_at_utc": "2026-09-18T00:00:00Z",
-  "note": "Precos em nanodolares inteiros por token. Conferir no provedor antes de qualquer chamada paga.",
-  "models": {}
+  "snapshot_id": "prices-2026-09-18-openrouter",
+  "captured_at_utc": "2026-09-18T23:40:00Z",
+  "note": "Precos em nanodolares inteiros por milhao de tokens (1 USD = 1e9 nusd). Conferidos na API publica do provedor. Modelo sem entrada aqui nao pode ser despachado.",
+  "models": {
+    "openrouter:typesafe/jev-1.13": {
+      "input_nusd_per_million_tokens": 42000000,
+      "output_nusd_per_million_tokens": 0,
+      "context_length": 32000,
+      "max_completion_tokens": 28800,
+      "source": "https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints",
+      "source_captured_at_utc": "2026-09-18T23:40:00Z",
+      "provider_endpoint_name": "TypeSafe | typesafe/jev-1.13-20260917",
+      "raw_pricing": {
+        "prompt": "0.000000042",
+        "completion": "0"
+      }
+    }
+  }
 }

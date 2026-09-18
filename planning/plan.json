@@ -7,9 +7,9 @@
   "new_spend_usd": 0,
   "total_cap_usd": 5,
   "historical_conservative_usd": 3.002937546,
-  "conservative_available_usd": 1.997062454,
+  "conservative_available_usd": 5,
   "planned_active_ceiling_usd": 1.7,
-  "unresolved_budget_scope": true,
+  "unresolved_budget_scope": false,
   "budget": [
     {
       "stage": "Rodada simples dos 15 sistemas",
@@ -728,5 +728,10 @@
     "heterogeneous_units": 156,
     "jev_call_cap": 168,
     "llm_call_cap": 18
+  },
+  "budget_scope": {
+    "decided_at": "2026-09-18",
+    "decided_by": "usuario",
+    "statement": "O teto de US$ 5,00 e de gasto NOVO. O historico de US$ 3,002937546 nao ocupa esse teto."
   }
 }

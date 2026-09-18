@@ -252,3 +252,22 @@ class LedgerTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class RealPriceTableTests(unittest.TestCase):
+    """A tabela versionada precisa bater com o preco bruto registrado na fonte."""
+
+    def setUp(self):
+        from executor.pricing import load_prices
+        self.prices = load_prices()
+
+    def test_tabela_real_carrega_e_confere_com_a_fonte(self):
+        for key, entry in self.prices['models'].items():
+            provider, model = key.split(':', 1)
+            raw_prompt = entry['raw_pricing']['prompt']
+            expected = usd_to_nusd(raw_prompt) * 1_000_000
+            self.assertEqual(entry['input_nusd_per_million_tokens'], expected)
+            self.assertTrue(entry.get('source', '').startswith('https://'))
+            # Pior caso de uma chamada com contexto cheio precisa caber no teto de bloco previsto.
+            worst = worst_case_nusd(self.prices, provider, model, entry['context_length'], 1)
+            self.assertLess(worst, usd_to_nusd('0.25'))
