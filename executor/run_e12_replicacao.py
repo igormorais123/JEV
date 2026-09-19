@@ -147,7 +147,8 @@ def braco_comparador(chave, modelo, casos, ledger, key, precos):
         if status != 200:
             liquidado = ledger.settle(attempt_id, status='http_error', usage=uso,
                                       provider_reported_cost_nusd=reportado,
-                                      provider_request_id=resposta.get('id'))
+                                      provider_request_id=resposta.get('id'),
+                                      http_status=status)
             caso[chave] = None
             caso[chave + '_erro'] = 'http ' + str(status) + ': ' + str(resposta.get('error'))[:160]
         else:

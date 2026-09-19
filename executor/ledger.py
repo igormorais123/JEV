@@ -405,8 +405,20 @@ class Ledger:
             self._event(attempt_id, 'release', int(row['reserved_nusd']), {'evidence': evidence})
 
     def settle(self, attempt_id, *, status='success', usage=None, provider_request_id=None, model_resolved=None,
-               response_path=None, latency_ms=None, provider_reported_cost_nusd=None, provider=None, model=None):
-        """Liquida a tentativa. Sem usage confiavel, o custo permanece o pior caso reservado."""
+               response_path=None, latency_ms=None, provider_reported_cost_nusd=None, provider=None, model=None,
+               http_status=None):
+        """Liquida a tentativa. Sem usage confiavel, o custo permanece o pior caso reservado.
+
+        [E12] Uma excecao, e so uma: HTTP 429. O provedor recusa a requisicao ANTES de gerar
+        qualquer token, entao nao ha o que cobrar — e liquidar pelo pior caso nao e prudencia,
+        e um gasto inventado. No E12, 76 chamadas recusadas por limite de taxa entraram no
+        livro-caixa como US$ 0,499, mais de vinte vezes o gasto real de todo o estudo ate
+        entao; o extrato da chave mostrava US$ 0,0346. Isso teria consumido 10% do teto
+        autorizado sem que um unico token fosse processado.
+
+        Nao vale para 5xx nem para timeout: ali a geracao pode ter acontecido e o conservador
+        continua sendo o certo.
+        """
         if status not in SETTLED_STATUSES:
             raise LedgerStateError(f'Status de liquidacao invalido: {status}')
         with self._tx(immediate=True):
@@ -432,6 +444,9 @@ class Ledger:
             if provider_reported_cost_nusd is not None:
                 cost = int(provider_reported_cost_nusd)
                 source = 'provider_reported'
+            elif http_status == 429:
+                cost = 0
+                source = 'rejeitado_sem_geracao'
             elif not tarifa_compativel:
                 cost = reserved
                 source = 'worst_case_price_snapshot_divergente'
