@@ -1,0 +1,4445 @@
+{
+ "chamadas": 410,
+ "R12": {
+  "0k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.993,
+   "erros_acima_de_090": 1,
+   "estado_medio": 98,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "12k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.982,
+   "erros_acima_de_090": 1,
+   "estado_medio": 12100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "16k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9813,
+   "erros_acima_de_090": 1,
+   "estado_medio": 16100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "20k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9827,
+   "erros_acima_de_090": 1,
+   "estado_medio": 20100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "30k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.98,
+   "erros_acima_de_090": 1,
+   "estado_medio": 30100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "50k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9803,
+   "erros_acima_de_090": 1,
+   "estado_medio": 50100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "8k-antes": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.982,
+   "erros_acima_de_090": 1,
+   "estado_medio": 8100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "12k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9877,
+   "erros_acima_de_090": 1,
+   "estado_medio": 12100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "16k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.989,
+   "erros_acima_de_090": 1,
+   "estado_medio": 16100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "20k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.989,
+   "erros_acima_de_090": 1,
+   "estado_medio": 20100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "30k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9883,
+   "erros_acima_de_090": 1,
+   "estado_medio": 30100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "50k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9903,
+   "erros_acima_de_090": 1,
+   "estado_medio": 50100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  },
+  "8k-depois": {
+   "n": 30,
+   "sem_resposta": 0,
+   "acuracia": 0.9667,
+   "ic95": [
+    0.8333,
+    0.9941
+   ],
+   "conf_media": 0.9897,
+   "erros_acima_de_090": 1,
+   "estado_medio": 8100,
+   "dominante": [
+    "cancelar",
+    9
+   ]
+  }
+ },
+ "R13": {
+  "sem-saida": {
+   "n": 10,
+   "respostas": [
+    [
+     "informacao",
+     10
+    ]
+   ],
+   "com_confianca_acima_de_090": 10,
+   "acertos_da_saida": 0,
+   "confianca_media": 0.987,
+   "detalhe": [
+    {
+     "id": "vazio-01",
+     "deu": "informacao",
+     "conf": 0.97
+    },
+    {
+     "id": "vazio-02",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-03",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-04",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-05",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-06",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-07",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-08",
+     "deu": "informacao",
+     "conf": 0.9
+    },
+    {
+     "id": "vazio-09",
+     "deu": "informacao",
+     "conf": 1
+    },
+    {
+     "id": "vazio-10",
+     "deu": "informacao",
+     "conf": 1
+    }
+   ]
+  },
+  "com-saida": {
+   "n": 10,
+   "respostas": [
+    [
+     "nao-se-aplica",
+     10
+    ]
+   ],
+   "com_confianca_acima_de_090": 7,
+   "acertos_da_saida": 10,
+   "confianca_media": 0.927,
+   "detalhe": [
+    {
+     "id": "vazio-01",
+     "deu": "nao-se-aplica",
+     "conf": 0.89
+    },
+    {
+     "id": "vazio-02",
+     "deu": "nao-se-aplica",
+     "conf": 0.93
+    },
+    {
+     "id": "vazio-03",
+     "deu": "nao-se-aplica",
+     "conf": 1
+    },
+    {
+     "id": "vazio-04",
+     "deu": "nao-se-aplica",
+     "conf": 0.72
+    },
+    {
+     "id": "vazio-05",
+     "deu": "nao-se-aplica",
+     "conf": 0.98
+    },
+    {
+     "id": "vazio-06",
+     "deu": "nao-se-aplica",
+     "conf": 1
+    },
+    {
+     "id": "vazio-07",
+     "deu": "nao-se-aplica",
+     "conf": 1
+    },
+    {
+     "id": "vazio-08",
+     "deu": "nao-se-aplica",
+     "conf": 0.96
+    },
+    {
+     "id": "vazio-09",
+     "deu": "nao-se-aplica",
+     "conf": 0.96
+    },
+    {
+     "id": "vazio-10",
+     "deu": "nao-se-aplica",
+     "conf": 0.83
+    }
+   ]
+  }
+ },
+ "detalhe": [
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 66,
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 101,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 103,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 107,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 78,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 78,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 109,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 88,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 94,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 83,
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 84,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 81,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 110,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 160,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 81,
+   "escolha": "trocar",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 110,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 115,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 78,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 92,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 86,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 108,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 93,
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 81,
+   "escolha": "cobranca",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 136,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 110,
+   "escolha": "cobranca",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 83,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 97,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 100,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "0k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 122,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 8068,
+   "escolha": "rastrear",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 8103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 8105,
+   "escolha": "cancelar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 8109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 8080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 8080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 8111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 8090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 8096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 8085,
+   "escolha": "trocar",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 8086,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 8083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 8112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 8162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 8083,
+   "escolha": "trocar",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 8112,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 8117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 8080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 8094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 8104,
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 8088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 8110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 8095,
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 8083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 8138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 8112,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 8085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 8099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 8102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 8124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 8068,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 8103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 8105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 8109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 8080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 8080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 8111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 8090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 8096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 8085,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 8086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 8083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 8112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 8162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 8083,
+   "escolha": "trocar",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 8112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 8117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 8080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 8094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 8104,
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 8088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 8110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 8095,
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 8083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 8138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 8112,
+   "escolha": "cobranca",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 8085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 8099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 8102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "8k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 8124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 12068,
+   "escolha": "rastrear",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 12103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 12105,
+   "escolha": "cancelar",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 12109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 12080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 12080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 12111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 12090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 12096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 12085,
+   "escolha": "trocar",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 12086,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 12083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 12112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 12162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 12083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 12112,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 12117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 12080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 12094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 12104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 12088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 12110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 12095,
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 12083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 12138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 12112,
+   "escolha": "cobranca",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 12085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 12099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 12102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 12124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 12068,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 12103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 12105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 12109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 12080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 12080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 12111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 12090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 12096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 12085,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 12086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 12083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 12112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 12162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 12083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 12112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 12117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 12080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 12094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 12104,
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 12088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 12110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 12095,
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 12083,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 12138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 12112,
+   "escolha": "cobranca",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 12085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 12099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 12102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "12k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 12124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 16068,
+   "escolha": "rastrear",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 16103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 16105,
+   "escolha": "cancelar",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 16109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 16080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 16080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 16111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 16090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 16096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 16085,
+   "escolha": "trocar",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 16086,
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 16083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 16112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 16162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 16083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 16112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 16117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 16080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 16094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 16104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 16088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 16110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 16095,
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 16083,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 16138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 16112,
+   "escolha": "cobranca",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 16085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 16099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 16102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 16124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 16068,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 16103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 16105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 16109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 16080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 16080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 16111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 16090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 16096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 16085,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 16086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 16083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 16112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 16162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 16083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 16112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 16117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 16080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 16094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 16104,
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 16088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 16110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 16095,
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 16083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 16138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 16112,
+   "escolha": "cobranca",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 16085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 16099,
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 16102,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "16k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 16124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 20068,
+   "escolha": "rastrear",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 20103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 20105,
+   "escolha": "cancelar",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 20109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 20080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 20080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 20111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 20090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 20096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 20085,
+   "escolha": "trocar",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 20086,
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 20083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 20112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 20162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 20083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 20112,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 20117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 20080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 20094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 20104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 20088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 20110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 20095,
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 20083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 20138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 20112,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 20085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 20099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 20102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 20124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 20068,
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 20103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 20105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 20109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 20080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 20080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 20111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 20090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 20096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 20085,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 20086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 20083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 20112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 20162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 20083,
+   "escolha": "trocar",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 20112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 20117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 20080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 20094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 20104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 20088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 20110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 20095,
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 20083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 20138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 20112,
+   "escolha": "cobranca",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 20085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 20099,
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 20102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "20k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 20124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 30068,
+   "escolha": "rastrear",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 30103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 30105,
+   "escolha": "cancelar",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 30109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 30080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 30080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 30111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 30090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 30096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 30085,
+   "escolha": "trocar",
+   "confianca": 0.83,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 30086,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 30083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 30112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 30162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 30083,
+   "escolha": "trocar",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 30112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 30117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 30080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 30094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 30104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 30088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 30110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 30095,
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 30083,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 30138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 30112,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 30085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 30099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 30102,
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 30124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 30068,
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 30103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 30105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 30109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 30080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 30080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 30111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 30090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 30096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 30085,
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 30086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 30083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 30112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 30162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 30083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 30112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 30117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 30080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 30094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 30104,
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 30088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 30110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 30095,
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 30083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 30138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 30112,
+   "escolha": "cobranca",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 30085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 30099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 30102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "30k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 30124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 50068,
+   "escolha": "rastrear",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 50103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 50105,
+   "escolha": "cancelar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 50109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 50080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 50080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 50111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 50090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 50096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 50085,
+   "escolha": "trocar",
+   "confianca": 0.83,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 50086,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 50083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 50112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 50162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 50083,
+   "escolha": "trocar",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 50112,
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 50117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 50080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 50094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 50104,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 50088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 50110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 50095,
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 50083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 50138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 50112,
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 50085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 50099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 50102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-antes",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 50124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p23-01",
+   "alvo": "rastrear",
+   "tamanho": 50068,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p12-01",
+   "alvo": "informacao",
+   "tamanho": 50103,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p04-02",
+   "alvo": "cancelar",
+   "tamanho": 50105,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p09-03",
+   "alvo": "rastrear",
+   "tamanho": 50109,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p15-01",
+   "alvo": "cancelar",
+   "tamanho": 50080,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p08-02",
+   "alvo": "rastrear",
+   "tamanho": 50080,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p13-02",
+   "alvo": "cobranca",
+   "tamanho": 50111,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p27-02",
+   "alvo": "rastrear",
+   "tamanho": 50090,
+   "escolha": "rastrear",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p21-03",
+   "alvo": "cobranca",
+   "tamanho": 50096,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p23-02",
+   "alvo": "trocar",
+   "tamanho": 50085,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p25-01",
+   "alvo": "cancelar",
+   "tamanho": 50086,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p16-01",
+   "alvo": "cancelar",
+   "tamanho": 50083,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p26-02",
+   "alvo": "trocar",
+   "tamanho": 50112,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p14-01",
+   "alvo": "cancelar",
+   "tamanho": 50162,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p30-02",
+   "alvo": "trocar",
+   "tamanho": 50083,
+   "escolha": "trocar",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p07-03",
+   "alvo": "cancelar",
+   "tamanho": 50112,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p29-02",
+   "alvo": "informacao",
+   "tamanho": 50117,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p07-02",
+   "alvo": "trocar",
+   "tamanho": 50080,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p01-02",
+   "alvo": "trocar",
+   "tamanho": 50094,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p17-01",
+   "alvo": "informacao",
+   "tamanho": 50104,
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p09-02",
+   "alvo": "cobranca",
+   "tamanho": 50088,
+   "escolha": "cobranca",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p27-01",
+   "alvo": "informacao",
+   "tamanho": 50110,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p06-01",
+   "alvo": "informacao",
+   "tamanho": 50095,
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p07-01",
+   "alvo": "cobranca",
+   "tamanho": 50083,
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p29-03",
+   "alvo": "cancelar",
+   "tamanho": 50138,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p30-03",
+   "alvo": "informacao",
+   "tamanho": 50112,
+   "escolha": "cobranca",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p22-03",
+   "alvo": "cancelar",
+   "tamanho": 50085,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p27-03",
+   "alvo": "trocar",
+   "tamanho": 50099,
+   "escolha": "trocar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p09-01",
+   "alvo": "informacao",
+   "tamanho": 50102,
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "rodada": "R12",
+   "condicao": "50k-depois",
+   "case_id": "rep-p24-01",
+   "alvo": "cancelar",
+   "tamanho": 50124,
+   "escolha": "cancelar",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-01",
+   "alvo": null,
+   "tamanho": 111,
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-01",
+   "alvo": "nao-se-aplica",
+   "tamanho": 111,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-02",
+   "alvo": null,
+   "tamanho": 76,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-02",
+   "alvo": "nao-se-aplica",
+   "tamanho": 76,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-03",
+   "alvo": null,
+   "tamanho": 8,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-03",
+   "alvo": "nao-se-aplica",
+   "tamanho": 8,
+   "escolha": "nao-se-aplica",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-04",
+   "alvo": null,
+   "tamanho": 72,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-04",
+   "alvo": "nao-se-aplica",
+   "tamanho": 72,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.72,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-05",
+   "alvo": null,
+   "tamanho": 66,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-05",
+   "alvo": "nao-se-aplica",
+   "tamanho": 66,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-06",
+   "alvo": null,
+   "tamanho": 9,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-06",
+   "alvo": "nao-se-aplica",
+   "tamanho": 9,
+   "escolha": "nao-se-aplica",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-07",
+   "alvo": null,
+   "tamanho": 27,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-07",
+   "alvo": "nao-se-aplica",
+   "tamanho": 27,
+   "escolha": "nao-se-aplica",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-08",
+   "alvo": null,
+   "tamanho": 47,
+   "escolha": "informacao",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-08",
+   "alvo": "nao-se-aplica",
+   "tamanho": 47,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-09",
+   "alvo": null,
+   "tamanho": 60,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-09",
+   "alvo": "nao-se-aplica",
+   "tamanho": 60,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "sem-saida",
+   "case_id": "vazio-10",
+   "alvo": null,
+   "tamanho": 63,
+   "escolha": "informacao",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "rodada": "R13",
+   "condicao": "com-saida",
+   "case_id": "vazio-10",
+   "alvo": "nao-se-aplica",
+   "tamanho": 63,
+   "escolha": "nao-se-aplica",
+   "confianca": 0.83,
+   "erro": null
+  }
+ ]
+}

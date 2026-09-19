@@ -96,3 +96,6 @@ integracao/avaliacao/amostra-com-contexto.json
 integracao/avaliacao/comandos.json
 integracao/avaliacao/respostas-jev.json
 integracao/avaliacao/comandos-resultado.json
+
+# Programa E14: gasto operacional do laboratorio (o que vai ao Git sao os resultados)
+laboratorio/gastos.jsonl

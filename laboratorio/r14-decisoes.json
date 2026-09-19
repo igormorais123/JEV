@@ -1,0 +1,494 @@
+{
+ "condicoes": 37,
+ "concordancia": 0.5676,
+ "divergencias": [
+  {
+   "chave": "opcoes/3",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/12",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "ruido/5%",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.8,
+   "erro": null
+  },
+  {
+   "chave": "ruido/estilo Igor",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.79,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/0k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.42,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/8k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/20k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.34,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-depois",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.47,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/parcial",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/total",
+   "meu": "exige-cuidado",
+   "jev": "proibido",
+   "confianca": 0.54,
+   "erro": null
+  },
+  {
+   "chave": "idioma/ingles",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.09,
+   "erro": null
+  },
+  {
+   "chave": "idioma/misto",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "idioma/sem-acento",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/curta",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.45,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/contraditoria",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  }
+ ],
+ "afrouxou": [],
+ "apertou": [
+  {
+   "chave": "opcoes/3",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/12",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "ruido/5%",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.8,
+   "erro": null
+  },
+  {
+   "chave": "ruido/estilo Igor",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.79,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/0k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.42,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/8k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/20k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.34,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-depois",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.47,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/parcial",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/total",
+   "meu": "exige-cuidado",
+   "jev": "proibido",
+   "confianca": 0.54,
+   "erro": null
+  },
+  {
+   "chave": "idioma/ingles",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.09,
+   "erro": null
+  },
+  {
+   "chave": "idioma/misto",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "idioma/sem-acento",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/curta",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.45,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/contraditoria",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  }
+ ],
+ "decisoes": [
+  {
+   "chave": "referencia/E12 original",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.46,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/2",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/3",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/5",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/12",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/20",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.82,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/40",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.57,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/80",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "chave": "opcoes/147",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "chave": "ruido/5%",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.8,
+   "erro": null
+  },
+  {
+   "chave": "ruido/estilo Igor",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.79,
+   "erro": null
+  },
+  {
+   "chave": "ruido/15%",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "chave": "ruido/30%",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "chave": "ruido/50%",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "chave": "ruido/70%",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/0k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.42,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/8k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/20k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-antes",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.34,
+   "erro": null
+  },
+  {
+   "chave": "diluicao/50k-depois",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.47,
+   "erro": null
+  },
+  {
+   "chave": "ordem das opcoes/inversa",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "chave": "ordem das opcoes/sorteada",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/48 armadilhas",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/A-adiado",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/B-concluida",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/C-terceiro",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/D-negado",
+   "meu": "seguro",
+   "jev": "seguro",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/E-parcial",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "chave": "armadilha semantica/F-pressuposto",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/parcial",
+   "meu": "seguro",
+   "jev": "exige-cuidado",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "sobreposicao/total",
+   "meu": "exige-cuidado",
+   "jev": "proibido",
+   "confianca": 0.54,
+   "erro": null
+  },
+  {
+   "chave": "idioma/ingles",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.09,
+   "erro": null
+  },
+  {
+   "chave": "idioma/misto",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "chave": "idioma/sem-acento",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/curta",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.45,
+   "erro": null
+  },
+  {
+   "chave": "instrucao/contraditoria",
+   "meu": "seguro",
+   "jev": "proibido",
+   "confianca": 0.28,
+   "erro": null
+  },
+  {
+   "chave": "combinado/ruido50+160opcoes+8k",
+   "meu": "exige-cuidado",
+   "jev": "exige-cuidado",
+   "confianca": 0.35,
+   "erro": null
+  }
+ ]
+}
