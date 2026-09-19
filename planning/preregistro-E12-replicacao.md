@@ -211,3 +211,34 @@ seria escolher o resultado. Então o critério vai escrito antes:
 
 Este critério vale para os quatro comparadores igualmente, e valeria contra o Jev se fosse o
 braço dele a falhar.
+
+## Emenda 3 — teto de saída suficiente para modelo que raciocina antes de responder
+
+**Escrita em 19 de setembro de 2026, com o braço `c4` interrompido na sexta chamada e antes de
+calcular qualquer acurácia dele.**
+
+O corpo do pré-registro fixa 64 tokens de saída em todos os comparadores, e esse número veio do
+E10, onde o comparador respondia um JSON de duas chaves. O `c4` (`openai/gpt-oss-20b`) consome
+tokens de saída com raciocínio interno antes de escrever a resposta: com teto de 64 ele devolve
+conteúdo **vazio**, e o conteúdo vazio vira "JSON inválido".
+
+Isso mede o teto que eu escolhi, não o modelo. É o mesmo tipo de erro do HTTP 429 da Emenda 1:
+atribuir ao comparador uma falha que é da minha configuração produziria uma vantagem do Jev que
+nunca foi medida — e desta vez a favor do lado que eu teria interesse em favorecer, o que é
+exatamente a razão de a regra ser escrita antes.
+
+**Regra, congelada aqui antes de olhar o resultado:**
+
+1. O teto de saída é **parâmetro de transporte**, não de capacidade, e pode ser corrigido por
+   braço quando ficar demonstrado que ele impede o modelo de responder.
+2. Para `c4` o teto passa de 64 para **256** tokens de saída. Os demais braços ficam em 64, onde
+   já respondem.
+3. O braço corrigido é executado **desde o primeiro caso** com o teto novo. As chamadas feitas
+   com o teto insuficiente são **anuladas da análise** — não do livro-caixa, onde continuam
+   registradas e pagas — e o relatório publica quantas foram.
+4. O preço declarado em `executor/prices.json` é atualizado antes da reexecução, para que a
+   reserva continue cobrindo o pior caso do teto novo.
+5. Se, mesmo com 256, o braço continuar sem responder, ele cai no critério de cobertura da
+   Emenda 2 e é reportado como incompleto.
+
+O mesmo vale para qualquer outro braço em que a mesma causa for demonstrada, inclusive o Jev.
