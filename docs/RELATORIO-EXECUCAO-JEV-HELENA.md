@@ -1,9 +1,11 @@
 # Relatório de execução — programa de avaliação Jev
 
-**Helena Strategos · 18 de setembro de 2026 · primeira rodada com inferência real**
+**Helena Strategos · 18 e 19 de setembro de 2026 · primeira rodada com inferência real**
 
-**Status:** etapas 1 a 4 do plano executadas. 261 chamadas reais, **US$ 0,007638** gastos de um teto de
-US$ 5,00 de gasto novo. Conciliação com o extrato do provedor fechada sem divergência inexplicada.
+**Status:** etapas 1 a 4 do plano executadas, mais os experimentos E1, E2, E2b, E3 e E4. 305 chamadas
+reais, **US$ 0,010950** gastos de um teto de US$ 5,00 de gasto novo. Conciliação com o extrato do
+provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por revisão
+independente de outro modelo, e a seção 5 lista o que essa revisão derrubou.
 
 ---
 
@@ -23,13 +25,18 @@ O que impede ir além: 64 casos autorais, um único avaliador, nenhuma medição
 
 ## 2. Achado principal
 
-**A confiança do Jev é informativa, e isso vale mais que a acurácia média.** Em 360 decisões do piloto de
-triagem, nenhuma das 244 com confidence ≥ 0,95 estava errada, enquanto a confiança média nos erros foi
-0,513 contra 0,926 nos acertos. Na segunda tarefa, o único erro saiu com confidence 0,36.
+**A confiança do Jev é informativa, e isso vale mais que a acurácia média.** A confiança média nos erros
+foi 0,513 contra 0,926 nos acertos; na segunda tarefa, o único erro saiu com confidence 0,36.
 
 Isso muda o desenho operacional: em vez de perguntar "o modelo é bom o suficiente para decidir sozinho?",
-a pergunta vira "quanto da fila ele resolve sem erro e quanto sobra para a pessoa?". Com corte em 0,95, a
-resposta neste corpus foi **67,8% da fila com zero erro**.
+a pergunta vira "quanto da fila ele resolve e quanto sobra para a pessoa?". Com corte em 0,95, **28 dos 40
+casos são aceitos (70% de cobertura) e nenhum deles está errado**.
+
+**Não observar erro não é taxa de erro zero.** Uma revisão independente derrubou a versão anterior desta
+seção, que falava em "360 decisões" e "zero erro". As 360 são 40 casos repetidos nove vezes, e o modelo se
+mostrou determinístico para entrada idêntica: o N honesto é 40, não 360. Sobre 28 aceitos com zero erros
+observados, o limite superior de 95% para a taxa de erro é **10,1%**, não zero. O sinal de calibração
+continua valendo; a promessa de perfeição, não.
 
 ---
 
@@ -45,9 +52,15 @@ declarado: ganho só conta como sinal se for de pelo menos +10 pontos percentuai
 | Regra simples congelada | 0,600 | 0,554 | 1/10 | 4 |
 | Jev 1.13 | **0,925** | **0,928** | **7/10** | **1** |
 
-Diferença pareada **+32,5 pontos**, mais de três vezes o critério. McNemar na unidade correta, a família:
-b=6, c=0, p=0,031. No nível de caso, b=15, c=2, p=0,0024 — reportado, mas **não** é a unidade válida,
-porque casos da mesma família não são independentes.
+Diferença pareada **+32,5 pontos**, mais de três vezes o critério, com **IC 95% de [0,150; 0,500]** por
+bootstrap de famílias (20.000 reamostragens de clusters inteiros). O intervalo não contém zero.
+
+O critério que este pré-registro havia congelado era inválido e foi emendado em 2026-09-19: ele pedia que
+"o limite inferior do intervalo de Wilson sobre famílias não cruzasse zero", mas Wilson é intervalo de
+proporção e nunca é negativo — uma única família perfeita já o satisfaria. O procedimento acima o
+substitui. O McNemar por família reportado antes (b=6, c=0, p=0,031) testa a ocorrência de *família
+perfeita*, não a diferença de acurácia, e passa a constar como análise posterior. A conclusão sobrevive ao
+teste correto; o que muda é a largura do intervalo.
 
 ### 3.2 E2 — fatorial 2×2×2, 320 decisões
 
@@ -57,12 +70,31 @@ ainda rodava individual antes; aqui cada um varia sozinho.
 
 | Fator | Efeito na acurácia | Efeito no custo |
 |---|---|---|
-| Lote de 8 contra individual | nenhum detectável (p=1,000 nas 4 células) | **−35,9% a −39,9% por decisão** |
-| Ordem das opções invertida | nenhum detectável | nenhum |
-| Contexto de distração | nenhum detectável | **+11,4% individual, +18,9% em lote** |
+| Lote de 8 contra individual | não detectado (p=1,000 nas 4 células) | **−35,9% a −39,9% por decisão** |
+| Ordem das opções invertida | não detectado | nenhum |
+| Contexto de distração | não detectado | **+11,4% individual, +18,9% em lote** |
 
 36 dos 40 casos acertam nas oito condições e nenhum erra em todas. A economia do lote é real e menor que
-os ~47% do dossiê histórico.
+os ~47% do dossiê histórico. O denominador é a decisão **solicitada**: todas as 320 voltaram válidas, então
+aqui ele coincide com decisão obtida; com falhas ou retries, os números mudariam.
+
+"Não detectado" é o máximo que estes dados permitem. Demonstrar ausência de perda relevante exigiria uma
+margem de não inferioridade declarada antes, e isso não foi feito.
+
+### 3.2.1 E2b — desconfundindo posição e caso
+
+No E2 a ordem dos casos dentro do lote era fixa, então "a posição 4 erra mais" e "o caso que cai na posição
+4 é difícil" eram a mesma afirmação. O E2b repetiu o lote em cinco permutações (200 observações) e o padrão
+**desapareceu**: amplitude observada de 0,12 entre posições, com p=0,403 em teste de permutação que usa o
+caso como unidade. O qui-quadrado que eu havia calculado antes tratava as 200 observações como
+independentes, o que era errado.
+
+**Achado novo, e este muda operação:** três dos quarenta casos mudam de resposta conforme os **vizinhos** do
+lote, embora o modelo seja determinístico para entrada idêntica. O caso `tri-f09-03` oscilou entre
+`informacao`, `rastrear` e `trocar` dependendo da companhia. Quem precisa de reprodutibilidade por caso —
+auditoria, contestação, revisão — deve usar o modo individual e pagar os 36% a 40% a mais. A atribuição
+específica à composição do lote ainda mistura composição e posição; separar as duas exige um desenho
+próprio.
 
 ### 3.3 E3 — relação afirmação/evidência, 24 casos em 6 famílias contrastivas
 
@@ -75,7 +107,8 @@ plano apontou como perigosos.
 | Jev 1.13 | **0,958** | **0,960** | **5/6** | **1** |
 
 O ganho está onde importa: agendado não é pago, proposto não é aprovado, citado não é endossado, ausente
-não é negativo. A regra errou oito desses; o Jev, um — e com confiança 0,36.
+não é negativo. A regra errou oito desses; o Jev, um — e com confiança 0,36. Diferença pareada de +0,333,
+com IC 95% de [0,250; 0,417] por bootstrap de famílias.
 
 ### 3.4 Custo e latência medidos
 
@@ -104,6 +137,26 @@ Três achados de engenharia, não de modelo:
 2. **S12 não roda no Windows:** quatro testes leem arquivo sem declarar encoding e quebram no cp1252.
 3. **Instalar não é testar.** S09 e S14 não têm suíte alguma; não recebem nota de qualidade.
 
+### 3.6 E4 — preservação de ressalvas na seleção de fontes (pergunta P2)
+
+Oito consultas, cinco candidatos cada, com relevância graduada e marcação de qual trecho contém a
+**ressalva necessária** — aquele que limita a regra geral e sem o qual a resposta final fica errada,
+ainda que a regra geral esteja presente.
+
+| Braço | nDCG@5 | Ressalvas no top-3 | Trechos essenciais no top-3 |
+|---|---:|---:|---:|
+| Ordem de chegada | 0,736 | 4/8 | 7 |
+| BM25 | 0,921 | 5/8 | 13 |
+| Jev (tipo `score`) | **0,996** | **8/8** | **16 de 16** |
+
+O BM25 acerta a relevância geral e ainda assim perde três ressalvas: ele encontra o trecho que fala do
+assunto, não o que limita a regra. Essa é exatamente a falha que o plano apontou como perigosa em
+pesquisa jurídica, e é onde o ganho do Jev aparece.
+
+Um erro de desenho foi corrigido **antes** de gastar: eu havia escrito o corpus com os candidatos em ordem
+decrescente de relevância, o que dava ao braço "ordem de chegada" um nDCG de 0,99 e um teto impossível de
+superar. A ordem de apresentação passou a ser embaralhada por consulta, com semente 20260918.
+
 ---
 
 ## 4. Mecanismo
@@ -119,7 +172,41 @@ Por isso o lote economiza — ele amortiza as instruções repetidas, não a dec
 
 ---
 
-## 5. Contra-hipóteses
+## 5. Revisão independente e o que ela derrubou
+
+Todo o material — executor, desenho, corpora e relatório — foi submetido a outro modelo
+(Codex `gpt-6-astra`, esforço alto), com instrução de procurar defeito e sem espaço para elogio. A
+primeira tentativa foi honesta ao falhar: o sandbox bloqueou a leitura dos arquivos e o revisor
+**recusou-se a afirmar que não havia defeito**, em vez de fingir uma revisão. Na segunda, com o código
+entregue no próprio prompt, vieram **cinco achados P1**. Verifiquei cada um contra o código: todos
+procedem. Todos foram corrigidos, com teste de regressão que reproduz o defeito
+(`executor/tests/test_achados_revisao.py`).
+
+| # | Achado | Consequência real | Correção |
+|---|---|---|---|
+| P1-1 | O teto declarado na reserva não era imposto ao que era enviado; `max_completion_tokens` ausente virava silenciosamente 1 token | Bastaria declarar 1 token para reservar quase nada e enviar 32 mil | O cliente não declara mais teto; reserva usa o contexto publicado, e sem máximo verificável não despacha |
+| P1-2 | Divergência do extrato do provedor virava só um evento, sem ocupar o teto | Extrato à frente do ledger autorizaria gasto contra saldo inexistente | Excedente não registrado passa a consumir a carteira |
+| P1-3 | A reserva precificava um modelo e a liquidação podia usar outro | Reservar caro e liquidar barato liberaria saldo que não existe | Identidade de preço é gravada na reserva; liquidar com outra é recusado |
+| P1-4 | Resposta ausente sumia da acurácia e inflava "família sem erro" | Braço com falhas pareceria melhor do que é, e o pareamento quebrava | Relatório traz cobertura, acurácia condicional e acurácia sobre os casos programados |
+| P1-5 | O critério de significância congelado era vacuoso | Wilson de proporção nunca cruza zero: o critério não testava nada | Emenda datada e bootstrap de clusters por família |
+
+O P1-5 é o mais sério, porque atinge a conclusão e não o código. A emenda está em
+`planning/preregistro-E1-triagem.md`, e o resultado **sobrevive** ao teste correto: a diferença de +32,5
+pontos tem IC 95% de [0,150; 0,500].
+
+Dos alertas P2, três mudaram o texto deste relatório: "efeito inexistente" virou "não detectamos efeito";
+"zero erro" virou "zero erros observados, com limite superior de 10,1%"; e a divergência entre a rubrica
+escrita e o prompt efetivamente enviado passou a constar na emenda em vez de ser apresentada como
+equivalência.
+
+Dois alertas continuam **abertos e não corrigidos**, por escolha: o comparador é reconhecidamente simples
+e o corpus concentra justamente as dificuldades que ele não trata, e as dez famílias são categorias
+autorais de fenômenos, não amostra da rotina. Os dois entram como contra-hipóteses abaixo, porque não se
+resolvem com código — só com dados novos.
+
+---
+
+## 6. Contra-hipóteses
 
 ### Contra-hipótese 1: o gabarito é meu, e eu escrevi os casos
 
@@ -162,12 +249,13 @@ inferência e usa as repetições apenas como verificação de estabilidade.
 
 ---
 
-## 6. Calibração de confiança
+## 7. Calibração de confiança
 
 | Afirmação | Confiança | Por quê |
 |---|---:|---|
-| O Jev supera a regra simples nestes dois corpora | **0,95** | Ganho grande, dois desenhos, McNemar significativo na unidade agrupada |
-| A confiança do modelo é informativa | **0,85** | Separação forte, mas medida sobre 64 casos e com determinismo observado |
+| O Jev supera a regra simples nestes corpora | **0,95** | Ganho grande em dois desenhos, com IC de bootstrap por família que não contém zero |
+| O Jev preserva ressalvas melhor que BM25 neste corpus | **0,80** | 8/8 contra 5/8, mas são só oito consultas autorais |
+| A confiança do modelo é informativa | **0,80** | Separação forte, porém o N honesto é 40 e o limite superior de erro acima de 0,95 é 10,1% |
 | O lote economiza de 35% a 40% sem dano | **0,70** | Economia medida direto; "sem dano" é ausência de evidência, com poder baixo |
 | O ganho se mantém em dados reais não balanceados | **0,45** | Nenhum caso real foi testado; é extrapolação |
 | O Jev reduz tempo humano no fluxo completo | **0,20** | Nada foi medido sobre fluxo de trabalho |
@@ -176,7 +264,7 @@ Confiança não é probabilidade do evento: é o quanto eu apostaria na conclus�
 
 ---
 
-## 7. Cenários
+## 8. Cenários
 
 **Base (mais provável):** o ganho se confirma em dados reais com alguma erosão, a acurácia cai para a faixa
 de 0,85 a 0,92 no estrato natural, o corte de confiança precisa subir, e o uso consultivo se estabiliza
@@ -191,7 +279,7 @@ com confidence alta — é esse o indicador que mata a recomendação, não a ac
 
 ---
 
-## 8. Próximo movimento
+## 9. Próximo movimento
 
 1. **Rotular os 64 casos com um segundo avaliador humano cego** — responsável: Igor ou quem ele designar;
    até 2026-10-15; feito quando houver Cohen kappa calculado e gabarito adjudicado gravado.
@@ -206,19 +294,32 @@ com confidence alta — é esse o indicador que mata a recomendação, não a ac
    deixarem de ser colineares.
 5. **Reduzir o limite da chave no painel do provedor** de US$ 50 para o valor autorizado — responsável:
    Igor, porque exige acesso à conta; até 2026-09-30; feito quando o extrato mostrar o novo limite.
+6. **Encomendar uma segunda regra a um terceiro**, desenvolvida em dados separados e congelada antes do
+   teste, para saber se o ganho sobrevive a um comparador bem-feito — responsável: Helena com Efesto; até
+   2026-10-20; feito quando a regra de terceiro rodar no mesmo corpus sem ter visto as saídas do Jev.
+7. **Separar composição do lote de posição no lote**, com desenho em que a vizinhança varia e a posição
+   fica fixa — responsável: Efesto; até 2026-10-20; feito quando os três casos instáveis tiverem causa
+   atribuída.
 
 ---
 
-## 9. O que este relatório não estabelece
+## 10. O que este relatório não estabelece
 
-Não mede desempenho em dados reais. Não mede tempo humano poupado. Não compara provedores (P6 não foi
-executado). Não avalia busca nem preservação de ressalvas em ranking (P2 não foi executado). Não julga 10
-dos 15 sistemas além da camada offline — instalar e rodar suíte não é inferência real do componente.
+Não mede desempenho em dados reais. Não mede tempo humano poupado. Não compara provedores: P6 continua
+sem execução, porque não há conta TypeSafe direta nesta máquina. Não julga 14 dos 15 sistemas além da
+camada offline — instalar e rodar suíte não é inferência real do componente, e só o S01 teve inferência.
 
-O controle financeiro tinha um furo conceitual, encontrado durante a própria execução: o teto de US$ 5
-estava sendo aplicado por experimento, e cada experimento novo abria um teto novo. Foi corrigido com uma
-carteira global e um teste de regressão que reproduz o furo. O gasto real nunca chegou perto do limite,
-mas o controle estava errado, e isso precisa constar.
+P2 passou a ter resposta preliminar no E4, sobre oito consultas autorais. Isso é um piloto, não um
+benchmark de busca.
+
+O controle financeiro teve **seis** defeitos encontrados durante a própria execução: o teto aplicado por
+experimento em vez de globalmente, mais os cinco achados da revisão independente na seção 5. Todos
+corrigidos, todos com teste de regressão. O gasto real nunca chegou perto do limite — US$ 0,010950 de
+US$ 5,00 — mas um controle financeiro que só funciona porque o gasto é pequeno não é um controle
+financeiro.
+
+Nenhum dos defeitos foi encontrado lendo o código. Todos apareceram ao executar de verdade, ou quando
+outro modelo olhou com instrução de achar problema.
 
 ---
 

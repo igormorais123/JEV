@@ -10,7 +10,8 @@ from pathlib import Path
 
 from .ledger import Ledger
 from .pricing import usd_to_nusd
-from .runner import DECISIONS_URL, estimate_input_tokens, load_api_key, payload_sha256
+from .runner import (DECISIONS_URL, load_api_key, payload_sha256, reservation_output_tokens,
+                     reservation_tokens)
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'runs' / 'probe'
@@ -65,14 +66,16 @@ def main():
     key, _ = load_api_key()
     findings = []
     with Ledger(DB, EXPERIMENT) as ledger:
-        ledger.set_block_cap(BLOCK, usd_to_nusd('0.02'))
+        ledger.set_block_cap(BLOCK, usd_to_nusd('0.10'))
         ledger.register_arm(ARM, 'S01', PROVIDER, MODEL, endpoint='/api/alpha/decisions')
         for name, questions in VARIANTS.items():
             payload = {'model': MODEL, 'state': STATE, 'questions': questions}
-            tokens = estimate_input_tokens(payload)
+            tokens = reservation_tokens(ledger.prices, PROVIDER, MODEL)
             path = f'runs/probe/{name}.json'
             reservation = ledger.reserve(arm_id=ARM, block_id=BLOCK, provider=PROVIDER, model=MODEL,
-                                         max_input_tokens=tokens, max_output_tokens=1,
+                                         max_input_tokens=tokens,
+                                         max_output_tokens=reservation_output_tokens(
+                                             ledger.prices, PROVIDER, MODEL),
                                          payload_sha256=payload_sha256(payload), request_path=path,
                                          runtime_manifest_path=path, evidence_level='live_component')
             attempt = reservation['attempt_id']

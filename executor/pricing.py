@@ -37,6 +37,9 @@ def entry(prices, provider, model):
         value = found.get(field)
         if not isinstance(value, int) or value < 0:
             raise PricingError(f'Preco invalido em {provider}:{model}.{field}')
+    taxa = found.get('request_surcharge_nusd', 0)
+    if not isinstance(taxa, int) or taxa < 0:
+        raise PricingError(f'request_surcharge_nusd invalido em {provider}:{model}: precisa ser inteiro >= 0')
     return found
 
 
@@ -69,7 +72,15 @@ def observed_nusd(prices, provider, model, input_tokens, output_tokens):
 
 
 def usd_to_nusd(value_usd):
-    """Converte USD decimal para nanodolares sem passar por float."""
+    """Converte USD para nanodolares, arredondando para cima.
+
+    Um float que veio de json.loads ja perdeu exatidao antes de chegar aqui; Decimal(float)
+    preserva o valor binario real em vez de reintroduzir erro pelo str(). Texto e int seguem
+    pelo caminho exato.
+    """
     from decimal import Decimal, ROUND_CEILING
-    quantized = (Decimal(str(value_usd)) * NUSD_PER_USD).to_integral_value(rounding=ROUND_CEILING)
-    return int(quantized)
+    if isinstance(value_usd, float):
+        bruto = Decimal(value_usd)
+    else:
+        bruto = Decimal(str(value_usd))
+    return int((bruto * NUSD_PER_USD).to_integral_value(rounding=ROUND_CEILING))

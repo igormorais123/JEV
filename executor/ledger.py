@@ -60,7 +60,12 @@ class Ledger:
               block_id TEXT NOT NULL,
               reserved_nusd INTEGER NOT NULL CHECK(reserved_nusd >= 0),
               settled_nusd INTEGER CHECK(settled_nusd >= 0),
-              cost_source TEXT
+              cost_source TEXT,
+              -- Identidade precificada na reserva. A liquidacao usa ESTA identidade, nunca
+              -- a do braco: senao uma reserva de modelo caro poderia ser liquidada pela
+              -- tarifa de um modelo barato e liberar saldo que nao existe.
+              priced_provider TEXT,
+              priced_model TEXT
             );
             """
         )
@@ -221,9 +226,9 @@ class Ledger:
                  runtime_manifest_path),
             )
             self.db.execute(
-                'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,settled_nusd,cost_source)'
-                ' VALUES(?,?,?,?,NULL,NULL)',
-                (attempt_id, self.experiment_id, block_id, worst),
+                'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,settled_nusd,'
+                'cost_source,priced_provider,priced_model) VALUES(?,?,?,?,NULL,NULL,?,?)',
+                (attempt_id, self.experiment_id, block_id, worst, provider, model),
             )
             self._event(attempt_id, 'reserve', worst, {
                 'provider': provider, 'model': model, 'block_id': block_id,
@@ -266,15 +271,18 @@ class Ledger:
         with self._tx(immediate=True):
             row = self._require_status(attempt_id, ('reserved', 'sent', 'timeout'))
             reserved = int(row['reserved_nusd'])
-            arm = self.db.execute(
-                'SELECT arms.provider AS provider, arms.model_requested AS model FROM attempts'
-                ' JOIN arms ON arms.arm_id = attempts.arm_id WHERE attempt_id = ?',
-                (attempt_id,),
-            ).fetchone()
-            provider = provider or arm['provider']
-            # Precifica pelo modelo solicitado, que e o id com tarifa publicada; o resolvido
-            # (versao datada) fica registrado como evidencia, nao como base de cobranca.
-            model = model or arm['model']
+            # A identidade que precificou a reserva e a unica base legitima de liquidacao.
+            # Um provider/model passado aqui que divirja dela e recusado, nao aceito.
+            if row['priced_provider'] is None or row['priced_model'] is None:
+                raise LedgerStateError('Tentativa sem identidade de preco registrada na reserva')
+            if provider is not None and provider != row['priced_provider']:
+                raise LedgerStateError(
+                    f"Provedor da liquidacao ({provider}) difere do reservado ({row['priced_provider']})")
+            if model is not None and model != row['priced_model']:
+                raise LedgerStateError(
+                    f"Modelo da liquidacao ({model}) difere do reservado ({row['priced_model']})")
+            provider = row['priced_provider']
+            model = row['priced_model']
             input_tokens = output_tokens = None
             if provider_reported_cost_nusd is not None:
                 cost = int(provider_reported_cost_nusd)
@@ -332,6 +340,11 @@ class Ledger:
         ).fetchone()
         base = int(previous['usage_nusd']) if previous and previous['usage_nusd'] is not None else 0
         delta = int(observed_usage_nusd) - base
+        # Se o extrato do provedor ja passou do que o ledger registra, a diferenca e gasto
+        # real fora do nosso controle e precisa ocupar o teto agora, senao autorizamos
+        # chamadas contra saldo que nao existe mais.
+        registrado = self.wallet_committed_nusd()
+        excedente = int(observed_usage_nusd) - registrado
         with self._tx():
             self.db.execute(
                 'INSERT INTO provider_snapshots(snapshot_id,provider,captured_at_utc,usage_nusd,key_limit_nusd,'
@@ -341,9 +354,20 @@ class Ledger:
             )
             self._event(None, 'reconcile', max(delta, 0), {
                 'provider': provider, 'delta_nusd': delta, 'baseline_nusd': base,
-                'ledger_committed_nusd': self.committed_nusd(),
+                'wallet_committed_nusd': registrado, 'excedente_nao_registrado_nusd': excedente,
             })
-        return {'delta_nusd': delta, 'ledger_committed_nusd': self.committed_nusd()}
+            if excedente > 0:
+                self.db.execute(
+                    'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,'
+                    'settled_nusd,cost_source,priced_provider,priced_model) VALUES(?,?,?,?,?,?,?,?)',
+                    (f'extrato:{uuid.uuid4()}', self.experiment_id, 'conciliacao', excedente,
+                     excedente, 'provider_statement_excess', provider, None),
+                )
+                self._event(None, 'historical_commitment', excedente, {
+                    'motivo': 'extrato do provedor acima do ledger; diferenca passa a ocupar o teto',
+                    'provider': provider})
+        return {'delta_nusd': delta, 'excedente_absorvido_nusd': max(excedente, 0),
+                'ledger_committed_nusd': self.wallet_committed_nusd()}
 
     def record_historical_commitment(self, amount_nusd, evidence):
         """Gasto historico que ocupa o teto total sem ter tentativa nesta base."""
@@ -360,7 +384,8 @@ class Ledger:
     # --- internos -------------------------------------------------------
     def _require_status(self, attempt_id, allowed):
         row = self.db.execute(
-            'SELECT a.status AS status, b.reserved_nusd AS reserved_nusd, b.settled_nusd AS settled_nusd'
+            'SELECT a.status AS status, b.reserved_nusd AS reserved_nusd, b.settled_nusd AS settled_nusd,'
+            ' b.priced_provider AS priced_provider, b.priced_model AS priced_model'
             ' FROM attempts a JOIN attempt_budget b ON b.attempt_id = a.attempt_id WHERE a.attempt_id = ?',
             (attempt_id,),
         ).fetchone()

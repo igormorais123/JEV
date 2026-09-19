@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 10,
-  "updated_at": "2026-09-19T03:36:23.193856+00:00",
+  "revision": 11,
+  "updated_at": "2026-09-19T03:43:04.497551+00:00",
   "system_progress": {
     "S01": {
       "simple": "running",
@@ -4233,6 +4233,31 @@
       "at": "2026-09-19T03:36:23.164612+00:00",
       "kind": "evidence",
       "text": "E4 responde a pergunta P2 do plano, preservacao de ressalvas em 8 consultas com 5 candidatos cada. nDCG@5: ordem de chegada 0,736, BM25 0,921, Jev 0,996. Ressalvas necessarias no top-3: 4 de 8 na ordem de chegada, 5 de 8 no BM25 e 8 de 8 no Jev. Erro de desenho corrigido antes de gastar: o corpus estava escrito em ordem decrescente de relevancia, o que daria a ordem de chegada um nDCG de 0,99 artificial; a ordem passou a ser embaralhada com semente 20260918."
+    },
+    {
+      "at": "2026-09-19T03:43:04.469243+00:00",
+      "kind": "manual",
+      "text": "Revisao independente por outro modelo (Codex gpt-6-astra, esforco alto) apontou 5 defeitos P1. Todos verificados contra o codigo e todos procedem: o teto declarado na reserva nao era imposto ao envio; divergencia do extrato nao ocupava o teto; reserva e liquidacao podiam usar modelos diferentes; resposta ausente sumia das metricas; e o criterio de significancia pre-registrado era vacuoso. Corrigidos, com testes de regressao em executor/tests/test_achados_revisao.py."
+    },
+    {
+      "at": "2026-09-19T03:43:04.469243+00:00",
+      "kind": "evidence",
+      "text": "Criterio estatistico emendado. O pre-registro pedia que o limite inferior do intervalo de Wilson sobre familias nao cruzasse zero, mas Wilson e intervalo de proporcao e nunca e negativo: o criterio nao testava nada. Substituido por bootstrap de clusters, reamostrando familias inteiras. E1: diferenca 0.325, IC95 [0.15, 0.5]. E3: diferenca 0.3333, IC95 [0.25, 0.4167]. A conclusao de superioridade sobrevive ao teste correto."
+    },
+    {
+      "at": "2026-09-19T03:43:04.469243+00:00",
+      "kind": "evidence",
+      "text": "Afirmacao de calibracao corrigida para baixo. O pool de 360 decisoes eram 40 casos repetidos 9 vezes, e o modelo e deterministico para entrada identica. Com o N honesto de 40: 28 decisoes aceitas no corte de 0,95, cobertura 0.7, zero erros observados e limite superior de 95% para a taxa de erro em 0.101. Nao observar erro nao e taxa de erro zero."
+    },
+    {
+      "at": "2026-09-19T03:43:04.469243+00:00",
+      "kind": "evidence",
+      "text": "Efeito de posicao no lote reavaliado com a unidade correta: teste de permutacao com o caso como unidade da p=0.4026 sobre amplitude observada de 0.12. A leitura passa a ser 'nao detectamos efeito', nao 'efeito inexistente'."
+    },
+    {
+      "at": "2026-09-19T03:43:04.469243+00:00",
+      "kind": "evidence",
+      "text": "Conciliacao final: ledger US$ 0,010949904 e extrato do provedor US$ 0,010862838; a diferenca continua sendo o provisionamento das chamadas com HTTP 400, que o provedor nao cobra. 305 tentativas registradas. Restam US$ 4,989050 do teto de US$ 5."
     }
   ]
 }

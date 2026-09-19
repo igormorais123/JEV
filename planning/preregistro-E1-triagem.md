@@ -71,3 +71,50 @@ no atendimento. Reportado separadamente da acurácia média.
 
 Não pode estabelecer desempenho operacional, porque a distribuição é balanceada de propósito e não
 reflete prevalência real. Não pode comparar provedores. Não pode sustentar decisão de adoção.
+
+---
+
+# Emenda 1 — 2026-09-19
+
+**Motivo:** revisão independente por outro modelo (Codex `gpt-6-astra`, esforço alto) apontou que o
+critério de significância congelado acima é **inválido**, e a crítica procede.
+
+**O que estava errado.** O critério dizia: "o limite inferior do intervalo binomial de Wilson sobre
+famílias não cruzar zero". Wilson é intervalo de uma **proporção**, que vive em [0,1] e nunca é
+negativo — uma única família perfeita já produziria limite inferior positivo. O critério era vacuoso:
+não testava superioridade nenhuma.
+
+**O que também ficou fora do combinado.** O McNemar por família que foi reportado (b=6, c=0, p=0,031)
+testa a diferença na ocorrência de *família perfeita*, não a diferença de acurácia por caso. É análise
+posterior legítima, mas não é o procedimento que este documento havia fixado, e passa a ser declarada
+como tal.
+
+**Procedimento que substitui o critério, a partir de agora.** Diferença pareada de acurácia por caso,
+com intervalo de 95% por **bootstrap de clusters**, reamostrando famílias inteiras (`executor/analise.py`).
+O ganho conta como sinal quando o intervalo não contém zero **e** a diferença pontual é de pelo menos
++10 pontos percentuais, que era o limiar original e continua valendo.
+
+**Resultado sob o procedimento corrigido**, calculado sobre os dados já coletados:
+
+| Experimento | Diferença Jev − regra | IC 95% por bootstrap de famílias |
+|---|---:|---|
+| E1 triagem (10 famílias, 40 casos) | +0,325 | [0,150; 0,500] |
+| E3 evidência (6 famílias, 24 casos) | +0,333 | [0,250; 0,417] |
+
+A conclusão de superioridade **sobrevive** ao teste correto. O que muda é o intervalo: mais largo e
+mais honesto que o número pontual sugeria.
+
+**Correções documentais no mesmo ato:**
+
+1. O texto dizia que a regra desempata "pela primeira ocorrência". O código
+   (`executor/baseline_regra.py`) desempata por **prioridade fixa de classes**, independentemente da
+   posição no texto. O código está congelado desde antes das chamadas; o documento é que descrevia
+   errado, e passa a descrever o comportamento real.
+2. O texto prometia `criteria` "idêntico às definições" da rubrica. Não é literalmente idêntico: a
+   rubrica inclui em `cobranca` quem "fala de pagamento", e o prompt não; a rubrica aceita "devolução"
+   em `trocar`, e o prompt exige "devolução com substituição". As diferenças são registradas aqui em
+   vez de alteradas, porque mexer nelas agora contaminaria o resultado já observado.
+3. Os casos `tri-f02-04` (pergunta sobre parcelamento) e `tri-f09-04` (pedido do código de rastreio)
+   ficam marcados como **fronteira que exige adjudicação**, não como erro estabelecido do modelo. A
+   métrica principal continua reportada com eles incluídos; a análise de sensibilidade sem eles está
+   no relatório.

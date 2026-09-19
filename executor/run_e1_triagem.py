@@ -68,18 +68,28 @@ def macro_f1(pares):
 
 
 def resumo(nome, resultados):
+    """Resume um braco SEM deixar resposta ausente sumir da conta.
+
+    Uma chamada que deu timeout, erro HTTP ou resposta invalida nao e um caso a menos:
+    e uma falha do braco. Reportamos cobertura, acuracia condicional as respostas validas
+    e acuracia sobre todos os casos programados, contando ausencia como erro.
+    """
+    programados = len(resultados)
     pares = [(r['gold'], r[nome]) for r in resultados if r.get(nome)]
     acertos = sum(1 for e, p in pares if e == p)
     por_familia = defaultdict(list)
     for r in resultados:
-        if r.get(nome):
-            por_familia[r['family']].append(r['gold'] == r[nome])
+        # Caso sem resposta entra na familia como falha, nunca como ausencia silenciosa.
+        por_familia[r['family']].append(bool(r.get(nome)) and r['gold'] == r[nome])
     familias_perfeitas = sum(1 for v in por_familia.values() if all(v))
     graves = sum(1 for r in resultados
                  if r.get(nome) and ((r['gold'] == 'cancelar') != (r[nome] == 'cancelar')))
     return {
+        'casos_programados': programados, 'respostas_validas': len(pares),
+        'cobertura': round(len(pares) / programados, 4) if programados else None,
         'n_casos': len(pares), 'acertos': acertos,
         'acuracia': round(acertos / len(pares), 4) if pares else None,
+        'acuracia_sobre_programados': round(acertos / programados, 4) if programados else None,
         'macro_f1': round(macro_f1(pares), 4),
         'n_familias': len(por_familia), 'familias_sem_erro': familias_perfeitas,
         'ic95_familias': [round(x, 4) for x in wilson(familias_perfeitas, len(por_familia))],
@@ -87,6 +97,7 @@ def resumo(nome, resultados):
         'erros': [{'case_id': r['case_id'], 'family': r['family'], 'kind': r['kind'],
                    'gold': r['gold'], 'pred': r[nome], 'text': r['text']}
                   for r in resultados if r.get(nome) and r[nome] != r['gold']],
+        'sem_resposta': [r['case_id'] for r in resultados if not r.get(nome)],
     }
 
 

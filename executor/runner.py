@@ -58,19 +58,27 @@ def estimate_input_tokens(payload):
     return int(size / 3 * 1.2) + 64
 
 
-def reservation_tokens(prices, provider, model, declared_cap=None):
-    """Teto de entrada usado na reserva: o contexto publicado do modelo, salvo teto menor declarado."""
+def reservation_tokens(prices, provider, model):
+    """Teto de entrada da reserva: o contexto publicado do modelo.
+
+    Nao existe teto menor declarado pelo cliente. O payload vai por POST com {model, state,
+    questions} e o endpoint nao aceita limite de tokens, entao qualquer numero menor seria
+    promessa sem garantia: bastaria declarar 1 token para reservar quase nada e enviar 32 mil.
+    """
     price = entry(prices, provider, model)
     context = price.get('context_length')
-    if declared_cap is not None:
-        if not isinstance(declared_cap, int) or declared_cap <= 0:
-            raise PricingError('Teto de tokens declarado invalido')
-        if context and declared_cap > context:
-            raise PricingError(f'Teto declarado {declared_cap} excede o contexto publicado {context}')
-        return declared_cap
     if not context:
         raise PricingError(f'{provider}:{model} sem context_length publicado; nao ha teto verificavel')
     return int(context)
+
+
+def reservation_output_tokens(prices, provider, model):
+    """Teto de saida da reserva. Sem maximo publicado nao ha teto verificavel: nao despacha."""
+    price = entry(prices, provider, model)
+    maximo = price.get('max_completion_tokens')
+    if not isinstance(maximo, int) or maximo <= 0:
+        raise PricingError(f'{provider}:{model} sem max_completion_tokens publicado; nao ha teto verificavel')
+    return maximo
 
 
 def http_transport(url, headers, body, timeout):
@@ -156,7 +164,7 @@ def reported_cost_nusd(body):
     return usd_to_nusd(cost)
 
 
-def dry_run(ledger, provider, model, payload, max_output_tokens=None):
+def dry_run(ledger, provider, model, payload):
     """Valida payload, preco e teto sem reservar e sem enviar nada."""
     price = entry(ledger.prices, provider, model)
     tokens = estimate_input_tokens(payload)
@@ -164,8 +172,7 @@ def dry_run(ledger, provider, model, payload, max_output_tokens=None):
     if context and tokens > context:
         raise ContractError(f'Payload estimado em {tokens} tokens excede o contexto de {context}')
     cap_tokens = reservation_tokens(ledger.prices, provider, model)
-    if max_output_tokens is None:
-        max_output_tokens = int(price.get('max_completion_tokens') or 1)
+    max_output_tokens = reservation_output_tokens(ledger.prices, provider, model)
     reservation = worst_case_nusd(ledger.prices, provider, model, cap_tokens, max_output_tokens)
     return {
         'estimated_input_tokens': tokens,
@@ -178,17 +185,16 @@ def dry_run(ledger, provider, model, payload, max_output_tokens=None):
 
 
 def dispatch(ledger, *, arm_id, block_id, provider, model, state, questions, request_path,
-             runtime_manifest_path, max_output_tokens=None, input_token_cap=None, timeout=45.0,
-             transport=http_transport, api_key=None, evidence_level='live_component'):
+             runtime_manifest_path, timeout=45.0, transport=http_transport, api_key=None,
+             evidence_level='live_component'):
     """Reserva, envia e liquida uma chamada. Sem reserva nao ha envio.
 
     A reserva usa o teto de contexto publicado, nao a estimativa do payload: a sondagem
     mostrou que o provedor acrescenta tokens que o cliente nao ve.
     """
     payload = payload_for(model, state, questions)
-    tokens = reservation_tokens(ledger.prices, provider, model, input_token_cap)
-    if max_output_tokens is None:
-        max_output_tokens = int(entry(ledger.prices, provider, model).get('max_completion_tokens') or 1)
+    tokens = reservation_tokens(ledger.prices, provider, model)
+    max_output_tokens = reservation_output_tokens(ledger.prices, provider, model)
     reservation = ledger.reserve(arm_id=arm_id, block_id=block_id, provider=provider, model=model,
                                  max_input_tokens=tokens, max_output_tokens=max_output_tokens,
                                  payload_sha256=payload_sha256(payload), request_path=request_path,
