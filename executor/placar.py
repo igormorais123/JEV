@@ -220,7 +220,44 @@ def confianca_calculada(e9, e6, e8, adj):
     # O corpus e construido pelo avaliador em todos os cenarios deste estudo.
     valor -= 0.10
     motivos.append('corpus construído pelo avaliador, não colhido de uso real (-0,10)')
+    # [R13] A revisao adversarial mostrou tres descontos que a lista declarava em outro lugar do
+    # relatorio e nao cobrava aqui. Uma nota que comeca em 1,0 e so desconta o que lembra e
+    # teatro de calibracao: se o motivo esta escrito no documento, tem de entrar na conta.
+    if politica and politica.get('erros_entre_aceitos') == 0:
+        teto = limite_superior_erro_da_politica(politica)
+        if teto is not None and teto > 0.10:
+            valor -= 0.10
+            motivos.append(f'zero erro observado entre os aceitos, mas o limite superior de 95% '
+                           f'por família é {pct(teto)} (-0,10)')
+    if not existe_comparador_de_mesmo_tipo():
+        valor -= 0.10
+        motivos.append('o comparador é uma regra congelada, não um modelo de linguagem barato '
+                       'no mesmo contrato: a pergunta "vale um LLM aqui?" segue aberta (-0,10)')
     return round(max(0.0, min(1.0, valor)), 2), motivos
+
+
+def limite_superior_erro_da_politica(politica):
+    """O teto de erro por familia da propria politica recomendada, quando o E9 o publica."""
+    for chave in ('limite_superior_erro_por_familia', 'limite_superior_por_familia',
+                  'limite_superior_erro'):
+        if chave in politica:
+            return politica[chave]
+    grave = ler('erro-grave.json')
+    if not grave:
+        return None
+    tetos = [b['jev']['limite_superior_por_familia']
+             for bloco in grave['por_conjunto'].values() for b in bloco.values()]
+    return max(tetos) if tetos else None
+
+
+def existe_comparador_de_mesmo_tipo():
+    """Houve algum braco com outro modelo de linguagem no mesmo contrato do Jev?
+
+    O plano previa esse braco (a pergunta P1: vale um LLM aqui, ou qualquer classificador
+    serve?). Ele nao foi executado, e o unico comparador do estudo e uma regra congelada escrita
+    por mim. Enquanto isso for verdade, a nota de confianca tem de pagar por isso.
+    """
+    return (RUNS / 'e10-llm-economico' / 'relatorio.json').exists()
 
 
 def nota_de_confianca(adj, e9=None):
@@ -553,6 +590,33 @@ def montar():
     else:
         cartoes.append(ausente('e6', 'Repetibilidade isolada (E6)',
                                'Repetições individuais ainda não executadas.', '—'))
+
+    grave = ler('erro-grave.json')
+    if grave:
+        # [R13] O pre-registro do E1 manda reportar erro grave SEPARADO da acuracia media, e
+        # isso nunca tinha sido feito. Acuracia media trata todos os erros como iguais; a
+        # classe `cancelar` dispara acao irreversivel. Zero observado nao e zero: o teto vem
+        # junto, no mesmo cartao, porque e ele que diz o que a amostra nao consegue excluir.
+        total_falsos = teto = 0.0
+        conjuntos, falsos_regra = [], 0
+        for nome, bloco in grave['por_conjunto'].items():
+            pior = max(bloco.values(), key=lambda b: len(b['jev']['falso_cancelar']))
+            total_falsos += len(pior['jev']['falso_cancelar'])
+            teto = max(teto, pior['jev']['limite_superior_por_familia'])
+            falsos_regra += max(len(b['regra']['falso_cancelar'])
+                                for b in bloco.values() if 'regra' in b)
+            conjuntos.append(f"{nome} {pior['jev']['casos']} casos")
+        cartoes.append(cartao(
+            'egrave', 'Erro grave: `cancelar` indevido',
+            f'{int(total_falsos)} em 80 casos',
+            f'regra congelada {falsos_regra} em 80',
+            ('Erro grave é responder `cancelar` onde o gabarito diz outra coisa: dispara ação '
+             'irreversível no atendimento. O pré-registro do E1 mandava reportá-lo separado da '
+             f'acurácia média desde o início, e isto é a primeira vez que ele aparece. O Jev não '
+             f'cometeu nenhum, **sob os três gabaritos**, nos 80 casos. Zero observado não é zero '
+             f'verdadeiro: com 10 famílias por conjunto, o limite superior de 95% é '
+             f'{pct(teto)} por família. A regra congelada comete {falsos_regra}.'),
+            fonte_com_gabarito(' · '.join(conjuntos), 'faixa')))
 
     # O saldo vale o do relatorio mais recente que registrou a carteira.
     carteira = e7 or e6 or e5 or e4 or e2b or {}

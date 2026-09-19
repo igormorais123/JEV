@@ -28,7 +28,12 @@ research/sources/
 
 # Arquivos temporarios e execucoes locais
 tmp/
-runs/
+# [R13] Era `runs/` puro, e com o diretorio inteiro excluido o Git nao desce nele: nenhuma das
+# excecoes abaixo valia, e os relatorios so estavam versionados porque alguem os adicionou a
+# mao. Com `runs/**` mais as duas liberacoes de diretorio, as excecoes passam a valer de fato.
+runs/**
+!runs/
+!runs/*/
 # Os relatorios agregados de cada experimento SAO o dado do estudo: sem eles, o relatorio
 # final cita fontes que quem clona o repositorio nao tem. Ficam de fora o ledger (banco
 # binario, com o gasto que o extrato do provedor reconcilia) e os pares de request/response
@@ -40,6 +45,10 @@ runs/
 !runs/e8-anotador/adjudicacao-bruta.jsonl
 !runs/e8-anotador/prompt-adjudicacao.txt
 !runs/canaries/summary.json
+# [R13] O extrato do livro-caixa vai versionado; o banco, nao. Sem ele, o custo publicado e uma
+# citacao que ninguem de fora consegue conferir.
+!runs/extrato-ledger.json
+!runs/erro-grave.json
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm

@@ -38,9 +38,16 @@ responder igual à mesma pergunta, e este não responde.
 **Acurácia do modelo nestes 80 casos: entre 0,8875 e
 0,9625, conforme o gabarito adotado** — 0,8875
 sob o gabarito do anotador independente, 0,95 sob o meu, e
-0,9625 sob o adjudicado, que é o mais defensável dos três. Reportar só
-o número mais alto seria escolher o gabarito depois de ver o resultado, e é por isso que o painel
-exibe a faixa.
+0,9625 sob o adjudicado, que é o oficial **porque foi declarado antes**, não porque é o mais
+alto. Reportar só o número mais alto seria escolher o gabarito depois de ver o resultado, e é
+por isso que o painel exibe a faixa.
+
+*(Correção registrada na décima terceira rodada: até aqui esta frase chamava o adjudicado de "o
+mais defensável dos três". A revisão adversarial apontou que essa é exatamente a manobra que o
+resto do documento condena — o adjudicado dá o teto da faixa, e dois dos três anotadores que o
+produziram passaram pela minha mão. O único gabarito que não passou é o do anotador
+independente, que dá o piso, 0,8875. Nenhum dos três é "o mais defensável"; o que existe é a
+faixa.)*
 
 *(Correção registrada: até a décima primeira rodada de revisão, este parágrafo dizia "entre
 0,8875 e 0,9750". O 0,9750 não é gabarito nenhum destes 80 casos — é a acurácia do E7 isolado,
@@ -234,6 +241,37 @@ certa do problema.
 
 ---
 
+### 3.7 Erro grave: `cancelar` indevido
+
+O pré-registro do E1 define, desde 18 de setembro, que **erro grave é confundir `cancelar` com
+qualquer outra classe, porque cancelar dispara ação irreversível no atendimento**, e manda
+reportá-lo *separadamente da acurácia média*. Até a décima terceira rodada de revisão ele nunca
+foi reportado. A cobrança procede e é séria: acurácia média trata todos os erros como iguais, e
+a métrica que o próprio protocolo classificou como irreversível ficou fora do relatório inteiro.
+
+| Conjunto | Gabarito | `cancelar` indevido | `cancelar` perdido | Teto do erro grave (por família) | Regra congelada |
+|---|---|---|---|---|---|
+| piloto (E1) | anotador local | **0** | 2 | 25,9% | 3 |
+| piloto (E1) | autor | **0** | 1 | 25,9% | 4 |
+| piloto (E1) | oficial | **0** | 1 | 25,9% | 4 |
+| confirmação (E7) | anotador local | **0** | 1 | 25,9% | 5 |
+| confirmação (E7) | autor | **0** | 0 | 25,9% | 6 |
+| confirmação (E7) | oficial | **0** | 0 | 25,9% | 6 |
+
+**O Jev não cometeu nenhum erro grave nos 80 casos, sob nenhum dos três gabaritos.** A regra
+congelada comete 10. Este é o resultado mais favorável ao modelo em todo o estudo, e é
+exatamente por isso que o teto vai na mesma tabela: com 10 famílias por conjunto, zero erro
+observado só permite afirmar que a taxa por família está **abaixo de 25,9% com 95% de
+confiança**. Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma
+garantia operacional. O que este número autoriza dizer é que o erro irreversível não apareceu
+onde a regra congelada o comete dez vezes; o que ele não autoriza é prometer que não aparecerá.
+
+O sentido oposto — `cancelar` que o modelo deixa passar — aparece em 1 ou 2 casos conforme o
+gabarito. Custa atraso, não destruição, e por isso está na tabela mas fora da definição de erro
+grave.
+
+---
+
 ## 4. Mecanismo: por que funciona
 
 A vantagem sobre as regras não vem de vocabulário maior. Vem de resolver três coisas que o
@@ -341,8 +379,17 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 
 1. **Não é um teste em dados reais.** Os 80 casos de triagem e os 24 de evidência foram
    construídos por mim. Nenhum veio de um canal de atendimento em produção.
-2. **Um anotador humano.** O E8 mitigou com um juiz independente, mas um modelo de 7B não
-   substitui uma segunda pessoa. Dois dos quatro "erros" do Jev podem ser erro meu.
+2. **Nenhum anotador humano além de mim.** O E8 mitigou com um anotador independente e o E8b
+   com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8593 mede que a
+   rubrica é **reprodutível por um LLM**, não que ela seja válida. Os 3 erros que
+   restam no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04) passaram pela adjudicação cega, mas a
+   adjudicação foi feita por máquina. A validade do constructo continua aberta, e é o item 2 da
+   seção 10.
+
+   *(Até a décima terceira rodada este item dizia "dois dos quatro erros do Jev podem ser erro
+   meu" — número anterior à adjudicação, e afirmação que a seção 3.6.1 já havia substituído. Os
+   dois textos conviveram por treze revisões, cada um dizendo uma coisa sobre o ponto que decide
+   se o modelo erra ou se o rótulo erra.)*
 3. **Amostra pequena.** 10 famílias por corpus. O bootstrap respeita o agrupamento, e por isso
    os intervalos são largos — o que é honesto, não um defeito.
 4. **O modelo não é determinístico.** Confirmado com o caso isolado e repetido.

@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 69,
- "updated_at": "2026-09-19T05:52:57.509403+00:00",
+ "revision": 72,
+ "updated_at": "2026-09-19T06:03:59.263319+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18781,16 +18781,18 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:52:57.509180+00:00",
+  "atualizado_em": "2026-09-19T06:03:59.263094+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
    "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
-   "confianca": 0.5,
+   "confianca": 0.3,
    "confianca_motivos": [
     "a política se apoia em 40 casos, menos de cem (-0,20)",
     "1 caso(s) mudam de resposta entre repetições idênticas (-0,10)",
     "o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)",
-    "corpus construído pelo avaliador, não colhido de uso real (-0,10)"
+    "corpus construído pelo avaliador, não colhido de uso real (-0,10)",
+    "zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)",
+    "o comparador é uma regra congelada, não um modelo de linguagem barato no mesmo contrato: a pergunta \"vale um LLM aqui?\" segue aberta (-0,10)"
    ],
    "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 é sustentado por 40 casos da partição de confirmação, com 0 erro entre os aceitos, e o modelo erra 3 de 80 casos no estudo inteiro. A conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0,9625 — mas os três juízes são modelos, não pessoas do atendimento real.",
    "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos"
@@ -18902,6 +18904,15 @@
     "comparacao": "acurácia por rodada 0,925 a 0,950",
     "leitura": "Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: tri-f02-04 muda de resposta entre repetições idênticas. Voto majoritário de 5 chega a 0.950 de acurácia, ao custo de 5x as chamadas.",
     "fonte": "40 casos × 5 repetições individuais; gabarito do autor; os anotadores divergem em casos deste corpus, e o cartão do E8 traz o efeito disso",
+    "estado": "pronto"
+   },
+   {
+    "chave": "egrave",
+    "titulo": "Erro grave: `cancelar` indevido",
+    "valor": "0 em 80 casos",
+    "comparacao": "regra congelada 10 em 80",
+    "leitura": "Erro grave é responder `cancelar` onde o gabarito diz outra coisa: dispara ação irreversível no atendimento. O pré-registro do E1 mandava reportá-lo separado da acurácia média desde o início, e isto é a primeira vez que ele aparece. O Jev não cometeu nenhum, **sob os três gabaritos**, nos 80 casos. Zero observado não é zero verdadeiro: com 10 famílias por conjunto, o limite superior de 95% é 25,9% por família. A regra congelada comete 10.",
+    "fonte": "piloto (E1) 40 casos · confirmação (E7) 40 casos; faixa entre os gabaritos",
     "estado": "pronto"
    }
   ],

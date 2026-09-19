@@ -1,0 +1,233 @@
+{
+ "definicao": "erro grave = responder `cancelar` onde o gabarito diz outra coisa; dispara ação irreversível. Pré-registrado no E1, seção \"Erros graves\".",
+ "por_conjunto": {
+  "piloto (E1)": {
+   "autor": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "tri-f06-02"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "tri-f04-01",
+      "tri-f05-01",
+      "tri-f06-01",
+      "tri-f07-04"
+     ],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.1,
+     "limite_superior_por_caso": 0.2144,
+     "familias_com_erro_grave": [
+      "F04-negacao",
+      "F05-acao-em-citacao",
+      "F06-duas-acoes-uma-pedida",
+      "F07-cobranca-vs-cancelamento"
+     ],
+     "limite_superior_por_familia": 0.6965,
+     "casos": 40,
+     "familias": 10
+    }
+   },
+   "anotador local": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "tri-f06-02",
+      "tri-f07-04"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "tri-f04-01",
+      "tri-f05-01",
+      "tri-f06-01"
+     ],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.075,
+     "limite_superior_por_caso": 0.1826,
+     "familias_com_erro_grave": [
+      "F04-negacao",
+      "F05-acao-em-citacao",
+      "F06-duas-acoes-uma-pedida"
+     ],
+     "limite_superior_por_familia": 0.6066,
+     "casos": 40,
+     "familias": 10
+    }
+   },
+   "oficial": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "tri-f06-02"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "tri-f04-01",
+      "tri-f05-01",
+      "tri-f06-01",
+      "tri-f07-04"
+     ],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.1,
+     "limite_superior_por_caso": 0.2144,
+     "familias_com_erro_grave": [
+      "F04-negacao",
+      "F05-acao-em-citacao",
+      "F06-duas-acoes-uma-pedida",
+      "F07-cobranca-vs-cancelamento"
+     ],
+     "limite_superior_por_familia": 0.6965,
+     "casos": 40,
+     "familias": 10
+    }
+   }
+  },
+  "confirmação (E7)": {
+   "autor": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "cnf-g02-01",
+      "cnf-g03-01",
+      "cnf-g05-01",
+      "cnf-g06-01",
+      "cnf-g07-04",
+      "cnf-g10-02"
+     ],
+     "cancelar_perdido": [
+      "cnf-g06-03",
+      "cnf-g07-03",
+      "cnf-g08-04",
+      "cnf-g10-01"
+     ],
+     "taxa_por_caso": 0.15,
+     "limite_superior_por_caso": 0.2747,
+     "familias_com_erro_grave": [
+      "G02-acao-de-terceiro",
+      "G03-condicional-nao-realizada",
+      "G05-acao-ja-concluida",
+      "G06-negacao-explicita",
+      "G07-vocabulario-trocado",
+      "G10-ambiguidade-resolvida-no-fim"
+     ],
+     "limite_superior_por_familia": 0.85,
+     "casos": 40,
+     "familias": 10
+    }
+   },
+   "anotador local": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "cnf-g03-01"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "cnf-g02-01",
+      "cnf-g05-01",
+      "cnf-g06-01",
+      "cnf-g07-04",
+      "cnf-g10-02"
+     ],
+     "cancelar_perdido": [
+      "cnf-g06-03",
+      "cnf-g07-03",
+      "cnf-g08-04",
+      "cnf-g10-01"
+     ],
+     "taxa_por_caso": 0.125,
+     "limite_superior_por_caso": 0.245,
+     "familias_com_erro_grave": [
+      "G02-acao-de-terceiro",
+      "G05-acao-ja-concluida",
+      "G06-negacao-explicita",
+      "G07-vocabulario-trocado",
+      "G10-ambiguidade-resolvida-no-fim"
+     ],
+     "limite_superior_por_familia": 0.7776,
+     "casos": 40,
+     "familias": 10
+    }
+   },
+   "oficial": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0722,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.2589,
+     "casos": 40,
+     "familias": 10
+    },
+    "regra": {
+     "falso_cancelar": [
+      "cnf-g02-01",
+      "cnf-g03-01",
+      "cnf-g05-01",
+      "cnf-g06-01",
+      "cnf-g07-04",
+      "cnf-g10-02"
+     ],
+     "cancelar_perdido": [
+      "cnf-g06-03",
+      "cnf-g07-03",
+      "cnf-g08-04",
+      "cnf-g10-01"
+     ],
+     "taxa_por_caso": 0.15,
+     "limite_superior_por_caso": 0.2747,
+     "familias_com_erro_grave": [
+      "G02-acao-de-terceiro",
+      "G03-condicional-nao-realizada",
+      "G05-acao-ja-concluida",
+      "G06-negacao-explicita",
+      "G07-vocabulario-trocado",
+      "G10-ambiguidade-resolvida-no-fim"
+     ],
+     "limite_superior_por_familia": 0.85,
+     "casos": 40,
+     "familias": 10
+    }
+   }
+  }
+ }
+}

@@ -370,3 +370,74 @@ def test_cartao_e8_reage_a_mudanca_no_gabarito_do_anotador_local():
         shutil.copy(copia, origem)
         importlib.reload(gabarito)
         importlib.reload(placar)
+
+
+@unittest.skipUnless((ROOT / 'runs' / 'extrato-ledger.json').exists(), 'extrato ainda não gerado')
+class ExtratoPublicadoConfereComOPainel(unittest.TestCase):
+    """[R13] O custo publicado tem de ser conferível por quem clona o repositório.
+
+    `runs/ledger.sqlite3` é ignorado pelo Git. Enquanto o único registro do gasto fosse o banco
+    local, o "US$ 0,018174462" do relatório era uma citação, não uma reprodução. O extrato
+    versionado fecha isso — e este teste garante que ele não se descole do painel.
+    """
+
+    def extrato(self):
+        return json.loads((ROOT / 'runs' / 'extrato-ledger.json').read_text(encoding='utf-8'))
+
+    def test_total_do_extrato_bate_com_o_orcamento_do_painel(self):
+        orcamento = placar.montar().get('orcamento')
+        if not orcamento:
+            self.skipTest('painel sem bloco de orçamento')
+        self.assertEqual(self.extrato()['comprometido_nusd'],
+                         orcamento['comprometido_nusd'],
+                         'o extrato versionado e o painel discordam sobre o gasto')
+
+    def test_soma_das_linhas_bate_com_o_total_declarado(self):
+        extrato = self.extrato()
+        soma = sum(linha['settled_nusd'] or 0 for linha in extrato['linhas'])
+        self.assertEqual(soma, extrato['comprometido_nusd'],
+                         'o total do extrato não é a soma das suas próprias linhas')
+
+    def test_extrato_nao_carrega_segredo(self):
+        texto = (ROOT / 'runs' / 'extrato-ledger.json').read_text(encoding='utf-8')
+        for padrao in (r'sk-[A-Za-z0-9_-]{10,}', r'Bearer\s+\S+', r'api[_-]?key'):
+            self.assertIsNone(re.search(padrao, texto, re.I),
+                              f'o extrato publicado casa com {padrao}')
+
+    def test_nenhuma_reserva_pendente_sem_liquidacao(self):
+        self.assertEqual(self.extrato()['reservas_pendentes_sem_liquidacao'], 0)
+
+
+@unittest.skipUnless((ROOT / 'runs' / 'extrato-ledger.json').exists(), 'extrato ainda não gerado')
+class ReadmeNaoContradizOsDados(unittest.TestCase):
+    """[R13] O README dizia "nove rodadas" quando o relatório já dizia treze.
+
+    É a mesma classe de defeito que as rodadas 9 a 13 passaram a caçar: duas superfícies do
+    mesmo estudo com denominadores diferentes. A superfície que mais gente lê primeiro era a que
+    estava mais desatualizada.
+    """
+
+    def test_readme_cita_o_gasto_do_extrato(self):
+        extrato = json.loads(
+            (ROOT / 'runs' / 'extrato-ledger.json').read_text(encoding='utf-8'))
+        texto = (ROOT / 'README.md').read_text(encoding='utf-8')
+        valor = f"{extrato['comprometido_usd']:.9f}"
+        self.assertTrue(valor in texto or valor.replace('.', ',') in texto,
+                        f'o README não cita o gasto real ({valor})')
+        self.assertIn(str(extrato['tentativas']), texto,
+                      'o README não cita o número real de tentativas')
+
+    def test_readme_e_relatorio_concordam_sobre_as_rodadas_de_revisao(self):
+        numeros = {'nove': 9, 'dez': 10, 'onze': 11, 'doze': 12, 'treze': 13, 'quatorze': 14,
+                   'catorze': 14, 'quinze': 15}
+        def rodadas(caminho):
+            texto = (ROOT / caminho).read_text(encoding='utf-8').lower()
+            achados = {v for k, v in numeros.items()
+                       if re.search(rf'\b{k} rodadas de revis', texto)}
+            return achados
+        no_readme = rodadas('README.md')
+        no_relatorio = rodadas('docs/RELATORIO-FINAL-JEV.md')
+        if not no_readme or not no_relatorio:
+            self.skipTest('um dos documentos não declara o número de rodadas')
+        self.assertEqual(no_readme, no_relatorio,
+                         f'README diz {no_readme} rodadas e o relatório diz {no_relatorio}')
