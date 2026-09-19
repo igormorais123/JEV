@@ -295,7 +295,7 @@ mesma partição** — foi essa mistura que a décima rodada de revisão encontr
 | Política | Cobertura automática | Erros entre aceitos | Custo por decisão | Economia |
 |---|---|---|---|---|
 | Revisar tudo | 0% | — | US$ 0,400 | — |
-| Corte 0,99 | 66,3% | 0 | US$ 0,135 | 66,2% |
+| Corte 0,99 | 66,25% | 0 | US$ 0,135 | 66,2% |
 | Corte 0,95 | 77,5% | 0 | US$ 0,090 | 77,5% |
 | **Corte 0,90** | **80,0%** | **0** | **US$ 0,080** | **80,0%** |
 | Aceitar tudo | 100% | 3 | US$ 0,000022 | 100% |
