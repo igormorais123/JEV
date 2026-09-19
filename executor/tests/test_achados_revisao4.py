@@ -211,8 +211,8 @@ class SetimaRodada(unittest.TestCase):
         pior = {'por_particao': {'confirmacao (teste)': {'politicas': [
             {'corte': 0.90, 'erros_entre_aceitos': 2},
             {'corte': 0.99, 'erros_entre_aceitos': 1}]}}}
-        self.assertIn('Revisao humana de todas', titulo_do_veredito(pior))
-        self.assertIn('Sem analise', titulo_do_veredito(None))
+        self.assertIn('Revisão humana de todas', titulo_do_veredito(pior))
+        self.assertIn('Sem análise', titulo_do_veredito(None))
 
     def test_classe_com_erro_tambem_recebe_limite(self):
         """[R7-3] A função de limite existia e nunca era chamada; classe com erro ficava sem."""

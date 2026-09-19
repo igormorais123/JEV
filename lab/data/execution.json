@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 61,
- "updated_at": "2026-09-19T05:33:43.091046+00:00",
+ "revision": 62,
+ "updated_at": "2026-09-19T05:34:28.166602+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18771,10 +18771,10 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:33:43.090887+00:00",
+  "atualizado_em": "2026-09-19T05:34:28.166121+00:00",
   "veredito": {
-   "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
-   "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87,5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; nessa mesma particao o custo por decisao cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
+   "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
+   "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.5,
    "confianca_motivos": [
     "a política se apoia em 40 casos, menos de cem (-0,20)",
@@ -18782,7 +18782,7 @@
     "o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)",
     "corpus construído pelo avaliador, não colhido de uso real (-0,10)"
    ],
-   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 é sustentado por 40 casos da partição de confirmação, com 0 erro entre os aceitos, e o modelo erra 3 de 80 casos no estudo inteiro. A conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real.",
+   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 é sustentado por 40 casos da partição de confirmação, com 0 erro entre os aceitos, e o modelo erra 3 de 80 casos no estudo inteiro. A conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0,9625 — mas os três juízes são modelos, não pessoas do atendimento real.",
    "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos"
   },
   "cartoes": [

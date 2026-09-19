@@ -1,5 +1,9 @@
 """Placar de decisão: transforma os relatórios dos experimentos em números de decidir.
 
+Todo texto daqui sai em português do Brasil, com acentuação e vírgula decimal: o painel é lido
+por gente que fala português, e número com ponto decimal num texto em português é erro, não
+estilo.
+
 O painel já mostrava o registro de atividade, mas o número que importa ficava dentro de uma
 nota de texto. Aqui os relatórios em runs/ viram cartões curtos, com a comparação ao lado, e o
 bloco entra em lab/data/execution.json sob a chave `decision`. Nada é digitado à mão: se um
@@ -236,7 +240,7 @@ def nota_de_confianca(adj, e9=None):
         return base + ' O gabarito é de um anotador só e os casos em disputa não foram adjudicados.'
     g = adj['gabarito_adjudicado']
     return (base + f" Os {len(adj['casos'])} casos em disputa foram adjudicados por um terceiro juiz "
-            f"cego, e sob esse gabarito a acurácia é {g['acuracia']} — mas os três juízes são "
+            f"cego, e sob esse gabarito a acurácia é {dec(g['acuracia'], 4)} — mas os três juízes são "
             'modelos, não pessoas do atendimento real.')
 
 
@@ -247,19 +251,19 @@ def titulo_do_veredito(e9):
     politica passasse a deixar erro entre os aceitos, o titulo continuaria recomendando.
     """
     if not e9:
-        return 'Sem analise de politica: nao ha recomendacao operacional'
+        return 'Sem análise de política: não há recomendação operacional'
     politica = politica_de_referencia(e9)
     if politica is None:
-        return 'Uso consultivo com revisao humana'
+        return 'Uso consultivo com revisão humana'
     if politica['erros_entre_aceitos'] == 0:
-        return 'Corte de confianca em 0,90 com revisao humana do resto'
+        return 'Corte de confiança em 0,90 com revisão humana do resto'
     melhor = next((politica_de_referencia(e9, corte=c)
                    for c in (0.95, 0.99)
                    if (politica_de_referencia(e9, corte=c) or {}).get('erros_entre_aceitos') == 0),
                   None)
     if melhor:
-        return f"Corte de confianca em {melhor['corte']} com revisao humana do resto"
-    return 'Revisao humana de todas as decisoes: nenhum corte zerou o erro'
+        return f"Corte de confiança em {melhor['corte']} com revisão humana do resto"
+    return 'Revisão humana de todas as decisões: nenhum corte zerou o erro'
 
 
 def texto_do_veredito(e9, e6):
@@ -269,7 +273,7 @@ def texto_do_veredito(e9, e6):
     execucao seguinte o placar mentiria sem que ninguem percebesse.
     """
     if not e9:
-        return 'Sem a analise de politica de aceitacao, o placar nao tem recomendacao operacional.'
+        return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
     # A particao de confirmacao e a que vale para decidir: sao os casos que nao guiaram o
     # desenho. A uniao entra so na conta de custo, que nao depende de particao.
     politica = politica_de_referencia(e9)
@@ -279,20 +283,20 @@ def texto_do_veredito(e9, e6):
     tudo = politica_de_referencia(e9, corte=1.01)
     partes = []
     if politica and politica['erros_entre_aceitos'] == 0:
-        partes.append(f"aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre "
+        partes.append(f"aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre "
                       f"{politica['cobertura'] * 100:.1f}".replace('.', ',') + '% dos '
-                      + f"{politica['casos']} casos da particao "
-                      'de confirmacao sem nenhum erro observado entre os aceitos')
+                      + f"{politica['casos']} casos da partição "
+                      'de confirmação sem nenhum erro observado entre os aceitos')
     elif politica:
-        partes.append(f"no corte 0,90 a politica cobre {politica['cobertura'] * 100:.0f}% dos casos, "
+        partes.append(f"no corte 0,90 a política cobre {politica['cobertura'] * 100:.0f}% dos casos, "
                       f"mas deixa passar {politica['erros_entre_aceitos']} erro(s): o corte precisa subir")
     if politica and tudo:
-        partes.append(f"nessa mesma particao o custo por decisao cai de "
+        partes.append(f"nessa mesma partição o custo por decisão cai de "
                       f"US$ {dec(tudo['custo_por_decisao_usd'])} para "
                       f"US$ {dec(politica['custo_por_decisao_usd'])}, com tempo humano declarado e "
                       'nunca cronometrado')
     if e6 and e6['n_instaveis']:
-        partes.append(f"o que impede automatizar tudo e o nao determinismo: {e6['n_instaveis']} caso "
+        partes.append(f"o que impede automatizar tudo é o não determinismo: {e6['n_instaveis']} caso "
                       f"em {e6['casos']}, sozinho e repetido {e6['repeticoes']} vezes, muda de resposta")
     texto = '; '.join(partes)
     return texto[:1].upper() + texto[1:] + '.'
