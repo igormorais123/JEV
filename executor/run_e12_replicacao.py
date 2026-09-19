@@ -146,6 +146,43 @@ def braco_comparador(chave, modelo, casos, ledger, key, precos):
               + caso['gold'].ljust(11) + ' -> ' + str(caso[chave]), flush=True)
 
 
+def falha_de_transporte(erro):
+    """Erro que impediu o modelo de responder, e que por isso não é resposta dele.
+
+    Emenda 1 do pré-registro, escrita durante a execução e antes de qualquer análise: HTTP 429,
+    HTTP 5xx e timeout são falhas de transporte e são repetidos; JSON inválido e classe fora do
+    contrato são erro do comparador e não são repetidos.
+    """
+    if not erro:
+        return False
+    return (erro.startswith('http 429') or erro.startswith('http 5')
+            or 'timeout' in erro.lower())
+
+
+def repescar(casos, ledger, key, precos, tentativas_max=3, pausa=6.0):
+    """Refaz as chamadas que morreram no transporte, com espaçamento, até o teto da Emenda 1."""
+    pendentes = 0
+    for chave, modelo in COMPARADORES:
+        for tentativa in range(2, tentativas_max + 1):
+            alvos = [c for c in casos
+                     if c.get(chave) is None and falha_de_transporte(c.get(chave + '_erro'))]
+            if not alvos:
+                break
+            print('\n-- repescagem %d/%d de %s: %d caso(s)'
+                  % (tentativa, tentativas_max, chave, len(alvos)), flush=True)
+            for caso in alvos:
+                time.sleep(pausa)
+                caso[chave + '_tentativas_transporte'] = tentativa
+                braco_comparador(chave, modelo, [caso], ledger, key, precos)
+        ainda = [c['case_id'] for c in casos
+                 if c.get(chave) is None and falha_de_transporte(c.get(chave + '_erro'))]
+        if ainda:
+            pendentes += len(ainda)
+            print('  %s: %d caso(s) seguem sem resposta apos %d tentativas e contam como erro: %s'
+                  % (chave, len(ainda), tentativas_max, ', '.join(ainda)), flush=True)
+    return pendentes
+
+
 def gabaritos(casos):
     """Os três gabaritos do estudo, caso a caso, para este corpus.
 
@@ -317,6 +354,13 @@ def analisar(casos, comprometido, disponivel):
         'custo': custo_por_mil(casos, campos),
         'respostas_invalidas': {campo: [c['case_id'] for c in casos if not c.get(campo)]
                                 for campo in campos},
+        'falhas_de_transporte': {
+            chave: {'sem_resposta_apos_repescagem': [
+                        c['case_id'] for c in casos
+                        if c.get(chave) is None and falha_de_transporte(c.get(chave + '_erro'))],
+                    'casos_repescados': sorted(
+                        c['case_id'] for c in casos if c.get(chave + '_tentativas_transporte'))}
+            for chave, _ in COMPARADORES},
         'casos': casos,
         'wallet_committed_nusd': comprometido, 'wallet_available_nusd': disponivel,
     }
@@ -346,6 +390,8 @@ def main():
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--so-analisar', action='store_true',
                         help='refaz a analise a partir de runs/e12-replicacao/respostas.jsonl')
+    parser.add_argument('--repescar', action='store_true',
+                        help='refaz so as chamadas que morreram no transporte (Emenda 1)')
     args = parser.parse_args()
     precos = load_prices()
 
@@ -355,6 +401,20 @@ def main():
             raise SystemExit('nao ha bruto em runs/e12-replicacao/respostas.jsonl')
         print('Reanalisando %d casos do bruto, sem nenhuma chamada.' % len(casos))
         analisar(casos, None, None)
+        return
+
+    if args.repescar:
+        casos = recuperar()
+        if not casos:
+            raise SystemExit('nao ha bruto em runs/e12-replicacao/respostas.jsonl')
+        key = load_api_key()[0]
+        with Ledger(DB, EXPERIMENT) as ledger:
+            pendentes = repescar(casos, ledger, key, precos)
+            comprometido = ledger.wallet_committed_nusd()
+            disponivel = ledger.wallet_available_nusd()
+        print('')
+        print('Casos ainda sem resposta por falha de transporte: %d' % pendentes)
+        analisar(casos, comprometido, disponivel)
         return
 
     casos = carregar()
