@@ -188,7 +188,7 @@ def politica_de_referencia(e9, corte=0.90):
     return next((p for p in confirmacao.get('politicas', []) if p['corte'] == corte), None)
 
 
-def confianca_calculada(e9, e6, e8, adj):
+def confianca_calculada(e9, e6, e8, adj, e12=None):
     """A confianca sai de regras declaradas, nao de um numero digitado.
 
     Um 0,6 cravado no codigo continua dizendo 0,6 depois que os dados pioram. Aqui cada
@@ -229,6 +229,23 @@ def confianca_calculada(e9, e6, e8, adj):
             valor -= 0.10
             motivos.append(f'zero erro observado entre os aceitos, mas o limite superior de 95% '
                            f'por família é {pct(teto)} (-0,10)')
+    # O E12 replicou a pergunta do comparador com 30 familias e quatro fornecedores. Enquanto
+    # ele existir, e o estado DELE que pesa aqui: o desconto do E11 media a mesma coisa com um
+    # quarto dos comparadores.
+    replicou = replicacao_depende_do_gabarito(e12 or ler('e12-replicacao/relatorio.json'))
+    if replicou is not None:
+        if not all(replicou.values()):
+            valor -= 0.15
+            motivos.append('na replicação com 30 famílias e quatro comparadores a vantagem do '
+                           'Jev separa de zero sob o gabarito adjudicado e não separa sob o do '
+                           'anotador independente: mais poder não resolveu a divergência, o que '
+                           'aponta o rótulo e não a amostra como gargalo (-0,15)')
+        else:
+            valor -= 0.05
+            motivos.append('o Jev superou quatro comparadores econômicos sob todos os '
+                           'gabaritos, mas os anotadores que produziram esses gabaritos são '
+                           'modelos de linguagem (-0,05)')
+        return round(max(0.0, min(1.0, valor)), 2), motivos
     e10 = ler('e10-llm-economico/relatorio.json')
     if not e10:
         valor -= 0.10
@@ -275,8 +292,32 @@ def limite_superior_erro_da_politica(politica):
 
 
 
-def nota_de_confianca(adj, e9=None, e11=None):
+def nota_de_confianca(adj, e9=None, e11=None, e12=None):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
+    replicou = replicacao_depende_do_gabarito(e12)
+    if replicou is not None and not all(replicou.values()):
+        adj12 = ler('e12-replicacao/adjudicacao.json')
+        oficial = e12['por_gabarito'].get('oficial') or e12['por_gabarito']['autor']
+        outro = e12['por_gabarito']['anotador local']
+        comparadores = e12['comparadores']
+        return ('Baixa para adoção, e agora com a melhor evidência que este estudo produziu '
+                'sobre o motivo. A replicação pré-registrada — ' + str(e12['casos_programados'])
+                + ' casos, ' + str(e12['familias']) + ' famílias novas, quatro comparadores '
+                'econômicos de quatro fornecedores — dá vantagem ao Jev contra todos no '
+                'gabarito adjudicado, de ' + pct(min(
+                    oficial['comparacoes'][c]['pareada']['diferenca_observada']
+                    for c in comparadores)) + ' a ' + pct(max(
+                    oficial['comparacoes'][c]['pareada']['diferenca_observada']
+                    for c in comparadores)) + ', e nenhuma vantagem contra o comparador de 8B '
+                'sob o gabarito do anotador independente ('
+                + pct(outro['comparacoes']['c1']['pareada']['diferenca_observada'])
+                + '). Triplicar as famílias em relação ao E11 e quadruplicar os comparadores não '
+                'moveu a divergência'
+                + (', e o terceiro juiz cego confirmou meu gabarito em '
+                   + str(adj12['placar']['confirmam_o_autor']) + ' de '
+                   + str(len(adj12['casos'])) + ' casos em disputa' if adj12 else '')
+                + '. O que falta não é mais execução nem mais orçamento: são anotadores humanos '
+                'do domínio, porque os três juízes deste estudo são modelos de linguagem.')
     separa = desempate_depende_do_gabarito(e11)
     if separa and separa.get('oficial'):
         pg = e11['por_gabarito']
@@ -366,6 +407,24 @@ def desempate_depende_do_gabarito(e11):
             for nome, bloco in e11['por_gabarito'].items()}
 
 
+def replicacao_depende_do_gabarito(e12):
+    """No E12 a vantagem do Jev sobre QUATRO comparadores sobrevive aos gabaritos?
+
+    O E11 fez a mesma pergunta com 20 familias e um comparador so, e a resposta dependeu do
+    gabarito. O E12 repetiu com 30 familias e quatro comparadores de quatro fornecedores, e a
+    resposta continuou dependendo: sob o meu gabarito e sob o oficial — adjudicado por um juiz
+    cego que confirmou o meu em 10 de 10 — o Jev separa de zero contra todos; sob o gabarito do
+    anotador independente, empata com o comparador de 8B e nao separa de mais dois.
+
+    Devolve, por gabarito, se a leitura daquele gabarito foi de vantagem. Poder maior nao
+    resolveu a divergencia: ela nao era falta de amostra, e a validade do rotulo.
+    """
+    if not e12 or 'leitura_por_gabarito' not in e12:
+        return None
+    return {nome: leitura == 'vantagem-do-jev'
+            for nome, leitura in e12['leitura_por_gabarito'].items()}
+
+
 def evidencia_dividida(e10, e10b):
     """A particao de teste e a analise ampliada discordam entre si?
 
@@ -379,7 +438,7 @@ def evidencia_dividida(e10, e10b):
     return comparador_empatou(e10) and not contem_zero(e10b['pareada_80_casos']['ic95'])
 
 
-def titulo_do_veredito(e9, e10=None, e11=None):
+def titulo_do_veredito(e9, e10=None, e11=None, e12=None):
     """O titulo tambem precisa cair quando o dado cair.
 
     Antes era uma frase cravada recomendando o corte de 0,90. Se o E9 sumisse, ou se a
@@ -388,6 +447,14 @@ def titulo_do_veredito(e9, e10=None, e11=None):
     # Puro de proposito: o E11 chega por parametro. Quando esta funcao foi buscar o relatorio
     # sozinha, o teste da setima rodada — que a chama com dados fabricados — passou a receber o
     # veredito do repositorio em vez do veredito dos dados dele.
+    # O E12 e a replicacao do E11 com 30 familias e quatro comparadores, e e ele que manda
+    # enquanto existir: mesma pergunta, mais poder, mais fornecedores.
+    replicou = replicacao_depende_do_gabarito(e12)
+    if replicou:
+        if not all(replicou.values()):
+            return ('Com mais famílias e quatro comparadores, a vantagem do Jev continua '
+                    'dependendo de quem escreveu o gabarito')
+        return ('Vantagem do Jev sobre quatro LLMs econômicos sob todos os gabaritos')
     separa = desempate_depende_do_gabarito(e11)
     if separa:
         if separa.get('oficial'):
@@ -417,7 +484,44 @@ def titulo_do_veredito(e9, e10=None, e11=None):
     return 'Revisão humana de todas as decisões: nenhum corte zerou o erro'
 
 
-def texto_do_veredito(e9, e6, e10=None, e11=None):
+def texto_da_replicacao(e12, replicou):
+    """O texto do veredito quando a replicacao existe. Calculado, nunca escrito a mao."""
+    adj = ler('e12-replicacao/adjudicacao.json')
+    oficial = e12['por_gabarito'].get('oficial') or e12['por_gabarito']['autor']
+    outro = e12['por_gabarito'].get('anotador local')
+    comparadores = e12['comparadores']
+    faixa = [oficial['comparacoes'][c]['pareada']['diferenca_observada'] for c in comparadores]
+    texto = (
+        'A replicação foi feita e não mudou a natureza do problema, só o tamanho da amostra. Em '
+        'corpus novo de ' + str(e12['casos_programados']) + ' casos e ' + str(e12['familias'])
+        + ' famílias, declaradas antes de o primeiro caso ser escrito, contra **quatro** '
+        'comparadores econômicos de quatro fornecedores, o Jev acerta '
+        + pct(e12['resumo']['jev']['acuracia_sobre_programados']) + ' e supera todos eles no '
+        'gabarito adjudicado, por ' + pct(min(faixa)) + ' a ' + pct(max(faixa))
+        + ', com todos os IC95 acima de zero.')
+    if adj:
+        pl = adj['placar']
+        texto += (' Os ' + str(len(adj['casos'])) + ' casos em que eu e o anotador independente '
+                  'discordamos foram a um terceiro juiz cego, de outro fornecedor, que confirmou '
+                  'meu gabarito em ' + str(pl['confirmam_o_autor']) + ' de '
+                  + str(len(adj['casos'])) + '.')
+    if outro and not all(replicou.values()):
+        pior = min(outro['comparacoes'][c]['pareada']['diferenca_observada']
+                   for c in comparadores)
+        melhor = max(outro['comparacoes'][c]['pareada']['diferenca_observada']
+                     for c in comparadores)
+        texto += (' **Sob o gabarito do anotador independente, que é o único que não passou pela '
+                  'minha mão, a mesma comparação vai de ' + pct(pior) + ' a ' + pct(melhor)
+                  + ', e o intervalo contém zero contra mais de um comparador.** Era essa a '
+                  'divergência que o E11 tinha encontrado com 20 famílias e um comparador só, e '
+                  'que este experimento existia para resolver com mais poder. Ela não era falta '
+                  'de amostra: triplicar as famílias e quadruplicar os comparadores não a moveu. '
+                  'O que decide o resultado não é quanto se mede, é quem escreveu o rótulo — e '
+                  'os três anotadores deste estudo continuam sendo modelos de linguagem.')
+    return texto
+
+
+def texto_do_veredito(e9, e6, e10=None, e11=None, e12=None):
     """O veredito e calculado, nao escrito a mao.
 
     Um texto fixo com numeros dentro continua afirmando o mesmo depois que os dados mudam: na
@@ -425,6 +529,9 @@ def texto_do_veredito(e9, e6, e10=None, e11=None):
     """
     if not e9:
         return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
+    replicou = replicacao_depende_do_gabarito(e12)
+    if replicou:
+        return texto_da_replicacao(e12, replicou)
     separa = desempate_depende_do_gabarito(e11)
     adj11 = ler('e11-desempate/adjudicacao.json')
     if separa and separa.get('oficial') and adj11:
@@ -873,6 +980,59 @@ def montar():
                                'decisões e o comparador por chat, o que é um viés de interface '
                                'que este estudo não separa do resto', 'faixa')))
 
+    e12 = ler('e12-replicacao/relatorio.json')
+    if e12:
+        oficial = e12['por_gabarito'].get('oficial') or e12['por_gabarito']['autor']
+        outro = e12['por_gabarito'].get('anotador local')
+        comparadores = e12['comparadores']
+        melhor_barato = min(comparadores,
+                            key=lambda c: e12['custo'][c]['custo_por_mil_classificacoes_usd']
+                            if e12['custo'].get(c) else float('inf'))
+        linha_comparadores = ' · '.join(
+            c + ' ' + pct(e12['resumo'][c]['acuracia_sobre_programados']) for c in comparadores)
+        incompletos = e12.get('bracos_incompletos') or []
+        leitura = ('A leitura pré-registrada é de interseção-união: só há vantagem se o IC95 '
+                   'separar de zero contra **todos** os comparadores. No gabarito adjudicado ela '
+                   'separa contra os quatro, de ' + pct(min(
+                       oficial['comparacoes'][c]['pareada']['diferenca_observada']
+                       for c in comparadores)) + ' a ' + pct(max(
+                       oficial['comparacoes'][c]['pareada']['diferenca_observada']
+                       for c in comparadores)) + '.')
+        if outro:
+            contem_zero_em = [c for c in comparadores
+                              if not outro['comparacoes'][c]['separa_de_zero']]
+            leitura += (' **Sob o gabarito do anotador independente ela não separa contra '
+                        + str(len(contem_zero_em)) + ' dos ' + str(len(comparadores))
+                        + '** (' + ', '.join(contem_zero_em) + '), e contra o comparador de 8B a '
+                        'diferença é exatamente '
+                        + pct(outro['comparacoes']['c1']['pareada']['diferenca_observada'])
+                        + '. O E11 já tinha encontrado essa divergência com 20 famílias e um '
+                        'comparador; triplicar as famílias e quadruplicar os comparadores não a '
+                        'moveu, o que é a evidência mais forte deste estudo de que o gargalo é a '
+                        'validade do rótulo e não o tamanho da amostra.')
+        if incompletos:
+            leitura += (' Braço(s) fora da leitura por cobertura abaixo de 90%, conforme a '
+                        'Emenda 2: ' + ', '.join(incompletos) + '.')
+        leitura += (' O mais barato dos comparadores custa US$ '
+                    + dec(e12['custo'][melhor_barato]['custo_por_mil_classificacoes_usd'], 6)
+                    + ' por mil classificações, contra US$ '
+                    + dec(e12['custo']['jev']['custo_por_mil_classificacoes_usd'], 6)
+                    + ' do Jev.')
+        d12 = gabarito.desempenho('runs/e12-replicacao/relatorio.json', 'jev')
+        cartoes.append(cartao(
+            'e12', 'Replicação com quatro comparadores (E12)',
+            # A politica do painel, desde a decima segunda rodada, e nunca estampar um gabarito
+            # sozinho: o numero grande e a FAIXA entre os tres, e a comparacao abre quem e quem.
+            valor_entre_gabaritos(d12),
+            ' · '.join(nome + ' ' + pct(v) for nome, v in
+                       sorted(gabaritos_do_conjunto(d12).items(), key=lambda kv: kv[1]))
+            + ' · ' + linha_comparadores, leitura,
+            fonte_com_gabarito(str(e12['casos_programados']) + ' casos em '
+                               + str(e12['familias']) + ' famílias novas, cinco braços na mesma '
+                               'lista e na mesma ordem; o Jev pelo endpoint de decisões e os '
+                               'comparadores por chat, viés de interface que este estudo não '
+                               'separa do resto', 'faixa')))
+
     grave = ler('erro-grave.json')
     if grave:
         # [R13] O pre-registro do E1 manda reportar erro grave SEPARADO da acuracia media, e
@@ -903,21 +1063,21 @@ def montar():
     # O saldo vale o do relatorio mais recente que registrou a carteira.
     # [E10] A cadeia era fixa e comecava no E7: depois do E10 o painel continuaria publicando o
     # saldo anterior ao ultimo experimento. Agora vence o relatorio com o carimbo mais novo.
-    candidatos = [r for r in (e11, e10b, e10, e7, e6, e5, e4, e2b)
+    candidatos = [r for r in (e12, e11, e10b, e10, e7, e6, e5, e4, e2b)
                   if r and r.get('wallet_committed_nusd')]
     carteira = max(candidatos, key=lambda r: r.get('at', '')) if candidatos else {}
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
     disponivel = carteira.get('wallet_available_nusd') or carteira.get('available_nusd')
 
-    confianca = confianca_calculada(e9, e6, e8, adj)
+    confianca = confianca_calculada(e9, e6, e8, adj, e12)
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
-            'titulo': titulo_do_veredito(e9, e10, e11),
-            'texto': texto_do_veredito(e9, e6, e10, e11),
+            'titulo': titulo_do_veredito(e9, e10, e11, e12),
+            'texto': texto_do_veredito(e9, e6, e10, e11, e12),
             'confianca': confianca[0],
             'confianca_motivos': confianca[1],
-            'confianca_nota': nota_de_confianca(adj, e9, e11),
+            'confianca_nota': nota_de_confianca(adj, e9, e11, e12),
             'confianca_metodo': ('descontos declarados sobre 1,0; cada um com motivo em '
                                  'confianca_motivos. Os PESOS são arbítrio meu, não medida: '
                                  'o que a conta garante é que a nota se mexa quando o dado '

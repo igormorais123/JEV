@@ -3,7 +3,7 @@
 **Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA
 **Execução:** 18–19 de setembro de 2026
 **Sistema avaliado:** Jev 1.13 (`typesafe/jev-1.13` via OpenRouter e `jev-1.13.0` direto)
-**Custo total:** US$ 0,022618774 em 945 chamadas, de um teto autorizado de US$ 5,00
+**Custo total:** US$ 0,035707114 em 1.474 chamadas, de um teto autorizado de US$ 5,00, conciliado contra um extrato de provedor de US$ 0,034640289
 **Código, dados e registros:** este repositório, com pré-registros em `planning/` e relatórios
 brutos em `runs/`
 
@@ -11,12 +11,14 @@ brutos em `runs/`
 
 ## 1. Recomendação
 
-**O Jev supera um LLM genérico e barato nesta tarefa, em corpus novo e pré-registrado, sob o
-gabarito adjudicado por um terceiro juiz cego. O que este estudo ainda não sustenta é a validade
-do rótulo contra o qual todos os números foram medidos — e essa é a única pergunta que falta.**
+**O Jev supera quatro LLMs genéricos e baratos nesta tarefa, em corpus novo e pré-registrado,
+sob o gabarito adjudicado por um terceiro juiz cego — e não supera nenhum deles de forma
+estatisticamente distinguível sob o gabarito do único anotador que não passou pela minha mão. A
+replicação com o triplo de famílias e o quádruplo de comparadores não moveu essa divergência, e
+é isso que este estudo tem de mais sólido a dizer: o gargalo não é a amostra, é o rótulo.**
 
-Esta é a **quinta** versão da recomendação deste relatório, todas do mesmo dia, e vale registrar
-a sequência porque ela é o método:
+Esta é a **sexta** versão da recomendação deste relatório, e vale registrar a sequência porque
+ela é o método:
 
 1. *"Use o Jev com corte de confiança em 0,90"* — antes de existir qualquer comparador que não
    fosse uma regra que eu mesma escrevi.
@@ -25,10 +27,30 @@ a sequência porque ela é o método:
 3. *"Evidência dividida"* — quando o E10b, no piloto, separou.
 4. *"O gargalo é o rótulo"* — quando o E11, em corpus novo, deu vantagem clara sob o meu
    gabarito e sinal invertido sob o do anotador independente.
-5. Esta, quando os 10 desacordos do E11 foram a um terceiro juiz cego e ele **confirmou meu
-   gabarito em 10 de 10**.
+5. *"Vantagem do Jev no gabarito adjudicado"* — quando os 10 desacordos do E11 foram a um
+   terceiro juiz cego e ele **confirmou meu gabarito em 10 de 10**.
+6. Esta, quando o E12 replicou tudo com 30 famílias novas e **quatro** comparadores de quatro
+   fornecedores, o segundo juiz cego confirmou meu gabarito em outros 10 de 10, e a divergência
+   entre os gabaritos **continuou exatamente onde estava**.
 
-**O resultado do desempate, nos três gabaritos:**
+**O resultado da replicação (E12), nos três gabaritos, contra os quatro comparadores:**
+
+| Gabarito | Jev | llama-3.1-8b | mistral-nemo | gemma-3-12b | gpt-oss-20b | Leitura |
+|---|---|---|---|---|---|---|
+| Adjudicado (oficial) | 0,9889 | 0,8778 | 0,9111 | 0,8444 | 0,8444 | vantagem em todos |
+| Meu, sem adjudicar | 0,9889 | 0,8778 | 0,9111 | 0,8444 | 0,8444 | vantagem em todos |
+| Anotador independente | 0,9000 | 0,9000 | 0,8556 | 0,8222 | 0,7111 | **sem evidência** |
+
+As diferenças pareadas, no gabarito oficial, vão de +7,8% (IC95 [3,3%; 13,3%], contra o
+mistral-nemo) a +14,4% (IC95 [7,8%; 21,1%] e [6,7%; 22,2%], contra o gemma e o gpt-oss). Sob o
+gabarito do anotador independente, a diferença contra o llama-3.1-8b é **exatamente zero**
+(IC95 [−6,7%; 6,7%], McNemar p = 1,0000) e o intervalo contém zero também contra o mistral-nemo
+e o gemma. A regra de leitura estava congelada antes de existir um único caso: só há vantagem se
+o intervalo separar de zero contra **todos**, e a conclusão só é reportada como vantagem se
+sobreviver aos três gabaritos. Ela não sobreviveu, e o veredito pré-registrado é
+`depende-do-gabarito`.
+
+**O resultado do desempate anterior (E11), que o E12 replica:**
 
 | Gabarito | Jev | llama-3.1-8b | Diferença | IC95 | McNemar |
 |---|---|---|---|---|---|
@@ -536,6 +558,71 @@ classe, não o fenômeno.
 
 ---
 
+### 3.12 A replicação (E12): mais famílias, mais comparadores, mesma divergência
+
+O item 1 do próximo movimento deste relatório pedia repetir o E10 *"em amostra maior, com pelo
+menos 30 famílias, e com dois ou três LLMs econômicos em vez de um"*. Foi feito, e é o
+experimento mais caro em chamadas de todo o estudo: 90 casos novos em 30 famílias declaradas
+antes de o primeiro caso existir, cinco braços na mesma lista e na mesma ordem, 529 tentativas
+registradas no livro-caixa.
+
+**O que este experimento tinha de diferente.** O E11 comparou o Jev contra **um** modelo de 8B
+de **um** fornecedor. Vencer um modelo não é vencer a classe "LLM genérico e barato": os quatro
+comparadores do E12 são de quatro fornecedores (Meta, Mistral, Google e OpenAI de pesos
+abertos), e a regra de leitura exige que o intervalo separe de zero contra **todos** para que
+haja vantagem. É um teste de interseção-união, conservador por construção, e ele foi escrito
+assim de propósito — basta um comparador barato empatar para que a conclusão não seja favorável
+ao sistema avaliado.
+
+**O resultado, no gabarito oficial:** o Jev acerta 0,9889 e supera os quatro, de +7,8% a +14,4%,
+com todos os IC95 acima de zero e McNemar exato entre p = 0,0156 e p = 0,0002. Os 10 casos em
+que eu e o anotador independente discordamos foram a um terceiro juiz cego, de outro fornecedor,
+com as leituras em ordem sorteada — e ele confirmou meu gabarito em 10 de 10, sem declarar
+ambiguidade em nenhum.
+
+**O resultado sob o gabarito do anotador independente:** contra o llama-3.1-8b a diferença é
+**0,0000**, IC95 [−6,7%; 6,7%], McNemar p = 1,0000. Contra o mistral-nemo e o gemma o intervalo
+encosta em zero pelo lado de baixo. Só contra o gpt-oss-20b a vantagem sobrevive.
+
+**Por que isso importa mais do que o número favorável.** O E11 já tinha encontrado essa
+divergência, e a explicação natural era falta de poder: 20 famílias, um comparador, intervalos
+largos. O E12 triplicou as famílias e quadruplicou os comparadores. Se a divergência fosse ruído
+amostral, ela teria encolhido. Ela não encolheu — ficou no mesmo lugar. **A conclusão deste
+estudo sobre o Jev depende de quem escreveu o gabarito, e mais medição não resolve isso.**
+
+**Custo por mil classificações, do livro-caixa e não de estimativa:** mistral-nemo US$ 0,005638;
+llama-3.1-8b US$ 0,007520; gemma-3-12b US$ 0,014744; Jev US$ 0,022524; gpt-oss-20b US$ 0,092679.
+O Jev é o quarto mais caro dos cinco. Se a pergunta operacional for *"qual o classificador mais
+barato que passa no critério de erro grave"*, o mistral-nemo custa um quarto do Jev, não comete
+nenhum `cancelar` indevido nos 90 casos e, sob o gabarito independente, não é distinguível dele.
+
+**Erro grave, no gabarito oficial:** o Jev não comete nenhum `falso-cancelar` nem perde nenhum
+`cancelar`. O mistral-nemo também não. O llama-3.1-8b comete 2 e perde 2; o gemma comete 2 e
+perde 1; o gpt-oss-20b comete 1 e perde 5. Zero observado não é zero verdadeiro: com 30
+famílias, o limite superior de 95% do Jev ainda é 4,4%.
+
+**Três emendas, todas escritas durante a execução e antes de olhar qualquer acurácia:**
+
+1. **Falha de transporte não é resposta errada.** O provedor devolveu HTTP 429 em 46 chamadas do
+   gemma. Contá-las como erro de classificação atribuiria ao comparador uma falha que é da fila
+   do provedor. Elas foram repetidas em até três tentativas; 8 seguiram sem resposta e contam
+   como erro dele, com o número publicado.
+2. **Cobertura mínima de um braço.** Um braço com menos de 90% de respostas válidas é reportado
+   como incompleto e sai da leitura primária. O critério foi escrito antes de calcular a
+   acurácia do braço que motivou a dúvida, justamente para que manter ou tirar não fosse escolha
+   pós-hoc. Ao fim, gemma ficou em 91,1% e gpt-oss em 90,0%: nenhum saiu.
+3. **Teto de saída é parâmetro de transporte.** Com os 64 tokens de saída herdados do E10, o
+   gpt-oss-20b devolvia conteúdo vazio — ele gasta saída com raciocínio antes de responder. O
+   teto subiu para 256, o braço foi reexecutado desde o primeiro caso, e as 9 chamadas feitas sob
+   o teto insuficiente foram anuladas **da análise, não do livro-caixa**, onde seguem pagas e
+   registradas.
+
+A terceira emenda corrigia um erro que favorecia o sistema avaliado, e é por isso que ela foi
+escrita antes: sem ela, o gpt-oss apareceria com acurácia perto de zero e a "vantagem do Jev"
+sobre ele seria um artefato da minha configuração.
+
+---
+
 ## 4. Mecanismo: por que funciona
 
 A vantagem sobre as regras não vem de vocabulário maior. Vem de resolver três coisas que o
@@ -612,8 +699,13 @@ observações independentes, o que eles não são.
 
 ## 7. Custo e operação
 
-**Medido:** 945 chamadas, US$ 0,022618774 no total. Custo por decisão individual ~US$ 0,000022.
-Latência mediana 396 ms no OpenRouter.
+**Medido:** 1.474 chamadas, US$ 0,035707114 no total, contra um extrato de provedor de
+US$ 0,034640289 — a diferença é o arredondamento para cima que o executor aplica em toda
+conversão. Custo por decisão individual ~US$ 0,000024. Latência mediana 396 ms no OpenRouter.
+
+O E12 sozinho responde por 529 dessas chamadas e US$ 0,013088340, e foi ele que expôs o defeito
+descrito na seção 9: liquidar uma requisição recusada por limite de taxa pelo pior caso fazia o
+livro-caixa declarar US$ 0,499 de gasto que o provedor nunca cobrou.
 
 **Declarado, não medido:** 2 minutos por revisão humana, US$ 12,00 por hora. Nenhum cronômetro
 foi usado; trocar esses parâmetros muda toda a tabela abaixo.
@@ -644,7 +736,7 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 1. **Não é um teste em dados reais.** Os 80 casos de triagem e os 24 de evidência foram
    construídos por mim. Nenhum veio de um canal de atendimento em produção.
 2. **Nenhum anotador humano além de mim.** O E8 mitigou com um anotador independente e o E8b
-   com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8301 sobre os 140 casos anotados mede que a
+   com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8420 sobre os 230 casos anotados mede que a
    rubrica é **reprodutível por um LLM**, não que ela seja válida. Os 3 erros que
    restam no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04) passaram pela adjudicação cega, mas a
    adjudicação foi feita por máquina. A validade do constructo continua aberta, e é o item 2 da
@@ -692,9 +784,12 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **treze rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **quinze rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
-Grok 4.6 via Cursor). As quatro primeiras encontraram
+Grok 4.6 via Cursor); os defeitos abaixo vão até a décima terceira, e as duas últimas rodadas não
+encontraram defeito financeiro novo. O décimo sexto e mais caro deles não veio de revisão
+nenhuma: veio da execução do E12, e está descrito no fim desta seção. As quatro primeiras
+encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
 rodada criaram defeitos novos, apanhados na rodada seguinte. Os mais graves:
 
@@ -740,7 +835,8 @@ US$ 0,017182296 para o OpenRouter; o provedor cobrou US$ 0,017095092. O ledger e
 extrato em US$ 0,000087, e a diferença é explicada: são as chamadas que voltaram HTTP 400 na
 fase de sondagem do contrato, provisionadas aqui e não cobradas lá. Nenhum excedente a absorver,
 nenhum gasto sem identidade de provedor. Somando o TypeSafe direto (US$ 0,000992166), o total
-comprometido é US$ 0,022618774.
+comprometido era US$ 0,022618774 naquele momento; depois do E12 e da retificação descrita em
+9.1, ele é US$ 0,035707114, contra um extrato de US$ 0,034640289.
 
 A oitava rodada não encontrou defeito financeiro novo — o teto passou a ser, nas palavras do
 revisor, "o pedaço mais honesto do repositório". Encontrou coisa pior no painel: depois de
@@ -825,8 +921,8 @@ A quinta foi a que importou. O revisor apontou que o único comparador do estudo
 congelada que eu mesma escrevi, e que a pergunta P1 do plano seguia sem metade da resposta.
 Executei o E10 (seção 3.8), com regra de decisão congelada antes da primeira chamada. O
 resultado contrariou a recomendação que este documento vinha fazendo desde a primeira versão, e
-a recomendação mudou. Custou US$ 0,000358 e treze rodadas de revisão não o teriam encontrado,
-porque nenhuma delas estava olhando para fora do que já havia sido medido.
+a recomendação mudou. Custou US$ 0,000358, e as treze revisões adversariais feitas até ali não
+o teriam encontrado, porque nenhuma delas estava olhando para fora do que já havia sido medido.
 
 O E10 e o E10b abriram uma divisão que nenhum dos dois podia fechar, e o E11 foi escrito para
 fechá-la: corpus novo, 20 famílias declaradas antes do primeiro caso, regra de decisão congelada
@@ -860,22 +956,59 @@ que o erro grave seria a métrica que não depende do gabarito. O único falso-`
 comparador está entre os 10 casos em disputa, e sob o gabarito do anotador independente ele
 desaparece. Reconto agora sob os três, e o que sobra é mais modesto.
 
-Estado final: **945 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,022618774 de
-US$ 5,00, 151 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
-log ou copiada para documentação.
+### 9.1 O defeito que quinze rodadas de revisão não acharam, e que a execução achou
+
+Nenhuma execução anterior deste estudo havia levado HTTP 429. O E12 levou 76.
+
+A regra do executor é liquidar pelo pior caso reservado quando não há `usage` confiável na
+resposta — e ela é correta: na dúvida, o teto sofre. Uma requisição recusada por limite de taxa
+não tem `usage`, então cada uma das 76 entrou no livro-caixa por US$ 0,0066. Somaram
+**US$ 0,499**: mais de vinte vezes o gasto de todo o estudo até aquele momento, e 10% do teto
+autorizado inteiro, por chamadas em que **nenhum token foi processado**.
+
+O extrato da chave mostrava US$ 0,0346 de uso acumulado. As 76 foram retificadas para zero pelo
+mecanismo que já existia para isso (`retificar_liquidacao`, que só aceita corrigir liquidação
+conservadora e exige motivo e evidência), com o extrato como evidência, e a regra foi corrigida
+na origem: **HTTP 429 liquida zero**, porque o provedor recusa antes de gerar. A exceção vale
+só para o 429 — em 5xx e em timeout a geração pode ter acontecido, e ali o conservador continua
+certo.
+
+Não era um erro de arredondamento: era o executor financeiro inventando meio dólar de gasto que
+nunca existiu. Como a política é conservadora, ele errava para o lado seguro do teto e para o
+lado errado da verdade — e teria bloqueado orçamento real de trabalho futuro.
+
+Outros três defeitos apareceram na mesma execução e estão corrigidos, todos com teste:
+
+- O interpretador de resposta do comparador assumia objeto JSON. Um modelo devolveu uma **lista**
+  e a execução inteira caiu com `AttributeError`, depois de 361 chamadas pagas. Resposta fora do
+  contrato é erro do comparador; agora ela vira erro, e não exceção.
+- A marca que anula da análise as chamadas feitas sob teto de saída insuficiente viajava junto no
+  registro da reexecução e apagava também a **resposta nova**. Nove chamadas já pagas do
+  gpt-oss-20b sumiram da análise sem que nada acusasse — e sumiram justamente inflando a
+  vantagem do Jev sobre aquele braço, de +14,4% para +24,4%. Corrigido, o número voltou a +14,4%.
+- O custo publicado no painel e no relatório do E12 vinha do valor que cada caso guardou no
+  instante da chamada, e não do livro-caixa. Depois da retificação, os dois divergiam em
+  US$ 0,052 — os dois números de custo no mesmo painel que a oitava rodada já havia proibido.
+  Agora ambos leem `attempt_budget`.
+
+Estado final: **1.474 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,035707114 de
+US$ 5,00, conciliado contra um extrato de US$ 0,034640289, e 173 testes automatizados passando.**
+A chave da API nunca foi versionada, impressa em log ou copiada para documentação.
 
 ---
 
 ## 10. Próximo movimento
 
-1. **Repetir o E10 em amostra maior**, com pelo menos 30 famílias, e com dois ou três LLMs
-   econômicos em vez de um — critério: o IC95 da diferença pareada separar de zero, ou não
-   separar com poder suficiente para que "não separa" signifique alguma coisa. É o movimento
-   mais barato da lista (as 40 chamadas custaram US$ 0,000358) e o que mais muda a decisão: se o
-   empate se confirmar, a discussão deixa de ser "qual modelo" e passa a ser "qual o mais
-   barato que passa".
+1. ~~**Repetir o E10 em amostra maior**, com pelo menos 30 famílias, e com dois ou três LLMs
+   econômicos em vez de um.~~ **Feito: é o E12, seção 3.12.** 30 famílias, quatro comparadores,
+   US$ 0,013. O resultado fecha a pergunta que este item fazia e abre outra: sob o gabarito
+   adjudicado o Jev vence os quatro; sob o gabarito independente ele empata com o mais barato
+   deles. Mais medição não separa essas duas leituras, porque a diferença entre elas não é de
+   amostra.
 2. **Coletar 200 mensagens reais de um canal de atendimento**, com a distribuição de classes que
    o canal tem — responsável: Igor; critério: corpus anonimizado disponível em `data/corpus/`.
+   **Este é agora o item que bloqueia todos os outros**: enquanto o rótulo for meu, cada
+   experimento novo só acrescenta precisão a uma medida cuja referência não foi validada.
 3. **Anotar com dois humanos independentes** e medir kappa entre eles antes de olhar o modelo —
    critério: kappa humano-humano ≥ 0,80; abaixo disso, o problema é a definição das classes,
    não o modelo.
@@ -886,13 +1019,17 @@ log ou copiada para documentação.
    vez de parâmetro declarado.
 6. **Só então** decidir se a política sobe para produção, e com qual corte.
 
-Os itens 2 e 3 dependem de gente, não de orçamento; o item 1 depende só de orçamento, e de muito pouco. Restam US$ 4,98 do teto autorizado, o que
-cobre com folga toda a fase de sombra.
+O item 1 está fechado. Os itens 2 e 3 dependem de gente, não de orçamento, e são o caminho
+crítico. Restam US$ 4,96 do teto autorizado, o que cobre com folga toda a fase de sombra — e a
+folga não é o que falta.
 
 ---
 
-*O estudo que eu queria ter feito é o que começa no item 1. O que está aqui é o que dá para
+*O estudo que eu queria ter feito é o que começa no item 2. O que está aqui é o que dá para
 saber sem dados reais — e o principal valor dele é ter descoberto, antes de gastar, exatamente
-onde o modelo quebra: no mesmo caso, perguntado duas vezes.*
+onde o modelo quebra: no mesmo caso, perguntado duas vezes. O E12 acrescentou o segundo achado
+dessa natureza, e ele é sobre o método e não sobre o modelo: quando a conclusão depende de quem
+escreveu o gabarito, triplicar a amostra não a torna menos dependente — só mais precisa dentro
+de cada gabarito.*
 
 **— Helena.** Café preto, sem açúcar.

@@ -460,8 +460,12 @@ class ReadmeNaoContradizOsDados(unittest.TestCase):
         valor = f"{extrato['comprometido_usd']:.9f}"
         self.assertTrue(valor in texto or valor.replace('.', ',') in texto,
                         f'o README não cita o gasto real ({valor})')
-        self.assertIn(str(extrato['tentativas']), texto,
-                      'o README não cita o número real de tentativas')
+        # O README e escrito em pt-BR, onde 1474 se escreve 1.474. Exigir so a forma crua
+        # obrigaria o documento a errar a propria lingua para agradar o teste.
+        tentativas = str(extrato['tentativas'])
+        com_separador = f"{extrato['tentativas']:,}".replace(',', '.')
+        self.assertTrue(tentativas in texto or com_separador in texto,
+                        'o README não cita o número real de tentativas')
 
     def test_readme_e_relatorio_concordam_sobre_as_rodadas_de_revisao(self):
         numeros = {'nove': 9, 'dez': 10, 'onze': 11, 'doze': 12, 'treze': 13, 'quatorze': 14,

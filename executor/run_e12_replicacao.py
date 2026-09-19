@@ -419,7 +419,33 @@ def executar_todos(casos, key, precos):
         return ledger.wallet_committed_nusd(), ledger.wallet_available_nusd()
 
 
+def carteira_do_ledger():
+    """O estado da carteira lido do banco, para a reanalise nao publicar carteira vazia.
+
+    `--so-analisar` nao abre o ledger para escrever, entao o relatorio saia com a carteira nula
+    e o painel caia no saldo do experimento anterior: o extrato versionado dizia US$ 0,0357 e o
+    painel, US$ 0,0226. Dois numeros de custo no mesmo estudo, que e o defeito que a oitava
+    rodada de revisao proibiu.
+    """
+    import sqlite3
+    if not DB.exists():
+        return None, None
+    con = sqlite3.connect(DB)
+    try:
+        comprometido = con.execute(
+            'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd'
+            ' ELSE settled_nusd END), 0) FROM attempt_budget').fetchone()[0]
+        teto = con.execute("SELECT cap_nusd FROM wallet WHERE wallet_id = 'default'").fetchone()
+    finally:
+        con.close()
+    if teto is None:
+        return int(comprometido), None
+    return int(comprometido), int(teto[0]) - int(comprometido)
+
+
 def analisar(casos, comprometido, disponivel):
+    if comprometido is None:
+        comprometido, disponivel = carteira_do_ledger()
     campos = ['jev'] + [chave for chave, _ in COMPARADORES]
     mapas, procedencia = gabaritos(casos)
     cobertura = cobertura_dos_bracos(casos)

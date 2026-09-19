@@ -1,5 +1,5 @@
 {
-  "at": "2026-09-19T12:57:54.832154+00:00",
+  "at": "2026-09-19T13:05:30.701991+00:00",
   "preregistro": "planning/preregistro-E12-replicacao.md",
   "corpus": "data/corpus/triagem-replicacao.jsonl",
   "modelo": "typesafe/jev-1.13",
@@ -4609,6 +4609,6 @@
       "c3_confidence": 0.95
     }
   ],
-  "wallet_committed_nusd": null,
-  "wallet_available_nusd": null
+  "wallet_committed_nusd": 35707114,
+  "wallet_available_nusd": 4964292886
 }

@@ -292,6 +292,29 @@ def e11_run(rel, gold, agora):
     }
 
 
+def custo_do_ledger(attempt_ids):
+    """O custo de cada tentativa como o livro-caixa o conhece HOJE.
+
+    [E12] As chamadas recusadas por limite de taxa foram liquidadas pelo pior caso e depois
+    retificadas para zero contra o extrato do provedor. O numero gravado dentro do relatorio e o
+    de antes da retificacao: publica-lo faria o painel somar US$ 0,088 enquanto o ledger soma
+    US$ 0,036 — os dois numeros de custo no mesmo painel que a oitava revisao ja tinha cobrado.
+    """
+    import sqlite3
+    caminho = RUNS / 'ledger.sqlite3'
+    if not attempt_ids or not caminho.exists():
+        return {}
+    con = sqlite3.connect(str(caminho))
+    try:
+        marcas = ','.join('?' * len(attempt_ids))
+        linhas = con.execute(
+            'SELECT attempt_id, settled_nusd FROM attempt_budget WHERE attempt_id IN ('
+            + marcas + ')', list(attempt_ids)).fetchall()
+    finally:
+        con.close()
+    return {a: c for a, c in linhas if c is not None}
+
+
 def e12_run(rel, gold, agora):
     """A replicacao: CINCO bracos na mesma lista, entao cinco tentativas por caso.
 
@@ -301,6 +324,9 @@ def e12_run(rel, gold, agora):
     tentativas, decisoes = [], []
     bracos = [('jev', 'replicacao-jev')] + [(chave, 'replicacao-' + chave)
                                             for chave in rel['comparadores']]
+    ids = [c.get(campo + '_attempt_id') for c in rel['casos'] for campo, _ in bracos
+           if c.get(campo + '_attempt_id')]
+    liquidado = custo_do_ledger(ids)
     for c in rel['casos']:
         for campo, pergunta in bracos:
             aid = c.get(campo + '_attempt_id')
@@ -309,7 +335,7 @@ def e12_run(rel, gold, agora):
             estado = c.get('jev_status') if campo == 'jev' else (
                 'success' if c.get(campo) else 'invalid_response')
             tentativas.append(tentativa(aid, estado, c.get(campo + '_latency_ms'),
-                                        c.get(campo + '_cost_nusd')))
+                                        liquidado.get(aid, c.get(campo + '_cost_nusd'))))
             decisoes.append(decisao(campo + ':' + c['case_id'], c['case_id'], aid, 'test',
                                     c['gold'], c.get(campo), c.get(campo + '_confidence'),
                                     pergunta, c['family']))
