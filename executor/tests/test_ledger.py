@@ -300,10 +300,19 @@ class RealPriceTableTests(unittest.TestCase):
     def test_tabela_real_carrega_e_confere_com_a_fonte(self):
         for key, entry in self.prices['models'].items():
             provider, model = key.split(':', 1)
-            raw_prompt = entry['raw_pricing']['prompt']
-            expected = usd_to_nusd(raw_prompt) * 1_000_000
-            self.assertEqual(entry['input_nusd_per_million_tokens'], expected)
+            bruto = entry['raw_pricing']
+            if 'prompt' in bruto:
+                # OpenRouter publica USD por token.
+                esperado = usd_to_nusd(bruto['prompt']) * 1_000_000
+            else:
+                # TypeSafe publica USD por bilhao de tokens ("$42 per Btok").
+                valor = float(bruto['input'].replace('$', '').split()[0])
+                esperado = usd_to_nusd(valor / 1_000) * 1_000_000 // 1_000_000 * 1_000_000
+                esperado = int(round(valor / 1e9 * 1e9 * 1e6))
+            self.assertEqual(entry['input_nusd_per_million_tokens'], esperado)
             self.assertTrue(entry.get('source', '').startswith('https://'))
-            # Pior caso de uma chamada com contexto cheio precisa caber no teto de bloco previsto.
-            worst = worst_case_nusd(self.prices, provider, model, entry['context_length'], 1)
+            self.assertIsInstance(entry.get('max_completion_tokens'), int)
+            # Pior caso de uma chamada cheia precisa caber no teto de bloco previsto.
+            worst = worst_case_nusd(self.prices, provider, model,
+                                    entry['context_length'], entry['max_completion_tokens'])
             self.assertLess(worst, usd_to_nusd('0.25'))

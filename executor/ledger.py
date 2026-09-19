@@ -54,6 +54,14 @@ class Ledger:
               cap_nusd INTEGER NOT NULL CHECK(cap_nusd >= 0),
               PRIMARY KEY(experiment_id, block_id)
             );
+            CREATE TABLE IF NOT EXISTS excedente_baixas (
+              baixa_id TEXT PRIMARY KEY,
+              provider TEXT NOT NULL,
+              amount_nusd INTEGER NOT NULL CHECK(amount_nusd > 0),
+              declared_at_utc TEXT NOT NULL,
+              motivo TEXT NOT NULL,
+              evidence_json TEXT NOT NULL
+            );
             CREATE TABLE IF NOT EXISTS attempt_budget (
               attempt_id TEXT PRIMARY KEY,
               experiment_id TEXT NOT NULL REFERENCES experiments(experiment_id),
@@ -70,7 +78,13 @@ class Ledger:
             );
             """
         )
-        self._migrar()
+        try:
+            self._migrar()
+        except Exception:
+            # Sem isto, uma migracao que falha deixa a conexao aberta e o arquivo travado,
+            # o que esconde o erro original atras de um segundo erro ao reabrir a base.
+            self.db.close()
+            raise
 
     def _migrar(self):
         """Acrescenta colunas novas a bases criadas por versoes anteriores.
@@ -78,24 +92,60 @@ class Ledger:
         CREATE TABLE IF NOT EXISTS nao altera tabela existente: sem isto, uma base antiga
         continuaria sem as colunas de identidade de preco e quebraria na primeira reserva.
         """
-        existentes = {linha['name'] for linha in self.db.execute('PRAGMA table_info(attempt_budget)')}
-        for coluna in ('priced_provider', 'priced_model', 'priced_snapshot_id'):
-            if coluna not in existentes:
-                self.db.execute(f'ALTER TABLE attempt_budget ADD COLUMN {coluna} TEXT')
-        colunas_snapshot = {linha['name'] for linha in self.db.execute('PRAGMA table_info(provider_snapshots)')}
-        for coluna in ('liquidado_no_instante_nusd', 'excedente_nusd'):
-            if coluna not in colunas_snapshot:
-                self.db.execute(f'ALTER TABLE provider_snapshots ADD COLUMN {coluna} INTEGER')
-        # Versoes anteriores materializavam o ajuste de conciliacao como linha de gasto. Agora
-        # o excedente e fato do snapshot: manter as linhas contaria o mesmo dinheiro duas vezes.
+        with self._tx(immediate=True):
+            existentes = {linha['name'] for linha in self.db.execute('PRAGMA table_info(attempt_budget)')}
+            for coluna in ('priced_provider', 'priced_model', 'priced_snapshot_id'):
+                if coluna not in existentes:
+                    self.db.execute(f'ALTER TABLE attempt_budget ADD COLUMN {coluna} TEXT')
+            colunas_snapshot = {linha['name']
+                                for linha in self.db.execute('PRAGMA table_info(provider_snapshots)')}
+            for coluna in ('liquidado_no_instante_nusd', 'excedente_nusd'):
+                if coluna not in colunas_snapshot:
+                    self.db.execute(f'ALTER TABLE provider_snapshots ADD COLUMN {coluna} INTEGER')
+            self._migrar_ajuste_materializado()
+
+    def _migrar_ajuste_materializado(self):
+        """Converte o ajuste de conciliacao de linha de gasto em fato do snapshot.
+
+        Apagar a linha e suficiente para nao contar o dinheiro duas vezes, mas so depois que
+        o valor estiver preservado em algum lugar. Os snapshots gravados pela versao anterior
+        tem `excedente_nusd` vazio, entao apagar primeiro e perguntar depois liberaria saldo
+        que o provedor ja cobrou. Aqui o valor e ancorado antes, e a base inteira migra numa
+        transacao so: ou tudo, ou nada.
+        """
         antigas = self.db.execute(
             "SELECT attempt_id, settled_nusd FROM attempt_budget"
             " WHERE cost_source = 'provider_statement_excess'").fetchall()
         for antiga in antigas:
-            self.db.execute('DELETE FROM attempt_budget WHERE attempt_id = ?', (antiga['attempt_id'],))
-            self._event(None, 'reconcile', int(antiga['settled_nusd'] or 0), {
+            valor = int(antiga['settled_nusd'] or 0)
+            # A versao anterior nomeava a linha como 'conciliacao:<provedor>'.
+            attempt_id = antiga['attempt_id']
+            provider = attempt_id.split(':', 1)[1] if ':' in attempt_id else 'desconhecido'
+            destino = self.db.execute(
+                'SELECT snapshot_id, excedente_nusd FROM provider_snapshots WHERE provider = ?'
+                ' ORDER BY captured_at_utc DESC, rowid DESC LIMIT 1', (provider,)).fetchone()
+            if destino is None:
+                blob = json.dumps({'migracao': 'ancora do ajuste materializado',
+                                   'attempt_id': attempt_id}, ensure_ascii=False, sort_keys=True)
+                self.db.execute(
+                    'INSERT INTO provider_snapshots(snapshot_id,provider,captured_at_utc,usage_nusd,'
+                    'key_limit_nusd,sanitized_json,sha256,liquidado_no_instante_nusd,excedente_nusd)'
+                    ' VALUES(?,?,?,NULL,NULL,?,?,NULL,?)',
+                    (str(uuid.uuid4()), provider, now_utc(), blob,
+                     hashlib.sha256(blob.encode('utf-8')).hexdigest(), valor))
+                ancora = 'snapshot de migracao criado'
+            else:
+                atual = destino['excedente_nusd']
+                if atual is None or int(atual) < valor:
+                    self.db.execute('UPDATE provider_snapshots SET excedente_nusd = ? WHERE snapshot_id = ?',
+                                    (valor, destino['snapshot_id']))
+                    ancora = 'excedente ancorado no ultimo snapshot do provedor'
+                else:
+                    ancora = 'snapshot ja registrava excedente maior ou igual'
+            self.db.execute('DELETE FROM attempt_budget WHERE attempt_id = ?', (attempt_id,))
+            self._event(None, 'reconcile', valor, {
                 'migracao': 'ajuste materializado removido; o excedente passou a ser fato do snapshot',
-                'attempt_id': antiga['attempt_id']})
+                'attempt_id': attempt_id, 'provider': provider, 'ancoragem': ancora})
 
     def close(self):
         self.db.close()
@@ -412,12 +462,123 @@ class Ledger:
         excedente antigo ao ser liquidada e liberaria espaco no teto para gastar de novo o
         mesmo dinheiro. Mantemos o maior excedente ja observado por provedor, porque um
         extrato atrasado nao desfaz uma divergencia que ja foi vista.
+
+        A ancora nao expira sozinha, mas nao e eterna: quando o gasto que a causou for enfim
+        identificado e registrado como tentativa, `baixar_excedente` desfaz a duplicacao com
+        motivo e evidencia. Sem esse caminho, o excedente comeria o teto para sempre.
         """
+        total = 0
+        for linha in self.db.execute(
+                'SELECT provider, MAX(excedente_nusd) AS maior FROM provider_snapshots'
+                ' WHERE excedente_nusd IS NOT NULL GROUP BY provider'):
+            total += max(int(linha['maior']) - self._baixas_de_excedente(linha['provider']), 0)
+        return total
+
+    def _baixas_de_excedente(self, provider):
         linha = self.db.execute(
-            'SELECT COALESCE(SUM(maior),0) AS total FROM ('
-            '  SELECT provider, MAX(excedente_nusd) AS maior FROM provider_snapshots'
-            '  WHERE excedente_nusd IS NOT NULL GROUP BY provider)').fetchone()
+            'SELECT COALESCE(SUM(amount_nusd),0) AS total FROM excedente_baixas WHERE provider = ?',
+            (provider,)).fetchone()
         return int(linha['total'])
+
+    def baixar_excedente(self, provider, amount_nusd, motivo, evidence):
+        """Reduz o excedente ancorado de um provedor, com motivo e evidencia.
+
+        Usar apenas quando a cobranca que gerou o excedente passar a estar registrada como
+        tentativa liquidada nesta base: nesse momento o mesmo dinheiro esta contado duas vezes,
+        e a baixa corrige. A baixa nunca passa do excedente ancorado e fica registrada como
+        evento, para que a liberacao de teto tenha dono e justificativa.
+        """
+        valor = int(amount_nusd)
+        if valor <= 0:
+            raise LedgerStateError('Baixa de excedente exige valor positivo')
+        if not motivo or not evidence:
+            raise LedgerStateError('Baixa de excedente exige motivo e evidencia')
+        with self._tx(immediate=True):
+            linha = self.db.execute(
+                'SELECT MAX(excedente_nusd) AS maior FROM provider_snapshots WHERE provider = ?',
+                (provider,)).fetchone()
+            ancorado = int(linha['maior']) if linha and linha['maior'] is not None else 0
+            disponivel = ancorado - self._baixas_de_excedente(provider)
+            if valor > disponivel:
+                raise LedgerStateError(
+                    f'Baixa de {valor} passa do excedente ancorado disponivel ({disponivel})')
+            self.db.execute(
+                'INSERT INTO excedente_baixas(baixa_id,provider,amount_nusd,declared_at_utc,motivo,'
+                'evidence_json) VALUES(?,?,?,?,?,?)',
+                (str(uuid.uuid4()), provider, valor, now_utc(), motivo,
+                 json.dumps(evidence, ensure_ascii=False, sort_keys=True)))
+            self._event(None, 'reconcile', valor, {
+                'baixa_de_excedente': motivo, 'provider': provider,
+                'excedente_ancorado_nusd': ancorado, 'excedente_restante_nusd': disponivel - valor,
+                **evidence})
+        return {'provider': provider, 'baixado_nusd': valor,
+                'excedente_restante_nusd': disponivel - valor}
+
+    def retomar_experimento(self, motivo, evidence):
+        """Tira o experimento da pausa, se o teto voltou a comportar o comprometido.
+
+        A pausa entra sozinha quando uma liquidacao estoura o teto. Sem um caminho de volta,
+        ela vira bloqueio operacional permanente, e a saida na pratica seria editar o banco na
+        mao, sem registro. Aqui a retomada e condicional: so sai da pausa quem esta de novo
+        dentro do teto, e a decisao fica gravada com motivo e evidencia.
+        """
+        if not motivo or not evidence:
+            raise LedgerStateError('Retomada exige motivo e evidencia')
+        with self._tx(immediate=True):
+            estado = self.db.execute(
+                'SELECT status FROM experiments WHERE experiment_id = ?', (self.experiment_id,)).fetchone()
+            if estado is None:
+                raise LedgerStateError('Experimento inexistente')
+            if estado['status'] != 'paused':
+                raise LedgerStateError(f"Experimento nao esta pausado (status {estado['status']})")
+            comprometido = self.wallet_committed_nusd()
+            teto = self.wallet_cap_nusd()
+            if comprometido > teto:
+                raise LedgerStateError(
+                    f'Comprometido ({comprometido}) ainda passa do teto ({teto}); retomada negada')
+            self.db.execute("UPDATE experiments SET status = 'running' WHERE experiment_id = ?",
+                            (self.experiment_id,))
+            self._event(None, 'authorize', 0, {
+                'retomada': motivo, 'wallet_committed_nusd': comprometido, 'wallet_cap_nusd': teto,
+                **evidence})
+        return {'status': 'running', 'wallet_committed_nusd': comprometido}
+
+    def retificar_liquidacao(self, attempt_id, amount_nusd, motivo, evidence):
+        """Corrige uma liquidacao conservadora quando o custo real aparece no extrato.
+
+        A liquidacao pelo pior caso e proposital: na duvida, o teto sofre. Mas ela nao pode ser
+        definitiva, senao uma divergencia de tabela de precos congela saldo que o provedor nunca
+        cobrou. So retificamos o que foi liquidado de forma conservadora, nunca um custo que o
+        provedor ja reportou, e o valor anterior fica no evento.
+        """
+        valor = int(amount_nusd)
+        if valor < 0:
+            raise LedgerStateError('Retificacao exige valor nao negativo')
+        if not motivo or not evidence:
+            raise LedgerStateError('Retificacao exige motivo e evidencia')
+        with self._tx(immediate=True):
+            linha = self.db.execute(
+                'SELECT settled_nusd, cost_source FROM attempt_budget WHERE attempt_id = ?',
+                (attempt_id,)).fetchone()
+            if linha is None or linha['settled_nusd'] is None:
+                raise LedgerStateError('Tentativa inexistente ou ainda nao liquidada')
+            if not str(linha['cost_source'] or '').startswith('worst_case'):
+                raise LedgerStateError(
+                    f"Somente liquidacao conservadora e retificavel (origem {linha['cost_source']})")
+            anterior = int(linha['settled_nusd'])
+            resultante = self.wallet_committed_nusd() - anterior + valor
+            if resultante > self.wallet_cap_nusd():
+                raise LedgerStateError(
+                    f'Retificacao para {valor} levaria o comprometido a {resultante}, acima do teto')
+            self.db.execute(
+                "UPDATE attempt_budget SET settled_nusd = ?, cost_source = 'provider_reported_retificado'"
+                ' WHERE attempt_id = ?', (valor, attempt_id))
+            self.db.execute('UPDATE attempts SET known_cost_nusd = ? WHERE attempt_id = ?',
+                            (valor, attempt_id))
+            self._event(attempt_id, 'settle', valor, {
+                'retificacao': motivo, 'settled_anterior_nusd': anterior,
+                'cost_source_anterior': linha['cost_source'], **evidence})
+        return {'attempt_id': attempt_id, 'settled_nusd': valor, 'settled_anterior_nusd': anterior}
 
     def reconcile(self, provider, observed_usage_nusd, sanitized, key_limit_nusd=None):
         """Grava o extrato do provedor. O excedente nao vira linha: vira conta.

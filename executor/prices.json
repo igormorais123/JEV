@@ -16,6 +16,20 @@
         "prompt": "0.000000042",
         "completion": "0"
       }
+    },
+    "typesafe:jev-1.13.0": {
+      "input_nusd_per_million_tokens": 42000000,
+      "output_nusd_per_million_tokens": 42000000,
+      "context_length": 64000,
+      "max_completion_tokens": 64000,
+      "source": "https://docs.typesafe.ai/models",
+      "source_captured_at_utc": "2026-09-19T04:05:00Z",
+      "nota": "Documentacao oficial: US$ 42 por Btok de entrada e US$ 0,042 por Mtok de saida, que sao a mesma tarifa por token (4,2e-8 USD). Diferenca material em relacao ao transporte OpenRouter, onde a saida NAO e cobrada. Contexto de 64k por requisicao, com 32k para o estado mais a maior pergunta. Sem maximo de saida publicado: reservamos o proprio limite da requisicao, que e conservador.",
+      "raw_pricing": {
+        "input": "$42 per Btok",
+        "output": "$0.042 per Mtok"
+      },
+      "rate_limits": "250.000 tokens por segundo; 1.200 requisicoes por minuto"
     }
   }
 }

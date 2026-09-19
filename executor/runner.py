@@ -185,13 +185,14 @@ def dry_run(ledger, provider, model, payload):
 
 
 def dispatch(ledger, *, arm_id, block_id, provider, model, state, questions, request_path,
-             runtime_manifest_path, timeout=45.0, transport=http_transport, api_key=None,
+             runtime_manifest_path, timeout=45.0, transport=None, api_key=None,
              evidence_level='live_component'):
     """Reserva, envia e liquida uma chamada. Sem reserva nao ha envio.
 
     A reserva usa o teto de contexto publicado, nao a estimativa do payload: a sondagem
     mostrou que o provedor acrescenta tokens que o cliente nao ve.
     """
+    transport = transport or http_transport
     payload = payload_for(model, state, questions)
     tokens = reservation_tokens(ledger.prices, provider, model)
     max_output_tokens = reservation_output_tokens(ledger.prices, provider, model)

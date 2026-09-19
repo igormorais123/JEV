@@ -62,10 +62,21 @@ def timestamp(value):
 
 
 def validate_state(state):
-    keys(state, ['schema_version', 'revision', 'updated_at', 'system_progress', 'stage_progress', 'runs', 'events'], 'estado')
+    keys(state, ['schema_version', 'revision', 'updated_at', 'system_progress', 'stage_progress',
+                 'runs', 'events', 'decision'], 'estado')
     require(type(state.get('schema_version')) is int and state['schema_version'] == 1, 'Versão de formato inválida')
     numeric(state.get('revision'), 'revision', integer=True)
     timestamp(state.get('updated_at'))
+    if state.get('decision') is not None:
+        # O placar e derivado dos relatorios por executor/placar.py; aqui so conferimos a forma,
+        # para que um arquivo torto nao derrube o servidor inteiro.
+        decision = state['decision']
+        require(isinstance(decision, dict), 'Placar inválido')
+        keys(decision, ['atualizado_em', 'veredito', 'cartoes', 'orcamento', 'pendencias'], 'placar')
+        timestamp(decision.get('atualizado_em'))
+        require(isinstance(decision.get('veredito'), dict), 'Veredito inválido')
+        require(isinstance(decision.get('cartoes'), list), 'Cartões do placar inválidos')
+        require(isinstance(decision.get('pendencias'), list), 'Pendências do placar inválidas')
     require(isinstance(state.get('system_progress'), dict), 'Acompanhamento inválido')
     require(isinstance(state.get('stage_progress'), dict), 'Etapas inválidas')
     for sid, progress in state['system_progress'].items():
