@@ -84,3 +84,66 @@ recusar. Nenhuma chamada havia sido feita quando a correção entrou.)*
 Não pode dizer que *nenhum* LLM econômico resolve a tarefa: testa um. Não pode dizer que o Jev é
 melhor em produção: o corpus continua sendo escrito por mim. E não resolve a validade do
 constructo, que depende de anotadores humanos e segue como item 2 da seção 10.
+
+---
+
+# Emenda 1 — 2026-09-19, depois do resultado primário e antes da execução do E10b
+
+**Motivo:** o resultado primário deu diferença pareada de +7,50% com IC95 [0,00%; 15,00%] sobre
+10 famílias. O intervalo toca zero exatamente no limite inferior, e com 10 famílias o poder é
+baixo por construção — coisa que este mesmo pré-registro já declarava. Um intervalo que encosta
+em zero é o caso em que mais poder muda a leitura, e não usar as 10 famílias do piloto que estão
+disponíveis, e custam US$ 0,0004, seria escolher a ignorância.
+
+**O que muda:** o comparador roda também nos 40 casos do piloto (E1), somando 80 casos e 20
+famílias.
+
+**O que não muda:** o **resultado primário continua sendo o da partição de confirmação**, com o
+número já publicado. A análise sobre as 20 famílias é **secundária e declarada como tal**,
+porque tem um viés conhecido: o piloto guiou o desenho do prompt do Jev, e o comparador recebe
+esse mesmo prompt sem nunca ter visto aqueles casos. O viés, portanto, **favorece o Jev**.
+
+**Consequência disso para a leitura:** se o intervalo secundário **continuar contendo zero**, a
+conclusão de ausência de evidência fica mais forte, porque sobreviveu a um teste enviesado a
+favor do Jev e com o dobro das famílias. Se o intervalo secundário **separar de zero**, isso
+**não** restabelece a recomendação: seria uma vantagem medida na partição que desenhou o prompt,
+que é exatamente a leitura que o estudo inteiro recusa. Nesse caso a conclusão permanece a do
+resultado primário, e a discrepância entra no relatório como o que ela é — o piloto favorecendo
+quem foi desenhado nele.
+
+Esta emenda foi escrita **antes** de qualquer chamada do E10b.
+
+---
+
+# Nota de verificação — 2026-09-19, depois de executar o E10b
+
+A Emenda 1 declarou um viés: *"o piloto guiou o desenho do prompt do Jev"*, e por isso mandou
+tratar o resultado das 20 famílias como secundário e incapaz de restabelecer a recomendação.
+
+**Fui conferir no histórico e a premissa não se sustenta.** As instruções e os critérios entraram
+no repositório uma única vez, no commit `9f6d13b` (18/09/2026), junto com o corpus piloto, e
+**nunca foram alterados depois** — o único commit posterior a tocar o arquivo (`b493035`) não
+mexeu no prompt. O corpus piloto também não mudou depois de rodar. Não houve, portanto, nenhuma
+iteração de prompt contra os resultados do piloto.
+
+Isso enfraquece o viés declarado, mas não o elimina, e sobra um viés menor que continua real: a
+rubrica e o corpus piloto foram escritos **juntos**, então a rubrica "casa" com aquele corpus por
+construção. Os dois modelos recebem a mesma rubrica, e o comparador nunca viu nenhum dos dois
+corpora.
+
+**Consequência para a leitura, escrita agora que os dois resultados estão na mesa e declarada
+como pós-hoc:** a evidência está dividida, e dizer isso é mais fiel do que escolher um dos lados.
+
+- Partição de teste (confirmação, 10 famílias): diferença +7,50%, IC95 [0,00%; 15,00%] — **não
+  separa de zero**.
+- Piloto (10 famílias): +20,00%, IC95 [10,00%; 30,00%] — separa.
+- Os 80 casos, 20 famílias: +13,75%, IC95 [7,50%; 20,00%] — separa.
+
+A recomendação final do estudo **não** volta a ser "use o Jev", porque a partição que existe para
+decidir não sustenta isso sozinha e porque a decisão de olhar o piloto foi tomada depois de ver o
+resultado primário. Também não é "os dois empatam", porque em 20 famílias eles não empatam. É a
+terceira, que é a que os dados aguentam: **a evidência não é suficiente para decidir, e o
+desempate custa US$ 0,0004 por conjunto de 40 casos.**
+
+Registro o que não vou fazer: não vou eleger, agora, a leitura das 20 famílias como principal só
+porque ela é a que favorece a conclusão que eu já tinha publicado antes do E10.

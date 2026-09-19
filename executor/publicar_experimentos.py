@@ -220,6 +220,35 @@ def e10_run(rel, gold, agora):
     }
 
 
+def e10b_run(rel, gold, agora):
+    """O braco secundario do comparador, nas 10 familias do piloto."""
+    tentativas, decisoes = [], []
+    for c in rel['casos']:
+        status = 'success' if c.get('llm') else 'invalid_response'
+        tentativas.append(tentativa(c['llm_attempt_id'], status, c['llm_latency_ms'],
+                                    c['llm_cost_nusd']))
+        decisoes.append(decisao(f"llm:{c['case_id']}", c['case_id'], c['llm_attempt_id'],
+                                'diagnostic', c['gold'], c.get('llm'), c.get('llm_confidence'),
+                                'comparador-economico-piloto', c['family']))
+    amp, pil = rel['pareada_80_casos'], rel['pareada_piloto']
+    return {
+        'id': 'e10b-comparador-no-piloto', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': 'os 40 casos do piloto, com as mesmas instrucoes congeladas do E1',
+        'notes': ('Analise SECUNDARIA sob emenda declarada antes da execucao, para dobrar o '
+                  'poder depois de o resultado primario ter tocado zero. No piloto a vantagem '
+                  f"do Jev e {pil['diferenca_observada']:+.4f}, IC95 [{pil['ic95'][0]:.4f}; "
+                  f"{pil['ic95'][1]:.4f}], e separa de zero; nas {amp['n_familias']} familias "
+                  f"das duas particoes e {amp['diferenca_observada']:+.4f}, IC95 "
+                  f"[{amp['ic95'][0]:.4f}; {amp['ic95'][1]:.4f}], e tambem separa. A particao "
+                  'que existe para decidir continua sendo a de confirmacao, que nao separa: o '
+                  'veredito do painel passou a dizer que a evidencia esta dividida.'),
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
 def tentativas_orfas_run(estado, agora):
     """Tentativas que existem no ledger e nao aparecem no painel.
 
@@ -277,7 +306,8 @@ def publicar():
                                ('e5-provedores/relatorio.json', e5_run),
                                ('e6-repetibilidade/relatorio.json', e6_run),
                                ('e7-confirmacao/relatorio.json', e7_run),
-                               ('e10-llm-economico/relatorio.json', e10_run)]:
+                               ('e10-llm-economico/relatorio.json', e10_run),
+                               ('e10b-piloto/relatorio.json', e10b_run)]:
         rel = ler(arquivo)
         if rel:
             novos.append(construir(rel, gold, agora))

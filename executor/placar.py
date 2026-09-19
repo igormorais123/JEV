@@ -234,6 +234,11 @@ def confianca_calculada(e9, e6, e8, adj):
         valor -= 0.10
         motivos.append('o comparador é uma regra congelada, não um modelo de linguagem barato '
                        'no mesmo contrato: a pergunta "vale um LLM aqui?" segue aberta (-0,10)')
+    elif evidencia_dividida(e10, ler('e10b-piloto/relatorio.json')):
+        valor -= 0.15
+        motivos.append('o braço do LLM econômico separa de zero em 20 famílias e não separa na '
+                       'partição de teste: a evidência sobre a necessidade do Jev está '
+                       'dividida (-0,15)')
     elif comparador_empatou(e10):
         # Pior do que nao ter o braco: ter, e ele nao sustentar a recomendacao.
         valor -= 0.20
@@ -284,8 +289,12 @@ def nota_de_confianca(adj, e9=None):
             'modelos, não pessoas do atendimento real.')
 
 
+def contem_zero(ic):
+    return ic[0] <= 0 <= ic[1]
+
+
 def comparador_empatou(e10):
-    """O braco do LLM economico desmentiu a recomendacao?
+    """O braco do LLM economico desmentiu a recomendacao na PARTICAO DE TESTE?
 
     A regra esta congelada no pre-registro do E10, escrita antes da primeira chamada: se o IC95
     da diferenca pareada contiver zero, o resultado e AUSENCIA DE EVIDENCIA DE VANTAGEM, e a
@@ -294,8 +303,20 @@ def comparador_empatou(e10):
     """
     if not e10:
         return None
-    baixo, alto = e10['pareada']['ic95']
-    return baixo <= 0 <= alto
+    return contem_zero(e10['pareada']['ic95'])
+
+
+def evidencia_dividida(e10, e10b):
+    """A particao de teste e a analise ampliada discordam entre si?
+
+    O E10b rodou o mesmo comparador nas 10 familias do piloto, sob emenda declarada. Em 20
+    familias a vantagem do Jev separa de zero; nas 10 da particao de teste, nao. Esconder
+    qualquer um dos dois lados seria escolher o resultado depois de ve-lo, e por isso o painel
+    diz que esta dividida em vez de escolher.
+    """
+    if not (e10 and e10b):
+        return False
+    return comparador_empatou(e10) and not contem_zero(e10b['pareada_80_casos']['ic95'])
 
 
 def titulo_do_veredito(e9, e10=None):
@@ -304,6 +325,9 @@ def titulo_do_veredito(e9, e10=None):
     Antes era uma frase cravada recomendando o corte de 0,90. Se o E9 sumisse, ou se a
     politica passasse a deixar erro entre os aceitos, o titulo continuaria recomendando.
     """
+    e10b = ler('e10b-piloto/relatorio.json')
+    if evidencia_dividida(e10, e10b):
+        return 'Evidência dividida sobre a necessidade do Jev: não decidir com este estudo'
     if comparador_empatou(e10):
         return 'Sem evidência de vantagem sobre um LLM econômico: não adotar ainda'
     if not e9:
@@ -330,6 +354,24 @@ def texto_do_veredito(e9, e6, e10=None):
     """
     if not e9:
         return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
+    e10b = ler('e10b-piloto/relatorio.json')
+    if evidencia_dividida(e10, e10b):
+        par, amp = e10['pareada'], e10b['pareada_80_casos']
+        pil = e10b['pareada_piloto']
+        return (
+            'O braço que faltava mudou a conclusão, e mudou para os dois lados. Um LLM genérico '
+            'e barato (' + e10['modelo'] + ') recebeu as mesmas instruções congeladas do E1, sem '
+            'nenhum ajuste de prompt. Na partição de confirmação, que é a de teste, a vantagem '
+            'do Jev é de ' + pct(par['diferenca_observada']) + ' com IC95 ['
+            + pct(par['ic95'][0]) + '; ' + pct(par['ic95'][1]) + ']: não separa de zero. No '
+            'piloto é de ' + pct(pil['diferenca_observada']) + ' e separa; nos '
+            + str(amp['n_familias']) + ' grupos das duas partições juntas é de '
+            + pct(amp['diferenca_observada']) + ', IC95 [' + pct(amp['ic95'][0]) + '; '
+            + pct(amp['ic95'][1]) + '], e também separa. A partição que existe para decidir é a '
+            'que não separa, e a decisão de olhar o piloto foi tomada depois de ver esse '
+            'resultado — então nenhum dos dois lados pode ser apresentado sozinho. O que os '
+            'dados sustentam é isto: a evidência não basta para decidir se o Jev é necessário '
+            'nesta tarefa, e o desempate custa US$ 0,0004 por conjunto de 40 casos.')
     if comparador_empatou(e10):
         par = e10['pareada']
         return (
@@ -654,6 +696,33 @@ def montar():
             fonte_com_gabarito(str(d10['casos_programados']) + ' casos da partição de '
                                'confirmação, max_tokens 64, temperatura 0', 'faixa')))
 
+    e10b = ler('e10b-piloto/relatorio.json')
+    if e10b:
+        d10b = gabarito.desempenho('runs/e10b-piloto/relatorio.json', 'llm')
+        d10b_jev = gabarito.desempenho('runs/e10b-piloto/relatorio.json', 'jev')
+        amp, pil = e10b['pareada_80_casos'], e10b['pareada_piloto']
+        cartoes.append(cartao(
+            'e10b', 'Comparador no piloto (E10b)', valor_entre_gabaritos(d10b),
+            ' · '.join(nome + ' ' + pct(v) for nome, v in
+                       sorted(gabaritos_do_conjunto(d10b).items(), key=lambda kv: kv[1]))
+            + ' · Jev ' + valor_entre_gabaritos(d10b_jev),
+            ('Análise secundária, sob emenda declarada antes da execução: o mesmo comparador nas '
+             '10 famílias do piloto, para dobrar o poder depois de o resultado primário ter '
+             'tocado zero. Aqui a vantagem do Jev é de ' + pct(pil['diferenca_observada'])
+             + ', IC95 [' + pct(pil['ic95'][0]) + '; ' + pct(pil['ic95'][1]) + '], e **separa** '
+             'de zero; nas ' + str(amp['n_familias']) + ' famílias das duas partições juntas é '
+             'de ' + pct(amp['diferenca_observada']) + ', IC95 [' + pct(amp['ic95'][0]) + '; '
+             + pct(amp['ic95'][1]) + '], e também separa. A emenda declarava que o piloto havia '
+             'guiado o desenho do prompt do Jev; fui conferir no histórico e isso não se '
+             'sustenta — o prompt entrou uma vez e nunca mudou. Sobra o viés menor de a rubrica '
+             'e o corpus piloto terem sido escritos juntos. Esta leitura não restabelece a '
+             'recomendação: a decisão de olhar o piloto foi tomada depois de ver o resultado '
+             'primário, e é por isso que o veredito diz que a evidência está dividida em vez de '
+             'escolher o lado que me convém.'),
+            fonte_com_gabarito(str(d10b['casos_programados']) + ' casos do piloto; '
+                               + str(amp['n_familias']) + ' famílias na análise ampliada',
+                               'faixa')))
+
     grave = ler('erro-grave.json')
     if grave:
         # [R13] O pre-registro do E1 manda reportar erro grave SEPARADO da acuracia media, e
@@ -684,7 +753,8 @@ def montar():
     # O saldo vale o do relatorio mais recente que registrou a carteira.
     # [E10] A cadeia era fixa e comecava no E7: depois do E10 o painel continuaria publicando o
     # saldo anterior ao ultimo experimento. Agora vence o relatorio com o carimbo mais novo.
-    candidatos = [r for r in (e10, e7, e6, e5, e4, e2b) if r and r.get('wallet_committed_nusd')]
+    candidatos = [r for r in (e10b, e10, e7, e6, e5, e4, e2b)
+                  if r and r.get('wallet_committed_nusd')]
     carteira = max(candidatos, key=lambda r: r.get('at', '')) if candidatos else {}
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
     disponivel = carteira.get('wallet_available_nusd') or carteira.get('available_nusd')

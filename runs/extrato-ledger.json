@@ -1,10 +1,10 @@
 {
- "gerado_em": "2026-09-19T06:11:11.754487+00:00",
+ "gerado_em": "2026-09-19T06:18:41.800781+00:00",
  "banco": "runs/ledger.sqlite3 (não versionado; hash abaixo)",
- "sha256_do_banco": "ea3e4d68f25c8ce59bbb0269788ad7029546db5faf8f8908c4cb107ceee142e6",
- "tentativas": 665,
- "comprometido_nusd": 18532027,
- "comprometido_usd": 0.018532027,
+ "sha256_do_banco": "f61761129a32e30ec74476632801df830b4ceb8b832f8e6e5dca55b222c63a22",
+ "tentativas": 705,
+ "comprometido_nusd": 18876461,
+ "comprometido_usd": 0.018876461,
  "reservas_pendentes_sem_liquidacao": 0,
  "colunas_omitidas": "qualquer coluna que carregue requisição, resposta, cabeçalho ou identificador de credencial",
  "linhas": [
@@ -516,6 +516,19 @@
    "ended_at_utc": "2026-09-19T04:15:17.744Z"
   },
   {
+   "attempt_id": "0ed0be1b-88ca-40c1-80fb-a52e6a9f51ed",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7020,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:43.841Z",
+   "ended_at_utc": "2026-09-19T06:16:44.542Z"
+  },
+  {
    "attempt_id": "0fa098c1-3b85-4825-8bc0-c2b7a62571cb",
    "arm_id": "arm-e1-jev",
    "block_id": "e1-piloto",
@@ -579,6 +592,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:35:25.861Z",
    "ended_at_utc": "2026-09-19T02:35:26.246Z"
+  },
+  {
+   "attempt_id": "119f6309-55ac-4408-94f6-5e5fe04056fd",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7161,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:44.544Z",
+   "ended_at_utc": "2026-09-19T06:16:45.259Z"
   },
   {
    "attempt_id": "11ce215e-a831-49ad-85a9-dcaeb030f1ce",
@@ -683,6 +709,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T06:08:54.475Z",
    "ended_at_utc": "2026-09-19T06:08:55.891Z"
+  },
+  {
+   "attempt_id": "1459594e-1045-420e-b295-ba2a17047855",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6820,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:20.112Z",
+   "ended_at_utc": "2026-09-19T06:16:20.865Z"
   },
   {
    "attempt_id": "148df50a-67be-4e2e-b5d4-11ece5774175",
@@ -1101,6 +1140,19 @@
    "ended_at_utc": "2026-09-19T02:38:37.211Z"
   },
   {
+   "attempt_id": "1fbe1fc0-647e-4fe3-9efc-7e530bd6eff5",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7161,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:46.033Z",
+   "ended_at_utc": "2026-09-19T06:16:46.742Z"
+  },
+  {
    "attempt_id": "1fcaaef7-acb3-4004-9f93-9c6768100b0b",
    "arm_id": "arm-e3-jev",
    "block_id": "e3-evidencia",
@@ -1151,6 +1203,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:28:37.500Z",
    "ended_at_utc": "2026-09-19T04:28:37.924Z"
+  },
+  {
+   "attempt_id": "213f77a9-bd09-4792-9798-2312eb002364",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6951,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:19.300Z",
+   "ended_at_utc": "2026-09-19T06:16:20.111Z"
   },
   {
    "attempt_id": "21d27cab-e875-4041-b2cf-289a4f33cc0f",
@@ -1907,6 +1972,19 @@
    "ended_at_utc": "2026-09-19T04:15:03.519Z"
   },
   {
+   "attempt_id": "35074c25-ba3f-4ae3-9dd6-9e357d116d7b",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6601,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:27.727Z",
+   "ended_at_utc": "2026-09-19T06:16:29.305Z"
+  },
+  {
    "attempt_id": "351fd397-aa74-4523-8938-e22ebe8cb670",
    "arm_id": "arm-e2-jev",
    "block_id": "e2-fatorial",
@@ -1918,6 +1996,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:37:48.670Z",
    "ended_at_utc": "2026-09-19T02:37:49.134Z"
+  },
+  {
+   "attempt_id": "35bb1237-ae58-4e7d-96a1-fbfa64968089",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6480,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:58.890Z",
+   "ended_at_utc": "2026-09-19T06:17:00.676Z"
   },
   {
    "attempt_id": "360b0df9-7824-4723-a6f4-bb41397d6013",
@@ -1970,6 +2061,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:37:27.626Z",
    "ended_at_utc": "2026-09-19T02:37:27.990Z"
+  },
+  {
+   "attempt_id": "373d5831-e453-4a22-80f7-1a0fd11c21a6",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6891,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:23.158Z",
+   "ended_at_utc": "2026-09-19T06:16:23.898Z"
   },
   {
    "attempt_id": "3765f01f-6da2-44cf-9d0b-d188a8b4b85c",
@@ -2269,6 +2373,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:29:07.267Z",
    "ended_at_utc": "2026-09-19T04:29:07.778Z"
+  },
+  {
+   "attempt_id": "3fc2ca14-7d7d-4cfd-a525-f1a941986742",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6341,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:30.766Z",
+   "ended_at_utc": "2026-09-19T06:16:32.526Z"
   },
   {
    "attempt_id": "4181fa69-1504-4f02-8639-9115e8cd19e3",
@@ -2633,6 +2750,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:28:32.146Z",
    "ended_at_utc": "2026-09-19T04:28:32.539Z"
+  },
+  {
+   "attempt_id": "4ebdbb94-ca22-422b-9abe-c915ba4e4abc",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6300,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:33.291Z",
+   "ended_at_utc": "2026-09-19T06:16:34.887Z"
   },
   {
    "attempt_id": "4ee4dbcf-03ea-41ca-86dd-111869a72359",
@@ -3103,6 +3233,19 @@
    "ended_at_utc": "2026-09-19T04:14:54.603Z"
   },
   {
+   "attempt_id": "587b76b0-81df-48e2-965d-84dba7849329",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6361,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:29.307Z",
+   "ended_at_utc": "2026-09-19T06:16:30.763Z"
+  },
+  {
    "attempt_id": "58adcff5-bf89-4385-ae70-13025d428173",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -3127,6 +3270,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:38:21.036Z",
    "ended_at_utc": "2026-09-19T02:38:21.465Z"
+  },
+  {
+   "attempt_id": "5906b53d-0cb9-468f-8a5c-d99de59d416d",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6881,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:43.103Z",
+   "ended_at_utc": "2026-09-19T06:16:43.839Z"
   },
   {
    "attempt_id": "5983b106-c743-404e-9777-12412739482e",
@@ -3205,6 +3361,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:32:24.929Z",
    "ended_at_utc": "2026-09-19T04:32:25.350Z"
+  },
+  {
+   "attempt_id": "5aa1f356-467e-4d92-9046-55efd78fc6a8",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7110,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:03.635Z",
+   "ended_at_utc": "2026-09-19T06:17:04.662Z"
   },
   {
    "attempt_id": "5ad6b7da-c911-49ac-ac6f-d4c212d66046",
@@ -3883,6 +4052,19 @@
    "ended_at_utc": "2026-09-19T04:28:28.043Z"
   },
   {
+   "attempt_id": "6d05e7e7-da78-4d34-9b07-a2a2a1117c7c",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7020,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:56.065Z",
+   "ended_at_utc": "2026-09-19T06:16:56.772Z"
+  },
+  {
    "attempt_id": "6db6a9e9-628b-41dc-ba17-9c26f76557bf",
    "arm_id": "arm-e1-jev",
    "block_id": "e1-piloto",
@@ -4481,6 +4663,19 @@
    "ended_at_utc": "2026-09-19T04:28:44.082Z"
   },
   {
+   "attempt_id": "7e2f9866-7f05-48f5-b6d4-4fcb311cf1fb",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6341,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:36.391Z",
+   "ended_at_utc": "2026-09-19T06:16:39.229Z"
+  },
+  {
    "attempt_id": "7fc47c4e-3cf5-419e-9a18-099b7ae19747",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -4557,6 +4752,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:28:56.877Z",
    "ended_at_utc": "2026-09-19T04:28:57.293Z"
+  },
+  {
+   "attempt_id": "82150c48-799d-4100-bd06-9a7f7bf8444e",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 47912,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:50.562Z",
+   "ended_at_utc": "2026-09-19T06:16:56.062Z"
   },
   {
    "attempt_id": "824f0bb1-0dc9-474d-a7d6-06a35b1b6fbb",
@@ -5430,6 +5638,19 @@
    "ended_at_utc": "2026-09-19T06:09:33.768Z"
   },
   {
+   "attempt_id": "9ca3c4f1-8fde-48c9-81a9-689926552dea",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6901,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:32.528Z",
+   "ended_at_utc": "2026-09-19T06:16:33.289Z"
+  },
+  {
    "attempt_id": "9cabbc04-916c-490b-bea6-fc70e25e755d",
    "arm_id": "arm-e5-openrouter",
    "block_id": "e5-provedores",
@@ -5480,6 +5701,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:41:03.677Z",
    "ended_at_utc": "2026-09-19T02:41:04.036Z"
+  },
+  {
+   "attempt_id": "9e049f00-b66b-4e25-906c-d49524d618c5",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7110,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:40.862Z",
+   "ended_at_utc": "2026-09-19T06:16:41.657Z"
   },
   {
    "attempt_id": "9e7306cf-d548-4a18-bcd6-a254e02e9a7a",
@@ -5872,6 +6106,19 @@
    "ended_at_utc": "2026-09-19T04:28:10.257Z"
   },
   {
+   "attempt_id": "a6dcdec4-abf5-46fd-a833-564792403e7e",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7071,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:00.678Z",
+   "ended_at_utc": "2026-09-19T06:17:01.430Z"
+  },
+  {
    "attempt_id": "a6de3290-2dd9-4e88-8fad-0cde4c508edc",
    "arm_id": "arm-e7-jev",
    "block_id": "e7-confirmacao",
@@ -5896,6 +6143,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:37:29.661Z",
    "ended_at_utc": "2026-09-19T02:37:30.023Z"
+  },
+  {
+   "attempt_id": "a91dc0be-f1fa-41d7-8df7-0a3b3048083f",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6840,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:21.200Z",
+   "ended_at_utc": "2026-09-19T06:16:23.143Z"
   },
   {
    "attempt_id": "a9c2b0d8-2f93-42b3-ad4b-221e85b1b23a",
@@ -6000,6 +6260,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:38:29.532Z",
    "ended_at_utc": "2026-09-19T02:38:29.912Z"
+  },
+  {
+   "attempt_id": "ade441d1-ed18-495f-b5db-3310724b163e",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6441,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:34.889Z",
+   "ended_at_utc": "2026-09-19T06:16:36.389Z"
   },
   {
    "attempt_id": "ae079171-9366-4d76-9eb9-1b0eac71c1f0",
@@ -6119,6 +6392,19 @@
    "ended_at_utc": "2026-09-19T02:38:26.230Z"
   },
   {
+   "attempt_id": "b0e5157e-84df-4e90-b883-8feedc8ef179",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6341,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:16.257Z",
+   "ended_at_utc": "2026-09-19T06:16:17.667Z"
+  },
+  {
    "attempt_id": "b15822a0-2e73-4873-b25e-5b6218e696f8",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -6156,6 +6442,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:40:56.881Z",
    "ended_at_utc": "2026-09-19T02:40:57.802Z"
+  },
+  {
+   "attempt_id": "b2265622-7a9a-4e95-8265-5a7e372b3bb4",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6940,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:18.417Z",
+   "ended_at_utc": "2026-09-19T06:16:19.299Z"
   },
   {
    "attempt_id": "b24dad83-5c1f-40d4-97fa-b7bcb6c3fa73",
@@ -6418,6 +6717,19 @@
    "ended_at_utc": "2026-09-19T02:37:41.912Z"
   },
   {
+   "attempt_id": "b9c58145-fa3b-41e5-9ac1-00396ebd7236",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6220,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:56.774Z",
+   "ended_at_utc": "2026-09-19T06:16:58.081Z"
+  },
+  {
    "attempt_id": "b9fcc4ff-991d-4d9b-bdc2-121eb156a861",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -6507,6 +6819,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:28:20.494Z",
    "ended_at_utc": "2026-09-19T04:28:20.854Z"
+  },
+  {
+   "attempt_id": "be3d9581-881f-4cae-9218-b6d34331ba4f",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6341,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:41.659Z",
+   "ended_at_utc": "2026-09-19T06:16:43.101Z"
   },
   {
    "attempt_id": "be3fa65c-7c44-4721-a991-8d761c5c0be0",
@@ -6613,6 +6938,19 @@
    "ended_at_utc": "2026-09-19T04:15:08.797Z"
   },
   {
+   "attempt_id": "c101d510-2b7a-41cf-9353-642d83bb068b",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6840,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:01.432Z",
+   "ended_at_utc": "2026-09-19T06:17:02.199Z"
+  },
+  {
    "attempt_id": "c10de4cb-3d43-4a18-a842-6b31b0645c76",
    "arm_id": "arm-e7-jev",
    "block_id": "e7-confirmacao",
@@ -6663,6 +7001,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:28:24.114Z",
    "ended_at_utc": "2026-09-19T04:28:24.517Z"
+  },
+  {
+   "attempt_id": "c1a32277-7bc8-4dec-8ca6-fe7c1f11ca79",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7061,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:25.408Z",
+   "ended_at_utc": "2026-09-19T06:16:26.259Z"
   },
   {
    "attempt_id": "c1eaf398-ca41-44c7-a8b1-ead309d3bd74",
@@ -6741,6 +7092,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:35:34.544Z",
    "ended_at_utc": "2026-09-19T02:35:34.960Z"
+  },
+  {
+   "attempt_id": "c345722e-1b5c-4c5c-b475-e2a6442b0980",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 18060,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:48.700Z",
+   "ended_at_utc": "2026-09-19T06:16:49.031Z"
   },
   {
    "attempt_id": "c3655f9e-a643-452f-8860-29c800d1bc0c",
@@ -6873,6 +7237,19 @@
    "ended_at_utc": "2026-09-19T02:37:25.592Z"
   },
   {
+   "attempt_id": "c8037413-33b5-4bef-a8c1-116be1877477",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6281,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:46.743Z",
+   "ended_at_utc": "2026-09-19T06:16:48.698Z"
+  },
+  {
    "attempt_id": "c8090b24-3878-4619-bb8c-1a1a522321f2",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -6962,6 +7339,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:29:10.692Z",
    "ended_at_utc": "2026-09-19T04:29:11.101Z"
+  },
+  {
+   "attempt_id": "c9a2ab39-e0e3-42be-b946-d9d2feac5be0",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6521,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:26.261Z",
+   "ended_at_utc": "2026-09-19T06:16:27.725Z"
   },
   {
    "attempt_id": "c9b2ee50-65e4-4224-a368-0f75e99623a7",
@@ -7185,6 +7575,19 @@
    "ended_at_utc": "2026-09-19T04:28:13.978Z"
   },
   {
+   "attempt_id": "cdb93439-2f4e-4f03-9809-01502346592e",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7100,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:02.201Z",
+   "ended_at_utc": "2026-09-19T06:17:03.633Z"
+  },
+  {
    "attempt_id": "ce83654d-21f2-43d3-988b-090469adae3d",
    "arm_id": "arm-e2-jev",
    "block_id": "e2-fatorial",
@@ -7352,6 +7755,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T02:35:32.493Z",
    "ended_at_utc": "2026-09-19T02:35:32.867Z"
+  },
+  {
+   "attempt_id": "d400ae59-7b51-4115-8189-9820392ad552",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7051,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:17.669Z",
+   "ended_at_utc": "2026-09-19T06:16:18.416Z"
   },
   {
    "attempt_id": "d4577554-5b42-4adf-aec9-c722c9b53c1d",
@@ -7549,6 +7965,19 @@
    "ended_at_utc": "2026-09-19T04:27:56.926Z"
   },
   {
+   "attempt_id": "d95e2761-dd4a-4164-b78a-075729163bca",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7030,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:45.261Z",
+   "ended_at_utc": "2026-09-19T06:16:46.032Z"
+  },
+  {
    "attempt_id": "da1c5263-fb8d-476b-8f03-662bf2cc1e0e",
    "arm_id": "arm-e2-jev",
    "block_id": "e2-fatorial",
@@ -7588,6 +8017,19 @@
    "ended_at_utc": "2026-09-19T02:41:07.883Z"
   },
   {
+   "attempt_id": "dbdc24b4-c281-4e86-8d77-1924e83899de",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 17471,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:20.867Z",
+   "ended_at_utc": "2026-09-19T06:16:21.198Z"
+  },
+  {
    "attempt_id": "dc2aab2e-d162-4f1a-a68a-6cb502873c6d",
    "arm_id": "arm-e2b-jev",
    "block_id": "e2b-posicao",
@@ -7625,6 +8067,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T03:31:24.789Z",
    "ended_at_utc": "2026-09-19T03:31:25.137Z"
+  },
+  {
+   "attempt_id": "de697cb2-67e4-417b-bada-40422bc1ef23",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6441,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:49.033Z",
+   "ended_at_utc": "2026-09-19T06:16:50.560Z"
   },
   {
    "attempt_id": "de7c4006-10e6-49fe-b097-517b57fdc7c2",
@@ -7716,6 +8171,19 @@
    "cost_source": "worst_case_no_usage",
    "started_at_utc": "2026-09-19T02:19:25.256Z",
    "ended_at_utc": "2026-09-19T02:19:25.367Z"
+  },
+  {
+   "attempt_id": "e087dad5-3e15-4cc0-bc13-5a7e66ff25fd",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 17720,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:05.437Z",
+   "ended_at_utc": "2026-09-19T06:17:05.819Z"
   },
   {
    "attempt_id": "e0a7cb97-958a-4a45-8a00-115590f0b287",
@@ -8108,6 +8576,19 @@
    "ended_at_utc": "2026-09-19T02:21:22.193Z"
   },
   {
+   "attempt_id": "ee4b6465-2de5-46c2-a8ac-b972578f2638",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 7100,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:17:04.663Z",
+   "ended_at_utc": "2026-09-19T06:17:05.435Z"
+  },
+  {
    "attempt_id": "eeafea90-9c0b-4c17-9191-4640ca21ff9e",
    "arm_id": "arm-e10-llm-economico",
    "block_id": "e10-llm-economico",
@@ -8171,6 +8652,19 @@
    "cost_source": "provider_reported",
    "started_at_utc": "2026-09-19T04:32:26.194Z",
    "ended_at_utc": "2026-09-19T04:32:26.561Z"
+  },
+  {
+   "attempt_id": "f24d3395-a722-429c-8712-ea56759f6b02",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6701,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:39.232Z",
+   "ended_at_utc": "2026-09-19T06:16:40.860Z"
   },
   {
    "attempt_id": "f2998528-9a10-49ff-a951-c1de9ddcd51c",
@@ -8277,6 +8771,19 @@
    "ended_at_utc": "2026-09-19T04:15:12.008Z"
   },
   {
+   "attempt_id": "f5a1ed11-0826-40bb-80c0-9f5402867372",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6820,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:58.083Z",
+   "ended_at_utc": "2026-09-19T06:16:58.887Z"
+  },
+  {
    "attempt_id": "f63966cc-d8c3-4b8c-b450-b2ff4123a767",
    "arm_id": "arm-e6-jev",
    "block_id": "e6-repetibilidade",
@@ -8327,6 +8834,19 @@
    "cost_source": "usage_priced",
    "started_at_utc": "2026-09-19T04:14:57.024Z",
    "ended_at_utc": "2026-09-19T04:14:57.763Z"
+  },
+  {
+   "attempt_id": "f7a2066f-2b36-4296-a555-cbb6b5de5352",
+   "arm_id": "arm-e10-llm-economico",
+   "block_id": "e10-llm-economico",
+   "provider": "openrouter",
+   "model_resolved": "meta-llama/llama-3.1-8b-instruct",
+   "status": "success",
+   "reserved_nusd": 6558720,
+   "settled_nusd": 6681,
+   "cost_source": "provider_reported",
+   "started_at_utc": "2026-09-19T06:16:23.905Z",
+   "ended_at_utc": "2026-09-19T06:16:25.405Z"
   },
   {
    "attempt_id": "f7ad5190-b211-4828-b1f6-bf931a862c6e",

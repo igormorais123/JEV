@@ -3,7 +3,7 @@
 **Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA
 **Execução:** 18–19 de setembro de 2026
 **Sistema avaliado:** Jev 1.13 (`typesafe/jev-1.13` via OpenRouter e `jev-1.13.0` direto)
-**Custo total:** US$ 0,018532027 em 665 chamadas, de um teto autorizado de US$ 5,00
+**Custo total:** US$ 0,018876461 em 705 chamadas, de um teto autorizado de US$ 5,00
 **Código, dados e registros:** este repositório, com pré-registros em `planning/` e relatórios
 brutos em `runs/`
 
@@ -11,12 +11,14 @@ brutos em `runs/`
 
 ## 1. Recomendação
 
-**Não adote o Jev com base neste estudo. Um LLM genérico e barato empata com ele dentro da
-margem de erro, e enquanto isso for verdade o estudo não mostrou que o Jev é necessário.**
+**Não decida sobre o Jev com base neste estudo. A evidência sobre a necessidade dele está
+dividida: na partição de teste um LLM genérico e barato empata com ele dentro da margem de erro;
+em 20 famílias, não empata.**
 
 Esta recomendação substitui a anterior, que era "use o Jev como classificador consultivo com
-corte de confiança em 0,90". A mudança não veio de opinião: veio do experimento E10, executado
-em 19 de setembro, **depois** de o relatório estar escrito e depois de treze rodadas de revisão.
+corte de confiança em 0,90". A mudança não veio de opinião: veio dos experimentos E10 e E10b,
+executados em 19 de setembro, **depois** de o relatório estar escrito e depois de treze rodadas
+de revisão.
 
 Até o E10, o único comparador deste estudo era uma **regra congelada escrita por mim** — o
 comparador mais fácil de vencer que existe. A décima terceira rodada de revisão adversarial
@@ -42,9 +44,31 @@ empate. O que cai não é o desempenho do Jev — ele continua acertando mais em
 e nos três gabaritos. O que cai é a afirmação de que **ele é necessário**. Um modelo de 8B que
 custa uma fração do preço chega perto o suficiente para que esta amostra não os separe.
 
-**O que fazer com isso:** antes de adotar qualquer um dos dois, rodar os dois lado a lado em
-amostra maior e colhida de uso real. O desenho está pronto e custa pouco: as 40 chamadas do E10
-custaram US$ 0,000358.
+**E então o E10b virou o resultado para o outro lado.** Com o intervalo primário encostando em
+zero, dobrei o poder: o mesmo comparador nas 10 famílias do piloto, sob emenda escrita antes da
+execução. Ali o Jev faz 0.9250 contra 0.7250 do
+comparador — diferença **20,0%**, IC95
+[10,0%; 30,0%], que **separa** de zero. Nas
+20 famílias das duas partições juntas: **13,8%**,
+IC95 [7,5%; 20,0%], que também separa.
+
+A emenda mandava tratar isso como secundário porque *"o piloto guiou o desenho do prompt do
+Jev"*. **Fui conferir no histórico do repositório e essa premissa não se sustenta:** as
+instruções entraram uma única vez, no commit `9f6d13b` de 18/09, junto com o corpus piloto, e
+nunca mais mudaram. Não houve iteração de prompt. Sobra um viés menor e real — a rubrica e o
+corpus piloto foram escritos juntos, então a rubrica casa com aquele corpus por construção —, e
+sobra o fato decisivo: **a decisão de olhar o piloto foi tomada depois de eu ver o resultado
+primário.**
+
+Por isso a recomendação não volta a ser "use o Jev". Escolher agora a leitura de 20 famílias,
+que é justamente a que devolve a conclusão que eu já tinha publicado, seria escolher o resultado
+depois de vê-lo — o vício que este relatório passa dez seções condenando. E também não é "os
+dois empatam", porque em 20 famílias eles não empatam. É a terceira leitura, que é a única que
+os dados aguentam: **a evidência não basta para decidir.**
+
+**O que fazer com isso:** rodar os dois lado a lado num corpus novo, pré-registrado, com pelo
+menos 30 famílias, colhido de uso real. É o desempate, e custa quase nada: as 80 chamadas do E10
+e do E10b custaram US$ 0,000702 somadas.
 
 *(Registro de método: este resultado poderia ter ficado fora do relatório. O E10 não estava no
 plano original, foi sugerido por um revisor adversarial, contraria a conclusão que eu já havia
@@ -101,7 +125,7 @@ faixa.)*
 que tem 40. Misturar denominadores é o mesmo vício que eu vinha corrigindo no painel, e ele
 estava aqui.)*
 
-**Confiança: 0,2.** Este número deixou de ser
+**Confiança: 0,25.** Este número deixou de ser
 um julgamento meu e passou a ser uma conta com as penalidades declaradas, partindo de 1,0:
 
 - a política se apoia em 40 casos, menos de cem (-0,20)
@@ -109,7 +133,7 @@ um julgamento meu e passou a ser uma conta com as penalidades declaradas, partin
 - o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)
 - corpus construído pelo avaliador, não colhido de uso real (-0,10)
 - zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)
-- o braço do LLM econômico foi executado e a vantagem do Jev sobre ele não separou de zero (-0,20)
+- o braço do LLM econômico separa de zero em 20 famílias e não separa na partição de teste: a evidência sobre a necessidade do Jev está dividida (-0,15)
 
 Os dois últimos descontos entraram na décima terceira rodada, cobrados pela revisão
 adversarial: o teto de erro já estava escrito na seção 6 e não era descontado, e o braço do LLM
@@ -365,6 +389,42 @@ Três detalhes de método que impedem este resultado de ser lido como favorável
 são equivalentes (o poder é baixo), ou que o Jev é dispensável em produção (o corpus continua
 sendo escrito por mim). O que diz é uma coisa só, e basta para mudar a recomendação: **este
 estudo não mostrou que o Jev é necessário.**
+
+---
+
+### 3.9 O mesmo comparador no piloto (E10b), e o que ele fez com a conclusão
+
+O intervalo do E10 encostou em zero no limite inferior. Com 10 famílias, é o caso em que mais
+poder muda a leitura — e havia 10 famílias disponíveis, a US$ 0,0004. Rodei, sob a Emenda 1 do
+pré-registro, escrita antes da execução.
+
+| Conjunto | Famílias | Jev | llama-3.1-8b | Diferença | IC95 | Separa de zero? |
+|---|---|---|---|---|---|---|
+| Confirmação (teste) | 10 | 0,9750 | 0,9000 | 7,5% | [0,0%; 15,0%] | **não** |
+| Piloto | 10 | 0.9250 | 0.7250 | 20,0% | [10,0%; 30,0%] | sim |
+| Os 80, 20 famílias | 20 | 0,9500 | 0,8125 | 13,8% | [7,5%; 20,0%] | sim |
+
+A assimetria é grande e merece ser dita: o comparador cai de 90,0% na confirmação para
+72.5% no piloto, enquanto o Jev cai de 97,5% para
+92.5%. O corpus piloto é mais duro **para o comparador**, não para
+os dois igualmente.
+
+**A premissa da minha própria emenda não sobreviveu à conferência.** A emenda dizia que o piloto
+havia guiado o desenho do prompt do Jev e que por isso o resultado ali deveria ser lido como
+secundário. Fui ao histórico: as instruções e os critérios entraram uma única vez, no commit
+`9f6d13b` de 18/09, junto com o corpus piloto, e nunca foram alterados; o corpus piloto também
+não mudou depois de rodar. Não houve iteração de prompt contra resultados. Registrei isso como
+nota de verificação no próprio pré-registro, em vez de reescrever a emenda.
+
+O que continua valendo contra a leitura ampliada é outra coisa, e é suficiente: **eu escolhi
+rodar o piloto depois de ver o resultado primário.** Uma análise decidida depois de ver o
+resultado que ela vai corrigir não pode ser apresentada como se tivesse sido planejada antes —
+ainda que a conta esteja certa, e ela está.
+
+Por isso o relatório não elege nenhum dos dois lados. A partição que existe para decidir não
+separa; a leitura com o dobro das famílias separa; e a segunda foi escolhida depois da primeira.
+A conclusão honesta é a que ficou na seção 1: **a evidência não basta para decidir**, e o
+desempate é um corpus novo com pelo menos 30 famílias, pré-registrado antes de qualquer chamada.
 
 ---
 
@@ -641,7 +701,7 @@ resultado contrariou a recomendação que este documento vinha fazendo desde a p
 a recomendação mudou. Custou US$ 0,000358 e treze rodadas de revisão não o teriam encontrado,
 porque nenhuma delas estava olhando para fora do que já havia sido medido.
 
-Estado final: **665 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018532027 de
+Estado final: **705 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018876461 de
 US$ 5,00, 143 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
