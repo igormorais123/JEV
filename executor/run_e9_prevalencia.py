@@ -55,6 +55,29 @@ def carregar():
     return casos
 
 
+def limite_superior_erro(erros, total, confianca=0.95):
+    """Clopper-Pearson unilateral, para qualquer numero de erros.
+
+    A versao anterior so dava limite para classe sem erro nenhum, e usava a formula copiada
+    a mao. Classe com um erro em 16 ficava sem intervalo, que e justamente onde o intervalo
+    mais importa.
+    """
+    if total == 0:
+        return 1.0
+    if erros == 0:
+        return round(1 - (1 - confianca) ** (1 / total), 4)
+    from math import comb
+    baixo, alto = erros / total, 1.0
+    for _ in range(200):
+        meio = (baixo + alto) / 2
+        cauda = sum(comb(total, k) * meio ** k * (1 - meio) ** (total - k) for k in range(erros + 1))
+        if cauda > 1 - confianca:
+            baixo = meio
+        else:
+            alto = meio
+    return round((baixo + alto) / 2, 4)
+
+
 def acuracia_por_classe(casos):
     por_classe = defaultdict(lambda: [0, 0])
     for c in casos:
@@ -63,11 +86,8 @@ def acuracia_por_classe(casos):
             por_classe[c['gold']][0] += 1
     saida = {}
     for classe, (a, n) in sorted(por_classe.items()):
-        item = {'acertos': a, 'casos': n, 'taxa': round(a / n, 4)}
-        if a == n:
-            # Uma classe sem erro nao tem risco zero: com 16 casos o limite ainda e alto.
-            item['limite_superior_erro'] = round(1 - 0.05 ** (1 / n), 4)
-        saida[classe] = item
+        saida[classe] = {'acertos': a, 'casos': n, 'taxa': round(a / n, 4),
+                         'limite_superior_erro': limite_superior_erro(n - a, n)}
     return saida
 
 
@@ -88,11 +108,6 @@ def aceitacao(casos, corte):
         'custo_total_usd': round(custo_api + custo_humano, 4),
         'custo_por_decisao_usd': round((custo_api + custo_humano) / len(casos), 6) if casos else None,
     }
-
-
-def limite_superior_zero_erro(n, confianca=0.95):
-    """Clopper-Pearson unilateral para zero erro em n. 16/16 nao e taxa de erro zero."""
-    return round(1 - (1 - confianca) ** (1 / n), 4) if n else 1.0
 
 
 def main():

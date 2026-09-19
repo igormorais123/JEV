@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 30,
- "updated_at": "2026-09-19T05:01:28.843961+00:00",
+ "revision": 38,
+ "updated_at": "2026-09-19T05:09:28.513090+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18522,12 +18522,27 @@
    "at": "2026-09-19T04:55:00.855709+00:00",
    "kind": "manual",
    "text": "Decisao de encerramento da fase: a rodada aprofundada dos 15 sistemas fica bloqueada por dependencia de dados reais, e isso esta registrado em cada sistema. O estudo entrega o que era possivel saber sem dados de producao: nove experimentos sobre o Jev, com pre-registro, comparadores congelados, conjunto de confirmacao e segundo anotador independente. Relatorio final em docs/RELATORIO-FINAL-JEV.md."
+  },
+  {
+   "at": "2026-09-19T05:03:43.384158+00:00",
+   "kind": "manual",
+   "text": "Sexta rodada de revisao independente (Grok 4.6 via Cursor), feita sobre o painel ja pronto. O achado principal nao foi de codigo: o cartao do E8 citava so os dois casos em que o anotador independente apoia o Jev e omitia os dois em que ele confirma o gabarito. Corrigido, e a confianca do veredito caiu de 0,75 para 0,60 por causa disso. Um [P1] financeiro real: authorize() desfazia a pausa por estouro de teto, porque todo runner o chama no arranque e a funcao era INSERT OR REPLACE com status fixo em running. A trava criada na quinta rodada nao valia nada no caminho de producao. 102 testes passam."
+  },
+  {
+   "at": "2026-09-19T05:09:28.447463+00:00",
+   "kind": "evidence",
+   "text": "Setima rodada de revisao: a correcao da sexta criou defeito novo, como sempre. authorize() deixou de apagar a pausa, mas continuava reescrevendo o teto do experimento; como todo runner o chama com US$ 5 no arranque, uma emenda que baixasse o teto para US$ 1 era desfeita pelo proximo run_e*. Agora authorize so reduz, e ampliar exige metodo proprio com motivo e evidencia. 108 testes passam."
+  },
+  {
+   "at": "2026-09-19T05:09:28.447463+00:00",
+   "kind": "evidence",
+   "text": "ADJUDICACAO: os 9 casos em disputa entre os dois anotadores foram julgados por um terceiro juiz cego (gpt-5.6-sol-high), que recebeu so a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 de 9. Isso CORRIGE a leitura anterior deste painel, e corrige contra o modelo: o Jev erra 3 casos no gabarito adjudicado, nao 2. A acuracia nos 80 casos fica entre 0,8875 e 0,9750 conforme o gabarito; sob o adjudicado, 0,9625."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:01:28.843832+00:00",
+  "atualizado_em": "2026-09-19T05:09:28.512974+00:00",
   "veredito": {
-   "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
+   "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.6,
    "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos, o gabarito ainda é de um anotador humano só, e a conta de custo usa tempo humano declarado, nunca cronometrado."
@@ -18607,7 +18622,16 @@
    },
    {
     "chave": "e8",
-    "titulo": "Segundo anotador independente (E8)",
+    "titulo": "Gabarito adjudicado (E8)",
+    "valor": "96.2%",
+    "comparacao": "77/80 sob o gabarito de três juízes",
+    "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não 2. Acurácia entre 88.8% e 96.2% conforme o gabarito adotado.",
+    "fonte": "gpt-5.6-sol-high via Cursor CLI, cego a quem escreveu cada leitura",
+    "estado": "pronto"
+   },
+   {
+    "chave": "e8b",
+    "titulo": "Concordância entre anotadores (E8)",
     "valor": "kappa 0.8593",
     "comparacao": "concordância bruta 88.8%",
     "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev, o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88.8%, não 95%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",

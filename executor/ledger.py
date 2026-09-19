@@ -161,8 +161,8 @@ class Ledger:
                   seed=20260918, protocol_version='1.0'):
         with self._tx(immediate=True):
             existente = self.db.execute(
-                'SELECT status, amendments_json FROM experiments WHERE experiment_id = ?',
-                (self.experiment_id,)).fetchone()
+                'SELECT status, amendments_json, budget_cap_nusd FROM experiments'
+                ' WHERE experiment_id = ?', (self.experiment_id,)).fetchone()
             if existente is None:
                 self.db.execute(
                     'INSERT INTO experiments(experiment_id,protocol_version,hypothesis,primary_metric,'
@@ -180,13 +180,50 @@ class Ledger:
                 raise BudgetError(
                     'Experimento pausado por estouro anterior; reautorizar nao retoma. '
                     'Use retomar_experimento(motivo, evidencia).')
+            # Reautorizar NUNCA amplia o teto. Os runners chamam authorize(US$ 5) no arranque;
+            # se isso pudesse subir o limite, uma emenda que baixou o teto para US$ 1 viraria
+            # decoracao no JSON e o proximo `python -m executor.run_e*` devolveria os US$ 5.
+            # Baixar e permitido, porque e sempre mais conservador.
+            atual = int(existente['budget_cap_nusd'])
+            efetivo = min(atual, int(cap_nusd))
             self.db.execute(
                 'UPDATE experiments SET protocol_version = ?, hypothesis = ?, primary_metric = ?,'
                 ' seed = ?, budget_cap_nusd = ? WHERE experiment_id = ?',
-                (protocol_version, hypothesis, metric, seed, int(cap_nusd), self.experiment_id))
-            self._event(None, 'authorize', int(cap_nusd),
-                        {'cap_nusd': int(cap_nusd), 'reautorizacao': True,
+                (protocol_version, hypothesis, metric, seed, efetivo, self.experiment_id))
+            self._event(None, 'authorize', efetivo,
+                        {'cap_nusd': efetivo, 'reautorizacao': True,
+                         'cap_pedido_nusd': int(cap_nusd), 'cap_anterior_nusd': atual,
+                         'recusou_ampliacao': int(cap_nusd) > atual,
                          'status_preservado': existente['status']})
+        return efetivo
+
+    def ampliar_teto_do_experimento(self, cap_nusd, motivo, evidence):
+        """Unico caminho para SUBIR o teto de um experimento que ja existe.
+
+        `authorize` so reduz, porque e chamado no arranque de todo runner e ampliar ali
+        desfaria qualquer emenda sem deixar rastro. Ampliar e decisao, entao exige motivo,
+        evidencia e registro proprio — e nunca passa do teto da carteira.
+        """
+        if not motivo or not evidence:
+            raise LedgerStateError('Ampliar teto exige motivo e evidencia')
+        with self._tx(immediate=True):
+            linha = self.db.execute(
+                'SELECT status, budget_cap_nusd FROM experiments WHERE experiment_id = ?',
+                (self.experiment_id,)).fetchone()
+            if linha is None:
+                raise LedgerStateError('Experimento inexistente')
+            if linha['status'] == 'paused':
+                raise BudgetError('Experimento pausado; retome antes de ampliar o teto')
+            if int(cap_nusd) < int(linha['budget_cap_nusd']):
+                raise LedgerStateError('Este caminho so amplia; para reduzir, use authorize')
+            if int(cap_nusd) > self.wallet_cap_nusd():
+                raise BudgetError(
+                    f'Teto pedido ({cap_nusd}) passa do teto da carteira ({self.wallet_cap_nusd()})')
+            self.db.execute('UPDATE experiments SET budget_cap_nusd = ? WHERE experiment_id = ?',
+                            (int(cap_nusd), self.experiment_id))
+            self._event(None, 'authorize', int(cap_nusd),
+                        {'ampliacao': motivo, 'cap_anterior_nusd': int(linha['budget_cap_nusd']),
+                         **evidence})
         return int(cap_nusd)
 
     def set_block_cap(self, block_id, cap_nusd):

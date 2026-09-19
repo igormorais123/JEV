@@ -1,4 +1,4 @@
-"""Regressão dos achados da SEXTA rodada de revisão independente (Grok 4.6 via Cursor, 2026-09-19).
+"""Regressão dos achados da SEXTA e da SÉTIMA rodadas de revisão (Grok 4.6 via Cursor, 2026-09-19).
 
 Esta rodada foi a mais dura do estudo, e com razão: ela mostrou que o painel tinha começado a
 contar meia verdade. Os testes de defeito financeiro estão aqui; os defeitos de leitura do
@@ -154,6 +154,81 @@ class PlacarNaoUsaAcuraciaCondicional(unittest.TestCase):
         bloco = {'acertos': 8, 'acuracia_sobre_programados': 0.8, 'casos_programados': 10}
         self.assertEqual(sobre_programados(bloco, []), (0.8, 10))
 
+
+
+class SetimaRodada(unittest.TestCase):
+    """[R7] A correção da sexta rodada criou defeitos novos, como sempre."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.ledger = Ledger(Path(self.temp.name) / 'l.sqlite3', 'exp', prices=PRECOS)
+        self.ledger.set_wallet_cap(usd_to_nusd('5.00'))
+        self.ledger.authorize(usd_to_nusd('5.00'))
+
+    def tearDown(self):
+        self.ledger.close()
+        self.temp.cleanup()
+
+    def teto(self):
+        return self.ledger.db.execute(
+            "SELECT budget_cap_nusd FROM experiments WHERE experiment_id = 'exp'").fetchone()[0]
+
+    def test_reautorizar_nao_devolve_teto_que_a_emenda_tirou(self):
+        """[R7-1] Todo runner chama authorize(US$ 5) no arranque.
+
+        Enquanto isso reescrevia o teto, uma emenda que baixou o limite para US$ 1 virava
+        decoração: bastava relançar o script para ter os US$ 5 de volta, sem registro.
+        """
+        self.ledger.db.execute('UPDATE experiments SET budget_cap_nusd = ? WHERE experiment_id = ?',
+                               (usd_to_nusd('1.00'), 'exp'))
+        efetivo = self.ledger.authorize(usd_to_nusd('5.00'))
+        self.assertEqual(self.teto(), usd_to_nusd('1.00'))
+        self.assertEqual(efetivo, usd_to_nusd('1.00'))
+
+    def test_reautorizar_ainda_pode_reduzir(self):
+        self.ledger.authorize(usd_to_nusd('0.50'))
+        self.assertEqual(self.teto(), usd_to_nusd('0.50'))
+
+    def test_ampliar_exige_motivo_evidencia_e_respeita_a_carteira(self):
+        self.ledger.authorize(usd_to_nusd('1.00'))
+        from executor.ledger import BudgetError, LedgerStateError
+        with self.assertRaises(LedgerStateError):
+            self.ledger.ampliar_teto_do_experimento(usd_to_nusd('2.00'), motivo='', evidence={'e': 1})
+        with self.assertRaises(BudgetError):
+            self.ledger.ampliar_teto_do_experimento(usd_to_nusd('9.00'), motivo='mais casos',
+                                                    evidence={'plano': 'x'})
+        self.ledger.ampliar_teto_do_experimento(usd_to_nusd('2.00'), motivo='mais casos',
+                                                evidence={'plano': 'x'})
+        self.assertEqual(self.teto(), usd_to_nusd('2.00'))
+
+    def test_titulo_do_veredito_cai_quando_a_politica_deixa_erro(self):
+        """[R7-2] O título recomendava o corte 0,90 mesmo que ele passasse a errar."""
+        from executor.placar import titulo_do_veredito
+        ruim = {'por_particao': {'confirmacao (teste)': {'politicas': [
+            {'corte': 0.90, 'erros_entre_aceitos': 2},
+            {'corte': 0.99, 'erros_entre_aceitos': 0}]}}}
+        self.assertIn('0.99', titulo_do_veredito(ruim))
+        pior = {'por_particao': {'confirmacao (teste)': {'politicas': [
+            {'corte': 0.90, 'erros_entre_aceitos': 2},
+            {'corte': 0.99, 'erros_entre_aceitos': 1}]}}}
+        self.assertIn('Revisao humana de todas', titulo_do_veredito(pior))
+        self.assertIn('Sem analise', titulo_do_veredito(None))
+
+    def test_classe_com_erro_tambem_recebe_limite(self):
+        """[R7-3] A função de limite existia e nunca era chamada; classe com erro ficava sem."""
+        from executor.run_e9_prevalencia import acuracia_por_classe
+        casos = [{'gold': 'x', 'jev': 'x'} for _ in range(15)] + [{'gold': 'x', 'jev': 'y'}]
+        saida = acuracia_por_classe(casos)
+        self.assertIn('limite_superior_erro', saida['x'])
+        self.assertGreater(saida['x']['limite_superior_erro'], 0.06)
+
+    def test_ambigua_ausente_e_desconhecida_nao_falsa(self):
+        """[R7-4] Campo ausente virava 'o modelo disse que não é ambíguo'."""
+        import inspect
+
+        from executor import run_e8_anotador
+        fonte = inspect.getsource(run_e8_anotador.perguntar)
+        self.assertIn('if bruto is None', fonte)
 
 if __name__ == '__main__':
     unittest.main()

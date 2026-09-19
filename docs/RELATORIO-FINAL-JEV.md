@@ -30,6 +30,10 @@ US$ 0,080.
 sozinho e repetido cinco vezes, pode mudar de resposta. Um sistema que decide sozinho precisa
 responder igual à mesma pergunta, e este não responde.
 
+**Acurácia do modelo nestes 80 casos: entre 0,8875 e 0,9750, conforme o gabarito adotado.**
+Sob o gabarito adjudicado por três juízes — o mais defensável — são **0,9625**. Reportar só o
+número mais alto seria escolher o gabarito depois de ver o resultado.
+
 **Confiança: 0,60.** Rebaixada de 0,75 depois da sexta rodada de revisão independente, que
 mostrou que o painel havia começado a apresentar duas lacunas conhecidas como se estivessem
 fechadas. Alta para a comparação contra os comparadores congelados — é pareada, pré-registrada e
@@ -131,14 +135,32 @@ vendo apenas as instruções e os critérios — sem o gabarito e sem a resposta
   em 2** (`tri-f06-02`, `tri-f09-04` — erros claros do modelo) e **fica do lado do Jev em 2**
   (`tri-f02-04`, `cnf-g05-02`). Nas outras 7 divergências foi o anotador que caiu na armadilha,
   com o Jev do lado do gabarito.
-- **Sob o gabarito do outro anotador, o Jev faz 0,8875, não 0,95.** Esse número tem de ser dito
-  junto com os demais: a acurácia depende de qual gabarito se adota, e é exatamente essa
-  fragilidade que o experimento veio expor.
-- `cnf-g05-02` é o caso que eu havia declarado contestável **antes** de ver este resultado, na
-  emenda do pré-registro do E7. `tri-f02-04` é mais delicado: é o mesmo caso que o E6 mostra
-  oscilando entre repetições idênticas. Usar a opinião de um classificador instável para
-  impugnar o gabarito seria o inverso de auditoria, e não faço isso aqui — registro que os dois
-  juízes divergem de mim e que o caso fica em aberto até adjudicação humana.
+- **Sob o gabarito do outro anotador, o Jev faz 0,8875, não 0,95.** A acurácia depende de qual
+  gabarito se adota, e é exatamente essa fragilidade que o experimento veio expor.
+
+### 3.6.1 Adjudicação cega dos 9 casos em disputa
+
+A sétima rodada de revisão apontou, com razão, que sem adjudicação o E8 não fechava nada: dois
+anotadores que discordam não produzem verdade, produzem uma disputa. Os 9 casos foram então
+submetidos a um **terceiro juiz** (`gpt-5.6-sol-high`, outro fornecedor ainda), que recebeu só a
+mensagem e as duas leituras **em ordem sorteada**, sem saber qual veio de quem.
+
+| | Resultado |
+|---|---|
+| Casos em que o terceiro juiz confirma o gabarito do autor | **8 de 9** |
+| Casos em que confirma o anotador local | 1 de 9 (`cnf-g05-02`) |
+| Casos em que propôs uma terceira leitura | 0 |
+
+**Este resultado corrige a leitura anterior deste relatório, e corrige-a contra o modelo.** Eu
+havia registrado que em 2 dos 4 erros "o suspeito é o meu gabarito". A adjudicação diz outra
+coisa: em `tri-f02-04` o terceiro juiz ficou comigo, e o Jev errou mesmo. Só `cnf-g05-02` — o
+caso que eu já havia declarado contestável antes de ver qualquer um destes resultados — mudou de
+lado, e mudou contra mim.
+
+**Sob o gabarito adjudicado, o Jev faz 0,9625 (77/80)**, com três erros: `tri-f02-04`,
+`tri-f06-02` e `tri-f09-04`. A faixa honesta de acurácia do modelo nestes 80 casos é
+**0,8875 a 0,9750**, conforme o gabarito adotado; o adjudicado, que é o mais defensável dos três,
+fica em 0,9625.
 
 **Ressalva que não pode ser omitida:** um modelo de 7B não é anotador humano, e o E8 **não é a
 adjudicação de gabarito** que o estudo precisa. Ele recebeu a minha rubrica e reproduziu a minha
@@ -146,8 +168,10 @@ rubrica; kappa alto aqui mede reprodutibilidade, não validade do constructo. O 
 divergências mostra viés claro — em 6 das 9 ele viu ação onde eu li pedido de informação, que é
 precisamente a armadilha que as instruções mandam evitar. E os 71 casos de "consenso" são os
 casos em que os dois concordam, ou seja, os fáceis: a acurácia de 0,9718 ali **não é uma medida
-melhor, é uma medida sobre um subconjunto mais fácil**, e não corrige nada. **O segundo anotador
-humano continua pendente, e nenhum dos 9 casos em disputa foi adjudicado.**
+melhor, é uma medida sobre um subconjunto mais fácil**, e não corrige nada. Os 9 casos em disputa **foram adjudicados** (seção 3.6.1), mas por um terceiro
+modelo, não por uma pessoa. **O anotador humano continua pendente**, e o que a adjudicação
+mostra é que a rubrica é reproduzível entre juízes independentes — não que ela seja a definição
+certa do problema.
 
 ---
 
@@ -179,8 +203,11 @@ não por melhora do Jev. **Parcialmente refutada, com ressalva permanente.**
 ### Contra-hipótese 2: o gabarito está errado onde o Jev "erra"
 **Argumento:** um anotador só define a verdade que ele mesmo vai avaliar.
 **Teste executado:** E8, anotador independente e cego.
-**Resultado:** em 2 dos 4 erros, o juiz independente apoiou o Jev. **Confirmada em parte** — e
-isso significa que a acurácia real do Jev pode ser mais alta do que a reportada, não mais baixa.
+**Teste executado:** E8 mais a adjudicação cega dos 9 casos em disputa por um terceiro juiz.
+**Resultado: refutada, e refutada contra o modelo.** O terceiro juiz confirmou o meu gabarito em
+8 dos 9 casos. Sob o gabarito adjudicado o Jev faz 0,9625, com três erros reais — não dois. A
+hipótese de que "o gabarito é que está errado onde o modelo erra" só se sustentou em um caso, o
+mesmo que eu já havia declarado contestável antes de ter qualquer resultado.
 
 ### Contra-hipótese 3: o ganho é do formato, não do modelo
 **Argumento:** talvez lote, ordem das opções ou distração expliquem os resultados.
@@ -295,8 +322,19 @@ gabarito. Corrigido no código e na seção 3.6, e é a razão de a confiança d
 vez de prosa fixa: um texto com números escritos à mão continua afirmando o mesmo depois que os
 dados mudam.
 
+A sétima rodada revisou as correções da sexta e encontrou o que o protocolo desta casa sempre
+encontra: um defeito novo, criado pela própria correção. O `authorize()` corrigido deixou de
+apagar a pausa, mas continuava reescrevendo o teto do experimento — e como todo runner o chama
+com US$ 5,00 no arranque, **uma emenda que baixasse o teto para US$ 1,00 seria desfeita pelo
+próximo `python -m executor.run_e*`**, sem registro. Agora `authorize` só reduz; ampliar exige
+`ampliar_teto_do_experimento(motivo, evidência)` e nunca passa do teto da carteira.
+
+A mesma rodada cobrou a adjudicação dos 9 casos em disputa do E8, e a cobrança estava certa:
+dois anotadores que discordam não produzem verdade. A adjudicação foi feita (seção 3.6.1) e
+**mudou o resultado contra o modelo**, não a favor.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 102 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 108 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

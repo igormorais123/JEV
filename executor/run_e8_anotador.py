@@ -75,7 +75,10 @@ def perguntar(texto):
     # bool('false') e True. Um modelo que responda a string em vez do booleano marcaria
     # todo caso como ambiguo, e a contagem de ambiguidade viraria ruido.
     bruto = saida.get('ambigua')
-    if isinstance(bruto, str):
+    if bruto is None:
+        # Campo ausente nao e "o modelo disse que nao e ambiguo": e ausencia de resposta.
+        ambigua = None
+    elif isinstance(bruto, str):
         ambigua = bruto.strip().lower() in ('true', '1', 'sim', 'yes')
     else:
         ambigua = bool(bruto)

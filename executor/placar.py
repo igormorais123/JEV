@@ -50,6 +50,27 @@ def sobre_programados(bloco, casos):
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
 
 
+def titulo_do_veredito(e9):
+    """O titulo tambem precisa cair quando o dado cair.
+
+    Antes era uma frase cravada recomendando o corte de 0,90. Se o E9 sumisse, ou se a
+    politica passasse a deixar erro entre os aceitos, o titulo continuaria recomendando.
+    """
+    if not e9:
+        return 'Sem analise de politica: nao ha recomendacao operacional'
+    confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)') or {}
+    politica = next((p for p in confirmacao.get('politicas', []) if p['corte'] == 0.90), None)
+    if politica is None:
+        return 'Uso consultivo com revisao humana'
+    if politica['erros_entre_aceitos'] == 0:
+        return 'Corte de confianca em 0,90 com revisao humana do resto'
+    melhor = next((p for p in confirmacao['politicas']
+                   if p['erros_entre_aceitos'] == 0), None)
+    if melhor:
+        return f"Corte de confianca em {melhor['corte']} com revisao humana do resto"
+    return 'Revisao humana de todas as decisoes: nenhum corte zerou o erro'
+
+
 def texto_do_veredito(e9, e6):
     """O veredito e calculado, nao escrito a mao.
 
@@ -95,6 +116,7 @@ def montar():
     e6 = ler('e6-repetibilidade/relatorio.json')
     e7 = ler('e7-confirmacao/relatorio.json')
     e8 = ler('e8-anotador/relatorio.json')
+    adj = ler('e8-anotador/adjudicacao.json')
     e9 = ler('e9-prevalencia/relatorio.json')
     pareada = ler('analise-pareada.json') or {}
 
@@ -220,8 +242,23 @@ def montar():
         erros = [a for a in e8['anotacoes'] if a['jev'] and a['jev'] != a['gold']]
         apoiam_jev = [a for a in erros if a['anotador'] == a['jev']]
         apoiam_gabarito = [a for a in erros if a['anotador'] == a['gold']]
+        if adj:
+            placar_adj = adj['placar']
+            g = adj['gabarito_adjudicado']
+            cartoes.append(cartao(
+                'e8', 'Gabarito adjudicado (E8)', pct(g['acuracia']),
+                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} sob o gabarito de três juízes",
+                (f"Os {len(adj['casos'])} casos em disputa foram julgados por um terceiro juiz cego, que "
+                 'recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito '
+                 f"do autor em {placar_adj['confirmam_o_autor']} e o do anotador local em "
+                 f"{placar_adj['confirmam_o_modelo_local']}. Isso desfaz a leitura anterior deste painel: "
+                 f"o Jev erra {len(g['erros'])} casos no gabarito adjudicado "
+                 f"({', '.join(g['erros'])}), e não 2. Acurácia entre "
+                 f"{pct(min(e8['acuracia_jev_sob_meu_gabarito'], e8['acuracia_jev_sob_gabarito_do_outro']))} "
+                 f"e {pct(g['acuracia'])} conforme o gabarito adotado."),
+                f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura"))
         cartoes.append(cartao(
-            'e8', 'Segundo anotador independente (E8)', f"kappa {e8['kappa_cohen']}",
+            'e8b', 'Concordância entre anotadores (E8)', f"kappa {e8['kappa_cohen']}",
             f"concordância bruta {pct(e8['concordancia_bruta'])}",
             (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Dos "
              f"{len(erros)} erros do Jev, o anotador independente confirma o gabarito em "
@@ -278,7 +315,7 @@ def montar():
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
-            'titulo': 'Corte de confiança em 0,90 com revisão humana do resto',
+            'titulo': titulo_do_veredito(e9),
             'texto': texto_do_veredito(e9, e6),
             'confianca': 0.6,
             'confianca_nota': ('Calibrada para baixo depois da sexta revisão independente. Alta para a '
