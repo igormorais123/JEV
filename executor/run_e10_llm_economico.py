@@ -78,6 +78,11 @@ def interpretar(corpo):
         dados = json.loads(conteudo)
     except ValueError:
         return None, None, 'json invalido: ' + conteudo[:80]
+    # [E12] Um dos comparadores devolveu uma LISTA de objetos em vez do objeto pedido, e esta
+    # funcao quebrou a execucao inteira com AttributeError. Resposta fora do contrato e erro do
+    # comparador, como qualquer outra: aqui ela vira erro, e nao excecao.
+    if not isinstance(dados, dict):
+        return None, None, 'json fora do contrato (' + type(dados).__name__ + '): ' + conteudo[:80]
     acao = dados.get('acao')
     if acao not in CLASSES:
         return None, None, 'classe fora do contrato: ' + repr(acao)

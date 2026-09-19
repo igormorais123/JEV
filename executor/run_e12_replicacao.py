@@ -183,6 +183,41 @@ def repescar(casos, ledger, key, precos, tentativas_max=3, pausa=6.0):
     return pendentes
 
 
+def fundir_com_o_corpus():
+    """O corpus com o que ja foi respondido por cima, para retomar sem perder nada.
+
+    A execucao morreu no meio do quarto brace por um defeito meu — um comparador devolveu uma
+    LISTA de objetos e o interpretador so previa objeto. As 361 chamadas ja pagas estao no bruto,
+    e refaze-las seria gastar de novo e, pior, reexecutar bracos que o pre-registro congela.
+    """
+    respondidos = {c['case_id']: c for c in (recuperar() or [])}
+    casos = []
+    for caso in carregar():
+        caso.update(respondidos.get(caso['case_id'], {}))
+        casos.append(caso)
+    return casos
+
+
+def faltantes(casos, chave):
+    """Casos em que aquele braco nunca chegou a ser chamado."""
+    return [c for c in casos if not c.get(chave + '_attempt_id')]
+
+
+def completar(casos, ledger, key, precos):
+    """Chama so o que falta, brace a brace, e nunca o que ja tem tentativa registrada."""
+    pendentes = faltantes(casos, 'jev')
+    if pendentes:
+        print('-- jev: %d caso(s) faltando' % len(pendentes), flush=True)
+        braco_jev(pendentes, ledger, key)
+    for chave, modelo in COMPARADORES:
+        pendentes = faltantes(casos, chave)
+        if not pendentes:
+            continue
+        print('')
+        print('-- %s: %s (%d caso(s) faltando)' % (chave, modelo, len(pendentes)), flush=True)
+        braco_comparador(chave, modelo, pendentes, ledger, key, precos)
+
+
 def gabaritos(casos):
     """Os três gabaritos do estudo, caso a caso, para este corpus.
 
@@ -287,18 +322,21 @@ def custo_por_mil(casos, campos):
     return saida
 
 
+def registrar_bracos(ledger):
+    ledger.authorize(usd_to_nusd('5.00'),
+                     hypothesis='O Jev e um LLM generico barato acertam igualmente a triagem',
+                     metric='diferenca pareada de acuracia contra quatro comparadores, '
+                            'em corpus novo de 30 familias')
+    ledger.set_block_cap(BLOCK, usd_to_nusd('0.80'))
+    ledger.register_arm(ARM_JEV, 'S01', PROVIDER, MODELO_JEV, endpoint='/api/alpha/decisions')
+    for chave, modelo in COMPARADORES:
+        ledger.register_arm('arm-e12-' + chave, 'S01', PROVIDER, modelo,
+                            endpoint='/api/v1/chat/completions')
+
+
 def executar_todos(casos, key, precos):
     with Ledger(DB, EXPERIMENT) as ledger:
-        ledger.authorize(usd_to_nusd('5.00'),
-                         hypothesis='O Jev e um LLM generico barato acertam igualmente a triagem',
-                         metric='diferenca pareada de acuracia contra quatro comparadores, '
-                                'em corpus novo de 30 familias')
-        ledger.set_block_cap(BLOCK, usd_to_nusd('0.80'))
-        ledger.register_arm(ARM_JEV, 'S01', PROVIDER, MODELO_JEV,
-                            endpoint='/api/alpha/decisions')
-        for chave, modelo in COMPARADORES:
-            ledger.register_arm('arm-e12-' + chave, 'S01', PROVIDER, modelo,
-                                endpoint='/api/v1/chat/completions')
+        registrar_bracos(ledger)
         braco_jev(casos, ledger, key)
         for chave, modelo in COMPARADORES:
             print('\n-- ' + chave + ': ' + modelo, flush=True)
@@ -390,6 +428,8 @@ def main():
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--so-analisar', action='store_true',
                         help='refaz a analise a partir de runs/e12-replicacao/respostas.jsonl')
+    parser.add_argument('--continuar', action='store_true',
+                        help='chama so os casos que nenhum braco chegou a responder')
     parser.add_argument('--repescar', action='store_true',
                         help='refaz so as chamadas que morreram no transporte (Emenda 1)')
     args = parser.parse_args()
@@ -403,12 +443,13 @@ def main():
         analisar(casos, None, None)
         return
 
-    if args.repescar:
-        casos = recuperar()
-        if not casos:
-            raise SystemExit('nao ha bruto em runs/e12-replicacao/respostas.jsonl')
+    if args.repescar or args.continuar:
+        casos = fundir_com_o_corpus()
         key = load_api_key()[0]
         with Ledger(DB, EXPERIMENT) as ledger:
+            registrar_bracos(ledger)
+            if args.continuar:
+                completar(casos, ledger, key, precos)
             pendentes = repescar(casos, ledger, key, precos)
             comprometido = ledger.wallet_committed_nusd()
             disponivel = ledger.wallet_available_nusd()
