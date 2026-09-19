@@ -21,6 +21,8 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import gabarito
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'runs' / 'e9-prevalencia'
 
@@ -42,17 +44,25 @@ CUSTO_HORA_HUMANA_USD = 12.0
 
 
 def carregar():
+    """Le as respostas do Jev, mas o gabarito vem do modulo oficial, nao do relatorio.
+
+    Enquanto cada parte do estudo lia o `gold` do proprio relatorio, o painel passou a exibir
+    tres gabaritos ao mesmo tempo sem dizer qual estava usando em cada numero.
+    """
+    oficial, procedencia = gabarito.adjudicado()
     casos = []
     for relatorio in ('e1-triagem', 'e7-confirmacao'):
         alvo = ROOT / 'runs' / relatorio / 'relatorio.json'
         if alvo.exists():
             dados = json.loads(alvo.read_text(encoding='utf-8'))
             for c in dados['casos']:
-                casos.append({'case_id': c['case_id'], 'gold': c['gold'], 'jev': c.get('jev'),
-                              'confidence': c.get('jev_confidence'),
+                entrada = oficial.get(c['case_id'], {})
+                casos.append({'case_id': c['case_id'], 'gold': entrada.get('gold', c['gold']),
+                              'gold_do_autor': c['gold'], 'gabarito': entrada.get('origem', 'autor'),
+                              'jev': c.get('jev'), 'confidence': c.get('jev_confidence'),
                               'custo_nusd': c.get('jev_cost_nusd'),
                               'latency_ms': c.get('latency_ms'), 'origem': relatorio})
-    return casos
+    return casos, procedencia
 
 
 def limite_superior_erro(erros, total, confianca=0.95):
@@ -112,7 +122,8 @@ def aceitacao(casos, corte):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    casos = [c for c in carregar() if c['jev']]
+    todos, procedencia = carregar()
+    casos = [c for c in todos if c['jev']]
     # A particao importa. Juntar piloto e confirmacao numa conta so apaga justamente a
     # separacao que o E7 existe para preservar, entao reportamos as tres visoes.
     por_particao = {
@@ -150,6 +161,7 @@ def main():
         'at': datetime.now(timezone.utc).isoformat(),
         'casos_usados': len(casos),
         'origem': 'E1 piloto + E7 confirmacao',
+        'gabarito': gabarito.rotulo(procedencia), 'procedencia_do_gabarito': procedencia,
         'aviso_particao': ('A uniao mistura desenvolvimento e teste. A leitura que vale para decidir '
                            'e a da particao de confirmacao; a uniao esta aqui so por ter mais casos.'),
         'por_particao': {nome: {'casos': len(grupo),

@@ -61,6 +61,11 @@ Respeitando o agrupamento por família, o limite superior do erro ainda chega a 
 
 ### 3.1 Comparação contra comparadores congelados
 
+Os três primeiros resultados abaixo usam o **gabarito do autor**, como pré-registrado. O
+gabarito oficial do estudo, depois da adjudicação da seção 3.6.1, está na seção 3.6 e move os
+números para cima; mantenho os dois porque trocar de gabarito depois de ver o resultado é
+exatamente o que um pré-registro existe para impedir.
+
 | Experimento | Jev | Comparador | Diferença pareada (IC95, bootstrap de famílias) |
 |---|---|---|---|
 | **E1** triagem, piloto (40 casos, 10 famílias) | 0,925 | regra de palavras-chave 0,600 | **+0,325** [0,150; 0,500] |
@@ -158,7 +163,11 @@ caso que eu já havia declarado contestável antes de ver qualquer um destes res
 lado, e mudou contra mim.
 
 **Sob o gabarito adjudicado, o Jev faz 0,9625 (77/80)**, com três erros: `tri-f02-04`,
-`tri-f06-02` e `tri-f09-04`. A faixa honesta de acurácia do modelo nestes 80 casos é
+`tri-f06-02` e `tri-f09-04` — **todos do corpus piloto**. No conjunto de confirmação, que é a
+partição de teste, o gabarito adjudicado deixa o modelo **sem erro nenhum**, porque o único erro
+que havia lá (`cnf-g05-02`) foi justamente o caso que mudou de lado. Isso não deve ser lido como
+"40/40 no teste": é um resultado de 40 casos em que o único erro virou disputa e a disputa foi
+decidida por um terceiro modelo. O número que eu levaria a uma reunião é o de 80 casos, 0,9625. A faixa honesta de acurácia do modelo nestes 80 casos é
 **0,8875 a 0,9750**, conforme o gabarito adotado; o adjudicado, que é o mais defensável dos três,
 fica em 0,9625.
 
@@ -228,9 +237,10 @@ mesmo que eu já havia declarado contestável antes de ter qualquer resultado.
 
 ### Contra-hipótese 5: a acurácia cai numa distribuição de classes realista
 **Argumento:** os corpora são quase balanceados; um canal real não é.
-**Teste executado:** E9, reponderação da matriz de confusão sob quatro distribuições.
-**Resultado:** acurácia esperada entre 0,943 e 0,969 — varia pouco, porque nenhuma classe é
-fraca. **Refutada dentro da suposição de que a dificuldade dentro de cada classe é a mesma do
+**Teste executado:** E9, reponderação da matriz de confusão sob quatro distribuições, no
+gabarito oficial.
+**Resultado:** acurácia esperada entre 0,9502 e
+0,9724 — varia pouco, porque nenhuma classe é fraca. **Refutada dentro da suposição de que a dificuldade dentro de cada classe é a mesma do
 corpus**, que é uma suposição grande e não testada.
 
 ---
@@ -270,7 +280,7 @@ conservadora, não a otimista.
 | Corte 0,99 | 66,3% | 0 | US$ 0,135 | 66,2% |
 | Corte 0,95 | 77,5% | 0 | US$ 0,090 | 77,5% |
 | **Corte 0,90** | **80,0%** | **0** | **US$ 0,080** | **80,0%** |
-| Aceitar tudo | 100% | 4 | US$ 0,000022 | 100% |
+| Aceitar tudo | 100% | 3 | US$ 0,000022 | 100% |
 
 A linha "aceitar tudo" é o que a automação total custaria e o que ela erraria. A diferença entre
 ela e o corte 0,90 é o preço de não errar: US$ 0,08 por decisão.
@@ -298,7 +308,7 @@ ela e o corte 0,90 é o preço de não errar: US$ 0,08 por decisão.
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **sete rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **oito rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
 Grok 4.6 via Cursor). As quatro primeiras encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -348,8 +358,22 @@ fase de sondagem do contrato, provisionadas aqui e não cobradas lá. Nenhum exc
 nenhum gasto sem identidade de provedor. Somando o TypeSafe direto (US$ 0,000992166), o total
 comprometido é US$ 0,018174462.
 
+A oitava rodada não encontrou defeito financeiro novo — o teto passou a ser, nas palavras do
+revisor, "o pedaço mais honesto do repositório". Encontrou coisa pior no painel: depois de
+adjudicar o gabarito, **o placar passou a se contradizer**. O veredito citava 87,5% em 40 casos
+da confirmação e o cartão ao lado citava 80% em 80 casos da união; um cartão do E8 dizia 3 erros
+e o outro dizia 4; e as pendências continuavam pedindo a adjudicação que o painel acabara de
+anunciar. Três gabaritos circulavam ao mesmo tempo e cada parte usava o que tinha à mão.
+
+A correção não foi cosmética: `executor/gabarito.py` passou a definir **um** gabarito oficial
+(o do autor, com os casos em disputa substituídos pela adjudicação), o E9 passou a consumi-lo,
+cada cartão declara qual gabarito está por trás do seu número, e `politica_de_referencia()`
+devolve uma leitura só — sem cair silenciosamente na união quando a partição falta. O teste
+`test_coerencia_placar.py` roda o painel contra os relatórios reais e falha se veredito e cartão
+divergirem.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 108 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 117 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

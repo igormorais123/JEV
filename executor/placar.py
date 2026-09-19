@@ -50,12 +50,62 @@ def sobre_programados(bloco, casos):
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
 
 
+def e7_sob_adjudicado(e7, adj):
+    """O cartao do E7 dizia que o unico erro era contestavel. Depois da adjudicacao, ou ele
+    deixou de ser erro, ou deixou de ser contestavel: em qualquer caso a frase tinha de mudar."""
+    if not adj:
+        return 'Único erro ainda sem adjudicação.'
+    mudados = {c['case_id'] for c in adj['casos'] if c['anotador_1_autor'] != c['terceiro_juiz']}
+    erros_e7 = [e['case_id'] for e in e7['jev'].get('erros', [])]
+    resolvidos = [c for c in erros_e7 if c in mudados]
+    if resolvidos and len(resolvidos) == len(erros_e7):
+        return (f"No gabarito oficial, depois da adjudicação, o E7 fica sem erro nenhum: "
+                f"{', '.join(resolvidos)} mudou de lado. Os erros que sobram no estudo são todos "
+                'do piloto.')
+    if resolvidos:
+        return (f"A adjudicação resolveu {len(resolvidos)} de {len(erros_e7)} erros a favor do "
+                'modelo; os demais seguem sendo erro.')
+    return 'A adjudicação manteve todos os erros do E7.'
+
+
+def pendencias(adj):
+    """O que falta, calculado: a lista nao pode continuar pedindo o que ja foi feito."""
+    lista = []
+    if not adj:
+        lista.append('Adjudicação dos casos em que os anotadores divergem: sem ela, dois '
+                     'anotadores que discordam não produzem gabarito.')
+    else:
+        lista.append('Anotação e adjudicação por pessoas do atendimento real: os três juízes '
+                     'deste estudo são modelos, e modelos grandes tendem a compartilhar a mesma '
+                     'convenção sobre o que é "a ação pedida".')
+    lista.append('Corpus colhido de atendimento real, com a distribuição de classes que o canal '
+                 'tem, em vez de casos construídos e quase balanceados.')
+    lista.append('P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa '
+                 'tempo declarado, nunca cronometrado.')
+    return lista
+
+
+def politica_de_referencia(e9):
+    """A politica do corte 0,90 na particao de confirmacao. UMA, para o painel inteiro.
+
+    O veredito lia a confirmacao e o cartao do E9 lia a uniao, entao o mesmo painel publicava
+    87,5% em 40 casos e 80% em 80 casos para a mesma decisao. Sem fallback silencioso: se a
+    particao sumir, quem chama recebe None e diz isso, em vez de trocar o numero por outro.
+    """
+    if not e9:
+        return None
+    confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)') or {}
+    return next((p for p in confirmacao.get('politicas', []) if p['corte'] == 0.90), None)
+
+
 def nota_de_confianca(adj):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
+    erros = len(adj['gabarito_adjudicado']['erros']) if adj else 4
+    total = adj['gabarito_adjudicado']['casos_com_resposta_do_jev'] if adj else 80
     base = ('Calibrada para baixo depois da sexta revisão independente. Alta para a comparação '
             'contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. '
-            'Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos '
-            'e a conta de custo usa tempo humano declarado, nunca cronometrado.')
+            f'Baixa para qualquer afirmação operacional: o corte de 0,90 vem de {erros} erros em '
+            f'{total} casos e a conta de custo usa tempo humano declarado, nunca cronometrado.')
     if not adj:
         return base + ' O gabarito é de um anotador só e os casos em disputa não foram adjudicados.'
     g = adj['gabarito_adjudicado']
@@ -95,10 +145,7 @@ def texto_do_veredito(e9, e6):
         return 'Sem a analise de politica de aceitacao, o placar nao tem recomendacao operacional.'
     # A particao de confirmacao e a que vale para decidir: sao os casos que nao guiaram o
     # desenho. A uniao entra so na conta de custo, que nao depende de particao.
-    confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)')
-    politica = next((p for p in (confirmacao or {}).get('politicas', []) if p['corte'] == 0.90), None)
-    if politica is None:
-        politica = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+    politica = politica_de_referencia(e9)
     custo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
     tudo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 1.01), None)
     partes = []
@@ -146,7 +193,8 @@ def montar():
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias." if ic else
              'Diferença ainda sem intervalo calculado.'),
-            f"{programados_e1} casos programados, {e1['jev']['n_familias']} famílias"))
+            f"{programados_e1} casos programados, {e1['jev']['n_familias']} famílias; "
+            'gabarito do autor, antes da adjudicação'))
     else:
         cartoes.append(ausente('e1', 'Triagem de atendimento (E1)', 'Piloto não executado.', '—'))
 
@@ -160,7 +208,8 @@ def montar():
             f'regra ingênua {pct(regra_e3)}',
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}]." if ic else 'Sem intervalo calculado.'),
-            f"{programados_e3} casos programados, {e3['jev']['n_familias']} famílias"))
+            f"{programados_e3} casos programados, {e3['jev']['n_familias']} famílias; "
+            'gabarito do autor'))
     else:
         cartoes.append(ausente('e3', 'Suporte por evidência (E3)', 'Piloto não executado.', '—'))
 
@@ -242,9 +291,9 @@ def montar():
             (f"Casos novos, que não guiaram o desenho: diferença {pct(par['diferenca_observada'])}, "
              f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
              '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
-             'armadilhas lexicais. Único erro com gabarito contestável.'),
+             'armadilhas lexicais. ' + e7_sob_adjudicado(e7, adj)),
             f"{e7['jev']['casos_programados']} casos programados, "
-            f"{e7['jev']['n_familias']} famílias novas"))
+            f"{e7['jev']['n_familias']} famílias novas; gabarito do autor"))
     else:
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
                                'Corpus de confirmação ainda não executado.', '—'))
@@ -261,7 +310,7 @@ def montar():
             g = adj['gabarito_adjudicado']
             cartoes.append(cartao(
                 'e8', 'Gabarito adjudicado (E8)', pct(g['acuracia']),
-                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} sob o gabarito de três juízes",
+                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} no gabarito oficial do estudo",
                 (f"Os {len(adj['casos'])} casos em disputa foram julgados por um terceiro juiz cego, que "
                  'recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito '
                  f"do autor em {placar_adj['confirmam_o_autor']} e o do anotador local em "
@@ -273,9 +322,10 @@ def montar():
                 f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura"))
         cartoes.append(cartao(
             'e8b', 'Concordância entre anotadores (E8)', f"kappa {e8['kappa_cohen']}",
-            f"concordância bruta {pct(e8['concordancia_bruta'])}",
+            f"concordância bruta {pct(e8['concordancia_bruta'])}, antes de adjudicar",
             (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Dos "
-             f"{len(erros)} erros do Jev, o anotador independente confirma o gabarito em "
+             f"{len(erros)} erros do Jev NO GABARITO DO AUTOR (o oficial tem outro número, no "
+             'cartão acima), o anotador independente confirma o gabarito em '
              f"{len(apoiam_gabarito)} ({', '.join(a['case_id'] for a in apoiam_gabarito)}) e fica do "
              f"lado do Jev em {len(apoiam_jev)} ({', '.join(a['case_id'] for a in apoiam_jev)}). "
              f"Sob o gabarito do outro anotador o Jev faz "
@@ -290,21 +340,26 @@ def montar():
     if e9:
         proj = e9['projecoes_por_prevalencia']
         valores = [p['acuracia_esperada'] for p in proj.values()]
-        politica = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+        politica = politica_de_referencia(e9)
         fraca = min(e9['acuracia_por_classe'].items(), key=lambda kv: kv[1]['taxa'])
         leitura = (f"A acurácia esperada se move pouco entre as distribuições porque a classe mais "
                    f"fraca ainda faz {fraca[1]['taxa']} — com {fraca[1]['casos']} casos só, o que "
                    'deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a '
                    'conta supõe que a dificuldade dentro de cada classe é a mesma do corpus.')
         if politica:
-            leitura += (f" No corte 0,90 a política aceita {pct(politica['cobertura'])} dos casos com "
-                        f"{politica['erros_entre_aceitos']} erro entre os aceitos.")
+            leitura += (f" No corte 0,90, na partição de confirmação, a política aceita "
+                        f"{pct(politica['cobertura'])} dos {politica['casos']} casos com "
+                        f"{politica['erros_entre_aceitos']} erro entre os aceitos — a mesma leitura "
+                        'que o veredito usa.')
+        else:
+            leitura += (' A partição de confirmação não está no relatório: sem ela o painel não '
+                        'publica cobertura, em vez de trocar pelo número da união.')
         cartoes.append(cartao(
             'e9', 'Sensibilidade à prevalência (E9)',
             f'{min(valores):.3f} a {max(valores):.3f}',
             f'{len(proj)} distribuições de canal', leitura,
-            'reponderação da matriz de confusão; NÃO é a medição de P5, que pedia minutagem humana '
-            'e continua pendente'))
+            f"reponderação da matriz de confusão sob o {e9.get('gabarito', 'gabarito do autor')}; "
+            'NÃO é a medição de P5, que pedia minutagem humana e continua pendente'))
 
     if e6:
         rodadas = list(e6['acuracia_por_rodada'].values())
@@ -338,12 +393,7 @@ def montar():
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}
                       if comprometido is not None else None),
         'relatorio_final': 'docs/RELATORIO-FINAL-JEV.md',
-        'pendencias': [
-            'Segundo anotador cego: o gabarito ainda é de uma pessoa só, e um dos erros do E7 é '
-            'contestável.',
-            'Corpus colhido de atendimento real, com a distribuição de classes que o canal tem.',
-            'P5: fluxo completo com minutagem humana, para custo por decisão de ponta a ponta.',
-        ],
+        'pendencias': pendencias(adj),
     }
     return bloco
 

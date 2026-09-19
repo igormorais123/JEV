@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 41,
- "updated_at": "2026-09-19T05:11:37.487675+00:00",
+ "revision": 44,
+ "updated_at": "2026-09-19T05:15:36.258550+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18542,15 +18542,20 @@
    "at": "2026-09-19T05:11:37.421050+00:00",
    "kind": "evidence",
    "text": "Conciliacao final com o extrato do provedor: ledger US$ 0,017182296 para o OpenRouter contra US$ 0,017095092 cobrados. O ledger esta ACIMA do extrato em US$ 0,000087, que e o provisionamento das chamadas com HTTP 400 que o provedor nao cobra. Excedente absorvido: zero. Gasto sem identidade de provedor: zero. Somando o TypeSafe direto (US$ 0,000992166), a carteira tem US$ 0,018174462 comprometidos e US$ 4,981826 disponiveis do teto de US$ 5,00. O limite de US$ 50 da chave continua sendo barreira do provedor, nao autorizacao."
+  },
+  {
+   "at": "2026-09-19T05:15:36.185463+00:00",
+   "kind": "manual",
+   "text": "Oitava rodada de revisao: nenhum defeito financeiro novo, o teto ficou solido. O problema era o painel se contradizendo depois da adjudicacao: o veredito citava 87,5% em 40 casos da confirmacao e o cartao ao lado citava 80% em 80 casos da uniao; um cartao do E8 dizia 3 erros e o outro 4; e as pendencias continuavam pedindo a adjudicacao que o painel acabara de anunciar. Corrigido na raiz: executor/gabarito.py define UM gabarito oficial, o E9 passou a consumi-lo, cada cartao declara qual gabarito usa, e um teste roda o painel contra os relatorios reais e falha se veredito e cartao divergirem. 117 testes passam."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:11:37.487531+00:00",
+  "atualizado_em": "2026-09-19T05:15:36.258285+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.6,
-   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos e a conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real."
+   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 3 erros em 80 casos e a conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real."
   },
   "cartoes": [
    {
@@ -18559,7 +18564,7 @@
     "valor": "92.5%",
     "comparacao": "regra congelada 60.0%",
     "leitura": "Vantagem de 32.5%, IC95 [15.0%; 50.0%] por reamostragem de famílias.",
-    "fonte": "40 casos programados, 10 famílias",
+    "fonte": "40 casos programados, 10 famílias; gabarito do autor, antes da adjudicação",
     "estado": "pronto"
    },
    {
@@ -18568,7 +18573,7 @@
     "valor": "95.8%",
     "comparacao": "regra ingênua 62.5%",
     "leitura": "Vantagem de 33.3%, IC95 [25.0%; 41.7%].",
-    "fonte": "24 casos programados, 6 famílias",
+    "fonte": "24 casos programados, 6 famílias; gabarito do autor",
     "estado": "pronto"
    },
    {
@@ -18621,15 +18626,15 @@
     "titulo": "Conjunto de confirmação (E7)",
     "valor": "97.5%",
     "comparacao": "regra congelada 32.5%",
-    "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. Único erro com gabarito contestável.",
-    "fonte": "40 casos programados, 10 famílias novas",
+    "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. No gabarito oficial, depois da adjudicação, o E7 fica sem erro nenhum: cnf-g05-02 mudou de lado. Os erros que sobram no estudo são todos do piloto.",
+    "fonte": "40 casos programados, 10 famílias novas; gabarito do autor",
     "estado": "pronto"
    },
    {
     "chave": "e8",
     "titulo": "Gabarito adjudicado (E8)",
     "valor": "96.2%",
-    "comparacao": "77/80 sob o gabarito de três juízes",
+    "comparacao": "77/80 no gabarito oficial do estudo",
     "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não 2. Acurácia entre 88.8% e 96.2% conforme o gabarito adotado.",
     "fonte": "gpt-5.6-sol-high via Cursor CLI, cego a quem escreveu cada leitura",
     "estado": "pronto"
@@ -18638,18 +18643,18 @@
     "chave": "e8b",
     "titulo": "Concordância entre anotadores (E8)",
     "valor": "kappa 0.8593",
-    "comparacao": "concordância bruta 88.8%",
-    "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev, o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88.8%, não 95%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",
+    "comparacao": "concordância bruta 88.8%, antes de adjudicar",
+    "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev NO GABARITO DO AUTOR (o oficial tem outro número, no cartão acima), o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88.8%, não 95%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",
     "fonte": "qwen2.5:7b-instruct local, cego ao gabarito e à resposta do Jev",
     "estado": "pronto"
    },
    {
     "chave": "e9",
     "titulo": "Sensibilidade à prevalência (E9)",
-    "valor": "0.943 a 0.969",
+    "valor": "0.950 a 0.972",
     "comparacao": "4 distribuições de canal",
-    "leitura": "A acurácia esperada se move pouco entre as distribuições porque a classe mais fraca ainda faz 0.9333 — com 15 casos só, o que deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a conta supõe que a dificuldade dentro de cada classe é a mesma do corpus. No corte 0,90 a política aceita 80.0% dos casos com 0 erro entre os aceitos.",
-    "fonte": "reponderação da matriz de confusão; NÃO é a medição de P5, que pedia minutagem humana e continua pendente",
+    "leitura": "A acurácia esperada se move pouco entre as distribuições porque a classe mais fraca ainda faz 0.9375 — com 16 casos só, o que deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a conta supõe que a dificuldade dentro de cada classe é a mesma do corpus. No corte 0,90, na partição de confirmação, a política aceita 87.5% dos 40 casos com 0 erro entre os aceitos — a mesma leitura que o veredito usa.",
+    "fonte": "reponderação da matriz de confusão sob o gabarito adjudicado (1 caso(s) mudaram em relação ao do autor); NÃO é a medição de P5, que pedia minutagem humana e continua pendente",
     "estado": "pronto"
    },
    {
@@ -18668,9 +18673,9 @@
   },
   "relatorio_final": "docs/RELATORIO-FINAL-JEV.md",
   "pendencias": [
-   "Segundo anotador cego: o gabarito ainda é de uma pessoa só, e um dos erros do E7 é contestável.",
-   "Corpus colhido de atendimento real, com a distribuição de classes que o canal tem.",
-   "P5: fluxo completo com minutagem humana, para custo por decisão de ponta a ponta."
+   "Anotação e adjudicação por pessoas do atendimento real: os três juízes deste estudo são modelos, e modelos grandes tendem a compartilhar a mesma convenção sobre o que é \"a ação pedida\".",
+   "Corpus colhido de atendimento real, com a distribuição de classes que o canal tem, em vez de casos construídos e quase balanceados.",
+   "P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo declarado, nunca cronometrado."
   ]
  }
 }
