@@ -16,7 +16,7 @@ Projeto experimental para testes com o modelo de classificação JEV.
   [evidência](data/corpus/evidencia-piloto.jsonl) e [ressalvas](data/corpus/ressalvas-piloto.jsonl).
 - Resultados brutos em `runs/`, um diretório por experimento.
 
-**625 chamadas reais, US$ 0.018174** de um teto de US$ 5,00 de gasto novo — os números vêm do
+**945 chamadas reais, US$ 0,022618774** de um teto de US$ 5,00 de gasto novo — os números vêm do
 ledger em `runs/ledger.sqlite3`, não deste texto. Na triagem piloto, Jev 0,925 contra 0,600 da regra
 congelada; no conjunto de confirmação, 0.975 contra
 0.325; na relação afirmação/evidência, 0,958 contra 0,625. Esses números usam o gabarito do autor, como pré-registrado; o gabarito oficial, depois da adjudicação cega descrita na seção 3.6.1 do relatório final, move a confirmação para 40/40 e o estudo inteiro para 0,9625. O painel exibe a faixa entre os dois, nunca só o melhor.

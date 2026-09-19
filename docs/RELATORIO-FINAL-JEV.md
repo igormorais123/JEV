@@ -11,117 +11,70 @@ brutos em `runs/`
 
 ## 1. Recomendação
 
-**Não decida sobre o Jev com base neste estudo — e o motivo não é o modelo, é o gabarito. A
-vantagem do Jev sobre um LLM genérico e barato aparece sob o gabarito que eu escrevi e desaparece
-sob o único gabarito que não passou pela minha mão.**
+**O Jev supera um LLM genérico e barato nesta tarefa, em corpus novo e pré-registrado, sob o
+gabarito adjudicado por um terceiro juiz cego. O que este estudo ainda não sustenta é a validade
+do rótulo contra o qual todos os números foram medidos — e essa é a única pergunta que falta.**
 
-O estudo terminou no experimento que existia para desempatar, e o desempate desempatou para os
-dois lados. Corpus novo, 60 casos, 20 famílias declaradas no pré-registro antes de o primeiro
-caso ser escrito, dois braços na mesma lista e na mesma ordem:
+Esta é a **quinta** versão da recomendação deste relatório, todas do mesmo dia, e vale registrar
+a sequência porque ela é o método:
 
-| Gabarito | Jev | llama-3.1-8b | Diferença pareada | IC95 | McNemar |
+1. *"Use o Jev com corte de confiança em 0,90"* — antes de existir qualquer comparador que não
+   fosse uma regra que eu mesma escrevi.
+2. *"Não adote"* — quando o E10 comparou o Jev a `meta-llama/llama-3.1-8b-instruct` na partição
+   de teste e a diferença não separou de zero.
+3. *"Evidência dividida"* — quando o E10b, no piloto, separou.
+4. *"O gargalo é o rótulo"* — quando o E11, em corpus novo, deu vantagem clara sob o meu
+   gabarito e sinal invertido sob o do anotador independente.
+5. Esta, quando os 10 desacordos do E11 foram a um terceiro juiz cego e ele **confirmou meu
+   gabarito em 10 de 10**.
+
+**O resultado do desempate, nos três gabaritos:**
+
+| Gabarito | Jev | llama-3.1-8b | Diferença | IC95 | McNemar |
 |---|---|---|---|---|---|
-| Meu (o do corpus) | 1.0000 | 0.8667 | **13,3%** | [5,0%; 21,7%] | p = 0.0078 |
-| Anotador independente | 0.8333 | 0.8667 | **-3,3%** | [-10,0%; 3,3%] | p = 0.6875 |
+| Adjudicado (oficial) | 1,0000 | 0,8667 | **13,3%** | [5,0%; 21,7%] | p = 0,0078 |
+| Meu, sem adjudicar | 1,0000 | 0,8667 | 13,3% | [5,0%; 21,7%] | p = 0,0078 |
+| Anotador independente | 0,8333 | 0,8667 | −3,3% | [−10,0%; 3,3%] | p = 0,6875 |
 
-Pela regra congelada no pré-registro do E11, que olhava o gabarito do corpus, a leitura seria
-*"há evidência de que o Jev supera um LLM econômico"*. Eu não vou parar aí, por dois motivos que
-não são preferência minha.
+**Por que a quarta versão estava errada, e quem mostrou isso.** A décima quarta rodada de
+revisão adversarial apontou que eu havia enterrado um resultado pré-registrado usando como ouro
+um modelo de 7B cujas discordâncias seguem um padrão conhecido: classificar pelo **vocabulário
+presente** na mensagem em vez do ato de fala pedido — que é exatamente o modo de falhar da regra
+congelada que o Jev supera desde o E1. E apontou que o E8 tinha um procedimento para isso, o
+terceiro juiz cego, e que o E11 havia parado antes dele. Os dois pontos procedem. Escrevi a
+emenda com a regra de leitura **antes** de rodar o juiz, declarando que se ele confirmasse meu
+gabarito a conclusão mudaria contra a que eu acabara de publicar. Ele confirmou
+10 de 10, sem nenhum caso em que declarasse
+ambiguidade ou propusesse terceira leitura.
 
-**O primeiro é que o Jev acertou 60 de 60.** Acerto perfeito no único conjunto que só eu revisei
-não é uma vitória, é um alarme. Foi por isso que rodei o anotador independente também nesses 60
-casos — depois do resultado, e com o resultado já à vista. Ele discorda de mim em 10 deles, e em
-todos os 10 o Jev concorda comigo.
+**O que isto autoriza afirmar:** neste corpus, com esta rubrica e contra este comparador, o Jev
+é melhor, e a diferença é grande o bastante para sobreviver ao agrupamento por família. O erro
+grave (`cancelar` indevido) reforça: **Jev 0, comparador 1**.
 
-**O segundo é que a política deste estudo, desde a décima segunda rodada de revisão, é nunca
-apresentar um gabarito sozinho.** Aplicá-la aqui e não lá seria escolher a regra conforme o
-resultado.
+**O que isto não autoriza:** que a rubrica meça o que diz medir. Os três anotadores deste estudo
+— eu, o anotador independente e o terceiro juiz — produzem rótulos, e dois deles são modelos de
+linguagem enquanto o terceiro sou eu, que escrevi o corpus. Concordância entre modelos sobre uma
+rubrica que eu redigi mede reprodutibilidade, não validade. Enquanto duas pessoas do atendimento
+real não anotarem os mesmos casos e medirem kappa entre si antes de olhar qualquer modelo, toda
+conclusão deste relatório repousa sobre um rótulo não validado. É o item 3 da seção 10, custa
+tempo de gente e não custa orçamento.
 
-Sob o gabarito independente o sinal **inverte**: o comparador barato fica numericamente à frente,
-com o intervalo contendo zero. Os dois números são da mesma execução, das mesmas respostas, dos
-mesmos 60 casos. O que muda entre uma linha e outra da tabela é **quem escreveu o rótulo**.
-
-É essa a conclusão do estudo, e ela não é sobre o Jev: **o gargalo não é a comparação entre os
-modelos, é a validade do rótulo.** Nenhuma execução adicional resolve isso — não há corpus meu,
-por maior que seja, que responda a uma pergunta cujo obstáculo é eu ter escrito o gabarito. O que
-falta são dois anotadores humanos do domínio, medindo kappa entre si antes de olhar qualquer
-modelo. É o item 3 da seção 10, custa tempo de gente e não custa orçamento nenhum.
-
-*(Registro de método: a recomendação deste relatório mudou três vezes em um dia. Era "use o Jev
-com corte em 0,90"; virou "não adote" quando o E10 não separou de zero; virou "evidência
-dividida" quando o E10b separou; e é esta agora, quando o E11 mostrou que a divisão tem nome.
-Cada mudança está datada e nenhuma versão anterior foi apagada. Um relatório que não muda quando
-o dado muda não é um relatório estável — é um relatório que parou de ler os dados.)*
-
-Esta recomendação substitui a anterior, que era "use o Jev como classificador consultivo com
-corte de confiança em 0,90". A mudança não veio de opinião: veio dos experimentos E10 e E10b,
-executados em 19 de setembro, **depois** de o relatório estar escrito e depois de treze rodadas
-de revisão.
-
-Até o E10, o único comparador deste estudo era uma **regra congelada escrita por mim** — o
-comparador mais fácil de vencer que existe. A décima terceira rodada de revisão adversarial
-apontou que a pergunta P1 do plano original (*vale um LLM especializado aqui, ou qualquer
-classificador de linguagem resolve?*) seguia com metade da resposta. O braço foi então executado
-com regra de decisão congelada antes da primeira chamada
-(`planning/preregistro-E10-llm-economico.md`).
-
-| | Acurácia (autor) | Acurácia (oficial) | Acurácia (anotador independente) |
-|---|---|---|---|
-| Jev 1.13 | 0.9750 | 1.0000 | 0.9000 |
-| `meta-llama/llama-3.1-8b-instruct` | 0.9000 | 0.9250 | 0.8500 |
-
-A diferença pareada é de **7,5%**, com IC95
-**[0,0%; 15,0%]** por reamostragem de famílias — e esse intervalo
-**contém zero**. Os dois modelos discordam em 3 casos
-(cnf-g03-01, cnf-g05-04, cnf-g07-01), todos a favor do Jev, o que no McNemar exato dá
-**p = 0,25**. Nenhuma das 40 respostas do comparador saiu fora do contrato.
-
-Pela regra que eu mesma congelei antes de olhar: isto é **ausência de evidência de vantagem**, e
-não equivalência. Com 10 famílias o poder é baixo por construção, e um empate aqui não prova
-empate. O que cai não é o desempenho do Jev — ele continua acertando mais em números absolutos,
-e nos três gabaritos. O que cai é a afirmação de que **ele é necessário**. Um modelo de 8B que
-custa uma fração do preço chega perto o suficiente para que esta amostra não os separe.
-
-**E então o E10b virou o resultado para o outro lado.** Com o intervalo primário encostando em
-zero, dobrei o poder: o mesmo comparador nas 10 famílias do piloto, sob emenda escrita antes da
-execução. Ali o Jev faz 0.9250 contra 0.7250 do
-comparador — diferença **20,0%**, IC95
-[10,0%; 30,0%], que **separa** de zero. Nas
-20 famílias das duas partições juntas: **13,8%**,
-IC95 [7,5%; 20,0%], que também separa.
-
-A emenda mandava tratar isso como secundário porque *"o piloto guiou o desenho do prompt do
-Jev"*. **Fui conferir no histórico do repositório e essa premissa não se sustenta:** as
-instruções entraram uma única vez, no commit `9f6d13b` de 18/09, junto com o corpus piloto, e
-nunca mais mudaram. Não houve iteração de prompt. Sobra um viés menor e real — a rubrica e o
-corpus piloto foram escritos juntos, então a rubrica casa com aquele corpus por construção —, e
-sobra o fato decisivo: **a decisão de olhar o piloto foi tomada depois de eu ver o resultado
-primário.**
-
-Por isso a recomendação não volta a ser "use o Jev". Escolher agora a leitura de 20 famílias,
-que é justamente a que devolve a conclusão que eu já tinha publicado, seria escolher o resultado
-depois de vê-lo — o vício que este relatório passa dez seções condenando. E também não é "os
-dois empatam", porque em 20 famílias eles não empatam. É a terceira leitura, que é a única que
-os dados aguentam: **a evidência não basta para decidir.**
-
-**O que fazer com isso:** rodar os dois lado a lado num corpus novo, pré-registrado, com pelo
-menos 30 famílias, colhido de uso real. É o desempate, e custa quase nada: as 80 chamadas do E10
-e do E10b custaram US$ 0,000702 somadas.
-
-*(Registro de método: este resultado poderia ter ficado fora do relatório. O E10 não estava no
-plano original, foi sugerido por um revisor adversarial, contraria a conclusão que eu já havia
-publicado e me custou reescrever a recomendação que treze rodadas de revisão tinham poupado.
-Executá-lo e publicá-lo é o único motivo pelo qual as outras conclusões deste documento merecem
-algum crédito.)*
+*(Registro de método: nenhuma das cinco versões foi apagada, e três delas contrariaram o que eu
+tinha acabado de publicar. A quarta foi corrigida por uma crítica externa que eu poderia ter
+ignorado — ela dizia que meu rigor tinha virado o seu contrário, e estava certa.)*
 
 ---
 
 ### 1.1 A política de corte, que continua válida no que ela mede
 
-O restante desta seção descreve a política de aceitação estudada no E9. Ela **não** é mais a
-recomendação do estudo — a recomendação é a de cima —, mas o que ela mede continua valendo, e é
-o que se deve usar caso a decisão de adotar o Jev seja tomada por outros motivos que não este
-estudo.
+O restante desta seção descreve a política de aceitação estudada no E9. **Ela não é uma
+recomendação de adoção, e não deve ser lida como uma.** O corte de 0,90 nunca foi
+pré-registrado: foi lido nos erros do piloto e depois avaliado sobre os mesmos erros, o que a
+seção 8 já registra ao dizer que `confidence` foi validado como ordenador e não como
+probabilidade. Ela está aqui porque mede uma coisa real — quanto do volume um corte cobre e ao
+custo de quê —, e essa medida é útil para desenhar o piloto em sombra do item 4 da seção 10.
+Usá-la como política operacional exigiria pré-registrar o corte num corpus que ele não tenha
+visto.
 
 A política concreta que os dados sustentam: aceitar automaticamente as decisões com confiança
 ≥ 0,90 e encaminhar o restante para uma pessoa. Na partição de confirmação — os 40 casos que não
@@ -163,7 +116,7 @@ faixa.)*
 que tem 40. Misturar denominadores é o mesmo vício que eu vinha corrigindo no painel, e ele
 estava aqui.)*
 
-**Confiança: 0,25.** Este número deixou de ser
+**Confiança: 0,35.** Este número deixou de ser
 um julgamento meu e passou a ser uma conta com as penalidades declaradas, partindo de 1,0:
 
 - a política se apoia em 40 casos, menos de cem (-0,20)
@@ -171,7 +124,7 @@ um julgamento meu e passou a ser uma conta com as penalidades declaradas, partin
 - o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)
 - corpus construído pelo avaliador, não colhido de uso real (-0,10)
 - zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)
-- no corpus de desempate a vantagem do Jev sobre o LLM econômico separa de zero sob o gabarito do autor e não separa sob o do anotador independente (-0,15)
+- o comparador econômico foi vencido no gabarito adjudicado, mas os três anotadores que produziram esse gabarito são modelos de linguagem (-0,05)
 
 Os dois últimos descontos entraram na décima terceira rodada, cobrados pela revisão
 adversarial: o teto de erro já estava escrito na seção 6 e não era descontado, e o braço do LLM
@@ -281,8 +234,8 @@ uma deriva do serviço não caísse sobre um só braço.
 
 | | Concordância | Acurácia | Latência p50 | Custo por decisão |
 |---|---|---|---|---|
-| OpenRouter | \- | 0,925 | 396 ms | 22.167 nusd |
-| TypeSafe direto | **40/40 (100%)** | 0,925 | 755 ms | 24.804 nusd |
+| OpenRouter | \- | 0,925 | 396 ms | 22,167 nusd |
+| TypeSafe direto | **40/40 (100%)** | 0,925 | 755 ms | 24,804 nusd |
 
 Decisão idêntica em todos os casos. O direto é ~2× mais lento e ~12% mais caro, porque cobra
 tokens de saída que o OpenRouter não cobra. **Não há motivo técnico para trocar de transporte.**
@@ -364,7 +317,7 @@ reportá-lo *separadamente da acurácia média*. Até a décima terceira rodada 
 foi reportado. A cobrança procede e é séria: acurácia média trata todos os erros como iguais, e
 a métrica que o próprio protocolo classificou como irreversível ficou fora do relatório inteiro.
 
-| Conjunto | Gabarito | `cancelar` indevido | `cancelar` perdido | Teto do erro grave (por família) | Regra congelada |
+| Conjunto | Gabarito | Indevido | Perdido | Teto por família | Regra congelada |
 |---|---|---|---|---|---|
 | piloto (E1) | anotador local | **0** | 2 | 25,9% | 3 |
 | piloto (E1) | autor | **0** | 1 | 25,9% | 4 |
@@ -401,8 +354,8 @@ Custo total: US$ 0,000358.
 
 | | Autor | Oficial | Anotador independente | Erro grave |
 |---|---|---|---|---|
-| Jev 1.13 | 0.9750 | 1.0000 | 0.9000 | 0 |
-| llama-3.1-8b | 0.9000 | 0.9250 | 0.8500 | 0 |
+| Jev 1,13 | 0,9750 | 1,0000 | 0,9000 | 0 |
+| llama-3.1-8b | 0,9000 | 0,9250 | 0,8500 | 0 |
 | Regra congelada | 0,3250 | — | — | 6 |
 
 Diferença pareada **7,5%**, IC95
@@ -436,11 +389,11 @@ O intervalo do E10 encostou em zero no limite inferior. Com 10 famílias, é o c
 poder muda a leitura — e havia 10 famílias disponíveis, a US$ 0,0004. Rodei, sob a Emenda 1 do
 pré-registro, escrita antes da execução.
 
-| Conjunto | Famílias | Jev | llama-3.1-8b | Diferença | IC95 | Separa de zero? |
-|---|---|---|---|---|---|---|
-| Confirmação (teste) | 10 | 0,9750 | 0,9000 | 7,5% | [0,0%; 15,0%] | **não** |
-| Piloto | 10 | 0.9250 | 0.7250 | 20,0% | [10,0%; 30,0%] | sim |
-| Os 80, 20 famílias | 20 | 0,9500 | 0,8125 | 13,8% | [7,5%; 20,0%] | sim |
+| Conjunto (famílias) | Jev | llama-3.1-8b | Diferença | IC95 |
+|---|---|---|---|---|
+| Confirmação, teste (10) | 0,9750 | 0,9000 | 7,5% | [0,0%; 15,0%] — não separa |
+| Piloto (10) | 0,9250 | 0,7250 | 20,0% | [10,0%; 30,0%] — separa |
+| Os 80, 20 famílias | 0,9500 | 0,8125 | 13,8% | [7,5%; 20,0%] — separa |
 
 A assimetria é grande e merece ser dita: o comparador cai de 90,0% na confirmação para
 72.5% no piloto, enquanto o Jev cai de 97,5% para
@@ -492,17 +445,22 @@ persistência.
 
 **O resultado, nos dois gabaritos:**
 
-| Gabarito | Jev | llama-3.1-8b | Diferença | IC95 | Só o Jev acerta | Só o comparador | McNemar |
-|---|---|---|---|---|---|---|---|
-| Meu | 1.0000 | 0.8667 | 13,3% | [5,0%; 21,7%] | 8 | 0 | p = 0.0078 |
-| Anotador independente | 0.8333 | 0.8667 | -3,3% | [-10,0%; 3,3%] | 2 | 4 | p = 0.6875 |
+| Gabarito | Jev | llama-3.1-8b | Diferença | IC95 |
+|---|---|---|---|---|
+| Meu | 1,0000 | 0,8667 | 13,3% | [5,0%; 21,7%] |
+| Anotador independente | 0,8333 | 0,8667 | −3,3% | [−10,0%; 3,3%] |
+
+Sob o meu gabarito, só o Jev acerta em 8 casos e só o comparador em nenhum (McNemar exato
+p = 0,0078). Sob o do anotador independente, 2 contra 4 (p = 0,6875).
 
 Erro grave (`cancelar` indevido): **Jev 0, comparador 1**. É a única métrica do E11 em que a
 diferença não depende do gabarito, e é a métrica que o pré-registro do E1 chamou de
 irreversível.
 
 **Os 10 casos em que o anotador independente discorda de mim:**
-`dsp-d01-02`, `dsp-d03-01`, `dsp-d06-03`, `dsp-d09-01`, `dsp-d10-03`, `dsp-d11-01`, `dsp-d12-01`, `dsp-d16-01`, `dsp-d16-02`, `dsp-d18-01`. Em **todos** eles o Jev responde o que eu responderia. Há duas leituras
+`dsp-d01-02`, `dsp-d03-01`, `dsp-d06-03`, `dsp-d09-01`, `dsp-d10-03`,
+`dsp-d11-01`, `dsp-d12-01`, `dsp-d16-01`, `dsp-d16-02` e `dsp-d18-01`.
+Em **todos** eles o Jev responde o que eu responderia. Há duas leituras
 para isso, e eu não tenho como escolher entre elas com o que este estudo mediu:
 
 1. O Jev segue a rubrica escrita melhor do que um modelo de 7B segue, e o anotador é que erra —
@@ -513,6 +471,47 @@ para isso, e eu não tenho como escolher entre elas com o que este estudo mediu:
 
 A segunda não é paranoia: é exatamente o que um corpus escrito pelo avaliador permite. E é por
 isso que o relatório não fecha a favor de ninguém.
+
+---
+
+### 3.11 Os 10 desacordos do desempate foram a um terceiro juiz, e ele não hesitou
+
+A primeira leitura deste experimento dizia que a vantagem do Jev "dependia de quem escreveu o
+gabarito", porque sob o gabarito do anotador independente o sinal invertia. A décima quarta
+rodada de revisão mostrou o defeito dessa leitura: o anotador independente é um modelo de 7B, e
+as 10 discordâncias dele seguem **um padrão só** — ele lê o vocabulário
+presente na mensagem, não o ato de fala pedido. Em `dsp-d01-02` ("Será que eu deveria cancelar?
+Antes de decidir, me explica como funciona a multa") ele marcou `cancelar`; em `dsp-d18-01`
+("Por enquanto não cancela nada, só me manda o valor da multa") marcou `cobranca`. É o mesmo
+modo de falhar da regra congelada que o Jev supera desde o E1.
+
+Sob a Emenda 2 do pré-registro, escrita antes da execução e com a regra de leitura declarada, os
+10 casos foram ao mesmo procedimento do E8b: terceiro juiz de outro fornecedor
+(`gpt-5.6-sol-high`), cego a quem escreveu cada leitura, com as duas em ordem sorteada por
+semente fixa, e sem ver resposta de modelo nenhum.
+
+| Decisão do terceiro juiz | Casos |
+|---|---|
+| Confirmam o meu gabarito | **10 de 10** |
+| Confirmam o anotador independente | 0 |
+| Propuseram terceira leitura | 0 |
+| Declararam ambiguidade | 0 |
+
+Dez de dez, sem nenhuma ambiguidade declarada. A inversão de sinal era o anotador, não o
+gabarito — e a emenda dizia, antes de eu saber disso, que nesse caso a leitura primária
+pré-registrada voltaria a valer. Voltou.
+
+**Uma ressalva sobre o McNemar,** apontada na mesma revisão e procedente: ele trata os 60 casos
+como independentes, e eles não são — são 3 por família. O p = 0,0078 é **secundário** e está
+otimista. A métrica primária, que é o bootstrap por família, respeita o agrupamento, e é ela que
+sustenta a conclusão.
+
+**E uma que não procede:** a revisão questionou `dsp-d16-03` ("Meu cancelamento já foi
+processado? Se ainda não, processa agora"), com gabarito `cancelar`, numa família chamada
+"pedido de confirmação, não pedido de ação". Não é contradição, é o controle da família: dois
+casos dela são `informacao` e o terceiro tem pedido explícito de execução. Famílias com caso de
+contraste são o desenho de todos os corpora deste estudo, e sem elas a família mediria só a
+classe, não o fenômeno.
 
 ---
 
@@ -592,7 +591,7 @@ observações independentes, o que eles não são.
 
 ## 7. Custo e operação
 
-**Medido:** 625 chamadas, US$ 0,018174462 no total. Custo por decisão individual ~US$ 0,000022.
+**Medido:** 945 chamadas, US$ 0,022618774 no total. Custo por decisão individual ~US$ 0,000022.
 Latência mediana 396 ms no OpenRouter.
 
 **Declarado, não medido:** 2 minutos por revisão humana, US$ 12,00 por hora. Nenhum cronômetro
@@ -624,7 +623,7 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 1. **Não é um teste em dados reais.** Os 80 casos de triagem e os 24 de evidência foram
    construídos por mim. Nenhum veio de um canal de atendimento em produção.
 2. **Nenhum anotador humano além de mim.** O E8 mitigou com um anotador independente e o E8b
-   com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8593 mede que a
+   com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8301 sobre os 140 casos anotados mede que a
    rubrica é **reprodutível por um LLM**, não que ela seja válida. Os 3 erros que
    restam no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04) passaram pela adjudicação cega, mas a
    adjudicação foi feita por máquina. A validade do constructo continua aberta, e é o item 2 da
@@ -641,9 +640,12 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
    uma medição de fluxo real. Isso era a pergunta P5 do plano e continua aberta.
 6. **`confidence` não foi validado como probabilidade.** Foi validado como *ordenador*: separa
    bem o que está certo do que está errado nestes 80 casos. Não é a mesma coisa.
-7. **O gabarito é meu em todos os corpora, inclusive no do desempate.** Esta é a limitação de
-   que todas as outras derivam, e o E11 a tornou mensurável em vez de apenas declarada: a
-   conclusão sobre a necessidade do Jev **muda de sinal** conforme o gabarito adotado.
+7. **Todos os anotadores deste estudo são modelos de linguagem, ou sou eu.** O gabarito do
+   autor é meu; o anotador independente é `qwen2.5:7b`; os terceiros juízes são
+   `gpt-5.6-sol-high`. A adjudicação cega resolve disputas *dentro* da rubrica, e resolveu:
+   18 dos 19 casos em disputa no estudo inteiro foram para o meu gabarito. O que ela não pode
+   resolver é se a rubrica corresponde ao que uma pessoa do atendimento faria. Esta é a
+   limitação de que todas as outras derivam.
 8. **Um único LLM econômico foi testado como comparador.** O E10 usou
    `meta-llama/llama-3.1-8b-instruct`. Um empate com ele não é empate com a categoria, e uma
    vantagem sobre ele também não seria vantagem sobre a categoria. O que o E10 estabelece é que
@@ -704,7 +706,7 @@ US$ 0,017182296 para o OpenRouter; o provedor cobrou US$ 0,017095092. O ledger e
 extrato em US$ 0,000087, e a diferença é explicada: são as chamadas que voltaram HTTP 400 na
 fase de sondagem do contrato, provisionadas aqui e não cobradas lá. Nenhum excedente a absorver,
 nenhum gasto sem identidade de provedor. Somando o TypeSafe direto (US$ 0,000992166), o total
-comprometido é US$ 0,018174462.
+comprometido é US$ 0,022618774.
 
 A oitava rodada não encontrou defeito financeiro novo — o teto passou a ser, nas palavras do
 revisor, "o pedaço mais honesto do repositório". Encontrou coisa pior no painel: depois de
@@ -804,8 +806,20 @@ responder pelo repositório em vez de responder pelos dados que recebia; e o run
 órfãs se substituía a cada publicação, apagando as próprias órfãs e desfazendo em silêncio a
 reconciliação de custo que a oitava rodada tinha estabelecido.
 
+A décima quarta rodada foi a mais útil de todas, e foi a que me corrigiu contra mim mesma. Ela
+mostrou que eu havia enterrado um resultado pré-registrado usando como ouro um modelo de 7B cujo
+modo de errar é justamente o que o sistema avaliado supera; que o procedimento para resolver
+isso já existia no próprio estudo, o terceiro juiz cego do E8b, e que o E11 tinha parado antes
+dele. Rodei, sob emenda com a regra escrita antes, e o juiz confirmou meu gabarito em 10 de 10.
+A recomendação mudou pela quinta vez.
+
+A mesma rodada achou três números velhos que conviviam com os novos no texto canônico — 625
+chamadas e US$ 0,018174462 na seção 7, na seção 9 e no README — e um kappa publicado que era
+anterior à ampliação do E8. O teste que existia exigia que o número certo aparecesse; não exigia
+que o errado sumisse. Agora exige.
+
 Estado final: **945 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,022618774 de
-US$ 5,00, 144 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 147 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

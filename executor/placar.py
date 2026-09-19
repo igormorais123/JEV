@@ -234,6 +234,13 @@ def confianca_calculada(e9, e6, e8, adj):
         valor -= 0.10
         motivos.append('o comparador é uma regra congelada, não um modelo de linguagem barato '
                        'no mesmo contrato: a pergunta "vale um LLM aqui?" segue aberta (-0,10)')
+    elif (lambda s: s and s.get('oficial'))(
+            desempate_depende_do_gabarito(ler('e11-desempate/relatorio.json'))):
+        # O braco existe e sustenta a vantagem no gabarito adjudicado. Sobra o desconto pelo que
+        # ele NAO resolve: os tres anotadores do estudo continuam sendo modelos.
+        valor -= 0.05
+        motivos.append('o comparador econômico foi vencido no gabarito adjudicado, mas os três '
+                       'anotadores que produziram esse gabarito são modelos de linguagem (-0,05)')
     elif (lambda s: s and not all(s.values()))(
             desempate_depende_do_gabarito(ler('e11-desempate/relatorio.json'))):
         valor -= 0.15
@@ -271,6 +278,17 @@ def limite_superior_erro_da_politica(politica):
 def nota_de_confianca(adj, e9=None, e11=None):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
     separa = desempate_depende_do_gabarito(e11)
+    if separa and separa.get('oficial'):
+        pg = e11['por_gabarito']
+        return ('Baixa para adoção, e não por causa do desempenho. A comparação contra as regras '
+                'congeladas e contra um LLM econômico é pareada, pré-registrada e replicou: no '
+                'corpus de desempate a vantagem é '
+                + pct(pg['oficial']['pareada']['diferenca_observada'])
+                + ' no gabarito adjudicado, e os 10 desacordos foram a um terceiro juiz cego que '
+                'confirmou meu gabarito em todos. O que continua sem resposta é a validade do '
+                'rótulo: os três anotadores deste estudo são modelos de linguagem, o corpus foi '
+                'escrito pelo avaliador e o tempo humano da conta de custo nunca foi '
+                'cronometrado.')
     if separa and not all(separa.values()):
         # Enquanto a nota descrevia a politica de corte, ela justificava uma recomendacao que o
         # veredito tinha deixado de fazer. A nota acompanha o veredito.
@@ -328,7 +346,13 @@ def comparador_empatou(e10):
 
 
 def desempate_depende_do_gabarito(e11):
-    """No E11 a vantagem do Jev sobre o comparador barato sobrevive aos dois gabaritos?
+    """No E11 a vantagem do Jev sobre o comparador barato sobrevive aos gabaritos?
+
+    Entre a primeira versao desta funcao e esta, os 10 desacordos do corpus de desempate foram a
+    um terceiro juiz cego, sob emenda escrita antes da execucao. Ele confirmou o gabarito do
+    autor em 10 de 10, e com isso o gabarito OFICIAL do corpus passou a existir. A leitura muda:
+    o que separa de zero sao o gabarito do autor e o oficial; o que nao separa e o do anotador
+    independente sozinho, que o terceiro juiz nao sustentou em nenhum caso.
 
     A regra congelada no pre-registro do E11 olhava o gabarito do corpus, que e o meu. A
     politica deste painel, desde a decima segunda rodada, e nunca apresentar um gabarito sozinho.
@@ -365,9 +389,12 @@ def titulo_do_veredito(e9, e10=None, e11=None):
     # sozinha, o teste da setima rodada — que a chama com dados fabricados — passou a receber o
     # veredito do repositorio em vez do veredito dos dados dele.
     separa = desempate_depende_do_gabarito(e11)
-    if separa and not all(separa.values()):
-        return 'A vantagem do Jev depende de quem escreveu o gabarito: o gargalo é o rótulo'
-    if separa and all(separa.values()):
+    if separa:
+        if separa.get('oficial'):
+            return ('Vantagem do Jev sobre o LLM econômico no gabarito adjudicado, '
+                    'com a validade do rótulo ainda em aberto')
+        if not all(separa.values()):
+            return 'A vantagem do Jev depende de quem escreveu o gabarito: o gargalo é o rótulo'
         return 'Vantagem do Jev sobre o LLM econômico sob todos os gabaritos'
     e10b = ler('e10b-piloto/relatorio.json')
     if evidencia_dividida(e10, e10b):
@@ -399,6 +426,27 @@ def texto_do_veredito(e9, e6, e10=None, e11=None):
     if not e9:
         return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
     separa = desempate_depende_do_gabarito(e11)
+    adj11 = ler('e11-desempate/adjudicacao.json')
+    if separa and separa.get('oficial') and adj11:
+        of = e11['por_gabarito']['oficial']
+        outro = e11['por_gabarito']['anotador local']
+        pl = adj11['placar']
+        return (
+            'O desempate foi feito e decidiu. Em corpus novo de '
+            + str(e11['jev']['casos_programados']) + ' casos e '
+            + str(of['pareada']['n_familias']) + ' famílias, com as famílias declaradas antes de '
+            'o primeiro caso ser escrito, o Jev supera um LLM genérico e barato por '
+            + pct(of['pareada']['diferenca_observada']) + ', IC95 ['
+            + pct(of['pareada']['ic95'][0]) + '; ' + pct(of['pareada']['ic95'][1]) + '], McNemar '
+            'exato p = ' + dec(of['mcnemar_p'], 4) + ', no gabarito adjudicado. O anotador '
+            'independente discordava de mim em ' + str(len(adj11['casos'])) + ' casos e sob o '
+            'gabarito dele a diferença era ' + pct(outro['pareada']['diferenca_observada'])
+            + ' — mas esses ' + str(len(adj11['casos'])) + ' casos foram a um terceiro juiz '
+            'cego, com as leituras em ordem sorteada, e ele confirmou meu gabarito em '
+            + str(pl['confirmam_o_autor']) + ' de ' + str(len(adj11['casos']))
+            + '. O que isto autoriza dizer é que o Jev vence este comparador neste corpus. O que '
+            'continua sem resposta é se a rubrica mede o que diz medir: os três anotadores do '
+            'estudo são modelos de linguagem, e nenhum deles é uma pessoa do atendimento real.')
     if separa and not all(separa.values()):
         autor = e11['por_gabarito']['autor']
         outro = e11['por_gabarito']['anotador local']

@@ -503,3 +503,51 @@ class OrfasNaoSeApagam(unittest.TestCase):
         self.assertEqual({a['id'] for a in primeiro['attempts']},
                          {a['id'] for a in segundo['attempts']},
                          'republicar mudou o conjunto de tentativas órfãs')
+
+
+@unittest.skipUnless((ROOT / 'runs' / 'extrato-ledger.json').exists(), 'extrato ainda não gerado')
+class NumeroVelhoNaoSobrevive(unittest.TestCase):
+    """[R14] O número certo aparecer não impede o errado de continuar ali.
+
+    O teste anterior exigia que o gasto do extrato fosse citado, e ele era. Só que "625 chamadas,
+    US$ 0,018174462" continuava escrito na seção 7, na seção 9 e no primeiro parágrafo do README,
+    de execuções anteriores. Os dois números conviviam e a suíte passava. O mesmo valia para o
+    kappa: o relatório publicava 0,8593, dos 80 casos, enquanto o arquivo vivo já dizia 0,8301
+    sobre 140.
+    """
+
+    DOCUMENTOS = ('docs/RELATORIO-FINAL-JEV.md', 'README.md')
+
+    def texto(self):
+        return '\n'.join((ROOT / d).read_text(encoding='utf-8') for d in self.DOCUMENTOS)
+
+    def test_nenhum_gasto_antigo_sobrevive_nos_documentos(self):
+        extrato = json.loads(
+            (ROOT / 'runs' / 'extrato-ledger.json').read_text(encoding='utf-8'))
+        atual = f"{extrato['comprometido_usd']:.9f}"
+        texto = self.texto()
+        # Só os valores que se apresentam como o TOTAL do estudo. Custo de um experimento
+        # isolado (US$ 0,000702 do E10, US$ 0,001923295 do incidente do E11) é histórico
+        # legítimo e tem de continuar publicado.
+        contextos = (r'US\$ (0[.,]\d{6,9}) (?:comprometidos|no total|de\s+US\$ 5)',
+                     r'(?:chamadas reais, |Custo total:\*\* )US\$ (0[.,]\d{6,9})',
+                     r'US\$ (0[.,]\d{6,9})\s+em \d+ chamadas')
+        achados = {m for padrao in contextos for m in re.findall(padrao, texto)}
+        self.assertTrue(achados, 'nenhum total de gasto encontrado nos documentos')
+        for achado in achados:
+            with self.subTest(valor=achado):
+                self.assertAlmostEqual(
+                    float(achado.replace(',', '.')), extrato['comprometido_usd'], places=9,
+                    msg=f'{achado} é publicado como total e o real é US$ {atual}')
+
+    def test_o_kappa_publicado_e_o_do_arquivo_vivo(self):
+        caminho = ROOT / 'runs' / 'e8-anotador' / 'relatorio.json'
+        if not caminho.exists():
+            self.skipTest('E8 ainda não executado')
+        e8 = json.loads(caminho.read_text(encoding='utf-8'))
+        texto = self.texto()
+        atual = f"{e8['kappa_cohen']:.4f}".replace('.', ',')
+        for achado in set(re.findall(r'kappa de (\d,\d{4})', texto)):
+            with self.subTest(kappa=achado):
+                self.assertEqual(achado, atual,
+                                 f'o relatório publica kappa {achado} e o arquivo diz {atual}')

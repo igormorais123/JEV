@@ -39,3 +39,32 @@ class EntregaveisNaoSeConfundem(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class GeradorDePdfAceitaOsCabecalhosDoRelatorio(unittest.TestCase):
+    """[E11] Um `#### ` no markdown travava o build do PDF para sempre.
+
+    O parser conhecia `##` e `###`. Um cabeçalho de nível 4 não casava com nenhum ramo, caía no
+    fluxo de texto como parágrafo comum, e a partir daí o layout do reportlab entrava em laço: o
+    comando não terminava, sem erro e sem saída. Achar isso exigiu bissecionar o markdown inteiro
+    linha a linha. O teste roda o gerador sobre um documento mínimo com os quatro níveis.
+    """
+
+    def test_build_termina_com_cabecalho_de_nivel_quatro(self):
+        import runpy
+        import tempfile
+        raiz = ROOT / 'planning' / 'build_deliverables.py'
+        if not raiz.exists():
+            self.skipTest('gerador ausente')
+        modulo = runpy.run_path(str(raiz))
+        destino = Path(tempfile.mkdtemp()) / 'teste.pdf'
+        capa = dict(modulo['CAPA_DO_PLANO'])
+        capa['destino'] = str(destino.relative_to(destino.anchor))
+        markdown = ('# Título\n\n## Seção\n\nTexto.\n\n### Subseção\n\nTexto.\n\n'
+                    '#### Nível quatro\n\nTexto que vem depois do nível quatro.\n')
+        try:
+            modulo['build_pdf'](markdown, {**capa, 'destino': 'output/pdf/_teste-niveis.pdf'})
+        finally:
+            alvo = ROOT / 'output' / 'pdf' / '_teste-niveis.pdf'
+            if alvo.exists():
+                alvo.unlink()

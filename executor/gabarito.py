@@ -15,7 +15,12 @@ ROOT = Path(__file__).resolve().parents[1]
 CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto'),
            ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao'),
            ('data/corpus/triagem-desempate.jsonl', 'desempate')]
-ADJUDICACAO = ROOT / 'runs' / 'e8-anotador' / 'adjudicacao.json'
+# Sao duas adjudicacoes cegas, uma por corpus: a do E8b cobre piloto e confirmacao, a do E11
+# cobre o corpus de desempate. Enquanto so a primeira era lida, o corpus de desempate ficava
+# sem gabarito oficial e a divergencia do anotador independente ali nao tinha terceiro juiz.
+ADJUDICACOES = [ROOT / 'runs' / 'e8-anotador' / 'adjudicacao.json',
+                ROOT / 'runs' / 'e11-desempate' / 'adjudicacao.json']
+ADJUDICACAO = ADJUDICACOES[0]
 
 
 ANOTACAO = ROOT / 'runs' / 'e8-anotador' / 'relatorio.json'
@@ -52,21 +57,25 @@ def do_autor():
 def adjudicado():
     """O gabarito oficial: o do autor, com os casos em disputa substituídos pela adjudicação."""
     mapa = do_autor()
-    if not ADJUDICACAO.exists():
+    presentes = [caminho for caminho in ADJUDICACOES if caminho.exists()]
+    if not presentes:
         return mapa, {'adjudicado': False, 'casos_substituidos': []}
-    dados = json.loads(ADJUDICACAO.read_text(encoding='utf-8'))
-    substituidos = []
-    for caso in dados['casos']:
-        entrada = mapa.get(caso['case_id'])
-        if entrada is None:
-            continue
-        if entrada['gold'] != caso['terceiro_juiz']:
-            substituidos.append({'case_id': caso['case_id'], 'de': entrada['gold'],
-                                 'para': caso['terceiro_juiz']})
-        entrada['gold'] = caso['terceiro_juiz']
-        entrada['origem'] = 'adjudicado'
-    return mapa, {'adjudicado': True, 'juiz': dados['terceiro_juiz'],
-                  'casos_em_disputa': len(dados['casos']),
+    substituidos, juizes, em_disputa = [], [], 0
+    for caminho in presentes:
+        dados = json.loads(caminho.read_text(encoding='utf-8'))
+        juizes.append(dados['terceiro_juiz'])
+        em_disputa += len(dados['casos'])
+        for caso in dados['casos']:
+            entrada = mapa.get(caso['case_id'])
+            if entrada is None or caso.get('terceiro_juiz') is None:
+                continue
+            if entrada['gold'] != caso['terceiro_juiz']:
+                substituidos.append({'case_id': caso['case_id'], 'de': entrada['gold'],
+                                     'para': caso['terceiro_juiz']})
+            entrada['gold'] = caso['terceiro_juiz']
+            entrada['origem'] = 'adjudicado'
+    return mapa, {'adjudicado': True, 'juiz': ' e '.join(sorted(set(juizes))),
+                  'casos_em_disputa': em_disputa,
                   'casos_substituidos': substituidos}
 
 

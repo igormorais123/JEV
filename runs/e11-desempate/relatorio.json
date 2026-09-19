@@ -1379,6 +1379,31 @@
       "so_llm": [],
       "mcnemar_p": 0.0078
     },
+    "oficial": {
+      "pareada": {
+        "diferenca_observada": 0.1333,
+        "ic95": [
+          0.05,
+          0.2167
+        ],
+        "massa_de_cauda_bilateral": 0.0001,
+        "n_familias": 20,
+        "n_casos": 60,
+        "repeticoes": 20000
+      },
+      "so_jev": [
+        "dsp-d03-01",
+        "dsp-d09-01",
+        "dsp-d10-03",
+        "dsp-d11-01",
+        "dsp-d13-02",
+        "dsp-d16-02",
+        "dsp-d16-03",
+        "dsp-d18-01"
+      ],
+      "so_llm": [],
+      "mcnemar_p": 0.0078
+    },
     "anotador local": {
       "pareada": {
         "diferenca_observada": -0.0333,
@@ -1403,5 +1428,6 @@
       ],
       "mcnemar_p": 0.6875
     }
-  }
+  },
+  "adjudicacao": "runs/e11-desempate/adjudicacao.json"
 }

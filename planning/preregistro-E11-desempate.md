@@ -164,3 +164,49 @@ código de persistência e o campo opcional.
 A execução que vale é a segunda, e o custo da primeira **permanece no livro-caixa**, como tem de
 permanecer: dinheiro gasto não se apaga porque o resultado se perdeu. Total do experimento passa
 a incluir as duas.
+
+---
+
+# Emenda 2 — 2026-09-19, antes de rodar o terceiro juiz nos 10 desacordos
+
+**Motivo.** A décima quarta rodada de revisão adversarial fez duas críticas que procedem, e as
+duas são sobre este pré-registro.
+
+**A primeira:** a regra congelada aqui produziu a leitura `vantagem-do-jev`, e o relatório
+publicou outra coisa. Isso foi feito **em prosa**, sem emenda, e é exatamente o que este
+documento existe para impedir. A análise por gabarito — rodar o anotador independente nos 60
+casos e recalcular a diferença sob o gabarito dele — **não estava pré-registrada**. Ela foi
+decidida depois de ver que o Jev acertara 60 de 60. Está declarada aqui, agora, pelo que é:
+análise complementar, pós-hoc, motivada pelo resultado.
+
+**A segunda, e mais séria:** o anotador independente é `qwen2.5:7b-instruct`, e a rubrica deste
+estudo diz que vale a ação pedida, não o assunto mencionado. O revisor mostrou que as
+divergências dele seguem um padrão — classificar pelo vocabulário presente na mensagem — que é
+justamente o modo de falhar da regra congelada que o Jev supera desde o E1. Tratar esse anotador
+como se fosse um humano do domínio, e com ele inverter o sinal de um resultado pré-registrado,
+pode ser o oposto de rigor. **No E8 esse mesmo conflito foi resolvido por um terceiro juiz cego,
+que devolveu 8 dos 9 casos ao gabarito do autor — e o E11 parou antes dessa etapa.**
+
+**O que vai ser feito, declarado antes de qualquer chamada:** os 10 casos em que os dois
+anotadores divergem no corpus do desempate vão ao mesmo procedimento do E8b — terceiro juiz de
+outro fornecedor, cego a quem escreveu cada leitura, com as leituras em **ordem sorteada** e a
+mesma rubrica que os dois receberam.
+
+**A regra de leitura, congelada agora:**
+
+1. Se o terceiro juiz confirmar **o gabarito do autor na maioria** dos 10, o gabarito oficial do
+   E11 passa a ser o adjudicado, como já é nos outros dois corpora, e a **leitura primária
+   pré-registrada volta a valer**: há evidência de que o Jev supera um LLM econômico neste
+   corpus. A conclusão publicada muda, e muda contra mim.
+2. Se confirmar **o anotador independente na maioria**, a inversão do sinal se sustenta com um
+   juiz a mais, e a conclusão atual fica mais forte, não mais fraca.
+3. Se ficar **dividido ou declarar ambiguidade na maioria**, os casos são ambíguos por natureza,
+   e a conclusão é sobre a rubrica: ela não separa o que diz separar.
+
+Em qualquer dos três casos, os três números — autor, anotador independente e adjudicado — vão
+para o relatório e para o painel, como manda a política desde a décima segunda rodada. O que a
+adjudicação decide é **qual é o oficial**, não qual aparece.
+
+**O que não muda:** o corpus, os gabaritos originais, as respostas dos dois modelos. Nada é
+reexecutado. O terceiro juiz vê apenas mensagem e duas leituras, sem saber de onde vieram e sem
+ver nenhuma resposta de modelo.

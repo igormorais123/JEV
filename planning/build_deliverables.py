@@ -147,6 +147,11 @@ def build_pdf(markdown, capa=None):
                 story.append(PageBreak())
             p=Paragraph(markup(line[3:]),styles['section']);p.section_key=section_count
             story.append(p);i+=1;continue
+        # [E11] Um `#### ` nunca casava com nenhum ramo e caia no fluxo de texto; com ele no
+        # meio do documento o layout do reportlab entrava em laco e o build nao terminava mais.
+        # Levou uma bissecao do markdown inteiro para achar, entao aqui ele e tratado.
+        if line.startswith('#### '):
+            story.append(Paragraph(markup(line[5:]), styles['sub']));i+=1;continue
         if line.startswith('### '):
             story.append(Paragraph(markup(line[4:]),styles['sub']));i+=1;continue
         if re.match(r'^(?:- |\d+\. )',line):

@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 87,
- "updated_at": "2026-09-19T06:36:10.972553+00:00",
+ "revision": 90,
+ "updated_at": "2026-09-19T07:12:12.273114+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18317,8 +18317,8 @@
    "phase": "pilot",
    "evidence": "live_component",
    "status": "completed",
-   "started_at": "2026-09-19T06:33:47.919671+00:00",
-   "finished_at": "2026-09-19T06:33:47.919671+00:00",
+   "started_at": "2026-09-19T07:12:12.273114+00:00",
+   "finished_at": "2026-09-19T07:12:12.273114+00:00",
    "provider": "openrouter",
    "model": "typesafe/jev-1.13",
    "dataset": "tentativas dos blocos e11-desempate, e4-ressalvas, sondagem, lidas do ledger",
@@ -24632,20 +24632,20 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T06:36:10.972221+00:00",
+  "atualizado_em": "2026-09-19T07:12:12.144824+00:00",
   "veredito": {
-   "titulo": "A vantagem do Jev depende de quem escreveu o gabarito: o gargalo é o rótulo",
-   "texto": "O desempate foi feito e desempatou para os dois lados, conforme o gabarito. Em corpus novo de 60 casos e 20 famílias, pré-registrado antes de existir qualquer dado, o Jev acerta 100,0% contra 86,7% do comparador barato sob o meu gabarito: diferença 13,3%, IC95 [5,0%; 21,7%], McNemar exato p = 0,0078. Sob o gabarito do anotador independente, que é o único que não passou pela minha mão, a mesma comparação dá -3,3%, IC95 [-10,0%; 3,3%] — contém zero, e o sinal inverte. O experimento que existia para desempatar mostrou onde está o gargalo, e não é a comparação entre os modelos: é a validade do rótulo. Enquanto o gabarito for meu, a vantagem é minha de encomenda; enquanto o único gabarito independente for um modelo de 7B, ele também não decide. O que falta não é mais uma execução — são dois anotadores humanos do domínio.",
-   "confianca": 0.25,
+   "titulo": "Vantagem do Jev sobre o LLM econômico no gabarito adjudicado, com a validade do rótulo ainda em aberto",
+   "texto": "O desempate foi feito e decidiu. Em corpus novo de 60 casos e 20 famílias, com as famílias declaradas antes de o primeiro caso ser escrito, o Jev supera um LLM genérico e barato por 13,3%, IC95 [5,0%; 21,7%], McNemar exato p = 0,0078, no gabarito adjudicado. O anotador independente discordava de mim em 10 casos e sob o gabarito dele a diferença era -3,3% — mas esses 10 casos foram a um terceiro juiz cego, com as leituras em ordem sorteada, e ele confirmou meu gabarito em 10 de 10. O que isto autoriza dizer é que o Jev vence este comparador neste corpus. O que continua sem resposta é se a rubrica mede o que diz medir: os três anotadores do estudo são modelos de linguagem, e nenhum deles é uma pessoa do atendimento real.",
+   "confianca": 0.35,
    "confianca_motivos": [
     "a política se apoia em 40 casos, menos de cem (-0,20)",
     "1 caso(s) mudam de resposta entre repetições idênticas (-0,10)",
     "o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)",
     "corpus construído pelo avaliador, não colhido de uso real (-0,10)",
     "zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)",
-    "no corpus de desempate a vantagem do Jev sobre o LLM econômico separa de zero sob o gabarito do autor e não separa sob o do anotador independente (-0,15)"
+    "o comparador econômico foi vencido no gabarito adjudicado, mas os três anotadores que produziram esse gabarito são modelos de linguagem (-0,05)"
    ],
-   "confianca_nota": "Baixa, e o motivo agora tem nome. A comparação contra as regras congeladas continua sólida: é pareada, pré-registrada e replicou em três corpora. O que não se sustenta é a afirmação de que o Jev é necessário: no corpus de desempate a vantagem sobre um LLM econômico é 13,3% sob o meu gabarito e -3,3% sob o do anotador independente, com o intervalo contendo zero. Os números do estudo são reprodutíveis; o rótulo contra o qual eles foram medidos é que não foi validado por gente.",
+   "confianca_nota": "Baixa para adoção, e não por causa do desempenho. A comparação contra as regras congeladas e contra um LLM econômico é pareada, pré-registrada e replicou: no corpus de desempate a vantagem é 13,3% no gabarito adjudicado, e os 10 desacordos foram a um terceiro juiz cego que confirmou meu gabarito em todos. O que continua sem resposta é a validade do rótulo: os três anotadores deste estudo são modelos de linguagem, o corpus foi escrito pelo avaliador e o tempo humano da conta de custo nunca foi cronometrado.",
    "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos"
   },
   "cartoes": [
