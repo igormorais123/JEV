@@ -37,7 +37,10 @@ CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto', 'runs/e1-triagem/relat
            # [E11] O corpus do desempate entrou depois, e entrou por um motivo: e o unico dos
            # tres em que o Jev acerta TUDO, e era tambem o unico com um gabarito so — o meu.
            # Acerto perfeito no conjunto que so eu revisei e sinal de alerta, nao de vitoria.
-           ('data/corpus/triagem-desempate.jsonl', 'desempate', 'runs/e11-desempate/relatorio.json')]
+           ('data/corpus/triagem-desempate.jsonl', 'desempate', 'runs/e11-desempate/relatorio.json'),
+           # [E12] O corpus da replicacao entra pelo mesmo motivo do desempate: sem segundo
+           # anotador sobre ELE, o gabarito oficial daquele corpus seria o meu, sozinho.
+           ('data/corpus/triagem-replicacao.jsonl', 'replicacao', 'runs/e12-replicacao/relatorio.json')]
 
 
 def carregar_tudo():

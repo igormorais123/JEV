@@ -14,12 +14,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto'),
            ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao'),
-           ('data/corpus/triagem-desempate.jsonl', 'desempate')]
-# Sao duas adjudicacoes cegas, uma por corpus: a do E8b cobre piloto e confirmacao, a do E11
-# cobre o corpus de desempate. Enquanto so a primeira era lida, o corpus de desempate ficava
-# sem gabarito oficial e a divergencia do anotador independente ali nao tinha terceiro juiz.
+           ('data/corpus/triagem-desempate.jsonl', 'desempate'),
+           ('data/corpus/triagem-replicacao.jsonl', 'replicacao')]
+# Uma adjudicacao cega por corpus: a do E8b cobre piloto e confirmacao, a do E11 cobre o
+# desempate e a do E12 cobre a replicacao. Enquanto so a primeira era lida, o corpus de
+# desempate ficava sem gabarito oficial e a divergencia do anotador independente ali nao tinha
+# terceiro juiz.
 ADJUDICACOES = [ROOT / 'runs' / 'e8-anotador' / 'adjudicacao.json',
-                ROOT / 'runs' / 'e11-desempate' / 'adjudicacao.json']
+                ROOT / 'runs' / 'e11-desempate' / 'adjudicacao.json',
+                ROOT / 'runs' / 'e12-replicacao' / 'adjudicacao.json']
 ADJUDICACAO = ADJUDICACOES[0]
 
 

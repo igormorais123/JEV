@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "snapshot_id": "prices-2026-09-18-openrouter",
- "captured_at_utc": "2026-09-18T23:40:00Z",
+ "snapshot_id": "prices-2026-09-19-openrouter-e12",
+ "captured_at_utc": "2026-09-19T12:06:29Z",
  "note": "Precos em nanodolares inteiros por milhao de tokens (1 USD = 1e9 nusd). Conferidos na API publica do provedor. Modelo sem entrada aqui nao pode ser despachado.",
  "models": {
   "openrouter:typesafe/jev-1.13": {
@@ -42,6 +42,48 @@
    "raw_pricing": {
     "prompt": "0.00000005",
     "completion": "0.00000008"
+   }
+  },
+  "openrouter:mistralai/mistral-nemo": {
+   "input_nusd_per_million_tokens": 19000000,
+   "output_nusd_per_million_tokens": 30000000,
+   "context_length": 131072,
+   "max_completion_tokens": 64,
+   "source": "https://openrouter.ai/api/v1/models",
+   "source_captured_at_utc": "2026-09-19T12:06:29Z",
+   "provider_endpoint_name": "OpenRouter | mistralai/mistral-nemo",
+   "nota": "Comparador economico do E12. max_completion_tokens e o teto que o payload impoe por max_tokens=64, pre-registrado, e nao o maximo do provedor (16384): um teto que nos mesmos aplicamos e verificavel na requisicao.",
+   "raw_pricing": {
+    "prompt": "0.000000019",
+    "completion": "0.00000003"
+   }
+  },
+  "openrouter:google/gemma-3-12b-it": {
+   "input_nusd_per_million_tokens": 50000000,
+   "output_nusd_per_million_tokens": 150000000,
+   "context_length": 131072,
+   "max_completion_tokens": 64,
+   "source": "https://openrouter.ai/api/v1/models",
+   "source_captured_at_utc": "2026-09-19T12:06:29Z",
+   "provider_endpoint_name": "OpenRouter | google/gemma-3-12b-it",
+   "nota": "Comparador economico do E12. max_completion_tokens e o teto que o payload impoe por max_tokens=64, pre-registrado, e nao o maximo do provedor (16384): um teto que nos mesmos aplicamos e verificavel na requisicao.",
+   "raw_pricing": {
+    "prompt": "0.00000005",
+    "completion": "0.00000015"
+   }
+  },
+  "openrouter:openai/gpt-oss-20b": {
+   "input_nusd_per_million_tokens": 30000000,
+   "output_nusd_per_million_tokens": 130000000,
+   "context_length": 131072,
+   "max_completion_tokens": 64,
+   "source": "https://openrouter.ai/api/v1/models",
+   "source_captured_at_utc": "2026-09-19T12:06:29Z",
+   "provider_endpoint_name": "OpenRouter | openai/gpt-oss-20b",
+   "nota": "Comparador economico do E12. max_completion_tokens e o teto que o payload impoe por max_tokens=64, pre-registrado, e nao o maximo do provedor (117964): um teto que nos mesmos aplicamos e verificavel na requisicao.",
+   "raw_pricing": {
+    "prompt": "0.00000003",
+    "completion": "0.00000013"
    }
   }
  }
