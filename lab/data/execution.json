@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 50,
- "updated_at": "2026-09-19T05:21:19.906309+00:00",
+ "revision": 52,
+ "updated_at": "2026-09-19T05:22:33.016658+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18761,7 +18761,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:20:53.171981+00:00",
+  "atualizado_em": "2026-09-19T05:22:33.016461+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
@@ -18793,7 +18793,7 @@
     "valor": "8/8",
     "comparacao": "BM25 5/8 · ordem de chegada 4/8",
     "leitura": "nDCG@5 0.9958 contra 0.9205 do BM25. Ressalva perdida no topo é exceção que não chega a quem decide.",
-    "fonte": "3 primeiros de 8 consultas × 5 candidatos",
+    "fonte": "3 primeiros de 8 consultas × 5 candidatos; sem gabarito de classe",
     "estado": "pronto"
    },
    {
@@ -18802,7 +18802,7 @@
     "valor": "0.925 a 0.950",
     "comparacao": "8 condições fatoriais",
     "leitura": "Nenhum contraste separa as condições (McNemar p=1,000 em todos). Lote economiza 32.4% a 43.2% por decisão.",
-    "fonte": "8 condições sobre os mesmos 40 casos",
+    "fonte": "8 condições sobre os mesmos 40 casos; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
    {
@@ -18811,7 +18811,7 @@
     "valor": "3 de 40 casos instáveis",
     "comparacao": "p de permutação 0.40258",
     "leitura": "Posição no lote não explica erro. Mas esses casos mudam de resposta conforme os vizinhos do lote: mesma pergunta, resposta diferente.",
-    "fonte": "200 observações em 5 permutações",
+    "fonte": "200 observações em 5 permutações; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
    {
@@ -18820,7 +18820,7 @@
     "valor": "34 aceitos de 40",
     "comparacao": "cobertura 85.0%",
     "leitura": "0 erro(s) observado(s), mas os aceitos vêm de apenas 10 famílias: o limite superior honesto é 25.9% por família, não 8.4% por caso.",
-    "fonte": "40 casos, corte de confiança 0,95",
+    "fonte": "40 casos, corte de confiança 0,95; gabarito do autor; o caso que a adjudicação mudou tinha confiança 0,60 e não entrava em nenhum dos cortes, então a contagem de erro entre os aceitos é a mesma nos dois gabaritos",
     "estado": "pronto"
    },
    {
@@ -18829,7 +18829,7 @@
     "valor": "100.0%",
     "comparacao": "40 de 40 casos concordam",
     "leitura": "openrouter: 92.5% de acurácia, p50 396 ms, 0.000022167 USD por decisão · typesafe: 92.5% de acurácia, p50 755 ms, 0.000024804 USD por decisão",
-    "fonte": "40 casos × 2 transportes, chamadas intercaladas",
+    "fonte": "40 casos × 2 transportes, chamadas intercaladas; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
    {
@@ -18874,7 +18874,7 @@
     "valor": "1 de 40 casos oscilam",
     "comparacao": "acurácia por rodada 0.925 a 0.950",
     "leitura": "Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: tri-f02-04 muda de resposta entre repetições idênticas. Voto majoritário de 5 chega a 0.950 de acurácia, ao custo de 5x as chamadas.",
-    "fonte": "40 casos × 5 repetições individuais",
+    "fonte": "40 casos × 5 repetições individuais; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    }
   ],

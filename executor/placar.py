@@ -52,6 +52,22 @@ def sobre_programados(bloco, casos):
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
 
 
+def fonte_com_gabarito(fonte, qual='autor'):
+    """Toda fonte declara o gabarito. Cartao que nao declara obriga o leitor a adivinhar.
+
+    Do corpus piloto nenhum caso mudou na adjudicacao, entao ali os dois gabaritos coincidem e
+    dizer isso e mais util do que escolher um nome.
+    """
+    rotulos = {'autor': 'gabarito do autor',
+               'calibracao': ('gabarito do autor; o caso que a adjudicação mudou tinha confiança '
+                              '0,60 e não entrava em nenhum dos cortes, então a contagem de erro '
+                              'entre os aceitos é a mesma nos dois gabaritos'),
+               'oficial': 'gabarito oficial (com adjudicação)',
+               'coincidem': 'os dois gabaritos coincidem neste corpus',
+               'nao-se-aplica': 'sem gabarito de classe'}
+    return f"{fonte}; {rotulos[qual]}"
+
+
 def valor_entre_gabaritos(d):
     """O numero de capa e a FAIXA entre os dois gabaritos, nao o melhor dos dois.
 
@@ -246,8 +262,8 @@ def montar():
             f'regra ingênua {pct(regra_e3)}',
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}]." if ic else 'Sem intervalo calculado.'),
-            f"{programados_e3} casos programados, {e3['jev']['n_familias']} famílias; "
-            'gabarito do autor'))
+            fonte_com_gabarito(f"{programados_e3} casos programados, "
+                               f"{e3['jev']['n_familias']} famílias", 'autor')))
     else:
         cartoes.append(ausente('e3', 'Suporte por evidência (E3)', 'Piloto não executado.', '—'))
 
@@ -259,7 +275,8 @@ def montar():
             f"ordem de chegada {e4['original']['ressalvas_no_topo']}/{e4['original']['ressalvas_totais']}",
             f"nDCG@5 {e4['jev']['ndcg5']:.4f} contra {e4['bm25']['ndcg5']:.4f} do BM25. "
             'Ressalva perdida no topo é exceção que não chega a quem decide.',
-            f"{e4['topo']} primeiros de 8 consultas × 5 candidatos"))
+            fonte_com_gabarito(f"{e4['topo']} primeiros de 8 consultas × 5 candidatos",
+                               'nao-se-aplica')))
     else:
         cartoes.append(ausente('e4', 'Ressalvas preservadas (E4)', 'Piloto não executado.', '—'))
 
@@ -278,7 +295,8 @@ def montar():
             ('Nenhum contraste separa as condições (McNemar p=1,000 em todos). '
              + (f'Lote economiza {min(economias):.1f}% a {max(economias):.1f}% por decisão.'
                 if economias else 'Economia do lote registrada no relatório.')),
-            f'{len(condicoes)} condições sobre os mesmos 40 casos'))
+            fonte_com_gabarito(f'{len(condicoes)} condições sobre os mesmos 40 casos',
+                               'coincidem')))
     else:
         cartoes.append(ausente('e2', 'Lote, ordem e distração (E2)', 'Fatorial não executado.', '—'))
 
@@ -290,7 +308,8 @@ def montar():
             f"p de permutação {dif.get('p_permutacao', '—')}",
             ('Posição no lote não explica erro. Mas esses casos mudam de resposta conforme os '
              'vizinhos do lote: mesma pergunta, resposta diferente.'),
-            f"{len(e2b['observacoes'])} observações em {len(e2b['sementes'])} permutações"))
+            fonte_com_gabarito(f"{len(e2b['observacoes'])} observações em "
+                               f"{len(e2b['sementes'])} permutações", 'coincidem')))
     else:
         cartoes.append(ausente('e2b', 'Estabilidade no lote (E2b)', 'Desconfundimento não executado.', '—'))
 
@@ -306,7 +325,8 @@ def montar():
              f"{calibracao['familias_representadas_entre_aceitos']} famílias: o limite superior honesto "
              f"é {pct(calibracao['limite_superior_erro_por_familia'])} por família, não "
              f"{pct(calibracao['limite_superior_erro_por_caso'])} por caso."),
-            f"{calibracao['casos_programados']} casos, corte de confiança 0,95"))
+            fonte_com_gabarito(f"{calibracao['casos_programados']} casos, corte de confiança 0,95",
+                               'calibracao')))
 
     if e5:
         cartoes.append(cartao(
@@ -315,7 +335,8 @@ def montar():
             ' · '.join(f"{nome}: {pct(d['acuracia'])} de acurácia, p50 {d['latencia_p50_ms']:.0f} ms, "
                        f"{d['custo_por_decisao_nusd'] / 1e9:.9f} USD por decisão"
                        for nome, d in e5['resumo'].items()),
-            f"{e5['casos']} casos × 2 transportes, chamadas intercaladas"))
+            fonte_com_gabarito(f"{e5['casos']} casos × 2 transportes, chamadas intercaladas",
+                               'coincidem')))
     else:
         cartoes.append(ausente('e5', 'Provedor: OpenRouter × TypeSafe (E5)',
                                'Comparação de transporte ainda não despachada.',
@@ -411,7 +432,8 @@ def montar():
              f"{', '.join(e6['casos_instaveis'])} muda de resposta entre repetições idênticas. "
              f"Voto majoritário de {e6['repeticoes']} chega a {e6['acuracia_voto_majoritario']:.3f} "
              f"de acurácia, ao custo de {e6['repeticoes']}x as chamadas."),
-            f"{e6['casos']} casos × {e6['repeticoes']} repetições individuais"))
+            fonte_com_gabarito(f"{e6['casos']} casos × {e6['repeticoes']} repetições individuais",
+                               'coincidem')))
     else:
         cartoes.append(ausente('e6', 'Repetibilidade isolada (E6)',
                                'Repetições individuais ainda não executadas.', '—'))
