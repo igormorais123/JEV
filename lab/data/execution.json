@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 2,
-  "updated_at": "2026-09-18T23:45:33.682180+00:00",
+  "revision": 3,
+  "updated_at": "2026-09-19T02:21:55.436653+00:00",
   "system_progress": {},
   "stage_progress": {
     "1": {
@@ -9,11 +9,257 @@
       "updated_at": "2026-09-18T23:33:13.657596+00:00"
     },
     "2": {
+      "status": "done",
+      "updated_at": "2026-09-19T02:21:55.418477+00:00"
+    },
+    "3": {
       "status": "running",
-      "updated_at": "2026-09-18T23:33:13.657596+00:00"
+      "updated_at": "2026-09-19T02:21:55.418477+00:00"
     }
   },
-  "runs": [],
+  "runs": [
+    {
+      "id": "sondagem-contrato-jev",
+      "system_id": "S01",
+      "phase": "simple",
+      "evidence": "live_component",
+      "status": "completed",
+      "started_at": "2026-09-19T02:21:55.418477+00:00",
+      "finished_at": "2026-09-19T02:21:55.418477+00:00",
+      "provider": "openrouter",
+      "model": "typesafe/jev-1.13",
+      "notes": "Sondagem do contrato real de /api/alpha/decisions. As tentativas com HTTP 400 nao foram cobradas pelo provedor, mas ocupam reserva no ledger ate a conciliacao.",
+      "attempts": [
+        {
+          "id": "a9c2b0d8-2f93-42b3-ad4b-221e85b1b23a",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.552e-06,
+          "reserved_usd": 6.552e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "74f12f35-83d5-4ba9-a128-1ed300120819",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 5.544e-06,
+          "reserved_usd": 5.544e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "fb33ea21-99c8-4e3f-917a-fcff3c7c38ca",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.552e-06,
+          "reserved_usd": 6.552e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "def4f907-8d48-45e8-9cb6-7f708b483c50",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.804e-06,
+          "reserved_usd": 6.804e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "3b2d619c-a919-4474-8320-fd489d33ff18",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.846e-06,
+          "reserved_usd": 6.846e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "2e0f4188-091d-4eef-a882-b74022f00f02",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.846e-06,
+          "reserved_usd": 6.846e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "e619afa7-4cd1-45c9-b193-054a42156925",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.804e-06,
+          "reserved_usd": 6.804e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "26828625-e3c5-437b-87c7-a51c2f66468f",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.09e-06,
+          "reserved_usd": 6.09e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "a0d09e05-9220-4f63-806a-1865a9ee8167",
+          "status": "success",
+          "latency_ms": null,
+          "input_tokens": 379,
+          "output_tokens": 46,
+          "cost_usd": 1.5918e-05,
+          "reserved_usd": 9.744e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "90f3d1d0-7a78-4b8b-aac5-d533cf1539c9",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 7.644e-06,
+          "reserved_usd": 7.644e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "dfe78233-9596-4028-8b99-8d9668ffa623",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 7.434e-06,
+          "reserved_usd": 7.434e-06,
+          "cache_hit": false
+        }
+      ],
+      "decisions": []
+    },
+    {
+      "id": "canarios-contrato-jev",
+      "system_id": "S01",
+      "phase": "simple",
+      "evidence": "live_component",
+      "status": "completed",
+      "started_at": "2026-09-19T02:21:55.418477+00:00",
+      "finished_at": "2026-09-19T02:21:55.418477+00:00",
+      "provider": "openrouter",
+      "model": "typesafe/jev-1.13",
+      "dataset": "3 canarios de contrato (diagnostico, nao e amostra estatistica)",
+      "notes": "3 de 3 escolhas corretas, confidence 1 nas tres. Diagnostico do instrumento, nao evidencia de desempenho do modelo.",
+      "attempts": [
+        {
+          "id": "d319a242-1455-477b-889e-0a4fb7e69b39",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.678e-06,
+          "reserved_usd": 6.678e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "fa1fd66f-3655-40c0-b648-fe57ad3dc104",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.972e-06,
+          "reserved_usd": 6.972e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "af637b18-d5c3-453c-8ee8-d90f7d4fce96",
+          "status": "error",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 6.3e-06,
+          "reserved_usd": 6.3e-06,
+          "cache_hit": false
+        },
+        {
+          "id": "2637bbbc-3b3b-49c0-bdcd-61898337c746",
+          "status": "success",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 1.5918e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "1000a659-f814-4e9c-a1e3-5a8a971f516f",
+          "status": "success",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 1.5876e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "edec75d8-937f-45bc-920d-399f510c8ca7",
+          "status": "success",
+          "latency_ms": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 1.4616e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        }
+      ],
+      "decisions": [
+        {
+          "id": "dec-canary-01-escolha-trivial",
+          "case_id": "canary-01-escolha-trivial",
+          "attempt_id": "2637bbbc-3b3b-49c0-bdcd-61898337c746",
+          "task": "contrato-canario",
+          "split": "diagnostic",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "q1",
+          "group_id": "canarios"
+        },
+        {
+          "id": "dec-canary-02-evidencia-ausente",
+          "case_id": "canary-02-evidencia-ausente",
+          "attempt_id": "1000a659-f814-4e9c-a1e3-5a8a971f516f",
+          "task": "contrato-canario",
+          "split": "diagnostic",
+          "expected": "nao_informado",
+          "predicted": "nao_informado",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "q1",
+          "group_id": "canarios"
+        },
+        {
+          "id": "dec-canary-03-assunto",
+          "case_id": "canary-03-assunto",
+          "attempt_id": "edec75d8-937f-45bc-920d-399f510c8ca7",
+          "task": "contrato-canario",
+          "split": "diagnostic",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "q1",
+          "group_id": "canarios"
+        }
+      ]
+    }
+  ],
   "events": [
     {
       "at": "2026-09-18T23:33:13.657596+00:00",
@@ -54,6 +300,26 @@
       "at": "2026-09-18T23:45:33.680995+00:00",
       "kind": "evidence",
       "text": "BLOQUEIO: nenhuma credencial valida. O .env do projeto nao existe nesta maquina e as tres chaves OpenRouter em ~/.secrets respondem HTTP 401. Sem chave valida os 3 canarios de contrato nao podem rodar e a Etapa 3 nao abre."
+    },
+    {
+      "at": "2026-09-19T02:21:55.418477+00:00",
+      "kind": "evidence",
+      "text": "Contrato real de /api/alpha/decisions descoberto por sondagem: questions e um record por id, cada pergunta tem type (choice, noul ou score), instructions e criteria (mapa opcao->descricao para choice). A resposta vem em answers[id] com choice, probabilities e confidence, e usage traz cost em USD. O formato de array assumido no plano retorna HTTP 400."
+    },
+    {
+      "at": "2026-09-19T02:21:55.418477+00:00",
+      "kind": "evidence",
+      "text": "Canarios de contrato: 3 de 3 escolhas corretas (cancelar, nao_informado, cobranca), confidence 1 nas tres, latencia de 374 a 578 ms, custo real US$ 0,000046410 somando as tres. Diagnostico do instrumento; nao e evidencia de desempenho do modelo."
+    },
+    {
+      "at": "2026-09-19T02:21:55.418477+00:00",
+      "kind": "evidence",
+      "text": "Defeito corrigido no executor: a estimativa de tokens do payload subestimava o consumo real (159 estimados contra 379 cobrados). A reserva passou a usar o contexto publicado de 32.000 tokens, US$ 0,001344 por chamada, e o settle usa usage.cost do provedor como valor autoritativo."
+    },
+    {
+      "at": "2026-09-19T02:21:55.418477+00:00",
+      "kind": "evidence",
+      "text": "Etapa 2 concluida. Ledger real em runs/ledger.sqlite3: comprometido US$ 0,000149394, disponivel US$ 4,999851 do teto de US$ 5 novos. O extrato agregado do provedor ainda marcava US$ 0,000015918 no fim da rodada, ou seja, tem defasagem; a conciliacao por extrato precisa ser repetida depois."
     }
   ]
 }
