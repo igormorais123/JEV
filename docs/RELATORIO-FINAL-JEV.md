@@ -461,6 +461,14 @@ nova, sobrevivendo justamente no cartão que fala de gabarito. A correção crio
 `gabarito.desempenho_do_estudo()`, que soma E1 e E7 sob os três gabaritos na hora da leitura, e
 o teste de mutação virou teste permanente.
 
+A auditoria de mutação foi então aplicada a todos os relatórios, e achou um **segundo** cartão
+cego: o E3 lia o bloco `jev` gravado no alto de `runs/e3-evidencia/relatorio.json` em vez de
+contar os casos. Os dois números batem hoje — 23 acertos em 24 — e é justamente por isso que
+nenhum teste de coerência podia pegá-lo: um número congelado parece correto enquanto ninguém
+mexe nos dados. Trocados cinco acertos por erros, o cartão continuava estampando 95,8%. Hoje ele
+recalcula e a auditoria de mutação virou teste permanente sobre todos os relatórios que têm
+lista de casos.
+
 A mesma rodada achou um defeito que nenhum teste do painel podia achar, porque não estava no
 painel: **`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf` e `output/pdf/RELATORIO-FINAL-JEV.pdf`
 eram o mesmo arquivo**, byte a byte, e já tinham sido versionados assim. O gerador do relatório
@@ -472,7 +480,7 @@ própria com números vindos do placar, e dois testes novos exigem que cada PDF 
 que o nome dele promete.
 
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 136 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 137 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

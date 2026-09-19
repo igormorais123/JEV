@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 68,
- "updated_at": "2026-09-19T05:51:05.366578+00:00",
+ "revision": 69,
+ "updated_at": "2026-09-19T05:52:57.509403+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18781,7 +18781,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:51:05.366406+00:00",
+  "atualizado_em": "2026-09-19T05:52:57.509180+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
    "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",

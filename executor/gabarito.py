@@ -162,3 +162,22 @@ def desempenho_do_estudo(relatorios=('runs/e1-triagem/relatorio.json',
         if chave == 'oficial':
             saida[chave]['erros'] = [e for p in partes for e in p['oficial']['erros']]
     return saida
+
+
+def contagem_bruta(relatorio, campo_resposta='jev'):
+    """Conta acertos direto dos casos, para corpora cujo gabarito vive no próprio relatório.
+
+    A auditoria de mutação da décima terceira rodada trocou cinco acertos por erros em cada
+    relatório e perguntou quais cartões se mexiam. O E3 não se mexeu: ele lia o bloco agregado
+    `jev` gravado no alto do arquivo, e aquele bloco continua dizendo o que dizia quando o
+    experimento rodou. Nenhum teste pegava isso porque os dois números batem enquanto ninguém
+    mexe nos dados — que é exatamente a situação em que um número congelado parece correto.
+    """
+    caminho = ROOT / relatorio if not str(relatorio).startswith(str(ROOT)) else Path(relatorio)
+    if not caminho.exists():
+        return None
+    casos = json.loads(caminho.read_text(encoding='utf-8')).get('casos') or []
+    programados = len(casos)
+    acertos = sum(1 for c in casos if c.get(campo_resposta) == c.get('gold'))
+    return {'acertos': acertos, 'casos_programados': programados,
+            'acuracia': round(acertos / programados, 4) if programados else None}

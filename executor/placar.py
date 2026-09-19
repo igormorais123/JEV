@@ -348,8 +348,15 @@ def montar():
     if e3:
         dif = pareada.get('e3_evidencia', {})
         ic = dif.get('ic95')
-        acuracia_e3, programados_e3 = sobre_programados(e3['jev'], e3['casos'])
-        regra_e3, _ = sobre_programados(e3['regra'], e3['casos'])
+        # Recontado dos casos, nao lido do bloco agregado: a auditoria de mutacao da decima
+        # terceira rodada trocou cinco acertos por erros neste relatorio e este cartao nao se
+        # mexeu. O corpus do E3 nao passa pela adjudicacao, entao o gabarito e o do proprio
+        # arquivo — mas a CONTAGEM tem de ser feita agora, como nos demais cartoes.
+        bruto_e3 = gabarito.contagem_bruta('runs/e3-evidencia/relatorio.json', 'jev')
+        bruto_regra = gabarito.contagem_bruta('runs/e3-evidencia/relatorio.json', 'regra')
+        acuracia_e3 = bruto_e3['acuracia']
+        programados_e3 = bruto_e3['casos_programados']
+        regra_e3 = bruto_regra['acuracia']
         cartoes.append(cartao(
             'e3', 'Suporte por evidência (E3)', pct(acuracia_e3),
             f'regra ingênua {pct(regra_e3)}',
