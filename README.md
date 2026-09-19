@@ -6,6 +6,11 @@ Projeto experimental para testes com o modelo de classificação JEV.
 
 - **[Relatório final](docs/RELATORIO-FINAL-JEV.md)** — recomendação, os nove experimentos, contra-hipóteses
   testadas e os limites que o estudo não autoriza ultrapassar. Comece por aqui.
+- **[Guia prático](docs/GUIA-PRATICO-JEV.md)** — como aplicar, passo a passo, com os cuidados em ordem de risco.
+- **[Os limites do Jev](docs/LIMITES-DO-JEV.md)** — mapa empírico do programa E14: onde ele quebra, onde não
+  quebra, a imunidade a manipulação pelo texto classificado e a classe de escape obrigatória.
+- [Pré-registro do E14](laboratorio/PREREGISTRO.md) — hipóteses, emendas datadas e o falso achado que produzi
+  e corrigi antes de publicar, mantido no registro.
 - [Relatório de execução intermediário](docs/RELATORIO-EXECUCAO-JEV-HELENA.md) — escrito antes do E5 ao E9;
   mantido como registro histórico, superado pelo final onde houver divergência.
 - [Executor financeiro e contrato real da API](executor/README.md)
@@ -20,9 +25,12 @@ Projeto experimental para testes com o modelo de classificação JEV.
   e [replicação](data/corpus/triagem-replicacao.jsonl).
 - Resultados brutos em `runs/`, um diretório por experimento.
 
-**1.474 chamadas reais, US$ 0,035707114** de um teto de US$ 5,00 de gasto novo, conciliados
-contra um extrato de provedor de US$ 0,034640289 — os números vêm do ledger em
-`runs/ledger.sqlite3`, não deste texto. Na triagem piloto, Jev 0,925 contra 0,600 da regra
+**1.474 chamadas reais, US$ 0,035707114** neste dossiê (E1 a E12), conciliados contra um extrato
+de provedor de US$ 0,034640289 — os números vêm do ledger em `runs/ledger.sqlite3`, não deste
+texto. O programa de limites E14 e as rodadas E15/E16 liquidam no mesmo livro-caixa e levam o
+ledger a 4.558 tentativas e 0,283629435 de unidade de conta; **essa parte ainda não foi
+conciliada contra extrato do provedor**, e por isso o total do dossiê continua sendo o número
+auditado. Teto autorizado: US$ 5,00. Na triagem piloto, Jev 0,925 contra 0,600 da regra
 congelada; no conjunto de confirmação, 0.975 contra
 0.325; na relação afirmação/evidência, 0,958 contra 0,625. Esses números usam o gabarito do autor, como pré-registrado; o gabarito oficial, depois da adjudicação cega descrita na seção 3.6.1 do relatório final, move a confirmação para 40/40 e o estudo inteiro para 0,9625. O painel exibe a faixa entre os dois, nunca só o melhor.
 

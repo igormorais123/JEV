@@ -10,6 +10,7 @@ Diferenças em relação ao `executor/runner.py`, que serve ao experimento:
 """
 import json
 import os
+import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -21,6 +22,8 @@ MODELO = 'typesafe/jev-1.13'
 TIMEOUT_PADRAO = 6.0
 
 RAIZ_DO_PROJETO = Path(__file__).resolve().parents[2]
+if str(RAIZ_DO_PROJETO) not in sys.path:
+    sys.path.insert(0, str(RAIZ_DO_PROJETO))
 
 
 def chave():
@@ -66,26 +69,31 @@ def perguntar(estado, perguntas, *, timeout=TIMEOUT_PADRAO, transporte=None, ori
     if not api_key:
         return None, {'erro': 'sem OPENROUTER_API_KEY'}
 
-    # A redação vem antes da truncagem: mascarar encurta o texto, e o que interessa é que
-    # nenhuma credencial atravesse a fronteira desta máquina.
+    # Sanitizar antes do envio. Excesso causa abstenção, nunca perda silenciosa.
     estado, mascarados = redacao.limpar(estado)
-    estado = estado[:orcamento.LIMITE_DE_CARACTERES]
-    corpo = {'model': MODELO, 'state': estado, 'questions': perguntas}
-    status, resposta = transporte(
-        URL, {'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json',
-              'User-Agent': 'jev-router/1.0'}, corpo, timeout)
-
-    custo = ((resposta.get('usage') or {}).get('cost')) if isinstance(resposta, dict) else None
-    orcamento.registrar(custo if custo is not None else 0.0, origem=origem, http=status,
-                        modelo=MODELO, caracteres=len(estado), mascarados=mascarados,
-                        custo_reportado=custo is not None)
-
-    if status != 200 or not isinstance(resposta, dict):
-        return None, {'erro': f'http {status}', 'custo_usd': custo}
-    respostas = resposta.get('answers')
-    if not isinstance(respostas, dict) or set(respostas) != set(perguntas):
-        return None, {'erro': 'resposta fora do contrato', 'custo_usd': custo}
-    for chave_da_pergunta, resposta_unica in respostas.items():
-        if not isinstance(resposta_unica, dict) or resposta_unica.get('choice') is None:
-            return None, {'erro': f'{chave_da_pergunta} sem escolha', 'custo_usd': custo}
-    return respostas, {'custo_usd': custo, 'http': status}
+    if len(estado) > orcamento.LIMITE_DE_CARACTERES:
+        return None, {'erro': 'input_too_large', 'sent': False}
+    from executor.shared import ask
+    try:
+        if transporte is not transporte_http:
+            # Test doubles never contaminate the live wallet or cost log.
+            import tempfile
+            from executor.ledger import Ledger
+            from executor.pricing import load_prices, usd_to_nusd
+            with tempfile.TemporaryDirectory() as directory:
+                db = Path(directory) / 'test.sqlite3'
+                with Ledger(db, 'simulation') as ledger:
+                    ledger.set_wallet_cap(usd_to_nusd('5'))
+                return ask(estado, perguntas, consumer='router', api_key=api_key,
+                           timeout=timeout, transport=transporte, db_path=db,
+                           prices=load_prices(), legacy_paths=())
+        respostas, detalhe = ask(estado, perguntas, consumer='router',
+                                 api_key=api_key, timeout=timeout)
+        orcamento.registrar(detalhe.get('custo_usd'), origem=origem,
+                            attempt_id=detalhe.get('attempt_id'), modelo=MODELO,
+                            caracteres=len(estado), mascarados=mascarados,
+                            custo_reportado=detalhe.get('custo_usd') is not None,
+                            evidence_level='live_component')
+        return respostas, detalhe
+    except Exception as error:
+        return None, {'erro': type(error).__name__, 'custo_usd': None}

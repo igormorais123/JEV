@@ -20,7 +20,10 @@ MINIMO_DE_CARACTERES = 25
 
 
 def impressao(texto):
-    return hashlib.sha256(texto.strip().lower().encode('utf-8')).hexdigest()[:32]
+    material = json.dumps({'state': texto, 'questions': politica.PERGUNTAS,
+                           'model': cliente.MODELO, 'version': 'shared-v1'},
+                          sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(material.encode('utf-8')).hexdigest()
 
 
 def do_cache(marca):
@@ -74,7 +77,7 @@ def classificar(pedido, *, contexto='', modo='sombra', usar_cache=True, transpor
         respostas, detalhe = cliente.perguntar(estado, politica.PERGUNTAS,
                                                transporte=transporte, origem=origem)
         latencia = round((time.time() - inicio) * 1000)
-        custo = (detalhe or {}).get('custo_usd') or 0.0
+        custo = (detalhe or {}).get('custo_usd')
         if respostas is None:
             registrar({'em': time.strftime('%Y-%m-%dT%H:%M:%S'), 'modo': modo, 'marca': marca,
                        'classificou': False, 'motivo': (detalhe or {}).get('erro'),
@@ -86,7 +89,10 @@ def classificar(pedido, *, contexto='', modo='sombra', usar_cache=True, transpor
     decisao = politica.decidir(respostas)
     decisao.update({'em': time.strftime('%Y-%m-%dT%H:%M:%S'), 'modo': modo, 'marca': marca,
                     'classificou': True, 'cache': veio_do_cache, 'latencia_ms': latencia,
-                    'custo_usd': custo, 'origem': origem, 'pedido_inicio': pedido[:160]})
+                    'custo_usd': custo, 'origem': origem,
+                    'attempt_id': None if veio_do_cache else detalhe.get('attempt_id'),
+                    'evidence_level': 'cache' if veio_do_cache else detalhe.get('evidence_level'),
+                    'pedido_sha256': hashlib.sha256(pedido.encode()).hexdigest()})
     registrar(decisao)
     return decisao
 

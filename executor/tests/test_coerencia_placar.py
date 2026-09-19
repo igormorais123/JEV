@@ -257,20 +257,33 @@ class PainelPublicadoEhReproduzivel(unittest.TestCase):
                              f'{campo} publicado difere do que os relatórios geram')
 
     def test_custo_somado_no_painel_fecha_com_o_ledger(self):
+        """O painel cobre os experimentos do dossiê; o ledger passou a cobrir mais que isso.
+
+        Desde que laboratório (E14) e roteador liquidam no mesmo livro-caixa, o total do ledger
+        inclui `shared-*`, que o painel do dossiê nunca publicou. Comparar os dois totais
+        acusava uma divergência real mas inócua e escondia a que importa: uma edição manual em
+        `lab/data/execution.json`. A comparação passa a ser contra as tentativas cujo
+        `attempt_id` o próprio painel declara.
+        """
         import sqlite3
         estado = json.loads((ROOT / 'lab/data/execution.json').read_text(encoding='utf-8'))
-        do_painel = sum(a['cost_usd'] or 0 for r in estado['runs'] for a in r['attempts'])
+        publicadas = {a['id']: a['cost_usd'] or 0
+                      for r in estado['runs'] for a in r['attempts']}
         caminho = ROOT / 'runs' / 'ledger.sqlite3'
         if not caminho.exists():
             self.skipTest('sem ledger')
         db = sqlite3.connect(str(caminho))
         try:
-            total = db.execute(
-                'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd'
-                ' ELSE settled_nusd END),0) FROM attempt_budget').fetchone()[0]
+            linhas = db.execute(
+                'SELECT attempt_id, COALESCE(CASE WHEN settled_nusd IS NULL THEN reserved_nusd'
+                ' ELSE settled_nusd END, 0) FROM attempt_budget').fetchall()
         finally:
             db.close()
-        self.assertAlmostEqual(do_painel, total / 1e9, places=9)
+        no_ledger = {identificador: valor / 1e9 for identificador, valor in linhas}
+        ausentes = [i for i in publicadas if i not in no_ledger]
+        self.assertFalse(ausentes, f'o painel publica tentativa que o ledger não tem: {ausentes[:3]}')
+        self.assertAlmostEqual(sum(publicadas.values()),
+                               sum(no_ledger[i] for i in publicadas), places=9)
 
 
 class FaixaDosTresGabaritos(unittest.TestCase):

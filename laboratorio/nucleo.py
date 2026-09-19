@@ -68,26 +68,24 @@ def gasto_do_programa():
 
 
 def gasto_total_autorizado():
-    """O que já saiu da chave por todos os caminhos: dossiê, roteador e este programa."""
+    """O que já saiu da chave por todos os caminhos, lido da fonte única.
+
+    Desde que o laboratório passou a despachar por `executor.shared.ask`, TODAS as chamadas --
+    dossiê, roteador e este programa -- liquidam no livro-caixa SQLite, e os JSONL locais são
+    cópias do mesmo evento. Somá-los aqui, como esta função fazia antes, contava duas vezes e
+    superestimava o consumo do teto de US$ 5,00. O ledger é a fonte; os JSONL são auditoria.
+    """
     import sqlite3
-    total = gasto_do_programa()
     ledger = RAIZ / 'runs' / 'ledger.sqlite3'
-    if ledger.exists():
-        try:
-            conexao = sqlite3.connect(f'file:{ledger}?mode=ro', uri=True)
-            linha = conexao.execute('select sum(settled_nusd) from attempt_budget').fetchone()
-            total += (linha[0] or 0) / 1e9
-            conexao.close()
-        except sqlite3.Error:
-            pass
-    roteador = RAIZ / 'integracao' / 'gastos.jsonl'
-    if roteador.exists():
-        for linha in roteador.read_text(encoding='utf-8', errors='replace').splitlines():
-            try:
-                total += json.loads(linha).get('custo_usd') or 0.0
-            except ValueError:
-                continue
-    return total
+    if not ledger.exists():
+        return gasto_do_programa()
+    try:
+        conexao = sqlite3.connect(f'file:{ledger}?mode=ro', uri=True)
+        linha = conexao.execute('select sum(settled_nusd) from attempt_budget').fetchone()
+        conexao.close()
+        return (linha[0] or 0) / 1e9
+    except sqlite3.Error:
+        return gasto_do_programa()
 
 
 def registrar(custo, **campos):
@@ -109,48 +107,21 @@ def perguntar(estado, perguntas, *, api_key=None, timeout=45.0, tentativas=3, ro
     contrato; o detalhe diz por quê, e a distinção entre 'transporte' e 'modelo' é a que separa
     erro de infraestrutura de erro de classificação.
     """
-    if gasto_do_programa() + CUSTO_MAXIMO_POR_CHAMADA > TETO_DO_PROGRAMA_USD:
-        return None, {'erro': 'teto do programa alcançado', 'tipo': 'orcamento'}
-
-    estado = estado[:LIMITE_DE_CARACTERES]
-    corpo = {'model': MODELO, 'state': estado, 'questions': perguntas}
-    cabecalhos = {'Authorization': f'Bearer {api_key or chave()}',
-                  'Content-Type': 'application/json', 'User-Agent': 'jev-lab-e14/1.0'}
-    dados = json.dumps(corpo, ensure_ascii=False).encode('utf-8')
-
-    ultimo = {}
-    for tentativa in range(tentativas):
-        requisicao = urllib.request.Request(URL, data=dados, headers=cabecalhos, method='POST')
-        try:
-            with urllib.request.urlopen(requisicao, timeout=timeout) as resposta:
-                status, corpo_resposta = resposta.status, json.loads(resposta.read().decode('utf-8'))
-        except urllib.error.HTTPError as erro:
-            try:
-                corpo_resposta = json.loads(erro.read().decode('utf-8'))
-            except (ValueError, OSError):
-                corpo_resposta = {}
-            status = erro.code
-        except Exception as erro:
-            status, corpo_resposta = 0, {'erro_local': type(erro).__name__}
-
-        custo = (corpo_resposta.get('usage') or {}).get('cost') if isinstance(corpo_resposta, dict) else None
-        # HTTP 429 é recusa antes da geração: o provedor não cobra, e liquidar pelo pior caso
-        # foi o defeito que inventou US$ 0,499 no livro-caixa do E12.
-        registrar(0.0 if status == 429 else (custo or 0.0), rodada=rodada, http=status,
-                  caracteres=len(estado), tentativa=tentativa + 1)
-
-        if status == 200 and isinstance(corpo_resposta, dict):
-            respostas = corpo_resposta.get('answers')
-            if isinstance(respostas, dict) and set(respostas) == set(perguntas):
-                return respostas, {'custo_usd': custo, 'http': status,
-                                   'tentativas': tentativa + 1}
-            return None, {'erro': 'fora do contrato', 'tipo': 'modelo', 'http': status}
-        ultimo = {'erro': f'http {status}', 'tipo': 'transporte', 'http': status}
-        if status in (429, 500, 502, 503, 504, 0):
-            time.sleep(2.0 * (tentativa + 1))
-            continue
-        return None, {'erro': f'http {status}', 'tipo': 'modelo', 'http': status}
-    return None, ultimo
+    from executor.shared import ask
+    from integracao.jev_router.redacao import limpar
+    estado, _ = limpar(estado)
+    try:
+        respostas, detalhe = ask(estado, perguntas, consumer='lab', api_key=api_key,
+                                 timeout=timeout)
+        if detalhe.get('attempt_id'):
+            registrar(detalhe.get('custo_usd'), rodada=rodada,
+                      attempt_id=detalhe['attempt_id'], status=detalhe['status'],
+                      caracteres=len(estado), evidence_level='live_component')
+        if not respostas:
+            detalhe['tipo'] = 'transporte' if detalhe.get('status') in ('timeout', 'transport_error', 'http_error') else 'contrato'
+        return respostas, detalhe
+    except Exception as error:
+        return None, {'erro': type(error).__name__, 'tipo': 'orcamento-ou-configuracao'}
 
 
 def em_paralelo(itens, funcao, *, trabalhadores=8, rotulo=''):

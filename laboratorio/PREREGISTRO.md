@@ -366,3 +366,58 @@ Quatorze rodadas, **2.522 chamadas**, **US$ 0,18** de um teto de US$ 2,00. O que
    mas derruba a confiança junto; texto sem pedido algum produz resposta errada com confiança
    máxima — e a mitigação é uma classe de escape.
 4. **O que decide não é a descrição da classe, é o nome dela.** Contraria o que o guia dizia.
+
+---
+
+# Bloco posterior — 2026-09-19, depois da síntese
+
+Acrescentado após a consolidação, com as três coisas que mudaram desde que o programa fechou.
+Nenhuma delas veio de chamada nova deste laboratório.
+
+## Replicação independente do falso achado da R11, por outro agente
+
+O Codex, trabalhando no mesmo repositório em paralelo e sem coordenação comigo, pré-registrou o
+E15 (`planning/preregistro-E15-implantacao.md`) com a H1 de que **a falha de diluição da R11 é
+causada por truncamento do cliente** — a mesma causa que eu encontrei e corrigi de forma
+independente. Ele reproduziu a condição de propósito, com o nome `legacy_truncated`, e mediu:
+
+| Condição do E15 | Acurácia | Aceitas | Erros entre as aceitas |
+|---|---|---|---|
+| `triage/base` | 100% (6/6) | 6 | 0 |
+| `triage/20k_prefix`, `20k_suffix`, `20k_middle` | 100% (6/6) cada | 6 cada | 0 |
+| **`triage/legacy_truncated`** | **16,7% (1/6)** | 6 | **5, todos em confiança 1,0** |
+
+A assinatura é idêntica à que eu publiquei e depois retirei: acurácia colapsada, confiança 1,0,
+erros passando por qualquer corte. Confirma as duas coisas de uma vez — que a R11 media um
+defeito meu, e que o defeito é real e grave quando acontece em produção.
+
+Custo do E15: US$ 0,00547239, 66 chamadas.
+
+## E16 — a Aplicação 3 fora do corpus jurídico
+
+Ainda pelo Codex: oito perguntas sobre o próprio repositório, quatro candidatos reais cada,
+32 chamadas. **Jev acertou o trecho essencial em top-1 nas 8**; o comparador léxico congelado,
+em 7. Custo US$ 0,000743316. A ordenação por relevância se sustenta em código, não só em
+contrato — e o ganho sobre o comparador é pequeno nesta amostra, de um caso.
+
+## Correção no cálculo do gasto acumulado
+
+`laboratorio/nucleo.py::gasto_total_autorizado()` somava o ledger SQLite **mais** os JSONL do
+laboratório e do roteador. Isso era correto enquanto o laboratório despachava por conta própria.
+Desde que a `perguntar()` passou a chamar `executor.shared.ask`, as três fontes registram o mesmo
+evento, e a soma contava duas vezes: reportava US$ 0,470 onde o consumo real é **US$ 0,283629435**.
+O erro era conservador — superestimava o gasto contra o teto de US$ 5,00 — mas publicava um número
+falso. Corrigido para ler apenas o ledger, que passou a ser a fonte única.
+
+Pelo mesmo motivo, `test_custo_somado_no_painel_fecha_com_o_ledger` comparava o total do painel
+do dossiê com o total do ledger inteiro, que agora inclui `shared-*`. Passou a comparar tentativa
+por tentativa, pelos `attempt_id` que o painel declara: mantém o poder de acusar edição manual em
+`lab/data/execution.json` e para de acusar uma diferença que é só de escopo.
+
+## Consequências aplicadas à documentação
+
+- `docs/LIMITES-DO-JEV.md` — criado. Mapa completo do E14, com a replicação do Codex na seção 5.
+- `docs/GUIA-PRATICO-JEV.md` — seção 3b nova (imunidade a injeção); passo 1 corrigido (até 12
+  classes, o rótulo decide, não a descrição); passo 1b novo (classe de escape); cuidados 7 e 8
+  novos; placar estendido a E14, E15 e E16; conclusão 2 reescrita.
+- `README.md` — índice e números do livro-caixa atualizados.

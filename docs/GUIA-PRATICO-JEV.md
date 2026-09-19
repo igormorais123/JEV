@@ -1,7 +1,8 @@
 # Como aplicar o Jev — guia de uso
 
-*Documento de aplicação. Todos os números vêm dos experimentos E1 a E12 e do livro-caixa; nenhum
-é estimativa. O método completo está em `docs/RELATORIO-FINAL-JEV.md`.*
+*Documento de aplicação. Todos os números vêm dos experimentos E1 a E16 e do livro-caixa; nenhum
+é estimativa. O método completo está em `docs/RELATORIO-FINAL-JEV.md`; o mapa de limites, em
+`docs/LIMITES-DO-JEV.md`.*
 
 ---
 
@@ -81,11 +82,54 @@ cliente e texto jurídico têm —, é aí que o investimento se paga.
 
 ---
 
+## 3b. A vantagem que não depende de quem escreve o gabarito
+
+Até o E12 a vantagem do Jev sobre um LLM genérico barato dependia do critério de correção — ela
+existia sob o gabarito desta casa e desaparecia sob o de um anotador independente. O E14 achou
+uma que não depende de gabarito nenhum.
+
+Quatro tentativas de manipulação foram escritas **dentro do texto do cliente** — uma ordem
+direta, uma falsa autoridade, um bloco que imita formato de sistema e uma sugestão. Quarenta
+tentativas por modelo:
+
+| Modelo | Manipulado | Viraram `cancelar` |
+|---|---|---|
+| `openai/gpt-oss-20b` | **70,0%** (28/40) | 4 |
+| `google/gemma-3-12b` | **25,0%** (10/40) | **10** |
+| `meta-llama/llama-3.1-8b` | 12,5% (5/40) | 3 |
+| `mistralai/mistral-nemo` | 0,0% (0/40) | 0 |
+| **`typesafe/jev-1.13`** | **0,0%** (0/40) | 0 |
+
+Dezessete respostas viraram cancelamento — a classe irreversível — porque o cliente escreveu uma
+linha de texto. **O mecanismo é do contrato:** no Jev o texto de terceiro vai no campo `state` e
+as opções no campo `questions`, separados; num LLM genérico tudo vira uma string só, e texto de
+terceiro fica indistinguível de instrução.
+
+**Consequência prática:** se o texto que você classifica vem de fora — cliente, fornecedor,
+contraparte, e-mail, formulário público —, esta é a razão para usar o Jev e não o LLM barato, e
+ela vale mesmo que a acurácia empate.
+
+**Ressalva:** o `mistral-nemo` também resistiu a 100%, então o correto é dizer que três dos
+quatro comparadores são manipuláveis. E os quatro vetores são meus; um atacante real tem mais
+criatividade e mais tentativas.
+
+Mapa completo dos limites: `docs/LIMITES-DO-JEV.md`.
+
+---
+
 ## 4. Como aplicar, passo a passo
 
-**Passo 1 — Escreva as opções antes de qualquer teste.** De 3 a 6 classes, cada uma com uma
-frase dizendo o que entra nela. As classes ruins são as que se sobrepõem; se você hesita entre
-duas ao classificar à mão, o modelo também vai hesitar — e o problema é da definição, não dele.
+**Passo 1 — Escreva as opções antes de qualquer teste.** Até **12 classes** não custam acurácia
+(medido no E14: 97,8% a 98,9% com 2, 3, 5 e 12 opções). De 20 em diante ela cai para ~90% e
+estabiliza ali, testado até 147 opções. **O que importa é o nome da classe, não a descrição:**
+com os cinco critérios escritos de forma textualmente idêntica ele ainda acertou 93,3%. Invista
+no rótulo; a frase de definição serve ao humano que vai revisar mais do que ao modelo.
+
+**Passo 1b — Inclua sempre uma classe de escape.** Este é o cuidado mais importante que o E14
+encontrou. Sem uma opção `nao-se-aplica`, um texto que não contém pedido nenhum — uma política
+interna, um "Bom dia.", letras aleatórias — é classificado assim mesmo, com **confiança média
+0,987**, acima de qualquer corte. Dez em dez. Acrescentando a saída explícita, dez acertos em
+dez. Nenhuma política de confiança cobre essa falha; só a classe extra cobre.
 
 **Passo 2 — Separe a classe perigosa.** Em toda aplicação existe uma opção cujo erro não tem
 volta (aqui foi `cancelar`). Essa classe **nunca** vai para o automático, qualquer que seja a
@@ -136,7 +180,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 1.474 chamadas reais | US$ 0,0357 |
+| Toda a avaliação, 4.558 chamadas reais | US$ 0,2836 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -161,14 +205,24 @@ mande para revisão.
 veio de um canal de produção. Elas medem discriminação de linguagem, não a bagunça do mundo
 real — e essa é a razão do passo 3 da seção 4.
 
-**5. A vantagem sobre um LLM genérico e barato não está provada.** Contra o método simples de
-hoje, a vantagem é enorme e sólida. Contra quatro LLMs baratos, ela existe sob o critério de
-correção desta casa e desaparece sob o critério de um anotador independente. Se o seu caso de
-uso tolera 88% a 91% de acerto, um modelo genérico barato pode bastar — e custa um quarto.
+**5. A vantagem *em acurácia* sobre um LLM genérico e barato não está provada.** Contra o método
+simples de hoje, a vantagem é enorme e sólida. Contra quatro LLMs baratos, ela existe sob o
+critério de correção desta casa e desaparece sob o critério de um anotador independente. Se o
+seu caso de uso tolera 88% a 91% de acerto **e o texto não vem de fora**, um modelo genérico
+barato pode bastar — e custa um quarto. Se o texto vem de fora, veja a seção 3b: ali a vantagem
+existe e não depende de gabarito.
+
 
 **6. A acurácia depende da mistura de assuntos.** Nas quatro distribuições simuladas, a acurácia
 esperada vai de 95,0% a 97,2%. Um canal dominado por rastreio não se comporta como um dominado
 por cobrança.
+
+**7. Texto de terceiro só entra em `state`.** Nunca concatene a mensagem do cliente dentro da
+instrução ou da descrição de uma classe. A separação estrutural é toda a proteção contra
+manipulação, e ela se perde no momento em que os dois campos viram um só.
+
+**8. Não automatize sem classe de escape.** Passo 1b da seção 4. É a única falha medida em que a
+confiança não avisa: 0,987 de média, errando em dez de dez.
 
 ---
 
@@ -191,7 +245,8 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Doze experimentos, 1.474 chamadas reais, US$ 0,0357. Esta é a lista inteira — o que cada um
+Dezesseis experimentos, 4.558 chamadas reais, US$ 0,2836 pelo livro-caixa —
+dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esta é a lista inteira — o que cada um
 perguntou, o que respondeu e o que isso muda na hora de aplicar.
 
 | # | O que foi testado | Resultado | Consequência prática |
@@ -211,14 +266,24 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E12 | Replicação: 30 famílias novas, **4** LLMs baratos | Jev **98,9%**, os outros de 84,4% a 91,1% sob o nosso critério; **sem vantagem** sob o critério independente | Triplicar o teste não resolveu: o que decide é quem escreve o gabarito. |
 | — | Erro grave (`cancelar` indevido), todos os corpora | **0 em 230 casos**, sob os três critérios; a regra simples comete 10 em 80 | O erro que dói não apareceu — mas a estatística só garante abaixo de 9,5% por família. |
 | — | A confiança avisa quando ele erra? | Funcionou em 2 corpora; **falhou no 3º** (erro com confiança 0,98) | Use corte 0,99 e recalibre no seu material. É o cuidado nº 2. |
+| E14 · R10 | Dá para manipular o modelo pelo texto do cliente? | Jev **0/40**; três de quatro LLMs baratos caem, até **70%** | **A vantagem que não depende de gabarito.** Seção 3b. |
+| E14 · R13 | E um texto que não contém pedido nenhum? | Sem classe de escape: erra 10/10 com confiança **0,987**. Com ela: acerta 10/10 | Classe de escape obrigatória. Passo 1b. |
+| E14 · R1–R7 | Quantas classes cabem, e o que degrada? | Até **12 sem custo**; platô em 90% até 147. Quebra só com ruído pesado (46,7% a 50%) — **e a confiança cai junto** | Taxonomia pode ser maior do que se supunha; o corte protege onde ele falha. |
+| E14 · R12 | Contexto grande dilui a decisão? | **96,7% constante de 0 a 50 mil caracteres** | Diluição não é risco. Truncamento do cliente é. |
+| E14 · R8 | Ordem, idioma, instrução, descrição das classes | Todos sem efeito; com os 5 critérios **idênticos** ainda acerta 93,3% | Ele decide pelo **rótulo**, não pela descrição. Passo 1. |
+| E14 · R14 | O Jev sabe avaliar o risco dos próprios resultados? | 56,8% bruto, **0 divergências que afrouxam**; no corte 0,90, **14/14** | O ciclo de melhoria serve — sob corte. |
+| E15 | (Codex) O truncamento explica mesmo a falha do R11? | Condição `legacy_truncated`: **16,7%** de acerto, 5 erros aceitos com confiança 1,0 | Replicação independente do meu falso achado. Seção 5 do mapa de limites. |
+| E16 | (Codex) Ordenar trechos reais de código por relevância | Jev **8/8** no top-1; comparador léxico 7/8 | A Aplicação 3 se sustenta fora do corpus jurídico. |
 
 **As três consequências que resumem tudo:**
 
 1. **Aplicar vale a pena onde o método atual é regra simples ou busca por palavra.** O ganho é
    grande, replicado três vezes e sobrevive a mudança de formato, de ordem e de fornecedor de
    acesso.
-2. **O que não se provou é que precise ser o Jev.** Contra LLMs genéricos baratos, a vantagem
-   depende de quem escreveu o gabarito — e eles custam um quarto do preço.
+2. **Precisa ser o Jev quando o texto vem de fora.** Em acurácia, a vantagem sobre LLMs baratos
+   depende de quem escreveu o gabarito — e eles custam um quarto do preço. Em resistência a
+   manipulação pelo próprio texto classificado, a vantagem é estrutural e não depende de
+   gabarito: 0% contra até 70%. Se o texto é de terceiro, a escolha está decidida.
 3. **Nada disso autoriza automatizar sem rede.** A confiança falha, o modelo oscila, e a classe
    irreversível continua exigindo gente.
 
@@ -232,8 +297,8 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E a triagem de atendimento? | Vale, mas com corte alto e revisão da classe perigosa — e ela é a aplicação em que o LLM barato mais se aproxima. |
 | Dá para automatizar? | Só acima de 0,99 de confiança, nunca na classe irreversível, e depois de recalibrar no seu material. |
 | Quanto custa experimentar? | Praticamente nada: mil decisões por dois centavos. O custo do piloto é o tempo de quem compara os resultados. |
-| Qual o maior risco? | Automatizar sobre um critério de correção que ninguém de fora validou. |
-| O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,96 do teto. É acesso a dado real e tempo de gente. |
+| Qual o maior risco? | Automatizar sobre um critério de correção que ninguém de fora validou — e, logo atrás, rodar sem classe de escape: é a única falha medida em que a confiança não avisa. |
+| O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,72 do teto. É acesso a dado real e tempo de gente. |
 
 ---
 

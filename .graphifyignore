@@ -1,0 +1,23 @@
+# Structural code map of this logical root; private and generated material excluded.
+.git/
+.env
+.env.*
+.venv*/
+__pycache__/
+.pytest_cache/
+.reticle/
+.playwright-mcp/
+research/sources/
+research/hermes/
+data/
+runs/
+output/
+graphify-out/
+.planning/
+integracao/cache/
+integracao/estado/
+integracao/avaliacao/*.json
+integracao/*.jsonl
+laboratorio/*.jsonl
+laboratorio/*.json
+lab/data/

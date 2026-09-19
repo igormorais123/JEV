@@ -99,3 +99,7 @@ integracao/avaliacao/comandos-resultado.json
 
 # Programa E14: gasto operacional do laboratorio (o que vai ao Git sao os resultados)
 laboratorio/gastos.jsonl
+
+# saida de ferramenta de analise de grafo, regeravel
+graphify-out/
+.planning/
