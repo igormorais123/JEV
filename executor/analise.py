@@ -123,8 +123,12 @@ def analisar_posicao_e2b(repeticoes=REPETICOES, semente=SEMENTE):
         if amplitude(embaralhado) >= observado:
             extremos += 1
     # (extremos + 1) / (repeticoes + 1) evita p igual a zero e nao subestima a cauda.
+    # Arredondar para 4 casas traria o zero de volta quando extremos = 0, entao guardamos
+    # o valor com precisao suficiente para o piso aparecer.
+    p_valor = (extremos + 1) / (repeticoes + 1)
     return {'amplitude_observada': round(observado, 4),
-            'p_permutacao': round((extremos + 1) / (repeticoes + 1), 4),
+            'p_permutacao': float(f'{p_valor:.6g}'),
+            'p_permutacao_piso': float(f'{1 / (repeticoes + 1):.6g}'),
             'n_casos': len(por_caso), 'n_observacoes': sum(len(v) for v in por_caso.values()),
             'repeticoes': repeticoes}
 
@@ -161,8 +165,11 @@ def analisar_calibracao(corte=0.95):
         'familias_com_erro': familias_com_erro,
         'limite_superior_erro_por_caso': limite_superior_erro(erros, len(aceitos)),
         'limite_superior_erro_por_familia': limite_superior_erro(familias_com_erro, len(familias)),
-        'leitura': ('O limite por familia e o numero honesto quando os casos de uma familia sao '
-                    'variantes do mesmo fenomeno. O limite por caso so valeria com casos independentes.'),
+        'leitura': ('Os dois limites medem eventos DIFERENTES e nao sao intercambiaveis. '
+                    'O limite por caso supoe casos independentes, o que este desenho nao tem. '
+                    'O limite por familia e sobre a probabilidade de uma familia conter ao menos '
+                    'um caso aceito errado, dando peso igual a familias de tamanhos diferentes; '
+                    'e o numero que devemos citar, e nao um limite conservador do risco por caso.'),
     }
 
 

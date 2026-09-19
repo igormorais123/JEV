@@ -136,16 +136,18 @@ class Ledger:
         return int(row['total'])
 
     def wallet_committed_nusd(self):
-        """Tudo que ja foi comprometido na base, somando TODOS os experimentos.
+        """Tudo comprometido na base, somando TODOS os experimentos, mais o excedente de extrato.
 
         O teto autorizado e da carteira, nao de cada experimento: sem isso, abrir um
-        experimento novo abriria um teto novo e o limite global seria ficcao.
+        experimento novo abriria um teto novo e o limite global seria ficcao. O excedente do
+        extrato entra aqui como calculo, nao como linha: assim ele encolhe sozinho quando a
+        cobranca correspondente passa a ser registrada como tentativa.
         """
         row = self.db.execute(
             'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd ELSE settled_nusd END),0) AS total'
             ' FROM attempt_budget'
         ).fetchone()
-        return int(row['total'])
+        return int(row['total']) + self.excedente_de_extrato_nusd()
 
     def set_wallet_cap(self, cap_nusd, note='teto global autorizado', wallet_id='default'):
         with self._tx():
@@ -369,69 +371,107 @@ class Ledger:
                 ' WHERE settled_nusd IS NOT NULL AND priced_provider = ?', (provider,)).fetchone()
         return int(linha['total'])
 
-    def reconcile(self, provider, observed_usage_nusd, sanitized, key_limit_nusd=None):
-        """Concilia o extrato do provedor com o que o ledger diz ter gasto NAQUELE provedor.
+    def sem_identidade_nusd(self):
+        """Liquidado que nao sabemos de qual provedor veio.
 
-        Tres cuidados que a primeira versao nao tinha:
-        1. compara com o liquidado do mesmo provedor, nao com o total comprometido;
-        2. le e decide dentro de uma transacao exclusiva, senao duas conexoes absorvem o
-           mesmo excedente duas vezes;
-        3. mantem UMA linha de ajuste por provedor, atualizada, em vez de somar uma nova a
-           cada conciliacao, o que duplicaria o mesmo gasto.
+        Enquanto existir, nenhuma conciliacao por provedor e confiavel: o valor pode pertencer
+        ao provedor conciliado e seria somado duas vezes.
+        """
+        linha = self.db.execute(
+            'SELECT COALESCE(SUM(settled_nusd),0) AS total FROM attempt_budget'
+            ' WHERE settled_nusd IS NOT NULL AND priced_provider IS NULL').fetchone()
+        return int(linha['total'])
+
+    def excedente_de_extrato_nusd(self):
+        """Quanto o extrato dos provedores passa do que o ledger registra, somando providers.
+
+        Calculado, nunca materializado. Materializar criava dois defeitos: o ajuste nao
+        encolhia quando a tentativa correspondente era enfim liquidada, e ele se somava ao
+        gasto historico do mesmo provedor. Como calculo, acompanha o estado atual sozinho.
+        """
+        total = 0
+        for linha in self.db.execute(
+                'SELECT provider, MAX(captured_at_utc) AS quando FROM provider_snapshots GROUP BY provider'):
+            ultimo = self.db.execute(
+                'SELECT usage_nusd FROM provider_snapshots WHERE provider = ?'
+                ' ORDER BY captured_at_utc DESC, rowid DESC LIMIT 1', (linha['provider'],)).fetchone()
+            if ultimo is None or ultimo['usage_nusd'] is None:
+                continue
+            registrado = self.settled_nusd_total(linha['provider'])
+            total += max(int(ultimo['usage_nusd']) - registrado, 0)
+        return total
+
+    def reconcile(self, provider, observed_usage_nusd, sanitized, key_limit_nusd=None):
+        """Grava o extrato do provedor. O excedente nao vira linha: vira conta.
+
+        Comparamos o extrato com o LIQUIDADO daquele provedor, nunca com o total comprometido,
+        que inclui reservas de chamadas que ainda nao aconteceram.
         """
         blob = json.dumps(sanitized, ensure_ascii=False, sort_keys=True)
-        ajuste_id = f'conciliacao:{provider}'
         with self._tx(immediate=True):
             anterior = self.db.execute(
                 'SELECT usage_nusd FROM provider_snapshots WHERE provider = ?'
                 ' ORDER BY captured_at_utc DESC, rowid DESC LIMIT 1', (provider,)).fetchone()
             base = int(anterior['usage_nusd']) if anterior and anterior['usage_nusd'] is not None else 0
             delta = int(observed_usage_nusd) - base
-
-            ajuste_atual = self.db.execute(
-                'SELECT COALESCE(settled_nusd,0) AS valor FROM attempt_budget WHERE attempt_id = ?',
-                (ajuste_id,)).fetchone()
-            ajuste_atual = int(ajuste_atual['valor']) if ajuste_atual else 0
-            # Liquidado deste provedor, descontando o proprio ajuste para nao contar duas vezes.
-            liquidado = self.settled_nusd_total(provider) - ajuste_atual
+            liquidado = self.settled_nusd_total(provider)
             excedente = max(int(observed_usage_nusd) - liquidado, 0)
-
+            sem_identidade = self.sem_identidade_nusd()
             self.db.execute(
                 'INSERT INTO provider_snapshots(snapshot_id,provider,captured_at_utc,usage_nusd,'
                 'key_limit_nusd,sanitized_json,sha256) VALUES(?,?,?,?,?,?,?)',
                 (str(uuid.uuid4()), provider, now_utc(), int(observed_usage_nusd), key_limit_nusd,
                  blob, hashlib.sha256(blob.encode('utf-8')).hexdigest()))
-
-            if excedente != ajuste_atual:
-                self.db.execute(
-                    'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,'
-                    'settled_nusd,cost_source,priced_provider,priced_model,priced_snapshot_id)'
-                    ' VALUES(?,?,?,?,?,?,?,NULL,NULL)'
-                    ' ON CONFLICT(attempt_id) DO UPDATE SET reserved_nusd=excluded.reserved_nusd,'
-                    ' settled_nusd=excluded.settled_nusd',
-                    (ajuste_id, self.experiment_id, 'conciliacao', excedente, excedente,
-                     'provider_statement_excess', provider))
             self._event(None, 'reconcile', max(delta, 0), {
                 'provider': provider, 'delta_nusd': delta, 'baseline_nusd': base,
                 'extrato_nusd': int(observed_usage_nusd), 'liquidado_do_provedor_nusd': liquidado,
-                'ajuste_anterior_nusd': ajuste_atual, 'ajuste_novo_nusd': excedente,
-                'reservas_pendentes_nusd': self.wallet_committed_nusd() - self.settled_nusd_total(),
+                'excedente_calculado_nusd': excedente,
+                'liquidado_sem_identidade_nusd': sem_identidade,
             })
-        return {'delta_nusd': delta, 'excedente_absorvido_nusd': excedente,
+        return {'delta_nusd': delta, 'excedente_nusd': excedente,
                 'liquidado_do_provedor_nusd': liquidado,
+                'liquidado_sem_identidade_nusd': sem_identidade,
                 'ledger_committed_nusd': self.wallet_committed_nusd()}
 
-    def record_historical_commitment(self, amount_nusd, evidence):
-        """Gasto historico que ocupa o teto total sem ter tentativa nesta base."""
+    def record_historical_commitment(self, amount_nusd, evidence, provider=None):
+        """Gasto historico que ocupa o teto sem ter tentativa nesta base.
+
+        O provedor e obrigatorio para que a conciliacao saiba que este gasto ja esta contado:
+        sem ele, o extrato do provedor acharia que o valor nao foi registrado e o somaria de novo.
+        """
         with self._tx():
-            self._event(None, 'historical_commitment', int(amount_nusd), evidence)
+            self._event(None, 'historical_commitment', int(amount_nusd),
+                        {**evidence, 'provider': provider})
             self.db.execute(
-                'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,settled_nusd,cost_source)'
-                ' VALUES(?,?,?,?,?,?)',
+                'INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,'
+                'settled_nusd,cost_source,priced_provider,priced_model,priced_snapshot_id)'
+                ' VALUES(?,?,?,?,?,?,?,NULL,NULL)',
                 (f'historical:{uuid.uuid4()}', self.experiment_id, 'historical', int(amount_nusd),
-                 int(amount_nusd), 'historical'),
+                 int(amount_nusd), 'historical', provider),
             )
         return int(amount_nusd)
+
+    def regularizar_identidade(self, attempt_id, provider, model, snapshot, motivo):
+        """Da identidade de preco a uma tentativa herdada de base antiga.
+
+        Sem isto, uma tentativa pendente migrada nunca poderia ser liquidada: settle() exige a
+        identidade da reserva, e a migracao so cria a coluna vazia. A regularizacao fica
+        registrada como evento, com o motivo, para nao virar porta de entrada silenciosa.
+        """
+        with self._tx():
+            linha = self.db.execute(
+                'SELECT priced_provider, settled_nusd FROM attempt_budget WHERE attempt_id = ?',
+                (attempt_id,)).fetchone()
+            if linha is None:
+                raise LedgerStateError('Tentativa inexistente')
+            if linha['priced_provider'] is not None:
+                raise LedgerStateError('Tentativa ja tem identidade de preco; regularizar apagaria evidencia')
+            self.db.execute(
+                'UPDATE attempt_budget SET priced_provider = ?, priced_model = ?, priced_snapshot_id = ?'
+                ' WHERE attempt_id = ?', (provider, model, snapshot, attempt_id))
+            self._event(attempt_id, 'reconcile', 0, {'regularizacao': motivo, 'provider': provider,
+                                                     'model': model, 'snapshot': snapshot})
+        return attempt_id
 
     # --- internos -------------------------------------------------------
     def _require_status(self, attempt_id, allowed):

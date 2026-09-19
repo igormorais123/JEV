@@ -5,8 +5,8 @@
 **Status:** etapas 1 a 4 do plano executadas, mais os experimentos E1, E2, E2b, E3 e E4. 305 chamadas
 reais, **US$ 0,010950** gastos de um teto de US$ 5,00 de gasto novo. Conciliação com o extrato do
 provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por **duas rodadas** de
-revisão independente de outro modelo (Codex `gpt-6-astra`), que encontraram doze defeitos além do que a
-execução já havia revelado. A seção 5 lista o que essas revisões derrubaram.
+revisão independente de outro modelo (Codex `gpt-6-astra`), que encontraram dezenove defeitos além do que
+a execução já havia revelado. A seção 5 lista o que essas revisões derrubaram.
 
 ---
 
@@ -217,9 +217,32 @@ preço criadas na primeira rodada — os testes passavam porque usam bancos novo
 funcionava em laboratório. Migração implementada com `ALTER TABLE`, base migrada, identidade das 305
 tentativas antigas preenchida pela evidência da reserva.
 
-Todos os sete corrigidos, com regressão em `executor/tests/test_achados_revisao2.py`. Total: **13 defeitos
-encontrados**, sendo 1 por execução, 5 na primeira revisão e 7 na segunda. Nenhum foi encontrado lendo o
-código na primeira escrita.
+Todos os sete corrigidos, com regressão em `executor/tests/test_achados_revisao2.py`.
+
+### 5.2 Terceira rodada: a correção da correção
+
+Terceira submissão, agora perguntando por regressões das correções da segunda. Mais **três P1** e quatro
+P2, e a raiz de três deles era a mesma decisão minha: eu havia **materializado** o ajuste de conciliação
+como uma linha no ledger.
+
+- Um gasto histórico do mesmo provedor ficava fora da soma filtrada, e o extrato o somava de novo.
+- Quando a tentativa correspondente era enfim liquidada, o ajuste só encolhia na conciliação *seguinte*;
+  no intervalo, a carteira contava o mesmo dinheiro duas vezes e podia negar uma chamada legítima.
+- A migração criava as colunas de identidade vazias, e o `settle` passava a rejeitar para sempre qualquer
+  tentativa antiga que ainda estivesse pendente — inclusive um timeout que recebesse resposta tardia.
+
+A correção foi estrutural: **o excedente do extrato deixou de ser linha e passou a ser cálculo**. Ele agora
+acompanha o estado sozinho, encolhe no instante em que a cobrança vira tentativa registrada, e não colide
+com o histórico. Junto, o gasto histórico passou a exigir o provedor, e foi criada uma regularização
+auditada de identidade para tentativas herdadas de base antiga.
+
+Dos P2: o `round(..., 4)` estava trazendo de volta o p igual a zero que a correção anterior tinha
+eliminado (1/20001 arredonda para 0,0), e o limite de erro por família foi reapresentado pelo que ele de
+fato mede — a probabilidade de uma família conter um caso aceito errado — e não como um limite
+conservador do risco por caso, que seria outro evento.
+
+Total: **20 defeitos encontrados**, sendo 1 pela execução, 5 na primeira revisão, 7 na segunda e 7 na
+terceira. Nenhum foi encontrado lendo o código na primeira escrita.
 
 Dos alertas P2, três mudaram o texto deste relatório: "efeito inexistente" virou "não detectamos efeito";
 "zero erro" virou "zero erros observados, com limite superior de 10,1%"; e a divergência entre a rubrica
@@ -339,13 +362,14 @@ camada offline — instalar e rodar suíte não é inferência real do component
 P2 passou a ter resposta preliminar no E4, sobre oito consultas autorais. Isso é um piloto, não um
 benchmark de busca.
 
-O controle financeiro e a análise acumularam **treze** defeitos encontrados durante a própria execução:
-um ao rodar (o teto aplicado por experimento), cinco na primeira revisão independente e sete na segunda.
+O controle financeiro e a análise acumularam **vinte** defeitos encontrados durante a própria execução:
+um ao rodar (o teto aplicado por experimento) e dezenove em três rodadas de revisão independente, sendo
+que cada rodada encontrou defeitos criados pelas correções da rodada anterior.
 Todos corrigidos, todos com teste de regressão. O gasto real nunca chegou perto do limite — US$ 0,010950
 de US$ 5,00 — mas um controle financeiro que só funciona porque o gasto é pequeno não é um controle
 financeiro.
 
-Nenhum dos treze foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou
+Nenhum dos vinte foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou
 quando outro modelo olhou com instrução de achar problema. O mais instrutivo: uma das correções da
 primeira rodada **só funcionava nos testes**, porque `CREATE TABLE IF NOT EXISTS` não migra tabela
 existente e os testes usavam bancos novos. A suíte estava verde e a produção, quebrada.

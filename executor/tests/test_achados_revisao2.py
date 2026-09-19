@@ -54,33 +54,62 @@ class ConciliacaoRound2(unittest.TestCase):
         self.assertGreater(self.ledger.wallet_committed_nusd(), 0)
         self.assertEqual(self.ledger.settled_nusd_total(), 0)
         saida = self.ledger.reconcile('openrouter', 300_000, {'nota': 'gasto externo'})
-        # O extrato acusa gasto que o ledger nao liquidou: tem de virar compromisso.
-        self.assertEqual(saida['excedente_absorvido_nusd'], 300_000)
+        # O extrato acusa gasto que o ledger nao liquidou: tem de ocupar o teto.
+        self.assertEqual(saida['excedente_nusd'], 300_000)
         self.assertEqual(saida['liquidado_do_provedor_nusd'], 0)
         self.ledger.cancel_before_send(pendente, evidence={'motivo': 'teste'})
         self.assertEqual(self.ledger.wallet_committed_nusd(), 300_000)
 
     def test_conciliacoes_sucessivas_nao_somam_o_mesmo_excedente(self):
-        """[R2-3] Uma linha de ajuste por provedor, atualizada, em vez de várias somadas."""
+        """[R2-3] O excedente é calculado, então repetir a conciliação não acumula nada."""
         self.ledger.reconcile('openrouter', 100_000, {'n': 1})
         primeiro = self.ledger.wallet_committed_nusd()
         self.ledger.reconcile('openrouter', 100_000, {'n': 2})
         self.ledger.reconcile('openrouter', 100_000, {'n': 3})
         self.assertEqual(self.ledger.wallet_committed_nusd(), primeiro)
+        # Nenhuma linha sintetica e criada: o excedente nao e materializado.
         linhas = self.ledger.db.execute(
             "SELECT COUNT(*) n FROM attempt_budget WHERE cost_source = 'provider_statement_excess'"
         ).fetchone()
-        self.assertEqual(linhas['n'], 1)
+        self.assertEqual(linhas['n'], 0)
 
-    def test_ajuste_acompanha_o_gasto_que_o_ledger_passa_a_registrar(self):
-        """O ajuste encolhe quando as tentativas correspondentes são liquidadas."""
+    def test_excedente_encolhe_sozinho_ao_liquidar_sem_nova_conciliacao(self):
+        """[R3-2] Antes, o excedente só encolhia na conciliação seguinte, e no intervalo
+
+        a carteira contava o mesmo gasto duas vezes. Agora é cálculo: acompanha na hora.
+        """
         self.ledger.reconcile('openrouter', 1_000_000, {'n': 1})
         self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
         attempt = self.ledger.reserve(**reserva())['attempt_id']
         self.ledger.settle(attempt, provider_reported_cost_nusd=1_000_000)
-        self.ledger.reconcile('openrouter', 1_000_000, {'n': 2})
-        # O gasto agora esta registrado como tentativa; o ajuste sintetico zera.
+        # Sem chamar reconcile de novo: o total continua 1.000.000, nao 2.000.000.
         self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
+
+    def test_historico_do_mesmo_provedor_nao_e_contado_duas_vezes(self):
+        """[R3-1] Histórico sem provedor ficava fora da soma e o extrato o somava de novo."""
+        self.ledger.record_historical_commitment(1_000_000, {'fonte': 'dossie'}, provider='openrouter')
+        self.ledger.reconcile('openrouter', 1_000_000, {'n': 1})
+        self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
+
+    def test_liquidado_sem_identidade_e_reportado(self):
+        """[R3-1] Enquanto houver gasto sem provedor, a conciliação avisa."""
+        self.ledger.record_historical_commitment(500, {'fonte': 'desconhecida'})
+        saida = self.ledger.reconcile('openrouter', 0, {'n': 1})
+        self.assertEqual(saida['liquidado_sem_identidade_nusd'], 500)
+
+    def test_tentativa_migrada_pode_ser_regularizada_e_liquidada(self):
+        """[R3-3] A migração criava coluna vazia e settle rejeitava a tentativa para sempre."""
+        attempt = self.ledger.reserve(**reserva())['attempt_id']
+        self.ledger.db.execute(
+            'UPDATE attempt_budget SET priced_provider = NULL, priced_model = NULL,'
+            ' priced_snapshot_id = NULL WHERE attempt_id = ?', (attempt,))
+        from executor.ledger import LedgerStateError
+        with self.assertRaises(LedgerStateError):
+            self.ledger.settle(attempt, provider_reported_cost_nusd=10)
+        self.ledger.regularizar_identidade(attempt, 'openrouter', 'm', 'tarifa-A',
+                                           motivo='base migrada de versao anterior')
+        saida = self.ledger.settle(attempt, provider_reported_cost_nusd=10)
+        self.assertEqual(saida['settled_nusd'], 10)
 
     def test_extrato_menor_que_o_liquidado_nao_devolve_saldo(self):
         attempt = self.ledger.reserve(**reserva())['attempt_id']

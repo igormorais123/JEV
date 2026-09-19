@@ -70,9 +70,12 @@ class AchadosP1(unittest.TestCase):
 
     # P1-2: divergência do extrato não ocupava o teto
     def test_extrato_acima_do_ledger_ocupa_o_teto(self):
+        attempt = self.ledger.reserve(**reserva())['attempt_id']
+        self.ledger.settle(attempt, provider_reported_cost_nusd=10_000)
+        liquidado = self.ledger.settled_nusd_total('openrouter')
         antes = self.ledger.wallet_committed_nusd()
-        saida = self.ledger.reconcile('openrouter', antes + 50_000, {'nota': 'extrato maior'})
-        self.assertEqual(saida['excedente_absorvido_nusd'], 50_000)
+        saida = self.ledger.reconcile('openrouter', liquidado + 50_000, {'nota': 'extrato maior'})
+        self.assertEqual(saida['excedente_nusd'], 50_000)
         self.assertEqual(self.ledger.wallet_committed_nusd(), antes + 50_000)
 
     def test_extrato_abaixo_do_ledger_nao_devolve_saldo(self):
