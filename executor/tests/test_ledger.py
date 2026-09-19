@@ -47,6 +47,7 @@ class LedgerTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.path = Path(self.temp.name) / 'ledger.sqlite3'
         self.ledger = self.open_ledger()
+        self.ledger.set_wallet_cap(usd_to_nusd('1.00'))
         self.ledger.authorize(usd_to_nusd('1.00'))
         self.ledger.set_block_cap('b1', usd_to_nusd('0.25'))
         self.ledger.register_arm('arm-1', 'S01', PROVIDER, MODEL)
@@ -103,7 +104,40 @@ class LedgerTests(unittest.TestCase):
         self.ledger.set_block_cap('b1', usd_to_nusd('1.00'))
         with self.assertRaises(BudgetError) as ctx:
             self.ledger.reserve(**reserve_args())
-        self.assertIn('Teto global', str(ctx.exception))
+        self.assertIn('Teto da carteira', str(ctx.exception))
+
+    def test_experimento_novo_nao_abre_teto_novo(self):
+        """O furo que a execucao real revelou: cada experimento tinha o proprio teto."""
+        self.ledger.set_block_cap('b1', usd_to_nusd('1.00'))
+        self.ledger.reserve(**reserve_args())
+        gasto = self.ledger.wallet_committed_nusd()
+
+        outro = Ledger(self.path, 'exp-outro', prices=PRICES)
+        try:
+            outro.authorize(usd_to_nusd('1.00'))
+            outro.set_block_cap('b2', usd_to_nusd('1.00'))
+            outro.register_arm('arm-2', 'S02', PROVIDER, MODEL)
+            # A carteira ja enxerga o gasto do primeiro experimento.
+            self.assertEqual(outro.wallet_committed_nusd(), gasto)
+            outro.set_wallet_cap(gasto + 1)
+            with self.assertRaises(BudgetError) as ctx:
+                outro.reserve(**reserve_args(arm_id='arm-2', block_id='b2'))
+            self.assertIn('Teto da carteira', str(ctx.exception))
+        finally:
+            outro.close()
+
+    def test_sem_teto_de_carteira_nao_despacha(self):
+        fresh = Path(self.temp.name) / 'sem-carteira.sqlite3'
+        ledger = Ledger(fresh, 'exp-sem-carteira', prices=PRICES)
+        try:
+            ledger.authorize(usd_to_nusd('1.00'))
+            ledger.set_block_cap('b1', usd_to_nusd('1.00'))
+            ledger.register_arm('arm-1', 'S01', PROVIDER, MODEL)
+            with self.assertRaises(BudgetError) as ctx:
+                ledger.reserve(**reserve_args())
+            self.assertIn('Carteira sem teto', str(ctx.exception))
+        finally:
+            ledger.close()
 
     # --- liquidacao ----------------------------------------------------
     def test_usage_valido_liquida_pelo_custo_observado(self):
@@ -186,6 +220,7 @@ class LedgerTests(unittest.TestCase):
     # --- concorrencia e reinicio -----------------------------------------
     def test_concorrencia_nao_ultrapassa_o_teto(self):
         self.ledger.set_block_cap('b1', 13_000)  # exatamente 10 reservas de 1300
+        self.ledger.set_wallet_cap(13_000)
         granted, denied = [], []
         lock = threading.Lock()
 

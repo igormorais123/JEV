@@ -42,6 +42,12 @@ class Ledger:
         self.db.executescript(SCHEMA_PATH.read_text(encoding='utf-8'))
         self.db.executescript(
             """
+            CREATE TABLE IF NOT EXISTS wallet (
+              wallet_id TEXT PRIMARY KEY,
+              cap_nusd INTEGER NOT NULL CHECK(cap_nusd >= 0),
+              declared_at_utc TEXT NOT NULL,
+              note TEXT NOT NULL
+            );
             CREATE TABLE IF NOT EXISTS budget_blocks (
               block_id TEXT NOT NULL,
               experiment_id TEXT NOT NULL REFERENCES experiments(experiment_id),
@@ -103,13 +109,42 @@ class Ledger:
 
     # --- consulta -----------------------------------------------------
     def committed_nusd(self):
-        """Liquidado + reservas abertas. Base unica para autorizar a proxima tentativa."""
+        """Liquidado + reservas abertas deste experimento."""
         row = self.db.execute(
             'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd ELSE settled_nusd END),0) AS total'
             ' FROM attempt_budget WHERE experiment_id = ?',
             (self.experiment_id,),
         ).fetchone()
         return int(row['total'])
+
+    def wallet_committed_nusd(self):
+        """Tudo que ja foi comprometido na base, somando TODOS os experimentos.
+
+        O teto autorizado e da carteira, nao de cada experimento: sem isso, abrir um
+        experimento novo abriria um teto novo e o limite global seria ficcao.
+        """
+        row = self.db.execute(
+            'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd ELSE settled_nusd END),0) AS total'
+            ' FROM attempt_budget'
+        ).fetchone()
+        return int(row['total'])
+
+    def set_wallet_cap(self, cap_nusd, note='teto global autorizado', wallet_id='default'):
+        with self._tx():
+            self.db.execute(
+                'INSERT OR REPLACE INTO wallet(wallet_id,cap_nusd,declared_at_utc,note) VALUES(?,?,?,?)',
+                (wallet_id, int(cap_nusd), now_utc(), note),
+            )
+        return int(cap_nusd)
+
+    def wallet_cap_nusd(self, wallet_id='default'):
+        row = self.db.execute('SELECT cap_nusd FROM wallet WHERE wallet_id = ?', (wallet_id,)).fetchone()
+        if row is None:
+            raise BudgetError('Carteira sem teto declarado; nenhuma chamada paga e autorizada')
+        return int(row['cap_nusd'])
+
+    def wallet_available_nusd(self):
+        return self.wallet_cap_nusd() - self.wallet_committed_nusd()
 
     def block_committed_nusd(self, block_id):
         row = self.db.execute(
@@ -148,11 +183,18 @@ class Ledger:
         worst = worst_case_nusd(self.prices, provider, model, max_input_tokens, max_output_tokens)
         attempt_id = attempt_id or str(uuid.uuid4())
         with self._tx(immediate=True):
+            wallet_cap = self.wallet_cap_nusd()
+            wallet_committed = self.wallet_committed_nusd()
+            if wallet_committed + worst > wallet_cap:
+                raise BudgetError(
+                    f'Teto da carteira: comprometido {wallet_committed} + pior caso {worst} > '
+                    f'teto {wallet_cap} nusd'
+                )
             cap = self.cap_nusd()
             committed = self.committed_nusd()
             if committed + worst > cap:
                 raise BudgetError(
-                    f'Teto global: comprometido {committed} + pior caso {worst} > teto {cap} nusd'
+                    f'Teto do experimento: comprometido {committed} + pior caso {worst} > teto {cap} nusd'
                 )
             block = self.db.execute(
                 'SELECT cap_nusd FROM budget_blocks WHERE experiment_id = ? AND block_id = ?',
@@ -253,7 +295,7 @@ class Ledger:
             if cost > reserved:
                 extra = cost - reserved
                 evidence['overrun_nusd'] = extra
-                if self.committed_nusd() - reserved + cost > self.cap_nusd():
+                if self.wallet_committed_nusd() - reserved + cost > self.wallet_cap_nusd():
                     self.db.execute("UPDATE experiments SET status = 'paused' WHERE experiment_id = ?",
                                     (self.experiment_id,))
                     evidence['paused'] = True

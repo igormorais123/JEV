@@ -2,6 +2,17 @@
 
 Projeto experimental para testes com o modelo de classificação JEV.
 
+## Execução realizada
+
+- [Relatório de execução — Helena](docs/RELATORIO-EXECUCAO-JEV-HELENA.md) — recomendação, evidência, red team e o que continua desconhecido.
+- [Executor financeiro e contrato real da API](executor/README.md)
+- [Pré-registro do E1](planning/preregistro-E1-triagem.md) · corpora em [triagem](data/corpus/triagem-piloto.jsonl) e [evidência](data/corpus/evidencia-piloto.jsonl)
+- Resultados brutos em `runs/`: canários, sondagem de contrato, E1, E2 fatorial, E3 e a rodada simples dos 15 sistemas.
+
+261 chamadas reais, **US$ 0,007638** de um teto de US$ 5,00 de gasto novo. A conciliação com o extrato do
+provedor fecha sem divergência inexplicada. Na triagem, Jev 0,925 contra 0,600 da regra simples congelada;
+na relação afirmação/evidência, 0,958 contra 0,625. Piloto com gabarito autoral provisório: não decide adoção.
+
 ## Plano de testes atual
 
 - [Plano científico completo — Helena](docs/PLANO-CIENTIFICO-JEV-HELENA.md)

@@ -40,6 +40,7 @@ class RunnerTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.ledger = Ledger(Path(self.temp.name) / 'ledger.sqlite3', 'exp-runner', prices=PRICES)
+        self.ledger.set_wallet_cap(usd_to_nusd('5.00'))
         self.ledger.authorize(usd_to_nusd('5.00'))
         self.ledger.set_block_cap('b1', usd_to_nusd('0.25'))
         self.ledger.register_arm('arm-1', 'S01', PROVIDER, MODEL)
@@ -112,6 +113,7 @@ class RunnerTests(unittest.TestCase):
 
     def test_sem_reserva_nao_ha_envio(self):
         self.ledger.set_block_cap('b1', RESERVA_ESPERADA - 1)
+        self.ledger.set_wallet_cap(usd_to_nusd('5.00'))
         from executor.ledger import BudgetError
         with self.assertRaises(BudgetError):
             runner.dispatch(self.ledger, transport=self.transport(200, {}), **dispatch_args())
