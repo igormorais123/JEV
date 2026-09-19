@@ -182,6 +182,44 @@ def e7_run(rel, gold, agora):
     }
 
 
+def e10_run(rel, gold, agora):
+    """O braço do LLM econômico. As tentativas são do comparador, não do Jev.
+
+    O Jev não foi reexecutado aqui: as respostas dele vêm do E7, os mesmos 40 casos. Publicar
+    tentativas do Jev neste run contaria a mesma chamada duas vezes no custo do painel.
+    """
+    tentativas, decisoes = [], []
+    for c in rel['casos']:
+        status = 'success' if c.get('llm') else 'invalid_response'
+        tentativas.append(tentativa(c['llm_attempt_id'], status, c['llm_latency_ms'],
+                                    c['llm_cost_nusd']))
+        decisoes.append(decisao(f"llm:{c['case_id']}", c['case_id'], c['llm_attempt_id'],
+                                'test', c['gold'], c.get('llm'), c.get('llm_confidence'),
+                                'comparador-economico', c['family']))
+    par = rel['pareada']
+    return {
+        'id': 'e10-comparador-llm-economico', 'system_id': 'S01', 'phase': 'confirmation',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': (f"os mesmos {rel['llm']['casos_programados']} casos da particao de "
+                    'confirmacao, com as instrucoes e criterios congelados do E1, sem ajuste '
+                    'de prompt'),
+        'notes': ('O braco que faltava desde o plano: ate aqui o unico comparador era uma regra '
+                  f"congelada escrita pelo avaliador. {rel['modelo']} acerta "
+                  f"{rel['llm']['acertos']}/{rel['llm']['casos_programados']} contra "
+                  f"{rel['jev']['acertos']}/{rel['jev']['casos_programados']} do Jev; diferenca "
+                  f"pareada {par['diferenca_observada']:+.4f}, IC95 [{par['ic95'][0]:.4f}; "
+                  f"{par['ic95'][1]:.4f}], que contem zero. So o Jev acerta em "
+                  f"{len(rel['so_jev_acerta'])} casos, so o comparador em "
+                  f"{len(rel['so_llm_acerta'])}: McNemar exato p = 0,25. Pela regra congelada no "
+                  'pre-registro, isto e ausencia de evidencia de vantagem, e o veredito do '
+                  f"painel mudou por causa disto. {len(rel['respostas_invalidas'])} respostas "
+                  'fora do contrato, contadas como erro e nunca reexecutadas.'),
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
 def tentativas_orfas_run(estado, agora):
     """Tentativas que existem no ledger e nao aparecem no painel.
 
@@ -238,7 +276,8 @@ def publicar():
                                ('e2b-posicao/relatorio.json', e2b_run),
                                ('e5-provedores/relatorio.json', e5_run),
                                ('e6-repetibilidade/relatorio.json', e6_run),
-                               ('e7-confirmacao/relatorio.json', e7_run)]:
+                               ('e7-confirmacao/relatorio.json', e7_run),
+                               ('e10-llm-economico/relatorio.json', e10_run)]:
         rel = ler(arquivo)
         if rel:
             novos.append(construir(rel, gold, agora))

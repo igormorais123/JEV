@@ -229,10 +229,16 @@ def confianca_calculada(e9, e6, e8, adj):
             valor -= 0.10
             motivos.append(f'zero erro observado entre os aceitos, mas o limite superior de 95% '
                            f'por família é {pct(teto)} (-0,10)')
-    if not existe_comparador_de_mesmo_tipo():
+    e10 = ler('e10-llm-economico/relatorio.json')
+    if not e10:
         valor -= 0.10
         motivos.append('o comparador é uma regra congelada, não um modelo de linguagem barato '
                        'no mesmo contrato: a pergunta "vale um LLM aqui?" segue aberta (-0,10)')
+    elif comparador_empatou(e10):
+        # Pior do que nao ter o braco: ter, e ele nao sustentar a recomendacao.
+        valor -= 0.20
+        motivos.append('o braço do LLM econômico foi executado e a vantagem do Jev sobre ele '
+                       'não separou de zero (-0,20)')
     return round(max(0.0, min(1.0, valor)), 2), motivos
 
 
@@ -249,15 +255,6 @@ def limite_superior_erro_da_politica(politica):
              for bloco in grave['por_conjunto'].values() for b in bloco.values()]
     return max(tetos) if tetos else None
 
-
-def existe_comparador_de_mesmo_tipo():
-    """Houve algum braco com outro modelo de linguagem no mesmo contrato do Jev?
-
-    O plano previa esse braco (a pergunta P1: vale um LLM aqui, ou qualquer classificador
-    serve?). Ele nao foi executado, e o unico comparador do estudo e uma regra congelada escrita
-    por mim. Enquanto isso for verdade, a nota de confianca tem de pagar por isso.
-    """
-    return (RUNS / 'e10-llm-economico' / 'relatorio.json').exists()
 
 
 def nota_de_confianca(adj, e9=None):
@@ -287,12 +284,28 @@ def nota_de_confianca(adj, e9=None):
             'modelos, não pessoas do atendimento real.')
 
 
-def titulo_do_veredito(e9):
+def comparador_empatou(e10):
+    """O braco do LLM economico desmentiu a recomendacao?
+
+    A regra esta congelada no pre-registro do E10, escrita antes da primeira chamada: se o IC95
+    da diferenca pareada contiver zero, o resultado e AUSENCIA DE EVIDENCIA DE VANTAGEM, e a
+    recomendacao do painel deixa de ser "use o Jev". Nao e equivalencia — com 10 familias o
+    poder e baixo por construcao — mas tambem nao e vantagem demonstrada.
+    """
+    if not e10:
+        return None
+    baixo, alto = e10['pareada']['ic95']
+    return baixo <= 0 <= alto
+
+
+def titulo_do_veredito(e9, e10=None):
     """O titulo tambem precisa cair quando o dado cair.
 
     Antes era uma frase cravada recomendando o corte de 0,90. Se o E9 sumisse, ou se a
     politica passasse a deixar erro entre os aceitos, o titulo continuaria recomendando.
     """
+    if comparador_empatou(e10):
+        return 'Sem evidência de vantagem sobre um LLM econômico: não adotar ainda'
     if not e9:
         return 'Sem análise de política: não há recomendação operacional'
     politica = politica_de_referencia(e9)
@@ -309,7 +322,7 @@ def titulo_do_veredito(e9):
     return 'Revisão humana de todas as decisões: nenhum corte zerou o erro'
 
 
-def texto_do_veredito(e9, e6):
+def texto_do_veredito(e9, e6, e10=None):
     """O veredito e calculado, nao escrito a mao.
 
     Um texto fixo com numeros dentro continua afirmando o mesmo depois que os dados mudam: na
@@ -317,6 +330,23 @@ def texto_do_veredito(e9, e6):
     """
     if not e9:
         return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
+    if comparador_empatou(e10):
+        par = e10['pareada']
+        return (
+            'O braço que faltava mudou a conclusão. Um LLM genérico e barato ('
+            + e10['modelo'] + '), com as mesmas instruções congeladas e nos mesmos '
+            + str(e10['llm']['casos_programados']) + ' casos da partição de confirmação, acerta '
+            + pct(e10['llm']['acuracia_sobre_programados']) + ' contra '
+            + pct(e10['jev']['acuracia_sobre_programados']) + ' do Jev. A diferença de '
+            + pct(par['diferenca_observada']) + ' tem IC95 [' + pct(par['ic95'][0]) + '; '
+            + pct(par['ic95'][1]) + '] por reamostragem de famílias, e esse intervalo contém '
+            'zero. Os dois erram em lados diferentes de '
+            + str(e10['mcnemar_discordancias']) + ' casos, todos a favor do Jev, o que no '
+            'McNemar exato dá p = 0,25. Pela regra congelada no pré-registro do E10, isto é '
+            'ausência de evidência de vantagem, não equivalência: com 10 famílias o poder é '
+            'baixo por construção. O que cai não é o desempenho do Jev — é a afirmação de que '
+            'ele é necessário aqui. Enquanto essa pergunta não for respondida com amostra maior, '
+            'a recomendação é não adotar com base neste estudo.')
     # A particao de confirmacao e a que vale para decidir: sao os casos que nao guiaram o
     # desenho. A uniao entra so na conta de custo, que nao depende de particao.
     politica = politica_de_referencia(e9)
@@ -591,6 +621,39 @@ def montar():
         cartoes.append(ausente('e6', 'Repetibilidade isolada (E6)',
                                'Repetições individuais ainda não executadas.', '—'))
 
+    e10 = ler('e10-llm-economico/relatorio.json')
+    if e10:
+        d10 = gabarito.desempenho('runs/e10-llm-economico/relatorio.json', 'llm')
+        # O Jev deste cartao tambem e recontado do mesmo arquivo: ler
+        # e10['jev']['acuracia_sobre_programados'] seria o agregado gravado quando o E10 rodou,
+        # e a auditoria de mutacao mostrou que esse cartao nao se mexia com o dado.
+        d10_jev = gabarito.desempenho('runs/e10-llm-economico/relatorio.json', 'jev')
+        par10 = e10['pareada']
+        cartoes.append(cartao(
+            'e10', 'Comparador: LLM econômico (E10)', valor_entre_gabaritos(d10),
+            ' · '.join(nome + ' ' + pct(v) for nome, v in
+                       sorted(gabaritos_do_conjunto(d10).items(), key=lambda kv: kv[1]))
+            + ' · Jev ' + valor_entre_gabaritos(d10_jev),
+            ('O estudo inteiro comparou o Jev contra uma regra congelada que eu mesmo escrevi — '
+             'o comparador mais fácil de vencer que existe. Aqui '
+             + e10['modelo'] + ' recebe as MESMAS instruções e critérios do E1, nos mesmos '
+             + str(d10['casos_programados']) + ' casos da partição de confirmação, sem '
+             'nenhum ajuste de prompt. Diferença pareada ' + pct(par10['diferenca_observada'])
+             + ', IC95 [' + pct(par10['ic95'][0]) + '; ' + pct(par10['ic95'][1]) + '] por '
+             'reamostragem de famílias. Só o Jev acerta em '
+             + str(len(e10['so_jev_acerta'])) + ' casos ('
+             + ', '.join(e10['so_jev_acerta']) + '); só o comparador acerta em '
+             + str(len(e10['so_llm_acerta'])) + '. '
+             + ('O intervalo contém zero: pela regra congelada no pré-registro, isto é ausência '
+                'de evidência de vantagem, e o veredito acima mudou por causa disto.'
+                if comparador_empatou(e10) else
+                'O intervalo não contém zero: a vantagem do Jev tem, agora, um comparador que '
+                'não fui eu que escrevi.')
+             + ' Respostas fora do contrato contaram como erro, nunca foram reexecutadas: '
+             'houve ' + str(len(e10['respostas_invalidas'])) + '.'),
+            fonte_com_gabarito(str(d10['casos_programados']) + ' casos da partição de '
+                               'confirmação, max_tokens 64, temperatura 0', 'faixa')))
+
     grave = ler('erro-grave.json')
     if grave:
         # [R13] O pre-registro do E1 manda reportar erro grave SEPARADO da acuracia media, e
@@ -619,7 +682,10 @@ def montar():
             fonte_com_gabarito(' · '.join(conjuntos), 'faixa')))
 
     # O saldo vale o do relatorio mais recente que registrou a carteira.
-    carteira = e7 or e6 or e5 or e4 or e2b or {}
+    # [E10] A cadeia era fixa e comecava no E7: depois do E10 o painel continuaria publicando o
+    # saldo anterior ao ultimo experimento. Agora vence o relatorio com o carimbo mais novo.
+    candidatos = [r for r in (e10, e7, e6, e5, e4, e2b) if r and r.get('wallet_committed_nusd')]
+    carteira = max(candidatos, key=lambda r: r.get('at', '')) if candidatos else {}
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
     disponivel = carteira.get('wallet_available_nusd') or carteira.get('available_nusd')
 
@@ -627,8 +693,8 @@ def montar():
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
-            'titulo': titulo_do_veredito(e9),
-            'texto': texto_do_veredito(e9, e6),
+            'titulo': titulo_do_veredito(e9, e10),
+            'texto': texto_do_veredito(e9, e6, e10),
             'confianca': confianca[0],
             'confianca_motivos': confianca[1],
             'confianca_nota': nota_de_confianca(adj, e9),

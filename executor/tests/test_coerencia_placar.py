@@ -23,6 +23,18 @@ def tem_relatorios():
 
 
 @unittest.skipUnless(tem_relatorios(), 'requer os relatórios de execução')
+def veredito_recomenda_corte(bloco):
+    """O veredito mudou de assunto?
+
+    [E10] Estes testes exigem que cobertura e custo saiam da mesma partição — e faziam sentido
+    enquanto o veredito era a política de corte. Depois que o braço do LLM econômico não separou
+    de zero, o veredito passou a ser "não adotar ainda", e não cita cobertura nenhuma. Exigir a
+    frase antiga transformaria o teste num impedimento a mudar de conclusão, que é o oposto do
+    que ele existe para proteger.
+    """
+    return 'corte de confiança' in bloco['veredito']['titulo'].lower()
+
+
 class CoerenciaDoPlacar(unittest.TestCase):
     def setUp(self):
         self.bloco = placar.montar()
@@ -32,6 +44,8 @@ class CoerenciaDoPlacar(unittest.TestCase):
         return set(re.findall(r'\d+[.,]?\d*', texto))
 
     def test_veredito_e_cartao_e9_citam_a_mesma_cobertura(self):
+        if not veredito_recomenda_corte(self.bloco):
+            self.skipTest('o veredito não recomenda corte: não há cobertura a conferir')
         veredito = self.bloco['veredito']['texto']
         cartao = self.cartoes['e9']['leitura']
         e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
@@ -50,6 +64,8 @@ class CoerenciaDoPlacar(unittest.TestCase):
         cobertura mede. Misturar as duas partições promete uma política que não existe em
         relatório nenhum.
         """
+        if not veredito_recomenda_corte(self.bloco):
+            self.skipTest('o veredito não recomenda corte: não há custo de política a conferir')
         e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
         politica = placar.politica_de_referencia(e9)
         tudo = placar.politica_de_referencia(e9, corte=1.01)
@@ -177,8 +193,16 @@ class ConfiancaCalculada(unittest.TestCase):
             {'por_particao': {'confirmacao (teste)': {'politicas': [
                 {'corte': 0.90, 'casos': 40, 'erros_entre_aceitos': 0}]}}},
             {'n_instaveis': 1, 'casos': 40, 'repeticoes': 5}, None, {'x': 1})
-        self.assertEqual(len(motivos), 4)
-        self.assertAlmostEqual(valor, 0.5, places=2)
+        # [R13] Este teste cravava "4 motivos, valor 0,5", e por isso reprovou quando a revisão
+        # adversarial acrescentou dois descontos legítimos. Contagem fixa não é invariante: o
+        # que tem de valer é que TODO desconto apareça na lista e que a soma feche com a nota.
+        self.assertTrue(motivos, 'nota abaixo de 1,0 sem nenhum motivo declarado')
+        descontos = [float(re.search(r'-0,(\d+)\)', m).group(1)) / 100
+                     for m in motivos if re.search(r'-0,(\d+)\)', m)]
+        self.assertEqual(len(descontos), len(motivos),
+                         'algum motivo não declara quanto descontou')
+        self.assertAlmostEqual(valor, round(1.0 - sum(descontos), 2), places=2,
+                               msg='a nota não é a soma dos descontos que ela declara')
 
 
 class GabaritoOficial(unittest.TestCase):

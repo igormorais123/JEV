@@ -41,26 +41,33 @@ class OPainelReageAoDadoBruto(unittest.TestCase):
     def test_trocar_acertos_por_erros_move_algum_cartao(self):
         base = montar()
         for fonte in relatorios_com_casos():
-            with self.subTest(relatorio=fonte.name):
+            with self.subTest(relatorio=fonte.parent.name):
                 copia = fonte.with_suffix('.mutacao-bkp')
                 shutil.copy(fonte, copia)
                 try:
                     dados = json.loads(fonte.read_text(encoding='utf-8'))
+                    # O campo de resposta muda por experimento: o E10 responde em `llm`.
+                    # Mutar so `jev` deixava o cartao do comparador fora da auditoria.
+                    campos = [c for c in ('jev', 'llm', 'resposta')
+                              if c in dados['casos'][0]]
                     trocados = 0
                     for caso in dados['casos']:
-                        if caso.get('jev') and caso['jev'] == caso.get('gold'):
-                            caso['jev'] = CLASSE_QUE_NAO_EXISTE
-                            trocados += 1
-                            if trocados >= 5:
-                                break
-                    self.assertTrue(trocados, f'{fonte.name} não tinha acerto para mutar')
+                        mexeu = False
+                        for campo in campos:
+                            if caso.get(campo) and caso[campo] == caso.get('gold'):
+                                caso[campo] = CLASSE_QUE_NAO_EXISTE
+                                mexeu = True
+                        trocados += 1 if mexeu else 0
+                        if trocados >= 5:
+                            break
+                    self.assertTrue(trocados, f'{fonte.parent.name} não tinha acerto para mutar')
                     fonte.write_text(json.dumps(dados, ensure_ascii=False, indent=2),
                                      encoding='utf-8')
                     novo = montar()
                     mudaram = [c['chave'] for c, b in zip(novo['cartoes'], base['cartoes'])
                                if c != b]
                     self.assertTrue(mudaram,
-                                    f'{trocados} acertos viraram erro em {fonte.name} e nenhum '
+                                    f'{trocados} acertos viraram erro em {fonte.parent.name} e nenhum '
                                     'cartão do painel se mexeu: algum número está congelado')
                 finally:
                     shutil.copy(copia, fonte)

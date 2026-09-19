@@ -1,35 +1,48 @@
 {
-  "schema_version": 1,
-  "snapshot_id": "prices-2026-09-18-openrouter",
-  "captured_at_utc": "2026-09-18T23:40:00Z",
-  "note": "Precos em nanodolares inteiros por milhao de tokens (1 USD = 1e9 nusd). Conferidos na API publica do provedor. Modelo sem entrada aqui nao pode ser despachado.",
-  "models": {
-    "openrouter:typesafe/jev-1.13": {
-      "input_nusd_per_million_tokens": 42000000,
-      "output_nusd_per_million_tokens": 0,
-      "context_length": 32000,
-      "max_completion_tokens": 28800,
-      "source": "https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints",
-      "source_captured_at_utc": "2026-09-18T23:40:00Z",
-      "provider_endpoint_name": "TypeSafe | typesafe/jev-1.13-20260917",
-      "raw_pricing": {
-        "prompt": "0.000000042",
-        "completion": "0"
-      }
-    },
-    "typesafe:jev-1.13.0": {
-      "input_nusd_per_million_tokens": 42000000,
-      "output_nusd_per_million_tokens": 42000000,
-      "context_length": 64000,
-      "max_completion_tokens": 64000,
-      "source": "https://docs.typesafe.ai/models",
-      "source_captured_at_utc": "2026-09-19T04:05:00Z",
-      "nota": "Documentacao oficial: US$ 42 por Btok de entrada e US$ 0,042 por Mtok de saida, que sao a mesma tarifa por token (4,2e-8 USD). Diferenca material em relacao ao transporte OpenRouter, onde a saida NAO e cobrada. Contexto de 64k por requisicao, com 32k para o estado mais a maior pergunta. Sem maximo de saida publicado: reservamos o proprio limite da requisicao, que e conservador.",
-      "raw_pricing": {
-        "input": "$42 per Btok",
-        "output": "$0.042 per Mtok"
-      },
-      "rate_limits": "250.000 tokens por segundo; 1.200 requisicoes por minuto"
-    }
+ "schema_version": 1,
+ "snapshot_id": "prices-2026-09-18-openrouter",
+ "captured_at_utc": "2026-09-18T23:40:00Z",
+ "note": "Precos em nanodolares inteiros por milhao de tokens (1 USD = 1e9 nusd). Conferidos na API publica do provedor. Modelo sem entrada aqui nao pode ser despachado.",
+ "models": {
+  "openrouter:typesafe/jev-1.13": {
+   "input_nusd_per_million_tokens": 42000000,
+   "output_nusd_per_million_tokens": 0,
+   "context_length": 32000,
+   "max_completion_tokens": 28800,
+   "source": "https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints",
+   "source_captured_at_utc": "2026-09-18T23:40:00Z",
+   "provider_endpoint_name": "TypeSafe | typesafe/jev-1.13-20260917",
+   "raw_pricing": {
+    "prompt": "0.000000042",
+    "completion": "0"
+   }
+  },
+  "typesafe:jev-1.13.0": {
+   "input_nusd_per_million_tokens": 42000000,
+   "output_nusd_per_million_tokens": 42000000,
+   "context_length": 64000,
+   "max_completion_tokens": 64000,
+   "source": "https://docs.typesafe.ai/models",
+   "source_captured_at_utc": "2026-09-19T04:05:00Z",
+   "nota": "Documentacao oficial: US$ 42 por Btok de entrada e US$ 0,042 por Mtok de saida, que sao a mesma tarifa por token (4,2e-8 USD). Diferenca material em relacao ao transporte OpenRouter, onde a saida NAO e cobrada. Contexto de 64k por requisicao, com 32k para o estado mais a maior pergunta. Sem maximo de saida publicado: reservamos o proprio limite da requisicao, que e conservador.",
+   "raw_pricing": {
+    "input": "$42 per Btok",
+    "output": "$0.042 per Mtok"
+   },
+   "rate_limits": "250.000 tokens por segundo; 1.200 requisicoes por minuto"
+  },
+  "openrouter:meta-llama/llama-3.1-8b-instruct": {
+   "input_nusd_per_million_tokens": 50000000,
+   "output_nusd_per_million_tokens": 80000000,
+   "context_length": 131072,
+   "max_completion_tokens": 64,
+   "source": "https://openrouter.ai/api/v1/models",
+   "source_captured_at_utc": "2026-09-19T06:06:48Z",
+   "provider_endpoint_name": "OpenRouter | meta-llama/llama-3.1-8b-instruct",
+   "raw_pricing": {
+    "prompt": "0.00000005",
+    "completion": "0.00000008"
+   }
   }
+ }
 }

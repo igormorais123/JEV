@@ -3,7 +3,7 @@
 **Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA
 **Execução:** 18–19 de setembro de 2026
 **Sistema avaliado:** Jev 1.13 (`typesafe/jev-1.13` via OpenRouter e `jev-1.13.0` direto)
-**Custo total:** US$ 0,018174462 em 625 chamadas, de um teto autorizado de US$ 5,00
+**Custo total:** US$ 0,018532027 em 665 chamadas, de um teto autorizado de US$ 5,00
 **Código, dados e registros:** este repositório, com pré-registros em `planning/` e relatórios
 brutos em `runs/`
 
@@ -11,8 +11,55 @@ brutos em `runs/`
 
 ## 1. Recomendação
 
-**Use o Jev como classificador consultivo com corte de confiança em 0,90 e revisão humana do
-que ficar abaixo. Não o use como decisor automático sem revisão.**
+**Não adote o Jev com base neste estudo. Um LLM genérico e barato empata com ele dentro da
+margem de erro, e enquanto isso for verdade o estudo não mostrou que o Jev é necessário.**
+
+Esta recomendação substitui a anterior, que era "use o Jev como classificador consultivo com
+corte de confiança em 0,90". A mudança não veio de opinião: veio do experimento E10, executado
+em 19 de setembro, **depois** de o relatório estar escrito e depois de treze rodadas de revisão.
+
+Até o E10, o único comparador deste estudo era uma **regra congelada escrita por mim** — o
+comparador mais fácil de vencer que existe. A décima terceira rodada de revisão adversarial
+apontou que a pergunta P1 do plano original (*vale um LLM especializado aqui, ou qualquer
+classificador de linguagem resolve?*) seguia com metade da resposta. O braço foi então executado
+com regra de decisão congelada antes da primeira chamada
+(`planning/preregistro-E10-llm-economico.md`).
+
+| | Acurácia (autor) | Acurácia (oficial) | Acurácia (anotador independente) |
+|---|---|---|---|
+| Jev 1.13 | 0.9750 | 1.0000 | 0.9000 |
+| `meta-llama/llama-3.1-8b-instruct` | 0.9000 | 0.9250 | 0.8500 |
+
+A diferença pareada é de **7,5%**, com IC95
+**[0,0%; 15,0%]** por reamostragem de famílias — e esse intervalo
+**contém zero**. Os dois modelos discordam em 3 casos
+(cnf-g03-01, cnf-g05-04, cnf-g07-01), todos a favor do Jev, o que no McNemar exato dá
+**p = 0,25**. Nenhuma das 40 respostas do comparador saiu fora do contrato.
+
+Pela regra que eu mesma congelei antes de olhar: isto é **ausência de evidência de vantagem**, e
+não equivalência. Com 10 famílias o poder é baixo por construção, e um empate aqui não prova
+empate. O que cai não é o desempenho do Jev — ele continua acertando mais em números absolutos,
+e nos três gabaritos. O que cai é a afirmação de que **ele é necessário**. Um modelo de 8B que
+custa uma fração do preço chega perto o suficiente para que esta amostra não os separe.
+
+**O que fazer com isso:** antes de adotar qualquer um dos dois, rodar os dois lado a lado em
+amostra maior e colhida de uso real. O desenho está pronto e custa pouco: as 40 chamadas do E10
+custaram US$ 0,000358.
+
+*(Registro de método: este resultado poderia ter ficado fora do relatório. O E10 não estava no
+plano original, foi sugerido por um revisor adversarial, contraria a conclusão que eu já havia
+publicado e me custou reescrever a recomendação que treze rodadas de revisão tinham poupado.
+Executá-lo e publicá-lo é o único motivo pelo qual as outras conclusões deste documento merecem
+algum crédito.)*
+
+---
+
+### 1.1 A política de corte, que continua válida no que ela mede
+
+O restante desta seção descreve a política de aceitação estudada no E9. Ela **não** é mais a
+recomendação do estudo — a recomendação é a de cima —, mas o que ela mede continua valendo, e é
+o que se deve usar caso a decisão de adotar o Jev seja tomada por outros motivos que não este
+estudo.
 
 A política concreta que os dados sustentam: aceitar automaticamente as decisões com confiança
 ≥ 0,90 e encaminhar o restante para uma pessoa. Na partição de confirmação — os 40 casos que não
@@ -54,16 +101,22 @@ faixa.)*
 que tem 40. Misturar denominadores é o mesmo vício que eu vinha corrigindo no painel, e ele
 estava aqui.)*
 
-**Confiança: 0,5.** Este número deixou de ser
+**Confiança: 0,2.** Este número deixou de ser
 um julgamento meu e passou a ser uma conta com as penalidades declaradas, partindo de 1,0:
 
 - a política se apoia em 40 casos, menos de cem (-0,20)
 - 1 caso(s) mudam de resposta entre repetições idênticas (-0,10)
 - o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)
 - corpus construído pelo avaliador, não colhido de uso real (-0,10)
+- zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)
+- o braço do LLM econômico foi executado e a vantagem do Jev sobre ele não separou de zero (-0,20)
 
-Alta para a comparação contra os comparadores congelados — é pareada, pré-registrada e replicou
-fora do corpus piloto. Baixa para qualquer afirmação operacional, pelos motivos acima. A conta
+Os dois últimos descontos entraram na décima terceira rodada, cobrados pela revisão
+adversarial: o teto de erro já estava escrito na seção 6 e não era descontado, e o braço do LLM
+econômico não existia. Depois que ele passou a existir e empatou, o desconto por ausência de
+comparador (-0,10) virou desconto por comparador que não separou de zero (-0,20). A nota caiu de
+0,5 para 0,2 sem que nenhum dado do Jev piorasse: o que mudou foi o que se sabe sobre a
+alternativa. A conta
 está em `executor/placar.py:confianca_calculada`, e é para ser contestada: se alguém achar que
 um desconto está errado, o lugar de discutir é o código, não a minha impressão.
 
@@ -272,6 +325,49 @@ grave.
 
 ---
 
+### 3.8 O braço do LLM econômico (E10)
+
+O estudo comparou o Jev contra uma regra congelada em todos os experimentos anteriores, e a
+regra perde feio em toda parte: 60,0% no piloto, 32,5% na confirmação, 10 erros graves contra
+zero. Nada disso responde à pergunta que o plano fez primeiro: *vale um LLM especializado aqui,
+ou qualquer classificador de linguagem resolve?*
+
+`meta-llama/llama-3.1-8b-instruct` recebeu **exatamente as mesmas instruções e os mesmos
+critérios congelados do E1** — sem exemplos, sem ajuste de prompt, sem nenhuma iteração contra
+estes casos — nos 40 casos da partição de confirmação, com `temperature` 0 e `max_tokens` 64.
+Custo total: US$ 0,000358.
+
+| | Autor | Oficial | Anotador independente | Erro grave |
+|---|---|---|---|---|
+| Jev 1.13 | 0.9750 | 1.0000 | 0.9000 | 0 |
+| llama-3.1-8b | 0.9000 | 0.9250 | 0.8500 | 0 |
+| Regra congelada | 0,3250 | — | — | 6 |
+
+Diferença pareada **7,5%**, IC95
+**[0,0%; 15,0%]** sobre 10 famílias. O intervalo
+toca zero no limite inferior. Discordâncias: 3 casos, todos a favor
+do Jev — `cnf-g03-01`, `cnf-g05-04`, `cnf-g07-01` —, o que dá McNemar exato bilateral **p = 0,25**.
+
+Três detalhes de método que impedem este resultado de ser lido como favorável a quem eu quisesse:
+
+1. **O Jev não foi reexecutado.** As respostas dele vêm do E7, dos mesmos 40 casos. Reexecutar
+   daria ao Jev uma segunda amostragem que o comparador não teve — e, como o E6 mostrou, este
+   modelo não é determinístico.
+2. **Resposta fora do contrato contaria como erro**, nunca seria reexecutada nem descartada.
+   Isso estava no pré-registro justamente porque descartar resposta malformada do comparador e
+   não do Jev é uma das formas mais comuns de fraudar este tipo de comparação. Não foi preciso:
+   as 40 respostas vieram em JSON válido, com classe dentro das cinco.
+3. **O comparador não é o anotador do E8.** Usar o `qwen2.5:7b` aqui faria do anotador juiz de
+   si mesmo. Ainda assim, sob o gabarito daquele anotador — o mais severo dos três — o
+   comparador faz 0.8500 e o Jev 0.9000.
+
+**O que isto não diz:** que nenhum LLM econômico resolve a tarefa (testou-se um), que os dois
+são equivalentes (o poder é baixo), ou que o Jev é dispensável em produção (o corpus continua
+sendo escrito por mim). O que diz é uma coisa só, e basta para mudar a recomendação: **este
+estudo não mostrou que o Jev é necessário.**
+
+---
+
 ## 4. Mecanismo: por que funciona
 
 A vantagem sobre as regras não vem de vocabulário maior. Vem de resolver três coisas que o
@@ -397,7 +493,11 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
    uma medição de fluxo real. Isso era a pergunta P5 do plano e continua aberta.
 6. **`confidence` não foi validado como probabilidade.** Foi validado como *ordenador*: separa
    bem o que está certo do que está errado nestes 80 casos. Não é a mesma coisa.
-7. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
+7. **Um único LLM econômico foi testado como comparador.** O E10 usou
+   `meta-llama/llama-3.1-8b-instruct`. Um empate com ele não é empate com a categoria, e uma
+   vantagem sobre ele também não seria vantagem sobre a categoria. O que o E10 estabelece é que
+   **um** modelo barato chega perto o bastante para esta amostra não separar os dois.
+8. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
    sistemas mostrou 5 suítes passando, 7 falhando e 3 sem como rodar. Isso é estado de
    repositório, não evidência de comportamento.
 
@@ -526,27 +626,48 @@ todos os ensaios terminados. Capa e destino passaram a ser do chamador, o relat�
 própria com números vindos do placar, e dois testes novos exigem que cada PDF abra no documento
 que o nome dele promete.
 
-Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 137 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+A mesma décima terceira rodada cobrou quatro coisas que eu podia verificar e uma que eu podia
+executar. As quatro: o pré-registro do E1 mandava reportar erro grave separado da acurácia
+média, e isso nunca tinha sido feito (seção 3.7); o `runs/ledger.sqlite3` é ignorado pelo Git, e
+sem ele o custo publicado era uma citação que ninguém de fora podia conferir (agora
+`runs/extrato-ledger.json` vai versionado); o `.gitignore` tinha `runs/` puro, e como o Git não
+desce em diretório excluído **nenhuma** das exceções abaixo dele valia; e o README dizia "nove
+rodadas" enquanto este documento dizia treze.
+
+A quinta foi a que importou. O revisor apontou que o único comparador do estudo era uma regra
+congelada que eu mesma escrevi, e que a pergunta P1 do plano seguia sem metade da resposta.
+Executei o E10 (seção 3.8), com regra de decisão congelada antes da primeira chamada. O
+resultado contrariou a recomendação que este documento vinha fazendo desde a primeira versão, e
+a recomendação mudou. Custou US$ 0,000358 e treze rodadas de revisão não o teriam encontrado,
+porque nenhuma delas estava olhando para fora do que já havia sido medido.
+
+Estado final: **665 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018532027 de
+US$ 5,00, 143 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---
 
 ## 10. Próximo movimento
 
-1. **Coletar 200 mensagens reais de um canal de atendimento**, com a distribuição de classes que
+1. **Repetir o E10 em amostra maior**, com pelo menos 30 famílias, e com dois ou três LLMs
+   econômicos em vez de um — critério: o IC95 da diferença pareada separar de zero, ou não
+   separar com poder suficiente para que "não separa" signifique alguma coisa. É o movimento
+   mais barato da lista (as 40 chamadas custaram US$ 0,000358) e o que mais muda a decisão: se o
+   empate se confirmar, a discussão deixa de ser "qual modelo" e passa a ser "qual o mais
+   barato que passa".
+2. **Coletar 200 mensagens reais de um canal de atendimento**, com a distribuição de classes que
    o canal tem — responsável: Igor; critério: corpus anonimizado disponível em `data/corpus/`.
-2. **Anotar com dois humanos independentes** e medir kappa entre eles antes de olhar o modelo —
+3. **Anotar com dois humanos independentes** e medir kappa entre eles antes de olhar o modelo —
    critério: kappa humano-humano ≥ 0,80; abaixo disso, o problema é a definição das classes,
    não o modelo.
-3. **Rodar a política do corte 0,90 em sombra** sobre esse corpus real, sem efeito em produção,
+4. **Rodar a política do corte 0,90 em sombra** sobre esse corpus real, sem efeito em produção,
    medindo cobertura e erro entre aceitos — critério: erro entre aceitos ≤ 1% com cobertura
    ≥ 70%.
-4. **Cronometrar o fluxo humano** durante a sombra, para fechar a pergunta P5 com dado medido em
+5. **Cronometrar o fluxo humano** durante a sombra, para fechar a pergunta P5 com dado medido em
    vez de parâmetro declarado.
-5. **Só então** decidir se a política sobe para produção, e com qual corte.
+6. **Só então** decidir se a política sobe para produção, e com qual corte.
 
-Os itens 1 e 2 dependem de gente, não de orçamento. Restam US$ 4,98 do teto autorizado, o que
+Os itens 2 e 3 dependem de gente, não de orçamento; o item 1 depende só de orçamento, e de muito pouco. Restam US$ 4,98 do teto autorizado, o que
 cobre com folga toda a fase de sombra.
 
 ---
