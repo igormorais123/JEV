@@ -469,7 +469,8 @@ class ReadmeNaoContradizOsDados(unittest.TestCase):
 
     def test_readme_e_relatorio_concordam_sobre_as_rodadas_de_revisao(self):
         numeros = {'nove': 9, 'dez': 10, 'onze': 11, 'doze': 12, 'treze': 13, 'quatorze': 14,
-                   'catorze': 14, 'quinze': 15}
+                   'catorze': 14, 'quinze': 15, 'dezesseis': 16, 'dezessete': 17,
+                   'dezoito': 18, 'dezenove': 19, 'vinte': 20}
         def rodadas(caminho):
             texto = (ROOT / caminho).read_text(encoding='utf-8').lower()
             achados = {v for k, v in numeros.items()

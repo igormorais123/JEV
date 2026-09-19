@@ -808,10 +808,11 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **quinze rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **dezesseis rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
-Grok 4.6 via Cursor); os defeitos abaixo vão até a décima terceira, e as duas últimas rodadas não
-encontraram defeito financeiro novo. O décimo sexto e mais caro deles não veio de revisão
+Grok 4.6 via Cursor); os defeitos abaixo vão até a décima terceira, e as rodadas seguintes não
+encontraram defeito financeiro novo — a décima sexta apontou, com razão, o **limite da
+evidência** da retificação do 429, que está declarado em 9.1. O décimo sexto e mais caro deles não veio de revisão
 nenhuma: veio da execução do E12, e está descrito no fim desta seção. As quatro primeiras
 encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -980,7 +981,7 @@ que o erro grave seria a métrica que não depende do gabarito. O único falso-`
 comparador está entre os 10 casos em disputa, e sob o gabarito do anotador independente ele
 desaparece. Reconto agora sob os três, e o que sobra é mais modesto.
 
-### 9.1 O defeito que quinze rodadas de revisão não acharam, e que a execução achou
+### 9.1 O defeito que quinze revisões adversariais não acharam, e que a execução achou
 
 Nenhuma execução anterior deste estudo havia levado HTTP 429. O E12 levou 76.
 
@@ -1025,8 +1026,17 @@ Outros três defeitos apareceram na mesma execução e estão corrigidos, todos 
   US$ 0,052 — os dois números de custo no mesmo painel que a oitava rodada já havia proibido.
   Agora ambos leem `attempt_budget`.
 
+A décima sexta rodada revisou o E12 inteiro e não derrubou a conclusão central. Encontrou três
+coisas, todas corrigidas e agora travadas por teste: as adjudicações do E11 e do E12 não iam no
+Git, e o relatório se apoia nelas para dizer "o terceiro juiz confirmou meu gabarito em 10 de
+10"; o número de `cancelar` perdidos do gpt-oss-20b no texto era anterior à correção de 9.1; e o
+README dizia "empata exatamente com o mais barato" onde o dado diz "não separa de zero", ainda
+por cima atribuindo o empate ao braço errado. As três são a mesma família de defeito que este
+relatório persegue desde a nona rodada, e duas delas eu cometi ao escrever sobre o experimento
+que acabara de corrigir esse mesmo tipo de erro.
+
 Estado final: **1.474 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,035707114 de
-US$ 5,00, conciliado contra um extrato de US$ 0,034640289, e 173 testes automatizados passando.**
+US$ 5,00, conciliado contra um extrato de US$ 0,034640289, e 176 testes automatizados passando.**
 A chave da API nunca foi versionada, impressa em log ou copiada para documentação.
 
 ---
