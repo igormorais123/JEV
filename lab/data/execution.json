@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 100,
- "updated_at": "2026-09-19T13:06:58.156431+00:00",
+ "revision": 101,
+ "updated_at": "2026-09-19T19:54:39.397224+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -35789,7 +35789,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T13:06:58.155935+00:00",
+  "atualizado_em": "2026-09-19T19:54:39.396557+00:00",
   "veredito": {
    "titulo": "Com mais famílias e quatro comparadores, a vantagem do Jev continua dependendo de quem escreveu o gabarito",
    "texto": "A replicação foi feita e não mudou a natureza do problema, só o tamanho da amostra. Em corpus novo de 90 casos e 30 famílias, declaradas antes de o primeiro caso ser escrito, contra **quatro** comparadores econômicos de quatro fornecedores, o Jev acerta 98,9% e supera todos eles no gabarito adjudicado, por 7,8% a 14,4%, com todos os IC95 acima de zero. Os 10 casos em que eu e o anotador independente discordamos foram a um terceiro juiz cego, de outro fornecedor, que confirmou meu gabarito em 10 de 10. **Sob o gabarito do anotador independente, que é o único que não passou pela minha mão, a mesma comparação vai de 0,0% a 8,9%, e o intervalo contém zero contra mais de um comparador.** Era essa a divergência que o E11 tinha encontrado com 20 famílias e um comparador só, e que este experimento existia para resolver com mais poder. Ela não era falta de amostra: triplicar as famílias e quadruplicar os comparadores não a moveu. O que decide o resultado não é quanto se mede, é quem escreveu o rótulo — e os três anotadores deste estudo continuam sendo modelos de linguagem.",

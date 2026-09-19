@@ -58,6 +58,8 @@ def capa():
                  'declarados. Os motivos de cada desconto estão no painel e na seção 9.'),
         'data': ('19 de setembro de 2026<br/>Todos os números deste documento são recalculados a '
                  'partir dos relatórios em runs/ e do livro-caixa; nenhum é digitado à mão.'),
+        'cabecalho': 'JEV  /  RELATÓRIO FINAL  /  HELENA',
+        'cabecalho_direita': '19.09.2026 · dados do E1 ao E12',
         'rodape': 'Relatório final. Ensaios concluídos; números recalculados dos dados brutos.',
         'mapa': ('Comece pelas seções 1 e 3. O método está nas seções 2 e 4 a 6. As ressalvas, o '
                  'que não foi testado e o histórico de revisão fecham o documento.'),

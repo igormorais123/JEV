@@ -56,8 +56,11 @@ def footer(canvas,doc):
     if doc.page>1:
         canvas.setFont('Regular',8)
         canvas.setFillColor(MUTED)
-        canvas.drawString(46,height-29,'JEV  /  PLANO CIENTÍFICO  /  HELENA')
-        canvas.drawRightString(width-46,height-29,'18.09.2026 · v1.0')
+        # [E12] Era fixo em "PLANO CIENTÍFICO / 18.09.2026 · v1.0", e por isso o relatório
+        # final e o guia prático saíam com o cabeçalho de outro documento em todas as páginas
+        # internas. Quem folheia o PDF lê o cabeçalho antes do texto.
+        canvas.drawString(46,height-29,getattr(doc,'cabecalho','JEV  /  PLANO CIENTÍFICO  /  HELENA'))
+        canvas.drawRightString(width-46,height-29,getattr(doc,'cabecalho_direita','18.09.2026 · v1.0'))
         canvas.setStrokeColor(LINE)
         canvas.line(46,height-37,width-46,height-37)
     canvas.setFillColor(MUTED)
@@ -120,6 +123,8 @@ def build_pdf(markdown, capa=None):
     doc=PlanDoc(str(target),pagesize=A4,leftMargin=46,rightMargin=46,topMargin=54,bottomMargin=48,
         title=capa['titulo_pdf'],author='Laboratório JEV / análise Helena')
     doc.rodape=capa['rodape']
+    doc.cabecalho=capa.get('cabecalho','JEV  /  PLANO CIENTÍFICO  /  HELENA')
+    doc.cabecalho_direita=capa.get('cabecalho_direita','18.09.2026 · v1.0')
     frame=Frame(doc.leftMargin,doc.bottomMargin,doc.width,doc.height,id='normal')
     doc.addPageTemplates(PageTemplate(id='normal',frames=frame,onPage=footer))
     story=[Spacer(1,47),Paragraph(capa['kicker'],styles['kicker']),
@@ -139,7 +144,9 @@ def build_pdf(markdown, capa=None):
     i=0; section_count=0
     while i<len(lines):
         line=lines[i].strip()
-        if not line or line.startswith('# '):
+        # `---` e separador de secao no markdown; sem este ramo ele era impresso como texto
+        # cru no meio do PDF, tres tracos soltos entre paragrafos.
+        if not line or line.startswith('# ') or re.fullmatch(r'-{3,}|\*{3,}|_{3,}',line):
             i+=1;continue
         if line.startswith('## '):
             section_count+=1

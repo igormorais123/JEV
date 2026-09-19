@@ -174,6 +174,12 @@ ficaram concentrados abaixo de 0,90, e nenhum caso aceito acima desse corte esta
 A ressalva é grande e vai na seção 8: zero erro entre os aceitos não é taxa de erro zero.
 Respeitando o agrupamento por família, o limite superior do erro ainda chega a 25,9%.
 
+**E há uma ressalva maior, descoberta depois, na seção 6.1:** isso valeu nos dois primeiros
+corpora e **não se repetiu no terceiro**. No corpus novo do E12, o único erro do modelo veio com
+confiança 0,98 — acima de qualquer corte que este relatório vinha recomendando. A confiança
+continua informativa; ela não é garantia, e o corte precisa ser recalibrado em cada material
+novo.
+
 ---
 
 ## 3. Evidência
@@ -718,6 +724,34 @@ casos aceitos.
 **Zero erro observado não é taxa de erro zero.** Os aceitos vêm de um número pequeno de
 famílias, e famílias são a unidade de dependência. O limite por caso (Clopper-Pearson, 35 ensaios no corte 0,90) daria um número bem menor, e seria enganoso: trataria casos da mesma família como
 observações independentes, o que eles não são.
+
+### 6.1 A calibração não se transportou para o corpus novo
+
+O corte de 0,90 foi calibrado no piloto e na confirmação, e nos dois **todos** os erros ficaram
+abaixo dele. O E12 trouxe 90 casos novos, e ali isso deixou de valer:
+
+| Corte | Aceitos (E12) | Cobertura | Erros entre os aceitos | Limite superior por família |
+|---|---|---|---|---|
+| 0,90 | 86/90 | 95,6% | **1** | 14,9% |
+| 0,95 | 81/90 | 90,0% | **1** | 14,9% |
+| **0,99** | **74/90** | **82,2%** | **0** | **9,8%** |
+
+O erro é `rep-p30-03`: *"Posso pedir a segunda via por aqui? Antes de pedir, me confirma se ela
+vem com o mesmo vencimento da original."* O gabarito é `informacao` — o remetente adia
+explicitamente o pedido — e o modelo respondeu `cobranca` **com confiança 0,98**. O anotador
+independente leu como `cobranca` também, e o terceiro juiz cego confirmou o gabarito; ou seja, é
+um caso difícil, não um caso mal escrito.
+
+**Consequência para a recomendação, e ela é desfavorável ao que este relatório vinha dizendo:**
+a afirmação "todos os erros ficam abaixo de 0,90" era verdadeira nos dois primeiros corpora e é
+falsa no terceiro. Um corte calibrado num conjunto **não se transporta** para outro. A
+recomendação operacional passa a ser o corte de 0,99, que é o único que zera o erro nos três
+corpora, e mesmo ele exige recalibração no material real de quem for aplicar — com revisão
+humana obrigatória da classe `cancelar` em qualquer corte.
+
+A seção 1.1 e o achado principal (seção 2) devem ser lidos com esta ressalva: a confiança
+reportada é informativa, e continua sendo o recurso mais útil do modelo, mas ela não é uma
+garantia.
 
 ---
 
