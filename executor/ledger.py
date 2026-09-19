@@ -82,6 +82,20 @@ class Ledger:
         for coluna in ('priced_provider', 'priced_model', 'priced_snapshot_id'):
             if coluna not in existentes:
                 self.db.execute(f'ALTER TABLE attempt_budget ADD COLUMN {coluna} TEXT')
+        colunas_snapshot = {linha['name'] for linha in self.db.execute('PRAGMA table_info(provider_snapshots)')}
+        for coluna in ('liquidado_no_instante_nusd', 'excedente_nusd'):
+            if coluna not in colunas_snapshot:
+                self.db.execute(f'ALTER TABLE provider_snapshots ADD COLUMN {coluna} INTEGER')
+        # Versoes anteriores materializavam o ajuste de conciliacao como linha de gasto. Agora
+        # o excedente e fato do snapshot: manter as linhas contaria o mesmo dinheiro duas vezes.
+        antigas = self.db.execute(
+            "SELECT attempt_id, settled_nusd FROM attempt_budget"
+            " WHERE cost_source = 'provider_statement_excess'").fetchall()
+        for antiga in antigas:
+            self.db.execute('DELETE FROM attempt_budget WHERE attempt_id = ?', (antiga['attempt_id'],))
+            self._event(None, 'reconcile', int(antiga['settled_nusd'] or 0), {
+                'migracao': 'ajuste materializado removido; o excedente passou a ser fato do snapshot',
+                'attempt_id': antiga['attempt_id']})
 
     def close(self):
         self.db.close()
@@ -210,6 +224,10 @@ class Ledger:
                     f'Teto da carteira: comprometido {wallet_committed} + pior caso {worst} > '
                     f'teto {wallet_cap} nusd'
                 )
+            estado = self.db.execute(
+                'SELECT status FROM experiments WHERE experiment_id = ?', (self.experiment_id,)).fetchone()
+            if estado and estado['status'] == 'paused':
+                raise BudgetError('Experimento pausado por estouro anterior; nenhuma reserva nova')
             cap = self.cap_nusd()
             committed = self.committed_nusd()
             if committed + worst > cap:
@@ -328,7 +346,10 @@ class Ledger:
             if cost > reserved:
                 extra = cost - reserved
                 evidence['overrun_nusd'] = extra
-                if self.wallet_committed_nusd() - reserved + cost > self.wallet_cap_nusd():
+                # Estado RESULTANTE da liquidacao, na mesma transacao: o comprometido atual
+                # ainda conta a reserva, que esta sendo substituida pelo custo real.
+                resultante = self.wallet_committed_nusd() - reserved + cost
+                if resultante > self.wallet_cap_nusd():
                     self.db.execute("UPDATE experiments SET status = 'paused' WHERE experiment_id = ?",
                                     (self.experiment_id,))
                     evidence['paused'] = True
@@ -383,23 +404,20 @@ class Ledger:
         return int(linha['total'])
 
     def excedente_de_extrato_nusd(self):
-        """Quanto o extrato dos provedores passa do que o ledger registra, somando providers.
+        """Gasto que o provedor cobrou e o ledger nunca registrou.
 
-        Calculado, nunca materializado. Materializar criava dois defeitos: o ajuste nao
-        encolhia quando a tentativa correspondente era enfim liquidada, e ele se somava ao
-        gasto historico do mesmo provedor. Como calculo, acompanha o estado atual sozinho.
+        O excedente e ancorado no INSTANTE do snapshot: comparamos o extrato com o que estava
+        liquidado naquele momento, e o resultado fica congelado. Calcular contra o liquidado
+        de agora abriria um furo: uma chamada nova, feita depois do extrato, reduziria o
+        excedente antigo ao ser liquidada e liberaria espaco no teto para gastar de novo o
+        mesmo dinheiro. Mantemos o maior excedente ja observado por provedor, porque um
+        extrato atrasado nao desfaz uma divergencia que ja foi vista.
         """
-        total = 0
-        for linha in self.db.execute(
-                'SELECT provider, MAX(captured_at_utc) AS quando FROM provider_snapshots GROUP BY provider'):
-            ultimo = self.db.execute(
-                'SELECT usage_nusd FROM provider_snapshots WHERE provider = ?'
-                ' ORDER BY captured_at_utc DESC, rowid DESC LIMIT 1', (linha['provider'],)).fetchone()
-            if ultimo is None or ultimo['usage_nusd'] is None:
-                continue
-            registrado = self.settled_nusd_total(linha['provider'])
-            total += max(int(ultimo['usage_nusd']) - registrado, 0)
-        return total
+        linha = self.db.execute(
+            'SELECT COALESCE(SUM(maior),0) AS total FROM ('
+            '  SELECT provider, MAX(excedente_nusd) AS maior FROM provider_snapshots'
+            '  WHERE excedente_nusd IS NOT NULL GROUP BY provider)').fetchone()
+        return int(linha['total'])
 
     def reconcile(self, provider, observed_usage_nusd, sanitized, key_limit_nusd=None):
         """Grava o extrato do provedor. O excedente nao vira linha: vira conta.
@@ -419,9 +437,10 @@ class Ledger:
             sem_identidade = self.sem_identidade_nusd()
             self.db.execute(
                 'INSERT INTO provider_snapshots(snapshot_id,provider,captured_at_utc,usage_nusd,'
-                'key_limit_nusd,sanitized_json,sha256) VALUES(?,?,?,?,?,?,?)',
+                'key_limit_nusd,sanitized_json,sha256,liquidado_no_instante_nusd,excedente_nusd)'
+                ' VALUES(?,?,?,?,?,?,?,?,?)',
                 (str(uuid.uuid4()), provider, now_utc(), int(observed_usage_nusd), key_limit_nusd,
-                 blob, hashlib.sha256(blob.encode('utf-8')).hexdigest()))
+                 blob, hashlib.sha256(blob.encode('utf-8')).hexdigest(), liquidado, excedente))
             self._event(None, 'reconcile', max(delta, 0), {
                 'provider': provider, 'delta_nusd': delta, 'baseline_nusd': base,
                 'extrato_nusd': int(observed_usage_nusd), 'liquidado_do_provedor_nusd': liquidado,
@@ -439,6 +458,9 @@ class Ledger:
         O provedor e obrigatorio para que a conciliacao saiba que este gasto ja esta contado:
         sem ele, o extrato do provedor acharia que o valor nao foi registrado e o somaria de novo.
         """
+        if not provider:
+            raise LedgerStateError(
+                'Compromisso historico exige provedor: sem ele a conciliacao contaria o gasto duas vezes')
         with self._tx():
             self._event(None, 'historical_commitment', int(amount_nusd),
                         {**evidence, 'provider': provider})
@@ -451,13 +473,19 @@ class Ledger:
             )
         return int(amount_nusd)
 
-    def regularizar_identidade(self, attempt_id, provider, model, snapshot, motivo):
+    def regularizar_identidade(self, attempt_id, provider, model, motivo):
         """Da identidade de preco a uma tentativa herdada de base antiga.
 
         Sem isto, uma tentativa pendente migrada nunca poderia ser liquidada: settle() exige a
-        identidade da reserva, e a migracao so cria a coluna vazia. A regularizacao fica
-        registrada como evento, com o motivo, para nao virar porta de entrada silenciosa.
+        identidade da reserva, e a migracao so cria a coluna vazia.
+
+        A regularizacao NAO escolhe tarifa. O snapshot recebe um marcador proprio que nunca
+        coincide com uma tabela de precos real, entao settle() cai no caminho conservador e
+        liquida pelo pior caso reservado. Sem isso, bastaria declarar um modelo barato para
+        liberar saldo de uma reserva antiga.
         """
+        if not provider or not model:
+            raise LedgerStateError('Regularizacao exige provedor e modelo declarados')
         with self._tx():
             linha = self.db.execute(
                 'SELECT priced_provider, settled_nusd FROM attempt_budget WHERE attempt_id = ?',
@@ -468,9 +496,10 @@ class Ledger:
                 raise LedgerStateError('Tentativa ja tem identidade de preco; regularizar apagaria evidencia')
             self.db.execute(
                 'UPDATE attempt_budget SET priced_provider = ?, priced_model = ?, priced_snapshot_id = ?'
-                ' WHERE attempt_id = ?', (provider, model, snapshot, attempt_id))
+                ' WHERE attempt_id = ?', (provider, model, 'regularizado-sem-tarifa', attempt_id))
             self._event(attempt_id, 'reconcile', 0, {'regularizacao': motivo, 'provider': provider,
-                                                     'model': model, 'snapshot': snapshot})
+                                                     'model': model,
+                                                     'efeito': 'liquidacao conservadora pelo pior caso'})
         return attempt_id
 
     # --- internos -------------------------------------------------------

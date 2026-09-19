@@ -73,16 +73,24 @@ class ConciliacaoRound2(unittest.TestCase):
         ).fetchone()
         self.assertEqual(linhas['n'], 0)
 
-    def test_excedente_encolhe_sozinho_ao_liquidar_sem_nova_conciliacao(self):
-        """[R3-2] Antes, o excedente só encolhia na conciliação seguinte, e no intervalo
+    def test_gasto_novo_nao_consome_o_excedente_ja_observado(self):
+        """[R4-1] O furo que o cálculo dinâmico abriu.
 
-        a carteira contava o mesmo gasto duas vezes. Agora é cálculo: acompanha na hora.
+        Com o excedente calculado contra o liquidado de agora, uma chamada feita DEPOIS do
+        extrato reduzia o excedente ao ser liquidada e devolvia espaço no teto — o mesmo
+        dinheiro podia ser gasto duas vezes. Ancorado no snapshot, isso não acontece.
         """
         self.ledger.reconcile('openrouter', 1_000_000, {'n': 1})
         self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
         attempt = self.ledger.reserve(**reserva())['attempt_id']
         self.ledger.settle(attempt, provider_reported_cost_nusd=1_000_000)
-        # Sem chamar reconcile de novo: o total continua 1.000.000, nao 2.000.000.
+        # O gasto novo SOMA ao excedente ja observado, nao o substitui.
+        self.assertEqual(self.ledger.wallet_committed_nusd(), 2_000_000)
+
+    def test_extrato_atrasado_nao_apaga_divergencia_ja_vista(self):
+        """[R4-1] Mantemos o maior excedente observado por provedor."""
+        self.ledger.reconcile('openrouter', 1_000_000, {'n': 1})
+        self.ledger.reconcile('openrouter', 0, {'n': 2, 'nota': 'extrato atrasado'})
         self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
 
     def test_historico_do_mesmo_provedor_nao_e_contado_duas_vezes(self):
@@ -91,25 +99,58 @@ class ConciliacaoRound2(unittest.TestCase):
         self.ledger.reconcile('openrouter', 1_000_000, {'n': 1})
         self.assertEqual(self.ledger.wallet_committed_nusd(), 1_000_000)
 
-    def test_liquidado_sem_identidade_e_reportado(self):
-        """[R3-1] Enquanto houver gasto sem provedor, a conciliação avisa."""
-        self.ledger.record_historical_commitment(500, {'fonte': 'desconhecida'})
-        saida = self.ledger.reconcile('openrouter', 0, {'n': 1})
-        self.assertEqual(saida['liquidado_sem_identidade_nusd'], 500)
+    def test_historico_sem_provedor_e_recusado(self):
+        """[R4-3] A docstring exigia provedor; a implementação não."""
+        from executor.ledger import LedgerStateError
+        with self.assertRaises(LedgerStateError):
+            self.ledger.record_historical_commitment(500, {'fonte': 'desconhecida'})
 
-    def test_tentativa_migrada_pode_ser_regularizada_e_liquidada(self):
-        """[R3-3] A migração criava coluna vazia e settle rejeitava a tentativa para sempre."""
+    def test_regularizacao_liquida_pelo_pior_caso_e_nao_pela_tarifa_escolhida(self):
+        """[R4-2] Antes, bastava declarar um modelo barato para liberar saldo de reserva antiga."""
         attempt = self.ledger.reserve(**reserva())['attempt_id']
+        reservado = self.ledger.wallet_committed_nusd()
         self.ledger.db.execute(
             'UPDATE attempt_budget SET priced_provider = NULL, priced_model = NULL,'
             ' priced_snapshot_id = NULL WHERE attempt_id = ?', (attempt,))
         from executor.ledger import LedgerStateError
         with self.assertRaises(LedgerStateError):
-            self.ledger.settle(attempt, provider_reported_cost_nusd=10)
-        self.ledger.regularizar_identidade(attempt, 'openrouter', 'm', 'tarifa-A',
+            self.ledger.settle(attempt, usage={'input_tokens': 1, 'output_tokens': 0})
+        self.ledger.regularizar_identidade(attempt, 'openrouter', 'm',
                                            motivo='base migrada de versao anterior')
-        saida = self.ledger.settle(attempt, provider_reported_cost_nusd=10)
-        self.assertEqual(saida['settled_nusd'], 10)
+        saida = self.ledger.settle(attempt, usage={'input_tokens': 1, 'output_tokens': 0})
+        self.assertEqual(saida['cost_source'], 'worst_case_price_snapshot_divergente')
+        self.assertEqual(saida['settled_nusd'], reservado)
+
+    def test_regularizacao_exige_provedor_e_modelo(self):
+        attempt = self.ledger.reserve(**reserva())['attempt_id']
+        from executor.ledger import LedgerStateError
+        with self.assertRaises(LedgerStateError):
+            self.ledger.regularizar_identidade(attempt, 'openrouter', None, motivo='sem modelo')
+
+    def test_experimento_pausado_nao_reserva(self):
+        """[R4-6] reserve() não consultava o status pausado."""
+        from executor.ledger import BudgetError
+        self.ledger.db.execute("UPDATE experiments SET status = 'paused' WHERE experiment_id = 'exp'")
+        with self.assertRaises(BudgetError) as ctx:
+            self.ledger.reserve(**reserva())
+        self.assertIn('pausado', str(ctx.exception))
+
+    def test_migracao_remove_ajuste_materializado_antigo(self):
+        """[R4-4] Linhas da versão anterior contariam o excedente duas vezes."""
+        self.ledger.db.execute(
+            "INSERT INTO attempt_budget(attempt_id,experiment_id,block_id,reserved_nusd,"
+            "settled_nusd,cost_source) VALUES('conciliacao:openrouter','exp','conciliacao',"
+            "7000,7000,'provider_statement_excess')")
+        self.ledger.close()
+        reaberto = Ledger(self.caminho, 'exp', prices=PRECOS)
+        try:
+            linhas = reaberto.db.execute(
+                "SELECT COUNT(*) n FROM attempt_budget WHERE cost_source = 'provider_statement_excess'"
+            ).fetchone()
+            self.assertEqual(linhas['n'], 0)
+        finally:
+            reaberto.close()
+        self.ledger = Ledger(self.caminho, 'exp', prices=PRECOS)
 
     def test_extrato_menor_que_o_liquidado_nao_devolve_saldo(self):
         attempt = self.ledger.reserve(**reserva())['attempt_id']

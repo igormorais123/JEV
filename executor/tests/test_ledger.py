@@ -100,7 +100,8 @@ class LedgerTests(unittest.TestCase):
             self.ledger.reserve(**reserve_args(block_id='desconhecido'))
 
     def test_teto_global_considera_gasto_historico(self):
-        self.ledger.record_historical_commitment(usd_to_nusd('0.9999999'), {'fonte': 'dossie'})
+        self.ledger.record_historical_commitment(usd_to_nusd('0.9999999'), {'fonte': 'dossie'},
+                                                provider=PROVIDER)
         self.ledger.set_block_cap('b1', usd_to_nusd('1.00'))
         with self.assertRaises(BudgetError) as ctx:
             self.ledger.reserve(**reserve_args())
