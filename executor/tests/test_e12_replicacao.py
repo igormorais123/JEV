@@ -1,0 +1,129 @@
+"""O que o E12 promete no pré-registro tem de valer no código, e não só no texto.
+
+Três coisas são travadas aqui:
+
+1. **O corpus é o que o pré-registro diz que é** — 90 casos, 30 famílias novas, três casos por
+   família, nenhuma família e nenhum texto repetidos dos corpora anteriores. Um corpus que
+   reaproveitasse famílias do piloto ou do desempate mediria de novo o que já foi medido.
+2. **A leitura é interseção-união** — só há `vantagem-do-jev` quando TODOS os comparadores
+   separam de zero. É a cláusula que torna a regra hostil ao Jev, e é a primeira que a pressa
+   de publicar um resultado bom tenderia a afrouxar.
+3. **Gabarito ausente não é gabarito que concorda** — sem segundo anotador sobre este corpus, ou
+   com divergência ainda não adjudicada, o bloco `oficial` não existe. Enquanto essa condição
+   não era checada, `adjudicado()` devolvia o gold do autor para casos que ninguém adjudicou.
+"""
+import json
+import unittest
+from pathlib import Path
+
+from executor import run_e12_replicacao as e12
+
+ROOT = Path(__file__).resolve().parents[2]
+CORPUS = ROOT / 'data' / 'corpus' / 'triagem-replicacao.jsonl'
+CLASSES = {'cancelar', 'rastrear', 'trocar', 'cobranca', 'informacao'}
+OUTROS = ('triagem-piloto.jsonl', 'triagem-confirmacao.jsonl', 'triagem-desempate.jsonl',
+          'evidencia-piloto.jsonl', 'ressalvas-piloto.jsonl')
+
+
+def carregar(nome):
+    alvo = ROOT / 'data' / 'corpus' / nome
+    return [json.loads(l) for l in alvo.read_text(encoding='utf-8').splitlines() if l.strip()]
+
+
+class CorpusDaReplicacao(unittest.TestCase):
+
+    def setUp(self):
+        self.casos = carregar('triagem-replicacao.jsonl')
+
+    def test_tamanho_declarado_no_preregistro(self):
+        self.assertEqual(len(self.casos), 90)
+        familias = {c['family'] for c in self.casos}
+        self.assertEqual(len(familias), 30)
+        for familia in familias:
+            with self.subTest(familia=familia):
+                self.assertEqual(sum(1 for c in self.casos if c['family'] == familia), 3)
+
+    def test_nenhuma_familia_com_uma_classe_so(self):
+        for familia in {c['family'] for c in self.casos}:
+            classes = {c['gold'] for c in self.casos if c['family'] == familia}
+            with self.subTest(familia=familia):
+                self.assertGreater(len(classes), 1,
+                                   'família com classe única não testa discriminação')
+
+    def test_classes_e_identificadores_validos(self):
+        ids = [c['case_id'] for c in self.casos]
+        self.assertEqual(len(set(ids)), len(ids))
+        for caso in self.casos:
+            with self.subTest(caso=caso['case_id']):
+                self.assertIn(caso['gold'], CLASSES)
+                self.assertTrue(caso['text'].strip())
+                self.assertTrue(caso['rationale'].strip())
+
+    def test_nada_reaproveitado_dos_corpora_anteriores(self):
+        textos, familias = set(), set()
+        for nome in OUTROS:
+            for caso in carregar(nome):
+                textos.add(caso.get('text'))
+                familias.add(caso.get('family'))
+        self.assertEqual([c['case_id'] for c in self.casos if c['text'] in textos], [])
+        self.assertEqual(sorted({c['family'] for c in self.casos} & familias), [])
+
+
+class LeituraCongelada(unittest.TestCase):
+    """A regra do pré-registro, exercitada com dados fabricados."""
+
+    @staticmethod
+    def comparacao(inferior, superior):
+        return {'pareada': {'ic95': [inferior, superior]},
+                'separa_de_zero': inferior > 0, 'separa_contra_o_jev': superior < 0}
+
+    def test_vantagem_exige_todos_os_comparadores(self):
+        todos = {'c%d' % i: self.comparacao(0.05, 0.2) for i in range(1, 5)}
+        self.assertEqual(e12.leitura(todos)[0], 'vantagem-do-jev')
+
+    def test_um_empate_derruba_a_vantagem(self):
+        quase = {'c%d' % i: self.comparacao(0.05, 0.2) for i in range(1, 4)}
+        quase['c4'] = self.comparacao(-0.02, 0.18)
+        chave, frase = e12.leitura(quase)
+        self.assertEqual(chave, 'sem-evidencia-de-vantagem')
+        self.assertIn('c4', frase)
+
+    def test_comparador_melhor_tem_precedencia(self):
+        misto = {'c1': self.comparacao(0.05, 0.2), 'c2': self.comparacao(-0.3, -0.1),
+                 'c3': self.comparacao(0.05, 0.2), 'c4': self.comparacao(0.05, 0.2)}
+        chave, frase = e12.leitura(misto)
+        self.assertEqual(chave, 'vantagem-do-comparador')
+        self.assertIn('c2', frase)
+
+    def test_intervalo_que_encosta_em_zero_nao_separa(self):
+        encostado = {'c%d' % i: self.comparacao(0.0, 0.2) for i in range(1, 5)}
+        self.assertEqual(e12.leitura(encostado)[0], 'sem-evidencia-de-vantagem')
+
+
+class GabaritoAusenteNaoConcorda(unittest.TestCase):
+
+    def test_sem_segundo_anotador_nao_ha_gabarito_oficial(self):
+        casos = [{'case_id': 'x-1', 'family': 'F', 'gold': 'cancelar'}]
+        original = e12.do_anotador_local
+        try:
+            e12.do_anotador_local = lambda: {}
+            mapas, procedencia = e12.gabaritos(casos)
+        finally:
+            e12.do_anotador_local = original
+        self.assertEqual(sorted(mapas), ['autor'])
+        self.assertFalse(procedencia['corpus_tem_segundo_anotador'])
+
+    def test_divergencia_sem_adjudicacao_nao_produz_oficial(self):
+        casos = [{'case_id': 'x-1', 'family': 'F', 'gold': 'cancelar'}]
+        original = e12.do_anotador_local
+        try:
+            e12.do_anotador_local = lambda: {'x-1': 'informacao'}
+            mapas, procedencia = e12.gabaritos(casos)
+        finally:
+            e12.do_anotador_local = original
+        self.assertNotIn('oficial', mapas)
+        self.assertEqual(procedencia['casos_em_que_os_anotadores_divergem'], ['x-1'])
+
+
+if __name__ == '__main__':
+    unittest.main()

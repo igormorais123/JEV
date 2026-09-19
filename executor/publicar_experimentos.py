@@ -292,6 +292,59 @@ def e11_run(rel, gold, agora):
     }
 
 
+def e12_run(rel, gold, agora):
+    """A replicacao: CINCO bracos na mesma lista, entao cinco tentativas por caso.
+
+    A nota e montada a partir do relatorio, nunca escrita a mao: um texto fixo com numeros
+    dentro continua afirmando o mesmo depois que os dados mudam.
+    """
+    tentativas, decisoes = [], []
+    bracos = [('jev', 'replicacao-jev')] + [(chave, 'replicacao-' + chave)
+                                            for chave in rel['comparadores']]
+    for c in rel['casos']:
+        for campo, pergunta in bracos:
+            aid = c.get(campo + '_attempt_id')
+            if not aid:
+                continue
+            estado = c.get('jev_status') if campo == 'jev' else (
+                'success' if c.get(campo) else 'invalid_response')
+            tentativas.append(tentativa(aid, estado, c.get(campo + '_latency_ms'),
+                                        c.get(campo + '_cost_nusd')))
+            decisoes.append(decisao(campo + ':' + c['case_id'], c['case_id'], aid, 'test',
+                                    c['gold'], c.get(campo), c.get(campo + '_confidence'),
+                                    pergunta, c['family']))
+
+    principal = (rel['por_gabarito'].get('oficial')
+                 or rel['por_gabarito'].get('autor'))
+    partes = []
+    for chave, modelo in rel['comparadores'].items():
+        comp = principal['comparacoes'][chave]
+        partes.append('%s (%s): %+.4f, IC95 [%.4f; %.4f]'
+                      % (chave, modelo, comp['pareada']['diferenca_observada'],
+                         comp['pareada']['ic95'][0], comp['pareada']['ic95'][1]))
+    nota = ('Corpus novo de %d casos em %d familias, declaradas no pre-registro antes de o '
+            'primeiro caso existir, contra QUATRO comparadores economicos de quatro '
+            'fornecedores. E o item 1 do proximo movimento do relatorio final. Diferenca pareada '
+            'do Jev contra cada um, no gabarito de referencia: %s. Leitura pre-registrada por '
+            'interseccao-uniao (so ha vantagem se TODOS separarem de zero): %s.'
+            % (rel['casos_programados'], rel['familias'], '; '.join(partes), rel['veredito']))
+    if len(set(rel['leitura_por_gabarito'].values())) > 1:
+        nota += (' As leituras divergem entre gabaritos (%s), e o pre-registro manda reportar a '
+                 'divergencia em vez de escolher a mais favoravel.'
+                 % '; '.join(n + ': ' + v for n, v in sorted(rel['leitura_por_gabarito'].items())))
+    return {
+        'id': 'e12-replicacao-quatro-comparadores', 'system_id': 'S01', 'phase': 'confirmation',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': ('%d casos novos em %d familias de fenomeno linguistico, nenhuma repetida dos '
+                    'corpora anteriores; cinco bracos na mesma lista e na mesma ordem'
+                    % (rel['casos_programados'], rel['familias'])),
+        'notes': nota,
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
 def tentativas_orfas_run(estado, agora):
     """Tentativas que existem no ledger e nao aparecem no painel.
 
@@ -356,7 +409,8 @@ def publicar():
                                ('e7-confirmacao/relatorio.json', e7_run),
                                ('e10-llm-economico/relatorio.json', e10_run),
                                ('e10b-piloto/relatorio.json', e10b_run),
-                               ('e11-desempate/relatorio.json', e11_run)]:
+                               ('e11-desempate/relatorio.json', e11_run),
+                               ('e12-replicacao/relatorio.json', e12_run)]:
         rel = ler(arquivo)
         if rel:
             novos.append(construir(rel, gold, agora))
