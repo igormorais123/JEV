@@ -155,3 +155,32 @@ modelo; o custo observado esperado é de ordem de centésimos de centavo. São 9
 
 Se o teto do bloco for atingido, a execução para e o experimento é reportado incompleto, com os
 casos que faltaram nomeados. Nenhum braço é excluído da análise por ter custado mais.
+
+---
+
+## Emenda 1 — falha de transporte não é resposta errada
+
+**Escrita em 19 de setembro de 2026, durante a execução, com o braço `c3` ainda rodando e antes
+de qualquer análise do resultado dele.**
+
+O corpo do pré-registro diz que "resposta malformada é erro, nunca descarte", e essa cláusula
+continua valendo integralmente. Durante a execução apareceu um caso que ela não cobre: o
+provedor devolveu **HTTP 429** (limite de taxa) em parte das chamadas do `c3`. Isso não é uma
+resposta malformada do modelo — é uma chamada que o modelo nunca chegou a responder. Contá-la
+como erro de classificação atribuiria ao comparador uma falha que é do transporte, e produziria
+uma vantagem do Jev que não foi medida em lugar nenhum.
+
+**Regra, congelada aqui antes de olhar o resultado:**
+
+1. Uma tentativa que termine em **erro de transporte** — HTTP 429, HTTP 5xx ou timeout — é
+   repetida, com espaçamento entre chamadas, até **três** tentativas por caso.
+2. Uma tentativa que termine em **resposta malformada** (JSON inválido, classe fora do
+   contrato) **não** é repetida: ela é erro do comparador, como sempre foi.
+3. Se após as três tentativas o caso continuar sem resposta, ele entra na análise como ausência
+   e **conta como erro** daquele braço, e o relatório publica quantos casos ficaram assim, por
+   braço.
+4. O número de repetições e o custo delas entram no livro-caixa como qualquer outra chamada.
+   Nenhuma tentativa é apagada.
+
+Esta emenda vale igualmente para os cinco braços, e não só para aquele em que o problema
+apareceu.
