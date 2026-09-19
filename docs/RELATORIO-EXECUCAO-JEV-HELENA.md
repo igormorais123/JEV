@@ -2,6 +2,15 @@
 
 **Helena Strategos · 18 e 19 de setembro de 2026 · primeira rodada com inferência real**
 
+
+> **Documento histórico.** Escrito depois do E4 e antes do E5 ao E9, da adjudicação do gabarito
+> e de cinco rodadas de revisão independente. Os números aqui — 305 chamadas, acurácias sob o
+> gabarito do autor, calibração do piloto — foram superados. O documento vale como registro do
+> que se sabia naquele momento, não como conclusão.
+>
+> **A conclusão está em [`RELATORIO-FINAL-JEV.md`](RELATORIO-FINAL-JEV.md).** Onde os dois
+> divergirem, vale o final.
+
 **Status:** etapas 1 a 4 do plano executadas, mais os experimentos E1, E2, E2b, E3 e E4. 305 chamadas
 reais, **US$ 0,010950** gastos de um teto de US$ 5,00 de gasto novo. Conciliação com o extrato do
 provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por **duas rodadas** de
