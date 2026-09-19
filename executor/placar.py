@@ -46,6 +46,8 @@ def montar():
     e5 = ler('e5-provedores/relatorio.json')
     e6 = ler('e6-repetibilidade/relatorio.json')
     e7 = ler('e7-confirmacao/relatorio.json')
+    e8 = ler('e8-anotador/relatorio.json')
+    e9 = ler('e9-prevalencia/relatorio.json')
     pareada = ler('analise-pareada.json') or {}
 
     cartoes = []
@@ -158,6 +160,35 @@ def montar():
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
                                'Corpus de confirmação ainda não executado.', '—'))
 
+    if e8:
+        apoiam = [d for d in e8['divergencias'] if d['jev'] == d['anotador']]
+        cartoes.append(cartao(
+            'e8', 'Segundo anotador independente (E8)', f"kappa {e8['kappa_cohen']}",
+            f"concordância bruta {pct(e8['concordancia_bruta'])}",
+            (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Nos "
+             f"{len(apoiam)} casos em que o Jev diverge do meu gabarito e o anotador independente "
+             'opina, ele fica do lado do Jev: meu gabarito é o suspeito, não a resposta. '
+             f"Sob o gabarito do outro anotador o Jev faz {pct(e8['acuracia_jev_sob_gabarito_do_outro'])}; "
+             f"nos {e8['casos_de_consenso']} casos de consenso, {pct(e8['acuracia_jev_no_consenso'])}."),
+            f"{e8['anotador_independente']} local, cego ao gabarito e à resposta do Jev"))
+    else:
+        cartoes.append(ausente('e8', 'Segundo anotador independente (E8)',
+                               'Anotação independente não executada.', '—'))
+
+    if e9:
+        proj = e9['projecoes_por_prevalencia']
+        valores = [p['acuracia_esperada'] for p in proj.values()]
+        politica = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+        cartoes.append(cartao(
+            'e9', 'Sensibilidade à prevalência (E9)',
+            f'{min(valores):.3f} a {max(valores):.3f}',
+            f'{len(proj)} distribuições de canal',
+            ('A acurácia quase não se move quando a mistura de classes muda, porque nenhuma classe '
+             'é fraca. ' + (f"No corte 0,90 a política aceita {pct(politica['cobertura'])} dos casos "
+                            f"com {politica['erros_entre_aceitos']} erro entre os aceitos: os quatro "
+                            'erros do Jev estão todos abaixo desse corte.' if politica else '')),
+            'reponderação da matriz de confusão dos 80 casos; distribuições declaradas, não medidas'))
+
     if e6:
         rodadas = list(e6['acuracia_por_rodada'].values())
         cartoes.append(cartao(
@@ -181,12 +212,13 @@ def montar():
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
-            'titulo': 'Uso consultivo com revisão humana, não decisão automática',
-            'texto': ('A vantagem sobre as regras congeladas se manteve num conjunto de confirmação '
-                      'que não guiou o desenho: 97,5% contra 32,5%. No corte de 0,95, 85% dos casos '
-                      'são aceitos sem nenhum erro observado. O que ainda impede o automático é o '
-                      'não determinismo — o mesmo caso, sozinho e repetido, pode mudar de resposta — '
-                      'e o limite de erro por família, que com 10 famílias ainda chega a 25,9%.'),
+            'titulo': 'Corte de confiança em 0,90 com revisão humana do resto',
+            'texto': ('A política que os dados sustentam: aceitar automaticamente o que vier com '
+                      'confiança de 0,90 ou mais e mandar o resto para uma pessoa. Nos 80 casos isso '
+                      'aceita 80% sem deixar passar nenhum erro — os quatro erros do modelo estão '
+                      'todos abaixo desse corte — e leva o custo por decisão de US$ 0,400 para '
+                      'US$ 0,080. O que impede ir além e automatizar tudo é o não determinismo: o '
+                      'mesmo caso, sozinho e repetido cinco vezes, pode mudar de resposta.'),
             'confianca': 0.75,
             'confianca_nota': ('Alta para a comparação contra as regras: é pareada, pré-registrada e '
                                'replicou fora do piloto. Baixa para generalizar a um canal real: '
@@ -195,6 +227,7 @@ def montar():
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}
                       if comprometido is not None else None),
+        'relatorio_final': 'docs/RELATORIO-FINAL-JEV.md',
         'pendencias': [
             'Segundo anotador cego: o gabarito ainda é de uma pessoa só, e um dos erros do E7 é '
             'contestável.',
