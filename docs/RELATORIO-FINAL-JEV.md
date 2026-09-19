@@ -162,6 +162,14 @@ lado, e mudou contra mim.
 **0,8875 a 0,9750**, conforme o gabarito adotado; o adjudicado, que é o mais defensável dos três,
 fica em 0,9625.
 
+**O limite desta adjudicação, dito antes que alguém o use contra o resultado:** o terceiro juiz
+é um modelo de linguagem grande, como o Jev. Modelos grandes treinados em dados parecidos tendem
+a compartilhar a mesma convenção sobre o que é "a ação pedida" — a concordância de 8 em 9 pode
+estar medindo essa convenção compartilhada, e não a verdade do domínio. O desenho controla o que
+dá para controlar (ordem sorteada, juiz cego à autoria, nenhum acesso ao repositório), mas não
+controla isso. Uma adjudicação com três pessoas do atendimento real poderia chegar a outro lugar,
+e continua sendo o item 2 da seção 10.
+
 **Ressalva que não pode ser omitida:** um modelo de 7B não é anotador humano, e o E8 **não é a
 adjudicação de gabarito** que o estudo precisa. Ele recebeu a minha rubrica e reproduziu a minha
 rubrica; kappa alto aqui mede reprodutibilidade, não validade do constructo. O padrão das
@@ -332,6 +340,13 @@ próximo `python -m executor.run_e*`**, sem registro. Agora `authorize` só redu
 A mesma rodada cobrou a adjudicação dos 9 casos em disputa do E8, e a cobrança estava certa:
 dois anotadores que discordam não produzem verdade. A adjudicação foi feita (seção 3.6.1) e
 **mudou o resultado contra o modelo**, não a favor.
+
+**Conciliação de encerramento contra o extrato do provedor:** o ledger registra
+US$ 0,017182296 para o OpenRouter; o provedor cobrou US$ 0,017095092. O ledger está **acima** do
+extrato em US$ 0,000087, e a diferença é explicada: são as chamadas que voltaram HTTP 400 na
+fase de sondagem do contrato, provisionadas aqui e não cobradas lá. Nenhum excedente a absorver,
+nenhum gasto sem identidade de provedor. Somando o TypeSafe direto (US$ 0,000992166), o total
+comprometido é US$ 0,018174462.
 
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
 US$ 5,00, 108 testes automatizados passando.** A chave da API nunca foi versionada, impressa em

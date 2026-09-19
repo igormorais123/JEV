@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 38,
- "updated_at": "2026-09-19T05:09:28.513090+00:00",
+ "revision": 41,
+ "updated_at": "2026-09-19T05:11:37.487675+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18537,15 +18537,20 @@
    "at": "2026-09-19T05:09:28.447463+00:00",
    "kind": "evidence",
    "text": "ADJUDICACAO: os 9 casos em disputa entre os dois anotadores foram julgados por um terceiro juiz cego (gpt-5.6-sol-high), que recebeu so a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 de 9. Isso CORRIGE a leitura anterior deste painel, e corrige contra o modelo: o Jev erra 3 casos no gabarito adjudicado, nao 2. A acuracia nos 80 casos fica entre 0,8875 e 0,9750 conforme o gabarito; sob o adjudicado, 0,9625."
+  },
+  {
+   "at": "2026-09-19T05:11:37.421050+00:00",
+   "kind": "evidence",
+   "text": "Conciliacao final com o extrato do provedor: ledger US$ 0,017182296 para o OpenRouter contra US$ 0,017095092 cobrados. O ledger esta ACIMA do extrato em US$ 0,000087, que e o provisionamento das chamadas com HTTP 400 que o provedor nao cobra. Excedente absorvido: zero. Gasto sem identidade de provedor: zero. Somando o TypeSafe direto (US$ 0,000992166), a carteira tem US$ 0,018174462 comprometidos e US$ 4,981826 disponiveis do teto de US$ 5,00. O limite de US$ 50 da chave continua sendo barreira do provedor, nao autorizacao."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:09:28.512974+00:00",
+  "atualizado_em": "2026-09-19T05:11:37.487531+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.6,
-   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos, o gabarito ainda é de um anotador humano só, e a conta de custo usa tempo humano declarado, nunca cronometrado."
+   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos e a conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real."
   },
   "cartoes": [
    {

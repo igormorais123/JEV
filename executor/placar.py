@@ -50,6 +50,20 @@ def sobre_programados(bloco, casos):
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
 
 
+def nota_de_confianca(adj):
+    """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
+    base = ('Calibrada para baixo depois da sexta revisão independente. Alta para a comparação '
+            'contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. '
+            'Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos '
+            'e a conta de custo usa tempo humano declarado, nunca cronometrado.')
+    if not adj:
+        return base + ' O gabarito é de um anotador só e os casos em disputa não foram adjudicados.'
+    g = adj['gabarito_adjudicado']
+    return (base + f" Os {len(adj['casos'])} casos em disputa foram adjudicados por um terceiro juiz "
+            f"cego, e sob esse gabarito a acurácia é {g['acuracia']} — mas os três juízes são "
+            'modelos, não pessoas do atendimento real.')
+
+
 def titulo_do_veredito(e9):
     """O titulo tambem precisa cair quando o dado cair.
 
@@ -318,12 +332,7 @@ def montar():
             'titulo': titulo_do_veredito(e9),
             'texto': texto_do_veredito(e9, e6),
             'confianca': 0.6,
-            'confianca_nota': ('Calibrada para baixo depois da sexta revisão independente. Alta para a '
-                               'comparação contra as regras congeladas: é pareada, pré-registrada e '
-                               'replicou fora do piloto. Baixa para qualquer afirmação operacional: o '
-                               'corte de 0,90 vem de 4 erros em 80 casos, o gabarito ainda é de um '
-                               'anotador humano só, e a conta de custo usa tempo humano declarado, '
-                               'nunca cronometrado.'),
+            'confianca_nota': nota_de_confianca(adj),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}
