@@ -97,3 +97,37 @@ class GabaritoOficial(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+@unittest.skipUnless(tem_relatorios(), 'requer os relatórios de execução')
+class PainelPublicadoEhReproduzivel(unittest.TestCase):
+    """O que está no ar tem que ser o que os relatórios produzem.
+
+    Sem isto, uma edição manual em `lab/data/execution.json` passaria despercebida, e o painel
+    poderia afirmar algo que nenhum experimento sustenta.
+    """
+
+    def test_bloco_publicado_bate_com_o_gerado(self):
+        publicado = json.loads(
+            (ROOT / 'lab/data/execution.json').read_text(encoding='utf-8')).get('decision')
+        self.assertIsNotNone(publicado, 'o painel está sem placar de decisão')
+        gerado = placar.montar()
+        for campo in ('veredito', 'cartoes', 'pendencias', 'orcamento'):
+            self.assertEqual(publicado[campo], gerado[campo],
+                             f'{campo} publicado difere do que os relatórios geram')
+
+    def test_custo_somado_no_painel_fecha_com_o_ledger(self):
+        import sqlite3
+        estado = json.loads((ROOT / 'lab/data/execution.json').read_text(encoding='utf-8'))
+        do_painel = sum(a['cost_usd'] or 0 for r in estado['runs'] for a in r['attempts'])
+        caminho = ROOT / 'runs' / 'ledger.sqlite3'
+        if not caminho.exists():
+            self.skipTest('sem ledger')
+        db = sqlite3.connect(str(caminho))
+        try:
+            total = db.execute(
+                'SELECT COALESCE(SUM(CASE WHEN settled_nusd IS NULL THEN reserved_nusd'
+                ' ELSE settled_nusd END),0) FROM attempt_budget').fetchone()[0]
+        finally:
+            db.close()
+        self.assertAlmostEqual(do_painel, total / 1e9, places=9)

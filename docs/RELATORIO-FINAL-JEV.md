@@ -143,6 +143,11 @@ vendo apenas as instruções e os critérios — sem o gabarito e sem a resposta
 - **Sob o gabarito do outro anotador, o Jev faz 0,8875, não 0,95.** A acurácia depende de qual
   gabarito se adota, e é exatamente essa fragilidade que o experimento veio expor.
 
+**Um dado lateral que vale registrar:** o anotador independente tinha a opção de marcar um caso
+como ambíguo, e marcou 6. Apenas 2 desses 6 estavam de fato entre os 9 em que ele divergiu de
+mim. A autopercepção de ambiguidade praticamente não previu a divergência real — o que é mais um
+motivo para não usar "o modelo disse que estava em dúvida" como filtro de qualidade.
+
 ### 3.6.1 Adjudicação cega dos 9 casos em disputa
 
 A sétima rodada de revisão apontou, com razão, que sem adjudicação o E8 não fechava nada: dois
