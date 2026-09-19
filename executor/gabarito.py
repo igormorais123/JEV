@@ -61,3 +61,39 @@ def rotulo(procedencia):
     if not n:
         return 'gabarito adjudicado (a adjudicação confirmou o autor em todos os casos em disputa)'
     return f'gabarito adjudicado ({n} caso(s) mudaram em relação ao do autor)'
+
+
+def desempenho(relatorio, campo_resposta='jev'):
+    """Recalcula acertos de um relatório sob os DOIS gabaritos, do autor e o oficial.
+
+    O painel lia a acurácia já calculada dentro de cada relatório, e essas acurácias foram
+    gravadas antes da adjudicação. O resultado foi um cartão que estampava 97,5% no número
+    grande e dizia, na linha de baixo, que no gabarito oficial não havia erro nenhum. Números
+    de gabaritos diferentes na mesma caixa. Aqui os dois saem da mesma conta.
+    """
+    caminho = ROOT / relatorio if not str(relatorio).startswith(str(ROOT)) else Path(relatorio)
+    if not caminho.exists():
+        return None
+    casos = json.loads(caminho.read_text(encoding='utf-8'))['casos']
+    oficial, procedencia = adjudicado()
+    programados = len(casos)
+    acertos_autor = sum(1 for c in casos if c.get(campo_resposta) == c['gold'])
+    erros_oficial, acertos_oficial = [], 0
+    for c in casos:
+        alvo = oficial.get(c['case_id'], {}).get('gold', c['gold'])
+        if c.get(campo_resposta) == alvo:
+            acertos_oficial += 1
+        else:
+            erros_oficial.append(c['case_id'])
+    mudados = {m['case_id'] for m in procedencia['casos_substituidos']}
+    return {
+        'casos_programados': programados,
+        'autor': {'acertos': acertos_autor,
+                  'acuracia': round(acertos_autor / programados, 4) if programados else None},
+        'oficial': {'acertos': acertos_oficial,
+                    'acuracia': round(acertos_oficial / programados, 4) if programados else None,
+                    'erros': erros_oficial},
+        'casos_deste_relatorio_que_mudaram': sorted(
+            {c['case_id'] for c in casos} & mudados),
+        'adjudicado': procedencia['adjudicado'],
+    }

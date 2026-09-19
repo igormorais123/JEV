@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 46,
- "updated_at": "2026-09-19T05:17:17.339520+00:00",
+ "revision": 50,
+ "updated_at": "2026-09-19T05:21:19.906309+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18753,24 +18753,29 @@
    "at": "2026-09-19T05:15:36.185463+00:00",
    "kind": "manual",
    "text": "Oitava rodada de revisao: nenhum defeito financeiro novo, o teto ficou solido. O problema era o painel se contradizendo depois da adjudicacao: o veredito citava 87,5% em 40 casos da confirmacao e o cartao ao lado citava 80% em 80 casos da uniao; um cartao do E8 dizia 3 erros e o outro 4; e as pendencias continuavam pedindo a adjudicacao que o painel acabara de anunciar. Corrigido na raiz: executor/gabarito.py define UM gabarito oficial, o E9 passou a consumi-lo, cada cartao declara qual gabarito usa, e um teste roda o painel contra os relatorios reais e falha se veredito e cartao divergirem. 117 testes passam."
+  },
+  {
+   "at": "2026-09-19T05:21:19.906309+00:00",
+   "kind": "manual",
+   "text": "Nona rodada de revisao: sem defeito financeiro. O painel ainda falava duas linguas no mesmo cartao. O E7 estampava 97,5% (gabarito do autor) e narrava embaixo que no gabarito oficial nao havia erro; a nota de confianca justificava o corte de 0,90 com 80 casos da uniao enquanto o veredito falava de 40 da confirmacao. Corrigido: gabarito.desempenho() recalcula cada conjunto sob os DOIS gabaritos na mesma conta, e o cartao mostra a FAIXA (97,5% a 100,0% no E7) em vez do melhor dos dois, porque com um numero so o olho pega o mais alto. A nota passou a citar a base da politica que recomenda. 120 testes passam."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:17:17.339334+00:00",
+  "atualizado_em": "2026-09-19T05:20:53.171981+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.6,
-   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 3 erros em 80 casos e a conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real."
+   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 é sustentado por 40 casos da partição de confirmação, com 0 erro entre os aceitos, e o modelo erra 3 de 80 casos no estudo inteiro. A conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0.9625 — mas os três juízes são modelos, não pessoas do atendimento real."
   },
   "cartoes": [
    {
     "chave": "e1",
     "titulo": "Triagem de atendimento (E1)",
     "valor": "92.5%",
-    "comparacao": "regra congelada 60.0%",
-    "leitura": "Vantagem de 32.5%, IC95 [15.0%; 50.0%] por reamostragem de famílias.",
-    "fonte": "40 casos programados, 10 famílias; gabarito do autor, antes da adjudicação",
+    "comparacao": "autor 92.5%, oficial 92.5% · regra congelada 60.0%",
+    "leitura": "Vantagem de 32.5%, IC95 [15.0%; 50.0%] por reamostragem de famílias, no gabarito do autor como pré-registrado.",
+    "fonte": "40 casos programados, 10 famílias; faixa entre os dois gabaritos",
     "estado": "pronto"
    },
    {
@@ -18830,10 +18835,10 @@
    {
     "chave": "e7",
     "titulo": "Conjunto de confirmação (E7)",
-    "valor": "97.5%",
-    "comparacao": "regra congelada 32.5%",
-    "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. No gabarito oficial, depois da adjudicação, o E7 fica sem erro nenhum: cnf-g05-02 mudou de lado. Os erros que sobram no estudo são todos do piloto.",
-    "fonte": "40 casos programados, 10 famílias novas; gabarito do autor",
+    "valor": "97.5% a 100.0%",
+    "comparacao": "autor 97.5%, oficial 100.0% · regra congelada 32.5%",
+    "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. A adjudicação levou E7 de 39/40 para 40/40, porque cnf-g05-02 mudou de lado. Ler isso como acerto pleno seria trocar de gabarito depois de ver o resultado: o número do autor está ao lado, de propósito.",
+    "fonte": "40 casos programados, 10 famílias novas; faixa entre os dois gabaritos",
     "estado": "pronto"
    },
    {

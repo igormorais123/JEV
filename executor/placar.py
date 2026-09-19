@@ -12,6 +12,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import gabarito
+
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / 'runs'
 ESTADO = ROOT / 'lab' / 'data' / 'execution.json'
@@ -50,22 +52,44 @@ def sobre_programados(bloco, casos):
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
 
 
-def e7_sob_adjudicado(e7, adj):
-    """O cartao do E7 dizia que o unico erro era contestavel. Depois da adjudicacao, ou ele
-    deixou de ser erro, ou deixou de ser contestavel: em qualquer caso a frase tinha de mudar."""
-    if not adj:
-        return 'Único erro ainda sem adjudicação.'
-    mudados = {c['case_id'] for c in adj['casos'] if c['anotador_1_autor'] != c['terceiro_juiz']}
-    erros_e7 = [e['case_id'] for e in e7['jev'].get('erros', [])]
-    resolvidos = [c for c in erros_e7 if c in mudados]
-    if resolvidos and len(resolvidos) == len(erros_e7):
-        return (f"No gabarito oficial, depois da adjudicação, o E7 fica sem erro nenhum: "
-                f"{', '.join(resolvidos)} mudou de lado. Os erros que sobram no estudo são todos "
-                'do piloto.')
-    if resolvidos:
-        return (f"A adjudicação resolveu {len(resolvidos)} de {len(erros_e7)} erros a favor do "
-                'modelo; os demais seguem sendo erro.')
-    return 'A adjudicação manteve todos os erros do E7.'
+def valor_entre_gabaritos(d):
+    """O numero de capa e a FAIXA entre os dois gabaritos, nao o melhor dos dois.
+
+    Com um numero so, o olho pega o mais alto e a ressalva fica na letra miuda. Quando os dois
+    gabaritos dao o mesmo resultado, nao ha faixa e o valor e unico.
+    """
+    autor, oficial = d['autor']['acuracia'], d['oficial']['acuracia']
+    if autor == oficial:
+        return pct(autor)
+    baixo, alto = sorted((autor, oficial))
+    return f'{pct(baixo)} a {pct(alto)}'
+
+
+def leitura_dos_gabaritos(d, nome):
+    """Compara os dois gabaritos a partir da MESMA contagem, nos dois sentidos.
+
+    A versão anterior só sabia descrever o caso em que a adjudicação apagava um erro. Se ela
+    criasse um erro novo, ou se o relatório fosse relido sob o gabarito oficial, a frase saía
+    errada sem ninguém notar.
+    """
+    if not d or not d['adjudicado']:
+        return f'{nome} ainda sem adjudicação: o número é o do gabarito do autor.'
+    autor, oficial = d['autor']['acertos'], d['oficial']['acertos']
+    total = d['casos_programados']
+    mudados = d['casos_deste_relatorio_que_mudaram']
+    if not mudados:
+        return (f'A adjudicação não mexeu em nenhum caso deste conjunto: {oficial}/{total} nos dois '
+                'gabaritos.')
+    quais = ', '.join(mudados)
+    if oficial > autor:
+        return (f'A adjudicação levou {nome} de {autor}/{total} para {oficial}/{total}, porque '
+                f'{quais} mudou de lado. Ler isso como acerto pleno seria trocar de gabarito depois '
+                'de ver o resultado: o número do autor está ao lado, de propósito.')
+    if oficial < autor:
+        return (f'A adjudicação levou {nome} de {autor}/{total} para {oficial}/{total}: {quais} '
+                'passou a contar como erro.')
+    return (f'A adjudicação mexeu em {quais} sem alterar a contagem: {oficial}/{total} nos dois '
+            'gabaritos.')
 
 
 def pendencias(adj):
@@ -98,14 +122,25 @@ def politica_de_referencia(e9):
     return next((p for p in confirmacao.get('politicas', []) if p['corte'] == 0.90), None)
 
 
-def nota_de_confianca(adj):
+def nota_de_confianca(adj, e9=None):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
-    erros = len(adj['gabarito_adjudicado']['erros']) if adj else 4
-    total = adj['gabarito_adjudicado']['casos_com_resposta_do_jev'] if adj else 80
+    politica = politica_de_referencia(e9) if e9 else None
+    # A base citada aqui tem que ser a MESMA da politica que o veredito recomenda. Enquanto a
+    # nota falava de 80 casos e o veredito de 40, o painel justificava a decisao com um
+    # denominador que ele proprio tinha recusado.
+    if politica:
+        onde = (f"o corte de 0,90 é sustentado por {politica['casos']} casos da partição de "
+                f"confirmação, com {politica['erros_entre_aceitos']} erro entre os aceitos")
+    else:
+        onde = 'não há partição de confirmação para sustentar corte nenhum'
+    erros_totais = len(adj['gabarito_adjudicado']['erros']) if adj else None
+    total = adj['gabarito_adjudicado']['casos_com_resposta_do_jev'] if adj else None
     base = ('Calibrada para baixo depois da sexta revisão independente. Alta para a comparação '
             'contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. '
-            f'Baixa para qualquer afirmação operacional: o corte de 0,90 vem de {erros} erros em '
-            f'{total} casos e a conta de custo usa tempo humano declarado, nunca cronometrado.')
+            f'Baixa para qualquer afirmação operacional: {onde}'
+            + (f", e o modelo erra {erros_totais} de {total} casos no estudo inteiro"
+               if erros_totais is not None else '')
+            + '. A conta de custo usa tempo humano declarado, nunca cronometrado.')
     if not adj:
         return base + ' O gabarito é de um anotador só e os casos em disputa não foram adjudicados.'
     g = adj['gabarito_adjudicado']
@@ -123,7 +158,7 @@ def titulo_do_veredito(e9):
     if not e9:
         return 'Sem analise de politica: nao ha recomendacao operacional'
     confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)') or {}
-    politica = next((p for p in confirmacao.get('politicas', []) if p['corte'] == 0.90), None)
+    politica = politica_de_referencia(e9)
     if politica is None:
         return 'Uso consultivo com revisao humana'
     if politica['erros_entre_aceitos'] == 0:
@@ -185,16 +220,19 @@ def montar():
     if e1:
         dif = pareada.get('e1_triagem', {})
         ic = dif.get('ic95')
-        acuracia_e1, programados_e1 = sobre_programados(e1['jev'], e1['casos'])
+        d1 = gabarito.desempenho('runs/e1-triagem/relatorio.json')
+        acuracia_e1, programados_e1 = d1['oficial']['acuracia'], d1['casos_programados']
         regra_e1, _ = sobre_programados(e1['regra'], e1['casos'])
         cartoes.append(cartao(
-            'e1', 'Triagem de atendimento (E1)', pct(acuracia_e1),
-            f'regra congelada {pct(regra_e1)}',
+            'e1', 'Triagem de atendimento (E1)', valor_entre_gabaritos(d1),
+            (f"autor {pct(d1['autor']['acuracia'])}, oficial {pct(d1['oficial']['acuracia'])} · "
+             f"regra congelada {pct(regra_e1)}"),
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
-             f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias." if ic else
+             f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias, "
+             'no gabarito do autor como pré-registrado.' if ic else
              'Diferença ainda sem intervalo calculado.'),
             f"{programados_e1} casos programados, {e1['jev']['n_familias']} famílias; "
-            'gabarito do autor, antes da adjudicação'))
+            'faixa entre os dois gabaritos'))
     else:
         cartoes.append(ausente('e1', 'Triagem de atendimento (E1)', 'Piloto não executado.', '—'))
 
@@ -285,15 +323,17 @@ def montar():
 
     if e7:
         par = e7['pareada']
+        d7 = gabarito.desempenho('runs/e7-confirmacao/relatorio.json')
         cartoes.append(cartao(
-            'e7', 'Conjunto de confirmação (E7)', pct(e7['jev']['acuracia_sobre_programados']),
-            f"regra congelada {pct(e7['regra']['acuracia_sobre_programados'])}",
+            'e7', 'Conjunto de confirmação (E7)', valor_entre_gabaritos(d7),
+            (f"autor {pct(d7['autor']['acuracia'])}, oficial {pct(d7['oficial']['acuracia'])} · "
+             f"regra congelada {pct(e7['regra']['acuracia_sobre_programados'])}"),
             (f"Casos novos, que não guiaram o desenho: diferença {pct(par['diferenca_observada'])}, "
              f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
              '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
-             'armadilhas lexicais. ' + e7_sob_adjudicado(e7, adj)),
-            f"{e7['jev']['casos_programados']} casos programados, "
-            f"{e7['jev']['n_familias']} famílias novas; gabarito do autor"))
+             'armadilhas lexicais. ' + leitura_dos_gabaritos(d7, 'E7')),
+            f"{d7['casos_programados']} casos programados, "
+            f"{e7['jev']['n_familias']} famílias novas; faixa entre os dois gabaritos"))
     else:
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
                                'Corpus de confirmação ainda não executado.', '—'))
@@ -387,7 +427,7 @@ def montar():
             'titulo': titulo_do_veredito(e9),
             'texto': texto_do_veredito(e9, e6),
             'confianca': 0.6,
-            'confianca_nota': nota_de_confianca(adj),
+            'confianca_nota': nota_de_confianca(adj, e9),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}

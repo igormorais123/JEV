@@ -58,10 +58,29 @@ class CoerenciaDoPlacar(unittest.TestCase):
         cartao = self.cartoes['e8b']
         self.assertIn('GABARITO DO AUTOR', cartao['leitura'])
 
-    def test_erros_da_nota_de_confianca_batem_com_o_gabarito_oficial(self):
+    def test_nota_de_confianca_usa_a_base_da_politica_recomendada(self):
+        """A nota justificava o corte com 80 casos enquanto o veredito falava de 40.
+
+        Justificar uma decisão com um denominador que o próprio painel recusou é pior do que
+        não justificar: dá aparência de base maior do que a que existe.
+        """
+        nota = self.bloco['veredito']['confianca_nota']
+        e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
+        politica = placar.politica_de_referencia(e9)
+        self.assertIn(f"{politica['casos']} casos da partição de confirmação", nota)
         adj = json.loads((ROOT / 'runs/e8-anotador/adjudicacao.json').read_text(encoding='utf-8'))
         erros = len(adj['gabarito_adjudicado']['erros'])
-        self.assertIn(f'{erros} erros', self.bloco['veredito']['confianca_nota'])
+        self.assertIn(f'erra {erros} de', nota)
+
+    def test_cartoes_com_dois_gabaritos_mostram_a_faixa_e_nao_o_melhor(self):
+        """O olho pega o número de capa; ele não pode ser o mais favorável dos dois."""
+        from executor import gabarito
+        d7 = gabarito.desempenho('runs/e7-confirmacao/relatorio.json')
+        if d7['autor']['acuracia'] == d7['oficial']['acuracia']:
+            self.skipTest('os dois gabaritos coincidem neste conjunto')
+        valor = self.cartoes['e7']['valor']
+        self.assertIn(' a ', valor, 'com gabaritos divergentes o cartão tem de mostrar a faixa')
+        self.assertIn(f"{d7['autor']['acuracia'] * 100:.1f}", valor)
 
     def test_pendencias_nao_pedem_o_que_ja_foi_feito(self):
         texto = ' '.join(self.bloco['pendencias']).lower()

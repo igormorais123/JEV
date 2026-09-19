@@ -32,7 +32,8 @@ responder igual à mesma pergunta, e este não responde.
 
 **Acurácia do modelo nestes 80 casos: entre 0,8875 e 0,9750, conforme o gabarito adotado.**
 Sob o gabarito adjudicado por três juízes — o mais defensável — são **0,9625**. Reportar só o
-número mais alto seria escolher o gabarito depois de ver o resultado.
+número mais alto seria escolher o gabarito depois de ver o resultado, e é por isso que o painel
+exibe a faixa em vez do melhor caso.
 
 **Confiança: 0,60.** Rebaixada de 0,75 depois da sexta rodada de revisão independente, que
 mostrou que o painel havia começado a apresentar duas lacunas conhecidas como se estivessem
@@ -313,7 +314,7 @@ ela e o corte 0,90 é o preço de não errar: US$ 0,08 por decisão.
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **oito rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **nove rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
 Grok 4.6 via Cursor). As quatro primeiras encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -377,8 +378,20 @@ devolve uma leitura só — sem cair silenciosamente na união quando a partiç�
 `test_coerencia_placar.py` roda o painel contra os relatórios reais e falha se veredito e cartão
 divergirem.
 
+A nona rodada não achou defeito financeiro — e achou, de novo, o painel falando duas línguas.
+O cartão do E7 estampava 97,5% (gabarito do autor) e narrava, na linha de baixo, que no gabarito
+oficial não havia erro nenhum; a nota de confiança justificava o corte de 0,90 com 80 casos da
+união enquanto o veredito, ao lado, falava de 40 casos da confirmação. A correção da oitava tinha
+unificado o par que a revisão apontou com o dedo, e só ele.
+
+Agora `executor/gabarito.py` recalcula cada conjunto **sob os dois gabaritos, na mesma conta**, e
+o cartão mostra a **faixa** — 97,5% a 100,0% no E7 — em vez do melhor dos dois. Com um número só,
+o olho pega o mais alto e a ressalva vira letra miúda. A nota de confiança passou a citar a mesma
+base da política que recomenda, e o título do veredito usa a mesma função de política do resto do
+painel.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 117 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 120 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---
