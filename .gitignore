@@ -80,3 +80,19 @@ lab/data/*.tmp
 # Screenshots de verificacao do painel
 *.png
 .playwright-mcp/
+
+# --- integracao/ : o roteador que roda nos fluxos desta maquina ---
+# Estado operacional: nao e resultado de experimento, muda a cada mensagem.
+integracao/cache/
+integracao/estado/
+integracao/gastos.jsonl
+integracao/decisoes.jsonl
+integracao/modo.txt
+# Material real do Igor. A amostra do E13 saiu do historico dele e traz CPF, nome de
+# familiar, caminho de cliente do escritorio e comando com credencial. Os gabaritos
+# (id -> rotulo) e os relatorios agregados VAO para o Git; o texto original, nunca.
+integracao/avaliacao/amostra.json
+integracao/avaliacao/amostra-com-contexto.json
+integracao/avaliacao/comandos.json
+integracao/avaliacao/respostas-jev.json
+integracao/avaliacao/comandos-resultado.json

@@ -1,0 +1,187 @@
+{
+ "anotador": "Claude Opus 5, autor da politica",
+ "criterio": "Tema principal do pedido, entre os oito que os hooks suggest-skill-* cobrem hoje, mais \"nenhum\" para o que e programacao ou operacao comum do projeto.",
+ "anotado_em": "2026-09-19, antes de rodar o Jev sobre a amostra",
+ "gabarito": {
+  "real-001": {
+   "tema": "google"
+  },
+  "real-002": {
+   "tema": "nenhum"
+  },
+  "real-003": {
+   "tema": "nenhum"
+  },
+  "real-004": {
+   "tema": "nenhum"
+  },
+  "real-005": {
+   "tema": "infra"
+  },
+  "real-006": {
+   "tema": "nenhum"
+  },
+  "real-007": {
+   "tema": "infra"
+  },
+  "real-008": {
+   "tema": "infra"
+  },
+  "real-009": {
+   "tema": "nenhum"
+  },
+  "real-010": {
+   "tema": "nenhum"
+  },
+  "real-011": {
+   "tema": "nenhum"
+  },
+  "real-012": {
+   "tema": "nenhum"
+  },
+  "real-013": {
+   "tema": "nenhum"
+  },
+  "real-014": {
+   "tema": "nenhum"
+  },
+  "real-015": {
+   "tema": "comunicacao"
+  },
+  "real-016": {
+   "tema": "nenhum"
+  },
+  "real-017": {
+   "tema": "nenhum"
+  },
+  "real-018": {
+   "tema": "nenhum"
+  },
+  "real-019": {
+   "tema": "infra"
+  },
+  "real-020": {
+   "tema": "nenhum"
+  },
+  "real-021": {
+   "tema": "nenhum"
+  },
+  "real-022": {
+   "tema": "nenhum"
+  },
+  "real-023": {
+   "tema": "google"
+  },
+  "real-024": {
+   "tema": "nenhum"
+  },
+  "real-025": {
+   "tema": "nenhum"
+  },
+  "real-026": {
+   "tema": "nenhum"
+  },
+  "real-027": {
+   "tema": "nenhum"
+  },
+  "real-028": {
+   "tema": "comunicacao"
+  },
+  "real-029": {
+   "tema": "relatorio"
+  },
+  "real-030": {
+   "tema": "nenhum"
+  },
+  "real-031": {
+   "tema": "infra"
+  },
+  "real-032": {
+   "tema": "nenhum"
+  },
+  "real-033": {
+   "tema": "nenhum"
+  },
+  "real-034": {
+   "tema": "relatorio"
+  },
+  "real-035": {
+   "tema": "infra"
+  },
+  "real-036": {
+   "tema": "nenhum"
+  },
+  "real-037": {
+   "tema": "nenhum"
+  },
+  "real-038": {
+   "tema": "comunicacao"
+  },
+  "real-039": {
+   "tema": "nenhum"
+  },
+  "real-040": {
+   "tema": "nenhum"
+  },
+  "real-041": {
+   "tema": "nenhum"
+  },
+  "real-042": {
+   "tema": "comunicacao"
+  },
+  "real-043": {
+   "tema": "google"
+  },
+  "real-044": {
+   "tema": "nenhum"
+  },
+  "real-045": {
+   "tema": "nenhum"
+  },
+  "real-046": {
+   "tema": "comunicacao"
+  },
+  "real-047": {
+   "tema": "infra"
+  },
+  "real-048": {
+   "tema": "nenhum"
+  },
+  "real-049": {
+   "tema": "nenhum"
+  },
+  "real-050": {
+   "tema": "nenhum"
+  },
+  "real-051": {
+   "tema": "juridico"
+  },
+  "real-052": {
+   "tema": "infra"
+  },
+  "real-053": {
+   "tema": "nenhum"
+  },
+  "real-054": {
+   "tema": "infra"
+  },
+  "real-055": {
+   "tema": "pesquisa"
+  },
+  "real-056": {
+   "tema": "pesquisa"
+  },
+  "real-057": {
+   "tema": "nenhum"
+  },
+  "real-058": {
+   "tema": "nenhum"
+  },
+  "real-059": {
+   "tema": "juridico"
+  },
+  "real-060": {
+   "tema": "nenhum"
+  }
+ }
+}

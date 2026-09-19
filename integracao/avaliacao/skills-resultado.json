@@ -1,0 +1,588 @@
+{
+ "casos": 60,
+ "jev": {
+  "acuracia": 0.7833,
+  "erros": [
+   {
+    "id": "real-013",
+    "esperado": "nenhum",
+    "jev": "comunicacao",
+    "confianca": 0.87
+   },
+   {
+    "id": "real-015",
+    "esperado": "comunicacao",
+    "jev": "nenhum",
+    "confianca": 0.5
+   },
+   {
+    "id": "real-022",
+    "esperado": "nenhum",
+    "jev": "infra",
+    "confianca": 0.49
+   },
+   {
+    "id": "real-028",
+    "esperado": "comunicacao",
+    "jev": "nenhum",
+    "confianca": 0.66
+   },
+   {
+    "id": "real-031",
+    "esperado": "infra",
+    "jev": "nenhum",
+    "confianca": 0.49
+   },
+   {
+    "id": "real-035",
+    "esperado": "infra",
+    "jev": "nenhum",
+    "confianca": 0.79
+   },
+   {
+    "id": "real-038",
+    "esperado": "comunicacao",
+    "jev": "nenhum",
+    "confianca": 0.8
+   },
+   {
+    "id": "real-042",
+    "esperado": "comunicacao",
+    "jev": "nenhum",
+    "confianca": 0.96
+   },
+   {
+    "id": "real-043",
+    "esperado": "google",
+    "jev": "nenhum",
+    "confianca": 0.6
+   },
+   {
+    "id": "real-051",
+    "esperado": "juridico",
+    "jev": "comunicacao",
+    "confianca": 0.47
+   },
+   {
+    "id": "real-054",
+    "esperado": "infra",
+    "jev": "nenhum",
+    "confianca": 0.52
+   },
+   {
+    "id": "real-055",
+    "esperado": "pesquisa",
+    "jev": "nenhum",
+    "confianca": 0.63
+   },
+   {
+    "id": "real-056",
+    "esperado": "pesquisa",
+    "jev": "nenhum",
+    "confianca": 0.59
+   }
+  ]
+ },
+ "regra": {
+  "acuracia": 0.6667,
+  "disparos_totais": 11,
+  "disparos_falsos": 6
+ },
+ "distribuicao_jev": [
+  [
+   "nenhum",
+   45
+  ],
+  [
+   "infra",
+   7
+  ],
+  [
+   "comunicacao",
+   3
+  ],
+  [
+   "google",
+   2
+  ],
+  [
+   "relatorio",
+   2
+  ],
+  [
+   "juridico",
+   1
+  ]
+ ],
+ "distribuicao_gabarito": [
+  [
+   "nenhum",
+   37
+  ],
+  [
+   "infra",
+   9
+  ],
+  [
+   "comunicacao",
+   5
+  ],
+  [
+   "google",
+   3
+  ],
+  [
+   "relatorio",
+   2
+  ],
+  [
+   "juridico",
+   2
+  ],
+  [
+   "pesquisa",
+   2
+  ]
+ ],
+ "linhas": [
+  {
+   "id": "real-001",
+   "jev": "google",
+   "confianca": 0.94,
+   "regra": [
+    "google",
+    "pesquisa"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-002",
+   "jev": "nenhum",
+   "confianca": 0.75,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-003",
+   "jev": "nenhum",
+   "confianca": 0.45,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-004",
+   "jev": "nenhum",
+   "confianca": 0.97,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-005",
+   "jev": "infra",
+   "confianca": 0.9,
+   "regra": [
+    "infra"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-006",
+   "jev": "nenhum",
+   "confianca": 0.96,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-007",
+   "jev": "infra",
+   "confianca": 1,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-008",
+   "jev": "infra",
+   "confianca": 0.48,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-009",
+   "jev": "nenhum",
+   "confianca": 0.87,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-010",
+   "jev": "nenhum",
+   "confianca": 0.94,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-011",
+   "jev": "nenhum",
+   "confianca": 0.94,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-012",
+   "jev": "nenhum",
+   "confianca": 0.7,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-013",
+   "jev": "comunicacao",
+   "confianca": 0.87,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-014",
+   "jev": "nenhum",
+   "confianca": 0.86,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-015",
+   "jev": "nenhum",
+   "confianca": 0.5,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-016",
+   "jev": "nenhum",
+   "confianca": 0.64,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-017",
+   "jev": "nenhum",
+   "confianca": 0.92,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-018",
+   "jev": "nenhum",
+   "confianca": 0.76,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-019",
+   "jev": "infra",
+   "confianca": 0.91,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-020",
+   "jev": "nenhum",
+   "confianca": 0.92,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-021",
+   "jev": "nenhum",
+   "confianca": 0.87,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-022",
+   "jev": "infra",
+   "confianca": 0.49,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-023",
+   "jev": "google",
+   "confianca": 0.85,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-024",
+   "jev": "nenhum",
+   "confianca": 0.93,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-025",
+   "jev": "nenhum",
+   "confianca": 0.95,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-026",
+   "jev": "nenhum",
+   "confianca": 0.82,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-027",
+   "jev": "nenhum",
+   "confianca": 0.94,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-028",
+   "jev": "nenhum",
+   "confianca": 0.66,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-029",
+   "jev": "relatorio",
+   "confianca": 0.4,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-030",
+   "jev": "nenhum",
+   "confianca": 1,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-031",
+   "jev": "nenhum",
+   "confianca": 0.49,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-032",
+   "jev": "nenhum",
+   "confianca": 0.75,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-033",
+   "jev": "nenhum",
+   "confianca": 0.95,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-034",
+   "jev": "relatorio",
+   "confianca": 0.98,
+   "regra": [
+    "relatorio"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-035",
+   "jev": "nenhum",
+   "confianca": 0.79,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-036",
+   "jev": "nenhum",
+   "confianca": 0.78,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-037",
+   "jev": "nenhum",
+   "confianca": 0.97,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-038",
+   "jev": "nenhum",
+   "confianca": 0.8,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-039",
+   "jev": "nenhum",
+   "confianca": 0.88,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-040",
+   "jev": "nenhum",
+   "confianca": 0.89,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-041",
+   "jev": "nenhum",
+   "confianca": 0.96,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-042",
+   "jev": "nenhum",
+   "confianca": 0.96,
+   "regra": [
+    "infra",
+    "relatorio"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-043",
+   "jev": "nenhum",
+   "confianca": 0.6,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-044",
+   "jev": "nenhum",
+   "confianca": 0.97,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-045",
+   "jev": "nenhum",
+   "confianca": 0.68,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-046",
+   "jev": "comunicacao",
+   "confianca": 0.96,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-047",
+   "jev": "infra",
+   "confianca": 0.98,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-048",
+   "jev": "nenhum",
+   "confianca": 0.97,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-049",
+   "jev": "nenhum",
+   "confianca": 0.5,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-050",
+   "jev": "nenhum",
+   "confianca": 0.82,
+   "regra": [
+    "estrategia",
+    "relatorio"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-051",
+   "jev": "comunicacao",
+   "confianca": 0.47,
+   "regra": [
+    "juridico"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-052",
+   "jev": "infra",
+   "confianca": 0.98,
+   "regra": [
+    "infra"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-053",
+   "jev": "nenhum",
+   "confianca": 0.93,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-054",
+   "jev": "nenhum",
+   "confianca": 0.52,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-055",
+   "jev": "nenhum",
+   "confianca": 0.63,
+   "regra": [
+    "relatorio"
+   ],
+   "erro": null
+  },
+  {
+   "id": "real-056",
+   "jev": "nenhum",
+   "confianca": 0.59,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-057",
+   "jev": "nenhum",
+   "confianca": 0.99,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-058",
+   "jev": "nenhum",
+   "confianca": 0.82,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-059",
+   "jev": "juridico",
+   "confianca": 0.9,
+   "regra": [],
+   "erro": null
+  },
+  {
+   "id": "real-060",
+   "jev": "nenhum",
+   "confianca": 0.96,
+   "regra": [],
+   "erro": null
+  }
+ ]
+}

@@ -1,0 +1,539 @@
+{
+ "sem-contexto": {
+  "linhas": [
+   {
+    "id": "ctx-001",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.84,
+    "erro": null
+   },
+   {
+    "id": "ctx-002",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.17,
+    "erro": null
+   },
+   {
+    "id": "ctx-003",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.52,
+    "erro": null
+   },
+   {
+    "id": "ctx-004",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.4,
+    "erro": null
+   },
+   {
+    "id": "ctx-005",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.65,
+    "erro": null
+   },
+   {
+    "id": "ctx-006",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.87,
+    "erro": null
+   },
+   {
+    "id": "ctx-007",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.93,
+    "erro": null
+   },
+   {
+    "id": "ctx-008",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.96,
+    "erro": null
+   },
+   {
+    "id": "ctx-009",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.58,
+    "erro": null
+   },
+   {
+    "id": "ctx-010",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.76,
+    "erro": null
+   },
+   {
+    "id": "ctx-011",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.98,
+    "erro": null
+   },
+   {
+    "id": "ctx-012",
+    "escolha": "ja-diz",
+    "confianca": 0.54,
+    "erro": null
+   },
+   {
+    "id": "ctx-013",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.59,
+    "erro": null
+   },
+   {
+    "id": "ctx-014",
+    "escolha": "precisa-descobrir",
+    "confianca": 1,
+    "erro": null
+   },
+   {
+    "id": "ctx-015",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.69,
+    "erro": null
+   },
+   {
+    "id": "ctx-016",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.45,
+    "erro": null
+   },
+   {
+    "id": "ctx-017",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.93,
+    "erro": null
+   },
+   {
+    "id": "ctx-018",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.99,
+    "erro": null
+   },
+   {
+    "id": "ctx-019",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.79,
+    "erro": null
+   },
+   {
+    "id": "ctx-020",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.98,
+    "erro": null
+   },
+   {
+    "id": "ctx-021",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.88,
+    "erro": null
+   },
+   {
+    "id": "ctx-022",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.81,
+    "erro": null
+   },
+   {
+    "id": "ctx-023",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.99,
+    "erro": null
+   },
+   {
+    "id": "ctx-024",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.9,
+    "erro": null
+   },
+   {
+    "id": "ctx-025",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.65,
+    "erro": null
+   },
+   {
+    "id": "ctx-026",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.95,
+    "erro": null
+   },
+   {
+    "id": "ctx-027",
+    "escolha": "ja-diz",
+    "confianca": 0.53,
+    "erro": null
+   },
+   {
+    "id": "ctx-028",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.74,
+    "erro": null
+   },
+   {
+    "id": "ctx-029",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.98,
+    "erro": null
+   },
+   {
+    "id": "ctx-030",
+    "escolha": "precisa-descobrir",
+    "confianca": 1,
+    "erro": null
+   },
+   {
+    "id": "ctx-031",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.84,
+    "erro": null
+   },
+   {
+    "id": "ctx-032",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.78,
+    "erro": null
+   },
+   {
+    "id": "ctx-033",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.76,
+    "erro": null
+   },
+   {
+    "id": "ctx-034",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.59,
+    "erro": null
+   },
+   {
+    "id": "ctx-035",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.81,
+    "erro": null
+   },
+   {
+    "id": "ctx-036",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.97,
+    "erro": null
+   },
+   {
+    "id": "ctx-037",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.11,
+    "erro": null
+   },
+   {
+    "id": "ctx-038",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.45,
+    "erro": null
+   },
+   {
+    "id": "ctx-039",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.22,
+    "erro": null
+   },
+   {
+    "id": "ctx-040",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.94,
+    "erro": null
+   }
+  ],
+  "resumo": {
+   "casos": 39,
+   "acuracia": 0.6923,
+   "falso_barato": [],
+   "falso_barato_acima_do_corte": [],
+   "barato_acima_do_corte": [],
+   "cobertura_util": 0.0,
+   "distribuicao": [
+    [
+     "precisa-descobrir",
+     38
+    ],
+    [
+     "ja-diz",
+     2
+    ]
+   ]
+  }
+ },
+ "com-contexto": {
+  "linhas": [
+   {
+    "id": "ctx-001",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.53,
+    "erro": null
+   },
+   {
+    "id": "ctx-002",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.54,
+    "erro": null
+   },
+   {
+    "id": "ctx-003",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.55,
+    "erro": null
+   },
+   {
+    "id": "ctx-004",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.3,
+    "erro": null
+   },
+   {
+    "id": "ctx-005",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.54,
+    "erro": null
+   },
+   {
+    "id": "ctx-006",
+    "escolha": "ja-diz",
+    "confianca": 0.7,
+    "erro": null
+   },
+   {
+    "id": "ctx-007",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.75,
+    "erro": null
+   },
+   {
+    "id": "ctx-008",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.84,
+    "erro": null
+   },
+   {
+    "id": "ctx-009",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.28,
+    "erro": null
+   },
+   {
+    "id": "ctx-010",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.39,
+    "erro": null
+   },
+   {
+    "id": "ctx-011",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.9,
+    "erro": null
+   },
+   {
+    "id": "ctx-012",
+    "escolha": "ja-diz",
+    "confianca": 0.4,
+    "erro": null
+   },
+   {
+    "id": "ctx-013",
+    "escolha": "ja-diz",
+    "confianca": 0.29,
+    "erro": null
+   },
+   {
+    "id": "ctx-014",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.79,
+    "erro": null
+   },
+   {
+    "id": "ctx-015",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.43,
+    "erro": null
+   },
+   {
+    "id": "ctx-016",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.21,
+    "erro": null
+   },
+   {
+    "id": "ctx-017",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.72,
+    "erro": null
+   },
+   {
+    "id": "ctx-018",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.91,
+    "erro": null
+   },
+   {
+    "id": "ctx-019",
+    "escolha": "ja-diz",
+    "confianca": 0.47,
+    "erro": null
+   },
+   {
+    "id": "ctx-020",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.96,
+    "erro": null
+   },
+   {
+    "id": "ctx-021",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.77,
+    "erro": null
+   },
+   {
+    "id": "ctx-022",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.19,
+    "erro": null
+   },
+   {
+    "id": "ctx-023",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.98,
+    "erro": null
+   },
+   {
+    "id": "ctx-024",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.88,
+    "erro": null
+   },
+   {
+    "id": "ctx-025",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.46,
+    "erro": null
+   },
+   {
+    "id": "ctx-026",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.63,
+    "erro": null
+   },
+   {
+    "id": "ctx-027",
+    "escolha": "ja-diz",
+    "confianca": 0.73,
+    "erro": null
+   },
+   {
+    "id": "ctx-028",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.9,
+    "erro": null
+   },
+   {
+    "id": "ctx-029",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.9,
+    "erro": null
+   },
+   {
+    "id": "ctx-030",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.86,
+    "erro": null
+   },
+   {
+    "id": "ctx-031",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.44,
+    "erro": null
+   },
+   {
+    "id": "ctx-032",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.93,
+    "erro": null
+   },
+   {
+    "id": "ctx-033",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.4,
+    "erro": null
+   },
+   {
+    "id": "ctx-034",
+    "escolha": "ja-diz",
+    "confianca": 0.07,
+    "erro": null
+   },
+   {
+    "id": "ctx-035",
+    "escolha": "ja-diz",
+    "confianca": 0.05,
+    "erro": null
+   },
+   {
+    "id": "ctx-036",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.14,
+    "erro": null
+   },
+   {
+    "id": "ctx-037",
+    "escolha": "ja-diz",
+    "confianca": 0.01,
+    "erro": null
+   },
+   {
+    "id": "ctx-038",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.46,
+    "erro": null
+   },
+   {
+    "id": "ctx-039",
+    "escolha": "ja-diz",
+    "confianca": 0.45,
+    "erro": null
+   },
+   {
+    "id": "ctx-040",
+    "escolha": "precisa-descobrir",
+    "confianca": 0.89,
+    "erro": null
+   }
+  ],
+  "resumo": {
+   "casos": 39,
+   "acuracia": 0.7179,
+   "falso_barato": [
+    "ctx-034",
+    "ctx-037",
+    "ctx-039"
+   ],
+   "falso_barato_acima_do_corte": [],
+   "barato_acima_do_corte": [],
+   "cobertura_util": 0.0,
+   "distribuicao": [
+    [
+     "precisa-descobrir",
+     31
+    ],
+    [
+     "ja-diz",
+     9
+    ]
+   ]
+  }
+ },
+ "mudaram_com_o_contexto": [
+  "ctx-006",
+  "ctx-013",
+  "ctx-019",
+  "ctx-034",
+  "ctx-035",
+  "ctx-037",
+  "ctx-039"
+ ]
+}

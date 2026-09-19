@@ -1,0 +1,1214 @@
+{
+ "B1-alvo-nomeado": [
+  {
+   "id": "real-001",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.32,
+   "erro": null
+  },
+  {
+   "id": "real-002",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-003",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-004",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "id": "real-005",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-006",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "id": "real-007",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-008",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "id": "real-009",
+   "escolha": "ja-diz",
+   "confianca": 0.38,
+   "erro": null
+  },
+  {
+   "id": "real-010",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-011",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.71,
+   "erro": null
+  },
+  {
+   "id": "real-012",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-013",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.36,
+   "erro": null
+  },
+  {
+   "id": "real-014",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-015",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.44,
+   "erro": null
+  },
+  {
+   "id": "real-016",
+   "escolha": "precisa-descobrir",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-017",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-018",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.7,
+   "erro": null
+  },
+  {
+   "id": "real-019",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.6,
+   "erro": null
+  },
+  {
+   "id": "real-020",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-021",
+   "escolha": "ja-diz",
+   "confianca": 0.71,
+   "erro": null
+  },
+  {
+   "id": "real-022",
+   "escolha": "ja-diz",
+   "confianca": 0.73,
+   "erro": null
+  },
+  {
+   "id": "real-023",
+   "escolha": "ja-diz",
+   "confianca": 0.53,
+   "erro": null
+  },
+  {
+   "id": "real-024",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.66,
+   "erro": null
+  },
+  {
+   "id": "real-025",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-026",
+   "escolha": "precisa-descobrir",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-027",
+   "escolha": "ja-diz",
+   "confianca": 0.48,
+   "erro": null
+  },
+  {
+   "id": "real-028",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-029",
+   "escolha": "ja-diz",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-030",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-031",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-032",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.85,
+   "erro": null
+  },
+  {
+   "id": "real-033",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-034",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "id": "real-035",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.59,
+   "erro": null
+  },
+  {
+   "id": "real-036",
+   "escolha": "ja-diz",
+   "confianca": 0.36,
+   "erro": null
+  },
+  {
+   "id": "real-037",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.79,
+   "erro": null
+  },
+  {
+   "id": "real-038",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "id": "real-039",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "id": "real-040",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-041",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.93,
+   "erro": null
+  },
+  {
+   "id": "real-042",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.61,
+   "erro": null
+  },
+  {
+   "id": "real-043",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.25,
+   "erro": null
+  },
+  {
+   "id": "real-044",
+   "escolha": "precisa-descobrir",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-045",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-046",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.25,
+   "erro": null
+  },
+  {
+   "id": "real-047",
+   "escolha": "ja-diz",
+   "confianca": 0.86,
+   "erro": null
+  },
+  {
+   "id": "real-048",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-049",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-050",
+   "escolha": "ja-diz",
+   "confianca": 0.7,
+   "erro": null
+  },
+  {
+   "id": "real-051",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.67,
+   "erro": null
+  },
+  {
+   "id": "real-052",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.28,
+   "erro": null
+  },
+  {
+   "id": "real-053",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-054",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-055",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-056",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.77,
+   "erro": null
+  },
+  {
+   "id": "real-057",
+   "escolha": "precisa-descobrir",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-058",
+   "escolha": "ja-diz",
+   "confianca": 0.62,
+   "erro": null
+  },
+  {
+   "id": "real-059",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-060",
+   "escolha": "precisa-descobrir",
+   "confianca": 0.83,
+   "erro": null
+  }
+ ],
+ "B1-alvo-nomeado/resumo": {
+  "acuracia": 0.6667,
+  "falsos_baratos": [
+   {
+    "id": "real-022",
+    "confianca": 0.73
+   },
+   {
+    "id": "real-027",
+    "confianca": 0.48
+   },
+   {
+    "id": "real-029",
+    "confianca": 1
+   },
+   {
+    "id": "real-050",
+    "confianca": 0.7
+   }
+  ],
+  "falsos_baratos_acima_do_corte": [
+   {
+    "id": "real-029",
+    "confianca": 1
+   }
+  ],
+  "distribuicao": [
+   [
+    "precisa-descobrir",
+    50
+   ],
+   [
+    "ja-diz",
+    10
+   ]
+  ]
+ },
+ "B2-esforco-humano": [
+  {
+   "id": "real-001",
+   "escolha": "minutos",
+   "confianca": 0.32,
+   "erro": null
+  },
+  {
+   "id": "real-002",
+   "escolha": "minutos",
+   "confianca": 0.33,
+   "erro": null
+  },
+  {
+   "id": "real-003",
+   "escolha": "minutos",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-004",
+   "escolha": "horas",
+   "confianca": 0.62,
+   "erro": null
+  },
+  {
+   "id": "real-005",
+   "escolha": "minutos",
+   "confianca": 0.13,
+   "erro": null
+  },
+  {
+   "id": "real-006",
+   "escolha": "horas",
+   "confianca": 0.58,
+   "erro": null
+  },
+  {
+   "id": "real-007",
+   "escolha": "horas",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-008",
+   "escolha": "horas",
+   "confianca": 0.8,
+   "erro": null
+  },
+  {
+   "id": "real-009",
+   "escolha": "minutos",
+   "confianca": 0.4,
+   "erro": null
+  },
+  {
+   "id": "real-010",
+   "escolha": "horas",
+   "confianca": 0.55,
+   "erro": null
+  },
+  {
+   "id": "real-011",
+   "escolha": "horas",
+   "confianca": 0.73,
+   "erro": null
+  },
+  {
+   "id": "real-012",
+   "escolha": "horas",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-013",
+   "escolha": "horas",
+   "confianca": 0.87,
+   "erro": null
+  },
+  {
+   "id": "real-014",
+   "escolha": "minutos",
+   "confianca": 0.75,
+   "erro": null
+  },
+  {
+   "id": "real-015",
+   "escolha": "minutos",
+   "confianca": 0.86,
+   "erro": null
+  },
+  {
+   "id": "real-016",
+   "escolha": "horas",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-017",
+   "escolha": "horas",
+   "confianca": 0.59,
+   "erro": null
+  },
+  {
+   "id": "real-018",
+   "escolha": "horas",
+   "confianca": 0.31,
+   "erro": null
+  },
+  {
+   "id": "real-019",
+   "escolha": "minutos",
+   "confianca": 0.52,
+   "erro": null
+  },
+  {
+   "id": "real-020",
+   "escolha": "minutos",
+   "confianca": 0.94,
+   "erro": null
+  },
+  {
+   "id": "real-021",
+   "escolha": "minutos",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-022",
+   "escolha": "minutos",
+   "confianca": 0.83,
+   "erro": null
+  },
+  {
+   "id": "real-023",
+   "escolha": "minutos",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-024",
+   "escolha": "horas",
+   "confianca": 0.34,
+   "erro": null
+  },
+  {
+   "id": "real-025",
+   "escolha": "horas",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-026",
+   "escolha": "horas",
+   "confianca": 0.29,
+   "erro": null
+  },
+  {
+   "id": "real-027",
+   "escolha": "minutos",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-028",
+   "escolha": "horas",
+   "confianca": 0.51,
+   "erro": null
+  },
+  {
+   "id": "real-029",
+   "escolha": "horas",
+   "confianca": 0.82,
+   "erro": null
+  },
+  {
+   "id": "real-030",
+   "escolha": "horas",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-031",
+   "escolha": "minutos",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "id": "real-032",
+   "escolha": "minutos",
+   "confianca": 0.47,
+   "erro": null
+  },
+  {
+   "id": "real-033",
+   "escolha": "minutos",
+   "confianca": 0.07,
+   "erro": null
+  },
+  {
+   "id": "real-034",
+   "escolha": "horas",
+   "confianca": 0.61,
+   "erro": null
+  },
+  {
+   "id": "real-035",
+   "escolha": "minutos",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-036",
+   "escolha": "minutos",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-037",
+   "escolha": "horas",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "id": "real-038",
+   "escolha": "minutos",
+   "confianca": 0.91,
+   "erro": null
+  },
+  {
+   "id": "real-039",
+   "escolha": "minutos",
+   "confianca": 0.66,
+   "erro": null
+  },
+  {
+   "id": "real-040",
+   "escolha": "horas",
+   "confianca": 0.35,
+   "erro": null
+  },
+  {
+   "id": "real-041",
+   "escolha": "minutos",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-042",
+   "escolha": "horas",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-043",
+   "escolha": "minutos",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-044",
+   "escolha": "minutos",
+   "confianca": 0.77,
+   "erro": null
+  },
+  {
+   "id": "real-045",
+   "escolha": "minutos",
+   "confianca": 0.16,
+   "erro": null
+  },
+  {
+   "id": "real-046",
+   "escolha": "horas",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-047",
+   "escolha": "minutos",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-048",
+   "escolha": "minutos",
+   "confianca": 0.65,
+   "erro": null
+  },
+  {
+   "id": "real-049",
+   "escolha": "minutos",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "id": "real-050",
+   "escolha": "minutos",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-051",
+   "escolha": "horas",
+   "confianca": 0.47,
+   "erro": null
+  },
+  {
+   "id": "real-052",
+   "escolha": "minutos",
+   "confianca": 0.67,
+   "erro": null
+  },
+  {
+   "id": "real-053",
+   "escolha": "horas",
+   "confianca": 0.48,
+   "erro": null
+  },
+  {
+   "id": "real-054",
+   "escolha": "minutos",
+   "confianca": 0.81,
+   "erro": null
+  },
+  {
+   "id": "real-055",
+   "escolha": "horas",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-056",
+   "escolha": "horas",
+   "confianca": 0.18,
+   "erro": null
+  },
+  {
+   "id": "real-057",
+   "escolha": "horas",
+   "confianca": 0.71,
+   "erro": null
+  },
+  {
+   "id": "real-058",
+   "escolha": "minutos",
+   "confianca": 0.69,
+   "erro": null
+  },
+  {
+   "id": "real-059",
+   "escolha": "horas",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "id": "real-060",
+   "escolha": "minutos",
+   "confianca": 0.29,
+   "erro": null
+  }
+ ],
+ "B2-esforco-humano/resumo": {
+  "acuracia": 0.7,
+  "falsos_baratos": [
+   {
+    "id": "real-001",
+    "confianca": 0.32
+   },
+   {
+    "id": "real-019",
+    "confianca": 0.52
+   },
+   {
+    "id": "real-022",
+    "confianca": 0.83
+   },
+   {
+    "id": "real-027",
+    "confianca": 0.98
+   },
+   {
+    "id": "real-031",
+    "confianca": 0.95
+   },
+   {
+    "id": "real-032",
+    "confianca": 0.47
+   },
+   {
+    "id": "real-033",
+    "confianca": 0.07
+   },
+   {
+    "id": "real-043",
+    "confianca": 0.9
+   },
+   {
+    "id": "real-044",
+    "confianca": 0.77
+   },
+   {
+    "id": "real-045",
+    "confianca": 0.16
+   },
+   {
+    "id": "real-048",
+    "confianca": 0.65
+   },
+   {
+    "id": "real-050",
+    "confianca": 1
+   },
+   {
+    "id": "real-052",
+    "confianca": 0.67
+   },
+   {
+    "id": "real-060",
+    "confianca": 0.29
+   }
+  ],
+  "falsos_baratos_acima_do_corte": [
+   {
+    "id": "real-050",
+    "confianca": 1
+   }
+  ],
+  "distribuicao": [
+   [
+    "minutos",
+    32
+   ],
+   [
+    "horas",
+    28
+   ]
+  ]
+ },
+ "B3-continuacao": [
+  {
+   "id": "real-001",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.45,
+   "erro": null
+  },
+  {
+   "id": "real-002",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.78,
+   "erro": null
+  },
+  {
+   "id": "real-003",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-004",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-005",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-006",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "id": "real-007",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.65,
+   "erro": null
+  },
+  {
+   "id": "real-008",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-009",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-010",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-011",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-012",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-013",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.84,
+   "erro": null
+  },
+  {
+   "id": "real-014",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.97,
+   "erro": null
+  },
+  {
+   "id": "real-015",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-016",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.82,
+   "erro": null
+  },
+  {
+   "id": "real-017",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-018",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.45,
+   "erro": null
+  },
+  {
+   "id": "real-019",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-020",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-021",
+   "escolha": "autossuficiente",
+   "confianca": 0.42,
+   "erro": null
+  },
+  {
+   "id": "real-022",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.5,
+   "erro": null
+  },
+  {
+   "id": "real-023",
+   "escolha": "autossuficiente",
+   "confianca": 0.52,
+   "erro": null
+  },
+  {
+   "id": "real-024",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-025",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-026",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-027",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-028",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.89,
+   "erro": null
+  },
+  {
+   "id": "real-029",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.8,
+   "erro": null
+  },
+  {
+   "id": "real-030",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.85,
+   "erro": null
+  },
+  {
+   "id": "real-031",
+   "escolha": "autossuficiente",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-032",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-033",
+   "escolha": "autossuficiente",
+   "confianca": 0.07,
+   "erro": null
+  },
+  {
+   "id": "real-034",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.92,
+   "erro": null
+  },
+  {
+   "id": "real-035",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-036",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-037",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.63,
+   "erro": null
+  },
+  {
+   "id": "real-038",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-039",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-040",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.99,
+   "erro": null
+  },
+  {
+   "id": "real-041",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-042",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-043",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.98,
+   "erro": null
+  },
+  {
+   "id": "real-044",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-045",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-046",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.36,
+   "erro": null
+  },
+  {
+   "id": "real-047",
+   "escolha": "autossuficiente",
+   "confianca": 0.03,
+   "erro": null
+  },
+  {
+   "id": "real-048",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-049",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.31,
+   "erro": null
+  },
+  {
+   "id": "real-050",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.96,
+   "erro": null
+  },
+  {
+   "id": "real-051",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.9,
+   "erro": null
+  },
+  {
+   "id": "real-052",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.95,
+   "erro": null
+  },
+  {
+   "id": "real-053",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-054",
+   "escolha": "autossuficiente",
+   "confianca": 0.22,
+   "erro": null
+  },
+  {
+   "id": "real-055",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.3,
+   "erro": null
+  },
+  {
+   "id": "real-056",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-057",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-058",
+   "escolha": "depende-do-anterior",
+   "confianca": 1,
+   "erro": null
+  },
+  {
+   "id": "real-059",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.88,
+   "erro": null
+  },
+  {
+   "id": "real-060",
+   "escolha": "depende-do-anterior",
+   "confianca": 0.23,
+   "erro": null
+  }
+ ],
+ "B3-continuacao/resumo": {
+  "distribuicao": [
+   [
+    "depende-do-anterior",
+    54
+   ],
+   [
+    "autossuficiente",
+    6
+   ]
+  ]
+ }
+}

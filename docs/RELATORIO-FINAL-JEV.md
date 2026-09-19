@@ -1075,6 +1075,70 @@ A chave da API nunca foi versionada, impressa em log ou copiada para documentaç
 
 ---
 
+## 9.2 O E13: aplicar o Jev aos fluxos de trabalho desta casa
+
+Os doze experimentos anteriores mediram o Jev em corpora construídos para medi-lo. O E13 é
+diferente: ele o coloca dentro do fluxo real de trabalho do Claude Code e do Codex, com o
+material que o Igor de fato escreveu, para responder a uma pergunta de economia — o Jev, que
+custa US$ 0,042 por milhão de tokens de entrada e nada na saída, consegue poupar trabalho de
+modelos milhares de vezes mais caros?
+
+A amostra saiu de 8.801 pedidos distintos do histórico e de 1.990 comandos de shell realmente
+executados. Os gabaritos foram anotados antes de cada execução, com o mesmo viés de autor que o
+E8 e o E11 mediram. Custo: US$ 0,0104 em 455 chamadas.
+
+**O roteamento de esforço não funciona, e o motivo não é a formulação da pergunta.** Quatro
+formulações foram testadas, da mais abstrata à mais concreta, e nenhuma produziu cobertura útil:
+
+| Formulação | Acurácia | Cobertura útil |
+|---|---|---|
+| Quatro classes de esforço | 51,7% | 0% |
+| "O pedido diz onde mexer?" | 66,7% | 0% |
+| "Quantos minutos leva?" | 70,0% | 0% |
+| A mesma, com o contexto da conversa anterior | 71,8% | 0% |
+
+Cobertura útil é a fração de pedidos mandados para o caminho barato com confiança acima do
+corte. Quando o Jev diz "simples", diz com confiança de no máximo 0,73 — não existe ponto de
+operação. Uma terceira pergunta explicou a razão: **54 dos 60 pedidos reais são continuações**
+("continue", "verifique e corrija então", "piorou tudo"), e a informação que decidiria não está
+escrita na mensagem. Dar a conversa anterior ao modelo moveu 2,6 pontos e nenhuma cobertura.
+
+Este é o terceiro achado do estudo sobre o *método* e não sobre o modelo, e o mais caro de
+descobrir tarde: **a pergunta certa pode não ter resposta no texto disponível.** Nenhuma
+melhoria de classificador resolve isso.
+
+**O guarda de comando irreversível funciona, e não serve aqui.** Em 60 comandos executados, o
+Jev somado à regra por palavra libera 14 dos 30 alarmes falsos sem soltar nenhum dos 4 comandos
+irreversíveis reais, e nos quatro ele nunca passou do corte de confiança. O resultado é bom e
+inútil nesta máquina, que roda em `acceptEdits` com `Bash(*)` liberado: não há confirmação para
+poupar. Fica medido para o dia em que o modo de permissão mudar.
+
+**O que funciona é o que o E1 já dizia: dizer sobre o que é a mensagem.** A linha de base não é
+hipotética — são os oito `hookify.suggest-skill-*` que já rodavam por `regex_match` a cada
+prompt. Com corte de confiança 0,90, nos mesmos 60 pedidos:
+
+| | Temas reais encontrados (de 23) | Sugestões à toa (em 37 sem tema) |
+|---|---|---|
+| **Jev** | **9** | **0** |
+| Os regex de hoje | 5 | 1 |
+
+Quase o dobro da cobertura sem nenhum disparo falso, e o erro do Jev é por omissão: 10 dos 13
+erros foram deixar de sugerir, não sugerir errado. O corte é 0,90 e não o 0,99 da seção 6.1
+porque a assimetria é outra — aqui uma sugestão perdida custa uma skill não carregada, e uma
+sugestão errada custa três linhas de contexto. O corte foi calibrado neste dado, e não
+transportado do E12, que é precisamente o que a seção 6.1 manda fazer.
+
+Está instalado como hook `UserPromptSubmit` nos dois clientes, em modo ativo, verificado de
+ponta a ponta numa sessão real. Falha para o lado aberto, mascara credencial antes de qualquer
+envio, e o custo por chamada é verificado contra o teto antes de ela sair. O pacote, a medição
+e as instruções de remoção estão em `integracao/`.
+
+**A conclusão para a pergunta de economia é negativa e vale registrá-la assim:** o Jev não
+consegue decidir quanto esforço um pedido merece, porque essa informação não está no pedido. Ele
+consegue dizer do que o pedido trata, e é só isso que foi instalado.
+
+---
+
 ## 10. Próximo movimento
 
 1. ~~**Repetir o E10 em amostra maior**, com pelo menos 30 famílias, e com dois ou três LLMs

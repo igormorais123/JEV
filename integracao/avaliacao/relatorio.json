@@ -1,0 +1,314 @@
+{
+ "casos": 60,
+ "por_gabarito": {
+  "autor": {
+   "casos_comparados": 60,
+   "acuracia_esforco": 0.5167,
+   "acuracia_risco": 0.8667,
+   "confusoes": [
+    [
+     "tarefa-local -> investigacao",
+     10
+    ],
+    [
+     "projeto -> investigacao",
+     9
+    ],
+    [
+     "investigacao -> resposta-direta",
+     4
+    ],
+    [
+     "tarefa-local -> resposta-direta",
+     3
+    ],
+    [
+     "resposta-direta -> investigacao",
+     2
+    ],
+    [
+     "resposta-direta -> projeto",
+     1
+    ]
+   ],
+   "rebaixamento_indevido": [
+    {
+     "id": "real-011",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.89,
+     "aplicada": true
+    },
+    {
+     "id": "real-023",
+     "esperado": "tarefa-local",
+     "jev": "resposta-direta",
+     "confianca": 0.85,
+     "aplicada": false
+    },
+    {
+     "id": "real-025",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.82,
+     "aplicada": true
+    },
+    {
+     "id": "real-028",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.52,
+     "aplicada": true
+    },
+    {
+     "id": "real-031",
+     "esperado": "investigacao",
+     "jev": "resposta-direta",
+     "confianca": 0.79,
+     "aplicada": false
+    },
+    {
+     "id": "real-032",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.71,
+     "aplicada": true
+    },
+    {
+     "id": "real-034",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.89,
+     "aplicada": true
+    },
+    {
+     "id": "real-035",
+     "esperado": "tarefa-local",
+     "jev": "resposta-direta",
+     "confianca": 0.55,
+     "aplicada": false
+    },
+    {
+     "id": "real-043",
+     "esperado": "investigacao",
+     "jev": "resposta-direta",
+     "confianca": 0.42,
+     "aplicada": false
+    },
+    {
+     "id": "real-046",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.84,
+     "aplicada": true
+    },
+    {
+     "id": "real-047",
+     "esperado": "tarefa-local",
+     "jev": "resposta-direta",
+     "confianca": 0.49,
+     "aplicada": false
+    },
+    {
+     "id": "real-050",
+     "esperado": "investigacao",
+     "jev": "resposta-direta",
+     "confianca": 0.97,
+     "aplicada": false
+    },
+    {
+     "id": "real-053",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.94,
+     "aplicada": true
+    },
+    {
+     "id": "real-057",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.96,
+     "aplicada": true
+    },
+    {
+     "id": "real-059",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.77,
+     "aplicada": true
+    },
+    {
+     "id": "real-060",
+     "esperado": "investigacao",
+     "jev": "resposta-direta",
+     "confianca": 0.49,
+     "aplicada": false
+    }
+   ],
+   "rebaixamento_indevido_aplicado": [
+    {
+     "id": "real-011",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.89,
+     "aplicada": true
+    },
+    {
+     "id": "real-025",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.82,
+     "aplicada": true
+    },
+    {
+     "id": "real-028",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.52,
+     "aplicada": true
+    },
+    {
+     "id": "real-032",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.71,
+     "aplicada": true
+    },
+    {
+     "id": "real-034",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.89,
+     "aplicada": true
+    },
+    {
+     "id": "real-046",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.84,
+     "aplicada": true
+    },
+    {
+     "id": "real-053",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.94,
+     "aplicada": true
+    },
+    {
+     "id": "real-057",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.96,
+     "aplicada": true
+    },
+    {
+     "id": "real-059",
+     "esperado": "projeto",
+     "jev": "investigacao",
+     "confianca": 0.77,
+     "aplicada": true
+    }
+   ],
+   "elevacao_a_mais": [
+    {
+     "id": "real-002",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-005",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-007",
+     "esperado": "resposta-direta",
+     "jev": "projeto"
+    },
+    {
+     "id": "real-009",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-013",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-014",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-015",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-020",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-036",
+     "esperado": "resposta-direta",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-038",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-042",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-051",
+     "esperado": "tarefa-local",
+     "jev": "investigacao"
+    },
+    {
+     "id": "real-058",
+     "esperado": "resposta-direta",
+     "jev": "investigacao"
+    }
+   ],
+   "irreversivel_nao_visto": [
+    {
+     "id": "real-002",
+     "jev": "atencao"
+    },
+    {
+     "id": "real-014",
+     "jev": "seguro"
+    },
+    {
+     "id": "real-046",
+     "jev": "seguro"
+    }
+   ]
+  }
+ },
+ "classificados": 60,
+ "economia": {
+  "pedidos": 60,
+  "classificados": 60,
+  "politica_aplicada": 47,
+  "roteados_para_modelo_barato": 0,
+  "fracao_para_modelo_barato": 0.0,
+  "distribuicao": [
+   [
+    "investigacao",
+    55
+   ],
+   [
+    "projeto",
+    5
+   ]
+  ]
+ }
+}
