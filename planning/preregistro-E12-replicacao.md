@@ -184,3 +184,30 @@ uma vantagem do Jev que não foi medida em lugar nenhum.
 
 Esta emenda vale igualmente para os cinco braços, e não só para aquele em que o problema
 apareceu.
+
+## Emenda 2 — cobertura mínima de um braço
+
+**Escrita em 19 de setembro de 2026, com o braço `c3` ainda em execução, antes da repescagem da
+Emenda 1 e antes de calcular qualquer acurácia dele.**
+
+A Emenda 1 resolve o caso em que algumas chamadas morrem no transporte. Ela não resolve o caso
+em que o provedor limita tanto um modelo que o braço inteiro fica sem dado: no `c3` quase metade
+das chamadas voltou 429, e três repescagens podem não bastar.
+
+Um braço assim não mede o modelo, mede a fila do provedor. Mantê-lo na leitura primária
+atribuiria ao comparador uma derrota de infraestrutura; tirá-lo depois de ver a acurácia dele
+seria escolher o resultado. Então o critério vai escrito antes:
+
+1. **Cobertura** de um braço é a proporção de casos com resposta válida ao fim da repescagem.
+2. Braço com cobertura **≥ 90%** entra na leitura primária normalmente; os casos sem resposta
+   contam como erro dele, conforme a Emenda 1.
+3. Braço com cobertura **< 90%** é reportado como **incompleto por limite de taxa do provedor**.
+   Ele sai da leitura primária — que passa a exigir separação contra todos os comparadores
+   completos — e permanece no relatório com a acurácia que teve, a cobertura e o motivo, para
+   que ninguém precise acreditar em mim sobre o que ele teria feito.
+4. Um braço incompleto **nunca** é substituído por outro modelo escolhido depois. A lista de
+   comparadores está congelada no corpo do pré-registro.
+5. O relatório e o painel dizem quantos braços entraram na leitura e quantos ficaram de fora.
+
+Este critério vale para os quatro comparadores igualmente, e valeria contra o Jev se fosse o
+braço dele a falhar.
