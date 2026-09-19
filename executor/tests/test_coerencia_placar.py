@@ -62,13 +62,22 @@ class CoerenciaDoPlacar(unittest.TestCase):
             self.assertNotIn(f"{uniao['custo_por_decisao_usd']:.3f}".replace('.', ','), veredito,
                              'o custo da união não pode aparecer junto da cobertura da confirmação')
 
-    def test_cartao_sem_divergencia_de_gabarito_nao_fala_em_faixa(self):
+    def test_rotulo_de_corpus_pergunta_pela_divergencia_entre_anotadores(self):
+        """O rótulo dizia "coincidem" no piloto, que tem quatro casos em disputa.
+
+        Ele perguntava se a adjudicação mudou algum caso — outra coisa. Enquanto o terceiro
+        juiz confirmasse o autor, o corpus inteiro parecia unânime.
+        """
         from executor import gabarito
-        d1 = gabarito.desempenho('runs/e1-triagem/relatorio.json')
-        if d1['autor']['acuracia'] != d1['oficial']['acuracia']:
-            self.skipTest('os gabaritos divergem neste conjunto')
-        self.assertNotIn('faixa', self.cartoes['e1']['fonte'])
-        self.assertNotIn(' a ', self.cartoes['e1']['valor'])
+        local, autor = gabarito.do_anotador_local(), gabarito.do_autor()
+        divergem = [c for c, r in local.items()
+                    if c.startswith('tri-') and c in autor and r != autor[c]['gold']]
+        rotulo = placar.gabarito_do_corpus('tri-')
+        if divergem:
+            self.assertEqual(rotulo, 'ha-divergencia',
+                             f'{len(divergem)} casos em disputa no piloto e o rótulo diz outra coisa')
+        else:
+            self.assertEqual(rotulo, 'coincidem')
 
     def test_cartao_do_gabarito_mostra_a_faixa_entre_os_tres(self):
         """O E8 estampava 96,2%, o mais alto dos três gabaritos."""
@@ -109,15 +118,27 @@ class CoerenciaDoPlacar(unittest.TestCase):
         # O painel e em pt-BR: numero com virgula, sempre.
         self.assertNotIn('.5%', self.bloco['veredito']['texto'])
 
-    def test_cartoes_com_dois_gabaritos_mostram_a_faixa_e_nao_o_melhor(self):
-        """O olho pega o número de capa; ele não pode ser o mais favorável dos dois."""
+    def test_cartoes_mostram_a_faixa_entre_TODOS_os_gabaritos(self):
+        """O olho pega o número de capa; ele tem de conter o pior gabarito, não só o melhor.
+
+        Por seis rodadas o painel ensinou três gabaritos no cartão do E8 e mostrou dois nos
+        cartões que se lê primeiro — deixando de fora justamente o mais severo.
+        """
         from executor import gabarito
-        d7 = gabarito.desempenho('runs/e7-confirmacao/relatorio.json')
-        if d7['autor']['acuracia'] == d7['oficial']['acuracia']:
-            self.skipTest('os dois gabaritos coincidem neste conjunto')
-        valor = self.cartoes['e7']['valor']
-        self.assertIn(' a ', valor, 'com gabaritos divergentes o cartão tem de mostrar a faixa')
-        self.assertIn(f"{d7['autor']['acuracia'] * 100:.1f}".replace('.', ','), valor)
+        for chave, relatorio in (('e1', 'runs/e1-triagem/relatorio.json'),
+                                 ('e7', 'runs/e7-confirmacao/relatorio.json')):
+            d = gabarito.desempenho(relatorio)
+            valores = placar.gabaritos_do_conjunto(d)
+            self.assertIn('anotador local', valores,
+                          'o gabarito do anotador independente tem de entrar na conta')
+            valor = self.cartoes[chave]['valor']
+            if len(set(valores.values())) > 1:
+                self.assertIn(' a ', valor)
+                baixo = f"{min(valores.values()) * 100:.1f}".replace('.', ',')
+                self.assertIn(baixo, valor, f'{chave} esconde o pior gabarito')
+            comparacao = self.cartoes[chave]['comparacao']
+            for nome in valores:
+                self.assertIn(nome, comparacao)
 
     def test_pendencias_nao_pedem_o_que_ja_foi_feito(self):
         texto = ' '.join(self.bloco['pendencias']).lower()

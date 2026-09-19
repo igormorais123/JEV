@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 63,
- "updated_at": "2026-09-19T05:35:41.062848+00:00",
+ "revision": 66,
+ "updated_at": "2026-09-19T05:41:12.033636+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18768,10 +18768,20 @@
    "at": "2026-09-19T05:33:43.023773+00:00",
    "kind": "manual",
    "text": "Decima primeira rodada: sem defeito financeiro. Tres achados, todos corretos. O pior era meu e estava no relatorio, nao no codigo: a capa afirmava acuracia \"entre 0,8875 e 0,9750\", e 0,9750 nao e gabarito nenhum dos 80 casos — e a acuracia do E7 isolado, que tem 40. Misturar denominadores e o mesmo vicio que eu vinha corrigindo no painel, e ele estava no meu texto. Os tres gabaritos sao 0,8875 (anotador local), 0,9500 (autor) e 0,9625 (oficial). A faixa do E8 tambem era um maximo disfarcado: min(local, autor) a max(oficial, autor), que so funcionava porque o oficial e hoje o mais alto. Agora sai do minimo e do maximo da lista inteira, com teste que inverte o anotador local para cima. Os rotulos \"os dois gabaritos coincidem\" deixaram de ser escritos a mao. 130 testes passam."
+  },
+  {
+   "at": "2026-09-19T05:41:11.963219+00:00",
+   "kind": "manual",
+   "text": "RETIFICAÇÃO de dois registros anteriores deste diário, que continuam acima porque diário é registro e não se reescreve. (1) O evento da ADJUDICAÇÃO dizia que a acurácia nos 80 casos fica \"entre 0,8875 e 0,9750\". O 0,9750 é do E7 isolado, que tem 40 casos; a faixa correta dos 80 é 0,8875 a 0,9625. (2) O evento do E9 citava acurácia esperada de 0,943 a 0,969, calculada antes da adjudicação; com o gabarito oficial são 0,950 a 0,972. Os cartões do placar sempre mostram o valor vigente, porque são recalculados a cada publicação; os eventos são fotografias do momento."
+  },
+  {
+   "at": "2026-09-19T05:41:11.963219+00:00",
+   "kind": "evidence",
+   "text": "Décima segunda rodada de revisão: sem defeito financeiro, e um achado que valeu a rodada inteira. O painel mostrava dois gabaritos onde existem três. O gabarito do anotador independente é o mais severo — no piloto 87,5% contra 92,5% do autor, na confirmação 90,0% contra 97,5% — e ficava fora dos cartões que se lê primeiro. Pior: o rótulo que deveria denunciar isso perguntava se a ADJUDICAÇÃO mudou algum caso, e não se os anotadores DISCORDARAM; com essa pergunta o piloto aparecia unânime tendo quatro casos em disputa. Corrigido: os cartões E1 e E7 mostram a faixa entre os três gabaritos e listam os três na comparação. Também faltava calcular o limite de erro por família no corte 0,90, que é o corte que a recomendação usa: são 25,9% por família e 8,2% por caso."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:35:41.062694+00:00",
+  "atualizado_em": "2026-09-19T05:41:12.033434+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
    "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
@@ -18789,10 +18799,10 @@
    {
     "chave": "e1",
     "titulo": "Triagem de atendimento (E1)",
-    "valor": "92,5%",
-    "comparacao": "autor 92,5%, oficial 92,5% · regra congelada 60,0%",
+    "valor": "87,5% a 92,5%",
+    "comparacao": "anotador local 87,5% · autor 92,5% · oficial 92,5% · regra congelada 60,0%",
     "leitura": "Vantagem de 32,5%, IC95 [15,0%; 50,0%] por reamostragem de famílias, no gabarito do autor como pré-registrado.",
-    "fonte": "40 casos programados, 10 famílias; os dois gabaritos coincidem neste corpus",
+    "fonte": "40 casos programados, 10 famílias; faixa entre os gabaritos",
     "estado": "pronto"
    },
    {
@@ -18819,7 +18829,7 @@
     "valor": "0,925 a 0,950",
     "comparacao": "8 condições fatoriais",
     "leitura": "Nenhum contraste separa as condições (McNemar p=1,000 em todos). Lote economiza 32,4% a 43,2% por decisão.",
-    "fonte": "8 condições sobre os mesmos 40 casos; os dois gabaritos coincidem neste corpus",
+    "fonte": "8 condições sobre os mesmos 40 casos; gabarito do autor; os anotadores divergem em casos deste corpus, e o cartão do E8 traz o efeito disso",
     "estado": "pronto"
    },
    {
@@ -18828,7 +18838,7 @@
     "valor": "3 de 40 casos instáveis",
     "comparacao": "p de permutação 0,40258",
     "leitura": "Posição no lote não explica erro. Mas esses casos mudam de resposta conforme os vizinhos do lote: mesma pergunta, resposta diferente.",
-    "fonte": "200 observações em 5 permutações; os dois gabaritos coincidem neste corpus",
+    "fonte": "200 observações em 5 permutações; gabarito do autor; os anotadores divergem em casos deste corpus, e o cartão do E8 traz o efeito disso",
     "estado": "pronto"
    },
    {
@@ -18846,16 +18856,16 @@
     "valor": "100,0%",
     "comparacao": "40 de 40 casos concordam",
     "leitura": "openrouter: 92,5% de acurácia, p50 396 ms, 0.000022167 USD por decisão · typesafe: 92,5% de acurácia, p50 755 ms, 0.000024804 USD por decisão",
-    "fonte": "40 casos × 2 transportes, chamadas intercaladas; os dois gabaritos coincidem neste corpus",
+    "fonte": "40 casos × 2 transportes, chamadas intercaladas; gabarito do autor; os anotadores divergem em casos deste corpus, e o cartão do E8 traz o efeito disso",
     "estado": "pronto"
    },
    {
     "chave": "e7",
     "titulo": "Conjunto de confirmação (E7)",
-    "valor": "97,5% a 100,0%",
-    "comparacao": "autor 97,5%, oficial 100,0% · regra congelada 32,5%",
+    "valor": "90,0% a 100,0%",
+    "comparacao": "anotador local 90,0% · autor 97,5% · oficial 100,0% · regra congelada 32,5%",
     "leitura": "Casos novos, que não guiaram o desenho: diferença 65,0%, IC95 [52,5%; 77,5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. A adjudicação levou E7 de 39/40 para 40/40, porque cnf-g05-02 mudou de lado. Ler isso como acerto pleno seria trocar de gabarito depois de ver o resultado: o número do autor está ao lado, de propósito.",
-    "fonte": "40 casos programados, 10 famílias novas; faixa entre os dois gabaritos",
+    "fonte": "40 casos programados, 10 famílias novas; faixa entre os gabaritos",
     "estado": "pronto"
    },
    {
@@ -18891,7 +18901,7 @@
     "valor": "1 de 40 casos oscilam",
     "comparacao": "acurácia por rodada 0,925 a 0,950",
     "leitura": "Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: tri-f02-04 muda de resposta entre repetições idênticas. Voto majoritário de 5 chega a 0.950 de acurácia, ao custo de 5x as chamadas.",
-    "fonte": "40 casos × 5 repetições individuais; os dois gabaritos coincidem neste corpus",
+    "fonte": "40 casos × 5 repetições individuais; gabarito do autor; os anotadores divergem em casos deste corpus, e o cartão do E8 traz o efeito disso",
     "estado": "pronto"
    }
   ],

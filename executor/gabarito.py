@@ -17,6 +17,22 @@ CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto'),
 ADJUDICACAO = ROOT / 'runs' / 'e8-anotador' / 'adjudicacao.json'
 
 
+ANOTACAO = ROOT / 'runs' / 'e8-anotador' / 'relatorio.json'
+
+
+def do_anotador_local():
+    """O gabarito do anotador independente, caso a caso.
+
+    Ele existe desde o E8 e ficou fora dos cartoes por seis rodadas: o painel ensinava tres
+    gabaritos no cartao do E8 e, nos cartoes que o olho le primeiro, fingia que eram dois.
+    E o terceiro e o mais severo.
+    """
+    if not ANOTACAO.exists():
+        return {}
+    dados = json.loads(ANOTACAO.read_text(encoding='utf-8'))
+    return {a['case_id']: a['anotador'] for a in dados['anotacoes'] if a.get('anotador')}
+
+
 def do_autor():
     """O gabarito como foi pré-registrado, antes de qualquer adjudicação."""
     mapa = {}
@@ -86,7 +102,15 @@ def desempenho(relatorio, campo_resposta='jev'):
         else:
             erros_oficial.append(c['case_id'])
     mudados = {m['case_id'] for m in procedencia['casos_substituidos']}
-    return {
+    local = do_anotador_local()
+    acertos_local = sum(1 for c in casos
+                        if c.get(campo_resposta) == local.get(c['case_id'], c['gold']))
+    # Divergencia entre ANOTADORES neste corpus: e outra pergunta, e e a que interessa para
+    # dizer se ha mais de um gabarito em jogo. Perguntar so o que a adjudicacao mudou deixava
+    # o piloto inteiro parecendo unanime, com quatro casos em disputa dentro dele.
+    divergentes = sorted(c['case_id'] for c in casos
+                         if c['case_id'] in local and local[c['case_id']] != c['gold'])
+    saida = {
         'casos_programados': programados,
         'autor': {'acertos': acertos_autor,
                   'acuracia': round(acertos_autor / programados, 4) if programados else None},
@@ -95,5 +119,11 @@ def desempenho(relatorio, campo_resposta='jev'):
                     'erros': erros_oficial},
         'casos_deste_relatorio_que_mudaram': sorted(
             {c['case_id'] for c in casos} & mudados),
+        'casos_em_que_os_anotadores_divergem': divergentes,
         'adjudicado': procedencia['adjudicado'],
     }
+    if local:
+        saida['anotador_local'] = {
+            'acertos': acertos_local,
+            'acuracia': round(acertos_local / programados, 4) if programados else None}
+    return saida

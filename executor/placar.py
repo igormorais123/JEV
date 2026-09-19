@@ -63,16 +63,19 @@ def sobre_programados(bloco, casos):
 
 
 def gabarito_do_corpus(prefixo):
-    """Diz se a adjudicacao mexeu em algum caso do corpus que comeca com este prefixo.
+    """Ha mais de um gabarito em jogo neste corpus?
 
-    Antes o rotulo 'coincidem' era gravado na mao em quatro cartoes. Se a adjudicacao passasse
-    a mexer no piloto, os quatro continuariam afirmando coincidencia.
+    A versao anterior perguntava se a ADJUDICACAO mudou algum caso, que e outra coisa. Com essa
+    pergunta, o piloto inteiro aparecia como unanime enquanto tinha quatro casos em que os
+    anotadores discordavam. A pergunta certa e se os anotadores divergiram.
     """
-    _, procedencia = gabarito.adjudicado()
-    if not procedencia.get('adjudicado'):
+    local = gabarito.do_anotador_local()
+    autor = gabarito.do_autor()
+    if not local:
         return 'autor'
-    mexeu = [m for m in procedencia['casos_substituidos'] if m['case_id'].startswith(prefixo)]
-    return 'coincidem' if not mexeu else 'faixa'
+    divergem = [cid for cid, rotulo in local.items()
+                if cid.startswith(prefixo) and cid in autor and rotulo != autor[cid]['gold']]
+    return 'coincidem' if not divergem else 'ha-divergencia'
 
 
 def gabaritos_dos_80(e8, adj):
@@ -107,22 +110,31 @@ def fonte_com_gabarito(fonte, qual='autor'):
                               'entre os aceitos é a mesma nos dois gabaritos'),
                'oficial': 'gabarito oficial (com adjudicação)',
                'coincidem': 'os dois gabaritos coincidem neste corpus',
-               'faixa': 'faixa entre os dois gabaritos',
+               'faixa': 'faixa entre os gabaritos',
+               'ha-divergencia': ('gabarito do autor; os anotadores divergem em casos deste '
+                                  'corpus, e o cartão do E8 traz o efeito disso'),
                'nao-se-aplica': 'sem gabarito de classe'}
     return f"{fonte}; {rotulos[qual]}"
 
 
-def valor_entre_gabaritos(d):
-    """O numero de capa e a FAIXA entre os dois gabaritos, nao o melhor dos dois.
+def gabaritos_do_conjunto(d):
+    """Os gabaritos que existem para este conjunto, nomeados. Sao tres, nao dois.
 
-    Com um numero so, o olho pega o mais alto e a ressalva fica na letra miuda. Quando os dois
-    gabaritos dao o mesmo resultado, nao ha faixa e o valor e unico.
+    O anotador independente tem um gabarito desde o E8, e ele e o mais severo: no piloto da
+    87,5% contra 92,5% do autor. Por seis rodadas o painel ensinou tres gabaritos no cartao do
+    E8 e, nos cartoes que o olho le primeiro, mostrou dois.
     """
-    autor, oficial = d['autor']['acuracia'], d['oficial']['acuracia']
-    if autor == oficial:
-        return pct(autor)
-    baixo, alto = sorted((autor, oficial))
-    return f'{pct(baixo)} a {pct(alto)}'
+    valores = {'autor': d['autor']['acuracia'], 'oficial': d['oficial']['acuracia']}
+    if d.get('anotador_local'):
+        valores['anotador local'] = d['anotador_local']['acuracia']
+    return valores
+
+
+def valor_entre_gabaritos(d):
+    """O numero de capa e a FAIXA entre todos os gabaritos, nunca o melhor deles."""
+    valores = gabaritos_do_conjunto(d)
+    baixo, alto = min(valores.values()), max(valores.values())
+    return pct(baixo) if baixo == alto else f'{pct(baixo)} a {pct(alto)}'
 
 
 def leitura_dos_gabaritos(d, nome):
@@ -325,15 +337,16 @@ def montar():
         regra_e1, _ = sobre_programados(e1['regra'], e1['casos'])
         cartoes.append(cartao(
             'e1', 'Triagem de atendimento (E1)', valor_entre_gabaritos(d1),
-            (f"autor {pct(d1['autor']['acuracia'])}, oficial {pct(d1['oficial']['acuracia'])} · "
-             f"regra congelada {pct(regra_e1)}"),
+            (' · '.join(f'{nome} {pct(v)}' for nome, v in
+                         sorted(gabaritos_do_conjunto(d1).items(), key=lambda kv: kv[1]))
+             + f" · regra congelada {pct(regra_e1)}"),
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias, "
              'no gabarito do autor como pré-registrado.' if ic else
              'Diferença ainda sem intervalo calculado.'),
             fonte_com_gabarito(f"{programados_e1} casos programados, "
                                f"{e1['jev']['n_familias']} famílias",
-                               'faixa' if d1['autor']['acuracia'] != d1['oficial']['acuracia']
+                               'faixa' if len(set(gabaritos_do_conjunto(d1).values())) > 1
                                else 'coincidem')))
     else:
         cartoes.append(ausente('e1', 'Triagem de atendimento (E1)', 'Piloto não executado.', '—'))
@@ -438,15 +451,16 @@ def montar():
         d7 = gabarito.desempenho('runs/e7-confirmacao/relatorio.json')
         cartoes.append(cartao(
             'e7', 'Conjunto de confirmação (E7)', valor_entre_gabaritos(d7),
-            (f"autor {pct(d7['autor']['acuracia'])}, oficial {pct(d7['oficial']['acuracia'])} · "
-             f"regra congelada {pct(e7['regra']['acuracia_sobre_programados'])}"),
+            (' · '.join(f'{nome} {pct(v)}' for nome, v in
+                         sorted(gabaritos_do_conjunto(d7).items(), key=lambda kv: kv[1]))
+             + f" · regra congelada {pct(e7['regra']['acuracia_sobre_programados'])}"),
             (f"Casos novos, que não guiaram o desenho: diferença {pct(par['diferenca_observada'])}, "
              f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
              '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
              'armadilhas lexicais. ' + leitura_dos_gabaritos(d7, 'E7')),
             fonte_com_gabarito(f"{d7['casos_programados']} casos programados, "
                                f"{e7['jev']['n_familias']} famílias novas",
-                               'faixa' if d7['autor']['acuracia'] != d7['oficial']['acuracia']
+                               'faixa' if len(set(gabaritos_do_conjunto(d7).values())) > 1
                                else 'coincidem')))
     else:
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',

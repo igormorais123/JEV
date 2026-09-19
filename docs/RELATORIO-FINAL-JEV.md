@@ -277,13 +277,17 @@ Medida na partição de teste (conjunto de confirmação), que é a leitura hone
 
 | Corte | Aceitos | Cobertura | Erros observados | Limite superior de erro (por família) |
 |---|---|---|---|---|
-| 0,90 | 35/40 | 87,5% | 0 | — |
+| **0,90** | **35/40** | **87,5%** | **0** | **25,9%** |
 | 0,95 | 34/40 | 85,0% | 0 | 25,9% |
 | 0,99 | 28/40 | 70,0% | 0 | 25,9% |
 
+O limite do corte 0,90 — **o que a seção 1 recomenda** — não estava calculado até a décima
+segunda rodada de revisão apontar a lacuna: o painel vendia um corte cujo número desconfortável
+ninguém tinha computado. Ele é **25,9% por família** e 8,2% por caso, sobre 10 famílias e 35
+casos aceitos.
+
 **Zero erro observado não é taxa de erro zero.** Os aceitos vêm de um número pequeno de
-famílias, e famílias são a unidade de dependência. O limite por caso (Clopper-Pearson sobre 34
-ensaios) daria um número muito menor, e seria enganoso: trataria casos da mesma família como
+famílias, e famílias são a unidade de dependência. O limite por caso (Clopper-Pearson, 35 ensaios no corte 0,90) daria um número bem menor, e seria enganoso: trataria casos da mesma família como
 observações independentes, o que eles não são.
 
 ---
@@ -338,7 +342,7 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **dez rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **doze rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
 Grok 4.6 via Cursor). As quatro primeiras encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -425,8 +429,15 @@ mesma partição, o veredito usa as duas, e um teste quebra se o custo da união
 cobertura da confirmação. Na mesma rodada, o cartão do E8 deixou de estampar 96,2% — o mais alto
 dos três gabaritos — e passou a mostrar a faixa 88,8% a 96,2%, como o E7 já fazia.
 
+A décima primeira e a décima segunda rodadas não acharam defeito financeiro; acharam o painel
+mostrando **dois gabaritos onde existem três**. O gabarito do anotador independente é o mais
+severo — no piloto dá 87,5% contra 92,5% do autor, e na confirmação 90,0% contra 97,5% — e
+ficava de fora dos cartões que se lê primeiro. O rótulo que deveria denunciar isso perguntava a
+coisa errada: se a adjudicação mudou algum caso, e não se os anotadores discordaram. Com essa
+pergunta, o piloto aparecia como unânime tendo quatro casos em disputa dentro dele.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 123 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 132 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

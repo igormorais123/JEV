@@ -29,6 +29,20 @@
     "n_observacoes": 200,
     "repeticoes": 20000
   },
+  "calibracao_0.9": {
+    "conjunto": "piloto",
+    "corte": 0.9,
+    "casos_programados": 40,
+    "casos_com_confianca": 40,
+    "aceitos": 29,
+    "erros_entre_aceitos": 0,
+    "cobertura_sobre_programados": 0.725,
+    "familias_representadas_entre_aceitos": 9,
+    "familias_com_erro": 0,
+    "limite_superior_erro_por_caso": 0.098145,
+    "limite_superior_erro_por_familia": 0.283129,
+    "leitura": "Os dois limites medem eventos DIFERENTES e nao sao intercambiaveis. O limite por caso supoe casos independentes, o que este desenho nao tem. O limite por familia e sobre a probabilidade de uma familia conter ao menos um caso aceito errado, dando peso igual a familias de tamanhos diferentes; e o numero que devemos citar, e nao um limite conservador do risco por caso."
+  },
   "calibracao_0.95": {
     "conjunto": "piloto",
     "corte": 0.95,
@@ -55,6 +69,20 @@
     "familias_com_erro": 0,
     "limite_superior_erro_por_caso": 0.112928,
     "limite_superior_erro_por_familia": 0.283129,
+    "leitura": "Os dois limites medem eventos DIFERENTES e nao sao intercambiaveis. O limite por caso supoe casos independentes, o que este desenho nao tem. O limite por familia e sobre a probabilidade de uma familia conter ao menos um caso aceito errado, dando peso igual a familias de tamanhos diferentes; e o numero que devemos citar, e nao um limite conservador do risco por caso."
+  },
+  "calibracao_confirmacao_0.9": {
+    "conjunto": "confirmacao",
+    "corte": 0.9,
+    "casos_programados": 40,
+    "casos_com_confianca": 40,
+    "aceitos": 35,
+    "erros_entre_aceitos": 0,
+    "cobertura_sobre_programados": 0.875,
+    "familias_representadas_entre_aceitos": 10,
+    "familias_com_erro": 0,
+    "limite_superior_erro_por_caso": 0.082032,
+    "limite_superior_erro_por_familia": 0.258866,
     "leitura": "Os dois limites medem eventos DIFERENTES e nao sao intercambiaveis. O limite por caso supoe casos independentes, o que este desenho nao tem. O limite por familia e sobre a probabilidade de uma familia conter ao menos um caso aceito errado, dando peso igual a familias de tamanhos diferentes; e o numero que devemos citar, e nao um limite conservador do risco por caso."
   },
   "calibracao_confirmacao_0.95": {
