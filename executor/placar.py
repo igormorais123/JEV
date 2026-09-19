@@ -27,7 +27,13 @@ def ler(caminho):
 
 
 def pct(x):
-    return f'{x * 100:.1f}%'
+    """Percentual em pt-BR. O painel inteiro e em portugues; o numero tambem."""
+    return f'{x * 100:.1f}'.replace('.', ',') + '%'
+
+
+def dec(x, casas=3):
+    """Numero decimal em pt-BR."""
+    return f'{x:.{casas}f}'.replace('.', ',')
 
 
 def cartao(chave, titulo, valor, comparacao, leitura, fonte, estado='pronto'):
@@ -50,6 +56,39 @@ def sobre_programados(bloco, casos):
         return bloco['acuracia_sobre_programados'], bloco.get('casos_programados', len(casos))
     programados = len(casos)
     return (round(bloco['acertos'] / programados, 4) if programados else None), programados
+
+
+def gabarito_do_corpus(prefixo):
+    """Diz se a adjudicacao mexeu em algum caso do corpus que comeca com este prefixo.
+
+    Antes o rotulo 'coincidem' era gravado na mao em quatro cartoes. Se a adjudicacao passasse
+    a mexer no piloto, os quatro continuariam afirmando coincidencia.
+    """
+    _, procedencia = gabarito.adjudicado()
+    if not procedencia.get('adjudicado'):
+        return 'autor'
+    mexeu = [m for m in procedencia['casos_substituidos'] if m['case_id'].startswith(prefixo)]
+    return 'coincidem' if not mexeu else 'faixa'
+
+
+def gabaritos_dos_80(e8, adj):
+    """Os tres gabaritos que existem para o mesmo conjunto, nomeados.
+
+    A versao anterior montava a faixa com min(local, autor) e max(oficial, autor): dava certo
+    so porque o oficial e, hoje, o mais alto. Se o anotador local passasse o oficial, o teto
+    sumia do intervalo. Aqui o minimo e o maximo saem da lista inteira.
+    """
+    valores = {'anotador local': e8['acuracia_jev_sob_gabarito_do_outro'],
+               'autor': e8['acuracia_jev_sob_meu_gabarito']}
+    if adj:
+        valores['oficial'] = adj['gabarito_adjudicado']['acuracia']
+    return valores
+
+
+def faixa_dos_gabaritos(e8, adj):
+    valores = gabaritos_dos_80(e8, adj)
+    baixo, alto = min(valores.values()), max(valores.values())
+    return (pct(baixo) if baixo == alto else f'{pct(baixo)} a {pct(alto)}'), valores
 
 
 def fonte_com_gabarito(fonte, qual='autor'):
@@ -241,15 +280,16 @@ def texto_do_veredito(e9, e6):
     partes = []
     if politica and politica['erros_entre_aceitos'] == 0:
         partes.append(f"aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre "
-                      f"{politica['cobertura'] * 100:.1f}% dos {politica['casos']} casos da particao "
+                      f"{politica['cobertura'] * 100:.1f}".replace('.', ',') + '% dos '
+                      + f"{politica['casos']} casos da particao "
                       'de confirmacao sem nenhum erro observado entre os aceitos')
     elif politica:
         partes.append(f"no corte 0,90 a politica cobre {politica['cobertura'] * 100:.0f}% dos casos, "
                       f"mas deixa passar {politica['erros_entre_aceitos']} erro(s): o corte precisa subir")
     if politica and tudo:
         partes.append(f"nessa mesma particao o custo por decisao cai de "
-                      f"US$ {tudo['custo_por_decisao_usd']:.3f} para "
-                      f"US$ {politica['custo_por_decisao_usd']:.3f}, com tempo humano declarado e "
+                      f"US$ {dec(tudo['custo_por_decisao_usd'])} para "
+                      f"US$ {dec(politica['custo_por_decisao_usd'])}, com tempo humano declarado e "
                       'nunca cronometrado')
     if e6 and e6['n_instaveis']:
         partes.append(f"o que impede automatizar tudo e o nao determinismo: {e6['n_instaveis']} caso "
@@ -315,7 +355,7 @@ def montar():
             f"{e4['jev']['ressalvas_no_topo']}/{e4['jev']['ressalvas_totais']}",
             f"BM25 {e4['bm25']['ressalvas_no_topo']}/{e4['bm25']['ressalvas_totais']} · "
             f"ordem de chegada {e4['original']['ressalvas_no_topo']}/{e4['original']['ressalvas_totais']}",
-            f"nDCG@5 {e4['jev']['ndcg5']:.4f} contra {e4['bm25']['ndcg5']:.4f} do BM25. "
+            f"nDCG@5 {dec(e4['jev']['ndcg5'], 4)} contra {dec(e4['bm25']['ndcg5'], 4)} do BM25. "
             'Ressalva perdida no topo é exceção que não chega a quem decide.',
             fonte_com_gabarito(f"{e4['topo']} primeiros de 8 consultas × 5 candidatos",
                                'nao-se-aplica')))
@@ -334,14 +374,14 @@ def montar():
                  if c['condicao']['lote']]
         referencia = sum(individuais) / len(individuais) if individuais else None
         economias = ([100 * (1 - x / referencia) for x in lotes] if referencia and lotes else [])
-        faixa = f'{min(acuracias):.3f} a {max(acuracias):.3f}'
+        faixa = f'{dec(min(acuracias))} a {dec(max(acuracias))}'
         cartoes.append(cartao(
             'e2', 'Lote, ordem e distração (E2)', faixa, '8 condições fatoriais',
             ('Nenhum contraste separa as condições (McNemar p=1,000 em todos). '
              + (f'Lote economiza {min(economias):.1f}% a {max(economias):.1f}% por decisão.'
                 if economias else 'Economia do lote registrada no relatório.')),
             fonte_com_gabarito(f'{len(condicoes)} condições sobre os mesmos 40 casos',
-                               'coincidem')))
+                               gabarito_do_corpus('tri-'))))
     else:
         cartoes.append(ausente('e2', 'Lote, ordem e distração (E2)', 'Fatorial não executado.', '—'))
 
@@ -350,11 +390,11 @@ def montar():
         instaveis = sum(1 for acertos, total in e2b['por_caso'].values() if 0 < acertos < total)
         cartoes.append(cartao(
             'e2b', 'Estabilidade no lote (E2b)', f'{instaveis} de {len(e2b["por_caso"])} casos instáveis',
-            f"p de permutação {dif.get('p_permutacao', '—')}",
+            f"p de permutação {str(dif.get('p_permutacao', '—')).replace('.', ',')}",
             ('Posição no lote não explica erro. Mas esses casos mudam de resposta conforme os '
              'vizinhos do lote: mesma pergunta, resposta diferente.'),
             fonte_com_gabarito(f"{len(e2b['observacoes'])} observações em "
-                               f"{len(e2b['sementes'])} permutações", 'coincidem')))
+                               f"{len(e2b['sementes'])} permutações", gabarito_do_corpus('tri-'))))
     else:
         cartoes.append(ausente('e2b', 'Estabilidade no lote (E2b)', 'Desconfundimento não executado.', '—'))
 
@@ -381,7 +421,7 @@ def montar():
                        f"{d['custo_por_decisao_nusd'] / 1e9:.9f} USD por decisão"
                        for nome, d in e5['resumo'].items()),
             fonte_com_gabarito(f"{e5['casos']} casos × 2 transportes, chamadas intercaladas",
-                               'coincidem')))
+                               gabarito_do_corpus('tri-'))))
     else:
         cartoes.append(ausente('e5', 'Provedor: OpenRouter × TypeSafe (E5)',
                                'Comparação de transporte ainda não despachada.',
@@ -416,28 +456,29 @@ def montar():
         if adj:
             placar_adj = adj['placar']
             g = adj['gabarito_adjudicado']
+            faixa, valores = faixa_dos_gabaritos(e8, adj)
             cartoes.append(cartao(
-                'e8', 'Gabarito adjudicado (E8)',
-                f"{pct(min(e8['acuracia_jev_sob_gabarito_do_outro'], e8['acuracia_jev_sob_meu_gabarito']))}"
-                f" a {pct(max(g['acuracia'], e8['acuracia_jev_sob_meu_gabarito']))}",
-                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} no oficial · "
-                f"autor {pct(e8['acuracia_jev_sob_meu_gabarito'])} · "
-                f"anotador local {pct(e8['acuracia_jev_sob_gabarito_do_outro'])}",
+                'e8', 'Gabarito adjudicado (E8)', faixa,
+                ' · '.join(f'{nome} {pct(v)}' for nome, v in
+                           sorted(valores.items(), key=lambda kv: kv[1])),
                 (f"Os {len(adj['casos'])} casos em disputa foram julgados por um terceiro juiz cego, que "
                  'recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito '
                  f"do autor em {placar_adj['confirmam_o_autor']} e o do anotador local em "
                  f"{placar_adj['confirmam_o_modelo_local']}. Isso desfaz a leitura anterior deste painel: "
                  f"o Jev erra {len(g['erros'])} casos no gabarito adjudicado "
-                 f"({', '.join(g['erros'])}), e não 2. Acurácia entre "
+                 f"({', '.join(g['erros'])}), e não os 2 que este painel "
+                 'chegou a anunciar antes da adjudicação. Acurácia entre '
                  f"{pct(min(e8['acuracia_jev_sob_meu_gabarito'], e8['acuracia_jev_sob_gabarito_do_outro']))} "
                  f"e {pct(g['acuracia'])} conforme o gabarito adotado."),
                 f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura"))
         cartoes.append(cartao(
-            'e8b', 'Concordância entre anotadores (E8)', f"kappa {e8['kappa_cohen']}",
+            'e8b', 'Concordância entre anotadores (E8)', f"kappa {dec(e8['kappa_cohen'], 4)}",
             f"concordância bruta {pct(e8['concordancia_bruta'])}, antes de adjudicar",
             (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Dos "
-             f"{len(erros)} erros do Jev NO GABARITO DO AUTOR (o oficial tem outro número, no "
-             'cartão acima), o anotador independente confirma o gabarito em '
+             f"{len(erros)} erros do Jev NO GABARITO DO AUTOR"
+             + (' (o oficial tem outro número, no cartão acima)' if adj else
+                ' (ainda sem adjudicação: este é o único gabarito disponível)')
+             + ', o anotador independente confirma o gabarito em '
              f"{len(apoiam_gabarito)} ({', '.join(a['case_id'] for a in apoiam_gabarito)}) e fica do "
              f"lado do Jev em {len(apoiam_jev)} ({', '.join(a['case_id'] for a in apoiam_jev)}). "
              f"Sob o gabarito do outro anotador o Jev faz "
@@ -456,7 +497,8 @@ def montar():
         politica = politica_de_referencia(e9)
         fraca = min(e9['acuracia_por_classe'].items(), key=lambda kv: kv[1]['taxa'])
         leitura = (f"A acurácia esperada se move pouco entre as distribuições porque a classe mais "
-                   f"fraca ainda faz {fraca[1]['taxa']} — com {fraca[1]['casos']} casos só, o que "
+                   f"fraca ainda faz {str(fraca[1]['taxa']).replace('.', ',')} — com "
+                   f"{fraca[1]['casos']} casos só, o que "
                    'deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a '
                    'conta supõe que a dificuldade dentro de cada classe é a mesma do corpus.')
         if politica:
@@ -469,7 +511,7 @@ def montar():
                         'publica cobertura, em vez de trocar pelo número da união.')
         cartoes.append(cartao(
             'e9', 'Sensibilidade à prevalência (E9)',
-            f'{min(valores):.3f} a {max(valores):.3f}',
+            f'{dec(min(valores))} a {dec(max(valores))}',
             f'{len(proj)} distribuições de canal', leitura,
             f"reponderação da matriz de confusão sob o {e9.get('gabarito', 'gabarito do autor')}; "
             'NÃO é a medição de P5, que pedia minutagem humana e continua pendente'))
@@ -479,13 +521,13 @@ def montar():
         cartoes.append(cartao(
             'e6', 'Repetibilidade isolada (E6)',
             f"{e6['n_instaveis']} de {e6['casos']} casos oscilam",
-            f"acurácia por rodada {min(rodadas):.3f} a {max(rodadas):.3f}",
+            f"acurácia por rodada {dec(min(rodadas))} a {dec(max(rodadas))}",
             ('Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: '
              f"{', '.join(e6['casos_instaveis'])} muda de resposta entre repetições idênticas. "
              f"Voto majoritário de {e6['repeticoes']} chega a {e6['acuracia_voto_majoritario']:.3f} "
              f"de acurácia, ao custo de {e6['repeticoes']}x as chamadas."),
             fonte_com_gabarito(f"{e6['casos']} casos × {e6['repeticoes']} repetições individuais",
-                               'coincidem')))
+                               gabarito_do_corpus('tri-'))))
     else:
         cartoes.append(ausente('e6', 'Repetibilidade isolada (E6)',
                                'Repetições individuais ainda não executadas.', '—'))

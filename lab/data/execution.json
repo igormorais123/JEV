@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 55,
- "updated_at": "2026-09-19T05:27:11.555190+00:00",
+ "revision": 61,
+ "updated_at": "2026-09-19T05:33:43.091046+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18763,13 +18763,18 @@
    "at": "2026-09-19T05:26:22.266282+00:00",
    "kind": "manual",
    "text": "Decima rodada: sem defeito financeiro, e uma promessa impossivel no painel. O veredito oferecia a cobertura da particao de confirmacao (87,5%) com o custo da uniao (US$ 0,080). Custo por decisao depende da fracao que vai para revisao humana, que e justamente o que a cobertura mede: as duas coisas tem de sair da mesma particao. Ou 87,5% a US$ 0,050, ou 80% a US$ 0,080. Corrigido, com teste que quebra se o custo da uniao aparecer ao lado da cobertura da confirmacao. O cartao do E8 deixou de estampar 96,2% (o mais alto dos tres gabaritos) e passou a mostrar a faixa 88,8% a 96,2%. 123 testes passam."
+  },
+  {
+   "at": "2026-09-19T05:33:43.023773+00:00",
+   "kind": "manual",
+   "text": "Decima primeira rodada: sem defeito financeiro. Tres achados, todos corretos. O pior era meu e estava no relatorio, nao no codigo: a capa afirmava acuracia \"entre 0,8875 e 0,9750\", e 0,9750 nao e gabarito nenhum dos 80 casos — e a acuracia do E7 isolado, que tem 40. Misturar denominadores e o mesmo vicio que eu vinha corrigindo no painel, e ele estava no meu texto. Os tres gabaritos sao 0,8875 (anotador local), 0,9500 (autor) e 0,9625 (oficial). A faixa do E8 tambem era um maximo disfarcado: min(local, autor) a max(oficial, autor), que so funcionava porque o oficial e hoje o mais alto. Agora sai do minimo e do maximo da lista inteira, com teste que inverte o anotador local para cima. Os rotulos \"os dois gabaritos coincidem\" deixaram de ser escritos a mao. 130 testes passam."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:27:11.555035+00:00",
+  "atualizado_em": "2026-09-19T05:33:43.090887+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
-   "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; nessa mesma particao o custo por decisao cai de US$ 0.400 para US$ 0.050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
+   "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87,5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; nessa mesma particao o custo por decisao cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
    "confianca": 0.5,
    "confianca_motivos": [
     "a política se apoia em 40 casos, menos de cem (-0,20)",
@@ -18784,18 +18789,18 @@
    {
     "chave": "e1",
     "titulo": "Triagem de atendimento (E1)",
-    "valor": "92.5%",
-    "comparacao": "autor 92.5%, oficial 92.5% · regra congelada 60.0%",
-    "leitura": "Vantagem de 32.5%, IC95 [15.0%; 50.0%] por reamostragem de famílias, no gabarito do autor como pré-registrado.",
+    "valor": "92,5%",
+    "comparacao": "autor 92,5%, oficial 92,5% · regra congelada 60,0%",
+    "leitura": "Vantagem de 32,5%, IC95 [15,0%; 50,0%] por reamostragem de famílias, no gabarito do autor como pré-registrado.",
     "fonte": "40 casos programados, 10 famílias; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
    {
     "chave": "e3",
     "titulo": "Suporte por evidência (E3)",
-    "valor": "95.8%",
-    "comparacao": "regra ingênua 62.5%",
-    "leitura": "Vantagem de 33.3%, IC95 [25.0%; 41.7%].",
+    "valor": "95,8%",
+    "comparacao": "regra ingênua 62,5%",
+    "leitura": "Vantagem de 33,3%, IC95 [25,0%; 41,7%].",
     "fonte": "24 casos programados, 6 famílias; gabarito do autor",
     "estado": "pronto"
    },
@@ -18804,14 +18809,14 @@
     "titulo": "Ressalvas preservadas (E4)",
     "valor": "8/8",
     "comparacao": "BM25 5/8 · ordem de chegada 4/8",
-    "leitura": "nDCG@5 0.9958 contra 0.9205 do BM25. Ressalva perdida no topo é exceção que não chega a quem decide.",
+    "leitura": "nDCG@5 0,9958 contra 0,9205 do BM25. Ressalva perdida no topo é exceção que não chega a quem decide.",
     "fonte": "3 primeiros de 8 consultas × 5 candidatos; sem gabarito de classe",
     "estado": "pronto"
    },
    {
     "chave": "e2",
     "titulo": "Lote, ordem e distração (E2)",
-    "valor": "0.925 a 0.950",
+    "valor": "0,925 a 0,950",
     "comparacao": "8 condições fatoriais",
     "leitura": "Nenhum contraste separa as condições (McNemar p=1,000 em todos). Lote economiza 32.4% a 43.2% por decisão.",
     "fonte": "8 condições sobre os mesmos 40 casos; os dois gabaritos coincidem neste corpus",
@@ -18821,7 +18826,7 @@
     "chave": "e2b",
     "titulo": "Estabilidade no lote (E2b)",
     "valor": "3 de 40 casos instáveis",
-    "comparacao": "p de permutação 0.40258",
+    "comparacao": "p de permutação 0,40258",
     "leitura": "Posição no lote não explica erro. Mas esses casos mudam de resposta conforme os vizinhos do lote: mesma pergunta, resposta diferente.",
     "fonte": "200 observações em 5 permutações; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
@@ -18830,53 +18835,53 @@
     "chave": "calibracao",
     "titulo": "Calibração no corte 0,95 (confirmacao)",
     "valor": "34 aceitos de 40",
-    "comparacao": "cobertura 85.0%",
-    "leitura": "0 erro(s) observado(s), mas os aceitos vêm de apenas 10 famílias: o limite superior honesto é 25.9% por família, não 8.4% por caso.",
+    "comparacao": "cobertura 85,0%",
+    "leitura": "0 erro(s) observado(s), mas os aceitos vêm de apenas 10 famílias: o limite superior honesto é 25,9% por família, não 8,4% por caso.",
     "fonte": "40 casos, corte de confiança 0,95; gabarito do autor; o caso que a adjudicação mudou tinha confiança 0,60 e não entrava em nenhum dos cortes, então a contagem de erro entre os aceitos é a mesma nos dois gabaritos",
     "estado": "pronto"
    },
    {
     "chave": "e5",
     "titulo": "Provedor: OpenRouter × TypeSafe (E5)",
-    "valor": "100.0%",
+    "valor": "100,0%",
     "comparacao": "40 de 40 casos concordam",
-    "leitura": "openrouter: 92.5% de acurácia, p50 396 ms, 0.000022167 USD por decisão · typesafe: 92.5% de acurácia, p50 755 ms, 0.000024804 USD por decisão",
+    "leitura": "openrouter: 92,5% de acurácia, p50 396 ms, 0.000022167 USD por decisão · typesafe: 92,5% de acurácia, p50 755 ms, 0.000024804 USD por decisão",
     "fonte": "40 casos × 2 transportes, chamadas intercaladas; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
    {
     "chave": "e7",
     "titulo": "Conjunto de confirmação (E7)",
-    "valor": "97.5% a 100.0%",
-    "comparacao": "autor 97.5%, oficial 100.0% · regra congelada 32.5%",
-    "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. A adjudicação levou E7 de 39/40 para 40/40, porque cnf-g05-02 mudou de lado. Ler isso como acerto pleno seria trocar de gabarito depois de ver o resultado: o número do autor está ao lado, de propósito.",
+    "valor": "97,5% a 100,0%",
+    "comparacao": "autor 97,5%, oficial 100,0% · regra congelada 32,5%",
+    "leitura": "Casos novos, que não guiaram o desenho: diferença 65,0%, IC95 [52,5%; 77,5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. A adjudicação levou E7 de 39/40 para 40/40, porque cnf-g05-02 mudou de lado. Ler isso como acerto pleno seria trocar de gabarito depois de ver o resultado: o número do autor está ao lado, de propósito.",
     "fonte": "40 casos programados, 10 famílias novas; faixa entre os dois gabaritos",
     "estado": "pronto"
    },
    {
     "chave": "e8",
     "titulo": "Gabarito adjudicado (E8)",
-    "valor": "88.8% a 96.2%",
-    "comparacao": "77/80 no oficial · autor 95.0% · anotador local 88.8%",
-    "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não 2. Acurácia entre 88.8% e 96.2% conforme o gabarito adotado.",
+    "valor": "88,8% a 96,2%",
+    "comparacao": "anotador local 88,8% · autor 95,0% · oficial 96,2%",
+    "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não os 2 que este painel chegou a anunciar antes da adjudicação. Acurácia entre 88,8% e 96,2% conforme o gabarito adotado.",
     "fonte": "gpt-5.6-sol-high via Cursor CLI, cego a quem escreveu cada leitura",
     "estado": "pronto"
    },
    {
     "chave": "e8b",
     "titulo": "Concordância entre anotadores (E8)",
-    "valor": "kappa 0.8593",
-    "comparacao": "concordância bruta 88.8%, antes de adjudicar",
-    "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev NO GABARITO DO AUTOR (o oficial tem outro número, no cartão acima), o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88.8%, e não 95.0%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",
+    "valor": "kappa 0,8593",
+    "comparacao": "concordância bruta 88,8%, antes de adjudicar",
+    "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev NO GABARITO DO AUTOR (o oficial tem outro número, no cartão acima), o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88,8%, e não 95,0%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",
     "fonte": "qwen2.5:7b-instruct local, cego ao gabarito e à resposta do Jev",
     "estado": "pronto"
    },
    {
     "chave": "e9",
     "titulo": "Sensibilidade à prevalência (E9)",
-    "valor": "0.950 a 0.972",
+    "valor": "0,950 a 0,972",
     "comparacao": "4 distribuições de canal",
-    "leitura": "A acurácia esperada se move pouco entre as distribuições porque a classe mais fraca ainda faz 0.9375 — com 16 casos só, o que deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a conta supõe que a dificuldade dentro de cada classe é a mesma do corpus. No corte 0,90, na partição de confirmação, a política aceita 87.5% dos 40 casos com 0 erro entre os aceitos — a mesma leitura que o veredito usa.",
+    "leitura": "A acurácia esperada se move pouco entre as distribuições porque a classe mais fraca ainda faz 0,9375 — com 16 casos só, o que deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a conta supõe que a dificuldade dentro de cada classe é a mesma do corpus. No corte 0,90, na partição de confirmação, a política aceita 87,5% dos 40 casos com 0 erro entre os aceitos — a mesma leitura que o veredito usa.",
     "fonte": "reponderação da matriz de confusão sob o gabarito adjudicado (1 caso(s) mudaram em relação ao do autor); NÃO é a medição de P5, que pedia minutagem humana e continua pendente",
     "estado": "pronto"
    },
@@ -18884,7 +18889,7 @@
     "chave": "e6",
     "titulo": "Repetibilidade isolada (E6)",
     "valor": "1 de 40 casos oscilam",
-    "comparacao": "acurácia por rodada 0.925 a 0.950",
+    "comparacao": "acurácia por rodada 0,925 a 0,950",
     "leitura": "Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: tri-f02-04 muda de resposta entre repetições idênticas. Voto majoritário de 5 chega a 0.950 de acurácia, ao custo de 5x as chamadas.",
     "fonte": "40 casos × 5 repetições individuais; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"

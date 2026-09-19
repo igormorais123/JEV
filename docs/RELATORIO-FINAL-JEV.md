@@ -18,9 +18,11 @@ A política concreta que os dados sustentam: aceitar automaticamente as decisõe
 ≥ 0,90 e encaminhar o restante para uma pessoa. Na partição de confirmação — os 40 casos que não
 guiaram o desenho, que é a leitura que vale para decidir — essa política aceita **87,5%** sem
 nenhum erro observado entre os aceitos; na união dos 80 casos, aceita 80%, também sem erro
-observado. Os quatro erros do modelo têm confiança abaixo de 0,90.
+observado. Os erros do modelo — quatro no gabarito do autor, três no oficial — têm todos confiança abaixo
+de 0,90.
 
-**A base é pequena e o número precisa ser lido assim:** são 4 erros em 80 casos. "Nenhum erro
+**A base é pequena e o número precisa ser lido assim:** são 3 erros em 80 casos no gabarito
+oficial (4, no do autor). "Nenhum erro
 entre os aceitos" descreve o que foi observado, não uma garantia; a seção 6 traz o limite
 superior que sobra depois de respeitar o agrupamento por família. Sob os parâmetros da seção 7 —
 declarados, nunca cronometrados — e **na mesma partição de confirmação**, a política leva o custo
@@ -33,10 +35,17 @@ partição com o preço da outra descreveria uma política que não existe.
 sozinho e repetido cinco vezes, pode mudar de resposta. Um sistema que decide sozinho precisa
 responder igual à mesma pergunta, e este não responde.
 
-**Acurácia do modelo nestes 80 casos: entre 0,8875 e 0,9750, conforme o gabarito adotado.**
-Sob o gabarito adjudicado por três juízes — o mais defensável — são **0,9625**. Reportar só o
-número mais alto seria escolher o gabarito depois de ver o resultado, e é por isso que o painel
-exibe a faixa em vez do melhor caso.
+**Acurácia do modelo nestes 80 casos: entre 0,8875 e
+0,9625, conforme o gabarito adotado** — 0,8875
+sob o gabarito do anotador independente, 0,95 sob o meu, e
+0,9625 sob o adjudicado, que é o mais defensável dos três. Reportar só
+o número mais alto seria escolher o gabarito depois de ver o resultado, e é por isso que o painel
+exibe a faixa.
+
+*(Correção registrada: até a décima primeira rodada de revisão, este parágrafo dizia "entre
+0,8875 e 0,9750". O 0,9750 não é gabarito nenhum destes 80 casos — é a acurácia do E7 isolado,
+que tem 40. Misturar denominadores é o mesmo vício que eu vinha corrigindo no painel, e ele
+estava aqui.)*
 
 **Confiança: 0,5.** Este número deixou de ser
 um julgamento meu e passou a ser uma conta com as penalidades declaradas, partindo de 1,0:
@@ -63,7 +72,7 @@ garante que corresponda a probabilidade de acerto. Mas nos dois corpora, todos o
 ficaram concentrados abaixo de 0,90, e nenhum caso aceito acima desse corte estava errado.
 É isso que torna viável uma política de triagem com revisão seletiva, em vez de revisão total.
 
-A ressalva é grande e vai na seção 8: zero erro em 64 casos aceitos não é taxa de erro zero.
+A ressalva é grande e vai na seção 8: zero erro entre os aceitos não é taxa de erro zero.
 Respeitando o agrupamento por família, o limite superior do erro ainda chega a 25,9%.
 
 ---
@@ -178,14 +187,15 @@ coisa: em `tri-f02-04` o terceiro juiz ficou comigo, e o Jev errou mesmo. Só `c
 caso que eu já havia declarado contestável antes de ver qualquer um destes resultados — mudou de
 lado, e mudou contra mim.
 
-**Sob o gabarito adjudicado, o Jev faz 0,9625 (77/80)**, com três erros: `tri-f02-04`,
-`tri-f06-02` e `tri-f09-04` — **todos do corpus piloto**. No conjunto de confirmação, que é a
+**Sob o gabarito adjudicado, o Jev faz 0,9625 (77/80)**, com três
+erros: `tri-f02-04`, `tri-f06-02` e `tri-f09-04` — **todos do corpus piloto**. No conjunto de confirmação, que é a
 partição de teste, o gabarito adjudicado deixa o modelo **sem erro nenhum**, porque o único erro
 que havia lá (`cnf-g05-02`) foi justamente o caso que mudou de lado. Isso não deve ser lido como
 "40/40 no teste": é um resultado de 40 casos em que o único erro virou disputa e a disputa foi
-decidida por um terceiro modelo. O número que eu levaria a uma reunião é o de 80 casos, 0,9625. A faixa honesta de acurácia do modelo nestes 80 casos é
-**0,8875 a 0,9750**, conforme o gabarito adotado; o adjudicado, que é o mais defensável dos três,
-fica em 0,9625.
+decidida por um terceiro modelo. O número que eu levaria a uma reunião é o de 80 casos, 0,9625.
+
+A faixa honesta de acurácia nestes 80 casos é **0,8875 a 0,9625**: 0,8875 sob o gabarito do
+anotador independente, 0,9500 sob o meu, 0,9625 sob o adjudicado.
 
 **O limite desta adjudicação, dito antes que alguém o use contra o resultado:** o terceiro juiz
 é um modelo de linguagem grande, como o Jev. Modelos grandes treinados em dados parecidos tendem
@@ -301,7 +311,9 @@ mesma partição** — foi essa mistura que a décima rodada de revisão encontr
 | Aceitar tudo | 100% | 3 | US$ 0,000022 | 100% |
 
 A linha "aceitar tudo" é o que a automação total custaria e o que ela erraria. A diferença entre
-ela e o corte 0,90 é o preço de não errar: US$ 0,08 por decisão.
+ela e o corte 0,90 é o preço de não errar: **US$ 0,08 por decisão nesta tabela, que é a união**.
+Na partição de confirmação, que é a leitura da seção 1, esse preço é US$ 0,05. Os dois números
+são da mesma política em bases diferentes, e nenhum dos dois deve ser citado sozinho.
 
 ---
 

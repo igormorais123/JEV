@@ -37,7 +37,7 @@ class CoerenciaDoPlacar(unittest.TestCase):
         e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
         politica = placar.politica_de_referencia(e9)
         self.assertIsNotNone(politica, 'sem partição de confirmação não há política de referência')
-        cobertura = f"{politica['cobertura'] * 100:.1f}"
+        cobertura = f"{politica['cobertura'] * 100:.1f}".replace('.', ',')
         self.assertIn(cobertura, veredito)
         self.assertIn(cobertura, cartao)
         self.assertIn(str(politica['casos']), veredito)
@@ -55,11 +55,11 @@ class CoerenciaDoPlacar(unittest.TestCase):
         tudo = placar.politica_de_referencia(e9, corte=1.01)
         self.assertIsNotNone(tudo, 'a partição precisa da política de revisar tudo para comparar')
         veredito = self.bloco['veredito']['texto']
-        self.assertIn(f"{politica['custo_por_decisao_usd']:.3f}", veredito)
-        self.assertIn(f"{tudo['custo_por_decisao_usd']:.3f}", veredito)
+        self.assertIn(f"{politica['custo_por_decisao_usd']:.3f}".replace('.', ','), veredito)
+        self.assertIn(f"{tudo['custo_por_decisao_usd']:.3f}".replace('.', ','), veredito)
         uniao = next(p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90)
         if abs(uniao['custo_por_decisao_usd'] - politica['custo_por_decisao_usd']) > 1e-9:
-            self.assertNotIn(f"{uniao['custo_por_decisao_usd']:.3f}", veredito,
+            self.assertNotIn(f"{uniao['custo_por_decisao_usd']:.3f}".replace('.', ','), veredito,
                              'o custo da união não pode aparecer junto da cobertura da confirmação')
 
     def test_cartao_sem_divergencia_de_gabarito_nao_fala_em_faixa(self):
@@ -75,7 +75,8 @@ class CoerenciaDoPlacar(unittest.TestCase):
         e8 = json.loads((ROOT / 'runs/e8-anotador/relatorio.json').read_text(encoding='utf-8'))
         valor = self.cartoes['e8']['valor']
         self.assertIn(' a ', valor)
-        self.assertIn(f"{e8['acuracia_jev_sob_gabarito_do_outro'] * 100:.1f}", valor)
+        self.assertIn(f"{e8['acuracia_jev_sob_gabarito_do_outro'] * 100:.1f}".replace('.', ','),
+                      valor)
 
     def test_politica_de_referencia_nao_cai_para_a_uniao(self):
         """Sem a partição, o painel tem de ficar em silêncio, não trocar o número."""
@@ -105,6 +106,8 @@ class CoerenciaDoPlacar(unittest.TestCase):
         adj = json.loads((ROOT / 'runs/e8-anotador/adjudicacao.json').read_text(encoding='utf-8'))
         erros = len(adj['gabarito_adjudicado']['erros'])
         self.assertIn(f'erra {erros} de', nota)
+        # O painel e em pt-BR: numero com virgula, sempre.
+        self.assertNotIn('.5%', self.bloco['veredito']['texto'])
 
     def test_cartoes_com_dois_gabaritos_mostram_a_faixa_e_nao_o_melhor(self):
         """O olho pega o número de capa; ele não pode ser o mais favorável dos dois."""
@@ -114,7 +117,7 @@ class CoerenciaDoPlacar(unittest.TestCase):
             self.skipTest('os dois gabaritos coincidem neste conjunto')
         valor = self.cartoes['e7']['valor']
         self.assertIn(' a ', valor, 'com gabaritos divergentes o cartão tem de mostrar a faixa')
-        self.assertIn(f"{d7['autor']['acuracia'] * 100:.1f}", valor)
+        self.assertIn(f"{d7['autor']['acuracia'] * 100:.1f}".replace('.', ','), valor)
 
     def test_pendencias_nao_pedem_o_que_ja_foi_feito(self):
         texto = ' '.join(self.bloco['pendencias']).lower()
@@ -211,3 +214,48 @@ class PainelPublicadoEhReproduzivel(unittest.TestCase):
         finally:
             db.close()
         self.assertAlmostEqual(do_painel, total / 1e9, places=9)
+
+
+class FaixaDosTresGabaritos(unittest.TestCase):
+    """[R11] A faixa do E8 era um máximo disfarçado.
+
+    Ela fazia min(local, autor) a max(oficial, autor): dava certo só porque o oficial é, hoje,
+    o mais alto. Se o anotador local passasse o oficial, o teto sumia do intervalo.
+    """
+
+    def test_faixa_cobre_os_tres_mesmo_com_o_local_no_topo(self):
+        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.99, 'acuracia_jev_sob_meu_gabarito': 0.90}
+        adj = {'gabarito_adjudicado': {'acuracia': 0.95}}
+        faixa, valores = placar.faixa_dos_gabaritos(e8, adj)
+        self.assertEqual(set(valores.values()), {0.99, 0.90, 0.95})
+        self.assertIn('99,0%', faixa)
+        self.assertIn('90,0%', faixa)
+
+    def test_faixa_vira_valor_unico_quando_todos_coincidem(self):
+        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.95, 'acuracia_jev_sob_meu_gabarito': 0.95}
+        adj = {'gabarito_adjudicado': {'acuracia': 0.95}}
+        faixa, _ = placar.faixa_dos_gabaritos(e8, adj)
+        self.assertNotIn(' a ', faixa)
+
+    def test_sem_adjudicacao_a_faixa_usa_os_dois_que_existem(self):
+        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.88, 'acuracia_jev_sob_meu_gabarito': 0.95}
+        _, valores = placar.faixa_dos_gabaritos(e8, None)
+        self.assertNotIn('oficial', valores)
+
+
+@unittest.skipUnless(tem_relatorios(), 'requer os relatórios de execução')
+class RelatorioFinalBateComOsDados(unittest.TestCase):
+    """O markdown também é uma superfície do painel, e já afirmou uma faixa que não existia."""
+
+    def test_faixa_citada_no_relatorio_existe_nos_dados(self):
+        e8 = json.loads((ROOT / 'runs/e8-anotador/relatorio.json').read_text(encoding='utf-8'))
+        adj = json.loads((ROOT / 'runs/e8-anotador/adjudicacao.json').read_text(encoding='utf-8'))
+        _, valores = placar.faixa_dos_gabaritos(e8, adj)
+        texto = (ROOT / 'docs/RELATORIO-FINAL-JEV.md').read_text(encoding='utf-8')
+        baixo = f'{min(valores.values())}'.replace('.', ',')
+        alto = f'{max(valores.values())}'.replace('.', ',')
+        self.assertIn(f'{baixo} a {alto}', texto)
+        # Nenhum numero fora da lista pode ser apresentado como extremo da faixa.
+        for proibido in ('0,9750 a', 'a 0,9750'):
+            ocorrencias = texto.count(proibido)
+            self.assertEqual(ocorrencias, 0, f'{proibido} aparece {ocorrencias} vez(es)')
