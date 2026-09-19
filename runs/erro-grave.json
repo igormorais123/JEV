@@ -228,6 +228,92 @@
      "familias": 10
     }
    }
+  },
+  "desempate (E11)": {
+   "autor": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0487,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.1391,
+     "casos": 60,
+     "familias": 20
+    }
+   },
+   "anotador local": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "dsp-d01-02",
+      "dsp-d03-01",
+      "dsp-d06-03",
+      "dsp-d12-01",
+      "dsp-d16-01"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0487,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.1391,
+     "casos": 60,
+     "familias": 20
+    }
+   },
+   "oficial": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0487,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.1391,
+     "casos": 60,
+     "familias": 20
+    }
+   }
+  },
+  "replicação (E12)": {
+   "autor": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0327,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.095,
+     "casos": 90,
+     "familias": 30
+    }
+   },
+   "anotador local": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [
+      "rep-p05-01",
+      "rep-p09-01",
+      "rep-p10-01"
+     ],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0327,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.095,
+     "casos": 90,
+     "familias": 30
+    }
+   },
+   "oficial": {
+    "jev": {
+     "falso_cancelar": [],
+     "cancelar_perdido": [],
+     "taxa_por_caso": 0.0,
+     "limite_superior_por_caso": 0.0327,
+     "familias_com_erro_grave": [],
+     "limite_superior_por_familia": 0.095,
+     "casos": 90,
+     "familias": 30
+    }
+   }
   }
  }
 }

@@ -1040,24 +1040,29 @@ def montar():
         # classe `cancelar` dispara acao irreversivel. Zero observado nao e zero: o teto vem
         # junto, no mesmo cartao, porque e ele que diz o que a amostra nao consegue excluir.
         total_falsos = teto = 0.0
-        conjuntos, falsos_regra = [], 0
+        conjuntos, falsos_regra, total_casos, casos_com_regra = [], 0, 0, 0
         for nome, bloco in grave['por_conjunto'].items():
             pior = max(bloco.values(), key=lambda b: len(b['jev']['falso_cancelar']))
             total_falsos += len(pior['jev']['falso_cancelar'])
             teto = max(teto, pior['jev']['limite_superior_por_familia'])
-            falsos_regra += max(len(b['regra']['falso_cancelar'])
-                                for b in bloco.values() if 'regra' in b)
+            total_casos += pior['jev']['casos']
+            com_regra = [b for b in bloco.values() if 'regra' in b]
+            if com_regra:
+                falsos_regra += max(len(b['regra']['falso_cancelar']) for b in com_regra)
+                casos_com_regra += pior['jev']['casos']
             conjuntos.append(f"{nome} {pior['jev']['casos']} casos")
         cartoes.append(cartao(
             'egrave', 'Erro grave: `cancelar` indevido',
-            f'{int(total_falsos)} em 80 casos',
-            f'regra congelada {falsos_regra} em 80',
+            # O denominador era 80 cravado no texto: com os corpora novos ele mentia.
+            str(int(total_falsos)) + ' em ' + str(total_casos) + ' casos',
+            'regra congelada ' + str(falsos_regra) + ' em ' + str(casos_com_regra),
             ('Erro grave é responder `cancelar` onde o gabarito diz outra coisa: dispara ação '
              'irreversível no atendimento. O pré-registro do E1 mandava reportá-lo separado da '
-             f'acurácia média desde o início, e isto é a primeira vez que ele aparece. O Jev não '
-             f'cometeu nenhum, **sob os três gabaritos**, nos 80 casos. Zero observado não é zero '
-             f'verdadeiro: com 10 famílias por conjunto, o limite superior de 95% é '
-             f'{pct(teto)} por família. A regra congelada comete {falsos_regra}.'),
+             'acurácia média desde o início. O Jev cometeu ' + str(int(total_falsos))
+             + ', **sob os três gabaritos**, nos ' + str(total_casos) + ' casos classificados do '
+             'estudo. Zero observado não é zero verdadeiro: o limite superior de 95% é '
+             + pct(teto) + ' por família. A regra congelada, onde existe comparação com ela, '
+             'comete ' + str(falsos_regra) + ' em ' + str(casos_com_regra) + '.'),
             fonte_com_gabarito(' · '.join(conjuntos), 'faixa')))
 
     # O saldo vale o do relatorio mais recente que registrou a carteira.

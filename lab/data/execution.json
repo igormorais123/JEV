@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 99,
- "updated_at": "2026-09-19T13:05:30.934823+00:00",
+ "revision": 100,
+ "updated_at": "2026-09-19T13:06:58.156431+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -35789,7 +35789,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T13:05:30.934264+00:00",
+  "atualizado_em": "2026-09-19T13:06:58.155935+00:00",
   "veredito": {
    "titulo": "Com mais famílias e quatro comparadores, a vantagem do Jev continua dependendo de quem escreveu o gabarito",
    "texto": "A replicação foi feita e não mudou a natureza do problema, só o tamanho da amostra. Em corpus novo de 90 casos e 30 famílias, declaradas antes de o primeiro caso ser escrito, contra **quatro** comparadores econômicos de quatro fornecedores, o Jev acerta 98,9% e supera todos eles no gabarito adjudicado, por 7,8% a 14,4%, com todos os IC95 acima de zero. Os 10 casos em que eu e o anotador independente discordamos foram a um terceiro juiz cego, de outro fornecedor, que confirmou meu gabarito em 10 de 10. **Sob o gabarito do anotador independente, que é o único que não passou pela minha mão, a mesma comparação vai de 0,0% a 8,9%, e o intervalo contém zero contra mais de um comparador.** Era essa a divergência que o E11 tinha encontrado com 20 famílias e um comparador só, e que este experimento existia para resolver com mais poder. Ela não era falta de amostra: triplicar as famílias e quadruplicar os comparadores não a moveu. O que decide o resultado não é quanto se mede, é quem escreveu o rótulo — e os três anotadores deste estudo continuam sendo modelos de linguagem.",
@@ -35953,10 +35953,10 @@
    {
     "chave": "egrave",
     "titulo": "Erro grave: `cancelar` indevido",
-    "valor": "0 em 80 casos",
+    "valor": "0 em 230 casos",
     "comparacao": "regra congelada 10 em 80",
-    "leitura": "Erro grave é responder `cancelar` onde o gabarito diz outra coisa: dispara ação irreversível no atendimento. O pré-registro do E1 mandava reportá-lo separado da acurácia média desde o início, e isto é a primeira vez que ele aparece. O Jev não cometeu nenhum, **sob os três gabaritos**, nos 80 casos. Zero observado não é zero verdadeiro: com 10 famílias por conjunto, o limite superior de 95% é 25,9% por família. A regra congelada comete 10.",
-    "fonte": "piloto (E1) 40 casos · confirmação (E7) 40 casos; faixa entre os gabaritos",
+    "leitura": "Erro grave é responder `cancelar` onde o gabarito diz outra coisa: dispara ação irreversível no atendimento. O pré-registro do E1 mandava reportá-lo separado da acurácia média desde o início. O Jev cometeu 0, **sob os três gabaritos**, nos 230 casos classificados do estudo. Zero observado não é zero verdadeiro: o limite superior de 95% é 25,9% por família. A regra congelada, onde existe comparação com ela, comete 10 em 80.",
+    "fonte": "piloto (E1) 40 casos · confirmação (E7) 40 casos · desempate (E11) 60 casos · replicação (E12) 90 casos; faixa entre os gabaritos",
     "estado": "pronto"
    }
   ],

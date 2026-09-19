@@ -349,12 +349,22 @@ a métrica que o próprio protocolo classificou como irreversível ficou fora do
 | confirmação (E7) | anotador local | **0** | 1 | 25,9% | 5 |
 | confirmação (E7) | autor | **0** | 0 | 25,9% | 6 |
 | confirmação (E7) | oficial | **0** | 0 | 25,9% | 6 |
+| desempate (E11) | anotador local | **0** | 5 | 13,9% | 20 |
+| desempate (E11) | autor e oficial | **0** | 0 | 13,9% | 20 |
+| replicação (E12) | anotador local | **0** | 3 | 9,5% | 30 |
+| replicação (E12) | autor e oficial | **0** | 0 | 9,5% | 30 |
 
-**O Jev não cometeu nenhum erro grave nos 80 casos, sob nenhum dos três gabaritos.** A regra
-congelada comete 10. Este é o resultado mais favorável ao modelo em todo o estudo, e é
-exatamente por isso que o teto vai na mesma tabela: com 10 famílias por conjunto, zero erro
-observado só permite afirmar que a taxa por família está **abaixo de 25,9% com 95% de
-confiança**. Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma
+**O Jev não cometeu nenhum erro grave nos 230 casos classificados do estudo, sob nenhum dos três
+gabaritos.** A regra congelada comete 10 nos 80 casos em que existe comparação com ela. Este é o
+resultado mais favorável ao modelo em todo o estudo, e é exatamente por isso que o teto vai na
+mesma tabela: zero erro observado só permite afirmar que a taxa por família está **abaixo de
+25,9% com 95% de confiança** nos conjuntos de 10 famílias, e abaixo de 9,5% no corpus de 30
+famílias do E12 — que é o mais apertado que este estudo conseguiu, e ainda assim é um em cada
+dez.
+
+Os quatro comparadores econômicos do E12, no mesmo corpus e no gabarito oficial, cometem erro
+grave: llama-3.1-8b, 2 falsos `cancelar` e 2 perdidos; gemma-3-12b, 2 e 1; gpt-oss-20b, 1 e 5. O
+mistral-nemo, como o Jev, não comete nenhum — e custa um quarto do preço dele. Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma
 garantia operacional. O que este número autoriza dizer é que o erro irreversível não apareceu
 onde a regra congelada o comete dez vezes; o que ele não autoriza é prometer que não aparecerá.
 

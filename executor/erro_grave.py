@@ -27,7 +27,12 @@ CLASSE_IRREVERSIVEL = 'cancelar'
 # Os rotulos saem daqui direto para o painel, entao vao acentuados: o teste de localizacao
 # pt-BR reprova qualquer texto publicado sem acento, e reprovou este.
 RELATORIOS = {'piloto (E1)': 'runs/e1-triagem/relatorio.json',
-              'confirmação (E7)': 'runs/e7-confirmacao/relatorio.json'}
+              'confirmação (E7)': 'runs/e7-confirmacao/relatorio.json',
+              # Os corpora novos entram porque a metrica e pre-registrada e vale para todo caso
+              # classificado; deixa-los de fora mantinha o cartao do painel preso em 80 casos
+              # enquanto o estudo ja tinha 230.
+              'desempate (E11)': 'runs/e11-desempate/relatorio.json',
+              'replicação (E12)': 'runs/e12-replicacao/relatorio.json'}
 
 
 def gabaritos():
