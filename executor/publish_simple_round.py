@@ -51,7 +51,9 @@ def main():
             'started_at': record['at'], 'finished_at': now,
             'notes': note_for(record)[:6000], 'attempts': [], 'decisions': [],
         })
-        status = {'passed': 'done', 'failed': 'running', 'blocked': 'blocked'}[record['status']]
+        # Passar na suite offline nao conclui a rodada simples: o plano exige inferencia
+        # real do componente. So 'blocked' e terminal aqui.
+        status = {'passed': 'running', 'failed': 'running', 'blocked': 'blocked'}[record['status']]
         progress = current['system_progress'].setdefault(record['id'], {})
         progress['simple'] = status
         progress['notes'] = note_for(record)[:6000]

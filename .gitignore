@@ -47,3 +47,7 @@ lab/data/*.tmp
 # Corpus versionado como evidencia (o resto de data/ continua ignorado)
 !data/corpus/
 !data/corpus/**
+
+# Screenshots de verificacao do painel
+*.png
+.playwright-mcp/
