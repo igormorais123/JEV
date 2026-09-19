@@ -43,6 +43,40 @@ class CoerenciaDoPlacar(unittest.TestCase):
         self.assertIn(str(politica['casos']), veredito)
         self.assertIn(str(politica['casos']), cartao)
 
+    def test_custo_do_veredito_sai_da_mesma_particao_da_cobertura(self):
+        """A quimera da décima rodada: 87,5% de cobertura com o preço de quem cobre 80%.
+
+        Custo por decisão depende da fração enviada a revisão humana, que é justamente o que a
+        cobertura mede. Misturar as duas partições promete uma política que não existe em
+        relatório nenhum.
+        """
+        e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
+        politica = placar.politica_de_referencia(e9)
+        tudo = placar.politica_de_referencia(e9, corte=1.01)
+        self.assertIsNotNone(tudo, 'a partição precisa da política de revisar tudo para comparar')
+        veredito = self.bloco['veredito']['texto']
+        self.assertIn(f"{politica['custo_por_decisao_usd']:.3f}", veredito)
+        self.assertIn(f"{tudo['custo_por_decisao_usd']:.3f}", veredito)
+        uniao = next(p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90)
+        if abs(uniao['custo_por_decisao_usd'] - politica['custo_por_decisao_usd']) > 1e-9:
+            self.assertNotIn(f"{uniao['custo_por_decisao_usd']:.3f}", veredito,
+                             'o custo da união não pode aparecer junto da cobertura da confirmação')
+
+    def test_cartao_sem_divergencia_de_gabarito_nao_fala_em_faixa(self):
+        from executor import gabarito
+        d1 = gabarito.desempenho('runs/e1-triagem/relatorio.json')
+        if d1['autor']['acuracia'] != d1['oficial']['acuracia']:
+            self.skipTest('os gabaritos divergem neste conjunto')
+        self.assertNotIn('faixa', self.cartoes['e1']['fonte'])
+        self.assertNotIn(' a ', self.cartoes['e1']['valor'])
+
+    def test_cartao_do_gabarito_mostra_a_faixa_entre_os_tres(self):
+        """O E8 estampava 96,2%, o mais alto dos três gabaritos."""
+        e8 = json.loads((ROOT / 'runs/e8-anotador/relatorio.json').read_text(encoding='utf-8'))
+        valor = self.cartoes['e8']['valor']
+        self.assertIn(' a ', valor)
+        self.assertIn(f"{e8['acuracia_jev_sob_gabarito_do_outro'] * 100:.1f}", valor)
+
     def test_politica_de_referencia_nao_cai_para_a_uniao(self):
         """Sem a partição, o painel tem de ficar em silêncio, não trocar o número."""
         e9 = {'politicas_de_aceitacao': [{'corte': 0.90, 'cobertura': 0.8, 'casos': 80,

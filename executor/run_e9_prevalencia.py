@@ -166,8 +166,10 @@ def main():
                            'e a da particao de confirmacao; a uniao esta aqui so por ter mais casos.'),
         'por_particao': {nome: {'casos': len(grupo),
                                 'acuracia_por_classe': acuracia_por_classe(grupo),
+                                # Inclui 0.0 (aceitar tudo) e 1.01 (revisar tudo) para que o
+                                # custo comparado saia SEMPRE da mesma particao da cobertura.
                                 'politicas': [aceitacao(grupo, corte)
-                                              for corte in (0.90, 0.95, 0.99)]}
+                                              for corte in (0.0, 0.90, 0.95, 0.99, 1.01)]}
                          for nome, grupo in por_particao.items()},
         'acuracia_por_classe': taxas,
         'projecoes_por_prevalencia': projecoes,

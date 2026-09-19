@@ -64,6 +64,7 @@ def fonte_com_gabarito(fonte, qual='autor'):
                               'entre os aceitos é a mesma nos dois gabaritos'),
                'oficial': 'gabarito oficial (com adjudicação)',
                'coincidem': 'os dois gabaritos coincidem neste corpus',
+               'faixa': 'faixa entre os dois gabaritos',
                'nao-se-aplica': 'sem gabarito de classe'}
     return f"{fonte}; {rotulos[qual]}"
 
@@ -125,7 +126,7 @@ def pendencias(adj):
     return lista
 
 
-def politica_de_referencia(e9):
+def politica_de_referencia(e9, corte=0.90):
     """A politica do corte 0,90 na particao de confirmacao. UMA, para o painel inteiro.
 
     O veredito lia a confirmacao e o cartao do E9 lia a uniao, entao o mesmo painel publicava
@@ -135,7 +136,7 @@ def politica_de_referencia(e9):
     if not e9:
         return None
     confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)') or {}
-    return next((p for p in confirmacao.get('politicas', []) if p['corte'] == 0.90), None)
+    return next((p for p in confirmacao.get('politicas', []) if p['corte'] == corte), None)
 
 
 def nota_de_confianca(adj, e9=None):
@@ -197,8 +198,10 @@ def texto_do_veredito(e9, e6):
     # A particao de confirmacao e a que vale para decidir: sao os casos que nao guiaram o
     # desenho. A uniao entra so na conta de custo, que nao depende de particao.
     politica = politica_de_referencia(e9)
-    custo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
-    tudo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 1.01), None)
+    # O custo TEM de sair da mesma particao da cobertura. Enquanto a cobertura vinha da
+    # confirmacao e o custo da uniao, o painel prometia 87,5% de cobertura pelo preco de uma
+    # politica que cobre 80% — uma linha que nao existe em relatorio nenhum.
+    tudo = politica_de_referencia(e9, corte=1.01)
     partes = []
     if politica and politica['erros_entre_aceitos'] == 0:
         partes.append(f"aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre "
@@ -207,9 +210,10 @@ def texto_do_veredito(e9, e6):
     elif politica:
         partes.append(f"no corte 0,90 a politica cobre {politica['cobertura'] * 100:.0f}% dos casos, "
                       f"mas deixa passar {politica['erros_entre_aceitos']} erro(s): o corte precisa subir")
-    if custo and tudo:
-        partes.append(f"o custo por decisao cai de US$ {tudo['custo_por_decisao_usd']:.3f} para "
-                      f"US$ {custo['custo_por_decisao_usd']:.3f}, com tempo humano declarado e "
+    if politica and tudo:
+        partes.append(f"nessa mesma particao o custo por decisao cai de "
+                      f"US$ {tudo['custo_por_decisao_usd']:.3f} para "
+                      f"US$ {politica['custo_por_decisao_usd']:.3f}, com tempo humano declarado e "
                       'nunca cronometrado')
     if e6 and e6['n_instaveis']:
         partes.append(f"o que impede automatizar tudo e o nao determinismo: {e6['n_instaveis']} caso "
@@ -247,8 +251,10 @@ def montar():
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias, "
              'no gabarito do autor como pré-registrado.' if ic else
              'Diferença ainda sem intervalo calculado.'),
-            f"{programados_e1} casos programados, {e1['jev']['n_familias']} famílias; "
-            'faixa entre os dois gabaritos'))
+            fonte_com_gabarito(f"{programados_e1} casos programados, "
+                               f"{e1['jev']['n_familias']} famílias",
+                               'faixa' if d1['autor']['acuracia'] != d1['oficial']['acuracia']
+                               else 'coincidem')))
     else:
         cartoes.append(ausente('e1', 'Triagem de atendimento (E1)', 'Piloto não executado.', '—'))
 
@@ -353,8 +359,10 @@ def montar():
              f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
              '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
              'armadilhas lexicais. ' + leitura_dos_gabaritos(d7, 'E7')),
-            f"{d7['casos_programados']} casos programados, "
-            f"{e7['jev']['n_familias']} famílias novas; faixa entre os dois gabaritos"))
+            fonte_com_gabarito(f"{d7['casos_programados']} casos programados, "
+                               f"{e7['jev']['n_familias']} famílias novas",
+                               'faixa' if d7['autor']['acuracia'] != d7['oficial']['acuracia']
+                               else 'coincidem')))
     else:
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
                                'Corpus de confirmação ainda não executado.', '—'))
@@ -370,8 +378,12 @@ def montar():
             placar_adj = adj['placar']
             g = adj['gabarito_adjudicado']
             cartoes.append(cartao(
-                'e8', 'Gabarito adjudicado (E8)', pct(g['acuracia']),
-                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} no gabarito oficial do estudo",
+                'e8', 'Gabarito adjudicado (E8)',
+                f"{pct(min(e8['acuracia_jev_sob_gabarito_do_outro'], e8['acuracia_jev_sob_meu_gabarito']))}"
+                f" a {pct(max(g['acuracia'], e8['acuracia_jev_sob_meu_gabarito']))}",
+                f"{g['acertos']}/{g['casos_com_resposta_do_jev']} no oficial · "
+                f"autor {pct(e8['acuracia_jev_sob_meu_gabarito'])} · "
+                f"anotador local {pct(e8['acuracia_jev_sob_gabarito_do_outro'])}",
                 (f"Os {len(adj['casos'])} casos em disputa foram julgados por um terceiro juiz cego, que "
                  'recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito '
                  f"do autor em {placar_adj['confirmam_o_autor']} e o do anotador local em "
@@ -390,7 +402,8 @@ def montar():
              f"{len(apoiam_gabarito)} ({', '.join(a['case_id'] for a in apoiam_gabarito)}) e fica do "
              f"lado do Jev em {len(apoiam_jev)} ({', '.join(a['case_id'] for a in apoiam_jev)}). "
              f"Sob o gabarito do outro anotador o Jev faz "
-             f"{pct(e8['acuracia_jev_sob_gabarito_do_outro'])}, não 95%. Nas demais divergências foi "
+             f"{pct(e8['acuracia_jev_sob_gabarito_do_outro'])}, e não "
+             f"{pct(e8['acuracia_jev_sob_meu_gabarito'])}. Nas demais divergências foi "
              'o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa '
              'alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.'),
             f"{e8['anotador_independente']} local, cego ao gabarito e à resposta do Jev"))

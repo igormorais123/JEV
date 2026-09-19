@@ -23,8 +23,11 @@ observado. Os quatro erros do modelo têm confiança abaixo de 0,90.
 **A base é pequena e o número precisa ser lido assim:** são 4 erros em 80 casos. "Nenhum erro
 entre os aceitos" descreve o que foi observado, não uma garantia; a seção 6 traz o limite
 superior que sobra depois de respeitar o agrupamento por família. Sob os parâmetros da seção 7 —
-declarados, nunca cronometrados — a política leva o custo por decisão de US$ 0,400 para
-US$ 0,080.
+declarados, nunca cronometrados — e **na mesma partição de confirmação**, a política leva o custo
+por decisão de US$ 0.400 para
+US$ 0.050. Na união dos 80 casos, onde a cobertura cai para
+80%, o mesmo corte custa US$ 0.080. Citar a cobertura de uma
+partição com o preço da outra descreveria uma política que não existe.
 
 **O que impede a recomendação de ir além disso:** o modelo não é determinístico. O mesmo caso,
 sozinho e repetido cinco vezes, pode mudar de resposta. Um sistema que decide sozinho precisa
@@ -39,7 +42,8 @@ exibe a faixa em vez do melhor caso.
 mostrou que o painel havia começado a apresentar duas lacunas conhecidas como se estivessem
 fechadas. Alta para a comparação contra os comparadores congelados — é pareada, pré-registrada e
 replicou fora do corpus piloto. Baixa para qualquer afirmação operacional: 80 casos construídos
-por mim, gabarito de um anotador humano (também eu), e um corte apoiado em 4 erros.
+por mim, gabarito de um anotador humano (também eu), e um corte apoiado em 3 erros no gabarito
+oficial — 4, no gabarito do autor.
 
 ---
 
@@ -276,9 +280,11 @@ Latência mediana 396 ms no OpenRouter.
 **Declarado, não medido:** 2 minutos por revisão humana, US$ 12,00 por hora. Nenhum cronômetro
 foi usado; trocar esses parâmetros muda toda a tabela abaixo.
 
-A tabela abaixo usa a **união dos 80 casos**. A partição de confirmação sozinha dá cobertura
-maior no mesmo corte (87,5% contra 80,0%), então a linha do corte 0,90 aqui é a leitura
-conservadora, não a otimista.
+A tabela abaixo usa a **união dos 80 casos**, que é a leitura conservadora: a partição de
+confirmação sozinha dá cobertura maior no mesmo corte (87,5% contra 80,0%) e, por isso mesmo,
+custo menor (US$ 0.050 contra
+US$ 0.080). **Cobertura e custo têm de ser lidos sempre na
+mesma partição** — foi essa mistura que a décima rodada de revisão encontrou no painel.
 
 | Política | Cobertura automática | Erros entre aceitos | Custo por decisão | Economia |
 |---|---|---|---|---|
@@ -314,7 +320,7 @@ ela e o corte 0,90 é o preço de não errar: US$ 0,08 por decisão.
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **nove rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **dez rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
 Grok 4.6 via Cursor). As quatro primeiras encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -390,8 +396,19 @@ o olho pega o mais alto e a ressalva vira letra miúda. A nota de confiança pas
 base da política que recomenda, e o título do veredito usa a mesma função de política do resto do
 painel.
 
+A décima rodada não achou defeito financeiro e achou uma promessa impossível no painel: o
+veredito oferecia a **cobertura da partição de confirmação (87,5%) com o custo da união
+(US$ 0,080)**. Custo por decisão depende da fração que vai para revisão humana, que é justamente
+o que a cobertura mede; as duas coisas têm de sair da mesma partição. Ou 87,5% a US$ 0,050, ou
+80% a US$ 0,080. O meio-termo era o número preferido de cada coluna.
+
+Corrigido: `politica_de_referencia()` passou a devolver também a política de revisar tudo da
+mesma partição, o veredito usa as duas, e um teste quebra se o custo da união aparecer ao lado da
+cobertura da confirmação. Na mesma rodada, o cartão do E8 deixou de estampar 96,2% — o mais alto
+dos três gabaritos — e passou a mostrar a faixa 88,8% a 96,2%, como o E7 já fazia.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 120 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 123 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---
