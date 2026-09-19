@@ -182,6 +182,54 @@ def e7_run(rel, gold, agora):
     }
 
 
+def tentativas_orfas_run(estado, agora):
+    """Tentativas que existem no ledger e nao aparecem no painel.
+
+    O painel somava US$ 0,017525 e o ledger US$ 0,018174: a diferenca eram as chamadas do E4
+    (ranqueamento, que nao publica decisoes) e tres sondagens de contrato. Dois numeros de custo
+    no mesmo painel e exatamente a contradicao que a oitava revisao cobrou, entao aqui o custo
+    fecha com o ledger. Sao tentativas sem decisao: entram pelo custo, nao pela metrica.
+    """
+    import sqlite3
+    caminho = ROOT / 'runs' / 'ledger.sqlite3'
+    if not caminho.exists():
+        return None
+    ja_publicadas = {a['id'] for r in estado['runs'] for a in r['attempts']}
+    db = sqlite3.connect(str(caminho))
+    db.row_factory = sqlite3.Row
+    try:
+        linhas = [r for r in db.execute(
+            'SELECT ab.attempt_id, ab.block_id, ab.settled_nusd, ab.reserved_nusd,'
+            ' a.status, a.latency_ms FROM attempt_budget ab'
+            ' LEFT JOIN attempts a ON a.attempt_id = ab.attempt_id')
+            if r['attempt_id'] not in ja_publicadas]
+    finally:
+        db.close()
+    if not linhas:
+        return None
+    tentativas = []
+    for r in linhas:
+        custo = r['settled_nusd'] if r['settled_nusd'] is not None else r['reserved_nusd']
+        tentativas.append({'id': r['attempt_id'],
+                           'status': 'success' if r['status'] == 'success' else 'error',
+                           'latency_ms': r['latency_ms'], 'input_tokens': None,
+                           'output_tokens': None, 'cost_usd': (custo or 0) / 1e9,
+                           'reserved_usd': (r['reserved_nusd'] or 0) / 1e9, 'cache_hit': False})
+    blocos = sorted({r['block_id'] for r in linhas})
+    return {
+        'id': 'tentativas-sem-decisao-publicada', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': agora, 'finished_at': agora,
+        'provider': 'openrouter', 'model': 'typesafe/jev-1.13',
+        'dataset': f"tentativas dos blocos {', '.join(blocos)}, lidas do ledger",
+        'notes': ('Chamadas pagas que nao viram decisao no painel: o E4 e ranqueamento e nao entra '
+                  'no formato de classificacao, e as sondagens de contrato nao tinham gabarito. '
+                  'Elas entram aqui para que o custo somado no painel seja o mesmo do ledger, em vez '
+                  'de dois numeros de custo no mesmo lugar. Sem decisoes: nao afetam nenhuma metrica.'),
+        'attempts': tentativas, 'decisions': [],
+    }
+
+
 def publicar():
     gold = gabarito()
     agora = datetime.now(timezone.utc).isoformat()
@@ -199,6 +247,11 @@ def publicar():
     por_id = {r['id']: r for r in estado['runs']}
     for run in novos:
         por_id[run['id']] = run
+    estado['runs'] = list(por_id.values())
+    orfas = tentativas_orfas_run(estado, agora)
+    if orfas:
+        novos.append(orfas)
+        por_id[orfas['id']] = orfas
     estado['runs'] = list(por_id.values())
     estado['revision'] = int(estado.get('revision', 0)) + 1
     estado['updated_at'] = agora

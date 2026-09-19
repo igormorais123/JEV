@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 44,
- "updated_at": "2026-09-19T05:15:36.258550+00:00",
+ "revision": 46,
+ "updated_at": "2026-09-19T05:17:17.339520+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18310,6 +18310,212 @@
      "group_id": "G10-ambiguidade-resolvida-no-fim"
     }
    ]
+  },
+  {
+   "id": "tentativas-sem-decisao-publicada",
+   "system_id": "S01",
+   "phase": "pilot",
+   "evidence": "live_component",
+   "status": "completed",
+   "started_at": "2026-09-19T05:17:04.480497+00:00",
+   "finished_at": "2026-09-19T05:17:04.480497+00:00",
+   "provider": "openrouter",
+   "model": "typesafe/jev-1.13",
+   "dataset": "tentativas dos blocos e4-ressalvas, sondagem, lidas do ledger",
+   "notes": "Chamadas pagas que nao viram decisao no painel: o E4 e ranqueamento e nao entra no formato de classificacao, e as sondagens de contrato nao tinham gabarito. Elas entram aqui para que o custo somado no painel seja o mesmo do ledger, em vez de dois numeros de custo no mesmo lugar. Sem decisoes: nao afetam nenhuma metrica.",
+   "attempts": [
+    {
+     "id": "31a4a985-bbd9-4e72-b646-10f02c460902",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 1.3818e-05,
+     "reserved_usd": 7.728e-06,
+     "cache_hit": false
+    },
+    {
+     "id": "aa3f38bb-601c-4e8c-8fe3-f71a2e253026",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 1.491e-05,
+     "reserved_usd": 8.946e-06,
+     "cache_hit": false
+    },
+    {
+     "id": "4b22f8ea-0af4-48bb-851f-418e625c1d48",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 1.239e-05,
+     "reserved_usd": 6.342e-06,
+     "cache_hit": false
+    },
+    {
+     "id": "fb9eb581-90cf-44c0-9314-5b64a621e17f",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8598e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "0c7c329c-3e39-4b43-87d3-acd9b86025cd",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8556e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "82b1f0f7-f992-4341-a8eb-37daad5ab69e",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8262e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "3e89dbb9-03bb-4311-b04b-c39fbc9e4ca6",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7506e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "6a44966f-eb62-4bbc-a8c4-9fb98e97f0f3",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7632e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "09e6a1e1-c12c-4180-bca2-9748a07cfaec",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7506e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "0bb0e781-b447-4b60-bf0c-d3bb9e3ac576",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.822e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "12e4ea50-07a1-4d3a-a24e-be3e9c389412",
+     "status": "error",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7674e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "a0351613-8c8f-4a4b-9837-4ff25da44c31",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8598e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "96a18b0e-9833-4c9b-b28e-26a4e1784924",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8556e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "0acf729b-82bc-485c-adf2-39aee70ad928",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.8262e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "6a37fe60-9b5b-48f5-843d-0bd8d60f1d48",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7506e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "360b0df9-7824-4723-a6f4-bb41397d6013",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7632e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "9386493c-21d1-47cf-9be2-d630e32970ce",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7506e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "7484ad1f-2a55-4d86-9de2-36087880c926",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.822e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    },
+    {
+     "id": "15c7eb24-6920-4f17-89ce-0170aeb2ff7c",
+     "status": "success",
+     "latency_ms": null,
+     "input_tokens": null,
+     "output_tokens": null,
+     "cost_usd": 3.7674e-05,
+     "reserved_usd": 0.001344,
+     "cache_hit": false
+    }
+   ],
+   "decisions": []
   }
  ],
  "events": [
@@ -18550,7 +18756,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:15:36.258285+00:00",
+  "atualizado_em": "2026-09-19T05:17:17.339334+00:00",
   "veredito": {
    "titulo": "Corte de confianca em 0,90 com revisao humana do resto",
    "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
