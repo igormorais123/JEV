@@ -101,6 +101,22 @@ vantagem cresceu porque o comparador piorou, não porque o Jev melhorou. O Jev f
 0,975 (dois casos); a regra caiu de 0,600 para 0,325, porque escrevi famílias inteiras contra
 casamento de palavras-chave. A comparação honesta entre corpora é a do Jev consigo mesmo.
 
+### 3.1.1 O mesmo resultado sob os três gabaritos
+
+Existem três gabaritos para estes casos, e eles não dão o mesmo número. Apresentar um só, sem
+dizer qual, foi o defeito que a décima segunda rodada de revisão encontrou no painel.
+
+| Conjunto | Anotador independente | Meu gabarito | Adjudicado | Casos em disputa |
+|---|---|---|---|---|
+| E1 piloto (40 casos) | 0,875 | 0,925 | 0,925 | 4 |
+| E7 confirmação (40 casos) | 0,9 | 0,975 | 1 | 5 |
+| Os 80 juntos | 0,8875 | 0,95 | 0,9625 | 9 |
+
+O gabarito do anotador independente é o mais severo dos três, e ele **não** é o menos defensável:
+é o único que não passou pela minha mão. Ele erra de formas próprias — em 6 das 9 divergências
+viu ação onde o enunciado pedia informação — mas citar só os outros dois seria escolher o
+gabarito depois de ver o resultado. O painel exibe a faixa completa em cada cartão.
+
 ### 3.2 Ressalvas e exceções (E4)
 
 Oito consultas, cinco candidatos cada, com ressalvas críticas plantadas. Perder uma ressalva no
@@ -342,7 +358,7 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
 
 ## 9. Controle financeiro e integridade do processo
 
-O controle de gastos foi tratado como código crítico e passou por **doze rodadas de revisão
+O controle de gastos foi tratado como código crítico e passou por **treze rodadas de revisão
 independente**, todas conduzidas por modelos de outros fornecedores (gpt-6-astra via Codex e
 Grok 4.6 via Cursor). As quatro primeiras encontraram
 mais de 20 defeitos de prioridade 1, e — como o protocolo da casa prevê — as correções de cada
@@ -436,8 +452,27 @@ ficava de fora dos cartões que se lê primeiro. O rótulo que deveria denunciar
 coisa errada: se a adjudicação mudou algum caso, e não se os anotadores discordaram. Com essa
 pergunta, o piloto aparecia como unânime tendo quatro casos em disputa dentro dele.
 
+A décima terceira rodada trocou de método: em vez de reler o código, **mutou os dados** e
+perguntou quais cartões se mexiam. Zerando as nove divergências do anotador independente dentro
+de `runs/e8-anotador/relatorio.json`, os cartões do E1 e do E7 acompanharam e o do E8 ficou
+parado. Ele não recalculava nada — lia dois agregados gravados dentro do próprio relatório no
+momento em que aquele experimento rodou. Era o defeito da nona rodada, número velho em caixa
+nova, sobrevivendo justamente no cartão que fala de gabarito. A correção criou
+`gabarito.desempenho_do_estudo()`, que soma E1 e E7 sob os três gabaritos na hora da leitura, e
+o teste de mutação virou teste permanente.
+
+A mesma rodada achou um defeito que nenhum teste do painel podia achar, porque não estava no
+painel: **`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf` e `output/pdf/RELATORIO-FINAL-JEV.pdf`
+eram o mesmo arquivo**, byte a byte, e já tinham sido versionados assim. O gerador do relatório
+chamava a função que monta o PDF do plano e copiava o resultado; aquela função gravava sempre no
+caminho do plano e montava sempre a capa do plano. Cada build do relatório destruía o plano, e o
+relatório que foi entregue abria anunciando *"ensaios dos sistemas ainda pendentes"* — depois de
+todos os ensaios terminados. Capa e destino passaram a ser do chamador, o relatório ganhou capa
+própria com números vindos do placar, e dois testes novos exigem que cada PDF abra no documento
+que o nome dele promete.
+
 Estado final: **625 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018174462 de
-US$ 5,00, 132 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 136 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

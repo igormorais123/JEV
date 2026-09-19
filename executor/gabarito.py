@@ -127,3 +127,38 @@ def desempenho(relatorio, campo_resposta='jev'):
             'acertos': acertos_local,
             'acuracia': round(acertos_local / programados, 4) if programados else None}
     return saida
+
+
+def desempenho_do_estudo(relatorios=('runs/e1-triagem/relatorio.json',
+                                     'runs/e7-confirmacao/relatorio.json')):
+    """O desempenho sobre os 80 casos, somado a partir dos relatórios, sob os três gabaritos.
+
+    O cartão do E8 lia `acuracia_jev_sob_meu_gabarito` e `acuracia_jev_sob_gabarito_do_outro`,
+    dois números gravados dentro do relatório do E8 no momento em que ele rodou. Um teste de
+    mutação da décima terceira rodada trocou as anotações do anotador local e os cartões do E1 e
+    do E7 acompanharam; o do E8 não se mexeu. Era o mesmo defeito da nona rodada — número velho
+    numa caixa nova — sobrevivendo no único cartão que ninguém tinha remexido. Aqui a conta é
+    feita agora, das mesmas fontes que os outros cartões usam.
+    """
+    partes = [desempenho(r) for r in relatorios]
+    partes = [p for p in partes if p]
+    if not partes:
+        return None
+    total = sum(p['casos_programados'] for p in partes)
+    saida = {
+        'casos_programados': total,
+        'adjudicado': any(p['adjudicado'] for p in partes),
+        'casos_em_que_os_anotadores_divergem': sorted(
+            c for p in partes for c in p['casos_em_que_os_anotadores_divergem']),
+        'casos_deste_relatorio_que_mudaram': sorted(
+            c for p in partes for c in p['casos_deste_relatorio_que_mudaram']),
+    }
+    for chave in ('autor', 'oficial', 'anotador_local'):
+        if not all(p.get(chave) for p in partes):
+            continue
+        acertos = sum(p[chave]['acertos'] for p in partes)
+        saida[chave] = {'acertos': acertos,
+                        'acuracia': round(acertos / total, 4) if total else None}
+        if chave == 'oficial':
+            saida[chave]['erros'] = [e for p in partes for e in p['oficial']['erros']]
+    return saida

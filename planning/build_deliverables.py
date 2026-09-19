@@ -62,12 +62,42 @@ def footer(canvas,doc):
         canvas.line(46,height-37,width-46,height-37)
     canvas.setFillColor(MUTED)
     canvas.setFont('Regular',8)
-    canvas.drawString(46,26,'Planejamento + auditoria offline. Ensaios dos sistemas ainda pendentes.')
+    canvas.drawString(46,26,getattr(doc,'rodape','Planejamento + auditoria offline. Ensaios dos sistemas ainda pendentes.'))
     canvas.drawRightString(width-46,26,str(doc.page))
     canvas.restoreState()
 
 
-def build_pdf(markdown):
+CAPA_DO_PLANO = {
+    'destino': 'output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf',
+    'titulo_pdf': 'Jev - Plano científico de testes - Helena',
+    'kicker': 'HELENA  /  PESQUISA APLICADA  /  PLANO v1.0',
+    'titulo': 'Testar todos.<br/>Medir o que importa.',
+    'intro': ('Um plano científico para avaliar os 15 sistemas Jev e decidir onde há benefício '
+              'real no trabalho.'),
+    'metricas': [['15 sistemas', '96 decisões', 'US$ 0'],
+                 ['Rodadas simples e profundas', 'Histórico recalculado do PDF',
+                  'Inferência nova nesta etapa']],
+    'decisao': ('<b>Decisão proposta</b><br/>Reaproveitar a evidência do Hermes, criar casos '
+                'novos bem rotulados e comparar qualidade, custo e tempo no fluxo completo.'),
+    'nota': ('A interface e os documentos estão prontos. Os ensaios dos sistemas, o executor e o '
+             'bloqueio financeiro continuam como próximos passos do plano.'),
+    'data': ('18 de setembro de 2026<br/>Cenário financeiro conservador: US$ 1,997062454 '
+             'disponíveis dentro do teto total de US$ 5, incluindo o histórico reportado.'),
+    'rodape': 'Planejamento + auditoria offline. Ensaios dos sistemas ainda pendentes.',
+    'mapa': ('Comece pelas seções 1, 3, 7 e 8. A metodologia e o contrato de dados estão nas '
+             'seções 4 a 6 e 9. As fichas dos 15 sistemas encerram o documento.'),
+}
+
+
+def build_pdf(markdown, capa=None):
+    """Monta o PDF. `capa` decide o documento; sem ela, sai o plano científico.
+
+    [R13] Esta função gravava SEMPRE no caminho do plano e montava SEMPRE a capa do plano. O
+    gerador do relatório final chamava-a e copiava o resultado, o que destruía o PDF do plano a
+    cada build e ainda fazia o relatório abrir com a capa errada — dizendo "ensaios ainda
+    pendentes" depois dos ensaios terminados. Destino e capa agora são do chamador.
+    """
+    capa = {**CAPA_DO_PLANO, **(capa or {})}
     pdfmetrics.registerFont(TTFont('Regular',str(FONT_DIR/'segoeui.ttf')))
     pdfmetrics.registerFont(TTFont('Bold',str(FONT_DIR/'segoeuib.ttf')))
     pdfmetrics.registerFont(TTFont('Italic',str(FONT_DIR/'segoeuii.ttf')))
@@ -85,25 +115,26 @@ def build_pdf(markdown):
       'title':ParagraphStyle('TitleCover',fontName='Bold',fontSize=37,leading=43,textColor=INK,spaceAfter=24),
       'intro':ParagraphStyle('Intro',fontName='Regular',fontSize=14,leading=21,textColor=INK,spaceAfter=22),
     }
-    target=ROOT/'output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf'
+    target=ROOT/capa['destino']
     target.parent.mkdir(parents=True,exist_ok=True)
     doc=PlanDoc(str(target),pagesize=A4,leftMargin=46,rightMargin=46,topMargin=54,bottomMargin=48,
-        title='Jev - Plano científico de testes - Helena',author='Laboratório JEV / análise Helena')
+        title=capa['titulo_pdf'],author='Laboratório JEV / análise Helena')
+    doc.rodape=capa['rodape']
     frame=Frame(doc.leftMargin,doc.bottomMargin,doc.width,doc.height,id='normal')
     doc.addPageTemplates(PageTemplate(id='normal',frames=frame,onPage=footer))
-    story=[Spacer(1,47),Paragraph('HELENA  /  PESQUISA APLICADA  /  PLANO v1.0',styles['kicker']),
-        Paragraph('Testar todos.<br/>Medir o que importa.',styles['title']),
-        Paragraph('Um plano científico para avaliar os 15 sistemas Jev e decidir onde há benefício real no trabalho.',styles['intro'])]
-    metrics=[['15 sistemas','96 decisões','US$ 0'],['Rodadas simples e profundas','Histórico recalculado do PDF','Inferência nova nesta etapa']]
+    story=[Spacer(1,47),Paragraph(capa['kicker'],styles['kicker']),
+        Paragraph(capa['titulo'],styles['title']),
+        Paragraph(capa['intro'],styles['intro'])]
+    metrics=capa['metricas']
     table=Table([[Paragraph(t,styles['sub'] if i==0 else styles['small']) for t in row] for i,row in enumerate(metrics)],colWidths=[doc.width/3]*3)
     table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),12),('RIGHTPADDING',(0,0),(-1,-1),12),('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
-    story += [table,Spacer(1,28),Paragraph('<b>Decisão proposta</b><br/>Reaproveitar a evidência do Hermes, criar casos novos bem rotulados e comparar qualidade, custo e tempo no fluxo completo.',styles['intro']),
-      Paragraph('A interface e os documentos estão prontos. Os ensaios dos sistemas, o executor e o bloqueio financeiro continuam como próximos passos do plano.',styles['body']),
-      Spacer(1,20),Paragraph('18 de setembro de 2026<br/>Cenário financeiro conservador: US$ 1,997062454 disponíveis dentro do teto total de US$ 5, incluindo o histórico reportado.',styles['small']),PageBreak(),
+    story += [table,Spacer(1,28),Paragraph(capa['decisao'],styles['intro']),
+      Paragraph(capa['nota'],styles['body']),
+      Spacer(1,20),Paragraph(capa['data'],styles['small']),PageBreak(),
       Paragraph('Mapa de leitura',ParagraphStyle('ContentsTitle',parent=styles['section']))]
     toc=TableOfContents()
     toc.levelStyles=[ParagraphStyle('TOC',fontName='Regular',fontSize=10,leading=16,textColor=INK,leftIndent=0,spaceBefore=6)]
-    story += [toc,Spacer(1,18),Paragraph('Comece pelas seções 1, 3, 7 e 8. A metodologia e o contrato de dados estão nas seções 4 a 6 e 9. As fichas dos 15 sistemas encerram o documento.',styles['small']),PageBreak()]
+    story += [toc,Spacer(1,18),Paragraph(capa['mapa'],styles['small']),PageBreak()]
     lines=markdown.splitlines()
     i=0; section_count=0
     while i<len(lines):

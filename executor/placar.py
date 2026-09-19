@@ -78,22 +78,16 @@ def gabarito_do_corpus(prefixo):
     return 'coincidem' if not divergem else 'ha-divergencia'
 
 
-def gabaritos_dos_80(e8, adj):
-    """Os tres gabaritos que existem para o mesmo conjunto, nomeados.
+def faixa_dos_gabaritos(d):
+    """A faixa entre TODOS os gabaritos de um conjunto, a partir do desempenho recalculado.
 
-    A versao anterior montava a faixa com min(local, autor) e max(oficial, autor): dava certo
-    so porque o oficial e, hoje, o mais alto. Se o anotador local passasse o oficial, o teto
-    sumia do intervalo. Aqui o minimo e o maximo saem da lista inteira.
+    Duas versoes anteriores erraram aqui. A primeira fazia min(local, autor) a max(oficial,
+    autor): dava certo so porque o oficial e, hoje, o mais alto. A segunda foi buscar o
+    desempenho dentro da propria funcao, e com isso deixou de ser testavel — os tres testes da
+    decima primeira rodada passaram a exercitar o repositorio em vez da regra. Aqui a funcao so
+    calcula: quem chama traz o dado, e o dado vem de `gabarito.desempenho_do_estudo()`.
     """
-    valores = {'anotador local': e8['acuracia_jev_sob_gabarito_do_outro'],
-               'autor': e8['acuracia_jev_sob_meu_gabarito']}
-    if adj:
-        valores['oficial'] = adj['gabarito_adjudicado']['acuracia']
-    return valores
-
-
-def faixa_dos_gabaritos(e8, adj):
-    valores = gabaritos_dos_80(e8, adj)
+    valores = gabaritos_do_conjunto(d)
     baixo, alto = min(valores.values()), max(valores.values())
     return (pct(baixo) if baixo == alto else f'{pct(baixo)} a {pct(alto)}'), valores
 
@@ -471,12 +465,14 @@ def montar():
         # anotador apoiou o Jev em dois casos e omitia que ele confirmou o gabarito nos outros
         # dois erros. Contar meia divergencia e propaganda, nao auditoria.
         erros = [a for a in e8['anotacoes'] if a['jev'] and a['jev'] != a['gold']]
+        d80b = gabarito.desempenho_do_estudo()
         apoiam_jev = [a for a in erros if a['anotador'] == a['jev']]
         apoiam_gabarito = [a for a in erros if a['anotador'] == a['gold']]
         if adj:
             placar_adj = adj['placar']
             g = adj['gabarito_adjudicado']
-            faixa, valores = faixa_dos_gabaritos(e8, adj)
+            d80 = gabarito.desempenho_do_estudo()
+            faixa, valores = faixa_dos_gabaritos(d80)
             cartoes.append(cartao(
                 'e8', 'Gabarito adjudicado (E8)', faixa,
                 ' · '.join(f'{nome} {pct(v)}' for nome, v in
@@ -485,11 +481,10 @@ def montar():
                  'recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito '
                  f"do autor em {placar_adj['confirmam_o_autor']} e o do anotador local em "
                  f"{placar_adj['confirmam_o_modelo_local']}. Isso desfaz a leitura anterior deste painel: "
-                 f"o Jev erra {len(g['erros'])} casos no gabarito adjudicado "
-                 f"({', '.join(g['erros'])}), e não os 2 que este painel "
-                 'chegou a anunciar antes da adjudicação. Acurácia entre '
-                 f"{pct(min(e8['acuracia_jev_sob_meu_gabarito'], e8['acuracia_jev_sob_gabarito_do_outro']))} "
-                 f"e {pct(g['acuracia'])} conforme o gabarito adotado."),
+                 f"o Jev erra {len(d80['oficial']['erros'])} casos no gabarito adjudicado "
+                 f"({', '.join(d80['oficial']['erros'])}), e não os 2 que este painel "
+                 'chegou a anunciar antes da adjudicação. Acurácia ' + faixa
+                 + ' conforme o gabarito adotado.'),
                 f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura"))
         cartoes.append(cartao(
             'e8b', 'Concordância entre anotadores (E8)', f"kappa {dec(e8['kappa_cohen'], 4)}",
@@ -502,8 +497,8 @@ def montar():
              f"{len(apoiam_gabarito)} ({', '.join(a['case_id'] for a in apoiam_gabarito)}) e fica do "
              f"lado do Jev em {len(apoiam_jev)} ({', '.join(a['case_id'] for a in apoiam_jev)}). "
              f"Sob o gabarito do outro anotador o Jev faz "
-             f"{pct(e8['acuracia_jev_sob_gabarito_do_outro'])}, e não "
-             f"{pct(e8['acuracia_jev_sob_meu_gabarito'])}. Nas demais divergências foi "
+             f"{pct(d80b['anotador_local']['acuracia'])}, e não "
+             f"{pct(d80b['autor']['acuracia'])}. Nas demais divergências foi "
              'o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa '
              'alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.'),
             f"{e8['anotador_independente']} local, cego ao gabarito e à resposta do Jev"))

@@ -244,24 +244,34 @@ class FaixaDosTresGabaritos(unittest.TestCase):
     o mais alto. Se o anotador local passasse o oficial, o teto sumia do intervalo.
     """
 
+    @staticmethod
+    def desempenho(local=None, autor=0.90, oficial=0.95):
+        d = {'autor': {'acuracia': autor}, 'oficial': {'acuracia': oficial}}
+        if local is not None:
+            d['anotador_local'] = {'acuracia': local}
+        return d
+
     def test_faixa_cobre_os_tres_mesmo_com_o_local_no_topo(self):
-        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.99, 'acuracia_jev_sob_meu_gabarito': 0.90}
-        adj = {'gabarito_adjudicado': {'acuracia': 0.95}}
-        faixa, valores = placar.faixa_dos_gabaritos(e8, adj)
+        faixa, valores = placar.faixa_dos_gabaritos(
+            self.desempenho(local=0.99, autor=0.90, oficial=0.95))
         self.assertEqual(set(valores.values()), {0.99, 0.90, 0.95})
         self.assertIn('99,0%', faixa)
         self.assertIn('90,0%', faixa)
 
     def test_faixa_vira_valor_unico_quando_todos_coincidem(self):
-        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.95, 'acuracia_jev_sob_meu_gabarito': 0.95}
-        adj = {'gabarito_adjudicado': {'acuracia': 0.95}}
-        faixa, _ = placar.faixa_dos_gabaritos(e8, adj)
+        faixa, _ = placar.faixa_dos_gabaritos(
+            self.desempenho(local=0.95, autor=0.95, oficial=0.95))
         self.assertNotIn(' a ', faixa)
 
-    def test_sem_adjudicacao_a_faixa_usa_os_dois_que_existem(self):
-        e8 = {'acuracia_jev_sob_gabarito_do_outro': 0.88, 'acuracia_jev_sob_meu_gabarito': 0.95}
-        _, valores = placar.faixa_dos_gabaritos(e8, None)
-        self.assertNotIn('oficial', valores)
+    def test_sem_anotador_local_a_faixa_usa_os_dois_que_existem(self):
+        _, valores = placar.faixa_dos_gabaritos(self.desempenho(local=None))
+        self.assertNotIn('anotador local', valores)
+        self.assertEqual(set(valores), {'autor', 'oficial'})
+
+    def test_a_funcao_e_pura_e_nao_consulta_o_repositorio(self):
+        """[R13] Se ela for buscar o dado sozinha, os testes acima param de testar a regra."""
+        valores = placar.faixa_dos_gabaritos(self.desempenho(local=0.10, autor=0.20))[1]
+        self.assertEqual(valores['anotador local'], 0.10)
 
 
 @unittest.skipUnless(tem_relatorios(), 'requer os relatórios de execução')
@@ -269,9 +279,8 @@ class RelatorioFinalBateComOsDados(unittest.TestCase):
     """O markdown também é uma superfície do painel, e já afirmou uma faixa que não existia."""
 
     def test_faixa_citada_no_relatorio_existe_nos_dados(self):
-        e8 = json.loads((ROOT / 'runs/e8-anotador/relatorio.json').read_text(encoding='utf-8'))
-        adj = json.loads((ROOT / 'runs/e8-anotador/adjudicacao.json').read_text(encoding='utf-8'))
-        _, valores = placar.faixa_dos_gabaritos(e8, adj)
+        from executor import gabarito
+        _, valores = placar.faixa_dos_gabaritos(gabarito.desempenho_do_estudo())
         texto = (ROOT / 'docs/RELATORIO-FINAL-JEV.md').read_text(encoding='utf-8')
         baixo = f'{min(valores.values())}'.replace('.', ',')
         alto = f'{max(valores.values())}'.replace('.', ',')
@@ -312,3 +321,52 @@ class PainelEmPortugues(unittest.TestCase):
     def test_nenhum_percentual_com_ponto_decimal(self):
         faltas = [t for t in self.textos() if re.search(r'\d\.\d+\s*%', t)]
         self.assertEqual(faltas, [], 'percentual com ponto decimal num painel em português')
+
+
+def test_cartao_e8_reage_a_mudanca_no_gabarito_do_anotador_local():
+    """Décima terceira rodada: teste de mutação.
+
+    Os cartões do E1 e do E7 recalculam a acurácia sob os três gabaritos. O do E8 lia dois
+    números agregados gravados dentro do próprio relatório do E8 no momento em que ele rodou.
+    Mutar as anotações do anotador local movia E1 e E7 e deixava o E8 parado, exibindo um valor
+    que já não correspondia aos dados. Um painel que não se mexe quando o dado muda não está
+    medindo o dado.
+    """
+    import importlib
+    import json
+    import shutil
+    import tempfile
+
+    from executor import gabarito, placar
+
+    origem = ROOT / 'runs' / 'e8-anotador' / 'relatorio.json'
+    if not origem.exists():
+        raise unittest.SkipTest('E8 ainda não executado')
+    copia = Path(tempfile.mkdtemp()) / 'relatorio.json'
+    shutil.copy(origem, copia)
+
+    def cartao(chave):
+        return next(c for c in placar.montar()['cartoes'] if c['chave'] == chave)
+
+    try:
+        antes = {c: cartao(c) for c in ('e1', 'e7', 'e8')}
+        dados = json.loads(origem.read_text(encoding='utf-8'))
+        autor = gabarito.do_autor()
+        mexidos = 0
+        for anotacao in dados['anotacoes']:
+            caso = anotacao['case_id']
+            if caso in autor and anotacao.get('anotador'):
+                if anotacao['anotador'] != autor[caso]['gold']:
+                    anotacao['anotador'] = autor[caso]['gold']
+                    mexidos += 1
+        assert mexidos, 'sem divergência para mutar: o teste perderia o sentido'
+        origem.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding='utf-8')
+        importlib.reload(gabarito)
+        importlib.reload(placar)
+        for chave in ('e1', 'e7', 'e8'):
+            assert cartao(chave) != antes[chave], (
+                f'o cartão {chave} não reagiu à mudança no gabarito do anotador local')
+    finally:
+        shutil.copy(copia, origem)
+        importlib.reload(gabarito)
+        importlib.reload(placar)

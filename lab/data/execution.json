@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 66,
- "updated_at": "2026-09-19T05:41:12.033636+00:00",
+ "revision": 68,
+ "updated_at": "2026-09-19T05:51:05.366578+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18781,7 +18781,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:41:12.033434+00:00",
+  "atualizado_em": "2026-09-19T05:51:05.366406+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
    "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
@@ -18873,7 +18873,7 @@
     "titulo": "Gabarito adjudicado (E8)",
     "valor": "88,8% a 96,2%",
     "comparacao": "anotador local 88,8% · autor 95,0% · oficial 96,2%",
-    "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não os 2 que este painel chegou a anunciar antes da adjudicação. Acurácia entre 88,8% e 96,2% conforme o gabarito adotado.",
+    "leitura": "Os 9 casos em disputa foram julgados por um terceiro juiz cego, que recebeu só a mensagem e as duas leituras em ordem sorteada. Ele confirmou o gabarito do autor em 8 e o do anotador local em 1. Isso desfaz a leitura anterior deste painel: o Jev erra 3 casos no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04), e não os 2 que este painel chegou a anunciar antes da adjudicação. Acurácia 88,8% a 96,2% conforme o gabarito adotado.",
     "fonte": "gpt-5.6-sol-high via Cursor CLI, cego a quem escreveu cada leitura",
     "estado": "pronto"
    },
