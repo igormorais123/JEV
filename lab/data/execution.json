@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 62,
- "updated_at": "2026-09-19T05:34:28.166602+00:00",
+ "revision": 63,
+ "updated_at": "2026-09-19T05:35:41.062848+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -18771,7 +18771,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T05:34:28.166121+00:00",
+  "atualizado_em": "2026-09-19T05:35:41.062694+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
    "texto": "Aceitar automaticamente o que vier com confiança de 0,90 ou mais cobre 87,5% dos 40 casos da partição de confirmação sem nenhum erro observado entre os aceitos; nessa mesma partição o custo por decisão cai de US$ 0,400 para US$ 0,050, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo é o não determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
@@ -18818,7 +18818,7 @@
     "titulo": "Lote, ordem e distração (E2)",
     "valor": "0,925 a 0,950",
     "comparacao": "8 condições fatoriais",
-    "leitura": "Nenhum contraste separa as condições (McNemar p=1,000 em todos). Lote economiza 32.4% a 43.2% por decisão.",
+    "leitura": "Nenhum contraste separa as condições (McNemar p=1,000 em todos). Lote economiza 32,4% a 43,2% por decisão.",
     "fonte": "8 condições sobre os mesmos 40 casos; os dois gabaritos coincidem neste corpus",
     "estado": "pronto"
    },
@@ -18833,7 +18833,7 @@
    },
    {
     "chave": "calibracao",
-    "titulo": "Calibração no corte 0,95 (confirmacao)",
+    "titulo": "Calibração no corte 0,95 (confirmação)",
     "valor": "34 aceitos de 40",
     "comparacao": "cobertura 85,0%",
     "leitura": "0 erro(s) observado(s), mas os aceitos vêm de apenas 10 famílias: o limite superior honesto é 25,9% por família, não 8,4% por caso.",

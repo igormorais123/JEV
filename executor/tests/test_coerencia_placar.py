@@ -259,3 +259,35 @@ class RelatorioFinalBateComOsDados(unittest.TestCase):
         for proibido in ('0,9750 a', 'a 0,9750'):
             ocorrencias = texto.count(proibido)
             self.assertEqual(ocorrencias, 0, f'{proibido} aparece {ocorrencias} vez(es)')
+
+
+@unittest.skipUnless(tem_relatorios(), 'requer os relatórios de execução')
+class PainelEmPortugues(unittest.TestCase):
+    """O painel é lido por quem fala português; o texto e o número têm de ser em português."""
+
+    PALAVRAS_SEM_ACENTO = re.compile(
+        r'\b(nao|sao|decisao|particao|confianca|acuracia|familia|familias|criterio|numero|'
+        r'analise|politica|revisao|confirmacao|aceitacao|adjudicacao)\b')
+
+    def setUp(self):
+        self.bloco = placar.montar()
+
+    def textos(self):
+        yield self.bloco['veredito']['titulo']
+        yield self.bloco['veredito']['texto']
+        yield self.bloco['veredito']['confianca_nota']
+        for motivo in self.bloco['veredito'].get('confianca_motivos', []):
+            yield motivo
+        for pendencia in self.bloco['pendencias']:
+            yield pendencia
+        for c in self.bloco['cartoes']:
+            for campo in ('titulo', 'valor', 'comparacao', 'leitura', 'fonte'):
+                yield c[campo]
+
+    def test_nenhum_texto_perde_acento(self):
+        faltas = [t for t in self.textos() if self.PALAVRAS_SEM_ACENTO.search(t)]
+        self.assertEqual(faltas, [], 'texto em português sem acentuação')
+
+    def test_nenhum_percentual_com_ponto_decimal(self):
+        faltas = [t for t in self.textos() if re.search(r'\d\.\d+\s*%', t)]
+        self.assertEqual(faltas, [], 'percentual com ponto decimal num painel em português')

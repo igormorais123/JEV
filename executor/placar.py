@@ -382,7 +382,7 @@ def montar():
         cartoes.append(cartao(
             'e2', 'Lote, ordem e distração (E2)', faixa, '8 condições fatoriais',
             ('Nenhum contraste separa as condições (McNemar p=1,000 em todos). '
-             + (f'Lote economiza {min(economias):.1f}% a {max(economias):.1f}% por decisão.'
+             + (f'Lote economiza {dec(min(economias), 1)}% a {dec(max(economias), 1)}% por decisão.'
                 if economias else 'Economia do lote registrada no relatório.')),
             fonte_com_gabarito(f'{len(condicoes)} condições sobre os mesmos 40 casos',
                                gabarito_do_corpus('tri-'))))
@@ -407,7 +407,9 @@ def montar():
     calibracao = pareada.get('calibracao_confirmacao_0.95') or pareada.get('calibracao_0.95')
     if calibracao:
         cartoes.append(cartao(
-            'calibracao', f"Calibração no corte 0,95 ({calibracao.get('conjunto', 'piloto')})",
+            'calibracao', ('Calibração no corte 0,95 ('
+             + {'confirmacao': 'confirmação'}.get(calibracao.get('conjunto', 'piloto'),
+                                                  calibracao.get('conjunto', 'piloto')) + ')'),
             f"{calibracao['aceitos']} aceitos de {calibracao['casos_programados']}",
             f"cobertura {pct(calibracao['cobertura_sobre_programados'])}",
             (f"{calibracao['erros_entre_aceitos']} erro(s) observado(s), mas os aceitos vêm de apenas "
