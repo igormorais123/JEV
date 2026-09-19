@@ -130,6 +130,14 @@ class CoerenciaDoPlacar(unittest.TestCase):
         """
         nota = self.bloco['veredito']['confianca_nota']
         e9 = json.loads((ROOT / 'runs/e9-prevalencia/relatorio.json').read_text(encoding='utf-8'))
+        if not veredito_recomenda_corte(self.bloco):
+            # [E11] Quando o veredito deixa de recomendar um corte, a nota tem de deixar de
+            # justificar um corte. Exigir a frase antiga obrigaria a nota a defender uma
+            # recomendacao que o painel nao faz mais — que e o defeito que este teste nasceu
+            # para impedir, so que ao contrario.
+            self.assertNotIn('o corte de 0,90 é sustentado', nota,
+                             'a nota justifica um corte que o veredito não recomenda')
+            return
         politica = placar.politica_de_referencia(e9)
         self.assertIn(f"{politica['casos']} casos da partição de confirmação", nota)
         adj = json.loads((ROOT / 'runs/e8-anotador/adjudicacao.json').read_text(encoding='utf-8'))

@@ -268,8 +268,23 @@ def limite_superior_erro_da_politica(politica):
 
 
 
-def nota_de_confianca(adj, e9=None):
+def nota_de_confianca(adj, e9=None, e11=None):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
+    separa = desempate_depende_do_gabarito(e11)
+    if separa and not all(separa.values()):
+        # Enquanto a nota descrevia a politica de corte, ela justificava uma recomendacao que o
+        # veredito tinha deixado de fazer. A nota acompanha o veredito.
+        por_gabarito = e11['por_gabarito']
+        return ('Baixa, e o motivo agora tem nome. A comparação contra as regras congeladas '
+                'continua sólida: é pareada, pré-registrada e replicou em três corpora. O que '
+                'não se sustenta é a afirmação de que o Jev é necessário: no corpus de '
+                'desempate a vantagem sobre um LLM econômico é '
+                + pct(por_gabarito['autor']['pareada']['diferenca_observada'])
+                + ' sob o meu gabarito e '
+                + pct(por_gabarito['anotador local']['pareada']['diferenca_observada'])
+                + ' sob o do anotador independente, com o intervalo contendo zero. Os números '
+                'do estudo são reprodutíveis; o rótulo contra o qual eles foram medidos é que '
+                'não foi validado por gente.')
     politica = politica_de_referencia(e9) if e9 else None
     # A base citada aqui tem que ser a MESMA da politica que o veredito recomenda. Enquanto a
     # nota falava de 80 casos e o veredito de 40, o painel justificava a decisao com um
@@ -852,7 +867,7 @@ def montar():
             'texto': texto_do_veredito(e9, e6, e10, e11),
             'confianca': confianca[0],
             'confianca_motivos': confianca[1],
-            'confianca_nota': nota_de_confianca(adj, e9),
+            'confianca_nota': nota_de_confianca(adj, e9, e11),
             'confianca_metodo': ('descontos declarados sobre 1,0; cada um com motivo em '
                                  'confianca_motivos'),
         },

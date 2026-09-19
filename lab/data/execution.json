@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 86,
- "updated_at": "2026-09-19T06:33:48.041191+00:00",
+ "revision": 87,
+ "updated_at": "2026-09-19T06:36:10.972553+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -24632,7 +24632,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T06:33:48.040908+00:00",
+  "atualizado_em": "2026-09-19T06:36:10.972221+00:00",
   "veredito": {
    "titulo": "A vantagem do Jev depende de quem escreveu o gabarito: o gargalo é o rótulo",
    "texto": "O desempate foi feito e desempatou para os dois lados, conforme o gabarito. Em corpus novo de 60 casos e 20 famílias, pré-registrado antes de existir qualquer dado, o Jev acerta 100,0% contra 86,7% do comparador barato sob o meu gabarito: diferença 13,3%, IC95 [5,0%; 21,7%], McNemar exato p = 0,0078. Sob o gabarito do anotador independente, que é o único que não passou pela minha mão, a mesma comparação dá -3,3%, IC95 [-10,0%; 3,3%] — contém zero, e o sinal inverte. O experimento que existia para desempatar mostrou onde está o gargalo, e não é a comparação entre os modelos: é a validade do rótulo. Enquanto o gabarito for meu, a vantagem é minha de encomenda; enquanto o único gabarito independente for um modelo de 7B, ele também não decide. O que falta não é mais uma execução — são dois anotadores humanos do domínio.",
@@ -24645,7 +24645,7 @@
     "zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)",
     "no corpus de desempate a vantagem do Jev sobre o LLM econômico separa de zero sob o gabarito do autor e não separa sob o do anotador independente (-0,15)"
    ],
-   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 é sustentado por 40 casos da partição de confirmação, com 0 erro entre os aceitos, e o modelo erra 3 de 80 casos no estudo inteiro. A conta de custo usa tempo humano declarado, nunca cronometrado. Os 9 casos em disputa foram adjudicados por um terceiro juiz cego, e sob esse gabarito a acurácia é 0,9625 — mas os três juízes são modelos, não pessoas do atendimento real.",
+   "confianca_nota": "Baixa, e o motivo agora tem nome. A comparação contra as regras congeladas continua sólida: é pareada, pré-registrada e replicou em três corpora. O que não se sustenta é a afirmação de que o Jev é necessário: no corpus de desempate a vantagem sobre um LLM econômico é 13,3% sob o meu gabarito e -3,3% sob o do anotador independente, com o intervalo contendo zero. Os números do estudo são reprodutíveis; o rótulo contra o qual eles foram medidos é que não foi validado por gente.",
    "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos"
   },
   "cartoes": [
