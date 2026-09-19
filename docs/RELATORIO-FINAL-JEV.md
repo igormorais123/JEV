@@ -3,7 +3,7 @@
 **Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA
 **Execução:** 18–19 de setembro de 2026
 **Sistema avaliado:** Jev 1.13 (`typesafe/jev-1.13` via OpenRouter e `jev-1.13.0` direto)
-**Custo total:** US$ 0,018876461 em 705 chamadas, de um teto autorizado de US$ 5,00
+**Custo total:** US$ 0,022618774 em 945 chamadas, de um teto autorizado de US$ 5,00
 **Código, dados e registros:** este repositório, com pré-registros em `planning/` e relatórios
 brutos em `runs/`
 
@@ -11,9 +11,47 @@ brutos em `runs/`
 
 ## 1. Recomendação
 
-**Não decida sobre o Jev com base neste estudo. A evidência sobre a necessidade dele está
-dividida: na partição de teste um LLM genérico e barato empata com ele dentro da margem de erro;
-em 20 famílias, não empata.**
+**Não decida sobre o Jev com base neste estudo — e o motivo não é o modelo, é o gabarito. A
+vantagem do Jev sobre um LLM genérico e barato aparece sob o gabarito que eu escrevi e desaparece
+sob o único gabarito que não passou pela minha mão.**
+
+O estudo terminou no experimento que existia para desempatar, e o desempate desempatou para os
+dois lados. Corpus novo, 60 casos, 20 famílias declaradas no pré-registro antes de o primeiro
+caso ser escrito, dois braços na mesma lista e na mesma ordem:
+
+| Gabarito | Jev | llama-3.1-8b | Diferença pareada | IC95 | McNemar |
+|---|---|---|---|---|---|
+| Meu (o do corpus) | 1.0000 | 0.8667 | **13,3%** | [5,0%; 21,7%] | p = 0.0078 |
+| Anotador independente | 0.8333 | 0.8667 | **-3,3%** | [-10,0%; 3,3%] | p = 0.6875 |
+
+Pela regra congelada no pré-registro do E11, que olhava o gabarito do corpus, a leitura seria
+*"há evidência de que o Jev supera um LLM econômico"*. Eu não vou parar aí, por dois motivos que
+não são preferência minha.
+
+**O primeiro é que o Jev acertou 60 de 60.** Acerto perfeito no único conjunto que só eu revisei
+não é uma vitória, é um alarme. Foi por isso que rodei o anotador independente também nesses 60
+casos — depois do resultado, e com o resultado já à vista. Ele discorda de mim em 10 deles, e em
+todos os 10 o Jev concorda comigo.
+
+**O segundo é que a política deste estudo, desde a décima segunda rodada de revisão, é nunca
+apresentar um gabarito sozinho.** Aplicá-la aqui e não lá seria escolher a regra conforme o
+resultado.
+
+Sob o gabarito independente o sinal **inverte**: o comparador barato fica numericamente à frente,
+com o intervalo contendo zero. Os dois números são da mesma execução, das mesmas respostas, dos
+mesmos 60 casos. O que muda entre uma linha e outra da tabela é **quem escreveu o rótulo**.
+
+É essa a conclusão do estudo, e ela não é sobre o Jev: **o gargalo não é a comparação entre os
+modelos, é a validade do rótulo.** Nenhuma execução adicional resolve isso — não há corpus meu,
+por maior que seja, que responda a uma pergunta cujo obstáculo é eu ter escrito o gabarito. O que
+falta são dois anotadores humanos do domínio, medindo kappa entre si antes de olhar qualquer
+modelo. É o item 3 da seção 10, custa tempo de gente e não custa orçamento nenhum.
+
+*(Registro de método: a recomendação deste relatório mudou três vezes em um dia. Era "use o Jev
+com corte em 0,90"; virou "não adote" quando o E10 não separou de zero; virou "evidência
+dividida" quando o E10b separou; e é esta agora, quando o E11 mostrou que a divisão tem nome.
+Cada mudança está datada e nenhuma versão anterior foi apagada. Um relatório que não muda quando
+o dado muda não é um relatório estável — é um relatório que parou de ler os dados.)*
 
 Esta recomendação substitui a anterior, que era "use o Jev como classificador consultivo com
 corte de confiança em 0,90". A mudança não veio de opinião: veio dos experimentos E10 e E10b,
@@ -133,7 +171,7 @@ um julgamento meu e passou a ser uma conta com as penalidades declaradas, partin
 - o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)
 - corpus construído pelo avaliador, não colhido de uso real (-0,10)
 - zero erro observado entre os aceitos, mas o limite superior de 95% por família é 25,9% (-0,10)
-- o braço do LLM econômico separa de zero em 20 famílias e não separa na partição de teste: a evidência sobre a necessidade do Jev está dividida (-0,15)
+- no corpus de desempate a vantagem do Jev sobre o LLM econômico separa de zero sob o gabarito do autor e não separa sob o do anotador independente (-0,15)
 
 Os dois últimos descontos entraram na décima terceira rodada, cobrados pela revisão
 adversarial: o teto de erro já estava escrito na seção 6 e não era descontado, e o braço do LLM
@@ -428,6 +466,56 @@ desempate é um corpus novo com pelo menos 30 famílias, pré-registrado antes d
 
 ---
 
+### 3.10 O desempate (E11), e por que ele não desempatou
+
+O E10 não separou de zero na partição de teste; o E10b, decidido depois, separou no piloto. Os
+dois defeitos eram claros: poder baixo e uma análise escolhida depois de ver a outra. O E11
+existe para resolver os dois — e resolveu, só que a resposta não foi a que a pergunta esperava.
+
+**O que foi congelado antes de qualquer dado existir:** as 20 famílias de fenômeno linguístico,
+listadas nominalmente no pré-registro; a métrica primária; o bootstrap por família; e as três
+leituras possíveis do intervalo, com o que cada uma obrigaria a escrever aqui. Só então os 60
+casos foram escritos, três por família, com o gabarito fixado junto com o caso.
+
+**Duas correções antes da primeira chamada,** pela mesma disciplina do E7: `dsp-d12-02` tinha
+gabarito `trocar` num pedido condicional, e a rubrica que os dois modelos recebem diz que ação
+condicional não é ação pedida — o caso mediria a contradição, não o modelo; `dsp-d09-02` ficava
+entre `rastrear` e `informacao`, e um caso que dois gabaritos defendem não mede nada.
+
+**Um incidente, declarado:** a primeira execução completou as 120 chamadas, liquidou
+US$ 0,001923295 e então a análise quebrou com `KeyError: 'kind'` — um campo que só existe nos
+corpora antigos. **Os dados se perderam inteiros**, porque nada era gravado em disco: o
+`request_path` que o executor registra no livro-caixa é só um rótulo. O custo permanece no
+livro-caixa, como tem de permanecer, e o experimento passou a gravar cada resposta assim que ela
+chega. Entre as duas execuções não mudou corpus, gabarito nem prompt — só o código de
+persistência.
+
+**O resultado, nos dois gabaritos:**
+
+| Gabarito | Jev | llama-3.1-8b | Diferença | IC95 | Só o Jev acerta | Só o comparador | McNemar |
+|---|---|---|---|---|---|---|---|
+| Meu | 1.0000 | 0.8667 | 13,3% | [5,0%; 21,7%] | 8 | 0 | p = 0.0078 |
+| Anotador independente | 0.8333 | 0.8667 | -3,3% | [-10,0%; 3,3%] | 2 | 4 | p = 0.6875 |
+
+Erro grave (`cancelar` indevido): **Jev 0, comparador 1**. É a única métrica do E11 em que a
+diferença não depende do gabarito, e é a métrica que o pré-registro do E1 chamou de
+irreversível.
+
+**Os 10 casos em que o anotador independente discorda de mim:**
+`dsp-d01-02`, `dsp-d03-01`, `dsp-d06-03`, `dsp-d09-01`, `dsp-d10-03`, `dsp-d11-01`, `dsp-d12-01`, `dsp-d16-01`, `dsp-d16-02`, `dsp-d18-01`. Em **todos** eles o Jev responde o que eu responderia. Há duas leituras
+para isso, e eu não tenho como escolher entre elas com o que este estudo mediu:
+
+1. O Jev segue a rubrica escrita melhor do que um modelo de 7B segue, e o anotador é que erra —
+   o padrão das discordâncias dele é o mesmo dos corpora anteriores, puxar para ação onde o
+   enunciado pede informação.
+2. Eu escrevi 60 casos que casam com a leitura do Jev, sem perceber, porque conheço as respostas
+   dele desde o E1.
+
+A segunda não é paranoia: é exatamente o que um corpus escrito pelo avaliador permite. E é por
+isso que o relatório não fecha a favor de ninguém.
+
+---
+
 ## 4. Mecanismo: por que funciona
 
 A vantagem sobre as regras não vem de vocabulário maior. Vem de resolver três coisas que o
@@ -553,11 +641,14 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
    uma medição de fluxo real. Isso era a pergunta P5 do plano e continua aberta.
 6. **`confidence` não foi validado como probabilidade.** Foi validado como *ordenador*: separa
    bem o que está certo do que está errado nestes 80 casos. Não é a mesma coisa.
-7. **Um único LLM econômico foi testado como comparador.** O E10 usou
+7. **O gabarito é meu em todos os corpora, inclusive no do desempate.** Esta é a limitação de
+   que todas as outras derivam, e o E11 a tornou mensurável em vez de apenas declarada: a
+   conclusão sobre a necessidade do Jev **muda de sinal** conforme o gabarito adotado.
+8. **Um único LLM econômico foi testado como comparador.** O E10 usou
    `meta-llama/llama-3.1-8b-instruct`. Um empate com ele não é empate com a categoria, e uma
    vantagem sobre ele também não seria vantagem sobre a categoria. O que o E10 estabelece é que
    **um** modelo barato chega perto o bastante para esta amostra não separar os dois.
-8. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
+9. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
    sistemas mostrou 5 suítes passando, 7 falhando e 3 sem como rodar. Isso é estado de
    repositório, não evidência de comportamento.
 
@@ -701,8 +792,20 @@ resultado contrariou a recomendação que este documento vinha fazendo desde a p
 a recomendação mudou. Custou US$ 0,000358 e treze rodadas de revisão não o teriam encontrado,
 porque nenhuma delas estava olhando para fora do que já havia sido medido.
 
-Estado final: **705 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,018876461 de
-US$ 5,00, 143 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+O E10 e o E10b abriram uma divisão que nenhum dos dois podia fechar, e o E11 foi escrito para
+fechá-la: corpus novo, 20 famílias declaradas antes do primeiro caso, regra de decisão congelada
+antes de existir dado. Ele fechou, mas não onde eu esperava. A vantagem do Jev sobre o
+comparador barato é nítida sob o meu gabarito e some sob o do anotador independente — mesma
+execução, mesmas respostas, mesmos 60 casos.
+
+Três defeitos apareceram no caminho e estão corrigidos: a primeira execução do E11 perdeu 120
+chamadas pagas porque nada era persistido; `titulo_do_veredito` tinha virado impura e passou a
+responder pelo repositório em vez de responder pelos dados que recebia; e o run de tentativas
+órfãs se substituía a cada publicação, apagando as próprias órfãs e desfazendo em silêncio a
+reconciliação de custo que a oitava rodada tinha estabelecido.
+
+Estado final: **945 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,022618774 de
+US$ 5,00, 144 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---
