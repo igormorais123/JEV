@@ -65,18 +65,40 @@ def gravar(caso):
 
 
 def recuperar():
+    """Reconstroi os casos a partir do bruto, que e append-only.
+
+    Uma linha com `<braco>_anulado_pela_emenda_3` apaga as respostas daquele braco no acumulado:
+    e assim que a Emenda 3 tira da ANALISE as chamadas feitas sob um teto de saida que impedia o
+    modelo de responder. Sem isso, `update` preservaria os campos antigos e a reexecucao acharia
+    que aqueles casos ja tinham resposta.
+    """
     if not BRUTO.exists():
         return None
     por_id = {}
     for linha in BRUTO.read_text(encoding='utf-8').splitlines():
-        if linha.strip():
-            caso = json.loads(linha)
-            por_id.setdefault(caso['case_id'], {}).update(caso)
+        if not linha.strip():
+            continue
+        caso = json.loads(linha)
+        acumulado = por_id.setdefault(caso['case_id'], {})
+        acumulado.update(caso)
+        for marca in [k for k in caso if k.endswith('_anulado_pela_emenda_3')]:
+            braco = marca.split('_', 1)[0]
+            for campo in [k for k in list(acumulado)
+                          if k == braco or k.startswith(braco + '_')]:
+                if campo != marca:
+                    acumulado.pop(campo)
     return list(por_id.values()) or None
 
 
-def payload_chat(modelo, texto):
-    return {'model': modelo, 'max_tokens': MAX_TOKENS, 'temperature': 0,
+# Emenda 3: o teto de saida e parametro de transporte, e um modelo que raciocina antes de
+# responder gasta saida no raciocinio. Com 64 tokens o c4 devolvia conteudo vazio, o que media o
+# teto e nao o modelo. Quem nao aparece aqui usa o teto do E10.
+TETO_DE_SAIDA = {'c4': 256}
+
+
+def payload_chat(modelo, texto, chave=None):
+    return {'model': modelo, 'max_tokens': TETO_DE_SAIDA.get(chave, MAX_TOKENS),
+            'temperature': 0,
             'response_format': {'type': 'json_object'},
             'messages': [{'role': 'user', 'content': prompt(texto)}]}
 
@@ -111,7 +133,7 @@ def braco_comparador(chave, modelo, casos, ledger, key, precos):
     arm = 'arm-e12-' + chave
     for caso in casos:
         caminho = 'runs/e12-replicacao/' + chave + '-' + caso['case_id'] + '.json'
-        corpo = payload_chat(modelo, caso['text'])
+        corpo = payload_chat(modelo, caso['text'], chave)
         reserva = ledger.reserve(arm_id=arm, block_id=BLOCK, provider=PROVIDER, model=modelo,
                                  max_input_tokens=entrada, max_output_tokens=saida_max,
                                  payload_sha256=payload_sha256(corpo), request_path=caminho,
