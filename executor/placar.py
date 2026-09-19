@@ -37,6 +37,54 @@ def ausente(chave, titulo, motivo, fonte):
     return cartao(chave, titulo, '—', 'sem execução', motivo, fonte, estado='pendente')
 
 
+def sobre_programados(bloco, casos):
+    """Acuracia contando resposta ausente como erro, mesmo em relatorio antigo.
+
+    Relatorios gerados antes da correcao P1-4 so tem a acuracia condicional as respostas
+    validas. Ler esse campo no placar reintroduz o defeito: uma execucao com falhas de
+    transporte apareceria com acuracia inflada. Aqui o denominador e sempre o programado.
+    """
+    if 'acuracia_sobre_programados' in bloco:
+        return bloco['acuracia_sobre_programados'], bloco.get('casos_programados', len(casos))
+    programados = len(casos)
+    return (round(bloco['acertos'] / programados, 4) if programados else None), programados
+
+
+def texto_do_veredito(e9, e6):
+    """O veredito e calculado, nao escrito a mao.
+
+    Um texto fixo com numeros dentro continua afirmando o mesmo depois que os dados mudam: na
+    execucao seguinte o placar mentiria sem que ninguem percebesse.
+    """
+    if not e9:
+        return 'Sem a analise de politica de aceitacao, o placar nao tem recomendacao operacional.'
+    # A particao de confirmacao e a que vale para decidir: sao os casos que nao guiaram o
+    # desenho. A uniao entra so na conta de custo, que nao depende de particao.
+    confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)')
+    politica = next((p for p in (confirmacao or {}).get('politicas', []) if p['corte'] == 0.90), None)
+    if politica is None:
+        politica = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+    custo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+    tudo = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 1.01), None)
+    partes = []
+    if politica and politica['erros_entre_aceitos'] == 0:
+        partes.append(f"aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre "
+                      f"{politica['cobertura'] * 100:.1f}% dos {politica['casos']} casos da particao "
+                      'de confirmacao sem nenhum erro observado entre os aceitos')
+    elif politica:
+        partes.append(f"no corte 0,90 a politica cobre {politica['cobertura'] * 100:.0f}% dos casos, "
+                      f"mas deixa passar {politica['erros_entre_aceitos']} erro(s): o corte precisa subir")
+    if custo and tudo:
+        partes.append(f"o custo por decisao cai de US$ {tudo['custo_por_decisao_usd']:.3f} para "
+                      f"US$ {custo['custo_por_decisao_usd']:.3f}, com tempo humano declarado e "
+                      'nunca cronometrado')
+    if e6 and e6['n_instaveis']:
+        partes.append(f"o que impede automatizar tudo e o nao determinismo: {e6['n_instaveis']} caso "
+                      f"em {e6['casos']}, sozinho e repetido {e6['repeticoes']} vezes, muda de resposta")
+    texto = '; '.join(partes)
+    return texto[:1].upper() + texto[1:] + '.'
+
+
 def montar():
     e1 = ler('e1-triagem/relatorio.json')
     e3 = ler('e3-evidencia/relatorio.json')
@@ -54,25 +102,29 @@ def montar():
     if e1:
         dif = pareada.get('e1_triagem', {})
         ic = dif.get('ic95')
+        acuracia_e1, programados_e1 = sobre_programados(e1['jev'], e1['casos'])
+        regra_e1, _ = sobre_programados(e1['regra'], e1['casos'])
         cartoes.append(cartao(
-            'e1', 'Triagem de atendimento (E1)', pct(e1['jev']['acuracia']),
-            f"regra congelada {pct(e1['regra']['acuracia'])}",
+            'e1', 'Triagem de atendimento (E1)', pct(acuracia_e1),
+            f'regra congelada {pct(regra_e1)}',
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}] por reamostragem de famílias." if ic else
              'Diferença ainda sem intervalo calculado.'),
-            f"{e1['jev']['n_casos']} casos, {e1['jev']['n_familias']} famílias"))
+            f"{programados_e1} casos programados, {e1['jev']['n_familias']} famílias"))
     else:
         cartoes.append(ausente('e1', 'Triagem de atendimento (E1)', 'Piloto não executado.', '—'))
 
     if e3:
         dif = pareada.get('e3_evidencia', {})
         ic = dif.get('ic95')
+        acuracia_e3, programados_e3 = sobre_programados(e3['jev'], e3['casos'])
+        regra_e3, _ = sobre_programados(e3['regra'], e3['casos'])
         cartoes.append(cartao(
-            'e3', 'Suporte por evidência (E3)', pct(e3['jev']['acuracia']),
-            f"regra ingênua {pct(e3['regra']['acuracia'])}",
+            'e3', 'Suporte por evidência (E3)', pct(acuracia_e3),
+            f'regra ingênua {pct(regra_e3)}',
             ('Vantagem de ' + pct(dif['diferenca_observada']) +
              f", IC95 [{pct(ic[0])}; {pct(ic[1])}]." if ic else 'Sem intervalo calculado.'),
-            f"{e3['jev']['n']} casos, {e3['jev']['n_familias']} famílias"))
+            f"{programados_e3} casos programados, {e3['jev']['n_familias']} famílias"))
     else:
         cartoes.append(ausente('e3', 'Suporte por evidência (E3)', 'Piloto não executado.', '—'))
 
@@ -155,21 +207,30 @@ def montar():
              f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
              '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
              'armadilhas lexicais. Único erro com gabarito contestável.'),
-            f"{e7['jev']['casos_programados']} casos, {e7['jev']['n_familias']} famílias novas"))
+            f"{e7['jev']['casos_programados']} casos programados, "
+            f"{e7['jev']['n_familias']} famílias novas"))
     else:
         cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
                                'Corpus de confirmação ainda não executado.', '—'))
 
     if e8:
-        apoiam = [d for d in e8['divergencias'] if d['jev'] == d['anotador']]
+        # A leitura tem que citar os DOIS lados. Na primeira versao este cartao dizia so que o
+        # anotador apoiou o Jev em dois casos e omitia que ele confirmou o gabarito nos outros
+        # dois erros. Contar meia divergencia e propaganda, nao auditoria.
+        erros = [a for a in e8['anotacoes'] if a['jev'] and a['jev'] != a['gold']]
+        apoiam_jev = [a for a in erros if a['anotador'] == a['jev']]
+        apoiam_gabarito = [a for a in erros if a['anotador'] == a['gold']]
         cartoes.append(cartao(
             'e8', 'Segundo anotador independente (E8)', f"kappa {e8['kappa_cohen']}",
             f"concordância bruta {pct(e8['concordancia_bruta'])}",
-            (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Nos "
-             f"{len(apoiam)} casos em que o Jev diverge do meu gabarito e o anotador independente "
-             'opina, ele fica do lado do Jev: meu gabarito é o suspeito, não a resposta. '
-             f"Sob o gabarito do outro anotador o Jev faz {pct(e8['acuracia_jev_sob_gabarito_do_outro'])}; "
-             f"nos {e8['casos_de_consenso']} casos de consenso, {pct(e8['acuracia_jev_no_consenso'])}."),
+            (f"{e8['n_divergencias']} divergências em {e8['respostas_validas']} casos. Dos "
+             f"{len(erros)} erros do Jev, o anotador independente confirma o gabarito em "
+             f"{len(apoiam_gabarito)} ({', '.join(a['case_id'] for a in apoiam_gabarito)}) e fica do "
+             f"lado do Jev em {len(apoiam_jev)} ({', '.join(a['case_id'] for a in apoiam_jev)}). "
+             f"Sob o gabarito do outro anotador o Jev faz "
+             f"{pct(e8['acuracia_jev_sob_gabarito_do_outro'])}, não 95%. Nas demais divergências foi "
+             'o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa '
+             'alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.'),
             f"{e8['anotador_independente']} local, cego ao gabarito e à resposta do Jev"))
     else:
         cartoes.append(ausente('e8', 'Segundo anotador independente (E8)',
@@ -179,15 +240,20 @@ def montar():
         proj = e9['projecoes_por_prevalencia']
         valores = [p['acuracia_esperada'] for p in proj.values()]
         politica = next((p for p in e9['politicas_de_aceitacao'] if p['corte'] == 0.90), None)
+        fraca = min(e9['acuracia_por_classe'].items(), key=lambda kv: kv[1]['taxa'])
+        leitura = (f"A acurácia esperada se move pouco entre as distribuições porque a classe mais "
+                   f"fraca ainda faz {fraca[1]['taxa']} — com {fraca[1]['casos']} casos só, o que "
+                   'deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a '
+                   'conta supõe que a dificuldade dentro de cada classe é a mesma do corpus.')
+        if politica:
+            leitura += (f" No corte 0,90 a política aceita {pct(politica['cobertura'])} dos casos com "
+                        f"{politica['erros_entre_aceitos']} erro entre os aceitos.")
         cartoes.append(cartao(
             'e9', 'Sensibilidade à prevalência (E9)',
             f'{min(valores):.3f} a {max(valores):.3f}',
-            f'{len(proj)} distribuições de canal',
-            ('A acurácia quase não se move quando a mistura de classes muda, porque nenhuma classe '
-             'é fraca. ' + (f"No corte 0,90 a política aceita {pct(politica['cobertura'])} dos casos "
-                            f"com {politica['erros_entre_aceitos']} erro entre os aceitos: os quatro "
-                            'erros do Jev estão todos abaixo desse corte.' if politica else '')),
-            'reponderação da matriz de confusão dos 80 casos; distribuições declaradas, não medidas'))
+            f'{len(proj)} distribuições de canal', leitura,
+            'reponderação da matriz de confusão; NÃO é a medição de P5, que pedia minutagem humana '
+            'e continua pendente'))
 
     if e6:
         rodadas = list(e6['acuracia_por_rodada'].values())
@@ -213,16 +279,14 @@ def montar():
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
             'titulo': 'Corte de confiança em 0,90 com revisão humana do resto',
-            'texto': ('A política que os dados sustentam: aceitar automaticamente o que vier com '
-                      'confiança de 0,90 ou mais e mandar o resto para uma pessoa. Nos 80 casos isso '
-                      'aceita 80% sem deixar passar nenhum erro — os quatro erros do modelo estão '
-                      'todos abaixo desse corte — e leva o custo por decisão de US$ 0,400 para '
-                      'US$ 0,080. O que impede ir além e automatizar tudo é o não determinismo: o '
-                      'mesmo caso, sozinho e repetido cinco vezes, pode mudar de resposta.'),
-            'confianca': 0.75,
-            'confianca_nota': ('Alta para a comparação contra as regras: é pareada, pré-registrada e '
-                               'replicou fora do piloto. Baixa para generalizar a um canal real: '
-                               '80 casos ao todo, construídos por mim, com um anotador só.'),
+            'texto': texto_do_veredito(e9, e6),
+            'confianca': 0.6,
+            'confianca_nota': ('Calibrada para baixo depois da sexta revisão independente. Alta para a '
+                               'comparação contra as regras congeladas: é pareada, pré-registrada e '
+                               'replicou fora do piloto. Baixa para qualquer afirmação operacional: o '
+                               'corte de 0,90 vem de 4 erros em 80 casos, o gabarito ainda é de um '
+                               'anotador humano só, e a conta de custo usa tempo humano declarado, '
+                               'nunca cronometrado.'),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}

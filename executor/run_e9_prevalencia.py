@@ -61,8 +61,14 @@ def acuracia_por_classe(casos):
         por_classe[c['gold']][1] += 1
         if c['jev'] == c['gold']:
             por_classe[c['gold']][0] += 1
-    return {classe: {'acertos': a, 'casos': n, 'taxa': round(a / n, 4)}
-            for classe, (a, n) in sorted(por_classe.items())}
+    saida = {}
+    for classe, (a, n) in sorted(por_classe.items()):
+        item = {'acertos': a, 'casos': n, 'taxa': round(a / n, 4)}
+        if a == n:
+            # Uma classe sem erro nao tem risco zero: com 16 casos o limite ainda e alto.
+            item['limite_superior_erro'] = round(1 - 0.05 ** (1 / n), 4)
+        saida[classe] = item
+    return saida
 
 
 def aceitacao(casos, corte):
@@ -84,9 +90,21 @@ def aceitacao(casos, corte):
     }
 
 
+def limite_superior_zero_erro(n, confianca=0.95):
+    """Clopper-Pearson unilateral para zero erro em n. 16/16 nao e taxa de erro zero."""
+    return round(1 - (1 - confianca) ** (1 / n), 4) if n else 1.0
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     casos = [c for c in carregar() if c['jev']]
+    # A particao importa. Juntar piloto e confirmacao numa conta so apaga justamente a
+    # separacao que o E7 existe para preservar, entao reportamos as tres visoes.
+    por_particao = {
+        'piloto (desenvolvimento)': [c for c in casos if c['origem'] == 'e1-triagem'],
+        'confirmacao (teste)': [c for c in casos if c['origem'] == 'e7-confirmacao'],
+        'uniao': casos,
+    }
     taxas = acuracia_por_classe(casos)
     observada = {classe: d['casos'] / len(casos) for classe, d in taxas.items()}
     CENARIOS['corpus-do-estudo'] = {k: round(v, 4) for k, v in observada.items()}
@@ -116,7 +134,14 @@ def main():
     relatorio = {
         'at': datetime.now(timezone.utc).isoformat(),
         'casos_usados': len(casos),
-        'origem': 'E1 piloto + E7 confirmacao, uniao dos dois corpora',
+        'origem': 'E1 piloto + E7 confirmacao',
+        'aviso_particao': ('A uniao mistura desenvolvimento e teste. A leitura que vale para decidir '
+                           'e a da particao de confirmacao; a uniao esta aqui so por ter mais casos.'),
+        'por_particao': {nome: {'casos': len(grupo),
+                                'acuracia_por_classe': acuracia_por_classe(grupo),
+                                'politicas': [aceitacao(grupo, corte)
+                                              for corte in (0.90, 0.95, 0.99)]}
+                         for nome, grupo in por_particao.items()},
         'acuracia_por_classe': taxas,
         'projecoes_por_prevalencia': projecoes,
         'aviso_projecao': ('A reponderacao assume que a dificuldade DENTRO de cada classe e a '

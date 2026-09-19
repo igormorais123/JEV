@@ -72,7 +72,14 @@ def perguntar(texto):
     except (ValueError, KeyError):
         return None, None
     rotulo = saida.get('rotulo')
-    return (rotulo if rotulo in CLASSES else None), bool(saida.get('ambigua'))
+    # bool('false') e True. Um modelo que responda a string em vez do booleano marcaria
+    # todo caso como ambiguo, e a contagem de ambiguidade viraria ruido.
+    bruto = saida.get('ambigua')
+    if isinstance(bruto, str):
+        ambigua = bruto.strip().lower() in ('true', '1', 'sim', 'yes')
+    else:
+        ambigua = bool(bruto)
+    return (rotulo if rotulo in CLASSES else None), ambigua
 
 
 def kappa_cohen(pares):

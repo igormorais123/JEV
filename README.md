@@ -4,14 +4,26 @@ Projeto experimental para testes com o modelo de classificação JEV.
 
 ## Execução realizada
 
-- [Relatório de execução — Helena](docs/RELATORIO-EXECUCAO-JEV-HELENA.md) — recomendação, evidência, red team e o que continua desconhecido.
+- **[Relatório final](docs/RELATORIO-FINAL-JEV.md)** — recomendação, os nove experimentos, contra-hipóteses
+  testadas e os limites que o estudo não autoriza ultrapassar. Comece por aqui.
+- [Relatório de execução intermediário](docs/RELATORIO-EXECUCAO-JEV-HELENA.md) — escrito antes do E5 ao E9;
+  mantido como registro histórico, superado pelo final onde houver divergência.
 - [Executor financeiro e contrato real da API](executor/README.md)
-- [Pré-registro do E1](planning/preregistro-E1-triagem.md) · corpora em [triagem](data/corpus/triagem-piloto.jsonl) e [evidência](data/corpus/evidencia-piloto.jsonl)
-- Resultados brutos em `runs/`: canários, sondagem de contrato, E1, E2 fatorial, E3 e a rodada simples dos 15 sistemas.
+- Pré-registros: [E1 piloto](planning/preregistro-E1-triagem.md) e
+  [E7 confirmação](planning/preregistro-E7-confirmacao.md), ambos com emendas declaradas.
+- Corpora: [triagem piloto](data/corpus/triagem-piloto.jsonl),
+  [triagem confirmação](data/corpus/triagem-confirmacao.jsonl),
+  [evidência](data/corpus/evidencia-piloto.jsonl) e [ressalvas](data/corpus/ressalvas-piloto.jsonl).
+- Resultados brutos em `runs/`, um diretório por experimento.
 
-261 chamadas reais, **US$ 0,007638** de um teto de US$ 5,00 de gasto novo. A conciliação com o extrato do
-provedor fecha sem divergência inexplicada. Na triagem, Jev 0,925 contra 0,600 da regra simples congelada;
-na relação afirmação/evidência, 0,958 contra 0,625. Piloto com gabarito autoral provisório: não decide adoção.
+**625 chamadas reais, US$ 0.018174** de um teto de US$ 5,00 de gasto novo — os números vêm do
+ledger em `runs/ledger.sqlite3`, não deste texto. Na triagem piloto, Jev 0,925 contra 0,600 da regra
+congelada; no conjunto de confirmação, 0.975 contra
+0.325; na relação afirmação/evidência, 0,958 contra 0,625.
+
+**O que isto não decide:** adoção. O gabarito é autoral e de um anotador humano só, os corpora são
+construídos e não colhidos de uso real, e o modelo não é determinístico. A recomendação operacional e os
+sete limites estão na seção 1 e na seção 8 do relatório final.
 
 ## Plano de testes atual
 
@@ -23,9 +35,9 @@ na relação afirmação/evidência, 0,958 contra 0,625. Piloto com gabarito aut
 - [Esquema de dados para a execução](planning/schema.sql)
 - [Auditoria das tabelas do Hermes](research/hermes/auditoria-local.json)
 
-A rodada simples cobre todos os 15 sistemas. Rodadas aprofundadas, critérios, corpus, orçamento e guia TypeSafe/OpenRouter estão no plano. Os testes dos sistemas ainda estão planejados; somente a auditoria offline do PDF foi executada. Custo novo de inferência: **US$ 0**.
+O plano previa rodada simples e rodada aprofundada para os 15 sistemas. A rodada simples foi executada como suíte offline de cada repositório, o que mede estado de código e não comportamento do componente. **A rodada aprofundada está bloqueada por dependência de dados**, não por tempo ou orçamento: ela pede centenas de casos por sistema, e produzi-los de forma autoral multiplicaria o viés que o relatório final aponta como limite principal. O desbloqueio está no item 1 da seção 10 do relatório final.
 
-O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, dentro do teto. O limite de US$ 50 informado pela chave continua sendo apenas uma segunda barreira do provedor, não uma autorização. O executor financeiro em `executor/` aplica o teto por reserva atômica antes de cada chamada; nenhuma chamada paga foi feita até aqui.
+O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, dentro do teto. O limite de US$ 50 informado pela chave continua sendo apenas uma segunda barreira do provedor, não uma autorização. O executor financeiro em `executor/` aplica o teto por reserva atômica antes de cada chamada. Estado atual: 625 tentativas registradas, US$ 0.018174 comprometidos, nenhuma reserva pendente sem liquidação. O controle passou por seis rodadas de revisão independente; o histórico de defeitos está na seção 9 do relatório final.
 
 Para reproduzir os cálculos e documentos, usar Python com ReportLab instalado:
 

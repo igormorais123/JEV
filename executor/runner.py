@@ -196,12 +196,14 @@ def dispatch(ledger, *, arm_id, block_id, provider, model, state, questions, req
     payload = payload_for(model, state, questions)
     tokens = reservation_tokens(ledger.prices, provider, model)
     max_output_tokens = reservation_output_tokens(ledger.prices, provider, model)
+    # A chave vem ANTES da reserva: falhar depois dela deixaria uma tentativa aberta
+    # segurando saldo sem que nenhuma requisicao tenha saido.
+    key = api_key or load_api_key()[0]
     reservation = ledger.reserve(arm_id=arm_id, block_id=block_id, provider=provider, model=model,
                                  max_input_tokens=tokens, max_output_tokens=max_output_tokens,
                                  payload_sha256=payload_sha256(payload), request_path=request_path,
                                  runtime_manifest_path=runtime_manifest_path, evidence_level=evidence_level)
     attempt_id = reservation['attempt_id']
-    key = api_key or load_api_key()[0]
     headers = {'Authorization': f'Bearer {key}', 'Content-Type': 'application/json',
                'User-Agent': 'jev-lab/1.0'}
     ledger.mark_sent(attempt_id)

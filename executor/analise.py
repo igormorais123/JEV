@@ -179,6 +179,11 @@ def main():
              'e2b_posicao': analisar_posicao_e2b(),
              'calibracao_0.95': analisar_calibracao(0.95),
              'calibracao_0.99': analisar_calibracao(0.99)}
+    # A calibracao que o painel cita e a da particao de confirmacao. Gravar so a do piloto
+    # apagava a chave e fazia o placar cair silenciosamente no numero do desenvolvimento.
+    if (ROOT / 'runs' / 'e7-confirmacao' / 'relatorio.json').exists():
+        for corte in (0.95, 0.99):
+            saida[f'calibracao_confirmacao_{corte}'] = analisar_calibracao(corte, conjunto='confirmacao')
     destino = ROOT / 'runs' / 'analise-pareada.json'
     destino.write_text(json.dumps(saida, ensure_ascii=False, indent=2), encoding='utf-8')
     for nome, dados in saida.items():

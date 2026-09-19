@@ -1,82 +1,97 @@
 {
  "schema_version": 1,
- "revision": 26,
- "updated_at": "2026-09-19T04:54:18.949780+00:00",
+ "revision": 30,
+ "updated_at": "2026-09-19T05:01:28.843961+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (npm test --silent): 13 failed, 195 passed. Saida 1 em 7.5s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (npm test --silent): 13 failed, 195 passed. Saida 1 em 7.5s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S02": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (npm test --silent): 80 passed. Saida 0 em 3.2s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento.",
-   "updated_at": "2026-09-19T02:46:13.752969+00:00"
+   "notes": "Suite propria do repositorio (npm test --silent): 80 passed. Saida 0 em 3.2s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S03": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 2 error. Saida 2 em 4.3s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 2 error. Saida 2 em 4.3s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S04": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 25.6s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 25.6s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S05": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 31 passed. Saida 0 em 2.4s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento.",
-   "updated_at": "2026-09-19T02:46:13.752969+00:00"
+   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 31 passed. Saida 0 em 2.4s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S06": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 24 passed. Saida 0 em 2.6s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento.",
-   "updated_at": "2026-09-19T02:46:13.752969+00:00"
+   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 24 passed. Saida 0 em 2.6s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S07": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 9 passed. Saida 0 em 5.5s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento.",
-   "updated_at": "2026-09-19T02:46:13.752969+00:00"
+   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 9 passed. Saida 0 em 5.5s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S08": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 64 error, 108 failed, 121 passed. Saida 1 em 11.8s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 64 error, 108 failed, 121 passed. Saida 1 em 11.8s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S09": {
    "simple": "blocked",
-   "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S10": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 78 passed. Saida 0 em 6.2s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento.",
-   "updated_at": "2026-09-19T02:46:13.752969+00:00"
+   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 78 passed. Saida 0 em 6.2s. Teste offline do codigo; nao e inferencia real do componente. A suite offline passar nao completa a rodada simples do plano, que exige inferencia real do componente; por isso o sistema segue em andamento. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S11": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (npm test --silent): 1 failed, 6 passed. Saida 1 em 2.1s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (npm test --silent): 1 failed, 6 passed. Saida 1 em 2.1s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S12": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 4 failed, 11 passed. Saida 1 em 26.4s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 4 failed, 11 passed. Saida 1 em 26.4s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S13": {
    "simple": "running",
-   "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 0.8s. Teste offline do codigo; nao e inferencia real do componente.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 0.8s. Teste offline do codigo; nao e inferencia real do componente. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S14": {
    "simple": "blocked",
-   "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   },
   "S15": {
    "simple": "blocked",
-   "notes": "Bloqueado: cargo ausente nesta maquina. Nada foi executado; o sistema permanece em inspecao.",
-   "updated_at": "2026-09-19T02:34:29.657370+00:00"
+   "notes": "Bloqueado: cargo ausente nesta maquina. Nada foi executado; o sistema permanece em inspecao. Aprofundamento BLOQUEADO por dependencia de dados, nao por falta de tempo ou de orcamento. A rodada aprofundada pede centenas de casos por sistema, e o corpus central de 840 casos nao existe. Escrever esse volume de casos autorais multiplicaria o vies que o relatorio final declara como limite principal, em vez de reduzi-lo. Desbloqueio: corpus colhido de uso real, anotado por dois humanos independentes. Ver docs/RELATORIO-FINAL-JEV.md, secao 10.",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00",
+   "deep": "blocked"
   }
  },
  "stage_progress": {
@@ -95,6 +110,22 @@
   "4": {
    "status": "done",
    "updated_at": "2026-09-19T02:43:08.440926+00:00"
+  },
+  "5": {
+   "status": "blocked",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00"
+  },
+  "6": {
+   "status": "blocked",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00"
+  },
+  "7": {
+   "status": "blocked",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00"
+  },
+  "8": {
+   "status": "blocked",
+   "updated_at": "2026-09-19T04:55:00.855709+00:00"
   }
  },
  "runs": [
@@ -18486,15 +18517,20 @@
    "at": "2026-09-19T04:52:13.174668+00:00",
    "kind": "evidence",
    "text": "Conciliacao de encerramento: 625 tentativas registradas, US$ 0,018174462 comprometidos do teto de US$ 5,00. Nenhuma reserva pendente sem liquidacao. Restam US$ 4,981826."
+  },
+  {
+   "at": "2026-09-19T04:55:00.855709+00:00",
+   "kind": "manual",
+   "text": "Decisao de encerramento da fase: a rodada aprofundada dos 15 sistemas fica bloqueada por dependencia de dados reais, e isso esta registrado em cada sistema. O estudo entrega o que era possivel saber sem dados de producao: nove experimentos sobre o Jev, com pre-registro, comparadores congelados, conjunto de confirmacao e segundo anotador independente. Relatorio final em docs/RELATORIO-FINAL-JEV.md."
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T04:54:18.949643+00:00",
+  "atualizado_em": "2026-09-19T05:01:28.843832+00:00",
   "veredito": {
    "titulo": "Corte de confiança em 0,90 com revisão humana do resto",
-   "texto": "A política que os dados sustentam: aceitar automaticamente o que vier com confiança de 0,90 ou mais e mandar o resto para uma pessoa. Nos 80 casos isso aceita 80% sem deixar passar nenhum erro — os quatro erros do modelo estão todos abaixo desse corte — e leva o custo por decisão de US$ 0,400 para US$ 0,080. O que impede ir além e automatizar tudo é o não determinismo: o mesmo caso, sozinho e repetido cinco vezes, pode mudar de resposta.",
-   "confianca": 0.75,
-   "confianca_nota": "Alta para a comparação contra as regras: é pareada, pré-registrada e replicou fora do piloto. Baixa para generalizar a um canal real: 80 casos ao todo, construídos por mim, com um anotador só."
+   "texto": "Aceitar automaticamente o que vier com confianca de 0,90 ou mais cobre 87.5% dos 40 casos da particao de confirmacao sem nenhum erro observado entre os aceitos; o custo por decisao cai de US$ 0.400 para US$ 0.080, com tempo humano declarado e nunca cronometrado; o que impede automatizar tudo e o nao determinismo: 1 caso em 40, sozinho e repetido 5 vezes, muda de resposta.",
+   "confianca": 0.6,
+   "confianca_nota": "Calibrada para baixo depois da sexta revisão independente. Alta para a comparação contra as regras congeladas: é pareada, pré-registrada e replicou fora do piloto. Baixa para qualquer afirmação operacional: o corte de 0,90 vem de 4 erros em 80 casos, o gabarito ainda é de um anotador humano só, e a conta de custo usa tempo humano declarado, nunca cronometrado."
   },
   "cartoes": [
    {
@@ -18503,7 +18539,7 @@
     "valor": "92.5%",
     "comparacao": "regra congelada 60.0%",
     "leitura": "Vantagem de 32.5%, IC95 [15.0%; 50.0%] por reamostragem de famílias.",
-    "fonte": "40 casos, 10 famílias",
+    "fonte": "40 casos programados, 10 famílias",
     "estado": "pronto"
    },
    {
@@ -18512,7 +18548,7 @@
     "valor": "95.8%",
     "comparacao": "regra ingênua 62.5%",
     "leitura": "Vantagem de 33.3%, IC95 [25.0%; 41.7%].",
-    "fonte": "24 casos, 6 famílias",
+    "fonte": "24 casos programados, 6 famílias",
     "estado": "pronto"
    },
    {
@@ -18566,7 +18602,7 @@
     "valor": "97.5%",
     "comparacao": "regra congelada 32.5%",
     "leitura": "Casos novos, que não guiaram o desenho: diferença 65.0%, IC95 [52.5%; 77.5%]. O Jev subiu pouco (92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem armadilhas lexicais. Único erro com gabarito contestável.",
-    "fonte": "40 casos, 10 famílias novas",
+    "fonte": "40 casos programados, 10 famílias novas",
     "estado": "pronto"
    },
    {
@@ -18574,7 +18610,7 @@
     "titulo": "Segundo anotador independente (E8)",
     "valor": "kappa 0.8593",
     "comparacao": "concordância bruta 88.8%",
-    "leitura": "9 divergências em 80 casos. Nos 2 casos em que o Jev diverge do meu gabarito e o anotador independente opina, ele fica do lado do Jev: meu gabarito é o suspeito, não a resposta. Sob o gabarito do outro anotador o Jev faz 88.8%; nos 71 casos de consenso, 97.2%.",
+    "leitura": "9 divergências em 80 casos. Dos 4 erros do Jev, o anotador independente confirma o gabarito em 2 (tri-f06-02, tri-f09-04) e fica do lado do Jev em 2 (tri-f02-04, cnf-g05-02). Sob o gabarito do outro anotador o Jev faz 88.8%, não 95%. Nas demais divergências foi o anotador que caiu na armadilha. Um modelo de 7B reproduziu a rubrica do autor: kappa alto aqui mede reprodutibilidade, não validade, e não substitui o segundo anotador humano.",
     "fonte": "qwen2.5:7b-instruct local, cego ao gabarito e à resposta do Jev",
     "estado": "pronto"
    },
@@ -18583,8 +18619,8 @@
     "titulo": "Sensibilidade à prevalência (E9)",
     "valor": "0.943 a 0.969",
     "comparacao": "4 distribuições de canal",
-    "leitura": "A acurácia quase não se move quando a mistura de classes muda, porque nenhuma classe é fraca. No corte 0,90 a política aceita 80.0% dos casos com 0 erro entre os aceitos: os quatro erros do Jev estão todos abaixo desse corte.",
-    "fonte": "reponderação da matriz de confusão dos 80 casos; distribuições declaradas, não medidas",
+    "leitura": "A acurácia esperada se move pouco entre as distribuições porque a classe mais fraca ainda faz 0.9333 — com 15 casos só, o que deixa essa taxa muito incerta. As distribuições são declaradas, não medidas, e a conta supõe que a dificuldade dentro de cada classe é a mesma do corpus. No corte 0,90 a política aceita 80.0% dos casos com 0 erro entre os aceitos.",
+    "fonte": "reponderação da matriz de confusão; NÃO é a medição de P5, que pedia minutagem humana e continua pendente",
     "estado": "pronto"
    },
    {

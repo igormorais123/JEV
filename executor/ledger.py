@@ -159,15 +159,34 @@ class Ledger:
     # --- configuracao -------------------------------------------------
     def authorize(self, cap_nusd, hypothesis='executor financeiro', metric='custo por decisao util',
                   seed=20260918, protocol_version='1.0'):
-        with self._tx():
+        with self._tx(immediate=True):
+            existente = self.db.execute(
+                'SELECT status, amendments_json FROM experiments WHERE experiment_id = ?',
+                (self.experiment_id,)).fetchone()
+            if existente is None:
+                self.db.execute(
+                    'INSERT INTO experiments(experiment_id,protocol_version,hypothesis,primary_metric,'
+                    'decision_rule_json,preregistered_at_utc,seed,budget_cap_nusd,status,amendments_json)'
+                    ' VALUES(?,?,?,?,?,?,?,?,?,?)',
+                    (self.experiment_id, protocol_version, hypothesis, metric, '{}', now_utc(), seed,
+                     int(cap_nusd), 'running', '[]'),
+                )
+                self._event(None, 'authorize', int(cap_nusd), {'cap_nusd': int(cap_nusd)})
+                return int(cap_nusd)
+            # Experimento que ja existe: reautorizar NAO e recriar. O INSERT OR REPLACE anterior
+            # reescrevia status e emendas, entao relancar o runner apagava uma pausa por estouro
+            # e desfazia, sem registro, a unica trava que impede gasto novo depois do teto.
+            if existente['status'] == 'paused':
+                raise BudgetError(
+                    'Experimento pausado por estouro anterior; reautorizar nao retoma. '
+                    'Use retomar_experimento(motivo, evidencia).')
             self.db.execute(
-                'INSERT OR REPLACE INTO experiments(experiment_id,protocol_version,hypothesis,primary_metric,'
-                'decision_rule_json,preregistered_at_utc,seed,budget_cap_nusd,status,amendments_json)'
-                ' VALUES(?,?,?,?,?,?,?,?,?,?)',
-                (self.experiment_id, protocol_version, hypothesis, metric, '{}', now_utc(), seed,
-                 int(cap_nusd), 'running', '[]'),
-            )
-            self._event(None, 'authorize', int(cap_nusd), {'cap_nusd': int(cap_nusd)})
+                'UPDATE experiments SET protocol_version = ?, hypothesis = ?, primary_metric = ?,'
+                ' seed = ?, budget_cap_nusd = ? WHERE experiment_id = ?',
+                (protocol_version, hypothesis, metric, seed, int(cap_nusd), self.experiment_id))
+            self._event(None, 'authorize', int(cap_nusd),
+                        {'cap_nusd': int(cap_nusd), 'reautorizacao': True,
+                         'status_preservado': existente['status']})
         return int(cap_nusd)
 
     def set_block_cap(self, block_id, cap_nusd):
