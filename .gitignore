@@ -40,10 +40,19 @@ runs/**
 # de cada chamada, que sao volumosos e nao acrescentam nada que o agregado nao diga.
 !runs/*/relatorio.json
 !runs/analise-pareada.json
-!runs/e8-anotador/adjudicacao.json
-!runs/e8-anotador/adjudicacao-mapa.json
-!runs/e8-anotador/adjudicacao-bruta.jsonl
-!runs/e8-anotador/prompt-adjudicacao.txt
+# [E12/R16] A revisao adversarial mostrou que so o E8 tinha a adjudicacao versionada: a do E11 e
+# a do E12 ficavam fora, e o relatorio se apoia nelas para dizer "o terceiro juiz confirmou meu
+# gabarito em 10 de 10". Quem clona nao conseguia conferir a afirmacao. Agora a regra e por
+# padrao de arquivo, e nao por experimento lembrado a mao.
+!runs/*/adjudicacao.json
+!runs/*/adjudicacao-mapa.json
+!runs/*/adjudicacao-bruta.jsonl
+!runs/*/casos-cegos.json
+!runs/*/prompt-adjudicacao.txt
+# O bruto caso a caso e a unica evidencia da CRONOLOGIA: cruzando os horarios dele com os
+# commits das emendas da para conferir o que ja existia quando cada emenda foi escrita.
+!runs/*/respostas.jsonl
+!runs/*/anuladas-emenda-3.json
 !runs/canaries/summary.json
 # [R13] O extrato do livro-caixa vai versionado; o banco, nao. Sem ele, o custo publicado e uma
 # citacao que ninguem de fora consegue conferir.

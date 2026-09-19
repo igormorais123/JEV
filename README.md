@@ -28,7 +28,8 @@ congelada; no conjunto de confirmação, 0.975 contra
 
 Na replicação (E12), 90 casos novos em 30 famílias contra **quatro** LLMs econômicos de quatro
 fornecedores: o Jev acerta 0,9889 e supera todos eles no gabarito adjudicado, de +7,8% a +14,4%,
-e **empata exatamente com o mais barato deles** sob o gabarito do anotador independente. A regra
+e **não separa de zero contra nenhum deles** sob o gabarito do anotador independente — contra o
+llama-3.1-8b a diferença é exatamente 0,0. A regra
 de leitura estava congelada antes de existir qualquer caso, e o veredito que ela produz é
 `depende-do-gabarito`.
 

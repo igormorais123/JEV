@@ -1,0 +1,68 @@
+Voce e o terceiro juiz de um estudo de anotacao. Dois anotadores independentes classificaram as mesmas mensagens de atendimento ao cliente e divergiram em 10 casos. Voce NAO sabe qual leitura veio de qual anotador, e isso e proposital. Decida cada caso pelo merito.
+
+REGRA DE DECISAO (a mesma que os dois anotadores receberam):
+Classifique a acao que o remetente pede na mensagem. Vale a acao pedida, nao o assunto mencionado. Acao citada como fala de terceiro, negada, condicional ou ja concluida nao e a acao pedida.
+
+CLASSES:
+- cancelar: O remetente pede encerrar, cancelar ou desistir de um pedido, servico ou contrato.
+- rastrear: O remetente pede informacao sobre onde esta, quando chega ou qual o status da entrega.
+- trocar: O remetente pede troca, devolucao com substituicao, reparo ou conserto em garantia.
+- cobranca: O remetente pede segunda via, estorno, reembolso, parcelamento, ou contesta um valor.
+- informacao: O remetente pede apenas esclarecimento ou dado, sem solicitar nenhuma das acoes acima.
+
+Para cada caso, escolha A ou B, ou responda "nenhuma" se as duas leituras estiverem erradas (e entao diga a classe correta), ou "ambiguas" se a mensagem realmente admitir as duas leituras sem que uma seja melhor.
+
+SAIDA: uma linha JSON por caso, sem markdown e sem cercas:
+{"case_id":"...","escolha":"A|B|nenhuma|ambiguas","classe":"<classe correta>","motivo":"ate 20 palavras"}
+
+CASOS EM DISPUTA:
+
+dsp-d01-02
+MENSAGEM: Sera que eu deveria cancelar? Antes de decidir qualquer coisa, me explica como funciona a multa.
+LEITURA A: informacao
+LEITURA B: cancelar
+
+dsp-d03-01
+MENSAGEM: Se nao chegar ate sexta eu cancelo tudo. Por ora, me diz onde esta a encomenda.
+LEITURA A: rastrear
+LEITURA B: cancelar
+
+dsp-d06-03
+MENSAGEM: Sou advogado do titular e gostaria de saber quais documentos voces exigem para um cancelamento.
+LEITURA A: cancelar
+LEITURA B: informacao
+
+dsp-d09-01
+MENSAGEM: Ja abri o pedido de troca pelo aplicativo na semana passada. Quanto tempo costuma levar?
+LEITURA A: informacao
+LEITURA B: trocar
+
+dsp-d10-03
+MENSAGEM: Comprei ha dezoito dias, o prazo era de cinco, e nada. Nao tem cabimento.
+LEITURA A: rastrear
+LEITURA B: trocar
+
+dsp-d11-01
+MENSAGEM: Paguei 349,90 no dia 02, com prazo de 7 dias uteis. Hoje e dia 19. Cade?
+LEITURA A: rastrear
+LEITURA B: cobranca
+
+dsp-d12-01
+MENSAGEM: Primeiro me diz onde esta o pedido; dependendo da resposta eu decido se cancelo.
+LEITURA A: cancelar
+LEITURA B: rastrear
+
+dsp-d16-01
+MENSAGEM: Meu cancelamento ja foi processado? Pedi no dia 5 e nao recebi confirmacao.
+LEITURA A: informacao
+LEITURA B: cancelar
+
+dsp-d16-02
+MENSAGEM: A troca que solicitei foi aprovada? So quero confirmar antes de mandar o produto.
+LEITURA A: trocar
+LEITURA B: informacao
+
+dsp-d18-01
+MENSAGEM: Por enquanto nao cancela nada, so me manda por escrito o valor da multa de rescisao.
+LEITURA A: cobranca
+LEITURA B: informacao

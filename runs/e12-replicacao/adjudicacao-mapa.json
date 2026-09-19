@@ -1,0 +1,62 @@
+{
+ "rep-p05-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "rep-p05-02": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "trocar"
+ },
+ "rep-p06-01": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "cobranca"
+ },
+ "rep-p09-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "rep-p10-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "rep-p10-02": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "rastrear",
+  "anotador_local": "informacao"
+ },
+ "rep-p17-01": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "rastrear"
+ },
+ "rep-p22-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "cobranca",
+  "anotador_local": "trocar"
+ },
+ "rep-p23-01": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "rastrear",
+  "anotador_local": "cobranca"
+ },
+ "rep-p30-03": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "cobranca"
+ }
+}

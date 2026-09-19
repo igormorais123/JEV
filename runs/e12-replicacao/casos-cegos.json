@@ -1,0 +1,62 @@
+[
+ {
+  "case_id": "rep-p05-01",
+  "text": "Como faco para cancelar a assinatura pelo aplicativo? Nao quero que voces cancelem nada agora, so quero saber o caminho.",
+  "A": "informacao",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "rep-p05-02",
+  "text": "Qual e o procedimento de troca de um produto com defeito? Pergunto por precaucao, meu produto esta perfeito.",
+  "A": "informacao",
+  "B": "trocar"
+ },
+ {
+  "case_id": "rep-p06-01",
+  "text": "Cancela minha assinatura, ou melhor, deixa quieto, so me diz quanto ficou a mensalidade nova.",
+  "A": "cobranca",
+  "B": "informacao"
+ },
+ {
+  "case_id": "rep-p09-01",
+  "text": "O aplicativo cancelou minha assinatura sozinho. Eu nao pedi isso e quero entender por que aconteceu.",
+  "A": "informacao",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "rep-p10-01",
+  "text": "Minha esposa quer cancelar o plano. Eu nao quero; so me explica o que muda para a gente se cancelar.",
+  "A": "informacao",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "rep-p10-02",
+  "text": "Meu socio pediu para trocar o equipamento. Que ele resolva isso; eu so preciso saber onde esta a entrega do outro pedido.",
+  "A": "rastrear",
+  "B": "informacao"
+ },
+ {
+  "case_id": "rep-p17-01",
+  "text": "Disseram que talvez a transportadora cancele a entrega por falta de acesso na rua. Isso procede mesmo?",
+  "A": "rastrear",
+  "B": "informacao"
+ },
+ {
+  "case_id": "rep-p22-01",
+  "text": "A mesma compra apareceu duas vezes na fatura do cartao. Devolve uma delas.",
+  "A": "cobranca",
+  "B": "trocar"
+ },
+ {
+  "case_id": "rep-p23-01",
+  "text": "Preciso disso hoje sem falta e ja passou do prazo combinado. Cade?",
+  "A": "cobranca",
+  "B": "rastrear"
+ },
+ {
+  "case_id": "rep-p30-03",
+  "text": "Posso pedir a segunda via por aqui? Antes de pedir, me confirma se ela vem com o mesmo vencimento da original.",
+  "A": "cobranca",
+  "B": "informacao"
+ }
+]

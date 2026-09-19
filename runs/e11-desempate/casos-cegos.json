@@ -1,0 +1,62 @@
+[
+ {
+  "case_id": "dsp-d01-02",
+  "text": "Sera que eu deveria cancelar? Antes de decidir qualquer coisa, me explica como funciona a multa.",
+  "A": "informacao",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "dsp-d03-01",
+  "text": "Se nao chegar ate sexta eu cancelo tudo. Por ora, me diz onde esta a encomenda.",
+  "A": "rastrear",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "dsp-d06-03",
+  "text": "Sou advogado do titular e gostaria de saber quais documentos voces exigem para um cancelamento.",
+  "A": "cancelar",
+  "B": "informacao"
+ },
+ {
+  "case_id": "dsp-d09-01",
+  "text": "Ja abri o pedido de troca pelo aplicativo na semana passada. Quanto tempo costuma levar?",
+  "A": "informacao",
+  "B": "trocar"
+ },
+ {
+  "case_id": "dsp-d10-03",
+  "text": "Comprei ha dezoito dias, o prazo era de cinco, e nada. Nao tem cabimento.",
+  "A": "rastrear",
+  "B": "trocar"
+ },
+ {
+  "case_id": "dsp-d11-01",
+  "text": "Paguei 349,90 no dia 02, com prazo de 7 dias uteis. Hoje e dia 19. Cade?",
+  "A": "rastrear",
+  "B": "cobranca"
+ },
+ {
+  "case_id": "dsp-d12-01",
+  "text": "Primeiro me diz onde esta o pedido; dependendo da resposta eu decido se cancelo.",
+  "A": "cancelar",
+  "B": "rastrear"
+ },
+ {
+  "case_id": "dsp-d16-01",
+  "text": "Meu cancelamento ja foi processado? Pedi no dia 5 e nao recebi confirmacao.",
+  "A": "informacao",
+  "B": "cancelar"
+ },
+ {
+  "case_id": "dsp-d16-02",
+  "text": "A troca que solicitei foi aprovada? So quero confirmar antes de mandar o produto.",
+  "A": "trocar",
+  "B": "informacao"
+ },
+ {
+  "case_id": "dsp-d18-01",
+  "text": "Por enquanto nao cancela nada, so me manda por escrito o valor da multa de rescisao.",
+  "A": "cobranca",
+  "B": "informacao"
+ }
+]

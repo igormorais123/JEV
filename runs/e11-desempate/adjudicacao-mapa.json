@@ -1,0 +1,62 @@
+{
+ "dsp-d01-02": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "dsp-d03-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "rastrear",
+  "anotador_local": "cancelar"
+ },
+ "dsp-d06-03": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "dsp-d09-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "trocar"
+ },
+ "dsp-d10-03": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "rastrear",
+  "anotador_local": "trocar"
+ },
+ "dsp-d11-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "rastrear",
+  "anotador_local": "cobranca"
+ },
+ "dsp-d12-01": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "rastrear",
+  "anotador_local": "cancelar"
+ },
+ "dsp-d16-01": {
+  "A": "autor",
+  "B": "anotador_local",
+  "autor": "informacao",
+  "anotador_local": "cancelar"
+ },
+ "dsp-d16-02": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "trocar"
+ },
+ "dsp-d18-01": {
+  "A": "anotador_local",
+  "B": "autor",
+  "autor": "informacao",
+  "anotador_local": "cobranca"
+ }
+}

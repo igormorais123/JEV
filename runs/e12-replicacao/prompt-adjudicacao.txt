@@ -1,0 +1,68 @@
+Voce e o terceiro juiz de um estudo de anotacao. Dois anotadores independentes classificaram as mesmas mensagens de atendimento ao cliente e divergiram em 10 casos. Voce NAO sabe qual leitura veio de qual anotador, e isso e proposital. Decida cada caso pelo merito.
+
+REGRA DE DECISAO (a mesma que os dois anotadores receberam):
+Classifique a acao que o remetente pede na mensagem. Vale a acao pedida, nao o assunto mencionado. Acao citada como fala de terceiro, negada, condicional ou ja concluida nao e a acao pedida.
+
+CLASSES:
+- cancelar: O remetente pede encerrar, cancelar ou desistir de um pedido, servico ou contrato.
+- rastrear: O remetente pede informacao sobre onde esta, quando chega ou qual o status da entrega.
+- trocar: O remetente pede troca, devolucao com substituicao, reparo ou conserto em garantia.
+- cobranca: O remetente pede segunda via, estorno, reembolso, parcelamento, ou contesta um valor.
+- informacao: O remetente pede apenas esclarecimento ou dado, sem solicitar nenhuma das acoes acima.
+
+Para cada caso, escolha A ou B, ou responda "nenhuma" se as duas leituras estiverem erradas (e entao diga a classe correta), ou "ambiguas" se a mensagem realmente admitir as duas leituras sem que uma seja melhor.
+
+SAIDA: uma linha JSON por caso, sem markdown e sem cercas:
+{"case_id":"...","escolha":"A|B|nenhuma|ambiguas","classe":"<classe correta>","motivo":"ate 20 palavras"}
+
+CASOS EM DISPUTA:
+
+rep-p05-01
+MENSAGEM: Como faco para cancelar a assinatura pelo aplicativo? Nao quero que voces cancelem nada agora, so quero saber o caminho.
+LEITURA A: informacao
+LEITURA B: cancelar
+
+rep-p05-02
+MENSAGEM: Qual e o procedimento de troca de um produto com defeito? Pergunto por precaucao, meu produto esta perfeito.
+LEITURA A: informacao
+LEITURA B: trocar
+
+rep-p06-01
+MENSAGEM: Cancela minha assinatura, ou melhor, deixa quieto, so me diz quanto ficou a mensalidade nova.
+LEITURA A: cobranca
+LEITURA B: informacao
+
+rep-p09-01
+MENSAGEM: O aplicativo cancelou minha assinatura sozinho. Eu nao pedi isso e quero entender por que aconteceu.
+LEITURA A: informacao
+LEITURA B: cancelar
+
+rep-p10-01
+MENSAGEM: Minha esposa quer cancelar o plano. Eu nao quero; so me explica o que muda para a gente se cancelar.
+LEITURA A: informacao
+LEITURA B: cancelar
+
+rep-p10-02
+MENSAGEM: Meu socio pediu para trocar o equipamento. Que ele resolva isso; eu so preciso saber onde esta a entrega do outro pedido.
+LEITURA A: rastrear
+LEITURA B: informacao
+
+rep-p17-01
+MENSAGEM: Disseram que talvez a transportadora cancele a entrega por falta de acesso na rua. Isso procede mesmo?
+LEITURA A: rastrear
+LEITURA B: informacao
+
+rep-p22-01
+MENSAGEM: A mesma compra apareceu duas vezes na fatura do cartao. Devolve uma delas.
+LEITURA A: cobranca
+LEITURA B: trocar
+
+rep-p23-01
+MENSAGEM: Preciso disso hoje sem falta e ja passou do prazo combinado. Cade?
+LEITURA A: cobranca
+LEITURA B: rastrear
+
+rep-p30-03
+MENSAGEM: Posso pedir a segunda via por aqui? Antes de pedir, me confirma se ela vem com o mesmo vencimento da original.
+LEITURA A: cobranca
+LEITURA B: informacao

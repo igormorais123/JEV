@@ -1,0 +1,104 @@
+{
+ "at": "2026-09-19T06:45:05.609367+00:00",
+ "terceiro_juiz": "gpt-5.6-sol-high (Cursor), cego",
+ "preregistro": "planning/preregistro-E11-desempate.md (Emenda 2)",
+ "corpus": "data/corpus/triagem-desempate.jsonl",
+ "casos": [
+  {
+   "case_id": "dsp-d01-02",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "O pedido atual é explicar a multa; cancelamento é hipótese ainda não decidida."
+  },
+  {
+   "case_id": "dsp-d03-01",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "Cancelamento é condicional; o pedido atual busca a localização da encomenda."
+  },
+  {
+   "case_id": "dsp-d06-03",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Pede requisitos documentais, não a execução do cancelamento."
+  },
+  {
+   "case_id": "dsp-d09-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "trocar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "A troca já foi solicitada; agora pede apenas informação sobre prazo."
+  },
+  {
+   "case_id": "dsp-d10-03",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "trocar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "A queixa por atraso implica pedido de status da entrega, sem pedir troca."
+  },
+  {
+   "case_id": "dsp-d11-01",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "cobranca",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "O valor pago é distração; 'Cadê?' pede localização ou status da entrega."
+  },
+  {
+   "case_id": "dsp-d12-01",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "Pede localização; eventual cancelamento depende da resposta e não é pedido atual."
+  },
+  {
+   "case_id": "dsp-d16-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "O cancelamento já foi pedido; agora solicita confirmação de processamento."
+  },
+  {
+   "case_id": "dsp-d16-02",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "trocar",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "A troca já foi solicitada; agora pede confirmação de aprovação."
+  },
+  {
+   "case_id": "dsp-d18-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cobranca",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Nega cancelamento e pede somente o valor da multa, um dado."
+  }
+ ],
+ "placar": {
+  "confirmam_o_autor": 10,
+  "confirmam_o_anotador_local": 0,
+  "terceira_leitura": 0,
+  "ambiguas": 0
+ }
+}

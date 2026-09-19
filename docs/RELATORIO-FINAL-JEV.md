@@ -363,13 +363,19 @@ famílias do E12 — que é o mais apertado que este estudo conseguiu, e ainda a
 dez.
 
 Os quatro comparadores econômicos do E12, no mesmo corpus e no gabarito oficial, cometem erro
-grave: llama-3.1-8b, 2 falsos `cancelar` e 2 perdidos; gemma-3-12b, 2 e 1; gpt-oss-20b, 1 e 5. O
-mistral-nemo, como o Jev, não comete nenhum — e custa um quarto do preço dele. Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma
+grave: llama-3.1-8b, 2 falsos `cancelar` e 2 perdidos; gemma-3-12b, 2 e 1; gpt-oss-20b, 1 e 2. O
+mistral-nemo, como o Jev, não comete nenhum — e custa um quarto do preço dele.
+
+*(Correção registrada: até a décima sexta rodada de revisão este parágrafo dizia que o
+gpt-oss-20b perdia 5 `cancelar`. Eram 5 antes de eu corrigir o defeito que apagava nove
+respostas já pagas daquele braço, descrito em 9.1, e o número ficou no texto depois de o dado
+mudar. É o mesmo erro que este relatório persegue desde a nona rodada: número velho numa caixa
+nova — desta vez cometido por mim, no parágrafo em que eu comparava erro grave entre modelos.)* Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma
 garantia operacional. O que este número autoriza dizer é que o erro irreversível não apareceu
 onde a regra congelada o comete dez vezes; o que ele não autoriza é prometer que não aparecerá.
 
-O sentido oposto — `cancelar` que o modelo deixa passar — aparece em 1 ou 2 casos conforme o
-gabarito. Custa atraso, não destruição, e por isso está na tabela mas fora da definição de erro
+O sentido oposto — `cancelar` que o modelo deixa passar — aparece em 1 a 5 casos conforme o
+gabarito e o corpus; no E12, sob o gabarito do anotador independente, o próprio Jev perde 3. Custa atraso, não destruição, e por isso está na tabela mas fora da definição de erro
 grave.
 
 ---
@@ -630,6 +636,14 @@ famílias, o limite superior de 95% do Jev ainda é 4,4%.
 A terceira emenda corrigia um erro que favorecia o sistema avaliado, e é por isso que ela foi
 escrita antes: sem ela, o gpt-oss apareceria com acurácia perto de zero e a "vantagem do Jev"
 sobre ele seria um artefato da minha configuração.
+
+**Como auditar essa cronologia sem acreditar em mim.** As três emendas foram commitadas com a
+execução em curso, ou seja, quando já existiam respostas parciais no disco — o Git prova a
+ordem dos commits, não o que eu tinha visto. O que torna a afirmação verificável é o bruto:
+`runs/e12-replicacao/respostas.jsonl` é gravado caso a caso, na ordem, e vai versionado desde a
+décima sexta rodada de revisão, que cobrou justamente isso. Cruzando o horário de cada linha do
+bruto com o horário de cada commit de emenda, qualquer pessoa recalcula exatamente qual era o
+estado dos dados quando cada regra foi escrita — inclusive para me contradizer.
 
 ---
 
@@ -982,6 +996,16 @@ conservadora e exige motivo e evidência), com o extrato como evidência, e a re
 na origem: **HTTP 429 liquida zero**, porque o provedor recusa antes de gerar. A exceção vale
 só para o 429 — em 5xx e em timeout a geração pode ter acontecido, e ali o conservador continua
 certo.
+
+**O que essa evidência prova, e o que ela não prova.** O extrato da chave é **agregado**: ele
+diz quanto o provedor cobrou no total, não quanto cobrou em cada tentativa. Uma requisição
+recusada com 429 não recebe identificador de geração, então não há recibo por tentativa a
+conferir. O que sustenta a retificação é a conta agregada, e ela é conservadora nos dois
+sentidos: depois de zerar as 76, o ledger ainda liquida US$ 0,035707114 contra os
+US$ 0,034640289 do extrato — continua **acima** do que o provedor cobrou. Se alguma daquelas
+chamadas tivesse sido cobrada, a diferença de US$ 0,001 já a absorveria. Essa é a garantia que
+existe; um recibo por tentativa não existe, e este parágrafo está aqui para que ninguém leia
+mais do que há.
 
 Não era um erro de arredondamento: era o executor financeiro inventando meio dólar de gasto que
 nunca existiu. Como a política é conservadora, ele errava para o lado seguro do teto e para o

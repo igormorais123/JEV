@@ -1,0 +1,65 @@
+{
+ "at": "2026-09-19T12:17:58.397472+00:00",
+ "emenda": "planning/preregistro-E12-replicacao.md (Emenda 3)",
+ "motivo": "o teto de 64 tokens de saida impedia openai/gpt-oss-20b de responder: o modelo gasta saida com raciocinio e devolvia conteudo vazio",
+ "braco": "c4",
+ "teto_antigo": 64,
+ "teto_novo": 256,
+ "chamadas_anuladas_da_analise": [
+  {
+   "case_id": "rep-p01-01",
+   "attempt_id": "bea7e7db-9aee-4349-80d9-c685ed33c301",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p01-02",
+   "attempt_id": "93ebd4cb-1cb1-4a03-a7e1-c61a1782a3ef",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p01-03",
+   "attempt_id": "8411b697-a385-4c8e-afb8-0a379544af38",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p02-01",
+   "attempt_id": "dfa48006-19df-406c-96e4-63ef656ef5d8",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p02-02",
+   "attempt_id": "8c7563b1-58b6-40fe-a3b0-02c4b8ab522d",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p02-03",
+   "attempt_id": "541b732d-a9ba-467c-9242-df3f71d2f653",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p03-01",
+   "attempt_id": "df4b2668-3238-4e5d-b37c-f67fbc48d392",
+   "resposta": null,
+   "erro": "classe fora do contrato: None"
+  },
+  {
+   "case_id": "rep-p03-02",
+   "attempt_id": "5a090e1a-e923-45c8-841b-c2e5d41f02f2",
+   "resposta": null,
+   "erro": "json invalido: "
+  },
+  {
+   "case_id": "rep-p03-03",
+   "attempt_id": "a2617f55-1035-44a7-873c-a18683d8078c",
+   "resposta": null,
+   "erro": "json invalido: "
+  }
+ ],
+ "observacao": "anuladas da ANALISE, nunca do livro-caixa: as tentativas seguem registradas e pagas no ledger, e aparecem no extrato"
+}

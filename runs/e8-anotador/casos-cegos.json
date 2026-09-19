@@ -1,0 +1,402 @@
+[
+ {
+  "case_id": "tri-f01-01",
+  "conjunto": "piloto",
+  "text": "Bom dia. Gostaria de cancelar o pedido 4471, ainda não foi enviado."
+ },
+ {
+  "case_id": "tri-f01-02",
+  "conjunto": "piloto",
+  "text": "Oi, quero saber onde está minha encomenda 8812, comprei na terça."
+ },
+ {
+  "case_id": "tri-f01-03",
+  "conjunto": "piloto",
+  "text": "A blusa veio no tamanho errado, queria trocar por um M."
+ },
+ {
+  "case_id": "tri-f01-04",
+  "conjunto": "piloto",
+  "text": "Preciso da segunda via do boleto que vence amanhã."
+ },
+ {
+  "case_id": "tri-f02-01",
+  "conjunto": "piloto",
+  "text": "Vocês entregam no interior de Goiás?"
+ },
+ {
+  "case_id": "tri-f02-02",
+  "conjunto": "piloto",
+  "text": "Qual é o horário de funcionamento da loja no sábado?"
+ },
+ {
+  "case_id": "tri-f02-03",
+  "conjunto": "piloto",
+  "text": "O produto 220v tem garantia de quantos meses?"
+ },
+ {
+  "case_id": "tri-f02-04",
+  "conjunto": "piloto",
+  "text": "Vocês parcelam em quantas vezes sem juros?"
+ },
+ {
+  "case_id": "tri-f03-01",
+  "conjunto": "piloto",
+  "text": "Recebi uma cobrança errada no cartão e por isso quero cancelar o pedido inteiro."
+ },
+ {
+  "case_id": "tri-f03-02",
+  "conjunto": "piloto",
+  "text": "O produto atrasou demais na entrega, então prefiro trocar por outro modelo que esteja disponível."
+ },
+ {
+  "case_id": "tri-f03-03",
+  "conjunto": "piloto",
+  "text": "Como a peça chegou quebrada, quero meu dinheiro de volta no cartão."
+ },
+ {
+  "case_id": "tri-f03-04",
+  "conjunto": "piloto",
+  "text": "Meu boleto já foi pago, só preciso saber quando o pedido sai para entrega."
+ },
+ {
+  "case_id": "tri-f04-01",
+  "conjunto": "piloto",
+  "text": "Não quero cancelar nada, só queria entender por que o valor mudou."
+ },
+ {
+  "case_id": "tri-f04-02",
+  "conjunto": "piloto",
+  "text": "Não precisa trocar o produto, me diga apenas se a garantia cobre o defeito."
+ },
+ {
+  "case_id": "tri-f04-03",
+  "conjunto": "piloto",
+  "text": "Não é sobre entrega. Quero cancelar a assinatura mensal."
+ },
+ {
+  "case_id": "tri-f04-04",
+  "conjunto": "piloto",
+  "text": "Não quero segunda via, quero saber onde o entregador deixou a caixa."
+ },
+ {
+  "case_id": "tri-f05-01",
+  "conjunto": "piloto",
+  "text": "Meu marido disse para cancelar, mas eu só quero saber a data prevista de entrega."
+ },
+ {
+  "case_id": "tri-f05-02",
+  "conjunto": "piloto",
+  "text": "A atendente sugeriu que eu trocasse o produto, mas prefiro cancelar mesmo."
+ },
+ {
+  "case_id": "tri-f05-03",
+  "conjunto": "piloto",
+  "text": "Li no site que dá para pedir reembolso. Antes disso, gostaria de trocar por outra cor."
+ },
+ {
+  "case_id": "tri-f05-04",
+  "conjunto": "piloto",
+  "text": "Um amigo falou que vocês rastreiam pelo WhatsApp. Eu preciso mesmo é da segunda via da nota."
+ },
+ {
+  "case_id": "tri-f06-01",
+  "conjunto": "piloto",
+  "text": "Entre cancelar e trocar, por enquanto quero apenas trocar o tamanho."
+ },
+ {
+  "case_id": "tri-f06-02",
+  "conjunto": "piloto",
+  "text": "Pensei em trocar, mas decidi cancelar a compra."
+ },
+ {
+  "case_id": "tri-f06-03",
+  "conjunto": "piloto",
+  "text": "Já vi o código de rastreio, agora preciso mesmo é do comprovante de pagamento."
+ },
+ {
+  "case_id": "tri-f06-04",
+  "conjunto": "piloto",
+  "text": "Depois de trocar o item, vou querer o novo código de rastreamento, mas primeiro me confirme a troca."
+ },
+ {
+  "case_id": "tri-f07-01",
+  "conjunto": "piloto",
+  "text": "Fui cobrado duas vezes pelo mesmo pedido, quero o estorno de uma delas."
+ },
+ {
+  "case_id": "tri-f07-02",
+  "conjunto": "piloto",
+  "text": "Cancelei o pedido na semana passada e a cobrança continua vindo. Quero encerrar a assinatura de vez."
+ },
+ {
+  "case_id": "tri-f07-03",
+  "conjunto": "piloto",
+  "text": "Quero parcelar o valor em três vezes em vez de pagar tudo agora."
+ },
+ {
+  "case_id": "tri-f07-04",
+  "conjunto": "piloto",
+  "text": "Se não der para parcelar, cancele o pedido. Por ora só me informe se dá."
+ },
+ {
+  "case_id": "tri-f08-01",
+  "conjunto": "piloto",
+  "text": "A geladeira chegou amassada, quero uma nova no lugar desta."
+ },
+ {
+  "case_id": "tri-f08-02",
+  "conjunto": "piloto",
+  "text": "O notebook liga mas a tela falha, quero enviar para conserto na garantia."
+ },
+ {
+  "case_id": "tri-f08-03",
+  "conjunto": "piloto",
+  "text": "Comprei dois iguais por engano, quero devolver um e receber o valor de volta."
+ },
+ {
+  "case_id": "tri-f08-04",
+  "conjunto": "piloto",
+  "text": "Quero devolver o item e receber outro igual, sem estorno."
+ },
+ {
+  "case_id": "tri-f09-01",
+  "conjunto": "piloto",
+  "text": "O prazo era até ontem e nada chegou."
+ },
+ {
+  "case_id": "tri-f09-02",
+  "conjunto": "piloto",
+  "text": "Saiu para entrega há três dias e continua no mesmo status."
+ },
+ {
+  "case_id": "tri-f09-03",
+  "conjunto": "piloto",
+  "text": "Mudei de endereço, o pacote ainda não saiu. Consigo redirecionar?"
+ },
+ {
+  "case_id": "tri-f09-04",
+  "conjunto": "piloto",
+  "text": "Me manda o código de rastreio, por favor."
+ },
+ {
+  "case_id": "tri-f10-01",
+  "conjunto": "piloto",
+  "text": "Boa tarde, tudo bem? Espero que sim. Enfim: cancela meu pedido, por gentileza."
+ },
+ {
+  "case_id": "tri-f10-02",
+  "conjunto": "piloto",
+  "text": "vcs sao pessimos!!! ja é a terceira vez, quero meu dinheiro de volta AGORA"
+ },
+ {
+  "case_id": "tri-f10-03",
+  "conjunto": "piloto",
+  "text": "obrigado pelo atendimento de ontem! so faltou me dizer se a troca foi aprovada"
+ },
+ {
+  "case_id": "tri-f10-04",
+  "conjunto": "piloto",
+  "text": "Prezados, solicito o cancelamento do contrato de serviço firmado em março."
+ },
+ {
+  "case_id": "cnf-g01-01",
+  "conjunto": "confirmacao",
+  "text": "oi bom dia, qro cancela o pedidoo 8812 pfv, mudei d ideia"
+ },
+ {
+  "case_id": "cnf-g01-02",
+  "conjunto": "confirmacao",
+  "text": "e ai, cade minha encomenda? ja faz 12 dia q comprei e nda"
+ },
+ {
+  "case_id": "cnf-g01-03",
+  "conjunto": "confirmacao",
+  "text": "moço o aparelho veio com a tela rachada, tem como vcs manda outro?"
+ },
+ {
+  "case_id": "cnf-g01-04",
+  "conjunto": "confirmacao",
+  "text": "vei cobraram 2x no meu cartao, qro meu dinheiro d volta"
+ },
+ {
+  "case_id": "cnf-g02-01",
+  "conjunto": "confirmacao",
+  "text": "Minha esposa cancelou o pedido dela ontem e recebeu o e-mail na hora. O meu, feito no mesmo dia, ainda não chegou. Onde está?"
+ },
+ {
+  "case_id": "cnf-g02-02",
+  "conjunto": "confirmacao",
+  "text": "O vendedor da loja me disse que eu deveria pedir a troca por aqui. Então é isso que estou fazendo: quero trocar o tênis por um número maior."
+ },
+ {
+  "case_id": "cnf-g02-03",
+  "conjunto": "confirmacao",
+  "text": "Meu filho comprou usando meu cartão e pediu o estorno pelo aplicativo dele. Só quero confirmar se a política de vocês permite isso para menores de idade."
+ },
+ {
+  "case_id": "cnf-g02-04",
+  "conjunto": "confirmacao",
+  "text": "A transportadora me ligou dizendo que devolveu o pacote para vocês. Como eu não vou estar em casa este mês, prefiro cancelar a compra."
+ },
+ {
+  "case_id": "cnf-g03-01",
+  "conjunto": "confirmacao",
+  "text": "Se o produto não chegar até sexta-feira, vou querer cancelar. Por enquanto, me informe apenas a previsão atualizada de entrega."
+ },
+ {
+  "case_id": "cnf-g03-02",
+  "conjunto": "confirmacao",
+  "text": "Caso a cor seja diferente da foto, eu peço a troca. Antes disso, queria saber qual é o tom exato do modelo grafite."
+ },
+ {
+  "case_id": "cnf-g03-03",
+  "conjunto": "confirmacao",
+  "text": "Se vocês não resolverem hoje eu peço o estorno. Mas o que eu preciso agora é o reembolso da taxa de entrega que foi cobrada errada."
+ },
+ {
+  "case_id": "cnf-g03-04",
+  "conjunto": "confirmacao",
+  "text": "Se eu tivesse recebido no prazo, não estaria escrevendo. Cancelem o pedido 3390, por favor."
+ },
+ {
+  "case_id": "cnf-g04-01",
+  "conjunto": "confirmacao",
+  "text": "Quero cancelar o pedido 7712. Já que estou aqui, aproveito para perguntar se vocês entregam no interior de Goiás."
+ },
+ {
+  "case_id": "cnf-g04-02",
+  "conjunto": "confirmacao",
+  "text": "Preciso saber se a garantia cobre queda. Dependendo da resposta eu decido se peço conserto ou não."
+ },
+ {
+  "case_id": "cnf-g04-03",
+  "conjunto": "confirmacao",
+  "text": "O código de rastreio não atualiza há quatro dias e eu também gostaria de trocar a forma de pagamento da próxima compra. O urgente é a entrega."
+ },
+ {
+  "case_id": "cnf-g04-04",
+  "conjunto": "confirmacao",
+  "text": "Além de me mandarem a nota fiscal, preciso que devolvam os R$ 89 da segunda cobrança. Esse valor é o que me preocupa."
+ },
+ {
+  "case_id": "cnf-g05-01",
+  "conjunto": "confirmacao",
+  "text": "Já cancelei o pedido pelo site na semana passada. O estorno não caiu na fatura até hoje e eu quero que vocês providenciem a devolução do valor."
+ },
+ {
+  "case_id": "cnf-g05-02",
+  "conjunto": "confirmacao",
+  "text": "Devolvi o produto na agência e tenho o comprovante. Preciso saber quando o novo será enviado."
+ },
+ {
+  "case_id": "cnf-g05-03",
+  "conjunto": "confirmacao",
+  "text": "Recebi o pedido ontem, tudo certo. Só queria entender por que o prazo no site dizia três dias e demorou nove."
+ },
+ {
+  "case_id": "cnf-g05-04",
+  "conjunto": "confirmacao",
+  "text": "Paguei o boleto em atraso na segunda-feira. O pedido continua como não pago no sistema. Onde ele está?"
+ },
+ {
+  "case_id": "cnf-g06-01",
+  "conjunto": "confirmacao",
+  "text": "Não quero cancelar nada, fiquem tranquilos. Só preciso entender se o frete grátis vale para a Bahia."
+ },
+ {
+  "case_id": "cnf-g06-02",
+  "conjunto": "confirmacao",
+  "text": "Não é reclamação de cobrança. O problema é que o produto chegou com a base torta e eu quero outro igual."
+ },
+ {
+  "case_id": "cnf-g06-03",
+  "conjunto": "confirmacao",
+  "text": "Não precisa trocar nem consertar. Quero desfazer a compra e encerrar por aqui."
+ },
+ {
+  "case_id": "cnf-g06-04",
+  "conjunto": "confirmacao",
+  "text": "Não estou pedindo informação genérica. Quero saber exatamente onde está a caixa que saiu de Campinas dia 3."
+ },
+ {
+  "case_id": "cnf-g07-01",
+  "conjunto": "confirmacao",
+  "text": "Solicito o estorno do aparelho com defeito: mandem um novo e levem esse embora."
+ },
+ {
+  "case_id": "cnf-g07-02",
+  "conjunto": "confirmacao",
+  "text": "Quero fazer a devolução do valor pago, não quero outro produto nem crédito na loja."
+ },
+ {
+  "case_id": "cnf-g07-03",
+  "conjunto": "confirmacao",
+  "text": "Preciso rastrear o motivo de a assinatura ter sido renovada sem aviso e quero encerrá-la agora."
+ },
+ {
+  "case_id": "cnf-g07-04",
+  "conjunto": "confirmacao",
+  "text": "Podem cancelar minha dúvida anterior: a peça chegou. Só me digam se ela tem garantia estendida."
+ },
+ {
+  "case_id": "cnf-g08-01",
+  "conjunto": "confirmacao",
+  "text": "Boa tarde. Comprei no dia 2, era presente de aniversário da minha mãe, que faz anos dia 15, e eu tinha planejado entregar no almoço de família. Minha irmã veio de Recife só para isso. O pacote não chegou e o aplicativo não mostra movimentação desde o dia 6. Podem verificar onde está?"
+ },
+ {
+  "case_id": "cnf-g08-02",
+  "conjunto": "confirmacao",
+  "text": "Sou cliente há seis anos, sempre elogiei o atendimento e já indiquei a loja para o escritório inteiro. Justamente por isso estou frustrado: a cobrança de dezembro veio com um valor que não reconheço, R$ 240 a mais. Peço a correção e a devolução da diferença."
+ },
+ {
+  "case_id": "cnf-g08-03",
+  "conjunto": "confirmacao",
+  "text": "Antes de mais nada, parabéns pela embalagem, muito bem feita. O problema é o conteúdo: a cadeira veio com dois parafusos a menos e um deles espanado. Já tentei com a chave que veio na caixa e não adiantou. Mandem a peça correta para eu finalizar a montagem."
+ },
+ {
+  "case_id": "cnf-g08-04",
+  "conjunto": "confirmacao",
+  "text": "Estou de mudança para outra cidade no dia 20 e não tenho como receber nada depois disso. Já falei com o porteiro, com a vizinha e com a administradora, e ninguém pode guardar. Diante disso, encerrem o pedido 5520."
+ },
+ {
+  "case_id": "cnf-g09-01",
+  "conjunto": "confirmacao",
+  "text": "Gostaria de saber se ainda há tempo de desistir da compra 1180 antes que ela seja despachada."
+ },
+ {
+  "case_id": "cnf-g09-02",
+  "conjunto": "confirmacao",
+  "text": "Será que dá para vocês verificarem a posição do meu envio? Não quero incomodar, mas estou há dias sem notícia."
+ },
+ {
+  "case_id": "cnf-g09-03",
+  "conjunto": "confirmacao",
+  "text": "Se não for pedir demais, eu preferiria receber a mesma jaqueta em outro tamanho; esta ficou apertada."
+ },
+ {
+  "case_id": "cnf-g09-04",
+  "conjunto": "confirmacao",
+  "text": "Existe alguma chance de rever o valor lançado em janeiro? Ele não bate com o que combinamos na contratação."
+ },
+ {
+  "case_id": "cnf-g10-01",
+  "conjunto": "confirmacao",
+  "text": "A geladeira faz um barulho alto à noite, o manual não explica nada e o revendedor não atende. Não adianta mais tentar consertar: quero desfazer o negócio."
+ },
+ {
+  "case_id": "cnf-g10-02",
+  "conjunto": "confirmacao",
+  "text": "Pensei em cancelar, pensei em pedir o dinheiro de volta, pesei tudo. No fim, o que resolve para mim é receber outra unidade sem o defeito."
+ },
+ {
+  "case_id": "cnf-g10-03",
+  "conjunto": "confirmacao",
+  "text": "Ia pedir troca, mas depois vi que o modelo saiu de linha. Então me devolvam o valor pago no cartão."
+ },
+ {
+  "case_id": "cnf-g10-04",
+  "conjunto": "confirmacao",
+  "text": "Cheguei a abrir uma reclamação sobre o prazo e outra sobre a cobrança, mas já resolvi as duas. O que falta é simples: quero saber se a loja funciona no feriado de segunda, porque pretendo comprar de novo."
+ }
+]

@@ -1,0 +1,104 @@
+{
+ "at": "2026-09-19T12:55:57.114251+00:00",
+ "terceiro_juiz": "gpt-5.5 via Codex CLI, cego",
+ "preregistro": "planning/preregistro-E12-replicacao.md",
+ "corpus": "data/corpus/triagem-replicacao.jsonl",
+ "casos": [
+  {
+   "case_id": "rep-p05-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Pede apenas o caminho para cancelar; nega pedido de cancelamento agora."
+  },
+  {
+   "case_id": "rep-p05-02",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "trocar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Pergunta procedimento em hipótese; produto está perfeito e não pede troca."
+  },
+  {
+   "case_id": "rep-p06-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cobranca",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Retira o pedido de cancelar e pede só o valor da mensalidade."
+  },
+  {
+   "case_id": "rep-p09-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Relata cancelamento já ocorrido e pede explicação, não novo cancelamento."
+  },
+  {
+   "case_id": "rep-p10-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cancelar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Cancela é vontade de terceiro; remetente pede explicação sobre efeitos."
+  },
+  {
+   "case_id": "rep-p10-02",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "informacao",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "Troca é pedido de terceiro; remetente pede localização/status da entrega."
+  },
+  {
+   "case_id": "rep-p17-01",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "rastrear",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Pergunta se a possibilidade de cancelamento procede; não pede status da entrega."
+  },
+  {
+   "case_id": "rep-p22-01",
+   "anotador_1_autor": "cobranca",
+   "anotador_2_local": "trocar",
+   "escolha_cega": "A",
+   "confirma": "autor",
+   "terceiro_juiz": "cobranca",
+   "motivo": "Contesta cobrança duplicada e pede devolução/estorno de uma cobrança."
+  },
+  {
+   "case_id": "rep-p23-01",
+   "anotador_1_autor": "rastrear",
+   "anotador_2_local": "cobranca",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "rastrear",
+   "motivo": "Pede localização/status após atraso: “cadê?” indica rastreamento."
+  },
+  {
+   "case_id": "rep-p30-03",
+   "anotador_1_autor": "informacao",
+   "anotador_2_local": "cobranca",
+   "escolha_cega": "B",
+   "confirma": "autor",
+   "terceiro_juiz": "informacao",
+   "motivo": "Antes de pedir segunda via, solicita confirmação sobre vencimento."
+  }
+ ],
+ "placar": {
+  "confirmam_o_autor": 10,
+  "confirmam_o_anotador_local": 0,
+  "terceira_leitura": 0,
+  "ambiguas": 0
+ }
+}

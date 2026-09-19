@@ -1,0 +1,10 @@
+{"case_id":"dsp-d01-02","escolha":"A","classe":"informacao","motivo":"O pedido atual é explicar a multa; cancelamento é hipótese ainda não decidida."}
+{"case_id":"dsp-d03-01","escolha":"A","classe":"rastrear","motivo":"Cancelamento é condicional; o pedido atual busca a localização da encomenda."}
+{"case_id":"dsp-d06-03","escolha":"B","classe":"informacao","motivo":"Pede requisitos documentais, não a execução do cancelamento."}
+{"case_id":"dsp-d09-01","escolha":"A","classe":"informacao","motivo":"A troca já foi solicitada; agora pede apenas informação sobre prazo."}
+{"case_id":"dsp-d10-03","escolha":"A","classe":"rastrear","motivo":"A queixa por atraso implica pedido de status da entrega, sem pedir troca."}
+{"case_id":"dsp-d11-01","escolha":"A","classe":"rastrear","motivo":"O valor pago é distração; 'Cadê?' pede localização ou status da entrega."}
+{"case_id":"dsp-d12-01","escolha":"B","classe":"rastrear","motivo":"Pede localização; eventual cancelamento depende da resposta e não é pedido atual."}
+{"case_id":"dsp-d16-01","escolha":"A","classe":"informacao","motivo":"O cancelamento já foi pedido; agora solicita confirmação de processamento."}
+{"case_id":"dsp-d16-02","escolha":"B","classe":"informacao","motivo":"A troca já foi solicitada; agora pede confirmação de aprovação."}
+{"case_id":"dsp-d18-01","escolha":"B","classe":"informacao","motivo":"Nega cancelamento e pede somente o valor da multa, um dado."}
