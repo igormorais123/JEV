@@ -22,7 +22,12 @@ function classificationStats(rows){
 }
 function metricSelection(){
  if(metricFilter.source==='history')return {rows:HISTORY.filter(r=>r.app===metricFilter.task&&r.mode===metricFilter.format&&(!metricFilter.split||r.split===metricFilter.split)).map(r=>({case_id:r.case_id,attempt_id:'pdf:'+r.call_id,task:r.app,split:r.split,expected:r.expected,predicted:r.predicted,correct:Number(r.correct)===1,confidence:Number(r.confidence_pdf)})),run:null};
- if(!metricFilter.run&&state.runs.length)metricFilter.run=state.runs[state.runs.length-1].id;
+ // Padrao: a execucao mais recente que tem decisoes. Cair numa execucao sem decisao
+ // deixava a tela vazia e parecia que os testes nao tinham rodado.
+ if(!metricFilter.run||!state.runs.some(r=>r.id===metricFilter.run&&r.decisions.length)){
+  const comDados=state.runs.filter(r=>r.decisions.length);
+  if(comDados.length)metricFilter.run=comDados[comDados.length-1].id;
+ }
  const run=state.runs.find(r=>r.id===metricFilter.run);if(!run)return {rows:[],run:null};
  const tasks=[...new Set(run.decisions.map(d=>d.task))];if(!tasks.includes(metricFilter.task))metricFilter.task=tasks[0]||'';
  return {rows:run.decisions.filter(d=>d.task===metricFilter.task&&(!metricFilter.split||d.split===metricFilter.split)),run};
@@ -83,6 +88,6 @@ function confidenceSection(rows){const high=rows.filter(r=>r.confidence!==null&&
  return `<div class="panel"><div class="panel-head"><h2>Confiança do modelo não é certeza de acerto</h2></div><div class="panel-body"><p>O campo <span class="mono">confidence</span> descreve uma característica da resposta do modelo. Ele precisa ser testado na nossa tarefa antes de orientar decisões.</p><div class="confidence-callout"><strong>${high.length?errors+' / '+high.length:'Sem dados'}</strong><span>${high.length?'erros entre decisões avaliadas com confidence ≥ 0,90, no recorte atual.':'Neste recorte não há decisões avaliadas com confidence ≥ 0,90.'}</span></div><p class="small muted">Esse corte é apenas uma descrição fixa. Zero erros em poucos casos não valida o limiar. Uma análise de calibração exigirá dados adequados; não tratamos confidence como probabilidade comprovada de acerto.</p></div></div>`;
 }
 function bindMetrics(){
- document.querySelectorAll('[data-metric-source]').forEach(b=>b.onclick=()=>{metricFilter.source=b.dataset.metricSource;metricFilter.split=metricFilter.source==='history'?'holdout':'';if(metricFilter.source==='new')metricFilter.run=state.runs[0]?.id||'';render()});
+ document.querySelectorAll('[data-metric-source]').forEach(b=>b.onclick=()=>{metricFilter.source=b.dataset.metricSource;metricFilter.split=metricFilter.source==='history'?'holdout':'';if(metricFilter.source==='new')metricFilter.run=(state.runs.filter(r=>r.decisions.length).pop()||{}).id||'';render()});
  for(const [id,key] of Object.entries({metricFormat:'format',metricTask:'task',metricSplit:'split',metricLabel:'label',metricRun:'run'})){const element=$('#'+id);if(element)element.onchange=()=>{metricFilter[key]=element.value;render()}}
 }

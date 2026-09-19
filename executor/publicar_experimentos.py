@@ -1,0 +1,211 @@
+"""Publica no painel as decisões caso a caso de E2, E2b e E5.
+
+Até agora esses experimentos entravam no painel como nota de texto: o placar mostrava o
+resultado, mas a aba de métricas ficava vazia porque não havia decisão nenhuma para contar.
+Aqui os relatórios em runs/ viram tentativas e decisões no formato que o painel valida.
+
+E4 fica de fora de propósito: é ranqueamento, medido por nDCG@5 e por ressalva preservada,
+e os relatórios não guardam a tentativa de cada documento. Forçá-lo no formato de
+classificação produziria uma matriz de confusão que não corresponde ao que foi medido.
+
+Uso:
+    python -m executor.publicar_experimentos
+"""
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+from .run_e1_triagem import carregar
+
+ROOT = Path(__file__).resolve().parents[1]
+RUNS = ROOT / 'runs'
+ESTADO = ROOT / 'lab' / 'data' / 'execution.json'
+
+
+def ler(caminho):
+    alvo = RUNS / caminho
+    return json.loads(alvo.read_text(encoding='utf-8')) if alvo.exists() else None
+
+
+def gabarito():
+    return {c['case_id']: (c['gold'], c['family']) for c in carregar()}
+
+
+def tentativa(attempt_id, status, latency_ms, cost_nusd):
+    return {'id': attempt_id, 'status': 'success' if status == 'success' else 'error',
+            'latency_ms': latency_ms, 'input_tokens': None, 'output_tokens': None,
+            'cost_usd': (cost_nusd / 1e9) if cost_nusd is not None else None,
+            'reserved_usd': 0, 'cache_hit': False}
+
+
+def decisao(did, case_id, attempt_id, split, expected, predicted, confidence, question_id, group_id):
+    return {'id': did, 'case_id': case_id, 'attempt_id': attempt_id, 'task': 'triage',
+            'split': split, 'expected': expected, 'predicted': predicted,
+            'correct': None if predicted is None else predicted == expected,
+            'confidence': confidence, 'question_id': question_id, 'group_id': group_id}
+
+
+def e2_run(rel, gold, agora):
+    tentativas, decisoes = {}, []
+    for condicao, saidas in rel['saidas'].items():
+        for case_id, s in saidas.items():
+            aid = s['attempt_id']
+            if aid not in tentativas:
+                # Numa chamada de lote a latência é da chamada inteira; o custo já vem rateado.
+                tentativas[aid] = tentativa(aid, s['status'], s['latency_ms'], None)
+            esperado, familia = gold[case_id]
+            decisoes.append(decisao(f'{condicao}:{case_id}', case_id, aid, 'diagnostic',
+                                    esperado, s.get('pred'), s.get('confidence'),
+                                    condicao, familia))
+    # O custo por condição está no resumo; distribuímos por tentativa para não perder o total.
+    total = sum(d['resumo']['custo_total_nusd'] for d in rel['condicoes'].values())
+    if tentativas:
+        cota = total / len(tentativas) / 1e9
+        for t in tentativas.values():
+            t['cost_usd'] = cota
+    return {
+        'id': 'e2-fatorial-lote-ordem-distracao', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': ('os mesmos 40 casos do E1 em 8 condições (2 lote × 2 ordem × 2 distração), '
+                    f"ordem de execução embaralhada com semente {rel['seed']}"),
+        'notes': ('Acurácia entre 0,925 e 0,950 nas 8 condições; McNemar p=1,000 em todos os '
+                  'contrastes. O lote de 8 reduz o custo por decisão sem perda detectável. '
+                  'Partição diagnóstica: os mesmos casos aparecem 8 vezes, uma por condição, '
+                  'então as decisões NÃO são independentes.'),
+        'attempts': list(tentativas.values()), 'decisions': decisoes,
+    }
+
+
+def e2b_run(rel, gold, agora):
+    tentativas, decisoes = {}, []
+    for o in rel['observacoes']:
+        aid = o['attempt_id']
+        if aid not in tentativas:
+            tentativas[aid] = tentativa(aid, 'success', o['latency_chamada_ms'], None)
+        decisoes.append(decisao(f"s{o['semente']}-l{o['lote']}-p{o['posicao']}:{o['case_id']}",
+                                o['case_id'], aid, 'diagnostic', o['gold'], o.get('pred'),
+                                o.get('confidence'), f"posicao-{o['posicao']}", o['family']))
+    custo = sum(o['cost_nusd'] for o in rel['observacoes'])
+    if tentativas:
+        cota = custo / len(tentativas) / 1e9
+        for t in tentativas.values():
+            t['cost_usd'] = cota
+    instaveis = [c for c, (acertos, total) in rel['por_caso'].items() if 0 < acertos < total]
+    return {
+        'id': 'e2b-posicao-desconfundida', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': 'typesafe/jev-1.13',
+        'dataset': (f"os mesmos 40 casos em {len(rel['sementes'])} permutações "
+                    f"(sementes {rel['sementes'][0]} a {rel['sementes'][-1]}), lotes de "
+                    f"{rel['tamanho_lote']}, {len(rel['observacoes'])} observações"),
+        'notes': ('Embaralhando a ordem, o efeito de posição desaparece (permutação p=0,403): o que o '
+                  'E2 leu como "posições 4 e 8 são piores" era confusão entre posição e caso. '
+                  f"O achado que sobra é outro: {len(instaveis)} casos ({', '.join(instaveis)}) mudam "
+                  'de resposta conforme os vizinhos do lote.'),
+        'attempts': list(tentativas.values()), 'decisions': decisoes,
+    }
+
+
+def e5_run(rel, gold, agora):
+    tentativas, decisoes = [], []
+    for r in rel['resultados']:
+        for braco in ('openrouter', 'typesafe'):
+            d = r[braco]
+            tentativas.append(tentativa(d['attempt_id'], d['status'], d['latency_ms'], d['cost_nusd']))
+            decisoes.append(decisao(f"{braco}:{r['case_id']}", r['case_id'], d['attempt_id'],
+                                    'pilot', r['gold'], d.get('pred'), d.get('confidence'),
+                                    braco, r['family']))
+    return {
+        'id': 'e5-provedores-openrouter-typesafe', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter e typesafe', 'model': 'typesafe/jev-1.13 e jev-1.13.0',
+        'dataset': f"os mesmos {rel['casos']} casos do E1, chamadas intercaladas entre os dois transportes",
+        'notes': ('Os dois transportes concordam em 40 de 40 casos, com a mesma acurácia de 0,925. '
+                  'O endpoint direto é cerca de duas vezes mais lento e mais caro por decisão, porque '
+                  'cobra tokens de saída que o OpenRouter não cobra. Cada caso aparece duas vezes, '
+                  'uma por transporte: as decisões são pareadas, não independentes.'),
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
+def e6_run(rel, gold, agora):
+    tentativas, decisoes = [], []
+    for o in rel['observacoes']:
+        tentativas.append(tentativa(o['attempt_id'], o['status'], o['latency_ms'], o['cost_nusd']))
+        decisoes.append(decisao(f"r{o['repeticao']}:{o['case_id']}", o['case_id'], o['attempt_id'],
+                                'diagnostic', o['gold'], o.get('pred'), o.get('confidence'),
+                                f"repeticao-{o['repeticao']}", o['family']))
+    return {
+        'id': 'e6-repetibilidade-individual', 'system_id': 'S01', 'phase': 'pilot',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': (f"os mesmos {rel['casos']} casos do E1, cada um sozinho numa chamada, "
+                    f"repetidos {rel['repeticoes']} vezes"),
+        'notes': ('Separa instabilidade do modelo de efeito do lote. Mesmo isolado, '
+                  f"{rel['n_instaveis']} caso(s) mudam de resposta entre repeticoes identicas: "
+                  f"{', '.join(rel['casos_instaveis'])}. A acuracia por rodada varia de "
+                  f"{min(rel['acuracia_por_rodada'].values())} a {max(rel['acuracia_por_rodada'].values())}; "
+                  f"o voto majoritario de {rel['repeticoes']} chega a {rel['acuracia_voto_majoritario']}, "
+                  f"a {rel['repeticoes']}x o custo. Os mesmos casos se repetem: decisoes nao independentes."),
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
+def e7_run(rel, gold, agora):
+    tentativas, decisoes = [], []
+    for c in rel['casos']:
+        tentativas.append(tentativa(c['jev_attempt_id'], c['jev_status'], c['latency_ms'],
+                                    c['jev_cost_nusd']))
+        decisoes.append(decisao(f"jev:{c['case_id']}", c['case_id'], c['jev_attempt_id'],
+                                'test', c['gold'], c.get('jev'), c.get('jev_confidence'),
+                                'confirmacao', c['family']))
+    par = rel['pareada']
+    return {
+        'id': 'e7-confirmacao-triagem', 'system_id': 'S01', 'phase': 'confirmation',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': (f"{rel['jev']['casos_programados']} casos novos em {rel['jev']['n_familias']} "
+                    'familias escritas para armadilhas que o piloto nao cobria; gabarito autoral, '
+                    'um anotador'),
+        'notes': (f"Conjunto de confirmacao pre-registrado. Jev {rel['jev']['acertos']}/"
+                  f"{rel['jev']['casos_programados']} contra {rel['regra']['acertos']}/"
+                  f"{rel['regra']['casos_programados']} da regra congelada; diferenca pareada "
+                  f"{par['diferenca_observada']:+.3f}, IC95 [{par['ic95'][0]:.3f}; {par['ic95'][1]:.3f}]. "
+                  f"{rel['veredito']} Partição de teste: cada caso aparece uma vez so."),
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
+def publicar():
+    gold = gabarito()
+    agora = datetime.now(timezone.utc).isoformat()
+    novos = []
+    for arquivo, construir in [('e2-fatorial/relatorio.json', e2_run),
+                               ('e2b-posicao/relatorio.json', e2b_run),
+                               ('e5-provedores/relatorio.json', e5_run),
+                               ('e6-repetibilidade/relatorio.json', e6_run),
+                               ('e7-confirmacao/relatorio.json', e7_run)]:
+        rel = ler(arquivo)
+        if rel:
+            novos.append(construir(rel, gold, agora))
+
+    estado = json.loads(ESTADO.read_text(encoding='utf-8'))
+    por_id = {r['id']: r for r in estado['runs']}
+    for run in novos:
+        por_id[run['id']] = run
+    estado['runs'] = list(por_id.values())
+    estado['revision'] = int(estado.get('revision', 0)) + 1
+    estado['updated_at'] = agora
+    ESTADO.write_text(json.dumps(estado, ensure_ascii=False, indent=1), encoding='utf-8')
+    return novos
+
+
+if __name__ == '__main__':
+    for run in publicar():
+        print(f"{run['id']:38} {len(run['attempts']):4} tentativas  {len(run['decisions']):4} decisoes")

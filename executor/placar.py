@@ -44,6 +44,8 @@ def montar():
     e2 = ler('e2-fatorial/relatorio.json')
     e2b = ler('e2b-posicao/relatorio.json')
     e5 = ler('e5-provedores/relatorio.json')
+    e6 = ler('e6-repetibilidade/relatorio.json')
+    e7 = ler('e7-confirmacao/relatorio.json')
     pareada = ler('analise-pareada.json') or {}
 
     cartoes = []
@@ -115,17 +117,19 @@ def montar():
     else:
         cartoes.append(ausente('e2b', 'Estabilidade no lote (E2b)', 'Desconfundimento não executado.', '—'))
 
-    calibracao = pareada.get('calibracao_0.95')
+    # A calibracao que vale e a do conjunto de confirmacao: e particao de teste, e os casos
+    # nao ajudaram a desenhar nada. A do piloto fica no relatorio, nao no placar.
+    calibracao = pareada.get('calibracao_confirmacao_0.95') or pareada.get('calibracao_0.95')
     if calibracao:
         cartoes.append(cartao(
-            'calibracao', 'Calibração no corte 0,95',
+            'calibracao', f"Calibração no corte 0,95 ({calibracao.get('conjunto', 'piloto')})",
             f"{calibracao['aceitos']} aceitos de {calibracao['casos_programados']}",
             f"cobertura {pct(calibracao['cobertura_sobre_programados'])}",
             (f"{calibracao['erros_entre_aceitos']} erro(s) observado(s), mas os aceitos vêm de apenas "
              f"{calibracao['familias_representadas_entre_aceitos']} famílias: o limite superior honesto "
              f"é {pct(calibracao['limite_superior_erro_por_familia'])} por família, não "
              f"{pct(calibracao['limite_superior_erro_por_caso'])} por caso."),
-            'análise pareada, corte de confiança 0,95'))
+            f"{calibracao['casos_programados']} casos, corte de confiança 0,95"))
 
     if e5:
         cartoes.append(cartao(
@@ -140,8 +144,37 @@ def montar():
                                'Comparação de transporte ainda não despachada.',
                                'chave TypeSafe registrada; script pronto'))
 
+    if e7:
+        par = e7['pareada']
+        cartoes.append(cartao(
+            'e7', 'Conjunto de confirmação (E7)', pct(e7['jev']['acuracia_sobre_programados']),
+            f"regra congelada {pct(e7['regra']['acuracia_sobre_programados'])}",
+            (f"Casos novos, que não guiaram o desenho: diferença {pct(par['diferenca_observada'])}, "
+             f"IC95 [{pct(par['ic95'][0])}; {pct(par['ic95'][1])}]. O Jev subiu pouco "
+             '(92,5% para 97,5%); quem caiu foi a regra (60,0% para 32,5%), porque o corpus tem '
+             'armadilhas lexicais. Único erro com gabarito contestável.'),
+            f"{e7['jev']['casos_programados']} casos, {e7['jev']['n_familias']} famílias novas"))
+    else:
+        cartoes.append(ausente('e7', 'Conjunto de confirmação (E7)',
+                               'Corpus de confirmação ainda não executado.', '—'))
+
+    if e6:
+        rodadas = list(e6['acuracia_por_rodada'].values())
+        cartoes.append(cartao(
+            'e6', 'Repetibilidade isolada (E6)',
+            f"{e6['n_instaveis']} de {e6['casos']} casos oscilam",
+            f"acurácia por rodada {min(rodadas):.3f} a {max(rodadas):.3f}",
+            ('Mesmo sozinho, uma pergunta por chamada, o modelo não é determinístico: '
+             f"{', '.join(e6['casos_instaveis'])} muda de resposta entre repetições idênticas. "
+             f"Voto majoritário de {e6['repeticoes']} chega a {e6['acuracia_voto_majoritario']:.3f} "
+             f"de acurácia, ao custo de {e6['repeticoes']}x as chamadas."),
+            f"{e6['casos']} casos × {e6['repeticoes']} repetições individuais"))
+    else:
+        cartoes.append(ausente('e6', 'Repetibilidade isolada (E6)',
+                               'Repetições individuais ainda não executadas.', '—'))
+
     # O saldo vale o do relatorio mais recente que registrou a carteira.
-    carteira = e5 or e4 or e2b or {}
+    carteira = e7 or e6 or e5 or e4 or e2b or {}
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
     disponivel = carteira.get('wallet_available_nusd') or carteira.get('available_nusd')
 
@@ -149,22 +182,24 @@ def montar():
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
             'titulo': 'Uso consultivo com revisão humana, não decisão automática',
-            'texto': ('O Jev supera as regras congeladas em triagem e em evidência por margens que o '
-                      'intervalo de confiança não atravessa, e preserva todas as ressalvas necessárias '
-                      'no topo. O que impede o automático é a instabilidade no lote e a cobertura: no '
-                      'corte de 0,95 só 70% dos casos são aceitos, e o limite de erro respeitando '
-                      'famílias ainda é alto.'),
-            'confianca': 0.7,
-            'confianca_nota': ('Alta para a comparação contra as regras, porque é pareada e replicada. '
-                               'Baixa para generalizar: corpus autoral, um anotador, 40 casos.'),
+            'texto': ('A vantagem sobre as regras congeladas se manteve num conjunto de confirmação '
+                      'que não guiou o desenho: 97,5% contra 32,5%. No corte de 0,95, 85% dos casos '
+                      'são aceitos sem nenhum erro observado. O que ainda impede o automático é o '
+                      'não determinismo — o mesmo caso, sozinho e repetido, pode mudar de resposta — '
+                      'e o limite de erro por família, que com 10 famílias ainda chega a 25,9%.'),
+            'confianca': 0.75,
+            'confianca_nota': ('Alta para a comparação contra as regras: é pareada, pré-registrada e '
+                               'replicou fora do piloto. Baixa para generalizar a um canal real: '
+                               '80 casos ao todo, construídos por mim, com um anotador só.'),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}
                       if comprometido is not None else None),
         'pendencias': [
-            'E5 (P6): comparar OpenRouter e TypeSafe direto nos mesmos casos.',
+            'Segundo anotador cego: o gabarito ainda é de uma pessoa só, e um dos erros do E7 é '
+            'contestável.',
+            'Corpus colhido de atendimento real, com a distribuição de classes que o canal tem.',
             'P5: fluxo completo com minutagem humana, para custo por decisão de ponta a ponta.',
-            'Corpus real, não balanceado, e um segundo anotador cego.',
         ],
     }
     return bloco

@@ -133,7 +133,7 @@ def analisar_posicao_e2b(repeticoes=REPETICOES, semente=SEMENTE):
             'repeticoes': repeticoes}
 
 
-def analisar_calibracao(corte=0.95):
+def analisar_calibracao(corte=0.95, conjunto='piloto'):
     """Risco-cobertura com duas correcoes exigidas pela segunda revisao.
 
     1. A cobertura usa TODOS os casos programados. Caso sem confidence e falha do braco,
@@ -143,8 +143,8 @@ def analisar_calibracao(corte=0.95):
        porque casos da mesma familia sao dependentes por construcao. O limite por familia
        e a leitura conservadora; o limite por caso e o piso otimista.
     """
-    e1 = json.loads((ROOT / 'runs' / 'e1-triagem' / 'relatorio.json').read_text(encoding='utf-8'))
-    programados = e1['casos']
+    origem = ROOT / 'runs' / ('e7-confirmacao' if conjunto == 'confirmacao' else 'e1-triagem')
+    programados = json.loads((origem / 'relatorio.json').read_text(encoding='utf-8'))['casos']
     com_confianca = [c for c in programados if c.get('jev_confidence') is not None]
     aceitos = [c for c in com_confianca if c['jev_confidence'] >= corte]
     erros = sum(1 for c in aceitos if c['jev'] != c['gold'])
@@ -155,6 +155,7 @@ def analisar_calibracao(corte=0.95):
     familias_com_erro = sum(1 for v in familias.values() if not all(v))
 
     return {
+        'conjunto': conjunto,
         'corte': corte,
         'casos_programados': len(programados),
         'casos_com_confianca': len(com_confianca),
