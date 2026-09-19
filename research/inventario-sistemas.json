@@ -1,0 +1,242 @@
+[
+  {
+    "id": "S01",
+    "name": "Jev CLI",
+    "repo": "Nasrallah-AL/jev-cli",
+    "langs": [
+      "node"
+    ],
+    "files": 129,
+    "test_files": 24,
+    "decisions_api": true,
+    "systemone_api": true,
+    "openrouter": true,
+    "jev_model": true,
+    "needs_gpu": false,
+    "needs_browser": true
+  },
+  {
+    "id": "S02",
+    "name": "Jev Search",
+    "repo": "superagents-lab/jev-search",
+    "langs": [
+      "node"
+    ],
+    "files": 68,
+    "test_files": 12,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": true,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S03",
+    "name": "Janus",
+    "repo": "FirasSX914/Janus",
+    "langs": [
+      "python"
+    ],
+    "files": 78,
+    "test_files": 3,
+    "decisions_api": false,
+    "systemone_api": false,
+    "openrouter": true,
+    "jev_model": true,
+    "needs_gpu": false,
+    "needs_browser": true
+  },
+  {
+    "id": "S04",
+    "name": "pi-warden",
+    "repo": "DevMortimer/pi-warden",
+    "langs": [
+      "node"
+    ],
+    "files": 126,
+    "test_files": 21,
+    "decisions_api": false,
+    "systemone_api": false,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S05",
+    "name": "Jev Ultrafast",
+    "repo": "browser-use/jev-ultrafast",
+    "langs": [
+      "python"
+    ],
+    "files": 40,
+    "test_files": 1,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": true,
+    "jev_model": true,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S06",
+    "name": "jevcal",
+    "repo": "abhixhek/jevcal",
+    "langs": [
+      "python"
+    ],
+    "files": 32,
+    "test_files": 3,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": true,
+    "jev_model": true,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S07",
+    "name": "Jev Rerank Bench",
+    "repo": "anessbelbati/jev-rerank-bench",
+    "langs": [
+      "python"
+    ],
+    "files": 556,
+    "test_files": 1,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": true,
+    "jev_model": false,
+    "needs_gpu": true,
+    "needs_browser": false
+  },
+  {
+    "id": "S08",
+    "name": "System One Adapter",
+    "repo": "typesafe-ai/system-one-adapter-python",
+    "langs": [
+      "python"
+    ],
+    "files": 65,
+    "test_files": 39,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S09",
+    "name": "Jev Review",
+    "repo": "devagrawal09/jev-review",
+    "langs": [
+      "node"
+    ],
+    "files": 29,
+    "test_files": 0,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S10",
+    "name": "Every",
+    "repo": "sufianetaouil/every",
+    "langs": [
+      "python"
+    ],
+    "files": 47,
+    "test_files": 20,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S11",
+    "name": "HEIST//ONE",
+    "repo": "AbdelStark/heist-one",
+    "langs": [
+      "node"
+    ],
+    "files": 68,
+    "test_files": 3,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": true
+  },
+  {
+    "id": "S12",
+    "name": "SemIf / OpenJev",
+    "repo": "TheoLeeCJ/openjev",
+    "langs": [
+      "python"
+    ],
+    "files": 90,
+    "test_files": 5,
+    "decisions_api": false,
+    "systemone_api": false,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": true,
+    "needs_browser": false
+  },
+  {
+    "id": "S13",
+    "name": "pi-model-router",
+    "repo": "redrossa/pi-model-router",
+    "langs": [
+      "node"
+    ],
+    "files": 22,
+    "test_files": 5,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": true,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S14",
+    "name": "should-ai-kill-us-all",
+    "repo": "hellogumbo/should-ai-kill-us-all",
+    "langs": [
+      "node"
+    ],
+    "files": 19,
+    "test_files": 0,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  },
+  {
+    "id": "S15",
+    "name": "Jeeves",
+    "repo": "Infrawrench/Jeeves",
+    "langs": [
+      "rust"
+    ],
+    "files": 71,
+    "test_files": 0,
+    "decisions_api": false,
+    "systemone_api": true,
+    "openrouter": false,
+    "jev_model": false,
+    "needs_gpu": false,
+    "needs_browser": false
+  }
+]

@@ -1,8 +1,84 @@
 {
   "schema_version": 1,
-  "revision": 3,
-  "updated_at": "2026-09-19T02:21:55.436653+00:00",
-  "system_progress": {},
+  "revision": 5,
+  "updated_at": "2026-09-19T02:36:34.075650+00:00",
+  "system_progress": {
+    "S01": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (npm test --silent): 13 failed, 195 passed. Saida 1 em 7.5s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S02": {
+      "simple": "done",
+      "notes": "Suite propria do repositorio (npm test --silent): 80 passed. Saida 0 em 3.2s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S03": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 2 error. Saida 2 em 4.3s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S04": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 25.6s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S05": {
+      "simple": "done",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 31 passed. Saida 0 em 2.4s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S06": {
+      "simple": "done",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 24 passed. Saida 0 em 2.6s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S07": {
+      "simple": "done",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 9 passed. Saida 0 em 5.5s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S08": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 64 error, 108 failed, 121 passed. Saida 1 em 11.8s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S09": {
+      "simple": "blocked",
+      "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S10": {
+      "simple": "done",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 78 passed. Saida 0 em 6.2s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S11": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (npm test --silent): 1 failed, 6 passed. Saida 1 em 2.1s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S12": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 4 failed, 11 passed. Saida 1 em 26.4s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S13": {
+      "simple": "running",
+      "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 0.8s. Teste offline do codigo; nao e inferencia real do componente.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S14": {
+      "simple": "blocked",
+      "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    },
+    "S15": {
+      "simple": "blocked",
+      "notes": "Bloqueado: cargo ausente nesta maquina. Nada foi executado; o sistema permanece em inspecao.",
+      "updated_at": "2026-09-19T02:34:29.657370+00:00"
+    }
+  },
   "stage_progress": {
     "1": {
       "status": "blocked",
@@ -13,8 +89,12 @@
       "updated_at": "2026-09-19T02:21:55.418477+00:00"
     },
     "3": {
+      "status": "done",
+      "updated_at": "2026-09-19T02:36:34.055685+00:00"
+    },
+    "4": {
       "status": "running",
-      "updated_at": "2026-09-19T02:21:55.418477+00:00"
+      "updated_at": "2026-09-19T02:36:34.055685+00:00"
     }
   },
   "runs": [
@@ -258,6 +338,1123 @@
           "group_id": "canarios"
         }
       ]
+    },
+    {
+      "id": "rodada-simples-offline-S01",
+      "system_id": "S01",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:31:49.415171+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (npm test --silent): 13 failed, 195 passed. Saida 1 em 7.5s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S02",
+      "system_id": "S02",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:31:59.674085+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (npm test --silent): 80 passed. Saida 0 em 3.2s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S03",
+      "system_id": "S03",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:32:25.330638+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 2 error. Saida 2 em 4.3s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S04",
+      "system_id": "S04",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:32:29.603976+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 25.6s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S05",
+      "system_id": "S05",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:04.595675+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 31 passed. Saida 0 em 2.4s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S06",
+      "system_id": "S06",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:06.952474+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 24 passed. Saida 0 em 2.6s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S07",
+      "system_id": "S07",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:09.563897+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 9 passed. Saida 0 em 5.5s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S08",
+      "system_id": "S08",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:30:28.024816+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --frozen --all-extras pytest -q --no-header): 64 error, 108 failed, 121 passed. Saida 1 em 11.8s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S09",
+      "system_id": "S09",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "failed",
+      "started_at": "2026-09-19T02:33:15.089546+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S10",
+      "system_id": "S10",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:15.090110+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 78 passed. Saida 0 em 6.2s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S11",
+      "system_id": "S11",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:21.272964+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (npm test --silent): 1 failed, 6 passed. Saida 1 em 2.1s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S12",
+      "system_id": "S12",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:30:39.856126+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (uv run --with pytest pytest -q --no-header): 4 failed, 11 passed. Saida 1 em 26.4s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S13",
+      "system_id": "S13",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "completed",
+      "started_at": "2026-09-19T02:33:30.598104+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Suite propria do repositorio (npm test --silent): sem contagem no relatorio. Saida 1 em 0.8s. Teste offline do codigo; nao e inferencia real do componente.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S14",
+      "system_id": "S14",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "failed",
+      "started_at": "2026-09-19T02:33:41.453187+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Bloqueado: package.json sem script de teste. Nada foi executado; o sistema permanece em inspecao.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "rodada-simples-offline-S15",
+      "system_id": "S15",
+      "phase": "simple",
+      "evidence": "offline",
+      "status": "failed",
+      "started_at": "2026-09-19T02:31:06.211865+00:00",
+      "finished_at": "2026-09-19T02:34:29.657370+00:00",
+      "notes": "Bloqueado: cargo ausente nesta maquina. Nada foi executado; o sistema permanece em inspecao.",
+      "attempts": [],
+      "decisions": []
+    },
+    {
+      "id": "e1-triagem-piloto-jev",
+      "system_id": "S01",
+      "phase": "pilot",
+      "evidence": "live_component",
+      "status": "completed",
+      "started_at": "2026-09-19T02:36:34.055685+00:00",
+      "finished_at": "2026-09-19T02:36:34.055685+00:00",
+      "provider": "openrouter",
+      "model": "typesafe/jev-1.13",
+      "dataset": "40 casos em 10 familias, corpus proprio pre-registrado, gabarito autoral provisorio",
+      "notes": "Jev 92,5% contra 60% da regra simples congelada; macro-F1 0,928 contra 0,554; 7 de 10 familias sem erro contra 1 de 10. McNemar por familia b=6 c=0, p=0,031. Erros graves de cancelamento: 1 contra 4. Confidence media 0,926 nos acertos e 0,513 nos erros; zero erro entre os 25 casos com confidence >= 0,99. Latencia p50 420 ms, p95 603 ms. Custo US$ 0,0000222 por decisao. Piloto: nao decide adocao.",
+      "attempts": [
+        {
+          "id": "11ce215e-a831-49ad-85a9-dcaeb030f1ce",
+          "status": "success",
+          "latency_ms": 988.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2344e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "5da999e8-80d9-43c7-9174-eaa3c68ee24a",
+          "status": "success",
+          "latency_ms": 373.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2344e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "61741479-3156-4364-8f65-0d9c32012495",
+          "status": "success",
+          "latency_ms": 603.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.205e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "e1aae01c-5c24-4b32-91a2-2ca077564a81",
+          "status": "success",
+          "latency_ms": 406.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1924e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "b6cd253f-d023-4471-8c24-e07cb681be1e",
+          "status": "success",
+          "latency_ms": 411.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1882e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "91e8feb8-2985-4410-b480-8b469c0b478c",
+          "status": "success",
+          "latency_ms": 411.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1924e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "ba511295-8b8c-4f23-bbb2-38c2802c0d49",
+          "status": "success",
+          "latency_ms": 376.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.205e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "b9315fff-d5d9-4bd5-bc53-8e5c663fae68",
+          "status": "success",
+          "latency_ms": 388.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1966e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "6e962dcc-e945-4bc2-929a-4ae1b6673037",
+          "status": "success",
+          "latency_ms": 384.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2176e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "e2fdda63-2b56-4f92-af7c-a77311d5589a",
+          "status": "success",
+          "latency_ms": 421.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.226e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "0a9177d4-0a04-4249-be6a-24a1a665d372",
+          "status": "success",
+          "latency_ms": 445.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2134e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "9ea6ab43-9072-40fe-9e52-18721734411e",
+          "status": "success",
+          "latency_ms": 516.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2134e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "5dccc809-fc3b-4bb0-b5e8-f08d26b2a43a",
+          "status": "success",
+          "latency_ms": 429.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.205e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "107cf417-93a6-4529-97d0-0018168c8e92",
+          "status": "success",
+          "latency_ms": 389.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2176e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "d70ed481-09b4-4d9b-b3d5-7ede6ddaafd6",
+          "status": "success",
+          "latency_ms": 415.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1924e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "1ddcd550-4236-42eb-b48d-0d4ad0dba6b1",
+          "status": "success",
+          "latency_ms": 378.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2134e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "87622707-8deb-4c31-844a-a6ef642d1a7e",
+          "status": "success",
+          "latency_ms": 412.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2176e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "7fd5a24f-c412-481c-af1a-da9acb6c3a7b",
+          "status": "success",
+          "latency_ms": 378.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2302e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "318ccd57-8a5a-4a1b-b085-bce2f95ff561",
+          "status": "success",
+          "latency_ms": 373.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2386e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "c230cf8e-14b4-44d9-be24-57ea8577fc62",
+          "status": "success",
+          "latency_ms": 420.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2428e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "9a8999d9-fcc7-4375-b713-a16eda833540",
+          "status": "success",
+          "latency_ms": 414.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2008e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "5031d9af-061a-435e-9e6f-1a833f8e765d",
+          "status": "success",
+          "latency_ms": 411.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2008e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "0fa098c1-3b85-4825-8bc0-c2b7a62571cb",
+          "status": "success",
+          "latency_ms": 454.8,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2344e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "3d395b1b-59ed-4f07-ab2b-1213c99113af",
+          "status": "success",
+          "latency_ms": 456.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.247e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "b91400ab-4fc6-425d-9527-30172bafac4d",
+          "status": "success",
+          "latency_ms": 429.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2218e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "f6635283-f5a8-42b6-b75a-b0a93101c496",
+          "status": "success",
+          "latency_ms": 400.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2386e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "76ffef78-021b-4014-b7f1-dc1b182dc3bb",
+          "status": "success",
+          "latency_ms": 433.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2176e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "2cbe89f8-27eb-47b7-9aed-77722d2a210b",
+          "status": "success",
+          "latency_ms": 445.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2344e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "059f6729-eb48-4e56-81e6-2d0c8556982b",
+          "status": "success",
+          "latency_ms": 419.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2134e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "d3bc7adf-2270-4cd4-8994-4bb2135b4247",
+          "status": "success",
+          "latency_ms": 378.8,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2218e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "88a09ba2-9e71-4521-8a06-b981ff3eec26",
+          "status": "success",
+          "latency_ms": 444.9,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2302e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "5a09418e-b250-4902-9d8f-79d76248d34f",
+          "status": "success",
+          "latency_ms": 359.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.205e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "b4a2c5c6-95b8-44a4-9b6d-357a180c33fb",
+          "status": "success",
+          "latency_ms": 421.0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.184e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "6db6a9e9-628b-41dc-ba17-9c26f76557bf",
+          "status": "success",
+          "latency_ms": 447.8,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2008e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "c333f169-fa0e-4d9a-9321-41cb1c31909f",
+          "status": "success",
+          "latency_ms": 420.9,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.226e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "56530648-ab4a-4292-bd58-6384b7169af3",
+          "status": "success",
+          "latency_ms": 434.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.1966e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "7712c75a-1263-4605-8aea-b3da0d976cb7",
+          "status": "success",
+          "latency_ms": 459.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2428e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "f9ce04d7-241f-4b68-b147-3f71f2149ba2",
+          "status": "success",
+          "latency_ms": 435.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.226e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "6c4c7243-dee8-4d94-8604-f8a39278adf9",
+          "status": "success",
+          "latency_ms": 423.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.226e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "7aaf5ca1-8063-44f5-85ab-454b3b144ef5",
+          "status": "success",
+          "latency_ms": 414.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 2.2218e-05,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        }
+      ],
+      "decisions": [
+        {
+          "id": "e1-tri-f01-01",
+          "case_id": "tri-f01-01",
+          "attempt_id": "11ce215e-a831-49ad-85a9-dcaeb030f1ce",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F01-pedido-direto"
+        },
+        {
+          "id": "e1-tri-f01-02",
+          "case_id": "tri-f01-02",
+          "attempt_id": "5da999e8-80d9-43c7-9174-eaa3c68ee24a",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F01-pedido-direto"
+        },
+        {
+          "id": "e1-tri-f01-03",
+          "case_id": "tri-f01-03",
+          "attempt_id": "61741479-3156-4364-8f65-0d9c32012495",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F01-pedido-direto"
+        },
+        {
+          "id": "e1-tri-f01-04",
+          "case_id": "tri-f01-04",
+          "attempt_id": "e1aae01c-5c24-4b32-91a2-2ca077564a81",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F01-pedido-direto"
+        },
+        {
+          "id": "e1-tri-f02-01",
+          "case_id": "tri-f02-01",
+          "attempt_id": "b6cd253f-d023-4471-8c24-e07cb681be1e",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F02-informacao-pura"
+        },
+        {
+          "id": "e1-tri-f02-02",
+          "case_id": "tri-f02-02",
+          "attempt_id": "91e8feb8-2985-4410-b480-8b469c0b478c",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F02-informacao-pura"
+        },
+        {
+          "id": "e1-tri-f02-03",
+          "case_id": "tri-f02-03",
+          "attempt_id": "ba511295-8b8c-4f23-bbb2-38c2802c0d49",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F02-informacao-pura"
+        },
+        {
+          "id": "e1-tri-f02-04",
+          "case_id": "tri-f02-04",
+          "attempt_id": "b9315fff-d5d9-4bd5-bc53-8e5c663fae68",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "cobranca",
+          "correct": false,
+          "confidence": 0.4,
+          "question_id": "acao",
+          "group_id": "F02-informacao-pura"
+        },
+        {
+          "id": "e1-tri-f03-01",
+          "case_id": "tri-f03-01",
+          "attempt_id": "6e962dcc-e945-4bc2-929a-4ae1b6673037",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F03-assunto-versus-acao"
+        },
+        {
+          "id": "e1-tri-f03-02",
+          "case_id": "tri-f03-02",
+          "attempt_id": "e2fdda63-2b56-4f92-af7c-a77311d5589a",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F03-assunto-versus-acao"
+        },
+        {
+          "id": "e1-tri-f03-03",
+          "case_id": "tri-f03-03",
+          "attempt_id": "0a9177d4-0a04-4249-be6a-24a1a665d372",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F03-assunto-versus-acao"
+        },
+        {
+          "id": "e1-tri-f03-04",
+          "case_id": "tri-f03-04",
+          "attempt_id": "9ea6ab43-9072-40fe-9e52-18721734411e",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 0.92,
+          "question_id": "acao",
+          "group_id": "F03-assunto-versus-acao"
+        },
+        {
+          "id": "e1-tri-f04-01",
+          "case_id": "tri-f04-01",
+          "attempt_id": "5dccc809-fc3b-4bb0-b5e8-f08d26b2a43a",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 0.89,
+          "question_id": "acao",
+          "group_id": "F04-negacao"
+        },
+        {
+          "id": "e1-tri-f04-02",
+          "case_id": "tri-f04-02",
+          "attempt_id": "107cf417-93a6-4529-97d0-0018168c8e92",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F04-negacao"
+        },
+        {
+          "id": "e1-tri-f04-03",
+          "case_id": "tri-f04-03",
+          "attempt_id": "d70ed481-09b4-4d9b-b3d5-7ede6ddaafd6",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F04-negacao"
+        },
+        {
+          "id": "e1-tri-f04-04",
+          "case_id": "tri-f04-04",
+          "attempt_id": "1ddcd550-4236-42eb-b48d-0d4ad0dba6b1",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 0.96,
+          "question_id": "acao",
+          "group_id": "F04-negacao"
+        },
+        {
+          "id": "e1-tri-f05-01",
+          "case_id": "tri-f05-01",
+          "attempt_id": "87622707-8deb-4c31-844a-a6ef642d1a7e",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 0.87,
+          "question_id": "acao",
+          "group_id": "F05-acao-em-citacao"
+        },
+        {
+          "id": "e1-tri-f05-02",
+          "case_id": "tri-f05-02",
+          "attempt_id": "7fd5a24f-c412-481c-af1a-da9acb6c3a7b",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F05-acao-em-citacao"
+        },
+        {
+          "id": "e1-tri-f05-03",
+          "case_id": "tri-f05-03",
+          "attempt_id": "318ccd57-8a5a-4a1b-b085-bce2f95ff561",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 0.98,
+          "question_id": "acao",
+          "group_id": "F05-acao-em-citacao"
+        },
+        {
+          "id": "e1-tri-f05-04",
+          "case_id": "tri-f05-04",
+          "attempt_id": "c230cf8e-14b4-44d9-be24-57ea8577fc62",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F05-acao-em-citacao"
+        },
+        {
+          "id": "e1-tri-f06-01",
+          "case_id": "tri-f06-01",
+          "attempt_id": "9a8999d9-fcc7-4375-b713-a16eda833540",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F06-duas-acoes-uma-pedida"
+        },
+        {
+          "id": "e1-tri-f06-02",
+          "case_id": "tri-f06-02",
+          "attempt_id": "5031d9af-061a-435e-9e6f-1a833f8e765d",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "informacao",
+          "correct": false,
+          "confidence": 0.49,
+          "question_id": "acao",
+          "group_id": "F06-duas-acoes-uma-pedida"
+        },
+        {
+          "id": "e1-tri-f06-03",
+          "case_id": "tri-f06-03",
+          "attempt_id": "0fa098c1-3b85-4825-8bc0-c2b7a62571cb",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 0.5,
+          "question_id": "acao",
+          "group_id": "F06-duas-acoes-uma-pedida"
+        },
+        {
+          "id": "e1-tri-f06-04",
+          "case_id": "tri-f06-04",
+          "attempt_id": "3d395b1b-59ed-4f07-ab2b-1213c99113af",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 0.56,
+          "question_id": "acao",
+          "group_id": "F06-duas-acoes-uma-pedida"
+        },
+        {
+          "id": "e1-tri-f07-01",
+          "case_id": "tri-f07-01",
+          "attempt_id": "b91400ab-4fc6-425d-9527-30172bafac4d",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F07-cobranca-vs-cancelamento"
+        },
+        {
+          "id": "e1-tri-f07-02",
+          "case_id": "tri-f07-02",
+          "attempt_id": "f6635283-f5a8-42b6-b75a-b0a93101c496",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F07-cobranca-vs-cancelamento"
+        },
+        {
+          "id": "e1-tri-f07-03",
+          "case_id": "tri-f07-03",
+          "attempt_id": "76ffef78-021b-4014-b7f1-dc1b182dc3bb",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F07-cobranca-vs-cancelamento"
+        },
+        {
+          "id": "e1-tri-f07-04",
+          "case_id": "tri-f07-04",
+          "attempt_id": "2cbe89f8-27eb-47b7-9aed-77722d2a210b",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 0.74,
+          "question_id": "acao",
+          "group_id": "F07-cobranca-vs-cancelamento"
+        },
+        {
+          "id": "e1-tri-f08-01",
+          "case_id": "tri-f08-01",
+          "attempt_id": "059f6729-eb48-4e56-81e6-2d0c8556982b",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F08-troca-vs-reparo"
+        },
+        {
+          "id": "e1-tri-f08-02",
+          "case_id": "tri-f08-02",
+          "attempt_id": "d3bc7adf-2270-4cd4-8994-4bb2135b4247",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F08-troca-vs-reparo"
+        },
+        {
+          "id": "e1-tri-f08-03",
+          "case_id": "tri-f08-03",
+          "attempt_id": "88a09ba2-9e71-4521-8a06-b981ff3eec26",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 0.98,
+          "question_id": "acao",
+          "group_id": "F08-troca-vs-reparo"
+        },
+        {
+          "id": "e1-tri-f08-04",
+          "case_id": "tri-f08-04",
+          "attempt_id": "5a09418e-b250-4902-9d8f-79d76248d34f",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "trocar",
+          "predicted": "trocar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F08-troca-vs-reparo"
+        },
+        {
+          "id": "e1-tri-f09-01",
+          "case_id": "tri-f09-01",
+          "attempt_id": "b4a2c5c6-95b8-44a4-9b6d-357a180c33fb",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 0.8,
+          "question_id": "acao",
+          "group_id": "F09-rastreio-indireto"
+        },
+        {
+          "id": "e1-tri-f09-02",
+          "case_id": "tri-f09-02",
+          "attempt_id": "6db6a9e9-628b-41dc-ba17-9c26f76557bf",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "rastrear",
+          "correct": true,
+          "confidence": 0.74,
+          "question_id": "acao",
+          "group_id": "F09-rastreio-indireto"
+        },
+        {
+          "id": "e1-tri-f09-03",
+          "case_id": "tri-f09-03",
+          "attempt_id": "c333f169-fa0e-4d9a-9321-41cb1c31909f",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 0.34,
+          "question_id": "acao",
+          "group_id": "F09-rastreio-indireto"
+        },
+        {
+          "id": "e1-tri-f09-04",
+          "case_id": "tri-f09-04",
+          "attempt_id": "56530648-ab4a-4292-bd58-6384b7169af3",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "rastrear",
+          "predicted": "informacao",
+          "correct": false,
+          "confidence": 0.65,
+          "question_id": "acao",
+          "group_id": "F09-rastreio-indireto"
+        },
+        {
+          "id": "e1-tri-f10-01",
+          "case_id": "tri-f10-01",
+          "attempt_id": "7712c75a-1263-4605-8aea-b3da0d976cb7",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F10-ruido-e-cortesia"
+        },
+        {
+          "id": "e1-tri-f10-02",
+          "case_id": "tri-f10-02",
+          "attempt_id": "f9ce04d7-241f-4b68-b147-3f71f2149ba2",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cobranca",
+          "predicted": "cobranca",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F10-ruido-e-cortesia"
+        },
+        {
+          "id": "e1-tri-f10-03",
+          "case_id": "tri-f10-03",
+          "attempt_id": "6c4c7243-dee8-4d94-8604-f8a39278adf9",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "informacao",
+          "predicted": "informacao",
+          "correct": true,
+          "confidence": 0.99,
+          "question_id": "acao",
+          "group_id": "F10-ruido-e-cortesia"
+        },
+        {
+          "id": "e1-tri-f10-04",
+          "case_id": "tri-f10-04",
+          "attempt_id": "7aaf5ca1-8063-44f5-85ab-454b3b144ef5",
+          "task": "triagem",
+          "split": "pilot",
+          "expected": "cancelar",
+          "predicted": "cancelar",
+          "correct": true,
+          "confidence": 1,
+          "question_id": "acao",
+          "group_id": "F10-ruido-e-cortesia"
+        }
+      ]
     }
   ],
   "events": [
@@ -320,6 +1517,26 @@
       "at": "2026-09-19T02:21:55.418477+00:00",
       "kind": "evidence",
       "text": "Etapa 2 concluida. Ledger real em runs/ledger.sqlite3: comprometido US$ 0,000149394, disponivel US$ 4,999851 do teto de US$ 5 novos. O extrato agregado do provedor ainda marcava US$ 0,000015918 no fim da rodada, ou seja, tem defasagem; a conciliacao por extrato precisa ser repetida depois."
+    },
+    {
+      "at": "2026-09-19T02:34:29.657370+00:00",
+      "kind": "evidence",
+      "text": "Rodada simples, camada offline: 15 sistemas receberam ficha com o resultado da suite declarada pelo proprio repositorio, em ambiente limpo das variaveis de LLM da maquina. Nenhuma inferencia paga nesta camada."
+    },
+    {
+      "at": "2026-09-19T02:36:34.055685+00:00",
+      "kind": "evidence",
+      "text": "Rodada simples encerrada nos 15 sistemas na camada offline: 5 suites passam integralmente (S02, S05, S06, S07, S10), 6 falham (S01, S03, S04, S08, S11, S12, S13) e 3 estao bloqueadas (S09 e S14 sem script de teste, S15 por cargo ausente). Ambiente limpo das variaveis OPENAI_/ANTHROPIC_ da maquina, que estavam redirecionando clientes para o OmniRoute local e contaminariam o experimento."
+    },
+    {
+      "at": "2026-09-19T02:36:34.055685+00:00",
+      "kind": "evidence",
+      "text": "E1 piloto de triagem executado com pre-registro congelado antes das chamadas: Jev 37 de 40 contra 24 de 40 da regra simples, diferenca de +32,5 pontos, muito acima do criterio de +10 declarado. McNemar na unidade correta (familia) da p=0,031. Custo total do bloco US$ 0,000887; restam US$ 4,999113."
+    },
+    {
+      "at": "2026-09-19T02:36:34.055685+00:00",
+      "kind": "evidence",
+      "text": "Achado de calibracao: a confidence do Jev separa acerto de erro no piloto (media 0,926 contra 0,513) e nenhum dos 25 casos com confidence >= 0,99 esta errado. Isso e sinal favoravel para a pergunta P3, ainda com N pequeno."
     }
   ]
 }

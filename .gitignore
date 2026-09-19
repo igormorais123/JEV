@@ -12,8 +12,8 @@ venv/
 # Notebooks
 .ipynb_checkpoints/
 
-# Dados e modelos locais
-data/
+# Dados e modelos locais (corpus versionado abaixo)
+data/*
 models/
 artifacts/
 
@@ -43,3 +43,7 @@ lab/data/*.tmp
 # Estado compartilhado do painel
 !lab/data/
 !lab/data/execution.json
+
+# Corpus versionado como evidencia (o resto de data/ continua ignorado)
+!data/corpus/
+!data/corpus/**
