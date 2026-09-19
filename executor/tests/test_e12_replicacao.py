@@ -114,15 +114,94 @@ class GabaritoAusenteNaoConcorda(unittest.TestCase):
         self.assertFalse(procedencia['corpus_tem_segundo_anotador'])
 
     def test_divergencia_sem_adjudicacao_nao_produz_oficial(self):
+        import tempfile
         casos = [{'case_id': 'x-1', 'family': 'F', 'gold': 'cancelar'}]
-        original = e12.do_anotador_local
-        try:
-            e12.do_anotador_local = lambda: {'x-1': 'informacao'}
-            mapas, procedencia = e12.gabaritos(casos)
-        finally:
-            e12.do_anotador_local = original
+        original, saida = e12.do_anotador_local, e12.OUT
+        # A adjudicacao do E12 ja existe no repositorio; este teste e sobre o estado em que ela
+        # ainda NAO existe, entao o diretorio do experimento aponta para um vazio.
+        with tempfile.TemporaryDirectory() as pasta:
+            try:
+                e12.do_anotador_local = lambda: {'x-1': 'informacao'}
+                e12.OUT = Path(pasta)
+                mapas, procedencia = e12.gabaritos(casos)
+            finally:
+                e12.do_anotador_local, e12.OUT = original, saida
         self.assertNotIn('oficial', mapas)
         self.assertEqual(procedencia['casos_em_que_os_anotadores_divergem'], ['x-1'])
+
+
+class CoberturaEAnulacao(unittest.TestCase):
+    """As duas emendas que nasceram durante a execução, travadas contra regressão."""
+
+    def test_braco_abaixo_do_minimo_sai_da_leitura(self):
+        casos = [{'case_id': 'x-%d' % i, 'family': 'F', 'gold': 'cancelar',
+                  'c1': 'cancelar', 'c2': 'cancelar', 'c3': 'cancelar',
+                  'c4': 'cancelar' if i < 8 else None} for i in range(10)]
+        cobertura = e12.cobertura_dos_bracos(casos)
+        self.assertTrue(cobertura['c1']['entra_na_leitura'])
+        self.assertEqual(cobertura['c4']['cobertura'], 0.8)
+        self.assertFalse(cobertura['c4']['entra_na_leitura'])
+
+    def test_limite_exato_de_noventa_por_cento_entra(self):
+        casos = [{'case_id': 'x-%d' % i, 'family': 'F', 'gold': 'cancelar',
+                  'c1': 'cancelar', 'c2': 'cancelar', 'c3': 'cancelar',
+                  'c4': 'cancelar' if i < 9 else None} for i in range(10)]
+        self.assertTrue(e12.cobertura_dos_bracos(casos)['c4']['entra_na_leitura'])
+
+    def test_resposta_nova_prevalece_sobre_anulacao_na_mesma_linha(self):
+        """A anulação vale para o que veio antes dela, nunca para a reexecução.
+
+        A primeira versão apagava a resposta da reexecução porque a marca viajava junto no
+        registro: nove chamadas já pagas do c4 sumiram da análise sem que nada acusasse.
+        """
+        import json as _json
+        import tempfile
+        with tempfile.TemporaryDirectory() as pasta:
+            bruto = Path(pasta) / 'respostas.jsonl'
+            linhas = [
+                {'case_id': 'x-1', 'c4': 'cancelar', 'c4_attempt_id': 'velha'},
+                {'case_id': 'x-1', 'c4_anulado_pela_emenda_3': 'velha'},
+                {'case_id': 'x-1', 'c4': 'trocar', 'c4_attempt_id': 'nova',
+                 'c4_anulado_pela_emenda_3': 'velha'},
+            ]
+            bruto.write_text(''.join(_json.dumps(l) + chr(10) for l in linhas), encoding='utf-8')
+            original = e12.BRUTO
+            try:
+                e12.BRUTO = bruto
+                recuperado = {c['case_id']: c for c in e12.recuperar()}
+            finally:
+                e12.BRUTO = original
+        self.assertEqual(recuperado['x-1']['c4'], 'trocar')
+        self.assertEqual(recuperado['x-1']['c4_attempt_id'], 'nova')
+
+    def test_anulacao_sozinha_apaga_a_resposta_anterior(self):
+        import json as _json
+        import tempfile
+        with tempfile.TemporaryDirectory() as pasta:
+            bruto = Path(pasta) / 'respostas.jsonl'
+            linhas = [{'case_id': 'x-1', 'c4': 'cancelar', 'c4_attempt_id': 'velha'},
+                      {'case_id': 'x-1', 'c4_anulado_pela_emenda_3': 'velha'}]
+            bruto.write_text(''.join(_json.dumps(l) + chr(10) for l in linhas), encoding='utf-8')
+            original = e12.BRUTO
+            try:
+                e12.BRUTO = bruto
+                recuperado = {c['case_id']: c for c in e12.recuperar()}
+            finally:
+                e12.BRUTO = original
+        self.assertIsNone(recuperado['x-1'].get('c4'))
+        self.assertIsNone(recuperado['x-1'].get('c4_attempt_id'))
+
+
+class FalhaDeTransporte(unittest.TestCase):
+
+    def test_o_que_e_repetido_e_o_que_nao_e(self):
+        for erro in ('http 429: rate limit', 'http 502: bad gateway', 'Timeout ao ler'):
+            with self.subTest(erro=erro):
+                self.assertTrue(e12.falha_de_transporte(erro))
+        for erro in ('json invalido: {', 'classe fora do contrato: None',
+                     'json fora do contrato (list): [1]', None, ''):
+            with self.subTest(erro=erro):
+                self.assertFalse(e12.falha_de_transporte(erro))
 
 
 if __name__ == '__main__':

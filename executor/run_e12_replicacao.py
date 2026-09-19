@@ -80,13 +80,17 @@ def recuperar():
             continue
         caso = json.loads(linha)
         acumulado = por_id.setdefault(caso['case_id'], {})
-        acumulado.update(caso)
+        # A anulacao vale para o que veio ANTES dela, nunca para o que vem na mesma linha. A
+        # primeira versao disto apagava tambem a resposta da reexecucao, porque a marca viajava
+        # junto no registro e era aplicada depois do update: nove chamadas ja pagas do c4
+        # sumiram da analise sem que nada acusasse.
         for marca in [k for k in caso if k.endswith('_anulado_pela_emenda_3')]:
             braco = marca.split('_', 1)[0]
             for campo in [k for k in list(acumulado)
                           if k == braco or k.startswith(braco + '_')]:
                 if campo != marca:
                     acumulado.pop(campo)
+        acumulado.update(caso)
     return list(por_id.values()) or None
 
 
@@ -132,6 +136,9 @@ def braco_comparador(chave, modelo, casos, ledger, key, precos):
                   'User-Agent': 'jev-lab/1.0'}
     arm = 'arm-e12-' + chave
     for caso in casos:
+        # Resposta nova cancela a anulacao anterior daquele braco: quem foi reexecutado sob o
+        # teto novo tem resposta valida, e a marca da Emenda 3 nao pode segui-lo.
+        caso.pop(chave + '_anulado_pela_emenda_3', None)
         caminho = 'runs/e12-replicacao/' + chave + '-' + caso['case_id'] + '.json'
         corpo = payload_chat(modelo, caso['text'], chave)
         reserva = ledger.reserve(arm_id=arm, block_id=BLOCK, provider=PROVIDER, model=modelo,
@@ -291,6 +298,26 @@ def comparar(casos, gold, chave):
             'separa_contra_o_jev': pareada['ic95'][1] < 0}
 
 
+COBERTURA_MINIMA = 0.90
+
+
+def cobertura_dos_bracos(casos):
+    """Emenda 2: braço com cobertura abaixo de 90% é incompleto e sai da leitura primária.
+
+    O critério foi escrito antes de qualquer acurácia ser calculada, justamente para que a
+    decisão de manter ou tirar um braço não dependesse de quanto ele acertou.
+    """
+    saida = {}
+    for chave, modelo in COMPARADORES:
+        validas = sum(1 for c in casos if c.get(chave))
+        cobertura = round(validas / len(casos), 4) if casos else 0.0
+        saida[chave] = {'modelo': modelo, 'respostas_validas': validas,
+                        'casos_programados': len(casos), 'cobertura': cobertura,
+                        'minimo_exigido': COBERTURA_MINIMA,
+                        'entra_na_leitura': cobertura >= COBERTURA_MINIMA}
+    return saida
+
+
 def leitura(comparacoes):
     """A regra congelada no pré-registro, aplicada sem margem de interpretação.
 
@@ -330,16 +357,41 @@ def erro_grave(casos, gold, campos):
     return saida
 
 
+def custo_liquidado(attempt_ids):
+    """Le o custo no livro-caixa, e nao o que o caso guardou na hora da chamada.
+
+    As 76 chamadas do c3 recusadas por limite de taxa foram liquidadas pelo pior caso e depois
+    RETIFICADAS para zero contra o extrato do provedor, que mostrava que nada havia sido
+    cobrado. O numero gravado dentro do caso e o de antes da retificacao: publica-lo daria um
+    custo por mil classificacoes quase cem vezes maior do que o real, no braco em que o provedor
+    recusou mais chamadas. O livro-caixa e a fonte; o caso e so um eco do instante.
+    """
+    import sqlite3
+    if not attempt_ids or not DB.exists():
+        return {}
+    con = sqlite3.connect(DB)
+    try:
+        marcas = ','.join('?' * len(attempt_ids))
+        linhas = con.execute(
+            'SELECT attempt_id, settled_nusd FROM attempt_budget WHERE attempt_id IN (' + marcas
+            + ')', list(attempt_ids)).fetchall()
+    finally:
+        con.close()
+    return {a: c for a, c in linhas if c is not None}
+
+
 def custo_por_mil(casos, campos):
     saida = {}
     for campo in campos:
-        valores = [c.get(campo + '_cost_nusd') for c in casos]
-        validos = [v for v in valores if isinstance(v, int)]
+        ids = [c.get(campo + '_attempt_id') for c in casos if c.get(campo + '_attempt_id')]
+        liquidado = custo_liquidado(ids)
+        validos = [liquidado[a] for a in ids if a in liquidado]
         if not validos:
             saida[campo] = None
             continue
         saida[campo] = {'chamadas_liquidadas': len(validos),
                         'custo_total_nusd': sum(validos),
+                        'fonte': 'runs/ledger.sqlite3 (attempt_budget.settled_nusd)',
                         'custo_por_mil_classificacoes_usd': round(
                             sum(validos) / len(validos) * 1000 / 1e9, 6)}
     return saida
@@ -370,10 +422,12 @@ def executar_todos(casos, key, precos):
 def analisar(casos, comprometido, disponivel):
     campos = ['jev'] + [chave for chave, _ in COMPARADORES]
     mapas, procedencia = gabaritos(casos)
+    cobertura = cobertura_dos_bracos(casos)
+    na_leitura = [chave for chave, bloco in cobertura.items() if bloco['entra_na_leitura']]
     por_gabarito = {}
     for nome, gold in mapas.items():
         comparacoes = {chave: comparar(casos, gold, chave) for chave, _ in COMPARADORES}
-        chave_leitura, frase = leitura(comparacoes)
+        chave_leitura, frase = leitura({k: v for k, v in comparacoes.items() if k in na_leitura})
         por_gabarito[nome] = {
             'acuracia': {campo: round(sum(1 for c in casos
                                           if c.get(campo) == gold[c['case_id']]) / len(casos), 4)
@@ -408,6 +462,9 @@ def analisar(casos, comprometido, disponivel):
         'familias': len({c['family'] for c in casos}),
         'resumo': {campo: resumo(campo, casos) for campo in campos},
         'gabaritos_disponiveis': sorted(mapas),
+        'cobertura_dos_bracos': cobertura,
+        'bracos_na_leitura': na_leitura,
+        'bracos_incompletos': [c for c in cobertura if c not in na_leitura],
         'adjudicacao': procedencia,
         'por_gabarito': por_gabarito,
         'leitura_por_gabarito': leituras,

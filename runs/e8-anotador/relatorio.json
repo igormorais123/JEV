@@ -1,12 +1,12 @@
 {
-  "at": "2026-09-19T06:30:12.606537+00:00",
+  "at": "2026-09-19T12:55:08.493539+00:00",
   "anotador_independente": "qwen2.5:7b-instruct",
   "natureza": "modelo local, nao humano; mede reprodutibilidade do gabarito por um juiz independente que so viu as instrucoes",
-  "casos": 140,
-  "respostas_validas": 140,
-  "concordancia_bruta": 0.8643,
-  "kappa_cohen": 0.8301,
-  "n_divergencias": 19,
+  "casos": 230,
+  "respostas_validas": 230,
+  "concordancia_bruta": 0.8739,
+  "kappa_cohen": 0.842,
+  "n_divergencias": 29,
   "divergencias": [
     {
       "case_id": "tri-f02-04",
@@ -197,12 +197,112 @@
       "jev": "informacao",
       "anotador_marcou_ambigua": false,
       "text": "Por enquanto nao cancela nada, so me manda por escrito o valor da multa de rescisao."
+    },
+    {
+      "case_id": "rep-p05-01",
+      "conjunto": "replicacao",
+      "family": "P05-pergunta-sobre-procedimento",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Como faco para cancelar a assinatura pelo aplicativo? Nao quero que voces cancelem nada agora, so quero saber o caminho."
+    },
+    {
+      "case_id": "rep-p05-02",
+      "conjunto": "replicacao",
+      "family": "P05-pergunta-sobre-procedimento",
+      "meu_gabarito": "informacao",
+      "anotador": "trocar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Qual e o procedimento de troca de um produto com defeito? Pergunto por precaucao, meu produto esta perfeito."
+    },
+    {
+      "case_id": "rep-p06-01",
+      "conjunto": "replicacao",
+      "family": "P06-pedido-retirado-na-mesma-frase",
+      "meu_gabarito": "informacao",
+      "anotador": "cobranca",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": true,
+      "text": "Cancela minha assinatura, ou melhor, deixa quieto, so me diz quanto ficou a mensalidade nova."
+    },
+    {
+      "case_id": "rep-p09-01",
+      "conjunto": "replicacao",
+      "family": "P09-acao-atribuida-ao-sistema",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "O aplicativo cancelou minha assinatura sozinho. Eu nao pedi isso e quero entender por que aconteceu."
+    },
+    {
+      "case_id": "rep-p10-01",
+      "conjunto": "replicacao",
+      "family": "P10-pedido-de-terceiro-recusado",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Minha esposa quer cancelar o plano. Eu nao quero; so me explica o que muda para a gente se cancelar."
+    },
+    {
+      "case_id": "rep-p10-02",
+      "conjunto": "replicacao",
+      "family": "P10-pedido-de-terceiro-recusado",
+      "meu_gabarito": "rastrear",
+      "anotador": "informacao",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": false,
+      "text": "Meu socio pediu para trocar o equipamento. Que ele resolva isso; eu so preciso saber onde esta a entrega do outro pedido."
+    },
+    {
+      "case_id": "rep-p17-01",
+      "conjunto": "replicacao",
+      "family": "P17-acao-em-hipotese-de-terceiro",
+      "meu_gabarito": "informacao",
+      "anotador": "rastrear",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Disseram que talvez a transportadora cancele a entrega por falta de acesso na rua. Isso procede mesmo?"
+    },
+    {
+      "case_id": "rep-p22-01",
+      "conjunto": "replicacao",
+      "family": "P22-duplicidade-de-cobranca",
+      "meu_gabarito": "cobranca",
+      "anotador": "trocar",
+      "jev": "cobranca",
+      "anotador_marcou_ambigua": false,
+      "text": "A mesma compra apareceu duas vezes na fatura do cartao. Devolve uma delas."
+    },
+    {
+      "case_id": "rep-p23-01",
+      "conjunto": "replicacao",
+      "family": "P23-urgencia-sem-verbo-de-acao",
+      "meu_gabarito": "rastrear",
+      "anotador": "cobranca",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": false,
+      "text": "Preciso disso hoje sem falta e ja passou do prazo combinado. Cade?"
+    },
+    {
+      "case_id": "rep-p30-03",
+      "conjunto": "replicacao",
+      "family": "P30-licenca-de-cortesia",
+      "meu_gabarito": "informacao",
+      "anotador": "cobranca",
+      "jev": "cobranca",
+      "anotador_marcou_ambigua": false,
+      "text": "Posso pedir a segunda via por aqui? Antes de pedir, me confirma se ela vem com o mesmo vencimento da original."
     }
   ],
-  "acuracia_jev_sob_meu_gabarito": 0.9714,
-  "acuracia_jev_sob_gabarito_do_outro": 0.8643,
-  "casos_de_consenso": 121,
-  "acuracia_jev_no_consenso": 0.9835,
+  "acuracia_jev_sob_meu_gabarito": 0.9783,
+  "acuracia_jev_sob_gabarito_do_outro": 0.8783,
+  "casos_de_consenso": 201,
+  "acuracia_jev_no_consenso": 0.99,
   "anotacoes": [
     {
       "case_id": "tri-f01-01",
@@ -1320,6 +1420,726 @@
       "case_id": "dsp-d20-03",
       "conjunto": "desempate",
       "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p01-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p01-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p01-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p02-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p02-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p02-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p03-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p03-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p03-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p04-01",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p04-02",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p04-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p05-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p05-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p05-03",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p06-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "cobranca",
+      "ambigua": true,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p06-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p06-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p07-01",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p07-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p07-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p08-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p08-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p08-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p09-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p09-02",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p09-03",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p10-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p10-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p10-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p11-01",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p11-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p11-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p12-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p12-02",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p12-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p13-01",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p13-02",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p13-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p14-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p14-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p14-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p15-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p15-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p15-03",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p16-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p16-02",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p16-03",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p17-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p17-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p17-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p18-01",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p18-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p18-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p19-01",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p19-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p19-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p20-01",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p20-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p20-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p21-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p21-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p21-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": true,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p22-01",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p22-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p22-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p23-01",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p23-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p23-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p24-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p24-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p24-03",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p25-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p25-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p25-03",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p26-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p26-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p26-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p27-01",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p27-02",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p27-03",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p28-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p28-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p28-03",
+      "conjunto": "replicacao",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "rep-p29-01",
+      "conjunto": "replicacao",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "rep-p29-02",
+      "conjunto": "replicacao",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "rep-p29-03",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p30-01",
+      "conjunto": "replicacao",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "rep-p30-02",
+      "conjunto": "replicacao",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "rep-p30-03",
+      "conjunto": "replicacao",
+      "gold": "informacao",
       "anotador": "cobranca",
       "ambigua": false,
       "jev": "cobranca"

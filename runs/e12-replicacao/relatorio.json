@@ -1,5 +1,5 @@
 {
-  "at": "2026-09-19T12:49:40.606547+00:00",
+  "at": "2026-09-19T12:57:54.832154+00:00",
   "preregistro": "planning/preregistro-E12-replicacao.md",
   "corpus": "data/corpus/triagem-replicacao.jsonl",
   "modelo": "typesafe/jev-1.13",
@@ -381,12 +381,55 @@
     }
   },
   "gabaritos_disponiveis": [
-    "autor"
+    "anotador local",
+    "autor",
+    "oficial"
   ],
+  "cobertura_dos_bracos": {
+    "c1": {
+      "modelo": "meta-llama/llama-3.1-8b-instruct",
+      "respostas_validas": 90,
+      "casos_programados": 90,
+      "cobertura": 1.0,
+      "minimo_exigido": 0.9,
+      "entra_na_leitura": true
+    },
+    "c2": {
+      "modelo": "mistralai/mistral-nemo",
+      "respostas_validas": 90,
+      "casos_programados": 90,
+      "cobertura": 1.0,
+      "minimo_exigido": 0.9,
+      "entra_na_leitura": true
+    },
+    "c3": {
+      "modelo": "google/gemma-3-12b-it",
+      "respostas_validas": 82,
+      "casos_programados": 90,
+      "cobertura": 0.9111,
+      "minimo_exigido": 0.9,
+      "entra_na_leitura": true
+    },
+    "c4": {
+      "modelo": "openai/gpt-oss-20b",
+      "respostas_validas": 81,
+      "casos_programados": 90,
+      "cobertura": 0.9,
+      "minimo_exigido": 0.9,
+      "entra_na_leitura": true
+    }
+  },
+  "bracos_na_leitura": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+  ],
+  "bracos_incompletos": [],
   "adjudicacao": {
     "adjudicado": true,
-    "juiz": "gpt-5.6-sol-high (Cursor), cego e gpt-5.6-sol-high via Cursor CLI",
-    "casos_em_disputa": 19,
+    "juiz": "gpt-5.5 via Codex CLI, cego e gpt-5.6-sol-high (Cursor), cego e gpt-5.6-sol-high via Cursor CLI",
+    "casos_em_disputa": 29,
     "casos_substituidos": [
       {
         "case_id": "cnf-g05-02",
@@ -394,9 +437,20 @@
         "para": "rastrear"
       }
     ],
-    "corpus_tem_segundo_anotador": false,
-    "casos_em_que_os_anotadores_divergem": [],
-    "corpus_adjudicado": false
+    "corpus_tem_segundo_anotador": true,
+    "casos_em_que_os_anotadores_divergem": [
+      "rep-p05-01",
+      "rep-p05-02",
+      "rep-p06-01",
+      "rep-p09-01",
+      "rep-p10-01",
+      "rep-p10-02",
+      "rep-p17-01",
+      "rep-p22-01",
+      "rep-p23-01",
+      "rep-p30-03"
+    ],
+    "corpus_adjudicado": true
   },
   "por_gabarito": {
     "autor": {
@@ -578,37 +632,411 @@
           "limite_superior_cancelar_perdido": 0.249249
         }
       }
+    },
+    "anotador local": {
+      "acuracia": {
+        "jev": 0.9,
+        "c1": 0.9,
+        "c2": 0.8556,
+        "c3": 0.8222,
+        "c4": 0.8111
+      },
+      "comparacoes": {
+        "c1": {
+          "pareada": {
+            "diferenca_observada": 0.0,
+            "ic95": [
+              -0.0667,
+              0.0667
+            ],
+            "massa_de_cauda_bilateral": 1.0,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p06-02",
+            "rep-p07-01",
+            "rep-p10-03",
+            "rep-p21-01",
+            "rep-p27-02"
+          ],
+          "so_comparador": [
+            "rep-p05-01",
+            "rep-p10-01",
+            "rep-p10-02",
+            "rep-p22-01",
+            "rep-p23-01"
+          ],
+          "mcnemar_p_exato": 1.0,
+          "separa_de_zero": false,
+          "separa_contra_o_jev": false
+        },
+        "c2": {
+          "pareada": {
+            "diferenca_observada": 0.0444,
+            "ic95": [
+              0.0,
+              0.1
+            ],
+            "massa_de_cauda_bilateral": 0.1217,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p07-01",
+            "rep-p11-02",
+            "rep-p21-02",
+            "rep-p27-02",
+            "rep-p28-03"
+          ],
+          "so_comparador": [
+            "rep-p06-01"
+          ],
+          "mcnemar_p_exato": 0.2188,
+          "separa_de_zero": false,
+          "separa_contra_o_jev": false
+        },
+        "c3": {
+          "pareada": {
+            "diferenca_observada": 0.0778,
+            "ic95": [
+              0.0,
+              0.1444
+            ],
+            "massa_de_cauda_bilateral": 0.064,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p03-03",
+            "rep-p04-01",
+            "rep-p09-02",
+            "rep-p16-02",
+            "rep-p18-02",
+            "rep-p20-01",
+            "rep-p26-03",
+            "rep-p28-02",
+            "rep-p29-03"
+          ],
+          "so_comparador": [
+            "rep-p05-01",
+            "rep-p05-02"
+          ],
+          "mcnemar_p_exato": 0.0654,
+          "separa_de_zero": false,
+          "separa_contra_o_jev": false
+        },
+        "c4": {
+          "pareada": {
+            "diferenca_observada": 0.0889,
+            "ic95": [
+              0.0,
+              0.1778
+            ],
+            "massa_de_cauda_bilateral": 0.06,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p07-03",
+            "rep-p11-01",
+            "rep-p11-03",
+            "rep-p12-02",
+            "rep-p21-03",
+            "rep-p23-03",
+            "rep-p26-03",
+            "rep-p29-01",
+            "rep-p30-01",
+            "rep-p30-02"
+          ],
+          "so_comparador": [
+            "rep-p05-01",
+            "rep-p05-02"
+          ],
+          "mcnemar_p_exato": 0.0386,
+          "separa_de_zero": false,
+          "separa_contra_o_jev": false
+        }
+      },
+      "leitura": "sem-evidencia-de-vantagem",
+      "leitura_texto": "o IC95 contem zero contra c1, c2, c3, c4: nao ha evidencia de vantagem sobre todos os comparadores, e a recomendacao passa a ser o classificador mais barato que passe no criterio de erro grave",
+      "erro_grave": {
+        "jev": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [
+            "rep-p05-01",
+            "rep-p09-01",
+            "rep-p10-01"
+          ],
+          "limite_superior_falso_cancelar": 0.04573,
+          "limite_superior_cancelar_perdido": 0.271902
+        },
+        "c1": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [
+            "rep-p09-01",
+            "rep-p10-03",
+            "rep-p21-01"
+          ],
+          "limite_superior_falso_cancelar": 0.04573,
+          "limite_superior_cancelar_perdido": 0.271902
+        },
+        "c2": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [
+            "rep-p05-01",
+            "rep-p09-01",
+            "rep-p10-01"
+          ],
+          "limite_superior_falso_cancelar": 0.04573,
+          "limite_superior_cancelar_perdido": 0.271902
+        },
+        "c3": {
+          "falso_cancelar": [
+            "rep-p06-01"
+          ],
+          "cancelar_perdido": [
+            "rep-p09-01",
+            "rep-p10-01",
+            "rep-p29-03"
+          ],
+          "limite_superior_falso_cancelar": 0.07199,
+          "limite_superior_cancelar_perdido": 0.271902
+        },
+        "c4": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [
+            "rep-p07-03",
+            "rep-p09-01",
+            "rep-p10-01",
+            "rep-p30-01"
+          ],
+          "limite_superior_falso_cancelar": 0.04573,
+          "limite_superior_cancelar_perdido": 0.318242
+        }
+      }
+    },
+    "oficial": {
+      "acuracia": {
+        "jev": 0.9889,
+        "c1": 0.8778,
+        "c2": 0.9111,
+        "c3": 0.8444,
+        "c4": 0.8444
+      },
+      "comparacoes": {
+        "c1": {
+          "pareada": {
+            "diferenca_observada": 0.1111,
+            "ic95": [
+              0.0444,
+              0.2
+            ],
+            "massa_de_cauda_bilateral": 0.0001,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p05-01",
+            "rep-p06-02",
+            "rep-p07-01",
+            "rep-p10-01",
+            "rep-p10-02",
+            "rep-p10-03",
+            "rep-p21-01",
+            "rep-p22-01",
+            "rep-p23-01",
+            "rep-p27-02"
+          ],
+          "so_comparador": [],
+          "mcnemar_p_exato": 0.002,
+          "separa_de_zero": true,
+          "separa_contra_o_jev": false
+        },
+        "c2": {
+          "pareada": {
+            "diferenca_observada": 0.0778,
+            "ic95": [
+              0.0333,
+              0.1333
+            ],
+            "massa_de_cauda_bilateral": 0.0008,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p06-01",
+            "rep-p07-01",
+            "rep-p10-02",
+            "rep-p11-02",
+            "rep-p21-02",
+            "rep-p27-02",
+            "rep-p28-03"
+          ],
+          "so_comparador": [],
+          "mcnemar_p_exato": 0.0156,
+          "separa_de_zero": true,
+          "separa_contra_o_jev": false
+        },
+        "c3": {
+          "pareada": {
+            "diferenca_observada": 0.1444,
+            "ic95": [
+              0.0778,
+              0.2111
+            ],
+            "massa_de_cauda_bilateral": 0.0,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p03-03",
+            "rep-p04-01",
+            "rep-p05-01",
+            "rep-p05-02",
+            "rep-p06-01",
+            "rep-p09-02",
+            "rep-p16-02",
+            "rep-p17-01",
+            "rep-p18-02",
+            "rep-p20-01",
+            "rep-p26-03",
+            "rep-p28-02",
+            "rep-p29-03"
+          ],
+          "so_comparador": [],
+          "mcnemar_p_exato": 0.0002,
+          "separa_de_zero": true,
+          "separa_contra_o_jev": false
+        },
+        "c4": {
+          "pareada": {
+            "diferenca_observada": 0.1444,
+            "ic95": [
+              0.0667,
+              0.2222
+            ],
+            "massa_de_cauda_bilateral": 0.0,
+            "n_familias": 30,
+            "n_casos": 90,
+            "repeticoes": 20000
+          },
+          "so_jev": [
+            "rep-p05-01",
+            "rep-p05-02",
+            "rep-p06-01",
+            "rep-p07-03",
+            "rep-p11-01",
+            "rep-p11-03",
+            "rep-p12-02",
+            "rep-p21-03",
+            "rep-p23-03",
+            "rep-p26-03",
+            "rep-p29-01",
+            "rep-p30-01",
+            "rep-p30-02"
+          ],
+          "so_comparador": [],
+          "mcnemar_p_exato": 0.0002,
+          "separa_de_zero": true,
+          "separa_contra_o_jev": false
+        }
+      },
+      "leitura": "vantagem-do-jev",
+      "leitura_texto": "os IC95 dos quatro comparadores estao inteiramente acima de zero: ha evidencia de que o Jev supera a classe \"LLM generico e barato\" nesta tarefa",
+      "erro_grave": {
+        "jev": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [],
+          "limite_superior_falso_cancelar": 0.043728,
+          "limite_superior_cancelar_perdido": 0.122123
+        },
+        "c1": {
+          "falso_cancelar": [
+            "rep-p05-01",
+            "rep-p10-01"
+          ],
+          "cancelar_perdido": [
+            "rep-p10-03",
+            "rep-p21-01"
+          ],
+          "limite_superior_falso_cancelar": 0.090999,
+          "limite_superior_cancelar_perdido": 0.249249
+        },
+        "c2": {
+          "falso_cancelar": [],
+          "cancelar_perdido": [],
+          "limite_superior_falso_cancelar": 0.043728,
+          "limite_superior_cancelar_perdido": 0.122123
+        },
+        "c3": {
+          "falso_cancelar": [
+            "rep-p05-01",
+            "rep-p06-01"
+          ],
+          "cancelar_perdido": [
+            "rep-p29-03"
+          ],
+          "limite_superior_falso_cancelar": 0.090999,
+          "limite_superior_cancelar_perdido": 0.190204
+        },
+        "c4": {
+          "falso_cancelar": [
+            "rep-p05-01"
+          ],
+          "cancelar_perdido": [
+            "rep-p07-03",
+            "rep-p30-01"
+          ],
+          "limite_superior_falso_cancelar": 0.068856,
+          "limite_superior_cancelar_perdido": 0.249249
+        }
+      }
     }
   },
   "leitura_por_gabarito": {
-    "autor": "vantagem-do-jev"
+    "autor": "vantagem-do-jev",
+    "anotador local": "sem-evidencia-de-vantagem",
+    "oficial": "vantagem-do-jev"
   },
-  "veredito": "vantagem-do-jev",
-  "veredito_texto": "os IC95 dos quatro comparadores estao inteiramente acima de zero: ha evidencia de que o Jev supera a classe \"LLM generico e barato\" nesta tarefa",
+  "veredito": "depende-do-gabarito",
+  "veredito_texto": "as leituras divergem entre os gabaritos (anotador local: sem-evidencia-de-vantagem; autor: vantagem-do-jev; oficial: vantagem-do-jev), e o pre-registro manda reportar a divergencia em vez de escolher a leitura mais favoravel",
   "custo": {
     "jev": {
       "chamadas_liquidadas": 90,
       "custo_total_nusd": 2027179,
+      "fonte": "runs/ledger.sqlite3 (attempt_budget.settled_nusd)",
       "custo_por_mil_classificacoes_usd": 0.022524
     },
     "c1": {
       "chamadas_liquidadas": 90,
       "custo_total_nusd": 676802,
+      "fonte": "runs/ledger.sqlite3 (attempt_budget.settled_nusd)",
       "custo_por_mil_classificacoes_usd": 0.00752
     },
     "c2": {
       "chamadas_liquidadas": 90,
       "custo_total_nusd": 507463,
+      "fonte": "runs/ledger.sqlite3 (attempt_budget.settled_nusd)",
       "custo_por_mil_classificacoes_usd": 0.005638
     },
     "c3": {
       "chamadas_liquidadas": 90,
-      "custo_total_nusd": 53832593,
-      "custo_por_mil_classificacoes_usd": 0.59814
+      "custo_total_nusd": 1326993,
+      "fonte": "runs/ledger.sqlite3 (attempt_budget.settled_nusd)",
+      "custo_por_mil_classificacoes_usd": 0.014744
     },
     "c4": {
       "chamadas_liquidadas": 90,
       "custo_total_nusd": 8341127,
+      "fonte": "runs/ledger.sqlite3 (attempt_budget.settled_nusd)",
       "custo_por_mil_classificacoes_usd": 0.092679
     }
   },
@@ -823,13 +1251,13 @@
       "c3_cost_nusd": 16000,
       "c3_latency_ms": 1254.5,
       "c4_anulado_pela_emenda_3": "8411b697-a385-4c8e-afb8-0a379544af38",
+      "c3_tentativas_transporte": 3,
       "c4": "informacao",
       "c4_confidence": 0.95,
       "c4_erro": null,
       "c4_attempt_id": "32860065-a97e-4865-a5d4-b5c0f2f5d771",
       "c4_cost_nusd": 16320,
       "c4_latency_ms": 9048.5,
-      "c3_tentativas_transporte": 3,
       "c3_confidence": 0.95
     },
     {
@@ -983,13 +1411,13 @@
       "c3_cost_nusd": 16651,
       "c3_latency_ms": 1330.2,
       "c4_anulado_pela_emenda_3": "df4b2668-3238-4e5d-b37c-f67fbc48d392",
+      "c3_tentativas_transporte": 3,
       "c4": "cancelar",
       "c4_confidence": 0.95,
       "c4_erro": null,
       "c4_attempt_id": "3e48a321-e8e7-4194-96ff-6fd8ed7ab5f7",
       "c4_cost_nusd": 63076,
       "c4_latency_ms": 598.3,
-      "c3_tentativas_transporte": 3,
       "c3_confidence": 0.95
     },
     {
@@ -1063,13 +1491,13 @@
       "c3_cost_nusd": 6563200,
       "c3_latency_ms": 313.3,
       "c4_anulado_pela_emenda_3": "a2617f55-1035-44a7-873c-a18683d8078c",
+      "c3_tentativas_transporte": 3,
       "c4": "informacao",
       "c4_confidence": 0.95,
       "c4_erro": null,
       "c4_attempt_id": "4591926a-853d-492b-b50b-da064ce5835b",
       "c4_cost_nusd": 30956,
-      "c4_latency_ms": 3082.7,
-      "c3_tentativas_transporte": 3
+      "c4_latency_ms": 3082.7
     },
     {
       "case_id": "rep-p04-01",
@@ -4181,6 +4609,6 @@
       "c3_confidence": 0.95
     }
   ],
-  "wallet_committed_nusd": 542391274,
-  "wallet_available_nusd": 4457608726
+  "wallet_committed_nusd": null,
+  "wallet_available_nusd": null
 }
