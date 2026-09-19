@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 8,
-  "updated_at": "2026-09-19T02:46:13.761389+00:00",
+  "revision": 10,
+  "updated_at": "2026-09-19T03:36:23.193856+00:00",
   "system_progress": {
     "S01": {
       "simple": "running",
@@ -3840,6 +3840,272 @@
         }
       ],
       "decisions": []
+    },
+    {
+      "id": "e2b-posicao-desconfundida",
+      "system_id": "S01",
+      "phase": "pilot",
+      "evidence": "live_component",
+      "status": "completed",
+      "started_at": "2026-09-19T03:32:26.261890+00:00",
+      "finished_at": "2026-09-19T03:32:26.261890+00:00",
+      "provider": "openrouter",
+      "model": "typesafe/jev-1.13",
+      "dataset": "os mesmos 40 casos em 5 permutacoes (sementes 20260918 a 20260922), 25 chamadas de lote, 200 observacoes",
+      "notes": "Corrige a limitacao declarada no E2: com a ordem dos casos fixa, posicao e caso eram a mesma variavel. Embaralhando, o efeito de posicao desaparece: qui-quadrado 8,33 com 7 graus de liberdade, p=0,304. O padrao \"posicoes 4 e 8 erram mais\" do E2 era artefato de confundimento. Acuracia global 192 de 200 (0,960). ACHADO NOVO: tres casos mudam de resposta conforme os vizinhos do lote (tri-f09-03 oscila entre informacao, rastrear e trocar). O modelo e deterministico para entrada identica, mas a composicao do lote altera a decisao. Quem precisa de reprodutibilidade por caso deve usar individual e pagar os 36 a 40 por cento a mais.",
+      "attempts": [
+        {
+          "id": "c9b2ee50-65e4-4224-a368-0f75e99623a7",
+          "status": "success",
+          "latency_ms": 779.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.00010605,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "b3906e7e-98c9-4b70-9b32-160bceced595",
+          "status": "success",
+          "latency_ms": 474.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106554,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "950908b8-676c-4c85-baa6-38b3e7f8c409",
+          "status": "success",
+          "latency_ms": 424.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106302,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "459cfed8-4cc9-47a6-8e48-bb7d020c9ef8",
+          "status": "success",
+          "latency_ms": 585.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000107142,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "c01482d5-fb2a-4db9-b703-3e3ab85c1b6d",
+          "status": "success",
+          "latency_ms": 467.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106596,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "2c911f37-1b91-4816-9e10-576665eaf783",
+          "status": "success",
+          "latency_ms": 412.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106134,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "41bc6558-21a6-46c5-b537-93b4406a6bbb",
+          "status": "success",
+          "latency_ms": 442.9,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.00010605,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "67f460d2-3283-4d24-85db-6c44cc181114",
+          "status": "success",
+          "latency_ms": 440.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106848,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "56037309-724e-4b1e-a59f-745ccc65d3bc",
+          "status": "success",
+          "latency_ms": 391.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.00010731,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "3bfceb81-4e4e-4e3c-bee8-34bdf3559628",
+          "status": "success",
+          "latency_ms": 416.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.00010626,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "6a4acb91-34bf-414d-bf43-ba844d1152ac",
+          "status": "success",
+          "latency_ms": 382.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.0001071,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "f9cf85e6-f7a0-4ce9-a890-24a55ce3bb97",
+          "status": "success",
+          "latency_ms": 473.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000105588,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "ed9eaabb-835c-49fb-8bb0-fc25840db137",
+          "status": "success",
+          "latency_ms": 445.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106176,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "06ff1c46-0099-4d22-a73c-a2b178a929b0",
+          "status": "success",
+          "latency_ms": 363.3,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106638,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "4efe5b55-b323-4575-b360-9ad9c40ddb43",
+          "status": "success",
+          "latency_ms": 378.1,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000107058,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "94d4a283-29ad-4b4f-be5f-0846c506a1e2",
+          "status": "success",
+          "latency_ms": 361.9,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000105966,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "8a52e5f2-e57b-4246-beae-4ed3f813b18b",
+          "status": "success",
+          "latency_ms": 437.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000107016,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "3765f01f-6da2-44cf-9d0b-d188a8b4b85c",
+          "status": "success",
+          "latency_ms": 370.4,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106848,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "6375d081-1d31-4a56-83f1-7fcced1368fa",
+          "status": "success",
+          "latency_ms": 422.8,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106554,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "a4ac285f-a3bd-4809-9371-28062910dc9d",
+          "status": "success",
+          "latency_ms": 402.7,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106218,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "dd66546f-2d67-4b45-835e-2a6357b2ab51",
+          "status": "success",
+          "latency_ms": 354.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106302,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "1cc6186f-f5d0-4391-96a0-d4e456ee300a",
+          "status": "success",
+          "latency_ms": 418.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106218,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "84d31a92-5214-4ddc-af17-2fa937ae6c4a",
+          "status": "success",
+          "latency_ms": 457.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000107352,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "dc2aab2e-d162-4f1a-a68a-6cb502873c6d",
+          "status": "success",
+          "latency_ms": 398.6,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.00010668,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        },
+        {
+          "id": "25ab9c26-45f7-467f-abef-c71ecc19f306",
+          "status": "success",
+          "latency_ms": 433.2,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost_usd": 0.000106092,
+          "reserved_usd": 0.001344,
+          "cache_hit": false
+        }
+      ],
+      "decisions": []
     }
   ],
   "events": [
@@ -3947,6 +4213,26 @@
       "at": "2026-09-19T02:46:13.752969+00:00",
       "kind": "manual",
       "text": "Correcao de marcacao: nenhum sistema recebe rodada simples concluida apenas por passar a propria suite offline. A rodada simples do plano exige inferencia real do componente, que so o S01 teve. Os demais voltam para em andamento."
+    },
+    {
+      "at": "2026-09-19T03:32:26.261890+00:00",
+      "kind": "evidence",
+      "text": "E2b executado: o efeito de posicao no lote NAO existe (p=0,304) depois de desconfundir posicao e caso com 5 permutacoes. A leitura anterior de que as posicoes 4 e 8 erravam mais era artefato do desenho de ordem fixa, como a limitacao do E2 ja advertia."
+    },
+    {
+      "at": "2026-09-19T03:32:26.261890+00:00",
+      "kind": "evidence",
+      "text": "ACHADO NOVO no E2b: a composicao do lote muda a decisao em 3 dos 40 casos, mesmo o modelo sendo deterministico para entrada identica. Consequencia pratica: lote economiza de 36 a 40 por cento mas introduz dependencia entre casos, e a mesma mensagem pode ser classificada de formas diferentes segundo a companhia. Auditoria por caso pede modo individual."
+    },
+    {
+      "at": "2026-09-19T03:36:23.164612+00:00",
+      "kind": "evidence",
+      "text": "Contrato do Jev mapeado por completo. choice devolve {choice, probabilities, confidence}; score devolve nota CONTINUA na escala declarada, com legend e probabilities; noul devolve apenas uma probabilidade em [0,1], sem campo confidence. O validador do executor passou a checar os tres tipos e a recusar resposta cujo tipo difira do pedido. 51 testes passam."
+    },
+    {
+      "at": "2026-09-19T03:36:23.164612+00:00",
+      "kind": "evidence",
+      "text": "E4 responde a pergunta P2 do plano, preservacao de ressalvas em 8 consultas com 5 candidatos cada. nDCG@5: ordem de chegada 0,736, BM25 0,921, Jev 0,996. Ressalvas necessarias no top-3: 4 de 8 na ordem de chegada, 5 de 8 no BM25 e 8 de 8 no Jev. Erro de desenho corrigido antes de gastar: o corpus estava escrito em ordem decrescente de relevancia, o que daria a ordem de chegada um nDCG de 0,99 artificial; a ordem passou a ser embaralhada com semente 20260918."
     }
   ]
 }

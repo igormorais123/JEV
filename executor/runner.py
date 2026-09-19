@@ -93,10 +93,12 @@ def http_transport(url, headers, body, timeout):
 
 
 def validate_contract(body, questions):
-    """Exige uma resposta tipada por pergunta, com escolha dentro dos criterios enviados.
+    """Exige uma resposta tipada por pergunta, coerente com o tipo pedido.
 
-    Formato confirmado na sondagem de 18/09/2026:
-    {"answers": {"<id>": {"type": "choice", "choice": ..., "probabilities": {...}, "confidence": ...}}}
+    Formatos confirmados por sondagem em 18 e 19/09/2026:
+      choice -> {"type":"choice","choice":<opcao>,"probabilities":{...},"confidence":0..1}
+      score  -> {"type":"score","score":<float>,"legend":{...},"probabilities":{...},"confidence":0..1}
+      noul   -> {"type":"noul","noul":<probabilidade 0..1>}   (sem campo confidence)
     """
     answers = body.get('answers')
     if not isinstance(answers, dict):
@@ -106,14 +108,33 @@ def validate_contract(body, questions):
     for question_id, answer in answers.items():
         if not isinstance(answer, dict):
             raise ContractError(f'Resposta de {question_id} nao e objeto')
-        choice = answer.get('choice')
-        if choice is None:
-            raise ContractError(f'Resposta de {question_id} sem escolha')
-        criteria = questions[question_id].get('criteria')
-        if isinstance(criteria, dict) and choice not in criteria:
-            raise ContractError(f'Escolha "{choice}" fora dos criterios declarados em {question_id}')
-        confidence = answer.get('confidence')
-        if confidence is not None and not 0 <= confidence <= 1:
+        pedido = questions[question_id].get('type')
+        devolvido = answer.get('type')
+        if pedido and devolvido and pedido != devolvido:
+            raise ContractError(f'{question_id}: pedimos {pedido} e voltou {devolvido}')
+        tipo = devolvido or pedido or 'choice'
+        if tipo == 'choice':
+            escolha = answer.get('choice')
+            if escolha is None:
+                raise ContractError(f'Resposta de {question_id} sem escolha')
+            criterios = questions[question_id].get('criteria')
+            if isinstance(criterios, dict) and escolha not in criterios:
+                raise ContractError(f'Escolha "{escolha}" fora dos criterios declarados em {question_id}')
+        elif tipo == 'score':
+            nota = answer.get('score')
+            if not isinstance(nota, (int, float)):
+                raise ContractError(f'Resposta de {question_id} sem score numerico')
+            criterios = questions[question_id].get('criteria')
+            if isinstance(criterios, list) and not 0 <= nota <= len(criterios) - 1:
+                raise ContractError(f'Score {nota} fora da escala declarada em {question_id}')
+        elif tipo == 'noul':
+            valor = answer.get('noul')
+            if not isinstance(valor, (int, float)) or not 0 <= valor <= 1:
+                raise ContractError(f'Resposta de {question_id} sem probabilidade valida em noul')
+        else:
+            raise ContractError(f'Tipo de resposta desconhecido em {question_id}: {tipo}')
+        confianca = answer.get('confidence')
+        if confianca is not None and not 0 <= confianca <= 1:
             raise ContractError(f'Confidence fora de [0,1] em {question_id}')
     return answers
 

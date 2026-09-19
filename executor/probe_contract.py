@@ -25,28 +25,24 @@ STATE = 'O usuario escreveu: "Bom dia, gostaria de cancelar meu pedido numero 44
 OPTIONS = ['cancelar', 'rastrear', 'trocar']
 
 VARIANTS = {
-    'I_choice_instructions_criteria': {'q1': {
-        'type': 'choice',
-        'instructions': 'Classifique a acao que o usuario pediu na mensagem.',
-        'criteria': {
-            'cancelar': 'O usuario pede para cancelar um pedido.',
-            'rastrear': 'O usuario pede informacao sobre entrega ou localizacao.',
-            'trocar': 'O usuario pede troca ou devolucao.',
-        },
+    'L_score_array_strings': {'q1': {
+        'type': 'score',
+        'instructions': 'Quao relevante e a mensagem para o assunto cobranca?',
+        'criteria': ['nada relevante', 'pouco relevante', 'muito relevante'],
     }},
-    'J_noul_instructions': {'q1': {
+    'M_score_array_objetos': {'q1': {
+        'type': 'score',
+        'instructions': 'Quao relevante e a mensagem para o assunto cobranca?',
+        'criteria': [
+            {'label': 'nada', 'description': 'Nao trata de valores.'},
+            {'label': 'muito', 'description': 'Trata diretamente de valores.'},
+        ],
+    }},
+    'N_noul_sem_criteria': {'q1': {
         'type': 'noul',
         'instructions': 'O usuario pediu cancelamento de pedido?',
-        'criteria': {'sim': 'Pediu cancelamento.', 'nao': 'Nao pediu cancelamento.'},
-    }},
-    'K_score': {'q1': {
-        'type': 'score',
-        'instructions': 'Quao urgente e a mensagem?',
-        'criteria': {'baixa': 'Sem urgencia.', 'alta': 'Precisa de acao imediata.'},
     }},
 }
-
-
 
 
 def send(key, payload):

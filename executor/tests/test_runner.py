@@ -140,6 +140,41 @@ class RunnerTests(unittest.TestCase):
         dump += ' '.join(str(r) for r in self.ledger.db.execute('SELECT * FROM budget_events').fetchall())
         self.assertNotIn('chave-de-teste', dump)
 
+    def test_score_valida_nota_dentro_da_escala(self):
+        questions = {'q1': {'type': 'score', 'instructions': 'Quao relevante?',
+                            'criteria': ['nada', 'pouco', 'muito']}}
+        body = {'answers': {'q1': {'type': 'score', 'score': 1.44,
+                                   'legend': {'0': 'nada', '1': 'pouco', '2': 'muito'},
+                                   'confidence': 0.16}},
+                'usage': {'input_tokens': 10, 'output_tokens': 0}}
+        result = runner.dispatch(self.ledger, transport=self.transport(200, body),
+                                 **dispatch_args(questions=questions))
+        self.assertEqual(result['status'], 'success')
+        self.assertEqual(result['answers']['q1']['score'], 1.44)
+
+    def test_score_fora_da_escala_reprova(self):
+        questions = {'q1': {'type': 'score', 'instructions': 'Quao relevante?',
+                            'criteria': ['nada', 'muito']}}
+        body = {'answers': {'q1': {'type': 'score', 'score': 4.2}},
+                'usage': {'input_tokens': 10, 'output_tokens': 0}}
+        result = runner.dispatch(self.ledger, transport=self.transport(200, body),
+                                 **dispatch_args(questions=questions))
+        self.assertEqual(result['status'], 'invalid_response')
+
+    def test_noul_valida_probabilidade(self):
+        questions = {'q1': {'type': 'noul', 'instructions': 'Pediu cancelamento?'}}
+        body = {'answers': {'q1': {'type': 'noul', 'noul': 0.99}},
+                'usage': {'input_tokens': 10, 'output_tokens': 0}}
+        result = runner.dispatch(self.ledger, transport=self.transport(200, body),
+                                 **dispatch_args(questions=questions))
+        self.assertEqual(result['status'], 'success')
+
+    def test_tipo_devolvido_diferente_do_pedido_reprova(self):
+        body = {'answers': {'q1': {'type': 'score', 'score': 1.0}},
+                'usage': {'input_tokens': 10, 'output_tokens': 0}}
+        result = runner.dispatch(self.ledger, transport=self.transport(200, body), **dispatch_args())
+        self.assertEqual(result['status'], 'invalid_response')
+
     def test_canarios_tem_gabarito_dentro_dos_criterios(self):
         for canary in runner.CANARIES:
             question = canary['questions'][canary['question_id']]
