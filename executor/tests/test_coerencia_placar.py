@@ -130,6 +130,33 @@ class CoerenciaDoPlacar(unittest.TestCase):
         self.assertEqual(tudo['erros_entre_aceitos'], erros_oficiais)
 
 
+class ConfiancaCalculada(unittest.TestCase):
+    """A confiança era um número digitado, e número digitado não cai quando o dado piora."""
+
+    def test_erro_entre_aceitos_derruba_a_confianca(self):
+        e9 = {'por_particao': {'confirmacao (teste)': {'politicas': [
+            {'corte': 0.90, 'casos': 40, 'erros_entre_aceitos': 0}]}}}
+        limpo, _ = placar.confianca_calculada(e9, None, None, {'x': 1})
+        e9_ruim = {'por_particao': {'confirmacao (teste)': {'politicas': [
+            {'corte': 0.90, 'casos': 40, 'erros_entre_aceitos': 2}]}}}
+        sujo, motivos = placar.confianca_calculada(e9_ruim, None, None, {'x': 1})
+        self.assertLess(sujo, limpo)
+        self.assertTrue(any('erro' in m for m in motivos))
+
+    def test_sem_particao_de_teste_a_confianca_cai_mais(self):
+        sem, motivos = placar.confianca_calculada(None, None, None, None)
+        self.assertLessEqual(sem, 0.5)
+        self.assertTrue(any('sem partição' in m for m in motivos))
+
+    def test_cada_desconto_tem_motivo(self):
+        valor, motivos = placar.confianca_calculada(
+            {'por_particao': {'confirmacao (teste)': {'politicas': [
+                {'corte': 0.90, 'casos': 40, 'erros_entre_aceitos': 0}]}}},
+            {'n_instaveis': 1, 'casos': 40, 'repeticoes': 5}, None, {'x': 1})
+        self.assertEqual(len(motivos), 4)
+        self.assertAlmostEqual(valor, 0.5, places=2)
+
+
 class GabaritoOficial(unittest.TestCase):
     def test_adjudicacao_substitui_apenas_o_que_mudou(self):
         from executor import gabarito

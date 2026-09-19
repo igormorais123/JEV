@@ -139,6 +139,41 @@ def politica_de_referencia(e9, corte=0.90):
     return next((p for p in confirmacao.get('politicas', []) if p['corte'] == corte), None)
 
 
+def confianca_calculada(e9, e6, e8, adj):
+    """A confianca sai de regras declaradas, nao de um numero digitado.
+
+    Um 0,6 cravado no codigo continua dizendo 0,6 depois que os dados pioram. Aqui cada
+    desconto tem motivo, e a lista de motivos vai junto para que a conta seja auditavel — e
+    contestavel, que e o ponto.
+    """
+    valor, motivos = 1.0, []
+    politica = politica_de_referencia(e9) if e9 else None
+    if politica is None:
+        valor -= 0.30
+        motivos.append('sem partição de teste para sustentar a política (-0,30)')
+    else:
+        if politica['casos'] < 100:
+            valor -= 0.20
+            motivos.append(f"a política se apoia em {politica['casos']} casos, menos de cem (-0,20)")
+        if politica['erros_entre_aceitos']:
+            valor -= 0.20
+            motivos.append(f"{politica['erros_entre_aceitos']} erro(s) entre os aceitos (-0,20)")
+    if e6 and e6['n_instaveis']:
+        valor -= 0.10
+        motivos.append(f"{e6['n_instaveis']} caso(s) mudam de resposta entre repetições "
+                       'idênticas (-0,10)')
+    if adj:
+        valor -= 0.10
+        motivos.append('o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)')
+    else:
+        valor -= 0.20
+        motivos.append('o gabarito tem um anotador só, sem adjudicação (-0,20)')
+    # O corpus e construido pelo avaliador em todos os cenarios deste estudo.
+    valor -= 0.10
+    motivos.append('corpus construído pelo avaliador, não colhido de uso real (-0,10)')
+    return round(max(0.0, min(1.0, valor)), 2), motivos
+
+
 def nota_de_confianca(adj, e9=None):
     """A nota tambem acompanha o estado da adjudicacao, em vez de ficar cravada."""
     politica = politica_de_referencia(e9) if e9 else None
@@ -174,14 +209,15 @@ def titulo_do_veredito(e9):
     """
     if not e9:
         return 'Sem analise de politica: nao ha recomendacao operacional'
-    confirmacao = (e9.get('por_particao') or {}).get('confirmacao (teste)') or {}
     politica = politica_de_referencia(e9)
     if politica is None:
         return 'Uso consultivo com revisao humana'
     if politica['erros_entre_aceitos'] == 0:
         return 'Corte de confianca em 0,90 com revisao humana do resto'
-    melhor = next((p for p in confirmacao['politicas']
-                   if p['erros_entre_aceitos'] == 0), None)
+    melhor = next((politica_de_referencia(e9, corte=c)
+                   for c in (0.95, 0.99)
+                   if (politica_de_referencia(e9, corte=c) or {}).get('erros_entre_aceitos') == 0),
+                  None)
     if melhor:
         return f"Corte de confianca em {melhor['corte']} com revisao humana do resto"
     return 'Revisao humana de todas as decisoes: nenhum corte zerou o erro'
@@ -288,7 +324,10 @@ def montar():
 
     if e2:
         condicoes = e2['condicoes']
-        acuracias = [c['resumo']['acuracia'] for c in condicoes.values()]
+        # A acuracia condicional ignora resposta ausente. Com cobertura cheia da no mesmo,
+        # mas o painel nao pode depender de sorte: o denominador e o programado.
+        acuracias = [round(c['resumo']['acertos'] / c['resumo']['n'], 4)
+                     for c in condicoes.values()]
         individuais = [c['resumo']['custo_por_decisao_nusd'] for c in condicoes.values()
                        if not c['condicao']['lote']]
         lotes = [c['resumo']['custo_por_decisao_nusd'] for c in condicoes.values()
@@ -456,13 +495,17 @@ def montar():
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
     disponivel = carteira.get('wallet_available_nusd') or carteira.get('available_nusd')
 
+    confianca = confianca_calculada(e9, e6, e8, adj)
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
             'titulo': titulo_do_veredito(e9),
             'texto': texto_do_veredito(e9, e6),
-            'confianca': 0.6,
+            'confianca': confianca[0],
+            'confianca_motivos': confianca[1],
             'confianca_nota': nota_de_confianca(adj, e9),
+            'confianca_metodo': ('descontos declarados sobre 1,0; cada um com motivo em '
+                                 'confianca_motivos'),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}

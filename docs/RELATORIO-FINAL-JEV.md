@@ -38,12 +38,18 @@ Sob o gabarito adjudicado por três juízes — o mais defensável — são **0,
 número mais alto seria escolher o gabarito depois de ver o resultado, e é por isso que o painel
 exibe a faixa em vez do melhor caso.
 
-**Confiança: 0,60.** Rebaixada de 0,75 depois da sexta rodada de revisão independente, que
-mostrou que o painel havia começado a apresentar duas lacunas conhecidas como se estivessem
-fechadas. Alta para a comparação contra os comparadores congelados — é pareada, pré-registrada e
-replicou fora do corpus piloto. Baixa para qualquer afirmação operacional: 80 casos construídos
-por mim, gabarito de um anotador humano (também eu), e um corte apoiado em 3 erros no gabarito
-oficial — 4, no gabarito do autor.
+**Confiança: 0,5.** Este número deixou de ser
+um julgamento meu e passou a ser uma conta com as penalidades declaradas, partindo de 1,0:
+
+- a política se apoia em 40 casos, menos de cem (-0,20)
+- 1 caso(s) mudam de resposta entre repetições idênticas (-0,10)
+- o gabarito foi adjudicado por modelos, não por pessoas do domínio (-0,10)
+- corpus construído pelo avaliador, não colhido de uso real (-0,10)
+
+Alta para a comparação contra os comparadores congelados — é pareada, pré-registrada e replicou
+fora do corpus piloto. Baixa para qualquer afirmação operacional, pelos motivos acima. A conta
+está em `executor/placar.py:confianca_calculada`, e é para ser contestada: se alguém achar que
+um desconto está errado, o lugar de discutir é o código, não a minha impressão.
 
 ---
 
