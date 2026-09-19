@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 11,
-  "updated_at": "2026-09-19T03:43:04.497551+00:00",
+  "revision": 12,
+  "updated_at": "2026-09-19T03:50:29.969675+00:00",
   "system_progress": {
     "S01": {
       "simple": "running",
@@ -4258,6 +4258,26 @@
       "at": "2026-09-19T03:43:04.469243+00:00",
       "kind": "evidence",
       "text": "Conciliacao final: ledger US$ 0,010949904 e extrato do provedor US$ 0,010862838; a diferenca continua sendo o provisionamento das chamadas com HTTP 400, que o provedor nao cobra. 305 tentativas registradas. Restam US$ 4,989050 do teto de US$ 5."
+    },
+    {
+      "at": "2026-09-19T03:50:29.941619+00:00",
+      "kind": "manual",
+      "text": "Segunda rodada de revisao independente: as correcoes da primeira rodada criaram 7 defeitos P1 novos, como o protocolo da casa previa. A conciliacao comparava extrato com total comprometido (que inclui reservas nao gastas); a absorcao do excedente lia saldo fora da transacao; conciliacao e registro historico podiam duplicar gasto; a liquidacao usava a tabela de precos atual em vez da tabela da reserva; a massa de cauda do bootstrap podia devolver 2,0; o limite de erro tratava casos dependentes como independentes; e a cobertura excluia do denominador os casos sem confidence. Todos corrigidos com regressao."
+    },
+    {
+      "at": "2026-09-19T03:50:29.941619+00:00",
+      "kind": "evidence",
+      "text": "DEFEITO QUE SO A VERIFICACAO PEGOU: CREATE TABLE IF NOT EXISTS nao adiciona coluna a tabela existente. O banco de producao, com 305 tentativas, estava sem as colunas de identidade de preco criadas na primeira rodada, e a suite passava porque usa bancos novos. A correcao so funcionava em laboratorio. Migracao com ALTER TABLE implementada, base migrada e identidade das 305 tentativas antigas preenchida pela evidencia da reserva."
+    },
+    {
+      "at": "2026-09-19T03:50:29.941619+00:00",
+      "kind": "evidence",
+      "text": "Calibracao recalculada respeitando o agrupamento: no corte de 0,95 sao 28 aceitos de 40 programados, cobertura 0.7, zero erros, vindos de apenas 9 familias. O limite superior de erro por caso e 0.101, mas o honesto, por familia, e 0.283. O numero bonito caiu."
+    },
+    {
+      "at": "2026-09-19T03:50:29.941619+00:00",
+      "kind": "evidence",
+      "text": "Conciliacao refeita com a logica corrigida: liquidado do OpenRouter US$ 0,010949904 contra extrato US$ 0,010862838. Como o ledger esta acima do extrato, o excedente absorvido e zero e a diferenca continua sendo o provisionamento das chamadas com HTTP 400. Restam US$ 4,989050. 70 testes passam."
     }
   ]
 }

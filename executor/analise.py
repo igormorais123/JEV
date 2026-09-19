@@ -45,9 +45,11 @@ def bootstrap_cluster(clusters, repeticoes=REPETICOES, semente=SEMENTE):
     return {
         'diferenca_observada': round(observada, 4),
         'ic95': [round(diferencas[corte], 4), round(diferencas[-corte - 1], 4)],
-        'p_bootstrap_bilateral': round(2 * min(
+        # Medida de cauda da distribuicao bootstrap, nao um p-valor calibrado sob hipotese
+        # nula. Sem o min(1.0) a conta passa de 1 quando todas as diferencas sao iguais.
+        'massa_de_cauda_bilateral': round(min(1.0, 2 * min(
             sum(1 for d in diferencas if d <= 0) / len(diferencas),
-            sum(1 for d in diferencas if d >= 0) / len(diferencas)), 4),
+            sum(1 for d in diferencas if d >= 0) / len(diferencas))), 4),
         'n_familias': len(nomes), 'n_casos': len(todos), 'repeticoes': repeticoes,
     }
 
@@ -120,28 +122,55 @@ def analisar_posicao_e2b(repeticoes=REPETICOES, semente=SEMENTE):
             embaralhado.extend(zip(posicoes, [a for _, a in lista]))
         if amplitude(embaralhado) >= observado:
             extremos += 1
+    # (extremos + 1) / (repeticoes + 1) evita p igual a zero e nao subestima a cauda.
     return {'amplitude_observada': round(observado, 4),
-            'p_permutacao': round(extremos / repeticoes, 4),
+            'p_permutacao': round((extremos + 1) / (repeticoes + 1), 4),
             'n_casos': len(por_caso), 'n_observacoes': sum(len(v) for v in por_caso.values()),
             'repeticoes': repeticoes}
 
 
-def analisar_calibracao():
-    """Risco-cobertura com a unidade honesta: o pool repete o mesmo corpus 9 vezes."""
+def analisar_calibracao(corte=0.95):
+    """Risco-cobertura com duas correcoes exigidas pela segunda revisao.
+
+    1. A cobertura usa TODOS os casos programados. Caso sem confidence e falha do braco,
+       nao um caso que nunca existiu; exclui-lo do denominador inflaria a cobertura.
+    2. O limite superior de erro e calculado tambem no nivel de FAMILIA. Tratar 28 casos
+       de dez familias como 28 ensaios independentes estreita o intervalo artificialmente,
+       porque casos da mesma familia sao dependentes por construcao. O limite por familia
+       e a leitura conservadora; o limite por caso e o piso otimista.
+    """
     e1 = json.loads((ROOT / 'runs' / 'e1-triagem' / 'relatorio.json').read_text(encoding='utf-8'))
-    unico = [(c['jev_confidence'], c['jev'] == c['gold'])
-             for c in e1['casos'] if c.get('jev_confidence') is not None]
-    aceitos = [p for p in unico if p[0] >= 0.95]
-    erros = sum(1 for _, ok in aceitos if not ok)
-    return {'n_casos_distintos': len(unico), 'aceitos_em_0.95': len(aceitos),
-            'erros_entre_aceitos': erros,
-            'cobertura': round(len(aceitos) / len(unico), 4) if unico else None,
-            'limite_superior_erro_95': limite_superior_erro(erros, len(aceitos))}
+    programados = e1['casos']
+    com_confianca = [c for c in programados if c.get('jev_confidence') is not None]
+    aceitos = [c for c in com_confianca if c['jev_confidence'] >= corte]
+    erros = sum(1 for c in aceitos if c['jev'] != c['gold'])
+
+    familias = defaultdict(list)
+    for c in aceitos:
+        familias[c['family']].append(c['jev'] == c['gold'])
+    familias_com_erro = sum(1 for v in familias.values() if not all(v))
+
+    return {
+        'corte': corte,
+        'casos_programados': len(programados),
+        'casos_com_confianca': len(com_confianca),
+        'aceitos': len(aceitos),
+        'erros_entre_aceitos': erros,
+        'cobertura_sobre_programados': round(len(aceitos) / len(programados), 4) if programados else None,
+        'familias_representadas_entre_aceitos': len(familias),
+        'familias_com_erro': familias_com_erro,
+        'limite_superior_erro_por_caso': limite_superior_erro(erros, len(aceitos)),
+        'limite_superior_erro_por_familia': limite_superior_erro(familias_com_erro, len(familias)),
+        'leitura': ('O limite por familia e o numero honesto quando os casos de uma familia sao '
+                    'variantes do mesmo fenomeno. O limite por caso so valeria com casos independentes.'),
+    }
 
 
 def main():
     saida = {'e1_triagem': analisar_e1(), 'e3_evidencia': analisar_e3(),
-             'e2b_posicao': analisar_posicao_e2b(), 'calibracao': analisar_calibracao()}
+             'e2b_posicao': analisar_posicao_e2b(),
+             'calibracao_0.95': analisar_calibracao(0.95),
+             'calibracao_0.99': analisar_calibracao(0.99)}
     destino = ROOT / 'runs' / 'analise-pareada.json'
     destino.write_text(json.dumps(saida, ensure_ascii=False, indent=2), encoding='utf-8')
     for nome, dados in saida.items():

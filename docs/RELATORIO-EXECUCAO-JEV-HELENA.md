@@ -4,8 +4,9 @@
 
 **Status:** etapas 1 a 4 do plano executadas, mais os experimentos E1, E2, E2b, E3 e E4. 305 chamadas
 reais, **US$ 0,010950** gastos de um teto de US$ 5,00 de gasto novo. Conciliação com o extrato do
-provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por revisão
-independente de outro modelo, e a seção 5 lista o que essa revisão derrubou.
+provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por **duas rodadas** de
+revisão independente de outro modelo (Codex `gpt-6-astra`), que encontraram doze defeitos além do que a
+execução já havia revelado. A seção 5 lista o que essas revisões derrubaram.
 
 ---
 
@@ -32,11 +33,12 @@ Isso muda o desenho operacional: em vez de perguntar "o modelo é bom o suficien
 a pergunta vira "quanto da fila ele resolve e quanto sobra para a pessoa?". Com corte em 0,95, **28 dos 40
 casos são aceitos (70% de cobertura) e nenhum deles está errado**.
 
-**Não observar erro não é taxa de erro zero.** Uma revisão independente derrubou a versão anterior desta
-seção, que falava em "360 decisões" e "zero erro". As 360 são 40 casos repetidos nove vezes, e o modelo se
-mostrou determinístico para entrada idêntica: o N honesto é 40, não 360. Sobre 28 aceitos com zero erros
-observados, o limite superior de 95% para a taxa de erro é **10,1%**, não zero. O sinal de calibração
-continua valendo; a promessa de perfeição, não.
+**Não observar erro não é taxa de erro zero.** Duas rodadas de revisão independente derrubaram a versão
+anterior desta seção, que falava em "360 decisões" e "zero erro". As 360 são 40 casos repetidos nove vezes,
+e o modelo se mostrou determinístico para entrada idêntica: o N honesto é 40. Sobre 28 aceitos com zero
+erros observados, o limite superior de 95% para a taxa de erro é **10,1% se os casos forem independentes**
+— e eles não são. Os 28 aceitos vêm de apenas 9 famílias; respeitando o agrupamento, o limite honesto é
+**28,3%**. O sinal de calibração continua valendo; a promessa de perfeição, não, e nem o número bonito.
 
 ---
 
@@ -194,6 +196,31 @@ O P1-5 é o mais sério, porque atinge a conclusão e não o código. A emenda e
 `planning/preregistro-E1-triagem.md`, e o resultado **sobrevive** ao teste correto: a diferença de +32,5
 pontos tem IC 95% de [0,150; 0,500].
 
+### 5.1 Segunda rodada: a correção criou defeitos novos
+
+O protocolo da casa diz que o primeiro round de correções costuma introduzir regressões. Submeti as
+correções ao mesmo revisor, com instrução explícita de procurar regressão. Vieram **mais sete P1**.
+
+| # | Achado da segunda rodada | Por que importa |
+|---|---|---|
+| R2-1 | A conciliação comparava o extrato com o total **comprometido**, que inclui reservas ainda não gastas | Extrato e reserva são grandezas diferentes: com uma reserva pendente grande, divergência real ficava escondida |
+| R2-2 | A absorção do excedente lia o saldo **fora** da transação | Duas conexões poderiam absorver o mesmo excedente duas vezes |
+| R2-3 | Conciliação e registro histórico podiam duplicar o mesmo gasto | Ordem de importação mudava o total comprometido |
+| R2-4 | A liquidação usava a tabela de preços **atual**, não a da reserva | Trocar a tabela por uma mais barata liquidaria a reserva antiga por menos e liberaria saldo |
+| R2-5 | `p_bootstrap_bilateral` podia devolver **2,0** | Com todas as diferenças iguais, a conta passava de 1; e nunca foi p-valor calibrado, é massa de cauda |
+| R2-6 | O limite de erro tratava 28 casos como 28 ensaios independentes | Eles vêm de 9 famílias; o limite honesto é 28,3%, não 10,1% |
+| R2-7 | A cobertura excluía do denominador os casos sem confidence | Mesmo mecanismo do P1-4, em outra métrica |
+
+E um alerta que, ao ser verificado, era pior do que P2: **`CREATE TABLE IF NOT EXISTS` não adiciona coluna
+a tabela existente.** O banco de produção, com 305 tentativas, estava sem as colunas de identidade de
+preço criadas na primeira rodada — os testes passavam porque usam bancos novos. Havia uma correção que só
+funcionava em laboratório. Migração implementada com `ALTER TABLE`, base migrada, identidade das 305
+tentativas antigas preenchida pela evidência da reserva.
+
+Todos os sete corrigidos, com regressão em `executor/tests/test_achados_revisao2.py`. Total: **13 defeitos
+encontrados**, sendo 1 por execução, 5 na primeira revisão e 7 na segunda. Nenhum foi encontrado lendo o
+código na primeira escrita.
+
 Dos alertas P2, três mudaram o texto deste relatório: "efeito inexistente" virou "não detectamos efeito";
 "zero erro" virou "zero erros observados, com limite superior de 10,1%"; e a divergência entre a rubrica
 escrita e o prompt efetivamente enviado passou a constar na emenda em vez de ser apresentada como
@@ -255,7 +282,7 @@ inferência e usa as repetições apenas como verificação de estabilidade.
 |---|---:|---|
 | O Jev supera a regra simples nestes corpora | **0,95** | Ganho grande em dois desenhos, com IC de bootstrap por família que não contém zero |
 | O Jev preserva ressalvas melhor que BM25 neste corpus | **0,80** | 8/8 contra 5/8, mas são só oito consultas autorais |
-| A confiança do modelo é informativa | **0,80** | Separação forte, porém o N honesto é 40 e o limite superior de erro acima de 0,95 é 10,1% |
+| A confiança do modelo é informativa | **0,75** | Separação forte, mas o N honesto é 40 e o limite superior de erro acima de 0,95 é 28,3% respeitando as famílias |
 | O lote economiza de 35% a 40% sem dano | **0,70** | Economia medida direto; "sem dano" é ausência de evidência, com poder baixo |
 | O ganho se mantém em dados reais não balanceados | **0,45** | Nenhum caso real foi testado; é extrapolação |
 | O Jev reduz tempo humano no fluxo completo | **0,20** | Nada foi medido sobre fluxo de trabalho |
@@ -312,14 +339,16 @@ camada offline — instalar e rodar suíte não é inferência real do component
 P2 passou a ter resposta preliminar no E4, sobre oito consultas autorais. Isso é um piloto, não um
 benchmark de busca.
 
-O controle financeiro teve **seis** defeitos encontrados durante a própria execução: o teto aplicado por
-experimento em vez de globalmente, mais os cinco achados da revisão independente na seção 5. Todos
-corrigidos, todos com teste de regressão. O gasto real nunca chegou perto do limite — US$ 0,010950 de
-US$ 5,00 — mas um controle financeiro que só funciona porque o gasto é pequeno não é um controle
+O controle financeiro e a análise acumularam **treze** defeitos encontrados durante a própria execução:
+um ao rodar (o teto aplicado por experimento), cinco na primeira revisão independente e sete na segunda.
+Todos corrigidos, todos com teste de regressão. O gasto real nunca chegou perto do limite — US$ 0,010950
+de US$ 5,00 — mas um controle financeiro que só funciona porque o gasto é pequeno não é um controle
 financeiro.
 
-Nenhum dos defeitos foi encontrado lendo o código. Todos apareceram ao executar de verdade, ou quando
-outro modelo olhou com instrução de achar problema.
+Nenhum dos treze foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou
+quando outro modelo olhou com instrução de achar problema. O mais instrutivo: uma das correções da
+primeira rodada **só funcionava nos testes**, porque `CREATE TABLE IF NOT EXISTS` não migra tabela
+existente e os testes usavam bancos novos. A suíte estava verde e a produção, quebrada.
 
 ---
 
