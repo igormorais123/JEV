@@ -48,8 +48,10 @@ gabarito a conclusão mudaria contra a que eu acabara de publicar. Ele confirmou
 ambiguidade ou propusesse terceira leitura.
 
 **O que isto autoriza afirmar:** neste corpus, com esta rubrica e contra este comparador, o Jev
-é melhor, e a diferença é grande o bastante para sobreviver ao agrupamento por família. O erro
-grave (`cancelar` indevido) reforça: **Jev 0, comparador 1**.
+é melhor, e a diferença é grande o bastante para sobreviver ao agrupamento por família. No erro
+grave (`cancelar` indevido) **o Jev não cometeu nenhum sob nenhum dos três gabaritos**; o
+comparador cometeu um sob dois deles e nenhum sob o terceiro — o detalhe está na seção 3.10, e
+ele é menos favorável do que a versão anterior desta frase dizia.
 
 **O que isto não autoriza:** que a rubrica meça o que diz medir. Os três anotadores deste estudo
 — eu, o anotador independente e o terceiro juiz — produzem rótulos, e dois deles são modelos de
@@ -414,12 +416,12 @@ ainda que a conta esteja certa, e ela está.
 
 Por isso o relatório não elege nenhum dos dois lados. A partição que existe para decidir não
 separa; a leitura com o dobro das famílias separa; e a segunda foi escolhida depois da primeira.
-A conclusão honesta é a que ficou na seção 1: **a evidência não basta para decidir**, e o
-desempate é um corpus novo com pelo menos 30 famílias, pré-registrado antes de qualquer chamada.
+Esta era a conclusão antes da adjudicação dos 10 desacordos. A seção 3.11 conta o que aconteceu
+com ela.
 
 ---
 
-### 3.10 O desempate (E11), e por que ele não desempatou
+### 3.10 O desempate (E11): o que ele mediu, e o que quase me fez concluir errado
 
 O E10 não separou de zero na partição de teste; o E10b, decidido depois, separou no piloto. Os
 dois defeitos eram claros: poder baixo e uma análise escolhida depois de ver a outra. O E11
@@ -453,9 +455,27 @@ persistência.
 Sob o meu gabarito, só o Jev acerta em 8 casos e só o comparador em nenhum (McNemar exato
 p = 0,0078). Sob o do anotador independente, 2 contra 4 (p = 0,6875).
 
-Erro grave (`cancelar` indevido): **Jev 0, comparador 1**. É a única métrica do E11 em que a
-diferença não depende do gabarito, e é a métrica que o pré-registro do E1 chamou de
-irreversível.
+Erro grave (`cancelar` indevido), recontado sob os três gabaritos porque a décima quinta rodada
+de revisão mostrou que a afirmação anterior era falsa:
+
+| Gabarito | Jev | llama-3.1-8b |
+|---|---|---|
+| Meu e adjudicado | 0 | 1 (`dsp-d03-01`) |
+| Anotador independente | 0 | **0** |
+
+Até esta rodada, esta seção dizia que o erro grave era *"a única métrica do E11 em que a
+diferença não depende do gabarito"*. **Não é.** O único falso-`cancelar` do comparador é
+justamente `dsp-d03-01`, que está entre os 10 casos em disputa: o anotador independente leu
+`cancelar` ali, e sob o gabarito dele o comparador acerta e o erro grave some. A frase antiga
+usava como âncora um caso que o próprio parágrafo seguinte declara contestado. O que se sustenta
+é mais modesto e continua valendo: **o Jev não cometeu erro grave sob nenhum dos três
+gabaritos**, e o comparador cometeu sob dois deles.
+
+Uma ressalva de contabilidade, da mesma rodada: o campo `erros_graves_cancelar` gravado nos
+relatórios soma `cancelar` indevido **e** `cancelar` perdido, e por isso marca 2 para o
+comparador onde a prosa diz 1. Os dois números estão certos em definições diferentes, e a
+definição que o pré-registro do E1 chamou de irreversível é só a primeira. O bloco
+`erro_grave` do relatório traz as duas listas separadas, nominalmente.
 
 **Os 10 casos em que o anotador independente discorda de mim:**
 `dsp-d01-02`, `dsp-d03-01`, `dsp-d06-03`, `dsp-d09-01`, `dsp-d10-03`,
@@ -469,8 +489,9 @@ para isso, e eu não tenho como escolher entre elas com o que este estudo mediu:
 2. Eu escrevi 60 casos que casam com a leitura do Jev, sem perceber, porque conheço as respostas
    dele desde o E1.
 
-A segunda não é paranoia: é exatamente o que um corpus escrito pelo avaliador permite. E é por
-isso que o relatório não fecha a favor de ninguém.
+A segunda não é paranoia: é exatamente o que um corpus escrito pelo avaliador permite, e foi ela
+que sustentou a quarta recomendação deste relatório. **A seção 3.11 mostra por que ela não
+sobreviveu**: os 10 casos foram a um terceiro juiz cego, que confirmou meu gabarito em todos.
 
 ---
 
@@ -646,11 +667,24 @@ são da mesma política em bases diferentes, e nenhum dos dois deve ser citado s
    18 dos 19 casos em disputa no estudo inteiro foram para o meu gabarito. O que ela não pode
    resolver é se a rubrica corresponde ao que uma pessoa do atendimento faria. Esta é a
    limitação de que todas as outras derivam.
-8. **Um único LLM econômico foi testado como comparador.** O E10 usou
+8. **Os dois braços não usam o mesmo protocolo.** O Jev responde pelo endpoint de decisões do
+   provedor, com o campo `questions` nativo; o comparador responde por `chat/completions`, com
+   JSON forçado, `max_tokens` 64 e `temperature` 0. O texto da rubrica é idêntico, a interface
+   não é, e nenhuma ablação cruzada foi feita (o comparador no endpoint de decisões, ou o Jev
+   pelo chat). Parte da diferença medida pode ser de formato, e este estudo não separa as duas
+   coisas.
+9. **A vantagem medida é sobre um corpus de armadilhas, não sobre uma amostra de trabalho.**
+   As 20 famílias do E11 são a instrução congelada fatiada em fenômenos: ação de terceiro,
+   negada, condicional, já concluída, irônica, truncada. Um canal real não chega com 20
+   fenômenos linguísticos × 3 casos, balanceados e escritos para punir casamento lexical. Os
+   13,3 pontos percentuais de diferença medem **densidade de armadilha**, e o 60/60 do Jev é teto
+   de escala, não façanha. O mesmo vale, e a seção 3.1 já registra, para a folga contra as
+   regras congeladas: famílias inteiras foram desenhadas contra elas.
+10. **Um único LLM econômico foi testado como comparador.** O E10 usou
    `meta-llama/llama-3.1-8b-instruct`. Um empate com ele não é empate com a categoria, e uma
    vantagem sobre ele também não seria vantagem sobre a categoria. O que o E10 estabelece é que
-   **um** modelo barato chega perto o bastante para esta amostra não separar os dois.
-9. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
+   **um** modelo barato foi vencido neste corpus, e não que a categoria toda perca.
+11. **Nenhuma conclusão sobre os outros 14 sistemas do plano.** A rodada simples offline dos 15
    sistemas mostrou 5 suítes passando, 7 falhando e 3 sem como rodar. Isso é estado de
    repositório, não evidência de comportamento.
 
@@ -818,8 +852,16 @@ chamadas e US$ 0,018174462 na seção 7, na seção 9 e no README — e um kappa
 anterior à ampliação do E8. O teste que existia exigia que o número certo aparecesse; não exigia
 que o errado sumisse. Agora exige.
 
+A décima quinta rodada não encontrou defeito financeiro, e encontrou o documento ainda
+argumentando a recomendação anterior enquanto a seção 1 publicava a nova: a 3.10 se intitulava
+*"por que ele não desempatou"* e fechava dizendo que o relatório *"não fecha a favor de
+ninguém"*. Achou também uma afirmação que eu havia acabado de escrever e que era falsa — a de
+que o erro grave seria a métrica que não depende do gabarito. O único falso-`cancelar` do
+comparador está entre os 10 casos em disputa, e sob o gabarito do anotador independente ele
+desaparece. Reconto agora sob os três, e o que sobra é mais modesto.
+
 Estado final: **945 tentativas, nenhuma reserva pendente sem liquidação, US$ 0,022618774 de
-US$ 5,00, 147 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
+US$ 5,00, 151 testes automatizados passando.** A chave da API nunca foi versionada, impressa em
 log ou copiada para documentação.
 
 ---

@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "revision": 90,
- "updated_at": "2026-09-19T07:12:12.273114+00:00",
+ "revision": 91,
+ "updated_at": "2026-09-19T07:22:00.053325+00:00",
  "system_progress": {
   "S01": {
    "simple": "running",
@@ -24632,7 +24632,7 @@
   }
  ],
  "decision": {
-  "atualizado_em": "2026-09-19T07:12:12.144824+00:00",
+  "atualizado_em": "2026-09-19T07:22:00.052856+00:00",
   "veredito": {
    "titulo": "Vantagem do Jev sobre o LLM econômico no gabarito adjudicado, com a validade do rótulo ainda em aberto",
    "texto": "O desempate foi feito e decidiu. Em corpus novo de 60 casos e 20 famílias, com as famílias declaradas antes de o primeiro caso ser escrito, o Jev supera um LLM genérico e barato por 13,3%, IC95 [5,0%; 21,7%], McNemar exato p = 0,0078, no gabarito adjudicado. O anotador independente discordava de mim em 10 casos e sob o gabarito dele a diferença era -3,3% — mas esses 10 casos foram a um terceiro juiz cego, com as leituras em ordem sorteada, e ele confirmou meu gabarito em 10 de 10. O que isto autoriza dizer é que o Jev vence este comparador neste corpus. O que continua sem resposta é se a rubrica mede o que diz medir: os três anotadores do estudo são modelos de linguagem, e nenhum deles é uma pessoa do atendimento real.",
@@ -24646,7 +24646,7 @@
     "o comparador econômico foi vencido no gabarito adjudicado, mas os três anotadores que produziram esse gabarito são modelos de linguagem (-0,05)"
    ],
    "confianca_nota": "Baixa para adoção, e não por causa do desempenho. A comparação contra as regras congeladas e contra um LLM econômico é pareada, pré-registrada e replicou: no corpus de desempate a vantagem é 13,3% no gabarito adjudicado, e os 10 desacordos foram a um terceiro juiz cego que confirmou meu gabarito em todos. O que continua sem resposta é a validade do rótulo: os três anotadores deste estudo são modelos de linguagem, o corpus foi escrito pelo avaliador e o tempo humano da conta de custo nunca foi cronometrado.",
-   "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos"
+   "confianca_metodo": "descontos declarados sobre 1,0; cada um com motivo em confianca_motivos. Os PESOS são arbítrio meu, não medida: o que a conta garante é que a nota se mexa quando o dado se mexe e que cada desconto seja contestável no código, não que 0,10 seja o preço certo de um corpus sintético"
   },
   "cartoes": [
    {
@@ -24781,7 +24781,7 @@
     "valor": "83,3% a 100,0%",
     "comparacao": "anotador local 83,3% · autor 100,0% · oficial 100,0% · comparador 86,7%",
     "leitura": "Corpus novo de 60 casos em 20 famílias, declaradas no pré-registro antes de o primeiro caso ser escrito, para resolver os dois defeitos que sobraram do E10 e do E10b: poder baixo e análise escolhida depois de ver a outra. Sob o meu gabarito o Jev acerta tudo — 60 de 60 — e a diferença é 13,3%, IC95 [5,0%; 21,7%], p = 0,0078. **Sob o gabarito do anotador independente a diferença é -3,3%, IC95 [-10,0%; 3,3%], e o sinal inverte.** Acerto perfeito no conjunto que só eu revisei é sinal de alerta, não de vitória: foi por isso que o anotador independente foi rodado também aqui, depois do resultado, e é por isso que os dois números vão lado a lado.",
-    "fonte": "60 casos, 20 famílias, dois braços na mesma lista e na mesma ordem; faixa entre os gabaritos",
+    "fonte": "60 casos, 20 famílias, dois braços na mesma lista e na mesma ordem; o Jev pelo endpoint de decisões e o comparador por chat, o que é um viés de interface que este estudo não separa do resto; faixa entre os gabaritos",
     "estado": "pronto"
    },
    {

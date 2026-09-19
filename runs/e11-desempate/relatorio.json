@@ -132,17 +132,95 @@
   "mcnemar_discordancias": 8,
   "mcnemar_p_exato": 0.0078,
   "erro_grave": {
-    "jev": {
-      "falso_cancelar": [],
-      "cancelar_perdido": []
+    "autor": {
+      "jev": {
+        "falso_cancelar": [],
+        "cancelar_perdido": [],
+        "taxa_por_caso": 0.0,
+        "limite_superior_por_caso": 0.0487,
+        "familias_com_erro_grave": [],
+        "limite_superior_por_familia": 0.1391,
+        "casos": 60,
+        "familias": 20
+      },
+      "llm": {
+        "falso_cancelar": [
+          "dsp-d03-01"
+        ],
+        "cancelar_perdido": [
+          "dsp-d16-03"
+        ],
+        "taxa_por_caso": 0.0167,
+        "limite_superior_por_caso": 0.0766,
+        "familias_com_erro_grave": [
+          "D03-ameaca-hipotetica"
+        ],
+        "limite_superior_por_familia": 0.2161,
+        "casos": 60,
+        "familias": 20
+      }
     },
-    "llm": {
-      "falso_cancelar": [
-        "dsp-d03-01"
-      ],
-      "cancelar_perdido": [
-        "dsp-d16-03"
-      ]
+    "oficial": {
+      "jev": {
+        "falso_cancelar": [],
+        "cancelar_perdido": [],
+        "taxa_por_caso": 0.0,
+        "limite_superior_por_caso": 0.0487,
+        "familias_com_erro_grave": [],
+        "limite_superior_por_familia": 0.1391,
+        "casos": 60,
+        "familias": 20
+      },
+      "llm": {
+        "falso_cancelar": [
+          "dsp-d03-01"
+        ],
+        "cancelar_perdido": [
+          "dsp-d16-03"
+        ],
+        "taxa_por_caso": 0.0167,
+        "limite_superior_por_caso": 0.0766,
+        "familias_com_erro_grave": [
+          "D03-ameaca-hipotetica"
+        ],
+        "limite_superior_por_familia": 0.2161,
+        "casos": 60,
+        "familias": 20
+      }
+    },
+    "anotador local": {
+      "jev": {
+        "falso_cancelar": [],
+        "cancelar_perdido": [
+          "dsp-d01-02",
+          "dsp-d03-01",
+          "dsp-d06-03",
+          "dsp-d12-01",
+          "dsp-d16-01"
+        ],
+        "taxa_por_caso": 0.0,
+        "limite_superior_por_caso": 0.0487,
+        "familias_com_erro_grave": [],
+        "limite_superior_por_familia": 0.1391,
+        "casos": 60,
+        "familias": 20
+      },
+      "llm": {
+        "falso_cancelar": [],
+        "cancelar_perdido": [
+          "dsp-d01-02",
+          "dsp-d06-03",
+          "dsp-d12-01",
+          "dsp-d16-01",
+          "dsp-d16-03"
+        ],
+        "taxa_por_caso": 0.0,
+        "limite_superior_por_caso": 0.0487,
+        "familias_com_erro_grave": [],
+        "limite_superior_por_familia": 0.1391,
+        "casos": 60,
+        "familias": 20
+      }
     }
   },
   "respostas_invalidas_do_comparador": [],
@@ -1429,5 +1507,6 @@
       "mcnemar_p": 0.6875
     }
   },
-  "adjudicacao": "runs/e11-desempate/adjudicacao.json"
+  "adjudicacao": "runs/e11-desempate/adjudicacao.json",
+  "erro_grave_nota": "Recontado sob os tres gabaritos na 15a rodada. O unico falso-cancelar do comparador (dsp-d03-01) esta entre os 10 casos em disputa: sob o gabarito do anotador independente ele acerta e o erro grave some. O Jev nao comete erro grave sob nenhum dos tres."
 }

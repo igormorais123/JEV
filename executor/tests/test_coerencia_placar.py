@@ -551,3 +551,62 @@ class NumeroVelhoNaoSobrevive(unittest.TestCase):
             with self.subTest(kappa=achado):
                 self.assertEqual(achado, atual,
                                  f'o relatório publica kappa {achado} e o arquivo diz {atual}')
+
+
+@unittest.skipUnless((ROOT / 'runs' / 'e11-desempate' / 'relatorio.json').exists(),
+                     'E11 ainda não executado')
+class ErroGraveNaoEIndependenteDoGabarito(unittest.TestCase):
+    """[R15] O relatório afirmava que o erro grave era a métrica que não dependia do gabarito.
+
+    Não era. O único falso-`cancelar` do comparador no E11 é `dsp-d03-01`, que está entre os 10
+    casos em disputa — sob o gabarito do anotador independente ele acerta e o erro grave some. A
+    frase ancorava a conclusão num caso que o parágrafo seguinte declarava contestado, e nenhum
+    teste podia pegá-la porque o erro grave só era calculado sob um gabarito.
+    """
+
+    def relatorio(self):
+        return json.loads(
+            (ROOT / 'runs/e11-desempate/relatorio.json').read_text(encoding='utf-8'))
+
+    def test_o_erro_grave_do_e11_e_reportado_sob_os_tres_gabaritos(self):
+        bloco = self.relatorio().get('erro_grave') or {}
+        self.assertEqual(set(bloco), {'autor', 'oficial', 'anotador local'},
+                         'o erro grave do E11 não cobre os três gabaritos')
+        for nome, por_campo in bloco.items():
+            with self.subTest(gabarito=nome):
+                self.assertEqual(set(por_campo), {'jev', 'llm'})
+
+    def test_o_relatorio_nao_afirma_independencia_do_gabarito(self):
+        texto = (ROOT / 'docs/RELATORIO-FINAL-JEV.md').read_text(encoding='utf-8')
+        self.assertNotIn('É a única métrica do E11 em que a\n'
+                         'diferença não depende do gabarito', texto,
+                         'a afirmação derrubada na 15ª rodada voltou ao documento')
+        self.assertIn('não depende do gabarito"*. **Não é.**', texto,
+                      'a retificação da 15ª rodada sumiu do documento')
+
+    def test_o_jev_nao_comete_erro_grave_em_nenhum_gabarito(self):
+        for nome, por_campo in (self.relatorio().get('erro_grave') or {}).items():
+            with self.subTest(gabarito=nome):
+                self.assertEqual(por_campo['jev']['falso_cancelar'], [],
+                                 f'o Jev comete erro grave sob o gabarito {nome} e o relatório '
+                                 'afirma que não comete sob nenhum')
+
+
+class DocumentoNaoArgumentaRecomendacaoAnterior(unittest.TestCase):
+    """[R15] A quinta recomendação foi grampeada num relatório que ainda argumentava a quarta.
+
+    A seção 1 dizia que o Jev vence no gabarito adjudicado enquanto a 3.10 se intitulava "por que
+    ele não desempatou" e fechava com "o relatório não fecha a favor de ninguém". O leitor que
+    chegasse lá encontrava a conclusão anterior, defendida, sem nada dizendo que fora superada.
+    """
+
+    FRASES_APOSENTADAS = ('e por que ele não desempatou',
+                          'o relatório não fecha a favor de ninguém',
+                          'esta amostra não separar os dois')
+
+    def test_nenhuma_frase_da_recomendacao_anterior_sobrevive(self):
+        texto = (ROOT / 'docs/RELATORIO-FINAL-JEV.md').read_text(encoding='utf-8')
+        for frase in self.FRASES_APOSENTADAS:
+            with self.subTest(frase=frase):
+                self.assertNotIn(frase, texto,
+                                 f'"{frase}" é da recomendação anterior e continua no documento')

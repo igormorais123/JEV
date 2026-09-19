@@ -869,7 +869,9 @@ def montar():
                 'isso que os dois números vão lado a lado.'
                 if autor and outro else 'Análise por gabarito ainda não calculada.')),
             fonte_com_gabarito(str(d11['casos_programados']) + ' casos, 20 famílias, dois '
-                               'braços na mesma lista e na mesma ordem', 'faixa')))
+                               'braços na mesma lista e na mesma ordem; o Jev pelo endpoint de '
+                               'decisões e o comparador por chat, o que é um viés de interface '
+                               'que este estudo não separa do resto', 'faixa')))
 
     grave = ler('erro-grave.json')
     if grave:
@@ -917,7 +919,10 @@ def montar():
             'confianca_motivos': confianca[1],
             'confianca_nota': nota_de_confianca(adj, e9, e11),
             'confianca_metodo': ('descontos declarados sobre 1,0; cada um com motivo em '
-                                 'confianca_motivos'),
+                                 'confianca_motivos. Os PESOS são arbítrio meu, não medida: '
+                                 'o que a conta garante é que a nota se mexa quando o dado '
+                                 'se mexe e que cada desconto seja contestável no código, '
+                                 'não que 0,10 seja o preço certo de um corpus sintético'),
         },
         'cartoes': cartoes,
         'orcamento': ({'comprometido_nusd': comprometido, 'disponivel_nusd': disponivel}
