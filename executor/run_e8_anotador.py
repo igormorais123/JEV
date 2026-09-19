@@ -33,7 +33,11 @@ MODELO = 'qwen2.5:7b-instruct'
 CLASSES = list(CRITERIOS)
 
 CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto', 'runs/e1-triagem/relatorio.json'),
-           ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao', 'runs/e7-confirmacao/relatorio.json')]
+           ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao', 'runs/e7-confirmacao/relatorio.json'),
+           # [E11] O corpus do desempate entrou depois, e entrou por um motivo: e o unico dos
+           # tres em que o Jev acerta TUDO, e era tambem o unico com um gabarito so — o meu.
+           # Acerto perfeito no conjunto que so eu revisei e sinal de alerta, nao de vitoria.
+           ('data/corpus/triagem-desempate.jsonl', 'desempate', 'runs/e11-desempate/relatorio.json')]
 
 
 def carregar_tudo():

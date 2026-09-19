@@ -97,11 +97,15 @@ class CoerenciaDoPlacar(unittest.TestCase):
 
     def test_cartao_do_gabarito_mostra_a_faixa_entre_os_tres(self):
         """O E8 estampava 96,2%, o mais alto dos três gabaritos."""
-        e8 = json.loads((ROOT / 'runs/e8-anotador/relatorio.json').read_text(encoding='utf-8'))
+        # [E11] O relatorio do E8 passou a cobrir 140 casos, porque o anotador independente
+        # rodou tambem no corpus do desempate. O cartao continua falando dos 80 ADJUDICADOS, que
+        # sao os unicos com terceiro juiz. Comparar o cartao com o agregado do E8 passou a
+        # comparar escopos diferentes: aqui a conta e refeita sobre os 80.
+        from executor import gabarito
+        d80 = gabarito.desempenho_do_estudo()
         valor = self.cartoes['e8']['valor']
         self.assertIn(' a ', valor)
-        self.assertIn(f"{e8['acuracia_jev_sob_gabarito_do_outro'] * 100:.1f}".replace('.', ','),
-                      valor)
+        self.assertIn(f"{d80['anotador_local']['acuracia'] * 100:.1f}".replace('.', ','), valor)
 
     def test_politica_de_referencia_nao_cai_para_a_uniao(self):
         """Sem a partição, o painel tem de ficar em silêncio, não trocar o número."""
@@ -465,3 +469,29 @@ class ReadmeNaoContradizOsDados(unittest.TestCase):
             self.skipTest('um dos documentos não declara o número de rodadas')
         self.assertEqual(no_readme, no_relatorio,
                          f'README diz {no_readme} rodadas e o relatório diz {no_relatorio}')
+
+
+class OrfasNaoSeApagam(unittest.TestCase):
+    """[E11] O run de tentativas órfãs se substituía e perdia o que já tinha.
+
+    Ele é reconstruído do zero a cada publicação, mas contava a si mesmo como "já publicado".
+    Na passagem seguinte, as órfãs antigas apareciam como publicadas, o run saía só com as
+    novas, e as antigas sumiam do painel — 16 chamadas do E4 e 3 sondagens, US$ 0,000649, que
+    voltaram a fazer o custo do painel divergir do livro-caixa depois de a oitava rodada ter
+    fechado exatamente isso.
+    """
+
+    def test_republicar_duas_vezes_nao_perde_orfas(self):
+        from executor import publicar_experimentos as pub
+        estado = json.loads((ROOT / 'lab/data/execution.json').read_text(encoding='utf-8'))
+        primeiro = pub.tentativas_orfas_run(estado, 'agora')
+        if not primeiro:
+            self.skipTest('sem tentativas órfãs no ledger')
+        estado_depois = dict(estado)
+        estado_depois['runs'] = [r for r in estado['runs']
+                                 if r['id'] != primeiro['id']] + [primeiro]
+        segundo = pub.tentativas_orfas_run(estado_depois, 'agora')
+        self.assertIsNotNone(segundo, 'a segunda passagem devolveu nada e apagaria as órfãs')
+        self.assertEqual({a['id'] for a in primeiro['attempts']},
+                         {a['id'] for a in segundo['attempts']},
+                         'republicar mudou o conjunto de tentativas órfãs')

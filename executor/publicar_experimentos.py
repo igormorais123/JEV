@@ -249,6 +249,49 @@ def e10b_run(rel, gold, agora):
     }
 
 
+def e11_run(rel, gold, agora):
+    """O desempate: DOIS bracos na mesma lista, entao duas tentativas e duas decisoes por caso."""
+    tentativas, decisoes = [], []
+    for c in rel['casos']:
+        tentativas.append(tentativa(c['jev_attempt_id'], c['jev_status'], c['jev_latency_ms'],
+                                    c['jev_cost_nusd']))
+        decisoes.append(decisao(f"jev:{c['case_id']}", c['case_id'], c['jev_attempt_id'],
+                                'test', c['gold'], c.get('jev'), c.get('jev_confidence'),
+                                'desempate-jev', c['family']))
+        tentativas.append(tentativa(c['llm_attempt_id'],
+                                    'success' if c.get('llm') else 'invalid_response',
+                                    c['llm_latency_ms'], c['llm_cost_nusd']))
+        decisoes.append(decisao(f"llm:{c['case_id']}", c['case_id'], c['llm_attempt_id'],
+                                'test', c['gold'], c.get('llm'), c.get('llm_confidence'),
+                                'desempate-comparador', c['family']))
+    pg = rel.get('por_gabarito') or {}
+    autor = (pg.get('autor') or {}).get('pareada') or rel['pareada']
+    outro = (pg.get('anotador local') or {}).get('pareada')
+    nota = ('Corpus novo de 60 casos em 20 familias, declaradas no pre-registro antes de o '
+            'primeiro caso existir, para resolver o poder baixo e o pos-hoc que sobraram do E10 '
+            f"e do E10b. Sob o gabarito do autor: Jev {rel['jev']['acertos']}/"
+            f"{rel['jev']['casos_programados']} contra {rel['llm']['acertos']}/"
+            f"{rel['llm']['casos_programados']}, diferenca {autor['diferenca_observada']:+.4f}, "
+            f"IC95 [{autor['ic95'][0]:.4f}; {autor['ic95'][1]:.4f}], McNemar exato p = "
+            f"{rel['mcnemar_p_exato']}.")
+    if outro:
+        nota += (' Sob o gabarito do anotador independente, que e o unico que nao passou pela '
+                 f"mao do avaliador: {outro['diferenca_observada']:+.4f}, IC95 "
+                 f"[{outro['ic95'][0]:.4f}; {outro['ic95'][1]:.4f}] — contem zero, e o sinal "
+                 'inverte. O gargalo nao e a comparacao entre os modelos, e a validade do '
+                 'rotulo.')
+    return {
+        'id': 'e11-desempate-corpus-novo', 'system_id': 'S01', 'phase': 'confirmation',
+        'evidence': 'live_component', 'status': 'completed',
+        'started_at': rel['at'], 'finished_at': rel['at'],
+        'provider': 'openrouter', 'model': rel['modelo'],
+        'dataset': ('60 casos novos em 20 familias de fenomeno linguistico, nenhuma repetida dos '
+                    'corpora anteriores; dois bracos na mesma lista e na mesma ordem'),
+        'notes': nota,
+        'attempts': tentativas, 'decisions': decisoes,
+    }
+
+
 def tentativas_orfas_run(estado, agora):
     """Tentativas que existem no ledger e nao aparecem no painel.
 
@@ -261,7 +304,12 @@ def tentativas_orfas_run(estado, agora):
     caminho = ROOT / 'runs' / 'ledger.sqlite3'
     if not caminho.exists():
         return None
-    ja_publicadas = {a['id'] for r in estado['runs'] for a in r['attempts']}
+    # O proprio run de orfas NAO conta como publicacao: ele e reconstruido do zero a cada
+    # execucao e substitui o anterior. Enquanto ele contava, a segunda passagem via as orfas
+    # antigas como "ja publicadas", montava o run so com as novas e sumia com as antigas — foi
+    # o que aconteceu quando o E11 perdido entrou e as 16 chamadas do E4 sairam do painel.
+    ja_publicadas = {a['id'] for r in estado['runs'] for a in r['attempts']
+                     if r['id'] != 'tentativas-sem-decisao-publicada'}
     db = sqlite3.connect(str(caminho))
     db.row_factory = sqlite3.Row
     try:
@@ -307,7 +355,8 @@ def publicar():
                                ('e6-repetibilidade/relatorio.json', e6_run),
                                ('e7-confirmacao/relatorio.json', e7_run),
                                ('e10-llm-economico/relatorio.json', e10_run),
-                               ('e10b-piloto/relatorio.json', e10b_run)]:
+                               ('e10b-piloto/relatorio.json', e10b_run),
+                               ('e11-desempate/relatorio.json', e11_run)]:
         rel = ler(arquivo)
         if rel:
             novos.append(construir(rel, gold, agora))

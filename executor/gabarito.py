@@ -13,7 +13,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPORA = [('data/corpus/triagem-piloto.jsonl', 'piloto'),
-           ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao')]
+           ('data/corpus/triagem-confirmacao.jsonl', 'confirmacao'),
+           ('data/corpus/triagem-desempate.jsonl', 'desempate')]
 ADJUDICACAO = ROOT / 'runs' / 'e8-anotador' / 'adjudicacao.json'
 
 

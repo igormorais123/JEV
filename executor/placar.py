@@ -234,6 +234,12 @@ def confianca_calculada(e9, e6, e8, adj):
         valor -= 0.10
         motivos.append('o comparador é uma regra congelada, não um modelo de linguagem barato '
                        'no mesmo contrato: a pergunta "vale um LLM aqui?" segue aberta (-0,10)')
+    elif (lambda s: s and not all(s.values()))(
+            desempate_depende_do_gabarito(ler('e11-desempate/relatorio.json'))):
+        valor -= 0.15
+        motivos.append('no corpus de desempate a vantagem do Jev sobre o LLM econômico separa '
+                       'de zero sob o gabarito do autor e não separa sob o do anotador '
+                       'independente (-0,15)')
     elif evidencia_dividida(e10, ler('e10b-piloto/relatorio.json')):
         valor -= 0.15
         motivos.append('o braço do LLM econômico separa de zero em 20 famílias e não separa na '
@@ -306,6 +312,21 @@ def comparador_empatou(e10):
     return contem_zero(e10['pareada']['ic95'])
 
 
+def desempate_depende_do_gabarito(e11):
+    """No E11 a vantagem do Jev sobre o comparador barato sobrevive aos dois gabaritos?
+
+    A regra congelada no pre-registro do E11 olhava o gabarito do corpus, que e o meu. A
+    politica deste painel, desde a decima segunda rodada, e nunca apresentar um gabarito sozinho.
+    As duas coisas se encontram aqui: sob o meu gabarito o Jev separa de zero; sob o do anotador
+    independente, nao separa. Quem decide isso nao e a preferencia de ninguem — e o fato de
+    existirem dois gabaritos e eles discordarem.
+    """
+    if not e11 or 'por_gabarito' not in e11:
+        return None
+    return {nome: bloco['pareada']['ic95'][0] > 0
+            for nome, bloco in e11['por_gabarito'].items()}
+
+
 def evidencia_dividida(e10, e10b):
     """A particao de teste e a analise ampliada discordam entre si?
 
@@ -319,12 +340,20 @@ def evidencia_dividida(e10, e10b):
     return comparador_empatou(e10) and not contem_zero(e10b['pareada_80_casos']['ic95'])
 
 
-def titulo_do_veredito(e9, e10=None):
+def titulo_do_veredito(e9, e10=None, e11=None):
     """O titulo tambem precisa cair quando o dado cair.
 
     Antes era uma frase cravada recomendando o corte de 0,90. Se o E9 sumisse, ou se a
     politica passasse a deixar erro entre os aceitos, o titulo continuaria recomendando.
     """
+    # Puro de proposito: o E11 chega por parametro. Quando esta funcao foi buscar o relatorio
+    # sozinha, o teste da setima rodada — que a chama com dados fabricados — passou a receber o
+    # veredito do repositorio em vez do veredito dos dados dele.
+    separa = desempate_depende_do_gabarito(e11)
+    if separa and not all(separa.values()):
+        return 'A vantagem do Jev depende de quem escreveu o gabarito: o gargalo é o rótulo'
+    if separa and all(separa.values()):
+        return 'Vantagem do Jev sobre o LLM econômico sob todos os gabaritos'
     e10b = ler('e10b-piloto/relatorio.json')
     if evidencia_dividida(e10, e10b):
         return 'Evidência dividida sobre a necessidade do Jev: não decidir com este estudo'
@@ -346,7 +375,7 @@ def titulo_do_veredito(e9, e10=None):
     return 'Revisão humana de todas as decisões: nenhum corte zerou o erro'
 
 
-def texto_do_veredito(e9, e6, e10=None):
+def texto_do_veredito(e9, e6, e10=None, e11=None):
     """O veredito e calculado, nao escrito a mao.
 
     Um texto fixo com numeros dentro continua afirmando o mesmo depois que os dados mudam: na
@@ -354,6 +383,28 @@ def texto_do_veredito(e9, e6, e10=None):
     """
     if not e9:
         return 'Sem a análise de política de aceitação, o placar não tem recomendação operacional.'
+    separa = desempate_depende_do_gabarito(e11)
+    if separa and not all(separa.values()):
+        autor = e11['por_gabarito']['autor']
+        outro = e11['por_gabarito']['anotador local']
+        return (
+            'O desempate foi feito e desempatou para os dois lados, conforme o gabarito. Em '
+            'corpus novo de ' + str(e11['jev']['casos_programados']) + ' casos e '
+            + str(autor['pareada']['n_familias']) + ' famílias, pré-registrado antes de existir '
+            'qualquer dado, o Jev acerta '
+            + pct(e11['jev']['acuracia_sobre_programados']) + ' contra '
+            + pct(e11['llm']['acuracia_sobre_programados']) + ' do comparador barato sob o meu '
+            'gabarito: diferença ' + pct(autor['pareada']['diferenca_observada']) + ', IC95 ['
+            + pct(autor['pareada']['ic95'][0]) + '; ' + pct(autor['pareada']['ic95'][1])
+            + '], McNemar exato p = ' + dec(autor['mcnemar_p'], 4) + '. Sob o gabarito do '
+            'anotador independente, que é o único que não passou pela minha mão, a mesma '
+            'comparação dá ' + pct(outro['pareada']['diferenca_observada']) + ', IC95 ['
+            + pct(outro['pareada']['ic95'][0]) + '; ' + pct(outro['pareada']['ic95'][1])
+            + '] — contém zero, e o sinal inverte. O experimento que existia para desempatar '
+            'mostrou onde está o gargalo, e não é a comparação entre os modelos: é a validade '
+            'do rótulo. Enquanto o gabarito for meu, a vantagem é minha de encomenda; enquanto '
+            'o único gabarito independente for um modelo de 7B, ele também não decide. O que '
+            'falta não é mais uma execução — são dois anotadores humanos do domínio.')
     e10b = ler('e10b-piloto/relatorio.json')
     if evidencia_dividida(e10, e10b):
         par, amp = e10['pareada'], e10b['pareada_80_casos']
@@ -601,7 +652,11 @@ def montar():
                  f"({', '.join(d80['oficial']['erros'])}), e não os 2 que este painel "
                  'chegou a anunciar antes da adjudicação. Acurácia ' + faixa
                  + ' conforme o gabarito adotado.'),
-                f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura"))
+                f"{adj['terceiro_juiz']}, cego a quem escreveu cada leitura; "
+                + str(d80['casos_programados']) + ' casos adjudicados (E1 e E7). O anotador '
+                'independente cobre também os ' + str(len(gabarito.do_anotador_local())
+                                                      - d80['casos_programados'])
+                + ' casos do E11, que não passaram por adjudicação'))
         cartoes.append(cartao(
             'e8b', 'Concordância entre anotadores (E8)', f"kappa {dec(e8['kappa_cohen'], 4)}",
             f"concordância bruta {pct(e8['concordancia_bruta'])}, antes de adjudicar",
@@ -723,6 +778,36 @@ def montar():
                                + str(amp['n_familias']) + ' famílias na análise ampliada',
                                'faixa')))
 
+    e11 = ler('e11-desempate/relatorio.json')
+    if e11:
+        d11 = gabarito.desempenho('runs/e11-desempate/relatorio.json', 'jev')
+        d11c = gabarito.desempenho('runs/e11-desempate/relatorio.json', 'llm')
+        pg = e11.get('por_gabarito') or {}
+        autor, outro = pg.get('autor'), pg.get('anotador local')
+        cartoes.append(cartao(
+            'e11', 'Desempate em corpus novo (E11)', valor_entre_gabaritos(d11),
+            ' · '.join(nome + ' ' + pct(v) for nome, v in
+                       sorted(gabaritos_do_conjunto(d11).items(), key=lambda kv: kv[1]))
+            + ' · comparador ' + valor_entre_gabaritos(d11c),
+            ('Corpus novo de ' + str(d11['casos_programados']) + ' casos em 20 famílias, '
+             'declaradas no pré-registro antes de o primeiro caso ser escrito, para resolver os '
+             'dois defeitos que sobraram do E10 e do E10b: poder baixo e análise escolhida '
+             'depois de ver a outra. '
+             + ('Sob o meu gabarito o Jev acerta tudo — ' + str(d11['autor']['acertos']) + ' de '
+                + str(d11['casos_programados']) + ' — e a diferença é '
+                + pct(autor['pareada']['diferenca_observada']) + ', IC95 ['
+                + pct(autor['pareada']['ic95'][0]) + '; ' + pct(autor['pareada']['ic95'][1])
+                + '], p = ' + dec(autor['mcnemar_p'], 4) + '. **Sob o gabarito do anotador '
+                'independente a diferença é ' + pct(outro['pareada']['diferenca_observada'])
+                + ', IC95 [' + pct(outro['pareada']['ic95'][0]) + '; '
+                + pct(outro['pareada']['ic95'][1]) + '], e o sinal inverte.** Acerto perfeito no '
+                'conjunto que só eu revisei é sinal de alerta, não de vitória: foi por isso que '
+                'o anotador independente foi rodado também aqui, depois do resultado, e é por '
+                'isso que os dois números vão lado a lado.'
+                if autor and outro else 'Análise por gabarito ainda não calculada.')),
+            fonte_com_gabarito(str(d11['casos_programados']) + ' casos, 20 famílias, dois '
+                               'braços na mesma lista e na mesma ordem', 'faixa')))
+
     grave = ler('erro-grave.json')
     if grave:
         # [R13] O pre-registro do E1 manda reportar erro grave SEPARADO da acuracia media, e
@@ -753,7 +838,7 @@ def montar():
     # O saldo vale o do relatorio mais recente que registrou a carteira.
     # [E10] A cadeia era fixa e comecava no E7: depois do E10 o painel continuaria publicando o
     # saldo anterior ao ultimo experimento. Agora vence o relatorio com o carimbo mais novo.
-    candidatos = [r for r in (e10b, e10, e7, e6, e5, e4, e2b)
+    candidatos = [r for r in (e11, e10b, e10, e7, e6, e5, e4, e2b)
                   if r and r.get('wallet_committed_nusd')]
     carteira = max(candidatos, key=lambda r: r.get('at', '')) if candidatos else {}
     comprometido = carteira.get('wallet_committed_nusd') or carteira.get('ledger_committed_nusd')
@@ -763,8 +848,8 @@ def montar():
     bloco = {
         'atualizado_em': datetime.now(timezone.utc).isoformat(),
         'veredito': {
-            'titulo': titulo_do_veredito(e9, e10),
-            'texto': texto_do_veredito(e9, e6, e10),
+            'titulo': titulo_do_veredito(e9, e10, e11),
+            'texto': texto_do_veredito(e9, e6, e10, e11),
             'confianca': confianca[0],
             'confianca_motivos': confianca[1],
             'confianca_nota': nota_de_confianca(adj, e9),

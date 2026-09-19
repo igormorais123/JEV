@@ -1,12 +1,12 @@
 {
-  "at": "2026-09-19T04:47:49.350351+00:00",
+  "at": "2026-09-19T06:30:12.606537+00:00",
   "anotador_independente": "qwen2.5:7b-instruct",
   "natureza": "modelo local, nao humano; mede reprodutibilidade do gabarito por um juiz independente que so viu as instrucoes",
-  "casos": 80,
-  "respostas_validas": 80,
-  "concordancia_bruta": 0.8875,
-  "kappa_cohen": 0.8593,
-  "n_divergencias": 9,
+  "casos": 140,
+  "respostas_validas": 140,
+  "concordancia_bruta": 0.8643,
+  "kappa_cohen": 0.8301,
+  "n_divergencias": 19,
   "divergencias": [
     {
       "case_id": "tri-f02-04",
@@ -97,12 +97,112 @@
       "jev": "rastrear",
       "anotador_marcou_ambigua": false,
       "text": "Devolvi o produto na agência e tenho o comprovante. Preciso saber quando o novo será enviado."
+    },
+    {
+      "case_id": "dsp-d01-02",
+      "conjunto": "desempate",
+      "family": "D01-intencao-em-pergunta-retorica",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Sera que eu deveria cancelar? Antes de decidir qualquer coisa, me explica como funciona a multa."
+    },
+    {
+      "case_id": "dsp-d03-01",
+      "conjunto": "desempate",
+      "family": "D03-ameaca-hipotetica",
+      "meu_gabarito": "rastrear",
+      "anotador": "cancelar",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": true,
+      "text": "Se nao chegar ate sexta eu cancelo tudo. Por ora, me diz onde esta a encomenda."
+    },
+    {
+      "case_id": "dsp-d06-03",
+      "conjunto": "desempate",
+      "family": "D06-acao-por-terceiro-autorizado",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Sou advogado do titular e gostaria de saber quais documentos voces exigem para um cancelamento."
+    },
+    {
+      "case_id": "dsp-d09-01",
+      "conjunto": "desempate",
+      "family": "D09-acao-ja-em-andamento",
+      "meu_gabarito": "informacao",
+      "anotador": "trocar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Ja abri o pedido de troca pelo aplicativo na semana passada. Quanto tempo costuma levar?"
+    },
+    {
+      "case_id": "dsp-d10-03",
+      "conjunto": "desempate",
+      "family": "D10-pedido-implicito-por-queixa",
+      "meu_gabarito": "rastrear",
+      "anotador": "trocar",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": false,
+      "text": "Comprei ha dezoito dias, o prazo era de cinco, e nada. Nao tem cabimento."
+    },
+    {
+      "case_id": "dsp-d11-01",
+      "conjunto": "desempate",
+      "family": "D11-numero-e-prazo-como-distracao",
+      "meu_gabarito": "rastrear",
+      "anotador": "cobranca",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": false,
+      "text": "Paguei 349,90 no dia 02, com prazo de 7 dias uteis. Hoje e dia 19. Cade?"
+    },
+    {
+      "case_id": "dsp-d12-01",
+      "conjunto": "desempate",
+      "family": "D12-pedido-encadeado",
+      "meu_gabarito": "rastrear",
+      "anotador": "cancelar",
+      "jev": "rastrear",
+      "anotador_marcou_ambigua": true,
+      "text": "Primeiro me diz onde esta o pedido; dependendo da resposta eu decido se cancelo."
+    },
+    {
+      "case_id": "dsp-d16-01",
+      "conjunto": "desempate",
+      "family": "D16-pedido-de-confirmacao-de-acao",
+      "meu_gabarito": "informacao",
+      "anotador": "cancelar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Meu cancelamento ja foi processado? Pedi no dia 5 e nao recebi confirmacao."
+    },
+    {
+      "case_id": "dsp-d16-02",
+      "conjunto": "desempate",
+      "family": "D16-pedido-de-confirmacao-de-acao",
+      "meu_gabarito": "informacao",
+      "anotador": "trocar",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "A troca que solicitei foi aprovada? So quero confirmar antes de mandar o produto."
+    },
+    {
+      "case_id": "dsp-d18-01",
+      "conjunto": "desempate",
+      "family": "D18-pedido-adiado-pelo-remetente",
+      "meu_gabarito": "informacao",
+      "anotador": "cobranca",
+      "jev": "informacao",
+      "anotador_marcou_ambigua": false,
+      "text": "Por enquanto nao cancela nada, so me manda por escrito o valor da multa de rescisao."
     }
   ],
-  "acuracia_jev_sob_meu_gabarito": 0.95,
-  "acuracia_jev_sob_gabarito_do_outro": 0.8875,
-  "casos_de_consenso": 71,
-  "acuracia_jev_no_consenso": 0.9718,
+  "acuracia_jev_sob_meu_gabarito": 0.9714,
+  "acuracia_jev_sob_gabarito_do_outro": 0.8643,
+  "casos_de_consenso": 121,
+  "acuracia_jev_no_consenso": 0.9835,
   "anotacoes": [
     {
       "case_id": "tri-f01-01",
@@ -743,6 +843,486 @@
       "anotador": "informacao",
       "ambigua": false,
       "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d01-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d01-02",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d01-03",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d02-01",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d02-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d02-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d03-01",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "cancelar",
+      "ambigua": true,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d03-02",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d03-03",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d04-01",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d04-02",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d04-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d05-01",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d05-02",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d05-03",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d06-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d06-02",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d06-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d07-01",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d07-02",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d07-03",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d08-01",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d08-02",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d08-03",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d09-01",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d09-02",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d09-03",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d10-01",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d10-02",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d10-03",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d11-01",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d11-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d11-03",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d12-01",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "cancelar",
+      "ambigua": true,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d12-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d12-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d13-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d13-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d13-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d14-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d14-02",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d14-03",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d15-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d15-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d15-03",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d16-01",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d16-02",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d16-03",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d17-01",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d17-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d17-03",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d18-01",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d18-02",
+      "conjunto": "desempate",
+      "gold": "informacao",
+      "anotador": "informacao",
+      "ambigua": false,
+      "jev": "informacao"
+    },
+    {
+      "case_id": "dsp-d18-03",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d19-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d19-02",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
+    },
+    {
+      "case_id": "dsp-d19-03",
+      "conjunto": "desempate",
+      "gold": "rastrear",
+      "anotador": "rastrear",
+      "ambigua": false,
+      "jev": "rastrear"
+    },
+    {
+      "case_id": "dsp-d20-01",
+      "conjunto": "desempate",
+      "gold": "cancelar",
+      "anotador": "cancelar",
+      "ambigua": false,
+      "jev": "cancelar"
+    },
+    {
+      "case_id": "dsp-d20-02",
+      "conjunto": "desempate",
+      "gold": "trocar",
+      "anotador": "trocar",
+      "ambigua": false,
+      "jev": "trocar"
+    },
+    {
+      "case_id": "dsp-d20-03",
+      "conjunto": "desempate",
+      "gold": "cobranca",
+      "anotador": "cobranca",
+      "ambigua": false,
+      "jev": "cobranca"
     }
   ]
 }

@@ -94,7 +94,10 @@ def resumo(nome, resultados):
         'n_familias': len(por_familia), 'familias_sem_erro': familias_perfeitas,
         'ic95_familias': [round(x, 4) for x in wilson(familias_perfeitas, len(por_familia))],
         'erros_graves_cancelar': graves,
-        'erros': [{'case_id': r['case_id'], 'family': r['family'], 'kind': r['kind'],
+        # `kind` so existe nos corpora piloto e de evidencia. Exigi-lo aqui derrubou a analise
+        # do E11 DEPOIS de 120 chamadas pagas, e como as respostas nao eram gravadas em disco,
+        # os dados se perderam inteiros. Campo opcional.
+        'erros': [{'case_id': r['case_id'], 'family': r['family'], 'kind': r.get('kind'),
                    'gold': r['gold'], 'pred': r[nome], 'text': r['text']}
                   for r in resultados if r.get(nome) and r[nome] != r['gold']],
         'sem_resposta': [r['case_id'] for r in resultados if not r.get(nome)],
