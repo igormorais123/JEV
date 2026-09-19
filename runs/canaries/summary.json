@@ -1,0 +1,114 @@
+{
+  "at": "2026-09-19T02:21:22.305228+00:00",
+  "results": [
+    {
+      "canary": "canary-01-escolha-trivial",
+      "status": "success",
+      "expected": "cancelar",
+      "observed": "cancelar",
+      "match": true,
+      "latency_ms": 526.4,
+      "attempt_id": "2637bbbc-3b3b-49c0-bdcd-61898337c746",
+      "settled_nusd": 15918,
+      "cost_source": "provider_reported",
+      "confidence": 1,
+      "probabilities": {
+        "trocar": 0,
+        "rastrear": 0,
+        "cancelar": 1
+      },
+      "error": null,
+      "http_status": null,
+      "answers": {
+        "acao": {
+          "type": "choice",
+          "choice": "cancelar",
+          "probabilities": {
+            "trocar": 0,
+            "rastrear": 0,
+            "cancelar": 1
+          },
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "canary": "canary-02-evidencia-ausente",
+      "status": "success",
+      "expected": "nao_informado",
+      "observed": "nao_informado",
+      "match": true,
+      "latency_ms": 374.2,
+      "attempt_id": "1000a659-f814-4e9c-a1e3-5a8a971f516f",
+      "settled_nusd": 15876,
+      "cost_source": "provider_reported",
+      "confidence": 1,
+      "probabilities": {
+        "nao": 0,
+        "sim": 0,
+        "nao_informado": 1
+      },
+      "error": null,
+      "http_status": null,
+      "answers": {
+        "pagamento": {
+          "type": "choice",
+          "choice": "nao_informado",
+          "probabilities": {
+            "nao": 0,
+            "sim": 0,
+            "nao_informado": 1
+          },
+          "confidence": 1
+        }
+      }
+    },
+    {
+      "canary": "canary-03-assunto",
+      "status": "success",
+      "expected": "cobranca",
+      "observed": "cobranca",
+      "match": true,
+      "latency_ms": 578.2,
+      "attempt_id": "edec75d8-937f-45bc-920d-399f510c8ca7",
+      "settled_nusd": 14616,
+      "cost_source": "provider_reported",
+      "confidence": 1,
+      "probabilities": {
+        "cobranca": 1,
+        "entrega": 0
+      },
+      "error": null,
+      "http_status": null,
+      "answers": {
+        "assunto": {
+          "type": "choice",
+          "choice": "cobranca",
+          "probabilities": {
+            "cobranca": 1,
+            "entrega": 0
+          },
+          "confidence": 1
+        }
+      }
+    }
+  ],
+  "provider_before": {
+    "usage_usd": 1.5918e-05,
+    "limit_usd": 50,
+    "limit_remaining_usd": 49.999984082,
+    "is_free_tier": false
+  },
+  "provider_after": {
+    "usage_usd": 1.5918e-05,
+    "limit_usd": 50,
+    "limit_remaining_usd": 49.999984082,
+    "is_free_tier": false
+  },
+  "reconciliation": {
+    "delta_nusd": 0,
+    "ledger_committed_nusd": 149394
+  },
+  "ledger_committed_nusd": 149394,
+  "available_nusd": 4999850606
+}

@@ -1,0 +1,993 @@
+{
+  "at": "2026-09-19T04:15:31.494261+00:00",
+  "resumo": {
+    "openrouter": {
+      "respostas_validas": 40,
+      "casos": 40,
+      "acertos": 37,
+      "acuracia": 0.925,
+      "latencia_p50_ms": 395.85,
+      "latencia_p95_ms": 467.8,
+      "custo_total_nusd": 886682,
+      "custo_por_decisao_nusd": 22167.0
+    },
+    "typesafe": {
+      "respostas_validas": 40,
+      "casos": 40,
+      "acertos": 37,
+      "acuracia": 0.925,
+      "latencia_p50_ms": 754.95,
+      "latencia_p95_ms": 847.4,
+      "custo_total_nusd": 992166,
+      "custo_por_decisao_nusd": 24804.2
+    }
+  },
+  "concordancia": 40,
+  "casos": 40,
+  "taxa_concordancia": 1.0,
+  "divergencias": [],
+  "resultados": [
+    {
+      "case_id": "tri-f01-01",
+      "family": "F01-pedido-direto",
+      "gold": "cancelar",
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 588.4,
+        "cost_nusd": 22345,
+        "cost_source": "provider_reported",
+        "attempt_id": "517e2fdf-969c-4bbc-ac18-f740f57c769b"
+      },
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 850.9,
+        "cost_nusd": 24990,
+        "cost_source": "usage_priced",
+        "attempt_id": "1a2a491f-457a-4ce2-a905-7264c86571ed"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f01-02",
+      "family": "F01-pedido-direto",
+      "gold": "rastrear",
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 688.4,
+        "cost_nusd": 24990,
+        "cost_source": "usage_priced",
+        "attempt_id": "dcf921c2-61e4-4ae6-bc2d-764de8aade8b"
+      },
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 364.8,
+        "cost_nusd": 22345,
+        "cost_source": "provider_reported",
+        "attempt_id": "c013aac5-94b8-4196-87a0-797b8414dd0e"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f01-03",
+      "family": "F01-pedido-direto",
+      "gold": "trocar",
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 436.2,
+        "cost_nusd": 22051,
+        "cost_source": "provider_reported",
+        "attempt_id": "975ded8c-7c99-4ebd-a0eb-1a998f18c209"
+      },
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 726.8,
+        "cost_nusd": 24654,
+        "cost_source": "usage_priced",
+        "attempt_id": "ca248b98-6c9c-44df-a2b7-06db6df6b3e6"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f01-04",
+      "family": "F01-pedido-direto",
+      "gold": "cobranca",
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 795.1,
+        "cost_nusd": 24570,
+        "cost_source": "usage_priced",
+        "attempt_id": "d1b1bb85-9dc1-48c2-aa85-5ab86cd39f90"
+      },
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 553.0,
+        "cost_nusd": 21924,
+        "cost_source": "provider_reported",
+        "attempt_id": "1f334c84-a726-46c6-8829-05a8ce2d7a98"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f02-01",
+      "family": "F02-informacao-pura",
+      "gold": "informacao",
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 384.6,
+        "cost_nusd": 21883,
+        "cost_source": "provider_reported",
+        "attempt_id": "eaa357c7-7c68-4de7-b19f-e331310c3ac2"
+      },
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 744.8,
+        "cost_nusd": 24528,
+        "cost_source": "usage_priced",
+        "attempt_id": "7c4c6b09-1484-4ada-91b9-762a9be459b5"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f02-02",
+      "family": "F02-informacao-pura",
+      "gold": "informacao",
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 740.8,
+        "cost_nusd": 24570,
+        "cost_source": "usage_priced",
+        "attempt_id": "65967231-63fe-4d38-8b64-77426c577557"
+      },
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 432.2,
+        "cost_nusd": 21924,
+        "cost_source": "provider_reported",
+        "attempt_id": "e92ebba2-da6e-43cd-a51a-33ba1b725d14"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f02-03",
+      "family": "F02-informacao-pura",
+      "gold": "informacao",
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 381.9,
+        "cost_nusd": 22051,
+        "cost_source": "provider_reported",
+        "attempt_id": "2bd94762-4993-480a-8d1b-85944847acc0"
+      },
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 701.0,
+        "cost_nusd": 24696,
+        "cost_source": "usage_priced",
+        "attempt_id": "e8da44f5-ff9a-437f-ae91-066c437f19f7"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f02-04",
+      "family": "F02-informacao-pura",
+      "gold": "informacao",
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 0.37,
+        "status": "success",
+        "latency_ms": 743.6,
+        "cost_nusd": 24612,
+        "cost_source": "usage_priced",
+        "attempt_id": "feb28d28-a387-4a69-837c-49566aaeec4a"
+      },
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 0.43,
+        "status": "success",
+        "latency_ms": 397.3,
+        "cost_nusd": 21966,
+        "cost_source": "provider_reported",
+        "attempt_id": "fc0cd6f8-1ecc-4f16-a80d-de83af3cb38e"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f03-01",
+      "family": "F03-assunto-versus-acao",
+      "gold": "cancelar",
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 467.8,
+        "cost_nusd": 22176,
+        "cost_source": "provider_reported",
+        "attempt_id": "57e13691-fbbe-4e46-a6e6-34f15b02480f"
+      },
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 797.9,
+        "cost_nusd": 24822,
+        "cost_source": "usage_priced",
+        "attempt_id": "994d3694-fb60-45fc-9795-c21d01d4d507"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f03-02",
+      "family": "F03-assunto-versus-acao",
+      "gold": "trocar",
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 789.9,
+        "cost_nusd": 24864,
+        "cost_source": "usage_priced",
+        "attempt_id": "1ce15d0a-c343-4d55-bf55-cc3d8be03c8b"
+      },
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 431.7,
+        "cost_nusd": 22261,
+        "cost_source": "provider_reported",
+        "attempt_id": "b6295013-f4ab-4e02-80b0-fd7cb4d6ff3b"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f03-03",
+      "family": "F03-assunto-versus-acao",
+      "gold": "cobranca",
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 396.5,
+        "cost_nusd": 22134,
+        "cost_source": "provider_reported",
+        "attempt_id": "4689ec3f-36df-401c-9d82-6be82e2324f8"
+      },
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 743.5,
+        "cost_nusd": 24780,
+        "cost_source": "usage_priced",
+        "attempt_id": "f68cbaec-bf8a-4b32-b243-250493801e03"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f03-04",
+      "family": "F03-assunto-versus-acao",
+      "gold": "rastrear",
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 0.9,
+        "status": "success",
+        "latency_ms": 771.0,
+        "cost_nusd": 24780,
+        "cost_source": "usage_priced",
+        "attempt_id": "96819b27-489a-4d53-926e-e730565f3328"
+      },
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 0.89,
+        "status": "success",
+        "latency_ms": 382.4,
+        "cost_nusd": 22134,
+        "cost_source": "provider_reported",
+        "attempt_id": "6f3123ed-81be-42f2-885a-d75fc864dacd"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f04-01",
+      "family": "F04-negacao",
+      "gold": "informacao",
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.88,
+        "status": "success",
+        "latency_ms": 395.6,
+        "cost_nusd": 22051,
+        "cost_source": "provider_reported",
+        "attempt_id": "76c6cecf-e519-4bdc-90a3-d8d749fd444d"
+      },
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.82,
+        "status": "success",
+        "latency_ms": 785.4,
+        "cost_nusd": 24696,
+        "cost_source": "usage_priced",
+        "attempt_id": "31bd8329-5e9d-4f83-9c5b-7d6232f7abcc"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f04-02",
+      "family": "F04-negacao",
+      "gold": "informacao",
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 741.5,
+        "cost_nusd": 24822,
+        "cost_source": "usage_priced",
+        "attempt_id": "ca5f1554-7294-4f27-9968-0b7ae5564a1f"
+      },
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 394.6,
+        "cost_nusd": 22176,
+        "cost_source": "provider_reported",
+        "attempt_id": "9cabbc04-916c-490b-bea6-fc70e25e755d"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f04-03",
+      "family": "F04-negacao",
+      "gold": "cancelar",
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 378.6,
+        "cost_nusd": 21924,
+        "cost_source": "provider_reported",
+        "attempt_id": "5bec811a-2f49-4eed-859e-e27d98193313"
+      },
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 753.7,
+        "cost_nusd": 24570,
+        "cost_source": "usage_priced",
+        "attempt_id": "39c0aef0-015c-4378-af4e-cd8dda3e5acf"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f04-04",
+      "family": "F04-negacao",
+      "gold": "rastrear",
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 0.97,
+        "status": "success",
+        "latency_ms": 779.0,
+        "cost_nusd": 24780,
+        "cost_source": "usage_priced",
+        "attempt_id": "5576f193-3a79-4707-adc9-a74e59c5370e"
+      },
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 0.97,
+        "status": "success",
+        "latency_ms": 373.9,
+        "cost_nusd": 22134,
+        "cost_source": "provider_reported",
+        "attempt_id": "3479dfc0-1313-41df-8ec5-6c3c6e83dda2"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f05-01",
+      "family": "F05-acao-em-citacao",
+      "gold": "rastrear",
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 0.89,
+        "status": "success",
+        "latency_ms": 423.3,
+        "cost_nusd": 22176,
+        "cost_source": "provider_reported",
+        "attempt_id": "b4c58d63-c4d5-4a95-90c3-5a1757c6e421"
+      },
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 0.88,
+        "status": "success",
+        "latency_ms": 1004.0,
+        "cost_nusd": 24822,
+        "cost_source": "usage_priced",
+        "attempt_id": "6aabdaa5-ab48-4562-b488-8696e9309450"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f05-02",
+      "family": "F05-acao-em-citacao",
+      "gold": "cancelar",
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 775.2,
+        "cost_nusd": 24948,
+        "cost_source": "usage_priced",
+        "attempt_id": "dec4523c-a976-4c58-864b-38d403aa3af1"
+      },
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 429.5,
+        "cost_nusd": 22303,
+        "cost_source": "provider_reported",
+        "attempt_id": "98ab72da-5020-48fe-acfc-0559e60f4336"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f05-03",
+      "family": "F05-acao-em-citacao",
+      "gold": "trocar",
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 0.99,
+        "status": "success",
+        "latency_ms": 362.4,
+        "cost_nusd": 22386,
+        "cost_source": "provider_reported",
+        "attempt_id": "2da9a0f2-7dbb-44a4-b457-52935933239a"
+      },
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 0.97,
+        "status": "success",
+        "latency_ms": 762.4,
+        "cost_nusd": 24990,
+        "cost_source": "usage_priced",
+        "attempt_id": "c2597373-afc7-4cad-a01d-dc5020068dd1"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f05-04",
+      "family": "F05-acao-em-citacao",
+      "gold": "cobranca",
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 767.5,
+        "cost_nusd": 25074,
+        "cost_source": "usage_priced",
+        "attempt_id": "31274486-780d-476e-9d0a-6789a162fb35"
+      },
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 394.5,
+        "cost_nusd": 22428,
+        "cost_source": "provider_reported",
+        "attempt_id": "d7361c92-415e-4b09-af80-62e2d8ea0124"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f06-01",
+      "family": "F06-duas-acoes-uma-pedida",
+      "gold": "trocar",
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 359.3,
+        "cost_nusd": 22009,
+        "cost_source": "provider_reported",
+        "attempt_id": "c0f86807-ee8e-4307-85c0-932f1f99a5dc"
+      },
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 785.9,
+        "cost_nusd": 24612,
+        "cost_source": "usage_priced",
+        "attempt_id": "852d7d17-1e30-4b3e-8c8e-25ecf7dda6b1"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f06-02",
+      "family": "F06-duas-acoes-uma-pedida",
+      "gold": "cancelar",
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.5,
+        "status": "success",
+        "latency_ms": 746.0,
+        "cost_nusd": 24654,
+        "cost_source": "usage_priced",
+        "attempt_id": "ae079171-9366-4d76-9eb9-1b0eac71c1f0"
+      },
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.52,
+        "status": "success",
+        "latency_ms": 421.6,
+        "cost_nusd": 22009,
+        "cost_source": "provider_reported",
+        "attempt_id": "17247201-3ef4-47d2-b883-b13c18e7643c"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f06-03",
+      "family": "F06-duas-acoes-uma-pedida",
+      "gold": "cobranca",
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 0.56,
+        "status": "success",
+        "latency_ms": 410.2,
+        "cost_nusd": 22345,
+        "cost_source": "provider_reported",
+        "attempt_id": "1a425944-ae55-46bc-821d-87c25fedf472"
+      },
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 0.59,
+        "status": "success",
+        "latency_ms": 847.4,
+        "cost_nusd": 24990,
+        "cost_source": "usage_priced",
+        "attempt_id": "f589ddc0-e8e5-414b-954e-8024fd25784b"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f06-04",
+      "family": "F06-duas-acoes-uma-pedida",
+      "gold": "trocar",
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 0.54,
+        "status": "success",
+        "latency_ms": 781.4,
+        "cost_nusd": 25074,
+        "cost_source": "usage_priced",
+        "attempt_id": "41f81fd0-ce38-4660-9682-3d60eae5dcf3"
+      },
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 0.56,
+        "status": "success",
+        "latency_ms": 358.9,
+        "cost_nusd": 22471,
+        "cost_source": "provider_reported",
+        "attempt_id": "7197bccb-6c4a-440e-b499-fe975659b19b"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f07-01",
+      "family": "F07-cobranca-vs-cancelamento",
+      "gold": "cobranca",
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 380.1,
+        "cost_nusd": 22218,
+        "cost_source": "provider_reported",
+        "attempt_id": "548643dc-cb26-462e-9242-e457bd312523"
+      },
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 743.1,
+        "cost_nusd": 24864,
+        "cost_source": "usage_priced",
+        "attempt_id": "742ce93e-00b9-4d1e-8994-fbbd60aac4e0"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f07-02",
+      "family": "F07-cobranca-vs-cancelamento",
+      "gold": "cancelar",
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 774.3,
+        "cost_nusd": 25032,
+        "cost_source": "usage_priced",
+        "attempt_id": "a0ec5851-f569-40a2-937e-89541d77f900"
+      },
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 389.5,
+        "cost_nusd": 22386,
+        "cost_source": "provider_reported",
+        "attempt_id": "a32ac0bf-4f22-4fa6-a612-6920ed44fc2b"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f07-03",
+      "family": "F07-cobranca-vs-cancelamento",
+      "gold": "cobranca",
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 368.4,
+        "cost_nusd": 22176,
+        "cost_source": "provider_reported",
+        "attempt_id": "69cc79bd-33cd-4982-bc68-76850f7f11dc"
+      },
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 796.0,
+        "cost_nusd": 24822,
+        "cost_source": "usage_priced",
+        "attempt_id": "6a78ced7-ce76-47bb-9837-530fdf8b4a0a"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f07-04",
+      "family": "F07-cobranca-vs-cancelamento",
+      "gold": "informacao",
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.77,
+        "status": "success",
+        "latency_ms": 756.2,
+        "cost_nusd": 24990,
+        "cost_source": "usage_priced",
+        "attempt_id": "525f728f-de5f-43b6-bcbe-6bef731972df"
+      },
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.71,
+        "status": "success",
+        "latency_ms": 387.8,
+        "cost_nusd": 22345,
+        "cost_source": "provider_reported",
+        "attempt_id": "0e5ec438-9060-434b-9bd2-483e4a1951a0"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f08-01",
+      "family": "F08-troca-vs-reparo",
+      "gold": "trocar",
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 344.9,
+        "cost_nusd": 22134,
+        "cost_source": "provider_reported",
+        "attempt_id": "3a6555e0-552f-49a7-9836-d66f3bc52781"
+      },
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 723.5,
+        "cost_nusd": 24738,
+        "cost_source": "usage_priced",
+        "attempt_id": "4ba4f985-1f15-489e-b676-d3d29d7723c4"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f08-02",
+      "family": "F08-troca-vs-reparo",
+      "gold": "trocar",
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 722.9,
+        "cost_nusd": 24822,
+        "cost_source": "usage_priced",
+        "attempt_id": "090f2411-69c5-4d5f-9501-79ce61d30690"
+      },
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 405.0,
+        "cost_nusd": 22218,
+        "cost_source": "provider_reported",
+        "attempt_id": "b6bd0f7d-a8b4-4403-a678-d0244502311c"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f08-03",
+      "family": "F08-troca-vs-reparo",
+      "gold": "cobranca",
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 0.98,
+        "status": "success",
+        "latency_ms": 389.9,
+        "cost_nusd": 22303,
+        "cost_source": "provider_reported",
+        "attempt_id": "4181fa69-1504-4f02-8639-9115e8cd19e3"
+      },
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 0.97,
+        "status": "success",
+        "latency_ms": 731.1,
+        "cost_nusd": 24948,
+        "cost_source": "usage_priced",
+        "attempt_id": "b64ce9c8-985e-43fe-aaf1-8be2858ff078"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f08-04",
+      "family": "F08-troca-vs-reparo",
+      "gold": "trocar",
+      "typesafe": {
+        "pred": "trocar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 726.5,
+        "cost_nusd": 24654,
+        "cost_source": "usage_priced",
+        "attempt_id": "82bc8ae6-60bc-4a6f-80ab-9613250da26d"
+      },
+      "openrouter": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 396.6,
+        "cost_nusd": 22051,
+        "cost_source": "provider_reported",
+        "attempt_id": "a2459672-2729-44d1-8b82-a956ea1efa10"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f09-01",
+      "family": "F09-rastreio-indireto",
+      "gold": "rastrear",
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 0.78,
+        "status": "success",
+        "latency_ms": 443.4,
+        "cost_nusd": 21841,
+        "cost_source": "provider_reported",
+        "attempt_id": "9491688b-74f2-488f-acd7-47d6726d722a"
+      },
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 0.83,
+        "status": "success",
+        "latency_ms": 779.0,
+        "cost_nusd": 24486,
+        "cost_source": "usage_priced",
+        "attempt_id": "0d2aeac0-b4e5-4c01-8171-5ec520ba5493"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f09-02",
+      "family": "F09-rastreio-indireto",
+      "gold": "rastrear",
+      "typesafe": {
+        "pred": "rastrear",
+        "confidence": 0.72,
+        "status": "success",
+        "latency_ms": 743.0,
+        "cost_nusd": 24654,
+        "cost_source": "usage_priced",
+        "attempt_id": "dfe30d36-6338-4f4f-ac5c-519ff9d03a24"
+      },
+      "openrouter": {
+        "pred": "rastrear",
+        "confidence": 0.71,
+        "status": "success",
+        "latency_ms": 392.2,
+        "cost_nusd": 22009,
+        "cost_source": "provider_reported",
+        "attempt_id": "28d3669c-85ff-44fe-885c-70770681f8aa"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f09-03",
+      "family": "F09-rastreio-indireto",
+      "gold": "informacao",
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.41,
+        "status": "success",
+        "latency_ms": 392.0,
+        "cost_nusd": 22261,
+        "cost_source": "provider_reported",
+        "attempt_id": "54d153af-5c3f-4d1d-8c2f-df8ff12b5e3d"
+      },
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.33,
+        "status": "success",
+        "latency_ms": 738.2,
+        "cost_nusd": 24906,
+        "cost_source": "usage_priced",
+        "attempt_id": "05482103-8642-4fd9-a097-fec28372209d"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f09-04",
+      "family": "F09-rastreio-indireto",
+      "gold": "rastrear",
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.66,
+        "status": "success",
+        "latency_ms": 766.8,
+        "cost_nusd": 24612,
+        "cost_source": "usage_priced",
+        "attempt_id": "09e44c73-8815-4880-b610-475e74267466"
+      },
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.62,
+        "status": "success",
+        "latency_ms": 419.2,
+        "cost_nusd": 21966,
+        "cost_source": "provider_reported",
+        "attempt_id": "b3a327be-2fd5-4ae8-9d2b-1ea99aa42cf8"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f10-01",
+      "family": "F10-ruido-e-cortesia",
+      "gold": "cancelar",
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 429.5,
+        "cost_nusd": 22428,
+        "cost_source": "provider_reported",
+        "attempt_id": "82f2663d-973a-4fac-91a8-075e4f3398af"
+      },
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 809.0,
+        "cost_nusd": 25074,
+        "cost_source": "usage_priced",
+        "attempt_id": "c6fa993a-6f86-49de-8d78-93a2b53fa0ee"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f10-02",
+      "family": "F10-ruido-e-cortesia",
+      "gold": "cobranca",
+      "typesafe": {
+        "pred": "cobranca",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 717.4,
+        "cost_nusd": 24906,
+        "cost_source": "usage_priced",
+        "attempt_id": "500e97d2-b48d-47ce-9d89-045bdd3880ea"
+      },
+      "openrouter": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 396.1,
+        "cost_nusd": 22261,
+        "cost_source": "provider_reported",
+        "attempt_id": "c8995998-1dfe-41b8-a41b-caa41746cb5e"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f10-03",
+      "family": "F10-ruido-e-cortesia",
+      "gold": "informacao",
+      "openrouter": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "latency_ms": 399.7,
+        "cost_nusd": 22261,
+        "cost_source": "provider_reported",
+        "attempt_id": "01119396-9060-4e4b-b148-72c6efbc5a0c"
+      },
+      "typesafe": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "latency_ms": 728.3,
+        "cost_nusd": 24906,
+        "cost_source": "usage_priced",
+        "attempt_id": "0ba4a779-5308-4155-a770-5dd892ce2ee1"
+      },
+      "concordam": true
+    },
+    {
+      "case_id": "tri-f10-04",
+      "family": "F10-ruido-e-cortesia",
+      "gold": "cancelar",
+      "typesafe": {
+        "pred": "cancelar",
+        "confidence": 1.0,
+        "status": "success",
+        "latency_ms": 715.6,
+        "cost_nusd": 24864,
+        "cost_source": "usage_priced",
+        "attempt_id": "857ade03-bce9-459e-98c1-2ab9a3ac8903"
+      },
+      "openrouter": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "latency_ms": 427.6,
+        "cost_nusd": 22218,
+        "cost_source": "provider_reported",
+        "attempt_id": "3d0cff7f-a813-4739-99f6-e5c3277c128f"
+      },
+      "concordam": true
+    }
+  ],
+  "wallet_committed_nusd": 12828752,
+  "wallet_available_nusd": 4987171248
+}

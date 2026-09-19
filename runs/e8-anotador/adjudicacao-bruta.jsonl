@@ -1,0 +1,9 @@
+{"case_id":"tri-f02-04","escolha":"B","classe":"informacao","motivo":"Pede apenas dado sobre condições de parcelamento, não solicita parcelar uma cobrança."}
+{"case_id":"tri-f04-01","escolha":"A","classe":"informacao","motivo":"Nega cancelamento e pede somente explicação sobre a mudança do valor."}
+{"case_id":"tri-f07-04","escolha":"B","classe":"informacao","motivo":"Cancelamento é condicional; a ação atual é pedir informação sobre parcelamento."}
+{"case_id":"tri-f10-03","escolha":"A","classe":"informacao","motivo":"A troca já foi solicitada; pede apenas informar se houve aprovação."}
+{"case_id":"cnf-g02-03","escolha":"A","classe":"informacao","motivo":"O estorno foi pedido por terceiro; o remetente solicita apenas esclarecimento sobre a política."}
+{"case_id":"cnf-g03-01","escolha":"A","classe":"rastrear","motivo":"Cancelamento é futuro e condicional; pede previsão atualizada da entrega."}
+{"case_id":"cnf-g03-02","escolha":"B","classe":"informacao","motivo":"A troca é condicional; pede apenas informação sobre a cor."}
+{"case_id":"cnf-g04-02","escolha":"B","classe":"informacao","motivo":"O conserto depende da resposta; atualmente pede apenas esclarecimento sobre a garantia."}
+{"case_id":"cnf-g05-02","escolha":"B","classe":"rastrear","motivo":"A devolução já ocorreu; pede previsão de envio do produto substituto."}

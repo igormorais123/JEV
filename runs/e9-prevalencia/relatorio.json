@@ -1,0 +1,488 @@
+{
+  "at": "2026-09-19T05:25:10.237771+00:00",
+  "casos_usados": 80,
+  "origem": "E1 piloto + E7 confirmacao",
+  "gabarito": "gabarito adjudicado (1 caso(s) mudaram em relação ao do autor)",
+  "procedencia_do_gabarito": {
+    "adjudicado": true,
+    "juiz": "gpt-5.6-sol-high via Cursor CLI",
+    "casos_em_disputa": 9,
+    "casos_substituidos": [
+      {
+        "case_id": "cnf-g05-02",
+        "de": "trocar",
+        "para": "rastrear"
+      }
+    ]
+  },
+  "aviso_particao": "A uniao mistura desenvolvimento e teste. A leitura que vale para decidir e a da particao de confirmacao; a uniao esta aqui so por ter mais casos.",
+  "por_particao": {
+    "piloto (desenvolvimento)": {
+      "casos": 40,
+      "acuracia_por_classe": {
+        "cancelar": {
+          "acertos": 7,
+          "casos": 8,
+          "taxa": 0.875,
+          "limite_superior_erro": 0.4707
+        },
+        "cobranca": {
+          "acertos": 8,
+          "casos": 8,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.3123
+        },
+        "informacao": {
+          "acertos": 8,
+          "casos": 9,
+          "taxa": 0.8889,
+          "limite_superior_erro": 0.4291
+        },
+        "rastrear": {
+          "acertos": 6,
+          "casos": 7,
+          "taxa": 0.8571,
+          "limite_superior_erro": 0.5207
+        },
+        "trocar": {
+          "acertos": 8,
+          "casos": 8,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.3123
+        }
+      },
+      "politicas": [
+        {
+          "corte": 0.0,
+          "casos": 40,
+          "aceitos": 40,
+          "cobertura": 1.0,
+          "erros_entre_aceitos": 3,
+          "enviados_a_revisao": 0,
+          "custo_api_usd": 0.000887,
+          "custo_humano_usd": 0.0,
+          "custo_total_usd": 0.0009,
+          "custo_por_decisao_usd": 2.2e-05
+        },
+        {
+          "corte": 0.9,
+          "casos": 40,
+          "aceitos": 29,
+          "cobertura": 0.725,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 11,
+          "custo_api_usd": 0.000887,
+          "custo_humano_usd": 4.4,
+          "custo_total_usd": 4.4009,
+          "custo_por_decisao_usd": 0.110022
+        },
+        {
+          "corte": 0.95,
+          "casos": 40,
+          "aceitos": 28,
+          "cobertura": 0.7,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 12,
+          "custo_api_usd": 0.000887,
+          "custo_humano_usd": 4.8,
+          "custo_total_usd": 4.8009,
+          "custo_por_decisao_usd": 0.120022
+        },
+        {
+          "corte": 0.99,
+          "casos": 40,
+          "aceitos": 25,
+          "cobertura": 0.625,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 15,
+          "custo_api_usd": 0.000887,
+          "custo_humano_usd": 6.0,
+          "custo_total_usd": 6.0009,
+          "custo_por_decisao_usd": 0.150022
+        },
+        {
+          "corte": 1.01,
+          "casos": 40,
+          "aceitos": 0,
+          "cobertura": 0.0,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 40,
+          "custo_api_usd": 0.000887,
+          "custo_humano_usd": 16.0,
+          "custo_total_usd": 16.0009,
+          "custo_por_decisao_usd": 0.400022
+        }
+      ]
+    },
+    "confirmacao (teste)": {
+      "casos": 40,
+      "acuracia_por_classe": {
+        "cancelar": {
+          "acertos": 9,
+          "casos": 9,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.2831
+        },
+        "cobranca": {
+          "acertos": 8,
+          "casos": 8,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.3123
+        },
+        "informacao": {
+          "acertos": 7,
+          "casos": 7,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.3482
+        },
+        "rastrear": {
+          "acertos": 9,
+          "casos": 9,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.2831
+        },
+        "trocar": {
+          "acertos": 7,
+          "casos": 7,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.3482
+        }
+      },
+      "politicas": [
+        {
+          "corte": 0.0,
+          "casos": 40,
+          "aceitos": 40,
+          "cobertura": 1.0,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 0,
+          "custo_api_usd": 0.000912,
+          "custo_humano_usd": 0.0,
+          "custo_total_usd": 0.0009,
+          "custo_por_decisao_usd": 2.3e-05
+        },
+        {
+          "corte": 0.9,
+          "casos": 40,
+          "aceitos": 35,
+          "cobertura": 0.875,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 5,
+          "custo_api_usd": 0.000912,
+          "custo_humano_usd": 2.0,
+          "custo_total_usd": 2.0009,
+          "custo_por_decisao_usd": 0.050023
+        },
+        {
+          "corte": 0.95,
+          "casos": 40,
+          "aceitos": 34,
+          "cobertura": 0.85,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 6,
+          "custo_api_usd": 0.000912,
+          "custo_humano_usd": 2.4,
+          "custo_total_usd": 2.4009,
+          "custo_por_decisao_usd": 0.060023
+        },
+        {
+          "corte": 0.99,
+          "casos": 40,
+          "aceitos": 28,
+          "cobertura": 0.7,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 12,
+          "custo_api_usd": 0.000912,
+          "custo_humano_usd": 4.8,
+          "custo_total_usd": 4.8009,
+          "custo_por_decisao_usd": 0.120023
+        },
+        {
+          "corte": 1.01,
+          "casos": 40,
+          "aceitos": 0,
+          "cobertura": 0.0,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 40,
+          "custo_api_usd": 0.000912,
+          "custo_humano_usd": 16.0,
+          "custo_total_usd": 16.0009,
+          "custo_por_decisao_usd": 0.400023
+        }
+      ]
+    },
+    "uniao": {
+      "casos": 80,
+      "acuracia_por_classe": {
+        "cancelar": {
+          "acertos": 16,
+          "casos": 17,
+          "taxa": 0.9412,
+          "limite_superior_erro": 0.2501
+        },
+        "cobranca": {
+          "acertos": 16,
+          "casos": 16,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.1707
+        },
+        "informacao": {
+          "acertos": 15,
+          "casos": 16,
+          "taxa": 0.9375,
+          "limite_superior_erro": 0.264
+        },
+        "rastrear": {
+          "acertos": 15,
+          "casos": 16,
+          "taxa": 0.9375,
+          "limite_superior_erro": 0.264
+        },
+        "trocar": {
+          "acertos": 15,
+          "casos": 15,
+          "taxa": 1.0,
+          "limite_superior_erro": 0.181
+        }
+      },
+      "politicas": [
+        {
+          "corte": 0.0,
+          "casos": 80,
+          "aceitos": 80,
+          "cobertura": 1.0,
+          "erros_entre_aceitos": 3,
+          "enviados_a_revisao": 0,
+          "custo_api_usd": 0.001799,
+          "custo_humano_usd": 0.0,
+          "custo_total_usd": 0.0018,
+          "custo_por_decisao_usd": 2.2e-05
+        },
+        {
+          "corte": 0.9,
+          "casos": 80,
+          "aceitos": 64,
+          "cobertura": 0.8,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 16,
+          "custo_api_usd": 0.001799,
+          "custo_humano_usd": 6.4,
+          "custo_total_usd": 6.4018,
+          "custo_por_decisao_usd": 0.080022
+        },
+        {
+          "corte": 0.95,
+          "casos": 80,
+          "aceitos": 62,
+          "cobertura": 0.775,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 18,
+          "custo_api_usd": 0.001799,
+          "custo_humano_usd": 7.2,
+          "custo_total_usd": 7.2018,
+          "custo_por_decisao_usd": 0.090022
+        },
+        {
+          "corte": 0.99,
+          "casos": 80,
+          "aceitos": 53,
+          "cobertura": 0.6625,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 27,
+          "custo_api_usd": 0.001799,
+          "custo_humano_usd": 10.8,
+          "custo_total_usd": 10.8018,
+          "custo_por_decisao_usd": 0.135022
+        },
+        {
+          "corte": 1.01,
+          "casos": 80,
+          "aceitos": 0,
+          "cobertura": 0.0,
+          "erros_entre_aceitos": 0,
+          "enviados_a_revisao": 80,
+          "custo_api_usd": 0.001799,
+          "custo_humano_usd": 32.0,
+          "custo_total_usd": 32.0018,
+          "custo_por_decisao_usd": 0.400022
+        }
+      ]
+    }
+  },
+  "acuracia_por_classe": {
+    "cancelar": {
+      "acertos": 16,
+      "casos": 17,
+      "taxa": 0.9412,
+      "limite_superior_erro": 0.2501
+    },
+    "cobranca": {
+      "acertos": 16,
+      "casos": 16,
+      "taxa": 1.0,
+      "limite_superior_erro": 0.1707
+    },
+    "informacao": {
+      "acertos": 15,
+      "casos": 16,
+      "taxa": 0.9375,
+      "limite_superior_erro": 0.264
+    },
+    "rastrear": {
+      "acertos": 15,
+      "casos": 16,
+      "taxa": 0.9375,
+      "limite_superior_erro": 0.264
+    },
+    "trocar": {
+      "acertos": 15,
+      "casos": 15,
+      "taxa": 1.0,
+      "limite_superior_erro": 0.181
+    }
+  },
+  "projecoes_por_prevalencia": {
+    "corpus-do-estudo": {
+      "distribuicao": {
+        "cancelar": 0.2125,
+        "cobranca": 0.2,
+        "informacao": 0.2,
+        "rastrear": 0.2,
+        "trocar": 0.1875
+      },
+      "acuracia_esperada": 0.9625,
+      "classe_dominante": "cancelar",
+      "classe_menos_observada": {
+        "classe": "trocar",
+        "casos_no_estudo": 15,
+        "taxa": 1.0
+      }
+    },
+    "canal-de-entrega": {
+      "distribuicao": {
+        "rastrear": 0.55,
+        "informacao": 0.2,
+        "cobranca": 0.12,
+        "trocar": 0.08,
+        "cancelar": 0.05
+      },
+      "acuracia_esperada": 0.9502,
+      "classe_dominante": "rastrear",
+      "classe_menos_observada": {
+        "classe": "trocar",
+        "casos_no_estudo": 15,
+        "taxa": 1.0
+      }
+    },
+    "canal-financeiro": {
+      "distribuicao": {
+        "cobranca": 0.5,
+        "informacao": 0.22,
+        "cancelar": 0.13,
+        "rastrear": 0.1,
+        "trocar": 0.05
+      },
+      "acuracia_esperada": 0.9724,
+      "classe_dominante": "cobranca",
+      "classe_menos_observada": {
+        "classe": "trocar",
+        "casos_no_estudo": 15,
+        "taxa": 1.0
+      }
+    },
+    "pos-venda-de-produto": {
+      "distribuicao": {
+        "trocar": 0.4,
+        "rastrear": 0.22,
+        "informacao": 0.18,
+        "cobranca": 0.12,
+        "cancelar": 0.08
+      },
+      "acuracia_esperada": 0.9703,
+      "classe_dominante": "trocar",
+      "classe_menos_observada": {
+        "classe": "trocar",
+        "casos_no_estudo": 15,
+        "taxa": 1.0
+      }
+    }
+  },
+  "aviso_projecao": "A reponderacao assume que a dificuldade DENTRO de cada classe e a mesma do corpus. Um canal real pode ter casos daquela classe muito mais dificeis. A projecao mostra sensibilidade, nao previsao.",
+  "parametros_de_operacao": {
+    "minutos_revisao_humana": 2.0,
+    "custo_hora_humana_usd": 12.0,
+    "natureza": "declarados, nao medidos; nenhum cronometro foi usado"
+  },
+  "politicas_de_aceitacao": [
+    {
+      "corte": 0.0,
+      "casos": 80,
+      "aceitos": 80,
+      "cobertura": 1.0,
+      "erros_entre_aceitos": 3,
+      "enviados_a_revisao": 0,
+      "custo_api_usd": 0.001799,
+      "custo_humano_usd": 0.0,
+      "custo_total_usd": 0.0018,
+      "custo_por_decisao_usd": 2.2e-05,
+      "economia_versus_revisao_total_usd": 32.0,
+      "economia_percentual": 100.0
+    },
+    {
+      "corte": 0.9,
+      "casos": 80,
+      "aceitos": 64,
+      "cobertura": 0.8,
+      "erros_entre_aceitos": 0,
+      "enviados_a_revisao": 16,
+      "custo_api_usd": 0.001799,
+      "custo_humano_usd": 6.4,
+      "custo_total_usd": 6.4018,
+      "custo_por_decisao_usd": 0.080022,
+      "economia_versus_revisao_total_usd": 25.6,
+      "economia_percentual": 80.0
+    },
+    {
+      "corte": 0.95,
+      "casos": 80,
+      "aceitos": 62,
+      "cobertura": 0.775,
+      "erros_entre_aceitos": 0,
+      "enviados_a_revisao": 18,
+      "custo_api_usd": 0.001799,
+      "custo_humano_usd": 7.2,
+      "custo_total_usd": 7.2018,
+      "custo_por_decisao_usd": 0.090022,
+      "economia_versus_revisao_total_usd": 24.8,
+      "economia_percentual": 77.5
+    },
+    {
+      "corte": 0.99,
+      "casos": 80,
+      "aceitos": 53,
+      "cobertura": 0.6625,
+      "erros_entre_aceitos": 0,
+      "enviados_a_revisao": 27,
+      "custo_api_usd": 0.001799,
+      "custo_humano_usd": 10.8,
+      "custo_total_usd": 10.8018,
+      "custo_por_decisao_usd": 0.135022,
+      "economia_versus_revisao_total_usd": 21.2,
+      "economia_percentual": 66.2
+    },
+    {
+      "corte": 1.01,
+      "casos": 80,
+      "aceitos": 0,
+      "cobertura": 0.0,
+      "erros_entre_aceitos": 0,
+      "enviados_a_revisao": 80,
+      "custo_api_usd": 0.001799,
+      "custo_humano_usd": 32.0,
+      "custo_total_usd": 32.0018,
+      "custo_por_decisao_usd": 0.400022,
+      "economia_versus_revisao_total_usd": 0.0,
+      "economia_percentual": 0.0
+    }
+  ]
+}

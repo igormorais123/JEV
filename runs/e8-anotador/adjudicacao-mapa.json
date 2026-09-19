@@ -1,0 +1,65 @@
+{
+ "tri-f02-04": {
+  "A": "cobranca",
+  "B": "informacao",
+  "anotador_1": "informacao",
+  "anotador_2": "cobranca",
+  "jev": "cobranca"
+ },
+ "tri-f04-01": {
+  "A": "informacao",
+  "B": "cobranca",
+  "anotador_1": "informacao",
+  "anotador_2": "cobranca",
+  "jev": "informacao"
+ },
+ "tri-f07-04": {
+  "A": "cancelar",
+  "B": "informacao",
+  "anotador_1": "informacao",
+  "anotador_2": "cancelar",
+  "jev": "informacao"
+ },
+ "tri-f10-03": {
+  "A": "informacao",
+  "B": "trocar",
+  "anotador_1": "informacao",
+  "anotador_2": "trocar",
+  "jev": "informacao"
+ },
+ "cnf-g02-03": {
+  "A": "informacao",
+  "B": "cobranca",
+  "anotador_1": "informacao",
+  "anotador_2": "cobranca",
+  "jev": "informacao"
+ },
+ "cnf-g03-01": {
+  "A": "rastrear",
+  "B": "cancelar",
+  "anotador_1": "rastrear",
+  "anotador_2": "cancelar",
+  "jev": "rastrear"
+ },
+ "cnf-g03-02": {
+  "A": "trocar",
+  "B": "informacao",
+  "anotador_1": "informacao",
+  "anotador_2": "trocar",
+  "jev": "informacao"
+ },
+ "cnf-g04-02": {
+  "A": "trocar",
+  "B": "informacao",
+  "anotador_1": "informacao",
+  "anotador_2": "trocar",
+  "jev": "informacao"
+ },
+ "cnf-g05-02": {
+  "A": "trocar",
+  "B": "rastrear",
+  "anotador_1": "trocar",
+  "anotador_2": "rastrear",
+  "jev": "rastrear"
+ }
+}

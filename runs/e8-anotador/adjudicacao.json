@@ -1,0 +1,123 @@
+{
+  "at": "2026-09-19T05:08:13.854579+00:00",
+  "terceiro_juiz": "gpt-5.6-sol-high via Cursor CLI",
+  "desenho": "os 9 casos em disputa foram apresentados so com a mensagem e as duas leituras, em ordem sorteada (semente 20260919); o juiz nao sabia qual leitura era de quem",
+  "casos": [
+    {
+      "case_id": "tri-f02-04",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "cobranca",
+      "jev": "cobranca",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "B",
+      "motivo": "Pede apenas dado sobre condições de parcelamento, não solicita parcelar uma cobrança.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": false
+    },
+    {
+      "case_id": "tri-f04-01",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "cobranca",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "A",
+      "motivo": "Nega cancelamento e pede somente explicação sobre a mudança do valor.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "tri-f07-04",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "cancelar",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "B",
+      "motivo": "Cancelamento é condicional; a ação atual é pedir informação sobre parcelamento.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "tri-f10-03",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "trocar",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "A",
+      "motivo": "A troca já foi solicitada; pede apenas informar se houve aprovação.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "cnf-g02-03",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "cobranca",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "A",
+      "motivo": "O estorno foi pedido por terceiro; o remetente solicita apenas esclarecimento sobre a política.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "cnf-g03-01",
+      "anotador_1_autor": "rastrear",
+      "anotador_2_modelo_local": "cancelar",
+      "jev": "rastrear",
+      "terceiro_juiz": "rastrear",
+      "escolha_cega": "A",
+      "motivo": "Cancelamento é futuro e condicional; pede previsão atualizada da entrega.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "cnf-g03-02",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "trocar",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "B",
+      "motivo": "A troca é condicional; pede apenas informação sobre a cor.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "cnf-g04-02",
+      "anotador_1_autor": "informacao",
+      "anotador_2_modelo_local": "trocar",
+      "jev": "informacao",
+      "terceiro_juiz": "informacao",
+      "escolha_cega": "B",
+      "motivo": "O conserto depende da resposta; atualmente pede apenas esclarecimento sobre a garantia.",
+      "confirma_autor": true,
+      "jev_certo_no_adjudicado": true
+    },
+    {
+      "case_id": "cnf-g05-02",
+      "anotador_1_autor": "trocar",
+      "anotador_2_modelo_local": "rastrear",
+      "jev": "rastrear",
+      "terceiro_juiz": "rastrear",
+      "escolha_cega": "B",
+      "motivo": "A devolução já ocorreu; pede previsão de envio do produto substituto.",
+      "confirma_autor": false,
+      "jev_certo_no_adjudicado": true
+    }
+  ],
+  "placar": {
+    "confirmam_o_autor": 8,
+    "confirmam_o_modelo_local": 1,
+    "terceira_leitura": 0
+  },
+  "gabarito_adjudicado": {
+    "casos_com_resposta_do_jev": 80,
+    "acertos": 77,
+    "acuracia": 0.9625,
+    "erros": [
+      "tri-f02-04",
+      "tri-f06-02",
+      "tri-f09-04"
+    ]
+  },
+  "acuracia_sob_gabarito_do_autor": 0.95,
+  "acuracia_sob_gabarito_do_modelo_local": 0.8875
+}

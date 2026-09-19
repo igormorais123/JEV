@@ -1,0 +1,3389 @@
+{
+  "at": "2026-09-19T02:38:42.003939+00:00",
+  "seed": 20260918,
+  "modelo": "typesafe/jev-1.13",
+  "base": "individual_ordem-declarada_sem-distracao",
+  "ordem_execucao": [
+    "individual_ordem-invertida_com-distracao",
+    "lote_ordem-declarada_com-distracao",
+    "individual_ordem-invertida_sem-distracao",
+    "individual_ordem-declarada_sem-distracao",
+    "lote_ordem-invertida_com-distracao",
+    "individual_ordem-declarada_com-distracao",
+    "lote_ordem-invertida_sem-distracao",
+    "lote_ordem-declarada_sem-distracao"
+  ],
+  "condicoes": {
+    "individual_ordem-invertida_com-distracao": {
+      "condicao": {
+        "lote": false,
+        "ordem_invertida": true,
+        "distracao": true,
+        "id": "individual_ordem-invertida_com-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9513,
+        "custo_total_nusd": 987462,
+        "custo_por_decisao_nusd": 24686.55,
+        "latencia_p50_ms": 419.1,
+        "mudancas_versus_base": 3
+      }
+    },
+    "lote_ordem-declarada_com-distracao": {
+      "condicao": {
+        "lote": true,
+        "ordem_invertida": false,
+        "distracao": true,
+        "id": "lote_ordem-declarada_com-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9506,
+        "custo_total_nusd": 633444.0,
+        "custo_por_decisao_nusd": 15836.1,
+        "latencia_p50_ms": 57.7375,
+        "mudancas_versus_base": 1
+      }
+    },
+    "individual_ordem-invertida_sem-distracao": {
+      "condicao": {
+        "lote": false,
+        "ordem_invertida": true,
+        "distracao": false,
+        "id": "individual_ordem-invertida_sem-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9513,
+        "custo_total_nusd": 886662,
+        "custo_por_decisao_nusd": 22166.55,
+        "latencia_p50_ms": 418.1,
+        "mudancas_versus_base": 3
+      }
+    },
+    "individual_ordem-declarada_sem-distracao": {
+      "condicao": {
+        "lote": false,
+        "ordem_invertida": false,
+        "distracao": false,
+        "id": "individual_ordem-declarada_sem-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 37,
+        "acuracia": 0.925,
+        "macro_f1": 0.9279,
+        "custo_total_nusd": 886662,
+        "custo_por_decisao_nusd": 22166.55,
+        "latencia_p50_ms": 409.2
+      }
+    },
+    "lote_ordem-invertida_com-distracao": {
+      "condicao": {
+        "lote": true,
+        "ordem_invertida": true,
+        "distracao": true,
+        "id": "lote_ordem-invertida_com-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9506,
+        "custo_total_nusd": 633444.0,
+        "custo_por_decisao_nusd": 15836.1,
+        "latencia_p50_ms": 55.8625,
+        "mudancas_versus_base": 1
+      }
+    },
+    "individual_ordem-declarada_com-distracao": {
+      "condicao": {
+        "lote": false,
+        "ordem_invertida": false,
+        "distracao": true,
+        "id": "individual_ordem-declarada_com-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9527,
+        "custo_total_nusd": 987462,
+        "custo_por_decisao_nusd": 24686.55,
+        "latencia_p50_ms": 416.0,
+        "mudancas_versus_base": 1
+      }
+    },
+    "lote_ordem-invertida_sem-distracao": {
+      "condicao": {
+        "lote": true,
+        "ordem_invertida": true,
+        "distracao": false,
+        "id": "lote_ordem-invertida_sem-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9506,
+        "custo_total_nusd": 532644.0,
+        "custo_por_decisao_nusd": 13316.1,
+        "latencia_p50_ms": 51.225,
+        "mudancas_versus_base": 1
+      }
+    },
+    "lote_ordem-declarada_sem-distracao": {
+      "condicao": {
+        "lote": true,
+        "ordem_invertida": false,
+        "distracao": false,
+        "id": "lote_ordem-declarada_sem-distracao"
+      },
+      "resumo": {
+        "n": 40,
+        "respostas_validas": 40,
+        "acertos": 38,
+        "acuracia": 0.95,
+        "macro_f1": 0.9506,
+        "custo_total_nusd": 532644.0,
+        "custo_por_decisao_nusd": 13316.1,
+        "latencia_p50_ms": 57.15,
+        "mudancas_versus_base": 1
+      }
+    }
+  },
+  "saidas": {
+    "individual_ordem-invertida_com-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "3b59b103-cd00-48c9-80b1-e4771541bcad",
+        "cost_nusd": 24864,
+        "latency_ms": 587.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "e83b0c57-c832-4023-ab9b-a1aa128d73c6",
+        "cost_nusd": 24864,
+        "latency_ms": 503.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c770d306-176c-4ade-9549-8d08e2a8e782",
+        "cost_nusd": 24570,
+        "latency_ms": 616.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6ed18165-d7cf-40e0-9466-49f2c9bcd4f2",
+        "cost_nusd": 24444,
+        "latency_ms": 481.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "3a7363ea-5639-4a71-a852-c4b48739606c",
+        "cost_nusd": 24402,
+        "latency_ms": 380.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5de69d73-7411-4bae-9c99-868456f93768",
+        "cost_nusd": 24444,
+        "latency_ms": 367.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "97d3012f-bbfd-470b-ac37-5faa6d1cbb73",
+        "cost_nusd": 24570,
+        "latency_ms": 376.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-04": {
+        "pred": "informacao",
+        "confidence": 0.59,
+        "status": "success",
+        "attempt_id": "67399487-0e12-41d9-9510-d1d23097d674",
+        "cost_nusd": 24486,
+        "latency_ms": 423.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "36c82976-267b-44d0-9b8f-b03a5a0ff4b7",
+        "cost_nusd": 24696,
+        "latency_ms": 368.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2b98caba-15a6-41bb-8f70-70286155c3b1",
+        "cost_nusd": 24780,
+        "latency_ms": 472.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2c75c6c9-efec-4c73-be71-9a17d67e1508",
+        "cost_nusd": 24654,
+        "latency_ms": 394.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.86,
+        "status": "success",
+        "attempt_id": "f8ee72b3-1ee3-47bc-bb8c-c31e58198812",
+        "cost_nusd": 24654,
+        "latency_ms": 394.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.95,
+        "status": "success",
+        "attempt_id": "d25c7002-8599-420f-bb6d-8f94cd7293e4",
+        "cost_nusd": 24570,
+        "latency_ms": 405.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a856439c-db31-49cc-bb11-8bd274bdfee5",
+        "cost_nusd": 24696,
+        "latency_ms": 366.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "e728bded-9209-40b6-a361-69470bc27454",
+        "cost_nusd": 24444,
+        "latency_ms": 412.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.95,
+        "status": "success",
+        "attempt_id": "7fe51e7f-5152-4c76-9063-10f37eacc46f",
+        "cost_nusd": 24654,
+        "latency_ms": 387.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "43f553aa-108c-4298-8b2c-1878475ead45",
+        "cost_nusd": 24696,
+        "latency_ms": 337.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "03415208-f926-477e-bc8a-a93a1ed0fb72",
+        "cost_nusd": 24822,
+        "latency_ms": 462.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.89,
+        "status": "success",
+        "attempt_id": "ce83654d-21f2-43d3-988b-090469adae3d",
+        "cost_nusd": 24906,
+        "latency_ms": 391.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "1f1e3f92-b7cf-4801-b515-2045ff2f1c65",
+        "cost_nusd": 24948,
+        "latency_ms": 444.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ab4289c1-a8f5-471c-a321-b98ff030c480",
+        "cost_nusd": 24528,
+        "latency_ms": 450.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 0.72,
+        "status": "success",
+        "attempt_id": "f9066275-8cf5-4bb8-831c-797c00f32537",
+        "cost_nusd": 24528,
+        "latency_ms": 424.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-03": {
+        "pred": "informacao",
+        "confidence": 0.42,
+        "status": "success",
+        "attempt_id": "5784a5c7-c003-42b3-9358-eefc430a856e",
+        "cost_nusd": 24864,
+        "latency_ms": 411.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.53,
+        "status": "success",
+        "attempt_id": "535251c3-4523-4848-85a4-27875bddec12",
+        "cost_nusd": 24990,
+        "latency_ms": 439.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "77d52f3a-9da9-42f7-9e84-f8d50ec9cf37",
+        "cost_nusd": 24738,
+        "latency_ms": 501.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "88ca53bc-ba5f-439d-a295-984c3203780e",
+        "cost_nusd": 24906,
+        "latency_ms": 419.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "cc735335-ecdb-411b-97c6-6e10d4c02d08",
+        "cost_nusd": 24696,
+        "latency_ms": 388.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.57,
+        "status": "success",
+        "attempt_id": "63ca7ee8-a6a0-4ff0-84d0-244fc69a10bc",
+        "cost_nusd": 24864,
+        "latency_ms": 448.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0c6461ae-22a2-43a3-af16-8b78e6b4f461",
+        "cost_nusd": 24654,
+        "latency_ms": 399.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6217eb08-8970-464e-ab07-de5a84d35a6e",
+        "cost_nusd": 24738,
+        "latency_ms": 387.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "092f4b3c-21dc-42fb-a53c-218d9d9d3847",
+        "cost_nusd": 24822,
+        "latency_ms": 438.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "7024497d-d4f8-4a7a-be7d-625763f6c2e1",
+        "cost_nusd": 24570,
+        "latency_ms": 365.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.78,
+        "status": "success",
+        "attempt_id": "a588cd7c-7761-4735-98ec-bd181d058b27",
+        "cost_nusd": 24360,
+        "latency_ms": 538.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.77,
+        "status": "success",
+        "attempt_id": "65507438-e2a1-40fe-83b3-35d17f4e1e1a",
+        "cost_nusd": 24528,
+        "latency_ms": 453.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.2,
+        "status": "success",
+        "attempt_id": "877175b4-bf22-4487-bac2-965bf9ad6df3",
+        "cost_nusd": 24780,
+        "latency_ms": 364.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.53,
+        "status": "success",
+        "attempt_id": "9f19fb0d-1797-4740-8fb0-07e23d0757bf",
+        "cost_nusd": 24486,
+        "latency_ms": 479.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "9e7306cf-d548-4a18-bcd6-a254e02e9a7a",
+        "cost_nusd": 24948,
+        "latency_ms": 383.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ca733bfd-f682-4a03-bd6f-bf956fc8566d",
+        "cost_nusd": 24780,
+        "latency_ms": 410.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.95,
+        "status": "success",
+        "attempt_id": "522a0ab9-3a39-4838-b2cb-20e012c3c9f5",
+        "cost_nusd": 24780,
+        "latency_ms": 453.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "72bf13ce-7f0c-4d07-83fe-aa4d5468c3d0",
+        "cost_nusd": 24738,
+        "latency_ms": 431.4,
+        "decisoes_na_chamada": 1
+      }
+    },
+    "lote_ordem-declarada_com-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.93,
+        "status": "success",
+        "attempt_id": "c44d05a6-b3bf-4cba-8aa7-10b8b37f82d2",
+        "cost_nusd": 15739.5,
+        "latency_ms": 57.1375,
+        "latency_chamada_ms": 457.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.6,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "b985b095-c2f5-4766-a5fa-e359f31a21b8",
+        "cost_nusd": 15797.25,
+        "latency_ms": 50.7875,
+        "latency_chamada_ms": 406.3,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.87,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.95,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.9,
+        "status": "success",
+        "attempt_id": "2b51b93a-9bdc-45b5-877e-8a749196d5f5",
+        "cost_nusd": 15928.5,
+        "latency_ms": 65.5,
+        "latency_chamada_ms": 524.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.5,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.91,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0b02279d-1070-4739-a6a8-2ed1a3189255",
+        "cost_nusd": 15891.75,
+        "latency_ms": 69.175,
+        "latency_chamada_ms": 553.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.76,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.46,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.48,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.86,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "af5265f3-5f43-4bc5-8aee-f84d0ad6397a",
+        "cost_nusd": 15823.5,
+        "latency_ms": 57.7375,
+        "latency_chamada_ms": 461.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      }
+    },
+    "individual_ordem-invertida_sem-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "091b983b-b714-4c4a-934d-a65332c4bfab",
+        "cost_nusd": 22344,
+        "latency_ms": 410.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "79980d9d-9c31-42d5-8759-a5491a787092",
+        "cost_nusd": 22344,
+        "latency_ms": 473.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "43b2b02b-e2c4-459d-8702-3ff40107bb58",
+        "cost_nusd": 22050,
+        "latency_ms": 560.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "cc028a51-b2cd-4510-a0a6-ec31e4053798",
+        "cost_nusd": 21924,
+        "latency_ms": 450.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "703bf5b6-0980-4c8c-9b2e-fcc56950cea8",
+        "cost_nusd": 21882,
+        "latency_ms": 394.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d5accf8c-15da-4c96-b8cc-d05a78f3d58d",
+        "cost_nusd": 21924,
+        "latency_ms": 407.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0d0bfc20-6247-4d40-aa63-416a4620b1c1",
+        "cost_nusd": 22050,
+        "latency_ms": 404.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-04": {
+        "pred": "informacao",
+        "confidence": 0.77,
+        "status": "success",
+        "attempt_id": "e6c129bf-dd11-467a-86e3-42cdf092af70",
+        "cost_nusd": 21966,
+        "latency_ms": 414.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "52022bb6-5082-4e38-89e8-3440e55ba2fd",
+        "cost_nusd": 22176,
+        "latency_ms": 461.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2b392685-2275-49d1-a17c-ed4eabb67848",
+        "cost_nusd": 22260,
+        "latency_ms": 398.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "534fc4a9-875e-491e-ad9f-5313d9b7f399",
+        "cost_nusd": 22134,
+        "latency_ms": 404.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.79,
+        "status": "success",
+        "attempt_id": "d3092c5b-f650-4e47-baf0-d69fc484ee39",
+        "cost_nusd": 22134,
+        "latency_ms": 433.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "351fd397-aa74-4523-8938-e22ebe8cb670",
+        "cost_nusd": 22050,
+        "latency_ms": 467.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d104d8d0-3aed-4db7-83a6-458c501d3ae5",
+        "cost_nusd": 22176,
+        "latency_ms": 458.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2c150c5b-3cb3-48a8-96c6-934b93a4ee1a",
+        "cost_nusd": 21924,
+        "latency_ms": 419.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.89,
+        "status": "success",
+        "attempt_id": "16824abd-ae82-466b-a36e-0b5daaa9dfce",
+        "cost_nusd": 22134,
+        "latency_ms": 445.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.91,
+        "status": "success",
+        "attempt_id": "102d1393-d213-46ea-9b84-7c5d5697bc19",
+        "cost_nusd": 22176,
+        "latency_ms": 364.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "558d68cf-de7f-46e6-8d84-7f92e70d238a",
+        "cost_nusd": 22302,
+        "latency_ms": 382.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.93,
+        "status": "success",
+        "attempt_id": "ca66e1f2-da83-4e04-9e4b-63fa84dd4c17",
+        "cost_nusd": 22386,
+        "latency_ms": 438.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "829a0e27-45d2-486c-968b-4516644d8261",
+        "cost_nusd": 22428,
+        "latency_ms": 376.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c12576ab-b104-458a-ba32-403d34a60b22",
+        "cost_nusd": 22008,
+        "latency_ms": 396.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 0.6,
+        "status": "success",
+        "attempt_id": "165cbfed-d1fb-4aae-8c1a-2f8a3a63fee1",
+        "cost_nusd": 22008,
+        "latency_ms": 497.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-03": {
+        "pred": "informacao",
+        "confidence": 0.58,
+        "status": "success",
+        "attempt_id": "7c38aad2-8943-4514-823d-83a2aeb94a3c",
+        "cost_nusd": 22344,
+        "latency_ms": 382.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.65,
+        "status": "success",
+        "attempt_id": "c3655f9e-a643-452f-8860-29c800d1bc0c",
+        "cost_nusd": 22470,
+        "latency_ms": 391.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6ebbad76-c327-4c46-8673-0155d4b06b87",
+        "cost_nusd": 22218,
+        "latency_ms": 463.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "0d61b1d9-a4a9-4122-a064-714e54e518ff",
+        "cost_nusd": 22386,
+        "latency_ms": 378.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ec4e28aa-a791-4a79-8367-ead2b095515c",
+        "cost_nusd": 22176,
+        "latency_ms": 383.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.82,
+        "status": "success",
+        "attempt_id": "4a27d535-1a2d-44cb-9e3f-9af3759015ed",
+        "cost_nusd": 22344,
+        "latency_ms": 470.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a14217fc-9188-4804-a596-0591c53b3eef",
+        "cost_nusd": 22134,
+        "latency_ms": 466.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "bfe4c672-223a-4b30-8dc2-c6c296d48dd4",
+        "cost_nusd": 22218,
+        "latency_ms": 853.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "1826bfff-0ee1-41b6-835c-a30f7803cd9c",
+        "cost_nusd": 22302,
+        "latency_ms": 418.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ebef4dbe-9168-4513-ac92-f9317aeb775d",
+        "cost_nusd": 22050,
+        "latency_ms": 415.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.65,
+        "status": "success",
+        "attempt_id": "c15dcba3-fc1d-4297-8faa-0009150c556a",
+        "cost_nusd": 21840,
+        "latency_ms": 407.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.76,
+        "status": "success",
+        "attempt_id": "fceecffa-4b05-466c-98dd-60b205d76ec7",
+        "cost_nusd": 22008,
+        "latency_ms": 469.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.36,
+        "status": "success",
+        "attempt_id": "8f757580-679d-45f6-8adb-67e6f2506b10",
+        "cost_nusd": 22260,
+        "latency_ms": 402.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.75,
+        "status": "success",
+        "attempt_id": "0c3b3e6f-8d29-420a-b5e2-3bc8826a84c7",
+        "cost_nusd": 21966,
+        "latency_ms": 421.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "766f2198-01eb-45b8-acc3-4dbe2112918b",
+        "cost_nusd": 22428,
+        "latency_ms": 637.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "270a643a-3b4c-49db-8bff-d879706958a6",
+        "cost_nusd": 22260,
+        "latency_ms": 401.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "fe614dc3-c6b0-482e-b9dd-4afb9af32d9e",
+        "cost_nusd": 22260,
+        "latency_ms": 381.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "4aab433d-b51b-4397-b28f-cdd0b61fdff4",
+        "cost_nusd": 22218,
+        "latency_ms": 535.8,
+        "decisoes_na_chamada": 1
+      }
+    },
+    "individual_ordem-declarada_sem-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "97739aaa-62ed-410e-adf9-9aef22845733",
+        "cost_nusd": 22344,
+        "latency_ms": 354.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "e83d7588-62d0-4fee-aaeb-28ff465c9560",
+        "cost_nusd": 22344,
+        "latency_ms": 364.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "11fde97b-4e3f-4f80-bedc-1df5df3e859a",
+        "cost_nusd": 22050,
+        "latency_ms": 615.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "45ca68be-b4d2-43e9-a3bb-adfd6ec46395",
+        "cost_nusd": 21924,
+        "latency_ms": 393.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "27638754-b1af-450a-94ac-f58e3dacac60",
+        "cost_nusd": 21882,
+        "latency_ms": 421.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d1989786-62e6-4a98-a774-f1b9fc9b7d77",
+        "cost_nusd": 21924,
+        "latency_ms": 401.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "61dd24e7-57ec-4be1-ad95-fa8d4a727dd0",
+        "cost_nusd": 22050,
+        "latency_ms": 462.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.4,
+        "status": "success",
+        "attempt_id": "63a5c4ac-4dc7-4f1f-89c9-fd47da20e97c",
+        "cost_nusd": 21966,
+        "latency_ms": 416.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "78456b49-6835-4383-8ae9-61ad69eb2313",
+        "cost_nusd": 22176,
+        "latency_ms": 408.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "611470ae-d5ca-40ca-82aa-70833f4baa03",
+        "cost_nusd": 22260,
+        "latency_ms": 375.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "17378df4-227b-41a1-97d2-c31d50dcd45e",
+        "cost_nusd": 22134,
+        "latency_ms": 409.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "55a91ae2-1211-481a-8e83-2c28ddcc2984",
+        "cost_nusd": 22134,
+        "latency_ms": 568.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.9,
+        "status": "success",
+        "attempt_id": "f3a6b4a1-32f2-46e5-a99b-1d3d84f949d8",
+        "cost_nusd": 22050,
+        "latency_ms": 391.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "3657863e-257a-46c9-8670-925137e870ba",
+        "cost_nusd": 22176,
+        "latency_ms": 513.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a004b554-8cf8-4134-b064-62b71aeef58b",
+        "cost_nusd": 21924,
+        "latency_ms": 352.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "1b369759-2131-422c-ab37-d7810af09e95",
+        "cost_nusd": 22134,
+        "latency_ms": 392.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.91,
+        "status": "success",
+        "attempt_id": "be3fa65c-7c44-4721-a991-8d761c5c0be0",
+        "cost_nusd": 22176,
+        "latency_ms": 414.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "3ef694a8-7a12-486a-93bd-445ef0d66977",
+        "cost_nusd": 22302,
+        "latency_ms": 411.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "1e5e7928-38e0-47fd-8aec-f14f7413d0ce",
+        "cost_nusd": 22386,
+        "latency_ms": 399.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "87939ae0-8325-4447-b9e8-5d46d2b292ff",
+        "cost_nusd": 22428,
+        "latency_ms": 406.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "773e5d18-84c1-4f51-852a-62e9cd83c597",
+        "cost_nusd": 22008,
+        "latency_ms": 406.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-02": {
+        "pred": "informacao",
+        "confidence": 0.54,
+        "status": "success",
+        "attempt_id": "074b8c2f-4a16-4e66-92fb-cc87352ab4f7",
+        "cost_nusd": 22008,
+        "latency_ms": 387.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.52,
+        "status": "success",
+        "attempt_id": "eef211de-5361-4fe8-a836-44d5547400bf",
+        "cost_nusd": 22344,
+        "latency_ms": 383.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.55,
+        "status": "success",
+        "attempt_id": "68d3b2b2-3ad2-401d-9551-0e946745709e",
+        "cost_nusd": 22470,
+        "latency_ms": 450.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "f9453f65-7d36-44fa-adbd-10ffadaad350",
+        "cost_nusd": 22218,
+        "latency_ms": 392.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "b27867ea-9c09-4df6-a685-e735e5b9a58a",
+        "cost_nusd": 22386,
+        "latency_ms": 538.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d24f0384-c370-4f8f-beb7-64dd34b397eb",
+        "cost_nusd": 22176,
+        "latency_ms": 414.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.77,
+        "status": "success",
+        "attempt_id": "a0815067-822f-481f-b977-c0bb257db065",
+        "cost_nusd": 22344,
+        "latency_ms": 446.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "8fc33a6e-6599-46bf-b675-51cf158e4664",
+        "cost_nusd": 22134,
+        "latency_ms": 501.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "795933f2-205f-4bfa-930b-a88beb90d41b",
+        "cost_nusd": 22218,
+        "latency_ms": 397.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "ca4f7b8b-bbbd-4ae8-babe-e14cc1921e92",
+        "cost_nusd": 22302,
+        "latency_ms": 372.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "14f2519b-c21d-4fdc-9e1c-41ced4d9fa91",
+        "cost_nusd": 22050,
+        "latency_ms": 459.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.8,
+        "status": "success",
+        "attempt_id": "be808484-ee3d-45b0-84c9-76756385db7e",
+        "cost_nusd": 21840,
+        "latency_ms": 382.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.72,
+        "status": "success",
+        "attempt_id": "b1ee4a5a-9858-4aae-b3cd-d94a7470817a",
+        "cost_nusd": 22008,
+        "latency_ms": 396.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.31,
+        "status": "success",
+        "attempt_id": "e199df29-371c-410a-80fd-1ddbf00d7469",
+        "cost_nusd": 22260,
+        "latency_ms": 449.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.65,
+        "status": "success",
+        "attempt_id": "22fcc536-743f-4984-81c5-5ea7915b0527",
+        "cost_nusd": 21966,
+        "latency_ms": 392.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2ceafbc4-2988-4fea-9bb0-be30c7188cef",
+        "cost_nusd": 22428,
+        "latency_ms": 484.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ed905640-6911-49f9-bec8-2e2e1de735ce",
+        "cost_nusd": 22260,
+        "latency_ms": 422.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "ba1ed64c-ca3d-4363-81a0-42b6a8edc105",
+        "cost_nusd": 22260,
+        "latency_ms": 454.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "3bab500c-bacb-4048-b119-03156d1d5e4d",
+        "cost_nusd": 22218,
+        "latency_ms": 565.5,
+        "decisoes_na_chamada": 1
+      }
+    },
+    "lote_ordem-invertida_com-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "552f0d56-fcdb-407e-a10a-00076acc83b8",
+        "cost_nusd": 15739.5,
+        "latency_ms": 60.875,
+        "latency_chamada_ms": 487.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.83,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "9eab04f8-1fa4-4631-906b-4e33800df612",
+        "cost_nusd": 15797.25,
+        "latency_ms": 55.85,
+        "latency_chamada_ms": 446.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.79,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.77,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.93,
+        "status": "success",
+        "attempt_id": "d6aa9260-dc35-420d-bd1e-b8c38b90d7d0",
+        "cost_nusd": 15928.5,
+        "latency_ms": 49.25,
+        "latency_chamada_ms": 394.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.47,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.93,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5d28815a-e838-4e26-87da-282bbce6c692",
+        "cost_nusd": 15891.75,
+        "latency_ms": 60.6,
+        "latency_chamada_ms": 484.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.73,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.83,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.26,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.53,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.9,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "5ccf17ef-6ce3-4756-88e8-2b6919a975f3",
+        "cost_nusd": 15823.5,
+        "latency_ms": 55.8625,
+        "latency_chamada_ms": 446.9,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      }
+    },
+    "individual_ordem-declarada_com-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "509ffb75-6a46-4280-a898-7e23d6024790",
+        "cost_nusd": 24864,
+        "latency_ms": 410.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "58f3302f-0845-41cd-8ff4-9feffc1cda60",
+        "cost_nusd": 24864,
+        "latency_ms": 433.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "f7bce6a8-9e8a-457a-8336-e5bad59c2411",
+        "cost_nusd": 24570,
+        "latency_ms": 480.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "761b7033-58c2-4fd9-aac2-1b091494d52f",
+        "cost_nusd": 24444,
+        "latency_ms": 390.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "c8ad9600-e61c-42ed-9807-2bd5516404b1",
+        "cost_nusd": 24402,
+        "latency_ms": 424.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "28abfedd-9ff6-4003-8bd0-bc79aacf0da6",
+        "cost_nusd": 24444,
+        "latency_ms": 510.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "2c949f3f-1ae3-42a6-84a7-07880af2b1aa",
+        "cost_nusd": 24570,
+        "latency_ms": 388.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.67,
+        "status": "success",
+        "attempt_id": "fa5ba79f-5820-45c3-a9b6-6d958b59d121",
+        "cost_nusd": 24486,
+        "latency_ms": 487.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "bbfda95b-c98c-4335-9bfb-c336eb67c85d",
+        "cost_nusd": 24696,
+        "latency_ms": 430.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "92672d27-432e-48e8-9a4b-42a647334148",
+        "cost_nusd": 24780,
+        "latency_ms": 399.3,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a5a169b4-3de7-4d8d-bacf-bbf614dff959",
+        "cost_nusd": 24654,
+        "latency_ms": 425.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "9f2500b4-6d94-4767-926d-129730bbda30",
+        "cost_nusd": 24654,
+        "latency_ms": 431.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.79,
+        "status": "success",
+        "attempt_id": "b0d74ebf-cb2a-4903-8237-daa547c71387",
+        "cost_nusd": 24570,
+        "latency_ms": 400.5,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "072c36ae-2f3e-4f89-b5bc-1f9f2339e03e",
+        "cost_nusd": 24696,
+        "latency_ms": 477.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "d0f30d12-1934-4bca-b502-31c959554e89",
+        "cost_nusd": 24444,
+        "latency_ms": 465.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "9d8f45e1-76f1-4f4e-99c4-63a1783284bd",
+        "cost_nusd": 24654,
+        "latency_ms": 404.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "3d174925-181b-4128-afd4-19e07075937b",
+        "cost_nusd": 24696,
+        "latency_ms": 391.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "7c0e30a5-5fa6-43ea-8563-76f4556aeeae",
+        "cost_nusd": 24822,
+        "latency_ms": 385.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "5ad6b7da-c911-49ac-ac6f-d4c212d66046",
+        "cost_nusd": 24906,
+        "latency_ms": 416.0,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "da1c5263-fb8d-476b-8f03-662bf2cc1e0e",
+        "cost_nusd": 24948,
+        "latency_ms": 385.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1303cb61-e95b-4006-bb12-7a4b4755f9e6",
+        "cost_nusd": 24528,
+        "latency_ms": 366.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-02": {
+        "pred": "informacao",
+        "confidence": 0.52,
+        "status": "success",
+        "attempt_id": "ad9d521e-4d08-4bc3-9dbc-7e8671c3a9c7",
+        "cost_nusd": 24528,
+        "latency_ms": 388.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.7,
+        "status": "success",
+        "attempt_id": "6be908f1-eca3-42fc-84eb-f7738aea94ca",
+        "cost_nusd": 24864,
+        "latency_ms": 358.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.33,
+        "status": "success",
+        "attempt_id": "b095bad7-bcba-492a-ae4a-4b99a4874edd",
+        "cost_nusd": 24990,
+        "latency_ms": 448.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "fbbcf98e-7f2b-445d-86ea-a8389ccf5424",
+        "cost_nusd": 24738,
+        "latency_ms": 443.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ded5672c-959e-4014-a704-2df8ea569545",
+        "cost_nusd": 24906,
+        "latency_ms": 429.2,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "148df50a-67be-4e2e-b5d4-11ece5774175",
+        "cost_nusd": 24696,
+        "latency_ms": 439.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.5,
+        "status": "success",
+        "attempt_id": "f7ad5190-b211-4828-b1f6-bf931a862c6e",
+        "cost_nusd": 24864,
+        "latency_ms": 394.6,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "00ba5660-5a04-4b88-a873-19c8ad650932",
+        "cost_nusd": 24654,
+        "latency_ms": 389.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "014b2609-fe4a-4cc8-9dda-eb62677a3782",
+        "cost_nusd": 24738,
+        "latency_ms": 405.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "c8cfb405-f540-4c3e-9650-c61cbaa3b506",
+        "cost_nusd": 24822,
+        "latency_ms": 501.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "fd586ed6-ebab-4cfd-b83c-772714509003",
+        "cost_nusd": 24570,
+        "latency_ms": 438.1,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.81,
+        "status": "success",
+        "attempt_id": "6ab29d12-48ea-46a6-818d-773a06793321",
+        "cost_nusd": 24360,
+        "latency_ms": 393.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.82,
+        "status": "success",
+        "attempt_id": "c9c4b771-f2f8-4be4-9f82-9155adf42fad",
+        "cost_nusd": 24528,
+        "latency_ms": 413.4,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.23,
+        "status": "success",
+        "attempt_id": "c650e07a-db5d-4e4d-ad69-201816eb5806",
+        "cost_nusd": 24780,
+        "latency_ms": 513.9,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f09-04": {
+        "pred": "rastrear",
+        "confidence": 0.51,
+        "status": "success",
+        "attempt_id": "516f32ab-aa30-4d0f-a6a4-c7f21e8863af",
+        "cost_nusd": 24486,
+        "latency_ms": 379.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "84520bb1-972f-4c37-bf22-59ee54ecb47c",
+        "cost_nusd": 24948,
+        "latency_ms": 582.7,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6391aa9b-f69e-4053-9024-5a656e2535ab",
+        "cost_nusd": 24780,
+        "latency_ms": 393.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.96,
+        "status": "success",
+        "attempt_id": "1f76cbc5-b6b1-4736-8502-56605730ee73",
+        "cost_nusd": 24780,
+        "latency_ms": 372.8,
+        "decisoes_na_chamada": 1
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "96e3a809-8b07-417c-bdd2-ba2f3689e4f8",
+        "cost_nusd": 24738,
+        "latency_ms": 447.7,
+        "decisoes_na_chamada": 1
+      }
+    },
+    "lote_ordem-invertida_sem-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.74,
+        "status": "success",
+        "attempt_id": "ef98265c-094c-4666-aab4-ae644fdb6fc8",
+        "cost_nusd": 13219.5,
+        "latency_ms": 59.1375,
+        "latency_chamada_ms": 473.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.84,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.87,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "6768a566-b9bd-45d4-9b74-a0420d72832e",
+        "cost_nusd": 13277.25,
+        "latency_ms": 52.525,
+        "latency_chamada_ms": 420.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.83,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.7,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "6c048b8b-8b84-4712-99e3-57426eef3320",
+        "cost_nusd": 13408.5,
+        "latency_ms": 50.45,
+        "latency_chamada_ms": 403.6,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.64,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.91,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "237476aa-9c43-4fbd-8074-7fb281481d5a",
+        "cost_nusd": 13371.75,
+        "latency_ms": 49.5,
+        "latency_chamada_ms": 396.0,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.62,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.76,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.19,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.71,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "fc150860-e42a-42a3-ab57-dc588b5d9bb1",
+        "cost_nusd": 13303.5,
+        "latency_ms": 51.225,
+        "latency_chamada_ms": 409.8,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      }
+    },
+    "lote_ordem-declarada_sem-distracao": {
+      "tri-f01-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f01-02": {
+        "pred": "rastrear",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f01-03": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f01-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f02-01": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f02-02": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f02-03": {
+        "pred": "informacao",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f02-04": {
+        "pred": "cobranca",
+        "confidence": 0.88,
+        "status": "success",
+        "attempt_id": "1e609149-6f9c-4269-a456-0007370e5748",
+        "cost_nusd": 13219.5,
+        "latency_ms": 57.15,
+        "latency_chamada_ms": 457.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f03-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f03-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f03-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f03-04": {
+        "pred": "rastrear",
+        "confidence": 0.98,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f04-01": {
+        "pred": "informacao",
+        "confidence": 0.65,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f04-02": {
+        "pred": "informacao",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f04-03": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f04-04": {
+        "pred": "rastrear",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "37dd6d63-b5ec-4adb-a4b6-58316f5891d5",
+        "cost_nusd": 13277.25,
+        "latency_ms": 48.55,
+        "latency_chamada_ms": 388.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f05-01": {
+        "pred": "rastrear",
+        "confidence": 0.87,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f05-02": {
+        "pred": "cancelar",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f05-03": {
+        "pred": "trocar",
+        "confidence": 0.97,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f05-04": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f06-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f06-02": {
+        "pred": "cancelar",
+        "confidence": 0.99,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f06-03": {
+        "pred": "cobranca",
+        "confidence": 0.94,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f06-04": {
+        "pred": "trocar",
+        "confidence": 0.91,
+        "status": "success",
+        "attempt_id": "1e6f3ca0-ac7e-4baf-a230-7147f493130f",
+        "cost_nusd": 13408.5,
+        "latency_ms": 45.525,
+        "latency_chamada_ms": 364.2,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f07-01": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f07-02": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f07-03": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f07-04": {
+        "pred": "informacao",
+        "confidence": 0.73,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f08-01": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f08-02": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f08-03": {
+        "pred": "cobranca",
+        "confidence": 0.92,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f08-04": {
+        "pred": "trocar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "02205ca7-3e3d-420b-b668-359bf5a411c8",
+        "cost_nusd": 13371.75,
+        "latency_ms": 57.8,
+        "latency_chamada_ms": 462.4,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      },
+      "tri-f09-01": {
+        "pred": "rastrear",
+        "confidence": 0.65,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 1
+      },
+      "tri-f09-02": {
+        "pred": "rastrear",
+        "confidence": 0.73,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 2
+      },
+      "tri-f09-03": {
+        "pred": "informacao",
+        "confidence": 0.55,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 3
+      },
+      "tri-f09-04": {
+        "pred": "informacao",
+        "confidence": 0.54,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 4
+      },
+      "tri-f10-01": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 5
+      },
+      "tri-f10-02": {
+        "pred": "cobranca",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 6
+      },
+      "tri-f10-03": {
+        "pred": "informacao",
+        "confidence": 0.93,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 7
+      },
+      "tri-f10-04": {
+        "pred": "cancelar",
+        "confidence": 1,
+        "status": "success",
+        "attempt_id": "a658781c-b9bb-4d90-94be-a6ae749758ce",
+        "cost_nusd": 13303.5,
+        "latency_ms": 70.3875,
+        "latency_chamada_ms": 563.1,
+        "decisoes_na_chamada": 8,
+        "posicao_no_lote": 8
+      }
+    }
+  },
+  "ledger_committed_nusd": 6080424,
+  "available_nusd": 4993919576
+}

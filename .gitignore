@@ -29,6 +29,17 @@ research/sources/
 # Arquivos temporarios e execucoes locais
 tmp/
 runs/
+# Os relatorios agregados de cada experimento SAO o dado do estudo: sem eles, o relatorio
+# final cita fontes que quem clona o repositorio nao tem. Ficam de fora o ledger (banco
+# binario, com o gasto que o extrato do provedor reconcilia) e os pares de request/response
+# de cada chamada, que sao volumosos e nao acrescentam nada que o agregado nao diga.
+!runs/*/relatorio.json
+!runs/analise-pareada.json
+!runs/e8-anotador/adjudicacao.json
+!runs/e8-anotador/adjudicacao-mapa.json
+!runs/e8-anotador/adjudicacao-bruta.jsonl
+!runs/e8-anotador/prompt-adjudicacao.txt
+!runs/canaries/summary.json
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm

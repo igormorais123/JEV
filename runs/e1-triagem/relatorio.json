@@ -1,0 +1,1072 @@
+{
+  "at": "2026-09-19T02:35:37.134966+00:00",
+  "preregistro": "planning/preregistro-E1-triagem.md",
+  "corpus": "data\\corpus\\triagem-piloto.jsonl",
+  "modelo": "typesafe/jev-1.13",
+  "regra": {
+    "n_casos": 40,
+    "acertos": 24,
+    "acuracia": 0.6,
+    "macro_f1": 0.5543,
+    "n_familias": 10,
+    "familias_sem_erro": 1,
+    "ic95_familias": [
+      0.0179,
+      0.4042
+    ],
+    "erros_graves_cancelar": 4,
+    "erros": [
+      {
+        "case_id": "tri-f02-01",
+        "family": "F02-informacao-pura",
+        "kind": "rotina",
+        "gold": "informacao",
+        "pred": "rastrear",
+        "text": "Vocês entregam no interior de Goiás?"
+      },
+      {
+        "case_id": "tri-f02-03",
+        "family": "F02-informacao-pura",
+        "kind": "rotina",
+        "gold": "informacao",
+        "pred": "trocar",
+        "text": "O produto 220v tem garantia de quantos meses?"
+      },
+      {
+        "case_id": "tri-f02-04",
+        "family": "F02-informacao-pura",
+        "kind": "rotina",
+        "gold": "informacao",
+        "pred": "cobranca",
+        "text": "Vocês parcelam em quantas vezes sem juros?"
+      },
+      {
+        "case_id": "tri-f03-04",
+        "family": "F03-assunto-versus-acao",
+        "kind": "fronteira",
+        "gold": "rastrear",
+        "pred": "cobranca",
+        "text": "Meu boleto já foi pago, só preciso saber quando o pedido sai para entrega."
+      },
+      {
+        "case_id": "tri-f04-01",
+        "family": "F04-negacao",
+        "kind": "perturbacao",
+        "gold": "informacao",
+        "pred": "cancelar",
+        "text": "Não quero cancelar nada, só queria entender por que o valor mudou."
+      },
+      {
+        "case_id": "tri-f04-02",
+        "family": "F04-negacao",
+        "kind": "perturbacao",
+        "gold": "informacao",
+        "pred": "trocar",
+        "text": "Não precisa trocar o produto, me diga apenas se a garantia cobre o defeito."
+      },
+      {
+        "case_id": "tri-f04-04",
+        "family": "F04-negacao",
+        "kind": "perturbacao",
+        "gold": "rastrear",
+        "pred": "cobranca",
+        "text": "Não quero segunda via, quero saber onde o entregador deixou a caixa."
+      },
+      {
+        "case_id": "tri-f05-01",
+        "family": "F05-acao-em-citacao",
+        "kind": "perturbacao",
+        "gold": "rastrear",
+        "pred": "cancelar",
+        "text": "Meu marido disse para cancelar, mas eu só quero saber a data prevista de entrega."
+      },
+      {
+        "case_id": "tri-f05-03",
+        "family": "F05-acao-em-citacao",
+        "kind": "perturbacao",
+        "gold": "trocar",
+        "pred": "cobranca",
+        "text": "Li no site que dá para pedir reembolso. Antes disso, gostaria de trocar por outra cor."
+      },
+      {
+        "case_id": "tri-f06-01",
+        "family": "F06-duas-acoes-uma-pedida",
+        "kind": "fronteira",
+        "gold": "trocar",
+        "pred": "cancelar",
+        "text": "Entre cancelar e trocar, por enquanto quero apenas trocar o tamanho."
+      },
+      {
+        "case_id": "tri-f07-04",
+        "family": "F07-cobranca-vs-cancelamento",
+        "kind": "fronteira",
+        "gold": "informacao",
+        "pred": "cancelar",
+        "text": "Se não der para parcelar, cancele o pedido. Por ora só me informe se dá."
+      },
+      {
+        "case_id": "tri-f08-01",
+        "family": "F08-troca-vs-reparo",
+        "kind": "fronteira",
+        "gold": "trocar",
+        "pred": "rastrear",
+        "text": "A geladeira chegou amassada, quero uma nova no lugar desta."
+      },
+      {
+        "case_id": "tri-f08-03",
+        "family": "F08-troca-vs-reparo",
+        "kind": "fronteira",
+        "gold": "cobranca",
+        "pred": "trocar",
+        "text": "Comprei dois iguais por engano, quero devolver um e receber o valor de volta."
+      },
+      {
+        "case_id": "tri-f08-04",
+        "family": "F08-troca-vs-reparo",
+        "kind": "fronteira",
+        "gold": "trocar",
+        "pred": "cobranca",
+        "text": "Quero devolver o item e receber outro igual, sem estorno."
+      },
+      {
+        "case_id": "tri-f09-03",
+        "family": "F09-rastreio-indireto",
+        "kind": "fronteira",
+        "gold": "informacao",
+        "pred": "rastrear",
+        "text": "Mudei de endereço, o pacote ainda não saiu. Consigo redirecionar?"
+      },
+      {
+        "case_id": "tri-f10-03",
+        "family": "F10-ruido-e-cortesia",
+        "kind": "perturbacao",
+        "gold": "informacao",
+        "pred": "trocar",
+        "text": "obrigado pelo atendimento de ontem! so faltou me dizer se a troca foi aprovada"
+      }
+    ]
+  },
+  "jev": {
+    "n_casos": 40,
+    "acertos": 37,
+    "acuracia": 0.925,
+    "macro_f1": 0.9279,
+    "n_familias": 10,
+    "familias_sem_erro": 7,
+    "ic95_familias": [
+      0.3968,
+      0.8922
+    ],
+    "erros_graves_cancelar": 1,
+    "erros": [
+      {
+        "case_id": "tri-f02-04",
+        "family": "F02-informacao-pura",
+        "kind": "rotina",
+        "gold": "informacao",
+        "pred": "cobranca",
+        "text": "Vocês parcelam em quantas vezes sem juros?"
+      },
+      {
+        "case_id": "tri-f06-02",
+        "family": "F06-duas-acoes-uma-pedida",
+        "kind": "fronteira",
+        "gold": "cancelar",
+        "pred": "informacao",
+        "text": "Pensei em trocar, mas decidi cancelar a compra."
+      },
+      {
+        "case_id": "tri-f09-04",
+        "family": "F09-rastreio-indireto",
+        "kind": "rotina",
+        "gold": "rastrear",
+        "pred": "informacao",
+        "text": "Me manda o código de rastreio, por favor."
+      }
+    ]
+  },
+  "ledger_committed_nusd": 886662,
+  "available_nusd": 4999113338,
+  "casos": [
+    {
+      "case_id": "tri-f01-01",
+      "family": "F01-pedido-direto",
+      "kind": "rotina",
+      "text": "Bom dia. Gostaria de cancelar o pedido 4471, ainda não foi enviado.",
+      "gold": "cancelar",
+      "rationale": "Pedido explícito de cancelamento.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "rastrear": 0,
+        "trocar": 0,
+        "informacao": 0,
+        "cancelar": 1
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "11ce215e-a831-49ad-85a9-dcaeb030f1ce",
+      "jev_cost_nusd": 22344,
+      "latency_ms": 988.6
+    },
+    {
+      "case_id": "tri-f01-02",
+      "family": "F01-pedido-direto",
+      "kind": "rotina",
+      "text": "Oi, quero saber onde está minha encomenda 8812, comprei na terça.",
+      "gold": "rastrear",
+      "rationale": "Pede localização da entrega.",
+      "regra": "rastrear",
+      "jev": "rastrear",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "rastrear": 1,
+        "informacao": 0,
+        "cancelar": 0,
+        "cobranca": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "5da999e8-80d9-43c7-9174-eaa3c68ee24a",
+      "jev_cost_nusd": 22344,
+      "latency_ms": 373.0
+    },
+    {
+      "case_id": "tri-f01-03",
+      "family": "F01-pedido-direto",
+      "kind": "rotina",
+      "text": "A blusa veio no tamanho errado, queria trocar por um M.",
+      "gold": "trocar",
+      "rationale": "Pede troca de item.",
+      "regra": "trocar",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "rastrear": 0,
+        "trocar": 1,
+        "cobranca": 0,
+        "cancelar": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "61741479-3156-4364-8f65-0d9c32012495",
+      "jev_cost_nusd": 22050,
+      "latency_ms": 603.3
+    },
+    {
+      "case_id": "tri-f01-04",
+      "family": "F01-pedido-direto",
+      "kind": "rotina",
+      "text": "Preciso da segunda via do boleto que vence amanhã.",
+      "gold": "cobranca",
+      "rationale": "Pede documento de pagamento.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "informacao": 0,
+        "cancelar": 0,
+        "cobranca": 1,
+        "trocar": 0,
+        "rastrear": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "e1aae01c-5c24-4b32-91a2-2ca077564a81",
+      "jev_cost_nusd": 21924,
+      "latency_ms": 406.3
+    },
+    {
+      "case_id": "tri-f02-01",
+      "family": "F02-informacao-pura",
+      "kind": "rotina",
+      "text": "Vocês entregam no interior de Goiás?",
+      "gold": "informacao",
+      "rationale": "Pergunta sobre cobertura, sem pedir ação sobre um pedido.",
+      "regra": "rastrear",
+      "jev": "informacao",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "informacao": 1,
+        "trocar": 0,
+        "cancelar": 0,
+        "cobranca": 0,
+        "rastrear": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "b6cd253f-d023-4471-8c24-e07cb681be1e",
+      "jev_cost_nusd": 21882,
+      "latency_ms": 411.3
+    },
+    {
+      "case_id": "tri-f02-02",
+      "family": "F02-informacao-pura",
+      "kind": "rotina",
+      "text": "Qual é o horário de funcionamento da loja no sábado?",
+      "gold": "informacao",
+      "rationale": "Pedido de esclarecimento simples.",
+      "regra": "informacao",
+      "jev": "informacao",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "rastrear": 0,
+        "informacao": 1,
+        "cancelar": 0,
+        "cobranca": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "91e8feb8-2985-4410-b480-8b469c0b478c",
+      "jev_cost_nusd": 21924,
+      "latency_ms": 411.4
+    },
+    {
+      "case_id": "tri-f02-03",
+      "family": "F02-informacao-pura",
+      "kind": "rotina",
+      "text": "O produto 220v tem garantia de quantos meses?",
+      "gold": "informacao",
+      "rationale": "Pergunta sobre característica do produto.",
+      "regra": "trocar",
+      "jev": "informacao",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "rastrear": 0,
+        "informacao": 1,
+        "cobranca": 0,
+        "cancelar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "ba511295-8b8c-4f23-bbb2-38c2802c0d49",
+      "jev_cost_nusd": 22050,
+      "latency_ms": 376.3
+    },
+    {
+      "case_id": "tri-f02-04",
+      "family": "F02-informacao-pura",
+      "kind": "rotina",
+      "text": "Vocês parcelam em quantas vezes sem juros?",
+      "gold": "informacao",
+      "rationale": "Pergunta sobre condição comercial; não pede ação de cobrança sobre um pedido existente.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 0.4,
+      "jev_probabilities": {
+        "informacao": 0.48,
+        "cobranca": 0.52,
+        "rastrear": 0,
+        "cancelar": 0,
+        "trocar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "b9315fff-d5d9-4bd5-bc53-8e5c663fae68",
+      "jev_cost_nusd": 21966,
+      "latency_ms": 388.1
+    },
+    {
+      "case_id": "tri-f03-01",
+      "family": "F03-assunto-versus-acao",
+      "kind": "fronteira",
+      "text": "Recebi uma cobrança errada no cartão e por isso quero cancelar o pedido inteiro.",
+      "gold": "cancelar",
+      "rationale": "Cobrança é o motivo; a ação pedida é cancelar.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "informacao": 0,
+        "rastrear": 0,
+        "cobranca": 0,
+        "cancelar": 1
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "6e962dcc-e945-4bc2-929a-4ae1b6673037",
+      "jev_cost_nusd": 22176,
+      "latency_ms": 384.2
+    },
+    {
+      "case_id": "tri-f03-02",
+      "family": "F03-assunto-versus-acao",
+      "kind": "fronteira",
+      "text": "O produto atrasou demais na entrega, então prefiro trocar por outro modelo que esteja disponível.",
+      "gold": "trocar",
+      "rationale": "Atraso é o motivo; a ação pedida é trocar.",
+      "regra": "trocar",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "rastrear": 0,
+        "cobranca": 0,
+        "trocar": 1,
+        "cancelar": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "e2fdda63-2b56-4f92-af7c-a77311d5589a",
+      "jev_cost_nusd": 22260,
+      "latency_ms": 421.0
+    },
+    {
+      "case_id": "tri-f03-03",
+      "family": "F03-assunto-versus-acao",
+      "kind": "fronteira",
+      "text": "Como a peça chegou quebrada, quero meu dinheiro de volta no cartão.",
+      "gold": "cobranca",
+      "rationale": "Pede reembolso, que é ação financeira, não troca.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "informacao": 0,
+        "cobranca": 1,
+        "rastrear": 0,
+        "cancelar": 0,
+        "trocar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "0a9177d4-0a04-4249-be6a-24a1a665d372",
+      "jev_cost_nusd": 22134,
+      "latency_ms": 445.0
+    },
+    {
+      "case_id": "tri-f03-04",
+      "family": "F03-assunto-versus-acao",
+      "kind": "fronteira",
+      "text": "Meu boleto já foi pago, só preciso saber quando o pedido sai para entrega.",
+      "gold": "rastrear",
+      "rationale": "Pagamento é contexto; a ação pedida é saber o status de envio.",
+      "regra": "cobranca",
+      "jev": "rastrear",
+      "jev_confidence": 0.92,
+      "jev_probabilities": {
+        "informacao": 0.06,
+        "rastrear": 0.94,
+        "cobranca": 0,
+        "cancelar": 0,
+        "trocar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "9ea6ab43-9072-40fe-9e52-18721734411e",
+      "jev_cost_nusd": 22134,
+      "latency_ms": 516.4
+    },
+    {
+      "case_id": "tri-f04-01",
+      "family": "F04-negacao",
+      "kind": "perturbacao",
+      "text": "Não quero cancelar nada, só queria entender por que o valor mudou.",
+      "gold": "informacao",
+      "rationale": "A ação de cancelar é explicitamente negada; resta um pedido de esclarecimento.",
+      "regra": "cancelar",
+      "jev": "informacao",
+      "jev_confidence": 0.89,
+      "jev_probabilities": {
+        "cancelar": 0,
+        "trocar": 0,
+        "informacao": 0.91,
+        "rastrear": 0,
+        "cobranca": 0.09
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "5dccc809-fc3b-4bb0-b5e8-f08d26b2a43a",
+      "jev_cost_nusd": 22050,
+      "latency_ms": 429.0
+    },
+    {
+      "case_id": "tri-f04-02",
+      "family": "F04-negacao",
+      "kind": "perturbacao",
+      "text": "Não precisa trocar o produto, me diga apenas se a garantia cobre o defeito.",
+      "gold": "informacao",
+      "rationale": "Troca negada; pedido é de informação.",
+      "regra": "trocar",
+      "jev": "informacao",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "rastrear": 0,
+        "trocar": 0,
+        "informacao": 1,
+        "cancelar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "107cf417-93a6-4529-97d0-0018168c8e92",
+      "jev_cost_nusd": 22176,
+      "latency_ms": 389.1
+    },
+    {
+      "case_id": "tri-f04-03",
+      "family": "F04-negacao",
+      "kind": "perturbacao",
+      "text": "Não é sobre entrega. Quero cancelar a assinatura mensal.",
+      "gold": "cancelar",
+      "rationale": "Nega o assunto entrega e pede cancelamento.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cancelar": 1,
+        "rastrear": 0,
+        "informacao": 0,
+        "cobranca": 0,
+        "trocar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "d70ed481-09b4-4d9b-b3d5-7ede6ddaafd6",
+      "jev_cost_nusd": 21924,
+      "latency_ms": 415.4
+    },
+    {
+      "case_id": "tri-f04-04",
+      "family": "F04-negacao",
+      "kind": "perturbacao",
+      "text": "Não quero segunda via, quero saber onde o entregador deixou a caixa.",
+      "gold": "rastrear",
+      "rationale": "Nega a ação de cobrança e pede rastreamento.",
+      "regra": "cobranca",
+      "jev": "rastrear",
+      "jev_confidence": 0.96,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "informacao": 0.03,
+        "rastrear": 0.97,
+        "trocar": 0,
+        "cancelar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "1ddcd550-4236-42eb-b48d-0d4ad0dba6b1",
+      "jev_cost_nusd": 22134,
+      "latency_ms": 378.7
+    },
+    {
+      "case_id": "tri-f05-01",
+      "family": "F05-acao-em-citacao",
+      "kind": "perturbacao",
+      "text": "Meu marido disse para cancelar, mas eu só quero saber a data prevista de entrega.",
+      "gold": "rastrear",
+      "rationale": "O cancelamento aparece em fala de terceiro; a solicitante pede rastreio.",
+      "regra": "cancelar",
+      "jev": "rastrear",
+      "jev_confidence": 0.87,
+      "jev_probabilities": {
+        "rastrear": 0.9,
+        "trocar": 0,
+        "cobranca": 0,
+        "cancelar": 0,
+        "informacao": 0.1
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "87622707-8deb-4c31-844a-a6ef642d1a7e",
+      "jev_cost_nusd": 22176,
+      "latency_ms": 412.7
+    },
+    {
+      "case_id": "tri-f05-02",
+      "family": "F05-acao-em-citacao",
+      "kind": "perturbacao",
+      "text": "A atendente sugeriu que eu trocasse o produto, mas prefiro cancelar mesmo.",
+      "gold": "cancelar",
+      "rationale": "A troca é sugestão de terceiro; a ação escolhida é cancelar.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "cancelar": 1,
+        "rastrear": 0,
+        "cobranca": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "7fd5a24f-c412-481c-af1a-da9acb6c3a7b",
+      "jev_cost_nusd": 22302,
+      "latency_ms": 378.7
+    },
+    {
+      "case_id": "tri-f05-03",
+      "family": "F05-acao-em-citacao",
+      "kind": "perturbacao",
+      "text": "Li no site que dá para pedir reembolso. Antes disso, gostaria de trocar por outra cor.",
+      "gold": "trocar",
+      "rationale": "O reembolso é referência ao site; a ação pedida é troca.",
+      "regra": "cobranca",
+      "jev": "trocar",
+      "jev_confidence": 0.98,
+      "jev_probabilities": {
+        "trocar": 0.99,
+        "rastrear": 0,
+        "informacao": 0,
+        "cancelar": 0,
+        "cobranca": 0.01
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "318ccd57-8a5a-4a1b-b085-bce2f95ff561",
+      "jev_cost_nusd": 22386,
+      "latency_ms": 373.1
+    },
+    {
+      "case_id": "tri-f05-04",
+      "family": "F05-acao-em-citacao",
+      "kind": "perturbacao",
+      "text": "Um amigo falou que vocês rastreiam pelo WhatsApp. Eu preciso mesmo é da segunda via da nota.",
+      "gold": "cobranca",
+      "rationale": "Rastreio aparece em relato de terceiro; o pedido é documento fiscal de pagamento.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "rastrear": 0,
+        "cobranca": 1,
+        "trocar": 0,
+        "cancelar": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "c230cf8e-14b4-44d9-be24-57ea8577fc62",
+      "jev_cost_nusd": 22428,
+      "latency_ms": 420.0
+    },
+    {
+      "case_id": "tri-f06-01",
+      "family": "F06-duas-acoes-uma-pedida",
+      "kind": "fronteira",
+      "text": "Entre cancelar e trocar, por enquanto quero apenas trocar o tamanho.",
+      "gold": "trocar",
+      "rationale": "Duas ações citadas, uma escolhida explicitamente.",
+      "regra": "cancelar",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "informacao": 0,
+        "rastrear": 0,
+        "cobranca": 0,
+        "trocar": 1,
+        "cancelar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "9a8999d9-fcc7-4375-b713-a16eda833540",
+      "jev_cost_nusd": 22008,
+      "latency_ms": 414.7
+    },
+    {
+      "case_id": "tri-f06-02",
+      "family": "F06-duas-acoes-uma-pedida",
+      "kind": "fronteira",
+      "text": "Pensei em trocar, mas decidi cancelar a compra.",
+      "gold": "cancelar",
+      "rationale": "Decisão final é cancelar.",
+      "regra": "cancelar",
+      "jev": "informacao",
+      "jev_confidence": 0.49,
+      "jev_probabilities": {
+        "trocar": 0,
+        "rastrear": 0,
+        "cancelar": 0.4,
+        "cobranca": 0,
+        "informacao": 0.6
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "5031d9af-061a-435e-9e6f-1a833f8e765d",
+      "jev_cost_nusd": 22008,
+      "latency_ms": 411.2
+    },
+    {
+      "case_id": "tri-f06-03",
+      "family": "F06-duas-acoes-uma-pedida",
+      "kind": "fronteira",
+      "text": "Já vi o código de rastreio, agora preciso mesmo é do comprovante de pagamento.",
+      "gold": "cobranca",
+      "rationale": "Rastreio já resolvido; pedido atual é documento de pagamento.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 0.5,
+      "jev_probabilities": {
+        "cobranca": 0.6,
+        "rastrear": 0,
+        "cancelar": 0,
+        "trocar": 0,
+        "informacao": 0.4
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "0fa098c1-3b85-4825-8bc0-c2b7a62571cb",
+      "jev_cost_nusd": 22344,
+      "latency_ms": 454.8
+    },
+    {
+      "case_id": "tri-f06-04",
+      "family": "F06-duas-acoes-uma-pedida",
+      "kind": "fronteira",
+      "text": "Depois de trocar o item, vou querer o novo código de rastreamento, mas primeiro me confirme a troca.",
+      "gold": "trocar",
+      "rationale": "A ação solicitada agora é a troca; rastrear é consequência futura.",
+      "regra": "trocar",
+      "jev": "trocar",
+      "jev_confidence": 0.56,
+      "jev_probabilities": {
+        "informacao": 0.26,
+        "cancelar": 0,
+        "rastrear": 0.09,
+        "trocar": 0.65,
+        "cobranca": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "3d395b1b-59ed-4f07-ab2b-1213c99113af",
+      "jev_cost_nusd": 22470,
+      "latency_ms": 456.1
+    },
+    {
+      "case_id": "tri-f07-01",
+      "family": "F07-cobranca-vs-cancelamento",
+      "kind": "fronteira",
+      "text": "Fui cobrado duas vezes pelo mesmo pedido, quero o estorno de uma delas.",
+      "gold": "cobranca",
+      "rationale": "Pede estorno, ação financeira, sem encerrar o pedido.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "rastrear": 0,
+        "cancelar": 0,
+        "trocar": 0,
+        "cobranca": 1,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "b91400ab-4fc6-425d-9527-30172bafac4d",
+      "jev_cost_nusd": 22218,
+      "latency_ms": 429.3
+    },
+    {
+      "case_id": "tri-f07-02",
+      "family": "F07-cobranca-vs-cancelamento",
+      "kind": "fronteira",
+      "text": "Cancelei o pedido na semana passada e a cobrança continua vindo. Quero encerrar a assinatura de vez.",
+      "gold": "cancelar",
+      "rationale": "O pedido atual é encerrar a assinatura.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "cancelar": 1,
+        "rastrear": 0,
+        "cobranca": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "f6635283-f5a8-42b6-b75a-b0a93101c496",
+      "jev_cost_nusd": 22386,
+      "latency_ms": 400.2
+    },
+    {
+      "case_id": "tri-f07-03",
+      "family": "F07-cobranca-vs-cancelamento",
+      "kind": "fronteira",
+      "text": "Quero parcelar o valor em três vezes em vez de pagar tudo agora.",
+      "gold": "cobranca",
+      "rationale": "Renegociação de pagamento.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cancelar": 0,
+        "informacao": 0,
+        "rastrear": 0,
+        "cobranca": 1,
+        "trocar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "76ffef78-021b-4014-b7f1-dc1b182dc3bb",
+      "jev_cost_nusd": 22176,
+      "latency_ms": 433.4
+    },
+    {
+      "case_id": "tri-f07-04",
+      "family": "F07-cobranca-vs-cancelamento",
+      "kind": "fronteira",
+      "text": "Se não der para parcelar, cancele o pedido. Por ora só me informe se dá.",
+      "gold": "informacao",
+      "rationale": "O cancelamento é condicional e não foi solicitado; o pedido atual é informação.",
+      "regra": "cancelar",
+      "jev": "informacao",
+      "jev_confidence": 0.74,
+      "jev_probabilities": {
+        "trocar": 0,
+        "cancelar": 0.03,
+        "rastrear": 0,
+        "informacao": 0.79,
+        "cobranca": 0.18
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "2cbe89f8-27eb-47b7-9aed-77722d2a210b",
+      "jev_cost_nusd": 22344,
+      "latency_ms": 445.2
+    },
+    {
+      "case_id": "tri-f08-01",
+      "family": "F08-troca-vs-reparo",
+      "kind": "fronteira",
+      "text": "A geladeira chegou amassada, quero uma nova no lugar desta.",
+      "gold": "trocar",
+      "rationale": "Substituição de item defeituoso.",
+      "regra": "rastrear",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "trocar": 1,
+        "cancelar": 0,
+        "rastrear": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "059f6729-eb48-4e56-81e6-2d0c8556982b",
+      "jev_cost_nusd": 22134,
+      "latency_ms": 419.1
+    },
+    {
+      "case_id": "tri-f08-02",
+      "family": "F08-troca-vs-reparo",
+      "kind": "fronteira",
+      "text": "O notebook liga mas a tela falha, quero enviar para conserto na garantia.",
+      "gold": "trocar",
+      "rationale": "Reparo em garantia está na definição operacional da classe trocar.",
+      "regra": "trocar",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cancelar": 0,
+        "rastrear": 0,
+        "informacao": 0,
+        "cobranca": 0,
+        "trocar": 1
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "d3bc7adf-2270-4cd4-8994-4bb2135b4247",
+      "jev_cost_nusd": 22218,
+      "latency_ms": 378.8
+    },
+    {
+      "case_id": "tri-f08-03",
+      "family": "F08-troca-vs-reparo",
+      "kind": "fronteira",
+      "text": "Comprei dois iguais por engano, quero devolver um e receber o valor de volta.",
+      "gold": "cobranca",
+      "rationale": "Devolução com pedido explícito de dinheiro de volta é ação financeira.",
+      "regra": "trocar",
+      "jev": "cobranca",
+      "jev_confidence": 0.98,
+      "jev_probabilities": {
+        "trocar": 0.02,
+        "rastrear": 0,
+        "cancelar": 0,
+        "cobranca": 0.98,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "88a09ba2-9e71-4521-8a06-b981ff3eec26",
+      "jev_cost_nusd": 22302,
+      "latency_ms": 444.9
+    },
+    {
+      "case_id": "tri-f08-04",
+      "family": "F08-troca-vs-reparo",
+      "kind": "fronteira",
+      "text": "Quero devolver o item e receber outro igual, sem estorno.",
+      "gold": "trocar",
+      "rationale": "Devolução com substituição, sem reembolso.",
+      "regra": "cobranca",
+      "jev": "trocar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 1,
+        "informacao": 0,
+        "cancelar": 0,
+        "cobranca": 0,
+        "rastrear": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "5a09418e-b250-4902-9d8f-79d76248d34f",
+      "jev_cost_nusd": 22050,
+      "latency_ms": 359.2
+    },
+    {
+      "case_id": "tri-f09-01",
+      "family": "F09-rastreio-indireto",
+      "kind": "rotina",
+      "text": "O prazo era até ontem e nada chegou.",
+      "gold": "rastrear",
+      "rationale": "Reclamação de prazo equivale a pedido de status de entrega.",
+      "regra": "rastrear",
+      "jev": "rastrear",
+      "jev_confidence": 0.8,
+      "jev_probabilities": {
+        "rastrear": 0.85,
+        "trocar": 0,
+        "cancelar": 0,
+        "cobranca": 0,
+        "informacao": 0.15
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "b4a2c5c6-95b8-44a4-9b6d-357a180c33fb",
+      "jev_cost_nusd": 21840,
+      "latency_ms": 421.0
+    },
+    {
+      "case_id": "tri-f09-02",
+      "family": "F09-rastreio-indireto",
+      "kind": "rotina",
+      "text": "Saiu para entrega há três dias e continua no mesmo status.",
+      "gold": "rastrear",
+      "rationale": "Pede esclarecimento sobre o andamento da entrega.",
+      "regra": "rastrear",
+      "jev": "rastrear",
+      "jev_confidence": 0.74,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "rastrear": 0.79,
+        "cancelar": 0,
+        "trocar": 0,
+        "informacao": 0.21
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "6db6a9e9-628b-41dc-ba17-9c26f76557bf",
+      "jev_cost_nusd": 22008,
+      "latency_ms": 447.8
+    },
+    {
+      "case_id": "tri-f09-03",
+      "family": "F09-rastreio-indireto",
+      "kind": "fronteira",
+      "text": "Mudei de endereço, o pacote ainda não saiu. Consigo redirecionar?",
+      "gold": "informacao",
+      "rationale": "Pergunta se a operação é possível; não pede nenhuma das quatro ações definidas.",
+      "regra": "rastrear",
+      "jev": "informacao",
+      "jev_confidence": 0.34,
+      "jev_probabilities": {
+        "trocar": 0.35,
+        "cobranca": 0,
+        "rastrear": 0.15,
+        "informacao": 0.47,
+        "cancelar": 0.03
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "c333f169-fa0e-4d9a-9321-41cb1c31909f",
+      "jev_cost_nusd": 22260,
+      "latency_ms": 420.9
+    },
+    {
+      "case_id": "tri-f09-04",
+      "family": "F09-rastreio-indireto",
+      "kind": "rotina",
+      "text": "Me manda o código de rastreio, por favor.",
+      "gold": "rastrear",
+      "rationale": "Pedido direto de rastreio.",
+      "regra": "rastrear",
+      "jev": "informacao",
+      "jev_confidence": 0.65,
+      "jev_probabilities": {
+        "cobranca": 0,
+        "rastrear": 0.28,
+        "trocar": 0,
+        "informacao": 0.72,
+        "cancelar": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "56530648-ab4a-4292-bd58-6384b7169af3",
+      "jev_cost_nusd": 21966,
+      "latency_ms": 434.6
+    },
+    {
+      "case_id": "tri-f10-01",
+      "family": "F10-ruido-e-cortesia",
+      "kind": "rotina",
+      "text": "Boa tarde, tudo bem? Espero que sim. Enfim: cancela meu pedido, por gentileza.",
+      "gold": "cancelar",
+      "rationale": "Cortesia longa antes do pedido real.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "trocar": 0,
+        "cancelar": 1,
+        "rastrear": 0,
+        "cobranca": 0,
+        "informacao": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "7712c75a-1263-4605-8aea-b3da0d976cb7",
+      "jev_cost_nusd": 22428,
+      "latency_ms": 459.2
+    },
+    {
+      "case_id": "tri-f10-02",
+      "family": "F10-ruido-e-cortesia",
+      "kind": "perturbacao",
+      "text": "vcs sao pessimos!!! ja é a terceira vez, quero meu dinheiro de volta AGORA",
+      "gold": "cobranca",
+      "rationale": "Tom agressivo, mas o pedido é reembolso.",
+      "regra": "cobranca",
+      "jev": "cobranca",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cancelar": 0,
+        "trocar": 0,
+        "rastrear": 0,
+        "informacao": 0,
+        "cobranca": 1
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "f9ce04d7-241f-4b68-b147-3f71f2149ba2",
+      "jev_cost_nusd": 22260,
+      "latency_ms": 435.2
+    },
+    {
+      "case_id": "tri-f10-03",
+      "family": "F10-ruido-e-cortesia",
+      "kind": "perturbacao",
+      "text": "obrigado pelo atendimento de ontem! so faltou me dizer se a troca foi aprovada",
+      "gold": "informacao",
+      "rationale": "Pede status de uma troca já solicitada, o que é esclarecimento, não nova solicitação de troca.",
+      "regra": "trocar",
+      "jev": "informacao",
+      "jev_confidence": 0.99,
+      "jev_probabilities": {
+        "informacao": 0.99,
+        "cobranca": 0,
+        "trocar": 0,
+        "cancelar": 0,
+        "rastrear": 0.01
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "6c4c7243-dee8-4d94-8604-f8a39278adf9",
+      "jev_cost_nusd": 22260,
+      "latency_ms": 423.3
+    },
+    {
+      "case_id": "tri-f10-04",
+      "family": "F10-ruido-e-cortesia",
+      "kind": "rotina",
+      "text": "Prezados, solicito o cancelamento do contrato de serviço firmado em março.",
+      "gold": "cancelar",
+      "rationale": "Registro formal de cancelamento.",
+      "regra": "cancelar",
+      "jev": "cancelar",
+      "jev_confidence": 1,
+      "jev_probabilities": {
+        "cancelar": 1,
+        "trocar": 0,
+        "cobranca": 0,
+        "informacao": 0,
+        "rastrear": 0
+      },
+      "jev_status": "success",
+      "jev_attempt_id": "7aaf5ca1-8063-44f5-85ab-454b3b144ef5",
+      "jev_cost_nusd": 22218,
+      "latency_ms": 414.1
+    }
+  ]
+}

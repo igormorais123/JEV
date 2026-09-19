@@ -1,0 +1,64 @@
+Voce e o terceiro juiz de um estudo de anotacao. Dois anotadores independentes classificaram as mesmas mensagens de atendimento ao cliente e divergiram em 9 casos. Voce NAO sabe qual leitura veio de qual anotador, e isso e proposital. Decida cada caso pelo merito.
+
+REGRA DE DECISAO (a mesma que os dois anotadores receberam):
+Classifique a acao que o remetente pede na mensagem. Vale a acao pedida, nao o assunto mencionado. Acao citada como fala de terceiro, negada, condicional ou ja concluida nao e a acao pedida.
+
+CLASSES:
+- cancelar: O remetente pede encerrar, cancelar ou desistir de um pedido, servico ou contrato.
+- rastrear: O remetente pede informacao sobre onde esta, quando chega ou qual o status da entrega.
+- trocar: O remetente pede troca, devolucao com substituicao, reparo ou conserto em garantia.
+- cobranca: O remetente pede segunda via, estorno, reembolso, parcelamento, ou contesta um valor.
+- informacao: O remetente pede apenas esclarecimento ou dado, sem solicitar nenhuma das acoes acima.
+
+Para cada caso, escolha A ou B, ou responda "nenhuma" se as duas leituras estiverem erradas (e entao diga a classe correta), ou "ambiguas" se a mensagem realmente admitir as duas leituras sem que uma seja melhor.
+
+SAIDA: uma linha JSON por caso, sem markdown e sem cercas:
+{"case_id":"...","escolha":"A|B|nenhuma|ambiguas","classe":"<classe que voce considera correta>","motivo":"ate 20 palavras"}
+
+CASOS EM DISPUTA:
+tri-f02-04
+MENSAGEM: Vocês parcelam em quantas vezes sem juros?
+LEITURA A: cobranca
+LEITURA B: informacao
+
+tri-f04-01
+MENSAGEM: Não quero cancelar nada, só queria entender por que o valor mudou.
+LEITURA A: informacao
+LEITURA B: cobranca
+
+tri-f07-04
+MENSAGEM: Se não der para parcelar, cancele o pedido. Por ora só me informe se dá.
+LEITURA A: cancelar
+LEITURA B: informacao
+
+tri-f10-03
+MENSAGEM: obrigado pelo atendimento de ontem! so faltou me dizer se a troca foi aprovada
+LEITURA A: informacao
+LEITURA B: trocar
+
+cnf-g02-03
+MENSAGEM: Meu filho comprou usando meu cartão e pediu o estorno pelo aplicativo dele. Só quero confirmar se a política de vocês permite isso para menores de idade.
+LEITURA A: informacao
+LEITURA B: cobranca
+
+cnf-g03-01
+MENSAGEM: Se o produto não chegar até sexta-feira, vou querer cancelar. Por enquanto, me informe apenas a previsão atualizada de entrega.
+LEITURA A: rastrear
+LEITURA B: cancelar
+
+cnf-g03-02
+MENSAGEM: Caso a cor seja diferente da foto, eu peço a troca. Antes disso, queria saber qual é o tom exato do modelo grafite.
+LEITURA A: trocar
+LEITURA B: informacao
+
+cnf-g04-02
+MENSAGEM: Preciso saber se a garantia cobre queda. Dependendo da resposta eu decido se peço conserto ou não.
+LEITURA A: trocar
+LEITURA B: informacao
+
+cnf-g05-02
+MENSAGEM: Devolvi o produto na agência e tenho o comprovante. Preciso saber quando o novo será enviado.
+LEITURA A: trocar
+LEITURA B: rastrear
+
+NAO leia arquivos do repositorio. Decida so pelo texto acima.

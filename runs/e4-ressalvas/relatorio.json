@@ -1,0 +1,726 @@
+{
+  "at": "2026-09-19T03:35:50.473310+00:00",
+  "modelo": "typesafe/jev-1.13",
+  "topo": 3,
+  "original": {
+    "ndcg5": 0.7359,
+    "recall_ressalvas_topo3": 0.5,
+    "ressalvas_no_topo": 4,
+    "ressalvas_totais": 8,
+    "essenciais_no_topo3": 7
+  },
+  "bm25": {
+    "ndcg5": 0.9205,
+    "recall_ressalvas_topo3": 0.625,
+    "ressalvas_no_topo": 5,
+    "ressalvas_totais": 8,
+    "essenciais_no_topo3": 13
+  },
+  "jev": {
+    "ndcg5": 0.9958,
+    "recall_ressalvas_topo3": 1.0,
+    "ressalvas_no_topo": 8,
+    "ressalvas_totais": 8,
+    "essenciais_no_topo3": 16
+  },
+  "ordens": {
+    "original": {
+      "q1": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q2": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q3": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q4": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q5": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q6": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q7": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "q8": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "bm25": {
+      "q1": [
+        2,
+        4,
+        0,
+        1,
+        3
+      ],
+      "q2": [
+        2,
+        1,
+        0,
+        3,
+        4
+      ],
+      "q3": [
+        3,
+        0,
+        4,
+        1,
+        2
+      ],
+      "q4": [
+        3,
+        4,
+        1,
+        0,
+        2
+      ],
+      "q5": [
+        3,
+        1,
+        0,
+        4,
+        2
+      ],
+      "q6": [
+        4,
+        1,
+        0,
+        2,
+        3
+      ],
+      "q7": [
+        1,
+        3,
+        2,
+        0,
+        4
+      ],
+      "q8": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "jev": {
+      "q1": [
+        1,
+        4,
+        2,
+        3,
+        0
+      ],
+      "q2": [
+        1,
+        2,
+        3,
+        0,
+        4
+      ],
+      "q3": [
+        4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "q4": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "q5": [
+        0,
+        3,
+        4,
+        1,
+        2
+      ],
+      "q6": [
+        4,
+        3,
+        1,
+        2,
+        0
+      ],
+      "q7": [
+        3,
+        1,
+        0,
+        2,
+        4
+      ],
+      "q8": [
+        0,
+        4,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "detalhes": [
+    {
+      "query_id": "q1",
+      "doc_id": "q1-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.02,
+      "probabilities": {
+        "0": 0.98,
+        "1": 0.02,
+        "2": 0
+      },
+      "confidence": 0.96
+    },
+    {
+      "query_id": "q1",
+      "doc_id": "q1-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.85,
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.09,
+        "2": 0.88
+      },
+      "confidence": 0.77
+    },
+    {
+      "query_id": "q1",
+      "doc_id": "q1-d5",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.64,
+      "probabilities": {
+        "0": 0.39,
+        "1": 0.58,
+        "2": 0.03
+      },
+      "confidence": 0.37
+    },
+    {
+      "query_id": "q1",
+      "doc_id": "q1-d3",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.1,
+      "probabilities": {
+        "0": 0.91,
+        "1": 0.09,
+        "2": 0
+      },
+      "confidence": 0.86
+    },
+    {
+      "query_id": "q1",
+      "doc_id": "q1-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.67,
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.12,
+        "2": 0.77
+      },
+      "confidence": 0.5
+    },
+    {
+      "query_id": "q2",
+      "doc_id": "q2-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.01,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 0.99
+    },
+    {
+      "query_id": "q2",
+      "doc_id": "q2-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.78,
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.09,
+        "2": 0.85
+      },
+      "confidence": 0.67
+    },
+    {
+      "query_id": "q2",
+      "doc_id": "q2-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.76,
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.05,
+        "2": 0.86
+      },
+      "confidence": 0.65
+    },
+    {
+      "query_id": "q2",
+      "doc_id": "q2-d3",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.16,
+      "probabilities": {
+        "0": 0.84,
+        "1": 0.16,
+        "2": 0
+      },
+      "confidence": 0.76
+    },
+    {
+      "query_id": "q2",
+      "doc_id": "q2-d5",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q3",
+      "doc_id": "q3-d5",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.18,
+      "probabilities": {
+        "0": 0.82,
+        "1": 0.18,
+        "2": 0
+      },
+      "confidence": 0.73
+    },
+    {
+      "query_id": "q3",
+      "doc_id": "q3-d3",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 0.99
+    },
+    {
+      "query_id": "q3",
+      "doc_id": "q3-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q3",
+      "doc_id": "q3-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.37,
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.47,
+        "2": 0.45
+      },
+      "confidence": 0.21
+    },
+    {
+      "query_id": "q3",
+      "doc_id": "q3-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.96,
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.01,
+        "2": 0.97
+      },
+      "confidence": 0.94
+    },
+    {
+      "query_id": "q4",
+      "doc_id": "q4-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.26,
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.42,
+        "2": 0.42
+      },
+      "confidence": 0.13
+    },
+    {
+      "query_id": "q4",
+      "doc_id": "q4-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.04,
+      "probabilities": {
+        "0": 0.97,
+        "1": 0.03,
+        "2": 0
+      },
+      "confidence": 0.95
+    },
+    {
+      "query_id": "q4",
+      "doc_id": "q4-d5",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.13,
+      "probabilities": {
+        "0": 0.87,
+        "1": 0.13,
+        "2": 0
+      },
+      "confidence": 0.81
+    },
+    {
+      "query_id": "q4",
+      "doc_id": "q4-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.84,
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.04,
+        "2": 0.9
+      },
+      "confidence": 0.77
+    },
+    {
+      "query_id": "q4",
+      "doc_id": "q4-d3",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.29,
+      "probabilities": {
+        "0": 0.73,
+        "1": 0.25,
+        "2": 0.02
+      },
+      "confidence": 0.57
+    },
+    {
+      "query_id": "q5",
+      "doc_id": "q5-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.97,
+      "probabilities": {
+        "0": 0.01,
+        "1": 0,
+        "2": 0.99
+      },
+      "confidence": 0.95
+    },
+    {
+      "query_id": "q5",
+      "doc_id": "q5-d5",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q5",
+      "doc_id": "q5-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q5",
+      "doc_id": "q5-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.11,
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.43,
+        "2": 0.34
+      },
+      "confidence": 0.14
+    },
+    {
+      "query_id": "q5",
+      "doc_id": "q5-d3",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.11,
+      "probabilities": {
+        "0": 0.89,
+        "1": 0.11,
+        "2": 0
+      },
+      "confidence": 0.83
+    },
+    {
+      "query_id": "q6",
+      "doc_id": "q6-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 0.99
+    },
+    {
+      "query_id": "q6",
+      "doc_id": "q6-d5",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.01,
+      "probabilities": {
+        "0": 0.99,
+        "1": 0.01,
+        "2": 0
+      },
+      "confidence": 0.99
+    },
+    {
+      "query_id": "q6",
+      "doc_id": "q6-d3",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q6",
+      "doc_id": "q6-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 0.9,
+      "probabilities": {
+        "0": 0.27,
+        "1": 0.56,
+        "2": 0.17
+      },
+      "confidence": 0.34
+    },
+    {
+      "query_id": "q6",
+      "doc_id": "q6-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.46,
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.31,
+        "2": 0.58
+      },
+      "confidence": 0.2
+    },
+    {
+      "query_id": "q7",
+      "doc_id": "q7-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q7",
+      "doc_id": "q7-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.02,
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.64,
+        "2": 0.19
+      },
+      "confidence": 0.46
+    },
+    {
+      "query_id": "q7",
+      "doc_id": "q7-d5",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q7",
+      "doc_id": "q7-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.98,
+      "probabilities": {
+        "0": 0.01,
+        "1": 0,
+        "2": 0.99
+      },
+      "confidence": 0.98
+    },
+    {
+      "query_id": "q7",
+      "doc_id": "q7-d3",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q8",
+      "doc_id": "q8-d2",
+      "gold_rel": 2,
+      "ressalva": true,
+      "jev_score": 1.78,
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.09,
+        "2": 0.85
+      },
+      "confidence": 0.67
+    },
+    {
+      "query_id": "q8",
+      "doc_id": "q8-d3",
+      "gold_rel": 1,
+      "ressalva": false,
+      "jev_score": 0.45,
+      "probabilities": {
+        "0": 0.57,
+        "1": 0.41,
+        "2": 0.02
+      },
+      "confidence": 0.32
+    },
+    {
+      "query_id": "q8",
+      "doc_id": "q8-d4",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q8",
+      "doc_id": "q8-d5",
+      "gold_rel": 0,
+      "ressalva": false,
+      "jev_score": 0.0,
+      "probabilities": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "confidence": 1
+    },
+    {
+      "query_id": "q8",
+      "doc_id": "q8-d1",
+      "gold_rel": 2,
+      "ressalva": false,
+      "jev_score": 1.77,
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.13,
+        "2": 0.82
+      },
+      "confidence": 0.65
+    }
+  ],
+  "wallet_committed_nusd": 10949904,
+  "wallet_available_nusd": 4989050096
+}
