@@ -7,6 +7,14 @@
 
 ## Integração assistida medida
 
+- No Claude Code, os hooks de leitura, busca e sentinela (`integracao/camadas/`) já
+  filtram o que entra no contexto; para vários arquivos candidatos, use a skill `/jev-ler`
+  (`integracao/camadas/ler.py`). Medição em `docs/CAMADAS-CLAUDE-CODE.md`.
+- Para usar JEV antes de carregar arquivos no contexto, siga `integracao/USO-CODEX.md`
+  e `integracao/ler_contexto.py`. Priorize busca local; preserve referências de todos
+  os candidatos; use dois trechos para fonte única e três para resposta repartida ou
+  estrutura desconhecida. Confiança baixa não aborta; falha técnica ou sentinela alerta devolve tudo.
+
 - Laboratório e hook usam `executor/shared.py` e a carteira existente em `runs/ledger.sqlite3`.
   Não criar transporte pago paralelo nem estimar teto financeiro por caracteres.
 - Ferramentas `jev_assist` e `jev_rank_context` são auxiliares para classificação fechada

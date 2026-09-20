@@ -24,12 +24,17 @@ LIMITE_DE_CARACTERES = 4000
 # Três caracteres por token é a razão conservadora usada no runner do estudo.
 TETO_DE_TOKENS_POR_CHAMADA = LIMITE_DE_CARACTERES // 3 + 700  # + as instruções fixas
 
-TETO_DIARIO_USD = 0.05        # ~3.500 roteamentos por dia
-TETO_ACUMULADO_USD = 1.00     # dentro do teto de US$ 5,00 autorizado para o projeto
+# Era US$ 0,05 (~3.500 roteamentos). Com as camadas de leitura, busca e sentinela, um dia de
+# trabalho pesado classifica alguns milhares de trechos; o teto sobe para US$ 0,20 e o
+# acumulado continua em US$ 1,00, dentro do teto de US$ 5,00 autorizado para o projeto.
+TETO_DIARIO_USD = 0.20
+TETO_ACUMULADO_USD = 1.00
 
 
-def custo_maximo_por_chamada_usd():
-    return TETO_DE_TOKENS_POR_CHAMADA / 1e6 * USD_POR_MILHAO_DE_ENTRADA
+def custo_maximo_por_chamada_usd(caracteres=LIMITE_DE_CARACTERES):
+    """Pior caso conhecido ANTES do envio, para a entrada truncada em `caracteres`."""
+    tokens = caracteres // 3 + 700
+    return tokens / 1e6 * USD_POR_MILHAO_DE_ENTRADA
 
 
 def _linhas():
@@ -62,10 +67,10 @@ def situacao():
     }
 
 
-def pode_gastar():
+def pode_gastar(caracteres=LIMITE_DE_CARACTERES):
     """Devolve (permitido, motivo). Verificado ANTES de qualquer envio."""
     s = situacao()
-    maximo = custo_maximo_por_chamada_usd()
+    maximo = custo_maximo_por_chamada_usd(caracteres)
     if s['gasto_hoje_usd'] + maximo > TETO_DIARIO_USD:
         return False, f"teto diário de US$ {TETO_DIARIO_USD:.2f} alcançado"
     if s['gasto_total_usd'] + maximo > TETO_ACUMULADO_USD:

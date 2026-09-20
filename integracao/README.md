@@ -1,5 +1,55 @@
 # O Jev dentro do Claude Code e do Codex
 
+## As camadas (2026-09-20): o Jev decide o que entra no contexto do modelo caro
+
+Depois do estudo (31 mil chamadas, 27 rodadas), o Jev foi posto nos pontos do fluxo do
+Claude Code em que o Fable mais gasta tokens: ler arquivo grande, escolher por onde começar
+depois de um Grep, e digerir conteúdo que veio de fora. Cada camada é um hook que falha para o
+lado aberto, registra tudo em `estado/camadas.jsonl` e tem uma medida do estudo por trás.
+
+| camada | evento | o que faz | modo |
+|---|---|---|---|
+| tema | `UserPromptSubmit` | sugere a skill pelo assunto do pedido; grava o pedido vigente da sessão | ativo |
+| **leitura** | `PreToolUse` em `Read` | em arquivo com 200 linhas ou mais, classifica blocos de ~60 linhas contra o pedido vigente e limita o `Read` à janela dos blocos essenciais (confiança ≥ 0,90, com um vizinho de cada lado) ou, sem nenhum, dos três do topo; injeta uma nota dizendo o que ficou de fora | ativo |
+| **busca** | `PostToolUse` em `Grep` | com 6 ou mais arquivos, classifica cada um (caminho mais as linhas que casaram) e diz por onde começar; não esconde nada | ativo |
+| **sentinela** | `PostToolUse` em WebFetch, WebSearch, página, e-mail, Drive | pergunta se o texto tenta dar ordens ao sistema; avisa, não bloqueia | ativo |
+| guarda | `PreToolUse` em `Bash` | segunda camada da regra de comando perigoso | sombra (decisão do Igor pendente) |
+| ler | skill `/jev-ler` | o agente passa a pergunta e os arquivos candidatos; volta só os blocos do topo, com número de linha | sob demanda |
+
+O que o primeiro teste real mudou no desenho: em código, o Jev **quase nunca** diz
+`irrelevante` com confiança 0,99 (em 14 blocos de `executor/ledger.py`, zero), então uma
+regra de descarte nunca dispararia. A regra passou a ser a da ordenação medida — ficam os
+blocos do topo — e um `essencial` fraco (0,45) no início do arquivo mostrou que o top-3 puro
+arrasta a janela: a janela nasce dos essenciais fortes. Com isso, o mesmo arquivo de 784
+linhas foi lido em 240 (7.400 tokens estimados a menos) por US$ 0,0007 e 3,5 s de espera.
+
+Custo por camada e por chamada: leitura US$ 0,00005 por bloco, busca US$ 0,00002 por
+arquivo, sentinela US$ 0,00003 por parte. Teto diário do conjunto: US$ 0,20; acumulado,
+US$ 1,00, na mesma carteira de US$ 5,00 do projeto. Latência: 0,6 a 3,5 s por hook no
+regime do dia (o provedor muda de regime no meio do dia; ver Q044 e H038).
+
+A medição — tokens evitados, releituras (arrependimento), concordância da busca, acusações
+do sentinela, custo — está em [`docs/CAMADAS-CLAUDE-CODE.md`](../docs/CAMADAS-CLAUDE-CODE.md),
+gerada por `python integracao/camadas/medir.py --gravar`. Instalação e modos:
+
+```
+python integracao/instalar.py --ver
+python integracao/instalar.py --instalar --gancho leitura --modo ativo     # ou sombra
+python integracao/instalar.py --instalar --gancho busca --modo ativo
+python integracao/instalar.py --instalar --gancho sentinela --modo ativo
+python integracao/instalar.py --desinstalar --gancho todos
+```
+
+O que **não** está nas camadas, por medida: roteamento de esforço (cobertura útil 0% em 60
+pedidos reais), escolha de modelo, e qualquer decisão de permissão — o Jev não libera nada
+sozinho.
+
+---
+
+Uso atual no Codex: [leitura assistida antes do contexto](USO-CODEX.md), com referências
+completas, abstenção e carteira compartilhada. As seções históricas abaixo descrevem
+medições anteriores; não representam economia de tokens do Astra comprovada.
+
 Este pacote aplica o Jev aos fluxos de trabalho reais desta máquina. Ele foi construído para
 responder a uma pergunta de economia — *dá para o Jev, que custa US$ 0,042 por milhão de tokens,
 poupar trabalho do Opus e do Fable, que custam milhares de vezes mais?* — e a resposta honesta

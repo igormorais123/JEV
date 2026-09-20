@@ -78,6 +78,15 @@ def main():
         return 0
 
     guardar_estado(dados.get('session_id'), decisao)
+    # O pedido redigido fica na sessão para as camadas de leitura e busca, que precisam de
+    # uma pergunta contra a qual classificar trechos. Só pedidos substantivos: "continue" e
+    # "sim" herdam o anterior.
+    try:
+        from camadas import nucleo
+        from jev_router import redacao
+        nucleo.guardar_pedido(dados.get('session_id'), redacao.limpar(pedido[:4000])[0])
+    except Exception:
+        pass
     if modo != 'ativo':
         return 0
 

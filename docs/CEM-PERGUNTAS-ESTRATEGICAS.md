@@ -72,14 +72,14 @@ Dois modos de falha sistemáticos, e os dois são de desenho, não do modelo. Te
 ### Q073 — Qual a taxa de falha de transporte a esperar?
 
 **Decide:** o desenho da repescagem  
-**Responde:** **1,1%** das 24.194 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**Responde:** **1,1%** das 24.281 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 A operação precisa de repescagem, não de tolerância a erro. 2,7% das tentativas falharam, e a maioria é erro do provedor ou estouro do timeout de 45 s — coisas que uma segunda tentativa resolve. O que não pode acontecer é falha virar classe padrão: uma chamada que não voltou não é "informação", é ausência de decisão.
 
 ### Q096 — Quanto resta do orçamento, e o que ele compra?
 
 **Decide:** o tamanho do próximo programa  
-**Responde:** Restam **US$ 3,9953**, que compram cerca de 123.839 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.140 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+**Responde:** Restam **US$ 3,9918**, que compram cerca de 123.645 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.227 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 O limite deste trabalho não é orçamento. Gastou-se 10,6% do teto autorizado, e o que resta compra mais de nove vezes tudo que já foi feito. O que falta é **dado real com gabarito humano** — duzentas mensagens anotadas por duas pessoas fecham de uma vez a maior ressalva do estudo, e custam tempo de gente, não dinheiro.
 
@@ -155,7 +155,7 @@ Ordenação de contexto para montar o prompt de um agente caro. É a única com 
 
 **Q011 — Quanto custa mil decisões, medido e não estimado?**
 
-**US$ 0,032 por mil decisões**, medido sobre 31.140 chamadas reais que somam US$ 1,0047 no livro-caixa. Não é estimativa: é o extrato.
+**US$ 0,032 por mil decisões**, medido sobre 31.227 chamadas reais que somam US$ 1,0082 no livro-caixa. Não é estimativa: é o extrato.
 
 *Decide a linha do orçamento. Fonte: dado medido; confiança alta. Vira se o preço do provedor mudar.*
 
@@ -191,13 +191,13 @@ Não neste corpus, e talvez em outro. O k adaptativo economiza 86,2% contra 73,7
 
 **Q017 — Que fração do orçamento do estudo virou chamada inútil?**
 
-266 tentativas de 24.194 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
+266 tentativas de 24.281 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
 
 *Decide quanto reservar de folga no próximo programa. Fonte: dado medido; confiança alta. Vira se a taxa de falha do provedor subir.*
 
 **Q018 — O custo por decisão cresce com o texto de um jeito que quebre a conta?**
 
-Não quebra: o custo é quase linear no tamanho do estado (r = 0,24), e o quartil de textos maiores custa 1,4× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
+Não quebra: o custo é quase linear no tamanho do estado (r = 0,25), e o quartil de textos maiores custa 1,4× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
 
 *Decide se há limite de tamanho a impor na entrada. Fonte: dado medido; confiança alta. Vira se a relação custo-tamanho deixar de ser aproximadamente linear.*
 
@@ -289,7 +289,7 @@ Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três
 
 **Q032 — Quanto custa um erro grave comparado ao custo da decisão?**
 
-Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000032 — razão de **6.199.150 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
+Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000032 — razão de **6.194.861 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
 
 *Decide quanto vale gastar em salvaguarda. Fonte: conta declarada; confiança baixa. Vira se o custo declarado do erro mudar de ordem de grandeza. Depende de: `custo_erro_grave_usd`.*
 
@@ -505,7 +505,7 @@ Contra aviso que imita sistema, vantagem grande: o Jev vira 0/50 e os comparador
 
 **Q066 — Contra revisão humana, qual a diferença de custo?**
 
-US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.398×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
+US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.390×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
 
 *Decide quanto a automação parcial economiza. Fonte: conta declarada; confiança baixa. Vira se o custo-hora declarado mudar. Depende de: `tempo_revisao_s`, `custo_hora_revisao_usd`.*
 
@@ -539,19 +539,19 @@ Sim, dois. **Prosa**: BM25 empata e custa zero. **Texto interno e confiável com
 
 **Q071 — Qual latência esperar, mediana e cauda?**
 
-Mediana **598 ms**, p90 1808 ms, p99 5694 ms, máximo 32256 ms, sobre 22.389 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
+Mediana **598 ms**, p90 1812 ms, p99 5681 ms, máximo 32256 ms, sobre 22.476 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
 
 *Decide o orçamento de tempo do fluxo. Fonte: dado medido; confiança alta. Vira se a latência mediana passar de 1 segundo.*
 
 **Q072 — A latência cabe num gancho interativo de editor?**
 
-Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5694 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
+Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5681 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
 
 *Decide se dá para usar no caminho quente. Fonte: dado medido; confiança alta. Vira se a cauda passar do limite tolerável do gancho.*
 
 **Q073 — Qual a taxa de falha de transporte a esperar?**
 
-**1,1%** das 24.194 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**1,1%** das 24.281 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 *Decide o desenho da repescagem. Fonte: dado medido; confiança alta. Vira se a taxa passar de 3%.*
 
@@ -657,7 +657,7 @@ A de que **a classe do topo prediz o acerto da resposta**. Ela se apoia em dois 
 
 **Q090 — O orçamento autorizado foi respeitado?**
 
-Sim. **US$ 1,0047 de US$ 5,00** autorizados, em 31.140 chamadas — 20,1% do teto, com US$ 3,9953 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
+Sim. **US$ 1,0082 de US$ 5,00** autorizados, em 31.227 chamadas — 20,2% do teto, com US$ 3,9918 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
 
 *Decide se há autorização para continuar. Fonte: dado medido; confiança alta. Vira se o gasto passar do teto.*
 
@@ -697,7 +697,7 @@ Cerca de 13,3 horas de duas pessoas, ou US$ 160 ao custo-hora declarado. É a co
 
 **Q096 — Quanto resta do orçamento, e o que ele compra?**
 
-Restam **US$ 3,9953**, que compram cerca de 123.839 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.140 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+Restam **US$ 3,9918**, que compram cerca de 123.645 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.227 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 *Decide o tamanho do próximo programa. Fonte: conta declarada; confiança alta. Vira se o teto ser revisto.*
 

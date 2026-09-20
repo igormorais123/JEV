@@ -17,6 +17,7 @@ Projeto experimental para testes com o modelo de classificação JEV.
   medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
   um a um, e um teste quebra se alguma resposta usar um deles calada.
 - **[Bateria complementar](docs/BATERIA-COMPLEMENTAR.md)** — cinco rodadas que fecham o que o estudo tinha
+- [`docs/CAMADAS-CLAUDE-CODE.md`](docs/CAMADAS-CLAUDE-CODE.md) — o Jev em camadas no Claude Code (leitura, busca, sentinela, tema, guarda, skill `/jev-ler`): o que poupou, custou e errou, recalculado do registro de produção.
   declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
   serve (a formulação decide), a acurácia cai com a distância do domínio, e as duas defesas cabem num payload
   se o sentinela ler o texto original. Mais de 14 mil chamadas novas, cada número recalculado pela auditoria.

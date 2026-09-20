@@ -56,13 +56,16 @@ def transporte_http(url, cabecalhos, corpo, timeout):
         return 0, {}
 
 
-def perguntar(estado, perguntas, *, timeout=TIMEOUT_PADRAO, transporte=None, origem='hook'):
+def perguntar(estado, perguntas, *, timeout=TIMEOUT_PADRAO, transporte=None, origem='hook',
+              limite=orcamento.LIMITE_DE_CARACTERES):
     """Faz uma chamada e devolve o mapa de respostas, ou None se qualquer coisa der errado.
 
     Devolve também o custo reportado pelo provedor, que é o valor autoritativo da cobrança.
+    `limite` é o tamanho máximo do estado em caracteres: o roteador usa 4.000; as camadas de
+    leitura mandam trechos maiores, e o pior caso por chamada é calculado com esse valor.
     """
     transporte = transporte or transporte_http
-    permitido, motivo = orcamento.pode_gastar()
+    permitido, motivo = orcamento.pode_gastar(limite)
     if not permitido:
         return None, {'erro': motivo}
     api_key = chave()
@@ -71,7 +74,7 @@ def perguntar(estado, perguntas, *, timeout=TIMEOUT_PADRAO, transporte=None, ori
 
     # Sanitizar antes do envio. Excesso causa abstenção, nunca perda silenciosa.
     estado, mascarados = redacao.limpar(estado)
-    if len(estado) > orcamento.LIMITE_DE_CARACTERES:
+    if len(estado) > limite:
         return None, {'erro': 'input_too_large', 'sent': False}
     from executor.shared import ask
     try:

@@ -51,7 +51,41 @@ GANCHOS = {
         'rotulo': 'conferindo o efeito do comando com o Jev',
         'matcher': 'Bash|PowerShell',
     },
+    # As tres camadas que decidem o que ENTRA no contexto do modelo caro (docs/CAMADAS-CLAUDE-CODE.md).
+    'leitura': {
+        'evento': 'PreToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_leitura.py',
+        'marca': 'jev_leitura.py',
+        'variavel': 'JEV_LEITURA_MODO',
+        'modo_arquivo': RAIZ / 'modo-leitura.txt',
+        'timeout': 10,
+        'rotulo': 'o Jev está escolhendo que parte do arquivo ler',
+        'matcher': 'Read',
+    },
+    'busca': {
+        'evento': 'PostToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_busca.py',
+        'marca': 'jev_busca.py',
+        'variavel': 'JEV_BUSCA_MODO',
+        'modo_arquivo': RAIZ / 'modo-busca.txt',
+        'timeout': 10,
+        'rotulo': 'o Jev está ordenando os arquivos do Grep',
+        'matcher': 'Grep',
+    },
+    'sentinela': {
+        'evento': 'PostToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_sentinela.py',
+        'marca': 'jev_sentinela.py',
+        'variavel': 'JEV_SENTINELA_MODO',
+        'modo_arquivo': RAIZ / 'modo-sentinela.txt',
+        'timeout': 10,
+        'rotulo': 'o sentinela do Jev está lendo o conteúdo externo',
+        'matcher': None,  # preenchido abaixo a partir da lista de ferramentas da camada
+    },
 }
+sys.path.insert(0, str(RAIZ))
+from camadas.sentinela import MATCHER as _MATCHER_SENTINELA  # noqa: E402
+GANCHOS['sentinela']['matcher'] = _MATCHER_SENTINELA
 
 
 def entrada_de(nome):

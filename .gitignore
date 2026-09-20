@@ -104,6 +104,9 @@ laboratorio/gastos.jsonl
 graphify-out/
 .planning/
 integracao/modo-guarda.txt
+integracao/modo-leitura.txt
+integracao/modo-busca.txt
+integracao/modo-sentinela.txt
 integracao/avaliacao/producao.json
 laboratorio/r16-amostra.json
 laboratorio/r16-guarda-de-comando.json

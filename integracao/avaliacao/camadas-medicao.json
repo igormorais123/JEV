@@ -1,0 +1,80 @@
+{
+ "leitura": {
+  "reads": 0,
+  "com_pedido": 0,
+  "classificados": 0,
+  "estreitados": 0,
+  "estreitados_ativos": 0,
+  "motivos": {},
+  "linhas_evitadas": 0,
+  "tokens_evitados": 0,
+  "releituras": 0,
+  "custo_usd": 0,
+  "chamadas": 0,
+  "latencia_mediana_ms": null,
+  "latencia_p90_ms": null,
+  "blocos_por_classe": {},
+  "descartaveis_a_099": 0
+ },
+ "busca": {
+  "greps": 0,
+  "classificados": 0,
+  "sugeridos": 0,
+  "sugeridos_ativos": 0,
+  "arquivos_no_topo": 0,
+  "arquivos_no_topo_lidos_depois": 0,
+  "arquivos_fora": 0,
+  "motivos": {},
+  "custo_usd": 0,
+  "chamadas": 0,
+  "latencia_mediana_ms": null
+ },
+ "sentinela": {
+  "conteudos": 0,
+  "inspecionados": 0,
+  "partes": 0,
+  "acusados": 0,
+  "por_ferramenta": {},
+  "acusados_por_ferramenta": {},
+  "custo_usd": 0,
+  "chamadas": 0,
+  "latencia_mediana_ms": null
+ },
+ "ler": {
+  "usos": 1,
+  "selecionaram": 1,
+  "blocos": 3,
+  "blocos_devolvidos": 3,
+  "caracteres_total": 12973,
+  "caracteres_devolvidos": 12973,
+  "tokens_evitados": 0,
+  "custo_usd": 0.000181,
+  "chamadas": 3
+ },
+ "roteador": {
+  "decisoes": 85,
+  "sugeriu": 59,
+  "cache": 53,
+  "custo_usd": 0.000928,
+  "latencia_mediana_ms": 613
+ },
+ "guarda": {
+  "chamadas": 9,
+  "custo_usd": 0.000226
+ },
+ "parametros": {
+  "caracteres_por_token": 4,
+  "preco_caro_usd_por_milhao": 15.0,
+  "janela_de_releitura": 10,
+  "janela_de_concordancia": 8
+ },
+ "total": {
+  "tokens_evitados": 0,
+  "valor_evitado_usd_ao_preco_declarado": 0.0,
+  "custo_jev_usd": 0.001335,
+  "chamadas_jev": 3,
+  "registros": 1,
+  "primeiro_registro": "2026-09-20T20:44:33",
+  "ultimo_registro": "2026-09-20T20:44:33"
+ }
+}
