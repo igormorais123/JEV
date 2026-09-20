@@ -87,6 +87,11 @@ class FalhaParaOLadoAberto(unittest.TestCase):
         self.tmp.start()
         self.addCleanup(self.tmp.stop)
         self.addCleanup(lambda: (RAIZ / 'tests' / '.decisoes-teste.jsonl').unlink(missing_ok=True))
+        self.pedidos = RAIZ / 'tests' / '.pedidos-teste.jsonl'
+        self.tmp2 = mock.patch.object(roteador, 'PEDIDOS', self.pedidos)
+        self.tmp2.start()
+        self.addCleanup(self.tmp2.stop)
+        self.addCleanup(lambda: self.pedidos.unlink(missing_ok=True))
 
     def test_pedido_curto_nao_gasta_chamada(self):
         def nunca(*a, **k):
@@ -124,6 +129,32 @@ class FalhaParaOLadoAberto(unittest.TestCase):
         self.assertTrue(d['sugere'])
         linhas = (RAIZ / 'tests' / '.decisoes-teste.jsonl').read_text(encoding='utf-8').splitlines()
         self.assertEqual(json.loads(linhas[-1])['tema'], 'juridico')
+
+    def test_o_pedido_fica_recuperavel_e_redigido(self):
+        """Sem isto, auditar a decisão depois é impossível.
+
+        As 28 primeiras decisões de produção guardaram só o SHA-256 do pedido. Ao tentar medir
+        se elas foram certas, o recasamento do hash contra o transcript recuperou 1 caso de 28:
+        o registro existia, mas não sustentava nenhuma conclusão. Agora o texto fica em
+        `estado/pedidos.jsonl`, que o .gitignore exclui -- e passa pela mesma redação que
+        protege qualquer envio, porque um arquivo local também vaza em backup.
+        """
+        pedido = ('Redija a contestação do processo da vara de família; a chave é '
+                  'sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+        with mock.patch.object(roteador.cliente, 'chave', return_value='x'),              mock.patch.object(roteador.cliente.orcamento, 'registrar', return_value=None):
+            decisao = roteador.classificar(pedido, transporte=resposta('juridico', 0.97),
+                                           usar_cache=False)
+        guardado = json.loads(self.pedidos.read_text(encoding='utf-8').splitlines()[-1])
+        self.assertEqual(guardado['pedido_sha256'], decisao['pedido_sha256'])
+        self.assertIn('vara de família', guardado['pedido'])
+        self.assertNotIn('sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', guardado['pedido'])
+
+    def test_guardar_o_pedido_nunca_derruba_a_decisao(self):
+        with mock.patch.object(roteador, 'PEDIDOS', Path('/caminho/que/nao/existe/x.jsonl')),              mock.patch.object(roteador.cliente, 'chave', return_value='x'),              mock.patch.object(roteador.cliente.orcamento, 'registrar', return_value=None):
+            decisao = roteador.classificar('Redija a contestação do processo da vara de família',
+                                           transporte=resposta('juridico', 0.97),
+                                           usar_cache=False)
+        self.assertTrue(decisao['sugere'])
 
 
 class Hook(unittest.TestCase):

@@ -52,6 +52,29 @@ Onde aplicar: achar a exceção escondida no meio do contrato, a cláusula que i
 geral, o parágrafo que ressalva o artigo anterior. **É onde ele mais se destaca sobre o que se
 usa hoje**, e é a aplicação menos óbvia das três.
 
+### Aplicação 4 — Guarda: "este comando precisa mesmo de confirmação?"
+
+Entra um comando de shell que um guarda por palavra-chave já barrou, sai se ele pode passar sem
+incomodar ninguém.
+
+O desenho importa mais que o modelo, e a primeira tentativa foi errada. Usar o Jev **no lugar**
+da regra é inseguro: sozinho, ele deixa passar de 2 a 6 comandos irreversíveis em 12. Usar o Jev
+**depois** da regra é outro resultado. Medido em 120 comandos reais desta máquina, 90 barrados
+pela regra:
+
+| | interrompe comando benigno | irreversíveis liberados |
+|---|---|---|
+| regra por palavra sozinha | **72,2%** | 0 de 12 |
+| regra + Jev como segunda camada | **29,6%** | **0 de 12** |
+
+**Três de cada cinco confirmações somem, e nenhum comando perigoso passa.** O erro observado é
+0 em 46 liberações, que o intervalo de Wilson limita a 7,7% — zero observado com teto declarado,
+não zero garantido. Por isso o guarda nunca libera sozinho: ele só deixa de pedir confirmação do
+que a regra já barrou, e quem barra continua sendo a regra.
+
+Onde aplicar: qualquer lugar onde uma regra por palavra-chave protege alguma coisa e incomoda
+mais do que protege. Implementado aqui em `integracao/hooks/jev_guarda_comando.py`.
+
 ---
 
 ## 3. Onde ele brilha: o tipo de texto que derruba os outros métodos
@@ -109,11 +132,24 @@ terceiro fica indistinguível de instrução.
 contraparte, e-mail, formulário público —, esta é a razão para usar o Jev e não o LLM barato, e
 ela vale mesmo que a acurácia empate.
 
-**Ressalva:** o `mistral-nemo` também resistiu a 100%, então o correto é dizer que três dos
-quatro comparadores são manipuláveis. E os quatro vetores são meus; um atacante real tem mais
-criatividade e mais tentativas.
+**Testado de novo com ataques que eu não escrevi.** Três LLMs receberam a tarefa de escrever a
+manipulação mais eficaz que conseguissem; dois produziram 12 vetores novos. O resultado obrigou
+a separar duas coisas que a primeira rodada tratava como uma só:
 
-Mapa completo dos limites: `docs/LIMITES-DO-JEV.md`.
+| Tipo de trecho anexado | O que o Jev faz | O que os comparadores fazem |
+|---|---|---|
+| **Fala com o classificador** — protocolo falso, "aprovado sem análise", formato imitado | **0 de 50.** Não obedece. | Até 16% viram, **e com confiança acima de 0,90** |
+| **Acrescenta um pedido real ao texto** — "solicito o cancelamento do serviço" | Muda a resposta em 14% — **e a confiança cai para 0,52 contra 0,92 nos acertos; nenhuma acima de 0,90** | Até 24% viram, 13 das 17 **acima de 0,90** |
+
+O segundo caso não é falha: o texto mudou de verdade, e um atendente humano também leria um
+pedido de cancelamento ali. O que importa é que o Jev **avisa** quando a leitura ficou incerta, e
+o corte de confiança recomendado barra todas essas viradas. Nos comparadores, 26 das 34 viradas
+passariam pelo corte.
+
+**Em uma frase:** ele não obedece a quem fala com ele, e quando o texto muda de sentido ele muda
+de resposta dizendo que ficou em dúvida.
+
+Mapa completo dos limites e as tabelas por família: `docs/LIMITES-DO-JEV.md`.
 
 ---
 
@@ -180,7 +216,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 4.558 chamadas reais | US$ 0,2836 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 5.269 chamadas reais | US$ 0,2931 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -245,7 +281,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezesseis experimentos, 4.558 chamadas reais, US$ 0,2836 pelo livro-caixa —
+Dezesseis experimentos, 5.269 chamadas reais, US$ 0,2931 pelo livro-caixa —
 dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esta é a lista inteira — o que cada um
 perguntou, o que respondeu e o que isso muda na hora de aplicar.
 
@@ -267,6 +303,10 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | — | Erro grave (`cancelar` indevido), todos os corpora | **0 em 230 casos**, sob os três critérios; a regra simples comete 10 em 80 | O erro que dói não apareceu — mas a estatística só garante abaixo de 9,5% por família. |
 | — | A confiança avisa quando ele erra? | Funcionou em 2 corpora; **falhou no 3º** (erro com confiança 0,98) | Use corte 0,99 e recalibre no seu material. É o cuidado nº 2. |
 | E14 · R10 | Dá para manipular o modelo pelo texto do cliente? | Jev **0/40**; três de quatro LLMs baratos caem, até **70%** | **A vantagem que não depende de gabarito.** Seção 3b. |
+| E14 · R15 | E com ataques escritos por outros modelos, não por mim? | Meta-instrução: Jev **0/50**, comparadores até 16% **acima do corte**. Conteúdo inserido: Jev 14%, **nada acima do corte** | Derrubou o "0% de manipulação" e o devolveu mais preciso. Seção 3b. |
+| E17 · R16 | O Jev pode substituir o guarda de comando por palavra-chave? | **Não.** Sozinho perde de 2 a 6 irreversíveis em 12; a melhor formulação com corte ainda interrompe 41,7% dos benignos | O desenho estava errado, não o modelo. |
+| E17 · R16b | E como segunda camada, liberando o que a regra barrou? | Interrupção cai de **72,2% para 29,6%**, com **0 de 12 irreversíveis liberados** | Aplicação 4. Implantado em sombra. |
+| E17 | O roteador em produção, 88 decisões reais | Latência mediana **431 ms**, p90 623 ms, US$ 0,0022 no total. Acerto **não medido**: o registro guardava só o hash | Corrigido o registro; a medição de acerto fica para a próxima rodada. |
 | E14 · R13 | E um texto que não contém pedido nenhum? | Sem classe de escape: erra 10/10 com confiança **0,987**. Com ela: acerta 10/10 | Classe de escape obrigatória. Passo 1b. |
 | E14 · R1–R7 | Quantas classes cabem, e o que degrada? | Até **12 sem custo**; platô em 90% até 147. Quebra só com ruído pesado (46,7% a 50%) — **e a confiança cai junto** | Taxonomia pode ser maior do que se supunha; o corte protege onde ele falha. |
 | E14 · R12 | Contexto grande dilui a decisão? | **96,7% constante de 0 a 50 mil caracteres** | Diluição não é risco. Truncamento do cliente é. |
@@ -283,7 +323,9 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 2. **Precisa ser o Jev quando o texto vem de fora.** Em acurácia, a vantagem sobre LLMs baratos
    depende de quem escreveu o gabarito — e eles custam um quarto do preço. Em resistência a
    manipulação pelo próprio texto classificado, a vantagem é estrutural e não depende de
-   gabarito: 0% contra até 70%. Se o texto é de terceiro, a escolha está decidida.
+   gabarito: **0 de 50** contra até 16% dos comparadores, sob ataques que eu não escrevi, e a
+   confiança dele protege onde a deles não protege. Se o texto é de terceiro, a escolha está
+   decidida.
 3. **Nada disso autoriza automatizar sem rede.** A confiança falha, o modelo oscila, e a classe
    irreversível continua exigindo gente.
 

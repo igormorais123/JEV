@@ -9,6 +9,7 @@ Projeto experimental para testes com o modelo de classificação JEV.
 - **[Guia prático](docs/GUIA-PRATICO-JEV.md)** — como aplicar, passo a passo, com os cuidados em ordem de risco.
 - **[Os limites do Jev](docs/LIMITES-DO-JEV.md)** — mapa empírico do programa E14: onde ele quebra, onde não
   quebra, a imunidade a manipulação pelo texto classificado e a classe de escape obrigatória.
+- [O Jev nos fluxos desta máquina](integracao/README.md) — os dois hooks instalados, o que cada um decide, o que foi medido e como ligar ou desligar.
 - [Pré-registro do E14](laboratorio/PREREGISTRO.md) — hipóteses, emendas datadas e o falso achado que produzi
   e corrigi antes de publicar, mantido no registro.
 - [Relatório de execução intermediário](docs/RELATORIO-EXECUCAO-JEV-HELENA.md) — escrito antes do E5 ao E9;

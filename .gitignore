@@ -103,3 +103,8 @@ laboratorio/gastos.jsonl
 # saida de ferramenta de analise de grafo, regeravel
 graphify-out/
 .planning/
+integracao/modo-guarda.txt
+integracao/avaliacao/producao.json
+laboratorio/r16-amostra.json
+laboratorio/r16-guarda-de-comando.json
+laboratorio/r16b-segunda-camada.json

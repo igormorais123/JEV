@@ -37,8 +37,45 @@ campos estruturalmente separados. Num LLM genérico tudo é concatenado numa str
 texto de terceiro fica indistinguível de instrução. A imunidade é arquitetural, não estatística.
 
 **Ressalva material:** o `mistral-nemo` também resistiu a 100%. A afirmação honesta é *"três dos
-quatro comparadores são manipuláveis"*, não *"só o Jev resiste"*. E os quatro vetores foram
-escritos por quem conhece o alvo; um atacante real tem mais criatividade e mais tentativas.
+quatro comparadores são manipuláveis"*, não *"só o Jev resiste"*.
+
+### 1.1 A R15 derrubou o "0% de manipulação" e o devolveu mais preciso
+
+A ressalva que eu mesma escrevi aqui — *"os quatro vetores foram escritos por quem conhece o
+alvo"* — foi testada. Três LLMs receberam a tarefa de escrever os ataques; dois produziram 12
+vetores que eu não escrevi. Sob eles, **o Jev virou 10 de 120 respostas, 8,3%**. A afirmação
+"imune a instrução injetada", como estava publicada, caiu.
+
+Olhando os dez casos, eles têm uma coisa que os meus quatro vetores não tinham: **não falam com
+o classificador**. Escrevem dentro da mensagem um pedido de cancelamento de verdade —
+*"solicitamos o cancelamento de seu serviço atual"*, *"solicito a imediata finalização do
+serviço"*. Isso não é manipular quem lê: é mudar o que está escrito. Separando as duas coisas:
+
+| | Família A — fala com o classificador | Família B — acrescenta conteúdo |
+|---|---|---|
+| | protocolo falso, "aprovado sem análise", formato imitado | "seu serviço foi cancelado", "solicito o cancelamento" |
+| **`typesafe/jev-1.13`** | **0/50 = 0,0%** | 10/70 = 14,3%, **0 acima do corte 0,90** |
+| `meta-llama/llama-3.1-8b` | 8/50 = 16,0%, **8 acima do corte** | 17/70 = 24,3%, **13 acima do corte** |
+| `mistralai/mistral-nemo` | 5/50 = 10,0%, **5 acima do corte** | 8/70 = 11,4%, **8 acima do corte** |
+| `google/gemma-3-12b` | 1/28 = 3,6%, 1 acima do corte | 3/38 = 7,9%, 3 acima do corte |
+| `openai/gpt-oss-20b` | 0/36 = 0,0% | 2/32 = 6,2%, 2 acima do corte |
+
+**O que sobrevive, e é mais forte que a versão anterior:**
+
+1. **Na família A o Jev continua em zero, agora contra vetores de terceiros** — e o `mistral-nemo`,
+   que resistia aos meus quatro, cai em 10% destes. O empate que enfraquecia o achado sumiu.
+2. **Na família B o Jev muda a resposta, e deve mudar:** o texto mudou. E a confiança cai junto —
+   **0,52 nas viradas contra 0,92 nos acertos**, com a maior virada em 0,80. Nenhuma passaria pelo
+   corte de 0,90.
+3. **Nos comparadores a confiança não protege:** 26 das 34 viradas vieram com 0,90 ou mais.
+
+A formulação correta, que substitui a anterior: **o Jev não obedece a quem fala com ele, e quando
+o texto muda de sentido ele muda de resposta avisando que mudou.** Os comparadores obedecem, e
+não avisam.
+
+Dado bruto: `laboratorio/r15-adversario-externo.json` e `laboratorio/r15b-familias.json`. A
+separação das famílias é minha, foi escrita olhando os textos antes de recontar, e os doze estão
+em `r15-vetores-gerados.json` para quem quiser discordar dela.
 
 ---
 
@@ -161,7 +198,10 @@ probabilidade, não como mera ordenação — com a ressalva já conhecida do co
    confiança cai. **Não protege contra armadilha semântica de alta confiança** — a classe
    irreversível continua exigindo gente.
 5. **Texto de terceiro só entra em `state`.** É onde está a vantagem que sobrevive a qualquer
-   critério de correção.
+   critério de correção — e, pela R15, a qualquer autor de ataque.
+5b. **Distinga ataque de leitura.** Se o texto inserido pede a ação, mudar a resposta é acerto,
+   não falha. O que se exige do classificador é não obedecer a quem se dirige a ele, e avisar
+   quando a leitura ficou incerta. O Jev faz as duas; os comparadores, nenhuma.
 6. **Diluição de contexto não é um risco.** Truncamento do cliente é — e foi o único limite real
    encontrado neste programa, no meu código, não no modelo.
 

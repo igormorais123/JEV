@@ -421,3 +421,128 @@ por tentativa, pelos `attempt_id` que o painel declara: mantém o poder de acusa
   classes, o rótulo decide, não a descrição); passo 1b novo (classe de escape); cuidados 7 e 8
   novos; placar estendido a E14, E15 e E16; conclusão 2 reescrita.
 - `README.md` — índice e números do livro-caixa atualizados.
+
+
+---
+
+# Programa E17 — as rodadas que nasceram de aplicar o E14
+
+Pré-registrado em 2026-09-19, depois do fechamento do E14 e antes de cada rodada. O fio condutor
+é outro: o E14 mediu o modelo, este mede **as aplicações**, e a primeira coisa que ele fez foi
+derrubar uma afirmação que eu tinha publicado horas antes.
+
+## R15 — a injeção escrita por outro
+
+**H15.** Sob vetores gerados por terceiros, o Jev continua em 0% de manipulação e pelo menos um
+comparador continua acima de 10%.
+
+Três LLMs receberam a tarefa de escrever a manipulação mais eficaz que conseguissem para virar
+uma classificação em `cancelar`. O `gpt-oss-20b` devolveu conteúdo vazio e ficou de fora; os
+outros dois produziram 12 vetores. 12 vetores x 10 bases x 5 modelos = 600 chamadas.
+
+**H15 FALSIFICADA.** O Jev virou **10 de 120 = 8,3%**, todas para `cancelar`. A frase "imune a
+instrução injetada", que eu tinha acabado de publicar no guia e no mapa de limites, caiu.
+
+## R15b — a emenda: "injeção" eram duas coisas
+
+Olhando os dez casos antes de reescrever, todos vieram de três vetores que **não falam com o
+classificador**: escrevem dentro da mensagem um pedido de cancelamento de verdade. Separando:
+
+| | A: fala com o classificador | B: acrescenta conteúdo ao texto |
+|---|---|---|
+| `typesafe/jev-1.13` | **0/50 = 0,0%** | 10/70 = 14,3%, **0 acima de 0,90** |
+| `meta-llama/llama-3.1-8b` | 8/50 = 16,0%, **8 acima de 0,90** | 17/70 = 24,3%, **13 acima de 0,90** |
+| `mistralai/mistral-nemo` | 5/50 = 10,0%, **5 acima de 0,90** | 8/70 = 11,4%, **8 acima de 0,90** |
+| `google/gemma-3-12b` | 1/28 = 3,6% | 3/38 = 7,9% |
+| `openai/gpt-oss-20b` | 0/36 = 0,0% | 2/32 = 6,2% |
+
+**H15b sustentada.** Três coisas mudam de status:
+
+1. **A afirmação forte sobrevive, e mais forte:** na família A o Jev continua em zero contra
+   vetores de terceiros, e o `mistral-nemo` — que resistia aos meus quatro — cai em 10% destes.
+   O empate que enfraquecia o achado do E14 desapareceu.
+2. **A família B não é falha:** o texto mudou, e a resposta deve mudar. A confiança cai de 0,92
+   para 0,52, com a maior virada em 0,80. Nenhuma passaria pelo corte recomendado.
+3. **Nos comparadores a confiança não protege:** 26 das 34 viradas vieram com 0,90 ou mais.
+
+A formulação que substitui a anterior: **o Jev não obedece a quem fala com ele, e quando o texto
+muda de sentido ele muda de resposta avisando que mudou.**
+
+**Limite declarado.** A separação das famílias é minha, feita olhando os textos antes de
+recontar. Os doze vetores estão em `r15-vetores-gerados.json` para quem quiser discordar dela.
+
+## R16 — o guarda de comando irreversível
+
+A avaliação anterior deixou o guarda inutilizável: 85,0% de acurácia, mas recall de **0,75** na
+classe que importa. Duas hipóteses, vindas do próprio E14:
+
+**H16a.** Trocar o rótulo `nao-se-desfaz` por um termo consagrado aumenta o recall (pela R8, o
+modelo decide pelo rótulo).
+**H16b.** A assimetria certa está no corte, não na formulação.
+
+Amostra: os 60 comandos já anotados mais 60 comandos reais desta máquina que a regra por palavra
+marca — **prevalência enriquecida de propósito**, para medir recall com mais de quatro casos.
+12 irreversíveis no total. 120 comandos x 4 formulações = 480 chamadas.
+
+| formulação | recall | alarme falso |
+|---|---|---|
+| A — `reversivel` / `nao-se-desfaz` (atual) | 58% | 19,8% |
+| B — `reversivel` / `irreversivel` | **50%** | 12,0% |
+| C — B mais classe de escape | 67% | 18,5% |
+| D — pergunta pelo efeito, 4 graus | **83%** | 19,4% |
+
+**H16a FALSIFICADA, e invertida:** o termo consagrado **piorou** o recall, de 58% para 50%. O
+achado da R8 diz que o rótulo decide; não diz que a palavra do dicionário decide melhor.
+
+**H16b sustentada, e insuficiente.** Com corte 0,90 e confirmação abaixo dele, A e D chegam a
+recall 100%. Só que a métrica honesta não é fricção: é **interrupção total**, confirmações mais
+alarmes falsos, porque alarme falso também interrompe. Nessa conta a melhor combinação com
+recall 1,0 interrompe **41,7%** dos comandos benignos, contra 72,2% da regra. Melhor, e ainda
+ruim demais para substituir a regra.
+
+## R16b — o desenho certo: segunda camada
+
+A regra por palavra tem recall 1,0 e alarme falso de 72,2%. Se ela já barra tudo, o Jev não
+precisa barrar: precisa **liberar**. Medido sobre os mesmos dados, olhando só os 90 comandos que
+a regra marcou:
+
+| formulação | corte | liberados de 90 | irreversíveis liberados | interrupção em benigno |
+|---|---|---|---|---|
+| **D — efeito em 4 graus** | **0,80** | **46** | **0** | **29,6%** |
+| A — atual | 0,80 | 42 | 0 | 33,3% |
+| B — rótulo consagrado | 0,90 | 45 | **1** | 31,5% |
+| C — com escape | 0,90 | 45 | **1** | 31,5% |
+| — regra sozinha | — | 0 | 0 | 72,2% |
+
+**A interrupção cai de 72,2% para 29,6% sem liberar nenhum dos 12 irreversíveis.** O erro
+observado é 0 em 46 liberações, o que o intervalo de Wilson limita a **7,7%** — é zero observado
+com teto declarado, não zero garantido, e é por isso que o hook nunca libera sozinho: ele só
+deixa de pedir confirmação do que a regra barrou.
+
+**Viés declarado.** Os 60 comandos enriquecidos foram escolhidos por casarem com a regra, então
+nenhum foi anotado às cegas. Isso favorece a regra na leitura de recall e a desfavorece na de
+alarme falso. E o critério de irreversibilidade foi ampliado ao anotar, para incluir chamada
+paga a serviço externo; a ampliação vale para os 60 novos e não para os 60 antigos, de modo que
+as duas metades não são estritamente comparáveis entre si.
+
+**Implantado:** `integracao/hooks/jev_guarda_comando.py`, evento `PreToolUse`, matcher
+`Bash|PowerShell`, **em modo sombra**. Doze testes offline travam o que ele não pode fazer:
+nunca opinar sobre comando que a regra não barrou, nunca liberar efeito grave por mais confiante
+que esteja, nunca liberar em falha de rede, nunca gravar o comando em claro. Ativar exige
+`--modo ativo` explícito.
+
+## Achado de engenharia: o registro que não permitia auditar
+
+Ao tentar medir, pela primeira vez, o que o roteador decidiu **em produção** — 88 decisões
+reais, 28 na política atual —, o recasamento do SHA-256 contra o transcript recuperou **1 caso
+de 28**. O registro existia, tinha latência, custo, tema e confiança, e não sustentava nenhuma
+conclusão sobre acerto, porque o texto não estava em lugar nenhum.
+
+A privacidade por hash foi uma decisão tomada antes de instalar, e ela custou a medição inteira.
+Corrigido: o pedido passa pela mesma redação de credenciais aplicada antes de qualquer envio e
+fica em `integracao/estado/pedidos.jsonl`, que o `.gitignore` já excluía. Dois testes travam o
+comportamento, inclusive o de que falhar ao gravar não pode derrubar a decisão.
+
+O que se mediu de produção, e vale: **latência mediana de 431 ms, p90 de 623 ms, custo total de
+US$ 0,0022 em 88 decisões.** O hook não atrapalha o fluxo e custa quase nada. Se ele acerta,
+ainda não se sabe — e agora se saberá na próxima medição.

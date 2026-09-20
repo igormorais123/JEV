@@ -1,0 +1,487 @@
+{
+ "programa": "E17",
+ "rodada": "R16 / R16b",
+ "casos": 120,
+ "nota": "Os comandos e os resultados caso a caso ficam fora do Git: sao trabalho real, com caminhos de cliente. Aqui estao so as metricas agregadas. O bruto esta em r16-guarda-de-comando.json e r16-amostra.json, ambos ignorados.",
+ "primeira_camada": {
+  "A-atual": {
+   "recall": 0.5833,
+   "ic95_do_recall": [
+    0.3195,
+    0.8067
+   ],
+   "irreversiveis": 12,
+   "perdidos": 5,
+   "alarmes_falsos": 21,
+   "taxa_de_alarme_falso": 0.1981,
+   "distribuicao": [
+    [
+     "reversivel",
+     90
+    ],
+    [
+     "nao-se-desfaz",
+     28
+    ],
+    [
+     null,
+     2
+    ]
+   ],
+   "com_corte": {
+    "0.9": {
+     "avaliados": 118,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1981,
+     "confirmacoes_pedidas": 24,
+     "fricção": 0.2034
+    },
+    "0.95": {
+     "avaliados": 118,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1981,
+     "confirmacoes_pedidas": 27,
+     "fricção": 0.2288
+    },
+    "0.99": {
+     "avaliados": 118,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1981,
+     "confirmacoes_pedidas": 35,
+     "fricção": 0.2966
+    }
+   }
+  },
+  "B-rotulo-consagrado": {
+   "recall": 0.5,
+   "ic95_do_recall": [
+    0.2538,
+    0.7462
+   ],
+   "irreversiveis": 12,
+   "perdidos": 6,
+   "alarmes_falsos": 13,
+   "taxa_de_alarme_falso": 0.1204,
+   "distribuicao": [
+    [
+     "reversivel",
+     101
+    ],
+    [
+     "irreversivel",
+     19
+    ]
+   ],
+   "com_corte": {
+    "0.9": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 1,
+     "recall": 0.9167,
+     "ic95_do_recall": [
+      0.6461,
+      0.9851
+     ],
+     "alarmes_falsos": 13,
+     "taxa_de_alarme_falso": 0.1204,
+     "confirmacoes_pedidas": 28,
+     "fricção": 0.2333
+    },
+    "0.95": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 13,
+     "taxa_de_alarme_falso": 0.1204,
+     "confirmacoes_pedidas": 32,
+     "fricção": 0.2667
+    },
+    "0.99": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 13,
+     "taxa_de_alarme_falso": 0.1204,
+     "confirmacoes_pedidas": 38,
+     "fricção": 0.3167
+    }
+   }
+  },
+  "C-com-escape": {
+   "recall": 0.6667,
+   "ic95_do_recall": [
+    0.3906,
+    0.8619
+   ],
+   "irreversiveis": 12,
+   "perdidos": 4,
+   "alarmes_falsos": 20,
+   "taxa_de_alarme_falso": 0.1852,
+   "distribuicao": [
+    [
+     "reversivel",
+     92
+    ],
+    [
+     "irreversivel",
+     28
+    ]
+   ],
+   "com_corte": {
+    "0.9": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 1,
+     "recall": 0.9167,
+     "ic95_do_recall": [
+      0.6461,
+      0.9851
+     ],
+     "alarmes_falsos": 20,
+     "taxa_de_alarme_falso": 0.1852,
+     "confirmacoes_pedidas": 22,
+     "fricção": 0.1833
+    },
+    "0.95": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 20,
+     "taxa_de_alarme_falso": 0.1852,
+     "confirmacoes_pedidas": 26,
+     "fricção": 0.2167
+    },
+    "0.99": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 20,
+     "taxa_de_alarme_falso": 0.1852,
+     "confirmacoes_pedidas": 35,
+     "fricção": 0.2917
+    }
+   }
+  },
+  "D-pergunta-do-efeito": {
+   "recall": 0.8333,
+   "ic95_do_recall": [
+    0.552,
+    0.953
+   ],
+   "irreversiveis": 12,
+   "perdidos": 2,
+   "alarmes_falsos": 21,
+   "taxa_de_alarme_falso": 0.1944,
+   "distribuicao": [
+    [
+     "apenas-le",
+     59
+    ],
+    [
+     "altera-local",
+     30
+    ],
+    [
+     "sai-da-maquina",
+     24
+    ],
+    [
+     "apaga-sem-volta",
+     7
+    ]
+   ],
+   "com_corte": {
+    "0.9": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1944,
+     "confirmacoes_pedidas": 29,
+     "fricção": 0.2417
+    },
+    "0.95": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1944,
+     "confirmacoes_pedidas": 36,
+     "fricção": 0.3
+    },
+    "0.99": {
+     "avaliados": 120,
+     "irreversiveis": 12,
+     "perdidos": 0,
+     "recall": 1.0,
+     "ic95_do_recall": [
+      0.7575,
+      1.0
+     ],
+     "alarmes_falsos": 21,
+     "taxa_de_alarme_falso": 0.1944,
+     "confirmacoes_pedidas": 44,
+     "fricção": 0.3667
+    }
+   }
+  }
+ },
+ "segunda_camada": {
+  "A-atual@0.8": {
+   "marcados_pela_regra": 90,
+   "liberados": 42,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 36,
+   "taxa": 0.3333,
+   "ic95_do_erro": [
+    0.0,
+    0.0838
+   ]
+  },
+  "A-atual@0.9": {
+   "marcados_pela_regra": 90,
+   "liberados": 40,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 38,
+   "taxa": 0.3519,
+   "ic95_do_erro": [
+    0.0,
+    0.0876
+   ]
+  },
+  "A-atual@0.95": {
+   "marcados_pela_regra": 90,
+   "liberados": 39,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 39,
+   "taxa": 0.3611,
+   "ic95_do_erro": [
+    0.0,
+    0.0897
+   ]
+  },
+  "A-atual@0.99": {
+   "marcados_pela_regra": 90,
+   "liberados": 32,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 46,
+   "taxa": 0.4259,
+   "ic95_do_erro": [
+    0.0,
+    0.1072
+   ]
+  },
+  "B-rotulo-consagrado@0.8": {
+   "marcados_pela_regra": 90,
+   "liberados": 46,
+   "irreversivel_liberado": 2,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 34,
+   "taxa": 0.3148,
+   "ic95_do_erro": [
+    0.012,
+    0.1453
+   ]
+  },
+  "B-rotulo-consagrado@0.9": {
+   "marcados_pela_regra": 90,
+   "liberados": 45,
+   "irreversivel_liberado": 1,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 34,
+   "taxa": 0.3148,
+   "ic95_do_erro": [
+    0.0039,
+    0.1157
+   ]
+  },
+  "B-rotulo-consagrado@0.95": {
+   "marcados_pela_regra": 90,
+   "liberados": 43,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 35,
+   "taxa": 0.3241,
+   "ic95_do_erro": [
+    0.0,
+    0.082
+   ]
+  },
+  "B-rotulo-consagrado@0.99": {
+   "marcados_pela_regra": 90,
+   "liberados": 39,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 39,
+   "taxa": 0.3611,
+   "ic95_do_erro": [
+    0.0,
+    0.0897
+   ]
+  },
+  "C-com-escape@0.8": {
+   "marcados_pela_regra": 90,
+   "liberados": 45,
+   "irreversivel_liberado": 1,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 34,
+   "taxa": 0.3148,
+   "ic95_do_erro": [
+    0.0039,
+    0.1157
+   ]
+  },
+  "C-com-escape@0.9": {
+   "marcados_pela_regra": 90,
+   "liberados": 45,
+   "irreversivel_liberado": 1,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 34,
+   "taxa": 0.3148,
+   "ic95_do_erro": [
+    0.0039,
+    0.1157
+   ]
+  },
+  "C-com-escape@0.95": {
+   "marcados_pela_regra": 90,
+   "liberados": 43,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 35,
+   "taxa": 0.3241,
+   "ic95_do_erro": [
+    0.0,
+    0.082
+   ]
+  },
+  "C-com-escape@0.99": {
+   "marcados_pela_regra": 90,
+   "liberados": 36,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 42,
+   "taxa": 0.3889,
+   "ic95_do_erro": [
+    0.0,
+    0.0964
+   ]
+  },
+  "D-pergunta-do-efeito@0.8": {
+   "marcados_pela_regra": 90,
+   "liberados": 46,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 32,
+   "taxa": 0.2963,
+   "ic95_do_erro": [
+    0.0,
+    0.0771
+   ]
+  },
+  "D-pergunta-do-efeito@0.9": {
+   "marcados_pela_regra": 90,
+   "liberados": 36,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 42,
+   "taxa": 0.3889,
+   "ic95_do_erro": [
+    0.0,
+    0.0964
+   ]
+  },
+  "D-pergunta-do-efeito@0.95": {
+   "marcados_pela_regra": 90,
+   "liberados": 31,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 47,
+   "taxa": 0.4352,
+   "ic95_do_erro": [
+    0.0,
+    0.1103
+   ]
+  },
+  "D-pergunta-do-efeito@0.99": {
+   "marcados_pela_regra": 90,
+   "liberados": 25,
+   "irreversivel_liberado": 0,
+   "perdidos_pela_regra": 0,
+   "interrupcoes_benignas": 53,
+   "taxa": 0.4907,
+   "ic95_do_erro": [
+    0.0,
+    0.1332
+   ]
+  }
+ },
+ "regra_por_palavra": {
+  "avaliados": 120,
+  "irreversiveis": 12,
+  "recall": 1.0,
+  "ic95_do_recall": [
+   0.7575,
+   1.0
+  ],
+  "alarmes_falsos": 78,
+  "taxa_de_alarme_falso": 0.7222,
+  "confirmacoes_pedidas": 0,
+  "fricção": 0.0
+ }
+}

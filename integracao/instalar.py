@@ -28,6 +28,100 @@ ENTRADA = {'hooks': [{'type': 'command', 'command': COMANDO, 'timeout': 8,
                       'statusMessage': 'classificando o tema com o Jev'}]}
 
 
+# Os dois hooks que o projeto instala, cada um no seu evento. O guarda entrou depois da R16 e
+# tem modo proprio de proposito: sao decisoes de risco diferente -- sugerir uma skill errada
+# custa tres linhas de contexto, deixar de pedir confirmacao de um comando custa o comando.
+GANCHOS = {
+    'roteador': {
+        'evento': 'UserPromptSubmit',
+        'arquivo': RAIZ / 'hooks' / 'jev_prompt_router.py',
+        'marca': 'jev_prompt_router.py',
+        'variavel': 'JEV_ROUTER_MODO',
+        'modo_arquivo': RAIZ / 'modo.txt',
+        'timeout': 8,
+        'rotulo': 'classificando o tema com o Jev',
+    },
+    'guarda': {
+        'evento': 'PreToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_guarda_comando.py',
+        'marca': 'jev_guarda_comando.py',
+        'variavel': 'JEV_GUARDA_MODO',
+        'modo_arquivo': RAIZ / 'modo-guarda.txt',
+        'timeout': 8,
+        'rotulo': 'conferindo o efeito do comando com o Jev',
+        'matcher': 'Bash|PowerShell',
+    },
+}
+
+
+def entrada_de(nome):
+    ganho = GANCHOS[nome]
+    bloco = {'hooks': [{'type': 'command',
+                        'command': f'python "{ganho["arquivo"].as_posix()}"',
+                        'timeout': ganho['timeout'],
+                        'statusMessage': ganho['rotulo']}]}
+    if ganho.get('matcher'):
+        bloco['matcher'] = ganho['matcher']
+    return bloco
+
+
+def instalado_em(dados, nome):
+    ganho = GANCHOS[nome]
+    for grupo in (dados.get('hooks') or {}).get(ganho['evento']) or []:
+        for gancho in grupo.get('hooks') or []:
+            if ganho['marca'] in (gancho.get('command') or ''):
+                return True
+    return False
+
+
+def instalar_gancho(caminho, nome, modo, define_ambiente):
+    ganho = GANCHOS[nome]
+    if not caminho.exists():
+        print(f'  {caminho}: nao existe, pulado')
+        return
+    if not ganho['arquivo'].exists():
+        print(f'  hook {nome} nao encontrado em {ganho["arquivo"]}', file=sys.stderr)
+        return
+    ganho['modo_arquivo'].write_text(modo + chr(10), encoding='utf-8')
+    dados = carregar(caminho)
+    if instalado_em(dados, nome):
+        print(f'  {caminho.name}: {nome} ja instalado')
+    else:
+        copia = backup(caminho)
+        dados.setdefault('hooks', {}).setdefault(ganho['evento'], []).append(entrada_de(nome))
+        print(f'  {caminho.name}: {nome} acrescentado em {ganho["evento"]} '
+              f'(backup em {copia.name})')
+    if define_ambiente:
+        dados.setdefault('env', {})[ganho['variavel']] = modo
+        print(f'  {caminho.name}: {ganho["variavel"]}={modo}')
+    gravar(caminho, dados)
+
+
+def desinstalar_gancho(caminho, nome):
+    ganho = GANCHOS[nome]
+    if not caminho.exists():
+        return
+    dados = carregar(caminho)
+    grupos = (dados.get('hooks') or {}).get(ganho['evento'])
+    if not grupos:
+        print(f'  {caminho.name}: {nome} nao esta la')
+        return
+    copia = backup(caminho)
+    restantes = []
+    for grupo in grupos:
+        ganchos = [g for g in (grupo.get('hooks') or [])
+                   if ganho['marca'] not in (g.get('command') or '')]
+        if ganchos:
+            restantes.append({**grupo, 'hooks': ganchos})
+    if restantes:
+        dados['hooks'][ganho['evento']] = restantes
+    else:
+        dados['hooks'].pop(ganho['evento'], None)
+    (dados.get('env') or {}).pop(ganho['variavel'], None)
+    gravar(caminho, dados)
+    print(f'  {caminho.name}: {nome} removido (backup em {copia.name})')
+
+
 def gravar_modo(modo):
     """O Codex não tem campo `env` no hooks.json; o modo dele vem deste arquivo."""
     (RAIZ / 'modo.txt').write_text(modo + '\n', encoding='utf-8')
@@ -98,13 +192,16 @@ def desinstalar(caminho):
 def ver():
     for caminho in (CLAUDE, CODEX):
         if not caminho.exists():
-            print(f'{caminho}: não existe')
+            print(f'{caminho}: nao existe')
             continue
         dados = carregar(caminho)
-        arquivo = (RAIZ / 'modo.txt')
-        padrao = arquivo.read_text(encoding='utf-8').strip() if arquivo.exists() else 'sombra'
-        modo = (dados.get('env') or {}).get('JEV_ROUTER_MODO', f'{padrao} (do modo.txt)')
-        print(f'{caminho.name}: instalado={ja_instalado(dados)} | modo={modo}')
+        for nome, ganho in GANCHOS.items():
+            arquivo = ganho['modo_arquivo']
+            padrao = arquivo.read_text(encoding='utf-8').strip() if arquivo.exists() else 'sombra'
+            modo = (dados.get('env') or {}).get(ganho['variavel'],
+                                                f'{padrao} (de {arquivo.name})')
+            print(f'{caminho.name}: {nome:9} instalado={instalado_em(dados, nome)} | '
+                  f'modo={modo}')
 
 
 def main():
@@ -113,23 +210,26 @@ def main():
     parser.add_argument('--desinstalar', action='store_true')
     parser.add_argument('--ver', action='store_true')
     parser.add_argument('--modo', default='sombra', choices=('sombra', 'ativo'))
+    parser.add_argument('--gancho', default='roteador',
+                        choices=tuple(GANCHOS) + ('todos',),
+                        help='qual hook instalar ou remover')
     args = parser.parse_args()
 
+    alvos = tuple(GANCHOS) if args.gancho == 'todos' else (args.gancho,)
+
     if args.desinstalar:
-        gravar_modo('sombra')
         print('removendo:')
-        for caminho in (CLAUDE, CODEX):
-            desinstalar(caminho)
+        for nome in alvos:
+            GANCHOS[nome]['modo_arquivo'].write_text('sombra' + chr(10), encoding='utf-8')
+            for caminho in (CLAUDE, CODEX):
+                desinstalar_gancho(caminho, nome)
         return 0
     if args.instalar:
-        if not HOOK.exists():
-            print(f'hook não encontrado em {HOOK}', file=sys.stderr)
-            return 1
-        gravar_modo(args.modo)
-        print(f'instalando em modo {args.modo}:')
-        # Só o Claude Code lê `env` do settings; no Codex o modo vem do ambiente do processo.
-        instalar(CLAUDE, args.modo, define_ambiente=True)
-        instalar(CODEX, args.modo, define_ambiente=False)
+        print(f'instalando {", ".join(alvos)} em modo {args.modo}:')
+        for nome in alvos:
+            # So o Claude Code le `env` do settings; no Codex o modo vem do arquivo de modo.
+            instalar_gancho(CLAUDE, nome, args.modo, define_ambiente=True)
+            instalar_gancho(CODEX, nome, args.modo, define_ambiente=False)
         return 0
     ver()
     return 0

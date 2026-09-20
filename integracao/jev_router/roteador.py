@@ -13,6 +13,14 @@ from . import cliente, politica
 RAIZ = Path(__file__).resolve().parents[1]
 CACHE = RAIZ / 'cache'
 DECISOES = RAIZ / 'decisoes.jsonl'
+# O pedido redigido, guardado só para auditoria posterior. Fica em `estado/`, que o .gitignore
+# já exclui, e passa pela mesma redação de credenciais aplicada antes de qualquer envio.
+#
+# Isto existe por causa de um defeito encontrado ao tentar auditar as 28 primeiras decisões de
+# produção: `decisoes.jsonl` guardava só o SHA-256 do pedido, e recasar o hash com o texto do
+# transcript recuperou 1 caso de 28. Um registro que não permite medir se a decisão foi certa
+# não serve à finalidade que o próprio arquivo declara no topo deste módulo.
+PEDIDOS = RAIZ / 'estado' / 'pedidos.jsonl'
 
 # Abaixo disto o pedido é curto demais para ter tema ("ok", "continue", "sim"). Eles herdam o
 # fluxo normal sem gastar chamada, e são justamente os que mais se repetem.
@@ -42,6 +50,23 @@ def para_o_cache(marca, respostas):
         (CACHE / f'{marca}.json').write_text(
             json.dumps(respostas, ensure_ascii=False), encoding='utf-8')
     except OSError:
+        pass
+
+
+def guardar_pedido(marca_do_pedido, pedido):
+    """Grava o pedido redigido para que a próxima auditoria tenha texto, não só hash.
+
+    Falha em silêncio de propósito: nada aqui pode atrapalhar o fluxo de quem está pedindo.
+    """
+    from . import redacao
+    try:
+        limpo, _ = redacao.limpar(pedido)
+        PEDIDOS.parent.mkdir(parents=True, exist_ok=True)
+        with PEDIDOS.open('a', encoding='utf-8') as arquivo:
+            arquivo.write(json.dumps({'pedido_sha256': marca_do_pedido,
+                                      'em': time.strftime('%Y-%m-%dT%H:%M:%S'),
+                                      'pedido': limpo}, ensure_ascii=False) + '\n')
+    except Exception:
         pass
 
 
@@ -94,6 +119,7 @@ def classificar(pedido, *, contexto='', modo='sombra', usar_cache=True, transpor
                     'evidence_level': 'cache' if veio_do_cache else detalhe.get('evidence_level'),
                     'pedido_sha256': hashlib.sha256(pedido.encode()).hexdigest()})
     registrar(decisao)
+    guardar_pedido(decisao['pedido_sha256'], pedido)
     return decisao
 
 

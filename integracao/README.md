@@ -29,12 +29,43 @@ está no texto do pedido. Dar o contexto anterior ao modelo melhorou 2,6 pontos 
 cobertura. O gargalo não é a formulação da pergunta; é que a decisão de esforço não está escrita
 na mensagem.
 
-**Guarda de comando irreversível funciona, mas não vale aqui.** Sobre 60 comandos de shell
-realmente executados, o Jev combinado com a regra por palavra libera 14 dos 30 alarmes falsos
-sem soltar nenhum dos 4 comandos irreversíveis reais — e nos quatro ele nunca passou do corte de
-confiança. É um bom resultado, e é inútil nesta máquina: o Claude Code aqui roda em
-`acceptEdits` com `Bash(*)` liberado, então não há confirmação para poupar. Fica medido, para o
-dia em que o modo de permissão mudar. O código está em `avaliacao/comandos.py`.
+**Guarda de comando irreversível: o primeiro desenho estava errado, o segundo funciona.**
+
+A primeira leitura desta seção dizia que o guarda era um bom resultado inútil, porque o Claude
+Code aqui roda em `acceptEdits` com `Bash(*)` liberado e não haveria confirmação a poupar. Duas
+coisas mudaram isso.
+
+*Primeiro, a medição.* A avaliação inicial usava o Jev **no lugar** da regra, e com 60 comandos
+e apenas 4 irreversíveis o recall ficou em 0,75 — inutilizável. Refeita com 120 comandos e 12
+irreversíveis (R16), a conclusão se inverteu: sozinho o Jev perde de 2 a 6 dos 12, e mesmo a
+melhor formulação com corte de confiança interrompe 41,7% dos comandos benignos. **Substituir a
+regra é inseguro.** Usar o Jev *depois* da regra, só para liberar o que ela barrou, é outro
+resultado:
+
+| | interrompe comando benigno | irreversíveis liberados |
+|---|---|---|
+| regra por palavra sozinha | **72,2%** | 0 de 12 |
+| regra + Jev como segunda camada | **29,6%** | **0 de 12** |
+
+*Segundo, o fato de que existe fricção.* Enquanto eu testava este hook, o
+`~/.agents/hooks/deny-dangerous.ps1` bloqueou **dois comandos meus legítimos** nesta sessão —
+um `grep` e uma demonstração — porque o texto continha `rm -rf` e `git push` dentro de aspas.
+Não é hipótese: é o alarme falso de 72% acontecendo ao vivo, e ele custa uma volta inteira de
+diagnóstico cada vez.
+
+**A ressalva que impede ligar isto hoje.** O guard global **nega**, não pergunta, e um `allow`
+deste hook não sobrepõe o `deny` de outro: o comando continua barrado. Então o ganho medido só
+se realiza em um destes dois caminhos, e a escolha entre eles é do Igor:
+
+1. o guard global passa a devolver `ask` em vez de `deny`, e este hook responde por ele; ou
+2. este hook substitui o `deny-dangerous.ps1`, herdando a mesma regra por palavra que já está
+   escrita dentro dele, mais a segunda camada.
+
+Enquanto nenhum dos dois acontecer, o hook fica em **sombra**: registra o que teria liberado,
+não muda nada. `python instalar.py --ver` diz o estado.
+
+Detalhe completo em `../laboratorio/PREREGISTRO.md`, seção do programa E17; dados em
+`../laboratorio/r16-guarda-de-comando.json` e `r16b-segunda-camada.json`.
 
 ## O que funciona, e está instalado
 
@@ -108,3 +139,43 @@ python avaliacao/comandos.py --extrair --rodar # o guarda de comando
 Os gabaritos em `avaliacao/gabarito-*.json` foram anotados **antes** de cada execução, e trazem
 o mesmo viés declarado do estudo: quem escreveu os critérios anotou o gabarito. Sob um anotador
 independente os números podem ser outros — é exatamente o que o E8, o E11 e o E12 mediram.
+
+---
+
+## O que se mediu do roteador em produção
+
+Primeira leitura do que o hook fez de verdade, não em amostra: **88 decisões reais**, 28 delas
+na política de tema atual.
+
+| | |
+|---|---|
+| latência mediana | **431 ms** |
+| latência p90 | 623 ms |
+| custo total das 88 | **US$ 0,0022** |
+| sugeriu skill | 20 de 28 |
+| acerto | **não medido** — ver abaixo |
+
+O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
+um defeito de engenharia meu: `decisoes.jsonl` guardava só o SHA-256 do pedido, por privacidade,
+e recasar o hash contra o transcript recuperou **1 caso de 28**. Um registro que não permite
+medir se a decisão foi certa não serve à finalidade que ele próprio declara.
+
+Corrigido: o pedido passa pela mesma redação de credenciais aplicada antes de qualquer envio e
+fica em `estado/pedidos.jsonl`, que o `.gitignore` exclui. A próxima medição terá texto.
+
+## Os dois hooks, e como mexer neles
+
+```
+python integracao/instalar.py --ver                                   # estado dos dois
+python integracao/instalar.py --instalar --gancho guarda --modo ativo # liga o guarda
+python integracao/instalar.py --desinstalar --gancho todos            # tira os dois
+```
+
+| hook | evento | o que decide | modo hoje |
+|---|---|---|---|
+| `jev_prompt_router.py` | `UserPromptSubmit` | tema do pedido, sugere a skill | **ativo** |
+| `jev_guarda_comando.py` | `PreToolUse` (Bash, PowerShell) | se o comando barrado pode passar | **sombra** |
+
+Os dois falham para o lado que não atrapalha: sem chave, sem rede, fora do teto ou fora do
+contrato, saem em silêncio com código 0 e a sessão segue como seguiria sem eles. O guarda tem
+uma diferença: ele falha para o lado **fechado**, ou seja, na dúvida a confirmação acontece.
