@@ -200,11 +200,11 @@ HIPOTESES = [
       'mediana < 700'),
     H(38, 'D', 'A cauda de latência não estoura o orçamento de um gancho de editor.',
       'O p99 fica abaixo de 3.000 ms.',
-      'livro-caixa, recibos',
+      'livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20)',
       'p99 < 3000'),
     H(39, 'D', 'A latência tem cauda longa em relação à mediana.',
       'A razão p99/p50 passa de 3.',
-      'livro-caixa, recibos',
+      'livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20)',
       'p99/p50 > 3'),
     H(40, 'D', 'O custo por chamada é desprezível na mediana.',
       'O custo mediano fica abaixo de US$ 0,0001.',
@@ -484,6 +484,14 @@ EMENDAS = [
                  'truncamento do meu próprio núcleo cortava o pedido do cliente, e o número '
                  'mede esse defeito. A R12 refez a medição com o limite corrigido. As duas '
                  'leituras aparecem no relatório, a retratada marcada como tal.')},
+    {'em': '2026-09-20', 'atinge': ['H038', 'H039'],
+     'o_que': 'a latência passa a ser medida sobre as chamadas que voltaram com resposta',
+     'por_que': ('as rodadas R21 e R22 trouxeram 79 timeouts, e o timeout do cliente é de 45 '
+                 'segundos. Incluí-los na distribuição faz o p99 valer exatamente a minha '
+                 'constante de paciência — o número passa a medir o instrumento e não o '
+                 'modelo, e H038 foi "falsificada" por esse artefato. As duas leituras entram '
+                 'no relatório: a de chamadas respondidas orienta decisão de arquitetura, a '
+                 'que inclui timeout orienta desenho de repescagem.')},
     {'em': '2026-09-20', 'atinge': ['H041'],
      'o_que': 'declarada inconclusiva por falta de dado, e não falsificada',
      'por_que': ('a tabela de tentativas não guardou latência, e os recibos só existem para '

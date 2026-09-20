@@ -13,7 +13,7 @@ herdaria esse defeito em silêncio, e só uma segunda implementação o revelari
 
 Uma divergência aqui significa que a documentação e o dado discordam, e o dado ganha.
 
-**661 de 661 conferências fecham.**
+**789 de 789 conferências fecham.**
 
 ## R1-R3 — 27 conferências, todas fecham
 
@@ -709,6 +709,118 @@ O número que sustenta a tese, refeito juntando os dois lotes brutos: 169 pergun
 |  | para o alvo da injecao | `28` | `28` |
 |  | viradas acima do corte | `1` | `1` |
 
+## R22 — 105 conferências, todas fecham
+
+As três defesas contra a ordem direta — sanitizar, delimitar e sentinela — com acurácia, virada e pareamento por arranjo, e os dois braços do detector.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | limpo: n | `82` | `82` |
+|  | limpo: acertos | `74` | `74` |
+|  | limpo: taxa de acerto | `0.9024` | `0.9024` |
+|  | limpo: ic95 do acerto | `[0.8191, 0.9497]` | `[0.8191, 0.9497]` |
+|  | limpo: pares com a base | `82` | `82` |
+|  | limpo: viradas | `0` | `0` |
+|  | limpo: taxa de virada | `0.0` | `0.0` |
+|  | limpo: ic95 da virada | `[0.0, 0.0448]` | `[0.0, 0.0448]` |
+|  | limpo: viradas para o alvo | `0` | `0` |
+|  | limpo: viradas acima do corte | `0` | `0` |
+|  | limpo: trechos removidos | `0` | `0` |
+|  | limpo-sanitizado: n | `84` | `84` |
+|  | limpo-sanitizado: acertos | `76` | `76` |
+|  | limpo-sanitizado: taxa de acerto | `0.9048` | `0.9048` |
+|  | limpo-sanitizado: ic95 do acerto | `[0.8232, 0.9509]` | `[0.8232, 0.9509]` |
+|  | limpo-sanitizado: pares com a base | `82` | `82` |
+|  | limpo-sanitizado: viradas | `0` | `0` |
+|  | limpo-sanitizado: taxa de virada | `0.0` | `0.0` |
+|  | limpo-sanitizado: ic95 da virada | `[0.0, 0.0448]` | `[0.0, 0.0448]` |
+|  | limpo-sanitizado: viradas para o alvo | `0` | `0` |
+|  | limpo-sanitizado: viradas acima do corte | `0` | `0` |
+|  | limpo-sanitizado: trechos removidos | `0` | `0` |
+|  | limpo-delimitado: n | `81` | `81` |
+|  | limpo-delimitado: acertos | `72` | `72` |
+|  | limpo-delimitado: taxa de acerto | `0.8889` | `0.8889` |
+|  | limpo-delimitado: ic95 do acerto | `[0.8021, 0.9404]` | `[0.8021, 0.9404]` |
+|  | limpo-delimitado: pares com a base | `78` | `78` |
+|  | limpo-delimitado: viradas | `1` | `1` |
+|  | limpo-delimitado: taxa de virada | `0.0128` | `0.0128` |
+|  | limpo-delimitado: ic95 da virada | `[0.0023, 0.0691]` | `[0.0023, 0.0691]` |
+|  | limpo-delimitado: viradas para o alvo | `0` | `0` |
+|  | limpo-delimitado: viradas acima do corte | `0` | `0` |
+|  | limpo-delimitado: trechos removidos | `0` | `0` |
+|  | limpo-sentinela: n | `83` | `83` |
+|  | limpo-sentinela: acertos | `75` | `75` |
+|  | limpo-sentinela: taxa de acerto | `0.9036` | `0.9036` |
+|  | limpo-sentinela: ic95 do acerto | `[0.8212, 0.9503]` | `[0.8212, 0.9503]` |
+|  | limpo-sentinela: pares com a base | `80` | `80` |
+|  | limpo-sentinela: viradas | `0` | `0` |
+|  | limpo-sentinela: taxa de virada | `0.0` | `0.0` |
+|  | limpo-sentinela: ic95 da virada | `[0.0, 0.0458]` | `[0.0, 0.0458]` |
+|  | limpo-sentinela: viradas para o alvo | `0` | `0` |
+|  | limpo-sentinela: viradas acima do corte | `0` | `0` |
+|  | limpo-sentinela: trechos removidos | `0` | `0` |
+|  | meta: n | `80` | `80` |
+|  | meta: acertos | `49` | `49` |
+|  | meta: taxa de acerto | `0.6125` | `0.6125` |
+|  | meta: ic95 do acerto | `[0.5029, 0.7118]` | `[0.5029, 0.7118]` |
+|  | meta: pares com a base | `78` | `78` |
+|  | meta: viradas | `28` | `28` |
+|  | meta: taxa de virada | `0.359` | `0.359` |
+|  | meta: ic95 da virada | `[0.2615, 0.4697]` | `[0.2615, 0.4697]` |
+|  | meta: viradas para o alvo | `28` | `28` |
+|  | meta: viradas acima do corte | `1` | `1` |
+|  | meta: trechos removidos | `0` | `0` |
+|  | meta-sanitizado: n | `85` | `85` |
+|  | meta-sanitizado: acertos | `76` | `76` |
+|  | meta-sanitizado: taxa de acerto | `0.8941` | `0.8941` |
+|  | meta-sanitizado: ic95 do acerto | `[0.8109, 0.9433]` | `[0.8109, 0.9433]` |
+|  | meta-sanitizado: pares com a base | `82` | `82` |
+|  | meta-sanitizado: viradas | `1` | `1` |
+|  | meta-sanitizado: taxa de virada | `0.0122` | `0.0122` |
+|  | meta-sanitizado: ic95 da virada | `[0.0022, 0.0659]` | `[0.0022, 0.0659]` |
+|  | meta-sanitizado: viradas para o alvo | `0` | `0` |
+|  | meta-sanitizado: viradas acima do corte | `0` | `0` |
+|  | meta-sanitizado: trechos removidos | `170` | `170` |
+|  | meta-delimitado: n | `79` | `79` |
+|  | meta-delimitado: acertos | `55` | `55` |
+|  | meta-delimitado: taxa de acerto | `0.6962` | `0.6962` |
+|  | meta-delimitado: ic95 do acerto | `[0.5877, 0.7866]` | `[0.5877, 0.7866]` |
+|  | meta-delimitado: pares com a base | `76` | `76` |
+|  | meta-delimitado: viradas | `21` | `21` |
+|  | meta-delimitado: taxa de virada | `0.2763` | `0.2763` |
+|  | meta-delimitado: ic95 da virada | `[0.1884, 0.3858]` | `[0.1884, 0.3858]` |
+|  | meta-delimitado: viradas para o alvo | `20` | `20` |
+|  | meta-delimitado: viradas acima do corte | `1` | `1` |
+|  | meta-delimitado: trechos removidos | `0` | `0` |
+|  | meta-sentinela: n | `83` | `83` |
+|  | meta-sentinela: acertos | `52` | `52` |
+|  | meta-sentinela: taxa de acerto | `0.6265` | `0.6265` |
+|  | meta-sentinela: ic95 do acerto | `[0.519, 0.7228]` | `[0.519, 0.7228]` |
+|  | meta-sentinela: pares com a base | `80` | `80` |
+|  | meta-sentinela: viradas | `28` | `28` |
+|  | meta-sentinela: taxa de virada | `0.35` | `0.35` |
+|  | meta-sentinela: ic95 da virada | `[0.2545, 0.4592]` | `[0.2545, 0.4592]` |
+|  | meta-sentinela: viradas para o alvo | `28` | `28` |
+|  | meta-sentinela: viradas acima do corte | `1` | `1` |
+|  | meta-sentinela: trechos removidos | `0` | `0` |
+|  | pareado meta-sanitizado: virou só sem defesa | `27` | `27` |
+|  | pareado meta-sanitizado: virou só com defesa | `0` | `0` |
+|  | pareado meta-sanitizado: p | `0.0` | `0.0` |
+|  | pareado meta-delimitado: virou só sem defesa | `8` | `8` |
+|  | pareado meta-delimitado: virou só com defesa | `2` | `2` |
+|  | pareado meta-delimitado: p | `0.1094` | `0.1094` |
+|  | pareado meta-sentinela: virou só sem defesa | `3` | `3` |
+|  | pareado meta-sentinela: virou só com defesa | `1` | `1` |
+|  | pareado meta-sentinela: p | `0.625` | `0.625` |
+|  | sentinela recall_sob_ataque: n | `83` | `83` |
+|  | sentinela recall_sob_ataque: certos | `83` | `83` |
+|  | sentinela recall_sob_ataque: taxa | `1.0` | `1.0` |
+|  | sentinela recall_sob_ataque: ic95 | `[0.9558, 1.0]` | `[0.9558, 1.0]` |
+|  | sentinela silencio_no_texto_limpo: n | `83` | `83` |
+|  | sentinela silencio_no_texto_limpo: certos | `81` | `81` |
+|  | sentinela silencio_no_texto_limpo: taxa | `0.9759` | `0.9759` |
+|  | sentinela silencio_no_texto_limpo: ic95 | `[0.9163, 0.9934]` | `[0.9163, 0.9934]` |
+
 ## cem hipoteses — 8 conferências, todas fecham
 
 | | item | publicado | recalculado |
@@ -718,11 +830,23 @@ O número que sustenta a tese, refeito juntando os dois lotes brutos: 169 pergun
 |  | a pagina existe | `True` | `True` |
 |  | a pagina esta atualizada | `True` | `True` |
 |  | a pagina declara o placar | `True` | `True` |
-|  | sustentadas | `82` | `82` |
-|  | falsificadas | `17` | `17` |
+|  | sustentadas | `81` | `81` |
+|  | falsificadas | `18` | `18` |
 |  | inconclusivas | `1` | `1` |
 
-## documentação — 54 conferências, todas fecham
+## cem perguntas — 5 conferências, todas fecham
+
+O registro estratégico, a declaração de todo parâmetro não medido que as respostas usam, e se a página publicada está atualizada.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | o registro tem cem | `100` | `100` |
+|  | toda pergunta tem resposta | `0` | `0` |
+|  | nenhuma usa parâmetro não declarado | `[]` | `[]` |
+|  | CEM-PERGUNTAS-ESTRATEGICAS.md existe | `True` | `True` |
+|  | CEM-PERGUNTAS-ESTRATEGICAS.md está atualizado | `True` | `True` |
+
+## documentação — 72 conferências, todas fecham
 
 Cada afirmação numérica escrita nos documentos, conferida em duas etapas: o trecho existe literalmente, e o valor fecha com o dado.
 
@@ -786,6 +910,28 @@ contra 84,4%)…" fecha com o dado | `95,5%` | `95,5%` |
 |  | GUIA-PRATICO-JEV.md: "0 em 46 liberações…" fecha com o dado | `46` | `46` |
 |  | GUIA-PRATICO-JEV.md: "**0 de 12**…" está escrito | `True` | `True` |
 |  | GUIA-PRATICO-JEV.md: "**0 de 12**…" fecha com o dado | `0` | `0` |
+|  | GUIA-PRATICO-JEV.md: "| nenhuma | 28/78 = **35,9%** | 49/80 = 61,3% | — |…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "| nenhuma | 28/78 = **35,9%** | 49/80 = 61,3% | — |…" fecha com o dado | `35,9%` | `35,9%` |
+|  | GUIA-PRATICO-JEV.md: "| **sanitizar a entrada** | 1/82 = **1,2%** | 76/85 …" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "| **sanitizar a entrada** | 1/82 = **1,2%** | 76/85 …" fecha com o dado | `1` | `1` |
+|  | GUIA-PRATICO-JEV.md: "27 a 0, p < 0,0001…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "27 a 0, p < 0,0001…" fecha com o dado | `27` | `27` |
+|  | GUIA-PRATICO-JEV.md: "| delimitar o texto do cliente | 21/76 = 27,6% | 55/…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "| delimitar o texto do cliente | 21/76 = 27,6% | 55/…" fecha com o dado | `27,6%` | `27,6%` |
+|  | GUIA-PRATICO-JEV.md: "removeu 170 trechos…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "removeu 170 trechos…" fecha com o dado | `170` | `170` |
+|  | GUIA-PRATICO-JEV.md: "**83 de
+83** tentativas de ordem direta…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "**83 de
+83** tentativas de ordem direta…" fecha com o dado | `83` | `83` |
+|  | GUIA-PRATICO-JEV.md: "calada em **81 de 83** mensagens limpas…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "calada em **81 de 83** mensagens limpas…" fecha com o dado | `81` | `81` |
+|  | GUIA-PRATICO-JEV.md: "recall de 100%
+com 2,4% de alarme falso…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "recall de 100%
+com 2,4% de alarme falso…" fecha com o dado | `2,4%` | `2,4%` |
+|  | GUIA-PRATICO-JEV.md: "76/84 contra 74/82 sem ela…" está escrito | `True` | `True` |
+|  | GUIA-PRATICO-JEV.md: "76/84 contra 74/82 sem ela…" fecha com o dado | `76` | `76` |
 
 ## páginas geradas — 2 conferências, todas fecham
 
@@ -801,8 +947,8 @@ As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, 
 | | item | publicado | recalculado |
 |---|---|---|---|
 |  | o guia declara chamadas e custo | `True` | `True` |
-|  | chamadas declaradas = livro-caixa | `11172` | `11172` |
-|  | custo declarado = livro-caixa (4 casas) | `0.4851` | `0.4851` |
+|  | chamadas declaradas = livro-caixa | `13042` | `13042` |
+|  | custo declarado = livro-caixa (4 casas) | `0.5297` | `0.5297` |
 |  | dentro do teto de US$ 5,00 | `True` | `True` |
 
 ## Fora do alcance desta auditoria
@@ -810,4 +956,6 @@ As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, 
 Números que aparecem nos resumos mas cujas linhas brutas não estão no arquivo que os cita. Não são falhas; são o que esta página **não** prova.
 
 - R1-R3: original-E12: reaproveitada de outro experimento
+- R22: se os oito padrões do sanitizador cobrem a ordem direta escrita de outro jeito: a defesa foi medida contra os vetores que este laboratório escreveu, e um atacante que os conheça pode contorná-los
+- cem perguntas: se o valor dos parâmetros não medidos — preço de mercado, custo-hora, volume mensal — corresponde à realidade de quem for usar o estudo. A auditoria confere que eles estão declarados, não que estão certos
 

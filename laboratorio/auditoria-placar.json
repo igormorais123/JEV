@@ -1,0 +1,28 @@
+{
+  "conferencias": 789,
+  "falhas": 0,
+  "fora_de_alcance": 3,
+  "por_bloco": {
+    "R1-R3": 27,
+    "R8": 18,
+    "R9": 10,
+    "R10": 20,
+    "R11": 80,
+    "R15": 20,
+    "R15b": 45,
+    "R16": 20,
+    "R17": 37,
+    "R18": 71,
+    "R19": 59,
+    "R20": 52,
+    "consolidado": 61,
+    "R21": 67,
+    "R21b": 6,
+    "R22": 105,
+    "cem hipoteses": 8,
+    "cem perguntas": 5,
+    "documentação": 72,
+    "páginas geradas": 2,
+    "caixa": 4
+  }
+}

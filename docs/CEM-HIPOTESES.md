@@ -5,7 +5,7 @@
 > provas estão em `laboratorio/h100/provas.py`. Nenhuma previsão foi editada depois de
 > ver o resultado, e as três emendas feitas estão datadas no próprio registro.
 
-**82 sustentadas, 17 falsificadas, 1 inconclusiva.**
+**81 sustentadas, 18 falsificadas, 1 inconclusiva.**
 
 ## O que este documento é, e o que ele não é
 
@@ -63,14 +63,14 @@ Falsificada como registrada, e o corte explica: a amostra inclui a R15, que é a
 ### H012 — A confiança relatada é a probabilidade da classe escolhida, não um número à parte.
 
 **Previa:** Em todas as linhas com vetor de probabilidades, confiança = probabilidade do escolhido.  
-**Mediu:** 2831 — 2831 de 3928 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)
+**Mediu:** 3944 — 3944 de 6054 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)
 
 A confiança **não é** a probabilidade da classe escolhida: elas divergem em 74% das decisões. São dois sinais distintos no mesmo contrato, e o estudo vinha tratando como se fossem um. Quem usa corte de confiança está usando o sinal certo; quem ler a probabilidade esperando o mesmo número vai errar.
 
 ### H015 — A confiança é degenerada: 1,0 é de longe o valor mais comum.
 
 **Previa:** Mais de metade das decisões vêm com confiança exatamente 1,0.  
-**Mediu:** 0,2217 — 871 de 3928 decisões com 1,0
+**Mediu:** 0,2886 — 1747 de 6054 decisões com 1,0
 
 A confiança é bem menos degenerada do que o corpus limpo sugeria: 1,0 aparece em 20,8% das decisões, não na maioria. O vetor de probabilidades colapsa em 24,1%. A impressão de "ele sempre responde 1,0" vinha de olhar só para as rodadas fáceis.
 
@@ -103,10 +103,10 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 
 | | hipótese | previa | veredito | mediu |
 |---|---|---|---|---|
-| `H001` | Mandar duas perguntas no mesmo payload não custa mais latência que mandar uma. | razão entre as medianas < 1,3 | **sustentada** | 1,007 |
-| `H002` | O custo de uma chamada é essencialmente linear no tamanho do payload. | r de Pearson > 0,90 | **sustentada** | 0,9863 |
-| `H003` | O tamanho do estado domina o custo: o resto do payload é ruído contábil. | r de Pearson > 0,85 | **sustentada** | 0,9825 |
-| `H004` | A latência é dominada por custo fixo, não pelo tamanho do que se manda. | r de Pearson < 0,30 | **sustentada** | -0,0336 |
+| `H001` | Mandar duas perguntas no mesmo payload não custa mais latência que mandar uma. | razão entre as medianas < 1,3 | **sustentada** | 0,993 |
+| `H002` | O custo de uma chamada é essencialmente linear no tamanho do payload. | r de Pearson > 0,90 | **sustentada** | 0,9866 |
+| `H003` | O tamanho do estado domina o custo: o resto do payload é ruído contábil. | r de Pearson > 0,85 | **sustentada** | 0,9749 |
+| `H004` | A latência é dominada por custo fixo, não pelo tamanho do que se manda. | r de Pearson < 0,30 | **sustentada** | -0,0419 |
 | `H005` | A ordem em que as opções aparecem não muda a escolha. | diferença absoluta de acurácia < 0,02 em ambas | **sustentada** | 0 |
 | `H006` | Até doze opções, o número de classes não custa acurácia. | todas as quatro acima de 0,95 | **sustentada** | 0,9778 |
 | `H007` | Uma instrução curta basta: o detalhe da instrução não é o que carrega a decisão. | queda < 0,03 | **sustentada** | 0 |
@@ -114,20 +114,20 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 | `H009` | Critérios em inglês com mensagem em português não degradam a classificação. | queda < 0,05 | **sustentada** | 0 |
 | `H010` | Tirar os acentos do texto não degrada a classificação. | queda < 0,03 | **sustentada** | 0 |
 | `H011` | O contrato nunca devolve uma classe que não estava nos critérios. | nenhuma escolha fora do conjunto | **sustentada** | 0 |
-| `H012` | A confiança relatada é a probabilidade da classe escolhida, não um número à parte. | nenhuma divergência acima de 0,01 | **FALSIFICADA** | 2831 |
+| `H012` | A confiança relatada é a probabilidade da classe escolhida, não um número à parte. | nenhuma divergência acima de 0,01 | **FALSIFICADA** | 3944 |
 
-- **H001** · fonte: livro-caixa, 3.180 recibos de decisão · mediana 483 ms com duas perguntas contra 480 ms com uma, em 92 e 3744 chamadas
-- **H002** · fonte: livro-caixa, recibos com custo e bytes · r de Pearson sobre 3836 recibos
-- **H003** · fonte: livro-caixa, recibos · r de Pearson sobre 3836 recibos
-- **H004** · fonte: livro-caixa, recibos · r de Pearson sobre 3857 recibos; latência mediana 480 ms
+- **H001** · fonte: livro-caixa, 3.180 recibos de decisão · mediana 472 ms com duas perguntas contra 475 ms com uma, em 417 e 5220 chamadas
+- **H002** · fonte: livro-caixa, recibos com custo e bytes · r de Pearson sobre 5637 recibos
+- **H003** · fonte: livro-caixa, recibos · r de Pearson sobre 5637 recibos
+- **H004** · fonte: livro-caixa, recibos · r de Pearson sobre 5716 recibos; latência mediana 476 ms
 - **H005** · fonte: R1-R3, condições ordem-inversa e ordem-sorteada · inversa 0.9889, sorteada 0.9889, referência 0.9889
 - **H006** · fonte: R1-R3, condições por número de opções · 2-opcoes 98.9%, 3-opcoes 97.8%, 5-opcoes 98.9%, 12-opcoes 97.8%
 - **H007** · fonte: R11, condição instrucao/curta contra a referência · curta 0.9667 contra referência 0.9667
 - **H008** · fonte: R11, condição instrucao/contraditoria · contraditória 0.9667 contra referência 0.9667
 - **H009** · fonte: R11, condição idioma/ingles · inglês 0.9667
 - **H010** · fonte: R11, condição idioma/sem-acento · sem acento 0.9667
-- **H011** · fonte: todos os artefatos com gabarito de classes · 3928 decisões conferidas contra os critérios declarados na própria chamada
-- **H012** · fonte: R4-R7, campo `probabilidades` · 2831 de 3928 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)
+- **H011** · fonte: todos os artefatos com gabarito de classes · 6054 decisões conferidas contra os critérios declarados na própria chamada
+- **H012** · fonte: R4-R7, campo `probabilidades` · 3944 de 6054 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)
 
 ### B · A confiança como sinal
 
@@ -137,7 +137,7 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 |---|---|---|---|---|
 | `H013` | A confiança separa acerto de erro: acerto vem mais confiante. | separação positiva em todas as rodadas testadas | **sustentada** | 0,0363 |
 | `H014` | Cortar em 0,90 melhora a precisão do que sobra. | acurácia acima do corte > acurácia geral | **sustentada** | 0,0449 |
-| `H015` | A confiança é degenerada: 1,0 é de longe o valor mais comum. | fração com confiança == 1,0 acima de 0,50 | **FALSIFICADA** | 0,2217 |
+| `H015` | A confiança é degenerada: 1,0 é de longe o valor mais comum. | fração com confiança == 1,0 acima de 0,50 | **FALSIFICADA** | 0,2886 |
 | `H016` | Existe erro com confiança máxima — a calibração tem um ponto cego duro. | contagem de erros com confiança == 1,0 maior que zero | **sustentada** | 56 |
 | `H017` | Erro acima do corte de 0,90 é raro o bastante para o corte valer a pena. | taxa de erro acima do corte < 0,05 | **sustentada** | 0,0442 |
 | `H018` | Ruído no texto derruba a confiança, não só a acurácia. | sequência não crescente de confiança média | **sustentada** | 0,6856 |
@@ -152,7 +152,7 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 
 - **H013** · fonte: R1-R3, R8-R9, R11, R19 — linhas com gabarito · R1-R3 +0.271, R11 +0.260, R12-R13 +0.036, R15 +0.392, R19 +0.250, R4-R7 +0.242, R8-R9 +0.446
 - **H014** · fonte: todas as linhas com gabarito e confiança · 95.6% acima do corte em 2172 decisões, contra 91.1% nas 2626
-- **H015** · fonte: livro-caixa, 3.180 decisões · 871 de 3928 decisões com 1,0
+- **H015** · fonte: livro-caixa, 3.180 decisões · 1747 de 6054 decisões com 1,0
 - **H016** · fonte: todas as linhas com gabarito · exemplo: R4-R7/R6/40-opcoes, escolheu devolver-sem-troca quando era cobranca
 - **H017** · fonte: todas as linhas com gabarito e confiança · 96 erros em 2172 decisões acima do corte; IC95 (0.0363, 0.0537)
 - **H018** · fonte: R11, dimensão ruido · 0.993 → 0.687 → 0.413 → 0.308
@@ -171,23 +171,23 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 
 | | hipótese | previa | veredito | mediu |
 |---|---|---|---|---|
-| `H027` | A distribuição de probabilidade quase sempre colapsa numa classe só. | fração degenerada > 0,70 | **FALSIFICADA** | 0,2538 |
+| `H027` | A distribuição de probabilidade quase sempre colapsa numa classe só. | fração degenerada > 0,70 | **FALSIFICADA** | 0,318 |
 | `H028` | Quando a distribuição não colapsa, o erro fica mais provável. | acurácia não degenerada < degenerada | **sustentada** | 0,1703 |
 | `H029` | A entropia da distribuição prediz erro. | entropia média dos erros maior | **sustentada** | 0,6419 |
 | `H030` | A margem entre a primeira e a segunda classe prediz erro tão bem quanto a confiança. | diferença de AUC < 0,05 | **sustentada** | 0,005 |
 | `H031` | O vetor de probabilidades soma 1. | nenhuma soma fora da tolerância | **sustentada** | 0,01 |
-| `H032` | A segunda opção quase nunca recebe massa. | fração com segunda == 0 acima de 0,70 | **FALSIFICADA** | 0,2538 |
+| `H032` | A segunda opção quase nunca recebe massa. | fração com segunda == 0 acima de 0,70 | **FALSIFICADA** | 0,318 |
 | `H033` | Quando erra, a classe certa costuma estar em segundo lugar. | fração > 0,50 | **sustentada** | 0,6471 |
 | `H034` | Mais opções espalham a probabilidade. | entropia média maior em 40 | **sustentada** | 0,0676 |
 | `H035` | Ruído espalha a probabilidade. | entropia média maior no sujo | **sustentada** | 0,2476 |
 | `H036` | A armadilha semântica espalha a probabilidade mais que a dificuldade de superfície. | entropia média maior no semântico | **FALSIFICADA** | -0,1739 |
 
-- **H027** · fonte: livro-caixa, vetores de probabilidade das 3.180 decisões · 997 de 3928 vetores
+- **H027** · fonte: livro-caixa, vetores de probabilidade das 3.180 decisões · 1925 de 6054 vetores
 - **H028** · fonte: linhas com gabarito e vetor de probabilidade · degeneradas 98.7% em 158, não degeneradas 81.7% em 82
 - **H029** · fonte: R4-R7, campo `probabilidades` · erros 0.7657 bits em 17, acertos 0.1238 bits em 223
 - **H030** · fonte: R4-R7, campo `probabilidades` · AUC da margem 0.8768, AUC da confiança 0.8718
-- **H031** · fonte: R4-R7 e livro-caixa · 4168 vetores conferidos
-- **H032** · fonte: livro-caixa, vetores de probabilidade · 997 de 3928
+- **H031** · fonte: R4-R7 e livro-caixa · 6294 vetores conferidos
+- **H032** · fonte: livro-caixa, vetores de probabilidade · 1925 de 6054
 - **H033** · fonte: R4-R7, erros com vetor de probabilidade · 11 de 17 erros com o gabarito em segundo lugar
 - **H034** · fonte: R6, condições de 20 e 40 opções · 40 opções 0.1880 bits, 20 opções 0.1204 bits
 - **H035** · fonte: R7, condições facil-limpo e facil-sujo · sujo 0.3550 bits, limpo 0.1074 bits
@@ -195,35 +195,35 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 
 ### D · Latência e custo
 
-*12 hipóteses: 2 falsificada, 1 inconclusiva, 9 sustentada.*
+*12 hipóteses: 3 falsificada, 1 inconclusiva, 8 sustentada.*
 
 | | hipótese | previa | veredito | mediu |
 |---|---|---|---|---|
-| `H037` | A latência mediana cabe dentro de um passo interativo. | mediana < 700 | **sustentada** | 480,4 |
-| `H038` | A cauda de latência não estoura o orçamento de um gancho de editor. | p99 < 3000 | **sustentada** | 1231,5 |
-| `H039` | A latência tem cauda longa em relação à mediana. | p99/p50 > 3 | **FALSIFICADA** | 2,56 |
+| `H037` | A latência mediana cabe dentro de um passo interativo. | mediana < 700 | **sustentada** | 475,1 |
+| `H038` | A cauda de latência não estoura o orçamento de um gancho de editor. | p99 < 3000 | **sustentada** | 1037,5 |
+| `H039` | A latência tem cauda longa em relação à mediana. | p99/p50 > 3 | **FALSIFICADA** | 2,18 |
 | `H040` | O custo por chamada é desprezível na mediana. | mediana < 0,0001 | **sustentada** | 0 |
 | `H041` | Chamadas que falharam são mais lentas que as que deram certo. | mediana das falhas maior | inconclusiva | — |
-| `H042` | O gasto do estudo está concentrado em poucas rodadas. | fração das três maiores > 0,80 | **sustentada** | 0,9284 |
+| `H042` | O gasto do estudo está concentrado em poucas rodadas. | fração das três maiores > 0,80 | **sustentada** | 0,9345 |
 | `H043` | Ordenar contexto custa menos que responder com ele. | custo médio de ordenação menor | **FALSIFICADA** | -0 |
-| `H044` | Dobrar o estado aproximadamente dobra o custo. | razão > 2 | **sustentada** | 2,15 |
-| `H045` | Chamadas com duas perguntas não custam o dobro. | razão < 1,5 | **sustentada** | 1,125 |
-| `H046` | O paralelismo de oito linhas não degradou a latência. | razão < 1,5 | **sustentada** | 1,011 |
-| `H047` | A taxa de falha de transporte do estudo inteiro é baixa. | taxa de erro < 0,03 | **sustentada** | 0,0234 |
-| `H048` | O modelo devolve pouquíssimo token de saída: o preço zero de saída não é sorte. | mediana < 200 | **sustentada** | 58 |
+| `H044` | Dobrar o estado aproximadamente dobra o custo. | razão > 2 | **FALSIFICADA** | 1,81 |
+| `H045` | Chamadas com duas perguntas não custam o dobro. | razão < 1,5 | **sustentada** | 1,187 |
+| `H046` | O paralelismo de oito linhas não degradou a latência. | razão < 1,5 | **sustentada** | 1,002 |
+| `H047` | A taxa de falha de transporte do estudo inteiro é baixa. | taxa de erro < 0,03 | **sustentada** | 0,0266 |
+| `H048` | O modelo devolve pouquíssimo token de saída: o preço zero de saída não é sorte. | mediana < 200 | **sustentada** | 61 |
 
-- **H037** · fonte: livro-caixa, 3.180 recibos · 3857 chamadas
-- **H038** · fonte: livro-caixa, recibos · p99 sobre 3857 chamadas
-- **H039** · fonte: livro-caixa, recibos · p99 1232 ms sobre mediana 480 ms
-- **H040** · fonte: livro-caixa, recibos · mediana de 3836 chamadas
+- **H037** · fonte: livro-caixa, 3.180 recibos · 5637 chamadas respondidas
+- **H038** · fonte: livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20) · p99 sobre 5637 chamadas respondidas; máximo 3474 ms. Incluindo os timeouts o p99 vira 45116 ms, que é a constante de timeout do cliente e não uma latência do modelo
+- **H039** · fonte: livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20) · p99 1037 ms sobre mediana 475 ms, em chamadas respondidas
+- **H040** · fonte: livro-caixa, recibos · mediana de 5637 chamadas
 - **H041** · fonte: livro-caixa, tabela attempts · a tabela de tentativas não registrou latência; os recibos só existem para chamadas que voltaram com resposta, então a comparação com a falha não é possível com o dado guardado
-- **H042** · fonte: livro-caixa, agrupado por experimento · shared-e15 51.1%, shared-lab 39.0%, exp-e12-replicacao 2.7%
+- **H042** · fonte: livro-caixa, agrupado por experimento · shared-e15 46.8%, shared-lab 44.2%, exp-e12-replicacao 2.5%
 - **H043** · fonte: diário de gastos, rodadas R18/R20 contra R18-resposta · ordenação US$ 0.00003280 em 1939 chamadas, resposta US$ 0.00002076 em 1067
-- **H044** · fonte: livro-caixa, recibos · quartil superior 47301 nUSD contra inferior 21981 nUSD
-- **H045** · fonte: livro-caixa, recibos · 26923 nUSD contra 23941 nUSD
-- **H046** · fonte: livro-caixa, recibos por consumidor · paralelo 481 ms em 3746 contra sequencial 475 ms em 110
-- **H047** · fonte: livro-caixa, tabela attempts · 125 falhas em 5347 tentativas: success 5211, http_error 91, timeout 21, reserved 11, invalid_response 8, sent 5
-- **H048** · fonte: livro-caixa, tabela attempts com uso registrado · mediana sobre 3836 recibos; máximo 134
+- **H044** · fonte: livro-caixa, recibos · quartil superior 40907 nUSD contra inferior 22604 nUSD
+- **H045** · fonte: livro-caixa, recibos · 28309 nUSD contra 23856 nUSD
+- **H046** · fonte: livro-caixa, recibos por consumidor · paralelo 476 ms em 5605 contra sequencial 475 ms em 110
+- **H047** · fonte: livro-caixa, tabela attempts · 192 falhas em 7217 tentativas: success 7012, http_error 91, timeout 79, sent 14, reserved 13, invalid_response 8
+- **H048** · fonte: livro-caixa, tabela attempts com uso registrado · mediana sobre 5637 recibos; máximo 134
 
 ### E · Seleção de contexto
 

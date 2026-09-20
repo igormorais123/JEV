@@ -8,14 +8,18 @@ Projeto experimental para testes com o modelo de classificação JEV.
   testadas e os limites que o estudo não autoriza ultrapassar. Comece por aqui.
 - **[Guia prático](docs/GUIA-PRATICO-JEV.md)** — como aplicar, passo a passo, com os cuidados em ordem de risco.
 - **[Os limites do Jev](docs/LIMITES-DO-JEV.md)** — mapa empírico do programa E14: onde ele quebra, onde não
-  quebra, a imunidade a manipulação pelo texto classificado e a classe de escape obrigatória.
+  quebra, a queda da afirmação de imunidade a manipulação e a classe de escape obrigatória.
 - **[Cem hipóteses sobre o Jev](docs/CEM-HIPOTESES.md)** — o registro com as cem, a previsão de cada uma
-  escrita antes do teste, e o que o dado respondeu: 82 sustentadas, 17 falsificadas, 1 inconclusiva.
+  escrita antes do teste, e o que o dado respondeu: 81 sustentadas, 18 falsificadas, 1 inconclusiva.
   Entre as falsificadas está a imunidade a meta-instrução, que era a afirmação mais forte do estudo.
+- **[Cem perguntas estratégicas](docs/CEM-PERGUNTAS-ESTRATEGICAS.md)** — o que fazer com o modelo, não o que
+  ele faz. Cada pergunta declara a decisão que informa e o que a faria virar; 76 se respondem com dado
+  medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
+  um a um, e um teste quebra se alguma resposta usar um deles calada.
 - **[Dossiê de evidências](docs/DOSSIE-DE-EVIDENCIAS.md)** — cada afirmação do estudo com a força dela
   (demonstrado, direção, medição única, falsificado) e, em cada uma, o que ela **não** prova. Página gerada
   a partir do dado bruto.
-- **[Auditoria dos números](docs/AUDITORIA-DE-NUMEROS.md)** — as 580 conferências que recalculam cada número
+- **[Auditoria dos números](docs/AUDITORIA-DE-NUMEROS.md)** — as 789 conferências que recalculam cada número
   publicado a partir das linhas de resposta originais, com estatística independente da que gerou os resumos.
   Presa na suíte de testes: número sem dado que o sustente quebra o `pytest`.
 - **Canários de comportamento** (`python -m laboratorio.canarios_de_comportamento --rodar`) — oito propriedades

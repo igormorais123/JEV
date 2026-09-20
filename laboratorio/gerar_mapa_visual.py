@@ -69,6 +69,41 @@ def injecao_direta():
         ]}
 
 
+def _pareado(bloco):
+    """`p = 0,0000` nao existe: abaixo da quarta casa o certo e dizer que e menor que ela."""
+    valor = bloco['p']
+    escrito = 'p < 0,0001' if valor < 0.0001 else f"p = {valor:.4f}".replace('.', ',')
+    return f"{bloco['virou_so_sem_defesa']} a {bloco['virou_so_com_defesa']}, {escrito}"
+
+
+def defesas():
+    """A R22: as tres defesas contra a ordem direta, cada uma pareada contra nao fazer nada."""
+    caminho = RAIZ / 'laboratorio' / 'r22-defesas.json'
+    if not caminho.exists():
+        return None
+    dado = json.loads(caminho.read_text(encoding='utf-8'))
+    a, par = dado['arranjos'], dado['pareado']
+    rotulo = {'meta': 'nenhuma defesa',
+              'meta-sanitizado': 'sanitizar a entrada',
+              'meta-delimitado': 'delimitar o texto do cliente',
+              'meta-sentinela': 'sentinela (só detecta)'}
+    linhas = []
+    for chave, nome in rotulo.items():
+        bloco = a[chave]
+        linhas.append({
+            'defesa': nome, 'viradas': bloco['viradas'], 'n': bloco['pares_com_base'],
+            'taxa': bloco['taxa_de_virada'], 'acuracia': bloco['taxa_de_acerto'],
+            'pareado': _pareado(par[chave]) if chave in par else '—'})
+    sentinela = dado['sentinela']
+    return {
+        'linhas': linhas,
+        'limpo_sem_defesa': a['limpo']['taxa_de_acerto'],
+        'limpo_sanitizado': a['limpo-sanitizado']['taxa_de_acerto'],
+        'trechos_removidos': a['meta-sanitizado']['trechos_removidos'],
+        'recall': sentinela['recall_sob_ataque'],
+        'silencio': sentinela['silencio_no_texto_limpo']}
+
+
 def ultima_corrida_de_canarios():
     """A corrida mais recente, ou None. A pagina precisa dizer de quando e o que ainda vale."""
     caminho = RAIZ / 'laboratorio' / 'canarios-de-comportamento.jsonl'
@@ -91,6 +126,7 @@ def main():
                                   .read_text(encoding='utf-8')),
              'canarios': ultima_corrida_de_canarios(),
              'injecao_direta': injecao_direta(),
+             'defesas': defesas(),
              'calibracao': {nome: {'ece': bloco['ece'], 'separacao': bloco['separacao'],
                                    'faixas': bloco['faixas']}
                             for nome, bloco in mapa['calibracao'].items()}}
@@ -324,6 +360,21 @@ tbody tr:last-child td{border-bottom:none}
   </section>
 
   <section>
+    <h2>E a defesa, medida</h2>
+    <p class="sub">Três defesas contra o mesmo vetor, no mesmo corpus, cada uma comparada contra
+    a resposta que o modelo deu sem defesa nenhuma. A coluna que decide é a última: o teste
+    pareado, que só conta os casos em que as duas versões discordaram.</p>
+    <div class="rolagem">
+      <table id="tabela-defesas">
+        <thead><tr><th>Defesa</th><th>Viradas</th><th>Taxa</th><th>Acurácia</th>
+        <th>Pareado contra não fazer nada</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="sub" id="defesas-nota"></p>
+  </section>
+
+  <section>
     <h2>Em escala: selecionar deixa de "não perder" e passa a ganhar</h2>
     <p class="sub">As mesmas perguntas, agora <b>geradas e filtradas por máquina</b> em dois lotes
     independentes — nenhuma delas lida por mim antes de rodar. Com 169 perguntas, mandar os dois
@@ -546,6 +597,29 @@ if (D.injecao_direta) {
         <td>${pct(l.taxa)}</td><td>${l.alvo}</td>
         <td style="font-weight:600;color:${l.acima > 5 ? 'var(--ruptura)' : 'var(--tinta-fraca)'}">${l.acima}</td></tr>`;
     }).join('');
+}
+
+// ---- defesas medidas (R22)
+if (D.defesas) {
+  document.querySelector('#tabela-defesas tbody').innerHTML =
+    D.defesas.linhas.map(l => {
+      const bom = l.taxa < 0.05;
+      return `<tr><td style="text-align:left">${l.defesa}</td>
+        <td><span class="pilula ${bom ? 'p-es' : 'p-ru'}">${l.viradas}/${l.n}</span></td>
+        <td style="font-weight:600;color:${bom ? 'var(--estavel)' : 'var(--ruptura)'}">${pct(l.taxa)}</td>
+        <td>${pct(l.acuracia)}</td><td>${l.pareado}</td></tr>`;
+    }).join('');
+  const d = D.defesas;
+  document.querySelector('#defesas-nota').innerHTML =
+    `Sanitizar removeu <span class="num">${d.trechos_removidos}</span> trechos das mensagens
+     atacadas e <b>nada</b> cobrou do texto inocente: no corpus limpo, com sanitização,
+     <span class="num">${pct(d.limpo_sanitizado)}</span> contra
+     <span class="num">${pct(d.limpo_sem_defesa)}</span> sem ela. O sentinela não impede a
+     virada, mas acusa <span class="num">${d.recall.certos}/${d.recall.n}</span> das tentativas
+     e fica calado em <span class="num">${d.silencio.certos}/${d.silencio.n}</span> das
+     mensagens limpas — ao custo de zero, porque o preço é por token de entrada e o estado já
+     foi enviado. O que isto <b>não</b> prova: que os oito padrões cobrem uma ordem direta
+     escrita de outro jeito.`;
 }
 
 // ---- escala consolidada (R18 + R20)

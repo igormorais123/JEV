@@ -453,26 +453,42 @@ def h036():
 
 
 # ===================================================================== D · latência e custo
+def _latencias(so_respondidas=True):
+    """Latências dos recibos. Timeout é a constante do cliente, não a do modelo.
+
+    Emenda de 2026-09-20: as hipóteses de latência passaram a medir só o que voltou. Uma chamada
+    que estourou o timeout de 45 s registra 45.000 ms de latência, e com 79 delas o p99 do
+    conjunto vira a própria constante — o instrumento passa a medir a si mesmo.
+    """
+    return [l['latencia_ms'] for l in d.decisoes()
+            if l['latencia_ms'] and (not so_respondidas or l.get('status') == 'success')]
+
+
 @prova('H037')
 def h037():
-    valores = [l['latencia_ms'] for l in d.decisoes() if l['latencia_ms']]
+    valores = _latencias()
     m = d.mediana(valores)
-    return ok(m < 700, round(m, 1), f'{len(valores)} chamadas')
+    return ok(m < 700, round(m, 1), f'{len(valores)} chamadas respondidas')
 
 
 @prova('H038')
 def h038():
-    valores = [l['latencia_ms'] for l in d.decisoes() if l['latencia_ms']]
+    valores = _latencias()
     p99 = d.percentil(valores, 0.99)
-    return ok(p99 < 3000, round(p99, 1), f'p99 sobre {len(valores)} chamadas')
+    com_timeout = d.percentil(_latencias(so_respondidas=False), 0.99)
+    return ok(p99 < 3000, round(p99, 1),
+              f'p99 sobre {len(valores)} chamadas respondidas; máximo {max(valores):.0f} ms. '
+              f'Incluindo os timeouts o p99 vira {com_timeout:.0f} ms, que é a constante de '
+              f'timeout do cliente e não uma latência do modelo')
 
 
 @prova('H039')
 def h039():
-    valores = [l['latencia_ms'] for l in d.decisoes() if l['latencia_ms']]
+    valores = _latencias()
     razao = d.percentil(valores, 0.99) / d.mediana(valores)
     return ok(razao > 3, round(razao, 2),
-              f'p99 {d.percentil(valores, 0.99):.0f} ms sobre mediana {d.mediana(valores):.0f} ms')
+              f'p99 {d.percentil(valores, 0.99):.0f} ms sobre mediana '
+              f'{d.mediana(valores):.0f} ms, em chamadas respondidas')
 
 
 @prova('H040')

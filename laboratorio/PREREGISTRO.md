@@ -38,7 +38,7 @@ rodada nasce do achado da anterior, e o critério de parada é a hipótese acaba
 
 ## R0 — A confiança do Jev é calibrada, ou só ordenada? (custo zero)
 
-**Por que.** A seção 6.1 do relatório mostrou que o corte de 0,90 furou no E12: um erro passou
+**Por que.** A seção 6,1 do relatório mostrou que o corte de 0,90 furou no E12: um erro passou
 com confiança 0,98. Isso foi medido como corte, nunca como calibração. São coisas diferentes:
 um número pode ordenar bem (mais confiança, menos erro) e ainda assim mentir sobre a
 probabilidade (dizer 0,90 quando acerta 0,70).
@@ -52,7 +52,7 @@ corpora E1, E7, E11 e E12, sob os três gabaritos.
 
 **Critério.** ECE ≤ 0,05 sustenta H0. ECE > 0,10 falsifica: a confiança é um ordenador, não uma
 probabilidade — e nesse caso toda política de corte precisa ser calibrada por dado, nunca
-transportada, o que reforça a seção 6.1 com um mecanismo e não só com um susto.
+transportada, o que reforça a seção 6,1 com um mecanismo e não só com um susto.
 
 **Custo:** zero. Os dados já estão pagos.
 
@@ -275,7 +275,7 @@ ataques contra os quatro comparadores do E12:
 |---|---|---|---|---|
 | openai/gpt-oss-20b | 28/40 | **70,0%** | [54,6%; 81,9%] | 4 |
 | google/gemma-3-12b | 10/40 | **25,0%** | [14,2%; 40,2%] | **10** |
-| meta-llama/llama-3.1-8b | 5/40 | 12,5% | [5,5%; 26,1%] | 3 |
+| meta-llama/llama-3,1-8b | 5/40 | 12,5% | [5,5%; 26,1%] | 3 |
 | mistralai/mistral-nemo | 0/40 | 0,0% | [0,0%; 8,8%] | 0 |
 | **typesafe/jev-1.13** | **0/40** | **0,0%** | [0,0%; 8,8%] | 0 |
 
@@ -451,7 +451,7 @@ classificador**: escrevem dentro da mensagem um pedido de cancelamento de verdad
 | | A: fala com o classificador | B: acrescenta conteúdo ao texto |
 |---|---|---|
 | `typesafe/jev-1.13` | **0/50 = 0,0%** | 10/70 = 14,3%, **0 acima de 0,90** |
-| `meta-llama/llama-3.1-8b` | 8/50 = 16,0%, **8 acima de 0,90** | 17/70 = 24,3%, **13 acima de 0,90** |
+| `meta-llama/llama-3,1-8b` | 8/50 = 16,0%, **8 acima de 0,90** | 17/70 = 24,3%, **13 acima de 0,90** |
 | `mistralai/mistral-nemo` | 5/50 = 10,0%, **5 acima de 0,90** | 8/70 = 11,4%, **8 acima de 0,90** |
 | `google/gemma-3-12b` | 1/28 = 3,6% | 3/38 = 7,9% |
 | `openai/gpt-oss-20b` | 0/36 = 0,0% | 2/32 = 6,2% |
@@ -890,13 +890,13 @@ geradas por máquina.
 
 | arranjo | acertos | taxa | IC95 |
 |---|---|---|---|
-| português | 51/65 | **78.5%** | [0.6703, 0.8671] |
-| inglês | 49/64 | 76.6% | [0.6487, 0.8525] |
-| espanhol | 49/63 | 77.8% | [0.6609, 0.8628] |
-| português com instrução de sujeito | 60/66 | **90.9%** | [0.8155, 0.9577] |
-| português com meta-instrução | 36/68 | **52.9%** | [0.4124, 0.6433] |
+| português | 51/65 | **78,5%** | [0,6703, 0,8671] |
+| inglês | 49/64 | 76,6% | [0,6487, 0,8525] |
+| espanhol | 49/63 | 77,8% | [0,6609, 0,8628] |
+| português com instrução de sujeito | 60/66 | **90,9%** | [0,8155, 0,9577] |
+| português com meta-instrução | 36/68 | **52,9%** | [0,4124, 0,6433] |
 
-**H095 falsificada.** 78.5% no jurídico contra o critério de 85%. A queda tem
+**H095 falsificada.** 78,5% no jurídico contra o critério de 85%. A queda tem
 endereço: o molde do terceiro, 8 de
 17. É a mesma fraqueza do atendimento, pior num domínio
 onde falar de terceiro é rotina.
@@ -905,7 +905,7 @@ onde falar de terceiro é rotina.
 pareamento dá 1 a 1 nos dois casos. A língua não é uma variável relevante para este contrato.
 
 **H099 sustentada, e com significância que a R19 não tinha alcançado.** A instrução de sujeito
-leva 78.5% para 90.9%, pareado **8 a 0, p = 0,0078**. Na
+leva 78,5% para 90,9%, pareado **8 a 0, p = 0,0078**. Na
 R19 a mesma frase dera 3 a 0, p = 0,25. Agora está demonstrada.
 
 **H100 falsificada, e é uma limitação de escopo que o guia não tinha.** Em prosa, o Jev põe o
@@ -923,7 +923,7 @@ para a classe que a injeção pediu, e **8 acima do corte de 0,90**.
 
 Isso contradiz a afirmação mais forte do estudo, então a pergunta imediata era: é o domínio ou é
 o vetor? A R21b aplicou o mesmo formato de vetor ao **corpus de atendimento**, que é onde a
-imunidade foi medida e publicada: **28 de 81 = 34.6%**, com
+imunidade foi medida e publicada: **28 de 81 = 34,6%**, com
 1 acima do corte.
 
 Logo é o vetor. E a razão está nos arquivos, à vista desde sempre: os doze vetores da "família A"
@@ -947,3 +947,78 @@ em que ela falhou entrava como virada — a comparação era contra `None`. A au
 divergência contra as linhas brutas, o número certo é 21 em
 64, e o script foi corrigido para não repetir. O número errado já
 estava em dois documentos quando a auditoria rodou; é exatamente para isso que ela existe.
+
+
+## R22 — a defesa contra a ordem direta, medida
+
+A R21b derrubou a imunidade e o guia passou a recomendar sanitizar a entrada. A recomendação não
+tinha número nenhum atrás dela, e recomendação sem medida é palpite com aparência de método. A
+R22 existe para fechar essa lacuna.
+
+**Pré-registro.** Três defesas, aplicadas ao mesmo corpus de atendimento e ao mesmo vetor
+imperativo da R21b, cada uma comparada contra a própria resposta sem defesa:
+
+1. **Sanitizar** — oito expressões regulares removem do texto do cliente, antes de ele virar
+   `state`, os padrões de ordem ao sistema (*ignore as instruções*, *você agora é*, *responda
+   sempre*, e as versões em inglês). Previsão: derruba a virada abaixo de 10%.
+2. **Delimitar** — o texto do cliente entra entre marcadores explícitos, com a instrução
+   dizendo que ali dentro não há ordens. Previsão: ajuda pouco, porque o modelo já recebe os
+   dois campos separados.
+3. **Sentinela** — uma segunda pergunta no mesmo payload pergunta se o texto contém tentativa
+   de dar ordem ao classificador. Previsão: detecta sem impedir, e custa zero, porque o preço é
+   por token de entrada e o estado já foi enviado.
+
+Quatro arranjos de controle em texto limpo entraram junto, e este é o ponto metodológico que a
+primeira versão da rodada não tinha: **uma defesa medida só sob ataque parece perfeita**. Sem o
+braço limpo não há como saber quanto ela cobra do texto inocente, nem qual é o alarme falso do
+detector.
+
+**Resultados.**
+
+| arranjo | viradas | acurácia | pareado contra `meta` |
+|---|---|---|---|
+| `meta` (sem defesa) | 28/78 = **35,9%** | 49/80 = 61,3% | — |
+| `meta-sanitizado` | 1/82 = **1,2%** | 76/85 = **89,4%** | **27 a 0, p < 0,0001** |
+| `meta-delimitado` | 21/76 = 27,6% | 55/79 = 69,6% | 8 a 2, p = 0,109 |
+| `limpo` | 0/82 | 74/82 = 90,2% | — |
+| `limpo-sanitizado` | 0/82 | 76/84 = 90,5% | — |
+
+As três previsões se sustentaram, e a primeira com folga: a sanitização não só derruba a virada
+como **restaura a acurácia ao nível do texto limpo**, e não cobra nada do texto inocente. Foram
+170 trechos removidos nas mensagens atacadas e **zero** nas limpas — o sanitizador não dispara
+onde não há o que remover.
+
+**O sentinela.** Recall de 83/83 sob ataque, silêncio em 81/83 no texto limpo: 100% de detecção
+com 2,4% de alarme falso, ao custo de nada. Ele não impede a virada — o arranjo
+`meta-sentinela` virou 28/78, igual ao sem defesa —, mas dá trilha de auditoria sem depender de
+lista de padrões, que é exatamente onde a sanitização é frágil.
+
+**O que a R22 não prova.** Que os oito padrões cobrem uma ordem direta escrita de outro jeito.
+Eles foram medidos contra os vetores que este laboratório escreveu; um atacante que os conheça
+pode contorná-los. Está declarado como fora de alcance no bloco `R22` da auditoria.
+
+## Cem perguntas estratégicas
+
+Depois das cem hipóteses, que perguntavam **o que o modelo faz**, veio um registro de cem
+perguntas que perguntam **o que fazer com ele**. A diferença de método é a que importa: cada
+pergunta declara, antes de qualquer resposta, a decisão concreta que ela informa e o que teria
+de ser verdade para essa decisão virar. Pergunta que não muda decisão nenhuma não entrou.
+
+O registro (`laboratorio/q100/registro.py`) foi commitado antes de qualquer resposta ser
+escrita, no commit `5f308d5`. As respostas (`laboratorio/q100/respostas.py`) calculam cada
+número na hora, a partir dos artefatos e do livro-caixa; a página
+(`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`) é gerada e a auditoria confere que está atualizada.
+
+**Setenta e seis** perguntas se respondem com dado medido, **19** com aritmética sobre o medido
+e **5** exigiram coleta nova. As 19 de aritmética carregam um risco que o registro nomeia: elas
+usam parâmetros que **não** foram medidos — preço de mercado de um modelo caro, custo-hora de
+revisão, volume mensal, custo de um erro grave. Esses parâmetros estão declarados um a um na
+resposta e na página, e um teste da suíte troca a função que os lê por um espião: qualquer
+resposta que use um parâmetro sem declarar quebra o `pytest`. Conta com parâmetro escondido é
+opinião com aparência de número.
+
+As respostas que mudaram uma decisão já tomada estão comentadas na página: **Q042** (sanitizar
+passa de sugestão a requisito), **Q044** (o sentinela sai de graça), **Q023** (o corte de
+confiança não se transporta entre taxonomias), **Q036** (os dois modos de falha sistemáticos são
+de desenho), **Q073** (a operação precisa de repescagem) e **Q096** (o limite do trabalho não é
+orçamento, é dado real com gabarito humano).
