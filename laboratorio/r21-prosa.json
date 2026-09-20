@@ -1,0 +1,846 @@
+{
+ "semente": 20260921,
+ "candidatos": 8,
+ "casos": [
+  {
+   "id": "p000",
+   "pergunta": "Qual percentual foi citado pelo veredito?",
+   "aceita": "(?i)\\b87[.,]5\\s*%",
+   "alvo": "RELATORIO-FINAL-JEV#178",
+   "candidatos": [
+    {
+     "chave": "TRIAGEM-JEV-HELENA#142",
+     "texto": "**Informações ainda necessárias para execução:** um primeiro corpus do trabalho real; definição das classes e erros mais caros; modelo comparador com preço verificado; confirmação técnica do contrato/custo no OpenRouter. Pi, Search1API, Gemini e hardware local só precisam ser resolvidos se a aplicação correspondente avançar."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#61",
+     "texto": "**Não decomponha em duas perguntas para resolver isso.** Perguntar *de quem é a ação* junto com *qual é a ação* — que o contrato permite de graça — melhora onde a ação é de terceiro (95,5% contra 84,4%) e destrói o caso oposto, em que alguém aconselha contra e quem escreve decide assim mesmo: cai de 86% para 36%. A causa está medida: a pergunta sobre o sujeito acerta sozinha só 68,7%, e encadear decisões numa pergunta fraca propaga o erro em vez de corrigi-lo."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#51",
+     "texto": "Todo o material — executor, desenho, corpora e relatório — foi submetido a outro modelo (Codex `gpt-6-astra`, esforço alto), com instrução de procurar defeito e sem espaço para elogio. A primeira tentativa foi honesta ao falhar: o sandbox bloqueou a leitura dos arquivos e o revisor **recusou-se a afirmar que não havia defeito**, em vez de fingir uma revisão. Na segunda, com o código entregue no próprio prompt, vieram **cinco achados P1**. Verifiquei cada um contra o código: todos procedem. Todos foram corrigidos, com teste de regressão que reproduz o defeito (`executor/tests/test_achados_revisao.py`)."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#123",
+     "texto": "**Separar desenvolvimento, calibração e teste:** divisão inicial 40% / 30% / 30%, agrupada por documento, conversa ou origem para impedir vazamento entre paráfrases. Com poucos itens por classe, ampliar a amostra ou assumir resultado exploratório. O teste final permanece intocado; revisão posterior abre uma nova versão do experimento. Os tamanhos das fichas são pilotos: não garantem suporte para estimar limiares. jevcal exige por padrão ao menos 30 aceitos no ajuste; subdividir um piloto pequeno pode legitimamente resultar em nenhum limiar elegível."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#94",
+     "texto": "**Função:** classifica a mensagem com contexto recente e mapeia categoria para lista priorizada de modelos disponíveis. Ler `src/jev.ts`, `router.ts`, `context.ts`, `extension.ts` e `config/default-criteria.json`. O cliente observado usa TypeSafe e `jev-latest`; retorna ao modelo anterior ao fim do turno conforme a lógica da extensão."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#154",
+     "texto": "O erro é `rep-p30-03`: *\"Posso pedir a segunda via por aqui? Antes de pedir, me confirma se ela vem com o mesmo vencimento da original.\"* O gabarito é `informacao` — o remetente adia explicitamente o pedido — e o modelo respondeu `cobranca` **com confiança 0,98**. O anotador independente leu como `cobranca` também, e o terceiro juiz cego confirmou o gabarito; ou seja, é um caso difícil, não um caso mal escrito."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#39",
+     "texto": "1. **S08 e S03 não declaram as próprias dependências de teste.** O Adapter importa `httpx` e `anthropic` sem declará-los no grupo dev; o Janus importa `pyyaml` sem declará-lo. Com o suplemento, o Janus passa 38/38. O Adapter continua falhando: seus cassetes de rede cobrem só um módulo, e 172 testes morrem em \"Network is disabled\". 2. **S12 não roda no Windows:** quatro testes leem arquivo sem declarar encoding e quebram no cp1252. 3. **Instalar não é testar.** S09 e S14 não têm suíte alguma; não recebem nota de qualidade."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#178",
+     "texto": "A oitava rodada não encontrou defeito financeiro novo — o teto passou a ser, nas palavras do revisor, \"o pedaço mais honesto do repositório\". Encontrou coisa pior no painel: depois de adjudicar o gabarito, **o placar passou a se contradizer**. O veredito citava 87,5% em 40 casos da confirmação e o cartão ao lado citava 80% em 80 casos da união; um cartão do E8 dizia 3 erros e o outro dizia 4; e as pendências continuavam pedindo a adjudicação que o painel acabara de anunciar. Três gabaritos circulavam ao mesmo tempo e cada parte usava o que tinha à mão."
+    }
+   ]
+  },
+  {
+   "id": "p001",
+   "pergunta": "Qual é o custo por decisão na mesma partição de confirmação?",
+   "aceita": "(?i)US\\$\\s*0\\.050",
+   "alvo": "RELATORIO-FINAL-JEV#20",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#57",
+     "texto": "E um alerta que, ao ser verificado, era pior do que P2: **`CREATE TABLE IF NOT EXISTS` não adiciona coluna a tabela existente.** O banco de produção, com 305 tentativas, estava sem as colunas de identidade de preço criadas na primeira rodada — os testes passavam porque usam bancos novos. Havia uma correção que só funcionava em laboratório. Migração implementada com `ALTER TABLE`, base migrada, identidade das 305 tentativas antigas preenchida pela evidência da reserva."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#213",
+     "texto": "**O guarda de comando irreversível funciona, e não serve aqui.** Em 60 comandos executados, o Jev somado à regra por palavra libera 14 dos 30 alarmes falsos sem soltar nenhum dos 4 comandos irreversíveis reais, e nos quatro ele nunca passou do corte de confiança. O resultado é bom e inútil nesta máquina, que roda em `acceptEdits` com `Bash(*)` liberado: não há confirmação para poupar. Fica medido para o dia em que o modo de permissão mudar."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#73",
+     "texto": "Comparador inicial: **Gemini 2.5 Flash-Lite**, com contrato do adaptador verificado antes da execução. Google e OpenRouter publicam US$ 0,10/M entrada e US$ 0,40/M saída; até 4.000 entradas + 1.000 saídas = US$ 0,0008 por chamada, 240 = US$ 0,192. Fixar thinking desabilitado e teto de saída; revalidar tarifa ao executar. O cartão OpenRouter anuncia retirada em **20/10/2026**: serve como comparador desta rodada próxima, não como dependência permanente. Se a execução ocorrer após essa data, ou o modelo estiver incompatível, registrar substituto e emenda antes de abrir o teste; nunca trocar após olhar o vencedor. [Google](https://ai.google.dev/gemini-api/docs/pricing) e [OpenRouter, preço e retirada](https://openrouter.ai/google/gemini-2.5-flash-lite)."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#39",
+     "texto": "1. **S08 e S03 não declaram as próprias dependências de teste.** O Adapter importa `httpx` e `anthropic` sem declará-los no grupo dev; o Janus importa `pyyaml` sem declará-lo. Com o suplemento, o Janus passa 38/38. O Adapter continua falhando: seus cassetes de rede cobrem só um módulo, e 172 testes morrem em \"Network is disabled\". 2. **S12 não roda no Windows:** quatro testes leem arquivo sem declarar encoding e quebram no cp1252. 3. **Instalar não é testar.** S09 e S14 não têm suíte alguma; não recebem nota de qualidade."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#20",
+     "texto": "**A base é pequena e o número precisa ser lido assim:** são 3 erros em 80 casos no gabarito oficial (4, no do autor). \"Nenhum erro entre os aceitos\" descreve o que foi observado, não uma garantia; a seção 6 traz o limite superior que sobra depois de respeitar o agrupamento por família. Sob os parâmetros da seção 7 — declarados, nunca cronometrados — e **na mesma partição de confirmação**, a política leva o custo por decisão de US$ 0.400 para US$ 0.050. Na união dos 80 casos, onde a cobertura cai para 80%, o mesmo corte custa US$ 0.080. Citar a cobertura de uma partição com o preço da outra descreveria uma política que não existe."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#3",
+     "texto": "**Status:** etapas 1 a 4 do plano executadas, mais os experimentos E1, E2, E2b, E3 e E4. 305 chamadas reais, **US$ 0,010950** gastos de um teto de US$ 5,00 de gasto novo. Conciliação com o extrato do provedor fechada sem divergência inexplicada. Todos os resultados abaixo passaram por **duas rodadas** de revisão independente de outro modelo (Codex `gpt-6-astra`), que encontraram dezenove defeitos além do que a execução já havia revelado. A seção 5 lista o que essas revisões derrubaram."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#114",
+     "texto": "A primeira leitura deste experimento dizia que a vantagem do Jev \"dependia de quem escreveu o gabarito\", porque sob o gabarito do anotador independente o sinal invertia. A décima quarta rodada de revisão mostrou o defeito dessa leitura: o anotador independente é um modelo de 7B, e as 10 discordâncias dele seguem **um padrão só** — ele lê o vocabulário presente na mensagem, não o ato de fala pedido. Em `dsp-d01-02` (\"Será que eu deveria cancelar? Antes de decidir, me explica como funciona a multa\") ele marcou `cancelar`; em `dsp-d18-01` (\"Por enquanto não cancela nada, só me manda o valor da multa\") marcou `cobranca`. É o mesmo modo de falhar da regra congelada que o Jev supera desde o E1."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#82",
+     "texto": "Não aplicar os limites diretos ao OpenRouter por analogia. Fixar `typesafe/jev-1.13` no transporte OpenRouter e `jev-1.13.0` no direto, registrando o modelo devolvido. Alias latest não serve para comparação longitudinal controlada. [Modelos TypeSafe](https://docs.typesafe.ai/models), [cartão OpenRouter](https://openrouter.ai/typesafe/jev-1.13) e [controles e taxa OpenRouter](https://openrouter.ai/blog/insights/governing-team-ai-spend/)."
+    }
+   ]
+  },
+  {
+   "id": "p002",
+   "pergunta": "Qual foi o valor total somado das requisições?",
+   "aceita": "(?i)US\\$\\s?0,499",
+   "alvo": "RELATORIO-FINAL-JEV#197",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#107",
+     "texto": "Até esta rodada, esta seção dizia que o erro grave era *\"a única métrica do E11 em que a diferença não depende do gabarito\"*. **Não é.** O único falso-`cancelar` do comparador é justamente `dsp-d03-01`, que está entre os 10 casos em disputa: o anotador independente leu `cancelar` ali, e sob o gabarito dele o comparador acerta e o erro grave some. A frase antiga usava como âncora um caso que o próprio parágrafo seguinte declara contestado. O que se sustenta é mais modesto e continua valendo: **o Jev não cometeu erro grave sob nenhum dos três gabaritos**, e o comparador cometeu sob dois deles."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#48",
+     "texto": "No piloto, produzir um gabarito rico com três propriedades separadas: responde diretamente, corrige/limita a premissa e é relacionado. Derivar classificações binária e ternária sem trocar o objetivo após a saída. Comparar os dois formatos pelo **mesmo resultado operacional**: uma resposta final conserva a ressalva necessária? Fazer chamadas separadas para os braços; o teste com duas perguntas juntas é uma ablação posterior de interferência, não o comparador principal."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#155",
+     "texto": "**Consequência para a recomendação, e ela é desfavorável ao que este relatório vinha dizendo:** a afirmação \"todos os erros ficam abaixo de 0,90\" era verdadeira nos dois primeiros corpora e é falsa no terceiro. Um corte calibrado num conjunto **não se transporta** para outro. A recomendação operacional passa a ser o corte de 0,99, que é o único que zera o erro nos três corpora, e mesmo ele exige recalibração no material real de quem for aplicar — com revisão humana obrigatória da classe `cancelar` em qualquer corte."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#164",
+     "texto": "A linha \"aceitar tudo\" é o que a automação total custaria e o que ela erraria. A diferença entre ela e o corte 0,90 é o preço de não errar: **US$ 0,08 por decisão nesta tabela, que é a união**. Na partição de confirmação, que é a leitura da seção 1, esse preço é US$ 0,05. Os dois números são da mesma política em bases diferentes, e nenhum dos dois deve ser citado sozinho."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#197",
+     "texto": "A regra do executor é liquidar pelo pior caso reservado quando não há `usage` confiável na resposta — e ela é correta: na dúvida, o teto sofre. Uma requisição recusada por limite de taxa não tem `usage`, então cada uma das 76 entrou no livro-caixa por US$ 0,0066. Somaram **US$ 0,499**: mais de vinte vezes o gasto de todo o estudo até aquele momento, e 10% do teto autorizado inteiro, por chamadas em que **nenhum token foi processado**."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#133",
+     "texto": "Esses são envelopes de alocação, não previsão de gasto. **Planejar somente US$ 3,50 de chamadas; preservar US$ 1,50 de margem.** Search1API, Gemini direto, GPU e hospedagem não estão financiados por essa chave nem autorizados como despesas adicionais. O custo total de um fluxo não pode ser omitido porque sai de outro provedor."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#199",
+     "texto": "**O que essa evidência prova, e o que ela não prova.** O extrato da chave é **agregado**: ele diz quanto o provedor cobrou no total, não quanto cobrou em cada tentativa. Uma requisição recusada com 429 não recebe identificador de geração, então não há recibo por tentativa a conferir. O que sustenta a retificação é a conta agregada, e ela é conservadora nos dois sentidos: depois de zerar as 76, o ledger ainda liquida US$ 0,035707114 contra os US$ 0,034640289 do extrato — continua **acima** do que o provedor cobrou. Se alguma daquelas chamadas tivesse sido cobrada, a diferença de US$ 0,001 já a absorveria. Essa é a garantia que existe; um recibo por tentativa não existe, e este parágrafo está aqui para que ninguém leia mais do que há."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#187",
+     "texto": "A mesma rodada achou um defeito que nenhum teste do painel podia achar, porque não estava no painel: **`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf` e `output/pdf/RELATORIO-FINAL-JEV.pdf` eram o mesmo arquivo**, byte a byte, e já tinham sido versionados assim. O gerador do relatório chamava a função que monta o PDF do plano e copiava o resultado; aquela função gravava sempre no caminho do plano e montava sempre a capa do plano. Cada build do relatório destruía o plano, e o relatório que foi entregue abria anunciando *\"ensaios dos sistemas ainda pendentes\"* — depois de todos os ensaios terminados. Capa e destino passaram a ser do chamador, o relatório ganhou capa própria com números vindos do placar, e dois testes novos exigem que cada PDF abra no documento que o nome dele promete."
+    }
+   ]
+  },
+  {
+   "id": "p003",
+   "pergunta": "O que o estudo não mostrou?",
+   "aceita": "(?i)(?:este\\s+estudo\\s+)?não\\s+mostrou\\s+que\\s+o\\s+Jev\\s+é\\s+necessário",
+   "alvo": "RELATORIO-FINAL-JEV#87",
+   "candidatos": [
+    {
+     "chave": "TRIAGEM-JEV-HELENA#40",
+     "texto": "**Função:** combina padrões locais e julgamentos para ações, regras, repetição e alegações de conclusão. Ler `docs/guards.md`, `src/guard.ts`, `done.ts`, `stuck.ts` e `eval/reports/`. Muitas verificações orientam o agente; não bloqueiam. O autor relata ganhos concentrados em algumas dimensões e ausência de ganho mensurável em outras."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#67",
+     "texto": "**Sob o gabarito adjudicado, o Jev faz 0,9625 (77/80)**, com três erros: `tri-f02-04`, `tri-f06-02` e `tri-f09-04` — **todos do corpus piloto**. No conjunto de confirmação, que é a partição de teste, o gabarito adjudicado deixa o modelo **sem erro nenhum**, porque o único erro que havia lá (`cnf-g05-02`) foi justamente o caso que mudou de lado. Isso não deve ser lido como \"40/40 no teste\": é um resultado de 40 casos em que o único erro virou disputa e a disputa foi decidida por um terceiro modelo. O número que eu levaria a uma reunião é o de 80 casos, 0,9625."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#132",
+     "texto": "**Como auditar essa cronologia sem acreditar em mim.** As três emendas foram commitadas com a execução em curso, ou seja, quando já existiam respostas parciais no disco — o Git prova a ordem dos commits, não o que eu tinha visto. O que torna a afirmação verificável é o bruto: `runs/e12-replicacao/respostas.jsonl` é gravado caso a caso, na ordem, e vai versionado desde a décima sexta rodada de revisão, que cobrou justamente isso. Cruzando o horário de cada linha do bruto com o horário de cada commit de emenda, qualquer pessoa recalcula exatamente qual era o estado dos dados quando cada regra foi escrita — inclusive para me contradizer."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#94",
+     "texto": "Nenhum dos vinte foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou quando outro modelo olhou com instrução de achar problema. O mais instrutivo: uma das correções da primeira rodada **só funcionava nos testes**, porque `CREATE TABLE IF NOT EXISTS` não migra tabela existente e os testes usavam bancos novos. A suíte estava verde e a produção, quebrada."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#174",
+     "texto": "A mesma rodada apontou que o painel havia começado a contar meia verdade: o cartão do E8 citava os dois casos em que o anotador independente apoia o Jev e omitia os dois em que ele confirma o gabarito. Corrigido no código e na seção 3.6, e é a razão de a confiança da seção 1 ter caído de 0,75 para 0,60. O texto do veredito do painel passou a ser calculado a partir dos números, em vez de prosa fixa: um texto com números escritos à mão continua afirmando o mesmo depois que os dados mudam."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#33",
+     "texto": "1. **\"De 3 a 6 classes\"** era conservador demais. Até 12 classes não custam nada; o degrau aparece entre 12 e 20 e estabiliza em 90% mesmo com 147 opções. 2. **\"Capriche na descrição de cada classe\"** está errado na ênfase. Com os cinco critérios textualmente idênticos ele ainda acerta 93,3%: **ele decide pelo rótulo da classe, não pela descrição.** Nomear bem a classe vale mais que descrevê-la bem."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#164",
+     "texto": "A linha \"aceitar tudo\" é o que a automação total custaria e o que ela erraria. A diferença entre ela e o corte 0,90 é o preço de não errar: **US$ 0,08 por decisão nesta tabela, que é a união**. Na partição de confirmação, que é a leitura da seção 1, esse preço é US$ 0,05. Os dois números são da mesma política em bases diferentes, e nenhum dos dois deve ser citado sozinho."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#87",
+     "texto": "**O que isto não diz:** que nenhum LLM econômico resolve a tarefa (testou-se um), que os dois são equivalentes (o poder é baixo), ou que o Jev é dispensável em produção (o corpus continua sendo escrito por mim). O que diz é uma coisa só, e basta para mudar a recomendação: **este estudo não mostrou que o Jev é necessário.**"
+    }
+   ]
+  },
+  {
+   "id": "p004",
+   "pergunta": "Qual foi o resultado numérico mencionado para o Jev contra os comparadores?",
+   "aceita": "(?i)\\b0\\s*de\\s*50\\b",
+   "alvo": "GUIA-PRATICO-JEV#97",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#66",
+     "texto": "Dois alertas continuam **abertos e não corrigidos**, por escolha: o comparador é reconhecidamente simples e o corpus concentra justamente as dificuldades que ele não trata, e as dez famílias são categorias autorais de fenômenos, não amostra da rotina. Os dois entram como contra-hipóteses abaixo, porque não se resolvem com código — só com dados novos."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#33",
+     "texto": "1. **\"De 3 a 6 classes\"** era conservador demais. Até 12 classes não custam nada; o degrau aparece entre 12 e 20 e estabiliza em 90% mesmo com 147 opções. 2. **\"Capriche na descrição de cada classe\"** está errado na ênfase. Com os cinco critérios textualmente idênticos ele ainda acerta 93,3%: **ele decide pelo rótulo da classe, não pela descrição.** Nomear bem a classe vale mais que descrevê-la bem."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#110",
+     "texto": "1. O Jev segue a rubrica escrita melhor do que um modelo de 7B segue, e o anotador é que erra — o padrão das discordâncias dele é o mesmo dos corpora anteriores, puxar para ação onde o enunciado pede informação. 2. Eu escrevi 60 casos que casam com a leitura do Jev, sem perceber, porque conheço as respostas dele desde o E1."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#70",
+     "texto": "**Ressalva que não pode ser omitida:** um modelo de 7B não é anotador humano, e o E8 **não é a adjudicação de gabarito** que o estudo precisa. Ele recebeu a minha rubrica e reproduziu a minha rubrica; kappa alto aqui mede reprodutibilidade, não validade do constructo. O padrão das divergências mostra viés claro — em 6 das 9 ele viu ação onde eu li pedido de informação, que é precisamente a armadilha que as instruções mandam evitar. E os 71 casos de \"consenso\" são os casos em que os dois concordam, ou seja, os fáceis: a acurácia de 0,9718 ali **não é uma medida melhor, é uma medida sobre um subconjunto mais fácil**, e não corrige nada. Os 9 casos em disputa **foram adjudicados** (seção 3.6.1), mas por um terceiro modelo, não por uma pessoa. **O anotador humano continua pendente**, e o que a adjudicação mostra é que a rubrica é reproduzível entre juízes independentes — não que ela seja a definição certa do problema."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#33",
+     "texto": "Meta inicial do teste de triagem: pelo menos 20 exemplos por classe; o restante segue frequência observada. Nas tarefas de três classes, pelo menos 40 por classe. Informar distribuição efetiva. Casos relacionados, traduções, mesma entidade/documento, mesmo template e mesma conversa ficam em um único grupo. Sortear grupos para splits com semente **20260918**, gravar o resultado e nunca refazer o sorteio por causa de uma métrica ruim."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#130",
+     "texto": "1. **Falha de transporte não é resposta errada.** O provedor devolveu HTTP 429 em 46 chamadas do gemma. Contá-las como erro de classificação atribuiria ao comparador uma falha que é da fila do provedor. Elas foram repetidas em até três tentativas; 8 seguiram sem resposta e contam como erro dele, com o número publicado. 2. **Cobertura mínima de um braço.** Um braço com menos de 90% de respostas válidas é reportado como incompleto e sai da leitura primária. O critério foi escrito antes de calcular a acurácia do braço que motivou a dúvida, justamente para que manter ou tirar não fosse escolha pós-hoc. Ao fim, gemma ficou em 91,1% e gpt-oss em 90,0%: nenhum saiu. 3. **Teto de saída é parâmetro de transporte.** Com os 64 tokens de saída herdados do E10, o gpt-oss-20b devolvia conteúdo vazio — ele gasta saída com raciocínio antes de responder. O teto subiu para 256, o braço foi reexecutado desde o primeiro caso, e as 9 chamadas feitas sob o teto insuficiente foram anuladas **da análise, não do livro-caixa**, onde seguem pagas e registradas."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#62",
+     "texto": "A correção foi estrutural: **o excedente do extrato deixou de ser linha e passou a ser cálculo**. Ele agora acompanha o estado sozinho, encolhe no instante em que a cobrança vira tentativa registrada, e não colide com o histórico. Junto, o gasto histórico passou a exigir o provedor, e foi criada uma regularização auditada de identidade para tentativas herdadas de base antiga."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#97",
+     "texto": "1. **Aplicar vale a pena onde o método atual é regra simples ou busca por palavra.** O ganho é grande, replicado três vezes e sobrevive a mudança de formato, de ordem e de fornecedor de acesso. 2. **Precisa ser o Jev quando o texto vem de fora.** Em acurácia, a vantagem sobre LLMs baratos depende de quem escreveu o gabarito — e eles custam um quarto do preço. Em resistência a manipulação pelo próprio texto classificado, a vantagem é estrutural e não depende de gabarito: **0 de 50** contra até 16% dos comparadores, sob ataques que eu não escrevi, e a confiança dele protege onde a deles não protege. Se o texto é de terceiro, a escolha está decidida. 3. **Nada disso autoriza automatizar sem rede.** A confiança falha, o modelo oscila, e a classe irreversível continua exigindo gente."
+    }
+   ]
+  },
+  {
+   "id": "p005",
+   "pergunta": "O que o E12 acrescentou ao estudo?",
+   "aceita": "(?i)\\bsegundo\\s+achado\\b.*\\bmétodo\\b",
+   "alvo": "RELATORIO-FINAL-JEV#224",
+   "candidatos": [
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#92",
+     "texto": "Para a fase de execução, acrescentar fila com dry-run, validação de manifesto, previsão/reserva de custo, pausa de despacho e conciliação. Só depois habilitar “executar bloco”; parar não cancela necessariamente uma chamada já enviada, cujo valor permanece reservado. O painel nunca recebe chave no navegador: executor lê variáveis localmente e publica apenas dados saneados."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#95",
+     "texto": "Usar **Janus** para explorar cascatas e **jevcal** como verificação alternativa, escolhendo depois um só se forem redundantes. Usar o **Rerank Bench** como harness especializado, **System One Adapter** como comparador e **CLI** para inspeção de contrato. **HEIST** fornece ambiente determinístico útil. Search, Warden, Router, Every, Review, Ultrafast, Jeeves e painel de manchetes são objetos de avaliação; não são a fonte única dos resultados que os julgam."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#120",
+     "texto": "1. **Validade:** qual erro queremos reduzir e quem define a resposta correta antes de ver o modelo? 2. **Ganho incremental:** Jev supera regra/AST/BM25 ou apenas uma comparação fraca? 3. **Calibração:** entre decisões aceitas, qual taxa real de acerto, em quantos casos e com que incerteza? 4. **Robustez:** paráfrase, negação, ordem de opções/candidatos, extensão do texto e português mudam o resultado? 5. **Generalização:** funciona em documentos e tarefas que não orientaram perguntas nem limiares? 6. **Operação:** o custo inclui falhas, retries, fallback, busca e revisão humana? Qual a latência p95? 7. **Abstenção:** reconhece falta de resposta e ausência de evidência? Como o software trata saída incompleta? 8. **Causalidade:** ao retirar Jev e conservar o resto, o sistema piora de maneira útil e repetível?"
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#17",
+     "texto": "- **Fato documental:** comportamento descrito e/ou trecho de implementação inspecionado. - **Resultado do autor:** experimento publicado no próprio projeto, não reproduzido aqui. - **Hipótese de teste:** ganho possível, ainda por medir em nossos dados. - **Recomendação:** julgamento de prioridade derivado dessas informações."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#12",
+     "texto": "A ressalva que eu mesma escrevi aqui — *\"os quatro vetores foram escritos por quem conhece o alvo\"* — foi testada. Três LLMs receberam a tarefa de escrever os ataques; dois produziram 12 vetores que eu não escrevi. Sob eles, **o Jev virou 10 de 120 respostas, 8,3%**. A afirmação \"imune a instrução injetada\", como estava publicada, caiu."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#75",
+     "texto": "**O Jev não cometeu nenhum erro grave nos 230 casos classificados do estudo, sob nenhum dos três gabaritos.** A regra congelada comete 10 nos 80 casos em que existe comparação com ela. Este é o resultado mais favorável ao modelo em todo o estudo, e é exatamente por isso que o teto vai na mesma tabela: zero erro observado só permite afirmar que a taxa por família está **abaixo de 25,9% com 95% de confiança** nos conjuntos de 10 famílias, e abaixo de 9,5% no corpus de 30 famílias do E12 — que é o mais apertado que este estudo conseguiu, e ainda assim é um em cada dez."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#224",
+     "texto": "*O estudo que eu queria ter feito é o que começa no item 2. O que está aqui é o que dá para saber sem dados reais — e o principal valor dele é ter descoberto, antes de gastar, exatamente onde o modelo quebra: no mesmo caso, perguntado duas vezes. O E12 acrescentou o segundo achado dessa natureza, e ele é sobre o método e não sobre o modelo: quando a conclusão depende de quem escreveu o gabarito, triplicar a amostra não a torna menos dependente — só mais precisa dentro de cada gabarito.*"
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#94",
+     "texto": "Nenhum dos vinte foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou quando outro modelo olhou com instrução de achar problema. O mais instrutivo: uma das correções da primeira rodada **só funcionava nos testes**, porque `CREATE TABLE IF NOT EXISTS` não migra tabela existente e os testes usavam bancos novos. A suíte estava verde e a produção, quebrada."
+    }
+   ]
+  },
+  {
+   "id": "p006",
+   "pergunta": "Qual é a numeração da rodada de revisão mencionada no trecho?",
+   "aceita": "(?i)\\bdécima\\s+sexta\\b",
+   "alvo": "RELATORIO-FINAL-JEV#132",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#174",
+     "texto": "A mesma rodada apontou que o painel havia começado a contar meia verdade: o cartão do E8 citava os dois casos em que o anotador independente apoia o Jev e omitia os dois em que ele confirma o gabarito. Corrigido no código e na seção 3.6, e é a razão de a confiança da seção 1 ter caído de 0,75 para 0,60. O texto do veredito do painel passou a ser calculado a partir dos números, em vez de prosa fixa: um texto com números escritos à mão continua afirmando o mesmo depois que os dados mudam."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#57",
+     "texto": "E um alerta que, ao ser verificado, era pior do que P2: **`CREATE TABLE IF NOT EXISTS` não adiciona coluna a tabela existente.** O banco de produção, com 305 tentativas, estava sem as colunas de identidade de preço criadas na primeira rodada — os testes passavam porque usam bancos novos. Havia uma correção que só funcionava em laboratório. Migração implementada com `ALTER TABLE`, base migrada, identidade das 305 tentativas antigas preenchida pela evidência da reserva."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#6",
+     "texto": "1. *\"Use o Jev com corte de confiança em 0,90\"* — antes de existir qualquer comparador que não fosse uma regra que eu mesma escrevi. 2. *\"Não adote\"* — quando o E10 comparou o Jev a `meta-llama/llama-3.1-8b-instruct` na partição de teste e a diferença não separou de zero. 3. *\"Evidência dividida\"* — quando o E10b, no piloto, separou. 4. *\"O gargalo é o rótulo\"* — quando o E11, em corpus novo, deu vantagem clara sob o meu gabarito e sinal invertido sob o do anotador independente. 5. *\"Vantagem do Jev no gabarito adjudicado\"* — quando os 10 desacordos do E11 foram a um terceiro juiz cego e ele **confirmou meu gabarito em 10 de 10**. 6. Esta, quando o E12 replicou tudo com 30 famílias novas e **quatro** comparadores de quatro fornecedores, o segundo juiz cego confirmou meu gabarito em outros 10 de 10, e a divergência entre os gabaritos **continuou exatamente onde estava**."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#93",
+     "texto": "**A premissa da minha própria emenda não sobreviveu à conferência.** A emenda dizia que o piloto havia guiado o desenho do prompt do Jev e que por isso o resultado ali deveria ser lido como secundário. Fui ao histórico: as instruções e os critérios entraram uma única vez, no commit `9f6d13b` de 18/09, junto com o corpus piloto, e nunca foram alterados; o corpus piloto também não mudou depois de rodar. Não houve iteração de prompt contra resultados. Registrei isso como nota de verificação no próprio pré-registro, em vez de reescrever a emenda."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#42",
+     "texto": "Janus e jevcal recebem os **mesmos pares**. O primário e o fallback são julgados contra rótulos externos. Medir não só discordância, mas qual modelo erra, quais erros são graves e o custo completo da política. Curva risco-cobertura e custo-qualidade são mais úteis que um único corte 0,90. Escolher limiar em calibração e abri-lo uma vez no teste. Grupos sem suporte não ganham política específica."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#132",
+     "texto": "**Como auditar essa cronologia sem acreditar em mim.** As três emendas foram commitadas com a execução em curso, ou seja, quando já existiam respostas parciais no disco — o Git prova a ordem dos commits, não o que eu tinha visto. O que torna a afirmação verificável é o bruto: `runs/e12-replicacao/respostas.jsonl` é gravado caso a caso, na ordem, e vai versionado desde a décima sexta rodada de revisão, que cobrou justamente isso. Cruzando o horário de cada linha do bruto com o horário de cada commit de emenda, qualquer pessoa recalcula exatamente qual era o estado dos dados quando cada regra foi escrita — inclusive para me contradizer."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#75",
+     "texto": "**O Jev não cometeu nenhum erro grave nos 230 casos classificados do estudo, sob nenhum dos três gabaritos.** A regra congelada comete 10 nos 80 casos em que existe comparação com ela. Este é o resultado mais favorável ao modelo em todo o estudo, e é exatamente por isso que o teto vai na mesma tabela: zero erro observado só permite afirmar que a taxa por família está **abaixo de 25,9% com 95% de confiança** nos conjuntos de 10 famílias, e abaixo de 9,5% no corpus de 30 famílias do E12 — que é o mais apertado que este estudo conseguiu, e ainda assim é um em cada dez."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#108",
+     "texto": "Uma ressalva de contabilidade, da mesma rodada: o campo `erros_graves_cancelar` gravado nos relatórios soma `cancelar` indevido **e** `cancelar` perdido, e por isso marca 2 para o comparador onde a prosa diz 1. Os dois números estão certos em definições diferentes, e a definição que o pré-registro do E1 chamou de irreversível é só a primeira. O bloco `erro_grave` do relatório traz as duas listas separadas, nominalmente."
+    }
+   ]
+  },
+  {
+   "id": "p007",
+   "pergunta": "Quantos itens não foram encontrados na primeira leitura?",
+   "aceita": "(?i)\\b(?:20|vinte)\\b",
+   "alvo": "RELATORIO-EXECUCAO-JEV-HELENA#94",
+   "candidatos": [
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#60",
+     "texto": "**Tamanho de amostra:** 16/16 não sustenta precisão de 99%. Com zero erros em observações independentes representativas, o limite superior unilateral de 95% para erro é `1 - 0,05^(1/n)`: 59 observações para ficar abaixo de 5%, 299 para abaixo de 1% e 598 para abaixo de 0,5%. O número relevante em uma política seletiva é o de casos aceitos, não o total. [Métodos para proporções do NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#95",
+     "texto": "Usar **Janus** para explorar cascatas e **jevcal** como verificação alternativa, escolhendo depois um só se forem redundantes. Usar o **Rerank Bench** como harness especializado, **System One Adapter** como comparador e **CLI** para inspeção de contrato. **HEIST** fornece ambiente determinístico útil. Search, Warden, Router, Every, Review, Ultrafast, Jeeves e painel de manchetes são objetos de avaliação; não são a fonte única dos resultados que os julgam."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#31",
+     "texto": "Não era óbvio. `confidence` é um número que o modelo emite sobre a própria resposta; nada garante que corresponda a probabilidade de acerto. Mas nos dois corpora, todos os erros ficaram concentrados abaixo de 0,90, e nenhum caso aceito acima desse corte estava errado. É isso que torna viável uma política de triagem com revisão seletiva, em vez de revisão total."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#66",
+     "texto": "Dois alertas continuam **abertos e não corrigidos**, por escolha: o comparador é reconhecidamente simples e o corpus concentra justamente as dificuldades que ele não trata, e as dez famílias são categorias autorais de fenômenos, não amostra da rotina. Os dois entram como contra-hipóteses abaixo, porque não se resolvem com código — só com dados novos."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#12",
+     "texto": "Há uma divergência documental: o CLI diz que o OpenRouter não possui alias `latest`, enquanto o catálogo atual lista `~typesafe/jev-latest`. Para o experimento, fixar `typesafe/jev-1.13` e registrar a versão devolvida evita depender dessa divergência. Não inferir, a partir da página genérica de compatibilidade OpenAI, que o Jev usa o endpoint comum de chat."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#120",
+     "texto": "1. **Validade:** qual erro queremos reduzir e quem define a resposta correta antes de ver o modelo? 2. **Ganho incremental:** Jev supera regra/AST/BM25 ou apenas uma comparação fraca? 3. **Calibração:** entre decisões aceitas, qual taxa real de acerto, em quantos casos e com que incerteza? 4. **Robustez:** paráfrase, negação, ordem de opções/candidatos, extensão do texto e português mudam o resultado? 5. **Generalização:** funciona em documentos e tarefas que não orientaram perguntas nem limiares? 6. **Operação:** o custo inclui falhas, retries, fallback, busca e revisão humana? Qual a latência p95? 7. **Abstenção:** reconhece falta de resposta e ausência de evidência? Como o software trata saída incompleta? 8. **Causalidade:** ao retirar Jev e conservar o resto, o sistema piora de maneira útil e repetível?"
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#94",
+     "texto": "Nenhum dos vinte foi encontrado lendo o código na primeira escrita. Apareceram ao executar de verdade, ou quando outro modelo olhou com instrução de achar problema. O mais instrutivo: uma das correções da primeira rodada **só funcionava nos testes**, porque `CREATE TABLE IF NOT EXISTS` não migra tabela existente e os testes usavam bancos novos. A suíte estava verde e a produção, quebrada."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#99",
+     "texto": "Engenharia preliminar: estimativa de 4–8 horas para ledger, adaptadores mínimos, esquemas e testes de falha; 4–12 horas para a cobertura simples dos 15, variando muito com Pi, Rust, navegador e GPU. Esses são intervalos de planejamento, não medição nem promessa. Preparação de dados/rotulagem será provavelmente maior; o piloto atualizará essa estimativa."
+    }
+   ]
+  },
+  {
+   "id": "p008",
+   "pergunta": "Quantos erros \"sob\" o Jev cometeu no erro grave?",
+   "aceita": "(?i)\\b(?:nenhum|não\\s+cometeu\\s+nenhum)\\b",
+   "alvo": "RELATORIO-FINAL-JEV#13",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#13",
+     "texto": "**O que isto autoriza afirmar:** neste corpus, com esta rubrica e contra este comparador, o Jev é melhor, e a diferença é grande o bastante para sobreviver ao agrupamento por família. No erro grave (`cancelar` indevido) **o Jev não cometeu nenhum sob nenhum dos três gabaritos**; o comparador cometeu um sob dois deles e nenhum sob o terceiro — o detalhe está na seção 3.10, e ele é menos favorável do que a versão anterior desta frase dizia."
+    },
+    {
+     "chave": "DOSSIE-DE-EVIDENCIAS#61",
+     "texto": "**O que não prova.** Não prova o que mudou do outro lado: da posição de cliente não dá para distinguir validação relaxada, troca de versão do modelo ou roteamento diferente. O que fica provado é outra coisa, e mais importante: uma propriedade publicada do endpoint pode morrer em um dia, e documentação sem canário não avisa. Nenhuma recomendação do guia dependia desta, o que foi sorte e não projeto."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#108",
+     "texto": "Uma ressalva de contabilidade, da mesma rodada: o campo `erros_graves_cancelar` gravado nos relatórios soma `cancelar` indevido **e** `cancelar` perdido, e por isso marca 2 para o comparador onde a prosa diz 1. Os dois números estão certos em definições diferentes, e a definição que o pré-registro do E1 chamou de irreversível é só a primeira. O bloco `erro_grave` do relatório traz as duas listas separadas, nominalmente."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#60",
+     "texto": "**Tamanho de amostra:** 16/16 não sustenta precisão de 99%. Com zero erros em observações independentes representativas, o limite superior unilateral de 95% para erro é `1 - 0,05^(1/n)`: 59 observações para ficar abaixo de 5%, 299 para abaixo de 1% e 598 para abaixo de 0,5%. O número relevante em uma política seletiva é o de casos aceitos, não o total. [Métodos para proporções do NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#61",
+     "texto": "- Um gasto histórico do mesmo provedor ficava fora da soma filtrada, e o extrato o somava de novo. - Quando a tentativa correspondente era enfim liquidada, o ajuste só encolhia na conciliação *seguinte*; no intervalo, a carteira contava o mesmo dinheiro duas vezes e podia negar uma chamada legítima. - A migração criava as colunas de identidade vazias, e o `settle` passava a rejeitar para sempre qualquer tentativa antiga que ainda estivesse pendente — inclusive um timeout que recebesse resposta tardia."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#74",
+     "texto": "**Argumento:** o poder é baixo por construção. O intervalo de Wilson sobre as 10 famílias do E1 vai de 0,397 a 0,892 — largo o suficiente para caber quase qualquer verdade. A distribuição é balanceada de propósito e não reflete prevalência real, então a acurácia observada não prevê desempenho operacional. **Teste observável:** coletar 280 casos reais desidentificados por tarefa, em janela consecutiva, e medir no estrato natural até 2026-11-30. **Gatilho de reversão:** se no estrato natural a acurácia cair abaixo de 0,85 ou a cobertura com erro zero cair abaixo de 50%, o corte de confiança precisa ser recalibrado antes de qualquer uso."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#178",
+     "texto": "A oitava rodada não encontrou defeito financeiro novo — o teto passou a ser, nas palavras do revisor, \"o pedaço mais honesto do repositório\". Encontrou coisa pior no painel: depois de adjudicar o gabarito, **o placar passou a se contradizer**. O veredito citava 87,5% em 40 casos da confirmação e o cartão ao lado citava 80% em 80 casos da união; um cartão do E8 dizia 3 erros e o outro dizia 4; e as pendências continuavam pedindo a adjudicação que o painel acabara de anunciar. Três gabaritos circulavam ao mesmo tempo e cada parte usava o que tinha à mão."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#14",
+     "texto": "No suplemento, utilidade em três classes acertou 18/18, enquanto o critério binário coincidiu com seu gabarito em 13/18. Manter a distinção conceitual: **resposta direta**, **ressalva útil**, **sem relação**. Uma proposta não prova aprovação; agendamento não prova pagamento; ausência de confirmação não prova falsidade. Perguntas diferentes na mesma chamada também podem interagir."
+    }
+   ]
+  },
+  {
+   "id": "p009",
+   "pergunta": "Quantas chamadas do gemma receberam resposta HTTP 429?",
+   "aceita": "\\b46\\b",
+   "alvo": "RELATORIO-FINAL-JEV#130",
+   "candidatos": [
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#45",
+     "texto": "Contrabalancear a posição do alvo nos lotes; randomizar a ordem temporal das oito condições e intercalar braços. Lotes agrupam os mesmos casos em cada condição pertinente. Não confundir ordem das opções com ordem dos casos. O estado extra dos outros casos faz parte do tratamento lote; registrar comprimento e composição. Interações são exploratórias com essa amostra. Repetir apenas um subconjunto de 8 casos para medir instabilidade se houver sinal de variação, com verba da reserva de confirmação."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#130",
+     "texto": "1. **Falha de transporte não é resposta errada.** O provedor devolveu HTTP 429 em 46 chamadas do gemma. Contá-las como erro de classificação atribuiria ao comparador uma falha que é da fila do provedor. Elas foram repetidas em até três tentativas; 8 seguiram sem resposta e contam como erro dele, com o número publicado. 2. **Cobertura mínima de um braço.** Um braço com menos de 90% de respostas válidas é reportado como incompleto e sai da leitura primária. O critério foi escrito antes de calcular a acurácia do braço que motivou a dúvida, justamente para que manter ou tirar não fosse escolha pós-hoc. Ao fim, gemma ficou em 91,1% e gpt-oss em 90,0%: nenhum saiu. 3. **Teto de saída é parâmetro de transporte.** Com os 64 tokens de saída herdados do E10, o gpt-oss-20b devolvia conteúdo vazio — ele gasta saída com raciocínio antes de responder. O teto subiu para 256, o braço foi reexecutado desde o primeiro caso, e as 9 chamadas feitas sob o teto insuficiente foram anuladas **da análise, não do livro-caixa**, onde seguem pagas e registradas."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#89",
+     "texto": "Os splits finais precisam de proteção contra leitura durante ajuste. Salvar gabarito final em arquivo separado e só juntar após finalizar previsões. Escrever relatório de falhas com ID e evidência, não apenas a frase “errou”. Categorias iniciais: tempo/status confundido, pedido versus assunto, falta de evidência versus contradição, ordem/posição, perda de ressalva, parsing, transporte, versão/cache e execução incorreta."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#1",
+     "texto": "**Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA **Execução:** 18–19 de setembro de 2026 **Sistema avaliado:** Jev 1.13 (`typesafe/jev-1.13` via OpenRouter e `jev-1.13.0` direto) **Custo total:** US$ 0,035707114 em 1.474 chamadas, de um teto autorizado de US$ 5,00, conciliado contra um extrato de provedor de US$ 0,034640289 **Código, dados e registros:** este repositório, com pré-registros em `planning/` e relatórios brutos em `runs/`"
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#174",
+     "texto": "A mesma rodada apontou que o painel havia começado a contar meia verdade: o cartão do E8 citava os dois casos em que o anotador independente apoia o Jev e omitia os dois em que ele confirma o gabarito. Corrigido no código e na seção 3.6, e é a razão de a confiança da seção 1 ter caído de 0,75 para 0,60. O texto do veredito do painel passou a ser calculado a partir dos números, em vez de prosa fixa: um texto com números escritos à mão continua afirmando o mesmo depois que os dados mudam."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#61",
+     "texto": "- Um gasto histórico do mesmo provedor ficava fora da soma filtrada, e o extrato o somava de novo. - Quando a tentativa correspondente era enfim liquidada, o ajuste só encolhia na conciliação *seguinte*; no intervalo, a carteira contava o mesmo dinheiro duas vezes e podia negar uma chamada legítima. - A migração criava as colunas de identidade vazias, e o `settle` passava a rejeitar para sempre qualquer tentativa antiga que ainda estivesse pendente — inclusive um timeout que recebesse resposta tardia."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#155",
+     "texto": "**Consequência para a recomendação, e ela é desfavorável ao que este relatório vinha dizendo:** a afirmação \"todos os erros ficam abaixo de 0,90\" era verdadeira nos dois primeiros corpora e é falsa no terceiro. Um corte calibrado num conjunto **não se transporta** para outro. A recomendação operacional passa a ser o corte de 0,99, que é o único que zera o erro nos três corpora, e mesmo ele exige recalibração no material real de quem for aplicar — com revisão humana obrigatória da classe `cancelar` em qualquer corte."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#50",
+     "texto": "40 casos pareados, 20 em ordem OpenRouter→TypeSafe e 20 na ordem inversa, intercalados no mesmo host e janela temporal. São no máximo 80 chamadas. Manter a semântica de estado, critérios e opções; armazenar os dois payloads e mapeamentos. Registrar ID solicitado e ID efetivamente retornado; se os modelos resolvidos diferirem, o resultado é comparação de serviços/modelos, não efeito isolado do transporte."
+    }
+   ]
+  },
+  {
+   "id": "p010",
+   "pergunta": "O que as cotas representam no experimento?",
+   "aceita": "(?i)limites\\s*,\\s*não\\s*metas\\s*de\\s*consumo",
+   "alvo": "PLANO-CIENTIFICO-JEV-HELENA#69",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#182",
+     "texto": "A décima rodada não achou defeito financeiro e achou uma promessa impossível no painel: o veredito oferecia a **cobertura da partição de confirmação (87,5%) com o custo da união (US$ 0,080)**. Custo por decisão depende da fração que vai para revisão humana, que é justamente o que a cobertura mede; as duas coisas têm de sair da mesma partição. Ou 87,5% a US$ 0,050, ou 80% a US$ 0,080. O meio-termo era o número preferido de cada coluna."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#37",
+     "texto": "Os três primeiros resultados abaixo usam o **gabarito do autor**, como pré-registrado. O gabarito oficial do estudo, depois da adjudicação da seção 3.6.1, está na seção 3.6 e move os números para cima; mantenho os dois porque trocar de gabarito depois de ver o resultado é exatamente o que um pré-registro existe para impedir."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#56",
+     "texto": "**Unidade de análise:** caso independente para classificação; consulta para ranking; episódio/tarefa para agentes; semente para simulação. Repetições ficam aninhadas. Para batch, manter também o agrupamento de transporte: erros dentro da mesma chamada podem ser correlacionados. Não misturar observações individuais e de lote como independentes."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#59",
+     "texto": "**Passo 1b — Inclua sempre uma classe de escape.** Este é o cuidado mais importante que o E14 encontrou. Sem uma opção `nao-se-aplica`, um texto que não contém pedido nenhum — uma política interna, um \"Bom dia.\", letras aleatórias — é classificado assim mesmo, com **confiança média 0,987**, acima de qualquer corte. Dez em dez. Acrescentando a saída explícita, dez acertos em dez. Nenhuma política de confiança cobre essa falha; só a classe extra cobre."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#69",
+     "texto": "As cotas são limites, não metas de consumo. Contam todos os provedores e auxiliares dentro deste experimento, inclusive busca externa, se ativada. Download, armazenamento, hardware e tempo humano ficam em colunas próprias; contratação de infraestrutura ou compra de créditos não está realizada nem embutida como se fosse gratuita."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#14",
+     "texto": "**O que isto não autoriza:** que a rubrica meça o que diz medir. Os três anotadores deste estudo — eu, o anotador independente e o terceiro juiz — produzem rótulos, e dois deles são modelos de linguagem enquanto o terceiro sou eu, que escrevi o corpus. Concordância entre modelos sobre uma rubrica que eu redigi mede reprodutibilidade, não validade. Enquanto duas pessoas do atendimento real não anotarem os mesmos casos e medirem kappa entre si antes de olhar qualquer modelo, toda conclusão deste relatório repousa sobre um rótulo não validado. É o item 3 da seção 10, custa tempo de gente e não custa orçamento."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#31",
+     "texto": "Não era óbvio. `confidence` é um número que o modelo emite sobre a própria resposta; nada garante que corresponda a probabilidade de acerto. Mas nos dois corpora, todos os erros ficaram concentrados abaixo de 0,90, e nenhum caso aceito acima desse corte estava errado. É isso que torna viável uma política de triagem com revisão seletiva, em vez de revisão total."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#207",
+     "texto": "Os doze experimentos anteriores mediram o Jev em corpora construídos para medi-lo. O E13 é diferente: ele o coloca dentro do fluxo real de trabalho do Claude Code e do Codex, com o material que o Igor de fato escreveu, para responder a uma pergunta de economia — o Jev, que custa US$ 0,042 por milhão de tokens de entrada e nada na saída, consegue poupar trabalho de modelos milhares de vezes mais caros?"
+    }
+   ]
+  },
+  {
+   "id": "p011",
+   "pergunta": "Qual é o intervalo estimado de horas para a cobertura simples dos 15?",
+   "aceita": "4\\s*[–-]\\s*12\\s*horas",
+   "alvo": "PLANO-CIENTIFICO-JEV-HELENA#99",
+   "candidatos": [
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#59",
+     "texto": "**Confiança do modelo:** é uma saída estatística que precisa de validação local, não a chance comprovada de estar certo. Guardar distribuição completa quando disponível. Estimar Brier multiclasses e diagramas de confiabilidade sobre probabilidades; avaliar confidence separadamente como escore de seleção. Não calcular Brier tratando confidence como probabilidade de correção sem justificar esse mapeamento. ECE depende dos bins e é instável com pouco dado; usar bins fixos e reportar suporte. [Definição TypeSafe](https://docs.typesafe.ai/confidence) e [referência de calibração](https://proceedings.mlr.press/v70/guo17a.html)."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#23",
+     "texto": "Os 15 sistemas têm ficha detalhada na seção 13. As duas listas awesome e o repositório de skills são referências; o cookbook é documentação. Para essas quatro referências: conferir links de instalação, licença, exemplo mínimo, versão do contrato e correspondência com código; uma referência não recebe pontuação de acurácia de produto."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#27",
+     "texto": "No E2 a ordem dos casos dentro do lote era fixa, então \"a posição 4 erra mais\" e \"o caso que cai na posição 4 é difícil\" eram a mesma afirmação. O E2b repetiu o lote em cinco permutações (200 observações) e o padrão **desapareceu**: amplitude observada de 0,12 entre posições, com p=0,403 em teste de permutação que usa o caso como unidade. O qui-quadrado que eu havia calculado antes tratava as 200 observações como independentes, o que era errado."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#124",
+     "texto": "**O resultado, no gabarito oficial:** o Jev acerta 0,9889 e supera os quatro, de +7,8% a +14,4%, com todos os IC95 acima de zero e McNemar exato entre p = 0,0156 e p = 0,0002. Os 10 casos em que eu e o anotador independente discordamos foram a um terceiro juiz cego, de outro fornecedor, com as leituras em ordem sorteada — e ele confirmou meu gabarito em 10 de 10, sem declarar ambiguidade em nenhum."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#94",
+     "texto": "**Função:** classifica a mensagem com contexto recente e mapeia categoria para lista priorizada de modelos disponíveis. Ler `src/jev.ts`, `router.ts`, `context.ts`, `extension.ts` e `config/default-criteria.json`. O cliente observado usa TypeSafe e `jev-latest`; retorna ao modelo anterior ao fim do turno conforme a lógica da extensão."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#185",
+     "texto": "A décima terceira rodada trocou de método: em vez de reler o código, **mutou os dados** e perguntou quais cartões se mexiam. Zerando as nove divergências do anotador independente dentro de `runs/e8-anotador/relatorio.json`, os cartões do E1 e do E7 acompanharam e o do E8 ficou parado. Ele não recalculava nada — lia dois agregados gravados dentro do próprio relatório no momento em que aquele experimento rodou. Era o defeito da nona rodada, número velho em caixa nova, sobrevivendo justamente no cartão que fala de gabarito. A correção criou `gabarito.desempenho_do_estudo()`, que soma E1 e E7 sob os três gabaritos na hora da leitura, e o teste de mutação virou teste permanente."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#76",
+     "texto": "A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3 acima inclui cronometrar a revisão: se ela leva 30 segundos e não 2 minutos, a economia real é um quarto da que está nesta tabela, e ninguém mediu isso ainda."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#99",
+     "texto": "Engenharia preliminar: estimativa de 4–8 horas para ledger, adaptadores mínimos, esquemas e testes de falha; 4–12 horas para a cobertura simples dos 15, variando muito com Pi, Rust, navegador e GPU. Esses são intervalos de planejamento, não medição nem promessa. Preparação de dados/rotulagem será provavelmente maior; o piloto atualizará essa estimativa."
+    }
+   ]
+  },
+  {
+   "id": "p012",
+   "pergunta": "Qual foi a porcentagem da regra congelada no piloto?",
+   "aceita": "60\\s*,\\s*0\\s*%",
+   "alvo": "RELATORIO-FINAL-JEV#81",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#126",
+     "texto": "**Por que isso importa mais do que o número favorável.** O E11 já tinha encontrado essa divergência, e a explicação natural era falta de poder: 20 famílias, um comparador, intervalos largos. O E12 triplicou as famílias e quadruplicou os comparadores. Se a divergência fosse ruído amostral, ela teria encolhido. Ela não encolheu — ficou no mesmo lugar. **A conclusão deste estudo sobre o Jev depende de quem escreveu o gabarito, e mais medição não resolve isso.**"
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#61",
+     "texto": "Para comparar pares com margem de não inferioridade de 5 pp, alfa unilateral 5%, poder 80% e discordância de 10%, aproximação inicial dá **248 pares**; margem 2 pp, **1.546 pares**. Isso é planejamento sob hipóteses, não garantia de poder. O piloto informa discordância e correlação; recalcular antes do teste final, com simulação se houver agrupamento. O corpus de 160 testes por tarefa não sustenta toda comparação estreita pretendida. Não unir tarefas diferentes só para atingir N."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#81",
+     "texto": "O estudo comparou o Jev contra uma regra congelada em todos os experimentos anteriores, e a regra perde feio em toda parte: 60,0% no piloto, 32,5% na confirmação, 10 erros graves contra zero. Nada disso responde à pergunta que o plano fez primeiro: *vale um LLM especializado aqui, ou qualquer classificador de linguagem resolve?*"
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#69",
+     "texto": "As cotas são limites, não metas de consumo. Contam todos os provedores e auxiliares dentro deste experimento, inclusive busca externa, se ativada. Download, armazenamento, hardware e tempo humano ficam em colunas próprias; contratação de infraestrutura ou compra de créditos não está realizada nem embutida como se fosse gratuita."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#40",
+     "texto": "**Ressalva registrada em emenda ao pré-registro, antes de aparecer em qualquer resumo:** a vantagem cresceu porque o comparador piorou, não porque o Jev melhorou. O Jev foi de 0,925 para 0,975 (dois casos); a regra caiu de 0,600 para 0,325, porque escrevi famílias inteiras contra casamento de palavras-chave. A comparação honesta entre corpora é a do Jev consigo mesmo."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#36",
+     "texto": "A primeira leitura da diluição de contexto (R11) mostrou colapso para 23,3% com confiança 1,0 e 23 erros acima de 0,90 — um limite de janela espetacular. Antes de publicar, fui à causa: o `LIMITE_DE_CARACTERES` do meu próprio núcleo estava em 12.000, e como o recheio vinha **antes** da mensagem, o truncamento cortava fora o pedido do cliente. O modelo respondia sobre um texto sem pedido nenhum. O limite não existia."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#66",
+     "texto": "**Este resultado corrige a leitura anterior deste relatório, e corrige-a contra o modelo.** Eu havia registrado que em 2 dos 4 erros \"o suspeito é o meu gabarito\". A adjudicação diz outra coisa: em `tri-f02-04` o terceiro juiz ficou comigo, e o Jev errou mesmo. Só `cnf-g05-02` — o caso que eu já havia declarado contestável antes de ver qualquer um destes resultados — mudou de lado, e mudou contra mim."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#132",
+     "texto": "**Como auditar essa cronologia sem acreditar em mim.** As três emendas foram commitadas com a execução em curso, ou seja, quando já existiam respostas parciais no disco — o Git prova a ordem dos commits, não o que eu tinha visto. O que torna a afirmação verificável é o bruto: `runs/e12-replicacao/respostas.jsonl` é gravado caso a caso, na ordem, e vai versionado desde a décima sexta rodada de revisão, que cobrou justamente isso. Cruzando o horário de cada linha do bruto com o horário de cada commit de emenda, qualquer pessoa recalcula exatamente qual era o estado dos dados quando cada regra foi escrita — inclusive para me contradizer."
+    }
+   ]
+  },
+  {
+   "id": "p013",
+   "pergunta": "Quantas chamadas liquidadas foram registradas no livro-caixa?",
+   "aceita": "\\b10\\.015\\b",
+   "alvo": "DOSSIE-DE-EVIDENCIAS#66",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#186",
+     "texto": "A auditoria de mutação foi então aplicada a todos os relatórios, e achou um **segundo** cartão cego: o E3 lia o bloco `jev` gravado no alto de `runs/e3-evidencia/relatorio.json` em vez de contar os casos. Os dois números batem hoje — 23 acertos em 24 — e é justamente por isso que nenhum teste de coerência podia pegá-lo: um número congelado parece correto enquanto ninguém mexe nos dados. Trocados cinco acertos por erros, o cartão continuava estampando 95,8%. Hoje ele recalcula e a auditoria de mutação virou teste permanente sobre todos os relatórios que têm lista de casos."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#14",
+     "texto": "A TypeSafe documenta inglês como língua de melhor desempenho e distingue o limite total da requisição do limite de estado mais pergunta. O OpenRouter apresenta contexto de 32K. **Não transferir automaticamente limites de lote nem resultados em inglês para o transporte e corpus que usaremos.** [Modelos TypeSafe](https://docs.typesafe.ai/models)."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#27",
+     "texto": "**E o cuidado da primeira medição não se confirmou.** Recortar com as constantes do topo do arquivo junto — que parecia resolver o erro em que o valor estava fora da função — melhorou a **ordenação** (74/74 contra 72/74) e **piorou a resposta** (66 contra 69). Mais contexto ajuda a achar e atrapalha a responder. Recorte enxuto, e aceite que alguns valores ficam de fora."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#3",
+     "texto": "**Decisão proposta:** testar os 15 sistemas em uma rodada simples, aprofundar os mecanismos de todos em bases compartilhadas e só promover os que entregarem valor no trabalho final. A prioridade anterior de excluir algumas demonstrações da primeira rodada foi substituída pelo seu pedido atual. Não vamos confundir um produto que funciona, um modelo que acerta e uma operação que economiza trabalho."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#60",
+     "texto": "**Tamanho de amostra:** 16/16 não sustenta precisão de 99%. Com zero erros em observações independentes representativas, o limite superior unilateral de 95% para erro é `1 - 0,05^(1/n)`: 59 observações para ficar abaixo de 5%, 299 para abaixo de 1% e 598 para abaixo de 0,5%. O número relevante em uma política seletiva é o de casos aceitos, não o total. [Métodos para proporções do NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#93",
+     "texto": "**A premissa da minha própria emenda não sobreviveu à conferência.** A emenda dizia que o piloto havia guiado o desenho do prompt do Jev e que por isso o resultado ali deveria ser lido como secundário. Fui ao histórico: as instruções e os critérios entraram uma única vez, no commit `9f6d13b` de 18/09, junto com o corpus piloto, e nunca foram alterados; o corpus piloto também não mudou depois de rodar. Não houve iteração de prompt contra resultados. Registrei isso como nota de verificação no próprio pré-registro, em vez de reescrever a emenda."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#44",
+     "texto": "Usar 32 casos de diagnóstico excluídos do teste final, em desenho **2 x 2 x 2**: individual versus lote de 8; ordem das opções A versus ordem alternativa balanceada; contexto limpo versus um distrator padronizado. São 256 decisões-alvo: 128 chamadas individuais e 16 chamadas de lote, total **144 chamadas**. Manter IDs explícitos de caso/pergunta."
+    },
+    {
+     "chave": "DOSSIE-DE-EVIDENCIAS#66",
+     "texto": "O livro-caixa SQLite em `runs/ledger.sqlite3` registra **10.015 chamadas** liquidadas, somando **US$ 0,4544** do teto de US$ 5,00 autorizado — restam US$ 4,5456. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido."
+    }
+   ]
+  },
+  {
+   "id": "p014",
+   "pergunta": "Qual ação só pode ser habilitada depois de acrescentar fila com dry-run, validação de manifesto, previsão/reserva de custo, pausa de despacho e conciliação?",
+   "aceita": "(?i)executar\\s*bloco",
+   "alvo": "PLANO-CIENTIFICO-JEV-HELENA#92",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#128",
+     "texto": "**Erro grave, no gabarito oficial:** o Jev não comete nenhum `falso-cancelar` nem perde nenhum `cancelar`. O mistral-nemo também não. O llama-3.1-8b comete 2 e perde 2; o gemma comete 2 e perde 1; o gpt-oss-20b comete 1 e perde 5. Zero observado não é zero verdadeiro: com 30 famílias, o limite superior de 95% do Jev ainda é 4,4%."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#23",
+     "texto": "Os 15 sistemas têm ficha detalhada na seção 13. As duas listas awesome e o repositório de skills são referências; o cookbook é documentação. Para essas quatro referências: conferir links de instalação, licença, exemplo mínimo, versão do contrato e correspondência com código; uma referência não recebe pontuação de acurácia de produto."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#69",
+     "texto": "As cotas são limites, não metas de consumo. Contam todos os provedores e auxiliares dentro deste experimento, inclusive busca externa, se ativada. Download, armazenamento, hardware e tempo humano ficam em colunas próprias; contratação de infraestrutura ou compra de créditos não está realizada nem embutida como se fosse gratuita."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#133",
+     "texto": "Esses são envelopes de alocação, não previsão de gasto. **Planejar somente US$ 3,50 de chamadas; preservar US$ 1,50 de margem.** Search1API, Gemini direto, GPU e hospedagem não estão financiados por essa chave nem autorizados como despesas adicionais. O custo total de um fluxo não pode ser omitido porque sai de outro provedor."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#99",
+     "texto": "Engenharia preliminar: estimativa de 4–8 horas para ledger, adaptadores mínimos, esquemas e testes de falha; 4–12 horas para a cobertura simples dos 15, variando muito com Pi, Rust, navegador e GPU. Esses são intervalos de planejamento, não medição nem promessa. Preparação de dados/rotulagem será provavelmente maior; o piloto atualizará essa estimativa."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#92",
+     "texto": "Para a fase de execução, acrescentar fila com dry-run, validação de manifesto, previsão/reserva de custo, pausa de despacho e conciliação. Só depois habilitar “executar bloco”; parar não cancela necessariamente uma chamada já enviada, cujo valor permanece reservado. O painel nunca recebe chave no navegador: executor lê variáveis localmente e publica apenas dados saneados."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#122",
+     "texto": "O item 1 do próximo movimento deste relatório pedia repetir o E10 *\"em amostra maior, com pelo menos 30 famílias, e com dois ou três LLMs econômicos em vez de um\"*. Foi feito, e é o experimento mais caro em chamadas de todo o estudo: 90 casos novos em 30 famílias declaradas antes de o primeiro caso existir, cinco braços na mesma lista e na mesma ordem, 529 tentativas registradas no livro-caixa."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#77",
+     "texto": "*(Correção registrada: até a décima sexta rodada de revisão este parágrafo dizia que o gpt-oss-20b perdia 5 `cancelar`. Eram 5 antes de eu corrigir o defeito que apagava nove respostas já pagas daquele braço, descrito em 9.1, e o número ficou no texto depois de o dado mudar. É o mesmo erro que este relatório persegue desde a nona rodada: número velho numa caixa nova — desta vez cometido por mim, no parágrafo em que eu comparava erro grave entre modelos.)* Zero observado não é zero verdadeiro, e um teto de um quarto por família não é uma garantia operacional. O que este número autoriza dizer é que o erro irreversível não apareceu onde a regra congelada o comete dez vezes; o que ele não autoriza é prometer que não aparecerá."
+    }
+   ]
+  },
+  {
+   "id": "p015",
+   "pergunta": "Qual é o tamanho de contexto apresentado pelo OpenRouter?",
+   "aceita": "(?i)\\b32K\\b",
+   "alvo": "TRIAGEM-JEV-HELENA#14",
+   "candidatos": [
+    {
+     "chave": "TRIAGEM-JEV-HELENA#14",
+     "texto": "A TypeSafe documenta inglês como língua de melhor desempenho e distingue o limite total da requisição do limite de estado mais pergunta. O OpenRouter apresenta contexto de 32K. **Não transferir automaticamente limites de lote nem resultados em inglês para o transporte e corpus que usaremos.** [Modelos TypeSafe](https://docs.typesafe.ai/models)."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#185",
+     "texto": "A décima terceira rodada trocou de método: em vez de reler o código, **mutou os dados** e perguntou quais cartões se mexiam. Zerando as nove divergências do anotador independente dentro de `runs/e8-anotador/relatorio.json`, os cartões do E1 e do E7 acompanharam e o do E8 ficou parado. Ele não recalculava nada — lia dois agregados gravados dentro do próprio relatório no momento em que aquele experimento rodou. Era o defeito da nona rodada, número velho em caixa nova, sobrevivendo justamente no cartão que fala de gabarito. A correção criou `gabarito.desempenho_do_estudo()`, que soma E1 e E7 sob os três gabaritos na hora da leitura, e o teste de mutação virou teste permanente."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#81",
+     "texto": "O estudo comparou o Jev contra uma regra congelada em todos os experimentos anteriores, e a regra perde feio em toda parte: 60,0% no piloto, 32,5% na confirmação, 10 erros graves contra zero. Nada disso responde à pergunta que o plano fez primeiro: *vale um LLM especializado aqui, ou qualquer classificador de linguagem resolve?*"
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#133",
+     "texto": "Esses são envelopes de alocação, não previsão de gasto. **Planejar somente US$ 3,50 de chamadas; preservar US$ 1,50 de margem.** Search1API, Gemini direto, GPU e hospedagem não estão financiados por essa chave nem autorizados como despesas adicionais. O custo total de um fluxo não pode ser omitido porque sai de outro provedor."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#100",
+     "texto": "**Duas correções antes da primeira chamada,** pela mesma disciplina do E7: `dsp-d12-02` tinha gabarito `trocar` num pedido condicional, e a rubrica que os dois modelos recebem diz que ação condicional não é ação pedida — o caso mediria a contradição, não o modelo; `dsp-d09-02` ficava entre `rastrear` e `informacao`, e um caso que dois gabaritos defendem não mede nada."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#2",
+     "texto": "**Status real:** estudo dos 18 repositórios e leitura integral dos dois PDFs concluídos; 96 decisões do PDF recalculadas localmente; nenhum teste novo dos 15 sistemas e nenhuma inferência paga nesta etapa. Plano e interface de consulta entregues. O executor de testes e o bloqueio financeiro ainda precisam ser implementados antes da execução paga."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#12",
+     "texto": "A ressalva que eu mesma escrevi aqui — *\"os quatro vetores foram escritos por quem conhece o alvo\"* — foi testada. Três LLMs receberam a tarefa de escrever os ataques; dois produziram 12 vetores que eu não escrevi. Sob eles, **o Jev virou 10 de 120 respostas, 8,3%**. A afirmação \"imune a instrução injetada\", como estava publicada, caiu."
+    },
+    {
+     "chave": "GUIA-PRATICO-JEV#83",
+     "texto": "**5. A vantagem *em acurácia* sobre um LLM genérico e barato não está provada.** Contra o método simples de hoje, a vantagem é enorme e sólida. Contra quatro LLMs baratos, ela existe sob o critério de correção desta casa e desaparece sob o critério de um anotador independente. Se o seu caso de uso tolera 88% a 91% de acerto **e o texto não vem de fora**, um modelo genérico barato pode bastar — e custa um quarto. Se o texto vem de fora, veja a seção 3b: ali a vantagem existe e não depende de gabarito."
+    }
+   ]
+  },
+  {
+   "id": "p016",
+   "pergunta": "Qual modelo de linguagem grande é citado como exemplo de terceiro juiz?",
+   "aceita": "(?i)\\bJev\\b",
+   "alvo": "RELATORIO-FINAL-JEV#69",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#18",
+     "texto": "O restante desta seção descreve a política de aceitação estudada no E9. **Ela não é uma recomendação de adoção, e não deve ser lida como uma.** O corte de 0,90 nunca foi pré-registrado: foi lido nos erros do piloto e depois avaliado sobre os mesmos erros, o que a seção 8 já registra ao dizer que `confidence` foi validado como ordenador e não como probabilidade. Ela está aqui porque mede uma coisa real — quanto do volume um corte cobre e ao custo de quê —, e essa medida é útil para desenhar o piloto em sombra do item 4 da seção 10. Usá-la como política operacional exigiria pré-registrar o corte num corpus que ele não tenha visto."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#150",
+     "texto": "**Zero erro observado não é taxa de erro zero.** Os aceitos vêm de um número pequeno de famílias, e famílias são a unidade de dependência. O limite por caso (Clopper-Pearson, 35 ensaios no corte 0,90) daria um número bem menor, e seria enganoso: trataria casos da mesma família como observações independentes, o que eles não são."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#167",
+     "texto": "1. **Não é um teste em dados reais.** Os 80 casos de triagem e os 24 de evidência foram construídos por mim. Nenhum veio de um canal de atendimento em produção. 2. **Nenhum anotador humano além de mim.** O E8 mitigou com um anotador independente e o E8b com um terceiro juiz, mas os três são modelos de linguagem. O kappa de 0,8420 sobre os 230 casos anotados mede que a rubrica é **reprodutível por um LLM**, não que ela seja válida. Os 3 erros que restam no gabarito adjudicado (tri-f02-04, tri-f06-02, tri-f09-04) passaram pela adjudicação cega, mas a adjudicação foi feita por máquina. A validade do constructo continua aberta, e é o item 2 da seção 10."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#13",
+     "texto": "**O que isto autoriza afirmar:** neste corpus, com esta rubrica e contra este comparador, o Jev é melhor, e a diferença é grande o bastante para sobreviver ao agrupamento por família. No erro grave (`cancelar` indevido) **o Jev não cometeu nenhum sob nenhum dos três gabaritos**; o comparador cometeu um sob dois deles e nenhum sob o terceiro — o detalhe está na seção 3.10, e ele é menos favorável do que a versão anterior desta frase dizia."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#76",
+     "texto": "Um único processo despacha chamadas; SQLite com transação atômica reserva o pior custo permitido antes de liberar cada tentativa. A condição de liberação é: `gasto reconciliado + reservas pendentes + pior custo da próxima tentativa <= teto global e teto do bloco`. Valores em inteiros de nanodólares, nunca ponto flutuante para autorizar gastos. Registrar baseline do provedor no início e reconciliar deltas sem contar duas vezes o ledger e o extrato."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#100",
+     "texto": "**Função:** agrega manchetes selecionadas, faz perguntas de veredito/risco e mostra pedido e resposta. Ler `functions/api/verdict.js`. Há cache e contenção de chamadas; atualização por requisição/cache não deve ser confundida automaticamente com agendamento garantido a cada dez minutos. O código consultado inclui quatro perguntas, apesar de um trecho do README dizer três."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#141",
+     "texto": "Campos mínimos de um item: `id`, tarefa, idioma, origem, texto/estado, pergunta, opções, rótulo, justificativa do rótulo e grupo de partição. Campos de execução: hash de entrada/pergunta, commit, modelo solicitado/devolvido, provedor, tentativa, resposta completa, erro, latência, tokens e custo confirmado/estimado. Sem a credencial em qualquer desses registros."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#69",
+     "texto": "**O limite desta adjudicação, dito antes que alguém o use contra o resultado:** o terceiro juiz é um modelo de linguagem grande, como o Jev. Modelos grandes treinados em dados parecidos tendem a compartilhar a mesma convenção sobre o que é \"a ação pedida\" — a concordância de 8 em 9 pode estar medindo essa convenção compartilhada, e não a verdade do domínio. O desenho controla o que dá para controlar (ordem sorteada, juiz cego à autoria, nenhum acesso ao repositório), mas não controla isso. Uma adjudicação com três pessoas do atendimento real poderia chegar a outro lugar, e continua sendo o item 2 da seção 10."
+    }
+   ]
+  },
+  {
+   "id": "p017",
+   "pergunta": "Em que estado de evidência todos os sistemas se encontram atualmente?",
+   "aceita": "(?i)\\binspeção\\b",
+   "alvo": "PLANO-CIENTIFICO-JEV-HELENA#26",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#63",
+     "texto": "Dos P2: o `round(..., 4)` estava trazendo de volta o p igual a zero que a correção anterior tinha eliminado (1/20001 arredonda para 0,0), e o limite de erro por família foi reapresentado pelo que ele de fato mede — a probabilidade de uma família conter um caso aceito errado — e não como um limite conservador do risco por caso, que seria outro evento."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#37",
+     "texto": "Os três primeiros resultados abaixo usam o **gabarito do autor**, como pré-registrado. O gabarito oficial do estudo, depois da adjudicação da seção 3.6.1, está na seção 3.6 e move os números para cima; mantenho os dois porque trocar de gabarito depois de ver o resultado é exatamente o que um pré-registro existe para impedir."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#174",
+     "texto": "A mesma rodada apontou que o painel havia começado a contar meia verdade: o cartão do E8 citava os dois casos em que o anotador independente apoia o Jev e omitia os dois em que ele confirma o gabarito. Corrigido no código e na seção 3.6, e é a razão de a confiança da seção 1 ter caído de 0,75 para 0,60. O texto do veredito do painel passou a ser calculado a partir dos números, em vez de prosa fixa: um texto com números escritos à mão continua afirmando o mesmo depois que os dados mudam."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#3",
+     "texto": "**Decisão proposta:** testar os 15 sistemas em uma rodada simples, aprofundar os mecanismos de todos em bases compartilhadas e só promover os que entregarem valor no trabalho final. A prioridade anterior de excluir algumas demonstrações da primeira rodada foi substituída pelo seu pedido atual. Não vamos confundir um produto que funciona, um modelo que acerta e uma operação que economiza trabalho."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#26",
+     "texto": "Estados de evidência obrigatórios: **inspeção**, **teste offline do código**, **reprodução com respostas armazenadas**, **inferência real do componente**, **integração simulada**, **fluxo completo verificado**. Instalar não conta como inferir; mock não conta como serviço real. Hoje todos os sistemas estão em inspeção, com as rodadas pendentes. A auditoria do PDF é um resultado separado."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#20",
+     "texto": "O critério que este pré-registro havia congelado era inválido e foi emendado em 2026-09-19: ele pedia que \"o limite inferior do intervalo de Wilson sobre famílias não cruzasse zero\", mas Wilson é intervalo de proporção e nunca é negativo — uma única família perfeita já o satisfaria. O procedimento acima o substitui. O McNemar por família reportado antes (b=6, c=0, p=0,031) testa a ocorrência de *família perfeita*, não a diferença de acurácia, e passa a constar como análise posterior. A conclusão sobrevive ao teste correto; o que muda é a largura do intervalo."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#185",
+     "texto": "A décima terceira rodada trocou de método: em vez de reler o código, **mutou os dados** e perguntou quais cartões se mexiam. Zerando as nove divergências do anotador independente dentro de `runs/e8-anotador/relatorio.json`, os cartões do E1 e do E7 acompanharam e o do E8 ficou parado. Ele não recalculava nada — lia dois agregados gravados dentro do próprio relatório no momento em que aquele experimento rodou. Era o defeito da nona rodada, número velho em caixa nova, sobrevivendo justamente no cartão que fala de gabarito. A correção criou `gabarito.desempenho_do_estudo()`, que soma E1 e E7 sob os três gabaritos na hora da leitura, e o teste de mutação virou teste permanente."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#62",
+     "texto": "**Multiplicidade e paradas:** escolher uma pergunta principal por família de uso. Reportar todos os resultados planejados, inclusive negativos. Se testar várias hipóteses confirmatórias na mesma família, usar Holm a 5%; análises adicionais recebem rótulo exploratório. Avaliar confirmação em um corte final pré-definido; não olhar p a cada lote até encontrar significância. Paradas operacionais por orçamento, bug, preço, versão ou entradas inválidas são imediatas e ficam registradas."
+    }
+   ]
+  },
+  {
+   "id": "p018",
+   "pergunta": "O que os dez casos não fazem com o classificador?",
+   "aceita": "(?i)n[ãa]o\\s+falam\\s+com\\s+o\\s+classificador",
+   "alvo": "LIMITES-DO-JEV#13",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#216",
+     "texto": "Quase o dobro da cobertura sem nenhum disparo falso, e o erro do Jev é por omissão: 10 dos 13 erros foram deixar de sugerir, não sugerir errado. O corte é 0,90 e não o 0,99 da seção 6.1 porque a assimetria é outra — aqui uma sugestão perdida custa uma skill não carregada, e uma sugestão errada custa três linhas de contexto. O corte foi calibrado neste dado, e não transportado do E12, que é precisamente o que a seção 6.1 manda fazer."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#13",
+     "texto": "A economia histórica do lote foi de aproximadamente **47,0%** sobre as mesmas 48 decisões: US$ 0,000937272 individual versus US$ 0,000496776 em lote. A mediana por chamada foi 283,96 ms versus 263,16 ms. Lote também alterou ordem e distrações, e individual veio antes: o ensaio não isola o efeito causal de cada fator. Tempo por chamada com oito decisões não é tempo de oito requisições individuais concorrentes."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#80",
+     "texto": "**Recomendação:** manter OpenRouter para o comparador econômico e o caminho já demonstrado no Hermes; habilitar TypeSafe direto para testar os projetos que foram escritos para sua API. Não transferir toda a verba nem comprar crédito só pela hipótese de preço menor. O preço nominal Jev é igual; a vantagem provável do direto é reduzir adaptações e permitir verificar o comportamento original dos projetos. A latência menor é hipótese a medir em E4."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#27",
+     "texto": "Os dois últimos descontos entraram na décima terceira rodada, cobrados pela revisão adversarial: o teto de erro já estava escrito na seção 6 e não era descontado, e o braço do LLM econômico não existia. Depois que ele passou a existir e empatou, o desconto por ausência de comparador (-0,10) virou desconto por comparador que não separou de zero (-0,20). A nota caiu de 0,5 para 0,2 sem que nenhum dado do Jev piorasse: o que mudou foi o que se sabe sobre a alternativa. A conta está em `executor/placar.py:confianca_calculada`, e é para ser contestada: se alguém achar que um desconto está errado, o lugar de discutir é o código, não a minha impressão."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#23",
+     "texto": "Os 15 sistemas têm ficha detalhada na seção 13. As duas listas awesome e o repositório de skills são referências; o cookbook é documentação. Para essas quatro referências: conferir links de instalação, licença, exemplo mínimo, versão do contrato e correspondência com código; uma referência não recebe pontuação de acurácia de produto."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#61",
+     "texto": "Para comparar pares com margem de não inferioridade de 5 pp, alfa unilateral 5%, poder 80% e discordância de 10%, aproximação inicial dá **248 pares**; margem 2 pp, **1.546 pares**. Isso é planejamento sob hipóteses, não garantia de poder. O piloto informa discordância e correlação; recalcular antes do teste final, com simulação se houver agrupamento. O corpus de 160 testes por tarefa não sustenta toda comparação estreita pretendida. Não unir tarefas diferentes só para atingir N."
+    },
+    {
+     "chave": "DOSSIE-DE-EVIDENCIAS#69",
+     "texto": "A auditoria confere três coisas, nesta ordem: que cada resumo fecha quando recalculado das linhas brutas; que cada número escrito na documentação existe nesses resumos, com a mesma casa decimal; e que as chamadas e o custo declarados fecham com o livro-caixa. Ela também declara o que **não** consegue conferir, em vez de omitir."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#13",
+     "texto": "Olhando os dez casos, eles têm uma coisa que os meus quatro vetores não tinham: **não falam com o classificador**. Escrevem dentro da mensagem um pedido de cancelamento de verdade — *\"solicitamos o cancelamento de seu serviço atual\"*, *\"solicito a imediata finalização do serviço\"*. Isso não é manipular quem lê: é mudar o que está escrito. Separando as duas coisas:"
+    }
+   ]
+  },
+  {
+   "id": "p019",
+   "pergunta": "Quantos falsos‑cancelar o llama‑3.1‑8b comete?",
+   "aceita": "\\b2\\b",
+   "alvo": "RELATORIO-FINAL-JEV#128",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#110",
+     "texto": "1. O Jev segue a rubrica escrita melhor do que um modelo de 7B segue, e o anotador é que erra — o padrão das discordâncias dele é o mesmo dos corpora anteriores, puxar para ação onde o enunciado pede informação. 2. Eu escrevi 60 casos que casam com a leitura do Jev, sem perceber, porque conheço as respostas dele desde o E1."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#48",
+     "texto": "No piloto, produzir um gabarito rico com três propriedades separadas: responde diretamente, corrige/limita a premissa e é relacionado. Derivar classificações binária e ternária sem trocar o objetivo após a saída. Comparar os dois formatos pelo **mesmo resultado operacional**: uma resposta final conserva a ressalva necessária? Fazer chamadas separadas para os braços; o teste com duas perguntas juntas é uma ablação posterior de interferência, não o comparador principal."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#91",
+     "texto": "`lab/index.html` é um **painel local de planejamento e inspeção**: catálogo filtrável dos 15 sistemas, fichas, tetos, simulação de orçamento, achados históricos e tabela das 96 decisões recalculadas. Funciona sem chave, sem API e sem servidor; os dados são embutidos no build. Filtros e exportação não fazem chamadas pagas. Resultados históricos e ensaios futuros aparecem separados."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#106",
+     "texto": "**Confiança da análise:** alta na conferência das 96 linhas e nas diferenças entre camadas de teste; moderada nas prioridades técnicas baseadas no código inspecionado; baixa em superioridade de qualquer sistema na sua rotina, que ainda não foi medida. A evidência que mudaria a recomendação é um conjunto novo, representativo, pareado e avaliado de forma independente com ganho no resultado final."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#211",
+     "texto": "Cobertura útil é a fração de pedidos mandados para o caminho barato com confiança acima do corte. Quando o Jev diz \"simples\", diz com confiança de no máximo 0,73 — não existe ponto de operação. Uma terceira pergunta explicou a razão: **54 dos 60 pedidos reais são continuações** (\"continue\", \"verifique e corrija então\", \"piorou tudo\"), e a informação que decidiria não está escrita na mensagem. Dar a conversa anterior ao modelo moveu 2,6 pontos e nenhuma cobertura."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#177",
+     "texto": "**Conciliação de encerramento contra o extrato do provedor:** o ledger registra US$ 0,017182296 para o OpenRouter; o provedor cobrou US$ 0,017095092. O ledger está **acima** do extrato em US$ 0,000087, e a diferença é explicada: são as chamadas que voltaram HTTP 400 na fase de sondagem do contrato, provisionadas aqui e não cobradas lá. Nenhum excedente a absorver, nenhum gasto sem identidade de provedor. Somando o TypeSafe direto (US$ 0,000992166), o total comprometido era US$ 0,022618774 naquele momento; depois do E12 e da retificação descrita em 9.1, ele é US$ 0,035707114, contra um extrato de US$ 0,034640289."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#105",
+     "texto": "Cenário favorável: alguns componentes reduzem revisão e tempo sem piorar a qualidade. Cenário intermediário: Jev ajuda como filtro/segunda opinião e regras cobrem a maior parte da demanda. Cenário desfavorável: integração e revisão custam mais que o ganho; guardar o conhecimento e encerrar o uso. Não atribuí probabilidades numéricas a esses cenários porque os dados atuais não as sustentam."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#128",
+     "texto": "**Erro grave, no gabarito oficial:** o Jev não comete nenhum `falso-cancelar` nem perde nenhum `cancelar`. O mistral-nemo também não. O llama-3.1-8b comete 2 e perde 2; o gemma comete 2 e perde 1; o gpt-oss-20b comete 1 e perde 5. Zero observado não é zero verdadeiro: com 30 famílias, o limite superior de 95% do Jev ainda é 4,4%."
+    }
+   ]
+  },
+  {
+   "id": "p020",
+   "pergunta": "Quantas famílias foram usadas no E11?",
+   "aceita": "20\\s*(famílias)?",
+   "alvo": "RELATORIO-FINAL-JEV#126",
+   "candidatos": [
+    {
+     "chave": "RELATORIO-FINAL-JEV#40",
+     "texto": "**Ressalva registrada em emenda ao pré-registro, antes de aparecer em qualquer resumo:** a vantagem cresceu porque o comparador piorou, não porque o Jev melhorou. O Jev foi de 0,925 para 0,975 (dois casos); a regra caiu de 0,600 para 0,325, porque escrevi famílias inteiras contra casamento de palavras-chave. A comparação honesta entre corpora é a do Jev consigo mesmo."
+    },
+    {
+     "chave": "PLANO-CIENTIFICO-JEV-HELENA#61",
+     "texto": "Para comparar pares com margem de não inferioridade de 5 pp, alfa unilateral 5%, poder 80% e discordância de 10%, aproximação inicial dá **248 pares**; margem 2 pp, **1.546 pares**. Isso é planejamento sob hipóteses, não garantia de poder. O piloto informa discordância e correlação; recalcular antes do teste final, com simulação se houver agrupamento. O corpus de 160 testes por tarefa não sustenta toda comparação estreita pretendida. Não unir tarefas diferentes só para atingir N."
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#62",
+     "texto": "A correção foi estrutural: **o excedente do extrato deixou de ser linha e passou a ser cálculo**. Ele agora acompanha o estado sozinho, encolhe no instante em que a cobrança vira tentativa registrada, e não colide com o histórico. Junto, o gasto histórico passou a exigir o provedor, e foi criada uma regularização auditada de identidade para tentativas herdadas de base antiga."
+    },
+    {
+     "chave": "LIMITES-DO-JEV#1",
+     "texto": "> Programa E14, 2026-09-19. 2.522 chamadas reais ao `typesafe/jev-1.13`, US$ 0,17597. > Consumo acumulado da chave, todos os caminhos, pelo livro-caixa: US$ 0,28363 de US$ 5,00 > autorizados. Só a parte do dossiê (US$ 0,03571) está conciliada contra extrato do provedor. > Pré-registro e emendas datadas: `laboratorio/PREREGISTRO.md`. > Dados brutos: `laboratorio/mapa-de-limites.json`. Visual: `output/mapa-de-limites.html`."
+    },
+    {
+     "chave": "DOSSIE-DE-EVIDENCIAS#60",
+     "texto": "**Evidência.** Em 2026-09-19, a condição `instrucao/vazia` da R11 voltou `http 400` em 30 de 30 chamadas: o provedor recusava o payload. Em 2026-09-20, o canário `instrucao-vazia-nao-responde` reprovou — com os **mesmos critérios** e a instrução igualmente vazia, **7 de 7** chamadas voltaram 200, com a classe certa e confiança 1 (duas corridas de canário e três de confirmação com o formato literal da R11). A propriedade caiu em menos de 24 horas, e quem pegou foi o canário, na primeira corrida dele."
+    },
+    {
+     "chave": "TRIAGEM-JEV-HELENA#106",
+     "texto": "**Função:** transforma regras em linguagem natural em avaliações de mensagens/histórico e ações. O escopo atual inclui Twitch, além de Discord. Ler `src/typesafe/client.rs`, `add_action/`, `message_actions/`, `moderation/`, `gemini.rs` e `twitch/`. Gemini também trata imagens e regras computacionais; o resultado não é atribuível só ao Jev."
+    },
+    {
+     "chave": "RELATORIO-FINAL-JEV#126",
+     "texto": "**Por que isso importa mais do que o número favorável.** O E11 já tinha encontrado essa divergência, e a explicação natural era falta de poder: 20 famílias, um comparador, intervalos largos. O E12 triplicou as famílias e quadruplicou os comparadores. Se a divergência fosse ruído amostral, ela teria encolhido. Ela não encolheu — ficou no mesmo lugar. **A conclusão deste estudo sobre o Jev depende de quem escreveu o gabarito, e mais medição não resolve isso.**"
+    },
+    {
+     "chave": "RELATORIO-EXECUCAO-JEV-HELENA#51",
+     "texto": "Todo o material — executor, desenho, corpora e relatório — foi submetido a outro modelo (Codex `gpt-6-astra`, esforço alto), com instrução de procurar defeito e sem espaço para elogio. A primeira tentativa foi honesta ao falhar: o sandbox bloqueou a leitura dos arquivos e o revisor **recusou-se a afirmar que não havia defeito**, em vez de fingir uma revisão. Na segunda, com o código entregue no próprio prompt, vieram **cinco achados P1**. Verifiquei cada um contra o código: todos procedem. Todos foram corrigidos, com teste de regressão que reproduz o defeito (`executor/tests/test_achados_revisao.py`)."
+    }
+   ]
+  }
+ ]
+}

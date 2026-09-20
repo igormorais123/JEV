@@ -590,6 +590,114 @@ def auditar_caixa(placar):
 
 
 # ----------------------------------------------------------------- relatório
+def auditar_r21(placar):
+    """A rodada da generalização: acurácia por arranjo, viradas sob meta e colocação em prosa."""
+    dado = carregar('r21-generalizacao.json')
+    for arranjo, resumo in dado['arranjos'].items():
+        validas = [l for l in dado['detalhe'] if l['arranjo'] == arranjo and l['escolha']]
+        acertos = sum(1 for l in validas if l['escolha'] == l['gold'])
+        placar.conferir('R21', f'{arranjo}: n', resumo['n'], len(validas))
+        placar.conferir('R21', f'{arranjo}: acertos', resumo['acertos'], acertos)
+        placar.conferir('R21', f'{arranjo}: taxa', resumo['taxa'],
+                        round(acertos / len(validas), 4) if validas else None)
+        placar.conferir('R21', f'{arranjo}: ic95', resumo['ic95'], wilson(acertos, len(validas)))
+        for molde, valor in resumo['por_molde'].items():
+            do_molde = [l for l in validas if l['molde'] == molde]
+            placar.conferir('R21', f'{arranjo}/{molde}: n', valor['n'], len(do_molde))
+            placar.conferir('R21', f'{arranjo}/{molde}: acertos', valor['acertos'],
+                            sum(1 for l in do_molde if l['escolha'] == l['gold']))
+
+    # a virada sob meta-instrução é medida contra a própria resposta sem meta, como na R10
+    base = {l['i']: l['escolha'] for l in dado['detalhe']
+            if l['arranjo'] == 'pt' and l['escolha']}
+    meta = [l for l in dado['detalhe']
+            if l['arranjo'] == 'pt-meta' and l['escolha'] and l['i'] in base]
+    viradas = [l for l in meta if l['escolha'] != base[l['i']]]
+    bloco = dado['meta_instrucao']
+    placar.conferir('R21', 'meta: n', bloco['n'],
+                    len([l for l in dado['detalhe']
+                         if l['arranjo'] == 'pt-meta' and l['escolha']]))
+    placar.conferir('R21', 'meta: viradas', bloco['viradas'], len(viradas))
+    placar.conferir('R21', 'meta: para o alvo da injecao', bloco['para_o_alvo_da_injecao'],
+                    sum(1 for l in viradas if l['escolha'] == 'encerrar'))
+
+    prosa = dado['prosa']
+    placar.conferir('R21', 'prosa: n', prosa['n'], len(prosa['detalhe']))
+    placar.conferir('R21', 'prosa: jev em primeiro', prosa['jev_primeiro'],
+                    sum(1 for c in prosa['detalhe'] if c['jev_primeiro']))
+    placar.conferir('R21', 'prosa: bm25 em primeiro', prosa['bm25_primeiro'],
+                    sum(1 for c in prosa['detalhe'] if c['bm25_primeiro']))
+    so_jev = sum(1 for c in prosa['detalhe'] if c['jev_primeiro'] and not c['bm25_primeiro'])
+    so_bm25 = sum(1 for c in prosa['detalhe'] if c['bm25_primeiro'] and not c['jev_primeiro'])
+    placar.conferir('R21', 'prosa: pareado p', prosa['pareado_primeiro']['p'],
+                    mcnemar(so_jev, so_bm25))
+
+
+def auditar_r21b(placar):
+    """O cruzamento que decidiu se a queda da imunidade era do domínio ou do vetor."""
+    dado = carregar('r21b-cruzamento.json')
+    base = {l['i']: l['escolha'] for l in dado['detalhe']
+            if l['arranjo'] == 'base' and l['escolha']}
+    meta = [l for l in dado['detalhe']
+            if l['arranjo'] == 'meta' and l['escolha'] and l['i'] in base]
+    viradas = [l for l in meta if l['escolha'] != base[l['i']]]
+    placar.conferir('R21b', 'n', dado['n'], len(meta))
+    placar.conferir('R21b', 'viradas', dado['viradas'], len(viradas))
+    placar.conferir('R21b', 'taxa', dado['taxa'], round(len(viradas) / len(meta), 4))
+    placar.conferir('R21b', 'ic95', dado['ic95'], wilson(len(viradas), len(meta)))
+    placar.conferir('R21b', 'para o alvo da injecao', dado['para_o_alvo_da_injecao'],
+                    sum(1 for l in viradas if l['escolha'] == 'cancelar'))
+    placar.conferir('R21b', 'viradas acima do corte', dado['viradas_acima_do_corte'],
+                    sum(1 for l in viradas if (l['confianca'] or 0) >= dado['corte']))
+
+
+def auditar_cem_hipoteses(placar):
+    """A página das cem tem de dizer o mesmo que o avaliador diz agora.
+
+    E mais: nenhuma hipótese pode se apoiar numa condição retratada sem dizer, no próprio
+    detalhe, que ela está retratada. Foi assim que H087 quase publicou um número que mede um
+    defeito do laboratório.
+    """
+    sys.path.insert(0, str(RAIZ))
+    from laboratorio.h100 import avaliar, dados as dados_h100, relatorio
+
+    resultados = avaliar.rodar()
+    placar.conferir('cem hipoteses', 'o registro tem cem', 100, len(resultados))
+    placar.conferir('cem hipoteses', 'nenhuma prova quebrou', 0,
+                    sum(1 for r in resultados if r['veredito'] in ('erro', 'sem prova')))
+
+    destino = DOCS / 'CEM-HIPOTESES.md'
+    placar.conferir('cem hipoteses', 'a pagina existe', True, destino.exists())
+    if not destino.exists():
+        return
+    texto = destino.read_text(encoding='utf-8')
+    placar.conferir('cem hipoteses', 'a pagina esta atualizada', True,
+                    texto == relatorio.montar())
+
+    contagem = defaultdict(int)
+    for r in resultados:
+        contagem[r['veredito']] += 1
+    escrito = re.search(r'(\d+) sustentadas, (\d+) falsificadas, (\d+) inconclusiva', texto)
+    placar.conferir('cem hipoteses', 'a pagina declara o placar', True, escrito is not None)
+    if escrito:
+        placar.conferir('cem hipoteses', 'sustentadas', int(escrito.group(1)),
+                        contagem['sustentada'])
+        placar.conferir('cem hipoteses', 'falsificadas', int(escrito.group(2)),
+                        contagem['falsificada'])
+        placar.conferir('cem hipoteses', 'inconclusivas', int(escrito.group(3)),
+                        contagem['inconclusiva'])
+
+    for bloco in dados_h100.retratacoes()['retratadas']:
+        for condicao in bloco['condicoes']:
+            for r in resultados:
+                if condicao in (r.get('detalhe') or ''):
+                    detalhe = r['detalhe'].lower()
+                    placar.conferir(
+                        'cem hipoteses',
+                        f'{r["id"]} cita `{condicao}` e avisa que esta retratada',
+                        True, 'retratad' in detalhe or 'truncamento' in detalhe)
+
+
 def auditar_paginas_geradas(placar):
     """Uma página gerada que não é regerada vira uma página escrita à mão sem ninguém notar."""
     try:
@@ -617,6 +725,9 @@ def rodar():
     auditar_r19(placar)
     auditar_r20(placar)
     auditar_consolidado(placar)
+    auditar_r21(placar)
+    auditar_r21b(placar)
+    auditar_cem_hipoteses(placar)
     auditar_documentacao(placar)
     auditar_paginas_geradas(placar)
     auditar_caixa(placar)

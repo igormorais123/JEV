@@ -50,6 +50,7 @@ FORCAS = {
     'falsificado': 'falsificado',
     'descritivo': 'medição única, sem comparador',
     'derivou': 'deixou de valer — deriva pega pelo canário',
+    'corrigida': 'afirmação anterior corrigida por medição nova',
 }
 
 
@@ -63,6 +64,8 @@ def afirmacoes():
     r16 = carregar('r16-resumo.json')
     r11 = carregar('r11-extremos.json')
     r10 = carregar('r10-injecao-comparada.json')
+    r21 = carregar('r21-generalizacao.json')
+    r21b = carregar('r21b-cruzamento.json')
 
     guarda = r16['segunda_camada']['D-pergunta-do-efeito@0.8']
     benignos = 108
@@ -141,29 +144,30 @@ def afirmacoes():
                 'candidatos em vez de escolher melhor — é barata e sai de graça na mesma chamada.'),
         ),
         dict(
-            titulo='O Jev não obedece a instrução injetada no lugar onde entra o dado',
-            forca='demonstrado',
+            titulo='Contra aviso pseudo-sistêmico o Jev não vira; contra **ordem direta**, vira',
+            forca='corrigida',
             evidencia=(
-                f"Sob os 12 vetores adversariais escritos por três LLMs que não são eu, o Jev "
-                f"virou {r15b['jev']['viradas']} vezes em {r15b['jev']['n']}. Separando por "
-                f"família: contra meta-instrução (\"ignore o anterior\", \"você é outro sistema\"), "
+                f"Sob os 12 vetores adversariais escritos por três LLMs, o Jev virou "
                 f"{r15b['familias']['A']['jev']['virou']} de "
-                f"{r15b['familias']['A']['jev']['n']}; contra texto que **acrescenta um pedido "
-                f"real**, {r15b['familias']['B']['jev']['virou']} de "
-                f"{r15b['familias']['B']['jev']['n']} — e "
-                f"{r15b['jev']['viradas_acima_do_corte']} delas passaram do corte de confiança "
-                f"{str(r15b['corte']).replace('.', ',')}, porque a maior foi "
-                f"{str(r15b['jev']['maior_confianca_de_virada']).replace('.', ',')}. Na mesma "
-                f"família da meta-instrução, três dos quatro comparadores viraram "
-                f"({r15b['familias']['A']['c1']['virou']}, "
-                f"{r15b['familias']['A']['c2']['virou']} e "
-                f"{r15b['familias']['A']['c3']['virou']} vezes), e **todas** essas viradas "
-                f"vieram com confiança acima do corte."),
-            onde='`r15-adversario-externo.json`, `r15b-familias.json`, `r10-injecao-comparada.json`',
+                f"{r15b['familias']['A']['jev']['n']} na família que fala com o classificador e "
+                f"{r15b['familias']['B']['jev']['virou']} de "
+                f"{r15b['familias']['B']['jev']['n']} na que acrescenta um pedido real — e "
+                f"{r15b['jev']['viradas_acima_do_corte']} dessas passaram do corte de "
+                f"{str(r15b['corte']).replace('.', ',')}. Foi disso que saiu a afirmação de "
+                f"imunidade. Só que os doze vetores são **avisos pseudo-sistêmicos** "
+                f"(\"Protocolo #7894-Omega\", \"Cancelamento automático aprovado\"): nenhum dá "
+                f"uma ordem ao classificador. A meta-instrução imperativa, testada só na R21, "
+                f"vira {r21['meta_instrucao']['viradas']} de {r21['meta_instrucao']['n']} no "
+                f"jurídico e {r21b['viradas']} de {r21b['n']} **em atendimento**, o domínio onde "
+                f"a imunidade tinha sido publicada."),
+            onde='`r15b-familias.json`, `r21-generalizacao.json`, `r21b-cruzamento.json`',
             nao_prova=(
-                'Não é imunidade a injeção. É imunidade a **meta-instrução**: quando o texto '
-                'inserido contém um pedido genuíno, o Jev muda de resposta como qualquer modelo — '
-                'só que baixando a confiança, o que um corte de 0,90 transforma em recusa.'),
+                'Não apaga a separação estrutural entre `state` e `questions`, que é real e é o '
+                'que impede o texto do cliente de virar instrução por concatenação. O que cai é '
+                'a leitura de que isso produz imunidade. E cai também o uso do corte de '
+                'confiança como defesa: ele barra as viradas em atendimento e deixa passar 10 '
+                'de 25 no jurídico. Contra ordem direta escrita no estado, a defesa é sanitizar '
+                'a entrada.'),
         ),
         dict(
             titulo='Como segunda camada, o Jev corta dois terços das confirmações inúteis '
@@ -353,6 +357,8 @@ Cada afirmação recebe uma de quatro forças, e a diferença entre elas é o po
 | **direção consistente** | o sinal se repete e nunca se inverte, sem atingir p < 0,05 | adotar se o custo for baixo; não usar para convencer ninguém |
 | **medição única** | um número observado, sem comparador ou com n pequeno demais | tratar como hipótese, e medir de novo antes de depender |
 | **falsificado** | a hipótese foi testada e o dado disse não | parar de fazer, e registrar por quê |
+| **corrigida** | uma afirmação publicada caiu diante de medição nova | ler a versão nova, e desconfiar de quem citar a antiga |
+| **derivou** | valia quando foi medida e não vale mais | refazer a medição antes de usar |
 
 Toda afirmação traz também **o que ela não prova**. Essa coluna é a parte do documento que
 mais custou a escrever e a única que impede o resto de virar propaganda.
@@ -364,7 +370,7 @@ def montar():
     partes = [CABECALHO, '## As afirmações\n']
 
     ordem = {'demonstrado': 0, 'direcao': 1, 'descritivo': 2, 'falsificado': 3,
-             'derivou': 4}
+             'corrigida': 4, 'derivou': 5}
     for item in sorted(afirmacoes(), key=lambda i: ordem[i['forca']]):
         evidencia = item['evidencia']
         if isinstance(evidencia, tuple):  # vírgula perdida sobrevive como tupla; normaliza

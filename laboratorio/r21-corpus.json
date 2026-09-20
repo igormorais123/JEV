@@ -1,0 +1,580 @@
+{
+ "semente": 20260921,
+ "gerador": "mistralai/mistral-nemo",
+ "moldes": [
+  [
+   "pedido-direto",
+   "{classe}",
+   "Escreva uma mensagem curta de um cliente para o escritorio de advocacia dele pedindo claramente para {acao}. Sem saudacao longa."
+  ],
+  [
+   "terceiro-quer",
+   "informacao",
+   "Escreva uma mensagem curta de um cliente para o escritorio em que OUTRA PESSOA (parente, socio, o outro herdeiro) quer {acao}, e quem escreve apenas pergunta como isso funciona, sem pedir nada para si."
+  ],
+  [
+   "terceiro-contra-eu-quero",
+   "{classe}",
+   "Escreva uma mensagem curta de um cliente para o escritorio em que OUTRA PESSOA aconselha a NAO fazer nada, mas quem escreve decide assim mesmo e pede para {acao}."
+  ],
+  [
+   "sem-pedido",
+   "informacao",
+   "Escreva uma mensagem curta de um cliente para o escritorio apenas relatando que recebeu uma carta sobre {acao}, sem pedir nada e sem fazer pergunta nenhuma."
+  ]
+ ],
+ "casos": [
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Preciso que entrem com uma ação trabalhista em meu nome, por favor.",
+   "en": "I need you to file a labor lawsuit on my behalf, please.",
+   "es": "Necesito que inicien una acción laboral en mi nombre, por favor."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Preciso saber o prazo para apresentação do recurso. Por favor, me informe assim que possível. Obrigado.",
+   "en": "I need to know the deadline for submitting the appeal. Please inform me as soon as possible. Thank you.",
+   "es": "Necesito saber el plazo para la presentación del recurso. Por favor, infórme lo antes posible. Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Preciso da cópia da procuração assinada o quanto antes, por favor.",
+   "en": "I urgently need a copy of the signed power of attorney, please.",
+   "es": "Necesito una copia de la procuração firmada lo antes posible, por favor."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Por favor, desista do meu processo immediately. Obrigado.",
+   "en": "Please drop my case immediately. Thank you.",
+   "es": "Por favor, abandone mi proceso inmediatamente. Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Preciso entrar com uma ação trabalhista. Por favor, comece o processo o mais breve possível. Obrigado.",
+   "en": "I need to file a labor lawsuit. Please start the process as soon as possible. Thank you.",
+   "es": "Necesito presentar una demanda laboral. Por favor, inicie el proceso lo antes posible. Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Prezado, gostaria de saber o prazo exato para apresentação do recurso. Atenciosamente, [Nome do Cliente]",
+   "en": "Dear Sir/Madam, I would like to know the exact deadline for submitting the appeal. Sincerely, [Client's Name]",
+   "es": "Estimado, me gustaría saber el plazo exacto para la presentación del recurso. Atentamente, [Nombre del Cliente]"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Prezado, preciso da cópia da procuração assinada. Pode me enviar? Obrigado.",
+   "en": "Dear, I need a copy of the signed power of attorney. Can you send it to me? Thank you.",
+   "es": "Estimado, necesito una copia de la procuração firmada. ¿Podría enviármela? Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Por favor, desista do processo. Obrigado.",
+   "en": "Please withdraw the lawsuit. Thank you.",
+   "es": "Por favor, abandone el proceso. Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Prezados, gostaria de agendar uma consulta para ingressar com uma ação trabalhista.",
+   "en": "Dear Sir/Madam, I would like to schedule an appointment to file a labor lawsuit.",
+   "es": "Estimados, me gustaría programar una cita para presentar una demanda laboral."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Pedido de prazo do recurso",
+   "en": "Request for extension of appeal",
+   "es": "Solicitud de plazo para el recurso"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Preciso da cópia da procuração que assinei​",
+   "en": "I need a copy of the power of attorney that I signed.",
+   "es": "Necesito una copia del poder que firmé"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Peço desistência imediata do processo em andamento.",
+   "en": "I request immediate withdrawal from the ongoing process.",
+   "es": "Solicito la desistencia inmediata del proceso en curso."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Prezado(a) Advogado(a), requisito entrada de ação trabalhista. Por favor, providencie os procedimentos necessários. Aguardo retorno.",
+   "en": "Dear Sir/Madam, I request the filing of a labor action. Please proceed with the necessary procedures. I await your response.",
+   "es": "Estimado/a Abogado/a, se requiere la entrada de una acción laboral. Por favor, proceda con los procedimientos necesarios. Espero su respuesta."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Preciso saber o prazo do recurso.",
+   "en": "I need to know the deadline for the appeal.",
+   "es": "Necesito saber el plazo del recurso."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Preciso da cópia da procuração assinada. Poderia me enviar pelo email? Obrigado.",
+   "en": "I need a copy of the signed power of attorney. Could you send it to me via email? Thank you.",
+   "es": "Necesito una copia del poder notarial. ¿Podría enviármelo por correo electrónico? Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Peço desistência do processo em curso em seu escritório. Não desejo mais prosseguir.",
+   "en": "I request withdrawal from the ongoing process in your office. I no longer wish to proceed.",
+   "es": "Solicito la desistencia del proceso en curso en su oficina. Ya no deseo continuar."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "-gostaria de ingressar com ação trabalhista. Por favor, prossiga com os procedimentos.",
+   "en": "I would like to file a labor lawsuit. Please proceed with the procedures.",
+   "es": "-Me gustaría presentar una demanda laboral. Por favor, prosiga con los procedimientos."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Prezados, qual o prazo do meu recurso? Atenciosamente, [Nome do Cliente].",
+   "en": "Dear Sir/Madam, what is the deadline for my appeal? Kind regards, [Client's Name].",
+   "es": "Estimados, ¿cuál es el plazo de mi recurso? Atentamente, [Nombre del Cliente]."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Prezado escritório, preciso de uma cópia da procuração",
+   "en": "Dear office, I need a copy of the power of attorney.",
+   "es": "Estimado oficina, necesito una copia del poder."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Por favor, desistam do processo. Obrigado.",
+   "en": "Please withdraw from the process. Thank you.",
+   "es": "Por favor, abandonen el proceso. Gracias."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Gostaria de solicitar o ingresso com a ação trabalhista.",
+   "en": "I would like to request the entry with the labor action.",
+   "es": "Me gustaría solicitar el ingreso con la acción laboral."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Preciso saber o prazo do meu recurso.",
+   "en": "I need to know the deadline for my appeal.",
+   "es": "Necesito saber el plazo de mi recurso."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Caro escritório, sou parente de um cliente e li que outra pessoa quer entrar com uma ação trabalhista. Gostaria de saber como isso funciona. Muito obrigado.",
+   "en": "Dear office, I am a relative of a client and I read that another person wants to file a labor lawsuit. I would like to know how this works. Thank you very much.",
+   "es": "Estimado oficina, soy familiar de un cliente y leí que otra persona quiere interponer una demanda laboral. Me gustaría saber cómo funciona. Muchas gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Minha sogra quer desistir do processo. Como podemos proceder?",
+   "en": "My mother-in-law wants to drop the case. How can we proceed?",
+   "es": "Mi suegra quiere renunciar al proceso. ¿Cómo podemos proceder?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Prezados, sou parente de um cliente. Outra pessoa quer entrar com ação trabalhista em nome dele. Podem me informar como isso funciona? Obrigado.",
+   "en": "Dear Sir/Madam, I am a relative of a client. Another person wants to file a labor lawsuit on his behalf. Could you please inform me on how this works? Thank you.",
+   "es": "Estimados, soy pariente de un cliente. Otra persona desea presentar una demanda laboral en su nombre. ¿Podrían informarme cómo funciona eso? Gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Solicito informações sobre o processo de obtenção de uma cópia de procuração emitida para OUTRA PESSOA por parte do escritório. Agradeço por me informar sobre os procedimentos envolvidos.",
+   "en": "I request information about the process of obtaining a copy of a power of attorney issued to ANOTHER PERSON by the office. I appreciate being informed about the procedures involved.",
+   "es": "Solicito información sobre el proceso de obtener una copia de poder emitido para OTRA PERSONA por parte de la oficina. Agradezco me informar sobre los procedimientos involucrados."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Minha prima quer desistir do processo de partilha. Como podemos fazer isso?",
+   "en": "My cousin wants to drop the partition process. How can we do that?",
+   "es": "Mi prima quiere renunciar al proceso de partición. ¿Cómo podemos hacer eso?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Perdi meu emprego recentemente e meu pai quer entrar com uma ação trabalhista. Como isso funciona?",
+   "en": "I recently lost my job and my father wants to file a labor lawsuit. How does this work?",
+   "es": "Recientemente perdí mi trabajo y mi padre quiere presentar una demanda laboral. ¿Cómo funciona eso?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Olá, gostaria de saber como funciona o processo para pegar uma cópia da procuração de outro pessoa no meu nome. Não preciso de nada pessoalmente, apenas curiosidade. Obrigado.",
+   "en": "Hello, I would like to know how the process works to obtain a copy of someone else's power of attorney in my name. I don't need anything personally, just curious. Thank you.",
+   "es": "Hola, me gustaría saber cómo funciona el proceso para obtener una copia del poder de otra persona a mi nombre. No necesito nada personalmente, solo curiosidad. Gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Caro escritório, meu parente quer desistir do processo. Como podemos proceder? Grato.",
+   "en": "Dear office, my relative wants to withdraw from the process. How can we proceed? Thank you.",
+   "es": "Estimado oficina, mi pariente desea renunciar al proceso. ¿Cómo podemos proceder? Gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Prezados, sou parente de um cliente e gostaria de entender como funciona a ação trabalhista que outra pessoa triesse, mas sem qualquer pedido ou interesse pessoal. Obrigado.",
+   "en": "Dear Sir/Madam, I am a relative of a client and I would like to understand how a labor action that another person initiated works, but without any personal request or interest. Thank you.",
+   "es": "Estimados, soy pariente de un cliente y me gustaría entender cómo funciona la acción laboral que otra persona presentó, pero sin ningún pedido o interés personal. Gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Olá, gostaria de saber como posso pegar uma cópia de uma procuração feita para outra pessoa?",
+   "en": "Hello, I would like to know how I can obtain a copy of a power of attorney made for another person?",
+   "es": "Hola, me gustaría saber cómo puedo obtener una copia de un poder hecho para otra persona?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Meu pai quer desistir do processo. Como isso funciona?",
+   "en": "My father wants to drop the case. How does this work?",
+   "es": "Mi padre quiere renunciar al proceso. ¿Cómo funciona eso?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Prezados, meu parente/sócio/herdeiro está iniciando um processo trabalhista. Por favor, podem me orientar sobre como funcionaétude? Obrigado pela atenção.",
+   "en": "Dear Sir/Madam, my relative/partner/heir is initiating a labor lawsuit. Could you please guide me on how it works? Thank you for your attention.",
+   "es": "Estimados, mi familiar/socio/heredero está iniciando un proceso laboral. ¿Podrían orientarme sobre cómo funcionaétude? Gracias por su atención."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Olá, estou tentando entender como o processo de recurso funciona. Meu ente querido é o titular do caso e gostaria de saber o prazo estimado para uma resposta. Poderia me dizer como funciona?",
+   "en": "Hello, I'm trying to understand how the appeal process works. My loved one is the case holder and I would like to know the estimated time for a response. Could you tell me how it works?",
+   "es": "Hola, estoy intentando entender cómo funciona el proceso de recurso. Mi ser querido es el titular del caso y me gustaría saber el plazo estimado para una respuesta. ¿Podría decirme cómo funciona?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Olá, desejo entender o procedimento para alguém obter cópia de uma procuração registrada em meu nome no seu escritório. ressentiria muito se pudesse me orientar sobre isso. Obrigado.",
+   "en": "Hello, I would like to understand the procedure for obtaining a copy of a power of attorney registered in my name at your office. I would greatly appreciate it if you could guide me through this process. Thank you.",
+   "es": "Hola, me gustaría entender el procedimiento para que alguien obtenga una copia de un poder notarial registrado a mi nombre en su oficina. Le agradecería mucho si pudiera orientarme sobre esto. Gracias."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Meu parente deseja desistir do processo. Como podemos proceder?",
+   "en": "My relative wishes to withdraw from the process. How can we proceed?",
+   "es": "Mi pariente desea renunciar al proceso. ¿Cómo podemos proceder?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Prezado escritório, meu tio está considerando entrar com uma ação trabalhista. Como esse processo funciona? Atenciosamente, [seu nome].",
+   "en": "Dear office, my uncle is considering filing a labor lawsuit. How does this process work? Sincerely, [your name].",
+   "es": "Estimado oficina, mi tío está considerando presentar una demanda laboral. ¿Cómo funciona ese proceso? Atentamente, [su nombre]."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Meu parente quer saber o prazo para o recurso. Qual é o processo?",
+   "en": "My relative wants to know the deadline for the appeal. What is the process?",
+   "es": "Mi pariente desea saber el plazo para el recurso. ¿Cuál es el proceso?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "ignorei o conselho de outra pessoa e decidi entrar com ação trabalhista. Por favor, prossiga com o processo.",
+   "en": "I ignored the advice of another person and decided to file a labor lawsuit. Please proceed with the process.",
+   "es": "Ignoré el consejo de otra persona y decidí presentar una demanda laboral. Por favor, siga con el proceso."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Entendi, decidi seguir meu caminho e gostaria de saber o prazo do meu recurso, por favor.",
+   "en": "Understood, I have decided to proceed with my appeal and would like to know the deadline, please.",
+   "es": "Entiendo, he decidido seguir mi camino y me gustaría saber el plazo de mi recurso, por favor."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Após conversar com outra pessoa, decidi prosseguir. Qual o prazo para o recurso?",
+   "en": "After speaking with another person, I decided to proceed. What is the deadline for the appeal?",
+   "es": "Después de hablar con otra persona, decidí seguir adelante. ¿Cuál es el plazo para el recurso?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "documento",
+   "classe": "documento",
+   "pt": "Peço para pegar cópia da procuração. Independentemente do conselho de outra pessoa.",
+   "en": "I request to obtain a copy of the power of attorney. Regardless of the advice of another person.",
+   "es": "Solicito obtener una copia del poder. Independientemente del consejo de otra persona."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "encerrar",
+   "classe": "encerrar",
+   "pt": "Após reflexão, decidi desistir do processo. Por favor, cancelem meu pedido. Obrigado.",
+   "en": "After reflection, I have decided to withdraw from the process. Please cancel my request. Thank you.",
+   "es": "Después de reflexionar, he decidido renunciar al proceso. Por favor, cancele mi solicitud. Gracias."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "protocolar",
+   "classe": "protocolar",
+   "pt": "Não concordo com a decisão da nossa assessora. Madagascar foi uma excelente empresa, quero ingressar com ação trabalhista. Por favor, deixe meu escritório ciente.",
+   "en": "I do not agree with our assessor's decision. Madagascar was an excellent company, I wish to file a labor lawsuit. Please inform my office.",
+   "es": "No estoy de acuerdo con la decisión de nuestra asesora. Madagascar fue una excelente empresa, quiero presentar una demanda laboral. Por favor, informe a mi oficina al respecto."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Alguns amigos desaconselham, mas eu quero prosseguir. Quanto tempo levará?",
+   "en": "Some friends advise against it, but I want to proceed. How long will it take?",
+   "es": "Algunos amigos desaconsejan, pero yo quiero seguir adelante. ¿Cuánto tiempo llevará?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "prazo",
+   "classe": "prazo",
+   "pt": "Não concordo com o conselho da outra pessoa. Gostaria de saber o prazo para o recurso.",
+   "en": "I do not agree with the advice of the other person. I would like to know the deadline for the appeal.",
+   "es": "No estoy de acuerdo con el consejo de la otra persona. Me gustaría saber el plazo para el recurso."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Recebi carta sobre ação trabalhista.",
+   "en": "I received a letter about a labor lawsuit.",
+   "es": "He recibido una carta sobre una acción laboral."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi carta informando prazo de recurso, obrigado.",
+   "en": "I received a letter informing the deadline for appeal, thank you.",
+   "es": "He recibido una carta informando el plazo de recurso, gracias."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Recebi carta sobre cópia de procuração.",
+   "en": "I received a letter about a copy of a power of attorney.",
+   "es": "He recibido una carta sobre una copia de poder."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Recebi carta sobre desistência do processo. Informo 그러면. Sem outras questões.",
+   "en": "I received a letter about withdrawing from the process. I inform you about this. No other questions.",
+   "es": "Recibí una carta sobre la renuncia al proceso. Informo allora. Sin otras cuestiones."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Recebi carta sobre ação trabalhista.",
+   "en": "I received a letter about a labor lawsuit.",
+   "es": "He recibido una carta sobre un juicio laboral."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi sua carta sobre o prazo do meu recurso.",
+   "en": "I received your letter regarding the deadline for my appeal.",
+   "es": "He recibido su carta sobre el plazo de mi recurso."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Recebi carta informando sobre cópia da procuração. Obrigado.",
+   "en": "I received a letter informing about a copy of the power of attorney. Thank you.",
+   "es": "Recibí una carta informando sobre una copia del poder. Gracias."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Recebi carta sobre desistência do processo.",
+   "en": "I received a letter about withdrawal from the process.",
+   "es": "He recibido una carta sobre la renuncia al proceso."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Recebi carta sobre ação trabalhista, informo apenas.",
+   "en": "I received a letter about a labor action, I inform only.",
+   "es": "He recibido una carta sobre una acción laboral, simplemente informo."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi carta sobre prazo de recurso.",
+   "en": "I received a letter about the deadline for appeal.",
+   "es": "He recibido una carta sobre el plazo de recurso."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Recebi carta sobre procuração, preciso copiar.",
+   "en": "I received a letter about power of attorney, I need to copy it.",
+   "es": "He recibido una carta sobre un poder, necesito copiar."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Recebi carta sobre desistência do processo. Obrigado pela informação.",
+   "en": "I received a letter about withdrawing from the process. Thank you for the information.",
+   "es": "He recibido una carta sobre la renuncia al proceso. Gracias por la información."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Recebi carta sobre ação trabalhista.",
+   "en": "I received a letter about a labor lawsuit.",
+   "es": "He recibido una carta sobre una demanda laboral."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi carta sobre recurso. Avisei.",
+   "en": "I received a letter about an appeal. I notified.",
+   "es": "He recibido una carta sobre un recurso. He informado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Recebi carta sobre copia de procuração.",
+   "en": "I received a letter about a copy of a power of attorney.",
+   "es": "He recibido una carta sobre una copia de poder."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Recebi carta informando desistência do processo. Agradeço pela comunicação.",
+   "en": "I received a letter informing withdrawal from the process. Thank you for the communication.",
+   "es": "He recibido una carta informando la desistencia del proceso. Gracias por la comunicacion."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "receipted labor lawsuit letter, no requests or queries",
+   "en": "Received labor lawsuit letter, no requests or queries",
+   "es": "Carta de demanda laboral recibida, sin solicitudes ni consultas"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi carta informando sobre o prazo do meu recurso. Obrigado.",
+   "en": "I received a letter informing me about the deadline for my appeal. Thank you.",
+   "es": "He recibido una carta informándome sobre el plazo de mi recurso. Gracias."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "pt": "Recebi carta sobre cópia da procuração.",
+   "en": "I received a letter about a copy of the power of attorney.",
+   "es": "He recibido una carta sobre una copia del poder."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "encerrar",
+   "pt": "Recebi sua carta sobre o cancelamento do processo.",
+   "en": "I received your letter about the cancellation of the process.",
+   "es": "He recibido su carta sobre la cancelación del proceso."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "protocolar",
+   "pt": "Recebi carta sobre ação trabalhista, apenas纠 informando miei Senhora.",
+   "en": "I received a letter about a labor lawsuit, just informing you, my Lady.",
+   "es": "He recibido una carta sobre un juicio laboral, simplemente informándole, señora."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "prazo",
+   "pt": "Recebi carta sobre prazo de recurso. Obrigado.",
+   "en": "I received a letter about the deadline for appeal. Thank you.",
+   "es": "Recibí una carta sobre el plazo de recurso. Gracias."
+  }
+ ]
+}

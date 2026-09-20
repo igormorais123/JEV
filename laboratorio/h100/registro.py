@@ -120,7 +120,7 @@ HIPOTESES = [
       'sequência não crescente de confiança média'),
     H(19, 'B', 'Diluir o contexto derruba a confiança.',
       'A confiança média em 30k é menor que na referência.',
-      'R11, dimensão diluicao',
+      'R12 (emenda de 2026-09-20; a R11 estava retratada)',
       'confiança média em 30k < referência'),
     H(20, 'B', 'A injeção derruba a confiança mesmo quando não muda a resposta.',
       'A confiança média sob injeção é menor que sem injeção.',
@@ -404,7 +404,7 @@ HIPOTESES = [
       'queda > 0,30'),
     H(87, 'H', 'Diluir o contexto até 30 mil tokens não degrada.',
       'A condição diluicao/30k fica a menos de 5 pontos da referência.',
-      'R11',
+      'R12 (emenda de 2026-09-20; a R11 estava retratada)',
       'queda < 0,05'),
     H(88, 'H', 'Cento e quarenta e sete opções degradam.',
       'A condição opcoes/147 cai mais de 5 pontos.',
@@ -462,6 +462,36 @@ HIPOTESES = [
       'medição nova, corpus de prosa',
       'mais acertos de colocação que o BM25', 'confirmatoria'),
 ]
+
+# ----------------------------------------------------------------- emendas
+# Três correções feitas DEPOIS de a varredura rodar, registradas com data e motivo em vez de
+# aplicadas em silêncio. Nenhuma delas mexe no critério que decide a hipótese; as três mexem em
+# qual dado responde a ela, que é onde eu tinha errado.
+EMENDAS = [
+    {'em': '2026-09-20', 'atinge': ['H011'],
+     'o_que': 'a prova passa a conferir a escolha contra as chaves do vetor de probabilidades',
+     'por_que': ('a primeira prova montava o conjunto de classes a partir dos gabaritos vistos, '
+                 'e classes legítimas que nunca são gabarito — `segunda-via-boleto`, '
+                 '`nao-se-aplica`, o `cancelar` que os vetores de injeção tentam forçar — '
+                 'apareciam como violação de contrato. O vetor de probabilidades do recibo tem '
+                 'por chaves exatamente os critérios declarados, então ele é o conjunto certo. '
+                 'O critério registrado não mudou: continua sendo zero escolhas fora do '
+                 'conjunto declarado.')},
+    {'em': '2026-09-20', 'atinge': ['H019', 'H087'],
+     'o_que': 'a fonte passa da R11 para a R12',
+     'por_que': ('declarei a R11 como fonte da diluição sem notar que as condições '
+                 '`diluicao/20k` e `diluicao/30k` dela estão retratadas desde 2026-09-19: o '
+                 'truncamento do meu próprio núcleo cortava o pedido do cliente, e o número '
+                 'mede esse defeito. A R12 refez a medição com o limite corrigido. As duas '
+                 'leituras aparecem no relatório, a retratada marcada como tal.')},
+    {'em': '2026-09-20', 'atinge': ['H041'],
+     'o_que': 'declarada inconclusiva por falta de dado, e não falsificada',
+     'por_que': ('a tabela de tentativas não guardou latência, e os recibos só existem para '
+                 'chamadas que voltaram com resposta. Não há como comparar a latência da falha '
+                 'com a do sucesso no dado que foi guardado. Fica como lacuna, com a instrumentação '
+                 'que faltou nomeada.')},
+]
+
 
 POR_ID = {h['id']: h for h in HIPOTESES}
 

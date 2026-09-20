@@ -9,6 +9,9 @@ Projeto experimental para testes com o modelo de classificação JEV.
 - **[Guia prático](docs/GUIA-PRATICO-JEV.md)** — como aplicar, passo a passo, com os cuidados em ordem de risco.
 - **[Os limites do Jev](docs/LIMITES-DO-JEV.md)** — mapa empírico do programa E14: onde ele quebra, onde não
   quebra, a imunidade a manipulação pelo texto classificado e a classe de escape obrigatória.
+- **[Cem hipóteses sobre o Jev](docs/CEM-HIPOTESES.md)** — o registro com as cem, a previsão de cada uma
+  escrita antes do teste, e o que o dado respondeu: 82 sustentadas, 17 falsificadas, 1 inconclusiva.
+  Entre as falsificadas está a imunidade a meta-instrução, que era a afirmação mais forte do estudo.
 - **[Dossiê de evidências](docs/DOSSIE-DE-EVIDENCIAS.md)** — cada afirmação do estudo com a força dela
   (demonstrado, direção, medição única, falsificado) e, em cada uma, o que ela **não** prova. Página gerada
   a partir do dado bruto.

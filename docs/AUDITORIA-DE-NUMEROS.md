@@ -13,7 +13,7 @@ herdaria esse defeito em silêncio, e só uma segunda implementação o revelari
 
 Uma divergência aqui significa que a documentação e o dado discordam, e o dado ganha.
 
-**580 de 580 conferências fecham.**
+**661 de 661 conferências fecham.**
 
 ## R1-R3 — 27 conferências, todas fecham
 
@@ -626,6 +626,102 @@ O número que sustenta a tese, refeito juntando os dois lotes brutos: 169 pergun
 |  | H20a jev-2 vs todos: só jev-2 | `22` | `22` |
 |  | H20a jev-2 vs todos: p | `0.0015` | `0.0015` |
 
+## R21 — 67 conferências, todas fecham
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | pt: n | `65` | `65` |
+|  | pt: acertos | `51` | `51` |
+|  | pt: taxa | `0.7846` | `0.7846` |
+|  | pt: ic95 | `[0.6703, 0.8671]` | `[0.6703, 0.8671]` |
+|  | pt/pedido-direto: n | `19` | `19` |
+|  | pt/pedido-direto: acertos | `19` | `19` |
+|  | pt/sem-pedido: n | `21` | `21` |
+|  | pt/sem-pedido: acertos | `16` | `16` |
+|  | pt/terceiro-contra-eu-quero: n | `8` | `8` |
+|  | pt/terceiro-contra-eu-quero: acertos | `8` | `8` |
+|  | pt/terceiro-quer: n | `17` | `17` |
+|  | pt/terceiro-quer: acertos | `8` | `8` |
+|  | en: n | `64` | `64` |
+|  | en: acertos | `49` | `49` |
+|  | en: taxa | `0.7656` | `0.7656` |
+|  | en: ic95 | `[0.6487, 0.8525]` | `[0.6487, 0.8525]` |
+|  | en/pedido-direto: n | `20` | `20` |
+|  | en/pedido-direto: acertos | `20` | `20` |
+|  | en/sem-pedido: n | `21` | `21` |
+|  | en/sem-pedido: acertos | `14` | `14` |
+|  | en/terceiro-contra-eu-quero: n | `8` | `8` |
+|  | en/terceiro-contra-eu-quero: acertos | `8` | `8` |
+|  | en/terceiro-quer: n | `15` | `15` |
+|  | en/terceiro-quer: acertos | `7` | `7` |
+|  | es: n | `63` | `63` |
+|  | es: acertos | `49` | `49` |
+|  | es: taxa | `0.7778` | `0.7778` |
+|  | es: ic95 | `[0.6609, 0.8628]` | `[0.6609, 0.8627]` |
+|  | es/pedido-direto: n | `20` | `20` |
+|  | es/pedido-direto: acertos | `20` | `20` |
+|  | es/sem-pedido: n | `20` | `20` |
+|  | es/sem-pedido: acertos | `13` | `13` |
+|  | es/terceiro-contra-eu-quero: n | `8` | `8` |
+|  | es/terceiro-contra-eu-quero: acertos | `8` | `8` |
+|  | es/terceiro-quer: n | `15` | `15` |
+|  | es/terceiro-quer: acertos | `8` | `8` |
+|  | pt-meta: n | `68` | `68` |
+|  | pt-meta: acertos | `36` | `36` |
+|  | pt-meta: taxa | `0.5294` | `0.5294` |
+|  | pt-meta: ic95 | `[0.4124, 0.6433]` | `[0.4124, 0.6433]` |
+|  | pt-meta/pedido-direto: n | `22` | `22` |
+|  | pt-meta/pedido-direto: acertos | `22` | `22` |
+|  | pt-meta/sem-pedido: n | `21` | `21` |
+|  | pt-meta/sem-pedido: acertos | `0` | `0` |
+|  | pt-meta/terceiro-contra-eu-quero: n | `8` | `8` |
+|  | pt-meta/terceiro-contra-eu-quero: acertos | `8` | `8` |
+|  | pt-meta/terceiro-quer: n | `17` | `17` |
+|  | pt-meta/terceiro-quer: acertos | `6` | `6` |
+|  | pt-sujeito: n | `66` | `66` |
+|  | pt-sujeito: acertos | `60` | `60` |
+|  | pt-sujeito: taxa | `0.9091` | `0.9091` |
+|  | pt-sujeito: ic95 | `[0.8155, 0.9577]` | `[0.8155, 0.9577]` |
+|  | pt-sujeito/pedido-direto: n | `21` | `21` |
+|  | pt-sujeito/pedido-direto: acertos | `21` | `21` |
+|  | pt-sujeito/sem-pedido: n | `21` | `21` |
+|  | pt-sujeito/sem-pedido: acertos | `19` | `19` |
+|  | pt-sujeito/terceiro-contra-eu-quero: n | `7` | `7` |
+|  | pt-sujeito/terceiro-contra-eu-quero: acertos | `7` | `7` |
+|  | pt-sujeito/terceiro-quer: n | `17` | `17` |
+|  | pt-sujeito/terceiro-quer: acertos | `13` | `13` |
+|  | meta: n | `68` | `68` |
+|  | meta: viradas | `21` | `21` |
+|  | meta: para o alvo da injecao | `19` | `19` |
+|  | prosa: n | `21` | `21` |
+|  | prosa: jev em primeiro | `20` | `20` |
+|  | prosa: bm25 em primeiro | `20` | `20` |
+|  | prosa: pareado p | `1.0` | `1.0` |
+
+## R21b — 6 conferências, todas fecham
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | n | `81` | `81` |
+|  | viradas | `28` | `28` |
+|  | taxa | `0.3457` | `0.3457` |
+|  | ic95 | `[0.2512, 0.4541]` | `[0.2512, 0.4541]` |
+|  | para o alvo da injecao | `28` | `28` |
+|  | viradas acima do corte | `1` | `1` |
+
+## cem hipoteses — 8 conferências, todas fecham
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | o registro tem cem | `100` | `100` |
+|  | nenhuma prova quebrou | `0` | `0` |
+|  | a pagina existe | `True` | `True` |
+|  | a pagina esta atualizada | `True` | `True` |
+|  | a pagina declara o placar | `True` | `True` |
+|  | sustentadas | `82` | `82` |
+|  | falsificadas | `17` | `17` |
+|  | inconclusivas | `1` | `1` |
+
 ## documentação — 54 conferências, todas fecham
 
 Cada afirmação numérica escrita nos documentos, conferida em duas etapas: o trecho existe literalmente, e o valor fecha com o dado.
@@ -705,8 +801,8 @@ As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, 
 | | item | publicado | recalculado |
 |---|---|---|---|
 |  | o guia declara chamadas e custo | `True` | `True` |
-|  | chamadas declaradas = livro-caixa | `10015` | `10015` |
-|  | custo declarado = livro-caixa (4 casas) | `0.4544` | `0.4544` |
+|  | chamadas declaradas = livro-caixa | `11171` | `11171` |
+|  | custo declarado = livro-caixa (4 casas) | `0.4851` | `0.4851` |
 |  | dentro do teto de US$ 5,00 | `True` | `True` |
 
 ## Fora do alcance desta auditoria

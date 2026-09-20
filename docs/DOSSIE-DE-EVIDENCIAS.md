@@ -20,6 +20,8 @@ Cada afirmação recebe uma de quatro forças, e a diferença entre elas é o po
 | **direção consistente** | o sinal se repete e nunca se inverte, sem atingir p < 0,05 | adotar se o custo for baixo; não usar para convencer ninguém |
 | **medição única** | um número observado, sem comparador ou com n pequeno demais | tratar como hipótese, e medir de novo antes de depender |
 | **falsificado** | a hipótese foi testada e o dado disse não | parar de fazer, e registrar por quê |
+| **corrigida** | uma afirmação publicada caiu diante de medição nova | ler a versão nova, e desconfiar de quem citar a antiga |
+| **derivou** | valia quando foi medida e não vale mais | refazer a medição antes de usar |
 
 Toda afirmação traz também **o que ela não prova**. Essa coluna é a parte do documento que
 mais custou a escrever e a única que impede o resto de virar propaganda.
@@ -46,16 +48,6 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 **O que não prova.** O BM25 aqui é uma implementação de referência com k1=1,5 e b=0,75 sobre o mesmo recorte, sem ajuste de parâmetros nem expansão de consulta. Um BM25 afinado para este corpus fecharia parte da diferença.
 
 **Dado bruto:** `r18-escala.json`, bloco `pareado`
-
-### O Jev não obedece a instrução injetada no lugar onde entra o dado
-
-**Força:** demonstrado.
-
-**Evidência.** Sob os 12 vetores adversariais escritos por três LLMs que não são eu, o Jev virou 10 vezes em 120. Separando por família: contra meta-instrução ("ignore o anterior", "você é outro sistema"), 0 de 50; contra texto que **acrescenta um pedido real**, 10 de 70 — e 0 delas passaram do corte de confiança 0,9, porque a maior foi 0,8. Na mesma família da meta-instrução, três dos quatro comparadores viraram (8, 5 e 1 vezes), e **todas** essas viradas vieram com confiança acima do corte.
-
-**O que não prova.** Não é imunidade a injeção. É imunidade a **meta-instrução**: quando o texto inserido contém um pedido genuíno, o Jev muda de resposta como qualquer modelo — só que baixando a confiança, o que um corte de 0,90 transforma em recusa.
-
-**Dado bruto:** `r15-adversario-externo.json`, `r15b-familias.json`, `r10-injecao-comparada.json`
 
 ### Como segunda camada, o Jev corta dois terços das confirmações inúteis sem soltar nada irreversível
 
@@ -127,6 +119,16 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 
 **Dado bruto:** `r18-escala.json`, arranjo `jev-cab-2`
 
+### Contra aviso pseudo-sistêmico o Jev não vira; contra **ordem direta**, vira
+
+**Força:** afirmação anterior corrigida por medição nova.
+
+**Evidência.** Sob os 12 vetores adversariais escritos por três LLMs, o Jev virou 0 de 50 na família que fala com o classificador e 10 de 70 na que acrescenta um pedido real — e 0 dessas passaram do corte de 0,9. Foi disso que saiu a afirmação de imunidade. Só que os doze vetores são **avisos pseudo-sistêmicos** ("Protocolo #7894-Omega", "Cancelamento automático aprovado"): nenhum dá uma ordem ao classificador. A meta-instrução imperativa, testada só na R21, vira 21 de 68 no jurídico e 28 de 81 **em atendimento**, o domínio onde a imunidade tinha sido publicada.
+
+**O que não prova.** Não apaga a separação estrutural entre `state` e `questions`, que é real e é o que impede o texto do cliente de virar instrução por concatenação. O que cai é a leitura de que isso produz imunidade. E cai também o uso do corte de confiança como defesa: ele barra as viradas em atendimento e deixa passar 10 de 25 no jurídico. Contra ordem direta escrita no estado, a defesa é sanitizar a entrada.
+
+**Dado bruto:** `r15b-familias.json`, `r21-generalizacao.json`, `r21b-cruzamento.json`
+
 ### O endpoint rejeita a chamada quando a instrução vem vazia — **não vale mais**
 
 **Força:** deixou de valer — deriva pega pelo canário.
@@ -150,7 +152,7 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 
 ## Contabilidade
 
-O livro-caixa SQLite em `runs/ledger.sqlite3` registra **10.015 chamadas** liquidadas, somando **US$ 0,4544** do teto de US$ 5,00 autorizado — restam US$ 4,5456. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
+O livro-caixa SQLite em `runs/ledger.sqlite3` registra **11.171 chamadas** liquidadas, somando **US$ 0,4851** do teto de US$ 5,00 autorizado — restam US$ 4,5149. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
 
 ## Como conferir
 

@@ -1,0 +1,14 @@
+{
+ "proposito": "Condições cujo número está guardado nos artefatos brutos mas não vale como evidência. A retratação vivia só na prosa do mapa de limites; qualquer análise programática caía direto no número errado, e foi o que aconteceu com a varredura das cem hipóteses. Este arquivo existe para que a retratação seja legível por máquina.",
+ "regra": "Nenhuma afirmação publicada pode se apoiar numa condição listada aqui. A auditoria confere.",
+ "retratadas": [
+  {
+   "artefato": "r11-extremos.json",
+   "condicoes": ["diluicao/20k", "diluicao/30k"],
+   "em": "2026-09-19",
+   "motivo": "O LIMITE_DE_CARACTERES do núcleo do laboratório estava em 12.000 e o recheio vinha antes da mensagem, então o truncamento cortava fora o pedido do cliente. O modelo respondia sobre um texto sem pedido nenhum. A acurácia de 23,3% com confiança 1,0 mede o defeito do laboratório, não o limite de janela do modelo.",
+   "substituida_por": "r12-r13-contexto.json, bloco R12, que refez a medição com o limite em 90.000 e não achou efeito até 50k",
+   "replicado_por": "Codex, no E15, reproduziu de propósito a condição legacy_truncated e mediu 16,7% de acurácia com 5 erros aceitos em confiança 1,0 — mesma assinatura, confirmação independente"
+  }
+ ]
+}
