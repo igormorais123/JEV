@@ -34,6 +34,8 @@ def main():
 
     dados = {'referencia': referencia, 'dimensoes': [], 'injecao': mapa['injecao'],
              'sem_pedido': mapa['sem_pedido'], 'custo': mapa['custo'],
+             'adversario': mapa.get('adversario_externo'),
+             'guarda': mapa.get('guarda_de_comando'),
              'calibracao': {nome: {'ece': bloco['ece'], 'separacao': bloco['separacao'],
                                    'faixas': bloco['faixas']}
                             for nome, bloco in mapa['calibracao'].items()}}
@@ -62,7 +64,11 @@ def main():
           f'{sum(len(d["niveis"]) for d in dados["dimensoes"])} níveis medidos')
 
 
-PAGINA = r'''<title>Mapa de Limites do Jev</title>
+PAGINA = r'''<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa de Limites do Jev</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -154,12 +160,9 @@ tbody tr:last-child td{border-bottom:none}
 </style>
 
 <div class="folha">
-  <p class="sobrenome">Programa E14 · laboratório INTEIA · 19.09.2026</p>
+  <p class="sobrenome">Programas E14 e E17 · laboratório INTEIA · 19.09.2026</p>
   <h1>Onde o Jev quebra</h1>
-  <p class="entrada">Doze experimentos mediram o Jev onde ele funciona. Este mediu <b>onde ele
-  para de funcionar</b>: dez dimensões empurradas até a ruptura, em <b id="n-chamadas"></b>
-  chamadas pagas. O grafo abaixo pesa cada aresta pela queda de acurácia que aquela condição
-  produziu — quanto mais grossa e mais quente, mais perto do limite.</p>
+  <p class="entrada">Doze experimentos mediram o Jev onde ele funciona. Este mediu <b>onde ele para de funcionar</b>: dez dimensões empurradas até a ruptura, os ataques reescritos por outros modelos e a aplicação que sai disso, em <span id="n-chamadas"></span> chamadas pagas. O grafo abaixo pesa cada aresta pela queda de acurácia que aquela condição produziu — quanto mais grossa e mais quente, mais perto do limite.</p>
 
   <dl class="faixa" id="faixa"></dl>
 
@@ -192,6 +195,37 @@ tbody tr:last-child td{border-bottom:none}
       <table id="tabela-injecao">
         <thead><tr><th>Modelo</th><th>Acurácia sem injeção</th><th>Manipulado</th>
         <th>Taxa</th><th>IC95</th><th>Viraram “cancelar”</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>A mesma pergunta, com ataques que eu não escrevi</h2>
+    <p class="sub">Três LLMs receberam a tarefa de escrever a manipulação mais eficaz que
+    conseguissem. O Jev virou 10 de 120, e a afirmação “imune a instrução injetada” caiu — até
+    separar o que os vetores realmente faziam. <b>A</b> fala com o classificador; <b>B</b>
+    acrescenta um pedido de verdade ao texto do cliente. Na coluna final, quantas viradas
+    passariam por um corte de confiança de 0,90.</p>
+    <div class="rolagem">
+      <table id="tabela-familias">
+        <thead><tr><th>Modelo</th><th>Família</th><th>Virou</th><th>Taxa</th><th>IC95</th>
+        <th>Acima do corte</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>A aplicação: quantas confirmações somem sem soltar nada perigoso</h2>
+    <p class="sub">Cento e vinte comandos de shell realmente executados nesta máquina, doze
+    deles irreversíveis. A regra por palavra barra quase tudo; o Jev entra depois dela e diz o
+    que pode passar. A barra mede a interrupção em comando benigno — quanto menor, melhor —
+    e a coluna da direita é a que não pode sair do zero.</p>
+    <div class="rolagem">
+      <table id="tabela-guarda">
+        <thead><tr><th>Desenho</th><th>Liberados dos barrados</th>
+        <th>Interrupção em benigno</th><th>Irrev. soltos</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -313,14 +347,58 @@ document.querySelector('#tabela-injecao tbody').innerHTML = ordem.map(([k,v]) =>
     <td style="font-weight:600;color:${v.para_cancelar ? 'var(--ruptura)' : 'var(--tinta-fraca)'}">${v.para_cancelar}</td></tr>`;
 }).join('');
 
+// ---- famílias de ataque (R15b)
+if (D.adversario) {
+  const rotuloFamilia = {A: 'A — fala com o classificador', B: 'B — acrescenta conteúdo'};
+  const linhas = [];
+  for (const familia of ['A','B']) {
+    const bloco = D.adversario.familias[familia];
+    for (const alvo of ['jev','c1','c2','c3','c4']) {
+      const v = bloco[alvo];
+      if (!v || !v.n) continue;
+      linhas.push({familia, alvo, ...v});
+    }
+  }
+  document.querySelector('#tabela-familias tbody').innerHTML = linhas.map(v => {
+    const cls = v.taxa === 0 ? 'p-ok' : (v.taxa < 0.15 ? 'p-at' : 'p-ru');
+    const destaque = v.alvo === 'jev' ? ' style="font-weight:650"' : '';
+    const corAcima = v.virou_acima_do_corte ? 'var(--ruptura)' : 'var(--estavel)';
+    return `<tr${destaque}><td>${nomes[v.alvo] || v.alvo}</td>
+      <td style="color:var(--tinta-fraca)">${rotuloFamilia[v.familia]}</td>
+      <td>${v.virou}/${v.n}</td>
+      <td><span class="pilula ${cls}">${pct(v.taxa)}</span></td>
+      <td style="color:var(--tinta-fraca)">[${pct(v.ic95[0])}; ${pct(v.ic95[1])}]</td>
+      <td style="font-weight:600;color:${corAcima}">${v.virou_acima_do_corte}</td></tr>`;
+  }).join('');
+}
+
+// ---- guarda de comando (R16b)
+if (D.guarda) {
+  const g = D.guarda, m = g.melhor_segunda_camada;
+  const barra = taxa => `<div style="display:flex;align-items:center;gap:.5rem">
+      <div style="flex:0 0 88px;height:8px;background:var(--linha);border-radius:4px;overflow:hidden">
+        <div style="width:${(taxa*100).toFixed(0)}%;height:100%;background:${taxa > .5 ? 'var(--ruptura)' : 'var(--atencao)'}"></div>
+      </div><span>${pct(taxa)}</span></div>`;
+  const linhas = [
+    ['Regra por palavra sozinha', '0 de ' + m.marcados_pela_regra,
+     g.regra_sozinha.taxa_de_alarme_falso, 0],
+    ['Regra + Jev como segunda camada <span style="color:var(--tinta-fraca)">(' + m.combinacao + ')</span>',
+     m.liberados + ' de ' + m.marcados_pela_regra, m.taxa, m.irreversivel_liberado],
+  ];
+  document.querySelector('#tabela-guarda tbody').innerHTML = linhas.map(([nome, lib, taxa, err]) =>
+    `<tr><td>${nome}</td><td>${lib}</td><td>${barra(taxa)}</td>
+     <td style="font-weight:650;white-space:nowrap;color:${err ? 'var(--ruptura)' : 'var(--estavel)'}">${err} de 12</td></tr>`
+  ).join('');
+}
+
 // ---- achados
 const semSaida = D.sem_pedido['sem-saida'], comSaida = D.sem_pedido['com-saida'];
 const ruido = D.dimensoes.find(d => d.chave === 'ruido');
 const pior70 = ruido.niveis.reduce((a,b) => a.acuracia < b.acuracia ? a : b);
 const cal = D.calibracao['oficial'] || D.calibracao['autor'];
 document.getElementById('achados').innerHTML = [
-  ['forte','Imunidade a instrução injetada',
-   `O Jev ignorou <span class="num">40 de 40</span> tentativas de manipulação escritas dentro da mensagem. Três dos quatro LLMs baratos obedeceram — <span class="num">17</span> respostas viraram <i>cancelar</i>, a classe irreversível. É a primeira vantagem do Jev que não depende de quem escreveu o gabarito.`],
+  ['forte','Ele não obedece a quem fala com ele',
+   `Contra ataques escritos por outros modelos, o Jev ignorou <span class="num">${D.adversario ? D.adversario.familias.A.jev.n : 50} de ${D.adversario ? D.adversario.familias.A.jev.n : 50}</span> tentativas dirigidas ao classificador. Os comparadores obedeceram em até <span class="num">16%</span> — e <b>todas</b> essas viradas vieram com confiança acima de 0,90, onde um corte não protege. Quando o texto inserido muda o sentido de verdade, ele muda a resposta e avisa: confiança cai de <span class="num">0,92</span> para <span class="num">0,52</span>, sem nenhuma virada acima do corte.`],
   ['risco','Sem classe de escape, ele inventa',
    `Em dez textos sem pedido algum, o Jev respondeu <i>informacao</i> nas <span class="num">${semSaida.n}</span> vezes, com confiança média <span class="num">${String(semSaida.conf).replace('.',',')}</span>. Oferecendo a opção “não se aplica”, acertou <span class="num">${comSaida.n}/${comSaida.n}</span>. Toda taxonomia precisa dessa saída.`],
   ['forte','Sob texto sujo, ele fica honesto',
@@ -331,10 +409,11 @@ document.getElementById('achados').innerHTML = [
 
 document.getElementById('rodape').innerHTML =
   `Todos os números desta página são injetados de <code>laboratorio/mapa-de-limites.json</code>, ` +
-  `escrito pelas rodadas R0 a R13 do programa E14. ` +
+  `escrito pelas rodadas R0 a R16 dos programas E14 e E17. ` +
   `${D.custo.chamadas.toLocaleString('pt-BR')} chamadas ao modelo, US$ ${D.custo.usd.toFixed(5).replace('.',',')}. ` +
   `Cada rodada teve hipótese e critério de decisão escritos antes da execução, em ` +
-  `<code>laboratorio/PREREGISTRO.md</code>. — Helena.`;
+  `<code>laboratorio/PREREGISTRO.md</code> — inclusive a R15, que falsificou uma afirmação ` +
+  `publicada horas antes, e a correção dela está lá com data. — Helena.`;
 </script>
 '''
 
