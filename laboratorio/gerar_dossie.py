@@ -238,8 +238,10 @@ def afirmacoes():
                 f"{r11['condicoes']['instrucao/vazia']['sem_resposta']} de "
                 f"{r11['condicoes']['instrucao/vazia']['sem_resposta']} chamadas: o provedor "
                 f"recusava o payload. Em 2026-09-20, o canário `instrucao-vazia-nao-responde` "
-                f"reprovou — com os **mesmos critérios** e a instrução igualmente vazia, 5 de 5 "
-                f"chamadas voltaram 200, com a classe certa e confiança 1. A propriedade caiu em "
+                f"reprovou — com os **mesmos critérios** e a instrução igualmente vazia, "
+                f"**7 de 7** chamadas voltaram 200, com a classe certa e confiança 1 (duas "
+                f"corridas de canário e três de confirmação com o formato literal da R11). "
+                f"A propriedade caiu em "
                 f"menos de 24 horas, e quem pegou foi o canário, na primeira corrida dele."),
             onde='`r11-extremos.json` e `canarios-de-comportamento.jsonl`',
             nao_prova=(

@@ -131,7 +131,7 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 
 **Força:** deixou de valer — deriva pega pelo canário.
 
-**Evidência.** Em 2026-09-19, a condição `instrucao/vazia` da R11 voltou `http 400` em 30 de 30 chamadas: o provedor recusava o payload. Em 2026-09-20, o canário `instrucao-vazia-nao-responde` reprovou — com os **mesmos critérios** e a instrução igualmente vazia, 5 de 5 chamadas voltaram 200, com a classe certa e confiança 1. A propriedade caiu em menos de 24 horas, e quem pegou foi o canário, na primeira corrida dele.
+**Evidência.** Em 2026-09-19, a condição `instrucao/vazia` da R11 voltou `http 400` em 30 de 30 chamadas: o provedor recusava o payload. Em 2026-09-20, o canário `instrucao-vazia-nao-responde` reprovou — com os **mesmos critérios** e a instrução igualmente vazia, **7 de 7** chamadas voltaram 200, com a classe certa e confiança 1 (duas corridas de canário e três de confirmação com o formato literal da R11). A propriedade caiu em menos de 24 horas, e quem pegou foi o canário, na primeira corrida dele.
 
 **O que não prova.** Não prova o que mudou do outro lado: da posição de cliente não dá para distinguir validação relaxada, troca de versão do modelo ou roteamento diferente. O que fica provado é outra coisa, e mais importante: uma propriedade publicada do endpoint pode morrer em um dia, e documentação sem canário não avisa. Nenhuma recomendação do guia dependia desta, o que foi sorte e não projeto.
 
@@ -150,7 +150,7 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 
 ## Contabilidade
 
-O livro-caixa SQLite em `runs/ledger.sqlite3` registra **9.999 chamadas** liquidadas, somando **US$ 0,4541** do teto de US$ 5,00 autorizado — restam US$ 4,5459. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
+O livro-caixa SQLite em `runs/ledger.sqlite3` registra **10.015 chamadas** liquidadas, somando **US$ 0,4544** do teto de US$ 5,00 autorizado — restam US$ 4,5456. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
 
 ## Como conferir
 

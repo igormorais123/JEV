@@ -28,15 +28,45 @@ ROTULOS = {
 }
 
 
+def custo_do_livro_caixa(mapa):
+    """O total vivo, nao o recorte que estava congelado no mapa.
+
+    O campo `custo` do mapa-de-limites cobria E14 mais R15 a R17 e envelheceu a cada rodada
+    nova. O livro-caixa nao envelhece: e a fonte unica de quanto saiu da chave.
+    """
+    import sqlite3
+    ledger = RAIZ / 'runs' / 'ledger.sqlite3'
+    if not ledger.exists():
+        return mapa['custo']
+    conexao = sqlite3.connect(f'file:{ledger}?mode=ro', uri=True)
+    chamadas, gasto = conexao.execute(
+        'select count(*), sum(settled_nusd) from attempt_budget').fetchone()
+    conexao.close()
+    return {'chamadas': chamadas, 'usd': round((gasto or 0) / 1e9, 5),
+            'nota': 'todo o estudo, pelo livro-caixa'}
+
+
+def ultima_corrida_de_canarios():
+    """A corrida mais recente, ou None. A pagina precisa dizer de quando e o que ainda vale."""
+    caminho = RAIZ / 'laboratorio' / 'canarios-de-comportamento.jsonl'
+    if not caminho.exists():
+        return None
+    linhas = [l for l in caminho.read_text(encoding='utf-8').splitlines() if l.strip()]
+    return json.loads(linhas[-1]) if linhas else None
+
+
 def main():
     mapa = json.loads(MAPA.read_text(encoding='utf-8'))
     referencia = mapa['dimensoes']['referencia'][0]['acuracia']
 
     dados = {'referencia': referencia, 'dimensoes': [], 'injecao': mapa['injecao'],
-             'sem_pedido': mapa['sem_pedido'], 'custo': mapa['custo'],
+             'sem_pedido': mapa['sem_pedido'], 'custo': custo_do_livro_caixa(mapa),
              'adversario': mapa.get('adversario_externo'),
              'guarda': mapa.get('guarda_de_comando'),
              'economia': mapa.get('economia_de_contexto'),
+             'escala': json.loads((RAIZ / 'laboratorio' / 'r18-r20-consolidado.json')
+                                  .read_text(encoding='utf-8')),
+             'canarios': ultima_corrida_de_canarios(),
              'calibracao': {nome: {'ece': bloco['ece'], 'separacao': bloco['separacao'],
                                    'faixas': bloco['faixas']}
                             for nome, bloco in mapa['calibracao'].items()}}
@@ -161,9 +191,9 @@ tbody tr:last-child td{border-bottom:none}
 </style>
 
 <div class="folha">
-  <p class="sobrenome">Programas E14 e E17 · laboratório INTEIA · 19.09.2026</p>
+  <p class="sobrenome">Programas E14 e E17 · laboratório INTEIA · 20.09.2026</p>
   <h1>Onde o Jev quebra</h1>
-  <p class="entrada">Doze experimentos mediram o Jev onde ele funciona. Este mediu <b>onde ele para de funcionar</b>: dez dimensões empurradas até a ruptura, os ataques reescritos por outros modelos e a aplicação que sai disso, em <span id="n-chamadas"></span> chamadas pagas. O grafo abaixo pesa cada aresta pela queda de acurácia que aquela condição produziu — quanto mais grossa e mais quente, mais perto do limite.</p>
+  <p class="entrada">Doze experimentos mediram o Jev onde ele funciona. Estes mediram <b>onde ele para de funcionar</b>: dez dimensões empurradas até a ruptura, os ataques reescritos por outros modelos, a aplicação que sai disso e, no fim, <b>se tudo isso ainda vale hoje</b> — em <span id="n-chamadas"></span> chamadas pagas. Cada número desta página é recalculado das respostas brutas por <code>laboratorio/auditoria.py</code>. O grafo abaixo pesa cada aresta pela queda de acurácia que aquela condição produziu — quanto mais grossa e mais quente, mais perto do limite.</p>
 
   <dl class="faixa" id="faixa"></dl>
 
@@ -246,6 +276,36 @@ tbody tr:last-child td{border-bottom:none}
         <tbody></tbody>
       </table>
     </div>
+  </section>
+
+  <section>
+    <h2>Em escala: selecionar deixa de "não perder" e passa a ganhar</h2>
+    <p class="sub">As mesmas perguntas, agora <b>geradas e filtradas por máquina</b> em dois lotes
+    independentes — nenhuma delas lida por mim antes de rodar. Com 169 perguntas, mandar os dois
+    trechos que o Jev escolheu não só custa menos: acerta mais do que mandar os oito. A barra mede
+    o contexto enviado.</p>
+    <div class="rolagem">
+      <table id="tabela-escala">
+        <thead><tr><th>O que se manda ao modelo</th><th>Respostas certas</th><th>Taxa</th>
+        <th>Contexto enviado</th><th>Economia</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="sub" id="escala-pareado"></p>
+  </section>
+
+  <section>
+    <h2>Isto ainda vale hoje?</h2>
+    <p class="sub">Oito propriedades em que a recomendação se apoia, congeladas como canário e
+    reverificadas com chamadas reais. A auditoria prova que os números fecham com o que foi
+    medido; ela não tem como saber se o modelo do outro lado mudou. Esta seção tem.</p>
+    <div class="rolagem">
+      <table id="tabela-canarios">
+        <thead><tr><th></th><th style="text-align:left">Propriedade, e a afirmação que ela protege</th><th>Observado agora</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="sub" id="canarios-rodape"></p>
   </section>
 
   <section>
@@ -429,6 +489,59 @@ if (D.economia) {
           <span>${a.bytes.toLocaleString('pt-BR')}</span></div></td>
         <td style="font-weight:600;color:${k==='jev'?'var(--estavel)':'var(--tinta-fraca)'}">${k==='todos' ? '—' : pct(a.economia)}</td></tr>`;
     }).join('');
+}
+
+// ---- escala consolidada (R18 + R20)
+if (D.escala) {
+  const rotulos = {todos: 'os oito trechos, sem seleção', 'jev-1': 'o primeiro que o Jev escolheu',
+                   'jev-2': 'os dois que o Jev escolheu', 'jev-3': 'os três primeiros'};
+  const ordem = ['todos','jev-1','jev-2','jev-3'];
+  const maior = Math.max(...ordem.map(k => D.escala.arranjos[k].bytes));
+  document.querySelector('#tabela-escala tbody').innerHTML = ordem.map(k => {
+    const a = D.escala.arranjos[k];
+    const destaque = k === 'jev-2' ? ' style="font-weight:650"' : '';
+    const cls = a.taxa >= 0.9 ? 'p-ok' : (a.taxa >= 0.8 ? 'p-at' : 'p-ru');
+    const largura = (a.bytes / maior * 100).toFixed(0);
+    const cor = k.startsWith('jev') ? 'var(--estavel)' : 'var(--traco-forte)';
+    const economia = k === 'todos' ? '—' : pct(1 - a.bytes / D.escala.arranjos.todos.bytes);
+    return `<tr${destaque}><td>${rotulos[k]}</td>
+      <td><span class="pilula ${cls}">${a.acertos}/${a.n}</span></td>
+      <td>${pct(a.taxa)}</td>
+      <td><div style="display:flex;align-items:center;gap:.5rem;justify-content:flex-end">
+        <div style="flex:0 0 70px;height:8px;background:var(--linha,var(--traco));border-radius:4px;overflow:hidden">
+          <div style="width:${largura}%;height:100%;background:${cor}"></div></div>
+        <span>${a.bytes.toLocaleString('pt-BR')}</span></div></td>
+      <td style="font-weight:600;color:${k==='todos'?'var(--tinta-fraca)':'var(--estavel)'}">${economia}</td></tr>`;
+  }).join('');
+  const par = D.escala.pareado['jev-2 vs todos'];
+  const k1 = D.escala.pareado['jev-1 vs jev-2'];
+  document.getElementById('escala-pareado').innerHTML =
+    `Pareado caso a caso, os dois do Jev ganham de carregar tudo por
+     <span class="num">${par['so_jev-2']} a ${par.so_todos}</span>, p&nbsp;=&nbsp;${String(par.p).replace('.', ',')} —
+     o contexto irrelevante não é só caro, ele desvia o modelo que responde. Entre um trecho e dois
+     não há diferença (<span class="num">${k1['so_jev-1']} a ${k1['so_jev-2']}</span>, p&nbsp;=&nbsp;1,0),
+     e um custa metade.`;
+}
+
+// ---- canários de comportamento
+if (D.canarios) {
+  const c = D.canarios;
+  document.querySelector('#tabela-canarios tbody').innerHTML = c.resultados.map(r => {
+    const ok = r.passou === r.de;
+    const marca = ok ? '<span class="pilula p-ok">ok</span>'
+                     : '<span class="pilula p-ru">alerta</span>';
+    const observado = r.observado.map(o => String(o).slice(0, 60)).join(' · ');
+    return `<tr${ok ? '' : ' style="font-weight:650"'}><td>${marca}</td>
+      <td style="text-align:left"><div>${r.canario}</div>
+          <div style="color:var(--tinta-fraca);font-weight:400;font-size:.82em;max-width:52ch;white-space:normal">${r.sustenta}</div></td>
+      <td>${observado}</td></tr>`;
+  }).join('');
+  const quando = c.em.slice(0, 16).replace('T', ' às ');  // corta antes de trocar o T, senão come os minutos
+  document.getElementById('canarios-rodape').innerHTML =
+    `Corrida de ${quando}: <span class="num">${c.passaram} de ${c.de}</span> passam,
+     ${c.repeticoes} repetições cada, custo total US$&nbsp;${c.custo_usd.toFixed(6).replace('.', ',')}.
+     ${c.passaram === c.de ? 'Nada mudou desde a medição.'
+       : 'O alerta acima é real: a propriedade da instrução vazia voltava <b>http 400</b> em 30 de 30 no dia 19 e hoje responde 200, com a classe certa e confiança 1. Uma propriedade publicada do endpoint morreu em menos de 24 horas — e nenhuma recomendação dependia dela por sorte, não por projeto.'}`;
 }
 
 // ---- achados

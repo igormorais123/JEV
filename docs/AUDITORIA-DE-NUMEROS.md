@@ -705,8 +705,8 @@ As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, 
 | | item | publicado | recalculado |
 |---|---|---|---|
 |  | o guia declara chamadas e custo | `True` | `True` |
-|  | chamadas declaradas = livro-caixa | `9999` | `9999` |
-|  | custo declarado = livro-caixa (4 casas) | `0.4541` | `0.4541` |
+|  | chamadas declaradas = livro-caixa | `10015` | `10015` |
+|  | custo declarado = livro-caixa (4 casas) | `0.4544` | `0.4544` |
 |  | dentro do teto de US$ 5,00 | `True` | `True` |
 
 ## Fora do alcance desta auditoria

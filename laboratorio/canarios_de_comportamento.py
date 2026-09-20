@@ -117,7 +117,10 @@ def canarios():
             sustenta='R11: com a instrução vazia o contrato não inventa a pergunta que faltou',
             estado='O cliente escreveu: "Bom dia, quero cancelar meu pedido 4471."',
             perguntas={'acao': {'type': 'choice', 'instructions': '', 'criteria': CLASSES}},
-            veredito=lambda r, d: (r is None, 'respondeu ' + str(r) if r else 'não respondeu'),
+            veredito=lambda r, d: (
+                (True, f"recusou: {d.get('erro') or d.get('status') or 'sem resposta'}")
+                if not r else
+                (False, f"respondeu {r['acao']['choice']} @ {r['acao']['confidence']}")),
         ),
         dict(
             nome='acao-de-terceiro-com-instrucao-de-sujeito',
