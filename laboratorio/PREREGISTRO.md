@@ -704,3 +704,68 @@ mitigação certa depende do diagnóstico certo.
 **Consequência para o guia:** a instrução deve dizer de quem é o pedido que importa. Uma frase.
 E a decomposição em várias perguntas, que parece elegante, só vale quando cada pergunta é mais
 confiável que a decisão que ela alimenta — o que aqui não era o caso, e agora está medido.
+
+
+## R20 — o lote novo que deu poder ao achado, e o k que a confiança escolhe
+
+A R18 deixou "mais contexto atrapalha" como direção consistente sem demonstração, e k sempre foi
+fixo. Esta rodada gera **um lote novo**, com outra semente e **funções que a R18 não usou**, e o
+teste do fio solto é feito nos dois lotes juntos — declarado assim antes de rodar.
+
+130 funções novas ao gerador, 129 perguntas, **95 aprovadas** pelo mesmo filtro mecânico.
+760 chamadas de ordenação, 475 de resposta.
+
+### O achado principal: selecionar não é só mais barato, é melhor
+
+| arranjo | acertos, 169 perguntas | taxa | IC95 | bytes |
+|---|---|---|---|---|
+| todos os 8 trechos | 141/169 | 83,4% | 0,771–0,883 | 1.472.278 |
+| **jev, k = 2** | **158/169** | **93,5%** | 0,887–0,963 | 383.150 |
+| jev, k = 1 | 157/169 | 92,9% | 0,880–0,959 | 184.293 |
+| jev, k = 3 | 152/169 | 89,9% | 0,845–0,936 | 549.561 |
+
+**`jev-2` contra carregar tudo: 22 casos a 5, p = 0,0015.** E `jev-1` contra carregar tudo:
+22 a 6, p = 0,0037. O que a R17 registrou como curiosidade com n = 20, e a R18 manteve como
+direção com p = 0,18, está demonstrado com n = 169: **mandar os dois trechos certos responde
+melhor do que mandar os oito, e com 74% menos contexto**.
+
+Isso inverte o argumento econômico do estudo. A seleção não é uma troca entre custo e qualidade
+— ela melhora as duas coisas ao mesmo tempo, porque contexto irrelevante desvia o respondedor.
+
+**H20a não demonstrada, e fica assim.** `jev-2` contra `jev-3`, nos dois lotes: 8 a 2,
+p = 0,109. A direção se manteve em todos os recortes e nunca se inverteu, mas não atinge
+p < 0,05. A afirmação publicável é a de cima, contra o contexto inteiro; entre k = 2 e k = 3 a
+diferença permanece sugestiva. E entre k = 1 e k = 2 não há diferença nenhuma: 3 a 4, p = 1,0.
+
+### H20b sustentada: a confiança escolhe o k e economiza mais
+
+A política congelada antes de rodar: um trecho quando o topo vem `essencial` com confiança
+≥ 0,90; três quando vem `incerto` ou `irrelevante`; dois no resto.
+
+| | acerto | bytes | economia |
+|---|---|---|---|
+| k = 2 fixo | 89/95 — 93,7% | 221.432 | 73,7% |
+| **k adaptativo** | **89/95 — 93,7%** | **115.735** | **86,2%** |
+
+Mesmo acerto, **12,5 pontos a mais de economia**. A política escolheu k = 1 em 88 dos 95 casos,
+k = 2 em 5 e k = 3 em 2.
+
+**A ressalva que desmonta metade do entusiasmo:** neste corpus o k = 1 fixo dá o mesmo 93,7% com
+87,4% de economia. O adaptativo não bate o k = 1 aqui — ele **empata** gastando quase o mesmo.
+O valor dele é de apólice: nos 7 casos em que o topo não veio confiante, ele mandou mais. Um
+corpus em que a ordenação fosse mais difícil separaria os dois, e este não é esse corpus.
+
+### H20c sustentada, e é o sinal mais útil da rodada
+
+A classe que o Jev dá ao **melhor** candidato prediz se a resposta vai sair certa:
+
+| classe do topo | n | acerto | alvo presente |
+|---|---|---|---|
+| `essencial` | 93 | **95,7%** | 92/93 |
+| `irrelevante` | 2 | **0,0%** | 0/2 |
+
+Quando o Jev diz que nenhum candidato é essencial, ele está dizendo que **o trecho certo não
+está entre os candidatos** — e nos dois casos em que disse isso, estava certo e a resposta
+falhou. São dois casos, o intervalo é largo, e mesmo assim a regra operacional é barata e
+óbvia: se o topo não vier `essencial`, não adianta escolher melhor, é preciso buscar mais
+candidatos. É um sinal de recall, não de ranking, e sai de graça na mesma chamada.
