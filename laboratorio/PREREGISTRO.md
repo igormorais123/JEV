@@ -606,3 +606,101 @@ comportamento, inclusive o de que falhar ao gravar não pode derrubar a decisão
 O que se mediu de produção, e vale: **latência mediana de 431 ms, p90 de 623 ms, custo total de
 US$ 0,0022 em 88 decisões.** O hook não atrapalha o fluxo e custa quase nada. Se ele acerta,
 ainda não se sabe — e agora se saberá na próxima medição.
+
+
+---
+
+# Ciclo em massa — R18 e R19
+
+Duas rodadas encadeadas para fechar pontos que ficaram em aberto por falta de amostra. As duas
+têm uma coisa em comum que nenhuma rodada anterior tinha: **o gabarito não é meu**. Na R18 ele
+sai de um gerador e passa por filtro mecânico; na R19 ele vem do molde que gerou a mensagem.
+
+## R18 — a R17 em escala, com as perguntas feitas por máquina
+
+A R17 deixou três coisas sem resolver, todas por n = 20: se carregar tudo é pior que selecionar,
+se o Jev bate o BM25, e quantos trechos mandar. O gargalo era escrever as perguntas.
+
+**Desenho.** Um LLM gera a pergunta e a expressão regular de verificação a partir do próprio
+trecho. O que as torna utilizáveis não é confiar no gerador, é o filtro mecânico:
+
+    a regex tem de casar com o texto do alvo              (a resposta está mesmo lá)
+    a regex não pode casar com mais de 2 dos 7 distratores (a pergunta discrimina)
+    a pergunta não pode citar o nome da função ou arquivo  (senão a busca por nome resolve)
+
+De 110 funções sorteadas, 109 geraram pergunta e **74 passaram no filtro**. As recusas dizem o
+que o filtro faz: 27 por "a resposta não está no alvo", 5 por regex casando com distratores
+demais, 2 por citar o nome, 1 por regex inválida. Nenhuma pergunta foi lida por mim antes de
+rodar. 1.184 chamadas de ordenação e 592 de resposta.
+
+| arranjo | acertos | taxa | alvo presente | bytes | economia |
+|---|---|---|---|---|---|
+| todos os 8 trechos | 64/74 | 86,5% | 74/74 | 631.826 | — |
+| **jev, k = 1** | 68/74 | **91,9%** | 70/74 | 78.256 | **87,6%** |
+| **jev, k = 2** | **69/74** | **93,2%** | 72/74 | 161.718 | **74,4%** |
+| jev, k = 3 | 65/74 | 87,8% | 72/74 | 247.493 | 60,8% |
+| jev, k = 5 | 65/74 | 87,8% | 72/74 | 368.948 | 41,6% |
+| jev com cabeçalho, k = 2 | 66/74 | 89,2% | **74/74** | 271.270 | 57,1% |
+| bm25, k = 2 | 52/74 | 70,3% | 51/74 | 187.359 | 70,3% |
+| sorteio, k = 2 | 24/74 | 32,4% | 19/74 | 152.820 | 75,8% |
+
+**H18b sustentada, e é o resultado forte da rodada.** Contra o BM25, no alvo colocado no top-2:
+**22 casos só do Jev contra 1 só do BM25, p < 0,0001**. Na resposta final, 18 contra 1,
+p = 0,0001. A dúvida que a R17 deixou (4 a 0, p = 0,125) está resolvida: o Jev recupera melhor,
+e a diferença não é de amostra.
+
+**H18a sustentada.** Contra carregar tudo, 7 casos só do Jev contra 2 só do contexto completo,
+p = 0,18. Não é superioridade demonstrada; é **ausência de perda** com 74,4% menos contexto, que
+era o que H18a afirmava.
+
+**H18c — a curva existe e aponta para baixo.** O acerto sobe de k = 1 para k = 2 e **desce** de
+k = 2 em diante, enquanto o custo só sobe. Contra k = 3 e contra k = 5, o k = 2 ganha **4 a 0**
+nos dois pareamentos, p = 0,125 em cada. Nenhuma comparação isolada atinge p < 0,05, mas as
+direções são todas a favor do k pequeno e não há um único caso contrário. **k = 2 é o joelho**:
+93,2% de acerto com 74,4% menos contexto.
+
+**H18d falsificada, e na direção contrária.** Recortar com as constantes do módulo junto — a
+mitigação que a R17 propôs — **piorou** a resposta: 66 contra 69, pareado 2 a 5. E melhorou a
+ordenação: o alvo entra no top-2 em **74 de 74** contra 72. Mais contexto ajuda a **achar** e
+atrapalha a **responder**. É a mesma curva da H18c aparecendo por outro caminho, e explica o
+erro que motivou a hipótese sem resolvê-lo.
+
+## R19 — atacar a pior fraqueza medida, e usar o contrato inteiro
+
+A família `ação de terceiro` era 75,0% em 8 casos, a pior do mapa, e nenhuma rodada tinha
+tentado consertá-la. Aqui o corpus vem de cinco moldes que **fixam a resposta certa antes de
+existir mensagem**: quando o pedido é *"escreva uma mensagem em que outra pessoa quer cancelar e
+quem escreve só pergunta"*, o gabarito é `informacao` por construção. 130 mensagens geradas,
+**85 aprovadas** por um filtro que exige menção a terceiro. 340 chamadas.
+
+E uma coisa que as 6.000 chamadas anteriores nunca fizeram: **mandar duas perguntas no mesmo
+payload**. O contrato aceita, o estado é o mesmo e o preço é por token de entrada — perguntar
+*de quem é a ação* junto com *qual é a ação* sai de graça.
+
+| formulação | geral | família do terceiro | terceiro-contra-eu-quero |
+|---|---|---|---|
+| A — atual | 89,4% | 84,4% | 86% |
+| **B — instrução que destaca o sujeito** | **92,9%** | 88,9% | **93%** |
+| C — com classe de escape | 89,4% | 86,7% | 79% |
+| D — sujeito e ação na mesma chamada | 80,7% | **95,5%** | **36%** |
+
+**A leitura que o número agregado esconde.** A formulação D é a melhor na família que o
+experimento queria consertar — 95,5% contra 84,4%, onze pontos — e é **a pior no geral**. Ela
+quebra exatamente o molde oposto: quando um terceiro aconselha contra e quem escreve decide
+mesmo assim, D lê "a ação é de outra pessoa" e responde `informacao`. Cai de 86% para 36%.
+
+A causa está medida: **a pergunta "de quem é a ação?" acerta sozinha apenas 68,7%**. Decompor em
+duas perguntas não eliminou o erro de atribuição; mudou o lugar onde ele aparece. Quando a
+segunda pergunta é o gargalo, encadear decisões nela propaga o erro em vez de corrigi-lo.
+
+**H19a sustentada em direção, não em significância.** A instrução que manda considerar só quem
+escreve melhora tudo e não piora nada: 3 casos a 0 no geral (p = 0,25), 2 a 0 na família
+(p = 0,5). É a recomendação, porque custa uma frase e não tem contrapartida.
+
+**H19c sustentada.** A classe de escape, que resolveu o texto sem pedido na R13, não ajuda aqui:
+89,4%, exatamente igual ao atual. O problema não era falta de opção, era atribuição — e a
+mitigação certa depende do diagnóstico certo.
+
+**Consequência para o guia:** a instrução deve dizer de quem é o pedido que importa. Uma frase.
+E a decomposição em várias perguntas, que parece elegante, só vale quando cada pergunta é mais
+confiável que a decisão que ela alimenta — o que aqui não era o caso, e agora está medido.

@@ -53,22 +53,33 @@ real, oito trechos de código candidatos cada, e um modelo respondendo com o que
 entregou. A verificação é por expressão regular escrita antes de rodar — ou a resposta traz o
 valor certo, ou não traz:
 
-| O que se manda para o modelo | Respostas certas | Trecho certo no top-2 | Contexto enviado |
+Replicado em 74 perguntas, com as perguntas e a verificação **geradas por máquina e filtradas
+por mecanismo** — nenhuma lida por mim antes de rodar:
+
+| O que se manda para o modelo | Respostas certas | Trecho certo no top-2 | Contexto |
 |---|---|---|---|
-| os oito trechos, sem seleção | 15/20 | 20/20 | 172.866 bytes |
-| **os dois que o Jev escolheu** | **18/20** | **20/20** | **47.313 bytes — 72,6% menos** |
-| os dois que o BM25 escolheu | 14/20 | 16/20 | 53.982 bytes |
-| dois ao acaso | 7/20 | 3/20 | 44.041 bytes |
+| os oito trechos, sem seleção | 64/74 — 86,5% | 74/74 | 631.826 bytes |
+| o único que o Jev pôs em 1º | 68/74 — 91,9% | 70/74 | **87,6% menos** |
+| **os dois que o Jev escolheu** | **69/74 — 93,2%** | 72/74 | **74,4% menos** |
+| os três primeiros | 65/74 — 87,8% | 72/74 | 60,8% menos |
+| os cinco primeiros | 65/74 — 87,8% | 72/74 | 41,6% menos |
+| os dois que o BM25 escolheu | 52/74 — 70,3% | 51/74 | 70,3% menos |
+| dois ao acaso | 24/74 — 32,4% | 19/74 | 75,8% menos |
 
-**Quase três quartos do contexto somem sem custar resposta.** A afirmação mais sólida é a da
-primeira coluna da direita: o Jev põe o trecho certo entre os dois primeiros em 20 de 20, o BM25
-em 16. A diferença na resposta final (18 contra 15 e contra 14) favorece o Jev em todos os
-pareamentos, mas com vinte perguntas não atinge significância — é ausência de perda, não
-superioridade demonstrada.
+**Três consequências diretas:**
 
-**Um cuidado que essa medição revelou:** selecionar por função isolada não traz as constantes
-declaradas no topo do arquivo. Numa das vinte, o Jev escolheu a função certa e a resposta saiu
-errada porque o valor estava fora dela. Recorte o candidato com o cabeçalho do módulo junto.
+1. **Mande dois trechos, não mais.** O acerto sobe de um para dois e **desce** de dois em
+   diante, enquanto o custo só sobe. Contra três e contra cinco, o dois ganha 4 a 0 nos dois
+   pareamentos. Contexto irrelevante não é só caro — atrapalha.
+2. **O Jev bate o BM25, e agora está demonstrado:** 22 casos a 1 na colocação do trecho certo,
+   p < 0,0001. Era a dúvida que a amostra pequena tinha deixado em aberto.
+3. **Contra carregar tudo, a leitura honesta é "não perde":** 7 a 2 a favor da seleção,
+   p = 0,18. Não é superioridade provada; é três quartos do contexto a menos sem custo.
+
+**E o cuidado da primeira medição não se confirmou.** Recortar com as constantes do topo do
+arquivo junto — que parecia resolver o erro em que o valor estava fora da função — melhorou a
+**ordenação** (74/74 contra 72/74) e **piorou a resposta** (66 contra 69). Mais contexto ajuda a
+achar e atrapalha a responder. Recorte enxuto, e aceite que alguns valores ficam de fora.
 
 Onde aplicar: achar a exceção escondida no meio do contrato, a cláusula que inverte a regra
 geral, o parágrafo que ressalva o artigo anterior — e montar o contexto de um agente caro, que é
@@ -190,6 +201,18 @@ interna, um "Bom dia.", letras aleatórias — é classificado assim mesmo, com 
 0,987**, acima de qualquer corte. Dez em dez. Acrescentando a saída explícita, dez acertos em
 dez. Nenhuma política de confiança cobre essa falha; só a classe extra cobre.
 
+**Passo 1c — Diga na instrução de quem é o pedido que importa.** A pior fraqueza medida do
+modelo é atribuir a outra pessoa uma ação que quem escreve pediu, ou o contrário. Acrescentar
+*"considere apenas o que quem escreve está pedindo para si mesmo; ação de outra pessoa,
+mencionada de passagem ou recusada não conta"* levou a acurácia de 89,4% para 92,9% em 85
+mensagens, sem piorar nenhuma família. Custa uma frase.
+
+**Não decomponha em duas perguntas para resolver isso.** Perguntar *de quem é a ação* junto com
+*qual é a ação* — que o contrato permite de graça — melhora onde a ação é de terceiro (95,5%
+contra 84,4%) e destrói o caso oposto, em que alguém aconselha contra e quem escreve decide
+assim mesmo: cai de 86% para 36%. A causa está medida: a pergunta sobre o sujeito acerta sozinha
+só 68,7%, e encadear decisões numa pergunta fraca propaga o erro em vez de corrigi-lo.
+
 **Passo 2 — Separe a classe perigosa.** Em toda aplicação existe uma opção cujo erro não tem
 volta (aqui foi `cancelar`). Essa classe **nunca** vai para o automático, qualquer que seja a
 confiança. Trate-a como fila prioritária de revisão humana.
@@ -239,7 +262,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 5.926 chamadas reais | US$ 0,3109 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 8.614 chamadas reais | US$ 0,4041 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -304,7 +327,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezessete experimentos, 5.926 chamadas reais, US$ 0,3109 pelo livro-caixa —
+Dezessete experimentos, 8.614 chamadas reais, US$ 0,4041 pelo livro-caixa —
 dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esta é a lista inteira — o que cada um
 perguntou, o que respondeu e o que isso muda na hora de aplicar.
 
@@ -331,6 +354,8 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E17 · R16b | E como segunda camada, liberando o que a regra barrou? | Interrupção cai de **72,2% para 29,6%**, com **0 de 12 irreversíveis liberados** | Aplicação 4. Implantado em sombra. |
 | E17 | O roteador em produção, 88 decisões reais | Latência mediana **431 ms**, p90 623 ms, US$ 0,0022 no total. Acerto **não medido**: o registro guardava só o hash | Corrigido o registro; a medição de acerto fica para a próxima rodada. |
 | E17 · R17 | Quanto token a seleção de contexto economiza, de verdade? | **72,6% do contexto**, com 18/20 respostas certas contra 15/20 carregando tudo; trecho certo no top-2 em **20/20** contra 16/20 do BM25 | Primeiro número de economia do estudo. Aplicação 3. |
+| E17 · R18 | O mesmo em 74 perguntas geradas por máquina | Jev bate o BM25 **22 a 1**, p < 0,0001. Acerto 93,2% com 74,4% menos contexto. **Mais de dois trechos piora** | Manda dois. A dúvida contra o BM25 acabou. |
+| E17 · R19 | Dá para consertar a armadilha de ação de terceiro? | Instrução de sujeito: 89,4% → **92,9%**, sem regressão. Decompor em duas perguntas ganha na família e **destrói o caso oposto** (86% → 36%) | Passo 1c. Decomposição só vale se cada pergunta for mais confiável que a decisão. |
 | E14 · R13 | E um texto que não contém pedido nenhum? | Sem classe de escape: erra 10/10 com confiança **0,987**. Com ela: acerta 10/10 | Classe de escape obrigatória. Passo 1b. |
 | E14 · R1–R7 | Quantas classes cabem, e o que degrada? | Até **12 sem custo**; platô em 90% até 147. Quebra só com ruído pesado (46,7% a 50%) — **e a confiança cai junto** | Taxonomia pode ser maior do que se supunha; o corte protege onde ele falha. |
 | E14 · R12 | Contexto grande dilui a decisão? | **96,7% constante de 0 a 50 mil caracteres** | Diluição não é risco. Truncamento do cliente é. |
@@ -364,7 +389,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | Dá para automatizar? | Só acima de 0,99 de confiança, nunca na classe irreversível, e depois de recalibrar no seu material. |
 | Quanto custa experimentar? | Praticamente nada: mil decisões por dois centavos. O custo do piloto é o tempo de quem compara os resultados. |
 | Qual o maior risco? | Automatizar sobre um critério de correção que ninguém de fora validou — e, logo atrás, rodar sem classe de escape: é a única falha medida em que a confiança não avisa. |
-| O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,72 do teto. É acesso a dado real e tempo de gente. |
+| O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,60 do teto. É acesso a dado real e tempo de gente. |
 
 ---
 

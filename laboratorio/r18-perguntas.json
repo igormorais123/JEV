@@ -1,0 +1,1052 @@
+{
+ "semente": 20260920,
+ "gerador": "openai/gpt-oss-120b",
+ "pedido": "Abaixo esta uma funcao Python de um projeto real. Escreva UMA pergunta factual que so possa ser respondida lendo esta funcao, e uma expressao regular Python que aceite a resposta correta.\n\nRegras: a pergunta nao pode citar o nome da funcao nem o nome do arquivo. A pergunta deve ter resposta curta e objetiva (um valor, um nome, um comportamento). A regex deve ser permissiva quanto a redacao e estrita quanto ao conteudo, e deve casar com algum texto presente no corpo da funcao.\n\nResponda APENAS com JSON: {{\"pergunta\": \"...\", \"regex\": \"...\"}}\n\nFuncao:\n{trecho}",
+ "aprovadas": [
+  {
+   "alvo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "pergunta": "Qual é o provedor indicado na chave 'provider' do dicionário retornado?",
+   "regex": "(?i)\\bopenrouter\\b",
+   "distratores": [
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "laboratorio/r12_r13_contexto.py::executar",
+    "executor/gabarito.py::rotulo",
+    "laboratorio/r8_r9_adversarial.py::main",
+    "executor/run_e12_replicacao.py::falha_de_transporte"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r11_extremos.py::condicoes",
+   "pergunta": "Qual é o nome da constante usada como semente ao criar o objeto random?",
+   "regex": "(?i)\\bSEMENTE\\b",
+   "distratores": [
+    "executor/placar.py::faixa_dos_gabaritos",
+    "executor/simple_round.py::main",
+    "integracao/jev_mcp.py::call",
+    "integracao/instalar.py::entrada_de",
+    "laboratorio/r1_r3_estresse.py::criterios_12",
+    "integracao/jev_mcp.py::main",
+    "executor/placar.py::contem_zero"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_router/orcamento.py::_linhas",
+   "pergunta": "Qual exceção é tratada no bloco try/except ao carregar cada linha como JSON?",
+   "regex": "(?i)\\bValueError\\b",
+   "distratores": [
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/run_e12_replicacao.py::comparar",
+    "laboratorio/r12_r13_contexto.py::main",
+    "integracao/avaliacao/rodar.py::comparar",
+    "executor/exportar_extrato.py::exportar",
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "integracao/avaliacao/com_contexto.py::medir"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r0_calibracao.py::calibrar",
+   "pergunta": "Qual o valor inicial atribuído à variável ece?",
+   "regex": "\\b0\\.0\\b",
+   "distratores": [
+    "executor/publish_simple_round.py::main",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "executor/run_e3_evidencia.py::carregar",
+    "executor/run_e2_fatorial.py::condicoes",
+    "executor/run_e12_replicacao.py::braco_jev",
+    "laboratorio/nucleo.py::registrar",
+    "executor/shared.py::current_prices"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "pergunta": "Qual o limite usado para decidir substituir a letra por uma tecla vizinha?",
+   "regex": "\\b0\\.45\\b",
+   "distratores": [
+    "executor/run_e11_desempate.py::gravar",
+    "laboratorio/gerar_mapa_visual.py::main",
+    "executor/publicar_experimentos.py::publicar",
+    "laboratorio/r1_r3_estresse.py::criterios_12",
+    "executor/run_e10b_piloto.py::main",
+    "executor/placar.py::cartao",
+    "integracao/instalar.py::instalado_em"
+   ]
+  },
+  {
+   "alvo": "executor/run_e1_triagem.py::macro_f1",
+   "pergunta": "Qual é o valor retornado se a lista f1s estiver vazia?",
+   "regex": "\\b0\\.0\\b",
+   "distratores": [
+    "executor/run_e11_desempate.py::braco_jev",
+    "executor/run_e8_anotador.py::perguntar",
+    "executor/run_canaries.py::provider_snapshot",
+    "executor/analise.py::analisar_e3",
+    "laboratorio/r17_economia_de_contexto.py::responder",
+    "executor/run_e15.py::excerpt",
+    "executor/adjudicar_e11.py::desacordos"
+   ]
+  },
+  {
+   "alvo": "executor/gabarito.py::contagem_bruta",
+   "pergunta": "Qual é o valor padrão do parâmetro campo_resposta?",
+   "regex": "\\bjev\\b",
+   "distratores": [
+    "executor/run_e16.py::prepare",
+    "laboratorio/r11_extremos.py::diluir",
+    "laboratorio/r16_guarda_de_comando.py::placar",
+    "integracao/instalar.py::desinstalar_gancho",
+    "integracao/instalar.py::backup",
+    "executor/runner.py::reservation_output_tokens",
+    "laboratorio/nucleo.py::gasto_total_autorizado"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/comandos.py::rodar",
+   "pergunta": "Qual é o valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando?",
+   "regex": "(?i)\\breversivel\\b",
+   "distratores": [
+    "executor/run_e16.py::read_results",
+    "executor/adjudicar_e11.py::cegar",
+    "executor/publicar_experimentos.py::ler",
+    "integracao/avaliacao/rodar.py::rodar",
+    "executor/placar.py::ler",
+    "laboratorio/r1_r3_estresse.py::acuracia",
+    "executor/run_e11_desempate.py::main"
+   ]
+  },
+  {
+   "alvo": "laboratorio/nucleo.py::wilson",
+   "pergunta": "Qual é o valor padrão do parâmetro z?",
+   "regex": "\\b1\\.96\\b",
+   "distratores": [
+    "executor/simple_round.py::detect",
+    "laboratorio/r18_escala.py::rodar",
+    "integracao/jev_router/roteador.py::classificar",
+    "laboratorio/r17_economia_de_contexto.py::montar",
+    "executor/publicar_experimentos.py::e12_run",
+    "integracao/avaliacao/skills.py::pela_regra",
+    "executor/run_e1_triagem.py::main"
+   ]
+  },
+  {
+   "alvo": "executor/run_e4_ressalvas.py::avaliar",
+   "pergunta": "Qual é o nome da constante usada para limitar o número de itens no topo?",
+   "regex": "\\bTOPO\\b",
+   "distratores": [
+    "integracao/avaliacao/rodar.py::rodar",
+    "integracao/jev_router/roteador.py::registrar",
+    "executor/analise.py::analisar_e1",
+    "executor/exportar_extrato.py::exportar",
+    "executor/run_e16.py::report",
+    "executor/runner.py::reservation_output_tokens",
+    "integracao/avaliacao/auditar_producao.py::main"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r1_r3_estresse.py::acuracia",
+   "pergunta": "Qual é o nome da lista que contém apenas as linhas com escolha?",
+   "regex": "(?i)\\bvalidas\\b",
+   "distratores": [
+    "executor/run_e5_provedores.py::transporte_direto",
+    "executor/run_e11_desempate.py::leitura",
+    "integracao/avaliacao/comandos.py::main",
+    "executor/run_e10b_piloto.py::pareamento",
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/placar.py::evidencia_dividida"
+   ]
+  },
+  {
+   "alvo": "executor/publicar_experimentos.py::decisao",
+   "pergunta": "Qual é o valor atribuído à chave 'task' no dicionário retornado?",
+   "regex": "(?i)\\btriage\\b",
+   "distratores": [
+    "executor/run_e2_fatorial.py::executar_lote",
+    "executor/placar.py::cartao",
+    "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+    "executor/runner.py::payload_sha256",
+    "executor/placar.py::fonte_com_gabarito",
+    "laboratorio/r1_r3_estresse.py::criterios_12",
+    "executor/run_e4_ressalvas.py::bm25"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r8_r9_adversarial.py::main",
+   "pergunta": "Quantas armadilhas semânticas são citadas na mensagem de resumo de R8?",
+   "regex": "\\b48\\b",
+   "distratores": [
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "laboratorio/r15b_familias.py::main",
+    "executor/adjudicar_e12.py::montar_prompt",
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "integracao/avaliacao/com_contexto.py::main",
+    "executor/run_e10b_piloto.py::pareamento",
+    "executor/run_e12_replicacao.py::gabaritos"
+   ]
+  },
+  {
+   "alvo": "executor/adjudicar_e11.py::consolidar",
+   "pergunta": "Qual é a chave usada para armazenar a data e hora da execução no dicionário de saída?",
+   "regex": "(?i)\\bat\\b",
+   "distratores": [
+    "executor/publicar_experimentos.py::publicar",
+    "laboratorio/r18_escala.py::rodar",
+    "executor/run_e12_replicacao.py::completar",
+    "executor/run_canaries.py::prepare",
+    "executor/runner.py::http_transport",
+    "laboratorio/r4_r7_limites.py::tarefas_r4",
+    "laboratorio/r16_guarda_de_comando.py::executar"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_router/roteador.py::classificar",
+   "pergunta": "Qual é o valor padrão do parâmetro `modo`?",
+   "regex": "\\bsombra\\b",
+   "distratores": [
+    "laboratorio/r14_autorrecursivo.py::executar",
+    "executor/placar.py::limite_superior_erro_da_politica",
+    "executor/placar.py::valor_entre_gabaritos",
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e4_ressalvas.py::bm25",
+    "integracao/avaliacao/auditar_producao.py::main",
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis"
+   ]
+  },
+  {
+   "alvo": "executor/adjudicar_e11.py::desacordos",
+   "pergunta": "Qual é o nome da chave que contém o anotador local nos dicionários retornados?",
+   "regex": "(?i)\\banotador_local\\b",
+   "distratores": [
+    "executor/run_e4_ressalvas.py::tokens",
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "integracao/jev_router/cliente.py::transporte_http",
+    "executor/run_e2_fatorial.py::main",
+    "integracao/jev_router/orcamento.py::registrar",
+    "executor/run_e11_desempate.py::carregar",
+    "integracao/avaliacao/skills.py::pela_regra"
+   ]
+  },
+  {
+   "alvo": "executor/pricing.py::load_prices",
+   "pergunta": "Qual exceção é lançada quando a versão do schema não é 1?",
+   "regex": "PricingError",
+   "distratores": [
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/adjudicar_e12.py::consolidar",
+    "executor/assist.py::main",
+    "executor/publish_simple_round.py::note_for",
+    "laboratorio/r1_r3_estresse.py::pareado",
+    "executor/run_e10_llm_economico.py::prompt",
+    "executor/run_canaries.py::main"
+   ]
+  },
+  {
+   "alvo": "executor/publicar_experimentos.py::e11_run",
+   "pergunta": "Qual é o provedor especificado no campo 'provider' do dicionário retornado?",
+   "regex": "\\bopenrouter\\b",
+   "distratores": [
+    "executor/run_e10b_piloto.py::carregar",
+    "lab/build_ui.py::build",
+    "executor/run_e11_desempate.py::leitura",
+    "integracao/avaliacao/comandos.py::medir",
+    "laboratorio/r17_economia_de_contexto.py::main",
+    "integracao/jev_router/cliente.py::chave",
+    "executor/run_e10_llm_economico.py::prompt"
+   ]
+  },
+  {
+   "alvo": "laboratorio/nucleo.py::mcnemar_exato",
+   "pergunta": "Qual valor a função retorna quando os argumentos so_a e so_b são zero?",
+   "regex": "\\b1\\.0\\b",
+   "distratores": [
+    "executor/run_e12_replicacao.py::executar_todos",
+    "executor/run_e10_llm_economico.py::payload",
+    "executor/assist.py::main",
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "laboratorio/r11_extremos.py::condicoes",
+    "laboratorio/r15_adversario_externo.py::executar",
+    "executor/run_e12_replicacao.py::custo_por_mil"
+   ]
+  },
+  {
+   "alvo": "executor/gabarito.py::do_anotador_local",
+   "pergunta": "Qual chave do dicionário retornado contém o identificador do caso?",
+   "regex": "\\bcase_id\\b",
+   "distratores": [
+    "executor/publicar_experimentos.py::e11_run",
+    "executor/run_e11_desempate.py::mcnemar_exato",
+    "laboratorio/r16_guarda_de_comando.py::main",
+    "laboratorio/r17_economia_de_contexto.py::main",
+    "laboratorio/r1_r3_estresse.py::executar",
+    "executor/placar.py::desempate_depende_do_gabarito",
+    "executor/publicar_experimentos.py::ler"
+   ]
+  },
+  {
+   "alvo": "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+   "pergunta": "Quantas casas decimais são usadas ao arredondar a cobertura?",
+   "regex": "(?i)\\b4\\b",
+   "distratores": [
+    "executor/run_e4_ressalvas.py::normalizar",
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "laboratorio/r17_economia_de_contexto.py::main",
+    "executor/placar.py::fonte_com_gabarito",
+    "integracao/instalar.py::instalar",
+    "executor/placar.py::gabarito_do_corpus",
+    "executor/run_e7_confirmacao.py::carregar"
+   ]
+  },
+  {
+   "alvo": "executor/run_e4_ressalvas.py::ndcg",
+   "pergunta": "Qual função da biblioteca math é utilizada para calcular o denominador?",
+   "regex": "(?i)math\\.log2",
+   "distratores": [
+    "executor/probe_contract.py::main",
+    "executor/adjudicar_e11.py::cegar",
+    "executor/adjudicar_e11.py::consolidar",
+    "laboratorio/r1_r3_estresse.py::estilo_igor",
+    "executor/placar.py::desempate_depende_do_gabarito",
+    "integracao/instalar.py::gravar_modo",
+    "executor/publicar_experimentos.py::tentativas_orfas_run"
+   ]
+  },
+  {
+   "alvo": "executor/smoke_mcp.py::exchange",
+   "pergunta": "Qual exceção é levantada quando o subprocess produz saída de erro?",
+   "regex": "\\bRuntimeError\\b",
+   "distratores": [
+    "executor/run_e10_llm_economico.py::executar",
+    "laboratorio/r18_escala.py::gerar",
+    "executor/adjudicar_e11.py::cegar",
+    "executor/simple_round.py::main",
+    "integracao/jev_router/roteador.py::do_cache",
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "laboratorio/r12_r13_contexto.py::tarefas_r12"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_mcp.py::main",
+   "pergunta": "Qual código de erro é retornado quando há erro de parsing?",
+   "regex": "-32700",
+   "distratores": [
+    "integracao/avaliacao/comandos.py::medir",
+    "executor/run_e7_confirmacao.py::carregar",
+    "integracao/instalar.py::instalar",
+    "executor/baseline_regra.py::classificar",
+    "executor/run_e12_replicacao.py::gravar",
+    "integracao/jev_router/politica.py::texto_para_o_agente",
+    "executor/run_e2_fatorial.py::main"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r0_calibracao.py::main",
+   "pergunta": "Qual a chave usada no dicionário resultado para armazenar a contagem total de casos?",
+   "regex": "\\bcasos\\b",
+   "distratores": [
+    "laboratorio/r15_adversario_externo.py::http",
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/publish_simple_round.py::main",
+    "laboratorio/r17b_sensibilidade.py::main",
+    "integracao/jev_router/roteador.py::impressao",
+    "integracao/avaliacao/skills.py::pela_regra",
+    "executor/run_canaries.py::provider_snapshot"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_router/orcamento.py::pode_gastar",
+   "pergunta": "Qual mensagem a função devolve quando o gasto está dentro do limite?",
+   "regex": "(?i)\\bdentro do teto\\b",
+   "distratores": [
+    "executor/placar.py::comparador_empatou",
+    "laboratorio/r11_extremos.py::distratores_em_massa",
+    "executor/run_e12_replicacao.py::executar_todos",
+    "executor/runner.py::dispatch",
+    "laboratorio/r0_calibracao.py::calibrar",
+    "integracao/jev_router/roteador.py::registrar",
+    "integracao/jev_router/cliente.py::perguntar"
+   ]
+  },
+  {
+   "alvo": "executor/run_e15.py::report",
+   "pergunta": "Qual o valor atribuído ao campo \"deployment\" nos resumos?",
+   "regex": "(?i)\\bexperimental_assistive_only\\b",
+   "distratores": [
+    "executor/placar.py::contem_zero",
+    "integracao/avaliacao/auditar_producao.py::marca",
+    "executor/publicar_experimentos.py::ler",
+    "laboratorio/r8_r9_adversarial.py::resumo",
+    "executor/run_e12_replicacao.py::recuperar",
+    "executor/run_e1_triagem.py::resumo",
+    "executor/placar.py::politica_de_referencia"
+   ]
+  },
+  {
+   "alvo": "executor/run_e12_replicacao.py::erro_grave",
+   "pergunta": "Qual é o nome da chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento?",
+   "regex": "(?i)falso_cancelar",
+   "distratores": [
+    "executor/run_e12_replicacao.py::payload_chat",
+    "laboratorio/r15b_familias.py::main",
+    "laboratorio/r10_injecao_comparada.py::main",
+    "executor/pricing.py::snapshot_id",
+    "integracao/avaliacao/skills.py::main",
+    "executor/gabarito.py::contagem_bruta",
+    "integracao/avaliacao/skills.py::pela_regra"
+   ]
+  },
+  {
+   "alvo": "executor/erro_grave.py::medir",
+   "pergunta": "Qual é o valor padrão do parâmetro campo?",
+   "regex": "\\bjev\\b",
+   "distratores": [
+    "integracao/instalar.py::gravar",
+    "executor/placar.py::publicar",
+    "executor/publicar_experimentos.py::e6_run",
+    "executor/run_e5_provedores.py::carregar_chave",
+    "executor/placar.py::gabarito_do_corpus",
+    "lab/server.py::text",
+    "executor/run_e11_desempate.py::executar_os_dois"
+   ]
+  },
+  {
+   "alvo": "executor/publish_simple_round.py::note_for",
+   "pergunta": "Qual texto é usado quando não há contagem no relatório?",
+   "regex": "(?i)sem\\s+contagem\\s+no\\s+relatorio",
+   "distratores": [
+    "executor/run_e12_replicacao.py::payload_chat",
+    "executor/adjudicar_e12.py::desacordos",
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "executor/publicar_experimentos.py::e7_run",
+    "executor/runner.py::dry_run",
+    "executor/placar.py::evidencia_dividida"
+   ]
+  },
+  {
+   "alvo": "executor/analise.py::analisar_e1",
+   "pergunta": "Qual é o nome do arquivo JSON que a função lê?",
+   "regex": "(?i)relatorio\\.json",
+   "distratores": [
+    "laboratorio/r14_autorrecursivo.py::executar",
+    "executor/run_e10_llm_economico.py::carregar",
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "integracao/avaliacao/comandos.py::medir",
+    "integracao/jev_router/orcamento.py::_linhas"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r15_adversario_externo.py::tarefas",
+   "pergunta": "Qual é o valor atribuído à chave 'alvo' na primeira inserção em 'saida'?",
+   "regex": "(?i)\\bjev\\b",
+   "distratores": [
+    "integracao/avaliacao/auditar_producao.py::marca",
+    "executor/publicar_experimentos.py::gabarito",
+    "executor/pricing.py::_ceil_div",
+    "laboratorio/r11_extremos.py::executar",
+    "integracao/avaliacao/com_contexto.py::estado_sem",
+    "executor/adjudicar_e12.py::cegar",
+    "executor/publicar_experimentos.py::e11_run"
+   ]
+  },
+  {
+   "alvo": "lab/server.py::validate_run_update",
+   "pergunta": "Quais são os campos verificados para identidade ou proveniência da execução?",
+   "regex": "\\[\\s*'id'\\s*,\\s*'system_id'\\s*,\\s*'phase'\\s*,\\s*'evidence'\\s*,\\s*'started_at'\\s*,\\s*'provider'\\s*,\\s*'model'\\s*,\\s*'dataset'\\s*,\\s*'finished_at'\\s*\\]",
+   "distratores": [
+    "executor/run_e12_replicacao.py::braco_comparador",
+    "executor/adjudicar_e11.py::consolidar",
+    "laboratorio/r12_r13_contexto.py::tarefas_r12",
+    "executor/runner.py::http_transport",
+    "laboratorio/r8_r9_adversarial.py::executar",
+    "executor/placar.py::pct",
+    "executor/run_e11_desempate.py::carregar"
+   ]
+  },
+  {
+   "alvo": "executor/runner.py::validate_contract",
+   "pergunta": "Qual é o valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos?",
+   "regex": "(?i)\\bchoice\\b",
+   "distratores": [
+    "integracao/avaliacao/com_contexto.py::estado_com",
+    "executor/run_e12_replicacao.py::erro_grave",
+    "laboratorio/r16_guarda_de_comando.py::placar",
+    "executor/run_e4_ressalvas.py::ndcg",
+    "lab/server.py::timestamp",
+    "executor/shared.py::current_prices",
+    "laboratorio/r4_r7_limites.py::corpus"
+   ]
+  },
+  {
+   "alvo": "executor/adjudicar_e11.py::cegar",
+   "pergunta": "Qual é o nome da constante usada como semente para o gerador aleatório?",
+   "regex": "(?i)\\bSEMENTE\\b",
+   "distratores": [
+    "executor/adjudicar_e12.py::main",
+    "executor/run_e4_ressalvas.py::avaliar",
+    "executor/run_canaries.py::prepare",
+    "integracao/avaliacao/amostrar.py::main",
+    "laboratorio/r12_r13_contexto.py::main",
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/simple_round.py::detect"
+   ]
+  },
+  {
+   "alvo": "executor/gabarito.py::rotulo",
+   "pergunta": "Qual mensagem é retornada quando a chave 'adjudicado' em 'procedencia' tem valor falsy?",
+   "regex": "(?i)gabarito\\s+do\\s+autor,\\s+sem\\s+adjudicação",
+   "distratores": [
+    "executor/runner.py::reservation_output_tokens",
+    "executor/placar.py::ausente",
+    "executor/run_e10_llm_economico.py::prompt",
+    "laboratorio/r4_r7_limites.py::tarefas_r7",
+    "executor/placar.py::evidencia_dividida",
+    "integracao/instalar.py::instalar",
+    "executor/analise.py::analisar_e3"
+   ]
+  },
+  {
+   "alvo": "executor/placar.py::limite_superior_erro_da_politica",
+   "pergunta": "Qual é a primeira chave que a função verifica ao procurar o limite superior de erro?",
+   "regex": "(?i)\\b(?:limite_superior_erro_por_familia)\\b",
+   "distratores": [
+    "laboratorio/nucleo.py::em_paralelo",
+    "integracao/instalar.py::gravar",
+    "executor/adjudicar_e11.py::main",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "executor/run_e15.py::questions_hash",
+    "integracao/hooks/jev_guarda_comando.py::main",
+    "executor/run_e12_replicacao.py::analisar"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_router/cliente.py::transporte_http",
+   "pergunta": "Qual método HTTP é usado na requisição?",
+   "regex": "(?i)\\bPOST\\b",
+   "distratores": [
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "executor/placar.py::titulo_do_veredito",
+    "executor/run_e12_replicacao.py::completar",
+    "executor/run_e16.py::prepare",
+    "laboratorio/r18_escala.py::main",
+    "executor/publicar_experimentos.py::ler",
+    "integracao/avaliacao/amostrar.py::carregar"
+   ]
+  },
+  {
+   "alvo": "executor/adjudicar_e12.py::main",
+   "pergunta": "Qual é o valor padrão do argumento '--juiz'?",
+   "regex": "\\bterceiro juiz cego, outro fornecedor\\b",
+   "distratores": [
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/ledger.py::now_utc",
+    "executor/run_e2_fatorial.py::executar_lote",
+    "integracao/avaliacao/rodar.py::rodar",
+    "executor/placar.py::dec",
+    "executor/erro_grave.py::gabaritos",
+    "laboratorio/r11_extremos.py::executar"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r1_r3_estresse.py::executar",
+   "pergunta": "Qual é a chave que armazena o tipo de falha no dicionário retornado?",
+   "regex": "\\btipo_de_falha\\b",
+   "distratores": [
+    "laboratorio/r17_economia_de_contexto.py::responder",
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "executor/run_e3_evidencia.py::normalizar",
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/run_e11_desempate.py::braco_barato",
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de"
+   ]
+  },
+  {
+   "alvo": "integracao/jev_router/politica.py::decidir",
+   "pergunta": "Qual é o valor atribuído inicialmente à chave 'sugere' no dicionário de decisão?",
+   "regex": "\\bFalse\\b",
+   "distratores": [
+    "executor/run_e12_replicacao.py::executar_todos",
+    "laboratorio/nucleo.py::chave",
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/placar.py::comparador_empatou",
+    "integracao/jev_router/cli.py::main",
+    "integracao/avaliacao/rodar.py::comparar"
+   ]
+  },
+  {
+   "alvo": "executor/publicar_experimentos.py::e7_run",
+   "pergunta": "Qual é o valor da chave 'phase' no dicionário retornado?",
+   "regex": "(?i)\\bconfirmation\\b",
+   "distratores": [
+    "executor/placar.py::pct",
+    "executor/run_e10_llm_economico.py::main",
+    "executor/shared.py::ask",
+    "executor/ledger.py::now_utc",
+    "laboratorio/nucleo.py::perguntar",
+    "executor/runner.py::estimate_input_tokens",
+    "executor/run_e8_anotador.py::main"
+   ]
+  },
+  {
+   "alvo": "executor/run_e2_fatorial.py::condicoes",
+   "pergunta": "Qual palavra é usada no ID para representar o caso em que lote é False?",
+   "regex": "\\bindividual\\b",
+   "distratores": [
+    "executor/run_e6_repetibilidade.py::entropia",
+    "integracao/instalar.py::backup",
+    "integracao/jev_mcp.py::main",
+    "executor/analise.py::limite_superior_erro",
+    "executor/run_e2_fatorial.py::criterios",
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "executor/probe_contract.py::main"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/rodar.py::economia",
+   "pergunta": "Qual chave do dicionário retornado indica a fração de respostas enviadas ao modelo barato?",
+   "regex": "\\bfracao_para_modelo_barato\\b",
+   "distratores": [
+    "executor/run_e2_fatorial.py::resumir",
+    "integracao/avaliacao/skills.py::pela_regra",
+    "executor/run_e15.py::sha",
+    "laboratorio/r16_guarda_de_comando.py::placar",
+    "integracao/jev_router/orcamento.py::situacao",
+    "lab/server.py::require",
+    "laboratorio/r18_escala.py::analisar"
+   ]
+  },
+  {
+   "alvo": "executor/pricing.py::observed_nusd",
+   "pergunta": "Qual exceção é lançada quando um dos parâmetros de token tem valor negativo ou não é inteiro?",
+   "regex": "PricingError\\s*\\(.*?invalid.*?\\)|PricingError\\s*\\(.*?invalido no usage\\)",
+   "distratores": [
+    "laboratorio/r18_escala.py::main",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/exportar_extrato.py::exportar",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "executor/run_e15.py::questions_hash"
+   ]
+  },
+  {
+   "alvo": "laboratorio/gerar_mapa_visual.py::main",
+   "pergunta": "Qual é o nome da chave usada para acessar a acurácia de referência no dicionário \"dimensoes\"?",
+   "regex": "(?i)\\breferencia\\b",
+   "distratores": [
+    "laboratorio/r12_r13_contexto.py::main",
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "laboratorio/r11_extremos.py::criterios_com",
+    "executor/simple_round.py::main",
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/gabarito.py::desempenho_do_estudo"
+   ]
+  },
+  {
+   "alvo": "executor/run_e15.py::excerpt",
+   "pergunta": "Qual exceção é levantada quando a função não é encontrada?",
+   "regex": "(?i)\\bValueError\\b",
+   "distratores": [
+    "executor/adjudicar_e11.py::cegar",
+    "laboratorio/r4_r7_limites.py::tarefas_r6",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "laboratorio/r18_escala.py::ordenar",
+    "laboratorio/r11_extremos.py::resumo",
+    "laboratorio/r0_calibracao.py::calibrar",
+    "laboratorio/r17_economia_de_contexto.py::tokeniza"
+   ]
+  },
+  {
+   "alvo": "executor/pricing.py::usd_to_nusd",
+   "pergunta": "Qual constante de arredondamento é utilizada na conversão?",
+   "regex": "(?i)\\bROUND_CEILING\\b",
+   "distratores": [
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "laboratorio/nucleo.py::chave",
+    "laboratorio/r16_guarda_de_comando.py::main",
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "executor/adjudicar_e12.py::consolidar",
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/erro_grave.py::relatorio"
+   ]
+  },
+  {
+   "alvo": "executor/gabarito.py::do_autor",
+   "pergunta": "Qual valor é atribuído à chave \"origem\" nos dicionários internos criados?",
+   "regex": "(?i)\\bautor\\b",
+   "distratores": [
+    "executor/placar.py::titulo_do_veredito",
+    "integracao/jev_router/politica.py::decidir",
+    "executor/placar.py::gabaritos_do_conjunto",
+    "executor/ledger.py::now_utc",
+    "executor/run_e4_ressalvas.py::avaliar",
+    "executor/gabarito.py::do_anotador_local",
+    "executor/analise.py::main"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::texto",
+   "pergunta": "Qual é o valor da chave 'type' que a função verifica nos dicionários da lista?",
+   "regex": "\\btext\\b",
+   "distratores": [
+    "laboratorio/r4_r7_limites.py::tarefas_r7",
+    "laboratorio/r4_r7_limites.py::executar",
+    "executor/placar.py::publicar",
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "laboratorio/r11_extremos.py::corpus",
+    "executor/publicar_experimentos.py::ler"
+   ]
+  },
+  {
+   "alvo": "executor/shared.py::current_prices",
+   "pergunta": "Qual o valor do timeout (em segundos) usado na chamada urllib.request.urlopen?",
+   "regex": "(?i)\\b15\\b",
+   "distratores": [
+    "integracao/avaliacao/com_contexto.py::estado_com",
+    "executor/placar.py::evidencia_dividida",
+    "executor/run_e15.py::prepare",
+    "executor/publish_simple_round.py::note_for",
+    "executor/simple_round.py::main",
+    "executor/baseline_regra.py::classificar",
+    "laboratorio/r15_adversario_externo.py::http"
+   ]
+  },
+  {
+   "alvo": "executor/publicar_experimentos.py::e2_run",
+   "pergunta": "Qual é o valor da chave system_id no dicionário retornado pela função?",
+   "regex": "['\"]?S01['\"]?",
+   "distratores": [
+    "executor/probe_contract.py::send",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "laboratorio/r11_extremos.py::criterios_com",
+    "integracao/hooks/jev_prompt_router.py::guardar_estado",
+    "executor/analise.py::bootstrap_cluster",
+    "executor/run_e4_ressalvas.py::normalizar",
+    "executor/shared.py::strict_answers"
+   ]
+  },
+  {
+   "alvo": "executor/publicar_experimentos.py::e10_run",
+   "pergunta": "Qual é o valor da chave \"phase\" no dicionário retornado pela função?",
+   "regex": "(?i)\\bconfirmation\\b",
+   "distratores": [
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/run_e6_repetibilidade.py::entropia",
+    "integracao/hooks/jev_guarda_comando.py::main",
+    "executor/analise.py::analisar_calibracao",
+    "laboratorio/r18_escala.py::com_cabecalho",
+    "executor/shared.py::import_legacy",
+    "laboratorio/r11_extremos.py::corpus"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/rodar.py::rodar",
+   "pergunta": "Qual é o número máximo de caracteres do campo 'pedido' que são incluídos na saída?",
+   "regex": "(?i)\\b300\\b",
+   "distratores": [
+    "executor/publish_simple_round.py::state",
+    "executor/analise.py::analisar_calibracao",
+    "integracao/avaliacao/amostrar_com_contexto.py::e_digitado",
+    "executor/placar.py::dec",
+    "laboratorio/r11_extremos.py::sem_acento",
+    "executor/run_e11_desempate.py::gravar",
+    "integracao/jev_router/orcamento.py::situacao"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r11_extremos.py::resumo",
+   "pergunta": "Qual chave do dicionário retornado indica o número total de linhas válidas?",
+   "regex": "\\bn\\b",
+   "distratores": [
+    "executor/analise.py::limite_superior_erro",
+    "executor/run_e12_replicacao.py::repescar",
+    "executor/placar.py::limite_superior_erro_da_politica",
+    "executor/pricing.py::snapshot_id",
+    "lab/server.py::text",
+    "executor/run_e2_fatorial.py::condicoes",
+    "integracao/jev_router/roteador.py::para_o_cache"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r11_extremos.py::executar",
+   "pergunta": "Qual é o nome da chave no dicionário retornado que armazena a confiança da escolha?",
+   "regex": "\\bconfianca\\b",
+   "distratores": [
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "integracao/jev_mcp.py::handle",
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "integracao/jev_router/politica.py::texto_para_o_agente",
+    "integracao/avaliacao/variantes.py::main",
+    "executor/run_e1_triagem.py::resumo",
+    "executor/run_e9_prevalencia.py::aceitacao"
+   ]
+  },
+  {
+   "alvo": "executor/run_e1_triagem.py::resumo",
+   "pergunta": "Qual é o nome da chave opcional que só existe nos corpora piloto e de evidencia?",
+   "regex": "(?i)\\bkind\\b",
+   "distratores": [
+    "integracao/jev_router/roteador.py::registrar",
+    "executor/run_e1_triagem.py::main",
+    "laboratorio/r15_adversario_externo.py::gerar_vetores",
+    "integracao/jev_router/roteador.py::do_cache",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "executor/placar.py::pct",
+    "executor/analise.py::bootstrap_cluster"
+   ]
+  },
+  {
+   "alvo": "executor/placar.py::pendencias",
+   "pergunta": "Qual é o código que inicia a última mensagem da lista retornada?",
+   "regex": "(?i)\\bP5\\b",
+   "distratores": [
+    "integracao/jev_router/orcamento.py::registrar",
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/run_e5_provedores.py::carregar_chave",
+    "laboratorio/r11_extremos.py::corpus",
+    "integracao/jev_router/cliente.py::transporte_http",
+    "integracao/instalar.py::entrada_de",
+    "lab/server.py::numeric"
+   ]
+  },
+  {
+   "alvo": "integracao/instalar.py::desinstalar",
+   "pergunta": "Qual mensagem é exibida quando não há hooks a remover?",
+   "regex": "(?s).*\\bnada a remover\\b.*",
+   "distratores": [
+    "laboratorio/nucleo.py::gasto_total_autorizado",
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "executor/run_e4_ressalvas.py::ndcg",
+    "laboratorio/r11_extremos.py::main",
+    "integracao/instalar.py::main",
+    "executor/runner.py::payload_for",
+    "executor/placar.py::cartao"
+   ]
+  },
+  {
+   "alvo": "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+   "pergunta": "Qual é o nome da variável que contém a lista final de casos antes de ser retornada?",
+   "regex": "(?i)\\bcasos\\b",
+   "distratores": [
+    "integracao/avaliacao/auditar_producao.py::marca",
+    "executor/run_e10_llm_economico.py::prompt",
+    "executor/shared.py::strict_answers",
+    "executor/run_e5_provedores.py::transporte_direto",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/run_e10_llm_economico.py::executar",
+    "integracao/jev_router/orcamento.py::custo_maximo_por_chamada_usd"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "pergunta": "Qual é o valor padrão do parâmetro b?",
+   "regex": "\\b0\\.75\\b",
+   "distratores": [
+    "laboratorio/r17_economia_de_contexto.py::montar",
+    "executor/run_e10_llm_economico.py::executar",
+    "executor/placar.py::politica_de_referencia",
+    "integracao/avaliacao/auditar_producao.py::main",
+    "integracao/instalar.py::ver",
+    "laboratorio/r15_adversario_externo.py::main",
+    "laboratorio/r0_calibracao.py::main"
+   ]
+  },
+  {
+   "alvo": "executor/run_canaries.py::provider_snapshot",
+   "pergunta": "Qual valor é usado para o cabeçalho 'User-Agent' na requisição?",
+   "regex": "(?i)jev[-_]lab/1\\.0",
+   "distratores": [
+    "integracao/avaliacao/skills.py::regexes",
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "executor/run_e12_replicacao.py::gabaritos",
+    "laboratorio/r1_r3_estresse.py::criterios_12",
+    "executor/pricing.py::worst_case_nusd",
+    "integracao/hooks/jev_prompt_router.py::guardar_estado",
+    "executor/placar.py::valor_entre_gabaritos"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "pergunta": "Qual é o valor máximo de comprimento de trecho que a função descarta?",
+   "regex": "\\b4600\\b",
+   "distratores": [
+    "executor/run_e12_replicacao.py::custo_liquidado",
+    "executor/run_e1_triagem.py::resumo",
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "laboratorio/r17_economia_de_contexto.py::tokeniza",
+    "executor/placar.py::publicar",
+    "executor/run_e12_replicacao.py::gabaritos",
+    "laboratorio/r18_escala.py::rodar"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r12_r13_contexto.py::tarefas_r13",
+   "pergunta": "Qual o valor atribuído à chave 'rodada' nos dicionários adicionados?",
+   "regex": "\\bR13\\b",
+   "distratores": [
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "executor/run_e12_replicacao.py::braco_comparador",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/run_e7_confirmacao.py::carregar",
+    "integracao/avaliacao/comandos.py::medir",
+    "executor/run_e15.py::questions_hash"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "pergunta": "Qual é o valor padrão do argumento \"--n\"?",
+   "regex": "\\b60\\b",
+   "distratores": [
+    "executor/smoke_mcp.py::exchange",
+    "executor/placar.py::contem_zero",
+    "laboratorio/r11_extremos.py::corpus",
+    "executor/run_e12_replicacao.py::executar_todos",
+    "laboratorio/r16_guarda_de_comando.py::main",
+    "integracao/instalar.py::gravar_modo",
+    "executor/run_e2_fatorial.py::executar_lote"
+   ]
+  },
+  {
+   "alvo": "executor/run_e9_prevalencia.py::carregar",
+   "pergunta": "Qual é a chave usada para armazenar a latência em milissegundos?",
+   "regex": "(?i)\\blatency_ms\\b",
+   "distratores": [
+    "executor/gabarito.py::rotulo",
+    "lab/server.py::validate_run_update",
+    "integracao/hooks/jev_guarda_comando.py::modo_vigente",
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "integracao/jev_router/roteador.py::impressao",
+    "executor/shared.py::current_prices",
+    "laboratorio/r11_extremos.py::corpus"
+   ]
+  },
+  {
+   "alvo": "executor/smoke_mcp.py::main",
+   "pergunta": "Qual é a versão do protocolo especificada na mensagem de inicialização?",
+   "regex": "['\\\"]?2024-11-05['\\\"]?",
+   "distratores": [
+    "laboratorio/r15_adversario_externo.py::main",
+    "executor/run_e11_desempate.py::executar_os_dois",
+    "executor/run_e10b_piloto.py::pareamento",
+    "laboratorio/r11_extremos.py::condicoes",
+    "executor/run_e15.py::excerpt",
+    "executor/simple_round.py::run_one",
+    "integracao/jev_router/roteador.py::guardar_pedido"
+   ]
+  },
+  {
+   "alvo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "pergunta": "Qual exceção é levantada quando algum alvo está ausente no repositório?",
+   "regex": ".*\\bSystemExit\\b.*",
+   "distratores": [
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/run_e12_replicacao.py::custo_por_mil",
+    "laboratorio/r17b_sensibilidade.py::main",
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "laboratorio/r11_extremos.py::sem_acento",
+    "laboratorio/r11_extremos.py::main",
+    "integracao/avaliacao/skills.py::main"
+   ]
+  },
+  {
+   "alvo": "executor/runner.py::estimate_input_tokens",
+   "pergunta": "Qual é o valor inteiro que é somado ao final da estimativa de tokens?",
+   "regex": "\\b64\\b",
+   "distratores": [
+    "executor/run_e15.py::questions_hash",
+    "integracao/jev_router/orcamento.py::situacao",
+    "lab/server.py::main",
+    "laboratorio/r8_r9_adversarial.py::tarefas",
+    "executor/publicar_experimentos.py::e2b_run",
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "executor/publish_simple_round.py::save"
+   ]
+  },
+  {
+   "alvo": "lab/server.py::main",
+   "pergunta": "Qual é a porta padrão usada pelo servidor?",
+   "regex": "\\b8766\\b",
+   "distratores": [
+    "lab/server.py::write_state",
+    "executor/adjudicar_e11.py::desacordos",
+    "executor/run_e6_repetibilidade.py::entropia",
+    "executor/publicar_experimentos.py::e10_run",
+    "integracao/instalar.py::ja_instalado",
+    "integracao/avaliacao/skills.py::regexes",
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos"
+   ]
+  },
+  {
+   "alvo": "executor/run_canaries.py::prepare",
+   "pergunta": "Qual o endpoint registrado na chamada register_arm?",
+   "regex": "['\"]?\\/api\\/alpha\\/decisions['\"]?",
+   "distratores": [
+    "laboratorio/r18_escala.py::gerar",
+    "laboratorio/r10_injecao_comparada.py::executar",
+    "integracao/jev_router/roteador.py::guardar_pedido",
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "integracao/jev_router/roteador.py::do_cache",
+    "executor/run_e12_replicacao.py::comparar",
+    "integracao/avaliacao/amostrar.py::main"
+   ]
+  },
+  {
+   "alvo": "integracao/avaliacao/com_contexto.py::main",
+   "pergunta": "Qual método é chamado para ler o conteúdo do arquivo AMOSTRA?",
+   "regex": "\\bread_text\\b",
+   "distratores": [
+    "executor/run_e2_fatorial.py::main",
+    "laboratorio/r18_escala.py::com_cabecalho",
+    "executor/simple_round.py::install_node",
+    "executor/run_e12_replicacao.py::gabaritos",
+    "laboratorio/r11_extremos.py::resumo",
+    "integracao/avaliacao/comandos.py::main",
+    "executor/adjudicar_e12.py::desacordos"
+   ]
+  },
+  {
+   "alvo": "executor/run_e12_replicacao.py::braco_jev",
+   "pergunta": "Qual é a chave usada para obter a escolha da resposta no dicionário de respostas?",
+   "regex": "\\bchoice\\b",
+   "distratores": [
+    "integracao/hooks/jev_prompt_router.py::guardar_estado",
+    "laboratorio/r17_economia_de_contexto.py::montar",
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "lab/server.py::keys",
+    "executor/placar.py::evidencia_dividida",
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/placar.py::ler"
+   ]
+  },
+  {
+   "alvo": "executor/pricing.py::entry",
+   "pergunta": "Qual exceção é lançada quando não existe preço publicado para o provedor e modelo?",
+   "regex": "PricingError",
+   "distratores": [
+    "integracao/avaliacao/rodar.py::rodar",
+    "executor/run_e12_replicacao.py::custo_por_mil",
+    "integracao/avaliacao/skills.py::pela_regra",
+    "laboratorio/r11_extremos.py::diluir",
+    "laboratorio/r4_r7_limites.py::corpus",
+    "executor/placar.py::cartao",
+    "executor/run_e15.py::encoded"
+   ]
+  }
+ ],
+ "recusas": {
+  "a resposta nao esta no alvo": 27,
+  "a regex casa com 3 distratores": 3,
+  "a regex casa com 4 distratores": 1,
+  "a pergunta cita o nome": 2,
+  "regex invalida": 1,
+  "a regex casa com 5 distratores": 1
+ },
+ "geradas": 109
+}

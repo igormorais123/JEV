@@ -1,0 +1,5325 @@
+{
+ "casos": 74,
+ "candidatos": 8,
+ "ks": [
+  1,
+  2,
+  3,
+  5
+ ],
+ "respondedor": "mistralai/mistral-nemo",
+ "arranjos": {
+  "todos": {
+   "n": 74,
+   "acertos": 64,
+   "taxa": 0.8649,
+   "ic95": [
+    0.7688,
+    0.9249
+   ],
+   "alvo_presente": 74,
+   "bytes": 631826,
+   "economia": 0.0
+  },
+  "jev-1": {
+   "n": 74,
+   "acertos": 68,
+   "taxa": 0.9189,
+   "ic95": [
+    0.8342,
+    0.9623
+   ],
+   "alvo_presente": 70,
+   "bytes": 78256,
+   "economia": 0.8761
+  },
+  "jev-2": {
+   "n": 74,
+   "acertos": 69,
+   "taxa": 0.9324,
+   "ic95": [
+    0.8514,
+    0.9708
+   ],
+   "alvo_presente": 72,
+   "bytes": 161718,
+   "economia": 0.744
+  },
+  "jev-3": {
+   "n": 74,
+   "acertos": 65,
+   "taxa": 0.8784,
+   "ic95": [
+    0.7847,
+    0.9347
+   ],
+   "alvo_presente": 72,
+   "bytes": 247493,
+   "economia": 0.6083
+  },
+  "jev-5": {
+   "n": 74,
+   "acertos": 65,
+   "taxa": 0.8784,
+   "ic95": [
+    0.7847,
+    0.9347
+   ],
+   "alvo_presente": 72,
+   "bytes": 368948,
+   "economia": 0.4161
+  },
+  "jev-cab-2": {
+   "n": 74,
+   "acertos": 66,
+   "taxa": 0.8919,
+   "ic95": [
+    0.8009,
+    0.9442
+   ],
+   "alvo_presente": 74,
+   "bytes": 271270,
+   "economia": 0.5707
+  },
+  "bm25-2": {
+   "n": 74,
+   "acertos": 52,
+   "taxa": 0.7027,
+   "ic95": [
+    0.5907,
+    0.7947
+   ],
+   "alvo_presente": 51,
+   "bytes": 187359,
+   "economia": 0.7035
+  },
+  "sorteio-2": {
+   "n": 74,
+   "acertos": 24,
+   "taxa": 0.3243,
+   "ic95": [
+    0.2286,
+    0.4373
+   ],
+   "alvo_presente": 19,
+   "bytes": 152820,
+   "economia": 0.7581
+  }
+ },
+ "detalhe": [
+  {
+   "id": "e000",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10249,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1003,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é o mesmo passado como argumento na função 'observed_nusd'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1003,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'nusd'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4343,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3050,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3550,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6456,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e000",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7734,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e001",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7802,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e001",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2778,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e001",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 3456,
+   "resposta": "A constante usada como semente ao criar o objeto random é 'SEED'."
+  },
+  {
+   "id": "e001",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5513,
+   "resposta": "A constante usada como semente ao criar o objeto random é Semente."
+  },
+  {
+   "id": "e001",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2362,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e001",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2455,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e001",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2871,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e001",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3842,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "e002",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 12744,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1826,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1398,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2386,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 410,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1826,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2812,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e002",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4980,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError."
+  },
+  {
+   "id": "e003",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 8574,
+   "resposta": "A variável `ece` não é inicializada em nenhum dos trechos de código fornecidos."
+  },
+  {
+   "id": "e003",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3737,
+   "resposta": "A variável ece é inicializada com o valor 0.0."
+  },
+  {
+   "id": "e003",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2138,
+   "resposta": "A variável ece não é inicializada no código fornecido."
+  },
+  {
+   "id": "e003",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4305,
+   "resposta": "A variável ece é inicializada com o valor 0.0."
+  },
+  {
+   "id": "e003",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1886,
+   "resposta": "O valor inicial atribuído à variável ece é 0.0."
+  },
+  {
+   "id": "e003",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3737,
+   "resposta": "A variável ece é inicializada com o valor 0.0."
+  },
+  {
+   "id": "e003",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4238,
+   "resposta": "A variável ece é inicializada com o valor 0.0."
+  },
+  {
+   "id": "e003",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4808,
+   "resposta": "A variável ece é inicializada com o valor 0.0."
+  },
+  {
+   "id": "e004",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8564,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é de 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1018,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1072,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3865,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 45%."
+  },
+  {
+   "id": "e004",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 749,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1072,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1404,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e004",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3172,
+   "resposta": "O limite usado para decidir substituir a letra por uma tecla vizinha é 0.45."
+  },
+  {
+   "id": "e005",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6430,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1186,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1773,
+   "resposta": "Se a lista f1s estiver vazia, nenhum valor será retornado."
+  },
+  {
+   "id": "e005",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2433,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 669,
+   "resposta": "Se a lista f1s estiver vazia, a função retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1528,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1899,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e005",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2810,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0."
+  },
+  {
+   "id": "e006",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7033,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2133,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 664,
+   "resposta": "O valor padrão do parâmetro campo_resposta não é definido nos trechos de código fornecidos."
+  },
+  {
+   "id": "e006",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3129,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1158,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1370,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2276,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e006",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4684,
+   "resposta": "O valor padrão do parâmetro campo_resposta é 'jev'."
+  },
+  {
+   "id": "e007",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5079,
+   "resposta": "O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'."
+  },
+  {
+   "id": "e007",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1459,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e007",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1197,
+   "resposta": "A chave 'regra' é atribuída o valor 'reversivel' quando a expressão regular REGRA não encontra correspondência no comando."
+  },
+  {
+   "id": "e007",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2172,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e007",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 672,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e007",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1197,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e007",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1984,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e007",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2338,
+   "resposta": "\"O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 'reversivel'.\""
+  },
+  {
+   "id": "e008",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 15516,
+   "resposta": "O valor padrão do parâmetro z na função `wilson` é 1.96."
+  },
+  {
+   "id": "e008",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 5490,
+   "resposta": "O valor padrão do parâmetro z não é fornecido no código apresentado."
+  },
+  {
+   "id": "e008",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2391,
+   "resposta": "O valor padrão do parâmetro z não é fornecido no código fornecido."
+  },
+  {
+   "id": "e008",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3279,
+   "resposta": "O valor padrão do parâmetro z é 1.96."
+  },
+  {
+   "id": "e008",
+   "arranjo": "jev-1",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 244,
+   "resposta": "O valor padrão do parâmetro z não é fornecido no código fornecido."
+  },
+  {
+   "id": "e008",
+   "arranjo": "jev-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1740,
+   "resposta": "O valor padrão do parâmetro z não é definido nos trechos de código fornecidos."
+  },
+  {
+   "id": "e008",
+   "arranjo": "jev-3",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 5079,
+   "resposta": "O valor padrão do parâmetro z não é definido nos trechos de código fornecidos."
+  },
+  {
+   "id": "e008",
+   "arranjo": "jev-5",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 10949,
+   "resposta": "O valor padrão do parâmetro z é None."
+  },
+  {
+   "id": "e009",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7865,
+   "resposta": "A constante usada para limitar o número de itens no topo é \"TOPO\"."
+  },
+  {
+   "id": "e009",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1461,
+   "resposta": "A constante usada para limitar o número de itens no topo é \"TOPO\"."
+  },
+  {
+   "id": "e009",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 1033,
+   "resposta": "A constante usada para limitar o número de itens no topo é `DECISOES`."
+  },
+  {
+   "id": "e009",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4350,
+   "resposta": "A constante usada para limitar o número de itens no topo é `TOPO`."
+  },
+  {
+   "id": "e009",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 983,
+   "resposta": "TOPO"
+  },
+  {
+   "id": "e009",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2821,
+   "resposta": "A constante usada para limitar o número de itens no topo é \"TOPO\"."
+  },
+  {
+   "id": "e009",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3299,
+   "resposta": "A constante usada para limitar o número de itens no topo é \"TOPO\"."
+  },
+  {
+   "id": "e009",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4334,
+   "resposta": "A constante usada para limitar o número de itens no topo é \"TOPO\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8655,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2826,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3515,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"amostra\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5763,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\" dentro da função \"acuracia\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 523,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2826,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3492,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e010",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7009,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\"."
+  },
+  {
+   "id": "e011",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5455,
+   "resposta": "O valor atribuído à chave 'task' no dicionário retornado pela função 'decisao' é 'triage'."
+  },
+  {
+   "id": "e011",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1400,
+   "resposta": "O valor atribuído à chave 'task' no dicionário retornado é 'cartao'."
+  },
+  {
+   "id": "e011",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 945,
+   "resposta": "O valor atribuído à chave 'task' no dicionário retornado é 'cartao'."
+  },
+  {
+   "id": "e011",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2240,
+   "resposta": "'triage'"
+  },
+  {
+   "id": "e011",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 478,
+   "resposta": "'triage'"
+  },
+  {
+   "id": "e011",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 747,
+   "resposta": "O valor atribuído à chave 'task' no dicionário retornado é 'triage'."
+  },
+  {
+   "id": "e011",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 892,
+   "resposta": "O valor atribuído à chave 'task' no dicionário retornado é 'triage'."
+  },
+  {
+   "id": "e011",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1754,
+   "resposta": "'triage'"
+  },
+  {
+   "id": "e012",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 13810,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4242,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2124,
+   "resposta": "A mensagem de resumo de R8 não menciona nenhuma armadilha semântica."
+  },
+  {
+   "id": "e012",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10339,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2904,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3961,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5781,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "e012",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6612,
+   "resposta": "A mensagem de resumo de R8 menciona 48 armadilhas semânticas."
+  },
+  {
+   "id": "e013",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10662,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4154,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'rodada'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4679,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'agora'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3692,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1915,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3414,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4296,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e013",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5340,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "e014",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7397,
+   "resposta": "O valor padrão do parâmetro `modo` na função `classificar` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2651,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1233,
+   "resposta": "O valor padrão do parâmetro `modo` não é fornecido no código fornecido."
+  },
+  {
+   "id": "e014",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3104,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2151,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2796,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3298,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e014",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4140,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "e015",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6772,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3760,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 761,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3447,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 515,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3760,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4277,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e015",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5140,
+   "resposta": "A chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "e016",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10361,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é `PricingError`."
+  },
+  {
+   "id": "e016",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1046,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é uma exceção de validação de schema."
+  },
+  {
+   "id": "e016",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2409,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é `PricingError` com a mensagem \"Versão de tabela de preços não suportada\"."
+  },
+  {
+   "id": "e016",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5311,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é PricingError com a mensagem 'Versao de tabela de precos nao suportada'."
+  },
+  {
+   "id": "e016",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 415,
+   "resposta": "A exceção PricingError é lançada quando a versão do schema não é 1."
+  },
+  {
+   "id": "e016",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1008,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é `PricingError` com a mensagem \"Versao de tabela de precos nao suportada\"."
+  },
+  {
+   "id": "e016",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1463,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é PricingError."
+  },
+  {
+   "id": "e016",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3435,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é PricingError."
+  },
+  {
+   "id": "e017",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11674,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3536,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 793,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'OPENROUTER_API_KEY'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4040,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2815,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2999,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7442,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e017",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9887,
+   "resposta": "O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "e018",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7600,
+   "resposta": "A função `mcnemar_exato` retorna 1.0 quando os argumentos `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2208,
+   "resposta": "A função `mcnemar_exato` retorna 1.0 quando os argumentos `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1034,
+   "resposta": "A função `custo_por_mil` retorna um dicionário vazio quando os argumentos `casos` e `campos` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2643,
+   "resposta": "A função `mcnemar_exato` retorna 1.0 quando os argumentos `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 372,
+   "resposta": "A função retorna 1.0 quando os argumentos so_a e so_b são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 642,
+   "resposta": "A função `mcnemar_exato` retorna `1.0` quando `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2478,
+   "resposta": "A função `mcnemar_exato` retorna `1.0` quando os argumentos `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e018",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4004,
+   "resposta": "A função `mcnemar_exato` retorna 1.0 quando os argumentos `so_a` e `so_b` são zero."
+  },
+  {
+   "id": "e019",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 13670,
+   "resposta": "A chave do dicionário que contém o identificador do caso é 'id'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1806,
+   "resposta": "A chave do dicionário retornado contém o identificador do caso."
+  },
+  {
+   "id": "e019",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4628,
+   "resposta": "A chave do dicionário retornado que contém o identificador do caso é 'nome'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3391,
+   "resposta": "A chave do dicionário retornado que contém o identificador do caso é 'case_id'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "jev-1",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 730,
+   "resposta": "A chave do dicionário que contém o identificador do caso é 'case_id'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1286,
+   "resposta": "A chave do dicionário retornado que contém o identificador do caso é 'case_id'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5729,
+   "resposta": "A chave do dicionário retornado que contém o identificador do caso é 'case_id'."
+  },
+  {
+   "id": "e019",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8721,
+   "resposta": "A chave do dicionário retornado que contém o identificador do caso é 'case_id'."
+  },
+  {
+   "id": "e020",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8708,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5297,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1318,
+   "resposta": "Ao arredondar a cobertura, são usadas 2 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7384,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 854,
+   "resposta": "São usadas 4 casas decimais ao arredondar a cobertura."
+  },
+  {
+   "id": "e020",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5297,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6024,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e020",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6413,
+   "resposta": "A cobertura é arredondada para 4 casas decimais."
+  },
+  {
+   "id": "e021",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10702,
+   "resposta": "A função `math.log2()` é utilizada para calcular o denominador."
+  },
+  {
+   "id": "e021",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1705,
+   "resposta": "A função da biblioteca math utilizada para calcular o denominador é `math.log2`."
+  },
+  {
+   "id": "e021",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1141,
+   "resposta": "A função da biblioteca math utilizada para calcular o denominador é `math.log2()`."
+  },
+  {
+   "id": "e021",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2448,
+   "resposta": "A função `math.log2` é utilizada para calcular o denominador na fórmula do NDCG."
+  },
+  {
+   "id": "e021",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 453,
+   "resposta": "A função da biblioteca math utilizada para calcular o denominador é log2."
+  },
+  {
+   "id": "e021",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 672,
+   "resposta": "A função da biblioteca math utilizada para calcular o denominador é `math.log2()`."
+  },
+  {
+   "id": "e021",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1459,
+   "resposta": "A função da biblioteca math utilizada para calcular o denominador é `math.log2()`."
+  },
+  {
+   "id": "e021",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4628,
+   "resposta": "A função `math.log2` é utilizada para calcular o denominador na fórmula do NDCG."
+  },
+  {
+   "id": "e022",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11161,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3608,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3960,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `CalledProcessError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1636,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 463,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1280,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `RuntimeError('MCP wrote stderr')`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 2546,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `subprocess.CalledProcessError`."
+  },
+  {
+   "id": "e022",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4255,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `subprocess.CalledProcessError`."
+  },
+  {
+   "id": "e023",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7049,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e023",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4654,
+   "resposta": "O código de erro retornado quando há erro de parsing não é fornecido nos trechos de código apresentados."
+  },
+  {
+   "id": "e023",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 905,
+   "resposta": "O código de erro retornado quando há erro de parsing não é fornecido nos trechos de código apresentados."
+  },
+  {
+   "id": "e023",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2534,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e023",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 500,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e023",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 687,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e023",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1220,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e023",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2897,
+   "resposta": "O código de erro retornado quando há erro de parsing é -32700."
+  },
+  {
+   "id": "e024",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11591,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4119,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2439,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5352,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1816,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4727,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5082,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e024",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5951,
+   "resposta": "A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "e025",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9901,
+   "resposta": "A função `perguntar` devolve a mensagem \"dentro do teto\" quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2409,
+   "resposta": "A função `pode_gastar` devolve `True` e a mensagem \"dentro do teto\" quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2423,
+   "resposta": "A função `distratores_em_massa` devolve um dicionário com chaves no formato \"{verbo}-{setor}\" e valores como strings que descrevem uma situação onde o remetente"
+  },
+  {
+   "id": "e025",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3327,
+   "resposta": "A função `pode_gastar` devolve `True` e a mensagem \"dentro do teto\" quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 521,
+   "resposta": "A função devolve \"dentro do teto\" quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2771,
+   "resposta": "A função `pode_gastar` devolve `True` e a mensagem 'dentro do teto' quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6147,
+   "resposta": "A função `pode_gastar` devolve `True` e a mensagem 'dentro do teto' quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e025",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7291,
+   "resposta": "A função `pode_gastar` retorna `True` e a mensagem 'dentro do teto' quando o gasto está dentro do limite."
+  },
+  {
+   "id": "e026",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7785,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3692,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos não é fornecido nos trechos de código apresentados."
+  },
+  {
+   "id": "e026",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2197,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2409,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2104,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2197,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2333,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e026",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3916,
+   "resposta": "O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "e027",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 13916,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4572,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'detalhe'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4277,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5020,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 863,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4277,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7542,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e027",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 12174,
+   "resposta": "A chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento é 'falso_cancelar'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5400,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2726,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1510,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2507,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1116,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1510,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2237,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e028",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4005,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "e029",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 6777,
+   "resposta": "O texto usado quando não há contagem no relatório é \"sem contagem no relatório\"."
+  },
+  {
+   "id": "e029",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 927,
+   "resposta": "\"sem contagem no relatorio\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1490,
+   "resposta": "\"O texto usado quando não há contagem no relatório é 'A particao de teste e a analise ampliada discordam entre si?'\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3197,
+   "resposta": "\"sem contagem no relatorio\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 591,
+   "resposta": "\"sem contagem no relatorio\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1852,
+   "resposta": "\"sem contagem no relatorio\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2725,
+   "resposta": "\"sem contagem no relatorio\""
+  },
+  {
+   "id": "e029",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4037,
+   "resposta": "\"Se não houver contagem no relatório, o texto usado é 'sem contagem no relatório'.\""
+  },
+  {
+   "id": "e030",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5761,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1404,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1821,
+   "resposta": "O nome do arquivo JSON que a função lê é \"REGISTRO\"."
+  },
+  {
+   "id": "e030",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1091,
+   "resposta": "O nome do arquivo JSON que a função `carregar` lê é 'triagem-confirmacao.jsonl'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 367,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 557,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 969,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e030",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3131,
+   "resposta": "O nome do arquivo JSON que a função lê é 'relatorio.json'."
+  },
+  {
+   "id": "e031",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5733,
+   "resposta": "A chave 'alvo' na primeira inserção em 'saida' é atribuída o valor 'jev'."
+  },
+  {
+   "id": "e031",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3554,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e031",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 2947,
+   "resposta": "O valor atribuído à chave 'alvo' na primeira inserção em 'saida' é 'jev'."
+  },
+  {
+   "id": "e031",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4183,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e031",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 737,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e031",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1601,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e031",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4418,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e031",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4673,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "e032",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 8966,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4205,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1511,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4054,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1333,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3250,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 6122,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e032",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 7222,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'fi"
+  },
+  {
+   "id": "e033",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8170,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2988,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1132,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é None."
+  },
+  {
+   "id": "e033",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5448,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2661,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2842,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3111,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e033",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3893,
+   "resposta": "O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "e034",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10120,
+   "resposta": "A constante usada como semente para o gerador aleatório é `SEMENTE`."
+  },
+  {
+   "id": "e034",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 4418,
+   "resposta": "A constante usada como semente para o gerador aleatório é COBERTURA_MINIMA."
+  },
+  {
+   "id": "e034",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 2061,
+   "resposta": "A constante usada como semente para o gerador aleatório é chamada de SEMENTE."
+  },
+  {
+   "id": "e034",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1741,
+   "resposta": "A constante usada como semente para o gerador aleatório é SEMENTE."
+  },
+  {
+   "id": "e034",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 785,
+   "resposta": "A constante usada como semente para o gerador aleatório é \"SEMENTE\"."
+  },
+  {
+   "id": "e034",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1415,
+   "resposta": "A constante usada como semente para o gerador aleatório é chamada de SEMENTE."
+  },
+  {
+   "id": "e034",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2848,
+   "resposta": "A constante usada como semente para o gerador aleatório é chamada de SEMENTE."
+  },
+  {
+   "id": "e034",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5200,
+   "resposta": "A constante usada como semente para o gerador aleatório é chamada de SEMENTE."
+  },
+  {
+   "id": "e035",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4704,
+   "resposta": "\"gabarito do autor, sem adjudicação\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 675,
+   "resposta": "\"gabarito do autor, sem adjudicação\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 958,
+   "resposta": "\"gabarito do autor, sem adjudicação\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1393,
+   "resposta": "\"gabarito do autor, sem adjudicação\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "jev-1",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 170,
+   "resposta": "\"O valor da chave 'adjudicado' em 'procedencia' é falsy.\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "jev-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1603,
+   "resposta": "\"Mensagem: 'sem execução'\"."
+  },
+  {
+   "id": "e035",
+   "arranjo": "jev-3",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2081,
+   "resposta": "\"Sem execução\""
+  },
+  {
+   "id": "e035",
+   "arranjo": "jev-5",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3071,
+   "resposta": "A mensagem retornada é \"sem execução\"."
+  },
+  {
+   "id": "e036",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10284,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2129,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1583,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'ensure_ascii'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3544,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 643,
+   "resposta": "A primeira chave que a função verifica é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5003,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5161,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e036",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6735,
+   "resposta": "A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7768,
+   "resposta": "O método HTTP usado na requisição é 'POST'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1042,
+   "resposta": "O método HTTP usado na requisição é 'POST'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1590,
+   "resposta": "A requisição utiliza o método HTTP GET."
+  },
+  {
+   "id": "e037",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1120,
+   "resposta": "O método HTTP usado na requisição é 'POST'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 675,
+   "resposta": "POST"
+  },
+  {
+   "id": "e037",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 850,
+   "resposta": "O método HTTP usado na requisição é 'POST'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2267,
+   "resposta": "The HTTP method used in the request is 'POST'."
+  },
+  {
+   "id": "e037",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4008,
+   "resposta": "O método HTTP usado na requisição é 'POST'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6636,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2759,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1579,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1888,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1431,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1579,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1714,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e038",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3665,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8541,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1914,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'comprometido'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1381,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'f1s'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5095,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 730,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3204,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3406,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e039",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5095,
+   "resposta": "A chave que armazena o tipo de falha no dicionário retornado é 'tipo_de_falha'."
+  },
+  {
+   "id": "e040",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9215,
+   "resposta": "A chave 'sugere' no dicionário de decisão é inicializada com o valor False."
+  },
+  {
+   "id": "e040",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1132,
+   "resposta": "O valor atribuído inicialmente à chave 'sugere' no dicionário de decisão é None."
+  },
+  {
+   "id": "e040",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1071,
+   "resposta": "O valor inicial atribuído à chave 'sugere' no dicionário de decisão é None."
+  },
+  {
+   "id": "e040",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4252,
+   "resposta": "A chave 'sugere' é inicializada com o valor False no dicionário de decisão."
+  },
+  {
+   "id": "e040",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1117,
+   "resposta": "A chave 'sugere' é inicialmente atribuída com o valor False no dicionário de decisão."
+  },
+  {
+   "id": "e040",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2745,
+   "resposta": "A chave 'sugere' é inicializada com o valor False no dicionário de decisão."
+  },
+  {
+   "id": "e040",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5548,
+   "resposta": "A chave 'sugere' é inicializada como False no dicionário de decisão."
+  },
+  {
+   "id": "e040",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6814,
+   "resposta": "A chave 'sugere' é inicializada como False no dicionário de decisão."
+  },
+  {
+   "id": "e041",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 14989,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4902,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4902,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3416,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1602,
+   "resposta": "A chave 'phase' no dicionário retornado tem o valor 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2908,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7395,
+   "resposta": "The value of the 'phase' key in the returned dictionary is 'confirmation'."
+  },
+  {
+   "id": "e041",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11118,
+   "resposta": "O valor da chave 'phase' no dicionário retornado é 'confirmation'."
+  },
+  {
+   "id": "e042",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5271,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1247,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1015,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"None\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1917,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é 'individual'."
+  },
+  {
+   "id": "e042",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 499,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 711,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 985,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e042",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4067,
+   "resposta": "A palavra usada no ID para representar o caso em que lote é False é \"individual\"."
+  },
+  {
+   "id": "e043",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 8035,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'roteados_para_modelo_barato'."
+  },
+  {
+   "id": "e043",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 993,
+   "resposta": "A chave 'fracao_para_modelo_barato' indica a fração de respostas enviadas ao modelo barato."
+  },
+  {
+   "id": "e043",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4744,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "e043",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6070,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "e043",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 747,
+   "resposta": "A chave 'fracao_para_modelo_barato' indica a fração de respostas enviadas ao modelo barato."
+  },
+  {
+   "id": "e043",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4744,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "e043",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6177,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "e043",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6393,
+   "resposta": "A chave do dicionário que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "e044",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 6611,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e044",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1689,
+   "resposta": "A exceção lançada é ValueError."
+  },
+  {
+   "id": "e044",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1825,
+   "resposta": "A exceção lançada é `SystemExit`."
+  },
+  {
+   "id": "e044",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 834,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e044",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 498,
+   "resposta": "A exceção lançada é PricingError."
+  },
+  {
+   "id": "e044",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1759,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e044",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 1906,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e044",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3790,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e045",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10533,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é \"referencia\"."
+  },
+  {
+   "id": "e045",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3831,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e045",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1632,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é \"acuracia\"."
+  },
+  {
+   "id": "e045",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8184,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e045",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1952,
+   "resposta": "A chave usada para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e045",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2454,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e045",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4333,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e045",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5486,
+   "resposta": "A chave para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referencia'."
+  },
+  {
+   "id": "e046",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5921,
+   "resposta": "A exceção levantada quando a função não é encontrada é `ValueError`."
+  },
+  {
+   "id": "e046",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1041,
+   "resposta": "A exceção levantada quando a função não é encontrada é `NameError`."
+  },
+  {
+   "id": "e046",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1195,
+   "resposta": "A exceção levantada quando a função não é encontrada é `NameError`."
+  },
+  {
+   "id": "e046",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1439,
+   "resposta": "A exceção levantada quando a função não é encontrada é `ValueError`."
+  },
+  {
+   "id": "e046",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 392,
+   "resposta": "A exceção levantada é ValueError."
+  },
+  {
+   "id": "e046",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1283,
+   "resposta": "A exceção levantada quando a função não é encontrada é ValueError."
+  },
+  {
+   "id": "e046",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2070,
+   "resposta": "A exceção levantada quando a função não é encontrada é ValueError."
+  },
+  {
+   "id": "e046",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2611,
+   "resposta": "A exceção levantada quando a função não é encontrada é ValueError."
+  },
+  {
+   "id": "e047",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9719,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1864,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2494,
+   "resposta": "A constante de arredondamento utilizada na conversão é 'round'."
+  },
+  {
+   "id": "e047",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5570,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 598,
+   "resposta": "A constante de arredondamento utilizada é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3976,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4852,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e047",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5881,
+   "resposta": "A constante de arredondamento utilizada na conversão é ROUND_CEILING."
+  },
+  {
+   "id": "e048",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 7822,
+   "resposta": "\"origem\" não é atribuído em nenhum dos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1757,
+   "resposta": "A chave \"origem\" não é atribuída em nenhum dos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3727,
+   "resposta": "A chave \"origem\" não é atribuída em nenhum dos dicionários internos criados nos trechos de código fornecidos."
+  },
+  {
+   "id": "e048",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2466,
+   "resposta": "A chave \"origem\" é atribuída o valor \"autor\" nos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 578,
+   "resposta": "A chave \"origem\" é atribuída o valor \"autor\" nos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1781,
+   "resposta": "A chave \"origem\" é atribuída o valor \"autor\" nos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4391,
+   "resposta": "A chave \"origem\" é atribuída o valor \"autor\" nos dicionários internos criados."
+  },
+  {
+   "id": "e048",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5658,
+   "resposta": "A chave \"origem\" nos dicionários internos criados é atribuída o valor \"autor\"."
+  },
+  {
+   "id": "e049",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4702,
+   "resposta": "A função `cobertura_dos_bracos` verifica se a chave 'type' em cada dicionário da lista é igual a 'text'."
+  },
+  {
+   "id": "e049",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2287,
+   "resposta": "A chave 'type' verifica se o valor é do tipo 'choice'."
+  },
+  {
+   "id": "e049",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2287,
+   "resposta": "A função verifica se a chave 'type' tem o valor 'choice' nos dicionários da lista."
+  },
+  {
+   "id": "e049",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3923,
+   "resposta": "A função `texto` verifica se a chave 'type' em um dicionário é igual a 'text'."
+  },
+  {
+   "id": "e049",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 399,
+   "resposta": "A função verifica se a chave 'type' tem o valor 'text' nos dicionários da lista."
+  },
+  {
+   "id": "e049",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1832,
+   "resposta": "A função verifica se a chave 'type' tem o valor 'text'."
+  },
+  {
+   "id": "e049",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 2226,
+   "resposta": "A função `tarefas_r7` verifica se a chave 'type' em um dicionário é igual a 'choice'."
+  },
+  {
+   "id": "e049",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3597,
+   "resposta": "A função `tarefas_r7` verifica se a chave 'type' em um dicionário é igual a 'choice'."
+  },
+  {
+   "id": "e050",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7011,
+   "resposta": "O valor do timeout (em segundos) usado na chamada urllib.request.urlopen é 15."
+  },
+  {
+   "id": "e050",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3463,
+   "resposta": "O valor do timeout usado na chamada urllib.request.urlopen é de 15 segundos."
+  },
+  {
+   "id": "e050",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1081,
+   "resposta": "O valor do timeout (em segundos) usado na chamada urllib.request.urlopen não é fornecido no código apresentado."
+  },
+  {
+   "id": "e050",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4947,
+   "resposta": "O valor do timeout usado na chamada urllib.request.urlopen é de 90 segundos."
+  },
+  {
+   "id": "e050",
+   "arranjo": "jev-1",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1484,
+   "resposta": "O valor do timeout usado na chamada urllib.request.urlopen é 90 segundos."
+  },
+  {
+   "id": "e050",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3463,
+   "resposta": "O valor do timeout usado na chamada urllib.request.urlopen é de 15 segundos."
+  },
+  {
+   "id": "e050",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4082,
+   "resposta": "O valor do timeout (em segundos) usado na chamada urllib.request.urlopen é 90."
+  },
+  {
+   "id": "e050",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4675,
+   "resposta": "O valor do timeout (em segundos) usado na chamada urllib.request.urlopen é 90."
+  },
+  {
+   "id": "e051",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7188,
+   "resposta": "O valor da chave 'system_id' no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "e051",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2291,
+   "resposta": "O valor da chave system_id no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "e051",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1780,
+   "resposta": "O valor da chave system_id no dicionário retornado pela função é None."
+  },
+  {
+   "id": "e051",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3910,
+   "resposta": "O valor da chave 'system_id' no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "e051",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1955,
+   "resposta": "O valor da chave system_id no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "e051",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2291,
+   "resposta": "O valor da chave \"system_id\" no dicionário retornado pela função é \"S01\"."
+  },
+  {
+   "id": "e051",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3036,
+   "resposta": "O valor da chave \"system_id\" no dicionário retornado pela função é \"S01\"."
+  },
+  {
+   "id": "e051",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4163,
+   "resposta": "O valor da chave \"system_id\" no dicionário retornado pela função é \"S01\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11160,
+   "resposta": "A chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3105,
+   "resposta": "O valor da chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3592,
+   "resposta": "The value of the key \"phase\" in the returned dictionary is not provided in the given code snippet."
+  },
+  {
+   "id": "e052",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5345,
+   "resposta": "O valor da chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2444,
+   "resposta": "O valor da chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2717,
+   "resposta": "O valor da chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4203,
+   "resposta": "A chave \"phase\" no dicionário retornado pela função tem o valor \"confirmation\"."
+  },
+  {
+   "id": "e052",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5228,
+   "resposta": "O valor da chave \"phase\" no dicionário retornado pela função é \"confirmation\"."
+  },
+  {
+   "id": "e053",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4725,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3205,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 302,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é de 3."
+  },
+  {
+   "id": "e053",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1833,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 777,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1100,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1235,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e053",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1976,
+   "resposta": "O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "e054",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4597,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1391,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'total'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 946,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'limite_superior_erro_por_familia'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3153,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 889,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1534,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1634,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e054",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2091,
+   "resposta": "A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10050,
+   "resposta": "A chave no dicionário retornado que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 3418,
+   "resposta": "A chave no dicionário retornado que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1520,
+   "resposta": "A chave no dicionário retornado que armazena a confiança da escolha é 'cobertura'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6432,
+   "resposta": "A chave no dicionário retornado que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 862,
+   "resposta": "A chave que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3426,
+   "resposta": "A chave no dicionário que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3959,
+   "resposta": "A chave no dicionário retornado que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e055",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7460,
+   "resposta": "A chave no dicionário que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 10629,
+   "resposta": "A chave opcional é \"kind\"."
+  },
+  {
+   "id": "e056",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2650,
+   "resposta": "A chave opcional é 'kind'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 2040,
+   "resposta": "A chave opcional é \"marca\"."
+  },
+  {
+   "id": "e056",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8105,
+   "resposta": "A chave opcional que só existe nos corpora piloto e de evidencia é 'kind'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2220,
+   "resposta": "A chave opcional é 'kind'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2650,
+   "resposta": "A chave opcional é 'kind'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2828,
+   "resposta": "A chave opcional é 'kind'."
+  },
+  {
+   "id": "e056",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3371,
+   "resposta": "A chave opcional é 'kind'."
+  },
+  {
+   "id": "e057",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4087,
+   "resposta": "O código que inicia a última mensagem da lista retornada é `pendencias(adj)`."
+  },
+  {
+   "id": "e057",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1346,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo declarado, nunca"
+  },
+  {
+   "id": "e057",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 948,
+   "resposta": "O código que inicia a última mensagem da lista retornada é `return casos[:N_CASOS]`."
+  },
+  {
+   "id": "e057",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 2612,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"return lista\"."
+  },
+  {
+   "id": "e057",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 973,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"lista.append('P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo de"
+  },
+  {
+   "id": "e057",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1246,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo declarado, nunca"
+  },
+  {
+   "id": "e057",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1662,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo declarado, nunca"
+  },
+  {
+   "id": "e057",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2370,
+   "resposta": "O código que inicia a última mensagem da lista retornada é \"P5: fluxo completo com minutagem humana. O custo por decisão deste painel usa tempo declarado, nunca"
+  },
+  {
+   "id": "e058",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 9254,
+   "resposta": "\"Não há hooks a remover.\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2146,
+   "resposta": "\"Quando não há hooks a remover, a mensagem exibida é 'nada a remover'.\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3505,
+   "resposta": "\"Não há hooks a remover.\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4362,
+   "resposta": "A mensagem exibida quando não há hooks a remover é: \"nada a remover\"."
+  },
+  {
+   "id": "e058",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 833,
+   "resposta": "\"Quando não há hooks a remover, a mensagem exibida é 'nada a remover'.\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2146,
+   "resposta": "\"Quando não há hooks a remover, a mensagem exibida é 'nada a remover'.\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 2601,
+   "resposta": "\"Nenhum hook a remover\""
+  },
+  {
+   "id": "e058",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3845,
+   "resposta": "\"Nada a remover\""
+  },
+  {
+   "id": "e059",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7656,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"answers\"."
+  },
+  {
+   "id": "e059",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2004,
+   "resposta": "A variável \"casos\" contém a lista final de casos antes de ser retornada."
+  },
+  {
+   "id": "e059",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 316,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"casos\"."
+  },
+  {
+   "id": "e059",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2411,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é `casos`."
+  },
+  {
+   "id": "e059",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 676,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"casos\"."
+  },
+  {
+   "id": "e059",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1421,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"casos\"."
+  },
+  {
+   "id": "e059",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4566,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"casos\"."
+  },
+  {
+   "id": "e059",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6076,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"casos\"."
+  },
+  {
+   "id": "e060",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 13017,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e060",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3726,
+   "resposta": "O valor padrão do parâmetro b é 0.90."
+  },
+  {
+   "id": "e060",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4908,
+   "resposta": "O valor padrão do parâmetro b não é fornecido no código exibido."
+  },
+  {
+   "id": "e060",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3290,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e060",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 992,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e060",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1664,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e060",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3429,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e060",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9622,
+   "resposta": "O valor padrão do parâmetro b é 0.75."
+  },
+  {
+   "id": "e061",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4990,
+   "resposta": "O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "e061",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1205,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "e061",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2441,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "e061",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1326,
+   "resposta": "O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "e061",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 621,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "e061",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2441,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "e061",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2783,
+   "resposta": "O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "e061",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3916,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "e062",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 13138,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4316,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3084,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4402,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1264,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1396,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4578,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e062",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7470,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "e063",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7452,
+   "resposta": "A chave 'rodada' nos dicionários adicionados em 'tarefas_r13' é atribuída o valor 'R13'."
+  },
+  {
+   "id": "e063",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1016,
+   "resposta": "O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'."
+  },
+  {
+   "id": "e063",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1839,
+   "resposta": "O valor atribuído à chave 'rodada' nos dicionários adicionados é 'rodada'."
+  },
+  {
+   "id": "e063",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3652,
+   "resposta": "O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'."
+  },
+  {
+   "id": "e063",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 586,
+   "resposta": "'R13'"
+  },
+  {
+   "id": "e063",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1016,
+   "resposta": "'R13'"
+  },
+  {
+   "id": "e063",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1203,
+   "resposta": "O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'."
+  },
+  {
+   "id": "e063",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4826,
+   "resposta": "O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'."
+  },
+  {
+   "id": "e064",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7553,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e064",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1766,
+   "resposta": "O valor padrão do argumento \"--n\" não é fornecido no código fornecido."
+  },
+  {
+   "id": "e064",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 737,
+   "resposta": "O valor padrão do argumento \"--n\" é definido pela variável \"N_CASOS\" no módulo \"laboratorio/r11_extremos.py\"."
+  },
+  {
+   "id": "e064",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3350,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e064",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 984,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e064",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1257,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e064",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1350,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e064",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2035,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "e065",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6758,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1673,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 2303,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3804,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1168,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2503,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2829,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e065",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3689,
+   "resposta": "A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11547,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1630,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '/api/v1/chat/completions'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3352,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é R15."
+  },
+  {
+   "id": "e066",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2548,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1989,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2295,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3059,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e066",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5817,
+   "resposta": "A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "e067",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11510,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é `SystemExit`."
+  },
+  {
+   "id": "e067",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 4160,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é \"SystemExit\"."
+  },
+  {
+   "id": "e067",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4014,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é `KeyError`."
+  },
+  {
+   "id": "e067",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3322,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é `SystemExit`."
+  },
+  {
+   "id": "e067",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 895,
+   "resposta": "A exceção levantada é `SystemExit` com a mensagem \"alvo inexistente no repositório: [faltando]\"."
+  },
+  {
+   "id": "e067",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1088,
+   "resposta": "A exceção levantada é `SystemExit` com a mensagem \"alvo inexistente no repositório: [faltando]\"."
+  },
+  {
+   "id": "e067",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1611,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é `SystemExit`."
+  },
+  {
+   "id": "e067",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5273,
+   "resposta": "A exceção levantada quando algum alvo está ausente no repositório é `SystemExit`."
+  },
+  {
+   "id": "e068",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 5266,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2286,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1160,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2896,
+   "resposta": "O valor inteiro somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 421,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 794,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1533,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e068",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2399,
+   "resposta": "O valor inteiro que é somado ao final da estimativa de tokens é 64."
+  },
+  {
+   "id": "e069",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 6005,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e069",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 3073,
+   "resposta": "A porta padrão usada pelo servidor é 8080."
+  },
+  {
+   "id": "e069",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 901,
+   "resposta": "A porta padrão usada pelo servidor é 8080."
+  },
+  {
+   "id": "e069",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2452,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e069",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 371,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e069",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 645,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e069",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1501,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e069",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2636,
+   "resposta": "A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "e070",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 9587,
+   "resposta": "O endpoint registrado na chamada register_arm é \"/api/alpha/decisions\"."
+  },
+  {
+   "id": "e070",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1535,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e070",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 4460,
+   "resposta": "O endpoint registrado na chamada register_arm é \"R18-geracao\"."
+  },
+  {
+   "id": "e070",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1097,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e070",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 369,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e070",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1357,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e070",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1644,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e070",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3038,
+   "resposta": "O endpoint registrado na chamada register_arm é '/api/alpha/decisions'."
+  },
+  {
+   "id": "e071",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 11863,
+   "resposta": "O método `json.loads(AMOSTRA.read_text(encoding='utf-8'))` é chamado para ler o conteúdo do arquivo AMOSTRA."
+  },
+  {
+   "id": "e071",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": true,
+   "bytes": 4346,
+   "resposta": "O método chamado para ler o conteúdo do arquivo AMOSTRA é `json.loads(AMOSTRA.read_text(encoding='utf-8'))`."
+  },
+  {
+   "id": "e071",
+   "arranjo": "sorteio-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3864,
+   "resposta": "O método chamado para ler o conteúdo do arquivo AMOSTRA é `json.loads(AMOSTRA.read_text(encoding='utf-8'))['amostra']`."
+  },
+  {
+   "id": "e071",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 6032,
+   "resposta": "O método `json.loads()` é chamado para ler o conteúdo do arquivo AMOSTRA."
+  },
+  {
+   "id": "e071",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1336,
+   "resposta": "O método chamado para ler o conteúdo do arquivo AMOSTRA é `json.loads(AMOSTRA.read_text(encoding='utf-8'))`."
+  },
+  {
+   "id": "e071",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3864,
+   "resposta": "O método `json.loads(AMOSTRA.read_text(encoding='utf-8'))` é chamado para ler o conteúdo do arquivo AMOSTRA."
+  },
+  {
+   "id": "e071",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 7109,
+   "resposta": "O método `json.loads(AMOSTRA.read_text(encoding='utf-8'))` é chamado para ler o conteúdo do arquivo AMOSTRA."
+  },
+  {
+   "id": "e071",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 8491,
+   "resposta": "O método `json.loads(AMOSTRA.read_text(encoding='utf-8'))` é chamado para ler o conteúdo do arquivo AMOSTRA."
+  },
+  {
+   "id": "e072",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4852,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'acao'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "bm25-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1473,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'entra_na_leitura'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1343,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'chave'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 4241,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'acao'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1257,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'choice'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 2154,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'acao'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3010,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'acao'."
+  },
+  {
+   "id": "e072",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": false,
+   "bytes": 3399,
+   "resposta": "A chave usada para obter a escolha da resposta no dicionário de respostas é 'acao'."
+  },
+  {
+   "id": "e073",
+   "arranjo": "todos",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 3528,
+   "resposta": "A exceção lançada quando não existe preço publicado para o provedor e modelo é `PricingError`."
+  },
+  {
+   "id": "e073",
+   "arranjo": "bm25-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 875,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e073",
+   "arranjo": "sorteio-2",
+   "alvo_presente": false,
+   "certo": false,
+   "bytes": 1023,
+   "resposta": "A exceção lançada quando não existe preço publicado para o provedor e modelo não é mencionada nos trechos de código fornecidos."
+  },
+  {
+   "id": "e073",
+   "arranjo": "jev-cab-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 2561,
+   "resposta": "A exceção lançada quando não existe preço publicado para o provedor e modelo é `PricingError`."
+  },
+  {
+   "id": "e073",
+   "arranjo": "jev-1",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 694,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "e073",
+   "arranjo": "jev-2",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1148,
+   "resposta": "A exceção lançada é PricingError."
+  },
+  {
+   "id": "e073",
+   "arranjo": "jev-3",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1287,
+   "resposta": "A exceção lançada quando não existe preço publicado para o provedor e modelo é `PricingError`."
+  },
+  {
+   "id": "e073",
+   "arranjo": "jev-5",
+   "alvo_presente": true,
+   "certo": true,
+   "bytes": 1714,
+   "resposta": "A exceção lançada quando não existe preço publicado para o provedor e modelo é `PricingError`."
+  }
+ ],
+ "pareado": {
+  "H18a jev-2 vs todos (resposta)": {
+   "so_jev-2": 7,
+   "so_todos": 2,
+   "p": 0.1797
+  },
+  "H18b jev-2 vs bm25-2 (alvo no topo)": {
+   "so_jev-2": 22,
+   "so_bm25-2": 1,
+   "p": 0.0
+  },
+  "H18b jev-2 vs bm25-2 (resposta)": {
+   "so_jev-2": 18,
+   "so_bm25-2": 1,
+   "p": 0.0001
+  },
+  "H18d jev-cab-2 vs jev-2 (resposta)": {
+   "so_jev-cab-2": 2,
+   "so_jev-2": 5,
+   "p": 0.4531
+  },
+  "controle jev-2 vs sorteio-2": {
+   "so_jev-2": 46,
+   "so_sorteio-2": 1,
+   "p": 0.0
+  }
+ },
+ "veredito": {
+  "H18a": "sustentada",
+  "H18b": "sustentada",
+  "H18d": "nao demonstrada"
+ },
+ "perguntas": [
+  {
+   "id": "e000",
+   "pergunta": "Qual é o provedor indicado na chave 'provider' do dicionário retornado?",
+   "alvo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "aceita": "(?i)\\bopenrouter\\b"
+  },
+  {
+   "id": "e001",
+   "pergunta": "Qual é o nome da constante usada como semente ao criar o objeto random?",
+   "alvo": "laboratorio/r11_extremos.py::condicoes",
+   "aceita": "(?i)\\bSEMENTE\\b"
+  },
+  {
+   "id": "e002",
+   "pergunta": "Qual exceção é tratada no bloco try/except ao carregar cada linha como JSON?",
+   "alvo": "integracao/jev_router/orcamento.py::_linhas",
+   "aceita": "(?i)\\bValueError\\b"
+  },
+  {
+   "id": "e003",
+   "pergunta": "Qual o valor inicial atribuído à variável ece?",
+   "alvo": "laboratorio/r0_calibracao.py::calibrar",
+   "aceita": "\\b0\\.0\\b"
+  },
+  {
+   "id": "e004",
+   "pergunta": "Qual o limite usado para decidir substituir a letra por uma tecla vizinha?",
+   "alvo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "aceita": "\\b0\\.45\\b"
+  },
+  {
+   "id": "e005",
+   "pergunta": "Qual é o valor retornado se a lista f1s estiver vazia?",
+   "alvo": "executor/run_e1_triagem.py::macro_f1",
+   "aceita": "\\b0\\.0\\b"
+  },
+  {
+   "id": "e006",
+   "pergunta": "Qual é o valor padrão do parâmetro campo_resposta?",
+   "alvo": "executor/gabarito.py::contagem_bruta",
+   "aceita": "\\bjev\\b"
+  },
+  {
+   "id": "e007",
+   "pergunta": "Qual é o valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando?",
+   "alvo": "integracao/avaliacao/comandos.py::rodar",
+   "aceita": "(?i)\\breversivel\\b"
+  },
+  {
+   "id": "e008",
+   "pergunta": "Qual é o valor padrão do parâmetro z?",
+   "alvo": "laboratorio/nucleo.py::wilson",
+   "aceita": "\\b1\\.96\\b"
+  },
+  {
+   "id": "e009",
+   "pergunta": "Qual é o nome da constante usada para limitar o número de itens no topo?",
+   "alvo": "executor/run_e4_ressalvas.py::avaliar",
+   "aceita": "\\bTOPO\\b"
+  },
+  {
+   "id": "e010",
+   "pergunta": "Qual é o nome da lista que contém apenas as linhas com escolha?",
+   "alvo": "laboratorio/r1_r3_estresse.py::acuracia",
+   "aceita": "(?i)\\bvalidas\\b"
+  },
+  {
+   "id": "e011",
+   "pergunta": "Qual é o valor atribuído à chave 'task' no dicionário retornado?",
+   "alvo": "executor/publicar_experimentos.py::decisao",
+   "aceita": "(?i)\\btriage\\b"
+  },
+  {
+   "id": "e012",
+   "pergunta": "Quantas armadilhas semânticas são citadas na mensagem de resumo de R8?",
+   "alvo": "laboratorio/r8_r9_adversarial.py::main",
+   "aceita": "\\b48\\b"
+  },
+  {
+   "id": "e013",
+   "pergunta": "Qual é a chave usada para armazenar a data e hora da execução no dicionário de saída?",
+   "alvo": "executor/adjudicar_e11.py::consolidar",
+   "aceita": "(?i)\\bat\\b"
+  },
+  {
+   "id": "e014",
+   "pergunta": "Qual é o valor padrão do parâmetro `modo`?",
+   "alvo": "integracao/jev_router/roteador.py::classificar",
+   "aceita": "\\bsombra\\b"
+  },
+  {
+   "id": "e015",
+   "pergunta": "Qual é o nome da chave que contém o anotador local nos dicionários retornados?",
+   "alvo": "executor/adjudicar_e11.py::desacordos",
+   "aceita": "(?i)\\banotador_local\\b"
+  },
+  {
+   "id": "e016",
+   "pergunta": "Qual exceção é lançada quando a versão do schema não é 1?",
+   "alvo": "executor/pricing.py::load_prices",
+   "aceita": "PricingError"
+  },
+  {
+   "id": "e017",
+   "pergunta": "Qual é o provedor especificado no campo 'provider' do dicionário retornado?",
+   "alvo": "executor/publicar_experimentos.py::e11_run",
+   "aceita": "\\bopenrouter\\b"
+  },
+  {
+   "id": "e018",
+   "pergunta": "Qual valor a função retorna quando os argumentos so_a e so_b são zero?",
+   "alvo": "laboratorio/nucleo.py::mcnemar_exato",
+   "aceita": "\\b1\\.0\\b"
+  },
+  {
+   "id": "e019",
+   "pergunta": "Qual chave do dicionário retornado contém o identificador do caso?",
+   "alvo": "executor/gabarito.py::do_anotador_local",
+   "aceita": "\\bcase_id\\b"
+  },
+  {
+   "id": "e020",
+   "pergunta": "Quantas casas decimais são usadas ao arredondar a cobertura?",
+   "alvo": "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+   "aceita": "(?i)\\b4\\b"
+  },
+  {
+   "id": "e021",
+   "pergunta": "Qual função da biblioteca math é utilizada para calcular o denominador?",
+   "alvo": "executor/run_e4_ressalvas.py::ndcg",
+   "aceita": "(?i)math\\.log2"
+  },
+  {
+   "id": "e022",
+   "pergunta": "Qual exceção é levantada quando o subprocess produz saída de erro?",
+   "alvo": "executor/smoke_mcp.py::exchange",
+   "aceita": "\\bRuntimeError\\b"
+  },
+  {
+   "id": "e023",
+   "pergunta": "Qual código de erro é retornado quando há erro de parsing?",
+   "alvo": "integracao/jev_mcp.py::main",
+   "aceita": "-32700"
+  },
+  {
+   "id": "e024",
+   "pergunta": "Qual a chave usada no dicionário resultado para armazenar a contagem total de casos?",
+   "alvo": "laboratorio/r0_calibracao.py::main",
+   "aceita": "\\bcasos\\b"
+  },
+  {
+   "id": "e025",
+   "pergunta": "Qual mensagem a função devolve quando o gasto está dentro do limite?",
+   "alvo": "integracao/jev_router/orcamento.py::pode_gastar",
+   "aceita": "(?i)\\bdentro do teto\\b"
+  },
+  {
+   "id": "e026",
+   "pergunta": "Qual o valor atribuído ao campo \"deployment\" nos resumos?",
+   "alvo": "executor/run_e15.py::report",
+   "aceita": "(?i)\\bexperimental_assistive_only\\b"
+  },
+  {
+   "id": "e027",
+   "pergunta": "Qual é o nome da chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento?",
+   "alvo": "executor/run_e12_replicacao.py::erro_grave",
+   "aceita": "(?i)falso_cancelar"
+  },
+  {
+   "id": "e028",
+   "pergunta": "Qual é o valor padrão do parâmetro campo?",
+   "alvo": "executor/erro_grave.py::medir",
+   "aceita": "\\bjev\\b"
+  },
+  {
+   "id": "e029",
+   "pergunta": "Qual texto é usado quando não há contagem no relatório?",
+   "alvo": "executor/publish_simple_round.py::note_for",
+   "aceita": "(?i)sem\\s+contagem\\s+no\\s+relatorio"
+  },
+  {
+   "id": "e030",
+   "pergunta": "Qual é o nome do arquivo JSON que a função lê?",
+   "alvo": "executor/analise.py::analisar_e1",
+   "aceita": "(?i)relatorio\\.json"
+  },
+  {
+   "id": "e031",
+   "pergunta": "Qual é o valor atribuído à chave 'alvo' na primeira inserção em 'saida'?",
+   "alvo": "laboratorio/r15_adversario_externo.py::tarefas",
+   "aceita": "(?i)\\bjev\\b"
+  },
+  {
+   "id": "e032",
+   "pergunta": "Quais são os campos verificados para identidade ou proveniência da execução?",
+   "alvo": "lab/server.py::validate_run_update",
+   "aceita": "\\[\\s*'id'\\s*,\\s*'system_id'\\s*,\\s*'phase'\\s*,\\s*'evidence'\\s*,\\s*'started_at'\\s*,\\s*'provider'\\s*,\\s*'model'\\s*,\\s*'dataset'\\s*,\\s*'finished_at'\\s*\\]"
+  },
+  {
+   "id": "e033",
+   "pergunta": "Qual é o valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos?",
+   "alvo": "executor/runner.py::validate_contract",
+   "aceita": "(?i)\\bchoice\\b"
+  },
+  {
+   "id": "e034",
+   "pergunta": "Qual é o nome da constante usada como semente para o gerador aleatório?",
+   "alvo": "executor/adjudicar_e11.py::cegar",
+   "aceita": "(?i)\\bSEMENTE\\b"
+  },
+  {
+   "id": "e035",
+   "pergunta": "Qual mensagem é retornada quando a chave 'adjudicado' em 'procedencia' tem valor falsy?",
+   "alvo": "executor/gabarito.py::rotulo",
+   "aceita": "(?i)gabarito\\s+do\\s+autor,\\s+sem\\s+adjudicação"
+  },
+  {
+   "id": "e036",
+   "pergunta": "Qual é a primeira chave que a função verifica ao procurar o limite superior de erro?",
+   "alvo": "executor/placar.py::limite_superior_erro_da_politica",
+   "aceita": "(?i)\\b(?:limite_superior_erro_por_familia)\\b"
+  },
+  {
+   "id": "e037",
+   "pergunta": "Qual método HTTP é usado na requisição?",
+   "alvo": "integracao/jev_router/cliente.py::transporte_http",
+   "aceita": "(?i)\\bPOST\\b"
+  },
+  {
+   "id": "e038",
+   "pergunta": "Qual é o valor padrão do argumento '--juiz'?",
+   "alvo": "executor/adjudicar_e12.py::main",
+   "aceita": "\\bterceiro juiz cego, outro fornecedor\\b"
+  },
+  {
+   "id": "e039",
+   "pergunta": "Qual é a chave que armazena o tipo de falha no dicionário retornado?",
+   "alvo": "laboratorio/r1_r3_estresse.py::executar",
+   "aceita": "\\btipo_de_falha\\b"
+  },
+  {
+   "id": "e040",
+   "pergunta": "Qual é o valor atribuído inicialmente à chave 'sugere' no dicionário de decisão?",
+   "alvo": "integracao/jev_router/politica.py::decidir",
+   "aceita": "\\bFalse\\b"
+  },
+  {
+   "id": "e041",
+   "pergunta": "Qual é o valor da chave 'phase' no dicionário retornado?",
+   "alvo": "executor/publicar_experimentos.py::e7_run",
+   "aceita": "(?i)\\bconfirmation\\b"
+  },
+  {
+   "id": "e042",
+   "pergunta": "Qual palavra é usada no ID para representar o caso em que lote é False?",
+   "alvo": "executor/run_e2_fatorial.py::condicoes",
+   "aceita": "\\bindividual\\b"
+  },
+  {
+   "id": "e043",
+   "pergunta": "Qual chave do dicionário retornado indica a fração de respostas enviadas ao modelo barato?",
+   "alvo": "integracao/avaliacao/rodar.py::economia",
+   "aceita": "\\bfracao_para_modelo_barato\\b"
+  },
+  {
+   "id": "e044",
+   "pergunta": "Qual exceção é lançada quando um dos parâmetros de token tem valor negativo ou não é inteiro?",
+   "alvo": "executor/pricing.py::observed_nusd",
+   "aceita": "PricingError\\s*\\(.*?invalid.*?\\)|PricingError\\s*\\(.*?invalido no usage\\)"
+  },
+  {
+   "id": "e045",
+   "pergunta": "Qual é o nome da chave usada para acessar a acurácia de referência no dicionário \"dimensoes\"?",
+   "alvo": "laboratorio/gerar_mapa_visual.py::main",
+   "aceita": "(?i)\\breferencia\\b"
+  },
+  {
+   "id": "e046",
+   "pergunta": "Qual exceção é levantada quando a função não é encontrada?",
+   "alvo": "executor/run_e15.py::excerpt",
+   "aceita": "(?i)\\bValueError\\b"
+  },
+  {
+   "id": "e047",
+   "pergunta": "Qual constante de arredondamento é utilizada na conversão?",
+   "alvo": "executor/pricing.py::usd_to_nusd",
+   "aceita": "(?i)\\bROUND_CEILING\\b"
+  },
+  {
+   "id": "e048",
+   "pergunta": "Qual valor é atribuído à chave \"origem\" nos dicionários internos criados?",
+   "alvo": "executor/gabarito.py::do_autor",
+   "aceita": "(?i)\\bautor\\b"
+  },
+  {
+   "id": "e049",
+   "pergunta": "Qual é o valor da chave 'type' que a função verifica nos dicionários da lista?",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::texto",
+   "aceita": "\\btext\\b"
+  },
+  {
+   "id": "e050",
+   "pergunta": "Qual o valor do timeout (em segundos) usado na chamada urllib.request.urlopen?",
+   "alvo": "executor/shared.py::current_prices",
+   "aceita": "(?i)\\b15\\b"
+  },
+  {
+   "id": "e051",
+   "pergunta": "Qual é o valor da chave system_id no dicionário retornado pela função?",
+   "alvo": "executor/publicar_experimentos.py::e2_run",
+   "aceita": "['\"]?S01['\"]?"
+  },
+  {
+   "id": "e052",
+   "pergunta": "Qual é o valor da chave \"phase\" no dicionário retornado pela função?",
+   "alvo": "executor/publicar_experimentos.py::e10_run",
+   "aceita": "(?i)\\bconfirmation\\b"
+  },
+  {
+   "id": "e053",
+   "pergunta": "Qual é o número máximo de caracteres do campo 'pedido' que são incluídos na saída?",
+   "alvo": "integracao/avaliacao/rodar.py::rodar",
+   "aceita": "(?i)\\b300\\b"
+  },
+  {
+   "id": "e054",
+   "pergunta": "Qual chave do dicionário retornado indica o número total de linhas válidas?",
+   "alvo": "laboratorio/r11_extremos.py::resumo",
+   "aceita": "\\bn\\b"
+  },
+  {
+   "id": "e055",
+   "pergunta": "Qual é o nome da chave no dicionário retornado que armazena a confiança da escolha?",
+   "alvo": "laboratorio/r11_extremos.py::executar",
+   "aceita": "\\bconfianca\\b"
+  },
+  {
+   "id": "e056",
+   "pergunta": "Qual é o nome da chave opcional que só existe nos corpora piloto e de evidencia?",
+   "alvo": "executor/run_e1_triagem.py::resumo",
+   "aceita": "(?i)\\bkind\\b"
+  },
+  {
+   "id": "e057",
+   "pergunta": "Qual é o código que inicia a última mensagem da lista retornada?",
+   "alvo": "executor/placar.py::pendencias",
+   "aceita": "(?i)\\bP5\\b"
+  },
+  {
+   "id": "e058",
+   "pergunta": "Qual mensagem é exibida quando não há hooks a remover?",
+   "alvo": "integracao/instalar.py::desinstalar",
+   "aceita": "(?s).*\\bnada a remover\\b.*"
+  },
+  {
+   "id": "e059",
+   "pergunta": "Qual é o nome da variável que contém a lista final de casos antes de ser retornada?",
+   "alvo": "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+   "aceita": "(?i)\\bcasos\\b"
+  },
+  {
+   "id": "e060",
+   "pergunta": "Qual é o valor padrão do parâmetro b?",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "aceita": "\\b0\\.75\\b"
+  },
+  {
+   "id": "e061",
+   "pergunta": "Qual valor é usado para o cabeçalho 'User-Agent' na requisição?",
+   "alvo": "executor/run_canaries.py::provider_snapshot",
+   "aceita": "(?i)jev[-_]lab/1\\.0"
+  },
+  {
+   "id": "e062",
+   "pergunta": "Qual é o valor máximo de comprimento de trecho que a função descarta?",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "aceita": "\\b4600\\b"
+  },
+  {
+   "id": "e063",
+   "pergunta": "Qual o valor atribuído à chave 'rodada' nos dicionários adicionados?",
+   "alvo": "laboratorio/r12_r13_contexto.py::tarefas_r13",
+   "aceita": "\\bR13\\b"
+  },
+  {
+   "id": "e064",
+   "pergunta": "Qual é o valor padrão do argumento \"--n\"?",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "aceita": "\\b60\\b"
+  },
+  {
+   "id": "e065",
+   "pergunta": "Qual é a chave usada para armazenar a latência em milissegundos?",
+   "alvo": "executor/run_e9_prevalencia.py::carregar",
+   "aceita": "(?i)\\blatency_ms\\b"
+  },
+  {
+   "id": "e066",
+   "pergunta": "Qual é a versão do protocolo especificada na mensagem de inicialização?",
+   "alvo": "executor/smoke_mcp.py::main",
+   "aceita": "['\\\"]?2024-11-05['\\\"]?"
+  },
+  {
+   "id": "e067",
+   "pergunta": "Qual exceção é levantada quando algum alvo está ausente no repositório?",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "aceita": ".*\\bSystemExit\\b.*"
+  },
+  {
+   "id": "e068",
+   "pergunta": "Qual é o valor inteiro que é somado ao final da estimativa de tokens?",
+   "alvo": "executor/runner.py::estimate_input_tokens",
+   "aceita": "\\b64\\b"
+  },
+  {
+   "id": "e069",
+   "pergunta": "Qual é a porta padrão usada pelo servidor?",
+   "alvo": "lab/server.py::main",
+   "aceita": "\\b8766\\b"
+  },
+  {
+   "id": "e070",
+   "pergunta": "Qual o endpoint registrado na chamada register_arm?",
+   "alvo": "executor/run_canaries.py::prepare",
+   "aceita": "['\"]?\\/api\\/alpha\\/decisions['\"]?"
+  },
+  {
+   "id": "e071",
+   "pergunta": "Qual método é chamado para ler o conteúdo do arquivo AMOSTRA?",
+   "alvo": "integracao/avaliacao/com_contexto.py::main",
+   "aceita": "\\bread_text\\b"
+  },
+  {
+   "id": "e072",
+   "pergunta": "Qual é a chave usada para obter a escolha da resposta no dicionário de respostas?",
+   "alvo": "executor/run_e12_replicacao.py::braco_jev",
+   "aceita": "\\bchoice\\b"
+  },
+  {
+   "id": "e073",
+   "pergunta": "Qual exceção é lançada quando não existe preço publicado para o provedor e modelo?",
+   "alvo": "executor/pricing.py::entry",
+   "aceita": "PricingError"
+  }
+ ]
+}

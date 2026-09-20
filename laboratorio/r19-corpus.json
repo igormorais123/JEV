@@ -1,0 +1,543 @@
+{
+ "semente": 20260920,
+ "gerador": "mistralai/mistral-nemo",
+ "moldes": [
+  [
+   "terceiro-quer",
+   "informacao",
+   "Escreva uma mensagem curta de cliente para um atendimento em que OUTRA PESSOA (parente, socio, chefe) quer {acao}, mas quem escreve apenas pergunta como funciona e nao pede nada. Nao use as palavras \"apenas pergunto\" nem \"so quero saber\"."
+  ],
+  [
+   "terceiro-quer-eu-nao",
+   "informacao",
+   "Escreva uma mensagem curta de cliente em que OUTRA PESSOA quer {acao} e quem escreve diz que NAO quer isso, so quer entender as consequencias."
+  ],
+  [
+   "terceiro-contra-eu-quero",
+   "{acao_classe}",
+   "Escreva uma mensagem curta de cliente em que outra pessoa ACONSELHA A NAO fazer nada, mas quem escreve decide e pede {acao} para si mesmo, de forma clara."
+  ],
+  [
+   "terceiro-ja-fez",
+   "informacao",
+   "Escreva uma mensagem curta de cliente em que OUTRA PESSOA ja fez {acao} no passado e quem escreve so quer saber se aquilo continua valendo. Nao pede nada novo."
+  ],
+  [
+   "eu-peco-terceiro-cita",
+   "{acao_classe}",
+   "Escreva uma mensagem curta de cliente em que quem escreve pede {acao} para si, e menciona de passagem que um parente teve outro problema diferente."
+  ]
+ ],
+ "casos": [
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, gostaria de saber como funciona o processo de troca de um produto por outro igual, já que outra pessoa irá realizar essaItems"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Sou [nome], parente de [nome completo da pessoa que está pedindo], preciso entender melhor como Obter a segunda via do boleto. Poderia me ajudar?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Gostaria de entender melhor o processo de cancelamento do nosso plano. Como posso proceder para isso?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, outra pessoa quer trocar um produto idêntico. Como funciona esse processo?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, tenho uma pergunta sobre a troca de um produto. Outra pessoa quer maladesso, mas ela não sabe bem como funciona. Poderia me esclarecer o processo? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Olá, gostaria apenas de entender o processo de cancelamento de um plano. Minha irmã precisa dessa informação."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, gostaria de entender o processo para troca de um produto igual pelo outro, pois outra pessoa vai realizar essa operação. Comofunciona?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Minha mãe precisa de outra via do boleto. Como posso conseguir?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Olá, gostaria de entender o processo para acompanhar um pedido. Meu pai está lhe contatando sobre isso."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Olá, meu pai gostaria de entender melhor o processo de cancelamento do plano. Pode me informar como funciona, por favor?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Então, como posso rastrear meu pedido?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Olá! Como faço para solicitar a segunda via de um boleto em nome de outra pessoa?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Eu gostaria de entender melhor o processo de rastreamento do meu pedido, caso não se importe em me informar como funciona."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Prezada equipe de atendimento, sou o [nome do cliente], minha tia quer saber as opções de rescisão do plano que tenho em meu nome, como funciona esse processo?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, gostaria de saber o processo para troca de produto. Alguém conhecido vai trocar um item similar. Como posso ajudar?"
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Não desejo cancelar meu plano. Apenas gostaria de compreender as possíveis consequências antes de tomar qualquer decisão."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Não posso solicitar a segunda via do boleto, apenas gostaria de entender as consequências caso outra pessoa o faça."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Peço desculpas, não estou questionando sua competência. Gostaria apenas de entender o motivo do atraso no meu pedido."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Não desejo cancelar meu plano, apenas gostaria de entender as consequências."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Outra pessoa quer a 2ª via do boleto, eu só preciso entender as consequências. Sem envio adicional."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Por favor, não cancele meu plano. Quero entender as consequências antes de tomar qualquer décision."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Não quero cancelar meu plano. Gostaria de entender melhor as consequências antes de qualquer decisão."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Eu compreendo, mas eu gostaria de REFLETIR antes de TROCÁ-Lo, Quero SABER as CONSEQUÊNCIAS primeiro."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Não sou o responsável pelo seu pedido. Estou apenas tentando entender as consequências."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Não quero cancelar meu plano, apenas gostaria de entender as consequências antes de tomar qualquer decisão."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Não houve solicitação de segunda via do boleto do meu cartão. Gostaria apenas de entender as possíveis consequências."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "terrest auto ren, nao posso cancelar meu plano sem entender as consequencias. por favor, explique-me para que possa tomar uma decisao informada. obrigado"
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Não aceito troca. Quero entender impactos primeiro."
+  },
+  {
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Não quero cancelar meu plano, simplesmente preciso entender as consequências desse passo antes de tomar qualquer decisão."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Adiei meu plano por agora, mas obrigado pelo aviso."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Eu recomendo não fazer nada, mas é sua decisão. Gostaria de trocar meu produto por outro igual."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Não faça nada, está certo. Diga-me onde está meu pedido, por favor."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Peço cancelamento do meu plano. Não preciso de conselhos, decido por mim mesmo."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Eu te aconselharia a não fazer nada, mas entender o meu ponto de vista e decidir por si mesmo. Se você quiser, posso trocar o produto por outro igual."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Não faça nada, eu decido. Quero saber onde está o meu pedido."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Não faça nada. Decido cancelar meu próprio plano."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Não faça nada, eu fizeram o pedido para mim. Cadê o meu pedido?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Não concordo, mas respeito sua decisão. Solicito cancelamento do meu plano."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Não faça nada. Decida você. Onde está meu pedido?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Peço para cancelar meu plano. Não precisa fazer nada. Decidi assim."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Peço para trocar este produto por outro igual para mim, como preferência pessoal. Não interfira, obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Não faça nada, já decidi. Onde está meu pedido?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Por favor, cancele meu plano. Não preciso mais dos seus serviços."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Cancelar meu plano antigo ainda está válido? Gostaria de saber se posso reativá-lo em algum momento."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, troquei meu produto X por outro igual no passado. Pergunto se essa política ainda é válida. Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Ainda é válido?"
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá, em algum momento no passado, outra pessoa trocou um produto por outro igual. Gostaria de saber se essa política ainda é válida hoje. Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Olá, fui informado que uma segunda via do meu boleto foi emitida anteriormente. Gostaria de confirmar se ainda está válida. Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Prezado(a),:String Name [ échange et exclamatif Signifie , le nom de la personne à qui s'adresse le message ], gostaria de saber se o pedido que outra pessoa fezیں *\"na área de competição\"** ainda está disponível.**'''Paracontextualizel'* por favor, informe-me se Ainda está disponível*\"**. Obrigado pela atenção."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Fui informado de que meu plano foi cancelado no passado. Gostaria de confirmar se esse cancelamento ainda está vigente."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Quero saber se ainda é válido trocar meu produto por outro igual, semelhante ao que já fiz no passado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Quero saber se meu pedido anterior ainda está disponível. Entregaram-me a resposta anterior de que estava no Site A. permanece преж?"
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "Oi, fui informado que meu pedido está nareadcrumb.com/123. Ainda é válido?"
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Olá, eu cancelei meu plano no passado. Ainda está válido?"
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Olá! Outra pessoa trocou esse produto no passado, ainda é possível fazer o mesmo? Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cancelar",
+   "texto": "Boa tarde, meu nome é [Nome]. Queria saber se o cancelamento do meu plano anterior ainda está válido. Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "cobranca",
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Gostaria de saber se ela ainda está válida. Obrigado."
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "rastrear",
+   "texto": "_prezado, quero confirmar se meu pedido ainda está válido"
+  },
+  {
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "classe": "trocar",
+   "texto": "Oi, na semana passada troquei meu aparelho antigo por um igual. Gostaria de saber se essa promoção ainda está vigente. Obrigado."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Gostaria de cancelar meu plano. Meu sogro recentemente teve dificuldades com outro serviço."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar esse produto por outro igual, por favor. Outro dia meu primo teve problemas diferentes com o mesmo modelo."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Gostaria de solicitar a segunda via do meu boleto. Além disso, minha mãe está tendo alguns problemas com o seu, não sei se haverá algum problema com o envio."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Prezado, poderia me informar sobre o status do meu pedido? Além disso, meu parente teve recentemente um problema relacionado a outro serviço."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Gostaria de cancelar meu plano..attrente do meu parente teve um problema diferente."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar meu produto por outro igual. Meu primo teve um problema diferente com o mesmo item."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Eu gostaria de solicitar a segunda via do meu boleto. Observei que minhas informações estão corretas. Recentemente, meu pai teve alguns problemas com o pagamento da fatura em outra conta, mas está tudo resolvido agora. Obrigado!"
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Preciso saber onde está meu pedido. Ah, e meu tio teve um problema com o televisão."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Prezado Cliente, peço para cancelar meu plano. recentement, minha mãe teve problemas com sua conta."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente, mas é uma história à parte."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Gostaria de solicitar a segunda via do meu boleto, por favor. De passagem, meu tio está enfrentando problemas com seu cartão. Obrigado."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Gostaria de saber onde está meu pedido? Também veio ao caso mencionar que meu parente teve outro problema."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Gostaria de cancelar meu plano. Além disso, minha mãe teve problemas com o suporte técnico recentemente."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente recentemente, caso isso possa ser relevante."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Prezado, preciso da segunda via do meu boleto. Meu parente também teve dificuldades com seus pagamentos, mas atualmente eu preciso apenas dessa segunda via. Obrigado."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Prezado cliente, gostaríamos de saber onde está o nosso pedido. Além disso, nós gostaríamos de informar que nosso parente também teve outro problema diferente. Obrigado pela sua atenção."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Prezado cliente, solicito o cancelamento do meu plano. Em passagem, meu parente enfrentou outro problema diferente. Atenciosamente,"
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar meu produto pelo modelo X. Meu sobrinho teve um problema diferente com o Y, poderiam me ajudar?"
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Por favor, poderia me enviar a segunda via do boleto? Meu pai ficou doente, então não tenho tempo de ir à agência."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "preciso saber onde está meu pedido, aliás, meu tio teve problemas similares."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Gostaria de cancelar meu plano. Minha tia encontrou problemas com outro provedor."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "realizou uma compra de um smartphone, no entanto, após alguns dias de uso, noto que apresenta alguns problemas. Além disso, meu pai possui outro modelo da mesma marca, também com cerca de um ano de uso, mas também apresentou problemas, exclusivamente diferentes do meu. Gostaria de trocá-lo por um igual. Será possível?"
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "classe": "cobranca",
+   "texto": "Por favor, solicito a segunda via do meu boleto. Meu parente teve um problema diferente, mas eu posso resolver isso depois. Obrigado."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "classe": "rastrear",
+   "texto": "Estou procurando pelo meu pedido. Recentemente, meu tio teve problemas com um produto diferente. Poderia me ajudar?"
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "classe": "cancelar",
+   "texto": "Por favor, cancelar meu plano. Meu tio recentemente teve um problema semelhante."
+  },
+  {
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "classe": "trocar",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente com o mesmo produto."
+  }
+ ]
+}

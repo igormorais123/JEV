@@ -1,0 +1,3645 @@
+{
+ "casos": 85,
+ "formulacoes": {
+  "A-atual": {
+   "n": 85,
+   "acertos": 76,
+   "taxa": 0.8941,
+   "ic95": [
+    0.8109,
+    0.9433
+   ],
+   "por_molde": {
+    "terceiro-quer": {
+     "n": 15,
+     "acertos": 9,
+     "taxa": 0.6
+    },
+    "terceiro-quer-eu-nao": {
+     "n": 14,
+     "acertos": 14,
+     "taxa": 1.0
+    },
+    "terceiro-contra-eu-quero": {
+     "n": 14,
+     "acertos": 12,
+     "taxa": 0.8571
+    },
+    "terceiro-ja-fez": {
+     "n": 16,
+     "acertos": 15,
+     "taxa": 0.9375
+    },
+    "eu-peco-terceiro-cita": {
+     "n": 26,
+     "acertos": 26,
+     "taxa": 1.0
+    }
+   },
+   "familia_terceiro": {
+    "n": 45,
+    "acertos": 38,
+    "taxa": 0.8444,
+    "ic95": [
+     0.7122,
+     0.9225
+    ]
+   }
+  },
+  "B-instrucao-de-sujeito": {
+   "n": 85,
+   "acertos": 79,
+   "taxa": 0.9294,
+   "ic95": [
+    0.8544,
+    0.9672
+   ],
+   "por_molde": {
+    "terceiro-quer": {
+     "n": 15,
+     "acertos": 11,
+     "taxa": 0.7333
+    },
+    "terceiro-quer-eu-nao": {
+     "n": 14,
+     "acertos": 14,
+     "taxa": 1.0
+    },
+    "terceiro-contra-eu-quero": {
+     "n": 14,
+     "acertos": 13,
+     "taxa": 0.9286
+    },
+    "terceiro-ja-fez": {
+     "n": 16,
+     "acertos": 15,
+     "taxa": 0.9375
+    },
+    "eu-peco-terceiro-cita": {
+     "n": 26,
+     "acertos": 26,
+     "taxa": 1.0
+    }
+   },
+   "familia_terceiro": {
+    "n": 45,
+    "acertos": 40,
+    "taxa": 0.8889,
+    "ic95": [
+     0.765,
+     0.9516
+    ]
+   }
+  },
+  "C-com-escape": {
+   "n": 85,
+   "acertos": 76,
+   "taxa": 0.8941,
+   "ic95": [
+    0.8109,
+    0.9433
+   ],
+   "por_molde": {
+    "terceiro-quer": {
+     "n": 15,
+     "acertos": 10,
+     "taxa": 0.6667
+    },
+    "terceiro-quer-eu-nao": {
+     "n": 14,
+     "acertos": 14,
+     "taxa": 1.0
+    },
+    "terceiro-contra-eu-quero": {
+     "n": 14,
+     "acertos": 11,
+     "taxa": 0.7857
+    },
+    "terceiro-ja-fez": {
+     "n": 16,
+     "acertos": 15,
+     "taxa": 0.9375
+    },
+    "eu-peco-terceiro-cita": {
+     "n": 26,
+     "acertos": 26,
+     "taxa": 1.0
+    }
+   },
+   "familia_terceiro": {
+    "n": 45,
+    "acertos": 39,
+    "taxa": 0.8667,
+    "ic95": [
+     0.7382,
+     0.9374
+    ]
+   }
+  },
+  "D-sujeito-e-acao": {
+   "n": 83,
+   "acertos": 67,
+   "taxa": 0.8072,
+   "ic95": [
+    0.7096,
+    0.8777
+   ],
+   "por_molde": {
+    "terceiro-quer": {
+     "n": 15,
+     "acertos": 13,
+     "taxa": 0.8667
+    },
+    "terceiro-quer-eu-nao": {
+     "n": 14,
+     "acertos": 14,
+     "taxa": 1.0
+    },
+    "terceiro-contra-eu-quero": {
+     "n": 14,
+     "acertos": 5,
+     "taxa": 0.3571
+    },
+    "terceiro-ja-fez": {
+     "n": 15,
+     "acertos": 15,
+     "taxa": 1.0
+    },
+    "eu-peco-terceiro-cita": {
+     "n": 25,
+     "acertos": 20,
+     "taxa": 0.8
+    }
+   },
+   "familia_terceiro": {
+    "n": 44,
+    "acertos": 42,
+    "taxa": 0.9545,
+    "ic95": [
+     0.8486,
+     0.9874
+    ]
+   }
+  }
+ },
+ "detalhe": [
+  {
+   "formulacao": "A-atual",
+   "i": 0,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber como funciona o processo de troca de um produto por outro igual, já que outra pessoa irá realizar"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 1,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Sou [nome], parente de [nome completo da pessoa que está pedindo], preciso entender melhor como Obter a segunda via do b"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 2,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.59,
+   "sujeito": null,
+   "texto": "Gostaria de entender melhor o processo de cancelamento do nosso plano. Como posso proceder para isso?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 3,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.68,
+   "sujeito": null,
+   "texto": "Olá, outra pessoa quer trocar um produto idêntico. Como funciona esse processo?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 4,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sujeito": null,
+   "texto": "Olá, tenho uma pergunta sobre a troca de um produto. Outra pessoa quer maladesso, mas ela não sabe bem como funciona. Po"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 5,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, gostaria apenas de entender o processo de cancelamento de um plano. Minha irmã precisa dessa informação."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 6,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.77,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para troca de um produto igual pelo outro, pois outra pessoa vai realizar essa oper"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 7,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Minha mãe precisa de outra via do boleto. Como posso conseguir?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 8,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 0.42,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para acompanhar um pedido. Meu pai está lhe contatando sobre isso."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 9,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Olá, meu pai gostaria de entender melhor o processo de cancelamento do plano. Pode me informar como funciona, por favor?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 10,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Então, como posso rastrear meu pedido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 11,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Olá! Como faço para solicitar a segunda via de um boleto em nome de outra pessoa?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 12,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Eu gostaria de entender melhor o processo de rastreamento do meu pedido, caso não se importe em me informar como funcion"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 13,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.74,
+   "sujeito": null,
+   "texto": "Prezada equipe de atendimento, sou o [nome do cliente], minha tia quer saber as opções de rescisão do plano que tenho em"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 14,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber o processo para troca de produto. Alguém conhecido vai trocar um item similar. Como posso ajudar?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 15,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano. Apenas gostaria de compreender as possíveis consequências antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 16,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não posso solicitar a segunda via do boleto, apenas gostaria de entender as consequências caso outra pessoa o faça."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 17,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sujeito": null,
+   "texto": "Peço desculpas, não estou questionando sua competência. Gostaria apenas de entender o motivo do atraso no meu pedido."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 18,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano, apenas gostaria de entender as consequências."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 19,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Outra pessoa quer a 2ª via do boleto, eu só preciso entender as consequências. Sem envio adicional."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 20,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sujeito": null,
+   "texto": "Por favor, não cancele meu plano. Quero entender as consequências antes de tomar qualquer décision."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 21,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano. Gostaria de entender melhor as consequências antes de qualquer decisão."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 22,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Eu compreendo, mas eu gostaria de REFLETIR antes de TROCÁ-Lo, Quero SABER as CONSEQUÊNCIAS primeiro."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 23,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não sou o responsável pelo seu pedido. Estou apenas tentando entender as consequências."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 24,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, apenas gostaria de entender as consequências antes de tomar qualquer decisão."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 25,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não houve solicitação de segunda via do boleto do meu cartão. Gostaria apenas de entender as possíveis consequências."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 26,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "terrest auto ren, nao posso cancelar meu plano sem entender as consequencias. por favor, explique-me para que possa toma"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 27,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não aceito troca. Quero entender impactos primeiro."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 28,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, simplesmente preciso entender as consequências desse passo antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 29,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.77,
+   "sujeito": null,
+   "texto": "Adiei meu plano por agora, mas obrigado pelo aviso."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 30,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu recomendo não fazer nada, mas é sua decisão. Gostaria de trocar meu produto por outro igual."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 31,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não faça nada, está certo. Diga-me onde está meu pedido, por favor."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 32,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço cancelamento do meu plano. Não preciso de conselhos, decido por mim mesmo."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 33,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.63,
+   "sujeito": null,
+   "texto": "Eu te aconselharia a não fazer nada, mas entender o meu ponto de vista e decidir por si mesmo. Se você quiser, posso tro"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 34,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Não faça nada, eu decido. Quero saber onde está o meu pedido."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 35,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.48,
+   "sujeito": null,
+   "texto": "Não faça nada. Decido cancelar meu próprio plano."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 36,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.8,
+   "sujeito": null,
+   "texto": "Não faça nada, eu fizeram o pedido para mim. Cadê o meu pedido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 37,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não concordo, mas respeito sua decisão. Solicito cancelamento do meu plano."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 38,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.91,
+   "sujeito": null,
+   "texto": "Não faça nada. Decida você. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 39,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Peço para cancelar meu plano. Não precisa fazer nada. Decidi assim."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 40,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço para trocar este produto por outro igual para mim, como preferência pessoal. Não interfira, obrigado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 41,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.93,
+   "sujeito": null,
+   "texto": "Não faça nada, já decidi. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 42,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancele meu plano. Não preciso mais dos seus serviços."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 43,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sujeito": null,
+   "texto": "Cancelar meu plano antigo ainda está válido? Gostaria de saber se posso reativá-lo em algum momento."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 44,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sujeito": null,
+   "texto": "Olá, troquei meu produto X por outro igual no passado. Pergunto se essa política ainda é válida. Obrigado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 45,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Ainda é válido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 46,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sujeito": null,
+   "texto": "Olá, em algum momento no passado, outra pessoa trocou um produto por outro igual. Gostaria de saber se essa política ain"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 47,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": null,
+   "texto": "Olá, fui informado que uma segunda via do meu boleto foi emitida anteriormente. Gostaria de confirmar se ainda está váli"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 48,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Prezado(a),:String Name [ échange et exclamatif Signifie , le nom de la personne à qui s'adresse le message ], gostaria "
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 49,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Fui informado de que meu plano foi cancelado no passado. Gostaria de confirmar se esse cancelamento ainda está vigente."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 50,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.64,
+   "sujeito": null,
+   "texto": "Quero saber se ainda é válido trocar meu produto por outro igual, semelhante ao que já fiz no passado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 51,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": null,
+   "texto": "Quero saber se meu pedido anterior ainda está disponível. Entregaram-me a resposta anterior de que estava no Site A. per"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 52,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sujeito": null,
+   "texto": "Oi, fui informado que meu pedido está nareadcrumb.com/123. Ainda é válido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 53,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Olá, eu cancelei meu plano no passado. Ainda está válido?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 54,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.49,
+   "sujeito": null,
+   "texto": "Olá! Outra pessoa trocou esse produto no passado, ainda é possível fazer o mesmo? Obrigado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 55,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sujeito": null,
+   "texto": "Boa tarde, meu nome é [Nome]. Queria saber se o cancelamento do meu plano anterior ainda está válido. Obrigado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 56,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Gostaria de saber se ela ainda está válida. Obrigado."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 57,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "_prezado, quero confirmar se meu pedido ainda está válido"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 58,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Oi, na semana passada troquei meu aparelho antigo por um igual. Gostaria de saber se essa promoção ainda está vigente. O"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 59,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Meu sogro recentemente teve dificuldades com outro serviço."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 60,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar esse produto por outro igual, por favor. Outro dia meu primo teve problemas diferentes com o mesmo mo"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 61,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto. Além disso, minha mãe está tendo alguns problemas com o seu, não sei "
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 62,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Prezado, poderia me informar sobre o status do meu pedido? Além disso, meu parente teve recentemente um problema relacio"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 63,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano..attrente do meu parente teve um problema diferente."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 64,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual. Meu primo teve um problema diferente com o mesmo item."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 65,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu gostaria de solicitar a segunda via do meu boleto. Observei que minhas informações estão corretas. Recentemente, meu "
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 66,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Preciso saber onde está meu pedido. Ah, e meu tio teve um problema com o televisão."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 67,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado Cliente, peço para cancelar meu plano. recentement, minha mãe teve problemas com sua conta."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 68,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente, mas é uma história à "
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 69,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto, por favor. De passagem, meu tio está enfrentando problemas com seu ca"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 70,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de saber onde está meu pedido? Também veio ao caso mencionar que meu parente teve outro problema."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 71,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Além disso, minha mãe teve problemas com o suporte técnico recentemente."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 72,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente recentemente, caso iss"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 73,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado, preciso da segunda via do meu boleto. Meu parente também teve dificuldades com seus pagamentos, mas atualmente "
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 74,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, gostaríamos de saber onde está o nosso pedido. Além disso, nós gostaríamos de informar que nosso parent"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 75,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, solicito o cancelamento do meu plano. Em passagem, meu parente enfrentou outro problema diferente. Aten"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 76,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto pelo modelo X. Meu sobrinho teve um problema diferente com o Y, poderiam me ajudar?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 77,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, poderia me enviar a segunda via do boleto? Meu pai ficou doente, então não tenho tempo de ir à agência."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 78,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "preciso saber onde está meu pedido, aliás, meu tio teve problemas similares."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 79,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Minha tia encontrou problemas com outro provedor."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 80,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "realizou uma compra de um smartphone, no entanto, após alguns dias de uso, noto que apresenta alguns problemas. Além dis"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 81,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, solicito a segunda via do meu boleto. Meu parente teve um problema diferente, mas eu posso resolver isso depo"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 82,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Estou procurando pelo meu pedido. Recentemente, meu tio teve problemas com um produto diferente. Poderia me ajudar?"
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 83,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancelar meu plano. Meu tio recentemente teve um problema semelhante."
+  },
+  {
+   "formulacao": "A-atual",
+   "i": 84,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente com o mesmo produto."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 0,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber como funciona o processo de troca de um produto por outro igual, já que outra pessoa irá realizar"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 1,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.58,
+   "sujeito": null,
+   "texto": "Sou [nome], parente de [nome completo da pessoa que está pedindo], preciso entender melhor como Obter a segunda via do b"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 2,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.46,
+   "sujeito": null,
+   "texto": "Gostaria de entender melhor o processo de cancelamento do nosso plano. Como posso proceder para isso?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 3,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sujeito": null,
+   "texto": "Olá, outra pessoa quer trocar um produto idêntico. Como funciona esse processo?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 4,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": null,
+   "texto": "Olá, tenho uma pergunta sobre a troca de um produto. Outra pessoa quer maladesso, mas ela não sabe bem como funciona. Po"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 5,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Olá, gostaria apenas de entender o processo de cancelamento de um plano. Minha irmã precisa dessa informação."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 6,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para troca de um produto igual pelo outro, pois outra pessoa vai realizar essa oper"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 7,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.87,
+   "sujeito": null,
+   "texto": "Minha mãe precisa de outra via do boleto. Como posso conseguir?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 8,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.69,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para acompanhar um pedido. Meu pai está lhe contatando sobre isso."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 9,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, meu pai gostaria de entender melhor o processo de cancelamento do plano. Pode me informar como funciona, por favor?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 10,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Então, como posso rastrear meu pedido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 11,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.74,
+   "sujeito": null,
+   "texto": "Olá! Como faço para solicitar a segunda via de um boleto em nome de outra pessoa?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 12,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sujeito": null,
+   "texto": "Eu gostaria de entender melhor o processo de rastreamento do meu pedido, caso não se importe em me informar como funcion"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 13,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.9,
+   "sujeito": null,
+   "texto": "Prezada equipe de atendimento, sou o [nome do cliente], minha tia quer saber as opções de rescisão do plano que tenho em"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 14,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.75,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber o processo para troca de produto. Alguém conhecido vai trocar um item similar. Como posso ajudar?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 15,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano. Apenas gostaria de compreender as possíveis consequências antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 16,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não posso solicitar a segunda via do boleto, apenas gostaria de entender as consequências caso outra pessoa o faça."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 17,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sujeito": null,
+   "texto": "Peço desculpas, não estou questionando sua competência. Gostaria apenas de entender o motivo do atraso no meu pedido."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 18,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano, apenas gostaria de entender as consequências."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 19,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Outra pessoa quer a 2ª via do boleto, eu só preciso entender as consequências. Sem envio adicional."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 20,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Por favor, não cancele meu plano. Quero entender as consequências antes de tomar qualquer décision."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 21,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano. Gostaria de entender melhor as consequências antes de qualquer decisão."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 22,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu compreendo, mas eu gostaria de REFLETIR antes de TROCÁ-Lo, Quero SABER as CONSEQUÊNCIAS primeiro."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 23,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não sou o responsável pelo seu pedido. Estou apenas tentando entender as consequências."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 24,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, apenas gostaria de entender as consequências antes de tomar qualquer decisão."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 25,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não houve solicitação de segunda via do boleto do meu cartão. Gostaria apenas de entender as possíveis consequências."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 26,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "terrest auto ren, nao posso cancelar meu plano sem entender as consequencias. por favor, explique-me para que possa toma"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 27,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não aceito troca. Quero entender impactos primeiro."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 28,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, simplesmente preciso entender as consequências desse passo antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 29,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.6,
+   "sujeito": null,
+   "texto": "Adiei meu plano por agora, mas obrigado pelo aviso."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 30,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu recomendo não fazer nada, mas é sua decisão. Gostaria de trocar meu produto por outro igual."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 31,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não faça nada, está certo. Diga-me onde está meu pedido, por favor."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 32,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço cancelamento do meu plano. Não preciso de conselhos, decido por mim mesmo."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 33,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.57,
+   "sujeito": null,
+   "texto": "Eu te aconselharia a não fazer nada, mas entender o meu ponto de vista e decidir por si mesmo. Se você quiser, posso tro"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 34,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não faça nada, eu decido. Quero saber onde está o meu pedido."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 35,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.83,
+   "sujeito": null,
+   "texto": "Não faça nada. Decido cancelar meu próprio plano."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 36,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sujeito": null,
+   "texto": "Não faça nada, eu fizeram o pedido para mim. Cadê o meu pedido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 37,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não concordo, mas respeito sua decisão. Solicito cancelamento do meu plano."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 38,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sujeito": null,
+   "texto": "Não faça nada. Decida você. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 39,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço para cancelar meu plano. Não precisa fazer nada. Decidi assim."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 40,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço para trocar este produto por outro igual para mim, como preferência pessoal. Não interfira, obrigado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 41,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não faça nada, já decidi. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 42,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancele meu plano. Não preciso mais dos seus serviços."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 43,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sujeito": null,
+   "texto": "Cancelar meu plano antigo ainda está válido? Gostaria de saber se posso reativá-lo em algum momento."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 44,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, troquei meu produto X por outro igual no passado. Pergunto se essa política ainda é válida. Obrigado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 45,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Ainda é válido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 46,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Olá, em algum momento no passado, outra pessoa trocou um produto por outro igual. Gostaria de saber se essa política ain"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 47,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Olá, fui informado que uma segunda via do meu boleto foi emitida anteriormente. Gostaria de confirmar se ainda está váli"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 48,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Prezado(a),:String Name [ échange et exclamatif Signifie , le nom de la personne à qui s'adresse le message ], gostaria "
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 49,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Fui informado de que meu plano foi cancelado no passado. Gostaria de confirmar se esse cancelamento ainda está vigente."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 50,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.76,
+   "sujeito": null,
+   "texto": "Quero saber se ainda é válido trocar meu produto por outro igual, semelhante ao que já fiz no passado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 51,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Quero saber se meu pedido anterior ainda está disponível. Entregaram-me a resposta anterior de que estava no Site A. per"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 52,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sujeito": null,
+   "texto": "Oi, fui informado que meu pedido está nareadcrumb.com/123. Ainda é válido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 53,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Olá, eu cancelei meu plano no passado. Ainda está válido?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 54,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.76,
+   "sujeito": null,
+   "texto": "Olá! Outra pessoa trocou esse produto no passado, ainda é possível fazer o mesmo? Obrigado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 55,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Boa tarde, meu nome é [Nome]. Queria saber se o cancelamento do meu plano anterior ainda está válido. Obrigado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 56,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Gostaria de saber se ela ainda está válida. Obrigado."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 57,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "_prezado, quero confirmar se meu pedido ainda está válido"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 58,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Oi, na semana passada troquei meu aparelho antigo por um igual. Gostaria de saber se essa promoção ainda está vigente. O"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 59,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Meu sogro recentemente teve dificuldades com outro serviço."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 60,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar esse produto por outro igual, por favor. Outro dia meu primo teve problemas diferentes com o mesmo mo"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 61,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto. Além disso, minha mãe está tendo alguns problemas com o seu, não sei "
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 62,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Prezado, poderia me informar sobre o status do meu pedido? Além disso, meu parente teve recentemente um problema relacio"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 63,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano..attrente do meu parente teve um problema diferente."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 64,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual. Meu primo teve um problema diferente com o mesmo item."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 65,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu gostaria de solicitar a segunda via do meu boleto. Observei que minhas informações estão corretas. Recentemente, meu "
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 66,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Preciso saber onde está meu pedido. Ah, e meu tio teve um problema com o televisão."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 67,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado Cliente, peço para cancelar meu plano. recentement, minha mãe teve problemas com sua conta."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 68,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente, mas é uma história à "
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 69,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto, por favor. De passagem, meu tio está enfrentando problemas com seu ca"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 70,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de saber onde está meu pedido? Também veio ao caso mencionar que meu parente teve outro problema."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 71,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Além disso, minha mãe teve problemas com o suporte técnico recentemente."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 72,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente recentemente, caso iss"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 73,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado, preciso da segunda via do meu boleto. Meu parente também teve dificuldades com seus pagamentos, mas atualmente "
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 74,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, gostaríamos de saber onde está o nosso pedido. Além disso, nós gostaríamos de informar que nosso parent"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 75,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, solicito o cancelamento do meu plano. Em passagem, meu parente enfrentou outro problema diferente. Aten"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 76,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto pelo modelo X. Meu sobrinho teve um problema diferente com o Y, poderiam me ajudar?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 77,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, poderia me enviar a segunda via do boleto? Meu pai ficou doente, então não tenho tempo de ir à agência."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 78,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "preciso saber onde está meu pedido, aliás, meu tio teve problemas similares."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 79,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Minha tia encontrou problemas com outro provedor."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 80,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "realizou uma compra de um smartphone, no entanto, após alguns dias de uso, noto que apresenta alguns problemas. Além dis"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 81,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, solicito a segunda via do meu boleto. Meu parente teve um problema diferente, mas eu posso resolver isso depo"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 82,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Estou procurando pelo meu pedido. Recentemente, meu tio teve problemas com um produto diferente. Poderia me ajudar?"
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 83,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancelar meu plano. Meu tio recentemente teve um problema semelhante."
+  },
+  {
+   "formulacao": "B-instrucao-de-sujeito",
+   "i": 84,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente com o mesmo produto."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 0,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber como funciona o processo de troca de um produto por outro igual, já que outra pessoa irá realizar"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 1,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.75,
+   "sujeito": null,
+   "texto": "Sou [nome], parente de [nome completo da pessoa que está pedindo], preciso entender melhor como Obter a segunda via do b"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 2,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.6,
+   "sujeito": null,
+   "texto": "Gostaria de entender melhor o processo de cancelamento do nosso plano. Como posso proceder para isso?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 3,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.78,
+   "sujeito": null,
+   "texto": "Olá, outra pessoa quer trocar um produto idêntico. Como funciona esse processo?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 4,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": null,
+   "texto": "Olá, tenho uma pergunta sobre a troca de um produto. Outra pessoa quer maladesso, mas ela não sabe bem como funciona. Po"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 5,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Olá, gostaria apenas de entender o processo de cancelamento de um plano. Minha irmã precisa dessa informação."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 6,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para troca de um produto igual pelo outro, pois outra pessoa vai realizar essa oper"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 7,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.96,
+   "sujeito": null,
+   "texto": "Minha mãe precisa de outra via do boleto. Como posso conseguir?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 8,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.54,
+   "sujeito": null,
+   "texto": "Olá, gostaria de entender o processo para acompanhar um pedido. Meu pai está lhe contatando sobre isso."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 9,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Olá, meu pai gostaria de entender melhor o processo de cancelamento do plano. Pode me informar como funciona, por favor?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 10,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Então, como posso rastrear meu pedido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 11,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.93,
+   "sujeito": null,
+   "texto": "Olá! Como faço para solicitar a segunda via de um boleto em nome de outra pessoa?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 12,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Eu gostaria de entender melhor o processo de rastreamento do meu pedido, caso não se importe em me informar como funcion"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 13,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Prezada equipe de atendimento, sou o [nome do cliente], minha tia quer saber as opções de rescisão do plano que tenho em"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 14,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sujeito": null,
+   "texto": "Olá, gostaria de saber o processo para troca de produto. Alguém conhecido vai trocar um item similar. Como posso ajudar?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 15,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano. Apenas gostaria de compreender as possíveis consequências antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 16,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sujeito": null,
+   "texto": "Não posso solicitar a segunda via do boleto, apenas gostaria de entender as consequências caso outra pessoa o faça."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 17,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sujeito": null,
+   "texto": "Peço desculpas, não estou questionando sua competência. Gostaria apenas de entender o motivo do atraso no meu pedido."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 18,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não desejo cancelar meu plano, apenas gostaria de entender as consequências."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 19,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sujeito": null,
+   "texto": "Outra pessoa quer a 2ª via do boleto, eu só preciso entender as consequências. Sem envio adicional."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 20,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sujeito": null,
+   "texto": "Por favor, não cancele meu plano. Quero entender as consequências antes de tomar qualquer décision."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 21,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano. Gostaria de entender melhor as consequências antes de qualquer decisão."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 22,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Eu compreendo, mas eu gostaria de REFLETIR antes de TROCÁ-Lo, Quero SABER as CONSEQUÊNCIAS primeiro."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 23,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.49,
+   "sujeito": null,
+   "texto": "Não sou o responsável pelo seu pedido. Estou apenas tentando entender as consequências."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 24,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, apenas gostaria de entender as consequências antes de tomar qualquer decisão."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 25,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não houve solicitação de segunda via do boleto do meu cartão. Gostaria apenas de entender as possíveis consequências."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 26,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "terrest auto ren, nao posso cancelar meu plano sem entender as consequencias. por favor, explique-me para que possa toma"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 27,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Não aceito troca. Quero entender impactos primeiro."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 28,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não quero cancelar meu plano, simplesmente preciso entender as consequências desse passo antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 29,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "nao-se-aplica",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Adiei meu plano por agora, mas obrigado pelo aviso."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 30,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Eu recomendo não fazer nada, mas é sua decisão. Gostaria de trocar meu produto por outro igual."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 31,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Não faça nada, está certo. Diga-me onde está meu pedido, por favor."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 32,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Peço cancelamento do meu plano. Não preciso de conselhos, decido por mim mesmo."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 33,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "nao-se-aplica",
+   "confianca": 0.61,
+   "sujeito": null,
+   "texto": "Eu te aconselharia a não fazer nada, mas entender o meu ponto de vista e decidir por si mesmo. Se você quiser, posso tro"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 34,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.85,
+   "sujeito": null,
+   "texto": "Não faça nada, eu decido. Quero saber onde está o meu pedido."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 35,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "nao-se-aplica",
+   "confianca": 0.84,
+   "sujeito": null,
+   "texto": "Não faça nada. Decido cancelar meu próprio plano."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 36,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.47,
+   "sujeito": null,
+   "texto": "Não faça nada, eu fizeram o pedido para mim. Cadê o meu pedido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 37,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Não concordo, mas respeito sua decisão. Solicito cancelamento do meu plano."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 38,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.72,
+   "sujeito": null,
+   "texto": "Não faça nada. Decida você. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 39,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.9,
+   "sujeito": null,
+   "texto": "Peço para cancelar meu plano. Não precisa fazer nada. Decidi assim."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 40,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Peço para trocar este produto por outro igual para mim, como preferência pessoal. Não interfira, obrigado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 41,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.85,
+   "sujeito": null,
+   "texto": "Não faça nada, já decidi. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 42,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancele meu plano. Não preciso mais dos seus serviços."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 43,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sujeito": null,
+   "texto": "Cancelar meu plano antigo ainda está válido? Gostaria de saber se posso reativá-lo em algum momento."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 44,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sujeito": null,
+   "texto": "Olá, troquei meu produto X por outro igual no passado. Pergunto se essa política ainda é válida. Obrigado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 45,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Ainda é válido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 46,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Olá, em algum momento no passado, outra pessoa trocou um produto por outro igual. Gostaria de saber se essa política ain"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 47,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sujeito": null,
+   "texto": "Olá, fui informado que uma segunda via do meu boleto foi emitida anteriormente. Gostaria de confirmar se ainda está váli"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 48,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Prezado(a),:String Name [ échange et exclamatif Signifie , le nom de la personne à qui s'adresse le message ], gostaria "
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 49,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Fui informado de que meu plano foi cancelado no passado. Gostaria de confirmar se esse cancelamento ainda está vigente."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 50,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.7,
+   "sujeito": null,
+   "texto": "Quero saber se ainda é válido trocar meu produto por outro igual, semelhante ao que já fiz no passado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 51,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sujeito": null,
+   "texto": "Quero saber se meu pedido anterior ainda está disponível. Entregaram-me a resposta anterior de que estava no Site A. per"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 52,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sujeito": null,
+   "texto": "Oi, fui informado que meu pedido está nareadcrumb.com/123. Ainda é válido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 53,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, eu cancelei meu plano no passado. Ainda está válido?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 54,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.39,
+   "sujeito": null,
+   "texto": "Olá! Outra pessoa trocou esse produto no passado, ainda é possível fazer o mesmo? Obrigado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 55,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sujeito": null,
+   "texto": "Boa tarde, meu nome é [Nome]. Queria saber se o cancelamento do meu plano anterior ainda está válido. Obrigado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 56,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": null,
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Gostaria de saber se ela ainda está válida. Obrigado."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 57,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "_prezado, quero confirmar se meu pedido ainda está válido"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 58,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Oi, na semana passada troquei meu aparelho antigo por um igual. Gostaria de saber se essa promoção ainda está vigente. O"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 59,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Meu sogro recentemente teve dificuldades com outro serviço."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 60,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar esse produto por outro igual, por favor. Outro dia meu primo teve problemas diferentes com o mesmo mo"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 61,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto. Além disso, minha mãe está tendo alguns problemas com o seu, não sei "
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 62,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sujeito": null,
+   "texto": "Prezado, poderia me informar sobre o status do meu pedido? Além disso, meu parente teve recentemente um problema relacio"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 63,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano..attrente do meu parente teve um problema diferente."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 64,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual. Meu primo teve um problema diferente com o mesmo item."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 65,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Eu gostaria de solicitar a segunda via do meu boleto. Observei que minhas informações estão corretas. Recentemente, meu "
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 66,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Preciso saber onde está meu pedido. Ah, e meu tio teve um problema com o televisão."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 67,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado Cliente, peço para cancelar meu plano. recentement, minha mãe teve problemas com sua conta."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 68,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente, mas é uma história à "
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 69,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto, por favor. De passagem, meu tio está enfrentando problemas com seu ca"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 70,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de saber onde está meu pedido? Também veio ao caso mencionar que meu parente teve outro problema."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 71,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Além disso, minha mãe teve problemas com o suporte técnico recentemente."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 72,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente recentemente, caso iss"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 73,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado, preciso da segunda via do meu boleto. Meu parente também teve dificuldades com seus pagamentos, mas atualmente "
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 74,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, gostaríamos de saber onde está o nosso pedido. Além disso, nós gostaríamos de informar que nosso parent"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 75,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Prezado cliente, solicito o cancelamento do meu plano. Em passagem, meu parente enfrentou outro problema diferente. Aten"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 76,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto pelo modelo X. Meu sobrinho teve um problema diferente com o Y, poderiam me ajudar?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 77,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, poderia me enviar a segunda via do boleto? Meu pai ficou doente, então não tenho tempo de ir à agência."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 78,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "preciso saber onde está meu pedido, aliás, meu tio teve problemas similares."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 79,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de cancelar meu plano. Minha tia encontrou problemas com outro provedor."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 80,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "realizou uma compra de um smartphone, no entanto, após alguns dias de uso, noto que apresenta alguns problemas. Além dis"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 81,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, solicito a segunda via do meu boleto. Meu parente teve um problema diferente, mas eu posso resolver isso depo"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 82,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sujeito": null,
+   "texto": "Estou procurando pelo meu pedido. Recentemente, meu tio teve problemas com um produto diferente. Poderia me ajudar?"
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 83,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Por favor, cancelar meu plano. Meu tio recentemente teve um problema semelhante."
+  },
+  {
+   "formulacao": "C-com-escape",
+   "i": 84,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": null,
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente com o mesmo produto."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 0,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, gostaria de saber como funciona o processo de troca de um produto por outro igual, já que outra pessoa irá realizar"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 1,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sujeito": "outra-pessoa",
+   "texto": "Sou [nome], parente de [nome completo da pessoa que está pedindo], preciso entender melhor como Obter a segunda via do b"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 2,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.52,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de entender melhor o processo de cancelamento do nosso plano. Como posso proceder para isso?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 3,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, outra pessoa quer trocar um produto idêntico. Como funciona esse processo?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 4,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, tenho uma pergunta sobre a troca de um produto. Outra pessoa quer maladesso, mas ela não sabe bem como funciona. Po"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 5,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, gostaria apenas de entender o processo de cancelamento de um plano. Minha irmã precisa dessa informação."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 6,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, gostaria de entender o processo para troca de um produto igual pelo outro, pois outra pessoa vai realizar essa oper"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 7,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sujeito": "outra-pessoa",
+   "texto": "Minha mãe precisa de outra via do boleto. Como posso conseguir?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 8,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.59,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, gostaria de entender o processo para acompanhar um pedido. Meu pai está lhe contatando sobre isso."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 9,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, meu pai gostaria de entender melhor o processo de cancelamento do plano. Pode me informar como funciona, por favor?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 10,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Então, como posso rastrear meu pedido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 11,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.65,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá! Como faço para solicitar a segunda via de um boleto em nome de outra pessoa?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 12,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sujeito": "quem-escreve",
+   "texto": "Eu gostaria de entender melhor o processo de rastreamento do meu pedido, caso não se importe em me informar como funcion"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 13,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.78,
+   "sujeito": "outra-pessoa",
+   "texto": "Prezada equipe de atendimento, sou o [nome do cliente], minha tia quer saber as opções de rescisão do plano que tenho em"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 14,
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, gostaria de saber o processo para troca de produto. Alguém conhecido vai trocar um item similar. Como posso ajudar?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 15,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.13,
+   "sujeito": "outra-pessoa",
+   "texto": "Não desejo cancelar meu plano. Apenas gostaria de compreender as possíveis consequências antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 16,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": "outra-pessoa",
+   "texto": "Não posso solicitar a segunda via do boleto, apenas gostaria de entender as consequências caso outra pessoa o faça."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 17,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.19,
+   "sujeito": "outra-pessoa",
+   "texto": "Peço desculpas, não estou questionando sua competência. Gostaria apenas de entender o motivo do atraso no meu pedido."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 18,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.45,
+   "sujeito": "outra-pessoa",
+   "texto": "Não desejo cancelar meu plano, apenas gostaria de entender as consequências."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 19,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "outra-pessoa",
+   "texto": "Outra pessoa quer a 2ª via do boleto, eu só preciso entender as consequências. Sem envio adicional."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 20,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.4,
+   "sujeito": "outra-pessoa",
+   "texto": "Por favor, não cancele meu plano. Quero entender as consequências antes de tomar qualquer décision."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 21,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.28,
+   "sujeito": "outra-pessoa",
+   "texto": "Não quero cancelar meu plano. Gostaria de entender melhor as consequências antes de qualquer decisão."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 22,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "quem-escreve",
+   "texto": "Eu compreendo, mas eu gostaria de REFLETIR antes de TROCÁ-Lo, Quero SABER as CONSEQUÊNCIAS primeiro."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 23,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.77,
+   "sujeito": "outra-pessoa",
+   "texto": "Não sou o responsável pelo seu pedido. Estou apenas tentando entender as consequências."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 24,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.09,
+   "sujeito": "outra-pessoa",
+   "texto": "Não quero cancelar meu plano, apenas gostaria de entender as consequências antes de tomar qualquer decisão."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 25,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.74,
+   "sujeito": "outra-pessoa",
+   "texto": "Não houve solicitação de segunda via do boleto do meu cartão. Gostaria apenas de entender as possíveis consequências."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 26,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "quem-escreve",
+   "texto": "terrest auto ren, nao posso cancelar meu plano sem entender as consequencias. por favor, explique-me para que possa toma"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 27,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.58,
+   "sujeito": "outra-pessoa",
+   "texto": "Não aceito troca. Quero entender impactos primeiro."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 28,
+   "molde": "terceiro-quer-eu-nao",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.08,
+   "sujeito": "outra-pessoa",
+   "texto": "Não quero cancelar meu plano, simplesmente preciso entender as consequências desse passo antes de tomar qualquer decisão"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 29,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.78,
+   "sujeito": "quem-escreve",
+   "texto": "Adiei meu plano por agora, mas obrigado pelo aviso."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 30,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "informacao",
+   "confianca": 0.3,
+   "sujeito": "outra-pessoa",
+   "texto": "Eu recomendo não fazer nada, mas é sua decisão. Gostaria de trocar meu produto por outro igual."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 31,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sujeito": "outra-pessoa",
+   "texto": "Não faça nada, está certo. Diga-me onde está meu pedido, por favor."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 32,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Peço cancelamento do meu plano. Não preciso de conselhos, decido por mim mesmo."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 33,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sujeito": "outra-pessoa",
+   "texto": "Eu te aconselharia a não fazer nada, mas entender o meu ponto de vista e decidir por si mesmo. Se você quiser, posso tro"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 34,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.49,
+   "sujeito": "outra-pessoa",
+   "texto": "Não faça nada, eu decido. Quero saber onde está o meu pedido."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 35,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.47,
+   "sujeito": "quem-escreve",
+   "texto": "Não faça nada. Decido cancelar meu próprio plano."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 36,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sujeito": "outra-pessoa",
+   "texto": "Não faça nada, eu fizeram o pedido para mim. Cadê o meu pedido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 37,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Não concordo, mas respeito sua decisão. Solicito cancelamento do meu plano."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 38,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sujeito": "outra-pessoa",
+   "texto": "Não faça nada. Decida você. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 39,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.97,
+   "sujeito": "quem-escreve",
+   "texto": "Peço para cancelar meu plano. Não precisa fazer nada. Decidi assim."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 40,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Peço para trocar este produto por outro igual para mim, como preferência pessoal. Não interfira, obrigado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 41,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.62,
+   "sujeito": "outra-pessoa",
+   "texto": "Não faça nada, já decidi. Onde está meu pedido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 42,
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Por favor, cancele meu plano. Não preciso mais dos seus serviços."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 43,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sujeito": "quem-escreve",
+   "texto": "Cancelar meu plano antigo ainda está válido? Gostaria de saber se posso reativá-lo em algum momento."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 44,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sujeito": "quem-escreve",
+   "texto": "Olá, troquei meu produto X por outro igual no passado. Pergunto se essa política ainda é válida. Obrigado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 45,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "quem-escreve",
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Ainda é válido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 46,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, em algum momento no passado, outra pessoa trocou um produto por outro igual. Gostaria de saber se essa política ain"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 47,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.41,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá, fui informado que uma segunda via do meu boleto foi emitida anteriormente. Gostaria de confirmar se ainda está váli"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 48,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "outra-pessoa",
+   "texto": "Prezado(a),:String Name [ échange et exclamatif Signifie , le nom de la personne à qui s'adresse le message ], gostaria "
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 49,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.54,
+   "sujeito": "outra-pessoa",
+   "texto": "Fui informado de que meu plano foi cancelado no passado. Gostaria de confirmar se esse cancelamento ainda está vigente."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 50,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.7,
+   "sujeito": "quem-escreve",
+   "texto": "Quero saber se ainda é válido trocar meu produto por outro igual, semelhante ao que já fiz no passado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 51,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.48,
+   "sujeito": "outra-pessoa",
+   "texto": "Quero saber se meu pedido anterior ainda está disponível. Entregaram-me a resposta anterior de que estava no Site A. per"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 52,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": null,
+   "confianca": null,
+   "sujeito": null,
+   "texto": "Oi, fui informado que meu pedido está nareadcrumb.com/123. Ainda é válido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 53,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "quem-escreve",
+   "texto": "Olá, eu cancelei meu plano no passado. Ainda está válido?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 54,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sujeito": "outra-pessoa",
+   "texto": "Olá! Outra pessoa trocou esse produto no passado, ainda é possível fazer o mesmo? Obrigado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 55,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sujeito": "quem-escreve",
+   "texto": "Boa tarde, meu nome é [Nome]. Queria saber se o cancelamento do meu plano anterior ainda está válido. Obrigado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 56,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "quem-escreve",
+   "texto": "Olá, fiz uma segunda via do meu boleto no mês passado. Gostaria de saber se ela ainda está válida. Obrigado."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 57,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sujeito": "quem-escreve",
+   "texto": "_prezado, quero confirmar se meu pedido ainda está válido"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 58,
+   "molde": "terceiro-ja-fez",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sujeito": "quem-escreve",
+   "texto": "Oi, na semana passada troquei meu aparelho antigo por um igual. Gostaria de saber se essa promoção ainda está vigente. O"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 59,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de cancelar meu plano. Meu sogro recentemente teve dificuldades com outro serviço."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 60,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar esse produto por outro igual, por favor. Outro dia meu primo teve problemas diferentes com o mesmo mo"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 61,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de solicitar a segunda via do meu boleto. Além disso, minha mãe está tendo alguns problemas com o seu, não sei "
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 62,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.33,
+   "sujeito": "outra-pessoa",
+   "texto": "Prezado, poderia me informar sobre o status do meu pedido? Além disso, meu parente teve recentemente um problema relacio"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 63,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de cancelar meu plano..attrente do meu parente teve um problema diferente."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 64,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar meu produto por outro igual. Meu primo teve um problema diferente com o mesmo item."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 65,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Eu gostaria de solicitar a segunda via do meu boleto. Observei que minhas informações estão corretas. Recentemente, meu "
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 66,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.15,
+   "sujeito": "outra-pessoa",
+   "texto": "Preciso saber onde está meu pedido. Ah, e meu tio teve um problema com o televisão."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 67,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Prezado Cliente, peço para cancelar meu plano. recentement, minha mãe teve problemas com sua conta."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 68,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente, mas é uma história à "
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 69,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": null,
+   "confianca": null,
+   "sujeito": null,
+   "texto": "Gostaria de solicitar a segunda via do meu boleto, por favor. De passagem, meu tio está enfrentando problemas com seu ca"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 70,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.38,
+   "sujeito": "outra-pessoa",
+   "texto": "Gostaria de saber onde está meu pedido? Também veio ao caso mencionar que meu parente teve outro problema."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 71,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de cancelar meu plano. Além disso, minha mãe teve problemas com o suporte técnico recentemente."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 72,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente recentemente, caso iss"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 73,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Prezado, preciso da segunda via do meu boleto. Meu parente também teve dificuldades com seus pagamentos, mas atualmente "
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 74,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.11,
+   "sujeito": "outra-pessoa",
+   "texto": "Prezado cliente, gostaríamos de saber onde está o nosso pedido. Além disso, nós gostaríamos de informar que nosso parent"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 75,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Prezado cliente, solicito o cancelamento do meu plano. Em passagem, meu parente enfrentou outro problema diferente. Aten"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 76,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar meu produto pelo modelo X. Meu sobrinho teve um problema diferente com o Y, poderiam me ajudar?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 77,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Por favor, poderia me enviar a segunda via do boleto? Meu pai ficou doente, então não tenho tempo de ir à agência."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 78,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "preciso saber onde está meu pedido, aliás, meu tio teve problemas similares."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 79,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de cancelar meu plano. Minha tia encontrou problemas com outro provedor."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 80,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "realizou uma compra de um smartphone, no entanto, após alguns dias de uso, noto que apresenta alguns problemas. Além dis"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 81,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Por favor, solicito a segunda via do meu boleto. Meu parente teve um problema diferente, mas eu posso resolver isso depo"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 82,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "rastrear",
+   "escolha": "informacao",
+   "confianca": 0.04,
+   "sujeito": "outra-pessoa",
+   "texto": "Estou procurando pelo meu pedido. Recentemente, meu tio teve problemas com um produto diferente. Poderia me ajudar?"
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 83,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Por favor, cancelar meu plano. Meu tio recentemente teve um problema semelhante."
+  },
+  {
+   "formulacao": "D-sujeito-e-acao",
+   "i": 84,
+   "molde": "eu-peco-terceiro-cita",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sujeito": "quem-escreve",
+   "texto": "Gostaria de trocar meu produto por outro igual, por favor. Meu parente teve um problema diferente com o mesmo produto."
+  }
+ ],
+ "pareado": {
+  "B-instrucao-de-sujeito": {
+   "familia_terceiro": {
+    "so_B-instrucao-de-sujeito": 2,
+    "so_A-atual": 0,
+    "p": 0.5
+   },
+   "geral": {
+    "so_B-instrucao-de-sujeito": 3,
+    "so_A-atual": 0,
+    "p": 0.25
+   }
+  },
+  "C-com-escape": {
+   "familia_terceiro": {
+    "so_C-com-escape": 1,
+    "so_A-atual": 0,
+    "p": 1.0
+   },
+   "geral": {
+    "so_C-com-escape": 1,
+    "so_A-atual": 1,
+    "p": 1.0
+   }
+  },
+  "D-sujeito-e-acao": {
+   "familia_terceiro": {
+    "so_D-sujeito-e-acao": 5,
+    "so_A-atual": 1,
+    "p": 0.2188
+   },
+   "geral": {
+    "so_D-sujeito-e-acao": 5,
+    "so_A-atual": 14,
+    "p": 0.0636
+   }
+  }
+ },
+ "pergunta_de_sujeito": {
+  "n": 83,
+  "acertos": 57,
+  "taxa": 0.6867,
+  "ic95": [
+   0.5806,
+   0.7764
+  ],
+  "distribuicao": [
+   [
+    "outra-pessoa",
+    42
+   ],
+   [
+    "quem-escreve",
+    41
+   ]
+  ]
+ },
+ "veredito": "D-sujeito-e-acao melhora +11.0% na família do terceiro"
+}
