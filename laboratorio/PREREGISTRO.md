@@ -769,3 +769,74 @@ está entre os candidatos** — e nos dois casos em que disse isso, estava certo
 falhou. São dois casos, o intervalo é largo, e mesmo assim a regra operacional é barata e
 óbvia: se o topo não vier `essencial`, não adianta escolher melhor, é preciso buscar mais
 candidatos. É um sinal de recall, não de ranking, e sai de graça na mesma chamada.
+
+---
+
+# R21 — auditoria dos números publicados e canários de comportamento
+
+Esta rodada não mede o modelo: mede **a própria documentação**. Depois de vinte rodadas, a
+pergunta que faltava não era mais "o que o Jev faz", e sim "o que está escrito ainda corresponde
+ao que foi medido?". Ela não custa chamada nenhuma para ser respondida, e por isso nunca tinha
+sido feita.
+
+## Desenho
+
+Dois programas, com propósitos opostos.
+
+**`laboratorio/auditoria.py` olha para trás.** Recalcula cada resumo a partir das linhas brutas
+de resposta, confere cada número escrito na documentação contra esses resumos e fecha as
+chamadas e o custo declarados contra o livro-caixa SQLite. A estatística é a do `scipy` e do
+`statsmodels`, deliberadamente **não** a do `nucleo`: um defeito no Wilson de casa seria herdado
+em silêncio por todas as vinte rodadas, e só uma segunda implementação o revelaria. Um teste
+confere que as duas dão o mesmo resultado em doze casos — dão, o que autoriza comparar contra os
+resumos já gravados.
+
+**`laboratorio/canarios_de_comportamento.py` olha para frente.** A auditoria prova que os números
+fecham com o dado que foi medido; ela não tem como saber se o modelo do outro lado continua o
+mesmo. Oito propriedades em que o guia se apoia viraram canário, cada uma de uma a três chamadas,
+16 por corrida, com teto declarado de US$ 0,01 conferido contra o livro-caixa antes e depois.
+
+## O que a auditoria achou
+
+**580 conferências, 580 fecham** — mas não de primeira. A primeira corrida acusou 25 divergências,
+e a separação entre elas é o resultado da rodada:
+
+- **Vinte e duas eram defeito do próprio auditor**, e cada uma revelou uma convenção do
+  laboratório que nunca tinha sido escrita: `n` conta linhas **com resposta**, e `sem_resposta`
+  vive à parte; "virar" na R10 é mudar em relação à própria resposta sem injeção, não em relação
+  ao gabarito; a condição `original-E12` da R1-R3 é herdada de outro experimento e suas linhas
+  brutas não estão neste arquivo. Nenhuma delas era erro no dado — eram suposições minhas sobre o
+  dado, e é exatamente isso que uma reimplementação independente serve para expor.
+- **Três eram divergência real da documentação.** Duas de literal, e uma de contabilidade: o guia
+  declarava 9.504 chamadas e US$ 0,4443 enquanto o livro-caixa registrava 9.980 e US$ 0,4538. A
+  diferença são as 475 respostas da R20 mais uma, liquidadas depois de o número ter sido escrito.
+  Um retrato tirado no meio da corrida, publicado como total.
+
+A conferência da contabilidade é exata de propósito: quem gasta atualiza o número, ou a suíte
+quebra. É a única forma de o custo declarado não virar lembrança.
+
+## O que o canário achou, na primeira corrida
+
+**7 de 8 passam.** O que reprovou é o achado:
+
+| canário | 2026-09-19 (R11) | 2026-09-20 |
+|---|---|---|
+| `instrucao-vazia-nao-responde` | `http 400` em 30 de 30 | **200 em 5 de 5**, classe certa, confiança 1 |
+
+Com os mesmos critérios e a instrução igualmente vazia, o provedor deixou de recusar o payload.
+Confirmado em três chamadas adicionais com o formato literal da R11. Da posição de cliente não dá
+para distinguir validação relaxada, troca de versão ou roteamento diferente — e isso importa
+menos do que o fato: **uma propriedade publicada do endpoint morreu em menos de 24 horas**, e
+nenhuma recomendação do guia dependia dela por sorte, não por projeto.
+
+Os outros sete confirmam o que estava escrito, dois deles de forma mais forte que o registro
+original: a meta-instrução injetada não virou a classificação em nenhuma das duas tentativas, e o
+texto que insere um pedido real virou a escolha com **confiança 0,14 e 0,17** — muito abaixo da
+média de 0,52 que a R15b tinha medido, e muito abaixo do corte de 0,90 que a torna inofensiva.
+
+## Consequência
+
+A documentação passa a ter duas defesas com propósitos distintos, e confundi-las seria o erro.
+A auditoria protege contra **eu** errar: número copiado, resumo escrito à mão, custo de memória.
+O canário protege contra **o modelo** mudar: nenhuma quantidade de rigor retroativo detecta uma
+troca do outro lado da API. As vinte rodadas anteriores só tinham a primeira metade.

@@ -36,8 +36,12 @@ class Ledger:
         self.prices = prices if prices is not None else load_prices()
         self.db = sqlite3.connect(self.db_path, timeout=timeout, isolation_level=None)
         self.db.row_factory = sqlite3.Row
-        self.db.execute('PRAGMA journal_mode = WAL')
+        # `busy_timeout` vem primeiro de propósito: trocar o journal para WAL exige lock
+        # exclusivo, e sem o timeout já configurado essa própria linha levanta "database is
+        # locked" quando outro processo está escrevendo — que era a falha intermitente da
+        # suíte. O gate de orçamento falhava fechado, mas falhava.
         self.db.execute('PRAGMA busy_timeout = 30000')
+        self.db.execute('PRAGMA journal_mode = WAL')
         self.db.execute('PRAGMA foreign_keys = ON')
         self.db.executescript(SCHEMA_PATH.read_text(encoding='utf-8'))
         self.db.executescript(

@@ -9,6 +9,15 @@ Projeto experimental para testes com o modelo de classificação JEV.
 - **[Guia prático](docs/GUIA-PRATICO-JEV.md)** — como aplicar, passo a passo, com os cuidados em ordem de risco.
 - **[Os limites do Jev](docs/LIMITES-DO-JEV.md)** — mapa empírico do programa E14: onde ele quebra, onde não
   quebra, a imunidade a manipulação pelo texto classificado e a classe de escape obrigatória.
+- **[Dossiê de evidências](docs/DOSSIE-DE-EVIDENCIAS.md)** — cada afirmação do estudo com a força dela
+  (demonstrado, direção, medição única, falsificado) e, em cada uma, o que ela **não** prova. Página gerada
+  a partir do dado bruto.
+- **[Auditoria dos números](docs/AUDITORIA-DE-NUMEROS.md)** — as 580 conferências que recalculam cada número
+  publicado a partir das linhas de resposta originais, com estatística independente da que gerou os resumos.
+  Presa na suíte de testes: número sem dado que o sustente quebra o `pytest`.
+- **Canários de comportamento** (`python -m laboratorio.canarios_de_comportamento --rodar`) — oito propriedades
+  em que o guia se apoia, verificáveis em 16 chamadas por menos de US$ 0,0003. A auditoria pega erro meu; o
+  canário pega mudança do modelo. A primeira corrida derrubou uma afirmação publicada em menos de 24 horas.
 - [O Jev nos fluxos desta máquina](integracao/README.md) — os dois hooks instalados, o que cada um decide, o que foi medido e como ligar ou desligar.
 - [Pré-registro do E14](laboratorio/PREREGISTRO.md) — hipóteses, emendas datadas e o falso achado que produzi
   e corrigi antes de publicar, mantido no registro.
