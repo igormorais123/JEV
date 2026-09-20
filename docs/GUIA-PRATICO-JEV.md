@@ -301,7 +301,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 11.171 chamadas reais | US$ 0,4851 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 11.172 chamadas reais | US$ 0,4851 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -366,7 +366,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezessete experimentos e uma suíte de canários, 11.171 chamadas reais, US$ 0,4851 pelo
+Dezessete experimentos e uma suíte de canários, 11.172 chamadas reais, US$ 0,4851 pelo
 livro-caixa — dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esses dois números
 são conferidos contra o livro-caixa por `laboratorio/auditoria.py`, junto com cada número desta
 página, e a conferência é exata de propósito: quem gasta atualiza o número, ou a suíte de testes
@@ -414,12 +414,13 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 1. **Aplicar vale a pena onde o método atual é regra simples ou busca por palavra.** O ganho é
    grande, replicado três vezes e sobrevive a mudança de formato, de ordem e de fornecedor de
    acesso.
-2. **Precisa ser o Jev quando o texto vem de fora.** Em acurácia, a vantagem sobre LLMs baratos
-   depende de quem escreveu o gabarito — e eles custam um quarto do preço. Em resistência a
-   manipulação pelo próprio texto classificado, a vantagem é estrutural e não depende de
-   gabarito: **0 de 50** contra até 16% dos comparadores, sob ataques que eu não escrevi, e a
-   confiança dele protege onde a deles não protege. Se o texto é de terceiro, a escolha está
-   decidida.
+2. **O Jev é preferível quando o texto vem de fora — mas não é blindagem.** Em acurácia, a
+   vantagem sobre LLMs baratos depende de quem escreveu o gabarito, e eles custam um quarto do
+   preço. Contra aviso que imita sistema, a vantagem é estrutural e não depende de gabarito:
+   **0 de 50** contra até 16% dos comparadores, sob ataques que eu não escrevi. Contra **ordem
+   direta** ao classificador, porém, ele vira 28 de 81 — e a seção 3b
+   explica por que a afirmação anterior estava errada. Se o texto vem de terceiro, prefira o
+   Jev **e** sanitize a entrada; a segunda parte não é opcional.
 3. **Nada disso autoriza automatizar sem rede.** A confiança falha, o modelo oscila, e a classe
    irreversível continua exigindo gente.
 
@@ -433,7 +434,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E a triagem de atendimento? | Vale, mas com corte alto e revisão da classe perigosa — e ela é a aplicação em que o LLM barato mais se aproxima. |
 | Dá para automatizar? | Só acima de 0,99 de confiança, nunca na classe irreversível, e depois de recalibrar no seu material. |
 | Quanto custa experimentar? | Praticamente nada: mil decisões por dois centavos. O custo do piloto é o tempo de quem compara os resultados. |
-| Qual o maior risco? | Automatizar sobre um critério de correção que ninguém de fora validou — e, logo atrás, rodar sem classe de escape: é a única falha medida em que a confiança não avisa. |
+| Qual o maior risco? | **Deixar texto hostil chegar ao estado sem sanitizar**: uma ordem direta ao classificador vira 28 de 81 decisões, e 8 das viradas no corpus jurídico passaram do corte de 0,90. Depois dele: automatizar sobre um critério de correção que ninguém de fora validou, e rodar sem classe de escape. |
 | O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,56 do teto. É acesso a dado real e tempo de gente. |
 
 ---
