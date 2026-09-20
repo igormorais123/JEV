@@ -48,9 +48,32 @@ Entra uma pergunta mais um conjunto de trechos, sai a ordem de relevância.
 **Achou as 8 de 8 ressalvas e colocou no top-3.** O BM25, que é o método de busca padrão, achou
 5 de 8. A ordem original do documento, 4 de 8.
 
+**E é a única aplicação com economia de token medida.** Vinte perguntas sobre um repositório
+real, oito trechos de código candidatos cada, e um modelo respondendo com o que a seleção
+entregou. A verificação é por expressão regular escrita antes de rodar — ou a resposta traz o
+valor certo, ou não traz:
+
+| O que se manda para o modelo | Respostas certas | Trecho certo no top-2 | Contexto enviado |
+|---|---|---|---|
+| os oito trechos, sem seleção | 15/20 | 20/20 | 172.866 bytes |
+| **os dois que o Jev escolheu** | **18/20** | **20/20** | **47.313 bytes — 72,6% menos** |
+| os dois que o BM25 escolheu | 14/20 | 16/20 | 53.982 bytes |
+| dois ao acaso | 7/20 | 3/20 | 44.041 bytes |
+
+**Quase três quartos do contexto somem sem custar resposta.** A afirmação mais sólida é a da
+primeira coluna da direita: o Jev põe o trecho certo entre os dois primeiros em 20 de 20, o BM25
+em 16. A diferença na resposta final (18 contra 15 e contra 14) favorece o Jev em todos os
+pareamentos, mas com vinte perguntas não atinge significância — é ausência de perda, não
+superioridade demonstrada.
+
+**Um cuidado que essa medição revelou:** selecionar por função isolada não traz as constantes
+declaradas no topo do arquivo. Numa das vinte, o Jev escolheu a função certa e a resposta saiu
+errada porque o valor estava fora dela. Recorte o candidato com o cabeçalho do módulo junto.
+
 Onde aplicar: achar a exceção escondida no meio do contrato, a cláusula que inverte a regra
-geral, o parágrafo que ressalva o artigo anterior. **É onde ele mais se destaca sobre o que se
-usa hoje**, e é a aplicação menos óbvia das três.
+geral, o parágrafo que ressalva o artigo anterior — e montar o contexto de um agente caro, que é
+onde a economia aparece em dinheiro. **É onde ele mais se destaca sobre o que se usa hoje**, e é
+a aplicação menos óbvia das três.
 
 ### Aplicação 4 — Guarda: "este comando precisa mesmo de confirmação?"
 
@@ -216,7 +239,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 5.269 chamadas reais | US$ 0,2931 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 5.926 chamadas reais | US$ 0,3109 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -281,7 +304,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezesseis experimentos, 5.269 chamadas reais, US$ 0,2931 pelo livro-caixa —
+Dezessete experimentos, 5.926 chamadas reais, US$ 0,3109 pelo livro-caixa —
 dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esta é a lista inteira — o que cada um
 perguntou, o que respondeu e o que isso muda na hora de aplicar.
 
@@ -307,6 +330,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E17 · R16 | O Jev pode substituir o guarda de comando por palavra-chave? | **Não.** Sozinho perde de 2 a 6 irreversíveis em 12; a melhor formulação com corte ainda interrompe 41,7% dos benignos | O desenho estava errado, não o modelo. |
 | E17 · R16b | E como segunda camada, liberando o que a regra barrou? | Interrupção cai de **72,2% para 29,6%**, com **0 de 12 irreversíveis liberados** | Aplicação 4. Implantado em sombra. |
 | E17 | O roteador em produção, 88 decisões reais | Latência mediana **431 ms**, p90 623 ms, US$ 0,0022 no total. Acerto **não medido**: o registro guardava só o hash | Corrigido o registro; a medição de acerto fica para a próxima rodada. |
+| E17 · R17 | Quanto token a seleção de contexto economiza, de verdade? | **72,6% do contexto**, com 18/20 respostas certas contra 15/20 carregando tudo; trecho certo no top-2 em **20/20** contra 16/20 do BM25 | Primeiro número de economia do estudo. Aplicação 3. |
 | E14 · R13 | E um texto que não contém pedido nenhum? | Sem classe de escape: erra 10/10 com confiança **0,987**. Com ela: acerta 10/10 | Classe de escape obrigatória. Passo 1b. |
 | E14 · R1–R7 | Quantas classes cabem, e o que degrada? | Até **12 sem custo**; platô em 90% até 147. Quebra só com ruído pesado (46,7% a 50%) — **e a confiança cai junto** | Taxonomia pode ser maior do que se supunha; o corte protege onde ele falha. |
 | E14 · R12 | Contexto grande dilui a decisão? | **96,7% constante de 0 a 50 mil caracteres** | Diluição não é risco. Truncamento do cliente é. |
@@ -335,7 +359,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 
 | Pergunta | Resposta |
 |---|---|
-| Onde aplicar primeiro? | Verificação de afirmação contra evidência, e ordenação para achar ressalva. São as duas em que a vantagem sobre o método atual é maior e o risco é menor. |
+| Onde aplicar primeiro? | **Ordenação para montar contexto** — é a única com economia medida (72,6%, sem perder resposta) e risco baixo. Depois, verificação de afirmação contra evidência. |
 | E a triagem de atendimento? | Vale, mas com corte alto e revisão da classe perigosa — e ela é a aplicação em que o LLM barato mais se aproxima. |
 | Dá para automatizar? | Só acima de 0,99 de confiança, nunca na classe irreversível, e depois de recalibrar no seu material. |
 | Quanto custa experimentar? | Praticamente nada: mil decisões por dois centavos. O custo do piloto é o tempo de quem compara os resultados. |

@@ -36,6 +36,7 @@ def main():
              'sem_pedido': mapa['sem_pedido'], 'custo': mapa['custo'],
              'adversario': mapa.get('adversario_externo'),
              'guarda': mapa.get('guarda_de_comando'),
+             'economia': mapa.get('economia_de_contexto'),
              'calibracao': {nome: {'ece': bloco['ece'], 'separacao': bloco['separacao'],
                                    'faixas': bloco['faixas']}
                             for nome, bloco in mapa['calibracao'].items()}}
@@ -232,7 +233,23 @@ tbody tr:last-child td{border-bottom:none}
   </section>
 
   <section>
-    <h2>Os quatro achados que mudam a aplicação</h2>
+    <h2>O que isso economiza, com a resposta na mão</h2>
+    <p class="sub">Vinte perguntas factuais sobre um repositório real, oito trechos de código
+    candidatos por pergunta, e um modelo respondendo com o que cada método de seleção entregou.
+    A verificação é por expressão regular escrita antes de rodar: ou a resposta traz o valor
+    certo, ou não traz. A barra mede o contexto enviado; a coluna da esquerda, se a resposta
+    sobreviveu ao corte.</p>
+    <div class="rolagem">
+      <table id="tabela-economia">
+        <thead><tr><th>O que se manda ao modelo</th><th>Respostas certas</th>
+        <th>Trecho certo no top-2</th><th>Contexto enviado</th><th>Economia</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Os achados que mudam a aplicação</h2>
     <div class="achados" id="achados"></div>
   </section>
 
@@ -391,6 +408,29 @@ if (D.guarda) {
   ).join('');
 }
 
+// ---- economia de contexto (R17)
+if (D.economia) {
+  const rotulos = {todos: 'os oito trechos, sem seleção', jev: 'os dois que o Jev escolheu',
+                   bm25: 'os dois que o BM25 escolheu', sorteio: 'dois ao acaso'};
+  const maior = Math.max(...Object.values(D.economia.arranjos).map(a => a.bytes));
+  document.querySelector('#tabela-economia tbody').innerHTML =
+    ['todos','jev','bm25','sorteio'].map(k => {
+      const a = D.economia.arranjos[k];
+      const destaque = k === 'jev' ? ' style="font-weight:650"' : '';
+      const cls = a.taxa >= 0.85 ? 'p-ok' : (a.taxa >= 0.6 ? 'p-at' : 'p-ru');
+      const largura = (a.bytes / maior * 100).toFixed(0);
+      const cor = k === 'jev' ? 'var(--estavel)' : 'var(--traco-forte)';
+      return `<tr${destaque}><td>${rotulos[k]}</td>
+        <td><span class="pilula ${cls}">${a.acertos}/${a.n}</span></td>
+        <td>${a.alvo_no_topo}/${a.n}</td>
+        <td><div style="display:flex;align-items:center;gap:.5rem;justify-content:flex-end">
+          <div style="flex:0 0 70px;height:8px;background:var(--linha,var(--traco));border-radius:4px;overflow:hidden">
+            <div style="width:${largura}%;height:100%;background:${cor}"></div></div>
+          <span>${a.bytes.toLocaleString('pt-BR')}</span></div></td>
+        <td style="font-weight:600;color:${k==='jev'?'var(--estavel)':'var(--tinta-fraca)'}">${k==='todos' ? '—' : pct(a.economia)}</td></tr>`;
+    }).join('');
+}
+
 // ---- achados
 const semSaida = D.sem_pedido['sem-saida'], comSaida = D.sem_pedido['com-saida'];
 const ruido = D.dimensoes.find(d => d.chave === 'ruido');
@@ -403,13 +443,15 @@ document.getElementById('achados').innerHTML = [
    `Em dez textos sem pedido algum, o Jev respondeu <i>informacao</i> nas <span class="num">${semSaida.n}</span> vezes, com confiança média <span class="num">${String(semSaida.conf).replace('.',',')}</span>. Oferecendo a opção “não se aplica”, acertou <span class="num">${comSaida.n}/${comSaida.n}</span>. Toda taxonomia precisa dessa saída.`],
   ['forte','Sob texto sujo, ele fica honesto',
    `Com ${pior70.nivel} dos caracteres corrompidos a acurácia cai para <span class="num">${pct(pior70.acuracia)}</span>, mas a confiança cai junto: nenhum erro passou de 0,90. A degradação de superfície é absorvida pelo mecanismo de confiança.`],
+  ['forte','Quase três quartos do contexto somem sem custar resposta',
+   `Escolhendo dois trechos entre oito, o contexto enviado cai <span class="num">${D.economia ? pct(D.economia.arranjos.jev.economia) : '—'}</span> e as respostas certas vão de <span class="num">${D.economia ? D.economia.arranjos.todos.acertos : '—'}/20</span> para <span class="num">${D.economia ? D.economia.arranjos.jev.acertos : '—'}/20</span>. O trecho certo entra no top-2 em <span class="num">20/20</span>; o BM25 acerta <span class="num">16/20</span>. É o primeiro número de economia que este estudo pôde publicar.`],
   ['','A confiança é calibrada, e ordena melhor ainda',
    `Erro de calibração esperado de <span class="num">${String(cal.ece).replace('.',',')}</span> em 230 casos, com separação de <span class="num">${String(cal.separacao).replace('.',',')}</span> entre acertos e erros. O número não é só um ranking: aproxima a probabilidade real.`]
 ].map(([c,t,p]) => `<div class="achado ${c}"><h4>${t}</h4><p>${p}</p></div>`).join('');
 
 document.getElementById('rodape').innerHTML =
   `Todos os números desta página são injetados de <code>laboratorio/mapa-de-limites.json</code>, ` +
-  `escrito pelas rodadas R0 a R16 dos programas E14 e E17. ` +
+  `escrito pelas rodadas R0 a R17 dos programas E14 e E17. ` +
   `${D.custo.chamadas.toLocaleString('pt-BR')} chamadas ao modelo, US$ ${D.custo.usd.toFixed(5).replace('.',',')}. ` +
   `Cada rodada teve hipótese e critério de decisão escritos antes da execução, em ` +
   `<code>laboratorio/PREREGISTRO.md</code> — inclusive a R15, que falsificou uma afirmação ` +

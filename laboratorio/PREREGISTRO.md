@@ -531,6 +531,66 @@ nunca opinar sobre comando que a regra não barrou, nunca liberar efeito grave p
 que esteja, nunca liberar em falha de rede, nunca gravar o comando em claro. Ativar exige
 `--modo ativo` explícito.
 
+## R17 — a pergunta que o projeto nunca tinha respondido: quanto isso economiza?
+
+Todo relatório deste estudo carrega o mesmo campo vazio: `astra_savings_measured: null`. A
+promessa que abriu o trabalho era poupar o modelo caro; o E16 mediu ordenação e acertou 8 de 8,
+e ainda assim não podia dizer que economizou nada, porque escolher bem os trechos só economiza
+se a resposta continuar certa com os trechos escolhidos.
+
+**Desenho, pré-registrado.** Vinte perguntas factuais sobre este próprio repositório, cada uma
+com **verificação por expressão regular escrita antes de rodar** — ou a resposta contém o valor
+certo, ou não contém; sem gabarito de opinião, sem anotador. Oito candidatos por pergunta: o
+trecho que contém a resposta e sete funções reais sorteadas do mesmo repositório. O mesmo modelo
+respondedor (`mistral-nemo`) é chamado quatro vezes por pergunta:
+
+**H17.** Com os dois trechos do Jev, o acerto empata com carregar os oito, e o contexto cai mais
+de 60%. **Falsificação:** se `jev` perder mais de um caso para `todos`, a economia é falsa; se
+`bm25` empatar, o Jev não é necessário aqui.
+
+| arranjo | acertos | IC95 | alvo no top-2 | bytes enviados | economia |
+|---|---|---|---|---|---|
+| todos os 8 trechos | 15/20 | 0,531–0,888 | 20/20 | 172.866 | — |
+| **top-2 do Jev** | **18/20** | 0,699–0,972 | **20/20** | **47.313** | **72,6%** |
+| top-2 do BM25 | 14/20 | 0,481–0,855 | 16/20 | 53.982 | 68,8% |
+| 2 ao acaso | 7/20 | 0,181–0,567 | 3/20 | 44.041 | 74,5% |
+
+**H17 sustentada.** Três leituras, em ordem de solidez:
+
+1. **O Jev põe o trecho certo no top-2 em 20 de 20; o BM25, em 16.** É a afirmação mais direta e
+   não depende do respondedor: mede recuperação, e a diferença é de quatro casos em vinte.
+2. **A economia é real: 72,6% do contexto de entrada, sem perder resposta.** No pareamento, o
+   Jev ganha 4 casos e perde 1 contra carregar tudo. A direção favorece a seleção, mas
+   **p = 0,375 no McNemar exato: isso não é diferença demonstrada, é ausência de perda.** O que
+   se pode afirmar é que a seleção não custou resposta, e cortou quase três quartos do contexto.
+3. **Contra o BM25, 4 a 0 no pareamento, p = 0,125.** Sugestivo e insuficiente com n = 20. A
+   afirmação que se sustenta é a da recuperação (20/20 contra 16/20), não a da resposta final.
+
+**O que mais surpreendeu, e precisa de mais amostra:** carregar os oito trechos foi **pior** que
+carregar os dois certos, 15 contra 18. Se isso se confirmar, selecionar não é só mais barato: é
+melhor, porque contexto irrelevante desvia o respondedor. Com n = 20 e p = 0,375, é uma
+hipótese para a próxima rodada, não um achado.
+
+**O erro do Jev que vale registrar.** Na pergunta sobre o fator de conversão do ledger, ele
+escolheu a função certa e a resposta saiu errada assim mesmo: o trecho usa a constante
+`NUSD_PER_USD`, que está declarada **fora** da função. Selecionar por função isolada não traz as
+constantes de módulo de que a função depende. É um limite da granularidade do candidato, não da
+ordenação, e é acionável: o recorte deveria incluir o cabeçalho do módulo.
+
+**Defeito meu, declarado e não corrigido no resultado.** A regex da pergunta 18 aceitava `famil`
+sem acento, e a resposta correta dizia *"por família"*. O caso foi contado como erro em todos os
+arranjos que o acertaram. Trocar a regex depois de ver o resultado é o ajuste que o pré-registro
+existe para impedir, então o número publicado continua sendo o pré-registrado. A análise de
+sensibilidade com a comparação sem acento está em `r17b-sensibilidade.json`, ao lado: ela move
+Jev para 19/20, `todos` para 16/20 e BM25 para 15/20, **sem mudar a ordem dos arranjos** — o
+defeito é simétrico, a mesma regex vale para os quatro.
+
+**Limite do que foi medido.** Isto é economia de contexto de entrada num passo de pergunta e
+resposta, não a economia de uma sessão de trabalho inteira. E o respondedor é um LLM barato, mais
+sensível a contexto ruim que um modelo forte: o ganho medido é um limite superior do que se veria
+com o Opus. O campo `astra_savings_measured` continua honesto ao dizer `null` para a sessão
+inteira; o que existe agora é **72,6% num passo de recuperação, com a resposta verificada**.
+
 ## Achado de engenharia: o registro que não permitia auditar
 
 Ao tentar medir, pela primeira vez, o que o roteador decidiu **em produção** — 88 decisões

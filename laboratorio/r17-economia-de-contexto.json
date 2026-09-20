@@ -1,0 +1,1518 @@
+{
+ "perguntas": 20,
+ "candidatos": 8,
+ "topo": 2,
+ "respondedor": "mistralai/mistral-nemo",
+ "arranjos": {
+  "todos": {
+   "n": 20,
+   "acertos": 15,
+   "taxa": 0.75,
+   "ic95": [
+    0.5313,
+    0.8881
+   ],
+   "alvo_no_topo": 20,
+   "bytes": 172866,
+   "economia": 0.0
+  },
+  "jev": {
+   "n": 20,
+   "acertos": 18,
+   "taxa": 0.9,
+   "ic95": [
+    0.699,
+    0.9721
+   ],
+   "alvo_no_topo": 20,
+   "bytes": 47313,
+   "economia": 0.7263
+  },
+  "bm25": {
+   "n": 20,
+   "acertos": 14,
+   "taxa": 0.7,
+   "ic95": [
+    0.481,
+    0.8545
+   ],
+   "alvo_no_topo": 16,
+   "bytes": 53982,
+   "economia": 0.6877
+  },
+  "sorteio": {
+   "n": 20,
+   "acertos": 7,
+   "taxa": 0.35,
+   "ic95": [
+    0.1812,
+    0.5671
+   ],
+   "alvo_no_topo": 3,
+   "bytes": 44041,
+   "economia": 0.7452
+  }
+ },
+ "detalhe": [
+  {
+   "id": "q00",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 9634,
+   "resposta": "A chave da API é lida a partir do arquivo .env do projeto ou das variáveis de ambiente, caso não esteja disponível."
+  },
+  {
+   "id": "q00",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1272,
+   "resposta": "A chave da API é lida a partir do arquivo .env do projeto se não estiver na variável de ambiente."
+  },
+  {
+   "id": "q00",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3357,
+   "resposta": "A chave da API é lida a partir do arquivo .env do projeto ou do ambiente."
+  },
+  {
+   "id": "q00",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 842,
+   "resposta": "A chave da API é obtida a partir do parâmetro 'chave' passado para a função 'faltantes'."
+  },
+  {
+   "id": "q01",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 5644,
+   "resposta": "O laboratório usa 8 linhas em paralelo por padrão ao despachar em lote."
+  },
+  {
+   "id": "q01",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1557,
+   "resposta": "O laboratório usa oito linhas em paralelo por padrão ao despachar em lote."
+  },
+  {
+   "id": "q01",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3018,
+   "resposta": "O laboratório usa 8 linhas em paralelo por padrão ao despachar em lote."
+  },
+  {
+   "id": "q01",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 634,
+   "resposta": "O laboratório usa 2 linhas em paralelo por padrão ao despachar em lote."
+  },
+  {
+   "id": "q02",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 7134,
+   "resposta": "O intervalo de confiança usa o valor de z=1.96 por padrão."
+  },
+  {
+   "id": "q02",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 2374,
+   "resposta": "O valor de z usado por padrão no intervalo de confiança é 1.96."
+  },
+  {
+   "id": "q02",
+   "arranjo": "bm25",
+   "alvo_no_topo": false,
+   "certo": true,
+   "bytes": 2504,
+   "resposta": "O intervalo de confiança usa o valor de z = 1.96 por padrão."
+  },
+  {
+   "id": "q02",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": true,
+   "bytes": 1874,
+   "resposta": "O intervalo de confiança usa o valor de z igual a 1,96 por padrão."
+  },
+  {
+   "id": "q03",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 7181,
+   "resposta": "O Bootstrap faz 10000 reamostragens por padrão."
+  },
+  {
+   "id": "q03",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1199,
+   "resposta": "O Bootstrap faz 10000 reamostragens por padrão."
+  },
+  {
+   "id": "q03",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 2979,
+   "resposta": "O padrão do bootstrap é 10000 reamostragens."
+  },
+  {
+   "id": "q03",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 2850,
+   "resposta": "O Bootstrap faz 1000 reamostragens por padrão."
+  },
+  {
+   "id": "q04",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 8332,
+   "resposta": "O teste de McNemar usado aqui utiliza a distribuição binomial exata."
+  },
+  {
+   "id": "q04",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 817,
+   "resposta": "O teste de McNemar usado aqui utiliza a distribuição binomial exata."
+  },
+  {
+   "id": "q04",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 860,
+   "resposta": "O teste de McNemar aqui usa a distribuição binomial exata."
+  },
+  {
+   "id": "q04",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 1164,
+   "resposta": "O teste de McNemar usado aqui utiliza a aproximação normal."
+  },
+  {
+   "id": "q05",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 12674,
+   "resposta": "O tamanho máximo do payload, em bytes, antes de o envio ser recusado é 90.000 bytes."
+  },
+  {
+   "id": "q05",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4678,
+   "resposta": "O tamanho máximo do payload, em bytes, antes de o envio ser recusado é 90.000 bytes."
+  },
+  {
+   "id": "q05",
+   "arranjo": "bm25",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 4378,
+   "resposta": "O tamanho máximo do payload é de 20 bytes."
+  },
+  {
+   "id": "q05",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 2254,
+   "resposta": "O tamanho máximo do payload, em bytes, antes de o envio ser recusado é de 256 bytes."
+  },
+  {
+   "id": "q06",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 12994,
+   "resposta": "A confiança precisa estar na faixa de 0 a 1."
+  },
+  {
+   "id": "q06",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4043,
+   "resposta": "A confiança precisa ser um número finito entre 0 e 1."
+  },
+  {
+   "id": "q06",
+   "arranjo": "bm25",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 5359,
+   "resposta": "A confiança precisa respeitar uma faixa de valores para a resposta ser aceita, mas não é especificado qual é essa faixa no código fornecido."
+  },
+  {
+   "id": "q06",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 2335,
+   "resposta": "A confiança precisa respeitar uma faixa de valores para a resposta ser aceita, mas não é possível determinar essa faixa apenas com base no código fornecido."
+  },
+  {
+   "id": "q07",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 5803,
+   "resposta": "O algoritmo de hash usado para a impressão digital do pedido é o SHA256."
+  },
+  {
+   "id": "q07",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1329,
+   "resposta": "O algoritmo de hash usado para a impressão digital do pedido é o SHA-256."
+  },
+  {
+   "id": "q07",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1037,
+   "resposta": "O algoritmo de hash usado para a impressão digital do pedido é o SHA-256."
+  },
+  {
+   "id": "q07",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": true,
+   "bytes": 2109,
+   "resposta": "O algoritmo de hash usado para a impressão digital do pedido é o SHA-256."
+  },
+  {
+   "id": "q08",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4351,
+   "resposta": "A função `ordenar_com_jev` devolve um par com a classificação e a confiança de cada candidato, mas não uma exceção quando o gasto ultrapassa o teto."
+  },
+  {
+   "id": "q08",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 669,
+   "resposta": "A função devolve um par com o motivo."
+  },
+  {
+   "id": "q08",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1443,
+   "resposta": "A função `pode_gastar` devolve um par com um booleano e uma string, onde o booleano indica se o gasto é permitido ou não, e a string fornece o motivo caso o gasto ultrapasse o teto."
+  },
+  {
+   "id": "q08",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 855,
+   "resposta": "A função devolve um dicionário com informações sobre o uso, limite e se é gratuito."
+  },
+  {
+   "id": "q09",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 8448,
+   "resposta": "Os dois parâmetros de ajuste do BM25 nesta implementação são 'k1' e 'b'."
+  },
+  {
+   "id": "q09",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1046,
+   "resposta": "Os dois parâmetros de ajuste do BM25 nesta implementação são 'k1' e 'b'."
+  },
+  {
+   "id": "q09",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4191,
+   "resposta": "Os dois parâmetros de ajuste do BM25 nesta implementação são 'k1' e 'b'."
+  },
+  {
+   "id": "q09",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 1148,
+   "resposta": "Os dois parâmetros de ajuste do BM25 nesta implementação são 'task' e 'state'."
+  },
+  {
+   "id": "q10",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4589,
+   "resposta": "Sim, a entropia calculada usa o logaritmo de base 2."
+  },
+  {
+   "id": "q10",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 1263,
+   "resposta": "Sim, a entropia calculada usa o logaritmo de base 2."
+  },
+  {
+   "id": "q10",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 774,
+   "resposta": "Sim, a entropia calculada usa o logaritmo de base 2."
+  },
+  {
+   "id": "q10",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": true,
+   "bytes": 1323,
+   "resposta": "Não é possível determinar se a entropia calculada usa o logaritmo de base 2 apenas com base nos trechos de código fornecidos."
+  },
+  {
+   "id": "q11",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 7921,
+   "resposta": "O valor em dólares é multiplicado por 1 bilhão (10^9) para virar a unidade inteira do ledger."
+  },
+  {
+   "id": "q11",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 2353,
+   "resposta": "O valor em dólares é multiplicado pelo fator NUSD_PER_USD para ser convertido em nanodolares."
+  },
+  {
+   "id": "q11",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 2962,
+   "resposta": "O valor em dólares é multiplicado pelo valor de NUSD_PER_USD para ser convertido em nanodolares."
+  },
+  {
+   "id": "q11",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 783,
+   "resposta": "O valor em dólares é multiplicado pelo fator de \"input_tokens\" e \"output_tokens\" para se tornar a unidade inteira do ledger."
+  },
+  {
+   "id": "q12",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 4240,
+   "resposta": "A função `normalizar` devolve o texto sem acentos e em letras minúsculas."
+  },
+  {
+   "id": "q12",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 680,
+   "resposta": "A função devolve o texto limpo e a quantidade de ocorrências mascaradas."
+  },
+  {
+   "id": "q12",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 680,
+   "resposta": "A função devolve o texto limpo e a quantidade de ocorrências mascaradas."
+  },
+  {
+   "id": "q12",
+   "arranjo": "sorteio",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 630,
+   "resposta": "A função devolve além do texto limpo, a quantidade total de ocorrências mascaradas."
+  },
+  {
+   "id": "q13",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 14474,
+   "resposta": "A resposta traz uma pergunta que não foi feita."
+  },
+  {
+   "id": "q13",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 7148,
+   "resposta": "Se a resposta traz uma pergunta que não foi feita, o código lançará uma exceção `ContractError` com a mensagem \"Perguntas respondidas {sorted(answers)} diferem das enviadas {sorted(questions)}\"."
+  },
+  {
+   "id": "q13",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3718,
+   "resposta": "Se a resposta traz uma pergunta que não foi feita, o código lançará um erro de contrato indicando que as perguntas respondidas diferem das enviadas."
+  },
+  {
+   "id": "q13",
+   "arranjo": "sorteio",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4995,
+   "resposta": "Se a resposta traz uma pergunta que não foi feita, o código lançará uma exceção \"ContractError\" com a mensagem \"Perguntas respondidas {sorted(answers)} diferem das enviadas {sorted(questions)}\"."
+  },
+  {
+   "id": "q14",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 12469,
+   "resposta": "Quando há corte de confiança, os casos abaixo do corte são considerados como confirmação."
+  },
+  {
+   "id": "q14",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 2060,
+   "resposta": "Quando há corte de confiança, o caso abaixo do corte é considerado como confirmação."
+  },
+  {
+   "id": "q14",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4731,
+   "resposta": "When confidence is cut, cases below the cut become confirmations."
+  },
+  {
+   "id": "q14",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 3434,
+   "resposta": "Quando há corte de confiança, os casos abaixo do corte não são executados."
+  },
+  {
+   "id": "q15",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 8138,
+   "resposta": "A função `avaliar` devolve `(libera, detalhe)`, onde `libera` é `True` apenas se o comando foi barrado pela regra."
+  },
+  {
+   "id": "q15",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 2923,
+   "resposta": "A função `avaliar` devolve `None` e um dicionário com o motivo 'a regra nao barrou; nada a decidir' quando a regra não barra o comando."
+  },
+  {
+   "id": "q15",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 2220,
+   "resposta": "A função devolve None e um dicionário com a chave 'motivo' igual a 'a regra nao barrou; nada a decidir' quando a regra não barra o comando."
+  },
+  {
+   "id": "q15",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 2469,
+   "resposta": "A função `main` na integração/avaliacao/com_contexto.py devolve um dicionário contendo os resultados da avaliação com e sem contexto, incluindo a acurácia, falso barato, cobertura útil e pedidos que m"
+  },
+  {
+   "id": "q16",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 6791,
+   "resposta": "A estatística de concordância entre anotadores calculada é a Coeficiente de Kappa de Cohen."
+  },
+  {
+   "id": "q16",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 849,
+   "resposta": "A estatística de concordância entre anotadores calculada é o coeficiente Kappa de Cohen."
+  },
+  {
+   "id": "q16",
+   "arranjo": "bm25",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 1075,
+   "resposta": "A estatística de concordância entre anotadores não é calculada nos trechos de código fornecidos."
+  },
+  {
+   "id": "q16",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 1197,
+   "resposta": "A estatística de concordância entre anotadores não é calculada nos trechos de código fornecidos."
+  },
+  {
+   "id": "q17",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 6466,
+   "resposta": "O campo da resposta do modelo comparado com o corte antes de sugerir a skill é 'confianca'."
+  },
+  {
+   "id": "q17",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 4228,
+   "resposta": "O campo da resposta do modelo comparado com o corte antes de sugerir a skill é 'confianca'."
+  },
+  {
+   "id": "q17",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 1818,
+   "resposta": "O campo \"acuracia_sobre_programados\" do modelo é comparado com o corte antes de sugerir a skill."
+  },
+  {
+   "id": "q17",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": true,
+   "bytes": 3521,
+   "resposta": "O campo da resposta do modelo comparado com o corte antes de sugerir a skill é 'jev_confidence'."
+  },
+  {
+   "id": "q18",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 15658,
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  },
+  {
+   "id": "q18",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 3602,
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  },
+  {
+   "id": "q18",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 3602,
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  },
+  {
+   "id": "q18",
+   "arranjo": "sorteio",
+   "alvo_no_topo": false,
+   "certo": false,
+   "bytes": 6348,
+   "resposta": "A reamostragem é feita por caso individual."
+  },
+  {
+   "id": "q19",
+   "arranjo": "todos",
+   "alvo_no_topo": true,
+   "certo": false,
+   "bytes": 9925,
+   "resposta": "O gasto acumulado é lido da fonte \"laboratorio/nucleo.py::gasto_total_autorizado\"."
+  },
+  {
+   "id": "q19",
+   "arranjo": "jev",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3223,
+   "resposta": "O gasto acumulado é lido do ledger SQLite."
+  },
+  {
+   "id": "q19",
+   "arranjo": "bm25",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3276,
+   "resposta": "O gasto acumulado é lido da fonte única, que é o livro-caixa SQLite."
+  },
+  {
+   "id": "q19",
+   "arranjo": "sorteio",
+   "alvo_no_topo": true,
+   "certo": true,
+   "bytes": 3276,
+   "resposta": "O gasto acumulado é lido da fonte única, que é o livro-caixa SQLite."
+  }
+ ],
+ "pareado": {
+  "jev_vs_todos": {
+   "so_jev": 4,
+   "so_todos": 1,
+   "p_mcnemar": 0.375
+  },
+  "jev_vs_bm25": {
+   "so_jev": 4,
+   "so_bm25": 0,
+   "p_mcnemar": 0.125
+  },
+  "jev_vs_sorteio": {
+   "so_jev": 11,
+   "so_sorteio": 0,
+   "p_mcnemar": 0.001
+  }
+ },
+ "veredito": "H17 sustentada",
+ "casos": [
+  {
+   "id": "q00",
+   "pergunta": "De onde a chave da API e lida quando ela nao esta na variavel de ambiente?",
+   "alvo": "executor/runner.py::load_api_key",
+   "aceita": "\\.env",
+   "candidatos": [
+    {
+     "chave": "executor/runner.py::load_api_key",
+     "bytes": 706
+    },
+    {
+     "chave": "laboratorio/r1_r3_estresse.py::acuracia",
+     "bytes": 475
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::custo_por_mil",
+     "bytes": 710
+    },
+    {
+     "chave": "executor/placar.py::titulo_do_veredito",
+     "bytes": 2561
+    },
+    {
+     "chave": "laboratorio/r16_guarda_de_comando.py::main",
+     "bytes": 3325
+    },
+    {
+     "chave": "integracao/jev_router/roteador.py::guardar_pedido",
+     "bytes": 704
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::faltantes",
+     "bytes": 158
+    },
+    {
+     "chave": "laboratorio/r4_r7_limites.py::tarefas_r6",
+     "bytes": 583
+    }
+   ]
+  },
+  {
+   "id": "q01",
+   "pergunta": "Quantas linhas em paralelo o laboratorio usa por padrao ao despachar em lote?",
+   "alvo": "laboratorio/nucleo.py::em_paralelo",
+   "aceita": "\\b8\\b|\\boito\\b",
+   "candidatos": [
+    {
+     "chave": "executor/adjudicar_e12.py::consolidar",
+     "bytes": 1946
+    },
+    {
+     "chave": "integracao/avaliacao/rodar.py::carregar_gabaritos",
+     "bytes": 216
+    },
+    {
+     "chave": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+     "bytes": 926
+    },
+    {
+     "chave": "laboratorio/nucleo.py::em_paralelo",
+     "bytes": 981
+    },
+    {
+     "chave": "executor/run_e1_triagem.py::carregar",
+     "bytes": 124
+    },
+    {
+     "chave": "executor/run_e7_confirmacao.py::carregar",
+     "bytes": 136
+    },
+    {
+     "chave": "executor/smoke_mcp.py::exchange",
+     "bytes": 423
+    },
+    {
+     "chave": "integracao/jev_router/politica.py::texto_para_o_agente",
+     "bytes": 468
+    }
+   ]
+  },
+  {
+   "id": "q02",
+   "pergunta": "Que valor de z o intervalo de confianca usa por padrao?",
+   "alvo": "laboratorio/nucleo.py::wilson",
+   "aceita": "1[.,]96",
+   "candidatos": [
+    {
+     "chave": "executor/run_e11_desempate.py::braco_jev",
+     "bytes": 1207
+    },
+    {
+     "chave": "laboratorio/r0_calibracao.py::calibrar",
+     "bytes": 1839
+    },
+    {
+     "chave": "integracao/avaliacao/skills.py::pela_regra",
+     "bytes": 193
+    },
+    {
+     "chave": "executor/pricing.py::_cost",
+     "bytes": 288
+    },
+    {
+     "chave": "laboratorio/nucleo.py::wilson",
+     "bytes": 448
+    },
+    {
+     "chave": "integracao/avaliacao/skills.py::regexes",
+     "bytes": 568
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::gravar",
+     "bytes": 185
+    },
+    {
+     "chave": "laboratorio/r14_autorrecursivo.py::main",
+     "bytes": 2029
+    }
+   ]
+  },
+  {
+   "id": "q03",
+   "pergunta": "Quantas reamostragens o bootstrap faz por padrao?",
+   "alvo": "laboratorio/nucleo.py::bootstrap_diferenca",
+   "aceita": "10[.,]?000",
+   "candidatos": [
+    {
+     "chave": "executor/run_e9_prevalencia.py::limite_superior_erro",
+     "bytes": 810
+    },
+    {
+     "chave": "executor/pricing.py::_ceil_div",
+     "bytes": 78
+    },
+    {
+     "chave": "integracao/jev_router/orcamento.py::pode_gastar",
+     "bytes": 465
+    },
+    {
+     "chave": "lab/server.py::numeric",
+     "bytes": 302
+    },
+    {
+     "chave": "laboratorio/nucleo.py::bootstrap_diferenca",
+     "bytes": 625
+    },
+    {
+     "chave": "executor/run_e5_provedores.py::carregar_chave",
+     "bytes": 317
+    },
+    {
+     "chave": "executor/shared.py::current_prices",
+     "bytes": 1934
+    },
+    {
+     "chave": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+     "bytes": 2230
+    }
+   ]
+  },
+  {
+   "id": "q04",
+   "pergunta": "O teste de McNemar aqui usa aproximacao normal ou a distribuicao binomial exata?",
+   "alvo": "laboratorio/nucleo.py::mcnemar_exato",
+   "aceita": "binomial|exat",
+   "candidatos": [
+    {
+     "chave": "executor/publicar_experimentos.py::e6_run",
+     "bytes": 1558
+    },
+    {
+     "chave": "laboratorio/nucleo.py::mcnemar_exato",
+     "bytes": 327
+    },
+    {
+     "chave": "executor/run_e11_desempate.py::recuperar",
+     "bytes": 394
+    },
+    {
+     "chave": "laboratorio/r10_injecao_comparada.py::tarefas",
+     "bytes": 610
+    },
+    {
+     "chave": "laboratorio/r12_r13_contexto.py::main",
+     "bytes": 3516
+    },
+    {
+     "chave": "executor/run_e11_desempate.py::leitura",
+     "bytes": 672
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::executar_todos",
+     "bytes": 409
+    },
+    {
+     "chave": "laboratorio/nucleo.py::wilson",
+     "bytes": 448
+    }
+   ]
+  },
+  {
+   "id": "q05",
+   "pergunta": "Qual o tamanho maximo do payload, em bytes, antes de o envio ser recusado?",
+   "alvo": "executor/shared.py::ask",
+   "aceita": "90[._,]?000|90\\s*mil",
+   "candidatos": [
+    {
+     "chave": "executor/run_e12_replicacao.py::carteira_do_ledger",
+     "bytes": 996
+    },
+    {
+     "chave": "integracao/jev_mcp.py::metrics",
+     "bytes": 782
+    },
+    {
+     "chave": "executor/shared.py::ask",
+     "bytes": 4453
+    },
+    {
+     "chave": "integracao/jev_router/roteador.py::para_o_cache",
+     "bytes": 245
+    },
+    {
+     "chave": "laboratorio/r11_extremos.py::sem_acento",
+     "bytes": 143
+    },
+    {
+     "chave": "executor/publicar_experimentos.py::tentativas_orfas_run",
+     "bytes": 2986
+    },
+    {
+     "chave": "laboratorio/r4_r7_limites.py::tarefas_r7",
+     "bytes": 1382
+    },
+    {
+     "chave": "executor/adjudicar_e11.py::montar_prompt",
+     "bytes": 1277
+    }
+   ]
+  },
+  {
+   "id": "q06",
+   "pergunta": "Que faixa de valores a confianca precisa respeitar para a resposta ser aceita?",
+   "alvo": "executor/shared.py::strict_answers",
+   "aceita": "0\\s*(a|e|-|até|ate|<=|,)\\s*1|entre\\s*0|\\[0",
+   "candidatos": [
+    {
+     "chave": "laboratorio/r1_r3_estresse.py::corpus",
+     "bytes": 134
+    },
+    {
+     "chave": "executor/shared.py::strict_answers",
+     "bytes": 700
+    },
+    {
+     "chave": "executor/run_e3_evidencia.py::macro_f1_3",
+     "bytes": 581
+    },
+    {
+     "chave": "integracao/avaliacao/rodar.py::carregar_gabaritos",
+     "bytes": 216
+    },
+    {
+     "chave": "executor/run_e10_llm_economico.py::main",
+     "bytes": 3250
+    },
+    {
+     "chave": "executor/shared.py::ask",
+     "bytes": 4453
+    },
+    {
+     "chave": "integracao/instalar.py::main",
+     "bytes": 1274
+    },
+    {
+     "chave": "executor/analise.py::analisar_posicao_e2b",
+     "bytes": 2009
+    }
+   ]
+  },
+  {
+   "id": "q07",
+   "pergunta": "Que algoritmo de hash e usado para a impressao digital do pedido?",
+   "alvo": "integracao/jev_router/roteador.py::impressao",
+   "aceita": "sha[\\s-]?256",
+   "candidatos": [
+    {
+     "chave": "executor/runner.py::dry_run",
+     "bytes": 938
+    },
+    {
+     "chave": "executor/run_e6_repetibilidade.py::entropia",
+     "bytes": 220
+    },
+    {
+     "chave": "laboratorio/r1_r3_estresse.py::criterios_12",
+     "bytes": 91
+    },
+    {
+     "chave": "executor/runner.py::reservation_tokens",
+     "bytes": 635
+    },
+    {
+     "chave": "executor/analise.py::bootstrap_cluster",
+     "bytes": 1737
+    },
+    {
+     "chave": "executor/adjudicar_e11.py::main",
+     "bytes": 1385
+    },
+    {
+     "chave": "integracao/instalar.py::gravar",
+     "bytes": 117
+    },
+    {
+     "chave": "integracao/jev_router/roteador.py::impressao",
+     "bytes": 300
+    }
+   ]
+  },
+  {
+   "id": "q08",
+   "pergunta": "O que a funcao devolve quando o gasto ultrapassa o teto: uma excecao ou um par com o motivo?",
+   "alvo": "integracao/jev_router/orcamento.py::pode_gastar",
+   "aceita": "par|tupla|tuple|dois valores|False.*motivo|motivo.*False|booleano",
+   "candidatos": [
+    {
+     "chave": "laboratorio/r17_economia_de_contexto.py::ordenar_com_jev",
+     "bytes": 855
+    },
+    {
+     "chave": "executor/run_e11_desempate.py::recuperar",
+     "bytes": 394
+    },
+    {
+     "chave": "laboratorio/r15_adversario_externo.py::tarefas",
+     "bytes": 682
+    },
+    {
+     "chave": "executor/ledger.py::now_utc",
+     "bytes": 110
+    },
+    {
+     "chave": "executor/run_canaries.py::provider_snapshot",
+     "bytes": 569
+    },
+    {
+     "chave": "integracao/jev_router/orcamento.py::pode_gastar",
+     "bytes": 465
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::gravar",
+     "bytes": 185
+    },
+    {
+     "chave": "laboratorio/r8_r9_adversarial.py::tarefas",
+     "bytes": 667
+    }
+   ]
+  },
+  {
+   "id": "q09",
+   "pergunta": "Quais sao os dois parametros de ajuste do BM25 nesta implementacao?",
+   "alvo": "executor/run_e4_ressalvas.py::bm25",
+   "aceita": "k1.*b\\b|b\\b.*k1",
+   "candidatos": [
+    {
+     "chave": "lab/server.py::numeric",
+     "bytes": 302
+    },
+    {
+     "chave": "integracao/hooks/jev_guarda_comando.py::_marca",
+     "bytes": 98
+    },
+    {
+     "chave": "executor/run_e10_llm_economico.py::main",
+     "bytes": 3250
+    },
+    {
+     "chave": "executor/run_e4_ressalvas.py::bm25",
+     "bytes": 848
+    },
+    {
+     "chave": "executor/run_e1_triagem.py::wilson",
+     "bytes": 333
+    },
+    {
+     "chave": "executor/adjudicar_e12.py::consolidar",
+     "bytes": 1946
+    },
+    {
+     "chave": "executor/assist.py::evaluate",
+     "bytes": 776
+    },
+    {
+     "chave": "executor/gabarito.py::do_autor",
+     "bytes": 539
+    }
+   ]
+  },
+  {
+   "id": "q10",
+   "pergunta": "A entropia calculada aqui usa logaritmo de base 2?",
+   "alvo": "executor/run_e6_repetibilidade.py::entropia",
+   "aceita": "\\blog2\\b|base\\s*2|\\b2\\b",
+   "candidatos": [
+    {
+     "chave": "integracao/instalar.py::instalar_gancho",
+     "bytes": 941
+    },
+    {
+     "chave": "executor/run_e6_repetibilidade.py::entropia",
+     "bytes": 220
+    },
+    {
+     "chave": "executor/placar.py::politica_de_referencia",
+     "bytes": 627
+    },
+    {
+     "chave": "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+     "bytes": 440
+    },
+    {
+     "chave": "executor/publicar_experimentos.py::decisao",
+     "bytes": 427
+    },
+    {
+     "chave": "integracao/hooks/jev_prompt_router.py::guardar_estado",
+     "bytes": 281
+    },
+    {
+     "chave": "integracao/avaliacao/comandos.py::rodar",
+     "bytes": 624
+    },
+    {
+     "chave": "executor/placar.py::limite_superior_erro_da_politica",
+     "bytes": 582
+    }
+   ]
+  },
+  {
+   "id": "q11",
+   "pergunta": "Por qual fator o valor em dolares e multiplicado para virar a unidade inteira do ledger?",
+   "alvo": "executor/pricing.py::usd_to_nusd",
+   "aceita": "10\\*\\*9|1e9|1[._,]?000[._,]?000[._,]?000|bilh",
+   "candidatos": [
+    {
+     "chave": "executor/placar.py::cartao",
+     "bytes": 232
+    },
+    {
+     "chave": "lab/server.py::validate_run_update",
+     "bytes": 1290
+    },
+    {
+     "chave": "laboratorio/r15_adversario_externo.py::gerar_vetores",
+     "bytes": 1692
+    },
+    {
+     "chave": "laboratorio/r11_extremos.py::condicoes",
+     "bytes": 2315
+    },
+    {
+     "chave": "integracao/hooks/jev_prompt_router.py::guardar_estado",
+     "bytes": 281
+    },
+    {
+     "chave": "executor/runner.py::usage_from",
+     "bytes": 399
+    },
+    {
+     "chave": "executor/pricing.py::usd_to_nusd",
+     "bytes": 557
+    },
+    {
+     "chave": "executor/assist.py::evaluate",
+     "bytes": 776
+    }
+   ]
+  },
+  {
+   "id": "q12",
+   "pergunta": "O que a funcao devolve alem do texto limpo?",
+   "alvo": "integracao/jev_router/redacao.py::limpar",
+   "aceita": "quantos|contagem|lista|numero|achados|padr|quantidade|marcas|substitu",
+   "candidatos": [
+    {
+     "chave": "executor/baseline_regra.py::normalizar",
+     "bytes": 185
+    },
+    {
+     "chave": "executor/gabarito.py::do_autor",
+     "bytes": 539
+    },
+    {
+     "chave": "executor/run_e2_fatorial.py::condicoes",
+     "bytes": 452
+    },
+    {
+     "chave": "executor/run_e10b_piloto.py::carregar",
+     "bytes": 136
+    },
+    {
+     "chave": "executor/runner.py::reported_cost_nusd",
+     "bytes": 232
+    },
+    {
+     "chave": "executor/run_e9_prevalencia.py::acuracia_por_classe",
+     "bytes": 453
+    },
+    {
+     "chave": "executor/publicar_experimentos.py::publicar",
+     "bytes": 1445
+    },
+    {
+     "chave": "integracao/jev_router/redacao.py::limpar",
+     "bytes": 397
+    }
+   ]
+  },
+  {
+   "id": "q13",
+   "pergunta": "O que acontece quando a resposta traz uma pergunta que nao foi feita?",
+   "alvo": "executor/runner.py::validate_contract",
+   "aceita": "erro|excec|exce|ValueError|rejeit|invalid|falha|levanta|raise",
+   "candidatos": [
+    {
+     "chave": "integracao/avaliacao/comandos.py::main",
+     "bytes": 2479
+    },
+    {
+     "chave": "executor/runner.py::validate_contract",
+     "bytes": 2615
+    },
+    {
+     "chave": "laboratorio/r1_r3_estresse.py::pareado",
+     "bytes": 757
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::carteira_do_ledger",
+     "bytes": 996
+    },
+    {
+     "chave": "executor/probe_contract.py::main",
+     "bytes": 2291
+    },
+    {
+     "chave": "executor/publicar_experimentos.py::decisao",
+     "bytes": 427
+    },
+    {
+     "chave": "lab/server.py::require",
+     "bytes": 88
+    },
+    {
+     "chave": "executor/shared.py::ask",
+     "bytes": 4453
+    }
+   ]
+  },
+  {
+   "id": "q14",
+   "pergunta": "Quando ha corte de confianca, o que acontece com o caso abaixo do corte?",
+   "alvo": "laboratorio/r16_guarda_de_comando.py::placar",
+   "aceita": "confirma",
+   "candidatos": [
+    {
+     "chave": "integracao/avaliacao/auditar_producao.py::marca",
+     "bytes": 78
+    },
+    {
+     "chave": "lab/server.py::write_state",
+     "bytes": 592
+    },
+    {
+     "chave": "executor/run_canaries.py::main",
+     "bytes": 4515
+    },
+    {
+     "chave": "laboratorio/r16_guarda_de_comando.py::placar",
+     "bytes": 1378
+    },
+    {
+     "chave": "executor/placar.py::limite_superior_erro_da_politica",
+     "bytes": 582
+    },
+    {
+     "chave": "executor/run_e10_llm_economico.py::main",
+     "bytes": 3250
+    },
+    {
+     "chave": "executor/simple_round.py::detect",
+     "bytes": 1453
+    },
+    {
+     "chave": "executor/erro_grave.py::gabaritos",
+     "bytes": 232
+    }
+   ]
+  },
+  {
+   "id": "q15",
+   "pergunta": "O que a funcao devolve quando a regra por palavra nao barrou o comando?",
+   "alvo": "integracao/hooks/jev_guarda_comando.py::avaliar",
+   "aceita": "None|nada|nulo|nenhum",
+   "candidatos": [
+    {
+     "chave": "integracao/jev_router/roteador.py::registrar",
+     "bytes": 201
+    },
+    {
+     "chave": "executor/baseline_regra.py::normalizar",
+     "bytes": 185
+    },
+    {
+     "chave": "integracao/hooks/jev_guarda_comando.py::avaliar",
+     "bytes": 1031
+    },
+    {
+     "chave": "executor/probe_contract.py::send",
+     "bytes": 739
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::recuperar",
+     "bytes": 1420
+    },
+    {
+     "chave": "integracao/avaliacao/com_contexto.py::main",
+     "bytes": 1285
+    },
+    {
+     "chave": "executor/placar.py::fonte_com_gabarito",
+     "bytes": 1084
+    },
+    {
+     "chave": "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+     "bytes": 1770
+    }
+   ]
+  },
+  {
+   "id": "q16",
+   "pergunta": "Qual estatistica de concordancia entre anotadores e calculada?",
+   "alvo": "executor/run_e8_anotador.py::kappa_cohen",
+   "aceita": "kappa|capa",
+   "candidatos": [
+    {
+     "chave": "integracao/hooks/jev_guarda_comando.py::modo_vigente",
+     "bytes": 263
+    },
+    {
+     "chave": "laboratorio/r1_r3_estresse.py::com_erro",
+     "bytes": 701
+    },
+    {
+     "chave": "executor/run_e8_anotador.py::kappa_cohen",
+     "bytes": 474
+    },
+    {
+     "chave": "integracao/jev_router/redacao.py::limpar",
+     "bytes": 397
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::braco_jev",
+     "bytes": 1207
+    },
+    {
+     "chave": "executor/run_e11_desempate.py::braco_barato",
+     "bytes": 2420
+    },
+    {
+     "chave": "integracao/avaliacao/comandos.py::rodar",
+     "bytes": 624
+    },
+    {
+     "chave": "laboratorio/r11_extremos.py::criterios_com",
+     "bytes": 283
+    }
+   ]
+  },
+  {
+   "id": "q17",
+   "pergunta": "Que campo da resposta do modelo e comparado com o corte antes de sugerir a skill?",
+   "alvo": "integracao/jev_router/politica.py::decidir",
+   "aceita": "confian|confidence",
+   "candidatos": [
+    {
+     "chave": "integracao/avaliacao/rodar.py::carregar_gabaritos",
+     "bytes": 216
+    },
+    {
+     "chave": "executor/run_e3_evidencia.py::main",
+     "bytes": 3066
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::payload_chat",
+     "bytes": 281
+    },
+    {
+     "chave": "integracao/jev_router/orcamento.py::_linhas",
+     "bytes": 358
+    },
+    {
+     "chave": "executor/run_e1_triagem.py::carregar",
+     "bytes": 124
+    },
+    {
+     "chave": "integracao/jev_router/politica.py::decidir",
+     "bytes": 1066
+    },
+    {
+     "chave": "executor/placar.py::valor_entre_gabaritos",
+     "bytes": 290
+    },
+    {
+     "chave": "executor/placar.py::sobre_programados",
+     "bytes": 653
+    }
+   ]
+  },
+  {
+   "id": "q18",
+   "pergunta": "A reamostragem e feita por caso individual ou por grupo?",
+   "alvo": "executor/analise.py::bootstrap_cluster",
+   "aceita": "grupo|cluster|famil|conglomerado|bloco",
+   "candidatos": [
+    {
+     "chave": "executor/probe_contract.py::main",
+     "bytes": 2291
+    },
+    {
+     "chave": "laboratorio/r11_extremos.py::executar",
+     "bytes": 816
+    },
+    {
+     "chave": "executor/analise.py::bootstrap_cluster",
+     "bytes": 1737
+    },
+    {
+     "chave": "executor/placar.py::faixa_dos_gabaritos",
+     "bytes": 776
+    },
+    {
+     "chave": "laboratorio/r8_r9_adversarial.py::main",
+     "bytes": 2857
+    },
+    {
+     "chave": "executor/run_e12_replicacao.py::falha_de_transporte",
+     "bytes": 532
+    },
+    {
+     "chave": "laboratorio/r15b_familias.py::main",
+     "bytes": 4487
+    },
+    {
+     "chave": "laboratorio/r0_calibracao.py::main",
+     "bytes": 1773
+    }
+   ]
+  },
+  {
+   "id": "q19",
+   "pergunta": "De qual fonte o gasto acumulado e lido?",
+   "alvo": "laboratorio/nucleo.py::gasto_total_autorizado",
+   "aceita": "ledger|sqlite|livro",
+   "candidatos": [
+    {
+     "chave": "laboratorio/r16_guarda_de_comando.py::placar",
+     "bytes": 1378
+    },
+    {
+     "chave": "laboratorio/nucleo.py::mcnemar_exato",
+     "bytes": 327
+    },
+    {
+     "chave": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+     "bytes": 2230
+    },
+    {
+     "chave": "integracao/avaliacao/skills.py::regexes",
+     "bytes": 568
+    },
+    {
+     "chave": "executor/run_e4_ressalvas.py::avaliar",
+     "bytes": 937
+    },
+    {
+     "chave": "integracao/jev_router/cliente.py::perguntar",
+     "bytes": 2196
+    },
+    {
+     "chave": "laboratorio/nucleo.py::gasto_total_autorizado",
+     "bytes": 919
+    },
+    {
+     "chave": "executor/run_e5_provedores.py::transporte_direto",
+     "bytes": 930
+    }
+   ]
+  }
+ ]
+}

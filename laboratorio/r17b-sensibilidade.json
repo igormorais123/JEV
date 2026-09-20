@@ -1,0 +1,79 @@
+{
+ "mudaram": [
+  {
+   "id": "q18",
+   "arranjo": "todos",
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  },
+  {
+   "id": "q18",
+   "arranjo": "jev",
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  },
+  {
+   "id": "q18",
+   "arranjo": "bm25",
+   "resposta": "A reamostragem é feita por família, não por caso individual."
+  }
+ ],
+ "arranjos": {
+  "todos": {
+   "n": 20,
+   "pre_registrado": 15,
+   "corrigido": 16,
+   "taxa_corrigida": 0.8,
+   "ic95_corrigido": [
+    0.584,
+    0.9193
+   ]
+  },
+  "jev": {
+   "n": 20,
+   "pre_registrado": 18,
+   "corrigido": 19,
+   "taxa_corrigida": 0.95,
+   "ic95_corrigido": [
+    0.7639,
+    0.9911
+   ]
+  },
+  "bm25": {
+   "n": 20,
+   "pre_registrado": 14,
+   "corrigido": 15,
+   "taxa_corrigida": 0.75,
+   "ic95_corrigido": [
+    0.5313,
+    0.8881
+   ]
+  },
+  "sorteio": {
+   "n": 20,
+   "pre_registrado": 7,
+   "corrigido": 7,
+   "taxa_corrigida": 0.35,
+   "ic95_corrigido": [
+    0.1812,
+    0.5671
+   ]
+  }
+ },
+ "pareado_corrigido": {
+  "jev_vs_todos": {
+   "so_jev": 4,
+   "so_todos": 1,
+   "p_mcnemar": 0.375
+  },
+  "jev_vs_bm25": {
+   "so_jev": 4,
+   "so_bm25": 0,
+   "p_mcnemar": 0.125
+  },
+  "jev_vs_sorteio": {
+   "so_jev": 12,
+   "so_sorteio": 0,
+   "p_mcnemar": 0.0005
+  }
+ },
+ "leitura": "A correcao muda o nivel absoluto e nao muda a ordem dos arranjos. O numero que vale como resultado do experimento e o pre-registrado; este fica como sensibilidade."
+}
