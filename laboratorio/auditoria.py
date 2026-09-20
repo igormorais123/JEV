@@ -803,6 +803,270 @@ def auditar_cem_perguntas(placar):
                          'A auditoria confere que eles estão declarados, não que estão certos')
 
 
+def auditar_r23(placar):
+    """A paráfrase: virada por conjunto e por família, pareamento e o sentinela, do bruto.
+
+    A chave do pareamento é (vetor, mensagem). A primeira análise da rodada usou só a mensagem e
+    colapsou doze pares num — o número por vetor estava certo, o do conjunto não. A auditoria
+    recalcula com a chave certa e é ela que garante que o defeito não volta.
+    """
+    dado = carregar('r23-parafrase.json')
+    corte = dado['corte']
+    linhas = [l for l in dado['detalhe'] if l['escolha']]
+    base = {l['i']: l['escolha'] for l in linhas if l['conjunto'] == 'limpo'}
+    autores = dado.get('autores_surpresa', {})
+
+    def familia(l):
+        if l['conjunto'] == 'conhecidos':
+            return 'instrucao/laboratorio'
+        autor = autores.get(l['vetor'], '?')
+        return ('conteudo/' if autor == 'mistralai/mistral-nemo' else 'instrucao/') + autor
+
+    def conferir_bloco(rotulo, grupo, publicado):
+        pares = [l for l in grupo if l['i'] in base]
+        viradas = [l for l in pares if l['escolha'] != base[l['i']]]
+        placar.conferir('R23', f'{rotulo}: pares', publicado['pares'], len(pares))
+        placar.conferir('R23', f'{rotulo}: viradas', publicado['viradas'], len(viradas))
+        placar.conferir('R23', f'{rotulo}: taxa de virada', publicado['taxa_de_virada'],
+                        round(len(viradas) / len(pares), 4) if pares else None)
+        placar.conferir('R23', f'{rotulo}: ic95 da virada', publicado['ic95_virada'],
+                        wilson(len(viradas), len(pares)))
+        placar.conferir('R23', f'{rotulo}: acima do corte', publicado['acima_do_corte'],
+                        sum(1 for l in viradas if (l['confianca'] or 0) >= corte))
+        placar.conferir('R23', f'{rotulo}: removidos', publicado['removidos'],
+                        sum(l['removidos'] for l in grupo))
+
+    def conferir_pareado(rotulo, bruto, defesa, publicado):
+        a = {(l['vetor'], l['i']): l['escolha'] != base[l['i']] for l in bruto if l['i'] in base}
+        b = {(l['vetor'], l['i']): l['escolha'] != base[l['i']] for l in defesa if l['i'] in base}
+        comuns = [k for k in a if k in b]
+        so_a = sum(1 for k in comuns if a[k] and not b[k])
+        so_b = sum(1 for k in comuns if b[k] and not a[k])
+        placar.conferir('R23', f'{rotulo}: virou só sem defesa', publicado['virou_so_sem_defesa'], so_a)
+        placar.conferir('R23', f'{rotulo}: virou só com defesa', publicado['virou_so_com_defesa'], so_b)
+        placar.conferir('R23', f'{rotulo}: p', publicado['p'], mcnemar(so_a, so_b))
+
+    def conferir_sentinela(rotulo, grupo, publicado, esperado='tenta-instruir'):
+        com = [l for l in grupo if l['braco'] == 'bruto' and l['sentinela']]
+        certos = sum(1 for l in com if l['sentinela'] == esperado)
+        placar.conferir('R23', f'{rotulo}: sentinela n', publicado['n'], len(com))
+        placar.conferir('R23', f'{rotulo}: sentinela acusou', publicado['acusou'], certos)
+        if 'recall' in publicado:
+            placar.conferir('R23', f'{rotulo}: sentinela recall', publicado['recall'],
+                            round(certos / len(com), 4) if com else None)
+
+    for conjunto in ('conhecidos', 'surpresa'):
+        grupo = [l for l in linhas if l['conjunto'] == conjunto]
+        pub = dado['por_conjunto'][conjunto]
+        for braco in ('bruto', 'v1', 'v2'):
+            conferir_bloco(f'{conjunto}/{braco}', [l for l in grupo if l['braco'] == braco], pub[braco])
+        for braco in ('v1', 'v2'):
+            conferir_pareado(f'{conjunto}/pareado {braco}', [l for l in grupo if l['braco'] == 'bruto'],
+                             [l for l in grupo if l['braco'] == braco], pub[f'pareado_{braco}'])
+        conferir_sentinela(conjunto, grupo, pub['sentinela'])
+    for nome, pub in dado['por_familia'].items():
+        grupo = [l for l in linhas if l['conjunto'] in ('conhecidos', 'surpresa') and familia(l) == nome]
+        placar.conferir('R23', f'{nome}: vetores', pub['vetores'], len({l['vetor'] for l in grupo}))
+        conferir_bloco(f'{nome}/bruto', [l for l in grupo if l['braco'] == 'bruto'], pub['bruto'])
+        conferir_bloco(f'{nome}/v2', [l for l in grupo if l['braco'] == 'v2'], pub['v2'])
+        conferir_pareado(f'{nome}/pareado v2', [l for l in grupo if l['braco'] == 'bruto'],
+                         [l for l in grupo if l['braco'] == 'v2'], pub['pareado_v2'])
+        conferir_sentinela(nome, grupo, pub['sentinela'])
+
+    limpo = [l for l in linhas if l['conjunto'] == 'limpo']
+    calado = [l for l in limpo if l['sentinela']]
+    placar.conferir('R23', 'limpo: sentinela calada', dado['por_conjunto']['limpo']['sentinela_calada'],
+                    sum(1 for l in calado if l['sentinela'] == 'nao-tenta'))
+
+    gat = [l for l in linhas if l['conjunto'] == 'gatilho']
+    for braco in ('bruto', 'v1', 'v2'):
+        grupo = [l for l in gat if l['braco'] == braco]
+        pub = dado['gatilho'][braco]
+        acertos = sum(1 for l in grupo if l['escolha'] == l['gold'])
+        placar.conferir('R23', f'gatilho/{braco}: n', pub['n'], len(grupo))
+        placar.conferir('R23', f'gatilho/{braco}: acertos', pub['acertos'], acertos)
+        placar.conferir('R23', f'gatilho/{braco}: ic95', pub['ic95'], wilson(acertos, len(grupo)))
+        placar.conferir('R23', f'gatilho/{braco}: mutiladas', pub['mensagens_mutiladas'],
+                        sum(1 for l in grupo if l['removidos']))
+    conferir_sentinela('gatilho alarme falso', gat, dado['gatilho']['sentinela_alarme_falso'])
+
+    placar.fora_de_alcance(
+        'R23', 'se os 36 vetores escritos por três modelos esgotam as formas de dar ordem ao '
+               'classificador: são uma amostra, e a taxa de virada vale para ela')
+
+
+def auditar_r24(placar):
+    """A votação: cada política refeita a partir das cinco chamadas por caso."""
+    from collections import Counter
+    dado = carregar('r24-votacao.json')
+
+    def votar(respostas, por_confianca=False):
+        validas = [r for r in respostas if r['escolha']]
+        if not validas:
+            return None
+        if por_confianca:
+            peso = Counter()
+            for r in validas:
+                peso[r['escolha']] += (r['confianca'] or 0)
+            return peso.most_common(1)[0][0]
+        melhor, quantos = Counter(r['escolha'] for r in validas).most_common(1)[0]
+        return validas[0]['escolha'] if quantos == 1 else melhor
+
+    for corpus, pub in dado['corpora'].items():
+        linhas = [l for l in dado['detalhe'] if l['corpus'] == corpus]
+        casos = {}
+        for l in linhas:
+            c = casos.setdefault(l['i'], {'gold': l['gold'], 'igual': [], 'diversa': []})
+            if l['formulacao'] == 'base':
+                c['igual'].append(l)
+            if l['repeticao'] == 0:
+                c['diversa'].append(l)
+        placar.conferir('R24', f'{corpus}: casos', pub['casos'], len(casos))
+        politicas = {}
+        for c in casos.values():
+            unica = next((r for r in c['igual'] if r['repeticao'] == 0), None)
+            c['pol'] = {'unica': unica['escolha'] if unica else None,
+                        'maioria-igual': votar(c['igual']),
+                        'maioria-diversa': votar(c['diversa']),
+                        'diversa-por-confianca': votar(c['diversa'], por_confianca=True)}
+        for pol, bloco in pub['politicas'].items():
+            validos = [c for c in casos.values() if c['pol'][pol]]
+            acertos = sum(1 for c in validos if c['pol'][pol] == c['gold'])
+            placar.conferir('R24', f'{corpus}/{pol}: n', bloco['n'], len(validos))
+            placar.conferir('R24', f'{corpus}/{pol}: acertos', bloco['acertos'], acertos)
+            placar.conferir('R24', f'{corpus}/{pol}: ic95', bloco['ic95'], wilson(acertos, len(validos)))
+            if 'pareado_contra_unica' in bloco:
+                pares = [c for c in validos if c['pol']['unica']]
+                so_u = sum(1 for c in pares if c['pol']['unica'] == c['gold'] and c['pol'][pol] != c['gold'])
+                so_p = sum(1 for c in pares if c['pol'][pol] == c['gold'] and c['pol']['unica'] != c['gold'])
+                placar.conferir('R24', f'{corpus}/{pol}: certo só única',
+                                bloco['pareado_contra_unica']['certo_so_unica'], so_u)
+                placar.conferir('R24', f'{corpus}/{pol}: certo só votação',
+                                bloco['pareado_contra_unica']['certo_so_votacao'], so_p)
+                placar.conferir('R24', f'{corpus}/{pol}: p', bloco['pareado_contra_unica']['p'],
+                                mcnemar(so_u, so_p))
+        tres = [c for c in casos.values() if len([r for r in c['igual'] if r['escolha']]) == 3]
+        placar.conferir('R24', f'{corpus}: oscilaram', pub['oscilacao']['oscilaram'],
+                        sum(1 for c in tres if len({r['escolha'] for r in c['igual'] if r['escolha']}) > 1))
+        for formulacao, bloco in pub['por_formulacao'].items():
+            grupo = [l for l in linhas if l['formulacao'] == formulacao and l['repeticao'] == 0 and l['escolha']]
+            placar.conferir('R24', f'{corpus}/formulação {formulacao}: acertos', bloco['acertos'],
+                            sum(1 for l in grupo if l['escolha'] == l['gold']))
+    placar.fora_de_alcance('R24', 'se a formulação reescrita ganha por ser reescrita ou por ter os '
+                                  'critérios em ordem inversa: as duas mudanças entraram juntas')
+
+
+def auditar_r25(placar):
+    """O terceiro domínio: acurácia por arranjo e por molde, os dois pareamentos, a virada."""
+    dado = carregar('r25-terceiro-dominio.json')
+    corte = dado['corte']
+    linhas = [l for l in dado['detalhe'] if l['escolha']]
+    base = {l['i']: l['escolha'] for l in linhas if l['arranjo'] == 'base'}
+    for arranjo, pub in dado['arranjos'].items():
+        grupo = [l for l in linhas if l['arranjo'] == arranjo]
+        acertos = sum(1 for l in grupo if l['escolha'] == l['gold'])
+        pares = [l for l in grupo if l['i'] in base]
+        viradas = [l for l in pares if l['escolha'] != base[l['i']]]
+        placar.conferir('R25', f'{arranjo}: n', pub['n'], len(grupo))
+        placar.conferir('R25', f'{arranjo}: acertos', pub['acertos'], acertos)
+        placar.conferir('R25', f'{arranjo}: ic95', pub['ic95'], wilson(acertos, len(grupo)))
+        placar.conferir('R25', f'{arranjo}: viradas', pub['viradas'], len(viradas))
+        placar.conferir('R25', f'{arranjo}: viradas acima do corte', pub['viradas_acima_do_corte'],
+                        sum(1 for l in viradas if (l['confianca'] or 0) >= corte))
+        for molde, v in pub['por_molde'].items():
+            do_molde = [l for l in grupo if l['molde'] == molde]
+            placar.conferir('R25', f'{arranjo}/{molde}: acertos', v['acertos'],
+                            sum(1 for l in do_molde if l['escolha'] == l['gold']))
+    certo = {}
+    for l in linhas:
+        certo.setdefault(l['i'], {})[l['arranjo']] = l['escolha'] == l['gold']
+    so_b = sum(1 for v in certo.values() if v.get('base') and v.get('sujeito') is False)
+    so_s = sum(1 for v in certo.values() if v.get('sujeito') and v.get('base') is False)
+    placar.conferir('R25', 'sujeito: certo só base', dado['pareado_sujeito']['certo_so_base'], so_b)
+    placar.conferir('R25', 'sujeito: certo só sujeito', dado['pareado_sujeito']['certo_so_sujeito'], so_s)
+    placar.conferir('R25', 'sujeito: p', dado['pareado_sujeito']['p'], mcnemar(so_b, so_s))
+    virou = {}
+    for l in linhas:
+        if l['i'] in base and l['arranjo'].startswith('meta'):
+            virou.setdefault(l['i'], {})[l['arranjo']] = l['escolha'] != base[l['i']]
+    so_m = sum(1 for v in virou.values() if v.get('meta') and v.get('meta-sanitizado') is False)
+    so_z = sum(1 for v in virou.values() if v.get('meta-sanitizado') and v.get('meta') is False)
+    placar.conferir('R25', 'sanitização: virou só sem defesa', dado['pareado_sanitizacao']['virou_so_sem_defesa'], so_m)
+    placar.conferir('R25', 'sanitização: virou só com defesa', dado['pareado_sanitizacao']['virou_so_com_defesa'], so_z)
+    placar.conferir('R25', 'sanitização: p', dado['pareado_sanitizacao']['p'], mcnemar(so_m, so_z))
+    placar.fora_de_alcance('R25', 'se a queda da clínica é do domínio ou do gerador: o mesmo modelo '
+                                  'escreveu os três corpus, e a fraqueza de terceiro pode ser dele')
+
+
+def auditar_r26(placar):
+    """A resposta dividida: acerto por arranjo, pareamento contra todos e a ordenação, do bruto."""
+    dado = carregar('r26-dois-trechos.json')
+    linhas = dado['detalhe']
+    base = {l['id']: l['certo'] for l in linhas if l['tipo'] == 'dupla' and l['arranjo'] == 'todos'}
+    for nome, pub in dado['arranjos'].items():
+        tipo, arranjo = nome.split('/')
+        grupo = [l for l in linhas if l['tipo'] == tipo and l['arranjo'] == arranjo]
+        acertos = sum(1 for l in grupo if l['certo'])
+        esperados = 2 if tipo == 'dupla' else 1
+        placar.conferir('R26', f'{nome}: n', pub['n'], len(grupo))
+        placar.conferir('R26', f'{nome}: acertos', pub['acertos'], acertos)
+        placar.conferir('R26', f'{nome}: ic95', pub['ic95'], wilson(acertos, len(grupo)))
+        placar.conferir('R26', f'{nome}: alvos presentes', pub['todos_os_alvos_presentes'],
+                        sum(1 for l in grupo if l['alvos_presentes'] == esperados))
+        if 'pareado_contra_todos' in pub:
+            so_t = sum(1 for l in grupo if base.get(l['id']) and not l['certo'])
+            so_k = sum(1 for l in grupo if l['certo'] and base.get(l['id']) is False)
+            placar.conferir('R26', f'{nome}: certo só todos', pub['pareado_contra_todos']['certo_so_todos'], so_t)
+            placar.conferir('R26', f'{nome}: certo só seleção', pub['pareado_contra_todos']['certo_so_selecao'], so_k)
+            placar.conferir('R26', f'{nome}: p', pub['pareado_contra_todos']['p'], mcnemar(so_t, so_k))
+    ordens = dado['ordens']
+    o = dado['ordenacao']
+    placar.conferir('R26', 'ordenação: n', o['n'], len(ordens))
+    placar.conferir('R26', 'ordenação: topo é alvo', o['topo_e_alvo'], sum(1 for x in ordens if x['topo_e_alvo']))
+    placar.conferir('R26', 'ordenação: dois no top-2', o['dois_no_top2'], sum(1 for x in ordens if x['dois_no_top2']))
+    placar.conferir('R26', 'ordenação: dois no top-3', o['dois_no_top3'], sum(1 for x in ordens if x['dois_no_top3']))
+    placar.conferir('R26', 'ordenação: topo essencial', o['topo_essencial'],
+                    sum(1 for x in ordens if x['classe_do_topo'] == 'essencial'))
+    placar.conferir('R26', 'ordenação: dois alvos essenciais', o['casos_com_dois_alvos_essenciais'],
+                    sum(1 for x in ordens if x['alvos_essenciais'] == 2))
+    placar.fora_de_alcance('R26', 'se a pergunta dupla "responda as duas" representa a resposta '
+                                  'dividida do mundo real, onde a divisão não vem anunciada')
+
+
+def auditar_r27(placar):
+    """A integração: virada, acerto e sentinela por montagem, do bruto."""
+    dado = carregar('r27-integracao.json')
+    corte = dado['corte']
+    base = {l['i']: l['escolha'] for l in dado['detalhe'] if l['montagem'] == 'base' and l['escolha']}
+    for montagem, pub in dado['montagens'].items():
+        grupo = [l for l in dado['detalhe'] if l['montagem'] == montagem and l['escolha']]
+        pares = [l for l in grupo if l['i'] in base]
+        viradas = [l for l in pares if l['escolha'] != base[l['i']]]
+        acertos = sum(1 for l in grupo if l['escolha'] == l['gold'])
+        placar.conferir('R27', f'{montagem}: n', pub['n'], len(grupo))
+        placar.conferir('R27', f'{montagem}: acertos', pub['acertos'], acertos)
+        placar.conferir('R27', f'{montagem}: viradas', pub['viradas'], len(viradas))
+        placar.conferir('R27', f'{montagem}: ic95 da virada', pub['ic95_virada'], wilson(len(viradas), len(pares)))
+        placar.conferir('R27', f'{montagem}: acima do corte', pub['viradas_acima_do_corte'],
+                        sum(1 for l in viradas if (l['confianca'] or 0) >= corte))
+        com = [l for l in dado['detalhe'] if l['montagem'] == montagem and l['sentinela']]
+        if pub['sentinela']:
+            esperado = 'tenta-instruir' if montagem.startswith('meta') else 'nao-tenta'
+            placar.conferir('R27', f'{montagem}: sentinela n', pub['sentinela']['n'], len(com))
+            placar.conferir('R27', f'{montagem}: sentinela certos', pub['sentinela']['certos'],
+                            sum(1 for l in com if l['sentinela'] == esperado))
+    virou = {}
+    for l in dado['detalhe']:
+        if l['escolha'] and l['i'] in base and l['montagem'].startswith('meta'):
+            virou.setdefault(l['i'], {})[l['montagem']] = l['escolha'] != base[l['i']]
+    for montagem, pub in dado['pareado_contra_separado'].items():
+        so_s = sum(1 for v in virou.values() if v.get('meta-separado') and v.get(montagem) is False)
+        so_m = sum(1 for v in virou.values() if v.get(montagem) and v.get('meta-separado') is False)
+        placar.conferir('R27', f'pareado {montagem}: só separado', pub['virou_so_separado'], so_s)
+        placar.conferir('R27', f'pareado {montagem}: só nesta', pub['virou_so_nesta'], so_m)
+        placar.conferir('R27', f'pareado {montagem}: p', pub['p'], mcnemar(so_s, so_m))
+
+
 def auditar_cem_hipoteses(placar):
     """A página das cem tem de dizer o mesmo que o avaliador diz agora.
 
@@ -857,11 +1121,14 @@ def auditar_paginas_geradas(placar):
     except ImportError:  # rodando o arquivo solto, fora do pacote
         sys.path.insert(0, str(RAIZ))
         from laboratorio import gerar_dossie
-    destino = DOCS / 'DOSSIE-DE-EVIDENCIAS.md'
-    placar.conferir('páginas geradas', 'DOSSIE-DE-EVIDENCIAS.md existe', True, destino.exists())
-    if destino.exists():
-        placar.conferir('páginas geradas', 'DOSSIE-DE-EVIDENCIAS.md está atualizado',
-                        True, destino.read_text(encoding='utf-8') == gerar_dossie.montar())
+    from laboratorio import gerar_bateria
+    for nome, gerador in (('DOSSIE-DE-EVIDENCIAS.md', gerar_dossie),
+                          ('BATERIA-COMPLEMENTAR.md', gerar_bateria)):
+        destino = DOCS / nome
+        placar.conferir('páginas geradas', f'{nome} existe', True, destino.exists())
+        if destino.exists():
+            placar.conferir('páginas geradas', f'{nome} está atualizado',
+                            True, destino.read_text(encoding='utf-8') == gerador.montar())
 
 
 def rodar():
@@ -880,6 +1147,11 @@ def rodar():
     auditar_r21(placar)
     auditar_r21b(placar)
     auditar_r22(placar)
+    auditar_r23(placar)
+    auditar_r24(placar)
+    auditar_r25(placar)
+    auditar_r26(placar)
+    auditar_r27(placar)
     auditar_cem_hipoteses(placar)
     auditar_cem_perguntas(placar)
     auditar_documentacao(placar)
@@ -916,6 +1188,16 @@ O_QUE_CADA_BLOCO_COBRE = {
                     'o trecho existe literalmente, e o valor fecha com o dado.',
     'R22': 'As três defesas contra a ordem direta — sanitizar, delimitar e sentinela — '
            'com acurácia, virada e pareamento por arranjo, e os dois braços do detector.',
+    'R23': 'O sanitizador contra 48 paráfrases da ordem direta, por conjunto e por família de '
+           'autor, com o pareamento pela chave certa e os dois braços do sentinela.',
+    'R24': 'As quatro políticas de votação refeitas das cinco chamadas por caso, a oscilação e '
+           'o acerto por formulação.',
+    'R25': 'O terceiro domínio: acurácia por arranjo e molde, a frase de sujeito e a '
+           'sanitização pareadas.',
+    'R26': 'A resposta dividida em dois trechos: acerto por arranjo, pareamento contra '
+           'carregar tudo e o que a ordenação viu.',
+    'R27': 'As oito montagens da integração sanitizador + sentinela: virada, acerto e '
+           'detecção, com o pareamento contra o separado.',
     'cem perguntas': 'O registro estratégico, a declaração de todo parâmetro não medido que '
                      'as respostas usam, e se a página publicada está atualizada.',
     'caixa': 'As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, '

@@ -81,14 +81,18 @@ dos dois, 169 perguntas:**
 1. **Selecionar não é uma troca entre custo e qualidade — melhora as duas.** Contra carregar os
    oito trechos, os dois do Jev ganham **22 casos a 5, p = 0,0015**. Contexto irrelevante desvia
    o modelo que responde. Este é o achado que inverte o argumento econômico do estudo.
-2. **Mande um ou dois trechos.** Entre k = 1 e k = 2 não há diferença (3 a 4, p = 1,0), e k = 1
-   custa metade. De dois para três o acerto cai, 8 a 2, p = 0,109 — direção consistente em todos
-   os recortes, sem demonstração.
+2. **Mande um ou dois trechos — se a resposta mora num lugar só.** Entre k = 1 e k = 2 não há
+   diferença (3 a 4, p = 1,0), e k = 1 custa metade. De dois para três o acerto cai, 8 a 2,
+   p = 0,109 — direção consistente em todos os recortes, sem demonstração. **A R26 pôs a
+   condição:** quando a resposta exige dois trechos, k = 1 acerta 6 de 80 contra 60 de 80
+   mandando os oito, e k = 3 (50 de 80) é o primeiro que não perde com significância. Quem não
+   sabe de antemão se a resposta está dividida manda três.
 3. **O Jev bate o BM25:** 22 casos a 1 na colocação do trecho certo, p < 0,0001.
 4. **Deixe a confiança escolher quantos mandar.** Um trecho quando o topo vem `essencial` com
    confiança ≥ 0,90, três quando vem incerto, dois no resto: mesmo acerto do k = 2 fixo com
    **86,2% de economia contra 73,7%**. Num corpus fácil ela empata com mandar sempre um; o valor
-   dela aparece quando a ordenação é difícil.
+   dela aparece quando a ordenação é difícil. **O que ela não vê (R26):** resposta dividida em
+   dois trechos — o topo vem `essencial` em 53 de 80 casos e a regra não dispara.
 
 **E um sinal de graça:** se o melhor candidato **não** vier classificado como `essencial`, o
 trecho certo provavelmente não está entre os que você juntou. Quando o topo era `essencial`, a
@@ -243,9 +247,25 @@ custa nada, porque o preço é por token de entrada e o estado já foi enviado. 
 com 2,4% de alarme falso. O sentinela **não impede** a virada; ele dá a trilha de auditoria.
 Use-o ao lado da sanitização, nunca no lugar dela.
 
-O que esta medida **não** prova: que os oito padrões cobrem uma ordem direta escrita de outro
-jeito. Eles foram medidos contra os vetores que este laboratório escreveu, e quem os conhecer
-pode contorná-los. Por isso o sentinela importa — ele não depende de lista de padrões.
+**E a R23 mediu exatamente isso, e a lista caiu.** Contra 48 vetores novos — 12 paráfrases do
+laboratório e 36 escritos por três outros modelos depois de a lista estar congelada — os oito
+padrões não cobrem **nenhum**, e uma lista ampliada cobre 2 dos 36. Contra ordens ao sistema
+nunca vistas, a virada é de **45%** sem defesa e 44% com a lista ampliada, com **202 viradas
+acima do corte de 0,90**. O sentinela, que não depende de lista, acusa **95%** dessas mesmas
+ordens. A ordem das camadas inverte:
+
+1. **Sentinela sobre o texto original**, sempre. Ele detecta 95% de ordens nunca vistas e
+   fica calado em 98% do texto limpo. Custa zero. O que ele cobra: 7 de 24 mensagens
+   legítimas que dizem "desconsidere a mensagem anterior" são acusadas — trate acusação
+   como "mandar para gente", não como "descartar".
+2. **Sanitização por lista como complemento**, contra o que já se conhece. Não a chame de
+   defesa: uma lista ampliada mutilou 22 de 24 mensagens legítimas com palavra-gatilho.
+3. **Integração (R27):** o sentinela precisa do texto **original** — depois de sanitizar ele
+   fica cego (2 de 85). Com dois campos no mesmo payload (limpo para classificar, original
+   para o sentinela) a detecção é 84/84 e a virada reabre em 3/84, nenhuma acima do corte;
+   com duas chamadas separadas, 0/82 ao dobro do custo. Classe irreversível: duas chamadas.
+
+Os números da R23 e da R27, vetor a vetor: `docs/BATERIA-COMPLEMENTAR.md`.
 
 Mapa completo dos limites e as tabelas por família: `docs/LIMITES-DO-JEV.md`. A varredura que
 derrubou a afirmação: `docs/CEM-HIPOTESES.md`, H098. A rodada que mediu a defesa: `R22`, em
@@ -329,7 +349,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 13.042 chamadas reais | US$ 0,5297 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 31.140 chamadas reais | US$ 1,0047 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -366,11 +386,13 @@ existe e não depende de gabarito.
 esperada vai de 95,0% a 97,2%. Um canal dominado por rastreio não se comporta como um dominado
 por cobrança.
 
-**7. Texto de terceiro só entra em `state`, e sanitizado.** Nunca concatene a mensagem do
-cliente dentro da instrução ou da descrição de uma classe: a separação estrutural se perde no
-momento em que os dois campos viram um só. Mas ela **não é toda a proteção** — essa frase esteve
-aqui e caiu. Contra ordem direta escrita no texto do cliente, a separação deixa passar 35,9% de
-viradas; a sanitização por expressão regular derruba para 1,2%, pareado 27 a 0. Seção 3b.
+**7. Texto de terceiro só entra em `state`, e com o sentinela lendo o original.** Nunca
+concatene a mensagem do cliente dentro da instrução ou da descrição de uma classe: a separação
+estrutural se perde no momento em que os dois campos viram um só. Mas ela **não é toda a
+proteção** — essa frase esteve aqui e caiu. Contra ordem direta no texto do cliente, a
+separação deixa passar 35,9% de viradas, e contra ordens que a lista de padrões nunca viu,
+45%. A camada que generaliza é a pergunta-sentinela no mesmo payload (95% de detecção);
+sanitizar por lista só cobre o ataque já conhecido. Seção 3b.
 
 **8. Não automatize sem classe de escape.** Passo 1b da seção 4. É a única falha medida em que a
 confiança não avisa: 0,987 de média, errando em dez de dez.
@@ -396,7 +418,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezessete experimentos e uma suíte de canários, 13.042 chamadas reais, US$ 0,5297 pelo
+Dezessete experimentos e uma suíte de canários, 31.140 chamadas reais, US$ 1,0047 pelo
 livro-caixa — dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esses dois números
 são conferidos contra o livro-caixa por `laboratorio/auditoria.py`, junto com cada número desta
 página, e a conferência é exata de propósito: quem gasta atualiza o número, ou a suíte de testes
@@ -411,7 +433,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E3 | Uma afirmação se sustenta na evidência anexada? | **95,8%** contra 62,5% | Aplicação recomendada: conferência de citação e de número contra a fonte. |
 | E4 | Achar o trecho que muda a resposta | **8 de 8 ressalvas no top-3**; BM25 acha 5 | Aplicação recomendada: achar a exceção escondida em contrato ou norma. |
 | E5 | O resultado muda conforme o caminho de acesso? | 40 de 40 casos iguais nos dois; o acesso direto é 2× mais lento e mais caro | Use o caminho mais barato. Trocar de fornecedor de acesso não muda a resposta. |
-| E6 | Perguntando 5 vezes a mesma coisa, responde igual? | **1 caso de 40 oscila**; votar em 3 chamadas estabiliza | Para decisão sem volta, pergunte 3 vezes e vá pela maioria. |
+| E6 · R24 | Perguntando 5 vezes a mesma coisa, responde igual? | **1 caso de 40 oscila** no E6 e **0 de 148** na R24; votar a mesma pergunta não muda nada, votar três **formulações** sobe o jurídico de 79,7% para 92,8% | Para decisão sem volta, pergunte 3 vezes e vá pela maioria. |
 | E7 | Triagem em conjunto separado, que nunca guiou nada | **97,5%** contra 32,5% | O resultado do E1 não foi sorte nem ajuste ao teste. |
 | E8 | Um anotador independente concorda com o nosso critério? | Concordância 87,4%, kappa 0,84; **29 divergências em 230 casos** | O critério de correção é reprodutível, mas não é unânime — e as divergências são casos reais de ambiguidade. |
 | E9 | E se a mistura de assuntos do canal for outra? | Acurácia esperada entre **95,0% e 97,2%** | Estime pelo seu canal: mais rastreio ou mais cobrança muda o número. |
@@ -450,7 +472,8 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
    **0 de 50** contra até 16% dos comparadores, sob ataques que eu não escrevi. Contra **ordem
    direta** ao classificador, porém, ele vira 28 de 81 — e a seção 3b
    explica por que a afirmação anterior estava errada. Se o texto vem de terceiro, prefira o
-   Jev **e** sanitize a entrada; a segunda parte não é opcional.
+   Jev **e** ponha o sentinela lendo o texto original; sanitizar por lista cobre só o
+   ataque que já se conhece (R23).
 3. **Nada disso autoriza automatizar sem rede.** A confiança falha, o modelo oscila, e a classe
    irreversível continua exigindo gente.
 
@@ -464,7 +487,7 @@ perguntou, o que respondeu e o que isso muda na hora de aplicar.
 | E a triagem de atendimento? | Vale, mas com corte alto e revisão da classe perigosa — e ela é a aplicação em que o LLM barato mais se aproxima. |
 | Dá para automatizar? | Só acima de 0,99 de confiança, nunca na classe irreversível, e depois de recalibrar no seu material. |
 | Quanto custa experimentar? | Praticamente nada: mil decisões por dois centavos. O custo do piloto é o tempo de quem compara os resultados. |
-| Qual o maior risco? | **Deixar texto hostil chegar ao estado sem sanitizar**: uma ordem direta ao classificador vira 28 de 81 decisões, e 8 das viradas no corpus jurídico passaram do corte de 0,90. Depois dele: automatizar sobre um critério de correção que ninguém de fora validou, e rodar sem classe de escape. |
+| Qual o maior risco? | **Deixar texto hostil chegar ao estado sem o sentinela**: uma ordem direta ao classificador vira 28 de 81 decisões, e 8 das viradas no corpus jurídico passaram do corte de 0,90. Depois dele: automatizar sobre um critério de correção que ninguém de fora validou, e rodar sem classe de escape. |
 | O que destrava tudo? | 200 mensagens reais e duas pessoas anotando os mesmos casos. Não é dinheiro — sobram US$ 4,56 do teto. É acesso a dado real e tempo de gente. |
 
 ---

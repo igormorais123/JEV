@@ -35,12 +35,14 @@ LEITURA = {
              'do texto limpo. Quem precisa de trilha de auditoria de ataque tem como tê-la de '
              'graça. O que o sentinela não faz é impedir a virada, então ele acompanha a '
              'sanitização em vez de substituí-la.'),
-    'Q023': ('A recomendação de corte em 0,90 do guia continua válida **e ganha uma ressalva que '
-             'muda onde ela pode ser aplicada**. No uso normal, o erro acima de 0,99 é 0,32%. '
-             'Nas condições extremas — 147 opções, 70% de ruído, classes sobrepostas — é 13,5%. '
-             'Não é o ataque que quebra o corte, é a dificuldade: quanto mais difícil a tarefa, '
-             'menos a confiança avisa. Corte de confiança não se transporta de uma taxonomia '
-             'para outra sem remedir.'),
+    'Q023': ('Esta resposta foi corrigida, e a correção é mais útil que a versão original. A '
+             'primeira dizia que o corte de confiança degradava 13,5% nas condições extremas; '
+             'o número somava a diluição **retratada** da R11, e 46 dos 52 erros acima de 0,99 '
+             'eram o truncamento do laboratório, não o modelo. Sem a condição retratada, os '
+             'extremos ficam em 1,29% e a rodada que mais escapa ao corte é a armadilha de '
+             'sujeito (3,43%). A ressalva que sobrevive muda de endereço: não é a taxonomia '
+             'grande nem o texto degradado que enganam o corte — é o pedido atribuído à pessoa '
+             'errada. A frase de sujeito do guia é a mitigação, e ela custa uma linha.'),
     'Q036': ('Dois modos de falha sistemáticos, e os dois são de desenho, não do modelo. Texto '
              'sem pedido nenhum, num contrato sem classe de escape, erra 10 de 10 com confiança '
              'média de 0,987 — o modelo não tem como dizer "nada disso", então ele escolhe. E '

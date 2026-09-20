@@ -63,6 +63,14 @@ LEITURA = {
              'conta do modelo caro que recebe menos contexto depois.'),
     'H058': ('Falsificada com n=5 do lado baixo. Não é evidência de que a confiança do topo não '
              'sirva; é evidência de que este corpus quase não produz topo pouco confiante.'),
+    'H038': ('Falsificada por deriva do provedor, não por desenho. Até a R22, na manhã de '
+             '2026-09-20, o p99 das chamadas respondidas ficava abaixo de 1 s (R22: 893 ms; R18: '
+             '961 ms). Todas as rodadas da tarde do mesmo dia — R23 a R26, inclusive as de 300 '
+             'chamadas — vieram com p99 entre 5 e 8,5 s e mediana 25% mais alta. Não é a carga '
+             'das 12 mil chamadas da R23: as rodadas pequenas depois dela têm a mesma cauda. A '
+             'latência do modelo mudou de regime no mesmo dia, e o gancho interativo que o guia '
+             'promete precisa de timeout curto e caminho de escape (Q072), porque o p99 não é '
+             'uma propriedade estável.'),
     'H089': ('Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7. '
              'O modelo aguenta ambiguidade semântica melhor do que aguenta erro de digitação, '
              'que é o contrário do que eu esperava.'),

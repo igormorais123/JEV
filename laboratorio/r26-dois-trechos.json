@@ -1,0 +1,5144 @@
+{
+ "pares": 80,
+ "candidatos": 8,
+ "respondedor": "mistralai/mistral-nemo",
+ "arranjos": {
+  "dupla/jev-1": {
+   "n": 80,
+   "acertos": 6,
+   "taxa": 0.075,
+   "ic95": [
+    0.0348,
+    0.1541
+   ],
+   "bytes": 95902,
+   "todos_os_alvos_presentes": 0,
+   "pareado_contra_todos": {
+    "certo_so_todos": 54,
+    "certo_so_selecao": 0,
+    "p": 0.0
+   }
+  },
+  "dupla/jev-2": {
+   "n": 80,
+   "acertos": 40,
+   "taxa": 0.5,
+   "ic95": [
+    0.393,
+    0.607
+   ],
+   "bytes": 195823,
+   "todos_os_alvos_presentes": 42,
+   "pareado_contra_todos": {
+    "certo_so_todos": 26,
+    "certo_so_selecao": 6,
+    "p": 0.0005
+   }
+  },
+  "dupla/jev-3": {
+   "n": 80,
+   "acertos": 50,
+   "taxa": 0.625,
+   "ic95": [
+    0.5155,
+    0.7231
+   ],
+   "bytes": 284100,
+   "todos_os_alvos_presentes": 59,
+   "pareado_contra_todos": {
+    "certo_so_todos": 21,
+    "certo_so_selecao": 11,
+    "p": 0.1102
+   }
+  },
+  "dupla/todos": {
+   "n": 80,
+   "acertos": 60,
+   "taxa": 0.75,
+   "ic95": [
+    0.6452,
+    0.8319
+   ],
+   "bytes": 715601,
+   "todos_os_alvos_presentes": 80
+  },
+  "simples/jev-1": {
+   "n": 80,
+   "acertos": 76,
+   "taxa": 0.95,
+   "ic95": [
+    0.8784,
+    0.9804
+   ],
+   "bytes": 85151,
+   "todos_os_alvos_presentes": 78
+  },
+  "simples/todos": {
+   "n": 80,
+   "acertos": 67,
+   "taxa": 0.8375,
+   "ic95": [
+    0.7416,
+    0.9025
+   ],
+   "bytes": 715601,
+   "todos_os_alvos_presentes": 80
+  }
+ },
+ "ordenacao": {
+  "n": 80,
+  "topo_e_alvo": 71,
+  "dois_no_top2": 42,
+  "dois_no_top3": 59,
+  "topo_essencial": 53,
+  "regra_de_recall_dispararia": 27,
+  "media_de_essenciais": 1.04,
+  "casos_com_dois_alvos_essenciais": 17
+ },
+ "detalhe": [
+  {
+   "id": "d000",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2151,
+   "resposta": "(1) O valor padrão do parâmetro `modo` é `'sombra'`.\n(2) Não são citados comparadores econômicos no texto."
+  },
+  {
+   "id": "d000",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 4703,
+   "resposta": "(1) O valor padrão do parâmetro `modo` é `'sombra'`.\n(2) No texto, são citados 4 comparadores econômicos."
+  },
+  {
+   "id": "d000",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5045,
+   "resposta": "(1) O valor padrão do parâmetro `modo` é `'sombra'`.\n(2) Dois comparadores econômicos são citados no texto."
+  },
+  {
+   "id": "d000",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 9447,
+   "resposta": "(1) O valor padrão do parâmetro `modo` é `sombra`.\n(2) No texto, são citados 4 comparadores econômicos de quatro fornecedores."
+  },
+  {
+   "id": "d000",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2151,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "d000",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9447,
+   "resposta": "O valor padrão do parâmetro `modo` é `'sombra'`."
+  },
+  {
+   "id": "d001",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 626,
+   "resposta": "(1) O nome da lista que contém todos os dicionários de casos é \"casos\".\n(2) A frase fixa exibida quando o gancho especificado não está presente é \"Alvo não existe\"."
+  },
+  {
+   "id": "d001",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5182,
+   "resposta": "(1) O nome da lista que contém todos os dicionários de casos é \"casos\".\n(2) A frase fixa exibida quando o gancho especificado não está presente é \"Simulação apenas. Nada foi enviado e nada foi reserva"
+  },
+  {
+   "id": "d001",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 6088,
+   "resposta": "(1) O nome da lista que contém todos os dicionários de casos é \"casos\".\n(2) A frase fixa exibida quando o gancho especificado não está presente é \"  {caminho.name}: {nome} não está lá\"."
+  },
+  {
+   "id": "d001",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 10936,
+   "resposta": "(1) CANARIES\n(2) Simulacao apenas. Nada foi enviado e nada foi reservado."
+  },
+  {
+   "id": "d001",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 626,
+   "resposta": "A lista que contém todos os dicionários de casos é chamada de \"casos\"."
+  },
+  {
+   "id": "d001",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10936,
+   "resposta": "A lista que contém todos os dicionários de casos é chamada de `CANARIES`."
+  },
+  {
+   "id": "d002",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 880,
+   "resposta": "(1) O método HTTP especificado na requisição é 'POST'.\n(2) A função retorna o código de status da resposta HTTP e um dicionário vazio quando a classe do primeiro elemento está em ('incerto', 'irreleva"
+  },
+  {
+   "id": "d002",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1503,
+   "resposta": "(1) O método HTTP especificado na requisição é 'POST'.\n(2) A função retorna {} quando a classe do primeiro elemento está em ('incerto', 'irrelevante')."
+  },
+  {
+   "id": "d002",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2161,
+   "resposta": "(1) O método HTTP especificado na requisição é 'POST'.\n(2) A função retorna 3 quando a classe do primeiro elemento está em ('incerto', 'irrelevante')."
+  },
+  {
+   "id": "d002",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8998,
+   "resposta": "(1) O método HTTP especificado na requisição é 'POST'.\n(2) A função retorna 3 quando a classe do primeiro elemento está em ('incerto', 'irrelevante')."
+  },
+  {
+   "id": "d002",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 880,
+   "resposta": "POST"
+  },
+  {
+   "id": "d002",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8998,
+   "resposta": "O método HTTP especificado na requisição é 'POST'."
+  },
+  {
+   "id": "d003",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 984,
+   "resposta": "(1) A exceção tratada no bloco try/except ao carregar cada linha como JSON é OSError.\n(2) O valor padrão do parâmetro z não é fornecido no código fornecido."
+  },
+  {
+   "id": "d003",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 2400,
+   "resposta": "(1) A exceção tratada no bloco try/except ao carregar cada linha como JSON é `ValueError`.\n(2) O valor padrão do parâmetro `z` não é fornecido no código fornecido."
+  },
+  {
+   "id": "d003",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2812,
+   "resposta": "(1) A exceção tratada no bloco try/except ao carregar cada linha como JSON é ValueError.\n(2) O valor padrão do parâmetro z não é fornecido no código fornecido."
+  },
+  {
+   "id": "d003",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12052,
+   "resposta": "(1) A exceção tratada no bloco try/except ao carregar cada linha como JSON é o ValueError.\n(2) O valor padrão do parâmetro z na função wilson é 1.96."
+  },
+  {
+   "id": "d003",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 410,
+   "resposta": "ValueError"
+  },
+  {
+   "id": "d003",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12052,
+   "resposta": "A exceção tratada no bloco try/except ao carregar cada linha como JSON é a exceção ValueError."
+  },
+  {
+   "id": "d004",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 747,
+   "resposta": "(1) 0 armadilhas semânticas são citadas na mensagem de resumo de R8.\n(2) A chave 'roteados_para_modelo_barato' indica a fração de respostas enviadas ao modelo barato."
+  },
+  {
+   "id": "d004",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3653,
+   "resposta": "(1) 48 armadilhas semânticas são citadas na mensagem de resumo de R8.\n(2) A chave 'fracao_para_modelo_barato' indica a fração de respostas enviadas ao modelo barato."
+  },
+  {
+   "id": "d004",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4991,
+   "resposta": "(1) 48 armadilhas semânticas são citadas na mensagem de resumo de R8.\n(2) A chave 'fracao_para_modelo_barato' indica a fração de respostas enviadas ao modelo barato."
+  },
+  {
+   "id": "d004",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12739,
+   "resposta": "(1) 48 armadilhas semânticas são citadas na mensagem de resumo de R8.\n(2) A chave do dicionário retornado que indica a fração de respostas enviadas ao modelo barato é 'fracao_para_modelo_barato'."
+  },
+  {
+   "id": "d004",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2904,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "d004",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12739,
+   "resposta": "A mensagem de resumo de R8 cita 48 armadilhas semânticas."
+  },
+  {
+   "id": "d005",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 2850,
+   "resposta": "(1) A chave do dicionário que contém a lista de identificadores dos casos errados é 'casos'.\n(2) O número inteiro somado à constante SEMENTE ao criar o gerador aleatório é 0."
+  },
+  {
+   "id": "d005",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 3219,
+   "resposta": "(1) A chave do dicionário que contém a lista de identificadores dos casos errados é 'casos'.\n(2) O número inteiro somado à constante SEMENTE ao criar o gerador aleatório é 0."
+  },
+  {
+   "id": "d005",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 4636,
+   "resposta": "(1) A chave do dicionário que contém a lista de identificadores dos casos errados é 'casos'.\n(2) O número inteiro somado à constante SEMENTE ao criar o gerador aleatório é 20260919."
+  },
+  {
+   "id": "d005",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12316,
+   "resposta": "(1) A chave do dicionário que contém a lista de identificadores dos casos errados é 'erros'.\n(2) O número inteiro somado à constante SEMENTE ao criar o gerador aleatório é 13."
+  },
+  {
+   "id": "d005",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 815,
+   "resposta": "'erros'"
+  },
+  {
+   "id": "d005",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12316,
+   "resposta": "A chave do dicionário retornado que contém a lista de identificadores dos casos errados é 'erros'."
+  },
+  {
+   "id": "d006",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2104,
+   "resposta": "(1) A função não devolve uma mensagem específica quando o gasto está dentro do limite.\n(2) O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "d006",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5480,
+   "resposta": "(1) A função não devolve uma mensagem específica quando o gasto está dentro do limite, pois não há uma condição específica para verificar isso no código fornecido.\n(2) O valor atribuído ao campo \"depl"
+  },
+  {
+   "id": "d006",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6003,
+   "resposta": "(1) A função devolve \"dentro do teto\" quando o gasto está dentro do limite.\n(2) O valor atribuído ao campo \"deployment\" nos resumos é \"experimental_assistive_only\"."
+  },
+  {
+   "id": "d006",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9757,
+   "resposta": "(1) A função `distratores_em_massa` devolve uma mensagem informando que o remetente pede algo junto a um setor, sem pedir nenhuma das ações principais.\n(2) O valor atribuído ao campo \"deployment\" nos "
+  },
+  {
+   "id": "d006",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 521,
+   "resposta": "True, 'dentro do teto'"
+  },
+  {
+   "id": "d006",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 9757,
+   "resposta": "A função `distratores_em_massa` devolve uma mensagem do tipo \"O remetente pede [verbo] algo junto ao setor de [setor], sem pedir nenhuma das ações principais.\" quando o gasto está dentro do limite."
+  },
+  {
+   "id": "d007",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 694,
+   "resposta": "(1) A função retorna o valor encontrado na lista de preços para o provedor e modelo especificados.\n(2) A exceção lançada é PricingError."
+  },
+  {
+   "id": "d007",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1106,
+   "resposta": "(1) A função retorna uma lista vazia quando a lista de pares está vazia.\n(2) A exceção lançada é PricingError."
+  },
+  {
+   "id": "d007",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1631,
+   "resposta": "(1) A função retorna None quando a lista de pares está vazia.\n(2) A exceção PricingError é lançada quando não existe preço publicado para o provedor e modelo."
+  },
+  {
+   "id": "d007",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8094,
+   "resposta": "(1) A função retorna None quando a lista de pares está vazia.\n(2) A exceção PricingError é lançada quando não existe preço publicado para o provedor e modelo."
+  },
+  {
+   "id": "d007",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 523,
+   "resposta": "A função retorna `None` quando a lista de pares está vazia."
+  },
+  {
+   "id": "d007",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8094,
+   "resposta": "A função `entry` retorna `None` quando a lista de pares está vazia."
+  },
+  {
+   "id": "d008",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 503,
+   "resposta": "(1) A função retorna 'gabarito do autor, sem adjudicação' quando o parâmetro total é zero.\n(2) A mensagem retornada é 'gabarito adjudicado (a adjudicação confirmou o autor em todos os casos em disputa"
+  },
+  {
+   "id": "d008",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1251,
+   "resposta": "(1) A função retorna 1.0 quando o parâmetro total é zero.\n(2) A mensagem retornada é 'gabarito do autor, sem adjudicação'."
+  },
+  {
+   "id": "d008",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1869,
+   "resposta": "(1) A função `limite_superior_erro` retorna 1.0 quando o parâmetro `total` é zero.\n(2) A mensagem retornada quando a chave 'adjudicado' em 'procedencia' tem valor falsy é 'gabarito do autor, sem adjud"
+  },
+  {
+   "id": "d008",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5276,
+   "resposta": "(1) A função `read_results` retorna uma lista vazia quando o parâmetro `total` é zero.\n(2) Quando a chave 'adjudicado' em 'procedencia' tem valor falsy, a função `rotulo` retorna a mensagem \"gabarito "
+  },
+  {
+   "id": "d008",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 746,
+   "resposta": "1.0"
+  },
+  {
+   "id": "d008",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5276,
+   "resposta": "A função `read_results` retorna uma lista vazia quando o parâmetro `total` é zero, pois a condição `if path.exists()` não é satisfeita e, consequentemente, o bloco `if` é ignorado. Portanto, a função "
+  },
+  {
+   "id": "d009",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1304,
+   "resposta": "(1) A exceção lançada quando o tipo da resposta está ausente ou difere do tipo esperado é \"Exception\".\n(2) O valor padrão do parâmetro tentativas é 3."
+  },
+  {
+   "id": "d009",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2049,
+   "resposta": "(1) A exceção lançada é ValueError.\n(2) O valor padrão do parâmetro tentativas é 3."
+  },
+  {
+   "id": "d009",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2656,
+   "resposta": "(1) A exceção lançada é ValueError.\n(2) O valor padrão do parâmetro tentativas é 3."
+  },
+  {
+   "id": "d009",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6696,
+   "resposta": "(1) A exceção lançada quando o tipo da resposta está ausente ou difere do tipo esperado é ValueError.\n(2) O valor padrão do parâmetro tentativas é 3."
+  },
+  {
+   "id": "d009",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 743,
+   "resposta": "ValueError"
+  },
+  {
+   "id": "d009",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6696,
+   "resposta": "A exceção lançada quando o tipo da resposta está ausente ou difere do tipo esperado é `ValueError`."
+  },
+  {
+   "id": "d010",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 1763,
+   "resposta": "(1) O valor padrão do parâmetro b não é fornecido no código fornecido.\n(2) O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 96."
+  },
+  {
+   "id": "d010",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 4908,
+   "resposta": "(1) O valor padrão do parâmetro b não é fornecido no código fornecido.\n(2) O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 96."
+  },
+  {
+   "id": "d010",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 5805,
+   "resposta": "(1) O valor padrão do parâmetro b não é fornecido no código fornecido.\n(2) O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 96."
+  },
+  {
+   "id": "d010",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11978,
+   "resposta": "(1) O valor padrão do parâmetro b é 0.75.\n(2) O número máximo de caracteres do campo 'pedido' que são incluídos na saída é 300."
+  },
+  {
+   "id": "d010",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 992,
+   "resposta": "0.75"
+  },
+  {
+   "id": "d010",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 11978,
+   "resposta": "O valor padrão do parâmetro b não é fornecido nos trechos de código fornecidos."
+  },
+  {
+   "id": "d011",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 764,
+   "resposta": "(1) A chave do dicionário que contém o gabarito oficial é 'fonte'.\n(2) O valor da chave 'fonte' atribuído no dicionário de saída é 'runs/ledger.sqlite3 (attempt_budget.settled_nusd)'."
+  },
+  {
+   "id": "d011",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2014,
+   "resposta": "(1) A chave do dicionário que contém o gabarito oficial é 'adjudicado'.\n(2) O valor da chave 'fonte' atribuído no dicionário de saída é 'runs/ledger.sqlite3 (attempt_budget.settled_nusd)'."
+  },
+  {
+   "id": "d011",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2873,
+   "resposta": "(1) A chave do dicionário que contém o gabarito oficial é 'adjudicado'.\n(2) O valor da chave 'fonte' atribuído no dicionário de saída é 'runs/ledger.sqlite3 (attempt_budget.settled_nusd)'."
+  },
+  {
+   "id": "d011",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11029,
+   "resposta": "(1) 'oficial'\n(2) 'runs/ledger.sqlite3 (attempt_budget.settled_nusd)'"
+  },
+  {
+   "id": "d011",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 500,
+   "resposta": "A chave do dicionário que contém o gabarito oficial é 'oficial'."
+  },
+  {
+   "id": "d011",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 11029,
+   "resposta": "A chave do dicionário que contém o gabarito oficial é 'oficial'."
+  },
+  {
+   "id": "d012",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 725,
+   "resposta": "(1) A exceção levantada quando o campo de comprimento de contexto está ausente é a exceção \"ValueError\".\n(2) A string que a função devolve quando não há divergência entre os rótulos é \"coincidem\"."
+  },
+  {
+   "id": "d012",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1409,
+   "resposta": "(1) PricingError\n(2) 'coincidem'"
+  },
+  {
+   "id": "d012",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2282,
+   "resposta": "(1) PricingError\n(2) 'coincidem'"
+  },
+  {
+   "id": "d012",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 6549,
+   "resposta": "(1) A exceção levantada quando o campo de comprimento de contexto está ausente é `PricingError`.\n(2) A função `gabarito_do_corpus` devolve a string \"ha-divergencia\" quando há divergência entre os rótu"
+  },
+  {
+   "id": "d012",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 682,
+   "resposta": "PricingError"
+  },
+  {
+   "id": "d012",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6549,
+   "resposta": "A exceção levantada quando o campo de comprimento de contexto está ausente é `PricingError`."
+  },
+  {
+   "id": "d013",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 866,
+   "resposta": "(1) 2 casas decimais\n(2) A hipótese passada para ledger.authorize é \"O Jev e um LLM generico barato acertam igualmente a triagem\""
+  },
+  {
+   "id": "d013",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1567,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar o valor de acurácia.\n(2) A hipótese passada para ledger.authorize é \"O Jev e um LLM generico barato acertam igualmente a triagem\"."
+  },
+  {
+   "id": "d013",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4832,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar o valor de acurácia.\n(2) A hipótese passada para ledger.authorize é \"O Jev e um LLM generico barato acertam igualmente a triagem\"."
+  },
+  {
+   "id": "d013",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8558,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar o valor de acurácia.\n(2) A hipótese passada para ledger.authorize é \"O Jev e um LLM generico barato acertam igualmente a triagem\"."
+  },
+  {
+   "id": "d013",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 699,
+   "resposta": "4"
+  },
+  {
+   "id": "d013",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 8558,
+   "resposta": "O valor de acurácia é arredondado para uma casa decimal."
+  },
+  {
+   "id": "d014",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2608,
+   "resposta": "(1) \"Sem análise de política: não há recomendação operacional\"\n(2) Não há código de erro retornado quando há erro de parsing, pois não é mencionado no código fornecido."
+  },
+  {
+   "id": "d014",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5249,
+   "resposta": "(1) \"Sem análise de política: não há recomendação operacional\"\n(2) ValueError"
+  },
+  {
+   "id": "d014",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5751,
+   "resposta": "(1) \"Sem análise de política: não há recomendação operacional\"\n(2) -32700"
+  },
+  {
+   "id": "d014",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 10100,
+   "resposta": "(1) A função devolve a mensagem \"Parse error\" quando a variável e9 é avaliada como falsa.\n(2) O código de erro é -32700 quando há erro de parsing."
+  },
+  {
+   "id": "d014",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2608,
+   "resposta": "\"Sem análise de política: não há recomendação operacional\""
+  },
+  {
+   "id": "d014",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10100,
+   "resposta": "A função `titulo_do_veredito` devolve a mensagem \"Sem análise de política: não há recomendação operacional\" quando a variável `e9` é avaliada como falsa."
+  },
+  {
+   "id": "d015",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 570,
+   "resposta": "(1) 'chamadas_total'\n(2) 'None'"
+  },
+  {
+   "id": "d015",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3233,
+   "resposta": "(1) 'chamadas_total'\n(2) 'choice'"
+  },
+  {
+   "id": "d015",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5051,
+   "resposta": "(1) 'chamadas_total'\n(2) 'choice'"
+  },
+  {
+   "id": "d015",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8228,
+   "resposta": "(1) O nome da chave que indica o número total de chamadas é 'chamadas_total'.\n(2) O valor padrão atribuído à variável tipo quando nem pedido nem devolvido são fornecidos é 'choice'."
+  },
+  {
+   "id": "d015",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 570,
+   "resposta": "'chamadas_total'"
+  },
+  {
+   "id": "d015",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8228,
+   "resposta": "A chave que indica o número total de chamadas é \"chamadas_total\"."
+  },
+  {
+   "id": "d016",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1117,
+   "resposta": "(1) O valor inicial atribuído à chave 'sugere' no dicionário de decisão é False.\n(2) Não há informações sobre a semente (seed) usada ao criar o objeto Random na extração."
+  },
+  {
+   "id": "d016",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3645,
+   "resposta": "(1) O valor atribuído inicialmente à chave 'sugere' no dicionário de decisão é False.\n(2) A semente (seed) usada ao criar o objeto Random na extração é 20260919."
+  },
+  {
+   "id": "d016",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4172,
+   "resposta": "(1) O valor atribuído inicialmente à chave 'sugere' no dicionário de decisão é False.\n(2) A semente (seed) usada ao criar o objeto Random na extração é 20260919."
+  },
+  {
+   "id": "d016",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8940,
+   "resposta": "(1) O valor atribuído inicialmente à chave 'sugere' no dicionário de decisão é 'False'.\n(2) A semente (seed) usada ao criar o objeto Random na extração é 20260919."
+  },
+  {
+   "id": "d016",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1117,
+   "resposta": "False"
+  },
+  {
+   "id": "d016",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8940,
+   "resposta": "A chave 'sugere' é inicializada com o valor 'False'."
+  },
+  {
+   "id": "d017",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 901,
+   "resposta": "(1) O nome do arquivo JSON onde a função grava o resultado não é fornecido no código apresentado.\n(2) O nome da chave que contém a lista de IDs dos erros com confiança maior ou igual a 0.90 é 'erros_a"
+  },
+  {
+   "id": "d017",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2895,
+   "resposta": "(1) O nome do arquivo JSON onde a função grava o resultado é 'adjudicacao.json'.\n(2) O nome da chave que contém a lista de IDs dos erros com confiança maior ou igual a 0.90 é 'erros_acima_de_090'."
+  },
+  {
+   "id": "d017",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4650,
+   "resposta": "(1) O nome do arquivo JSON onde a função `consolidar` grava o resultado é \"adjudicacao.json\".\n(2) O nome da chave que contém a lista de IDs dos erros com confiança maior ou igual a 0.90 é \"erros_acima"
+  },
+  {
+   "id": "d017",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9859,
+   "resposta": "(1) O nome do arquivo JSON onde a função `gerar_vetores` grava o resultado é `VETORES`.\n(2) O nome da chave que contém a lista de IDs dos erros com confiança maior ou igual a 0.90 é `erros_acima_de_09"
+  },
+  {
+   "id": "d017",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1992,
+   "resposta": "O nome do arquivo JSON onde a função grava o resultado é 'adjudicacao.json'."
+  },
+  {
+   "id": "d017",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 9859,
+   "resposta": "O nome do arquivo JSON onde a função `gerar_vetores` grava o resultado é `VETORES`."
+  },
+  {
+   "id": "d018",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1256,
+   "resposta": "(1) O nome do evento hook especificado no dicionário de saída JSON é \"UserPromptSubmit\".\n(2) A exceção levantada quando algum alvo está ausente no repositório é \"AttributeError\"."
+  },
+  {
+   "id": "d018",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2153,
+   "resposta": "(1) O nome do evento hook especificado no dicionário de saída JSON é \"UserPromptSubmit\".\n(2) A exceção levantada quando algum alvo está ausente no repositório é \"SystemExit\"."
+  },
+  {
+   "id": "d018",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3564,
+   "resposta": "(1) O nome do evento hook especificado no dicionário de saída JSON é 'UserPromptSubmit'.\n(2) A exceção levantada quando algum alvo está ausente no repositório é 'SystemExit'."
+  },
+  {
+   "id": "d018",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5587,
+   "resposta": "(1) O nome do evento hook especificado no dicionário de saída JSON é \"UserPromptSubmit\".\n(2) A exceção levantada quando algum alvo está ausente no repositório é SystemExit."
+  },
+  {
+   "id": "d018",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1256,
+   "resposta": "O nome do evento hook especificado no dicionário de saída JSON é \"UserPromptSubmit\"."
+  },
+  {
+   "id": "d018",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5587,
+   "resposta": "O nome do evento hook especificado no dicionário de saída JSON é \"UserPromptSubmit\"."
+  },
+  {
+   "id": "d019",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 675,
+   "resposta": "(1) POST\n(2) 'code'"
+  },
+  {
+   "id": "d019",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1934,
+   "resposta": "(1) O método HTTP usado na requisição é 'POST'.\n(2) A chave usada para obter a escolha da resposta no dicionário de respostas é 'choice'."
+  },
+  {
+   "id": "d019",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2109,
+   "resposta": "(1) O método HTTP usado na requisição é 'POST'.\n(2) A chave usada para obter a escolha da resposta no dicionário de respostas é 'choice'."
+  },
+  {
+   "id": "d019",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8244,
+   "resposta": "(1) O método HTTP usado na requisição é 'POST'.\n(2) A chave usada para obter a escolha da resposta no dicionário de respostas é 'choice'."
+  },
+  {
+   "id": "d019",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 675,
+   "resposta": "POST"
+  },
+  {
+   "id": "d019",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8244,
+   "resposta": "POST"
+  },
+  {
+   "id": "d020",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1655,
+   "resposta": "(1) A chave opcional que só existe nos corpora piloto e de evidencia é 'gold'.\n(2) O prefixo usado nos IDs dos casos marcados como enriquecidos é 'enr-'."
+  },
+  {
+   "id": "d020",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3877,
+   "resposta": "(1) 'kind'\n(2) 'enr-'"
+  },
+  {
+   "id": "d020",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4055,
+   "resposta": "(1) 'kind'\n(2) 'enr-'"
+  },
+  {
+   "id": "d020",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10500,
+   "resposta": "(1) A chave opcional que só existe nos corpora piloto e de evidencia é 'kind'.\n(2) O prefixo usado nos IDs dos casos marcados como enriquecidos é 'enr-'."
+  },
+  {
+   "id": "d020",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2220,
+   "resposta": "A chave opcional que só existe nos corpora piloto e de evidencia é 'kind'."
+  },
+  {
+   "id": "d020",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10500,
+   "resposta": "A chave opcional que só existe nos corpora piloto e de evidencia é 'kind'."
+  },
+  {
+   "id": "d021",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 371,
+   "resposta": "(1) O nome da tabela consultada para obter o valor do teto da carteira não é fornecido no código apresentado.\n(2) A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "d021",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1428,
+   "resposta": "(1) A tabela consultada para obter o valor do teto da carteira é \"wallet\".\n(2) A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "d021",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1615,
+   "resposta": "(1) A tabela consultada para obter o valor do teto da carteira é \"wallet\".\n(2) A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "d021",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4765,
+   "resposta": "(1) A tabela consultada para obter o valor do teto da carteira é \"wallet\".\n(2) A porta padrão usada pelo servidor é 8766."
+  },
+  {
+   "id": "d021",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1055,
+   "resposta": "A tabela consultada para obter o valor do teto da carteira é \"wallet\"."
+  },
+  {
+   "id": "d021",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 4765,
+   "resposta": "A tabela consultada para obter o valor do teto da carteira é \"wallet\"."
+  },
+  {
+   "id": "d022",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 428,
+   "resposta": "(1) O valor padrão do argumento '--modo' não é fornecido no código exibido.\n(2) O método HTTP usado na requisição é 'PUT'."
+  },
+  {
+   "id": "d022",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1741,
+   "resposta": "(1) O valor padrão do argumento '--modo' é 'sombra'.\n(2) O método HTTP usado na requisição é 'PUT'."
+  },
+  {
+   "id": "d022",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2268,
+   "resposta": "(1) O valor padrão do argumento '--modo' é 'sombra'.\n(2) O método HTTP usado na requisição é 'PUT'."
+  },
+  {
+   "id": "d022",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8867,
+   "resposta": "(1) O valor padrão do argumento '--modo' é 'sombra'.\n(2) O método HTTP usado na requisição é 'PUT'."
+  },
+  {
+   "id": "d022",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1311,
+   "resposta": "O valor padrão do argumento '--modo' é 'sombra'."
+  },
+  {
+   "id": "d022",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8867,
+   "resposta": "O valor padrão do argumento '--modo' é 'sombra'."
+  },
+  {
+   "id": "d023",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2362,
+   "resposta": "(1) SEMENTE\n(2) 99"
+  },
+  {
+   "id": "d023",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2778,
+   "resposta": "(1) SEMENTE\n(2) 99"
+  },
+  {
+   "id": "d023",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3604,
+   "resposta": "(1) A constante usada como semente ao criar o objeto random é \"SEMENTE\".\n(2) O valor atribuído à chave 'rodada' para os casos originados da lista BASES_R9 é 99."
+  },
+  {
+   "id": "d023",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8428,
+   "resposta": "(1) A constante usada como semente ao criar o objeto random é \"SEMENTE\".\n(2) O valor atribuído à chave 'rodada' para os casos originados da lista BASES_R9 é \"R9\"."
+  },
+  {
+   "id": "d023",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2362,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "d023",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8428,
+   "resposta": "A constante usada como semente ao criar o objeto random é \"SEMENTE\"."
+  },
+  {
+   "id": "d024",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 664,
+   "resposta": "(1) A string usada como valor da chave 'condicao' quando não há injeção é 'sem-injecao'.\n(2) A palavra usada no ID para representar o caso em que lote é False é 'case_id'."
+  },
+  {
+   "id": "d024",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1165,
+   "resposta": "(1) 'sem-injecao'\n(2) 'individual'"
+  },
+  {
+   "id": "d024",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1471,
+   "resposta": "(1) 'sem-injecao'\n(2) 'individual'"
+  },
+  {
+   "id": "d024",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5342,
+   "resposta": "(1) A string usada como valor da chave 'condicao' quando não há injeção é 'sem-injecao'.\n(2) A palavra usada no ID para representar o caso em que lote é False é 'individual'."
+  },
+  {
+   "id": "d024",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 664,
+   "resposta": "'sem-injecao'"
+  },
+  {
+   "id": "d024",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5342,
+   "resposta": "A string usada como valor da chave 'condicao' quando não há injeção é 'sem-injecao'."
+  },
+  {
+   "id": "d025",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 862,
+   "resposta": "(1) O nome do arquivo JSON que a função lê é \"caso\".\n(2) O nome da chave no dicionário retornado que armazena a confiança da escolha é \"confianca\"."
+  },
+  {
+   "id": "d025",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1052,
+   "resposta": "(1) CORPUS\n(2) 'confidence'"
+  },
+  {
+   "id": "d025",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1421,
+   "resposta": "(1) O nome do arquivo JSON que a função lê é 'relatorio.json'.\n(2) O nome da chave no dicionário retornado que armazena a confiança da escolha é 'confianca'."
+  },
+  {
+   "id": "d025",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 6213,
+   "resposta": "(1) 'relatorio.json'\n(2) 'confidence'"
+  },
+  {
+   "id": "d025",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 188,
+   "resposta": "O nome do arquivo JSON que a função lê é \"CORPUS\"."
+  },
+  {
+   "id": "d025",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6213,
+   "resposta": "relatorio.json"
+  },
+  {
+   "id": "d026",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2059,
+   "resposta": "(1) 'n_casos'\n(2) 1"
+  },
+  {
+   "id": "d026",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 4911,
+   "resposta": "(1) 'n_casos'\n(2) 1"
+  },
+  {
+   "id": "d026",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5247,
+   "resposta": "(1) 'n_casos'\n(2) 1"
+  },
+  {
+   "id": "d026",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10821,
+   "resposta": "(1) A chave do dicionário que indica o número de casos é 'n_casos'.\n(2) O valor numérico passado como segundo argumento para a chamada de com_erro é 0.06."
+  },
+  {
+   "id": "d026",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2059,
+   "resposta": "'n_casos'"
+  },
+  {
+   "id": "d026",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10821,
+   "resposta": "A chave do dicionário que indica o número de casos é 'n_casos'."
+  },
+  {
+   "id": "d027",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2301,
+   "resposta": "(1) O valor padrão do parâmetro limite_de_arquivos é 2000.\n(2) A chave \"status\" não existe no dicionário retornado pela função."
+  },
+  {
+   "id": "d027",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 4507,
+   "resposta": "(1) O valor padrão do parâmetro limite_de_arquivos é 2000.\n(2) O valor da chave \"status\" no dicionário retornado pela função é None."
+  },
+  {
+   "id": "d027",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5956,
+   "resposta": "(1) O valor padrão do parâmetro limite_de_arquivos é 2000.\n(2) A chave \"status\" no dicionário retornado pela função não está presente no código fornecido."
+  },
+  {
+   "id": "d027",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 8618,
+   "resposta": "(1) O valor padrão do parâmetro limite_de_arquivos é 2000.\n(2) A chave \"status\" no dicionário retornado pela função não é mencionada no código fornecido."
+  },
+  {
+   "id": "d027",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2301,
+   "resposta": "O valor padrão do parâmetro limite_de_arquivos é 2000."
+  },
+  {
+   "id": "d027",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8618,
+   "resposta": "O valor padrão do parâmetro limite_de_arquivos é 2000."
+  },
+  {
+   "id": "d028",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1087,
+   "resposta": "(1) avaliar\n(2) 'custo_usd'"
+  },
+  {
+   "id": "d028",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1760,
+   "resposta": "(1) UserPromptSubmit\n(2) 'custo_usd'"
+  },
+  {
+   "id": "d028",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5025,
+   "resposta": "(1) O nome do hook adicionado ao dicionário \"hooks\" é \"UserPromptSubmit\".\n(2) A chave que contém o custo em dólares no dicionário de detalhe retornado é \"custo_usd\"."
+  },
+  {
+   "id": "d028",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8601,
+   "resposta": "(1) 'UserPromptSubmit'\n(2) 'custo_usd'"
+  },
+  {
+   "id": "d028",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 671,
+   "resposta": "O nome do hook é \"UserPromptSubmit\"."
+  },
+  {
+   "id": "d028",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8601,
+   "resposta": "O nome do hook que é adicionado ao dicionário \"hooks\" é \"UserPromptSubmit\"."
+  },
+  {
+   "id": "d029",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 1431,
+   "resposta": "(1) 'terceiro_juiz'\n(2) 'tentativas'"
+  },
+  {
+   "id": "d029",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2054,
+   "resposta": "(1) 'anotador local'\n(2) 'tentativas'"
+  },
+  {
+   "id": "d029",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2484,
+   "resposta": "(1) 'anotador local'\n(2) 'tentativas'"
+  },
+  {
+   "id": "d029",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5906,
+   "resposta": "(1) 'anotador local'\n(2) 'custo_usd'"
+  },
+  {
+   "id": "d029",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 621,
+   "resposta": "'anotador local'"
+  },
+  {
+   "id": "d029",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5906,
+   "resposta": "'anotador local'"
+  },
+  {
+   "id": "d030",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 643,
+   "resposta": "(1) A mensagem de erro retornada quando não há nenhum elemento em 'choices' é \"None\".\n(2) A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_por_famil"
+  },
+  {
+   "id": "d030",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2059,
+   "resposta": "(1) A mensagem de erro retornada quando não há nenhum elemento em 'choices' é \"sem choices\".\n(2) A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_po"
+  },
+  {
+   "id": "d030",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2362,
+   "resposta": "(1) 'sem choices'\n(2) 'limite_superior_erro_por_familia'"
+  },
+  {
+   "id": "d030",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7427,
+   "resposta": "(1) A mensagem de erro retornada quando não há nenhum elemento em 'choices' é \"sem choices\".\n(2) A primeira chave que a função verifica ao procurar o limite superior de erro é 'limite_superior_erro_po"
+  },
+  {
+   "id": "d030",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1414,
+   "resposta": "'sem choices'"
+  },
+  {
+   "id": "d030",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7427,
+   "resposta": "A mensagem de erro retornada quando não há nenhum elemento em 'choices' é \"sem choices\"."
+  },
+  {
+   "id": "d031",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3050,
+   "resposta": "(1) openrouter\n(2) attempt_id"
+  },
+  {
+   "id": "d031",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5956,
+   "resposta": "(1) openrouter\n(2) attempt_id"
+  },
+  {
+   "id": "d031",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 6588,
+   "resposta": "(1) O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'.\n(2) O nome da coluna retornada na consulta SQL é 'attempt_id'."
+  },
+  {
+   "id": "d031",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 10692,
+   "resposta": "(1) O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'.\n(2) O nome da coluna retornada na consulta SQL é 'attempt_id'."
+  },
+  {
+   "id": "d031",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 3050,
+   "resposta": "openrouter"
+  },
+  {
+   "id": "d031",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10692,
+   "resposta": "O provedor indicado na chave 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "d032",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 453,
+   "resposta": "(1) A função retorna 0.0 quando a lista f1s está vazia.\n(2) A função math.log2 é utilizada para calcular o denominador."
+  },
+  {
+   "id": "d032",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1085,
+   "resposta": "(1) A função retorna 0.0 quando a lista f1s está vazia.\n(2) A função math.log2 é utilizada para calcular o denominador."
+  },
+  {
+   "id": "d032",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1540,
+   "resposta": "(1) A função retorna 0.0 quando a lista f1s está vazia.\n(2) A função da biblioteca math utilizada para calcular o denominador é log2."
+  },
+  {
+   "id": "d032",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5516,
+   "resposta": "(1) A função retorna 0.0 quando a lista f1s está vazia.\n(2) A função da biblioteca math utilizada para calcular o denominador é math.log2."
+  },
+  {
+   "id": "d032",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 630,
+   "resposta": "0.0"
+  },
+  {
+   "id": "d032",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5516,
+   "resposta": "A função `ndcg` retorna 0.0 quando a lista `ordem` está vazia."
+  },
+  {
+   "id": "d033",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 891,
+   "resposta": "(1) \"fail\"\n(2) 1.5"
+  },
+  {
+   "id": "d033",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1674,
+   "resposta": "(1) \"erro\"\n(2) 1.5"
+  },
+  {
+   "id": "d033",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2268,
+   "resposta": "(1) 'timeout'\n(2) 1.5"
+  },
+  {
+   "id": "d033",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7141,
+   "resposta": "(1) \"timeout\"\n(2) 1.5"
+  },
+  {
+   "id": "d033",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 592,
+   "resposta": "'timeout'"
+  },
+  {
+   "id": "d033",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7141,
+   "resposta": "\"timeout\""
+  },
+  {
+   "id": "d034",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1168,
+   "resposta": "(1) A string associada à chave 'autor' no dicionário interno é 'autor'.\n(2) A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "d034",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2667,
+   "resposta": "(1) A string associada à chave 'autor' no dicionário interno é 'gold_do_autor'.\n(2) A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "d034",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3573,
+   "resposta": "(1) A string associada à chave 'autor' no dicionário interno é 'gold_do_autor'.\n(2) A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "d034",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7503,
+   "resposta": "(1) A string associada à chave 'autor' no dicionário interno é 'gabarito do autor'.\n(2) A chave usada para armazenar a latência em milissegundos é 'latency_ms'."
+  },
+  {
+   "id": "d034",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1131,
+   "resposta": "'gabarito do autor'"
+  },
+  {
+   "id": "d034",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7503,
+   "resposta": "A string associada à chave 'autor' no dicionário interno é 'gabarito do autor'."
+  },
+  {
+   "id": "d035",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 421,
+   "resposta": "(1) 64\n(2) 'error_type'"
+  },
+  {
+   "id": "d035",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1153,
+   "resposta": "(1) 64\n(2) 'tipo'"
+  },
+  {
+   "id": "d035",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1725,
+   "resposta": "(1) 64\n(2) 'tipo'"
+  },
+  {
+   "id": "d035",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5568,
+   "resposta": "(1) 64\n(2) 'tipo_de_falha'"
+  },
+  {
+   "id": "d035",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 421,
+   "resposta": "64"
+  },
+  {
+   "id": "d035",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5568,
+   "resposta": "64"
+  },
+  {
+   "id": "d036",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 578,
+   "resposta": "(1) A chave usada para obter a escolha no dicionário alvo é 'case_id'.\n(2) O valor atribuído à chave \"origem\" nos dicionários internos criados é 'autor'."
+  },
+  {
+   "id": "d036",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1156,
+   "resposta": "(1) A chave usada para obter a escolha no dicionário alvo é 'choice'.\n(2) O valor atribuído à chave \"origem\" nos dicionários internos criados é 'com-contexto/{etiqueta}'."
+  },
+  {
+   "id": "d036",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2021,
+   "resposta": "(1) A chave usada para obter a escolha no dicionário alvo é 'choice'.\n(2) O valor atribuído à chave \"origem\" nos dicionários internos criados é 'autor'."
+  },
+  {
+   "id": "d036",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7648,
+   "resposta": "(1) A chave usada para obter a escolha no dicionário alvo é 'choice'.\n(2) O valor atribuído à chave \"origem\" nos dicionários internos criados é 'autor'."
+  },
+  {
+   "id": "d036",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 576,
+   "resposta": "A chave usada para obter a escolha no dicionário alvo é 'choice'."
+  },
+  {
+   "id": "d036",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7648,
+   "resposta": "A chave usada para obter a escolha no dicionário alvo é 'choice'."
+  },
+  {
+   "id": "d037",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 616,
+   "resposta": "(1) A expressão regular usada para extrair o nome do skill é `r'name: suggest-skill-(\\S+)'`.\n(2) O valor da chave \"phase\" no dicionário retornado pela função não é fornecido no código apresentado."
+  },
+  {
+   "id": "d037",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 890,
+   "resposta": "(1) A expressão regular usada para extrair o nome do skill é `r'name: suggest-skill-(\\S+)'`.\n(2) O valor da chave \"phase\" no dicionário retornado pela função é `None`, já que não há nenhuma referência"
+  },
+  {
+   "id": "d037",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2050,
+   "resposta": "(1) A expressão regular usada para extrair o nome do skill é `r'name: suggest-skill-(\\S+)'`.\n(2) O valor da chave \"phase\" no dicionário retornado pela função não é fornecido no código apresentado."
+  },
+  {
+   "id": "d037",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 9532,
+   "resposta": "(1) A expressão regular usada para extrair o nome do skill a partir do texto é: `name: suggest-skill-(\\S+)`\n(2) O valor da chave \"phase\" no dicionário retornado pela função é: 'confirmation'"
+  },
+  {
+   "id": "d037",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 616,
+   "resposta": "r'name: suggest-skill-(\\S+)'"
+  },
+  {
+   "id": "d037",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9532,
+   "resposta": "A expressão regular usada para extrair o nome do skill a partir do texto é: `r'name: suggest-skill-(\\S+)'`."
+  },
+  {
+   "id": "d038",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1264,
+   "resposta": "(1) 4600\n(2) 4600"
+  },
+  {
+   "id": "d038",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1396,
+   "resposta": "(1) 4600\n(2) 4600"
+  },
+  {
+   "id": "d038",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3071,
+   "resposta": "(1) 4600\n(2) TAMANHO_LOTE"
+  },
+  {
+   "id": "d038",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11631,
+   "resposta": "(1) O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres.\n(2) A constante que define o número máximo de casos processados por iteração é TAMANHO_LOTE."
+  },
+  {
+   "id": "d038",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1264,
+   "resposta": "4600"
+  },
+  {
+   "id": "d038",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 11631,
+   "resposta": "O valor máximo de comprimento de trecho que a função descarta é 4600 caracteres."
+  },
+  {
+   "id": "d039",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 924,
+   "resposta": "(1) O valor definido para o orçamento em dólares no manifesto é 2.\n(2) O valor padrão do parâmetro tentativas_max não é fornecido no código apresentado."
+  },
+  {
+   "id": "d039",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2181,
+   "resposta": "(1) O valor definido para o orçamento em dólares no manifesto é 2.\n(2) O valor padrão do parâmetro tentativas_max é 3."
+  },
+  {
+   "id": "d039",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2350,
+   "resposta": "(1) O valor definido para o orçamento em dólares no manifesto é 2.\n(2) O valor padrão do parâmetro tentativas_max é 3."
+  },
+  {
+   "id": "d039",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8098,
+   "resposta": "(1) O valor definido para o orçamento em dólares no manifesto é 2.\n(2) O valor padrão do parâmetro tentativas_max é 3."
+  },
+  {
+   "id": "d039",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 924,
+   "resposta": "2"
+  },
+  {
+   "id": "d039",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8098,
+   "resposta": "2"
+  },
+  {
+   "id": "d040",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2248,
+   "resposta": "(1) 'sem OPENROUTER_API_KEY'\n(2) 'router'"
+  },
+  {
+   "id": "d040",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3398,
+   "resposta": "(1) A mensagem de erro retornada quando a chave API não está definida é \"sem OPENROUTER_API_KEY\".\n(2) O provedor especificado no campo 'provider' do dicionário retornado é 'router'."
+  },
+  {
+   "id": "d040",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3734,
+   "resposta": "(1) 'sem OPENROUTER_API_KEY'\n(2) 'router'"
+  },
+  {
+   "id": "d040",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8958,
+   "resposta": "(1) A mensagem de erro retornada quando a chave API não está definida é \"sem OPENROUTER_API_KEY\".\n(2) O provedor especificado no campo 'provider' do dicionário retornado é 'openrouter'."
+  },
+  {
+   "id": "d040",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2248,
+   "resposta": "'sem OPENROUTER_API_KEY'"
+  },
+  {
+   "id": "d040",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8958,
+   "resposta": "A mensagem de erro retornada quando a chave API não está definida é \"sem OPENROUTER_API_KEY\"."
+  },
+  {
+   "id": "d041",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2037,
+   "resposta": "(1) ordem_inversa\n(2) 10"
+  },
+  {
+   "id": "d041",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3187,
+   "resposta": "(1) ordem_inversa\n(2) 10"
+  },
+  {
+   "id": "d041",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5166,
+   "resposta": "(1) A variável que armazena a ordem inversa dos critérios é chamada de \"ordem_inversa\".\n(2) O valor do timeout usado na chamada urllib.request.urlopen é de 15 segundos."
+  },
+  {
+   "id": "d041",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11860,
+   "resposta": "(1) A variável que armazena a ordem inversa dos critérios é \"ordem_inversa\".\n(2) O valor do timeout (em segundos) usado na chamada urllib.request.urlopen é 15."
+  },
+  {
+   "id": "d041",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2037,
+   "resposta": "ordem_inversa"
+  },
+  {
+   "id": "d041",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 11860,
+   "resposta": "A variável que armazena a ordem inversa dos critérios é `ordem_inversa`."
+  },
+  {
+   "id": "d042",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1989,
+   "resposta": "(1) A chave usada no dicionário de saída para armazenar a confiança da resposta é 'confidence'.\n(2) A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "d042",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3073,
+   "resposta": "(1) A chave usada no dicionário de saída para armazenar a confiança da resposta é 'confidence'.\n(2) A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "d042",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5226,
+   "resposta": "(1) A chave usada no dicionário de saída para armazenar a confiança da resposta é 'confidence'.\n(2) A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "d042",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7684,
+   "resposta": "(1) A chave usada no dicionário de saída para armazenar a confiança da resposta é 'confidence'.\n(2) A versão do protocolo especificada na mensagem de inicialização é '2024-11-05'."
+  },
+  {
+   "id": "d042",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1082,
+   "resposta": "'confidence'"
+  },
+  {
+   "id": "d042",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7684,
+   "resposta": "A chave usada no dicionário de saída para armazenar a confiança da resposta é 'confidence'."
+  },
+  {
+   "id": "d043",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1259,
+   "resposta": "(1) 'nao_informado'\n(2) 'erros'"
+  },
+  {
+   "id": "d043",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2124,
+   "resposta": "(1) 'nao_informado'\n(2) 'falso_cancelar'"
+  },
+  {
+   "id": "d043",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6656,
+   "resposta": "(1) 'nao_informado'\n(2) 'falso_cancelar'"
+  },
+  {
+   "id": "d043",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 12510,
+   "resposta": "(1) A string usada no código para representar o caso de informação não informada é 'nao_informado'.\n(2) O nome da chave do dicionário de saída que contém a lista de IDs de casos falsos de cancelamento"
+  },
+  {
+   "id": "d043",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1259,
+   "resposta": "'nao_informado'"
+  },
+  {
+   "id": "d043",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12510,
+   "resposta": "A string usada no código para representar o caso de informação não informada é \"'nao_informado'\"."
+  },
+  {
+   "id": "d044",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 476,
+   "resposta": "(1) O valor padrão do parâmetro campo é None.\n(2) A exceção levantada quando max_completion_tokens não é um inteiro positivo é PricingError."
+  },
+  {
+   "id": "d044",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1594,
+   "resposta": "(1) O valor padrão do parâmetro campo é 'jev'.\n(2) A exceção levantada quando max_completion_tokens não é um inteiro positivo é PricingError."
+  },
+  {
+   "id": "d044",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1967,
+   "resposta": "(1) O valor padrão do parâmetro campo é 'jev'.\n(2) A exceção levantada quando max_completion_tokens não é um inteiro positivo é PricingError."
+  },
+  {
+   "id": "d044",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5010,
+   "resposta": "(1) O valor padrão do parâmetro campo é 'jev'.\n(2) A exceção levantada quando max_completion_tokens não é um inteiro positivo é PricingError."
+  },
+  {
+   "id": "d044",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1116,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "d044",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5010,
+   "resposta": "O valor padrão do parâmetro campo é 'jev'."
+  },
+  {
+   "id": "d045",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1452,
+   "resposta": "(1) 600 caracteres\n(2) Não há menção à criação de uma tabela para armazenar os imports compartilhados no código fornecido."
+  },
+  {
+   "id": "d045",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4295,
+   "resposta": "(1) 600 caracteres\n(2) shared_imports"
+  },
+  {
+   "id": "d045",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5078,
+   "resposta": "(1) O limite máximo de caracteres permitido para um comando extraído é 600.\n(2) O nome da tabela criada para armazenar os imports compartilhados é \"shared_imports\"."
+  },
+  {
+   "id": "d045",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10738,
+   "resposta": "(1) O limite máximo de caracteres permitido para um comando extraído é de 600 caracteres.\n(2) O nome da tabela criada para armazenar os imports compartilhados é \"shared_imports\"."
+  },
+  {
+   "id": "d045",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1452,
+   "resposta": "600"
+  },
+  {
+   "id": "d045",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10738,
+   "resposta": "O limite máximo de caracteres permitido para um comando extraído é de 600 caracteres."
+  },
+  {
+   "id": "d046",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 515,
+   "resposta": "(1) 'case_id'\n(2) 'anotador_local'"
+  },
+  {
+   "id": "d046",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2001,
+   "resposta": "(1) 'case_id'\n(2) 'anotador_local'"
+  },
+  {
+   "id": "d046",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3038,
+   "resposta": "(1) A chave usada no dicionário _gasto_em_memoria para armazenar o gasto em dólares é 'settled_nusd'.\n(2) O nome da chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "d046",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5378,
+   "resposta": "(1) A chave usada no dicionário _gasto_em_memoria para armazenar o gasto em dólares é 'usd'.\n(2) O nome da chave que contém o anotador local nos dicionários retornados é 'anotador_local'."
+  },
+  {
+   "id": "d046",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 487,
+   "resposta": "'usd'"
+  },
+  {
+   "id": "d046",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5378,
+   "resposta": "A chave usada no dicionário _gasto_em_memoria para armazenar o gasto em dólares é 'usd'."
+  },
+  {
+   "id": "d047",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 780,
+   "resposta": "(1) 'jev-lab/1.0'\n(2) 'payload'"
+  },
+  {
+   "id": "d047",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1099,
+   "resposta": "(1) 'jev-lab/1.0'\n(2) 'b'"
+  },
+  {
+   "id": "d047",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1234,
+   "resposta": "(1) 'jev-lab/1.0'\n(2) 'b'"
+  },
+  {
+   "id": "d047",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12991,
+   "resposta": "(1) O valor do cabeçalho 'User-Agent' enviado na requisição é 'jev-lab/1.0'.\n(2) O nome da variável que armazena os valores dos gabaritos é 'mapas'."
+  },
+  {
+   "id": "d047",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 780,
+   "resposta": "'jev-lab/1.0'"
+  },
+  {
+   "id": "d047",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12991,
+   "resposta": "O valor do cabeçalho 'User-Agent' enviado na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "d048",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 415,
+   "resposta": "(1) PricingError\n(2) \\n"
+  },
+  {
+   "id": "d048",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1008,
+   "resposta": "(1) PricingError\n(2) f-string"
+  },
+  {
+   "id": "d048",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1384,
+   "resposta": "(1) PricingError\n(2) f-string"
+  },
+  {
+   "id": "d048",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 7133,
+   "resposta": "(1) A exceção lançada quando a versão do schema não é 1 é PricingError.\n(2) A sequência de escape de nova linha usada para juntar os blocos de casos na string final é '\\n'."
+  },
+  {
+   "id": "d048",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 415,
+   "resposta": "A exceção lançada é `PricingError` com a mensagem \"Versao de tabela de precos nao suportada\"."
+  },
+  {
+   "id": "d048",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7133,
+   "resposta": "A exceção lançada quando a versão do schema não é 1 é `PricingError`."
+  },
+  {
+   "id": "d049",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 972,
+   "resposta": "(1) A função chamada para obter a chave da API é 'tarefas_r4'.\n(2) A frase completa usada para a condição 'negada' é 'O remetente NAO esta pedindo o cancelamento de nenhum pedido, servico ou contrato."
+  },
+  {
+   "id": "d049",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1345,
+   "resposta": "(1) A função chamada para obter a chave da API é 'chave()'.\n(2) A frase completa usada para a condição 'negada' é 'O remetente NAO esta pedindo o cancelamento de nenhum pedido, servico ou contrato.'"
+  },
+  {
+   "id": "d049",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2320,
+   "resposta": "(1) A função chamada para obter a chave da API é 'chave()'.\n(2) A frase completa usada para a condição 'negada' é 'O remetente NAO esta pedindo o cancelamento de nenhum pedido, servico ou contrato.'"
+  },
+  {
+   "id": "d049",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 15234,
+   "resposta": "(1) A função chamada para obter a chave da API é `chave()`.\n(2) A frase completa usada para a condição 'negada' é 'O remetente NAO esta pedindo o cancelamento de nenhum pedido, servico ou contrato.'."
+  },
+  {
+   "id": "d049",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 371,
+   "resposta": "A função chamada para obter a chave da API é `chave()`."
+  },
+  {
+   "id": "d049",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 15234,
+   "resposta": "A função chamada para obter a chave da API é `chave()`."
+  },
+  {
+   "id": "d050",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 889,
+   "resposta": "(1) O valor padrão do parâmetro de confiança é 0.\n(2) A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "d050",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1539,
+   "resposta": "(1) O valor padrão do parâmetro de confiança é 0.\n(2) A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "d050",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3600,
+   "resposta": "(1) O valor padrão do parâmetro de confiança é None.\n(2) A chave do dicionário que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "d050",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10341,
+   "resposta": "(1) O valor padrão do parâmetro de confiança é 0.95.\n(2) A chave do dicionário retornado que indica o número total de linhas válidas é 'n'."
+  },
+  {
+   "id": "d050",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 871,
+   "resposta": "0.95"
+  },
+  {
+   "id": "d050",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 10341,
+   "resposta": "O valor padrão do parâmetro de confiança não é explicitamente definido nos trechos de código fornecidos. No entanto, é mencionado em alguns lugares, como em `laboratorio/r19_armadilha_de_sujeito.py::e"
+  },
+  {
+   "id": "d051",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1431,
+   "resposta": "(1) O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'.\n(2) O nome da constante usada como semente para o gerador aleatório é 'SEMENTE'."
+  },
+  {
+   "id": "d051",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2218,
+   "resposta": "(1) O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'.\n(2) A constante usada como semente para o gerador aleatório é 'SEMENTE'."
+  },
+  {
+   "id": "d051",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2366,
+   "resposta": "(1) O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'.\n(2) A constante usada como semente para o gerador aleatório é 'SEMENTE'."
+  },
+  {
+   "id": "d051",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6559,
+   "resposta": "(1) O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'.\n(2) A constante usada como semente para o gerador aleatório é 'SEMENTE'."
+  },
+  {
+   "id": "d051",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1431,
+   "resposta": "'terceiro juiz cego, outro fornecedor'"
+  },
+  {
+   "id": "d051",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6559,
+   "resposta": "O valor padrão do argumento '--juiz' é 'terceiro juiz cego, outro fornecedor'."
+  },
+  {
+   "id": "d052",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 747,
+   "resposta": "(1) OPENROUTER_API_KEY\n(2) '='"
+  },
+  {
+   "id": "d052",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1096,
+   "resposta": "(1) OPENROUTER_API_KEY\n(2) '='"
+  },
+  {
+   "id": "d052",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1277,
+   "resposta": "(1) OPENROUTER_API_KEY\n(2) '='"
+  },
+  {
+   "id": "d052",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5807,
+   "resposta": "(1) A variável de ambiente que a função procura para obter a chave da API é 'OPENROUTER_API_KEY'.\n(2) O literal de string usado como separador ao juntar as partes é ' '."
+  },
+  {
+   "id": "d052",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 747,
+   "resposta": "OPENROUTER_API_KEY"
+  },
+  {
+   "id": "d052",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 5807,
+   "resposta": "OPENROUTER_API_KEY"
+  },
+  {
+   "id": "d053",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 672,
+   "resposta": "(1) A variável que contém a lista final de casos antes de ser retornada é 'linhas'.\n(2) Quando a expressão regular REGRA não encontra correspondência no comando, o valor atribuído à chave 'regra' é 'r"
+  },
+  {
+   "id": "d053",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1350,
+   "resposta": "(1) A variável que contém a lista final de casos antes de ser retornada é \"linhas\".\n(2) O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é \"re"
+  },
+  {
+   "id": "d053",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2678,
+   "resposta": "(1) A variável que contém a lista final de casos antes de ser retornada é 'linhas'.\n(2) O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é 're"
+  },
+  {
+   "id": "d053",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 8148,
+   "resposta": "(1) A variável que contém a lista final de casos antes de ser retornada é `linhas`.\n(2) O valor atribuído à chave 'regra' quando a expressão regular REGRA não encontra correspondência no comando é `'r"
+  },
+  {
+   "id": "d053",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": true,
+   "bytes": 672,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é \"linhas\"."
+  },
+  {
+   "id": "d053",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 8148,
+   "resposta": "A variável que contém a lista final de casos antes de ser retornada é `casos`."
+  },
+  {
+   "id": "d054",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 2562,
+   "resposta": "(1) falsos_baratos\n(2) json.loads"
+  },
+  {
+   "id": "d054",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3742,
+   "resposta": "(1) falsos_baratos\n(2) json.loads"
+  },
+  {
+   "id": "d054",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5080,
+   "resposta": "(1) O nome da lista é 'linhas'.\n(2) O método chamado para ler o conteúdo do arquivo AMOSTRA é 'read_text'."
+  },
+  {
+   "id": "d054",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9871,
+   "resposta": "(1) O nome da lista que coleta os IDs quando o valor obtido é 'barato' e a confiança está acima ou igual ao corte é 'falsos_baratos'.\n(2) O método chamado para ler o conteúdo do arquivo AMOSTRA é 'jso"
+  },
+  {
+   "id": "d054",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1178,
+   "resposta": "A lista que coleta os IDs quando o valor obtido é 'barato' e a confiança está acima ou igual ao corte é 'barato_no_corte'."
+  },
+  {
+   "id": "d054",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 9871,
+   "resposta": "A lista que coleta os IDs quando o valor obtido é 'barato' e a confiança está acima ou igual ao corte é chamada de \"falsos_baratos\" no código."
+  },
+  {
+   "id": "d055",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 857,
+   "resposta": "(1) Se a lista f1s estiver vazia, o valor retornado é None.\n(2) A função http é chamada para obter a chave da API."
+  },
+  {
+   "id": "d055",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1528,
+   "resposta": "(1) Se a lista f1s estiver vazia, o valor retornado é 0.0.\n(2) A função http é chamada para obter a chave da API."
+  },
+  {
+   "id": "d055",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1895,
+   "resposta": "(1) Se a lista f1s estiver vazia, o valor retornado é 0.0.\n(2) A função chamada para obter a chave da API é chave()."
+  },
+  {
+   "id": "d055",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6280,
+   "resposta": "(1) Se a lista f1s estiver vazia, o valor retornado é 0.0.\n(2) A função chamada para obter a chave da API é urllib.request.Request."
+  },
+  {
+   "id": "d055",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 669,
+   "resposta": "0.0"
+  },
+  {
+   "id": "d055",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6280,
+   "resposta": "Se a lista f1s estiver vazia, a função macro_f1 retornará 0.0, pois a soma dos valores de f1s será dividida por zero."
+  },
+  {
+   "id": "d056",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 392,
+   "resposta": "(1) ValueError\n(2) 'id' não está presente no dicionário retornado pela função."
+  },
+  {
+   "id": "d056",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2257,
+   "resposta": "(1) A exceção levantada quando a função não é encontrada é ValueError.\n(2) O valor da chave 'id' no dicionário retornado pela função é 'e2b-posicao-desconfundida'."
+  },
+  {
+   "id": "d056",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2891,
+   "resposta": "(1) A exceção levantada quando a função não é encontrada é ValueError.\n(2) O valor da chave 'id' no dicionário retornado pela função é 'e2b-posicao-desconfundida'."
+  },
+  {
+   "id": "d056",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7654,
+   "resposta": "(1) A exceção levantada quando a função não é encontrada é ValueError.\n(2) O valor da chave 'id' no dicionário retornado pela função é 'e2b-posicao-desconfundida'."
+  },
+  {
+   "id": "d056",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 392,
+   "resposta": "ValueError"
+  },
+  {
+   "id": "d056",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7654,
+   "resposta": "A exceção levantada quando a função não é encontrada é `ValueError`."
+  },
+  {
+   "id": "d057",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 523,
+   "resposta": "(1) validas\n(2) 'n'"
+  },
+  {
+   "id": "d057",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3051,
+   "resposta": "(1) validas\n(2) 'n'"
+  },
+  {
+   "id": "d057",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 3357,
+   "resposta": "(1) A lista que contém apenas as linhas com escolha é chamada de \"validas\".\n(2) A chave usada no dicionário resultado para armazenar a contagem total de casos é \"n\"."
+  },
+  {
+   "id": "d057",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9854,
+   "resposta": "(1) A lista que contém apenas as linhas com escolha não tem nome definido no código fornecido.\n(2) A chave usada no dicionário resultado para armazenar a contagem total de casos é 'casos'."
+  },
+  {
+   "id": "d057",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 523,
+   "resposta": "validas"
+  },
+  {
+   "id": "d057",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9854,
+   "resposta": "A lista que contém apenas as linhas com escolha é chamada de \"validas\" no código."
+  },
+  {
+   "id": "d058",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1836,
+   "resposta": "(1) A variável que armazena o dicionário result é 'result'.\n(2) O valor da chave 'scheduled' no dicionário result é 32."
+  },
+  {
+   "id": "d058",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2353,
+   "resposta": "(1) A variável que armazena o anotador local é 'local'.\n(2) O valor da chave 'scheduled' no dicionário result é 32."
+  },
+  {
+   "id": "d058",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5618,
+   "resposta": "(1) A variável que armazena o anotador local é 'local'.\n(2) O valor da chave 'scheduled' no dicionário result é 32."
+  },
+  {
+   "id": "d058",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11487,
+   "resposta": "(1) O nome da variável que armazena o anotador local é 'local'.\n(2) O valor da chave 'scheduled' no dicionário result é 32."
+  },
+  {
+   "id": "d058",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 515,
+   "resposta": "A variável que armazena o anotador local é \"outro\"."
+  },
+  {
+   "id": "d058",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 11487,
+   "resposta": "A variável que armazena o anotador local é chamada de \"local\"."
+  },
+  {
+   "id": "d059",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1328,
+   "resposta": "(1) O valor mínimo de comprimento de texto para ser considerado é zero.\n(2) O rótulo retornado quando algum comparador separa contra o Jev é \"vantagem-do-comparador\"."
+  },
+  {
+   "id": "d059",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2111,
+   "resposta": "(1) O valor mínimo de comprimento de texto para que ele seja considerado é 25 caracteres.\n(2) O rótulo retornado quando algum comparador separa contra o Jev é \"vantagem-do-comparador\"."
+  },
+  {
+   "id": "d059",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4752,
+   "resposta": "(1) O valor mínimo de comprimento de texto para que ele seja considerado é 25 caracteres.\n(2) O rótulo retornado quando algum comparador separa contra o Jev é \"vantagem-do-comparador\"."
+  },
+  {
+   "id": "d059",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10554,
+   "resposta": "(1) O valor mínimo de comprimento de texto para que ele seja considerado é 25 caracteres.\n(2) O rótulo retornado quando algum comparador separa contra o Jev é \"vantagem-do-comparador\"."
+  },
+  {
+   "id": "d059",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 781,
+   "resposta": "O valor mínimo de comprimento de texto para que ele seja considerado é 25 caracteres."
+  },
+  {
+   "id": "d059",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10554,
+   "resposta": "O valor mínimo de comprimento de texto para que ele seja considerado é 25 caracteres."
+  },
+  {
+   "id": "d060",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1849,
+   "resposta": "(1) 2 casas decimais são usadas ao arredondar a cobertura.\n(2) O status atribuído quando o registro tem status 'blocked' é 'blocked'."
+  },
+  {
+   "id": "d060",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2705,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar a cobertura.\n(2) O status atribuído quando o registro tem status 'blocked' é 'failed'."
+  },
+  {
+   "id": "d060",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2907,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar a cobertura.\n(2) O status atribuído quando o registro tem status 'blocked' é 'failed'."
+  },
+  {
+   "id": "d060",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10372,
+   "resposta": "(1) 4 casas decimais são usadas ao arredondar a cobertura.\n(2) O status atribuído quando o registro tem status 'blocked' é 'failed'."
+  },
+  {
+   "id": "d060",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 854,
+   "resposta": "4"
+  },
+  {
+   "id": "d060",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 10372,
+   "resposta": "Com base nos trechos de código fornecidos, não é possível determinar quantas casas decimais são usadas ao arredondar a cobertura, pois não há informações específicas sobre isso nos trechos de código a"
+  },
+  {
+   "id": "d061",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 554,
+   "resposta": "(1) \"Ele existe desde o E8 e ficou fora dos cartoes por seis rodadas\"\n(2) \"case_id\""
+  },
+  {
+   "id": "d061",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 3932,
+   "resposta": "(1) \"gabarito\"\n(2) \"case_id\""
+  },
+  {
+   "id": "d061",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 5407,
+   "resposta": "(1) \"o painel ensinava tres\"\n(2) \"case_id\""
+  },
+  {
+   "id": "d061",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 10003,
+   "resposta": "(1) \"A formulação\"\n(2) \"formulacao\""
+  },
+  {
+   "id": "d061",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 671,
+   "resposta": "\"jev\""
+  },
+  {
+   "id": "d061",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10003,
+   "resposta": "O literal de string passado como segundo argumento para a primeira chamada da função faltantes é \"jev\"."
+  },
+  {
+   "id": "d062",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 369,
+   "resposta": "(1) /api/alpha/decisions\n(2) 'S01'"
+  },
+  {
+   "id": "d062",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 656,
+   "resposta": "(1) /api/alpha/decisions\n(2) 'S01'"
+  },
+  {
+   "id": "d062",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1420,
+   "resposta": "(1) /api/alpha/decisions\n(2) 'S01'"
+  },
+  {
+   "id": "d062",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10567,
+   "resposta": "(1) O endpoint registrado na chamada register_arm é '/api/alpha/decisions'.\n(2) O valor associado à chave 'phase' no dicionário retornado é 'pilot'."
+  },
+  {
+   "id": "d062",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 369,
+   "resposta": "/api/alpha/decisions"
+  },
+  {
+   "id": "d062",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10567,
+   "resposta": "/api/alpha/decisions"
+  },
+  {
+   "id": "d063",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 822,
+   "resposta": "(1) A chave que a função verifica para decidir se deve retornar None é 'acuracia', que é calculada apenas se houver pares de dados (g, p) para comparar.\n(2) A chave no dicionário retornado que represe"
+  },
+  {
+   "id": "d063",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1843,
+   "resposta": "(1) A função verifica se a lista 'pares' está vazia para decidir se deve retornar None para a chave 'acuracia'.\n(2) A chave no dicionário retornado que representa a latência mediana é 'latencia_p50_ms"
+  },
+  {
+   "id": "d063",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 6399,
+   "resposta": "(1) A função verifica se a lista 'pares' está vazia para decidir se deve retornar None para a chave 'acuracia'.\n(2) A chave no dicionário retornado que representa a latência mediana é 'latencia_p50_ms"
+  },
+  {
+   "id": "d063",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10475,
+   "resposta": "(1) A função verifica se a chave 'leitura_por_gabarito' está presente no dicionário 'e12' para decidir se deve retornar None.\n(2) A chave no dicionário retornado que representa a latência mediana é 'l"
+  },
+  {
+   "id": "d063",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1019,
+   "resposta": "A chave que a função verifica para decidir se deve retornar None é 'leitura_por_gabarito'. Se esta chave não estiver presente no dicionário 'e12', a função retorna None."
+  },
+  {
+   "id": "d063",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 10475,
+   "resposta": "A chave que a função verifica para decidir se deve retornar None é a chave de API do OpenRouter."
+  },
+  {
+   "id": "d064",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1066,
+   "resposta": "(1) ValueError\n(2) 'cobertura'"
+  },
+  {
+   "id": "d064",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 1566,
+   "resposta": "(1) PricingError\n(2) 'cobertura'"
+  },
+  {
+   "id": "d064",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 3020,
+   "resposta": "(1) A exceção lançada é `PricingError`.\n(2) O nome da chave do dicionário que indica a cobertura é `'cobertura'`."
+  },
+  {
+   "id": "d064",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 7532,
+   "resposta": "(1) A exceção PricingError é lançada quando um dos parâmetros de token tem valor negativo ou não é inteiro.\n(2) O nome da chave do dicionário retornado que indica a cobertura é 'cobertura'."
+  },
+  {
+   "id": "d064",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 498,
+   "resposta": "A exceção lançada é `PricingError`."
+  },
+  {
+   "id": "d064",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 7532,
+   "resposta": "A exceção lançada quando um dos parâmetros de token tem valor negativo ou não é inteiro é `PricingError`."
+  },
+  {
+   "id": "d065",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1834,
+   "resposta": "(1) 25\n(2) 'accuracy'"
+  },
+  {
+   "id": "d065",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4091,
+   "resposta": "(1) 25 caracteres\n(2) 'referencia'"
+  },
+  {
+   "id": "d065",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 5117,
+   "resposta": "(1) 25\n(2) 'acuracia'"
+  },
+  {
+   "id": "d065",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 9270,
+   "resposta": "(1) O número mínimo de caracteres que uma mensagem de usuário deve ter para ser considerada é 25.\n(2) O nome da chave usada para acessar a acurácia de referência no dicionário \"dimensoes\" é 'referenci"
+  },
+  {
+   "id": "d065",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1834,
+   "resposta": "25"
+  },
+  {
+   "id": "d065",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9270,
+   "resposta": "O número mínimo de caracteres que uma mensagem de usuário deve ter para ser considerada é 25."
+  },
+  {
+   "id": "d066",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 463,
+   "resposta": "(1) A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`.\n(2) O valor padrão do parâmetro `campo_resposta` é `None`."
+  },
+  {
+   "id": "d066",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1250,
+   "resposta": "(1) A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`.\n(2) O valor padrão do parâmetro `campo_resposta` é `None`."
+  },
+  {
+   "id": "d066",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2516,
+   "resposta": "(1) A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`.\n(2) O valor padrão do parâmetro `campo_resposta` é `None`."
+  },
+  {
+   "id": "d066",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11399,
+   "resposta": "(1) A exceção levantada quando o subprocess produz saída de erro é `RuntimeError`.\n(2) O valor padrão do parâmetro `campo_resposta` é `'jev'`."
+  },
+  {
+   "id": "d066",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 463,
+   "resposta": "RuntimeError"
+  },
+  {
+   "id": "d066",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 11399,
+   "resposta": "A exceção levantada quando o subprocess produz saída de erro é `subprocess.CalledProcessError`."
+  },
+  {
+   "id": "d067",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 3848,
+   "resposta": "(1) A expressão usada para decidir quando parar de adicionar chaves ao dicionário é `if not outra:`.\n(2) O nome da chave usada para obter a escolha da ação no dicionário 'alvo' é `'escolha'`."
+  },
+  {
+   "id": "d067",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 4494,
+   "resposta": "(1) A expressão usada para decidir quando parar de adicionar chaves ao dicionário é `if not outra:`.\n(2) O nome da chave usada para obter a escolha da ação no dicionário 'alvo' é `'choice'`."
+  },
+  {
+   "id": "d067",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 4924,
+   "resposta": "(1) A expressão usada para decidir quando parar de adicionar chaves ao dicionário é `if len(tudo) >= n: break`.\n(2) O nome da chave usada para obter a escolha da ação no dicionário 'alvo' é `'acao'`."
+  },
+  {
+   "id": "d067",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 9817,
+   "resposta": "(1) A expressão usada para decidir quando parar de adicionar chaves ao dicionário é \"if len(tudo) >= n: break\".\n(2) O nome da chave usada para obter a escolha da ação no dicionário 'alvo' é \"choice\"."
+  },
+  {
+   "id": "d067",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 428,
+   "resposta": "O critério para parar de adicionar chaves ao dicionário é quando o número de chaves no dicionário atinge o valor de `n`."
+  },
+  {
+   "id": "d067",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9817,
+   "resposta": "A expressão usada para decidir quando parar de adicionar chaves ao dicionário é \"if len(tudo) >= n:\"."
+  },
+  {
+   "id": "d068",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1484,
+   "resposta": "(1) O valor padrão do parâmetro timeout é 90.\n(2) O valor inicial atribuído à variável ece não é fornecido no código apresentado."
+  },
+  {
+   "id": "d068",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3372,
+   "resposta": "(1) O valor padrão do parâmetro timeout é 90.\n(2) O valor inicial atribuído à variável ece é 0.0."
+  },
+  {
+   "id": "d068",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3714,
+   "resposta": "(1) O valor padrão do parâmetro timeout é 90.\n(2) O valor inicial atribuído à variável ece é 0.0."
+  },
+  {
+   "id": "d068",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12907,
+   "resposta": "(1) O valor padrão do parâmetro timeout é 90.\n(2) O valor inicial atribuído à variável ece é 0.0."
+  },
+  {
+   "id": "d068",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1484,
+   "resposta": "90"
+  },
+  {
+   "id": "d068",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12907,
+   "resposta": "O valor padrão do parâmetro timeout é 90 segundos."
+  },
+  {
+   "id": "d069",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2801,
+   "resposta": "(1) A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'.\n(2) O valor usado para o cabeçalho 'User-Agent' na requisição não é fornecido no código "
+  },
+  {
+   "id": "d069",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 3424,
+   "resposta": "(1) A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'.\n(2) O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "d069",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4056,
+   "resposta": "(1) A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'.\n(2) O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "d069",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 12617,
+   "resposta": "(1) A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'.\n(2) O valor usado para o cabeçalho 'User-Agent' na requisição é 'jev-lab/1.0'."
+  },
+  {
+   "id": "d069",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 2801,
+   "resposta": "A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'."
+  },
+  {
+   "id": "d069",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 12617,
+   "resposta": "A chave do dicionário de relatório que contém a lista de rebaixamentos indevidos é 'rebaixamento_indevido'."
+  },
+  {
+   "id": "d070",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 984,
+   "resposta": "(1) O valor padrão do argumento \"--n\" é 60.\n(2) O nome da constante usada para formatar cada pedaço de preenchimento é \"i + 1:03d\"."
+  },
+  {
+   "id": "d070",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1438,
+   "resposta": "(1) O valor padrão do argumento \"--n\" é 60.\n(2) O nome da constante usada para formatar cada pedaço de preenchimento é \"RECHEIO\"."
+  },
+  {
+   "id": "d070",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 4816,
+   "resposta": "(1) O valor padrão do argumento \"--n\" é 60.\n(2) O nome da constante usada para formatar cada pedaço de preenchimento é \"RECHEIO\"."
+  },
+  {
+   "id": "d070",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6332,
+   "resposta": "(1) O valor padrão do argumento \"--n\" é 60.\n(2) O nome da constante usada para formatar cada pedaço de preenchimento é \"RECHEIO\"."
+  },
+  {
+   "id": "d070",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 984,
+   "resposta": "60"
+  },
+  {
+   "id": "d070",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6332,
+   "resposta": "O valor padrão do argumento \"--n\" é 60."
+  },
+  {
+   "id": "d071",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1070,
+   "resposta": "(1) O valor padrão do parâmetro z não é fornecido no código exibido.\n(2) A coluna 'settled_nusd' da tabela 'attempt_budget' é selecionada na consulta SQL."
+  },
+  {
+   "id": "d071",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1448,
+   "resposta": "(1) O valor padrão do parâmetro z é 1.96.\n(2) A coluna 'settled_nusd' da tabela 'attempt_budget' é selecionada na consulta SQL."
+  },
+  {
+   "id": "d071",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1742,
+   "resposta": "(1) O valor padrão do parâmetro z é 1.96.\n(2) A coluna 'settled_nusd' da tabela 'attempt_budget' é selecionada na consulta SQL."
+  },
+  {
+   "id": "d071",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7161,
+   "resposta": "(1) O valor padrão do parâmetro z é 1.96.\n(2) A coluna 'settled_nusd' da tabela 'attempt_budget' é selecionada na consulta SQL."
+  },
+  {
+   "id": "d071",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 376,
+   "resposta": "O valor padrão do parâmetro z é 1.96."
+  },
+  {
+   "id": "d071",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7161,
+   "resposta": "O valor padrão do parâmetro z é 1.96."
+  },
+  {
+   "id": "d072",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 862,
+   "resposta": "(1) O valor atribuído à chave 'alvo' na primeira inserção em 'saida' é o valor da chave 'gold' no dicionário 'tarefa['caso']'.\n(2) A função verifica o valor da chave 'type' que é 'choice' nos dicionár"
+  },
+  {
+   "id": "d072",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1601,
+   "resposta": "(1) O valor atribuído à chave 'alvo' na primeira inserção em 'saida' é 'jev'.\n(2) A função verifica o valor da chave 'type' que é 'choice' nos dicionários da lista."
+  },
+  {
+   "id": "d072",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2002,
+   "resposta": "(1) O valor atribuído à chave 'alvo' na primeira inserção em 'saida' é 'jev'.\n(2) A função verifica o valor da chave 'type' que é 'text' nos dicionários da lista."
+  },
+  {
+   "id": "d072",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 3317,
+   "resposta": "(1) 'jev'\n(2) 'choice'"
+  },
+  {
+   "id": "d072",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 737,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "d072",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 3317,
+   "resposta": "'jev'"
+  },
+  {
+   "id": "d073",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 407,
+   "resposta": "(1) O valor da chave 'phase' no dicionário retornado é 'nao_informado'.\n(2) O valor retornado quando nenhuma palavra de cinco ou mais letras da claim está presente no documento é 'nao_informado'."
+  },
+  {
+   "id": "d073",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2011,
+   "resposta": "(1) O valor da chave 'phase' no dicionário retornado é 'confirmation'.\n(2) O valor retornado quando nenhuma palavra de cinco ou mais letras da claim está presente no documento é 'nao_informado'."
+  },
+  {
+   "id": "d073",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2159,
+   "resposta": "(1) O valor da chave 'phase' no dicionário retornado é 'confirmation'.\n(2) O valor retornado quando nenhuma palavra de cinco ou mais letras da claim está presente no documento é 'nao_informado'."
+  },
+  {
+   "id": "d073",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 11853,
+   "resposta": "(1) O valor da chave 'phase' no dicionário retornado é 'confirmation'.\n(2) O valor retornado quando nenhuma palavra de cinco ou mais letras da claim está presente no documento é 'nao_informado'."
+  },
+  {
+   "id": "d073",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1602,
+   "resposta": "'confirmation'"
+  },
+  {
+   "id": "d073",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 11853,
+   "resposta": "A chave 'phase' não está presente no dicionário retornado."
+  },
+  {
+   "id": "d074",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1955,
+   "resposta": "(1) O dicionário `tentativas`.\n(2) 'S01'."
+  },
+  {
+   "id": "d074",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2470,
+   "resposta": "(1) O defaultdict é usado para agrupar os contadores por classe.\n(2) O valor da chave 'system_id' no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "d074",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 5884,
+   "resposta": "(1) O defaultdict é usado para agrupar os contadores por classe.\n(2) O valor da chave system_id no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "d074",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9571,
+   "resposta": "(1) A estrutura de dados usada para agrupar os contadores por classe é um dicionário.\n(2) O valor da chave system_id no dicionário retornado pela função é 'S01'."
+  },
+  {
+   "id": "d074",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 513,
+   "resposta": "O código usa a estrutura de dados `defaultdict` do Python para agrupar os contadores por classe."
+  },
+  {
+   "id": "d074",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9571,
+   "resposta": "A estrutura de dados usada para agrupar os contadores por classe é um dicionário (defaultdict) no código `run_e9_prevalencia.py::acuracia_por_classe`."
+  },
+  {
+   "id": "d075",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1164,
+   "resposta": "(1) Quando a variável escolha tem o valor 'nao-se-desfaz', a string 'irreversivel' é atribuída à variável binaria.\n(2) A função chamada para registrar os braços é a função executar."
+  },
+  {
+   "id": "d075",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1630,
+   "resposta": "(1) Quando a variável escolha tem o valor 'nao-se-desfaz', a string 'irreversivel' é atribuída à variável binaria.\n(2) A função chamada para registrar os braços é registrar_bracos."
+  },
+  {
+   "id": "d075",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 2262,
+   "resposta": "(1) Quando a variável escolha tem o valor 'nao-se-desfaz', a string 'irreversivel' é atribuída à variável binaria.\n(2) A função 'registrar_bracos' é chamada para registrar os braços."
+  },
+  {
+   "id": "d075",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 6099,
+   "resposta": "(1) Quando a variável escolha tem o valor 'nao-se-desfaz', a string 'irreversivel' é atribuída à variável binaria.\n(2) A função 'registrar_bracos' é chamada para registrar os braços."
+  },
+  {
+   "id": "d075",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1164,
+   "resposta": "'irreversivel'"
+  },
+  {
+   "id": "d075",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 6099,
+   "resposta": "'irreversivel'"
+  },
+  {
+   "id": "d076",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 438,
+   "resposta": "(1) A chave usada para armazenar a data e hora da execução no dicionário de saída é 'timestamp'.\n(2) A chave usada como fallback para contar tokens de saída é 'completion_tokens'."
+  },
+  {
+   "id": "d076",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1937,
+   "resposta": "(1) A chave usada para armazenar a data e hora da execução no dicionário de saída é 'updated_at'.\n(2) A chave usada como fallback para contar tokens de saída é 'completion_tokens'."
+  },
+  {
+   "id": "d076",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 3854,
+   "resposta": "(1) 'at'\n(2) 'output_tokens'"
+  },
+  {
+   "id": "d076",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9936,
+   "resposta": "(1) A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'.\n(2) A chave 'terceira_leitura' é usada como fallback para contar tokens de saída."
+  },
+  {
+   "id": "d076",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1915,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "d076",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 9936,
+   "resposta": "A chave usada para armazenar a data e hora da execução no dicionário de saída é 'at'."
+  },
+  {
+   "id": "d077",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 973,
+   "resposta": "(1) Os campos verificados para identidade ou proveniência da execução são: `adj` (que é um parâmetro da função `pendencias`).\n(2) O código que inicia a última mensagem da lista retornada é: `lista.app"
+  },
+  {
+   "id": "d077",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 2890,
+   "resposta": "(1) Os campos verificados para identidade ou proveniência da execução são: `caminho_bruto` e `juiz`.\n(2) O código que inicia a última mensagem da lista retornada é `saida = {...}`"
+  },
+  {
+   "id": "d077",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 4225,
+   "resposta": "(1) Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'finished_at' e 'status'.\n(2) O código "
+  },
+  {
+   "id": "d077",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": false,
+   "bytes": 9755,
+   "resposta": "(1) Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'finished_at'.\n(2) O código que inicia "
+  },
+  {
+   "id": "d077",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 1333,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'finished_at', 'status', 'attempts' e 'deci"
+  },
+  {
+   "id": "d077",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 9755,
+   "resposta": "Os campos verificados para identidade ou proveniência da execução são: 'id', 'system_id', 'phase', 'evidence', 'started_at', 'provider', 'model', 'dataset', 'finished_at'."
+  },
+  {
+   "id": "d078",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 414,
+   "resposta": "(1) O valor atribuído à chave 'rodada' nos dicionários adicionados é 'rodada'.\n(2) O valor associado à chave 'type' no dicionário de hooks é 'command'."
+  },
+  {
+   "id": "d078",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 1,
+   "certo": false,
+   "bytes": 601,
+   "resposta": "(1) O valor atribuído à chave 'rodada' nos dicionários adicionados não é mostrado no código fornecido.\n(2) O valor associado à chave 'type' no dicionário de hooks é 'command'."
+  },
+  {
+   "id": "d078",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 1189,
+   "resposta": "(1) O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'.\n(2) O valor associado à chave 'type' no dicionário de hooks é 'command'."
+  },
+  {
+   "id": "d078",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 7721,
+   "resposta": "(1) O valor atribuído à chave 'rodada' nos dicionários adicionados é 'R13'.\n(2) O valor associado à chave 'type' no dicionário de hooks é 'command'."
+  },
+  {
+   "id": "d078",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 586,
+   "resposta": "'R13'"
+  },
+  {
+   "id": "d078",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 7721,
+   "resposta": "'R13'"
+  },
+  {
+   "id": "d079",
+   "tipo": "dupla",
+   "arranjo": "jev-1",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 1849,
+   "resposta": "(1) O nome do arquivo JSON que é lido para obter o manifesto é 'S*.json'.\n(2) O texto usado quando não há contagem no relatório é 'Nada novo a publicar.'"
+  },
+  {
+   "id": "d079",
+   "tipo": "dupla",
+   "arranjo": "jev-2",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 3052,
+   "resposta": "(1) O nome do arquivo JSON que é lido para obter o manifesto é 'S*.json', onde 'S' é um número.\n(2) O texto usado quando não há contagem no relatório é 'Nada novo a publicar.'"
+  },
+  {
+   "id": "d079",
+   "tipo": "dupla",
+   "arranjo": "jev-3",
+   "alvos_presentes": 0,
+   "certo": false,
+   "bytes": 7495,
+   "resposta": "(1) O nome do arquivo JSON que é lido para obter o manifesto é \"S*.json\".\n(2) O texto usado quando não há contagem no relatório é \"Nenhuma inferencia paga nesta camada.\""
+  },
+  {
+   "id": "d079",
+   "tipo": "dupla",
+   "arranjo": "todos",
+   "alvos_presentes": 2,
+   "certo": true,
+   "bytes": 10646,
+   "resposta": "(1) O nome do arquivo JSON que é lido para obter o manifesto é 'manifest.json'.\n(2) O texto usado quando não há contagem no relatório é 'sem contagem no relatorio'."
+  },
+  {
+   "id": "d079",
+   "tipo": "simples",
+   "arranjo": "jev-1",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 1014,
+   "resposta": "O nome do arquivo JSON que é lido para obter o manifesto é 'manifest.json'."
+  },
+  {
+   "id": "d079",
+   "tipo": "simples",
+   "arranjo": "todos",
+   "alvos_presentes": 1,
+   "certo": true,
+   "bytes": 10646,
+   "resposta": "O nome do arquivo JSON que é lido para obter o manifesto é 'manifest.json'."
+  }
+ ],
+ "ordens": [
+  {
+   "id": "d000",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d001",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d002",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d003",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d004",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d005",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d006",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d007",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d008",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d009",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d010",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d011",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d012",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d013",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d014",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d015",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d016",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d017",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d018",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d019",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d020",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d021",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d022",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d023",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d024",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d025",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d026",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d027",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d028",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d029",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d030",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d031",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d032",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d033",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d034",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d035",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d036",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d037",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d038",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d039",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d040",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d041",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d042",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d043",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d044",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d045",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d046",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d047",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d048",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d049",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d050",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d051",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d052",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d053",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d054",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d055",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d056",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d057",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d058",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d059",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d060",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d061",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d062",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d063",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d064",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d065",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d066",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d067",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d068",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d069",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d070",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d071",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d072",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 2,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d073",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d074",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d075",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": true,
+   "dois_no_top3": true,
+   "essenciais": 1,
+   "alvos_essenciais": 1
+  },
+  {
+   "id": "d076",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d077",
+   "classe_do_topo": "essencial",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 3,
+   "alvos_essenciais": 2
+  },
+  {
+   "id": "d078",
+   "classe_do_topo": "incerto",
+   "topo_e_alvo": true,
+   "dois_no_top2": false,
+   "dois_no_top3": true,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  },
+  {
+   "id": "d079",
+   "classe_do_topo": "complementar",
+   "topo_e_alvo": false,
+   "dois_no_top2": false,
+   "dois_no_top3": false,
+   "essenciais": 0,
+   "alvos_essenciais": 0
+  }
+ ],
+ "custo_usd": 0.052236,
+ "chamadas": 1747
+}

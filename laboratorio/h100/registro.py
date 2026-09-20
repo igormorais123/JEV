@@ -484,6 +484,14 @@ EMENDAS = [
                  'truncamento do meu próprio núcleo cortava o pedido do cliente, e o número '
                  'mede esse defeito. A R12 refez a medição com o limite corrigido. As duas '
                  'leituras aparecem no relatório, a retratada marcada como tal.')},
+    {'em': '2026-09-20', 'atinge': ['H002', 'H003'],
+     'o_que': 'o custo passa a ser medido sobre as chamadas que voltaram com resposta',
+     'por_que': ('uma chamada que falha por erro HTTP fica no livro-caixa com a reserva de pior '
+                 'caso — 1.344.000 nUSD, o teto de tokens do laboratório vezes o preço —, que é '
+                 'uma constante do cliente e não um custo do modelo. Dez linhas dessas, vindas '
+                 'do 429 do provedor sob a carga de 12 mil chamadas da R23, derrubaram o r de '
+                 'Pearson de 0,97 para 0,25. É o artefato da Emenda 4 na outra coluna do '
+                 'recibo, e a correção é a mesma: só o que voltou mede o modelo.')},
     {'em': '2026-09-20', 'atinge': ['H038', 'H039'],
      'o_que': 'a latência passa a ser medida sobre as chamadas que voltaram com resposta',
      'por_que': ('as rodadas R21 e R22 trouxeram 79 timeouts, e o timeout do cliente é de 45 '

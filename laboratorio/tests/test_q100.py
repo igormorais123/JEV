@@ -131,3 +131,13 @@ def test_a_pagina_se_gera_e_cita_todas_as_perguntas():
     texto = relatorio.montar()
     for q in registro.PERGUNTAS:
         assert f'{q["id"]} — ' in texto, f'{q["id"]} não saiu na página'
+
+
+def test_nenhuma_resposta_se_apoia_em_condicao_retratada():
+    """Foi assim que a Q023 publicou 13,5% de erro que era truncamento do laboratório."""
+    from laboratorio.h100 import dados
+    linhas = respostas._linhas_jev()
+    for bloco in dados.retratacoes()['retratadas']:
+        for condicao in bloco['condicoes']:
+            assert not any(l['condicao'] == condicao for l in linhas), (
+                f'`{condicao}` está retratada e ainda entra nas respostas')

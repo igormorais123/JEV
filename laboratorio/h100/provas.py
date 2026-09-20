@@ -66,16 +66,22 @@ def h001():
               f'{d.mediana(uma):.0f} ms com uma, em {len(duas)} e {len(uma)} chamadas')
 
 
+def _recibos_liquidados():
+    """Só o que voltou. Erro HTTP fica com a reserva de pior caso, que não é custo (Emenda 5)."""
+    return [l for l in d.decisoes()
+            if l['payload_bytes'] and l['nusd'] and l.get('status') == 'success']
+
+
 @prova('H002')
 def h002():
-    linhas = [l for l in d.decisoes() if l['payload_bytes'] and l['nusd']]
+    linhas = _recibos_liquidados()
     r = d.pearson([l['payload_bytes'] for l in linhas], [l['nusd'] for l in linhas])
     return ok(r > 0.90, round(r, 4), f'r de Pearson sobre {len(linhas)} recibos')
 
 
 @prova('H003')
 def h003():
-    linhas = [l for l in d.decisoes() if l['estado_car'] and l['nusd']]
+    linhas = [l for l in _recibos_liquidados() if l['estado_car']]
     r = d.pearson([l['estado_car'] for l in linhas], [l['nusd'] for l in linhas])
     return ok(r > 0.85, round(r, 4), f'r de Pearson sobre {len(linhas)} recibos')
 

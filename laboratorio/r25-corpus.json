@@ -1,0 +1,489 @@
+{
+ "gerador": "mistralai/mistral-nemo",
+ "moldes": [
+  [
+   "pedido-direto",
+   "{classe}",
+   "Escreva uma mensagem curta de um paciente para a clinica dele pedindo claramente para {acao}. Sem saudacao longa."
+  ],
+  [
+   "terceiro-quer",
+   "informacao",
+   "Escreva uma mensagem curta de um paciente para a clinica em que OUTRA PESSOA (mae, filho, marido, colega) quer {acao}, e quem escreve apenas pergunta como isso funciona, sem pedir nada para si."
+  ],
+  [
+   "terceiro-contra-eu-quero",
+   "{classe}",
+   "Escreva uma mensagem curta de um paciente para a clinica em que OUTRA PESSOA aconselha a NAO fazer nada, mas quem escreve decide assim mesmo e pede para {acao}."
+  ],
+  [
+   "sem-pedido",
+   "informacao",
+   "Escreva uma mensagem curta de um paciente para a clinica apenas contando que recebeu um lembrete sobre {acao}, sem pedir nada e sem fazer pergunta nenhuma."
+  ]
+ ],
+ "casos": [
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Gostaria de marcar uma consulta com o cardiologista. Qual é o primeiro horário disponível?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Cancelar minha consulta de sexta-feira, por favor."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Por favor, Release my blood test results."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Preciso de atestado para trabalho devido à consulta médica recente. Por favor, me enviem assim que possível. Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Preciso marcar uma consulta com o cardiologista. Pode me ajudar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Por favor, cancele minha consulta de sexta-feira."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Preciso do resultado do meu exame de sangue. Quando estará disponível?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Prezado(a) Dr./Dra. [Nome do Médico], poderia Gentilmente emitir um atestado para meu trabalho? From [Seu Nome], [Data de Hoje].agradeço"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Preciso marks consulta com cardiologista. Por favor, agende o mais breve possivel."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Preciso cancelar a consulta de sexta-feira."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Por favor,Envie resultado exame de sangue."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Preciso de um atestado para o trabalho, pode providenciar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Preciso marcar consulta com meu cardiologista o mais breve possível."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Por gentileza, cancele minha consulta de sexta-feira"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Preciso do resultado do meu exame de sangue. Por favor, professor."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Preciso de um atestado médico para o trabalho. Pode providenciar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Gostaria de marcar uma consulta com o cardiologista. Por favor, me informe a disponibilidade."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Por favor, cancelei minha consulta de sexta-feira. Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Preciso do resultado do meu exame de sangue."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Prezado Dr., preciso de um atestado para minha empresa."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Preciso marcar uma consulta com o cardiologista. Favor, me ajude. Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Por favor, cancele minha consulta de sexta-feira."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Por favor, Prégua o resultado do meu exame de sangue. Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Preciso de um atestado para trabalho. Pode providenciar?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Preciso saber como marcar uma consulta com o cardiologista para outra pessoa."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Olá, gostaria de saber como funciona o processo para uma pessoa diferente do paciente pegar o resultado do exame de sangue em meu nome.agradecço."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Olá, meu familiar precisa de um atestado para o trabalho. Como podemos providenciar isso na clínica? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "globalei sobre como agendar consulta com cardiologista pra mesa pessoa, pode me ajudar?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Olá, sou a mãe do paciente João. Como posso cancelar a consulta dele marcada para sexta-feira?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Preciso saber como agendar um acompanhante para buscar meu resultado de exame de sangue na clínica."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Olá, gostaria de saber como funciona para pedir um atestado de trabalho para outra pessoa. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Prezado(a), gostaria de saber como funciona para marcar uma consulta com o cardiologista para meu pais/mãe/filho/marido/amigo/colega? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Olá, preciso saber como autorizar outra pessoa a pegar meu resultado de exame de sangue na clínica. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Prezados, minha mãe gostaria de marcar uma consulta com o cardiologista. Poderia me informar como proceder? Grato."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Olá, precisaria de ajuda para entender o processo de pegar o resultado de um exame de sangue para outra pessoa na clínica. Poderia me orientar? Agradeço."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Olá, minha mãe precisa de um atestado para o trabalho. Gostaria de saber como solicitá-lo. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Olá, minha mãe queria saber como.markar uma consulta com o cardiologista em seu consultório. Agradeço qualquer orientação."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Oi, preciso saber como funciona o processo para outra pessoa pegar meu resultado de exame de sangue. Obrigado pela atenção."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Oi, gostaria de saber como funciona para emitir um atestado médico para trabalho. Estou perguntando em nome de outra pessoa."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Olá, eu sou a mãe/marido/filho de [Nome]. Gostaria de saber como marcar uma consulta com o cardiologista. Obrigado!"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Estou ligando porque meu filho, que tem uma consulta marcada para sexta, não poderá comparecer. Gostaria de saber como funcionam os procedimentos para cancelar a consulta."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Prezados, sou X, parente de Y. Como posso pegar seu resultado de exame de sangue?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "No atestado é para meu pai, posso saber do processo?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Minha acompanhante acha melhor não fazermos mais exames, mas decidimos de modo diferente. Gostaríamos de pega o resultado do meu exame de sangue. Por favor, nos avise assim que estiver disponível. Obrigado pela atenção e compreensão."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "documento",
+   "classe": "documento",
+   "texto": "Prezada Clínica, tenho dores persistentes. Outra pessoa aconselhou descanso, mas decidi procurar ajuda. Por favor, pode emitir um atestado médico para minha ausência no trabalho? Grato."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Prezada equipe, após analisar, decidi cancelar minha consulta de sexta. Peço para remarcá-la."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Por favor, agende meu resultado do exame de sangue. Ignore o conselho anterior."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "agendar",
+   "classe": "agendar",
+   "texto": "Prezados, após conselho de terceiros, decidi marcar consulta com cardiologista. Aguardo retorno. Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "дник, desculpe incomodar. Preciso cancelar minha consulta de sexta-feira. Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Caros, preciso cancelar minha consulta de sexta-feira. Alguém me aconselhou a não agir, mas eu decidi assim mesmo. Obrigado e desculpem pelas possíveis incoerências."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Desculpe incomodar. Outra pessoa aconselhou não fazer nada, mas decidi não seguir esse conselho. Gostaria de cancelar minha consulta de sexta-feira. Obrigado por entender."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "resultado",
+   "classe": "resultado",
+   "texto": "Por favor, retorne com os resultados do meu exame de sangue. Ignorem o conselho de outra pessoa."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "remarcar",
+   "classe": "remarcar",
+   "texto": "Por favor, cancele a consulta de sexta-feira. Decidi seguir outro conselho."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi seu lembrete. secrète estar ciente da consulta com o cardiologista. Obrigado pelo lembrete."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi lembrete, vou cancelar consulta de sexta."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi lembrete para buscar resultado de exame de sangue."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Recebi o lembrete sobre o atestado para o trabalho. Obrigado!"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi seu lembrete, obrigado. marcaçãomarked"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi lembrete de cancelar consulta sexta-feira."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi seu lembrete. Irei buscar meu resultado de exame de sangue hoje. Obrigado!"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Li seu lembrete sobre o atestado para o trabalho. Obrigado!"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi lembrete sobre consulta com cardiologista, obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi lembrete. Cancelarei consulta de sexta."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi lembrete. Pretendo buscar resultado do exame de sangue."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Recebi seu lembrete sobre o atestado para o trabalho. Obrigado!"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi lembrete para marcar consulta com o cardiologista."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi o lembete sobre cancelar a consulta de sexta-feira. Obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi lembrete. Vou pegar meu resultado de exame de sangue hoje."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Recebi seu lembrete para pedir atestado médico para o trabalho. Obrigado!"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi seu lembrete sobre marcar uma consulta com o cardiologista."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi o lembrete sobre minha consulta de sexta-feira."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi seu lembrete. Obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Recebi seu lembrete. Vou solicitar meu atestado de trabalho. Obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "agendar",
+   "texto": "Recebi lembrete sobre consulta com cardiologista. Graz."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "remarcar",
+   "texto": "Recebi o lembrete sobre cancelar a consulta de sexta-feira."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "resultado",
+   "texto": "Recebi lembrete. Pegarei resultado do exame de sangue hoje."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "documento",
+   "texto": "Recebi seu lembrete sobre o atestado para o trabalho. Obrigado."
+  }
+ ]
+}

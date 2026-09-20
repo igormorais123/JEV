@@ -1,7 +1,7 @@
 {
-  "conferencias": 789,
+  "conferencias": 1130,
   "falhas": 0,
-  "fora_de_alcance": 3,
+  "fora_de_alcance": 7,
   "por_bloco": {
     "R1-R3": 27,
     "R8": 18,
@@ -19,10 +19,15 @@
     "R21": 67,
     "R21b": 6,
     "R22": 105,
+    "R23": 145,
+    "R24": 52,
+    "R25": 42,
+    "R26": 39,
+    "R27": 61,
     "cem hipoteses": 8,
     "cem perguntas": 5,
     "documentação": 72,
-    "páginas geradas": 2,
+    "páginas geradas": 4,
     "caixa": 4
   }
 }

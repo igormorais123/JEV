@@ -13,7 +13,7 @@ herdaria esse defeito em silêncio, e só uma segunda implementação o revelari
 
 Uma divergência aqui significa que a documentação e o dado discordam, e o dado ganha.
 
-**789 de 789 conferências fecham.**
+**1130 de 1130 conferências fecham.**
 
 ## R1-R3 — 27 conferências, todas fecham
 
@@ -821,6 +821,380 @@ As três defesas contra a ordem direta — sanitizar, delimitar e sentinela — 
 |  | sentinela silencio_no_texto_limpo: taxa | `0.9759` | `0.9759` |
 |  | sentinela silencio_no_texto_limpo: ic95 | `[0.9163, 0.9934]` | `[0.9163, 0.9934]` |
 
+## R23 — 145 conferências, todas fecham
+
+O sanitizador contra 48 paráfrases da ordem direta, por conjunto e por família de autor, com o pareamento pela chave certa e os dois braços do sentinela.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | conhecidos/bruto: pares | `942` | `942` |
+|  | conhecidos/bruto: viradas | `208` | `208` |
+|  | conhecidos/bruto: taxa de virada | `0.2208` | `0.2208` |
+|  | conhecidos/bruto: ic95 da virada | `[0.1955, 0.2484]` | `[0.1955, 0.2484]` |
+|  | conhecidos/bruto: acima do corte | `20` | `20` |
+|  | conhecidos/bruto: removidos | `0` | `0` |
+|  | conhecidos/v1: pares | `934` | `934` |
+|  | conhecidos/v1: viradas | `207` | `207` |
+|  | conhecidos/v1: taxa de virada | `0.2216` | `0.2216` |
+|  | conhecidos/v1: ic95 da virada | `[0.1962, 0.2494]` | `[0.1962, 0.2494]` |
+|  | conhecidos/v1: acima do corte | `23` | `23` |
+|  | conhecidos/v1: removidos | `0` | `0` |
+|  | conhecidos/v2: pares | `941` | `941` |
+|  | conhecidos/v2: viradas | `11` | `11` |
+|  | conhecidos/v2: taxa de virada | `0.0117` | `0.0117` |
+|  | conhecidos/v2: ic95 da virada | `[0.0065, 0.0208]` | `[0.0065, 0.0208]` |
+|  | conhecidos/v2: acima do corte | `0` | `0` |
+|  | conhecidos/v2: removidos | `1084` | `1084` |
+|  | conhecidos/pareado v1: virou só sem defesa | `14` | `14` |
+|  | conhecidos/pareado v1: virou só com defesa | `13` | `13` |
+|  | conhecidos/pareado v1: p | `1.0` | `1.0` |
+|  | conhecidos/pareado v2: virou só sem defesa | `201` | `201` |
+|  | conhecidos/pareado v2: virou só com defesa | `6` | `6` |
+|  | conhecidos/pareado v2: p | `0.0` | `0.0` |
+|  | conhecidos: sentinela n | `1002` | `1002` |
+|  | conhecidos: sentinela acusou | `831` | `831` |
+|  | conhecidos: sentinela recall | `0.8293` | `0.8293` |
+|  | surpresa/bruto: pares | `2854` | `2854` |
+|  | surpresa/bruto: viradas | `1308` | `1308` |
+|  | surpresa/bruto: taxa de virada | `0.4583` | `0.4583` |
+|  | surpresa/bruto: ic95 da virada | `[0.4401, 0.4766]` | `[0.4401, 0.4766]` |
+|  | surpresa/bruto: acima do corte | `380` | `380` |
+|  | surpresa/bruto: removidos | `0` | `0` |
+|  | surpresa/v1: pares | `2851` | `2851` |
+|  | surpresa/v1: viradas | `1309` | `1309` |
+|  | surpresa/v1: taxa de virada | `0.4591` | `0.4591` |
+|  | surpresa/v1: ic95 da virada | `[0.4409, 0.4775]` | `[0.4409, 0.4775]` |
+|  | surpresa/v1: acima do corte | `370` | `370` |
+|  | surpresa/v1: removidos | `0` | `0` |
+|  | surpresa/v2: pares | `2850` | `2850` |
+|  | surpresa/v2: viradas | `1276` | `1276` |
+|  | surpresa/v2: taxa de virada | `0.4477` | `0.4477` |
+|  | surpresa/v2: ic95 da virada | `[0.4295, 0.466]` | `[0.4295, 0.466]` |
+|  | surpresa/v2: acima do corte | `378` | `378` |
+|  | surpresa/v2: removidos | `168` | `168` |
+|  | surpresa/pareado v1: virou só sem defesa | `39` | `39` |
+|  | surpresa/pareado v1: virou só com defesa | `44` | `44` |
+|  | surpresa/pareado v1: p | `0.6609` | `0.6609` |
+|  | surpresa/pareado v2: virou só sem defesa | `71` | `71` |
+|  | surpresa/pareado v2: virou só com defesa | `41` | `41` |
+|  | surpresa/pareado v2: p | `0.0059` | `0.0059` |
+|  | surpresa: sentinela n | `3032` | `3032` |
+|  | surpresa: sentinela acusou | `2234` | `2234` |
+|  | surpresa: sentinela recall | `0.7368` | `0.7368` |
+|  | conteudo/mistralai/mistral-nemo: vetores | `12` | `12` |
+|  | conteudo/mistralai/mistral-nemo/bruto: pares | `954` | `954` |
+|  | conteudo/mistralai/mistral-nemo/bruto: viradas | `455` | `455` |
+|  | conteudo/mistralai/mistral-nemo/bruto: taxa de virada | `0.4769` | `0.4769` |
+|  | conteudo/mistralai/mistral-nemo/bruto: ic95 da virada | `[0.4454, 0.5087]` | `[0.4454, 0.5087]` |
+|  | conteudo/mistralai/mistral-nemo/bruto: acima do corte | `178` | `178` |
+|  | conteudo/mistralai/mistral-nemo/bruto: removidos | `0` | `0` |
+|  | conteudo/mistralai/mistral-nemo/v2: pares | `951` | `951` |
+|  | conteudo/mistralai/mistral-nemo/v2: viradas | `447` | `447` |
+|  | conteudo/mistralai/mistral-nemo/v2: taxa de virada | `0.47` | `0.47` |
+|  | conteudo/mistralai/mistral-nemo/v2: ic95 da virada | `[0.4385, 0.5018]` | `[0.4385, 0.5018]` |
+|  | conteudo/mistralai/mistral-nemo/v2: acima do corte | `177` | `177` |
+|  | conteudo/mistralai/mistral-nemo/v2: removidos | `0` | `0` |
+|  | conteudo/mistralai/mistral-nemo/pareado v2: virou só sem defesa | `13` | `13` |
+|  | conteudo/mistralai/mistral-nemo/pareado v2: virou só com defesa | `10` | `10` |
+|  | conteudo/mistralai/mistral-nemo/pareado v2: p | `0.6776` | `0.6776` |
+|  | conteudo/mistralai/mistral-nemo: sentinela n | `1013` | `1013` |
+|  | conteudo/mistralai/mistral-nemo: sentinela acusou | `308` | `308` |
+|  | conteudo/mistralai/mistral-nemo: sentinela recall | `0.304` | `0.304` |
+|  | instrucao/google/gemma-3-12b-it: vetores | `12` | `12` |
+|  | instrucao/google/gemma-3-12b-it/bruto: pares | `951` | `951` |
+|  | instrucao/google/gemma-3-12b-it/bruto: viradas | `458` | `458` |
+|  | instrucao/google/gemma-3-12b-it/bruto: taxa de virada | `0.4816` | `0.4816` |
+|  | instrucao/google/gemma-3-12b-it/bruto: ic95 da virada | `[0.45, 0.5134]` | `[0.45, 0.5134]` |
+|  | instrucao/google/gemma-3-12b-it/bruto: acima do corte | `155` | `155` |
+|  | instrucao/google/gemma-3-12b-it/bruto: removidos | `0` | `0` |
+|  | instrucao/google/gemma-3-12b-it/v2: pares | `954` | `954` |
+|  | instrucao/google/gemma-3-12b-it/v2: viradas | `427` | `427` |
+|  | instrucao/google/gemma-3-12b-it/v2: taxa de virada | `0.4476` | `0.4476` |
+|  | instrucao/google/gemma-3-12b-it/v2: ic95 da virada | `[0.4163, 0.4793]` | `[0.4163, 0.4793]` |
+|  | instrucao/google/gemma-3-12b-it/v2: acima do corte | `153` | `153` |
+|  | instrucao/google/gemma-3-12b-it/v2: removidos | `84` | `84` |
+|  | instrucao/google/gemma-3-12b-it/pareado v2: virou só sem defesa | `43` | `43` |
+|  | instrucao/google/gemma-3-12b-it/pareado v2: virou só com defesa | `11` | `11` |
+|  | instrucao/google/gemma-3-12b-it/pareado v2: p | `0.0` | `0.0` |
+|  | instrucao/google/gemma-3-12b-it: sentinela n | `1011` | `1011` |
+|  | instrucao/google/gemma-3-12b-it: sentinela acusou | `953` | `953` |
+|  | instrucao/google/gemma-3-12b-it: sentinela recall | `0.9426` | `0.9426` |
+|  | instrucao/laboratorio: vetores | `12` | `12` |
+|  | instrucao/laboratorio/bruto: pares | `942` | `942` |
+|  | instrucao/laboratorio/bruto: viradas | `208` | `208` |
+|  | instrucao/laboratorio/bruto: taxa de virada | `0.2208` | `0.2208` |
+|  | instrucao/laboratorio/bruto: ic95 da virada | `[0.1955, 0.2484]` | `[0.1955, 0.2484]` |
+|  | instrucao/laboratorio/bruto: acima do corte | `20` | `20` |
+|  | instrucao/laboratorio/bruto: removidos | `0` | `0` |
+|  | instrucao/laboratorio/v2: pares | `941` | `941` |
+|  | instrucao/laboratorio/v2: viradas | `11` | `11` |
+|  | instrucao/laboratorio/v2: taxa de virada | `0.0117` | `0.0117` |
+|  | instrucao/laboratorio/v2: ic95 da virada | `[0.0065, 0.0208]` | `[0.0065, 0.0208]` |
+|  | instrucao/laboratorio/v2: acima do corte | `0` | `0` |
+|  | instrucao/laboratorio/v2: removidos | `1084` | `1084` |
+|  | instrucao/laboratorio/pareado v2: virou só sem defesa | `201` | `201` |
+|  | instrucao/laboratorio/pareado v2: virou só com defesa | `6` | `6` |
+|  | instrucao/laboratorio/pareado v2: p | `0.0` | `0.0` |
+|  | instrucao/laboratorio: sentinela n | `1002` | `1002` |
+|  | instrucao/laboratorio: sentinela acusou | `831` | `831` |
+|  | instrucao/laboratorio: sentinela recall | `0.8293` | `0.8293` |
+|  | instrucao/openai/gpt-oss-20b: vetores | `12` | `12` |
+|  | instrucao/openai/gpt-oss-20b/bruto: pares | `949` | `949` |
+|  | instrucao/openai/gpt-oss-20b/bruto: viradas | `395` | `395` |
+|  | instrucao/openai/gpt-oss-20b/bruto: taxa de virada | `0.4162` | `0.4162` |
+|  | instrucao/openai/gpt-oss-20b/bruto: ic95 da virada | `[0.3853, 0.4479]` | `[0.3853, 0.4479]` |
+|  | instrucao/openai/gpt-oss-20b/bruto: acima do corte | `47` | `47` |
+|  | instrucao/openai/gpt-oss-20b/bruto: removidos | `0` | `0` |
+|  | instrucao/openai/gpt-oss-20b/v2: pares | `945` | `945` |
+|  | instrucao/openai/gpt-oss-20b/v2: viradas | `402` | `402` |
+|  | instrucao/openai/gpt-oss-20b/v2: taxa de virada | `0.4254` | `0.4254` |
+|  | instrucao/openai/gpt-oss-20b/v2: ic95 da virada | `[0.3942, 0.4572]` | `[0.3942, 0.4572]` |
+|  | instrucao/openai/gpt-oss-20b/v2: acima do corte | `48` | `48` |
+|  | instrucao/openai/gpt-oss-20b/v2: removidos | `84` | `84` |
+|  | instrucao/openai/gpt-oss-20b/pareado v2: virou só sem defesa | `15` | `15` |
+|  | instrucao/openai/gpt-oss-20b/pareado v2: virou só com defesa | `20` | `20` |
+|  | instrucao/openai/gpt-oss-20b/pareado v2: p | `0.4996` | `0.4996` |
+|  | instrucao/openai/gpt-oss-20b: sentinela n | `1008` | `1008` |
+|  | instrucao/openai/gpt-oss-20b: sentinela acusou | `973` | `973` |
+|  | instrucao/openai/gpt-oss-20b: sentinela recall | `0.9653` | `0.9653` |
+|  | limpo: sentinela calada | `78` | `78` |
+|  | gatilho/bruto: n | `24` | `24` |
+|  | gatilho/bruto: acertos | `20` | `20` |
+|  | gatilho/bruto: ic95 | `[0.6415, 0.9332]` | `[0.6415, 0.9332]` |
+|  | gatilho/bruto: mutiladas | `0` | `0` |
+|  | gatilho/v1: n | `24` | `24` |
+|  | gatilho/v1: acertos | `20` | `20` |
+|  | gatilho/v1: ic95 | `[0.6415, 0.9332]` | `[0.6415, 0.9332]` |
+|  | gatilho/v1: mutiladas | `10` | `10` |
+|  | gatilho/v2: n | `24` | `24` |
+|  | gatilho/v2: acertos | `19` | `19` |
+|  | gatilho/v2: ic95 | `[0.5953, 0.9076]` | `[0.5953, 0.9076]` |
+|  | gatilho/v2: mutiladas | `22` | `22` |
+|  | gatilho alarme falso: sentinela n | `24` | `24` |
+|  | gatilho alarme falso: sentinela acusou | `7` | `7` |
+
+## R24 — 52 conferências, todas fecham
+
+As quatro políticas de votação refeitas das cinco chamadas por caso, a oscilação e o acerto por formulação.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | atendimento: casos | `85` | `85` |
+|  | atendimento/unica: n | `84` | `84` |
+|  | atendimento/unica: acertos | `76` | `76` |
+|  | atendimento/unica: ic95 | `[0.8232, 0.9509]` | `[0.8232, 0.9509]` |
+|  | atendimento/maioria-igual: n | `85` | `85` |
+|  | atendimento/maioria-igual: acertos | `77` | `77` |
+|  | atendimento/maioria-igual: ic95 | `[0.8251, 0.9515]` | `[0.8251, 0.9515]` |
+|  | atendimento/maioria-igual: certo só única | `0` | `0` |
+|  | atendimento/maioria-igual: certo só votação | `0` | `0` |
+|  | atendimento/maioria-igual: p | `1.0` | `1.0` |
+|  | atendimento/maioria-diversa: n | `85` | `85` |
+|  | atendimento/maioria-diversa: acertos | `78` | `78` |
+|  | atendimento/maioria-diversa: ic95 | `[0.8396, 0.9595]` | `[0.8396, 0.9595]` |
+|  | atendimento/maioria-diversa: certo só única | `0` | `0` |
+|  | atendimento/maioria-diversa: certo só votação | `1` | `1` |
+|  | atendimento/maioria-diversa: p | `1.0` | `1.0` |
+|  | atendimento/diversa-por-confianca: n | `85` | `85` |
+|  | atendimento/diversa-por-confianca: acertos | `78` | `78` |
+|  | atendimento/diversa-por-confianca: ic95 | `[0.8396, 0.9595]` | `[0.8396, 0.9595]` |
+|  | atendimento/diversa-por-confianca: certo só única | `0` | `0` |
+|  | atendimento/diversa-por-confianca: certo só votação | `1` | `1` |
+|  | atendimento/diversa-por-confianca: p | `1.0` | `1.0` |
+|  | atendimento: oscilaram | `0` | `0` |
+|  | atendimento/formulação base: acertos | `76` | `76` |
+|  | atendimento/formulação sujeito: acertos | `77` | `77` |
+|  | atendimento/formulação reescrita: acertos | `77` | `77` |
+|  | juridico: casos | `69` | `69` |
+|  | juridico/unica: n | `69` | `69` |
+|  | juridico/unica: acertos | `55` | `55` |
+|  | juridico/unica: ic95 | `[0.6878, 0.8751]` | `[0.6878, 0.8751]` |
+|  | juridico/maioria-igual: n | `69` | `69` |
+|  | juridico/maioria-igual: acertos | `55` | `55` |
+|  | juridico/maioria-igual: ic95 | `[0.6878, 0.8751]` | `[0.6878, 0.8751]` |
+|  | juridico/maioria-igual: certo só única | `0` | `0` |
+|  | juridico/maioria-igual: certo só votação | `0` | `0` |
+|  | juridico/maioria-igual: p | `1.0` | `1.0` |
+|  | juridico/maioria-diversa: n | `69` | `69` |
+|  | juridico/maioria-diversa: acertos | `64` | `64` |
+|  | juridico/maioria-diversa: ic95 | `[0.8413, 0.9687]` | `[0.8413, 0.9687]` |
+|  | juridico/maioria-diversa: certo só única | `0` | `0` |
+|  | juridico/maioria-diversa: certo só votação | `9` | `9` |
+|  | juridico/maioria-diversa: p | `0.0039` | `0.0039` |
+|  | juridico/diversa-por-confianca: n | `69` | `69` |
+|  | juridico/diversa-por-confianca: acertos | `61` | `61` |
+|  | juridico/diversa-por-confianca: ic95 | `[0.7875, 0.9401]` | `[0.7875, 0.9401]` |
+|  | juridico/diversa-por-confianca: certo só única | `0` | `0` |
+|  | juridico/diversa-por-confianca: certo só votação | `6` | `6` |
+|  | juridico/diversa-por-confianca: p | `0.0312` | `0.0312` |
+|  | juridico: oscilaram | `0` | `0` |
+|  | juridico/formulação base: acertos | `55` | `55` |
+|  | juridico/formulação sujeito: acertos | `63` | `63` |
+|  | juridico/formulação reescrita: acertos | `63` | `63` |
+
+## R25 — 42 conferências, todas fecham
+
+O terceiro domínio: acurácia por arranjo e molde, a frase de sujeito e a sanitização pareadas.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | base: n | `76` | `76` |
+|  | base: acertos | `48` | `48` |
+|  | base: ic95 | `[0.5192, 0.7312]` | `[0.5193, 0.7312]` |
+|  | base: viradas | `0` | `0` |
+|  | base: viradas acima do corte | `0` | `0` |
+|  | base/terceiro-quer: acertos | `4` | `4` |
+|  | base/terceiro-contra-eu-quero: acertos | `10` | `10` |
+|  | base/sem-pedido: acertos | `11` | `11` |
+|  | base/pedido-direto: acertos | `23` | `23` |
+|  | sujeito: n | `77` | `77` |
+|  | sujeito: acertos | `60` | `60` |
+|  | sujeito: ic95 | `[0.6746, 0.8573]` | `[0.6746, 0.8573]` |
+|  | sujeito: viradas | `11` | `11` |
+|  | sujeito: viradas acima do corte | `0` | `0` |
+|  | sujeito/terceiro-quer: acertos | `13` | `13` |
+|  | sujeito/terceiro-contra-eu-quero: acertos | `10` | `10` |
+|  | sujeito/sem-pedido: acertos | `13` | `13` |
+|  | sujeito/pedido-direto: acertos | `24` | `24` |
+|  | meta: n | `73` | `73` |
+|  | meta: acertos | `34` | `34` |
+|  | meta: ic95 | `[0.3559, 0.579]` | `[0.3559, 0.579]` |
+|  | meta: viradas | `16` | `16` |
+|  | meta: viradas acima do corte | `2` | `2` |
+|  | meta/terceiro-quer: acertos | `1` | `1` |
+|  | meta/terceiro-contra-eu-quero: acertos | `9` | `9` |
+|  | meta/sem-pedido: acertos | `0` | `0` |
+|  | meta/pedido-direto: acertos | `24` | `24` |
+|  | meta-sanitizado: n | `77` | `77` |
+|  | meta-sanitizado: acertos | `49` | `49` |
+|  | meta-sanitizado: ic95 | `[0.5248, 0.7349]` | `[0.5248, 0.7349]` |
+|  | meta-sanitizado: viradas | `0` | `0` |
+|  | meta-sanitizado: viradas acima do corte | `0` | `0` |
+|  | meta-sanitizado/terceiro-quer: acertos | `4` | `4` |
+|  | meta-sanitizado/terceiro-contra-eu-quero: acertos | `10` | `10` |
+|  | meta-sanitizado/sem-pedido: acertos | `11` | `11` |
+|  | meta-sanitizado/pedido-direto: acertos | `24` | `24` |
+|  | sujeito: certo só base | `0` | `0` |
+|  | sujeito: certo só sujeito | `11` | `11` |
+|  | sujeito: p | `0.001` | `0.001` |
+|  | sanitização: virou só sem defesa | `16` | `16` |
+|  | sanitização: virou só com defesa | `0` | `0` |
+|  | sanitização: p | `0.0` | `0.0` |
+
+## R26 — 39 conferências, todas fecham
+
+A resposta dividida em dois trechos: acerto por arranjo, pareamento contra carregar tudo e o que a ordenação viu.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | dupla/jev-1: n | `80` | `80` |
+|  | dupla/jev-1: acertos | `6` | `6` |
+|  | dupla/jev-1: ic95 | `[0.0348, 0.1541]` | `[0.0348, 0.1541]` |
+|  | dupla/jev-1: alvos presentes | `0` | `0` |
+|  | dupla/jev-1: certo só todos | `54` | `54` |
+|  | dupla/jev-1: certo só seleção | `0` | `0` |
+|  | dupla/jev-1: p | `0.0` | `0.0` |
+|  | dupla/jev-2: n | `80` | `80` |
+|  | dupla/jev-2: acertos | `40` | `40` |
+|  | dupla/jev-2: ic95 | `[0.393, 0.607]` | `[0.393, 0.607]` |
+|  | dupla/jev-2: alvos presentes | `42` | `42` |
+|  | dupla/jev-2: certo só todos | `26` | `26` |
+|  | dupla/jev-2: certo só seleção | `6` | `6` |
+|  | dupla/jev-2: p | `0.0005` | `0.0005` |
+|  | dupla/jev-3: n | `80` | `80` |
+|  | dupla/jev-3: acertos | `50` | `50` |
+|  | dupla/jev-3: ic95 | `[0.5155, 0.7231]` | `[0.5155, 0.7231]` |
+|  | dupla/jev-3: alvos presentes | `59` | `59` |
+|  | dupla/jev-3: certo só todos | `21` | `21` |
+|  | dupla/jev-3: certo só seleção | `11` | `11` |
+|  | dupla/jev-3: p | `0.1102` | `0.1102` |
+|  | dupla/todos: n | `80` | `80` |
+|  | dupla/todos: acertos | `60` | `60` |
+|  | dupla/todos: ic95 | `[0.6452, 0.8319]` | `[0.6452, 0.8319]` |
+|  | dupla/todos: alvos presentes | `80` | `80` |
+|  | simples/jev-1: n | `80` | `80` |
+|  | simples/jev-1: acertos | `76` | `76` |
+|  | simples/jev-1: ic95 | `[0.8784, 0.9804]` | `[0.8784, 0.9804]` |
+|  | simples/jev-1: alvos presentes | `78` | `78` |
+|  | simples/todos: n | `80` | `80` |
+|  | simples/todos: acertos | `67` | `67` |
+|  | simples/todos: ic95 | `[0.7416, 0.9025]` | `[0.7416, 0.9025]` |
+|  | simples/todos: alvos presentes | `80` | `80` |
+|  | ordenação: n | `80` | `80` |
+|  | ordenação: topo é alvo | `71` | `71` |
+|  | ordenação: dois no top-2 | `42` | `42` |
+|  | ordenação: dois no top-3 | `59` | `59` |
+|  | ordenação: topo essencial | `53` | `53` |
+|  | ordenação: dois alvos essenciais | `17` | `17` |
+
+## R27 — 61 conferências, todas fecham
+
+As oito montagens da integração sanitizador + sentinela: virada, acerto e detecção, com o pareamento contra o separado.
+
+| | item | publicado | recalculado |
+|---|---|---|---|
+|  | limpo-separado: n | `84` | `84` |
+|  | limpo-separado: acertos | `76` | `76` |
+|  | limpo-separado: viradas | `0` | `0` |
+|  | limpo-separado: ic95 da virada | `[0.0, 0.0437]` | `[0.0, 0.0437]` |
+|  | limpo-separado: acima do corte | `0` | `0` |
+|  | limpo-dois-campos: n | `84` | `84` |
+|  | limpo-dois-campos: acertos | `77` | `77` |
+|  | limpo-dois-campos: viradas | `1` | `1` |
+|  | limpo-dois-campos: ic95 da virada | `[0.0021, 0.0644]` | `[0.0021, 0.0644]` |
+|  | limpo-dois-campos: acima do corte | `0` | `0` |
+|  | limpo-dois-campos: sentinela n | `84` | `84` |
+|  | limpo-dois-campos: sentinela certos | `82` | `82` |
+|  | limpo-sentinela-limpo: n | `84` | `84` |
+|  | limpo-sentinela-limpo: acertos | `76` | `76` |
+|  | limpo-sentinela-limpo: viradas | `0` | `0` |
+|  | limpo-sentinela-limpo: ic95 da virada | `[0.0, 0.0437]` | `[0.0, 0.0437]` |
+|  | limpo-sentinela-limpo: acima do corte | `0` | `0` |
+|  | limpo-sentinela-limpo: sentinela n | `84` | `84` |
+|  | limpo-sentinela-limpo: sentinela certos | `82` | `82` |
+|  | limpo-duas-chamadas: n | `85` | `85` |
+|  | limpo-duas-chamadas: acertos | `77` | `77` |
+|  | limpo-duas-chamadas: viradas | `0` | `0` |
+|  | limpo-duas-chamadas: ic95 da virada | `[0.0, 0.0432]` | `[0.0, 0.0432]` |
+|  | limpo-duas-chamadas: acima do corte | `0` | `0` |
+|  | limpo-duas-chamadas: sentinela n | `85` | `85` |
+|  | limpo-duas-chamadas: sentinela certos | `83` | `83` |
+|  | meta-separado: n | `84` | `84` |
+|  | meta-separado: acertos | `76` | `76` |
+|  | meta-separado: viradas | `0` | `0` |
+|  | meta-separado: ic95 da virada | `[0.0, 0.0437]` | `[0.0, 0.0437]` |
+|  | meta-separado: acima do corte | `0` | `0` |
+|  | meta-dois-campos: n | `84` | `84` |
+|  | meta-dois-campos: acertos | `79` | `79` |
+|  | meta-dois-campos: viradas | `3` | `3` |
+|  | meta-dois-campos: ic95 da virada | `[0.0122, 0.0998]` | `[0.0122, 0.0998]` |
+|  | meta-dois-campos: acima do corte | `0` | `0` |
+|  | meta-dois-campos: sentinela n | `84` | `84` |
+|  | meta-dois-campos: sentinela certos | `84` | `84` |
+|  | meta-sentinela-limpo: n | `85` | `85` |
+|  | meta-sentinela-limpo: acertos | `77` | `77` |
+|  | meta-sentinela-limpo: viradas | `0` | `0` |
+|  | meta-sentinela-limpo: ic95 da virada | `[0.0, 0.0432]` | `[0.0, 0.0432]` |
+|  | meta-sentinela-limpo: acima do corte | `0` | `0` |
+|  | meta-sentinela-limpo: sentinela n | `85` | `85` |
+|  | meta-sentinela-limpo: sentinela certos | `2` | `2` |
+|  | meta-duas-chamadas: n | `82` | `82` |
+|  | meta-duas-chamadas: acertos | `74` | `74` |
+|  | meta-duas-chamadas: viradas | `0` | `0` |
+|  | meta-duas-chamadas: ic95 da virada | `[0.0, 0.0448]` | `[0.0, 0.0448]` |
+|  | meta-duas-chamadas: acima do corte | `0` | `0` |
+|  | meta-duas-chamadas: sentinela n | `83` | `83` |
+|  | meta-duas-chamadas: sentinela certos | `83` | `83` |
+|  | pareado meta-dois-campos: só separado | `0` | `0` |
+|  | pareado meta-dois-campos: só nesta | `3` | `3` |
+|  | pareado meta-dois-campos: p | `0.25` | `0.25` |
+|  | pareado meta-sentinela-limpo: só separado | `0` | `0` |
+|  | pareado meta-sentinela-limpo: só nesta | `0` | `0` |
+|  | pareado meta-sentinela-limpo: p | `1.0` | `1.0` |
+|  | pareado meta-duas-chamadas: só separado | `0` | `0` |
+|  | pareado meta-duas-chamadas: só nesta | `0` | `0` |
+|  | pareado meta-duas-chamadas: p | `1.0` | `1.0` |
+
 ## cem hipoteses — 8 conferências, todas fecham
 
 | | item | publicado | recalculado |
@@ -933,12 +1307,14 @@ com 2,4% de alarme falso…" fecha com o dado | `2,4%` | `2,4%` |
 |  | GUIA-PRATICO-JEV.md: "76/84 contra 74/82 sem ela…" está escrito | `True` | `True` |
 |  | GUIA-PRATICO-JEV.md: "76/84 contra 74/82 sem ela…" fecha com o dado | `76` | `76` |
 
-## páginas geradas — 2 conferências, todas fecham
+## páginas geradas — 4 conferências, todas fecham
 
 | | item | publicado | recalculado |
 |---|---|---|---|
 |  | DOSSIE-DE-EVIDENCIAS.md existe | `True` | `True` |
 |  | DOSSIE-DE-EVIDENCIAS.md está atualizado | `True` | `True` |
+|  | BATERIA-COMPLEMENTAR.md existe | `True` | `True` |
+|  | BATERIA-COMPLEMENTAR.md está atualizado | `True` | `True` |
 
 ## caixa — 4 conferências, todas fecham
 
@@ -947,8 +1323,8 @@ As chamadas e o custo declarados na documentação contra o livro-caixa SQLite, 
 | | item | publicado | recalculado |
 |---|---|---|---|
 |  | o guia declara chamadas e custo | `True` | `True` |
-|  | chamadas declaradas = livro-caixa | `13042` | `13042` |
-|  | custo declarado = livro-caixa (4 casas) | `0.5297` | `0.5297` |
+|  | chamadas declaradas = livro-caixa | `31140` | `31140` |
+|  | custo declarado = livro-caixa (4 casas) | `1.0047` | `1.0047` |
 |  | dentro do teto de US$ 5,00 | `True` | `True` |
 
 ## Fora do alcance desta auditoria
@@ -957,5 +1333,9 @@ Números que aparecem nos resumos mas cujas linhas brutas não estão no arquivo
 
 - R1-R3: original-E12: reaproveitada de outro experimento
 - R22: se os oito padrões do sanitizador cobrem a ordem direta escrita de outro jeito: a defesa foi medida contra os vetores que este laboratório escreveu, e um atacante que os conheça pode contorná-los
+- R23: se os 36 vetores escritos por três modelos esgotam as formas de dar ordem ao classificador: são uma amostra, e a taxa de virada vale para ela
+- R24: se a formulação reescrita ganha por ser reescrita ou por ter os critérios em ordem inversa: as duas mudanças entraram juntas
+- R25: se a queda da clínica é do domínio ou do gerador: o mesmo modelo escreveu os três corpus, e a fraqueza de terceiro pode ser dele
+- R26: se a pergunta dupla "responda as duas" representa a resposta dividida do mundo real, onde a divisão não vem anunciada
 - cem perguntas: se o valor dos parâmetros não medidos — preço de mercado, custo-hora, volume mensal — corresponde à realidade de quem for usar o estudo. A auditoria confere que eles estão declarados, não que estão certos
 

@@ -16,10 +16,14 @@ Projeto experimental para testes com o modelo de classificação JEV.
   ele faz. Cada pergunta declara a decisão que informa e o que a faria virar; 76 se respondem com dado
   medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
   um a um, e um teste quebra se alguma resposta usar um deles calada.
+- **[Bateria complementar](docs/BATERIA-COMPLEMENTAR.md)** — cinco rodadas que fecham o que o estudo tinha
+  declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
+  serve (a formulação decide), a acurácia cai com a distância do domínio, e as duas defesas cabem num payload
+  se o sentinela ler o texto original. Mais de 14 mil chamadas novas, cada número recalculado pela auditoria.
 - **[Dossiê de evidências](docs/DOSSIE-DE-EVIDENCIAS.md)** — cada afirmação do estudo com a força dela
   (demonstrado, direção, medição única, falsificado) e, em cada uma, o que ela **não** prova. Página gerada
   a partir do dado bruto.
-- **[Auditoria dos números](docs/AUDITORIA-DE-NUMEROS.md)** — as 789 conferências que recalculam cada número
+- **[Auditoria dos números](docs/AUDITORIA-DE-NUMEROS.md)** — as 1.128 conferências que recalculam cada número
   publicado a partir das linhas de resposta originais, com estatística independente da que gerou os resumos.
   Presa na suíte de testes: número sem dado que o sustente quebra o `pytest`.
 - **Canários de comportamento** (`python -m laboratorio.canarios_de_comportamento --rodar`) — oito propriedades

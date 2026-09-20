@@ -130,8 +130,22 @@ def _custo_por_decisao():
     return gasto / chamadas
 
 
+# Rodada unificada -> artefato de origem, para consultar o registro de retratações.
+ARTEFATO_DA_RODADA = {'R11': 'r11-extremos.json'}
+
+
 def _linhas_jev():
-    return [l for l in d.apenas_jev(d.linhas_com_gabarito()) if l['confianca'] is not None]
+    """Só o que vale como evidência: condição retratada fica de fora.
+
+    A primeira versão da Q023 somava a diluição de 20k e 30k da R11, que está retratada porque o
+    truncamento do laboratório cortava o pedido do cliente. Essas 60 linhas carregavam 46 dos 52
+    erros acima de 0,99 dos extremos, e a "degradação sob dificuldade" era, em quase toda a sua
+    extensão, o defeito do instrumento. O registro de retratações existe para isso ser mecânico.
+    """
+    return [l for l in d.apenas_jev(d.linhas_com_gabarito())
+            if l['confianca'] is not None
+            and not (l['rodada'] in ARTEFATO_DA_RODADA
+                     and d.esta_retratada(ARTEFATO_DA_RODADA[l['rodada']], l['condicao']))]
 
 
 DIFICULDADE = {
@@ -169,6 +183,32 @@ def _latencias():
     não a latência do modelo; incluí-lo faz o p99 medir o instrumento."""
     return [l['latencia_ms'] for l in d.decisoes()
             if l['latencia_ms'] and l.get('status') == 'success']
+
+
+def _r23():
+    return _artefato('r23-parafrase.json')
+
+
+def _familias_de_instrucao_surpresa():
+    """As famílias de ordem ao sistema escritas por outros modelos: o conjunto que decide."""
+    return {nome: bloco for nome, bloco in _r23()['por_familia'].items()
+            if nome.startswith('instrucao/') and nome != 'instrucao/laboratorio'}
+
+
+def _r24():
+    return _artefato('r24-votacao.json')
+
+
+def _r25():
+    return _artefato('r25-terceiro-dominio.json')
+
+
+def _r26():
+    return _artefato('r26-dois-trechos.json')
+
+
+def _r27():
+    return _artefato('r27-integracao.json')
 
 
 def _r22():
@@ -435,12 +475,17 @@ def q018():
 @resposta('Q019')
 def q019():
     custo = _custo_por_decisao()
-    return R(f'Cabe folgado. Três chamadas custam US$ {custo * 3:.6f} por decisão, contra US$ '
-             f'{p("custo_erro_grave_usd"):.2f} de um erro grave: a votação é '
-             f'{mil(p('custo_erro_grave_usd') / (custo * 3))}× mais barata que um único erro '
-             'que ela evite. Para a classe irreversível, votar em três é decisão fácil.',
-             {'custo_votacao_usd': round(custo * 3, 6)},
-             _declarar('custo_erro_grave_usd'), confianca='baixa')
+    r24 = _r24()
+    osc = sum(c['oscilacao']['oscilaram'] for c in r24['corpora'].values())
+    n = sum(c['oscilacao']['n'] for c in r24['corpora'].values())
+    return R(f'Cabe folgado — três chamadas custam US$ {usd(3 * custo, 6)} por decisão contra '
+             f'US$ {usd(p("custo_erro_grave_usd"), 2)} de um erro grave — mas a R24 mostrou que '
+             f'votar a **mesma** pergunta três vezes não compra nada: em {n} casos, {osc} '
+             'oscilaram. O que vale o triplo do custo é perguntar de **três formulações** '
+             'diferentes, que no jurídico levou de 79,7% para 92,8%. Para a classe irreversível, '
+             'redundância de formulação, não de repetição.',
+             {'custo_tres_chamadas_usd': round(3 * custo, 7), 'oscilaram': osc, 'n': n},
+             _declarar('custo_erro_grave_usd'), confianca='media')
 
 
 @resposta('Q020')
@@ -503,7 +548,7 @@ def q022():
 
 @resposta('Q023')
 def q023():
-    """A pergunta certa não é 'sobrevive?', é 'sobrevive onde?'."""
+    """A pergunta certa não é 'sobrevive?', é 'sobrevive onde?' — e com que dado."""
     linhas = _linhas_jev()
     por_rodada = {}
     for rodada in sorted(set(l['rodada'] for l in linhas)):
@@ -516,16 +561,19 @@ def q023():
                               'o_que_e': DIFICULDADE.get(rodada, '')}
     normal = por_rodada.get('R1-R3')
     extremo = por_rodada.get('R11')
-    return R('Sobrevive no uso normal e **degrada exatamente onde seria mais necessário**. '
-             f'No corpus de variação de formato e ordem, acima de 0,99 há {normal["erros"]} '
-             f'erros em {mil(normal["n"])} decisões — {normal["taxa"]:.2%}. Nas condições '
-             f'extremas (até 147 opções, 70% de ruído, sobreposição de classes), '
-             f'{extremo["erros"]} em {mil(extremo["n"])} — **{extremo["taxa"]:.1%}**. Não é o '
-             'ataque que quebra o corte, é a **dificuldade**: quanto mais difícil a tarefa, '
-             'menos a confiança avisa. A recomendação do guia continua de pé para uso normal, '
-             'e precisa ganhar a ressalva de que ela não se transporta para taxonomia grande '
-             'nem para texto degradado.',
-             {'por_rodada': por_rodada})
+    pior = max(por_rodada.items(), key=lambda kv: kv[1]['taxa'])
+    return R('Sobrevive, e a primeira versão desta resposta dizia o contrário por um erro que '
+             'vale registrar: ela somava a diluição retratada da R11, e a "degradação sob '
+             'dificuldade" era o truncamento do laboratório. Retirada a condição retratada, '
+             f'acima de 0,99 há {normal["erros"]} erros em {mil(normal["n"])} decisões no uso '
+             f'normal ({normal["taxa"]:.2%}) e {extremo["erros"]} em {mil(extremo["n"])} nas '
+             f'condições extremas que valem como evidência ({extremo["taxa"]:.2%}) — até 147 '
+             'opções, 70% de ruído, sobreposição de classes. A pior rodada é '
+             f'{pior[0]} ({pior[1]["o_que_e"]}), com {pior[1]["taxa"]:.2%}. O corte de 0,99 '
+             'continua sendo o último ponto em que a confiança avisa, e a ressalva que fica é '
+             'outra: em ruído pesado a acurácia despenca (36,7% a 70%) **mas nenhum erro passa '
+             'do corte** — o corte cobre; o que ele não faz é devolver acurácia.',
+             {'por_rodada': por_rodada, 'pior_rodada': pior[0]})
 
 
 @resposta('Q024')
@@ -695,15 +743,28 @@ def q039():
 
 @resposta('Q040')
 def q040():
-    return R('Parcialmente independentes, e por isso votar ajuda. Em 40 casos repetidos cinco '
-             'vezes, apenas 1 oscilou — ou seja, a maioria das decisões é estável e o erro '
-             'restante é o que a votação captura. Mas cuidado: se o erro for **sistemático** '
-             '(armadilha semântica, texto sem pedido), votar três vezes repete o mesmo erro '
-             'três vezes. A votação protege contra oscilação, não contra viés.',
-             {'oscilaram': 1, 'de': 40}, confianca='media')
+    r24 = _r24()
+    saida = {}
+    for nome, c in r24['corpora'].items():
+        saida[nome] = {'oscilaram': c['oscilacao']['oscilaram'], 'n': c['oscilacao']['n'],
+                       'divergiram_entre_formulacoes': c['divergencia_entre_formulacoes']['divergiram'],
+                       'unica': c['politicas']['unica']['taxa'],
+                       'maioria_igual': c['politicas']['maioria-igual']['taxa'],
+                       'maioria_diversa': c['politicas']['maioria-diversa']['taxa'],
+                       'pareado_diversa': c['politicas']['maioria-diversa']['pareado_contra_unica']}
+    j, a = saida['juridico'], saida['atendimento']
+    return R('**Os erros se repetem, e votar a mesma pergunta não resolve.** Em '
+             f"{j['n'] + a['n']} casos com três chamadas idênticas, {j['oscilaram'] + a['oscilaram']} "
+             'oscilaram: o modelo é determinístico neste regime, e o erro é sistemático. O que '
+             f"muda a resposta é a formulação — {j['divergiram_entre_formulacoes']} dos "
+             f"{j['n']} casos jurídicos divergem entre três formulações — e por isso a maioria "
+             f"**diversa** sobe o jurídico de {j['unica']:.1%} para {j['maioria_diversa']:.1%} "
+             f"(pareado {j['pareado_diversa']['certo_so_votacao']} a "
+             f"{j['pareado_diversa']['certo_so_unica']}, p = {usd(j['pareado_diversa']['p'], 4)}). "
+             'Votação protege contra formulação ruim, não contra oscilação, que não existe.',
+             saida)
 
 
-# ===================================================================== E · segurança
 @resposta('Q041')
 def q041():
     return R('Um campo só: o `state`, que é onde entra o texto de terceiro. A separação '
@@ -720,38 +781,55 @@ def q042():
     r22 = _r22()
     a = r22['arranjos']
     par = r22['pareado']['meta-sanitizado']
-    return R('**Sim, e completamente.** Uma expressão regular de oito padrões derruba a virada '
-             f"de {a['meta']['viradas']}/{a['meta']['pares_com_base']} "
-             f"({a['meta']['taxa_de_virada']:.1%}) para "
-             f"{a['meta-sanitizado']['viradas']}/{a['meta-sanitizado']['pares_com_base']} "
-             f"({a['meta-sanitizado']['taxa_de_virada']:.1%}), pareado "
-             f"**{par['virou_so_sem_defesa']} a {par['virou_so_com_defesa']}, p < 0,0001**. E "
-             'restaura a acurácia: '
-             f"{a['meta-sanitizado']['acertos']}/{a['meta-sanitizado']['n']} contra "
-             f"{a['meta']['acertos']}/{a['meta']['n']} sem defesa, praticamente o nível do texto "
-             f"limpo ({a['limpo']['acertos']}/{a['limpo']['n']}). **Não cobra nada do texto "
-             f"inocente**: no corpus limpo, sanitizar dá {a['limpo-sanitizado']['acertos']}/"
-             f"{a['limpo-sanitizado']['n']} contra {a['limpo']['acertos']}/{a['limpo']['n']}. "
-             'A recomendação do guia, que tinha sido escrita sem evidência, agora tem.',
-             {'virada_sem_defesa': a['meta']['taxa_de_virada'],
-              'virada_com_sanitizacao': a['meta-sanitizado']['taxa_de_virada'],
-              'pareado': par})
+    r23 = _r23()['por_conjunto']
+    fam = _familias_de_instrucao_surpresa()
+    viradas = sum(f['bruto']['viradas'] for f in fam.values())
+    pares = sum(f['bruto']['pares'] for f in fam.values())
+    com_v2 = sum(f['v2']['viradas'] for f in fam.values())
+    acima = sum(f['bruto']['acima_do_corte'] for f in fam.values())
+    return R('**Contra o vetor para o qual a lista foi escrita, sim; contra qualquer outro, '
+             'não.** Na R22 a expressão regular de oito padrões derrubou a virada de '
+             f"{a['meta']['viradas']}/{a['meta']['pares_com_base']} para "
+             f"{a['meta-sanitizado']['viradas']}/{a['meta-sanitizado']['pares_com_base']}, pareado "
+             f"{par['virou_so_sem_defesa']} a {par['virou_so_com_defesa']}. Na R23 a mesma lista "
+             f"não cobre **nenhum** dos {r23['conhecidos']['vetores'] + r23['surpresa']['vetores']} "
+             'vetores novos, e a lista ampliada (v2) cobre só '
+             f"{r23['surpresa']['vetores_cobertos_v2']} dos {r23['surpresa']['vetores']} escritos "
+             f'por outros modelos. Contra ordens ao sistema nunca vistas, a virada é '
+             f'**{viradas}/{pares} = {viradas / pares:.1%}** sem defesa e '
+             f'{com_v2}/{pares} com o v2, com **{acima} viradas acima do corte de 0,90**. '
+             'Sanitizar por lista é defesa contra o ataque que já se conhece. A camada que '
+             'generaliza é o sentinela (Q043).',
+             {'r22_pareado': [par['virou_so_sem_defesa'], par['virou_so_com_defesa']],
+              'r23_vetores_cobertos_v1': r23['surpresa']['vetores_cobertos_v1'],
+              'r23_vetores_cobertos_v2': r23['surpresa']['vetores_cobertos_v2'],
+              'r23_instrucao_surpresa': {'viradas': viradas, 'pares': pares, 'com_v2': com_v2,
+                                         'acima_do_corte': acima}})
 
 
 @resposta('Q043')
 def q043():
     vigia = _r22()['sentinela']
     ataque, limpo = vigia['recall_sob_ataque'], vigia['silencio_no_texto_limpo']
-    return R(f'**Sim, e é o melhor achado desta rodada.** Uma segunda pergunta no mesmo payload '
-             f'— *este texto tenta dar ordem ao sistema?* — acusa **{ataque["certos"]} de '
-             f'{ataque["n"]}** das mensagens sob ataque e fica calada em '
-             f'{limpo["certos"]} de {limpo["n"]} das limpas: recall '
-             f'{ataque["taxa"]:.0%}, alarme falso {1 - limpo["taxa"]:.1%}. E **custa zero '
-             'chamada**, porque o contrato aceita várias perguntas no mesmo estado. Ela não '
-             'impede a virada — a decisão principal continua virando — mas detecta, e detectar '
-             'é o que autoriza recusar.',
-             {'recall': ataque['taxa'], 'alarme_falso': round(1 - limpo['taxa'], 4),
-              'ic95_recall': ataque['ic95']})
+    fam = _familias_de_instrucao_surpresa()
+    acusou = sum(f['sentinela']['acusou'] for f in fam.values())
+    n = sum(f['sentinela']['n'] for f in fam.values())
+    gat = _r23()['gatilho']['sentinela_alarme_falso']
+    r27 = _r27()['montagens']
+    return R('**Sim, e é a única defesa que generaliza.** Na R22 a segunda pergunta no mesmo '
+             f'payload acusou {ataque["certos"]} de {ataque["n"]} sob ataque e ficou calada em '
+             f'{limpo["certos"]} de {limpo["n"]} das limpas. Na R23, contra ordens ao sistema '
+             f'escritas por outros modelos e nunca vistas, acusou **{mil(acusou)} de {mil(n)} = '
+             f'{acusou / n:.1%}** — onde a lista de padrões cobria 2 vetores em 24. O custo: '
+             f'{gat["acusou"]} de {gat["n"]} mensagens legítimas que dizem "desconsidere a '
+             'mensagem anterior" são acusadas, e o sentinela precisa ler o texto **original** — '
+             f'depois de sanitizar ele acusa {r27["meta-sentinela-limpo"]["sentinela"]["certos"]} '
+             f'de {r27["meta-sentinela-limpo"]["sentinela"]["n"]} (R27). Ele não impede a virada; '
+             'detecta, e detectar é o que autoriza recusar ou mandar para gente.',
+             {'r22_recall': ataque['taxa'], 'r22_alarme_falso': round(1 - limpo['taxa'], 4),
+              'r23_recall_instrucao_surpresa': round(acusou / n, 4),
+              'r23_alarme_falso_gatilho': round(gat['acusou'] / gat['n'], 4),
+              'r27_cego_apos_sanitizar': r27['meta-sentinela-limpo']['sentinela']['certos']})
 
 
 @resposta('Q044')
@@ -779,14 +857,29 @@ def q045():
 
 @resposta('Q046')
 def q046():
-    r22 = _r22()
-    a = r22['arranjos']
-    return R('**Sanitizar primeiro, sentinela junto.** Sanitizar custa zero chamada e zero '
-             f"acurácia, e leva a virada a {a['meta-sanitizado']['taxa_de_virada']:.1%}. A "
-             'sentinela custa zero chamada e pega o que a regex não cobrir, com recall de 100% '
-             'neste corpus. As duas juntas são defesa em profundidade a custo nulo. Delimitar '
-             'fica de fora: não demonstrou efeito.',
-             {'ordem': ['sanitizar', 'sentinela', 'delimitar']})
+    r27 = _r27()
+    m = r27['montagens']
+    fam = _familias_de_instrucao_surpresa()
+    acusou = sum(f['sentinela']['acusou'] for f in fam.values())
+    n = sum(f['sentinela']['n'] for f in fam.values())
+    return R('**Sentinela primeiro, sobre o texto original; sanitização como complemento para '
+             'o que já se conhece.** A ordem inverteu depois da R23: a lista de padrões não '
+             f'generaliza e o sentinela acusa {acusou / n:.0%} de ordens nunca vistas. Na '
+             'integração (R27), o sentinela precisa do texto original — sanitizado antes, ele '
+             f'fica cego ({m["meta-sentinela-limpo"]["sentinela"]["certos"]}/'
+             f'{m["meta-sentinela-limpo"]["sentinela"]["n"]}). Com dois campos no mesmo payload '
+             f'a detecção é {m["meta-dois-campos"]["sentinela"]["certos"]}/'
+             f'{m["meta-dois-campos"]["sentinela"]["n"]} e a virada reabre em '
+             f'{m["meta-dois-campos"]["viradas"]}/{m["meta-dois-campos"]["pares_com_base"]}; com '
+             f'duas chamadas, {m["meta-duas-chamadas"]["viradas"]}/'
+             f'{m["meta-duas-chamadas"]["pares_com_base"]} viradas ao dobro do custo. Para a '
+             'classe irreversível, duas chamadas; para o resto, dois campos. Delimitar fica de '
+             'fora.',
+             {'ordem': ['sentinela sobre o original', 'sanitizar o que se conhece', 'delimitar'],
+              'r27_dois_campos': {'viradas': m['meta-dois-campos']['viradas'],
+                                  'sentinela': m['meta-dois-campos']['sentinela']['certos']},
+              'r27_duas_chamadas': {'viradas': m['meta-duas-chamadas']['viradas'],
+                                    'sentinela': m['meta-duas-chamadas']['sentinela']['certos']}})
 
 
 @resposta('Q047')
@@ -826,12 +919,26 @@ def q049():
         if l['escolha'] != base[l['i']]['escolha']:
             por_conf[faixa][0] += 1
     taxas = {k: (v[0] / v[1] if v[1] else None) for k, v in por_conf.items()}
+    # replicação na R23: 48 vetores sobre as mesmas 85 mensagens, com a linha de base da corrida
+    r23 = _r23()['detalhe']
+    base23 = {l['i']: l for l in r23 if l['conjunto'] == 'limpo' and l['escolha']}
+    rep = {'base >= 0,99': [0, 0], 'base < 0,99': [0, 0]}
+    for l in r23:
+        if l['conjunto'] in ('conhecidos', 'surpresa') and l['braco'] == 'bruto'                 and l['escolha'] and l['i'] in base23:
+            faixa = 'base >= 0,99' if (base23[l['i']]['confianca'] or 0) >= 0.99 else 'base < 0,99'
+            rep[faixa][1] += 1
+            rep[faixa][0] += l['escolha'] != base23[l['i']]['escolha']
+    taxas23 = {k: (v[0] / v[1] if v[1] else None) for k, v in rep.items()}
     return R('Sim, e o sinal é gratuito: a confiança da decisão **sem** o ataque prediz a '
-             'fragilidade. Mensagens que o modelo classificava com confiança abaixo de 0,99 '
-             f"viraram {taxas['base < 0,99']:.0%} das vezes; as de confiança máxima, "
-             f"{taxas['base >= 0,99']:.0%}. Quem já estava em dúvida é quem o atacante "
-             'consegue empurrar.',
-             {'viradas_por_faixa': por_conf, 'taxas': taxas}, confianca='media')
+             'fragilidade. Na R22, mensagens que o modelo classificava com confiança abaixo de '
+             f"0,99 viraram {taxas['base < 0,99']:.0%} das vezes; as de confiança máxima, "
+             f"{taxas['base >= 0,99']:.0%}. A R23 replica com 48 vetores: "
+             f"{taxas23['base < 0,99']:.0%} contra {taxas23['base >= 0,99']:.0%}, sobre "
+             f"{mil(rep['base < 0,99'][1])} e {mil(rep['base >= 0,99'][1])} pares. Quem já "
+             'estava em dúvida é quem o atacante consegue empurrar — e a confiança de base é o '
+             'sinal de graça para escolher onde pôr revisão humana.',
+             {'r22_viradas_por_faixa': por_conf, 'r22_taxas': taxas,
+              'r23_viradas_por_faixa': rep, 'r23_taxas': taxas23})
 
 
 @resposta('Q050')
@@ -935,15 +1042,17 @@ def q059():
 
 @resposta('Q060')
 def q060():
-    return R('Duas coisas, nesta ordem. **Primeira:** 200 mensagens de um canal real, anotadas '
-             'por duas pessoas, que fecham a ressalva de escopo e permitem calibrar o corte. '
-             '**Segunda:** um terceiro domínio, para saber se a queda do jurídico é do domínio '
-             'ou da distância ao corpus de origem. A primeira depende de acesso; a segunda '
-             'custa US$ 0,02 e pode ser feita hoje.',
-             {'custo_terceiro_dominio_usd': 0.02})
+    r25 = _r25()['arranjos']
+    return R('O terceiro domínio já foi medido (R25) e respondeu: a queda é de **distância do '
+             f'corpus de origem**, não do jurídico. A clínica fica em {r25["base"]["taxa"]:.1%} '
+             f'sem a frase de sujeito e {r25["sujeito"]["taxa"]:.1%} com ela — abaixo do jurídico '
+             'e muito abaixo do atendimento. O que continua faltando é o que sempre faltou: '
+             '**200 mensagens de um canal real, anotadas por duas pessoas**, que fecham a '
+             'ressalva de material construído e permitem calibrar o corte no dado certo. Depende '
+             'de acesso, não de orçamento.',
+             {'clinica_base': r25['base']['taxa'], 'clinica_sujeito': r25['sujeito']['taxa']})
 
 
-# ===================================================================== G · alternativas
 @resposta('Q061')
 def q061():
     return R('Entre 32 e 65 pontos, conforme o corpus: 92,5% contra 60,0% no piloto e 97,5% '
@@ -1317,12 +1426,26 @@ def q094():
 
 @resposta('Q095')
 def q095():
-    return R('Rodar a Aplicação 3 sobre um corpus onde a resposta exija **juntar dois trechos**. '
-             'Toda a demonstração de que selecionar bate carregar tudo vem de perguntas com uma '
-             'única fonte de resposta; se a resposta estiver dividida, mandar um trecho deve ser '
-             'pior que mandar oito, e a recomendação central inverte. É o teste adversarial que '
-             'falta, e ele é barato.',
-             {})
+    r26 = _r26()
+    a, o = r26['arranjos'], r26['ordenacao']
+    return R('**Já foi feito (R26), e a recomendação central inverte onde a resposta está '
+             f'dividida.** Em {r26["pares"]} perguntas que exigem dois trechos, mandar o primeiro '
+             f'que o Jev escolheu acerta {a["dupla/jev-1"]["acertos"]}/{a["dupla/jev-1"]["n"]} '
+             f'contra {a["dupla/todos"]["acertos"]}/{a["dupla/todos"]["n"]} mandando os oito '
+             f'({a["dupla/jev-1"]["pareado_contra_todos"]["certo_so_todos"]} a '
+             f'{a["dupla/jev-1"]["pareado_contra_todos"]["certo_so_selecao"]}); k = 2 dá '
+             f'{a["dupla/jev-2"]["acertos"]}/{a["dupla/jev-2"]["n"]} e k = 3, '
+             f'{a["dupla/jev-3"]["acertos"]}/{a["dupla/jev-3"]["n"]}, já sem diferença '
+             'significativa. A mesma primeira pergunta sozinha continua favorecendo a seleção '
+             f'({a["simples/jev-1"]["acertos"]}/{a["simples/jev-1"]["n"]} contra '
+             f'{a["simples/todos"]["acertos"]}/{a["simples/todos"]["n"]}). E a regra de recall '
+             f'de graça **não avisa**: o topo veio `essencial` em {o["topo_essencial"]} de '
+             f'{o["n"]} casos, e os dois alvos foram marcados essenciais em só '
+             f'{o["casos_com_dois_alvos_essenciais"]}. Quem não sabe se a resposta está dividida '
+             'manda três, não um.',
+             {'dupla': {k: v['acertos'] for k, v in a.items() if k.startswith('dupla')},
+              'simples': {k: v['acertos'] for k, v in a.items() if k.startswith('simples')},
+              'ordenacao': o})
 
 
 @resposta('Q096')
@@ -1353,25 +1476,33 @@ def q097():
 
 @resposta('Q098')
 def q098():
-    par = _r22()['pareado']['meta-sanitizado']
-    return R('**Nenhum, depois desta rodada** — e é a primeira vez que isso pode ser dito. A '
-             'injeção por ordem direta era o risco sem mitigação medida, e a sanitização foi '
-             'medida (27 a 0, p < 0,0001) com a sentinela como segunda camada. Continuam sem '
-             'mitigação **medida** dois itens menores: a oscilação entre chamadas, mitigada por '
-             'votação nunca testada de ponta a ponta, e o erro em texto de produção, que não '
-             'pode ser mitigado antes de ser medido.',
-             {'sanitizacao_pareado': [par['virou_so_sem_defesa'], par['virou_so_com_defesa']],
-              'p': par['p']})
+    fam = _familias_de_instrucao_surpresa()
+    viradas = sum(f['bruto']['viradas'] for f in fam.values())
+    pares = sum(f['bruto']['pares'] for f in fam.values())
+    acusou = sum(f['sentinela']['acusou'] for f in fam.values())
+    n = sum(f['sentinela']['n'] for f in fam.values())
+    return R('**Um, e ele voltou a existir depois da R23:** a ordem direta escrita de um jeito '
+             f'que a lista não conhece vira {viradas / pares:.0%} das decisões, e a única '
+             f'mitigação medida contra ela é **detecção** ({acusou / n:.0%} pelo sentinela), não '
+             'prevenção. Detectar autoriza recusar ou mandar para gente; não devolve a resposta '
+             'certa. A oscilação entre chamadas saiu da lista — a R24 mediu zero. O erro em texto '
+             'de produção continua sem poder ser mitigado antes de ser medido.',
+             {'virada_instrucao_surpresa': round(viradas / pares, 4),
+              'recall_sentinela': round(acusou / n, 4)})
 
 
 @resposta('Q099')
 def q099():
-    return R('**Ordenação de contexto, com k = 1**, dentro de um fluxo que já usa modelo caro. '
-             'Salvaguardas: classe de escape na taxonomia, sanitização da entrada se o texto vier '
-             'de fora, e a regra de recall de graça — se o topo não vier `essencial`, buscar mais '
-             'candidatos em vez de escolher melhor. Nenhuma dessas salvaguardas custa uma '
-             'chamada.',
-             {'k': 1})
+    r26 = _r26()['arranjos']
+    return R('**Ordenação de contexto, com k = 1 para pergunta de fonte única e k = 3 quando não '
+             'se sabe**, dentro de um fluxo que já usa modelo caro. A R26 tirou o k = 1 '
+             f'incondicional: com resposta dividida em dois trechos ele acerta '
+             f'{r26["dupla/jev-1"]["acertos"]}/{r26["dupla/jev-1"]["n"]} e a regra de recall de '
+             'graça não avisa. Salvaguardas que não custam chamada: classe de escape na '
+             'taxonomia, sentinela lendo o texto original se ele vier de fora, e a formulação '
+             'escolhida por medida, não por intuição.',
+             {'jev1_resposta_dividida': r26['dupla/jev-1']['acertos'],
+              'jev3_resposta_dividida': r26['dupla/jev-3']['acertos']})
 
 
 @resposta('Q100')

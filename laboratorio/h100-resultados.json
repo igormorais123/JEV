@@ -15,8 +15,8 @@
    "criterio": "razão entre as medianas < 1,3",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 0.993,
-   "detalhe": "mediana 472 ms com duas perguntas contra 475 ms com uma, em 417 e 5220 chamadas"
+   "medido": 1.035,
+   "detalhe": "mediana 614 ms com duas perguntas contra 594 ms com uma, em 4898 e 17491 chamadas"
   },
   {
    "id": "H002",
@@ -27,8 +27,8 @@
    "criterio": "r de Pearson > 0,90",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 0.9866,
-   "detalhe": "r de Pearson sobre 5637 recibos"
+   "medido": 0.9853,
+   "detalhe": "r de Pearson sobre 22389 recibos"
   },
   {
    "id": "H003",
@@ -39,8 +39,8 @@
    "criterio": "r de Pearson > 0,85",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 0.9749,
-   "detalhe": "r de Pearson sobre 5637 recibos"
+   "medido": 0.9373,
+   "detalhe": "r de Pearson sobre 22389 recibos"
   },
   {
    "id": "H004",
@@ -51,8 +51,8 @@
    "criterio": "r de Pearson < 0,30",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": -0.0419,
-   "detalhe": "r de Pearson sobre 5716 recibos; latência mediana 476 ms"
+   "medido": -0.0125,
+   "detalhe": "r de Pearson sobre 22524 recibos; latência mediana 600 ms"
   },
   {
    "id": "H005",
@@ -136,7 +136,7 @@
    "natureza": "exploratoria",
    "veredito": "sustentada",
    "medido": 0,
-   "detalhe": "6054 decisões conferidas contra os critérios declarados na própria chamada"
+   "detalhe": "27287 decisões conferidas contra os critérios declarados na própria chamada"
   },
   {
    "id": "H012",
@@ -147,8 +147,8 @@
    "criterio": "nenhuma divergência acima de 0,01",
    "natureza": "exploratoria",
    "veredito": "falsificada",
-   "medido": 3944,
-   "detalhe": "3944 de 6054 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)"
+   "medido": 19716,
+   "detalhe": "19716 de 27287 decisões em que a confiança difere da probabilidade da classe escolhida; maior diferença 0.50 (escolheu `reversivel` com probabilidade 0.5 e confiança 0)"
   },
   {
    "id": "H013",
@@ -183,8 +183,8 @@
    "criterio": "fração com confiança == 1,0 acima de 0,50",
    "natureza": "exploratoria",
    "veredito": "falsificada",
-   "medido": 0.2886,
-   "detalhe": "1747 de 6054 decisões com 1,0"
+   "medido": 0.2188,
+   "detalhe": "5971 de 27287 decisões com 1,0"
   },
   {
    "id": "H016",
@@ -327,8 +327,8 @@
    "criterio": "fração degenerada > 0,70",
    "natureza": "exploratoria",
    "veredito": "falsificada",
-   "medido": 0.318,
-   "detalhe": "1925 de 6054 vetores"
+   "medido": 0.2474,
+   "detalhe": "6751 de 27287 vetores"
   },
   {
    "id": "H028",
@@ -376,7 +376,7 @@
    "natureza": "exploratoria",
    "veredito": "sustentada",
    "medido": 0.01,
-   "detalhe": "6294 vetores conferidos"
+   "detalhe": "27527 vetores conferidos"
   },
   {
    "id": "H032",
@@ -387,8 +387,8 @@
    "criterio": "fração com segunda == 0 acima de 0,70",
    "natureza": "exploratoria",
    "veredito": "falsificada",
-   "medido": 0.318,
-   "detalhe": "1925 de 6054"
+   "medido": 0.2474,
+   "detalhe": "6751 de 27287"
   },
   {
    "id": "H033",
@@ -447,8 +447,8 @@
    "criterio": "mediana < 700",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 475.1,
-   "detalhe": "5637 chamadas respondidas"
+   "medido": 597.6,
+   "detalhe": "22389 chamadas respondidas"
   },
   {
    "id": "H038",
@@ -458,9 +458,9 @@
    "fonte": "livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20)",
    "criterio": "p99 < 3000",
    "natureza": "exploratoria",
-   "veredito": "sustentada",
-   "medido": 1037.5,
-   "detalhe": "p99 sobre 5637 chamadas respondidas; máximo 3474 ms. Incluindo os timeouts o p99 vira 45116 ms, que é a constante de timeout do cliente e não uma latência do modelo"
+   "veredito": "falsificada",
+   "medido": 5693.8,
+   "detalhe": "p99 sobre 22389 chamadas respondidas; máximo 32256 ms. Incluindo os timeouts o p99 vira 7501 ms, que é a constante de timeout do cliente e não uma latência do modelo"
   },
   {
    "id": "H039",
@@ -470,9 +470,9 @@
    "fonte": "livro-caixa, recibos de chamadas respondidas (emenda de 2026-09-20)",
    "criterio": "p99/p50 > 3",
    "natureza": "exploratoria",
-   "veredito": "falsificada",
-   "medido": 2.18,
-   "detalhe": "p99 1037 ms sobre mediana 475 ms, em chamadas respondidas"
+   "veredito": "sustentada",
+   "medido": 9.53,
+   "detalhe": "p99 5694 ms sobre mediana 598 ms, em chamadas respondidas"
   },
   {
    "id": "H040",
@@ -483,8 +483,8 @@
    "criterio": "mediana < 0,0001",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 2.415e-05,
-   "detalhe": "mediana de 5637 chamadas"
+   "medido": 2.36e-05,
+   "detalhe": "mediana de 22389 chamadas"
   },
   {
    "id": "H041",
@@ -507,8 +507,8 @@
    "criterio": "fração das três maiores > 0,80",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 0.9345,
-   "detalhe": "shared-e15 46.8%, shared-lab 44.2%, exp-e12-replicacao 2.5%"
+   "medido": 0.9644,
+   "detalhe": "shared-lab 69.3%, shared-e15 24.7%, shared-router 2.5%"
   },
   {
    "id": "H043",
@@ -531,8 +531,8 @@
    "criterio": "razão > 2",
    "natureza": "exploratoria",
    "veredito": "falsificada",
-   "medido": 1.81,
-   "detalhe": "quartil superior 40907 nUSD contra inferior 22604 nUSD"
+   "medido": 1.41,
+   "detalhe": "quartil superior 33164 nUSD contra inferior 23558 nUSD"
   },
   {
    "id": "H045",
@@ -543,8 +543,8 @@
    "criterio": "razão < 1,5",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 1.187,
-   "detalhe": "28309 nUSD contra 23856 nUSD"
+   "medido": 1.197,
+   "detalhe": "27847 nUSD contra 23269 nUSD"
   },
   {
    "id": "H046",
@@ -555,8 +555,8 @@
    "criterio": "razão < 1,5",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 1.002,
-   "detalhe": "paralelo 476 ms em 5605 contra sequencial 475 ms em 110"
+   "medido": 1.262,
+   "detalhe": "paralelo 602 ms em 22406 contra sequencial 477 ms em 117"
   },
   {
    "id": "H047",
@@ -567,8 +567,8 @@
    "criterio": "taxa de erro < 0,03",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 0.0266,
-   "detalhe": "192 falhas em 7217 tentativas: success 7012, http_error 91, timeout 79, sent 14, reserved 13, invalid_response 8"
+   "medido": 0.011,
+   "detalhe": "266 falhas em 24194 tentativas: success 23764, reserved 164, timeout 119, http_error 107, sent 32, invalid_response 8"
   },
   {
    "id": "H048",
@@ -579,8 +579,8 @@
    "criterio": "mediana < 200",
    "natureza": "exploratoria",
    "veredito": "sustentada",
-   "medido": 61,
-   "detalhe": "mediana sobre 5637 recibos; máximo 134"
+   "medido": 63,
+   "detalhe": "mediana sobre 22389 recibos; máximo 134"
   },
   {
    "id": "H049",

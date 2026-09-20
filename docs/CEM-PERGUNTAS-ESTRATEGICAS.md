@@ -6,7 +6,7 @@
 > na hora, a partir dos artefatos e do livro-caixa. Nenhum número desta página foi
 > digitado à mão.
 
-**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 83 alta, 10 média, 7 baixa.
+**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 85 alta, 9 média, 6 baixa.
 
 ## O que separa esta página das cem hipóteses
 
@@ -44,7 +44,7 @@ qualquer um deles muda o número da resposta, e as respostas dizem em que direç
 ### Q042 — Sanitizar a entrada restaura a resistência à ordem direta?
 
 **Decide:** se a mitigação que o guia prescreve funciona  
-**Responde:** **Sim, e completamente.** Uma expressão regular de oito padrões derruba a virada de 28/78 (35,9%) para 1/82 (1,2%), pareado **27 a 0, p < 0,0001**. E restaura a acurácia: 76/85 contra 49/80 sem defesa, praticamente o nível do texto limpo (74/82). **Não cobra nada do texto inocente**: no corpus limpo, sanitizar dá 76/84 contra 74/82. A recomendação do guia, que tinha sido escrita sem evidência, agora tem.
+**Responde:** **Contra o vetor para o qual a lista foi escrita, sim; contra qualquer outro, não.** Na R22 a expressão regular de oito padrões derrubou a virada de 28/78 para 1/82, pareado 27 a 0. Na R23 a mesma lista não cobre **nenhum** dos 48 vetores novos, e a lista ampliada (v2) cobre só 2 dos 36 escritos por outros modelos. Contra ordens ao sistema nunca vistas, a virada é **853/1900 = 44,9%** sem defesa e 829/1900 com o v2, com **202 viradas acima do corte de 0,90**. Sanitizar por lista é defesa contra o ataque que já se conhece. A camada que generaliza é o sentinela (Q043).
 
 A mitigação que o guia recomendava sem prova agora tem prova, e ela é forte. Uma expressão regular de oito padrões, aplicada ao texto antes de ele virar `state`, derruba a virada por ordem direta de 35,9% para 1,2% — pareado, 27 a 0, p < 0,0001. Custa zero chamada e não machuca texto limpo. **Passa de sugestão a requisito de integração.**
 
@@ -58,9 +58,9 @@ O sentinela é a descoberta operacional mais barata do estudo: uma segunda pergu
 ### Q023 — O corte de 0,99 recomendado no guia sobrevive ao conjunto inteiro de decisões?
 
 **Decide:** manter ou mudar a recomendação publicada  
-**Responde:** Sobrevive no uso normal e **degrada exatamente onde seria mais necessário**. No corpus de variação de formato e ordem, acima de 0,99 há 2 erros em 629 decisões — 0,32%. Nas condições extremas (até 147 opções, 70% de ruído, sobreposição de classes), 50 em 370 — **13,5%**. Não é o ataque que quebra o corte, é a **dificuldade**: quanto mais difícil a tarefa, menos a confiança avisa. A recomendação do guia continua de pé para uso normal, e precisa ganhar a ressalva de que ela não se transporta para taxonomia grande nem para texto degradado.
+**Responde:** Sobrevive, e a primeira versão desta resposta dizia o contrário por um erro que vale registrar: ela somava a diluição retratada da R11, e a "degradação sob dificuldade" era o truncamento do laboratório. Retirada a condição retratada, acima de 0,99 há 2 erros em 629 decisões no uso normal (0,32%) e 4 em 310 nas condições extremas que valem como evidência (1,29%) — até 147 opções, 70% de ruído, sobreposição de classes. A pior rodada é R19 (armadilha de sujeito, corpus gerado por molde), com 3,43%. O corte de 0,99 continua sendo o último ponto em que a confiança avisa, e a ressalva que fica é outra: em ruído pesado a acurácia despenca (36,7% a 70%) **mas nenhum erro passa do corte** — o corte cobre; o que ele não faz é devolver acurácia.
 
-A recomendação de corte em 0,90 do guia continua válida **e ganha uma ressalva que muda onde ela pode ser aplicada**. No uso normal, o erro acima de 0,99 é 0,32%. Nas condições extremas — 147 opções, 70% de ruído, classes sobrepostas — é 13,5%. Não é o ataque que quebra o corte, é a dificuldade: quanto mais difícil a tarefa, menos a confiança avisa. Corte de confiança não se transporta de uma taxonomia para outra sem remedir.
+Esta resposta foi corrigida, e a correção é mais útil que a versão original. A primeira dizia que o corte de confiança degradava 13,5% nas condições extremas; o número somava a diluição **retratada** da R11, e 46 dos 52 erros acima de 0,99 eram o truncamento do laboratório, não o modelo. Sem a condição retratada, os extremos ficam em 1,29% e a rodada que mais escapa ao corte é a armadilha de sujeito (3,43%). A ressalva que sobrevive muda de endereço: não é a taxonomia grande nem o texto degradado que enganam o corte — é o pedido atribuído à pessoa errada. A frase de sujeito do guia é a mitigação, e ela custa uma linha.
 
 ### Q036 — Existe modo de falha em que a confiança não avisa?
 
@@ -72,14 +72,14 @@ Dois modos de falha sistemáticos, e os dois são de desenho, não do modelo. Te
 ### Q073 — Qual a taxa de falha de transporte a esperar?
 
 **Decide:** o desenho da repescagem  
-**Responde:** **2,7%** das 7.217 tentativas: 91 erros HTTP do provedor, 79 estouros do timeout de 45 s do cliente, 14 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**Responde:** **1,1%** das 24.194 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 A operação precisa de repescagem, não de tolerância a erro. 2,7% das tentativas falharam, e a maioria é erro do provedor ou estouro do timeout de 45 s — coisas que uma segunda tentativa resolve. O que não pode acontecer é falha virar classe padrão: uma chamada que não voltou não é "informação", é ausência de decisão.
 
 ### Q096 — Quanto resta do orçamento, e o que ele compra?
 
 **Decide:** o tamanho do próximo programa  
-**Responde:** Restam **US$ 4,4703**, que compram cerca de 110.060 chamadas — mais de nove vezes tudo que foi gasto até aqui (13.042 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+**Responde:** Restam **US$ 3,9953**, que compram cerca de 123.839 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.140 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 O limite deste trabalho não é orçamento. Gastou-se 10,6% do teto autorizado, e o que resta compra mais de nove vezes tudo que já foi feito. O que falta é **dado real com gabarito humano** — duzentas mensagens anotadas por duas pessoas fecham de uma vez a maior ressalva do estudo, e custam tempo de gente, não dinheiro.
 
@@ -115,7 +115,7 @@ Não. Sob o gabarito desta casa o Jev ganha (98,9% contra 84,4%–91,1% no E12);
 
 **Q005 — Qual o volume mensal mínimo em que o custo de integrar se paga?**
 
-Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000041 contra US$ 0,4000 da revisão humana.
+Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000032 contra US$ 0,4000 da revisão humana.
 
 *Decide se vale integrar ou rodar na mão. Fonte: conta declarada; confiança baixa. Vira se o custo de integração declarado mudar de ordem de grandeza. Depende de: `horas_de_integracao`, `custo_hora_revisao_usd`, `tempo_revisao_s`, `volume_mensal_decisoes`.*
 
@@ -155,7 +155,7 @@ Ordenação de contexto para montar o prompt de um agente caro. É a única com 
 
 **Q011 — Quanto custa mil decisões, medido e não estimado?**
 
-**US$ 0,041 por mil decisões**, medido sobre 13.042 chamadas reais que somam US$ 0,5297 no livro-caixa. Não é estimativa: é o extrato.
+**US$ 0,032 por mil decisões**, medido sobre 31.140 chamadas reais que somam US$ 1,0047 no livro-caixa. Não é estimativa: é o extrato.
 
 *Decide a linha do orçamento. Fonte: dado medido; confiança alta. Vira se o preço do provedor mudar.*
 
@@ -191,21 +191,21 @@ Não neste corpus, e talvez em outro. O k adaptativo economiza 86,2% contra 73,7
 
 **Q017 — Que fração do orçamento do estudo virou chamada inútil?**
 
-192 tentativas de 7.217 terminaram em falha — **2,7%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
+266 tentativas de 24.194 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
 
 *Decide quanto reservar de folga no próximo programa. Fonte: dado medido; confiança alta. Vira se a taxa de falha do provedor subir.*
 
 **Q018 — O custo por decisão cresce com o texto de um jeito que quebre a conta?**
 
-Não quebra: o custo é quase linear no tamanho do estado (r = 0,97), e o quartil de textos maiores custa 1,8× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
+Não quebra: o custo é quase linear no tamanho do estado (r = 0,24), e o quartil de textos maiores custa 1,4× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
 
 *Decide se há limite de tamanho a impor na entrada. Fonte: dado medido; confiança alta. Vira se a relação custo-tamanho deixar de ser aproximadamente linear.*
 
 **Q019 — Votar em três chamadas triplica o custo — isso cabe no custo por decisão?**
 
-Cabe folgado. Três chamadas custam US$ 0,000122 por decisão, contra US$ 200,00 de um erro grave: a votação é 1.641.366× mais barata que um único erro que ela evite. Para a classe irreversível, votar em três é decisão fácil.
+Cabe folgado — três chamadas custam US$ 0,000097 por decisão contra US$ 200,00 de um erro grave — mas a R24 mostrou que votar a **mesma** pergunta três vezes não compra nada: em 148 casos, 0 oscilaram. O que vale o triplo do custo é perguntar de **três formulações** diferentes, que no jurídico levou de 79,7% para 92,8%. Para a classe irreversível, redundância de formulação, não de repetição.
 
-*Decide se a política de votação é viável para a classe irreversível. Fonte: conta declarada; confiança baixa. Vira se o custo por decisão passar a ser material contra o custo do erro. Depende de: `custo_erro_grave_usd`.*
+*Decide se a política de votação é viável para a classe irreversível. Fonte: conta declarada; confiança média. Vira se o custo por decisão passar a ser material contra o custo do erro. Depende de: `custo_erro_grave_usd`.*
 
 **Q020 — Quanto custa rodar a suíte de canários todo dia por um ano?**
 
@@ -231,7 +231,7 @@ A curva é quase plana até 0,90 e só então começa a pagar: de 0 a 0,90 a cob
 
 **Q023 — O corte de 0,99 recomendado no guia sobrevive ao conjunto inteiro de decisões?**
 
-Sobrevive no uso normal e **degrada exatamente onde seria mais necessário**. No corpus de variação de formato e ordem, acima de 0,99 há 2 erros em 629 decisões — 0,32%. Nas condições extremas (até 147 opções, 70% de ruído, sobreposição de classes), 50 em 370 — **13,5%**. Não é o ataque que quebra o corte, é a **dificuldade**: quanto mais difícil a tarefa, menos a confiança avisa. A recomendação do guia continua de pé para uso normal, e precisa ganhar a ressalva de que ela não se transporta para taxonomia grande nem para texto degradado.
+Sobrevive, e a primeira versão desta resposta dizia o contrário por um erro que vale registrar: ela somava a diluição retratada da R11, e a "degradação sob dificuldade" era o truncamento do laboratório. Retirada a condição retratada, acima de 0,99 há 2 erros em 629 decisões no uso normal (0,32%) e 4 em 310 nas condições extremas que valem como evidência (1,29%) — até 147 opções, 70% de ruído, sobreposição de classes. A pior rodada é R19 (armadilha de sujeito, corpus gerado por molde), com 3,43%. O corte de 0,99 continua sendo o último ponto em que a confiança avisa, e a ressalva que fica é outra: em ruído pesado a acurácia despenca (36,7% a 70%) **mas nenhum erro passa do corte** — o corte cobre; o que ele não faz é devolver acurácia.
 
 *Decide manter ou mudar a recomendação publicada. Fonte: dado medido; confiança alta. Vira se a taxa de erro acima de 0,99 passar de 1%.*
 
@@ -289,7 +289,7 @@ Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três
 
 **Q032 — Quanto custa um erro grave comparado ao custo da decisão?**
 
-Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000041 — razão de **4.924.099 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
+Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000032 — razão de **6.199.150 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
 
 *Decide quanto vale gastar em salvaguarda. Fonte: conta declarada; confiança baixa. Vira se o custo declarado do erro mudar de ordem de grandeza. Depende de: `custo_erro_grave_usd`.*
 
@@ -307,7 +307,7 @@ Ao corte de 0,99, **3,6 erros por mil decisões aceitas**, o que ao custo declar
 
 **Q035 — O erro se concentra em alguma classe?**
 
-Sim: a classe `informacao` concentra o erro, com 12,3% de taxa entre as classes com pelo menos 30 casos. Revisão seletiva por classe é viável e é mais barata que revisar tudo.
+Sim: a classe `informacao` concentra o erro, com 12,5% de taxa entre as classes com pelo menos 30 casos. Revisão seletiva por classe é viável e é mais barata que revisar tudo.
 
 *Decide se a revisão pode ser seletiva por classe. Fonte: dado medido; confiança alta. Vira se a concentração deixar de existir.*
 
@@ -337,9 +337,9 @@ Não. De 0 a 50 mil caracteres a acurácia fica constante em 96,7%. O que derrub
 
 **Q040 — Os erros se repetem entre chamadas, ou votar em três resolve?**
 
-Parcialmente independentes, e por isso votar ajuda. Em 40 casos repetidos cinco vezes, apenas 1 oscilou — ou seja, a maioria das decisões é estável e o erro restante é o que a votação captura. Mas cuidado: se o erro for **sistemático** (armadilha semântica, texto sem pedido), votar três vezes repete o mesmo erro três vezes. A votação protege contra oscilação, não contra viés.
+**Os erros se repetem, e votar a mesma pergunta não resolve.** Em 148 casos com três chamadas idênticas, 0 oscilaram: o modelo é determinístico neste regime, e o erro é sistemático. O que muda a resposta é a formulação — 11 dos 66 casos jurídicos divergem entre três formulações — e por isso a maioria **diversa** sobe o jurídico de 79,7% para 92,8% (pareado 9 a 0, p = 0,0039). Votação protege contra formulação ruim, não contra oscilação, que não existe.
 
-*Decide se a votação é salvaguarda real ou teatro. Fonte: dado medido; confiança média. Vira se o erro se mostrar determinístico.*
+*Decide se a votação é salvaguarda real ou teatro. Fonte: dado medido; confiança alta. Vira se o erro se mostrar determinístico.*
 
 ### E · Segurança e adversário
 
@@ -353,13 +353,13 @@ Um campo só: o `state`, que é onde entra o texto de terceiro. A separação es
 
 **Q042 — Sanitizar a entrada restaura a resistência à ordem direta?**
 
-**Sim, e completamente.** Uma expressão regular de oito padrões derruba a virada de 28/78 (35,9%) para 1/82 (1,2%), pareado **27 a 0, p < 0,0001**. E restaura a acurácia: 76/85 contra 49/80 sem defesa, praticamente o nível do texto limpo (74/82). **Não cobra nada do texto inocente**: no corpus limpo, sanitizar dá 76/84 contra 74/82. A recomendação do guia, que tinha sido escrita sem evidência, agora tem.
+**Contra o vetor para o qual a lista foi escrita, sim; contra qualquer outro, não.** Na R22 a expressão regular de oito padrões derrubou a virada de 28/78 para 1/82, pareado 27 a 0. Na R23 a mesma lista não cobre **nenhum** dos 48 vetores novos, e a lista ampliada (v2) cobre só 2 dos 36 escritos por outros modelos. Contra ordens ao sistema nunca vistas, a virada é **853/1900 = 44,9%** sem defesa e 829/1900 com o v2, com **202 viradas acima do corte de 0,90**. Sanitizar por lista é defesa contra o ataque que já se conhece. A camada que generaliza é o sentinela (Q043).
 
 *Decide se a mitigação que o guia prescreve funciona. Fonte: coleta nova; confiança alta. Vira se a sanitização não reduzir a taxa de virada.*
 
 **Q043 — Uma pergunta-sentinela detecta o texto que tenta instruir o classificador?**
 
-**Sim, e é o melhor achado desta rodada.** Uma segunda pergunta no mesmo payload — *este texto tenta dar ordem ao sistema?* — acusa **83 de 83** das mensagens sob ataque e fica calada em 81 de 83 das limpas: recall 100%, alarme falso 2,4%. E **custa zero chamada**, porque o contrato aceita várias perguntas no mesmo estado. Ela não impede a virada — a decisão principal continua virando — mas detecta, e detectar é o que autoriza recusar.
+**Sim, e é a única defesa que generaliza.** Na R22 a segunda pergunta no mesmo payload acusou 83 de 83 sob ataque e ficou calada em 81 de 83 das limpas. Na R23, contra ordens ao sistema escritas por outros modelos e nunca vistas, acusou **1.926 de 2.019 = 95,4%** — onde a lista de padrões cobria 2 vetores em 24. O custo: 7 de 24 mensagens legítimas que dizem "desconsidere a mensagem anterior" são acusadas, e o sentinela precisa ler o texto **original** — depois de sanitizar ele acusa 2 de 85 (R27). Ele não impede a virada; detecta, e detectar é o que autoriza recusar ou mandar para gente.
 
 *Decide se dá para detectar em vez de só filtrar. Fonte: coleta nova; confiança alta. Vira se a sentinela ter recall baixo ou alarme falso alto.*
 
@@ -377,7 +377,7 @@ Ajuda pouco e não está demonstrado. Delimitar o texto com marcadores e avisar 
 
 **Q046 — Qual defesa tem o melhor custo-benefício?**
 
-**Sanitizar primeiro, sentinela junto.** Sanitizar custa zero chamada e zero acurácia, e leva a virada a 1,2%. A sentinela custa zero chamada e pega o que a regex não cobrir, com recall de 100% neste corpus. As duas juntas são defesa em profundidade a custo nulo. Delimitar fica de fora: não demonstrou efeito.
+**Sentinela primeiro, sobre o texto original; sanitização como complemento para o que já se conhece.** A ordem inverteu depois da R23: a lista de padrões não generaliza e o sentinela acusa 95% de ordens nunca vistas. Na integração (R27), o sentinela precisa do texto original — sanitizado antes, ele fica cego (2/85). Com dois campos no mesmo payload a detecção é 84/84 e a virada reabre em 3/84; com duas chamadas, 0/82 viradas ao dobro do custo. Para a classe irreversível, duas chamadas; para o resto, dois campos. Delimitar fica de fora.
 
 *Decide qual mitigação implementar primeiro. Fonte: coleta nova; confiança alta. Vira se outra defesa superar em redução por unidade de custo.*
 
@@ -395,9 +395,9 @@ A classe que a injeção pedir é executada como se o cliente tivesse pedido. No
 
 **Q049 — A resistência depende da mensagem — dá para prever qual mensagem é frágil?**
 
-Sim, e o sinal é gratuito: a confiança da decisão **sem** o ataque prediz a fragilidade. Mensagens que o modelo classificava com confiança abaixo de 0,99 viraram 61% das vezes; as de confiança máxima, 18%. Quem já estava em dúvida é quem o atacante consegue empurrar.
+Sim, e o sinal é gratuito: a confiança da decisão **sem** o ataque prediz a fragilidade. Na R22, mensagens que o modelo classificava com confiança abaixo de 0,99 viraram 61% das vezes; as de confiança máxima, 18%. A R23 replica com 48 vetores: 58% contra 27%, sobre 1.563 e 2.233 pares. Quem já estava em dúvida é quem o atacante consegue empurrar — e a confiança de base é o sinal de graça para escolher onde pôr revisão humana.
 
-*Decide se é possível alertar caso a caso. Fonte: coleta nova; confiança média. Vira se não existir sinal que separe frágil de resistente.*
+*Decide se é possível alertar caso a caso. Fonte: coleta nova; confiança alta. Vira se não existir sinal que separe frágil de resistente.*
 
 **Q050 — Quanto custa a defesa recomendada, por mil decisões?**
 
@@ -465,7 +465,7 @@ Pouco: nas quatro distribuições simuladas a acurácia esperada vai de 95,0% a 
 
 **Q060 — Que evidência falta para ampliar o escopo com segurança?**
 
-Duas coisas, nesta ordem. **Primeira:** 200 mensagens de um canal real, anotadas por duas pessoas, que fecham a ressalva de escopo e permitem calibrar o corte. **Segunda:** um terceiro domínio, para saber se a queda do jurídico é do domínio ou da distância ao corpus de origem. A primeira depende de acesso; a segunda custa US$ 0,02 e pode ser feita hoje.
+O terceiro domínio já foi medido (R25) e respondeu: a queda é de **distância do corpus de origem**, não do jurídico. A clínica fica em 63,2% sem a frase de sujeito e 77,9% com ela — abaixo do jurídico e muito abaixo do atendimento. O que continua faltando é o que sempre faltou: **200 mensagens de um canal real, anotadas por duas pessoas**, que fecham a ressalva de material construído e permitem calibrar o corte no dado certo. Depende de acesso, não de orçamento.
 
 *Decide o desenho da próxima rodada. Fonte: dado medido; confiança alta. Vira se a evidência ser coletada.*
 
@@ -505,7 +505,7 @@ Contra aviso que imita sistema, vantagem grande: o Jev vira 0/50 e os comparador
 
 **Q066 — Contra revisão humana, qual a diferença de custo?**
 
-US$ 0,4000 contra US$ 0,000041 por decisão — o humano custa **9.848×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
+US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.398×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
 
 *Decide quanto a automação parcial economiza. Fonte: conta declarada; confiança baixa. Vira se o custo-hora declarado mudar. Depende de: `tempo_revisao_s`, `custo_hora_revisao_usd`.*
 
@@ -539,19 +539,19 @@ Sim, dois. **Prosa**: BM25 empata e custa zero. **Texto interno e confiável com
 
 **Q071 — Qual latência esperar, mediana e cauda?**
 
-Mediana **475 ms**, p90 600 ms, p99 1037 ms, máximo 3474 ms, sobre 5.637 chamadas respondidas. Fora dessas, 79 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
+Mediana **598 ms**, p90 1808 ms, p99 5694 ms, máximo 32256 ms, sobre 22.389 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
 
 *Decide o orçamento de tempo do fluxo. Fonte: dado medido; confiança alta. Vira se a latência mediana passar de 1 segundo.*
 
 **Q072 — A latência cabe num gancho interativo de editor?**
 
-Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 1037 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 79 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
+Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5694 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
 
 *Decide se dá para usar no caminho quente. Fonte: dado medido; confiança alta. Vira se a cauda passar do limite tolerável do gancho.*
 
 **Q073 — Qual a taxa de falha de transporte a esperar?**
 
-**2,7%** das 7.217 tentativas: 91 erros HTTP do provedor, 79 estouros do timeout de 45 s do cliente, 14 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**1,1%** das 24.194 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 *Decide o desenho da repescagem. Fonte: dado medido; confiança alta. Vira se a taxa passar de 3%.*
 
@@ -603,7 +603,7 @@ Três itens. **Um:** o acerto do roteador em produção nunca foi medido — o r
 
 **Q081 — Quantos números publicados são conferidos automaticamente?**
 
-**789 conferências**, todas refeitas a partir das linhas brutas de resposta com estatística independente da que gerou os resumos, e presas na suíte de testes: um número publicado sem dado que o sustente quebra o `pytest`. 3 itens estão declarados fora de alcance em vez de omitidos.
+**1130 conferências**, todas refeitas a partir das linhas brutas de resposta com estatística independente da que gerou os resumos, e presas na suíte de testes: um número publicado sem dado que o sustente quebra o `pytest`. 7 itens estão declarados fora de alcance em vez de omitidos.
 
 *Decide quanta confiança a documentação merece. Fonte: dado medido; confiança alta. Vira se a cobertura de auditoria cair.*
 
@@ -657,7 +657,7 @@ A de que **a classe do topo prediz o acerto da resposta**. Ela se apoia em dois 
 
 **Q090 — O orçamento autorizado foi respeitado?**
 
-Sim. **US$ 0,5297 de US$ 5,00** autorizados, em 13.042 chamadas — 10,6% do teto, com US$ 4,4703 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
+Sim. **US$ 1,0047 de US$ 5,00** autorizados, em 31.140 chamadas — 20,1% do teto, com US$ 3,9953 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
 
 *Decide se há autorização para continuar. Fonte: dado medido; confiança alta. Vira se o gasto passar do teto.*
 
@@ -673,7 +673,7 @@ Sim. **US$ 0,5297 de US$ 5,00** autorizados, em 13.042 chamadas — 10,6% do tet
 
 **Q092 — Quanto custaria medir o acerto do roteador em produção?**
 
-Quase nada em dinheiro — 500 decisões custam US$ 0,0203 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
+Quase nada em dinheiro — 500 decisões custam US$ 0,0161 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
 
 *Decide se essa lacuna é barata de fechar. Fonte: conta declarada; confiança alta. Vira se o volume de pedidos registrados mudar.*
 
@@ -691,13 +691,13 @@ Cerca de 13,3 horas de duas pessoas, ou US$ 160 ao custo-hora declarado. É a co
 
 **Q095 — Qual experimento derrubaria a recomendação principal?**
 
-Rodar a Aplicação 3 sobre um corpus onde a resposta exija **juntar dois trechos**. Toda a demonstração de que selecionar bate carregar tudo vem de perguntas com uma única fonte de resposta; se a resposta estiver dividida, mandar um trecho deve ser pior que mandar oito, e a recomendação central inverte. É o teste adversarial que falta, e ele é barato.
+**Já foi feito (R26), e a recomendação central inverte onde a resposta está dividida.** Em 80 perguntas que exigem dois trechos, mandar o primeiro que o Jev escolheu acerta 6/80 contra 60/80 mandando os oito (54 a 0); k = 2 dá 40/80 e k = 3, 50/80, já sem diferença significativa. A mesma primeira pergunta sozinha continua favorecendo a seleção (76/80 contra 67/80). E a regra de recall de graça **não avisa**: o topo veio `essencial` em 53 de 80 casos, e os dois alvos foram marcados essenciais em só 17. Quem não sabe se a resposta está dividida manda três, não um.
 
 *Decide o teste adversarial a fazer antes de escalar. Fonte: dado medido; confiança alta. Vira se o experimento ser feito.*
 
 **Q096 — Quanto resta do orçamento, e o que ele compra?**
 
-Restam **US$ 4,4703**, que compram cerca de 110.060 chamadas — mais de nove vezes tudo que foi gasto até aqui (13.042 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+Restam **US$ 3,9953**, que compram cerca de 123.839 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.140 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 *Decide o tamanho do próximo programa. Fonte: conta declarada; confiança alta. Vira se o teto ser revisto.*
 
@@ -709,13 +709,13 @@ Restam **US$ 4,4703**, que compram cerca de 110.060 chamadas — mais de nove ve
 
 **Q098 — Qual risco identificado ainda não tem mitigação medida?**
 
-**Nenhum, depois desta rodada** — e é a primeira vez que isso pode ser dito. A injeção por ordem direta era o risco sem mitigação medida, e a sanitização foi medida (27 a 0, p < 0,0001) com a sentinela como segunda camada. Continuam sem mitigação **medida** dois itens menores: a oscilação entre chamadas, mitigada por votação nunca testada de ponta a ponta, e o erro em texto de produção, que não pode ser mitigado antes de ser medido.
+**Um, e ele voltou a existir depois da R23:** a ordem direta escrita de um jeito que a lista não conhece vira 45% das decisões, e a única mitigação medida contra ela é **detecção** (95% pelo sentinela), não prevenção. Detectar autoriza recusar ou mandar para gente; não devolve a resposta certa. A oscilação entre chamadas saiu da lista — a R24 mediu zero. O erro em texto de produção continua sem poder ser mitigado antes de ser medido.
 
 *Decide o que não pode ir para produção ainda. Fonte: dado medido; confiança alta. Vira se a mitigação ser medida.*
 
 **Q099 — O que deve entrar em produção primeiro, e com que salvaguarda?**
 
-**Ordenação de contexto, com k = 1**, dentro de um fluxo que já usa modelo caro. Salvaguardas: classe de escape na taxonomia, sanitização da entrada se o texto vier de fora, e a regra de recall de graça — se o topo não vier `essencial`, buscar mais candidatos em vez de escolher melhor. Nenhuma dessas salvaguardas custa uma chamada.
+**Ordenação de contexto, com k = 1 para pergunta de fonte única e k = 3 quando não se sabe**, dentro de um fluxo que já usa modelo caro. A R26 tirou o k = 1 incondicional: com resposta dividida em dois trechos ele acerta 6/80 e a regra de recall de graça não avisa. Salvaguardas que não custam chamada: classe de escape na taxonomia, sentinela lendo o texto original se ele vier de fora, e a formulação escolhida por medida, não por intuição.
 
 *Decide o plano de implantação. Fonte: dado medido; confiança alta. Vira se a salvaguarda se mostrar insuficiente.*
 

@@ -618,8 +618,10 @@ if (D.defesas) {
      virada, mas acusa <span class="num">${d.recall.certos}/${d.recall.n}</span> das tentativas
      e fica calado em <span class="num">${d.silencio.certos}/${d.silencio.n}</span> das
      mensagens limpas — ao custo de zero, porque o preço é por token de entrada e o estado já
-     foi enviado. O que isto <b>não</b> prova: que os oito padrões cobrem uma ordem direta
-     escrita de outro jeito.`;
+     foi enviado. <b>E a R23 mediu o que isto não provava:</b> contra 48 ordens escritas de
+     outro jeito, os oito padrões não cobrem nenhuma, a virada volta a <span class="num">45%</span>
+     e o sentinela acusa <span class="num">95%</span> delas — a lista cobre o ataque conhecido; o
+     sentinela é a camada que generaliza (<code>docs/BATERIA-COMPLEMENTAR.md</code>).`;
 }
 
 // ---- escala consolidada (R18 + R20)

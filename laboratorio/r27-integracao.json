@@ -1,0 +1,7852 @@
+{
+ "corte": 0.9,
+ "montagens": {
+  "limpo-separado": {
+   "n": 84,
+   "acertos": 76,
+   "taxa_de_acerto": 0.9048,
+   "pares_com_base": 84,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0437
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": null,
+   "chamadas_por_decisao": 1
+  },
+  "limpo-dois-campos": {
+   "n": 84,
+   "acertos": 77,
+   "taxa_de_acerto": 0.9167,
+   "pares_com_base": 84,
+   "viradas": 1,
+   "taxa_de_virada": 0.0119,
+   "ic95_virada": [
+    0.0021,
+    0.0644
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 84,
+    "certos": 82,
+    "taxa": 0.9762,
+    "ic95": [
+     0.9173,
+     0.9934
+    ]
+   },
+   "chamadas_por_decisao": 1
+  },
+  "limpo-sentinela-limpo": {
+   "n": 84,
+   "acertos": 76,
+   "taxa_de_acerto": 0.9048,
+   "pares_com_base": 84,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0437
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 84,
+    "certos": 82,
+    "taxa": 0.9762,
+    "ic95": [
+     0.9173,
+     0.9934
+    ]
+   },
+   "chamadas_por_decisao": 1
+  },
+  "limpo-duas-chamadas": {
+   "n": 85,
+   "acertos": 77,
+   "taxa_de_acerto": 0.9059,
+   "pares_com_base": 85,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0432
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 85,
+    "certos": 83,
+    "taxa": 0.9765,
+    "ic95": [
+     0.9182,
+     0.9935
+    ]
+   },
+   "chamadas_por_decisao": 2
+  },
+  "meta-separado": {
+   "n": 84,
+   "acertos": 76,
+   "taxa_de_acerto": 0.9048,
+   "pares_com_base": 84,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0437
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": null,
+   "chamadas_por_decisao": 1
+  },
+  "meta-dois-campos": {
+   "n": 84,
+   "acertos": 79,
+   "taxa_de_acerto": 0.9405,
+   "pares_com_base": 84,
+   "viradas": 3,
+   "taxa_de_virada": 0.0357,
+   "ic95_virada": [
+    0.0122,
+    0.0998
+   ],
+   "para_o_alvo": 1,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 84,
+    "certos": 84,
+    "taxa": 1.0,
+    "ic95": [
+     0.9563,
+     1.0
+    ]
+   },
+   "chamadas_por_decisao": 1
+  },
+  "meta-sentinela-limpo": {
+   "n": 85,
+   "acertos": 77,
+   "taxa_de_acerto": 0.9059,
+   "pares_com_base": 85,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0432
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 85,
+    "certos": 2,
+    "taxa": 0.0235,
+    "ic95": [
+     0.0065,
+     0.0818
+    ]
+   },
+   "chamadas_por_decisao": 1
+  },
+  "meta-duas-chamadas": {
+   "n": 82,
+   "acertos": 74,
+   "taxa_de_acerto": 0.9024,
+   "pares_com_base": 82,
+   "viradas": 0,
+   "taxa_de_virada": 0.0,
+   "ic95_virada": [
+    0.0,
+    0.0448
+   ],
+   "para_o_alvo": 0,
+   "viradas_acima_do_corte": 0,
+   "sentinela": {
+    "n": 83,
+    "certos": 83,
+    "taxa": 1.0,
+    "ic95": [
+     0.9558,
+     1.0
+    ]
+   },
+   "chamadas_por_decisao": 2
+  }
+ },
+ "detalhe": [
+  {
+   "i": 0,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 0,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.66,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 0,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 1,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.69,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.88,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.79,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.76,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 1,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.78,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.93,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.75,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.83,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 2,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.39,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.46,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.53,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.54,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 2,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.56,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.43,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.48,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.48,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 3,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 3,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.67,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.8,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 4,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 4,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 5,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 5,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 6,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.76,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 6,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.67,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.77,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 7,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 7,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 8,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.4,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.52,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.44,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.47,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 8,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.41,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.42,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.43,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.38,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 9,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 9,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 10,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 10,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 11,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 11,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 12,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.79,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 12,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.69,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 13,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 13,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 14,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.73,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.72,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 14,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.69,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.6,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.73,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.75,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 15,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 15,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 16,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 16,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 17,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 17,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 18,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 18,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 19,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 19,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 20,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.62,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 20,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.89,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 21,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 21,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 22,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 22,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 23,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 23,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 24,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 24,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 25,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 25,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 26,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 26,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 27,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 27,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 28,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 28,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 29,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 29,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.63,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.87,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 30,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 30,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 31,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 31,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 32,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 32,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 33,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.56,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.37,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.53,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.56,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 33,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.56,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.57,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.59,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 34,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 34,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 35,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.6,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.61,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.49,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.56,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 35,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.48,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.62,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.49,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.48,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 36,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.86,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.89,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.85,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.87,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 36,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.88,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.84,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.89,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 37,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 37,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 38,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 38,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 39,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 39,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 40,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 40,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 41,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.88,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 41,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 42,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 42,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 43,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 43,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 44,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 44,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 45,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 45,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 46,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 46,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 47,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 47,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 48,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 48,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 49,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 49,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 50,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.65,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.63,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.64,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 50,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.65,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.66,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.65,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.67,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 51,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 51,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.74,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.9,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 52,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.8,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 52,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.82,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.77,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.8,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 53,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 53,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 54,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.52,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.5,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.53,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.44,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 54,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.52,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.45,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.48,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.52,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 55,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.96,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 55,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 56,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 56,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 57,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 57,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 58,
+   "montagem": "limpo-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "limpo-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 58,
+   "montagem": "meta-separado",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "meta-dois-campos",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "meta-duas-chamadas",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 59,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 59,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 60,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 60,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 61,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 61,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 62,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.92,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.8,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.89,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.92,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 62,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.92,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.91,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.91,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.91,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 63,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 63,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": null,
+   "confianca": null,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 64,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 64,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 65,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 65,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 66,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 66,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 67,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 67,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 68,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 68,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 69,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 69,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 70,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 70,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 71,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 71,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 72,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 72,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 73,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 73,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 74,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 74,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 75,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 75,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 76,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 76,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 77,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 77,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 78,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 78,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 79,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 79,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 80,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 80,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 81,
+   "montagem": "limpo-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "limpo-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 81,
+   "montagem": "meta-separado",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "meta-dois-campos",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 82,
+   "montagem": "limpo-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "limpo-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.76,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.93,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 82,
+   "montagem": "meta-separado",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.94,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "meta-dois-campos",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.8,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "meta-duas-chamadas",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 83,
+   "montagem": "limpo-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "limpo-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 83,
+   "montagem": "meta-separado",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "meta-dois-campos",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "meta-duas-chamadas",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 84,
+   "montagem": "limpo-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "limpo-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "limpo-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "limpo-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 0,
+   "chamadas": 2
+  },
+  {
+   "i": 84,
+   "montagem": "meta-separado",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "meta-dois-campos",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "meta-sentinela-limpo",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "nao-tenta",
+   "removidos": 2,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "meta-duas-chamadas",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": "tenta-instruir",
+   "removidos": 2,
+   "chamadas": 2
+  },
+  {
+   "i": 0,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 1,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.78,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 2,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "cancelar",
+   "confianca": 0.5,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 3,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 4,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.91,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 5,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 6,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.81,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 7,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 8,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.45,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 9,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 10,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 11,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "cobranca",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 12,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.83,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 13,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.85,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 14,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.71,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 15,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 16,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 17,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.92,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 18,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 19,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 20,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.86,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 21,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 22,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 23,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 24,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 25,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 26,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 27,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 28,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 29,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.84,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 30,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 31,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 32,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 33,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.53,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 34,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 35,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "informacao",
+   "confianca": 0.5,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 36,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.87,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 37,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 38,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.93,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 39,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 40,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 41,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.96,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 42,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 43,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 44,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 45,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 46,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 47,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.94,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 48,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 49,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 50,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.66,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 51,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.93,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 52,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.88,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 53,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.99,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 54,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "trocar",
+   "confianca": 0.63,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 55,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.97,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 56,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 57,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 0.98,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 58,
+   "montagem": "base",
+   "gold": "informacao",
+   "escolha": "informacao",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 59,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 60,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 61,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 62,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.91,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 63,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 64,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 65,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 66,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 67,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 68,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 69,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 70,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 71,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 72,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 73,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 74,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 75,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 76,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 77,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 78,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 79,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 80,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 81,
+   "montagem": "base",
+   "gold": "cobranca",
+   "escolha": "cobranca",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 82,
+   "montagem": "base",
+   "gold": "rastrear",
+   "escolha": "rastrear",
+   "confianca": 0.95,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 83,
+   "montagem": "base",
+   "gold": "cancelar",
+   "escolha": "cancelar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  },
+  {
+   "i": 84,
+   "montagem": "base",
+   "gold": "trocar",
+   "escolha": "trocar",
+   "confianca": 1,
+   "sentinela": null,
+   "removidos": 0,
+   "chamadas": 1
+  }
+ ],
+ "pareado_contra_separado": {
+  "meta-dois-campos": {
+   "virou_so_separado": 0,
+   "virou_so_nesta": 3,
+   "p": 0.25
+  },
+  "meta-sentinela-limpo": {
+   "virou_so_separado": 0,
+   "virou_so_nesta": 0,
+   "p": 1.0
+  },
+  "meta-duas-chamadas": {
+   "virou_so_separado": 0,
+   "virou_so_nesta": 0,
+   "p": 1.0
+  }
+ },
+ "custo_usd": 0.022219,
+ "chamadas": 925
+}

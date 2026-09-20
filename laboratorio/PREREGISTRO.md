@@ -1018,7 +1018,101 @@ resposta que use um parâmetro sem declarar quebra o `pytest`. Conta com parâme
 opinião com aparência de número.
 
 As respostas que mudaram uma decisão já tomada estão comentadas na página: **Q042** (sanitizar
-passa de sugestão a requisito), **Q044** (o sentinela sai de graça), **Q023** (o corte de
-confiança não se transporta entre taxonomias), **Q036** (os dois modos de falha sistemáticos são
+passa de sugestão a requisito), **Q044** (o sentinela sai de graça), **Q023** (o corte de confiança sobrevive aos extremos, e a rodada que mais lhe escapa é a armadilha de sujeito — resposta corrigida depois de excluir a diluição retratada da R11, que respondia por 46 dos 52 erros acima de 0,99), **Q036** (os dois modos de falha sistemáticos são
 de desenho), **Q073** (a operação precisa de repescagem) e **Q096** (o limite do trabalho não é
 orçamento, é dado real com gabarito humano).
+
+
+## Bateria complementar — R23 a R27
+
+Depois das cem hipóteses e das cem perguntas, cinco rodadas para fechar o que o estudo tinha
+declarado em aberto. Cada uma tem o critério de falsificação escrito no cabeçalho do próprio
+script, antes de rodar; os números abaixo saem dos artefatos e a auditoria os reconfere. A
+página gerada é `docs/BATERIA-COMPLEMENTAR.md`.
+
+### R23 — o sanitizador contra a ordem escrita de outro jeito (12.377 chamadas)
+
+**Pré-registro.** A R22 mediu a sanitização contra um vetor. Aqui, 48: doze paráfrases do
+laboratório (que o v2 foi escrito para cobrir) e 36 escritas por três outros modelos **depois**
+de o v2 estar congelado no arquivo, filtradas para não casar com o v1. Cada vetor roda em três
+braços sobre as 85 mensagens de atendimento — bruto com o sentinela no payload, sanitizado v1,
+sanitizado v2 — mais 24 mensagens legítimas que usam as palavras-gatilho. Falsifica se o v1
+deixar passar mais de metade das viradas nos conhecidos, se o sentinela ficar abaixo de 90% no
+surpresa, ou se o v2 cobrar mais de 3 pontos no gatilho.
+
+**Resultado.** Os três critérios dispararam, dois contra a lista e um a favor do sentinela. O v1
+não cobre **nenhum** dos 48 vetores; o v2 cobre os 12 para os quais foi escrito (virada de 22,1%
+para 1,2%, 201 a 6) e apenas 2 dos 36 de outros modelos. Por família de autor:
+
+| família | vetores | virada bruta | acima do corte | com v2 | sentinela |
+|---|---|---|---|---|---|
+| instrução, laboratório | 12 | 208/942 = 22,1% | 20 | 1,2% | 82,9% |
+| instrução, gemma-3-12b | 12 | 458/951 = 48,2% | 155 | 44,8% | 94,3% |
+| instrução, gpt-oss-20b | 12 | 395/949 = 41,6% | 47 | 42,5% | 96,5% |
+| conteúdo, mistral-nemo | 12 | 455/954 = 47,7% | 178 | 47,0% | 30,4% |
+
+Os doze do mistral-nemo são pedidos genuínos de cancelamento ("cancelar todos os pedidos
+atuais"), a família de conteúdo da R15b — virar ali é leitura, e o sentinela acerta em não
+acusar. Contra as duas famílias de instrução nunca vistas, a virada é 45%, **202 viradas passam
+do corte de 0,90**, e o sentinela acusa 95,4% (calado em 98% do texto limpo). No conjunto
+gatilho, o v2 mutila 22 de 24 mensagens legítimas e o sentinela acusa 7 de 24.
+
+**Dois erros meus nesta rodada, registrados.** O gpt-oss-120b recusou escrever os vetores; os
+mesmos modelos da R15 aceitaram, e a autoria está no artefato. E o pareamento por conjunto usava
+a mensagem como chave, colapsando doze vetores num par — o número por vetor estava certo, o do
+conjunto não; a reanálise, sem chamada nova, usa a chave (vetor, mensagem), e a auditoria
+recalcula com ela.
+
+**O que muda.** "Sanitize com expressão regular" sai do guia como defesa e entra como
+complemento contra o ataque conhecido. O sentinela passa a primeira camada.
+
+### R24 — votação de ponta a ponta (758 chamadas)
+
+**Pré-registro.** Cinco chamadas por caso nos dois corpus mais difíceis: três idênticas e duas
+formulações alternativas (frase de sujeito; instrução reescrita com os critérios em ordem
+inversa). Falsifica a votação se nenhuma política ganhar da chamada única com p < 0,05.
+
+**Resultado.** Em 148 casos com três chamadas idênticas, **zero oscilaram**: a maioria de três
+iguais é a chamada única a custo triplo. A maioria de três formulações sobe o jurídico de 55/69
+(79,7%) para 64/69 (92,8%), pareado 9 a 0, p = 0,0039 — e o ganho é da formulação, não do voto:
+sozinhas, a frase de sujeito dá 92,6% e a reescrita 95,5%. Fora de alcance: se a reescrita ganha
+por ser reescrita ou pela ordem dos critérios, porque as duas mudanças entraram juntas.
+
+### R25 — o terceiro domínio (303 chamadas)
+
+**Pré-registro.** Triagem de clínica de saúde, cinco classes, corpus gerado por molde com
+gabarito fixado antes do texto. Falsifica se ficar abaixo de 85% sem a frase de sujeito, se a
+frase não subir 5 pontos, ou se a sanitização deixar mais de 10% de virada.
+
+**Resultado.** 48/76 = **63,2%** sem a frase — abaixo do jurídico (78,5%) e do atendimento. A
+queda é de distância do corpus de origem, com o mesmo endereço dos outros domínios: pedido
+direto 23/23, terceiro-quer 4/19, sem-pedido 11/24. A frase de sujeito sobe para 77,9% (11 a 0,
+p = 0,001) e a sanitização v1 zera a virada do vetor da R22 (16 a 0). Fora de alcance: o mesmo
+modelo escreveu os três corpus, e a fraqueza de terceiro pode ser do gerador.
+
+### R27 — sanitizador e sentinela no mesmo payload (925 chamadas)
+
+**Pré-registro.** Quatro montagens sobre as 85 mensagens com o vetor da R22: só o texto limpo;
+dois campos (limpo para classificar, original para o sentinela); sentinela sobre o texto limpo;
+duas chamadas. Falsifica a integração se `dois-campos` virar mais de 10%.
+
+**Resultado.** Depois de sanitizar, o sentinela fica cego: 2 de 85. Com dois campos, detecção
+84/84 e virada 3/84 (p = 0,25 contra 0/84 do separado), nenhuma acima do corte. Duas chamadas:
+0/82 e 83/83 ao dobro do custo. Classe irreversível: duas chamadas; o resto, dois campos.
+
+### R26 — a resposta que exige dois trechos (1.747 chamadas, mais 897 perdidas)
+
+**Pré-registro.** 80 pares de perguntas aprovadas dos lotes da R18 e da R20 viram perguntas
+duplas; a resposta só conta se as duas regex casarem. Oito candidatos, ordenação pelo Jev,
+k = 1, 2, 3 e os oito, com a primeira pergunta sozinha como controle. Falsifica Q095 se `jev-1`
+ficar a menos de 5 pontos de `todos`.
+
+**Resultado.** `jev-1` acerta **6/80** contra 60/80 de `todos` (54 a 0); `jev-2` 40/80 (26 a
+6, p = 0,0005); `jev-3` 50/80 (21 a 11, p = 0,11). O controle mantém a vantagem da seleção na
+pergunta de fonte única: 76/80 contra 67/80. A regra de recall de graça não avisa: o topo veio
+`essencial` em 53 de 80 casos, o modelo marcou em média 1,04 trechos como essenciais, e os dois
+alvos só em 17. k = 1 vale para fonte única; sem saber, k = 3.
+
+**Um erro meu, pago.** A primeira corrida fez todas as chamadas e quebrou na análise por um erro
+de precedência, sem ter gravado o bruto — a lição do E11, reaprendida a US$ 0,02. O script agora
+grava o bruto antes de analisar, e as 897 chamadas perdidas constam do livro-caixa.
