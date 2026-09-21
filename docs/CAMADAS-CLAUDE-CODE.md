@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **6** (2026-09-20T20:44:33 a 2026-09-20T23:41:50).
-Última rotina automática: 2026-09-20T23:44:04 (completa, ok, commit).
+Registros: **36** (2026-09-20T20:44:33 a 2026-09-20T23:58:57).
+Última rotina automática: 2026-09-20T23:58:46 (completa, parou em auditoria).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -25,35 +25,35 @@ Registros: **6** (2026-09-20T20:44:33 a 2026-09-20T23:41:50).
 
 | | valor |
 |---|---|
-| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **9.008** |
-| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,1351 |
-| chamadas ao Jev pelas camadas | 23 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,002634** |
+| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **17.219** |
+| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,2583 |
+| chamadas ao Jev pelas camadas | 135 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,007479** |
 
 ## Leitura (`Read`)
 
 | | valor |
 |---|---|
-| Reads vistos pelo hook | 2 |
-| com pedido vigente na sessão | 2 |
-| classificados (arquivo grande, com pedido) | 1 |
-| estreitados | 1 (em modo ativo: 1) |
-| linhas evitadas | 604 |
-| tokens evitados (estimados) | **8.269** |
-| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **1 de 1** |
-| linhas relidas nessas voltas (o que fez falta) | 0 de 604 evitadas (mais 1 volta(s) de tamanho não registrado) |
-| blocos por classe | complementar: 7, essencial: 4, incerto: 1, irrelevante: 2 |
+| Reads vistos pelo hook | 6 |
+| com pedido vigente na sessão | 6 |
+| classificados (arquivo grande, com pedido) | 3 |
+| estreitados | 3 (em modo ativo: 3) |
+| linhas evitadas | 988 |
+| tokens evitados (estimados) | **16.480** |
+| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **1 de 3** |
+| linhas relidas nessas voltas (o que fez falta) | 0 de 988 evitadas (mais 1 volta(s) de tamanho não registrado) |
+| blocos por classe | complementar: 20, essencial: 4, incerto: 1, irrelevante: 2 |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | 0 |
-| latência mediana / p90 do hook | 3.035 ms / 3.035 ms |
-| custo | US$ 0,00073 em 14 chamadas |
+| latência mediana / p90 do hook | 2.148 ms / 3.035 ms |
+| custo | US$ 0,001043 em 27 chamadas |
 
-Por que não estreitou: read ja delimitado: 1.
+Por que não estreitou: tipo de arquivo fora da camada: 2, read ja delimitado: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| listagens vistas | 0 (—) |
+| listagens vistas | 1 (Grep: 1) |
 | classificados (6 ou mais arquivos, com pedido) | 0 |
 | com sugestão | 0 (em modo ativo: 0) |
 | arquivos postos em "leia primeiro" | 0 |
@@ -62,7 +62,7 @@ Por que não estreitou: read ja delimitado: 1.
 | latência mediana | — ms |
 | custo | US$ 0 em 0 chamadas |
 
-Por que não sugeriu: —.
+Por que não sugeriu: poucos itens: 1.
 
 ## Sentinela (conteúdo externo)
 
@@ -84,15 +84,15 @@ vira medida de acerto quando alguém revisar as acusações.
 
 | | valor |
 |---|---|
-| saídas longas com marca de erro | 0 |
-| classificadas | 0 |
-| com causa apontada (confiança ≥ 0,90) | **0** |
-| partes por classe | — |
-| latência mediana | — ms |
-| custo | US$ 0 em 0 chamadas |
+| saídas longas com marca de erro | 25 |
+| classificadas | 25 |
+| com causa apontada (confiança ≥ 0,90) | **1** |
+| partes por classe | causa: 1, consequencia: 2, incerto: 1, normal: 95 |
+| latência mediana | 1.381 ms |
+| custo | US$ 0,003532 em 99 chamadas |
 
 Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
-a causa real. Por que não apontou: —.
+a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 24.
 
 ## Verificação pela skill (`/jev-verificar`)
 
@@ -119,10 +119,10 @@ a causa real. Por que não apontou: —.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 103 (sugeriu skill em 72; 66 do cache) |
-| latência mediana sem cache | 661 ms |
-| custo do roteador | US$ 0,001103 |
-| guarda de comando (sombra) | 10 chamadas, US$ 0,000255 |
+| decisões do roteador de tema em produção | 113 (sugeriu skill em 77; 71 do cache) |
+| latência mediana sem cache | 690 ms |
+| custo do roteador | US$ 0,001263 |
+| guarda de comando (sombra) | 41 chamadas, US$ 0,001095 |
 
 ## O que esta página não prova
 

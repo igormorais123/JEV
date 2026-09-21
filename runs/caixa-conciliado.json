@@ -1,0 +1,88 @@
+{
+ "chamadas": 31418,
+ "usd": 1.018469303,
+ "por_experimento": [
+  {
+   "experimento": "exp-canarios-contrato",
+   "chamadas": 20,
+   "usd": 0.000190512
+  },
+  {
+   "experimento": "exp-e1-triagem-piloto",
+   "chamadas": 40,
+   "usd": 0.000886662
+  },
+  {
+   "experimento": "exp-e10-llm-economico",
+   "chamadas": 80,
+   "usd": 0.000701999
+  },
+  {
+   "experimento": "exp-e11-desempate",
+   "chamadas": 240,
+   "usd": 0.003742313
+  },
+  {
+   "experimento": "exp-e12-replicacao",
+   "chamadas": 529,
+   "usd": 0.01308834
+  },
+  {
+   "experimento": "exp-e2-fatorial",
+   "chamadas": 180,
+   "usd": 0.006080424
+  },
+  {
+   "experimento": "exp-e2b-posicao",
+   "chamadas": 25,
+   "usd": 0.002663052
+  },
+  {
+   "experimento": "exp-e3-evidencia",
+   "chamadas": 24,
+   "usd": 0.000521346
+  },
+  {
+   "experimento": "exp-e4-ressalvas",
+   "chamadas": 16,
+   "usd": 0.000607908
+  },
+  {
+   "experimento": "exp-e5-provedores",
+   "chamadas": 80,
+   "usd": 0.001878848
+  },
+  {
+   "experimento": "exp-e6-repetibilidade",
+   "chamadas": 200,
+   "usd": 0.00443341
+  },
+  {
+   "experimento": "exp-e7-confirmacao",
+   "chamadas": 40,
+   "usd": 0.0009123
+  },
+  {
+   "experimento": "shared-e15",
+   "chamadas": 3083,
+   "usd": 0.24790027
+  },
+  {
+   "experimento": "shared-lab",
+   "chamadas": 25528,
+   "usd": 0.69579302
+  },
+  {
+   "experimento": "shared-router",
+   "chamadas": 1308,
+   "usd": 0.038205282
+  },
+  {
+   "experimento": "shared-tools",
+   "chamadas": 25,
+   "usd": 0.000863617
+  }
+ ],
+ "em": "2026-09-21T00:00:02",
+ "corte_utc": "2026-09-21T03:00:02.163922+00:00"
+}
