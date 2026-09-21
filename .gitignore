@@ -57,6 +57,8 @@ runs/**
 # [R13] O extrato do livro-caixa vai versionado; o banco, nao. Sem ele, o custo publicado e uma
 # citacao que ninguem de fora consegue conferir.
 !runs/extrato-ledger.json
+# O instantâneo do caixa que a documentação declara e a auditoria confere (laboratorio/caixa.py).
+!runs/caixa-conciliado.json
 !runs/erro-grave.json
 *.sqlite
 *.sqlite-wal

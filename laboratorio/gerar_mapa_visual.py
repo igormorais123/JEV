@@ -7,9 +7,12 @@ conferir um número, o caminho até a chamada paga que o produziu existe.
     python laboratorio/gerar_mapa_visual.py
 """
 import json
+import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
+if str(RAIZ) not in sys.path:  # rodado como script, o pacote laboratorio precisa estar no caminho
+    sys.path.insert(0, str(RAIZ))
 MAPA = RAIZ / 'laboratorio' / 'mapa-de-limites.json'
 DESTINO = RAIZ / 'output' / 'mapa-de-limites.html'
 
@@ -34,16 +37,12 @@ def custo_do_livro_caixa(mapa):
     O campo `custo` do mapa-de-limites cobria E14 mais R15 a R17 e envelheceu a cada rodada
     nova. O livro-caixa nao envelhece: e a fonte unica de quanto saiu da chave.
     """
-    import sqlite3
-    ledger = RAIZ / 'runs' / 'ledger.sqlite3'
-    if not ledger.exists():
+    from laboratorio import caixa
+    dado = caixa.conciliado()
+    if dado is None:
         return mapa['custo']
-    conexao = sqlite3.connect(f'file:{ledger}?mode=ro', uri=True)
-    chamadas, gasto = conexao.execute(
-        'select count(*), sum(settled_nusd) from attempt_budget').fetchone()
-    conexao.close()
-    return {'chamadas': chamadas, 'usd': round((gasto or 0) / 1e9, 5),
-            'nota': 'todo o estudo, pelo livro-caixa'}
+    return {'chamadas': dado['chamadas'], 'usd': round(dado['usd'], 5),
+            'nota': 'todo o estudo, pelo livro-caixa conciliado'}
 
 
 def injecao_direta():

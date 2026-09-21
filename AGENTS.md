@@ -8,6 +8,8 @@
 
 ## Integração assistida medida
 
+- Chaves do Jev: `executor/credenciais.py` (ambiente > `.env` > `~/.secrets/jev.env`); provedor
+  preferido `typesafe`. Nunca imprimir, registrar ou versionar valor de chave.
 - No Claude Code, os hooks de leitura, busca e sentinela (`integracao/camadas/`) já
   filtram o que entra no contexto; para vários arquivos candidatos, use a skill `/jev-ler`
   (`integracao/camadas/ler.py`). Medição em `docs/CAMADAS-CLAUDE-CODE.md`.

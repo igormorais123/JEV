@@ -26,18 +26,18 @@ class ContractError(Exception):
     """Resposta fora do contrato tipado esperado."""
 
 
-def load_api_key(env_path=None):
-    """Le a chave do .env do projeto ou do ambiente. Nunca registra o valor."""
-    if os.environ.get('OPENROUTER_API_KEY'):
-        return os.environ['OPENROUTER_API_KEY'], 'ambiente'
-    path = Path(env_path) if env_path else PROJECT_ROOT / '.env'
-    if path.exists():
-        for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
-            if line.strip().startswith('OPENROUTER_API_KEY='):
-                value = line.split('=', 1)[1].strip().strip('"').strip("'")
-                if value:
-                    return value, str(path)
-    raise RuntimeError('OPENROUTER_API_KEY ausente. Configure o .env local do projeto antes de despachar.')
+def load_api_key(env_path=None, provider='openrouter'):
+    """Le a chave do provedor: ambiente, .env do projeto ou ~/.secrets/jev.env. Nunca registra o valor."""
+    from . import credenciais
+    if env_path:
+        return credenciais.chave(provider, arquivos=(Path(env_path),) + credenciais.ARQUIVOS[1:])
+    return credenciais.chave(provider)
+
+
+def url_for(provider):
+    """O endpoint de decisões de cada provedor; o OpenRouter é o padrão histórico."""
+    from . import credenciais
+    return credenciais.PROVEDORES.get(provider, {}).get('url', DECISIONS_URL)
 
 
 def payload_for(model, state, questions):
@@ -198,7 +198,7 @@ def dispatch(ledger, *, arm_id, block_id, provider, model, state, questions, req
     max_output_tokens = reservation_output_tokens(ledger.prices, provider, model)
     # A chave vem ANTES da reserva: falhar depois dela deixaria uma tentativa aberta
     # segurando saldo sem que nenhuma requisicao tenha saido.
-    key = api_key or load_api_key()[0]
+    key = api_key or load_api_key(provider=provider)[0]
     reservation = ledger.reserve(arm_id=arm_id, block_id=block_id, provider=provider, model=model,
                                  max_input_tokens=tokens, max_output_tokens=max_output_tokens,
                                  payload_sha256=payload_sha256(payload), request_path=request_path,
@@ -208,7 +208,7 @@ def dispatch(ledger, *, arm_id, block_id, provider, model, state, questions, req
                'User-Agent': 'jev-lab/1.0'}
     ledger.mark_sent(attempt_id)
     try:
-        status, body = transport(DECISIONS_URL, headers, payload, timeout)
+        status, body = transport(url_for(provider), headers, payload, timeout)
     except TransportTimeout as error:
         ledger.mark_timeout(attempt_id, {'kind': 'timeout', 'detail': str(error)[:200]})
         return {'attempt_id': attempt_id, 'status': 'timeout', 'reserved_nusd': reservation['reserved_nusd']}

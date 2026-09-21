@@ -37,8 +37,12 @@ def decisoes():
     """Os recibos de decisão do livro-caixa, com o vetor de probabilidades intacto."""
     conexao = sqlite3.connect(f'file:{LEDGER}?mode=ro', uri=True)
     linhas = []
-    for recibo, respostas in conexao.execute(
-            'select receipt_json, answers_json from shared_decisions'):
+    from laboratorio import caixa
+    corte = caixa.corte_utc()
+    consulta = 'select receipt_json, answers_json from shared_decisions'
+    if corte:
+        consulta += f" where recorded_at <= '{corte}'"
+    for recibo, respostas in conexao.execute(consulta):
         r = json.loads(recibo)
         # chamada que deu timeout grava `null` no lugar das respostas; ela conta como tentativa
         # e como custo, mas não tem decisão nenhuma para analisar
@@ -67,21 +71,22 @@ def tentativas():
     conexao = sqlite3.connect(f'file:{LEDGER}?mode=ro', uri=True)
     colunas = ['attempt_id', 'experiment_id', 'status', 'latency_ms',
                'input_tokens', 'output_tokens', 'started_at_utc', 'ended_at_utc']
-    linhas = [dict(zip(colunas, linha)) for linha in conexao.execute(
-        'select a.attempt_id, a.arm_id, a.status, a.latency_ms, a.input_tokens, '
-        'a.output_tokens, a.started_at_utc, a.ended_at_utc from attempts a')]
+    from laboratorio import caixa
+    corte = caixa.corte_utc()
+    consulta = ('select a.attempt_id, a.arm_id, a.status, a.latency_ms, a.input_tokens, '
+                'a.output_tokens, a.started_at_utc, a.ended_at_utc from attempts a')
+    if corte:
+        consulta += f" where a.started_at_utc is null or a.started_at_utc <= '{corte}'"
+    linhas = [dict(zip(colunas, linha)) for linha in conexao.execute(consulta)]
     conexao.close()
     return linhas
 
 
 @lru_cache(maxsize=1)
 def custo_por_experimento():
-    conexao = sqlite3.connect(f'file:{LEDGER}?mode=ro', uri=True)
-    linhas = [{'experimento': e, 'chamadas': n, 'usd': (u or 0) / 1e9} for e, n, u
-              in conexao.execute('select experiment_id, count(*), sum(settled_nusd) '
-                                 'from attempt_budget group by 1')]
-    conexao.close()
-    return linhas
+    from laboratorio import caixa
+    dado = caixa.conciliado()
+    return list(dado['por_experimento']) if dado else []
 
 
 @lru_cache(maxsize=1)

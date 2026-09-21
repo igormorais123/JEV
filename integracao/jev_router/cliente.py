@@ -27,17 +27,15 @@ if str(RAIZ_DO_PROJETO) not in sys.path:
 
 
 def chave():
-    """Lê do ambiente ou do .env do projeto. O valor nunca é registrado nem devolvido em log."""
-    if os.environ.get('OPENROUTER_API_KEY'):
-        return os.environ['OPENROUTER_API_KEY']
-    env = RAIZ_DO_PROJETO / '.env'
-    if env.exists():
-        for linha in env.read_text(encoding='utf-8', errors='replace').splitlines():
-            if linha.strip().startswith('OPENROUTER_API_KEY='):
-                valor = linha.split('=', 1)[1].strip().strip('"').strip("'")
-                if valor:
-                    return valor
-    return None
+    """A chave do provedor preferido (ambiente, .env do projeto ou ~/.secrets/jev.env).
+
+    O valor nunca é registrado nem devolvido em log. Sem chave, None: o hook cala.
+    """
+    try:
+        from executor import credenciais
+        return credenciais.chave(credenciais.provedor())[0]
+    except Exception:
+        return None
 
 
 def transporte_http(url, cabecalhos, corpo, timeout):
@@ -92,8 +90,15 @@ def perguntar(estado, perguntas, *, timeout=TIMEOUT_PADRAO, transporte=None, ori
                            prices=load_prices(), legacy_paths=())
         respostas, detalhe = ask(estado, perguntas, consumer='router',
                                  api_key=api_key, timeout=timeout)
-        orcamento.registrar(detalhe.get('custo_usd'), origem=origem,
-                            attempt_id=detalhe.get('attempt_id'), modelo=MODELO,
+        # A TypeSafe não devolve o valor cobrado; o livro-caixa precifica pelo uso e liquida
+        # em `settled_nusd`. O controle diário usa esse valor, nunca zero por desconhecimento.
+        custo = detalhe.get('custo_usd')
+        if custo is None and detalhe.get('settled_nusd') is not None:
+            custo = detalhe['settled_nusd'] / 1e9
+            detalhe['custo_usd'] = custo
+        orcamento.registrar(custo, origem=origem,
+                            attempt_id=detalhe.get('attempt_id'),
+                            modelo=detalhe.get('model') or MODELO, provedor=detalhe.get('provider'),
                             caracteres=len(estado), mascarados=mascarados,
                             custo_reportado=detalhe.get('custo_usd') is not None,
                             evidence_level='live_component')

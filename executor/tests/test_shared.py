@@ -20,7 +20,7 @@ def wallet(tmp_path):
 
 
 def query(wallet, transport, state='Connection timed out'):
-    return ask(state, {'decision': RUBRICS['log']}, consumer='e15', api_key='test',
+    return ask(state, {'decision': RUBRICS['log']}, consumer='e15', api_key='test', provider='openrouter',
                transport=transport, db_path=wallet, prices=load_prices(), legacy_paths=())
 
 

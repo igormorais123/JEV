@@ -14,6 +14,7 @@ from pathlib import Path
 from .ledger import Ledger, BudgetError
 from .pricing import load_prices, usd_to_nusd, worst_case_nusd
 from .runner import dispatch, load_api_key, payload_sha256, validate_contract
+from . import credenciais
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = 'typesafe/jev-1.13'
@@ -122,20 +123,30 @@ def strict_answers(body, questions):
 
 
 def ask(state, questions, *, consumer='tools', timeout=15, api_key=None,
-        transport=None, db_path=DB, prices=None, legacy_paths=LEGACY):
-    """Reserve, measure, settle. Injected test transports require an isolated DB."""
+        transport=None, db_path=DB, prices=None, legacy_paths=LEGACY, provider=None):
+    """Reserve, measure, settle. Injected test transports require an isolated DB.
+
+    `provider` é `typesafe` ou `openrouter`; sem ele, vale a preferência de
+    `executor/credenciais.py` (JEV_PROVEDOR, ou typesafe se a chave existir). O preço da
+    TypeSafe vem da tabela local (documentação oficial, conferida em 2026-09-19); o do
+    OpenRouter continua sendo lido do provedor a cada hora.
+    """
     if consumer not in CAPS:
         raise ValueError('Unknown consumer')
+    provider = provider or credenciais.provedor()
+    if provider not in credenciais.PROVEDORES:
+        raise ValueError('Unknown provider')
+    model = credenciais.PROVEDORES[provider]['modelo']
     if transport is not None and Path(db_path).resolve() == DB.resolve():
         raise ValueError('Test transport requires isolated ledger')
     if not isinstance(state, str) or not isinstance(questions, dict) or not questions:
         raise ValueError('Invalid request')
-    payload = {'model': MODEL, 'state': state, 'questions': questions}
+    payload = {'model': model, 'state': state, 'questions': questions}
     # Bytes are a conservative input guard, NOT a billing/token estimate. Never cut text.
     if len(json.dumps(payload, ensure_ascii=False).encode('utf-8')) > 90_000:
         return None, {'status': 'abstain', 'erro': 'input_too_large', 'sent': False}
-    key = api_key or load_api_key()[0]
-    price_table = prices or current_prices()
+    key = api_key or load_api_key(provider=provider)[0]
+    price_table = prices or (current_prices() if provider == 'openrouter' else load_prices())
     start = time.perf_counter()
     experiment = 'shared-' + consumer
     captured = {}
@@ -154,9 +165,9 @@ def ask(state, questions, *, consumer='tools', timeout=15, api_key=None,
         import_legacy(ledger, legacy_paths)
         ledger.set_block_cap(consumer, usd_to_nusd(CAPS[consumer]))
         arm = 'shared-arm-' + consumer
-        ledger.register_arm(arm, 'S01', PROVIDER, MODEL)
-        receipt = dispatch(ledger, arm_id=arm, block_id=consumer, provider=PROVIDER,
-                           model=MODEL, state=state, questions=questions,
+        ledger.register_arm(arm, 'S01', provider, model)
+        receipt = dispatch(ledger, arm_id=arm, block_id=consumer, provider=provider,
+                           model=model, state=state, questions=questions,
                            request_path='sha256:' + payload_sha256(payload),
                            runtime_manifest_path='executor/shared.py', timeout=timeout, api_key=key,
                            transport=measured, evidence_level='mock_integration' if transport else 'live_component')
@@ -164,6 +175,7 @@ def ask(state, questions, *, consumer='tools', timeout=15, api_key=None,
                         'payload_sha256': payload_sha256(payload),
                         'state_chars': len(state), 'payload_bytes': len(json.dumps(payload, ensure_ascii=False).encode()),
                         'consumer': consumer, 'usage': captured.get('usage'),
+                        'provider': provider, 'model': model,
                         'network_ms': captured.get('network_ms'),
                         'model_resolved': captured.get('model'), 'price_snapshot': price_table['snapshot_id'],
                         'wallet_committed_nusd': ledger.wallet_committed_nusd(),

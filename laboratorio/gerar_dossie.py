@@ -14,9 +14,12 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
+if str(RAIZ) not in sys.path:  # rodado como script, o pacote laboratorio precisa estar no caminho
+    sys.path.insert(0, str(RAIZ))
 LAB = RAIZ / 'laboratorio'
 DESTINO = RAIZ / 'docs' / 'DOSSIE-DE-EVIDENCIAS.md'
 
@@ -327,11 +330,8 @@ def fichas():
 
 # ----------------------------------------------------------------- contabilidade
 def caixa():
-    conexao = sqlite3.connect(f"file:{RAIZ / 'runs' / 'ledger.sqlite3'}?mode=ro", uri=True)
-    chamadas, gasto = conexao.execute(
-        'select count(*), sum(settled_nusd) from attempt_budget').fetchone()
-    conexao.close()
-    return chamadas, (gasto or 0) / 1e9
+    from laboratorio import caixa as livro
+    return livro.totais()
 
 
 # ----------------------------------------------------------------- montagem

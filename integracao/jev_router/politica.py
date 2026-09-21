@@ -111,7 +111,7 @@ def texto_para_o_agente(decisao, modo):
     partes = []
     if decisao.get('sugere'):
         partes.append(f"[jev/{modo}] tema **{decisao['tema']}** "
-                      f"(confiança {decisao['confianca']:.2f}). Skills para isto: "
+                      f"(confiança {decisao['confianca']:.2f}".replace('.', ',') + "). Skills para isto: "
                       f"{decisao['skills']}.")
     if decisao.get('aviso'):
         partes.append(decisao['aviso'])

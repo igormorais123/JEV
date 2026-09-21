@@ -118,11 +118,8 @@ def _artefato(nome):
 
 
 def _ledger():
-    conexao = sqlite3.connect(f"file:{RAIZ / 'runs' / 'ledger.sqlite3'}?mode=ro", uri=True)
-    chamadas, gasto = conexao.execute(
-        'select count(*), sum(settled_nusd) from attempt_budget').fetchone()
-    conexao.close()
-    return chamadas, (gasto or 0) / 1e9
+    from laboratorio import caixa
+    return caixa.totais()
 
 
 def _custo_por_decisao():

@@ -591,15 +591,22 @@ def auditar_documentacao(placar):
 # ----------------------------------------------------------------- bloco 3: contabilidade
 def auditar_caixa(placar):
     """O custo declarado no guia tem de ser o que o livro-caixa registra, não uma lembrança."""
-    ledger = RAIZ / 'runs' / 'ledger.sqlite3'
-    if not ledger.exists():
+    from laboratorio import caixa
+    vivo = caixa.ao_vivo()
+    if vivo is None:
         placar.conferir('caixa', 'livro-caixa existe', True, False)
         return
-    conexao = sqlite3.connect(f'file:{ledger}?mode=ro', uri=True)
-    chamadas, gasto = conexao.execute(
-        'select count(*), sum(settled_nusd) from attempt_budget').fetchone()
-    conexao.close()
-    gasto = (gasto or 0) / 1e9
+    conciliado = caixa.conciliado()
+    chamadas, gasto = conciliado['chamadas'], conciliado['usd']
+    # O instantâneo é o corte: recente, e nunca maior do que o livro-caixa ao vivo (o gasto
+    # dos hooks só acrescenta). A diferença entre os dois é o gasto desde a conciliação.
+    idade = caixa.idade_horas()
+    placar.conferir('caixa', f'instantâneo conciliado com menos de {caixa.VALIDADE_HORAS} h',
+                    True, idade is not None and idade <= caixa.VALIDADE_HORAS)
+    placar.conferir('caixa', 'livro-caixa ao vivo não é menor que o instantâneo', True,
+                    vivo['chamadas'] >= chamadas and vivo['usd'] + 1e-9 >= gasto)
+    placar.fora_de_alcance('caixa', f'o gasto desde a conciliação ({vivo["chamadas"] - chamadas} '
+                                    'chamadas) até a próxima rotina diária')
 
     guia = _texto('GUIA-PRATICO-JEV.md')
     # a frase pode quebrar de linha em qualquer ponto; o que não pode é o número não existir

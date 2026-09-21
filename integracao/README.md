@@ -44,6 +44,18 @@ python integracao/instalar.py --desinstalar --gancho todos
 python integracao/instalar.py --agendar        # tarefa diária do Windows com a rotina completa
 ```
 
+**Chaves e provedor, para qualquer instância desta máquina.** As chaves vivem no cofre
+privado `~/.secrets/jev.env` (fora de qualquer repositório; nunca versionar, exibir ou colar em
+prompt), com `TYPESAFE_API_KEY`, `OPENROUTER_API_KEY` e a preferência `JEV_PROVEDOR=typesafe`.
+Ordem de leitura em `executor/credenciais.py`: variável de ambiente, `.env` do projeto, o cofre.
+`python executor/credenciais.py` mostra de onde cada chave vem, sem nenhum valor. O provedor
+preferido é a TypeSafe direto (`api.typesafe.ai`, modelo `jev-1.13.0`): só tem o Jev, menos
+superfície. O E5 mediu o preço disso nos mesmos 40 casos: mesma resposta nos 40, latência p50
+de 755 ms contra 396 ms pelo OpenRouter, custo 12% maior. A TypeSafe não devolve o valor
+cobrado; o livro-caixa precifica pelo uso de tokens com a tarifa publicada (US$ 42 por bilhão
+de tokens), e o roteador registra esse valor no controle diário. Para voltar ao OpenRouter:
+`JEV_PROVEDOR=openrouter` no ambiente ou no cofre.
+
 **A medição não depende de ninguém lembrar.** Ao fim de cada sessão do Claude Code, o hook
 `SessionEnd` regera `docs/CAMADAS-CLAUDE-CODE.md`; uma vez por dia, às 23h30, a tarefa agendada
 `JEV-medicao-das-camadas` roda `integracao/camadas/rotina.py` inteira: mede, concilia o

@@ -35,12 +35,15 @@ ARQUIVOS_DO_COMMIT = [
     'docs/CAMADAS-CLAUDE-CODE.md', 'integracao/avaliacao/camadas-medicao.json',
     'docs/GUIA-PRATICO-JEV.md', 'docs/CEM-HIPOTESES.md', 'docs/CEM-PERGUNTAS-ESTRATEGICAS.md',
     'docs/DOSSIE-DE-EVIDENCIAS.md', 'docs/BATERIA-COMPLEMENTAR.md', 'docs/AUDITORIA-DE-NUMEROS.md',
-    'runs/extrato-ledger.json',
+    'runs/extrato-ledger.json', 'runs/caixa-conciliado.json', 'laboratorio/auditoria-placar.json',
 ]
 
 PASSOS_COMPLETOS = [
     ('medir', [sys.executable, 'integracao/camadas/medir.py', '--gravar']),
     ('conciliar', [sys.executable, 'laboratorio/conciliar_caixa.py', '--gravar']),
+    # As páginas das cem hipóteses e das cem perguntas citam o placar da auditoria, e a
+    # auditoria confere as páginas: por isso ela roda antes (grava o placar) e depois (confere).
+    ('auditoria (placar)', [sys.executable, 'laboratorio/auditoria.py']),
     ('cem hipoteses', [sys.executable, '-m', 'laboratorio.h100.relatorio']),
     ('cem perguntas', [sys.executable, '-m', 'laboratorio.q100.relatorio']),
     ('dossie', [sys.executable, 'laboratorio/gerar_dossie.py']),
@@ -88,6 +91,10 @@ def executar(so_medir=False):
     for nome, comando in passos:
         ok, cauda = _rodar(nome, comando)
         feitos.append({'passo': nome, 'ok': ok, 'saida': cauda[:160]})
+        # A primeira auditoria só grava o placar: as páginas ainda não foram regeradas com
+        # o caixa novo e é normal que ela as acuse. Quem decide é a auditoria final.
+        if not ok and nome == 'auditoria (placar)':
+            continue
         if not ok:
             resultado.update({'ok': False, 'parou_em': nome})
             break

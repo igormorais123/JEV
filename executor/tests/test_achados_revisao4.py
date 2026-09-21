@@ -85,7 +85,7 @@ class ChaveAntesDaReserva(unittest.TestCase):
 
         from executor import runner
         fonte = inspect.getsource(runner.dispatch)
-        posicao_chave = fonte.index('key = api_key or load_api_key()')
+        posicao_chave = fonte.index('key = api_key or load_api_key(')
         posicao_reserva = fonte.index('ledger.reserve(')
         self.assertLess(posicao_chave, posicao_reserva,
                         'A chave precisa ser resolvida antes da reserva')
