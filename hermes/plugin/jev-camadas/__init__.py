@@ -1,6 +1,6 @@
 """Plugin jev-camadas: o Jev decide o que entra no contexto do modelo caro do Hermes.
 
-Registra cinco ganchos, todos falhando para o lado aberto (qualquer erro devolve None e o
+Registra quatro ganchos, todos falhando para o lado aberto (qualquer erro devolve None e o
 Hermes segue como seguiria sem o plugin). O código de decisão mora em
 `/root/.hermes/integrations/jev/jev_hermes/camadas.py`; este arquivo só liga os ganchos.
 
@@ -18,7 +18,7 @@ if str(RAIZ) not in sys.path:
 
 logger = logging.getLogger(__name__)
 
-TODAS = ('tema', 'leitura', 'busca', 'sentinela', 'saida')
+TODAS = ('tema', 'leitura', 'busca', 'sentinela', 'saida', 'recorte')
 FERRAMENTAS_DE_BUSCA = {'search_files', 'web_search', 'session_search'}
 FERRAMENTAS_EXTERNAS = {'web_extract', 'browser_snapshot', 'browser_navigate', 'browser_console'}
 PLATAFORMAS_SEM_TEMA = {'cron', ''}
@@ -38,12 +38,15 @@ def _camadas():
 
 
 def _pre_llm_call(session_id=None, user_message=None, platform=None, parent_session_id=None,
-                  is_first_turn=None, **_):
+                  is_first_turn=None, task_id=None, **_):
     try:
         if not isinstance(user_message, str):
             return None
         camadas = _camadas()
         camadas.guardar_pedido(session_id, user_message)
+        if task_id and task_id != session_id:
+            # O gancho do terminal só recebe o task_id do turno.
+            camadas.guardar_pedido(task_id, user_message)
         if 'tema' not in _ativas() or (platform or '') in PLATAFORMAS_SEM_TEMA or parent_session_id:
             return None
         nota, decisao = camadas.tema(user_message)
@@ -97,10 +100,16 @@ def _transform_terminal_output(command=None, output=None, returncode=None, task_
     try:
         if not isinstance(output, str) or not output:
             return None
+        original = output
         ativas = _ativas()
         camadas = _camadas()
         acrescimos = []
         comando = command or ''
+        if 'recorte' in ativas and returncode in (0, None) and len(output) >= camadas.MINIMO_DO_RECORTE:
+            novo, decisao = camadas.recortar_terminal(comando, output, camadas.pedido_vigente(task_id))
+            camadas.registrar('recorte', **decisao)
+            if novo:
+                output = novo
         if 'sentinela' in ativas and any(marca in comando for marca in COMANDO_EXTERNO):
             nota, decisao = camadas.sentinela('terminal', output)
             camadas.registrar('sentinela', ferramenta_real='terminal', **decisao)
@@ -112,7 +121,9 @@ def _transform_terminal_output(command=None, output=None, returncode=None, task_
                 camadas.registrar('saida', **decisao)
             if nota:
                 acrescimos.append(nota)
-        return output + ''.join(acrescimos) if acrescimos else None
+        if acrescimos or output is not original:
+            return output + ''.join(acrescimos)
+        return None
     except Exception as erro:
         logger.debug('jev-camadas transform_terminal_output: %s', erro)
         return None

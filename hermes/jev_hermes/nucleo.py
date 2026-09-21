@@ -43,12 +43,13 @@ PROVEDORES = {
     'openrouter': {'url': 'https://openrouter.ai/api/alpha/decisions', 'modelo': 'typesafe/jev-1.13',
                    'variavel': 'OPENROUTER_API_KEY', 'saida_cobrada': False},
     'typesafe': {'url': 'https://api.typesafe.ai/v1/systemone', 'modelo': 'jev-1.13.0',
-                 'variavel': 'TYPESAFE_API_KEY', 'saida_cobrada': True},
+                 'variavel': 'TYPESAFE_API_KEY', 'saida_cobrada': False},
 }
 ORDEM_PADRAO = ('openrouter', 'typesafe')
 
-# US$ 0,042 por milhão de tokens de entrada nos dois provedores; a TypeSafe cobra a saída
-# pela mesma tarifa (executor/prices.json do projeto, conferido em 2026-09-19).
+# US$ 0,042 por milhão de tokens de entrada nos dois provedores; saída gratuita nos dois
+# (docs.typesafe.ai/models, conferido em 2026-09-21; a nota de 2026-09-19 no executor/prices.json
+# ainda cobrava a saída da TypeSafe). O pior caso da reserva continua cobrindo a saída.
 USD_POR_TOKEN = 0.042e-6
 TETO_DIARIO_PADRAO = 0.50
 TETO_MENSAL_PADRAO = 5.00
@@ -57,6 +58,7 @@ LIMITE_MAXIMO = 60000
 TRABALHADORES = 8          # acima disso o provedor devolveu 429 nas rodadas do estudo
 CACHE_SEGUNDOS = 3 * 86400
 TIMEOUT_PADRAO = 6.0
+TIMEOUT_POR_CHAMADA = 15.0  # num lote, nenhuma chamada espera mais que isto, por maior que seja o lote
 
 _trava = threading.Lock()
 
@@ -337,11 +339,13 @@ def _resumo_das_respostas(respostas):
 
 
 def perguntar(estado, perguntas, *, origem, timeout=TIMEOUT_PADRAO, limite=LIMITE_PADRAO,
-              transporte=None, usar_cache=True):
+              transporte=None, usar_cache=True, rota=None):
     """Uma decisão do Jev. Devolve (respostas, detalhe); respostas é None em qualquer falha.
 
     `estado` é texto (ou objeto JSON, para os contratos legados do `jev_advisor`); `perguntas`
     é o mapa `questions` do contrato. Texto de terceiro vai só no estado — nunca na instrução.
+    `rota` é uma lista de (provedor, chave) que substitui as chaves do `jev.env` — é como a ponte
+    do OmniRoute usa as chaves que o OmniRoute guarda.
     """
     inicio = time.time()
     detalhe = {'origem': origem, 'enviado': False}
@@ -367,10 +371,15 @@ def perguntar(estado, perguntas, *, origem, timeout=TIMEOUT_PADRAO, limite=LIMIT
             registrar({'em': _agora().isoformat(timespec='seconds'), **detalhe,
                        'respostas': _resumo_das_respostas(respostas)})
             return respostas, detalhe
-    provedores = ordem_de_provedores()
+    cfg = configuracao()
+    if rota:
+        chaves = {p: k for p, k in rota if p in PROVEDORES and k}
+        provedores = list(chaves)
+    else:
+        provedores = ordem_de_provedores()
+        chaves = {p: cfg(PROVEDORES[p]['variavel']) for p in provedores}
     if not provedores:
         return None, {**detalhe, 'erro': 'sem chave'}
-    cfg = configuracao()
     transporte = transporte or transporte_http
     for provedor in provedores:
         restante = timeout - (time.time() - inicio)
@@ -384,7 +393,7 @@ def perguntar(estado, perguntas, *, origem, timeout=TIMEOUT_PADRAO, limite=LIMIT
         identificador, motivo = _reservar(origem, provedor, reservado)
         if identificador is None:
             return None, {**detalhe, 'erro': motivo}
-        cabecalhos = {'Authorization': f"Bearer {cfg(dados['variavel'])}", 'Content-Type': 'application/json',
+        cabecalhos = {'Authorization': f"Bearer {chaves[provedor]}", 'Content-Type': 'application/json',
                       'User-Agent': 'hermes-jev/1.0', 'X-Title': 'Hermes Jev'}
         status, resposta = transporte(dados['url'], cabecalhos, corpo, restante)
         detalhe.update({'provedor': provedor, 'http': status, 'enviado': status != 0})
@@ -392,6 +401,8 @@ def perguntar(estado, perguntas, *, origem, timeout=TIMEOUT_PADRAO, limite=LIMIT
             custo = _custo(provedor, resposta, reservado)
             _liquidar(identificador, custo)
             detalhe['custo_usd'] = custo
+            detalhe['uso'] = {k: v for k, v in (resposta.get('usage') or {}).items() if k != 'cost'}
+            detalhe['modelo_resolvido'] = resposta.get('model')
             try:
                 respostas = validar(resposta, perguntas)
             except ErroDeContrato as erro:
@@ -428,8 +439,8 @@ def classificar_em_paralelo(estados, perguntas, *, origem, tempo_total=TIMEOUT_P
         restante = tempo_total - (time.time() - inicio)
         if restante <= 0.5:
             return None, {'erro': 'sem tempo', 'origem': origem}
-        return perguntar(estado, perguntas, origem=origem, timeout=restante, limite=limite,
-                         transporte=transporte)
+        return perguntar(estado, perguntas, origem=origem, timeout=min(restante, TIMEOUT_POR_CHAMADA),
+                         limite=limite, transporte=transporte)
 
     if not estados:
         return []

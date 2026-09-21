@@ -10,10 +10,11 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 |---|---|---|
 | núcleo | `/root/.hermes/integrations/jev/jev_hermes/nucleo.py` | chaves, OpenRouter com reserva na TypeSafe, redação de credenciais, cache de 3 dias, teto, registro sem conteúdo |
 | chaves | `/root/.hermes/integrations/jev/jev.env` (0600) | `OPENROUTER_API_KEY`, `TYPESAFE_API_KEY` copiadas do cofre do PC; tetos |
-| camadas | `/root/.hermes/plugins/jev-camadas/` + `jev_hermes/camadas.py` | tema/risco do pedido, recorte de `read_file`, ordem de busca, sentinela em conteúdo externo, causa de erro no terminal |
+| camadas | `/root/.hermes/plugins/jev-camadas/` + `jev_hermes/camadas.py` | tema/risco do pedido, recorte de `read_file`, ordem de busca, sentinela em conteúdo externo, causa de erro no terminal, recorte de saída longa sem erro do terminal (≥ 16 mil caracteres: fica o essencial ao pedido, com vizinhas, primeira e última parte) |
 | ferramenta | `/root/.hermes/plugins/jev-advisor/` (v3) | `jev_advisor` para o modelo, com modo `lote` (até 60 textos) |
 | porteiros | `/root/.hermes/scripts/jev_gate_*.py` | decidem se o job de cron acorda o modelo principal |
 | rotinas | `/root/.hermes/scripts/jev_rotina_*.py` | jobs sem modelo principal: caixa vigiada, agenda, saúde do coletor, medição |
+| ponte OpenAI | `hermes-jev-ponte.service`, `172.17.0.1:20145` (só a rede Docker) | traduz chat do OmniRoute para decisão do Jev; a chave vem no Bearer. No OmniRoute: nós `jev-openrouter` e `jev-typesafe`, combo `jev` |
 | skill | `/root/.hermes/skills/jev/SKILL.md` | quando e como delegar ao Jev |
 | contrato | `/root/HERMES.md`, linha "Sistema 1 é do Jev" | Jev por padrão em toda decisão fechada |
 | medição | `jev_hermes/medir.py` → `estado/RELATORIO.md` | recalculada dos registros, diária |
@@ -28,7 +29,8 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 | Radar de IA (diário) | Sol lia todo candidato | Jev lê contra as missões; tudo trivial → descarte pelo helper, sem Sol |
 | Watchdog urgente Fábio | 22 palavras-chave | Jev decide relevância; palavras só se o Jev falhar |
 | Caixa vigiada (novo, 30 min, 7–22h) | — | alerta imediato de e-mail que pede ação, cliente, jurídico, financeiro |
-| Agenda do dia (novo, 7h) | — | compromissos de hoje com marca de preparo |
+| Painel da manhã (novo, 7h) | — | agenda + demandas do escritório; o Jev pontua urgência e preparo; mensagem com uma prioridade e o próximo gesto |
+| Sono de memória (diário) | Sol colhia e escolhia entre ~20 candidatos; 33 de 50 sem promover | porteiro roda colheita e snapshot; o Jev classifica; só acorda com P(durável) ≥ 0,30 |
 | Saúde do coletor WhatsApp (novo, 8h) | — | avisa coletor parado ou deslogado (regra, sem Jev) |
 | Medição diária (novo, local) e economia semanal (novo, seg. 8h05) | — | relatório e resumo |
 

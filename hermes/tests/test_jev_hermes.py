@@ -172,3 +172,63 @@ def test_portao_acorda_quando_falha(jev):
     with redirect_stdout(saida):
         portao.executar('teste', lambda: 1 / 0)
     assert json.loads(saida.getvalue().strip().splitlines()[-1])['wakeAgent'] is True
+
+
+def test_rota_externa_usa_a_chave_recebida(jev):
+    nucleo, _, _ = jev
+    t = responder()
+    respostas, detalhe = nucleo.perguntar('texto da ponte', PERGUNTA, origem='teste', transporte=t,
+                                          rota=[('typesafe', 'chave-do-omniroute')])
+    assert respostas and detalhe['provedor'] == 'typesafe' and t.chamadas[0]['auth'] == 'Bearer chave-do-omniroute'
+
+
+def test_ponte_traduz_chat_para_decisao(jev, monkeypatch):
+    nucleo, _, _ = jev
+    import threading, urllib.request
+    from jev_hermes import ponte_openai
+    importlib.reload(ponte_openai)
+    t = responder({'decisao': 'b'})
+    real = nucleo.perguntar
+    monkeypatch.setattr(ponte_openai.nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+    servidor = ponte_openai.ThreadingHTTPServer(('127.0.0.1', 0), ponte_openai.Ponte)
+    threading.Thread(target=servidor.serve_forever, daemon=True).start()
+    porta = servidor.server_address[1]
+
+    def chamar(conteudo, caminho='/openrouter/v1/chat/completions'):
+        corpo = json.dumps({'model': 'jev-1.13', 'messages': [{'role': 'user', 'content': conteudo}]}).encode()
+        req = urllib.request.Request(f'http://127.0.0.1:{porta}{caminho}', data=corpo,
+                                     headers={'Authorization': 'Bearer k', 'Content-Type': 'application/json'})
+        try:
+            with urllib.request.urlopen(req) as r:
+                return r.status, json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            return e.code, json.loads(e.read())
+
+    status, dado = chamar(json.dumps({'state': 'x', 'question': PERGUNTA['x']}))
+    assert status == 200 and json.loads(dado['choices'][0]['message']['content'])['answers']['decisao']['choice'] == 'b'
+    status, dado = chamar('texto livre')
+    assert status == 400 and 'JSON' in dado['error']['message']
+    status, _ = chamar('{}', caminho='/outro/v1/chat/completions')
+    assert status == 401
+    servidor.shutdown()
+
+
+def test_recorte_mantem_essenciais_com_vizinhas_e_pontas(jev, monkeypatch):
+    nucleo, camadas, _ = jev
+    t = responder(lambda estado: 'essencial' if 'parte 6 de' in estado else 'irrelevante')
+    real = nucleo.perguntar
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+    texto = ''.join(f'{i:02d}' + 'x' * 3498 for i in range(1, 13))   # 12 partes de 3.500
+    novo, decisao = camadas.recortar_terminal('cat log', texto, 'qual linha mostra o teto diário?')
+    assert decisao['acao'] == 'recortar' and decisao['essenciais'] == [6] and decisao['partes_mantidas'] == 5
+    for mantida in ('01', '05', '06', '07', '12'):
+        assert mantida + 'x' in novo
+    assert '02x' not in novo and 'partes 2–4 de 12 omitidas' in novo and 'partes 8–11 de 12' in novo
+    assert '[jev/recorte]' in novo
+
+
+def test_recorte_deixa_inteira_saida_que_termina_em_falha(jev):
+    _, camadas, _ = jev
+    texto = 'y' * 20000 + '\nTraceback (most recent call last):\n'
+    novo, decisao = camadas.recortar_terminal('cmd | tail', texto, 'pedido longo o bastante aqui')
+    assert novo is None and decisao['motivo'] == 'falha na cauda'

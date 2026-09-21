@@ -17,7 +17,7 @@ from jev_hermes import nucleo  # noqa: E402
 
 SAIDAS_DE_CRON = Path('/root/.hermes/cron/output')
 JOBS = {'arcano-email-fabio': '6b539f9271ed', 'monitor-fabio-whatsapp': '19fa0f01b2c5',
-        'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3'}
+        'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3', 'sono-memoria': '99ce108c2539'}
 CARACTERES_POR_TOKEN = 4
 RELATORIO = nucleo.ESTADO / 'RELATORIO.md'
 

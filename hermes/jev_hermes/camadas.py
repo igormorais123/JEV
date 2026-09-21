@@ -518,3 +518,74 @@ def saida(comando, texto, codigo):
     nota = (f"\n\n[jev/saida] a causa da falha parece estar na parte {c['parte']} de {total} da saída "
             f"(caracteres {a}–{b}), confiança {nucleo.dec(c['confianca'])}. Confira antes de agir.")
     return nota, {**base, 'acao': 'apontar'}
+
+
+# --------------------------------------------------------------------------- recorte
+
+MINIMO_DO_RECORTE = 16000
+MAXIMO_DE_PARTES_DO_RECORTE = 30
+# Sinal de falha no fim da saída. A marca ampla da camada `saida` casaria com qualquer `cat` de
+# código (ValueError, 'not found'...), e aqui o código de saída já é 0; olha-se só a cauda,
+# onde `cmd | tail` com falha deixaria o rastro.
+FALHA_NA_CAUDA = re.compile(r'Traceback|FAILED|fatal:|panic:|npm ERR!|Unhandled|Segmentation fault')
+
+
+def recortar_terminal(comando, texto, pedido):
+    """Numa saída longa e sem erro (cat, grep, log, listagem), mantém só as partes que importam ao
+    pedido vigente, com vizinhas, mais a primeira e a última; as demais viram um marcador que diz
+    como recuperá-las. Saída que termina em falha fica inteira: a camada `saida` cuida dela."""
+    inicio = time.time()
+    base = {'acao': 'nada', 'caracteres': len(texto or '')}
+    if not texto or len(texto) < MINIMO_DO_RECORTE:
+        return None, {**base, 'motivo': 'saída curta'}
+    if not pedido:
+        return None, {**base, 'motivo': 'sem pedido vigente'}
+    if FALHA_NA_CAUDA.search(texto[-TAMANHO_DA_PARTE:]):
+        return None, {**base, 'motivo': 'falha na cauda'}
+    partes = [texto[i:i + TAMANHO_DA_PARTE] for i in range(0, len(texto), TAMANHO_DA_PARTE)]
+    total = len(partes)
+    if total > MAXIMO_DE_PARTES_DO_RECORTE:
+        return None, {**base, 'motivo': 'saída grande demais'}
+    estados = [f'PEDIDO:\n{pedido}\n\nCOMANDO: {(comando or "")[:160]}\nSAIDA (parte {i} de {total}):\n{p}'
+               for i, p in enumerate(partes, 1)]
+    resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-recorte',
+                                                tempo_total=TEMPO_DA_CAMADA, limite=5000)
+    resumo = nucleo.resumo_das_chamadas(resultados)
+    base.update({**resumo, 'partes': total, 'latencia_ms': round((time.time() - inicio) * 1000)})
+    if resumo['falha']:
+        return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
+    classes = [nucleo.escolha(respostas, 'relevancia') for respostas, _ in resultados]
+    fortes = [i for i, (classe, confianca) in enumerate(classes)
+              if classe == 'essencial' and (confianca or 0) >= CONFIANCA_ESSENCIAL]
+    base['essenciais'] = [i + 1 for i in fortes]
+    if not fortes:
+        return None, {**base, 'motivo': 'nenhuma parte essencial'}
+    manter = {0, total - 1}
+    for i in fortes:
+        manter.update(j for j in (i - 1, i, i + 1) if 0 <= j < total)
+    evitados = sum(len(partes[i]) for i in range(total) if i not in manter)
+    base.update({'partes_mantidas': len(manter), 'caracteres_evitados': evitados,
+                 'tokens_evitados_estimados': tokens(evitados)})
+    if evitados / len(texto) < ECONOMIA_MINIMA:
+        return None, {**base, 'motivo': 'economia pequena demais'}
+    pedacos, omitidas = [], []
+
+    def fechar():
+        if omitidas:
+            a, b = omitidas[0], omitidas[-1]
+            ini, fim = a * TAMANHO_DA_PARTE + 1, min(len(texto), (b + 1) * TAMANHO_DA_PARTE)
+            pedacos.append(f'\n[jev: partes {a + 1}–{b + 1} de {total} omitidas (caracteres {ini}–{fim}), '
+                           f'julgadas não essenciais ao pedido]\n')
+            omitidas.clear()
+
+    for i, parte in enumerate(partes):
+        if i in manter:
+            fechar()
+            pedacos.append(parte)
+        else:
+            omitidas.append(i)
+    fechar()
+    nota = (f'\n\n[jev/recorte] Saída de {len(texto)} caracteres reduzida às partes que o Jev julgou essenciais '
+            f'ao pedido vigente, com vizinhas, mais a primeira e a última. Se precisar do trecho omitido, rode '
+            f'o comando de novo filtrando (grep, sed -n, head/tail).')
+    return ''.join(pedacos) + nota, {**base, 'acao': 'recortar'}
