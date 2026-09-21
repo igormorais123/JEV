@@ -93,6 +93,14 @@ leitura a subagente com contrato fechado e faça você o julgamento e a redaçã
   você. Ao criar cron de monitoramento, faça igual: script que coleta, Jev que decide, e
   `{"wakeAgent": false}` na última linha quando não houver nada.
 
+## Ferramentas prontas com o Jev
+
+- **Pendências do WhatsApp pessoal** (quem espera Igor e promessas dele sem entrega, 7 dias):
+  `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.pendencias` → JSON. Use isto para
+  "o que está pendente/quem me espera/o que prometi" em vez de ler as conversas. Leitura apenas.
+- **Painel da manhã** (7h, sem você): agenda + demandas do escritório + pendências do WhatsApp,
+  com uma prioridade e o próximo gesto.
+
 ## Operação
 
 - Situação e gasto: `python3 /root/.hermes/integrations/jev/jev_hermes/nucleo.py`

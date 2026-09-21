@@ -241,3 +241,28 @@ def test_tema_de_pesquisa_sugere_delegar(jev, monkeypatch):
     monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
     nota, decisao = camadas.tema('Levante a jurisprudência recente do STJ sobre dano moral coletivo.')
     assert decisao['acao'] == 'sugerir' and '[jev/economia]' in nota and 'delegate_task' in nota
+
+
+def test_pendencias_acha_quem_espera_e_ignora_social(jev, monkeypatch, tmp_path):
+    nucleo, _, _ = jev
+    import sqlite3, time
+    from jev_hermes import pendencias
+    importlib.reload(pendencias)
+    banco = tmp_path / 'm.sqlite'
+    c = sqlite3.connect(banco)
+    c.execute('CREATE TABLE messages (message_id, chat_id, timestamp, direction, sender_name, chat_name, '
+              'is_group, body, message_type, media_type)')
+    agora = int(time.time())
+    linhas = [('1', 'a@lid', agora - 3600, 'in', 'Ana', 'Ana', 0, 'Pode me mandar o contrato hoje?', 'conversation', None),
+              ('2', 'b@lid', agora - 3600, 'in', 'Beto', 'Beto', 0, 'kkkk boa', 'conversation', None),
+              ('3', 'h@lid', agora - 3600, 'in', 'Hermes', 'Hermes', 0, 'Relatorio pronto', 'conversation', None)]
+    c.executemany('INSERT INTO messages VALUES (?,?,?,?,?,?,?,?,?,?)', linhas)
+    c.commit(); c.close()
+    monkeypatch.setattr(pendencias, 'BANCO', banco)
+    monkeypatch.setattr(pendencias, 'canal_do_hermes', lambda: 'h@lid')
+    t = responder(lambda estado: 'enviar-algo' if 'contrato' in estado else 'social')
+    real = nucleo.perguntar
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+    esperando, _ = pendencias.esperando_igor()
+    assert [e['contato'] for e in esperando] == ['Ana'] and esperando[0]['pedido'] == 'enviar-algo'
+    assert len(t.chamadas) == 2   # o canal do próprio Hermes nem vai ao Jev
