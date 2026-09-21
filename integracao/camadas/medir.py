@@ -127,6 +127,7 @@ def busca(linhas):
             seguidas += Path(a).name in lidos
     return {
         'greps': len(todas),
+        'por_ferramenta': dict(Counter(l.get('ferramenta') or 'Grep' for l in todas)),
         'classificados': sum(1 for l in todas if l.get('chamadas')),
         'sugeridos': len(sugeridas),
         'sugeridos_ativos': sum(1 for l in sugeridas if l.get('modo') == 'ativo'),
@@ -154,6 +155,37 @@ def sentinela(linhas):
         'custo_usd': round(sum(l.get('custo_usd') or 0 for l in todas), 6),
         'chamadas': sum(l.get('chamadas') or 0 for l in todas),
         'latencia_mediana_ms': _mediana([l.get('latencia_ms') for l in inspecionadas]),
+    }
+
+
+def saida(linhas):
+    todas = [l for l in linhas if l['camada'] == 'saida']
+    classificadas = [l for l in todas if l.get('chamadas')]
+    apontadas = [l for l in todas if l.get('acao') == 'apontar']
+    return {
+        'saidas_com_erro': len(todas),
+        'classificadas': len(classificadas),
+        'apontadas': len(apontadas),
+        'partes_por_classe': dict(Counter(
+            c['classe'] for l in classificadas for c in (l.get('classes') or []))),
+        'motivos': dict(Counter(l.get('motivo') for l in todas if l.get('acao') != 'apontar')),
+        'custo_usd': round(sum(l.get('custo_usd') or 0 for l in todas), 6),
+        'chamadas': sum(l.get('chamadas') or 0 for l in todas),
+        'latencia_mediana_ms': _mediana([l.get('latencia_ms') for l in classificadas]),
+    }
+
+
+def verificar(linhas):
+    todas = [l for l in linhas if l['camada'] == 'verificar']
+    return {
+        'usos': len(todas),
+        'afirmacoes': sum(l.get('afirmacoes') or 0 for l in todas),
+        'suportadas': sum(l.get('suportadas') or 0 for l in todas),
+        'contraditas': sum(l.get('contraditas') or 0 for l in todas),
+        'nao_informadas': sum(l.get('nao_informadas') or 0 for l in todas),
+        'nao_verificadas': sum(l.get('nao_verificadas') or 0 for l in todas),
+        'custo_usd': round(sum(l.get('custo_usd') or 0 for l in todas), 6),
+        'chamadas': sum(l.get('chamadas') or 0 for l in todas),
     }
 
 
@@ -200,17 +232,20 @@ def medir():
     linhas = [l for l in _jsonl(REGISTRO)
               if not str(l.get('sessao') or '').startswith(PREFIXO_DE_FUMACA)]
     dado = {'leitura': leitura(linhas), 'busca': busca(linhas), 'sentinela': sentinela(linhas),
-            'ler': ler(linhas), **roteador_e_guarda(),
+            'ler': ler(linhas), 'saida': saida(linhas), 'verificar': verificar(linhas),
+            **roteador_e_guarda(),
             'parametros': {'caracteres_por_token': 4, 'preco_caro_usd_por_milhao': PRECO_CARO_USD_POR_MILHAO,
                            'janela_de_releitura': JANELA_DE_RELEITURA,
                            'janela_de_concordancia': JANELA_DE_CONCORDANCIA}}
     tokens = dado['leitura']['tokens_evitados'] + dado['ler']['tokens_evitados']
-    custo_jev = sum(dado[c]['custo_usd'] for c in ('leitura', 'busca', 'sentinela', 'ler', 'roteador', 'guarda'))
+    custo_jev = sum(dado[c]['custo_usd'] for c in ('leitura', 'busca', 'sentinela', 'ler', 'saida',
+                                                    'verificar', 'roteador', 'guarda'))
     dado['total'] = {
         'tokens_evitados': tokens,
         'valor_evitado_usd_ao_preco_declarado': round(tokens / 1e6 * PRECO_CARO_USD_POR_MILHAO, 4),
         'custo_jev_usd': round(custo_jev, 6),
-        'chamadas_jev': sum(dado[c].get('chamadas') or 0 for c in ('leitura', 'busca', 'sentinela', 'ler')),
+        'chamadas_jev': sum(dado[c].get('chamadas') or 0
+                            for c in ('leitura', 'busca', 'sentinela', 'ler', 'saida', 'verificar')),
         'registros': len(linhas),
         'primeiro_registro': linhas[0]['em'] if linhas else None,
         'ultimo_registro': linhas[-1]['em'] if linhas else None,
@@ -228,6 +263,7 @@ def n(v):
 
 def pagina(d):
     L, B, S, R, T = d['leitura'], d['busca'], d['sentinela'], d['ler'], d['total']
+    SA, V = d['saida'], d['verificar']
     rot, gua = d['roteador'], d['guarda']
     releitura = f"{L['releituras']} de {L['estreitados_ativos']}" if L['estreitados_ativos'] else '—'
     concord = (f"{B['arquivos_no_topo_lidos_depois']} de {B['arquivos_no_topo']}"
@@ -247,8 +283,10 @@ Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ulti
 |---|---|---|---|
 | tema (roteador) | `UserPromptSubmit` | sobre o que é o pedido; sugere a skill | E1, E13: 9 de 23 temas, 0 falsos |
 | leitura | `PreToolUse` em `Read` | que janela do arquivo entra | E16, R18, R20, R26: top-3 mantém a resposta, corta 74% |
-| busca | `PostToolUse` em `Grep` | por qual arquivo começar | E16: 8 de 8 essenciais no topo |
-| sentinela | `PostToolUse` em conteúdo externo | se o texto tenta dar ordens | R23, R27: 95% de detecção, 2,4% de alarme falso |
+| busca | `PostToolUse` em `Grep`, `Glob`, WebSearch, buscas do Gmail, Drive e Agenda | por qual item começar | E1, E16: triagem 92–99%, 8 de 8 essenciais no topo |
+| sentinela | `PostToolUse` em conteúdo externo e no conteúdo colado no prompt | se o texto tenta dar ordens | R23, R27: 95% de detecção, 2,4% de alarme falso |
+| saída | `PostToolUse` em `Bash` com erro e 3 mil caracteres ou mais | em que parte da saída está a causa | não medida no estudo; só aponta com confiança ≥ 0,90 |
+| verificar (skill `/jev-verificar`) | quando o agente chama | se cada afirmação se sustenta na fonte | E3: 95,8% contra 62,5% |
 | guarda (sombra) | `PreToolUse` em `Bash` | se o comando barrado pode passar | R16: 72% → 30% de interrupção, 0 de 12 liberados |
 | ler (skill `/jev-ler`) | quando o agente chama | quais blocos de vários arquivos entram | R18, R20, R26: k = 3 |
 
@@ -280,11 +318,11 @@ Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ulti
 
 Por que não estreitou: {', '.join(f'{k}: {v}' for k, v in sorted(L['motivos'].items(), key=lambda x: -x[1])) or '—'}.
 
-## Busca (`Grep`)
+## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| Greps vistos | {n(B['greps'])} |
+| listagens vistas | {n(B['greps'])} ({', '.join(f'{k}: {v}' for k, v in sorted(B['por_ferramenta'].items())) or '—'}) |
 | classificados (6 ou mais arquivos, com pedido) | {n(B['classificados'])} |
 | com sugestão | {n(B['sugeridos'])} (em modo ativo: {n(B['sugeridos_ativos'])}) |
 | arquivos postos em "leia primeiro" | {n(B['arquivos_no_topo'])} |
@@ -310,6 +348,31 @@ Por que não sugeriu: {', '.join(f'{k}: {v}' for k, v in sorted(B['motivos'].ite
 Uma acusação não é bloqueio: o conteúdo continua no contexto com um aviso. A R23 mede 2,4% de
 alarme falso em texto limpo e 7 de 24 em texto legítimo com palavra-gatilho; a taxa aqui só
 vira medida de acerto quando alguém revisar as acusações.
+
+## Saída de comando (`Bash`, `PowerShell`)
+
+| | valor |
+|---|---|
+| saídas longas com marca de erro | {n(SA['saidas_com_erro'])} |
+| classificadas | {n(SA['classificadas'])} |
+| com causa apontada (confiança ≥ 0,90) | **{n(SA['apontadas'])}** |
+| partes por classe | {', '.join(f'{k}: {v}' for k, v in sorted(SA['partes_por_classe'].items())) or '—'} |
+| latência mediana | {n(SA['latencia_mediana_ms'])} ms |
+| custo | US$ {n(SA['custo_usd'])} em {n(SA['chamadas'])} chamadas |
+
+Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
+a causa real. Por que não apontou: {', '.join(f'{k}: {v}' for k, v in sorted(SA['motivos'].items(), key=lambda x: -x[1])) or '—'}.
+
+## Verificação pela skill (`/jev-verificar`)
+
+| | valor |
+|---|---|
+| usos / afirmações | {n(V['usos'])} / {n(V['afirmacoes'])} |
+| suportadas (confiança ≥ 0,90) | {n(V['suportadas'])} |
+| contraditas | **{n(V['contraditas'])}** |
+| não informadas pela fonte | {n(V['nao_informadas'])} |
+| não verificadas (falha) | {n(V['nao_verificadas'])} |
+| custo | US$ {n(V['custo_usd'])} em {n(V['chamadas'])} chamadas |
 
 ## Leitura seletiva pela skill (`/jev-ler`)
 

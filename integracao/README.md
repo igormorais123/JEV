@@ -11,10 +11,12 @@ lado aberto, registra tudo em `estado/camadas.jsonl` e tem uma medida do estudo 
 |---|---|---|---|
 | tema | `UserPromptSubmit` | sugere a skill pelo assunto do pedido; grava o pedido vigente da sessão | ativo |
 | **leitura** | `PreToolUse` em `Read` | em arquivo com 200 linhas ou mais, classifica blocos de ~60 linhas contra o pedido vigente e limita o `Read` à janela dos blocos essenciais (confiança ≥ 0,90, com um vizinho de cada lado) ou, sem nenhum, dos três do topo; injeta uma nota dizendo o que ficou de fora | ativo |
-| **busca** | `PostToolUse` em `Grep` | com 6 ou mais arquivos, classifica cada um (caminho mais as linhas que casaram) e diz por onde começar; não esconde nada | ativo |
-| **sentinela** | `PostToolUse` em WebFetch, WebSearch, página, e-mail, Drive | pergunta se o texto tenta dar ordens ao sistema; avisa, não bloqueia | ativo |
+| **busca** | `PostToolUse` em `Grep`, `Glob`, WebSearch, buscas do Gmail, Drive e Agenda | com 6 ou mais itens, classifica cada um (arquivo mais as linhas que casaram; ou o registro da listagem) e diz por onde começar; não esconde nada | ativo |
+| **sentinela** | `PostToolUse` em WebFetch, WebSearch, página, e-mail, Drive; e blocos `<pasted_content>` do prompt | pergunta se o texto tenta dar ordens ao sistema; avisa, não bloqueia | ativo |
+| **saída** | `PostToolUse` em `Bash` e `PowerShell` | em saída com 3 mil caracteres ou mais e marca de erro, aponta em que parte está a causa (só com confiança ≥ 0,90; aplicação não medida no estudo) | ativo |
+| verificar | skill `/jev-verificar` | afirmações contra a fonte: suportado, contradito, não informado (E3: 95,8%) | sob demanda |
 | guarda | `PreToolUse` em `Bash` | segunda camada da regra de comando perigoso | sombra (decisão do Igor pendente) |
-| ler | skill `/jev-ler` | o agente passa a pergunta e os arquivos candidatos; volta só os blocos do topo, com número de linha | sob demanda |
+| ler | skill `/jev-ler` | o agente passa a pergunta e os arquivos candidatos, ou `--rg PADRAO`; volta só os blocos do topo, com número de linha | sob demanda |
 
 O que o primeiro teste real mudou no desenho: em código, o Jev **quase nunca** diz
 `irrelevante` com confiança 0,99 (em 14 blocos de `executor/ledger.py`, zero), então uma
@@ -37,6 +39,7 @@ python integracao/instalar.py --ver
 python integracao/instalar.py --instalar --gancho leitura --modo ativo     # ou sombra
 python integracao/instalar.py --instalar --gancho busca --modo ativo
 python integracao/instalar.py --instalar --gancho sentinela --modo ativo
+python integracao/instalar.py --instalar --gancho saida --modo ativo
 python integracao/instalar.py --desinstalar --gancho todos
 ```
 

@@ -69,8 +69,18 @@ GANCHOS = {
         'variavel': 'JEV_BUSCA_MODO',
         'modo_arquivo': RAIZ / 'modo-busca.txt',
         'timeout': 10,
-        'rotulo': 'o Jev está ordenando os arquivos do Grep',
-        'matcher': 'Grep',
+        'rotulo': 'o Jev está ordenando a listagem',
+        'matcher': None,  # preenchido abaixo a partir da lista de ferramentas da camada
+    },
+    'saida': {
+        'evento': 'PostToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_saida.py',
+        'marca': 'jev_saida.py',
+        'variavel': 'JEV_SAIDA_MODO',
+        'modo_arquivo': RAIZ / 'modo-saida.txt',
+        'timeout': 10,
+        'rotulo': 'o Jev está procurando a causa na saída',
+        'matcher': 'Bash|PowerShell',
     },
     'sentinela': {
         'evento': 'PostToolUse',
@@ -84,7 +94,9 @@ GANCHOS = {
     },
 }
 sys.path.insert(0, str(RAIZ))
+from camadas.busca import MATCHER as _MATCHER_BUSCA  # noqa: E402
 from camadas.sentinela import MATCHER as _MATCHER_SENTINELA  # noqa: E402
+GANCHOS['busca']['matcher'] = _MATCHER_BUSCA
 GANCHOS['sentinela']['matcher'] = _MATCHER_SENTINELA
 
 
@@ -120,6 +132,12 @@ def instalar_gancho(caminho, nome, modo, define_ambiente):
     dados = carregar(caminho)
     if instalado_em(dados, nome):
         print(f'  {caminho.name}: {nome} ja instalado')
+        # O matcher pode ter crescido (a camada passou a cobrir mais ferramentas): atualiza.
+        for grupo in dados['hooks'][ganho['evento']]:
+            if any(ganho['marca'] in (g.get('command') or '') for g in grupo.get('hooks') or []):
+                if ganho.get('matcher') and grupo.get('matcher') != ganho['matcher']:
+                    grupo['matcher'] = ganho['matcher']
+                    print(f'  {caminho.name}: matcher de {nome} atualizado')
     else:
         copia = backup(caminho)
         dados.setdefault('hooks', {}).setdefault(ganho['evento'], []).append(entrada_de(nome))

@@ -5,7 +5,7 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
+Registros: **5** (2026-09-20T20:44:33 a 2026-09-20T22:40:02).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -13,8 +13,10 @@ Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
 |---|---|---|---|
 | tema (roteador) | `UserPromptSubmit` | sobre o que é o pedido; sugere a skill | E1, E13: 9 de 23 temas, 0 falsos |
 | leitura | `PreToolUse` em `Read` | que janela do arquivo entra | E16, R18, R20, R26: top-3 mantém a resposta, corta 74% |
-| busca | `PostToolUse` em `Grep` | por qual arquivo começar | E16: 8 de 8 essenciais no topo |
-| sentinela | `PostToolUse` em conteúdo externo | se o texto tenta dar ordens | R23, R27: 95% de detecção, 2,4% de alarme falso |
+| busca | `PostToolUse` em `Grep`, `Glob`, WebSearch, buscas do Gmail, Drive e Agenda | por qual item começar | E1, E16: triagem 92–99%, 8 de 8 essenciais no topo |
+| sentinela | `PostToolUse` em conteúdo externo e no conteúdo colado no prompt | se o texto tenta dar ordens | R23, R27: 95% de detecção, 2,4% de alarme falso |
+| saída | `PostToolUse` em `Bash` com erro e 3 mil caracteres ou mais | em que parte da saída está a causa | não medida no estudo; só aponta com confiança ≥ 0,90 |
+| verificar (skill `/jev-verificar`) | quando o agente chama | se cada afirmação se sustenta na fonte | E3: 95,8% contra 62,5% |
 | guarda (sombra) | `PreToolUse` em `Bash` | se o comando barrado pode passar | R16: 72% → 30% de interrupção, 0 de 12 liberados |
 | ler (skill `/jev-ler`) | quando o agente chama | quais blocos de vários arquivos entram | R18, R20, R26: k = 3 |
 
@@ -22,10 +24,10 @@ Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
 
 | | valor |
 |---|---|
-| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **8.269** |
-| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,124 |
-| chamadas ao Jev pelas camadas | 17 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,002129** |
+| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **9.008** |
+| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,1351 |
+| chamadas ao Jev pelas camadas | 23 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,002564** |
 
 ## Leitura (`Read`)
 
@@ -46,11 +48,11 @@ Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
 
 Por que não estreitou: read ja delimitado: 1.
 
-## Busca (`Grep`)
+## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| Greps vistos | 0 |
+| listagens vistas | 0 (—) |
 | classificados (6 ou mais arquivos, com pedido) | 0 |
 | com sugestão | 0 (em modo ativo: 0) |
 | arquivos postos em "leia primeiro" | 0 |
@@ -77,23 +79,48 @@ Uma acusação não é bloqueio: o conteúdo continua no contexto com um aviso. 
 alarme falso em texto limpo e 7 de 24 em texto legítimo com palavra-gatilho; a taxa aqui só
 vira medida de acerto quando alguém revisar as acusações.
 
+## Saída de comando (`Bash`, `PowerShell`)
+
+| | valor |
+|---|---|
+| saídas longas com marca de erro | 0 |
+| classificadas | 0 |
+| com causa apontada (confiança ≥ 0,90) | **0** |
+| partes por classe | — |
+| latência mediana | — ms |
+| custo | US$ 0 em 0 chamadas |
+
+Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
+a causa real. Por que não apontou: —.
+
+## Verificação pela skill (`/jev-verificar`)
+
+| | valor |
+|---|---|
+| usos / afirmações | 1 / 3 |
+| suportadas (confiança ≥ 0,90) | 1 |
+| contraditas | **1** |
+| não informadas pela fonte | 0 |
+| não verificadas (falha) | 0 |
+| custo | US$ 0,000193 em 3 chamadas |
+
 ## Leitura seletiva pela skill (`/jev-ler`)
 
 | | valor |
 |---|---|
-| usos | 1 (com seleção: 1) |
-| blocos classificados / devolvidos | 3 / 3 |
-| caracteres nos candidatos / devolvidos | 12.973 / 12.973 |
-| tokens evitados (estimados) | **0** |
-| custo | US$ 0,000181 em 3 chamadas |
+| usos | 2 (com seleção: 2) |
+| blocos classificados / devolvidos | 6 / 5 |
+| caracteres nos candidatos / devolvidos | 21.553 / 18.594 |
+| tokens evitados (estimados) | **739** |
+| custo | US$ 0,000353 em 6 chamadas |
 
 ## Tema e guarda (as camadas anteriores)
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 94 (sugeriu skill em 67; 61 do cache) |
+| decisões do roteador de tema em produção | 99 (sugeriu skill em 70; 64 do cache) |
 | latência mediana sem cache | 622 ms |
-| custo do roteador | US$ 0,000963 |
+| custo do roteador | US$ 0,001033 |
 | guarda de comando (sombra) | 10 chamadas, US$ 0,000255 |
 
 ## O que esta página não prova

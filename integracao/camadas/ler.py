@@ -2,6 +2,10 @@
 
     python integracao/camadas/ler.py --pergunta "onde a reserva é liquidada?" \
         executor/ledger.py executor/shared.py:100-220 laboratorio/nucleo.py
+    python integracao/camadas/ler.py --pergunta "onde a reserva é liquidada?" --rg "reserv" --raiz executor
+
+Com `--rg PADRAO`, os candidatos vêm do ripgrep: cada arquivo com casamento vira blocos de
+80 linhas ao redor das linhas casadas (casamentos próximos se fundem), até 32 blocos.
 
 Cada arquivo (ou intervalo `arquivo:inicio-fim`) vira blocos de ~80 linhas; o Jev classifica
 todos contra a pergunta, em paralelo, e o comando imprime só os blocos escolhidos, com número
@@ -56,6 +60,45 @@ def candidatos_de(especificacoes, raiz):
     if not 1 <= len(blocos) <= MAXIMO_DE_BLOCOS:
         raise ValueError(f'{len(blocos)} blocos; o máximo é {MAXIMO_DE_BLOCOS}. '
                          'Passe intervalos menores (arquivo:inicio-fim).')
+    return blocos
+
+
+LINHAS_AO_REDOR = 40
+
+
+def candidatos_do_rg(padrao, raiz, maximo=MAXIMO_DE_BLOCOS):
+    """Blocos ao redor dos casamentos do ripgrep, arquivo a arquivo, na ordem do rg."""
+    import re
+    import subprocess
+    saida = subprocess.run(['rg', '-n', '--no-heading', '--color', 'never', padrao, '.'],
+                           cwd=str(raiz), capture_output=True, text=True, encoding='utf-8',
+                           errors='replace').stdout
+    por_arquivo = {}
+    for linha in saida.splitlines():
+        m = re.match(r'^(?P<arquivo>.+?):(?P<n>\d+):', linha)
+        if m:
+            por_arquivo.setdefault(m['arquivo'], []).append(int(m['n']))
+    blocos = []
+    for arquivo, numeros in por_arquivo.items():
+        caminho = (raiz / arquivo).resolve()
+        try:
+            linhas = caminho.read_text(encoding='utf-8', errors='replace').splitlines(keepends=True)
+        except OSError:
+            continue
+        intervalos = []
+        for n in sorted(numeros):
+            a, b = max(1, n - LINHAS_AO_REDOR), min(len(linhas), n + LINHAS_AO_REDOR)
+            if intervalos and a <= intervalos[-1][1] + 1:
+                intervalos[-1][1] = max(intervalos[-1][1], b)
+            else:
+                intervalos.append([a, b])
+        for a, b in intervalos:
+            blocos.append({'arquivo': str(caminho), 'nome': Path(arquivo).name, 'inicio': a,
+                           'fim': b, 'texto': ''.join(linhas[a-1:b])})
+            if len(blocos) >= maximo:
+                return blocos
+    if not blocos:
+        raise ValueError(f'o rg não achou "{padrao}" em {raiz}')
     return blocos
 
 
@@ -123,16 +166,20 @@ def main(argv=None):
     parser.add_argument('--raiz', default='.', type=Path)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--json', action='store_true')
-    parser.add_argument('arquivos', nargs='+', help='arquivo ou arquivo:inicio-fim')
+    parser.add_argument('--rg', help='padrão do ripgrep; os candidatos vêm dos casamentos')
+    parser.add_argument('arquivos', nargs='*', help='arquivo ou arquivo:inicio-fim')
     args = parser.parse_args(argv)
+    if not args.rg and not args.arquivos:
+        parser.error('passe arquivos ou --rg')
     try:
         sys.stdout.reconfigure(encoding='utf-8')
     except (AttributeError, ValueError):
         pass
-    blocos = candidatos_de(args.arquivos, args.raiz.resolve())
+    raiz = args.raiz.resolve()
+    blocos = candidatos_do_rg(args.rg, raiz) if args.rg else candidatos_de(args.arquivos, raiz)
     decisao = selecionar(args.pergunta, blocos, max(1, args.k))
     nucleo.registrar('ler', **{k: v for k, v in decisao.items() if k != 'classes'},
-                     arquivos=sorted({b['arquivo'] for b in blocos}))
+                     arquivos=sorted({b['arquivo'] for b in blocos}), rg=args.rg)
     imprimir(blocos, decisao, args.json)
     return 0
 

@@ -28,7 +28,7 @@ def transporte_por_trecho(classificador, confianca=0.995, custo=0.00001):
             escolha = 'tenta-instruir' if 'ignore as instruções' in estado else 'nao-tenta'
             return 200, {'answers': {nome: {'type': 'choice', 'choice': escolha, 'confidence': 0.97}},
                          'usage': {'cost': custo}}
-        trecho = estado.split('\n\nARQUIVO', 1)[1]
+        trecho = estado.split('\n\n', 1)[1]  # tudo depois do PEDIDO
         classe, conf = classificador(trecho)
         return 200, {'answers': {nome: {'type': 'choice', 'choice': classe, 'confidence': conf}},
                      'usage': {'cost': custo}}
@@ -116,11 +116,11 @@ class Busca(unittest.TestCase):
         self.assertEqual(d['primeiro'], ['src/0.py', 'src/2.py', 'src/4.py', 'src/6.py'])
         self.assertEqual(d['fora'], ['src/1.py', 'src/3.py', 'src/5.py', 'src/7.py'])
         self.assertEqual(len(d['classes']), 8)
-        self.assertIn('Leia primeiro', busca.nota_para_o_agente(d))
+        self.assertIn('Abra primeiro', busca.nota_para_o_agente(d))
 
     def test_poucos_arquivos_nao_gastam_chamada(self):
         d = busca.analisar('a.py:1:x\nb.py:2:y', 'pergunta longa o bastante', {}, transporte=quebrado)
-        self.assertEqual(d['motivo'], 'poucos arquivos')
+        self.assertEqual(d['motivo'], 'poucos itens')
         self.assertNotIn('chamadas', d)
 
     def test_agrupa_caminho_do_windows_e_modo_so_arquivos(self):
@@ -133,6 +133,80 @@ class Busca(unittest.TestCase):
         self.assertEqual(busca.texto_da_resposta({'file': {'content': 'b'}}), 'b')
         self.assertEqual(busca.texto_da_resposta([{'text': 'c'}, 'd']), 'c\nd')
         self.assertEqual(busca.texto_da_resposta(None), '')
+
+
+class Listagens(unittest.TestCase):
+
+    def test_itens_de_listagem_acha_a_lista_de_registros_no_json(self):
+        resposta = {'content': [{'type': 'text', 'text': json.dumps({'threads': [
+            {'id': f't{i}', 'subject': f'assunto {i}', 'snippet': 'x'} for i in range(7)]})}]}
+        itens = busca.itens_de_listagem(resposta)
+        self.assertEqual(len(itens), 7)
+        self.assertEqual(itens[0][0], 'assunto 0')
+        self.assertIn('"id": "t0"', itens[0][1])
+
+    def test_sugere_para_listagem_do_gmail(self):
+        registros = [{'id': f't{i}', 'subject': 'contrato do cliente' if i % 3 == 0 else 'newsletter'}
+                     for i in range(9)]
+        transporte = transporte_por_trecho(
+            lambda t: ('essencial', 0.95) if 'contrato' in t else ('irrelevante', 0.995))
+        d = busca.analisar(json.dumps({'threads': registros}), 'ache o contrato do cliente',
+                           {'query': 'cliente'}, ferramenta='mcp__claude_ai_Gmail__search_threads',
+                           transporte=transporte)
+        self.assertEqual(d['acao'], 'sugerir')
+        self.assertEqual(len(d['primeiro']), 3)
+        self.assertEqual(len(d['fora']), 6)
+        self.assertIn('Abra primeiro', busca.nota_para_o_agente(d))
+
+    def test_o_matcher_da_busca_cobre_as_ferramentas(self):
+        import re
+        for ferramenta in busca.FERRAMENTAS:
+            self.assertTrue(re.fullmatch(busca.MATCHER, ferramenta), ferramenta)
+
+
+class Saida(unittest.TestCase):
+
+    def transporte(self, url, cab, corpo, timeout):
+        estado = corpo['state']
+        classe = 'causa' if 'ModuleNotFoundError' in estado else 'normal'
+        return 200, {'answers': {'papel': {'type': 'choice', 'choice': classe, 'confidence': 0.96}},
+                     'usage': {'cost': 0.00001}}
+
+    def test_aponta_a_parte_com_a_causa(self):
+        from camadas import saida
+        texto = 'linha normal de log\n' * 200 + 'Traceback (most recent call last):\n' + \
+                'ModuleNotFoundError: No module named x\n' + 'FAILED test_a\n' * 100
+        d = saida.analisar({'stdout': texto}, 'pytest', transporte=self.transporte)
+        self.assertEqual(d['acao'], 'apontar')
+        self.assertEqual(d['causa']['parte'], 2)
+        self.assertIn('parte 2 de', saida.nota_para_o_agente(d))
+
+    def test_saida_curta_ou_sem_erro_nao_gasta(self):
+        from camadas import saida
+        self.assertEqual(saida.analisar('ok\n' * 10, transporte=quebrado)['motivo'], 'saida curta')
+        self.assertEqual(saida.analisar('ok\n' * 2000, transporte=quebrado)['motivo'], 'sem marca de erro')
+
+
+class Verificar(unittest.TestCase):
+
+    def transporte(self, url, cab, corpo, timeout):
+        estado = corpo['state']
+        classe = 'suportado' if 'teto' in estado.split('FONTE:')[0] else 'contradito'
+        return 200, {'answers': {'sustenta': {'type': 'choice', 'choice': classe, 'confidence': 0.93}},
+                     'usage': {'cost': 0.00001}}
+
+    def test_vereditos_por_afirmacao(self):
+        from camadas import verificar
+        r = verificar.verificar(['o teto diário é 0,20', 'o teto é infinito'.replace('teto', 'limite')],
+                                'TETO_DIARIO_USD = 0.20', transporte=self.transporte)
+        self.assertEqual([v['veredito'] for v in r['vereditos']], ['suportado', 'CONTRADITO'])
+        self.assertEqual((r['suportadas'], r['contraditas']), (1, 1))
+
+    def test_falha_nunca_vira_suportado(self):
+        from camadas import verificar
+        r = verificar.verificar(['qualquer coisa'], 'fonte', transporte=quebrado)
+        self.assertEqual(r['vereditos'][0]['veredito'], 'não verificado')
+        self.assertEqual(r['nao_verificadas'], 1)
 
 
 class Sentinela(unittest.TestCase):
@@ -170,6 +244,22 @@ class Ler(unittest.TestCase):
         self.assertEqual(d['acao'], 'selecionar')
         self.assertEqual(d['selecionados'], [0, 5])  # k=1 mais o segundo essencial
         self.assertGreater(d['tokens_evitados_estimados'], 0)
+
+    def test_candidatos_do_rg_fundem_casamentos_proximos(self):
+        import shutil
+        if not shutil.which('rg'):
+            self.skipTest('sem ripgrep')
+        pasta = nucleo.ESTADO / '_teste_rg'
+        pasta.mkdir(exist_ok=True)
+        (pasta / 'a.py').write_text('x = 1\n' * 100 + 'ALVO_A\n' + 'x = 1\n' * 5 + 'ALVO_B\n' + 'x = 1\n' * 300 + 'ALVO_C\n',
+                                    encoding='utf-8')
+        try:
+            blocos = ler.candidatos_do_rg('ALVO_', pasta)
+        finally:
+            shutil.rmtree(pasta)
+        self.assertEqual(len(blocos), 2)  # A e B perto, C longe
+        self.assertLessEqual(blocos[0]['inicio'], 101)
+        self.assertGreaterEqual(blocos[0]['fim'], 107)
 
     def test_falha_devolve_tudo_e_diz_que_falhou(self):
         blocos = [{'arquivo': '/x/a.py', 'nome': 'a.py', 'inicio': 1, 'fim': 2, 'texto': 'x\n'}]

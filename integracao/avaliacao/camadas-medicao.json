@@ -27,6 +27,7 @@
  },
  "busca": {
   "greps": 0,
+  "por_ferramenta": {},
   "classificados": 0,
   "sugeridos": 0,
   "sugeridos_ativos": 0,
@@ -50,21 +51,41 @@
   "latencia_mediana_ms": null
  },
  "ler": {
+  "usos": 2,
+  "selecionaram": 2,
+  "blocos": 6,
+  "blocos_devolvidos": 5,
+  "caracteres_total": 21553,
+  "caracteres_devolvidos": 18594,
+  "tokens_evitados": 739,
+  "custo_usd": 0.000353,
+  "chamadas": 6
+ },
+ "saida": {
+  "saidas_com_erro": 0,
+  "classificadas": 0,
+  "apontadas": 0,
+  "partes_por_classe": {},
+  "motivos": {},
+  "custo_usd": 0,
+  "chamadas": 0,
+  "latencia_mediana_ms": null
+ },
+ "verificar": {
   "usos": 1,
-  "selecionaram": 1,
-  "blocos": 3,
-  "blocos_devolvidos": 3,
-  "caracteres_total": 12973,
-  "caracteres_devolvidos": 12973,
-  "tokens_evitados": 0,
-  "custo_usd": 0.000181,
+  "afirmacoes": 3,
+  "suportadas": 1,
+  "contraditas": 1,
+  "nao_informadas": 0,
+  "nao_verificadas": 0,
+  "custo_usd": 0.000193,
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 94,
-  "sugeriu": 67,
-  "cache": 61,
-  "custo_usd": 0.000963,
+  "decisoes": 99,
+  "sugeriu": 70,
+  "cache": 64,
+  "custo_usd": 0.001033,
   "latencia_mediana_ms": 622
  },
  "guarda": {
@@ -78,12 +99,12 @@
   "janela_de_concordancia": 8
  },
  "total": {
-  "tokens_evitados": 8269,
-  "valor_evitado_usd_ao_preco_declarado": 0.124,
-  "custo_jev_usd": 0.002129,
-  "chamadas_jev": 17,
-  "registros": 3,
+  "tokens_evitados": 9008,
+  "valor_evitado_usd_ao_preco_declarado": 0.1351,
+  "custo_jev_usd": 0.002564,
+  "chamadas_jev": 23,
+  "registros": 5,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-20T22:29:37"
+  "ultimo_registro": "2026-09-20T22:40:02"
  }
 }

@@ -55,6 +55,24 @@ def guardar_estado(sessao, decisao):
         pass
 
 
+def sentinela_do_colado(pedido, sessao, modo):
+    """Devolve a nota do sentinela sobre os blocos <pasted_content>, ou ''."""
+    import re
+    blocos = re.findall(r'<pasted_content[^>]*>(.*?)</pasted_content', pedido, re.S)
+    texto = '\n\n'.join(b.strip() for b in blocos if b.strip())
+    if not texto:
+        return ''
+    try:
+        from camadas import nucleo, sentinela
+        decisao = sentinela.analisar(texto, 'prompt/pasted_content')
+        nucleo.registrar('sentinela', modo=modo, sessao=sessao, **decisao)
+        if decisao['acao'] == 'avisar' and modo == 'ativo':
+            return sentinela.nota_para_o_agente(decisao)
+    except Exception:
+        pass
+    return ''
+
+
 def main():
     try:
         sys.stdin.reconfigure(encoding='utf-8')
@@ -91,6 +109,9 @@ def main():
         return 0
 
     nota = politica.texto_para_o_agente(decisao, modo)
+    # Conteúdo colado no pedido veio de fora: e-mail, página, documento. O sentinela lê só
+    # esses blocos — o pedido do usuário É instrução ao sistema e acusaria sempre.
+    nota = ' '.join(p for p in (nota, sentinela_do_colado(pedido, dados.get('session_id'), modo)) if p)
     if not nota:
         return 0
 
