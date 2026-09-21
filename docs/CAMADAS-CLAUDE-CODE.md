@@ -5,7 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **5** (2026-09-20T20:44:33 a 2026-09-20T22:40:02).
+Registros: **6** (2026-09-20T20:44:33 a 2026-09-20T23:41:50).
+Última rotina automática: nunca rodou.
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -27,7 +28,7 @@ Registros: **5** (2026-09-20T20:44:33 a 2026-09-20T22:40:02).
 | tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **9.008** |
 | o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,1351 |
 | chamadas ao Jev pelas camadas | 23 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,002564** |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,002634** |
 
 ## Leitura (`Read`)
 
@@ -67,7 +68,7 @@ Por que não sugeriu: —.
 
 | | valor |
 |---|---|
-| conteúdos vistos | 0 |
+| conteúdos vistos | 1 |
 | inspecionados (partes de 3.500 caracteres) | 0 (0 partes) |
 | acusados | **0** |
 | por ferramenta | — |
@@ -118,9 +119,9 @@ a causa real. Por que não apontou: —.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 99 (sugeriu skill em 70; 64 do cache) |
-| latência mediana sem cache | 622 ms |
-| custo do roteador | US$ 0,001033 |
+| decisões do roteador de tema em produção | 103 (sugeriu skill em 72; 66 do cache) |
+| latência mediana sem cache | 661 ms |
+| custo do roteador | US$ 0,001103 |
 | guarda de comando (sombra) | 10 chamadas, US$ 0,000255 |
 
 ## O que esta página não prova

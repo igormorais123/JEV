@@ -40,7 +40,7 @@
   "latencia_mediana_ms": null
  },
  "sentinela": {
-  "conteudos": 0,
+  "conteudos": 1,
   "inspecionados": 0,
   "partes": 0,
   "acusados": 0,
@@ -82,11 +82,11 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 99,
-  "sugeriu": 70,
-  "cache": 64,
-  "custo_usd": 0.001033,
-  "latencia_mediana_ms": 622
+  "decisoes": 103,
+  "sugeriu": 72,
+  "cache": 66,
+  "custo_usd": 0.001103,
+  "latencia_mediana_ms": 661
  },
  "guarda": {
   "chamadas": 10,
@@ -101,10 +101,10 @@
  "total": {
   "tokens_evitados": 9008,
   "valor_evitado_usd_ao_preco_declarado": 0.1351,
-  "custo_jev_usd": 0.002564,
+  "custo_jev_usd": 0.002634,
   "chamadas_jev": 23,
-  "registros": 5,
+  "registros": 6,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-20T22:40:02"
+  "ultimo_registro": "2026-09-20T23:41:50"
  }
 }
