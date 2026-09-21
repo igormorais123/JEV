@@ -1,0 +1,1683 @@
+{
+ "casos": 49,
+ "candidatos": 8,
+ "resumo": {
+  "jev_top1": {
+   "acertos": 43,
+   "n": 49,
+   "taxa": 0.8776,
+   "ic95": [
+    0.7576,
+    0.9427
+   ]
+  },
+  "jev_top2": {
+   "acertos": 47,
+   "n": 49,
+   "taxa": 0.9592,
+   "ic95": [
+    0.8629,
+    0.9887
+   ]
+  },
+  "bm25_top1": {
+   "acertos": 34,
+   "n": 49,
+   "taxa": 0.6939,
+   "ic95": [
+    0.5547,
+    0.8048
+   ]
+  },
+  "bm25_top2": {
+   "acertos": 42,
+   "n": 49,
+   "taxa": 0.8571,
+   "ic95": [
+    0.7333,
+    0.929
+   ]
+  },
+  "pareado_top1": {
+   "so_jev": 11,
+   "so_bm25": 2,
+   "p": 0.0225
+  },
+  "topo_sem_testa": {
+   "n": 5,
+   "acertos_top1": 3
+  }
+ },
+ "detalhe": [
+  {
+   "id": "H007",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R15",
+    "R7",
+    "R14",
+    "R1",
+    "R26",
+    "R6",
+    "R0b"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.95,
+   "quantas_testa": 1,
+   "bm25": [
+    "R11",
+    "R6",
+    "R15",
+    "R1",
+    "R26",
+    "R0b",
+    "R7",
+    "R14"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H008",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R16",
+    "R22",
+    "R18",
+    "R1",
+    "R17",
+    "R26",
+    "R7"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.84,
+   "quantas_testa": 1,
+   "bm25": [
+    "R11",
+    "R22",
+    "R1",
+    "R26",
+    "R17",
+    "R18",
+    "R16",
+    "R7"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H009",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R21b",
+    "R16",
+    "R21",
+    "R2",
+    "R26",
+    "R5",
+    "R22"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.72,
+   "quantas_testa": 1,
+   "bm25": [
+    "R21",
+    "R11",
+    "R22",
+    "R5",
+    "R26",
+    "R2",
+    "R16",
+    "R21b"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H010",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R4",
+    "R19",
+    "R22",
+    "R27",
+    "R9",
+    "R21b",
+    "R8"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.89,
+   "quantas_testa": 1,
+   "bm25": [
+    "R11",
+    "R22",
+    "R27",
+    "R19",
+    "R4",
+    "R21b",
+    "R9",
+    "R8"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H018",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R5",
+    "R11",
+    "R12",
+    "R25",
+    "R26",
+    "R18",
+    "R16b",
+    "R21"
+   ],
+   "classe_do_topo": "relacionado",
+   "confianca_do_topo": 0.89,
+   "quantas_testa": 0,
+   "bm25": [
+    "R5",
+    "R11",
+    "R16b",
+    "R26",
+    "R12",
+    "R21",
+    "R25",
+    "R18"
+   ],
+   "jev_top1": false,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H020",
+   "certas": [
+    "R8",
+    "R9"
+   ],
+   "jev": [
+    "R8",
+    "R9",
+    "R24",
+    "R6",
+    "R4",
+    "R23",
+    "R0b",
+    "R20"
+   ],
+   "classe_do_topo": "relacionado",
+   "confianca_do_topo": 0.62,
+   "quantas_testa": 0,
+   "bm25": [
+    "R20",
+    "R0b",
+    "R4",
+    "R6",
+    "R8",
+    "R23",
+    "R9",
+    "R24"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H023",
+   "certas": [
+    "R0"
+   ],
+   "jev": [
+    "R0",
+    "R0b",
+    "R16b",
+    "R2",
+    "R7",
+    "R18",
+    "R12",
+    "R3"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.78,
+   "quantas_testa": 2,
+   "bm25": [
+    "R0",
+    "R0b",
+    "R7",
+    "R18",
+    "R2",
+    "R3",
+    "R16b",
+    "R12"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H024",
+   "certas": [
+    "R0"
+   ],
+   "jev": [
+    "R0",
+    "R7",
+    "R13",
+    "R5",
+    "R21",
+    "R22",
+    "R18",
+    "R15b"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.64,
+   "quantas_testa": 1,
+   "bm25": [
+    "R0",
+    "R15b",
+    "R22",
+    "R18",
+    "R21",
+    "R7",
+    "R5",
+    "R13"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H043",
+   "certas": [
+    "R18",
+    "R20"
+   ],
+   "jev": [
+    "R18",
+    "R20",
+    "R3",
+    "R15",
+    "R16b",
+    "R16",
+    "R10",
+    "R22"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.23,
+   "quantas_testa": 1,
+   "bm25": [
+    "R3",
+    "R18",
+    "R20",
+    "R22",
+    "R16b",
+    "R15",
+    "R16",
+    "R10"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H049",
+   "certas": [
+    "R18",
+    "R20"
+   ],
+   "jev": [
+    "R18",
+    "R26",
+    "R6",
+    "R8",
+    "R10",
+    "R2",
+    "R13",
+    "R20"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.95,
+   "quantas_testa": 2,
+   "bm25": [
+    "R20",
+    "R18",
+    "R26",
+    "R2",
+    "R8",
+    "R6",
+    "R13",
+    "R10"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H050",
+   "certas": [
+    "R18",
+    "R20"
+   ],
+   "jev": [
+    "R20",
+    "R18",
+    "R27",
+    "R15",
+    "R9",
+    "R1",
+    "R13",
+    "R25"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 3,
+   "bm25": [
+    "R18",
+    "R20",
+    "R1",
+    "R9",
+    "R27",
+    "R15",
+    "R13",
+    "R25"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H051",
+   "certas": [
+    "R18",
+    "R20"
+   ],
+   "jev": [
+    "R20",
+    "R18",
+    "R25",
+    "R10",
+    "R23",
+    "R27",
+    "R16",
+    "R4"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.97,
+   "quantas_testa": 2,
+   "bm25": [
+    "R18",
+    "R20",
+    "R4",
+    "R23",
+    "R10",
+    "R16",
+    "R27",
+    "R25"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H052",
+   "certas": [
+    "R18"
+   ],
+   "jev": [
+    "R18",
+    "R17",
+    "R20",
+    "R5",
+    "R13",
+    "R24",
+    "R15",
+    "R0b"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 2,
+   "bm25": [
+    "R18",
+    "R0b",
+    "R17",
+    "R20",
+    "R24",
+    "R15",
+    "R5",
+    "R13"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H053",
+   "certas": [
+    "R18",
+    "R20"
+   ],
+   "jev": [
+    "R18",
+    "R17",
+    "R0",
+    "R0b",
+    "R20",
+    "R14",
+    "R4",
+    "R3"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.91,
+   "quantas_testa": 2,
+   "bm25": [
+    "R18",
+    "R20",
+    "R4",
+    "R17",
+    "R0",
+    "R3",
+    "R0b",
+    "R14"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H057",
+   "certas": [
+    "R20"
+   ],
+   "jev": [
+    "R20",
+    "R17",
+    "R15b",
+    "R27",
+    "R24",
+    "R12",
+    "R2",
+    "R25"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 2,
+   "bm25": [
+    "R20",
+    "R17",
+    "R12",
+    "R2",
+    "R15b",
+    "R27",
+    "R24",
+    "R25"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H058",
+   "certas": [
+    "R20"
+   ],
+   "jev": [
+    "R20",
+    "R7",
+    "R17",
+    "R16b",
+    "R21",
+    "R1",
+    "R12",
+    "R22"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.89,
+   "quantas_testa": 1,
+   "bm25": [
+    "R20",
+    "R7",
+    "R1",
+    "R22",
+    "R17",
+    "R12",
+    "R21",
+    "R16b"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H059",
+   "certas": [
+    "R18"
+   ],
+   "jev": [
+    "R18",
+    "R16",
+    "R21",
+    "R4",
+    "R3",
+    "R27",
+    "R14",
+    "R5"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 1,
+   "bm25": [
+    "R18",
+    "R3",
+    "R4",
+    "R21",
+    "R5",
+    "R16",
+    "R14",
+    "R27"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H061",
+   "certas": [
+    "R15b"
+   ],
+   "jev": [
+    "R9",
+    "R10",
+    "R15b",
+    "R11",
+    "R25",
+    "R16",
+    "R7",
+    "R0"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 3,
+   "bm25": [
+    "R15b",
+    "R9",
+    "R10",
+    "R7",
+    "R0",
+    "R11",
+    "R25",
+    "R16"
+   ],
+   "jev_top1": false,
+   "bm25_top1": true,
+   "jev_top2": false,
+   "bm25_top2": true
+  },
+  {
+   "id": "H062",
+   "certas": [
+    "R15b"
+   ],
+   "jev": [
+    "R15b",
+    "R9",
+    "R16b",
+    "R0b",
+    "R12",
+    "R26",
+    "R8",
+    "R27"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.95,
+   "quantas_testa": 2,
+   "bm25": [
+    "R15b",
+    "R16b",
+    "R0b",
+    "R8",
+    "R9",
+    "R27",
+    "R12",
+    "R26"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H063",
+   "certas": [
+    "R15b"
+   ],
+   "jev": [
+    "R15b",
+    "R23",
+    "R26",
+    "R22",
+    "R16b",
+    "R6",
+    "R19",
+    "R2"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.93,
+   "quantas_testa": 2,
+   "bm25": [
+    "R15b",
+    "R23",
+    "R22",
+    "R16b",
+    "R19",
+    "R26",
+    "R6",
+    "R2"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H064",
+   "certas": [
+    "R15b"
+   ],
+   "jev": [
+    "R15b",
+    "R0",
+    "R14",
+    "R22",
+    "R13",
+    "R19",
+    "R1",
+    "R12"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.9,
+   "quantas_testa": 1,
+   "bm25": [
+    "R15b",
+    "R0",
+    "R13",
+    "R14",
+    "R22",
+    "R1",
+    "R19",
+    "R12"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H065",
+   "certas": [
+    "R15"
+   ],
+   "jev": [
+    "R9",
+    "R15",
+    "R21b",
+    "R14",
+    "R13",
+    "R25",
+    "R19",
+    "R6"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.91,
+   "quantas_testa": 3,
+   "bm25": [
+    "R6",
+    "R15",
+    "R9",
+    "R25",
+    "R21b",
+    "R13",
+    "R14",
+    "R19"
+   ],
+   "jev_top1": false,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H066",
+   "certas": [
+    "R15"
+   ],
+   "jev": [
+    "R9",
+    "R15",
+    "R25",
+    "R11",
+    "R22",
+    "R7",
+    "R5",
+    "R14"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.67,
+   "quantas_testa": 2,
+   "bm25": [
+    "R15",
+    "R22",
+    "R9",
+    "R7",
+    "R25",
+    "R11",
+    "R5",
+    "R14"
+   ],
+   "jev_top1": false,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H067",
+   "certas": [
+    "R8",
+    "R9"
+   ],
+   "jev": [
+    "R9",
+    "R15b",
+    "R21b",
+    "R26",
+    "R27",
+    "R5",
+    "R11",
+    "R8"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.33,
+   "quantas_testa": 1,
+   "bm25": [
+    "R21b",
+    "R8",
+    "R9",
+    "R15b",
+    "R11",
+    "R27",
+    "R5",
+    "R26"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H068",
+   "certas": [
+    "R8",
+    "R9"
+   ],
+   "jev": [
+    "R17",
+    "R9",
+    "R11",
+    "R8",
+    "R0b",
+    "R19",
+    "R7",
+    "R6"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.72,
+   "quantas_testa": 2,
+   "bm25": [
+    "R6",
+    "R17",
+    "R0b",
+    "R7",
+    "R11",
+    "R19",
+    "R9",
+    "R8"
+   ],
+   "jev_top1": false,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H069",
+   "certas": [
+    "R16",
+    "R16b"
+   ],
+   "jev": [
+    "R16b",
+    "R15",
+    "R0b",
+    "R16",
+    "R14",
+    "R8",
+    "R4",
+    "R2"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 1,
+   "bm25": [
+    "R16b",
+    "R16",
+    "R14",
+    "R2",
+    "R0b",
+    "R4",
+    "R8",
+    "R15"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H070",
+   "certas": [
+    "R16"
+   ],
+   "jev": [
+    "R16",
+    "R19",
+    "R10",
+    "R14",
+    "R4",
+    "R6",
+    "R25",
+    "R12"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.57,
+   "quantas_testa": 1,
+   "bm25": [
+    "R16",
+    "R14",
+    "R19",
+    "R4",
+    "R6",
+    "R10",
+    "R25",
+    "R12"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H071",
+   "certas": [
+    "R16",
+    "R16b"
+   ],
+   "jev": [
+    "R16b",
+    "R16",
+    "R15",
+    "R6",
+    "R0",
+    "R5",
+    "R14",
+    "R10"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.92,
+   "quantas_testa": 1,
+   "bm25": [
+    "R16b",
+    "R16",
+    "R0",
+    "R6",
+    "R10",
+    "R15",
+    "R5",
+    "R14"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H073",
+   "certas": [
+    "R8"
+   ],
+   "jev": [
+    "R8",
+    "R5",
+    "R21b",
+    "R16",
+    "R13",
+    "R16b",
+    "R6",
+    "R0b"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 1,
+   "bm25": [
+    "R8",
+    "R0b",
+    "R6",
+    "R5",
+    "R16b",
+    "R21b",
+    "R16",
+    "R13"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H074",
+   "certas": [
+    "R8"
+   ],
+   "jev": [
+    "R8",
+    "R11",
+    "R24",
+    "R19",
+    "R6",
+    "R12",
+    "R22",
+    "R23"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.71,
+   "quantas_testa": 2,
+   "bm25": [
+    "R8",
+    "R6",
+    "R19",
+    "R22",
+    "R23",
+    "R11",
+    "R12",
+    "R24"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H075",
+   "certas": [
+    "R8"
+   ],
+   "jev": [
+    "R8",
+    "R11",
+    "R14",
+    "R21b",
+    "R18",
+    "R27",
+    "R2",
+    "R1"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.74,
+   "quantas_testa": 1,
+   "bm25": [
+    "R8",
+    "R1",
+    "R27",
+    "R11",
+    "R21b",
+    "R2",
+    "R14",
+    "R18"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H076",
+   "certas": [
+    "R8"
+   ],
+   "jev": [
+    "R8",
+    "R0b",
+    "R13",
+    "R21b",
+    "R0",
+    "R1",
+    "R25",
+    "R9"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.61,
+   "quantas_testa": 1,
+   "bm25": [
+    "R8",
+    "R1",
+    "R13",
+    "R21b",
+    "R25",
+    "R0b",
+    "R0",
+    "R9"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H077",
+   "certas": [
+    "R19"
+   ],
+   "jev": [
+    "R19",
+    "R25",
+    "R24",
+    "R9",
+    "R13",
+    "R15",
+    "R7",
+    "R20"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 2,
+   "bm25": [
+    "R19",
+    "R7",
+    "R25",
+    "R9",
+    "R24",
+    "R15",
+    "R13",
+    "R20"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H078",
+   "certas": [
+    "R19"
+   ],
+   "jev": [
+    "R19",
+    "R21",
+    "R12",
+    "R10",
+    "R11",
+    "R18",
+    "R0",
+    "R5"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.82,
+   "quantas_testa": 2,
+   "bm25": [
+    "R21",
+    "R19",
+    "R11",
+    "R12",
+    "R5",
+    "R0",
+    "R10",
+    "R18"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H079",
+   "certas": [
+    "R19"
+   ],
+   "jev": [
+    "R19",
+    "R8",
+    "R16",
+    "R20",
+    "R21",
+    "R15b",
+    "R12",
+    "R10"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 1,
+   "bm25": [
+    "R19",
+    "R21",
+    "R16",
+    "R12",
+    "R8",
+    "R20",
+    "R10",
+    "R15b"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H080",
+   "certas": [
+    "R19"
+   ],
+   "jev": [
+    "R19",
+    "R25",
+    "R22",
+    "R23",
+    "R24",
+    "R2",
+    "R12",
+    "R6"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 1,
+   "bm25": [
+    "R19",
+    "R25",
+    "R6",
+    "R22",
+    "R23",
+    "R2",
+    "R24",
+    "R12"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H082",
+   "certas": [
+    "R19"
+   ],
+   "jev": [
+    "R19",
+    "R21b",
+    "R15",
+    "R22",
+    "R27",
+    "R1",
+    "R3",
+    "R17"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 1,
+   "bm25": [
+    "R19",
+    "R1",
+    "R22",
+    "R27",
+    "R3",
+    "R15",
+    "R21b",
+    "R17"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H086",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R3",
+    "R2",
+    "R6",
+    "R19",
+    "R24",
+    "R8",
+    "R21b"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.96,
+   "quantas_testa": 2,
+   "bm25": [
+    "R3",
+    "R6",
+    "R11",
+    "R19",
+    "R2",
+    "R8",
+    "R21b",
+    "R24"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H088",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R4",
+    "R18",
+    "R24",
+    "R21",
+    "R10",
+    "R0b",
+    "R15b"
+   ],
+   "classe_do_topo": "relacionado",
+   "confianca_do_topo": 0.66,
+   "quantas_testa": 0,
+   "bm25": [
+    "R21",
+    "R15b",
+    "R10",
+    "R11",
+    "R0b",
+    "R4",
+    "R24",
+    "R18"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H089",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R3",
+    "R7",
+    "R21b",
+    "R26",
+    "R22",
+    "R21",
+    "R13"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.71,
+   "quantas_testa": 1,
+   "bm25": [
+    "R3",
+    "R7",
+    "R11",
+    "R21",
+    "R22",
+    "R21b",
+    "R13",
+    "R26"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H090",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R19",
+    "R22",
+    "R4",
+    "R24",
+    "R21",
+    "R16",
+    "R15b"
+   ],
+   "classe_do_topo": "relacionado",
+   "confianca_do_topo": 0.4,
+   "quantas_testa": 0,
+   "bm25": [
+    "R19",
+    "R21",
+    "R22",
+    "R15b",
+    "R16",
+    "R4",
+    "R24",
+    "R11"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": false
+  },
+  {
+   "id": "H091",
+   "certas": [
+    "R12",
+    "R13"
+   ],
+   "jev": [
+    "R12",
+    "R11",
+    "R0b",
+    "R13",
+    "R17",
+    "R16b",
+    "R7",
+    "R20"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.94,
+   "quantas_testa": 2,
+   "bm25": [
+    "R12",
+    "R20",
+    "R17",
+    "R7",
+    "R11",
+    "R0b",
+    "R16b",
+    "R13"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H092",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R11",
+    "R7",
+    "R0b",
+    "R16",
+    "R20",
+    "R15",
+    "R12",
+    "R1"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.51,
+   "quantas_testa": 2,
+   "bm25": [
+    "R7",
+    "R11",
+    "R0b",
+    "R20",
+    "R1",
+    "R15",
+    "R16",
+    "R12"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H093",
+   "certas": [
+    "R11"
+   ],
+   "jev": [
+    "R21b",
+    "R15b",
+    "R0",
+    "R1",
+    "R5",
+    "R0b",
+    "R27",
+    "R11"
+   ],
+   "classe_do_topo": "relacionado",
+   "confianca_do_topo": 0.7,
+   "quantas_testa": 0,
+   "bm25": [
+    "R21b",
+    "R15b",
+    "R11",
+    "R1",
+    "R0",
+    "R27",
+    "R0b",
+    "R5"
+   ],
+   "jev_top1": false,
+   "bm25_top1": false,
+   "jev_top2": false,
+   "bm25_top2": false
+  },
+  {
+   "id": "H095",
+   "certas": [
+    "R21"
+   ],
+   "jev": [
+    "R21",
+    "R24",
+    "R25",
+    "R1",
+    "R21b",
+    "R9",
+    "R27",
+    "R17"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.94,
+   "quantas_testa": 1,
+   "bm25": [
+    "R1",
+    "R21",
+    "R21b",
+    "R25",
+    "R17",
+    "R24",
+    "R9",
+    "R27"
+   ],
+   "jev_top1": true,
+   "bm25_top1": false,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H096",
+   "certas": [
+    "R21"
+   ],
+   "jev": [
+    "R21",
+    "R8",
+    "R21b",
+    "R3",
+    "R20",
+    "R19",
+    "R24",
+    "R1"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 1.0,
+   "quantas_testa": 1,
+   "bm25": [
+    "R21",
+    "R1",
+    "R3",
+    "R20",
+    "R19",
+    "R24",
+    "R8",
+    "R21b"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H097",
+   "certas": [
+    "R21"
+   ],
+   "jev": [
+    "R21",
+    "R18",
+    "R13",
+    "R16b",
+    "R0",
+    "R15",
+    "R17",
+    "R3"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.99,
+   "quantas_testa": 1,
+   "bm25": [
+    "R21",
+    "R3",
+    "R17",
+    "R18",
+    "R0",
+    "R15",
+    "R16b",
+    "R13"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H099",
+   "certas": [
+    "R21"
+   ],
+   "jev": [
+    "R21",
+    "R19",
+    "R11",
+    "R22",
+    "R17",
+    "R3",
+    "R5",
+    "R23"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.93,
+   "quantas_testa": 2,
+   "bm25": [
+    "R21",
+    "R19",
+    "R22",
+    "R11",
+    "R23",
+    "R3",
+    "R17",
+    "R5"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  },
+  {
+   "id": "H100",
+   "certas": [
+    "R21"
+   ],
+   "jev": [
+    "R21",
+    "R18",
+    "R0b",
+    "R15",
+    "R14",
+    "R3",
+    "R9",
+    "R4"
+   ],
+   "classe_do_topo": "testa",
+   "confianca_do_topo": 0.98,
+   "quantas_testa": 2,
+   "bm25": [
+    "R21",
+    "R18",
+    "R14",
+    "R0b",
+    "R9",
+    "R15",
+    "R4",
+    "R3"
+   ],
+   "jev_top1": true,
+   "bm25_top1": true,
+   "jev_top2": true,
+   "bm25_top2": true
+  }
+ ],
+ "custo_usd": 0.0,
+ "chamadas": 388
+}

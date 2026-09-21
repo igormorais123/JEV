@@ -216,7 +216,7 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 | `H044` | Dobrar o estado aproximadamente dobra o custo. | razão > 2 | **FALSIFICADA** | 1,45 |
 | `H045` | Chamadas com duas perguntas não custam o dobro. | razão < 1,5 | **sustentada** | 1,197 |
 | `H046` | O paralelismo de oito linhas não degradou a latência. | razão < 1,5 | **sustentada** | 0,651 |
-| `H047` | A taxa de falha de transporte do estudo inteiro é baixa. | taxa de erro < 0,03 | **sustentada** | 0,0109 |
+| `H047` | A taxa de falha de transporte do estudo inteiro é baixa. | taxa de erro < 0,03 | **sustentada** | 0,0108 |
 | `H048` | O modelo devolve pouquíssimo token de saída: o preço zero de saída não é sorte. | mediana < 200 | **sustentada** | 63 |
 
 - **H037** · fonte: livro-caixa, 3.180 recibos · 22668 chamadas respondidas
@@ -229,7 +229,7 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 - **H044** · fonte: livro-caixa, recibos · quartil superior 34270 nUSD contra inferior 23573 nUSD
 - **H045** · fonte: livro-caixa, recibos · 27847 nUSD contra 23269 nUSD
 - **H046** · fonte: livro-caixa, recibos por consumidor · paralelo 602 ms em 22406 contra sequencial 924 ms em 372
-- **H047** · fonte: livro-caixa, tabela attempts · 266 falhas em 24473 tentativas: success 24043, reserved 164, timeout 119, http_error 107, sent 32, invalid_response 8
+- **H047** · fonte: livro-caixa, tabela attempts · 266 falhas em 24523 tentativas: success 24043, reserved 214, timeout 119, http_error 107, sent 32, invalid_response 8
 - **H048** · fonte: livro-caixa, tabela attempts com uso registrado · mediana sobre 22668 recibos; máximo 135
 
 ### E · Seleção de contexto

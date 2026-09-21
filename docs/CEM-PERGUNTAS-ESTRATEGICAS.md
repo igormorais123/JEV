@@ -6,7 +6,7 @@
 > na hora, a partir dos artefatos e do livro-caixa. Nenhum número desta página foi
 > digitado à mão.
 
-**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 85 alta, 9 média, 6 baixa.
+**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 86 alta, 8 média, 6 baixa.
 
 ## O que separa esta página das cem hipóteses
 
@@ -72,7 +72,7 @@ Dois modos de falha sistemáticos, e os dois são de desenho, não do modelo. Te
 ### Q073 — Qual a taxa de falha de transporte a esperar?
 
 **Decide:** o desenho da repescagem  
-**Responde:** **1,1%** das 24.473 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**Responde:** **1,1%** das 24.523 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 A operação precisa de repescagem, não de tolerância a erro. 2,7% das tentativas falharam, e a maioria é erro do provedor ou estouro do timeout de 45 s — coisas que uma segunda tentativa resolve. O que não pode acontecer é falha virar classe padrão: uma chamada que não voltou não é "informação", é ausência de decisão.
 
@@ -191,7 +191,7 @@ Não neste corpus, e talvez em outro. O k adaptativo economiza 86,2% contra 73,7
 
 **Q017 — Que fração do orçamento do estudo virou chamada inútil?**
 
-266 tentativas de 24.473 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
+266 tentativas de 24.523 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
 
 *Decide quanto reservar de folga no próximo programa. Fonte: dado medido; confiança alta. Vira se a taxa de falha do provedor subir.*
 
@@ -243,37 +243,37 @@ Sobrevive, e a primeira versão desta resposta dizia o contrário por um erro qu
 
 **Q025 — A classe de escape deve ser obrigatória em toda taxonomia?**
 
-Não vale a complexidade hoje. Ela empata com k = 1 fixo em acerto e em economia. Implemente a regra simples; a adaptativa fica como opção para corpus onde a ordenação erre mais, cenário que ainda não foi medido.
+Sim, sempre. Sem classe de escape, dez textos sem pedido nenhum foram classificados como `informacao` nas 10 vezes, com confiança média 0,987 — o único modo de falha medido em que a confiança **não avisa**. Com a classe, acerta 10 de 10. Custa uma linha.
 
-*Decide o padrão de desenho de taxonomia. Fonte: dado medido; confiança média. Vira se aparecer caso em que a classe de escape piora a decisão.*
+*Decide o padrão de desenho de taxonomia. Fonte: dado medido; confiança alta. Vira se aparecer caso em que a classe de escape piora a decisão.*
 
 **Q026 — A instrução de sujeito deve ser padrão em toda classificação de pedido?**
 
-Sim, sempre. Sem classe de escape, dez textos sem pedido nenhum foram classificados como `informacao` nas 10 vezes, com confiança média 0,987 — o único modo de falha medido em que a confiança **não avisa**. Com a classe, acerta 10 de 10. Custa uma linha.
+Sim, padrão. Ela leva 89,4% a 92,9% em atendimento sem piorar nenhum molde, e 78,5% a 90,9% no jurídico com **8 a 0, p = 0,0078**. Custa uma frase e é a única mitigação do estudo que replicou em dois domínios com ganho maior no segundo.
 
 *Decide o texto padrão da instrução. Fonte: dado medido; confiança alta. Vira se a instrução de sujeito piorar alguma família.*
 
 **Q027 — Sob que condição vale decompor a decisão em várias perguntas?**
 
-Sim, padrão. Ela leva 89,4% a 92,9% em atendimento sem piorar nenhum molde, e 78,5% a 90,9% no jurídico com **8 a 0, p = 0,0078**. Custa uma frase e é a única mitigação do estudo que replicou em dois domínios com ganho maior no segundo.
+Só quando a pergunta auxiliar for **mais confiável que a decisão que ela alimenta** — e isso é verificável antes de adotar, medindo a auxiliar sozinha. Na R19 a pergunta de sujeito acertava 68,7% sozinha, abaixo da decisão, e decompor destruiu o molde oposto (86% para 36%). A capacidade de várias perguntas no payload é gratuita e útil — mas para **observar** (ver a sentinela, Q043), não para encadear decisão.
 
 *Decide quando usar múltiplas perguntas no mesmo payload. Fonte: dado medido; confiança alta. Vira se a pergunta auxiliar passar a ser mais confiável que a decisão.*
 
 **Q028 — Mandar de oito em oito é seguro? Para quais classes?**
 
-Só quando a pergunta auxiliar for **mais confiável que a decisão que ela alimenta** — e isso é verificável antes de adotar, medindo a auxiliar sozinha. Na R19 a pergunta de sujeito acertava 68,7% sozinha, abaixo da decisão, e decompor destruiu o molde oposto (86% para 36%). A capacidade de várias perguntas no payload é gratuita e útil — mas para **observar** (ver a sentinela, Q043), não para encadear decisão.
+Sim para a média, não para a classe perigosa. O efeito de posição some ao embaralhar (p = 0,40), mas **3 de 40 casos** mudaram de resposta conforme os vizinhos. Use lote para baratear triagem comum; nunca para `cancelar`.
 
 *Decide se usar lote para baratear. Fonte: dado medido; confiança alta. Vira se o efeito de posição voltar a aparecer com significância.*
 
 **Q029 — Quantas repetições para decisão sem volta?**
 
-Sim para a média, não para a classe perigosa. O efeito de posição some ao embaralhar (p = 0,40), mas **3 de 40 casos** mudaram de resposta conforme os vizinhos. Use lote para baratear triagem comum; nunca para `cancelar`.
+Nenhuma repetição da **mesma** pergunta: em 148 casos com três chamadas idênticas, 0 oscilaram (R24), então repetir é pagar o triplo pela mesma resposta. No E6, de 40 casos repetidos cinco vezes, 1 oscilou. Para decisão sem volta o que vale são **três formulações diferentes** com maioria (Q040), e gente na confirmação.
 
 *Decide a política de repetição na classe irreversível. Fonte: dado medido; confiança alta. Vira se a taxa de oscilação medida subir.*
 
 **Q030 — A política recomendada muda se o canal tiver outra mistura de assuntos?**
 
-Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três estabiliza. O custo é desprezível (Q019) e a alternativa é aceitar que uma decisão sem volta dependa de um sorteio de baixa probabilidade.
+Pouco. Nas quatro distribuições simuladas no E9 a acurácia esperada vai de 95,0% a 97,2% — 2,2 pontos de amplitude, abaixo do gatilho de 5. A política não precisa ser por canal por causa da mistura de assuntos; precisa por causa do domínio (Q052).
 
 *Decide se a configuração precisa ser por canal. Fonte: dado medido; confiança alta. Vira se a variação entre misturas passar de 5 pontos.*
 
@@ -301,7 +301,7 @@ Ao corte de 0,99, **3,6 erros por mil decisões aceitas**, o que ao custo declar
 
 **Q034 — Qual família de erro é a mais cara?**
 
-**Ação atribuída a terceiro** — 75,0% de acerto, a pior família medida. É também a mais cara, porque o erro típico dela é agir sobre o pedido de outra pessoa. A mitigação existe e é uma frase (Q027).
+**Ação atribuída a terceiro** — 75,0% de acerto, a pior família medida. É também a mais cara, porque o erro típico dela é agir sobre o pedido de outra pessoa. A mitigação existe e é uma frase (Q026).
 
 *Decide onde pôr revisão humana. Fonte: dado medido; confiança alta. Vira se outra família passar a concentrar o erro.*
 
@@ -551,7 +551,7 @@ Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5640 ms, e 
 
 **Q073 — Qual a taxa de falha de transporte a esperar?**
 
-**1,1%** das 24.473 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**1,1%** das 24.523 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 *Decide o desenho da repescagem. Fonte: dado medido; confiança alta. Vira se a taxa passar de 3%.*
 

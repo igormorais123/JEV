@@ -1,0 +1,1484 @@
+{
+ "casos": 80,
+ "direta": {
+  "acertos": 69,
+  "n": 80,
+  "taxa": 0.8625,
+  "ic95": [
+   0.7703,
+   0.9215
+  ]
+ },
+ "inversa": {
+  "acertos": 68,
+  "n": 80,
+  "taxa": 0.85,
+  "ic95": [
+   0.7559,
+   0.9121
+  ]
+ },
+ "concordam": 61,
+ "acerto_entre_concordantes": {
+  "acertos": 60,
+  "n": 61,
+  "taxa": 0.9836,
+  "ic95": [
+   0.9128,
+   0.9971
+  ]
+ },
+ "alvo_entre_as_duas_escolhas": {
+  "acertos": 77,
+  "n": 80,
+  "taxa": 0.9625,
+  "ic95": [
+   0.8955,
+   0.9872
+  ]
+ },
+ "chamadas": 160,
+ "custo_usd": 0.066207,
+ "detalhe": [
+  {
+   "caso": 0,
+   "ordem": "direta",
+   "alvo": "executor/publicar_experimentos.py::e2_run",
+   "topo": "executor/publicar_experimentos.py::e2_run",
+   "confianca": 0.99,
+   "custo_usd": 0.00037758,
+   "latencia_ms": 1927.78
+  },
+  {
+   "caso": 0,
+   "ordem": "inversa",
+   "alvo": "executor/publicar_experimentos.py::e2_run",
+   "topo": "executor/publicar_experimentos.py::e2_run",
+   "confianca": 0.99,
+   "custo_usd": 0.000377538,
+   "latencia_ms": 4671.35
+  },
+  {
+   "caso": 1,
+   "ordem": "direta",
+   "alvo": "executor/run_e2_fatorial.py::executar_individual",
+   "topo": "laboratorio/r4_r7_limites.py::executar",
+   "confianca": 0.67,
+   "custo_usd": 0.000347928,
+   "latencia_ms": 1288.57
+  },
+  {
+   "caso": 1,
+   "ordem": "inversa",
+   "alvo": "executor/run_e2_fatorial.py::executar_individual",
+   "topo": "laboratorio/r22_defesas.py::classificar",
+   "confianca": 0.42,
+   "custo_usd": 0.000347886,
+   "latencia_ms": 2148.68
+  },
+  {
+   "caso": 2,
+   "ordem": "direta",
+   "alvo": "executor/publicar_experimentos.py::e10_run",
+   "topo": "executor/publicar_experimentos.py::e10_run",
+   "confianca": 0.98,
+   "custo_usd": 0.000482496,
+   "latencia_ms": 1489.75
+  },
+  {
+   "caso": 2,
+   "ordem": "inversa",
+   "alvo": "executor/publicar_experimentos.py::e10_run",
+   "topo": "executor/publicar_experimentos.py::e10_run",
+   "confianca": 0.99,
+   "custo_usd": 0.000482454,
+   "latencia_ms": 1707.8
+  },
+  {
+   "caso": 3,
+   "ordem": "direta",
+   "alvo": "integracao/jev_router/cliente.py::transporte_http",
+   "topo": "integracao/jev_router/cliente.py::transporte_http",
+   "confianca": 0.99,
+   "custo_usd": 0.000354774,
+   "latencia_ms": 5376.29
+  },
+  {
+   "caso": 3,
+   "ordem": "inversa",
+   "alvo": "integracao/jev_router/cliente.py::transporte_http",
+   "topo": "integracao/jev_router/cliente.py::transporte_http",
+   "confianca": 0.99,
+   "custo_usd": 0.000354774,
+   "latencia_ms": 2368.61
+  },
+  {
+   "caso": 4,
+   "ordem": "direta",
+   "alvo": "executor/run_e9_prevalencia.py::aceitacao",
+   "topo": "executor/run_e9_prevalencia.py::aceitacao",
+   "confianca": 0.99,
+   "custo_usd": 0.000356244,
+   "latencia_ms": 1286.01
+  },
+  {
+   "caso": 4,
+   "ordem": "inversa",
+   "alvo": "executor/run_e9_prevalencia.py::aceitacao",
+   "topo": "executor/run_e9_prevalencia.py::aceitacao",
+   "confianca": 0.97,
+   "custo_usd": 0.000356286,
+   "latencia_ms": 1382.02
+  },
+  {
+   "caso": 5,
+   "ordem": "direta",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "topo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "confianca": 0.94,
+   "custo_usd": 0.000444444,
+   "latencia_ms": 1185.65
+  },
+  {
+   "caso": 5,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "topo": "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+   "confianca": 0.86,
+   "custo_usd": 0.000444444,
+   "latencia_ms": 1201.95
+  },
+  {
+   "caso": 6,
+   "ordem": "direta",
+   "alvo": "executor/publicar_experimentos.py::custo_do_ledger",
+   "topo": "executor/publicar_experimentos.py::custo_do_ledger",
+   "confianca": 0.91,
+   "custo_usd": 0.000380352,
+   "latencia_ms": 1985.42
+  },
+  {
+   "caso": 6,
+   "ordem": "inversa",
+   "alvo": "executor/publicar_experimentos.py::custo_do_ledger",
+   "topo": "executor/publicar_experimentos.py::custo_do_ledger",
+   "confianca": 0.77,
+   "custo_usd": 0.000380394,
+   "latencia_ms": 1249.09
+  },
+  {
+   "caso": 7,
+   "ordem": "direta",
+   "alvo": "executor/run_e16.py::report",
+   "topo": "executor/run_e16.py::report",
+   "confianca": 0.98,
+   "custo_usd": 0.000425712,
+   "latencia_ms": 1264.54
+  },
+  {
+   "caso": 7,
+   "ordem": "inversa",
+   "alvo": "executor/run_e16.py::report",
+   "topo": "executor/run_e16.py::report",
+   "confianca": 0.98,
+   "custo_usd": 0.000425712,
+   "latencia_ms": 2456.18
+  },
+  {
+   "caso": 8,
+   "ordem": "direta",
+   "alvo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "topo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "confianca": 0.92,
+   "custo_usd": 0.000383292,
+   "latencia_ms": 1247.25
+  },
+  {
+   "caso": 8,
+   "ordem": "inversa",
+   "alvo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "topo": "executor/publicar_experimentos.py::tentativas_orfas_run",
+   "confianca": 1.0,
+   "custo_usd": 0.00038325,
+   "latencia_ms": 1466.15
+  },
+  {
+   "caso": 9,
+   "ordem": "direta",
+   "alvo": "executor/run_e2_fatorial.py::pergunta",
+   "topo": "executor/run_e2_fatorial.py::pergunta",
+   "confianca": 0.66,
+   "custo_usd": 0.000420672,
+   "latencia_ms": 1250.15
+  },
+  {
+   "caso": 9,
+   "ordem": "inversa",
+   "alvo": "executor/run_e2_fatorial.py::pergunta",
+   "topo": "executor/run_e12_replicacao.py::braco_jev",
+   "confianca": 0.35,
+   "custo_usd": 0.00042063,
+   "latencia_ms": 3521.38
+  },
+  {
+   "caso": 10,
+   "ordem": "direta",
+   "alvo": "laboratorio/r15_adversario_externo.py::tarefas",
+   "topo": "laboratorio/r42_r44_quarta_leva.py::rodar_r43",
+   "confianca": 0.37,
+   "custo_usd": 0.000401352,
+   "latencia_ms": 2769.14
+  },
+  {
+   "caso": 10,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r15_adversario_externo.py::tarefas",
+   "topo": "laboratorio/r15_adversario_externo.py::tarefas",
+   "confianca": 0.91,
+   "custo_usd": 0.000401394,
+   "latencia_ms": 1749.3
+  },
+  {
+   "caso": 11,
+   "ordem": "direta",
+   "alvo": "integracao/jev_router/politica.py::decidir",
+   "topo": "integracao/jev_router/politica.py::decidir",
+   "confianca": 1.0,
+   "custo_usd": 0.000407736,
+   "latencia_ms": 2071.18
+  },
+  {
+   "caso": 11,
+   "ordem": "inversa",
+   "alvo": "integracao/jev_router/politica.py::decidir",
+   "topo": "integracao/jev_router/politica.py::decidir",
+   "confianca": 0.99,
+   "custo_usd": 0.000407736,
+   "latencia_ms": 1260.15
+  },
+  {
+   "caso": 12,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/rodar.py::comparar",
+   "topo": "integracao/avaliacao/rodar.py::comparar",
+   "confianca": 0.92,
+   "custo_usd": 0.000429156,
+   "latencia_ms": 2052.54
+  },
+  {
+   "caso": 12,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/rodar.py::comparar",
+   "topo": "integracao/avaliacao/rodar.py::comparar",
+   "confianca": 0.98,
+   "custo_usd": 0.000429198,
+   "latencia_ms": 2058.39
+  },
+  {
+   "caso": 13,
+   "ordem": "direta",
+   "alvo": "executor/run_e2_fatorial.py::condicoes",
+   "topo": "executor/run_e2_fatorial.py::condicoes",
+   "confianca": 0.99,
+   "custo_usd": 0.000388752,
+   "latencia_ms": 1225.05
+  },
+  {
+   "caso": 13,
+   "ordem": "inversa",
+   "alvo": "executor/run_e2_fatorial.py::condicoes",
+   "topo": "executor/run_e2_fatorial.py::condicoes",
+   "confianca": 1.0,
+   "custo_usd": 0.000388752,
+   "latencia_ms": 1793.24
+  },
+  {
+   "caso": 14,
+   "ordem": "direta",
+   "alvo": "executor/run_e12_replicacao.py::braco_jev",
+   "topo": "integracao/avaliacao/skills.py::main",
+   "confianca": 0.72,
+   "custo_usd": 0.000422352,
+   "latencia_ms": 1278.11
+  },
+  {
+   "caso": 14,
+   "ordem": "inversa",
+   "alvo": "executor/run_e12_replicacao.py::braco_jev",
+   "topo": "executor/run_e12_replicacao.py::braco_jev",
+   "confianca": 0.57,
+   "custo_usd": 0.000422394,
+   "latencia_ms": 1297.0
+  },
+  {
+   "caso": 15,
+   "ordem": "direta",
+   "alvo": "laboratorio/r15_adversario_externo.py::http",
+   "topo": "laboratorio/r15_adversario_externo.py::http",
+   "confianca": 0.98,
+   "custo_usd": 0.000520506,
+   "latencia_ms": 1645.68
+  },
+  {
+   "caso": 15,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r15_adversario_externo.py::http",
+   "topo": "laboratorio/r15_adversario_externo.py::http",
+   "confianca": 0.98,
+   "custo_usd": 0.000520506,
+   "latencia_ms": 4009.63
+  },
+  {
+   "caso": 16,
+   "ordem": "direta",
+   "alvo": "executor/publicar_experimentos.py::e6_run",
+   "topo": "executor/publicar_experimentos.py::e6_run",
+   "confianca": 0.99,
+   "custo_usd": 0.000378504,
+   "latencia_ms": 1409.62
+  },
+  {
+   "caso": 16,
+   "ordem": "inversa",
+   "alvo": "executor/publicar_experimentos.py::e6_run",
+   "topo": "executor/publicar_experimentos.py::e6_run",
+   "confianca": 0.99,
+   "custo_usd": 0.000378504,
+   "latencia_ms": 2497.67
+  },
+  {
+   "caso": 17,
+   "ordem": "direta",
+   "alvo": "executor/shared.py::strict_answers",
+   "topo": "executor/shared.py::strict_answers",
+   "confianca": 0.99,
+   "custo_usd": 0.00035406,
+   "latencia_ms": 1383.47
+  },
+  {
+   "caso": 17,
+   "ordem": "inversa",
+   "alvo": "executor/shared.py::strict_answers",
+   "topo": "executor/shared.py::strict_answers",
+   "confianca": 0.99,
+   "custo_usd": 0.000354018,
+   "latencia_ms": 2478.21
+  },
+  {
+   "caso": 18,
+   "ordem": "direta",
+   "alvo": "integracao/jev_router/roteador.py::classificar",
+   "topo": "integracao/jev_router/roteador.py::classificar",
+   "confianca": 0.98,
+   "custo_usd": 0.000489552,
+   "latencia_ms": 1452.69
+  },
+  {
+   "caso": 18,
+   "ordem": "inversa",
+   "alvo": "integracao/jev_router/roteador.py::classificar",
+   "topo": "integracao/jev_router/roteador.py::classificar",
+   "confianca": 0.97,
+   "custo_usd": 0.000489594,
+   "latencia_ms": 1851.4
+  },
+  {
+   "caso": 19,
+   "ordem": "direta",
+   "alvo": "laboratorio/r11_extremos.py::resumo",
+   "topo": "laboratorio/r11_extremos.py::resumo",
+   "confianca": 0.41,
+   "custo_usd": 0.00035805,
+   "latencia_ms": 1811.68
+  },
+  {
+   "caso": 19,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r11_extremos.py::resumo",
+   "topo": "laboratorio/r11_extremos.py::resumo",
+   "confianca": 0.85,
+   "custo_usd": 0.000358008,
+   "latencia_ms": 1321.84
+  },
+  {
+   "caso": 20,
+   "ordem": "direta",
+   "alvo": "integracao/instalar.py::main",
+   "topo": "integracao/instalar.py::main",
+   "confianca": 1.0,
+   "custo_usd": 0.000432978,
+   "latencia_ms": 5691.67
+  },
+  {
+   "caso": 20,
+   "ordem": "inversa",
+   "alvo": "integracao/instalar.py::main",
+   "topo": "integracao/instalar.py::main",
+   "confianca": 1.0,
+   "custo_usd": 0.000432936,
+   "latencia_ms": 1250.92
+  },
+  {
+   "caso": 21,
+   "ordem": "direta",
+   "alvo": "laboratorio/r4_r7_limites.py::tarefas_r4",
+   "topo": "laboratorio/r4_r7_limites.py::tarefas_r4",
+   "confianca": 1.0,
+   "custo_usd": 0.000432852,
+   "latencia_ms": 2319.66
+  },
+  {
+   "caso": 21,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r4_r7_limites.py::tarefas_r4",
+   "topo": "laboratorio/r4_r7_limites.py::tarefas_r4",
+   "confianca": 1.0,
+   "custo_usd": 0.00043281,
+   "latencia_ms": 1264.06
+  },
+  {
+   "caso": 22,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "confianca": 0.99,
+   "custo_usd": 0.00048216,
+   "latencia_ms": 1281.13
+  },
+  {
+   "caso": 22,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "confianca": 1.0,
+   "custo_usd": 0.000482202,
+   "latencia_ms": 1268.8
+  },
+  {
+   "caso": 23,
+   "ordem": "direta",
+   "alvo": "executor/run_e12_replicacao.py::executar_todos",
+   "topo": "executor/run_e12_replicacao.py::executar_todos",
+   "confianca": 0.86,
+   "custo_usd": 0.000382998,
+   "latencia_ms": 2882.77
+  },
+  {
+   "caso": 23,
+   "ordem": "inversa",
+   "alvo": "executor/run_e12_replicacao.py::executar_todos",
+   "topo": "executor/run_e2_fatorial.py::main",
+   "confianca": 0.52,
+   "custo_usd": 0.000382956,
+   "latencia_ms": 1267.9
+  },
+  {
+   "caso": 24,
+   "ordem": "direta",
+   "alvo": "laboratorio/r1_r3_estresse.py::acuracia",
+   "topo": "laboratorio/r8_r9_adversarial.py::resumo",
+   "confianca": 0.78,
+   "custo_usd": 0.000361116,
+   "latencia_ms": 1519.49
+  },
+  {
+   "caso": 24,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r1_r3_estresse.py::acuracia",
+   "topo": "laboratorio/r1_r3_estresse.py::acuracia",
+   "confianca": 0.73,
+   "custo_usd": 0.000361116,
+   "latencia_ms": 1281.53
+  },
+  {
+   "caso": 25,
+   "ordem": "direta",
+   "alvo": "laboratorio/r20_k_adaptativo.py::k_adaptativo",
+   "topo": "laboratorio/r20_k_adaptativo.py::k_adaptativo",
+   "confianca": 1.0,
+   "custo_usd": 0.000456582,
+   "latencia_ms": 1608.82
+  },
+  {
+   "caso": 25,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r20_k_adaptativo.py::k_adaptativo",
+   "topo": "laboratorio/r20_k_adaptativo.py::k_adaptativo",
+   "confianca": 0.99,
+   "custo_usd": 0.000456624,
+   "latencia_ms": 1328.83
+  },
+  {
+   "caso": 26,
+   "ordem": "direta",
+   "alvo": "executor/probe_contract.py::send",
+   "topo": "executor/probe_contract.py::send",
+   "confianca": 0.99,
+   "custo_usd": 0.000463764,
+   "latencia_ms": 1356.1
+  },
+  {
+   "caso": 26,
+   "ordem": "inversa",
+   "alvo": "executor/probe_contract.py::send",
+   "topo": "executor/probe_contract.py::send",
+   "confianca": 0.99,
+   "custo_usd": 0.000463764,
+   "latencia_ms": 1426.3
+  },
+  {
+   "caso": 27,
+   "ordem": "direta",
+   "alvo": "laboratorio/r1_r3_estresse.py::executar",
+   "topo": "laboratorio/r1_r3_estresse.py::executar",
+   "confianca": 0.97,
+   "custo_usd": 0.000470232,
+   "latencia_ms": 1431.43
+  },
+  {
+   "caso": 27,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r1_r3_estresse.py::executar",
+   "topo": "laboratorio/r1_r3_estresse.py::executar",
+   "confianca": 0.89,
+   "custo_usd": 0.000470232,
+   "latencia_ms": 1419.99
+  },
+  {
+   "caso": 28,
+   "ordem": "direta",
+   "alvo": "executor/run_canaries.py::prepare",
+   "topo": "executor/run_canaries.py::prepare",
+   "confianca": 0.99,
+   "custo_usd": 0.00042483,
+   "latencia_ms": 6259.25
+  },
+  {
+   "caso": 28,
+   "ordem": "inversa",
+   "alvo": "executor/run_canaries.py::prepare",
+   "topo": "executor/run_canaries.py::prepare",
+   "confianca": 1.0,
+   "custo_usd": 0.00042483,
+   "latencia_ms": 3965.55
+  },
+  {
+   "caso": 29,
+   "ordem": "direta",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "topo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "confianca": 0.89,
+   "custo_usd": 0.00043911,
+   "latencia_ms": 1402.33
+  },
+  {
+   "caso": 29,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "topo": "laboratorio/r17_economia_de_contexto.py::montar",
+   "confianca": 0.96,
+   "custo_usd": 0.000439068,
+   "latencia_ms": 1395.71
+  },
+  {
+   "caso": 30,
+   "ordem": "direta",
+   "alvo": "executor/placar.py::texto_da_replicacao",
+   "topo": "executor/placar.py::texto_da_replicacao",
+   "confianca": 0.92,
+   "custo_usd": 0.000364938,
+   "latencia_ms": 3333.81
+  },
+  {
+   "caso": 30,
+   "ordem": "inversa",
+   "alvo": "executor/placar.py::texto_da_replicacao",
+   "topo": "executor/placar.py::texto_da_replicacao",
+   "confianca": 0.99,
+   "custo_usd": 0.000364938,
+   "latencia_ms": 1407.81
+  },
+  {
+   "caso": 31,
+   "ordem": "direta",
+   "alvo": "integracao/hooks/jev_guarda_comando.py::avaliar",
+   "topo": "integracao/hooks/jev_guarda_comando.py::avaliar",
+   "confianca": 0.99,
+   "custo_usd": 0.00040236,
+   "latencia_ms": 1421.2
+  },
+  {
+   "caso": 31,
+   "ordem": "inversa",
+   "alvo": "integracao/hooks/jev_guarda_comando.py::avaliar",
+   "topo": "integracao/hooks/jev_guarda_comando.py::avaliar",
+   "confianca": 0.48,
+   "custo_usd": 0.000402402,
+   "latencia_ms": 1402.29
+  },
+  {
+   "caso": 32,
+   "ordem": "direta",
+   "alvo": "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+   "topo": "executor/run_e2_fatorial.py::executar_lote",
+   "confianca": 0.74,
+   "custo_usd": 0.00039606,
+   "latencia_ms": 1408.59
+  },
+  {
+   "caso": 32,
+   "ordem": "inversa",
+   "alvo": "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+   "topo": "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+   "confianca": 0.62,
+   "custo_usd": 0.000396102,
+   "latencia_ms": 1642.42
+  },
+  {
+   "caso": 33,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+   "topo": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+   "confianca": 1.0,
+   "custo_usd": 0.000342426,
+   "latencia_ms": 2995.98
+  },
+  {
+   "caso": 33,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+   "topo": "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+   "confianca": 1.0,
+   "custo_usd": 0.000342384,
+   "latencia_ms": 1348.48
+  },
+  {
+   "caso": 34,
+   "ordem": "direta",
+   "alvo": "executor/publish_simple_round.py::save",
+   "topo": "executor/publish_simple_round.py::save",
+   "confianca": 0.94,
+   "custo_usd": 0.000403536,
+   "latencia_ms": 1908.29
+  },
+  {
+   "caso": 34,
+   "ordem": "inversa",
+   "alvo": "executor/publish_simple_round.py::save",
+   "topo": "executor/publish_simple_round.py::save",
+   "confianca": 0.95,
+   "custo_usd": 0.000403536,
+   "latencia_ms": 1927.2
+  },
+  {
+   "caso": 35,
+   "ordem": "direta",
+   "alvo": "executor/run_e1_triagem.py::macro_f1",
+   "topo": "executor/run_e1_triagem.py::macro_f1",
+   "confianca": 0.98,
+   "custo_usd": 0.000396942,
+   "latencia_ms": 2036.85
+  },
+  {
+   "caso": 35,
+   "ordem": "inversa",
+   "alvo": "executor/run_e1_triagem.py::macro_f1",
+   "topo": "executor/run_e1_triagem.py::macro_f1",
+   "confianca": 0.99,
+   "custo_usd": 0.000396942,
+   "latencia_ms": 3178.41
+  },
+  {
+   "caso": 36,
+   "ordem": "direta",
+   "alvo": "executor/erro_grave.py::medir",
+   "topo": "executor/erro_grave.py::medir",
+   "confianca": 0.97,
+   "custo_usd": 0.00037086,
+   "latencia_ms": 2073.4
+  },
+  {
+   "caso": 36,
+   "ordem": "inversa",
+   "alvo": "executor/erro_grave.py::medir",
+   "topo": "executor/erro_grave.py::medir",
+   "confianca": 0.93,
+   "custo_usd": 0.000370818,
+   "latencia_ms": 1486.59
+  },
+  {
+   "caso": 37,
+   "ordem": "direta",
+   "alvo": "executor/simple_round.py::main",
+   "topo": "executor/simple_round.py::main",
+   "confianca": 0.45,
+   "custo_usd": 0.000339066,
+   "latencia_ms": 1486.25
+  },
+  {
+   "caso": 37,
+   "ordem": "inversa",
+   "alvo": "executor/simple_round.py::main",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::main",
+   "confianca": 0.33,
+   "custo_usd": 0.000339066,
+   "latencia_ms": 3144.95
+  },
+  {
+   "caso": 38,
+   "ordem": "direta",
+   "alvo": "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+   "topo": "executor/placar.py::gabaritos_do_conjunto",
+   "confianca": 0.46,
+   "custo_usd": 0.000418236,
+   "latencia_ms": 1518.7
+  },
+  {
+   "caso": 38,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+   "topo": "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+   "confianca": 0.64,
+   "custo_usd": 0.000418278,
+   "latencia_ms": 1438.21
+  },
+  {
+   "caso": 39,
+   "ordem": "direta",
+   "alvo": "laboratorio/r0_calibracao.py::calibrar",
+   "topo": "laboratorio/r0_calibracao.py::calibrar",
+   "confianca": 0.98,
+   "custo_usd": 0.000323442,
+   "latencia_ms": 1419.0
+  },
+  {
+   "caso": 39,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r0_calibracao.py::calibrar",
+   "topo": "laboratorio/r0_calibracao.py::calibrar",
+   "confianca": 0.98,
+   "custo_usd": 0.000323484,
+   "latencia_ms": 1356.31
+  },
+  {
+   "caso": 40,
+   "ordem": "direta",
+   "alvo": "executor/placar.py::pendencias",
+   "topo": "nenhum",
+   "confianca": 0.37,
+   "custo_usd": 0.000274134,
+   "latencia_ms": 1969.77
+  },
+  {
+   "caso": 40,
+   "ordem": "inversa",
+   "alvo": "executor/placar.py::pendencias",
+   "topo": "executor/placar.py::pendencias",
+   "confianca": 0.26,
+   "custo_usd": 0.000274134,
+   "latencia_ms": 1364.07
+  },
+  {
+   "caso": 41,
+   "ordem": "direta",
+   "alvo": "lab/server.py::validate_run_update",
+   "topo": "lab/server.py::validate_run_update",
+   "confianca": 1.0,
+   "custo_usd": 0.000436716,
+   "latencia_ms": 1367.6
+  },
+  {
+   "caso": 41,
+   "ordem": "inversa",
+   "alvo": "lab/server.py::validate_run_update",
+   "topo": "lab/server.py::validate_run_update",
+   "confianca": 1.0,
+   "custo_usd": 0.000436758,
+   "latencia_ms": 1622.65
+  },
+  {
+   "caso": 42,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::texto",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::texto",
+   "confianca": 0.91,
+   "custo_usd": 0.000408954,
+   "latencia_ms": 2991.72
+  },
+  {
+   "caso": 42,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::texto",
+   "topo": "integracao/camadas/nucleo.py::_pedido_do_transcript",
+   "confianca": 0.95,
+   "custo_usd": 0.000408954,
+   "latencia_ms": 1387.04
+  },
+  {
+   "caso": 43,
+   "ordem": "direta",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "topo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "confianca": 0.86,
+   "custo_usd": 0.000483126,
+   "latencia_ms": 1339.38
+  },
+  {
+   "caso": 43,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "topo": "laboratorio/r17_economia_de_contexto.py::pool",
+   "confianca": 0.93,
+   "custo_usd": 0.000483126,
+   "latencia_ms": 1359.52
+  },
+  {
+   "caso": 44,
+   "ordem": "direta",
+   "alvo": "laboratorio/nucleo.py::perguntar",
+   "topo": "laboratorio/nucleo.py::perguntar",
+   "confianca": 0.99,
+   "custo_usd": 0.000470694,
+   "latencia_ms": 1367.87
+  },
+  {
+   "caso": 44,
+   "ordem": "inversa",
+   "alvo": "laboratorio/nucleo.py::perguntar",
+   "topo": "laboratorio/nucleo.py::perguntar",
+   "confianca": 1.0,
+   "custo_usd": 0.000470694,
+   "latencia_ms": 2520.62
+  },
+  {
+   "caso": 45,
+   "ordem": "direta",
+   "alvo": "integracao/jev_router/politica.py::texto_para_o_agente",
+   "topo": "integracao/jev_router/politica.py::texto_para_o_agente",
+   "confianca": 0.93,
+   "custo_usd": 0.000361998,
+   "latencia_ms": 1628.41
+  },
+  {
+   "caso": 45,
+   "ordem": "inversa",
+   "alvo": "integracao/jev_router/politica.py::texto_para_o_agente",
+   "topo": "integracao/jev_router/politica.py::texto_para_o_agente",
+   "confianca": 0.61,
+   "custo_usd": 0.00036204,
+   "latencia_ms": 3287.93
+  },
+  {
+   "caso": 46,
+   "ordem": "direta",
+   "alvo": "integracao/instalar.py::desinstalar",
+   "topo": "integracao/instalar.py::desinstalar",
+   "confianca": 1.0,
+   "custo_usd": 0.000444822,
+   "latencia_ms": 1418.02
+  },
+  {
+   "caso": 46,
+   "ordem": "inversa",
+   "alvo": "integracao/instalar.py::desinstalar",
+   "topo": "integracao/instalar.py::desinstalar",
+   "confianca": 0.99,
+   "custo_usd": 0.000444864,
+   "latencia_ms": 1437.86
+  },
+  {
+   "caso": 47,
+   "ordem": "direta",
+   "alvo": "executor/run_e8_anotador.py::kappa_cohen",
+   "topo": "executor/run_e8_anotador.py::kappa_cohen",
+   "confianca": 0.94,
+   "custo_usd": 0.00036183,
+   "latencia_ms": 4972.39
+  },
+  {
+   "caso": 47,
+   "ordem": "inversa",
+   "alvo": "executor/run_e8_anotador.py::kappa_cohen",
+   "topo": "executor/run_e8_anotador.py::kappa_cohen",
+   "confianca": 0.85,
+   "custo_usd": 0.00036183,
+   "latencia_ms": 2738.73
+  },
+  {
+   "caso": 48,
+   "ordem": "direta",
+   "alvo": "laboratorio/r10_injecao_comparada.py::tarefas",
+   "topo": "laboratorio/r10_injecao_comparada.py::tarefas",
+   "confianca": 1.0,
+   "custo_usd": 0.000405006,
+   "latencia_ms": 1384.58
+  },
+  {
+   "caso": 48,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r10_injecao_comparada.py::tarefas",
+   "topo": "laboratorio/r10_injecao_comparada.py::tarefas",
+   "confianca": 1.0,
+   "custo_usd": 0.000405006,
+   "latencia_ms": 3318.66
+  },
+  {
+   "caso": 49,
+   "ordem": "direta",
+   "alvo": "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+   "topo": "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+   "confianca": 0.91,
+   "custo_usd": 0.000389424,
+   "latencia_ms": 1331.09
+  },
+  {
+   "caso": 49,
+   "ordem": "inversa",
+   "alvo": "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+   "topo": "laboratorio/auditoria.py::wilson",
+   "confianca": 0.67,
+   "custo_usd": 0.000389424,
+   "latencia_ms": 1316.81
+  },
+  {
+   "caso": 50,
+   "ordem": "direta",
+   "alvo": "executor/run_e3_evidencia.py::regra_simples",
+   "topo": "executor/run_e3_evidencia.py::regra_simples",
+   "confianca": 1.0,
+   "custo_usd": 0.000323106,
+   "latencia_ms": 1642.62
+  },
+  {
+   "caso": 50,
+   "ordem": "inversa",
+   "alvo": "executor/run_e3_evidencia.py::regra_simples",
+   "topo": "executor/run_e3_evidencia.py::regra_simples",
+   "confianca": 1.0,
+   "custo_usd": 0.000323064,
+   "latencia_ms": 1373.89
+  },
+  {
+   "caso": 51,
+   "ordem": "direta",
+   "alvo": "executor/run_e2_fatorial.py::resumir",
+   "topo": "executor/run_e2_fatorial.py::resumir",
+   "confianca": 0.92,
+   "custo_usd": 0.0003444,
+   "latencia_ms": 1366.33
+  },
+  {
+   "caso": 51,
+   "ordem": "inversa",
+   "alvo": "executor/run_e2_fatorial.py::resumir",
+   "topo": "executor/run_e2_fatorial.py::resumir",
+   "confianca": 0.96,
+   "custo_usd": 0.0003444,
+   "latencia_ms": 3408.2
+  },
+  {
+   "caso": 52,
+   "ordem": "direta",
+   "alvo": "integracao/instalar.py::desinstalar_gancho",
+   "topo": "integracao/instalar.py::desinstalar_gancho",
+   "confianca": 0.77,
+   "custo_usd": 0.00041454,
+   "latencia_ms": 4729.3
+  },
+  {
+   "caso": 52,
+   "ordem": "inversa",
+   "alvo": "integracao/instalar.py::desinstalar_gancho",
+   "topo": "integracao/instalar.py::desinstalar_gancho",
+   "confianca": 0.74,
+   "custo_usd": 0.00041454,
+   "latencia_ms": 5282.18
+  },
+  {
+   "caso": 53,
+   "ordem": "direta",
+   "alvo": "laboratorio/r1_r3_estresse.py::condicoes",
+   "topo": "laboratorio/r1_r3_estresse.py::condicoes",
+   "confianca": 0.99,
+   "custo_usd": 0.00049686,
+   "latencia_ms": 1400.72
+  },
+  {
+   "caso": 53,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r1_r3_estresse.py::condicoes",
+   "topo": "laboratorio/r1_r3_estresse.py::condicoes",
+   "confianca": 0.99,
+   "custo_usd": 0.00049686,
+   "latencia_ms": 1981.42
+  },
+  {
+   "caso": 54,
+   "ordem": "direta",
+   "alvo": "laboratorio/nucleo.py::wilson",
+   "topo": "laboratorio/nucleo.py::wilson",
+   "confianca": 0.99,
+   "custo_usd": 0.000488838,
+   "latencia_ms": 1382.56
+  },
+  {
+   "caso": 54,
+   "ordem": "inversa",
+   "alvo": "laboratorio/nucleo.py::wilson",
+   "topo": "laboratorio/nucleo.py::wilson",
+   "confianca": 0.98,
+   "custo_usd": 0.000488838,
+   "latencia_ms": 1638.28
+  },
+  {
+   "caso": 55,
+   "ordem": "direta",
+   "alvo": "executor/adjudicar_e11.py::cegar",
+   "topo": "laboratorio/r18_escala.py::rodar",
+   "confianca": 0.63,
+   "custo_usd": 0.00041202,
+   "latencia_ms": 1407.92
+  },
+  {
+   "caso": 55,
+   "ordem": "inversa",
+   "alvo": "executor/adjudicar_e11.py::cegar",
+   "topo": "executor/adjudicar_e11.py::cegar",
+   "confianca": 0.59,
+   "custo_usd": 0.000412062,
+   "latencia_ms": 1389.97
+  },
+  {
+   "caso": 56,
+   "ordem": "direta",
+   "alvo": "laboratorio/r11_extremos.py::executar",
+   "topo": "laboratorio/r11_extremos.py::executar",
+   "confianca": 0.82,
+   "custo_usd": 0.000479724,
+   "latencia_ms": 1396.06
+  },
+  {
+   "caso": 56,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r11_extremos.py::executar",
+   "topo": "integracao/avaliacao/variantes.py::main",
+   "confianca": 0.81,
+   "custo_usd": 0.000479682,
+   "latencia_ms": 1397.8
+  },
+  {
+   "caso": 57,
+   "ordem": "direta",
+   "alvo": "laboratorio/r11_extremos.py::diluir",
+   "topo": "laboratorio/r11_extremos.py::diluir",
+   "confianca": 0.86,
+   "custo_usd": 0.000432138,
+   "latencia_ms": 1894.67
+  },
+  {
+   "caso": 57,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r11_extremos.py::diluir",
+   "topo": "laboratorio/r11_extremos.py::diluir",
+   "confianca": 0.66,
+   "custo_usd": 0.000432138,
+   "latencia_ms": 1321.39
+  },
+  {
+   "caso": 58,
+   "ordem": "direta",
+   "alvo": "executor/gabarito.py::do_autor",
+   "topo": "executor/gabarito.py::do_autor",
+   "confianca": 0.99,
+   "custo_usd": 0.00048531,
+   "latencia_ms": 1327.09
+  },
+  {
+   "caso": 58,
+   "ordem": "inversa",
+   "alvo": "executor/gabarito.py::do_autor",
+   "topo": "executor/gabarito.py::do_autor",
+   "confianca": 0.99,
+   "custo_usd": 0.000485268,
+   "latencia_ms": 1362.34
+  },
+  {
+   "caso": 59,
+   "ordem": "direta",
+   "alvo": "executor/run_e9_prevalencia.py::carregar",
+   "topo": "executor/run_e9_prevalencia.py::carregar",
+   "confianca": 0.93,
+   "custo_usd": 0.000375438,
+   "latencia_ms": 1333.49
+  },
+  {
+   "caso": 59,
+   "ordem": "inversa",
+   "alvo": "executor/run_e9_prevalencia.py::carregar",
+   "topo": "lab/server.py::validate_run_update",
+   "confianca": 0.48,
+   "custo_usd": 0.000375396,
+   "latencia_ms": 1617.39
+  },
+  {
+   "caso": 60,
+   "ordem": "direta",
+   "alvo": "integracao/instalar.py::instalar",
+   "topo": "integracao/instalar.py::instalar",
+   "confianca": 0.99,
+   "custo_usd": 0.000469728,
+   "latencia_ms": 1392.26
+  },
+  {
+   "caso": 60,
+   "ordem": "inversa",
+   "alvo": "integracao/instalar.py::instalar",
+   "topo": "integracao/instalar.py::instalar",
+   "confianca": 0.99,
+   "custo_usd": 0.000469686,
+   "latencia_ms": 1360.98
+  },
+  {
+   "caso": 61,
+   "ordem": "direta",
+   "alvo": "executor/run_e9_prevalencia.py::acuracia_por_classe",
+   "topo": "executor/run_e9_prevalencia.py::acuracia_por_classe",
+   "confianca": 0.78,
+   "custo_usd": 0.00042819,
+   "latencia_ms": 1369.03
+  },
+  {
+   "caso": 61,
+   "ordem": "inversa",
+   "alvo": "executor/run_e9_prevalencia.py::acuracia_por_classe",
+   "topo": "executor/run_e9_prevalencia.py::acuracia_por_classe",
+   "confianca": 0.57,
+   "custo_usd": 0.00042819,
+   "latencia_ms": 2470.98
+  },
+  {
+   "caso": 62,
+   "ordem": "direta",
+   "alvo": "executor/placar.py::limite_superior_erro_da_politica",
+   "topo": "executor/placar.py::limite_superior_erro_da_politica",
+   "confianca": 0.99,
+   "custo_usd": 0.000429324,
+   "latencia_ms": 1893.26
+  },
+  {
+   "caso": 62,
+   "ordem": "inversa",
+   "alvo": "executor/placar.py::limite_superior_erro_da_politica",
+   "topo": "executor/placar.py::limite_superior_erro_da_politica",
+   "confianca": 1.0,
+   "custo_usd": 0.000429366,
+   "latencia_ms": 1368.66
+  },
+  {
+   "caso": 63,
+   "ordem": "direta",
+   "alvo": "executor/run_e15.py::excerpt",
+   "topo": "executor/run_e15.py::excerpt",
+   "confianca": 0.92,
+   "custo_usd": 0.000364224,
+   "latencia_ms": 1884.17
+  },
+  {
+   "caso": 63,
+   "ordem": "inversa",
+   "alvo": "executor/run_e15.py::excerpt",
+   "topo": "executor/run_e15.py::excerpt",
+   "confianca": 0.96,
+   "custo_usd": 0.000364182,
+   "latencia_ms": 3521.44
+  },
+  {
+   "caso": 64,
+   "ordem": "direta",
+   "alvo": "executor/run_e3_evidencia.py::macro_f1_3",
+   "topo": "executor/run_e3_evidencia.py::macro_f1_3",
+   "confianca": 0.99,
+   "custo_usd": 0.000362712,
+   "latencia_ms": 1859.13
+  },
+  {
+   "caso": 64,
+   "ordem": "inversa",
+   "alvo": "executor/run_e3_evidencia.py::macro_f1_3",
+   "topo": "executor/run_e3_evidencia.py::macro_f1_3",
+   "confianca": 1.0,
+   "custo_usd": 0.00036267,
+   "latencia_ms": 1334.52
+  },
+  {
+   "caso": 65,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+   "confianca": 0.98,
+   "custo_usd": 0.00042231,
+   "latencia_ms": 1869.6
+  },
+  {
+   "caso": 65,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+   "topo": "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+   "confianca": 0.94,
+   "custo_usd": 0.00042231,
+   "latencia_ms": 3659.58
+  },
+  {
+   "caso": 66,
+   "ordem": "direta",
+   "alvo": "laboratorio/r20_k_adaptativo.py::main",
+   "topo": "executor/runner.py::load_api_key",
+   "confianca": 0.91,
+   "custo_usd": 0.000488502,
+   "latencia_ms": 1307.7
+  },
+  {
+   "caso": 66,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r20_k_adaptativo.py::main",
+   "topo": "executor/runner.py::load_api_key",
+   "confianca": 0.57,
+   "custo_usd": 0.000488544,
+   "latencia_ms": 1311.82
+  },
+  {
+   "caso": 67,
+   "ordem": "direta",
+   "alvo": "executor/adjudicar_e11.py::consolidar",
+   "topo": "executor/adjudicar_e11.py::consolidar",
+   "confianca": 0.56,
+   "custo_usd": 0.000407652,
+   "latencia_ms": 2350.99
+  },
+  {
+   "caso": 67,
+   "ordem": "inversa",
+   "alvo": "executor/adjudicar_e11.py::consolidar",
+   "topo": "integracao/measurement.py::record",
+   "confianca": 0.51,
+   "custo_usd": 0.00040761,
+   "latencia_ms": 1339.09
+  },
+  {
+   "caso": 68,
+   "ordem": "direta",
+   "alvo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "topo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "confianca": 0.95,
+   "custo_usd": 0.000414036,
+   "latencia_ms": 1522.17
+  },
+  {
+   "caso": 68,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "topo": "laboratorio/r1_r3_estresse.py::com_erro",
+   "confianca": 0.98,
+   "custo_usd": 0.000413994,
+   "latencia_ms": 3574.1
+  },
+  {
+   "caso": 69,
+   "ordem": "direta",
+   "alvo": "executor/shared.py::current_prices",
+   "topo": "executor/run_e8_anotador.py::perguntar",
+   "confianca": 0.85,
+   "custo_usd": 0.000458262,
+   "latencia_ms": 1528.56
+  },
+  {
+   "caso": 69,
+   "ordem": "inversa",
+   "alvo": "executor/shared.py::current_prices",
+   "topo": "executor/shared.py::current_prices",
+   "confianca": 0.45,
+   "custo_usd": 0.000458304,
+   "latencia_ms": 2523.22
+  },
+  {
+   "caso": 70,
+   "ordem": "direta",
+   "alvo": "executor/run_e9_prevalencia.py::limite_superior_erro",
+   "topo": "executor/run_e9_prevalencia.py::limite_superior_erro",
+   "confianca": 0.91,
+   "custo_usd": 0.000403074,
+   "latencia_ms": 3059.62
+  },
+  {
+   "caso": 70,
+   "ordem": "inversa",
+   "alvo": "executor/run_e9_prevalencia.py::limite_superior_erro",
+   "topo": "executor/run_e9_prevalencia.py::limite_superior_erro",
+   "confianca": 0.98,
+   "custo_usd": 0.000403074,
+   "latencia_ms": 1478.09
+  },
+  {
+   "caso": 71,
+   "ordem": "direta",
+   "alvo": "executor/placar.py::replicacao_depende_do_gabarito",
+   "topo": "executor/placar.py::replicacao_depende_do_gabarito",
+   "confianca": 0.95,
+   "custo_usd": 0.00041055,
+   "latencia_ms": 2070.42
+  },
+  {
+   "caso": 71,
+   "ordem": "inversa",
+   "alvo": "executor/placar.py::replicacao_depende_do_gabarito",
+   "topo": "integracao/measurement.py::evaluate_cached",
+   "confianca": 0.42,
+   "custo_usd": 0.00041055,
+   "latencia_ms": 1222.04
+  },
+  {
+   "caso": 72,
+   "ordem": "direta",
+   "alvo": "executor/exportar_extrato.py::exportar",
+   "topo": "laboratorio/r31_r37_segunda_leva.py::perguntar",
+   "confianca": 0.29,
+   "custo_usd": 0.00037149,
+   "latencia_ms": 1243.75
+  },
+  {
+   "caso": 72,
+   "ordem": "inversa",
+   "alvo": "executor/exportar_extrato.py::exportar",
+   "topo": "integracao/camadas/medir.py::ler",
+   "confianca": 0.17,
+   "custo_usd": 0.000371448,
+   "latencia_ms": 1256.42
+  },
+  {
+   "caso": 73,
+   "ordem": "direta",
+   "alvo": "executor/run_e4_ressalvas.py::ndcg",
+   "topo": "executor/run_e4_ressalvas.py::ndcg",
+   "confianca": 0.76,
+   "custo_usd": 0.00048258,
+   "latencia_ms": 1532.24
+  },
+  {
+   "caso": 73,
+   "ordem": "inversa",
+   "alvo": "executor/run_e4_ressalvas.py::ndcg",
+   "topo": "executor/run_e4_ressalvas.py::ndcg",
+   "confianca": 0.57,
+   "custo_usd": 0.000482622,
+   "latencia_ms": 1283.17
+  },
+  {
+   "caso": 74,
+   "ordem": "direta",
+   "alvo": "executor/pricing.py::usd_to_nusd",
+   "topo": "executor/pricing.py::usd_to_nusd",
+   "confianca": 0.89,
+   "custo_usd": 0.000388164,
+   "latencia_ms": 1277.13
+  },
+  {
+   "caso": 74,
+   "ordem": "inversa",
+   "alvo": "executor/pricing.py::usd_to_nusd",
+   "topo": "executor/pricing.py::usd_to_nusd",
+   "confianca": 0.83,
+   "custo_usd": 0.000388206,
+   "latencia_ms": 3086.79
+  },
+  {
+   "caso": 75,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/com_contexto.py::medir",
+   "topo": "integracao/avaliacao/com_contexto.py::medir",
+   "confianca": 0.97,
+   "custo_usd": 0.000536802,
+   "latencia_ms": 1702.66
+  },
+  {
+   "caso": 75,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/com_contexto.py::medir",
+   "topo": "integracao/avaliacao/com_contexto.py::medir",
+   "confianca": 0.97,
+   "custo_usd": 0.00053676,
+   "latencia_ms": 1448.06
+  },
+  {
+   "caso": 76,
+   "ordem": "direta",
+   "alvo": "laboratorio/r16_guarda_de_comando.py::amostra",
+   "topo": "laboratorio/r16_guarda_de_comando.py::amostra",
+   "confianca": 1.0,
+   "custo_usd": 0.000429828,
+   "latencia_ms": 2256.02
+  },
+  {
+   "caso": 76,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r16_guarda_de_comando.py::amostra",
+   "topo": "laboratorio/r16_guarda_de_comando.py::amostra",
+   "confianca": 1.0,
+   "custo_usd": 0.00042987,
+   "latencia_ms": 1408.35
+  },
+  {
+   "caso": 77,
+   "ordem": "direta",
+   "alvo": "integracao/avaliacao/comandos.py::main",
+   "topo": "integracao/avaliacao/comandos.py::main",
+   "confianca": 0.97,
+   "custo_usd": 0.000407484,
+   "latencia_ms": 1737.14
+  },
+  {
+   "caso": 77,
+   "ordem": "inversa",
+   "alvo": "integracao/avaliacao/comandos.py::main",
+   "topo": "integracao/avaliacao/comandos.py::main",
+   "confianca": 0.91,
+   "custo_usd": 0.000407526,
+   "latencia_ms": 1165.16
+  },
+  {
+   "caso": 78,
+   "ordem": "direta",
+   "alvo": "executor/run_e10_llm_economico.py::interpretar",
+   "topo": "executor/run_e10_llm_economico.py::interpretar",
+   "confianca": 0.99,
+   "custo_usd": 0.000444024,
+   "latencia_ms": 1235.4
+  },
+  {
+   "caso": 78,
+   "ordem": "inversa",
+   "alvo": "executor/run_e10_llm_economico.py::interpretar",
+   "topo": "executor/run_e10_llm_economico.py::interpretar",
+   "confianca": 1.0,
+   "custo_usd": 0.000444024,
+   "latencia_ms": 1244.21
+  },
+  {
+   "caso": 79,
+   "ordem": "direta",
+   "alvo": "laboratorio/r8_r9_adversarial.py::tarefas",
+   "topo": "laboratorio/r8_r9_adversarial.py::tarefas",
+   "confianca": 1.0,
+   "custo_usd": 0.000467418,
+   "latencia_ms": 1863.56
+  },
+  {
+   "caso": 79,
+   "ordem": "inversa",
+   "alvo": "laboratorio/r8_r9_adversarial.py::tarefas",
+   "topo": "laboratorio/r8_r9_adversarial.py::tarefas",
+   "confianca": 0.99,
+   "custo_usd": 0.00046746,
+   "latencia_ms": 1371.56
+  }
+ ]
+}

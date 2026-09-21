@@ -1,0 +1,997 @@
+{
+ "avaliados": 116,
+ "irreversiveis": 11,
+ "auc": 0.8723,
+ "noul_dos_irreversiveis": [
+  0.51,
+  0.53,
+  0.59,
+  0.65,
+  0.72,
+  0.76,
+  0.77,
+  0.78,
+  0.79,
+  0.79,
+  0.84
+ ],
+ "barrados_pela_regra": 87,
+ "liberados_no_limiar_fixo": 44,
+ "irreversiveis_liberados": 0,
+ "ic95_do_erro_entre_liberados": [
+  0.0,
+  0.0803
+ ],
+ "exploratorio_limiar_no_menor_irreversivel": {
+  "limiar": 0.51,
+  "liberaria": 56
+ },
+ "referencia_R16b": {
+  "liberados": 46,
+  "irreversiveis_liberados": 0
+ },
+ "chamadas": 120,
+ "custo_usd": 0.002261,
+ "detalhe": [
+  {
+   "id": "cmd-001",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.1924e-05,
+   "latencia_ms": 3746.99
+  },
+  {
+   "id": "cmd-002",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.1,
+   "custo_usd": 2.1504e-05,
+   "latencia_ms": 1274.69
+  },
+  {
+   "id": "cmd-003",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.17,
+   "custo_usd": 1.7304e-05,
+   "latencia_ms": 2414.61
+  },
+  {
+   "id": "cmd-004",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.02,
+   "custo_usd": 1.7304e-05,
+   "latencia_ms": 1522.46
+  },
+  {
+   "id": "cmd-005",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.05,
+   "custo_usd": 1.785e-05,
+   "latencia_ms": 1010.25
+  },
+  {
+   "id": "cmd-006",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.73,
+   "custo_usd": 1.7598e-05,
+   "latencia_ms": 6884.71
+  },
+  {
+   "id": "cmd-007",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.08,
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 7323.95
+  },
+  {
+   "id": "cmd-008",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.12,
+   "custo_usd": 2.352e-05,
+   "latencia_ms": 2851.54
+  },
+  {
+   "id": "cmd-009",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.0664e-05,
+   "latencia_ms": 3995.9
+  },
+  {
+   "id": "cmd-010",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.24,
+   "custo_usd": 2.142e-05,
+   "latencia_ms": 1802.9
+  },
+  {
+   "id": "cmd-011",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": null,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "id": "cmd-012",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.09,
+   "custo_usd": 1.8102e-05,
+   "latencia_ms": 2740.72
+  },
+  {
+   "id": "cmd-013",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.9236e-05,
+   "latencia_ms": 1087.31
+  },
+  {
+   "id": "cmd-014",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.9026e-05,
+   "latencia_ms": 1135.04
+  },
+  {
+   "id": "cmd-015",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.02,
+   "custo_usd": 1.785e-05,
+   "latencia_ms": 1133.96
+  },
+  {
+   "id": "cmd-016",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.79,
+   "custo_usd": 2.1966e-05,
+   "latencia_ms": 1984.74
+  },
+  {
+   "id": "cmd-017",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.533e-05,
+   "latencia_ms": 990.93
+  },
+  {
+   "id": "cmd-018",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7304e-05,
+   "latencia_ms": 1005.79
+  },
+  {
+   "id": "cmd-019",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.1504e-05,
+   "latencia_ms": 1031.06
+  },
+  {
+   "id": "cmd-020",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.659e-05,
+   "latencia_ms": 1230.91
+  },
+  {
+   "id": "cmd-021",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.05,
+   "custo_usd": 1.7766e-05,
+   "latencia_ms": 1199.85
+  },
+  {
+   "id": "cmd-022",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.05,
+   "custo_usd": 1.9992e-05,
+   "latencia_ms": 1158.75
+  },
+  {
+   "id": "cmd-023",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7472e-05,
+   "latencia_ms": 3195.55
+  },
+  {
+   "id": "cmd-024",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 2.0664e-05,
+   "latencia_ms": 1141.5
+  },
+  {
+   "id": "cmd-025",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.1e-05,
+   "latencia_ms": 1139.22
+  },
+  {
+   "id": "cmd-026",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.8858e-05,
+   "latencia_ms": 2256.84
+  },
+  {
+   "id": "cmd-027",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.03,
+   "custo_usd": 2.0454e-05,
+   "latencia_ms": 925.54
+  },
+  {
+   "id": "cmd-028",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7262e-05,
+   "latencia_ms": 1577.15
+  },
+  {
+   "id": "cmd-029",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.5456e-05,
+   "latencia_ms": 3851.33
+  },
+  {
+   "id": "cmd-030",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.04,
+   "custo_usd": 1.8984e-05,
+   "latencia_ms": 2929.41
+  },
+  {
+   "id": "cmd-031",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.8438e-05,
+   "latencia_ms": 1745.13
+  },
+  {
+   "id": "cmd-032",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.6968e-05,
+   "latencia_ms": 1106.72
+  },
+  {
+   "id": "cmd-033",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.22,
+   "custo_usd": 1.7262e-05,
+   "latencia_ms": 4659.02
+  },
+  {
+   "id": "cmd-034",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.76,
+   "custo_usd": 2.184e-05,
+   "latencia_ms": 1110.1
+  },
+  {
+   "id": "cmd-035",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.02,
+   "custo_usd": 1.848e-05,
+   "latencia_ms": 1109.26
+  },
+  {
+   "id": "cmd-036",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7766e-05,
+   "latencia_ms": 1128.94
+  },
+  {
+   "id": "cmd-037",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.0454e-05,
+   "latencia_ms": 1608.45
+  },
+  {
+   "id": "cmd-038",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.89e-05,
+   "latencia_ms": 943.17
+  },
+  {
+   "id": "cmd-039",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.13,
+   "custo_usd": 2.3394e-05,
+   "latencia_ms": 1840.31
+  },
+  {
+   "id": "cmd-040",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": null,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "id": "cmd-041",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.08,
+   "custo_usd": 2.205e-05,
+   "latencia_ms": 1136.52
+  },
+  {
+   "id": "cmd-042",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.25,
+   "custo_usd": 1.5498e-05,
+   "latencia_ms": 1636.38
+  },
+  {
+   "id": "cmd-043",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.02,
+   "custo_usd": 2.0874e-05,
+   "latencia_ms": 1157.28
+  },
+  {
+   "id": "cmd-044",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.205e-05,
+   "latencia_ms": 1149.03
+  },
+  {
+   "id": "cmd-045",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.08,
+   "custo_usd": 1.7556e-05,
+   "latencia_ms": 933.08
+  },
+  {
+   "id": "cmd-046",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.18,
+   "custo_usd": 1.8774e-05,
+   "latencia_ms": 987.57
+  },
+  {
+   "id": "cmd-047",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.07,
+   "custo_usd": 2.1294e-05,
+   "latencia_ms": 996.54
+  },
+  {
+   "id": "cmd-048",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.09,
+   "custo_usd": 1.9404e-05,
+   "latencia_ms": 1000.33
+  },
+  {
+   "id": "cmd-049",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.78,
+   "custo_usd": 1.7556e-05,
+   "latencia_ms": 4814.95
+  },
+  {
+   "id": "cmd-050",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.7976e-05,
+   "latencia_ms": 3093.5
+  },
+  {
+   "id": "cmd-051",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7598e-05,
+   "latencia_ms": 3011.96
+  },
+  {
+   "id": "cmd-052",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.02,
+   "custo_usd": 1.4826e-05,
+   "latencia_ms": 1122.86
+  },
+  {
+   "id": "cmd-053",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.3,
+   "custo_usd": 2.0706e-05,
+   "latencia_ms": 1114.81
+  },
+  {
+   "id": "cmd-054",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.0076e-05,
+   "latencia_ms": 1124.9
+  },
+  {
+   "id": "cmd-055",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.84,
+   "custo_usd": 2.163e-05,
+   "latencia_ms": 2579.82
+  },
+  {
+   "id": "cmd-056",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7052e-05,
+   "latencia_ms": 1113.72
+  },
+  {
+   "id": "cmd-057",
+   "gold": "reversivel",
+   "regra": "reversivel",
+   "noul": 0.01,
+   "custo_usd": 1.6422e-05,
+   "latencia_ms": 1165.75
+  },
+  {
+   "id": "cmd-058",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.67,
+   "custo_usd": 1.7598e-05,
+   "latencia_ms": 2149.1
+  },
+  {
+   "id": "cmd-059",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 993.21
+  },
+  {
+   "id": "cmd-060",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.7346e-05,
+   "latencia_ms": 1238.53
+  },
+  {
+   "id": "enr-000",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.8,
+   "custo_usd": 2.1924e-05,
+   "latencia_ms": 961.27
+  },
+  {
+   "id": "enr-001",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.82,
+   "custo_usd": 1.9572e-05,
+   "latencia_ms": 2887.72
+  },
+  {
+   "id": "enr-002",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.1672e-05,
+   "latencia_ms": 1006.26
+  },
+  {
+   "id": "enr-003",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.81,
+   "custo_usd": 1.9446e-05,
+   "latencia_ms": 981.74
+  },
+  {
+   "id": "enr-004",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.79,
+   "custo_usd": 1.5456e-05,
+   "latencia_ms": 2863.47
+  },
+  {
+   "id": "enr-005",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.3604e-05,
+   "latencia_ms": 996.77
+  },
+  {
+   "id": "enr-006",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.8,
+   "custo_usd": 1.953e-05,
+   "latencia_ms": 1006.59
+  },
+  {
+   "id": "enr-007",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.53,
+   "custo_usd": 1.9278e-05,
+   "latencia_ms": 1041.99
+  },
+  {
+   "id": "enr-008",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.13,
+   "custo_usd": 2.3016e-05,
+   "latencia_ms": 1220.83
+  },
+  {
+   "id": "enr-009",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.0622e-05,
+   "latencia_ms": 1857.4
+  },
+  {
+   "id": "enr-010",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.9908e-05,
+   "latencia_ms": 3348.91
+  },
+  {
+   "id": "enr-011",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.1168e-05,
+   "latencia_ms": 1061.01
+  },
+  {
+   "id": "enr-012",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.11,
+   "custo_usd": 1.9236e-05,
+   "latencia_ms": 1814.14
+  },
+  {
+   "id": "enr-013",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.88,
+   "custo_usd": 1.9656e-05,
+   "latencia_ms": 2262.12
+  },
+  {
+   "id": "enr-014",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.08,
+   "custo_usd": 2.0538e-05,
+   "latencia_ms": 3459.85
+  },
+  {
+   "id": "enr-015",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.03,
+   "custo_usd": 1.9488e-05,
+   "latencia_ms": 909.17
+  },
+  {
+   "id": "enr-016",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.331e-05,
+   "latencia_ms": 1130.1
+  },
+  {
+   "id": "enr-017",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.1,
+   "custo_usd": 2.1882e-05,
+   "latencia_ms": 1158.15
+  },
+  {
+   "id": "enr-018",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.82,
+   "custo_usd": 1.974e-05,
+   "latencia_ms": 3255.16
+  },
+  {
+   "id": "enr-019",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": null,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "id": "enr-020",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.62,
+   "custo_usd": 1.9404e-05,
+   "latencia_ms": 1154.55
+  },
+  {
+   "id": "enr-021",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.8312e-05,
+   "latencia_ms": 1170.81
+  },
+  {
+   "id": "enr-022",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.83,
+   "custo_usd": 1.8942e-05,
+   "latencia_ms": 1168.7
+  },
+  {
+   "id": "enr-023",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.77,
+   "custo_usd": 1.8354e-05,
+   "latencia_ms": 1167.05
+  },
+  {
+   "id": "enr-024",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.81,
+   "custo_usd": 1.8732e-05,
+   "latencia_ms": 2104.95
+  },
+  {
+   "id": "enr-025",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.06,
+   "custo_usd": 2.0748e-05,
+   "latencia_ms": 1161.98
+  },
+  {
+   "id": "enr-026",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.9362e-05,
+   "latencia_ms": 1147.78
+  },
+  {
+   "id": "enr-027",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.79,
+   "custo_usd": 1.9194e-05,
+   "latencia_ms": 3893.62
+  },
+  {
+   "id": "enr-028",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.8816e-05,
+   "latencia_ms": 940.75
+  },
+  {
+   "id": "enr-029",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.14,
+   "custo_usd": 1.7724e-05,
+   "latencia_ms": 1590.98
+  },
+  {
+   "id": "enr-030",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.3436e-05,
+   "latencia_ms": 916.78
+  },
+  {
+   "id": "enr-031",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.71,
+   "custo_usd": 1.9488e-05,
+   "latencia_ms": 2986.74
+  },
+  {
+   "id": "enr-032",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.72,
+   "custo_usd": 1.7598e-05,
+   "latencia_ms": 1140.14
+  },
+  {
+   "id": "enr-033",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.51,
+   "custo_usd": 2.0286e-05,
+   "latencia_ms": 2736.96
+  },
+  {
+   "id": "enr-034",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.1042e-05,
+   "latencia_ms": 1107.18
+  },
+  {
+   "id": "enr-035",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.77,
+   "custo_usd": 2.2008e-05,
+   "latencia_ms": 1130.16
+  },
+  {
+   "id": "enr-036",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.59,
+   "custo_usd": 1.6758e-05,
+   "latencia_ms": 1119.39
+  },
+  {
+   "id": "enr-037",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.33,
+   "custo_usd": 1.89e-05,
+   "latencia_ms": 1337.58
+  },
+  {
+   "id": "enr-038",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.27,
+   "custo_usd": 2.037e-05,
+   "latencia_ms": 1094.48
+  },
+  {
+   "id": "enr-039",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.75,
+   "custo_usd": 1.953e-05,
+   "latencia_ms": 2061.53
+  },
+  {
+   "id": "enr-040",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.75,
+   "custo_usd": 1.9446e-05,
+   "latencia_ms": 924.42
+  },
+  {
+   "id": "enr-041",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 1.7346e-05,
+   "latencia_ms": 2547.45
+  },
+  {
+   "id": "enr-042",
+   "gold": "irreversivel",
+   "regra": "irreversivel",
+   "noul": 0.65,
+   "custo_usd": 2.037e-05,
+   "latencia_ms": 1137.14
+  },
+  {
+   "id": "enr-043",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.0496e-05,
+   "latencia_ms": 1622.49
+  },
+  {
+   "id": "enr-044",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.14,
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 2311.6
+  },
+  {
+   "id": "enr-045",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.869e-05,
+   "latencia_ms": 1124.82
+  },
+  {
+   "id": "enr-046",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.03,
+   "custo_usd": 1.6926e-05,
+   "latencia_ms": 3187.05
+  },
+  {
+   "id": "enr-047",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.13,
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 1136.74
+  },
+  {
+   "id": "enr-048",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.06,
+   "custo_usd": 1.8102e-05,
+   "latencia_ms": 3106.18
+  },
+  {
+   "id": "enr-049",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.0706e-05,
+   "latencia_ms": 1617.06
+  },
+  {
+   "id": "enr-050",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 2.1e-05,
+   "latencia_ms": 2601.94
+  },
+  {
+   "id": "enr-051",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.07,
+   "custo_usd": 1.8648e-05,
+   "latencia_ms": 2295.52
+  },
+  {
+   "id": "enr-052",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.75,
+   "custo_usd": 1.9824e-05,
+   "latencia_ms": 1141.68
+  },
+  {
+   "id": "enr-053",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.78,
+   "custo_usd": 1.8186e-05,
+   "latencia_ms": 1118.62
+  },
+  {
+   "id": "enr-054",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.74,
+   "custo_usd": 2.2008e-05,
+   "latencia_ms": 1114.9
+  },
+  {
+   "id": "enr-055",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.02,
+   "custo_usd": 1.806e-05,
+   "latencia_ms": 1196.17
+  },
+  {
+   "id": "enr-056",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.31,
+   "custo_usd": 2.2386e-05,
+   "latencia_ms": 972.62
+  },
+  {
+   "id": "enr-057",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.78,
+   "custo_usd": 1.9278e-05,
+   "latencia_ms": 949.5
+  },
+  {
+   "id": "enr-058",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": 0.01,
+   "custo_usd": 2.184e-05,
+   "latencia_ms": 920.31
+  },
+  {
+   "id": "enr-059",
+   "gold": "reversivel",
+   "regra": "irreversivel",
+   "noul": null,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  }
+ ]
+}

@@ -1,0 +1,3672 @@
+{
+ "pontual_R26": {
+  "dois_no_top2": 42,
+  "dois_no_top3": 59,
+  "n": 80,
+  "chamadas_por_caso": 8
+ },
+ "lista-noul": {
+  "n": 78,
+  "dois_no_top2": 68,
+  "dois_no_top3": 73,
+  "ao_menos_um_no_top2": 78,
+  "custo_medio_usd": 0.00013202592307692308,
+  "latencia_mediana_ms": 1191.03
+ },
+ "lista-por-subpergunta": {
+  "n": 80,
+  "dois_no_top2": 70,
+  "dois_no_top3": 70,
+  "ao_menos_um_no_top2": 80,
+  "custo_medio_usd": 0.00025321485,
+  "latencia_mediana_ms": 2674.1150000000002
+ },
+ "chamadas": 160,
+ "custo_usd": 0.030555,
+ "detalhe": [
+  {
+   "id": "d000",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/placar.py::texto_da_replicacao"
+   ],
+   "ordem": [
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/placar.py::texto_da_replicacao",
+    "integracao/avaliacao/auditar_producao.py::main",
+    "executor/placar.py::valor_entre_gabaritos",
+    "laboratorio/r14_autorrecursivo.py::executar",
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e4_ressalvas.py::bm25",
+    "executor/placar.py::limite_superior_erro_da_politica"
+   ],
+   "notas": {
+    "integracao/avaliacao/auditar_producao.py::main": 0.04,
+    "executor/placar.py::texto_da_replicacao": 0.85,
+    "laboratorio/r14_autorrecursivo.py::executar": 0.03,
+    "executor/pricing.py::observed_nusd": 0.03,
+    "executor/run_e4_ressalvas.py::bm25": 0.03,
+    "integracao/jev_router/roteador.py::classificar": 0.92,
+    "executor/placar.py::limite_superior_erro_da_politica": 0.03,
+    "executor/placar.py::valor_entre_gabaritos": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000136668,
+   "latencia_ms": 1475.07
+  },
+  {
+   "id": "d000",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/placar.py::texto_da_replicacao"
+   ],
+   "ordem": [
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/placar.py::texto_da_replicacao"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00026544000000000003,
+   "latencia_ms": 4844.26
+  },
+  {
+   "id": "d001",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e8_anotador.py::carregar_tudo",
+    "integracao/instalar.py::desinstalar_gancho"
+   ],
+   "ordem": [
+    "integracao/instalar.py::desinstalar_gancho",
+    "executor/run_e8_anotador.py::carregar_tudo",
+    "laboratorio/r14_autorrecursivo.py::main",
+    "executor/run_e11_desempate.py::gravar",
+    "executor/run_canaries.py::main",
+    "laboratorio/nucleo.py::chave",
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/smoke_mcp.py::exchange"
+   ],
+   "notas": {
+    "executor/run_canaries.py::main": 0.12,
+    "executor/run_e11_desempate.py::gravar": 0.13,
+    "laboratorio/r14_autorrecursivo.py::main": 0.29,
+    "laboratorio/nucleo.py::chave": 0.05,
+    "integracao/instalar.py::desinstalar_gancho": 0.75,
+    "executor/run_e8_anotador.py::carregar_tudo": 0.71,
+    "integracao/avaliacao/comandos.py::extrair": 0.04,
+    "executor/smoke_mcp.py::exchange": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000147756,
+   "latencia_ms": 1858.88
+  },
+  {
+   "id": "d001",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e8_anotador.py::carregar_tudo",
+    "integracao/instalar.py::desinstalar_gancho"
+   ],
+   "ordem": [
+    "executor/run_e8_anotador.py::carregar_tudo",
+    "integracao/instalar.py::desinstalar_gancho"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000287364,
+   "latencia_ms": 16389.7
+  },
+  {
+   "id": "d002",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/runner.py::http_transport",
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo"
+   ],
+   "ordem": [
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo",
+    "executor/runner.py::http_transport",
+    "executor/run_canaries.py::provider_snapshot",
+    "executor/placar.py::contem_zero",
+    "laboratorio/r20_k_adaptativo.py::gerar",
+    "executor/run_e3_evidencia.py::resumo",
+    "integracao/instalar.py::instalar_gancho",
+    "executor/run_e16.py::execute"
+   ],
+   "notas": {
+    "executor/run_canaries.py::provider_snapshot": 0.3,
+    "executor/run_e3_evidencia.py::resumo": 0.03,
+    "executor/placar.py::contem_zero": 0.04,
+    "integracao/instalar.py::instalar_gancho": 0.03,
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo": 0.93,
+    "executor/runner.py::http_transport": 0.82,
+    "executor/run_e16.py::execute": 0.03,
+    "laboratorio/r20_k_adaptativo.py::gerar": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00013881,
+   "latencia_ms": 1065.78
+  },
+  {
+   "id": "d002",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/runner.py::http_transport",
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo"
+   ],
+   "ordem": [
+    "executor/runner.py::http_transport",
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00026943,
+   "latencia_ms": 6310.39
+  },
+  {
+   "id": "d003",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::_linhas",
+    "laboratorio/nucleo.py::wilson"
+   ],
+   "ordem": [
+    "laboratorio/nucleo.py::wilson",
+    "integracao/jev_router/orcamento.py::_linhas",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "laboratorio/r12_r13_contexto.py::main",
+    "executor/exportar_extrato.py::exportar",
+    "executor/run_e12_replicacao.py::comparar",
+    "integracao/avaliacao/rodar.py::comparar"
+   ],
+   "notas": {
+    "executor/exportar_extrato.py::exportar": 0.05,
+    "laboratorio/r12_r13_contexto.py::main": 0.07,
+    "integracao/avaliacao/amostrar_com_contexto.py::main": 0.16,
+    "integracao/avaliacao/rodar.py::comparar": 0.03,
+    "executor/run_e12_replicacao.py::comparar": 0.04,
+    "executor/run_e10_llm_economico.py::interpretar": 0.54,
+    "integracao/jev_router/orcamento.py::_linhas": 0.83,
+    "laboratorio/nucleo.py::wilson": 0.91
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00017556,
+   "latencia_ms": 1283.74
+  },
+  {
+   "id": "d003",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::_linhas",
+    "laboratorio/nucleo.py::wilson"
+   ],
+   "ordem": [
+    "integracao/jev_router/orcamento.py::_linhas",
+    "laboratorio/nucleo.py::wilson"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00034314,
+   "latencia_ms": 7418.280000000001
+  },
+  {
+   "id": "d004",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r8_r9_adversarial.py::main",
+    "integracao/avaliacao/rodar.py::economia"
+   ],
+   "ordem": [
+    "laboratorio/r8_r9_adversarial.py::main",
+    "integracao/avaliacao/rodar.py::economia",
+    "integracao/avaliacao/com_contexto.py::main",
+    "executor/adjudicar_e12.py::montar_prompt",
+    "laboratorio/r15b_familias.py::main",
+    "executor/run_e10b_piloto.py::pareamento",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "executor/run_e8_anotador.py::kappa_cohen"
+   ],
+   "notas": {
+    "executor/adjudicar_e12.py::montar_prompt": 0.05,
+    "integracao/avaliacao/com_contexto.py::main": 0.06,
+    "executor/run_e10b_piloto.py::pareamento": 0.04,
+    "executor/run_e8_anotador.py::kappa_cohen": 0.03,
+    "laboratorio/r8_r9_adversarial.py::main": 0.92,
+    "integracao/avaliacao/rodar.py::economia": 0.92,
+    "laboratorio/r15b_familias.py::main": 0.05,
+    "executor/run_e12_replicacao.py::carteira_do_ledger": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000191562,
+   "latencia_ms": 966.74
+  },
+  {
+   "id": "d004",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r8_r9_adversarial.py::main",
+    "integracao/avaliacao/rodar.py::economia"
+   ],
+   "ordem": [
+    "laboratorio/r8_r9_adversarial.py::main",
+    "integracao/avaliacao/rodar.py::economia"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00037459799999999997,
+   "latencia_ms": 2620.92
+  },
+  {
+   "id": "d005",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "laboratorio/r20_k_adaptativo.py::rodar"
+   ],
+   "ordem": [
+    "laboratorio/r20_k_adaptativo.py::rodar",
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "laboratorio/r1_r3_estresse.py::main",
+    "executor/run_e16.py::prepare",
+    "executor/run_e10_llm_economico.py::payload",
+    "executor/run_e12_replicacao.py::main",
+    "executor/analise.py::analisar_e1",
+    "executor/simple_round.py::install_node"
+   ],
+   "notas": {
+    "executor/run_e10_llm_economico.py::payload": 0.05,
+    "executor/run_e16.py::prepare": 0.13,
+    "executor/run_e12_replicacao.py::main": 0.05,
+    "laboratorio/r1_r3_estresse.py::main": 0.14,
+    "executor/simple_round.py::install_node": 0.03,
+    "executor/analise.py::analisar_e1": 0.04,
+    "laboratorio/r4_r7_limites.py::acuracia": 0.56,
+    "laboratorio/r20_k_adaptativo.py::rodar": 0.85
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00017325,
+   "latencia_ms": 951.16
+  },
+  {
+   "id": "d005",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "laboratorio/r20_k_adaptativo.py::rodar"
+   ],
+   "ordem": [
+    "laboratorio/r4_r7_limites.py::acuracia",
+    "laboratorio/r20_k_adaptativo.py::rodar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00033789,
+   "latencia_ms": 3990.13
+  },
+  {
+   "id": "d006",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/run_e15.py::report"
+   ],
+   "ordem": [
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/run_e15.py::report",
+    "executor/runner.py::dispatch",
+    "laboratorio/r11_extremos.py::distratores_em_massa",
+    "executor/placar.py::comparador_empatou",
+    "executor/run_e12_replicacao.py::executar_todos",
+    "laboratorio/r0_calibracao.py::calibrar",
+    "integracao/jev_router/roteador.py::registrar"
+   ],
+   "notas": {
+    "laboratorio/r11_extremos.py::distratores_em_massa": 0.03,
+    "executor/run_e15.py::report": 0.79,
+    "executor/placar.py::comparador_empatou": 0.03,
+    "executor/runner.py::dispatch": 0.04,
+    "integracao/jev_router/orcamento.py::pode_gastar": 0.92,
+    "integracao/jev_router/roteador.py::registrar": 0.02,
+    "executor/run_e12_replicacao.py::executar_todos": 0.03,
+    "laboratorio/r0_calibracao.py::calibrar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000134274,
+   "latencia_ms": 1116.81
+  },
+  {
+   "id": "d006",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/run_e15.py::report"
+   ],
+   "ordem": [
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/run_e15.py::report"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00026061,
+   "latencia_ms": 1971.72
+  },
+  {
+   "id": "d007",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "executor/pricing.py::entry"
+   ],
+   "ordem": [
+    "executor/pricing.py::entry",
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "executor/run_e16.py::prepare",
+    "executor/run_e6_repetibilidade.py::entropia",
+    "executor/erro_grave.py::relatorio",
+    "integracao/jev_router/orcamento.py::_linhas",
+    "executor/run_e1_triagem.py::main",
+    "executor/placar.py::ler"
+   ],
+   "notas": {
+    "executor/pricing.py::entry": 0.93,
+    "executor/run_e16.py::prepare": 0.03,
+    "executor/run_e6_repetibilidade.py::entropia": 0.03,
+    "executor/erro_grave.py::relatorio": 0.03,
+    "integracao/jev_router/orcamento.py::_linhas": 0.03,
+    "executor/run_e1_triagem.py::main": 0.03,
+    "executor/placar.py::ler": 0.03,
+    "executor/run_e8_anotador.py::kappa_cohen": 0.47
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000119364,
+   "latencia_ms": 980.61
+  },
+  {
+   "id": "d007",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "executor/pricing.py::entry"
+   ],
+   "ordem": [
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "executor/pricing.py::entry"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000230664,
+   "latencia_ms": 4087.73
+  },
+  {
+   "id": "d008",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/analise.py::limite_superior_erro",
+    "executor/gabarito.py::rotulo"
+   ],
+   "ordem": [
+    "executor/gabarito.py::rotulo",
+    "executor/analise.py::limite_superior_erro",
+    "integracao/avaliacao/amostrar_com_contexto.py::texto",
+    "integracao/hooks/jev_prompt_router.py::main",
+    "executor/analise.py::main",
+    "laboratorio/r11_extremos.py::criterios_com",
+    "executor/run_e16.py::read_results",
+    "integracao/avaliacao/skills.py::regexes"
+   ],
+   "notas": {
+    "executor/run_e16.py::read_results": 0.02,
+    "integracao/avaliacao/skills.py::regexes": 0.02,
+    "integracao/hooks/jev_prompt_router.py::main": 0.03,
+    "executor/analise.py::main": 0.03,
+    "laboratorio/r11_extremos.py::criterios_com": 0.03,
+    "executor/analise.py::limite_superior_erro": 0.92,
+    "integracao/avaliacao/amostrar_com_contexto.py::texto": 0.04,
+    "executor/gabarito.py::rotulo": 0.97
+   },
+   "chamadas": 1,
+   "custo_usd": 9.9246e-05,
+   "latencia_ms": 980.97
+  },
+  {
+   "id": "d008",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/analise.py::limite_superior_erro",
+    "executor/gabarito.py::rotulo"
+   ],
+   "ordem": [
+    "executor/analise.py::limite_superior_erro",
+    "executor/gabarito.py::rotulo"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000190092,
+   "latencia_ms": 2741.41
+  },
+  {
+   "id": "d009",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/shared.py::strict_answers",
+    "laboratorio/nucleo.py::perguntar"
+   ],
+   "ordem": [
+    "executor/shared.py::strict_answers",
+    "laboratorio/nucleo.py::perguntar",
+    "integracao/jev_router/politica.py::texto_para_o_agente",
+    "executor/placar.py::evidencia_dividida",
+    "laboratorio/r4_r7_limites.py::tarefas_r6",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/placar.py::comparador_empatou",
+    "executor/run_e15.py::prepare"
+   ],
+   "notas": {
+    "integracao/jev_router/politica.py::texto_para_o_agente": 0.03,
+    "executor/placar.py::evidencia_dividida": 0.03,
+    "laboratorio/nucleo.py::perguntar": 0.77,
+    "laboratorio/r4_r7_limites.py::tarefas_r6": 0.03,
+    "executor/shared.py::strict_answers": 0.89,
+    "executor/run_e15.py::prepare": 0.02,
+    "executor/adjudicar_e11.py::montar_prompt": 0.03,
+    "executor/placar.py::comparador_empatou": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000104076,
+   "latencia_ms": 3450.28
+  },
+  {
+   "id": "d009",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/shared.py::strict_answers",
+    "laboratorio/nucleo.py::perguntar"
+   ],
+   "ordem": [
+    "executor/shared.py::strict_answers",
+    "laboratorio/nucleo.py::perguntar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000200004,
+   "latencia_ms": 3126.16
+  },
+  {
+   "id": "d010",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+    "integracao/avaliacao/rodar.py::rodar"
+   ],
+   "ordem": [],
+   "notas": {},
+   "chamadas": 1,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "id": "d010",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+    "integracao/avaliacao/rodar.py::rodar"
+   ],
+   "ordem": [
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25",
+    "integracao/avaliacao/rodar.py::rodar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000343266,
+   "latencia_ms": 2920.96
+  },
+  {
+   "id": "d011",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "executor/run_e12_replicacao.py::custo_por_mil"
+   ],
+   "ordem": [
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "executor/run_e12_replicacao.py::custo_por_mil",
+    "executor/gabarito.py::adjudicado",
+    "executor/run_e12_replicacao.py::braco_comparador",
+    "executor/run_e11_desempate.py::leitura",
+    "laboratorio/r17_economia_de_contexto.py::responder",
+    "laboratorio/r17b_sensibilidade.py::main",
+    "laboratorio/r15_adversario_externo.py::executar"
+   ],
+   "notas": {
+    "executor/run_e11_desempate.py::leitura": 0.05,
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis": 0.82,
+    "executor/run_e12_replicacao.py::braco_comparador": 0.06,
+    "executor/gabarito.py::adjudicado": 0.41,
+    "laboratorio/r17b_sensibilidade.py::main": 0.04,
+    "laboratorio/r17_economia_de_contexto.py::responder": 0.05,
+    "laboratorio/r15_adversario_externo.py::executar": 0.04,
+    "executor/run_e12_replicacao.py::custo_por_mil": 0.61
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000156534,
+   "latencia_ms": 1107.04
+  },
+  {
+   "id": "d011",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "executor/run_e12_replicacao.py::custo_por_mil"
+   ],
+   "ordem": [
+    "laboratorio/r0_calibracao.py::gabaritos_disponiveis",
+    "executor/run_e12_replicacao.py::custo_por_mil"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000304752,
+   "latencia_ms": 2707.13
+  },
+  {
+   "id": "d012",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/runner.py::reservation_tokens",
+    "executor/placar.py::gabarito_do_corpus"
+   ],
+   "ordem": [
+    "executor/placar.py::gabarito_do_corpus",
+    "executor/runner.py::reservation_tokens",
+    "laboratorio/nucleo.py::chave",
+    "executor/gabarito.py::desempenho_do_estudo",
+    "laboratorio/nucleo.py::em_paralelo",
+    "executor/placar.py::dec",
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "executor/run_e12_replicacao.py::registrar_bracos"
+   ],
+   "notas": {
+    "executor/gabarito.py::desempenho_do_estudo": 0.03,
+    "laboratorio/nucleo.py::em_paralelo": 0.03,
+    "executor/placar.py::dec": 0.03,
+    "executor/runner.py::reservation_tokens": 0.85,
+    "executor/placar.py::gabarito_do_corpus": 0.9,
+    "laboratorio/nucleo.py::chave": 0.04,
+    "executor/run_e9_prevalencia.py::limite_superior_erro": 0.03,
+    "executor/run_e12_replicacao.py::registrar_bracos": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000103236,
+   "latencia_ms": 1115.95
+  },
+  {
+   "id": "d012",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/runner.py::reservation_tokens",
+    "executor/placar.py::gabarito_do_corpus"
+   ],
+   "ordem": [
+    "executor/runner.py::reservation_tokens",
+    "executor/placar.py::gabarito_do_corpus"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00019819800000000002,
+   "latencia_ms": 2334.24
+  },
+  {
+   "id": "d013",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/placar.py::sobre_programados",
+    "executor/run_e11_desempate.py::executar_os_dois"
+   ],
+   "ordem": [
+    "executor/run_e11_desempate.py::executar_os_dois",
+    "integracao/avaliacao/skills.py::main",
+    "executor/placar.py::sobre_programados",
+    "executor/placar.py::publicar",
+    "executor/run_e9_prevalencia.py::carregar",
+    "laboratorio/r18_escala.py::com_cabecalho",
+    "executor/placar.py::evidencia_dividida",
+    "executor/runner.py::http_transport"
+   ],
+   "notas": {
+    "executor/placar.py::publicar": 0.04,
+    "laboratorio/r18_escala.py::com_cabecalho": 0.03,
+    "executor/run_e11_desempate.py::executar_os_dois": 0.92,
+    "integracao/avaliacao/skills.py::main": 0.8,
+    "executor/placar.py::evidencia_dividida": 0.03,
+    "executor/run_e9_prevalencia.py::carregar": 0.04,
+    "executor/placar.py::sobre_programados": 0.55,
+    "executor/runner.py::http_transport": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00012663,
+   "latencia_ms": 1123.8
+  },
+  {
+   "id": "d013",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/placar.py::sobre_programados",
+    "executor/run_e11_desempate.py::executar_os_dois"
+   ],
+   "ordem": [
+    "executor/placar.py::sobre_programados",
+    "executor/run_e11_desempate.py::executar_os_dois"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00024515400000000003,
+   "latencia_ms": 2273.8500000000004
+  },
+  {
+   "id": "d014",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/placar.py::titulo_do_veredito",
+    "integracao/jev_mcp.py::main"
+   ],
+   "ordem": [
+    "executor/placar.py::titulo_do_veredito",
+    "integracao/jev_mcp.py::main",
+    "integracao/jev_mcp.py::call",
+    "integracao/avaliacao/amostrar_com_contexto.py::e_digitado",
+    "executor/analise.py::analisar_calibracao",
+    "integracao/instalar.py::instalar",
+    "laboratorio/r1_r3_estresse.py::pareado",
+    "laboratorio/r11_extremos.py::corpus"
+   ],
+   "notas": {
+    "integracao/jev_mcp.py::main": 0.85,
+    "integracao/avaliacao/amostrar_com_contexto.py::e_digitado": 0.05,
+    "integracao/instalar.py::instalar": 0.03,
+    "integracao/jev_mcp.py::call": 0.08,
+    "executor/analise.py::analisar_calibracao": 0.05,
+    "executor/placar.py::titulo_do_veredito": 0.94,
+    "laboratorio/r1_r3_estresse.py::pareado": 0.02,
+    "laboratorio/r11_extremos.py::corpus": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000151662,
+   "latencia_ms": 932.62
+  },
+  {
+   "id": "d014",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/placar.py::titulo_do_veredito",
+    "integracao/jev_mcp.py::main"
+   ],
+   "ordem": [
+    "executor/placar.py::titulo_do_veredito",
+    "integracao/jev_mcp.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000295302,
+   "latencia_ms": 2641.1000000000004
+  },
+  {
+   "id": "d015",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::situacao",
+    "executor/runner.py::validate_contract"
+   ],
+   "ordem": [
+    "executor/runner.py::validate_contract",
+    "integracao/jev_router/orcamento.py::situacao",
+    "executor/runner.py::usage_from",
+    "laboratorio/r1_r3_estresse.py::executar",
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "laboratorio/r0_calibracao.py::main",
+    "executor/run_e5_provedores.py::carregar_chave",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "notas": {
+    "laboratorio/r1_r3_estresse.py::executar": 0.08,
+    "executor/runner.py::validate_contract": 0.91,
+    "laboratorio/r16_guarda_de_comando.py::executar": 0.05,
+    "executor/run_e5_provedores.py::carregar_chave": 0.04,
+    "laboratorio/r0_calibracao.py::main": 0.05,
+    "executor/runner.py::usage_from": 0.13,
+    "integracao/jev_router/orcamento.py::situacao": 0.74,
+    "executor/run_e12_replicacao.py::executar_todos": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000123732,
+   "latencia_ms": 4527.34
+  },
+  {
+   "id": "d015",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/orcamento.py::situacao",
+    "executor/runner.py::validate_contract"
+   ],
+   "ordem": [
+    "integracao/jev_router/orcamento.py::situacao",
+    "executor/runner.py::validate_contract"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000239064,
+   "latencia_ms": 2355.0
+  },
+  {
+   "id": "d016",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/politica.py::decidir",
+    "integracao/avaliacao/comandos.py::main"
+   ],
+   "ordem": [
+    "integracao/jev_router/politica.py::decidir",
+    "integracao/avaliacao/comandos.py::main",
+    "integracao/jev_router/cli.py::main",
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/placar.py::comparador_empatou",
+    "laboratorio/nucleo.py::chave",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "notas": {
+    "laboratorio/r15_adversario_externo.py::tarefas": 0.03,
+    "executor/adjudicar_e11.py::montar_prompt": 0.03,
+    "integracao/avaliacao/comandos.py::main": 0.8,
+    "laboratorio/nucleo.py::chave": 0.02,
+    "executor/run_e12_replicacao.py::executar_todos": 0.02,
+    "integracao/jev_router/politica.py::decidir": 0.91,
+    "executor/placar.py::comparador_empatou": 0.03,
+    "integracao/jev_router/cli.py::main": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000132048,
+   "latencia_ms": 3058.19
+  },
+  {
+   "id": "d016",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/politica.py::decidir",
+    "integracao/avaliacao/comandos.py::main"
+   ],
+   "ordem": [
+    "integracao/jev_router/politica.py::decidir",
+    "integracao/avaliacao/comandos.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000255612,
+   "latencia_ms": 4025.34
+  },
+  {
+   "id": "d017",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/adjudicar_e12.py::consolidar",
+    "laboratorio/r8_r9_adversarial.py::resumo"
+   ],
+   "ordem": [
+    "laboratorio/r8_r9_adversarial.py::resumo",
+    "executor/run_e11_desempate.py::_analisar",
+    "laboratorio/r15_adversario_externo.py::gerar_vetores",
+    "executor/adjudicar_e12.py::consolidar",
+    "executor/run_e9_prevalencia.py::carregar",
+    "executor/adjudicar_e12.py::desacordos",
+    "executor/runner.py::payload_for",
+    "integracao/instalar.py::ja_instalado"
+   ],
+   "notas": {
+    "laboratorio/r15_adversario_externo.py::gerar_vetores": 0.15,
+    "executor/adjudicar_e12.py::consolidar": 0.09,
+    "laboratorio/r8_r9_adversarial.py::resumo": 0.63,
+    "executor/adjudicar_e12.py::desacordos": 0.05,
+    "executor/run_e11_desempate.py::_analisar": 0.2,
+    "executor/runner.py::payload_for": 0.03,
+    "integracao/instalar.py::ja_instalado": 0.03,
+    "executor/run_e9_prevalencia.py::carregar": 0.06
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000146412,
+   "latencia_ms": 1133.49
+  },
+  {
+   "id": "d017",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/adjudicar_e12.py::consolidar",
+    "laboratorio/r8_r9_adversarial.py::resumo"
+   ],
+   "ordem": [
+    "laboratorio/r15_adversario_externo.py::gerar_vetores",
+    "laboratorio/r8_r9_adversarial.py::resumo"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000284508,
+   "latencia_ms": 2342.16
+  },
+  {
+   "id": "d018",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/hooks/jev_prompt_router.py::main",
+    "laboratorio/r17_economia_de_contexto.py::montar"
+   ],
+   "ordem": [
+    "integracao/hooks/jev_prompt_router.py::main",
+    "laboratorio/r17_economia_de_contexto.py::montar",
+    "lab/server.py::require",
+    "integracao/avaliacao/comandos.py::medir",
+    "laboratorio/r1_r3_estresse.py::pareado",
+    "executor/erro_grave.py::gabaritos",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "executor/publicar_experimentos.py::tentativa"
+   ],
+   "notas": {
+    "integracao/avaliacao/comandos.py::medir": 0.05,
+    "integracao/hooks/jev_prompt_router.py::main": 0.92,
+    "laboratorio/r1_r3_estresse.py::pareado": 0.03,
+    "executor/erro_grave.py::gabaritos": 0.03,
+    "integracao/hooks/jev_guarda_comando.py::registrar": 0.03,
+    "executor/publicar_experimentos.py::tentativa": 0.03,
+    "lab/server.py::require": 0.08,
+    "laboratorio/r17_economia_de_contexto.py::montar": 0.67
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000100884,
+   "latencia_ms": 2172.92
+  },
+  {
+   "id": "d018",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/hooks/jev_prompt_router.py::main",
+    "laboratorio/r17_economia_de_contexto.py::montar"
+   ],
+   "ordem": [
+    "integracao/hooks/jev_prompt_router.py::main",
+    "laboratorio/r17_economia_de_contexto.py::montar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00019340999999999998,
+   "latencia_ms": 2157.1800000000003
+  },
+  {
+   "id": "d019",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/cliente.py::transporte_http",
+    "executor/run_e12_replicacao.py::braco_jev"
+   ],
+   "ordem": [
+    "integracao/jev_router/cliente.py::transporte_http",
+    "executor/run_e12_replicacao.py::braco_jev",
+    "executor/run_e12_replicacao.py::completar",
+    "executor/publicar_experimentos.py::ler",
+    "laboratorio/r18_escala.py::main",
+    "executor/placar.py::titulo_do_veredito",
+    "executor/run_e16.py::prepare",
+    "executor/run_e9_prevalencia.py::aceitacao"
+   ],
+   "notas": {
+    "executor/placar.py::titulo_do_veredito": 0.03,
+    "integracao/jev_router/cliente.py::transporte_http": 0.91,
+    "executor/run_e12_replicacao.py::braco_jev": 0.58,
+    "executor/run_e16.py::prepare": 0.03,
+    "executor/publicar_experimentos.py::ler": 0.04,
+    "executor/run_e12_replicacao.py::completar": 0.08,
+    "laboratorio/r18_escala.py::main": 0.04,
+    "executor/run_e9_prevalencia.py::aceitacao": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000123438,
+   "latencia_ms": 1697.88
+  },
+  {
+   "id": "d019",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/cliente.py::transporte_http",
+    "executor/run_e12_replicacao.py::braco_jev"
+   ],
+   "ordem": [
+    "integracao/jev_router/cliente.py::transporte_http",
+    "executor/run_e12_replicacao.py::braco_jev"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00023898,
+   "latencia_ms": 3857.5099999999998
+  },
+  {
+   "id": "d020",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e1_triagem.py::resumo",
+    "laboratorio/r16_guarda_de_comando.py::amostra"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::resumo",
+    "laboratorio/r16_guarda_de_comando.py::amostra",
+    "executor/run_e1_triagem.py::main",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "integracao/jev_router/roteador.py::registrar",
+    "laboratorio/r15_adversario_externo.py::gerar_vetores",
+    "integracao/jev_router/roteador.py::do_cache",
+    "executor/placar.py::pct"
+   ],
+   "notas": {
+    "laboratorio/r4_r7_limites.py::criterios_com": 0.06,
+    "integracao/jev_router/roteador.py::registrar": 0.04,
+    "laboratorio/r15_adversario_externo.py::gerar_vetores": 0.04,
+    "executor/run_e1_triagem.py::main": 0.1,
+    "integracao/jev_router/roteador.py::do_cache": 0.03,
+    "executor/placar.py::pct": 0.03,
+    "laboratorio/r16_guarda_de_comando.py::amostra": 0.89,
+    "executor/run_e1_triagem.py::resumo": 0.92
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000148764,
+   "latencia_ms": 984.01
+  },
+  {
+   "id": "d020",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e1_triagem.py::resumo",
+    "laboratorio/r16_guarda_de_comando.py::amostra"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::resumo",
+    "laboratorio/r16_guarda_de_comando.py::amostra"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000289296,
+   "latencia_ms": 2132.96
+  },
+  {
+   "id": "d021",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "lab/server.py::main"
+   ],
+   "ordem": [
+    "lab/server.py::main",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "executor/run_e10b_piloto.py::carregar",
+    "executor/runner.py::usage_from",
+    "executor/run_e8_anotador.py::kappa_cohen",
+    "executor/run_e12_replicacao.py::carregar",
+    "executor/simple_round.py::run_one",
+    "executor/run_e2_fatorial.py::criterios"
+   ],
+   "notas": {
+    "lab/server.py::main": 0.93,
+    "executor/run_e10b_piloto.py::carregar": 0.04,
+    "executor/run_e8_anotador.py::kappa_cohen": 0.03,
+    "executor/run_e12_replicacao.py::carregar": 0.03,
+    "executor/run_e12_replicacao.py::carteira_do_ledger": 0.91,
+    "executor/runner.py::usage_from": 0.04,
+    "executor/simple_round.py::run_one": 0.03,
+    "executor/run_e2_fatorial.py::criterios": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 8.0892e-05,
+   "latencia_ms": 2169.84
+  },
+  {
+   "id": "d021",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "lab/server.py::main"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "lab/server.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000154014,
+   "latencia_ms": 3272.3999999999996
+  },
+  {
+   "id": "d022",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/instalar.py::main",
+    "executor/publish_simple_round.py::save"
+   ],
+   "ordem": [
+    "integracao/instalar.py::main",
+    "executor/publish_simple_round.py::save",
+    "executor/publicar_experimentos.py::e2b_run",
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "integracao/jev_router/roteador.py::impressao",
+    "executor/gabarito.py::adjudicado",
+    "laboratorio/nucleo.py::chave",
+    "executor/placar.py::faixa_dos_gabaritos"
+   ],
+   "notas": {
+    "executor/publish_simple_round.py::save": 0.79,
+    "executor/publicar_experimentos.py::e2b_run": 0.04,
+    "executor/gabarito.py::adjudicado": 0.02,
+    "laboratorio/nucleo.py::chave": 0.02,
+    "executor/placar.py::faixa_dos_gabaritos": 0.02,
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico": 0.03,
+    "integracao/jev_router/roteador.py::impressao": 0.03,
+    "integracao/instalar.py::main": 0.92
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000124656,
+   "latencia_ms": 931.49
+  },
+  {
+   "id": "d022",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/instalar.py::main",
+    "executor/publish_simple_round.py::save"
+   ],
+   "ordem": [
+    "integracao/instalar.py::main",
+    "executor/publish_simple_round.py::save"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00024179399999999998,
+   "latencia_ms": 2815.23
+  },
+  {
+   "id": "d023",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r11_extremos.py::condicoes",
+    "laboratorio/r8_r9_adversarial.py::tarefas"
+   ],
+   "ordem": [
+    "laboratorio/r11_extremos.py::condicoes",
+    "laboratorio/r8_r9_adversarial.py::tarefas",
+    "executor/placar.py::faixa_dos_gabaritos",
+    "laboratorio/r1_r3_estresse.py::criterios_12",
+    "integracao/jev_mcp.py::call",
+    "integracao/jev_mcp.py::main",
+    "integracao/instalar.py::entrada_de",
+    "executor/simple_round.py::main"
+   ],
+   "notas": {
+    "executor/placar.py::faixa_dos_gabaritos": 0.03,
+    "laboratorio/r1_r3_estresse.py::criterios_12": 0.03,
+    "integracao/jev_mcp.py::call": 0.03,
+    "integracao/jev_mcp.py::main": 0.03,
+    "laboratorio/r11_extremos.py::condicoes": 0.93,
+    "integracao/instalar.py::entrada_de": 0.03,
+    "laboratorio/r8_r9_adversarial.py::tarefas": 0.92,
+    "executor/simple_round.py::main": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000134568,
+   "latencia_ms": 1174.77
+  },
+  {
+   "id": "d023",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r11_extremos.py::condicoes",
+    "laboratorio/r8_r9_adversarial.py::tarefas"
+   ],
+   "ordem": [
+    "laboratorio/r11_extremos.py::condicoes",
+    "laboratorio/r8_r9_adversarial.py::tarefas"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000260652,
+   "latencia_ms": 2272.46
+  },
+  {
+   "id": "d024",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/run_e2_fatorial.py::condicoes"
+   ],
+   "ordem": [
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/run_e2_fatorial.py::condicoes",
+    "executor/publicar_experimentos.py::tentativa",
+    "executor/run_e12_replicacao.py::braco_jev",
+    "executor/run_e10b_piloto.py::pareamento",
+    "integracao/jev_router/politica.py::decidir",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "integracao/instalar.py::instalar"
+   ],
+   "notas": {
+    "laboratorio/r10_injecao_comparada.py::tarefas": 0.91,
+    "executor/publicar_experimentos.py::tentativa": 0.04,
+    "integracao/hooks/jev_guarda_comando.py::registrar": 0.02,
+    "executor/run_e12_replicacao.py::braco_jev": 0.03,
+    "executor/run_e2_fatorial.py::condicoes": 0.86,
+    "executor/run_e10b_piloto.py::pareamento": 0.03,
+    "integracao/jev_router/politica.py::decidir": 0.03,
+    "integracao/instalar.py::instalar": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 8.9334e-05,
+   "latencia_ms": 3000.85
+  },
+  {
+   "id": "d024",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/run_e2_fatorial.py::condicoes"
+   ],
+   "ordem": [
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/run_e2_fatorial.py::condicoes"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000170478,
+   "latencia_ms": 4385.41
+  },
+  {
+   "id": "d025",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/analise.py::analisar_e1",
+    "laboratorio/r11_extremos.py::executar"
+   ],
+   "ordem": [
+    "executor/analise.py::analisar_e1",
+    "laboratorio/r14_autorrecursivo.py::executar",
+    "laboratorio/r11_extremos.py::executar",
+    "executor/run_e10_llm_economico.py::carregar",
+    "integracao/avaliacao/comandos.py::medir",
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25"
+   ],
+   "notas": {
+    "executor/analise.py::analisar_e1": 0.82,
+    "integracao/avaliacao/comandos.py::medir": 0.06,
+    "laboratorio/r1_r3_estresse.py::com_erro": 0.03,
+    "executor/run_e10_llm_economico.py::carregar": 0.18,
+    "executor/publicar_experimentos.py::custo_do_ledger": 0.03,
+    "laboratorio/r14_autorrecursivo.py::executar": 0.77,
+    "laboratorio/r17_economia_de_contexto.py::ordenar_com_bm25": 0.03,
+    "laboratorio/r11_extremos.py::executar": 0.35
+   },
+   "chamadas": 1,
+   "custo_usd": 9.828e-05,
+   "latencia_ms": 1063.51
+  },
+  {
+   "id": "d025",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/analise.py::analisar_e1",
+    "laboratorio/r11_extremos.py::executar"
+   ],
+   "ordem": [
+    "executor/analise.py::analisar_e1",
+    "laboratorio/r14_autorrecursivo.py::executar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000188454,
+   "latencia_ms": 4181.24
+  },
+  {
+   "id": "d026",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/analise.py::analisar_posicao_e2b",
+    "laboratorio/r1_r3_estresse.py::estilo_igor"
+   ],
+   "ordem": [
+    "laboratorio/r1_r3_estresse.py::estilo_igor",
+    "executor/analise.py::analisar_posicao_e2b",
+    "laboratorio/r11_extremos.py::criterios_com",
+    "executor/run_e10_llm_economico.py::executar",
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "executor/run_e12_replicacao.py::main",
+    "executor/run_e4_ressalvas.py::tokens",
+    "integracao/jev_router/roteador.py::impressao"
+   ],
+   "notas": {
+    "laboratorio/r1_r3_estresse.py::estilo_igor": 0.87,
+    "executor/run_e4_ressalvas.py::tokens": 0.03,
+    "executor/run_e10_llm_economico.py::executar": 0.05,
+    "laboratorio/r11_extremos.py::criterios_com": 0.06,
+    "integracao/jev_router/roteador.py::impressao": 0.03,
+    "executor/analise.py::analisar_posicao_e2b": 0.54,
+    "laboratorio/r17_economia_de_contexto.py::pool": 0.04,
+    "executor/run_e12_replicacao.py::main": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000146706,
+   "latencia_ms": 1130.5
+  },
+  {
+   "id": "d026",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/analise.py::analisar_posicao_e2b",
+    "laboratorio/r1_r3_estresse.py::estilo_igor"
+   ],
+   "ordem": [
+    "executor/analise.py::analisar_posicao_e2b",
+    "laboratorio/r1_r3_estresse.py::estilo_igor"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00028518,
+   "latencia_ms": 2080.13
+  },
+  {
+   "id": "d027",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/publicar_experimentos.py::e5_run"
+   ],
+   "ordem": [
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/publicar_experimentos.py::e5_run",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "integracao/hooks/jev_guarda_comando.py::_marca",
+    "laboratorio/r11_extremos.py::main",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "integracao/instalar.py::desinstalar_gancho",
+    "executor/placar.py::dec"
+   ],
+   "notas": {
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico": 0.93,
+    "executor/run_e12_replicacao.py::carteira_do_ledger": 0.05,
+    "laboratorio/r11_extremos.py::main": 0.04,
+    "integracao/hooks/jev_guarda_comando.py::registrar": 0.03,
+    "integracao/instalar.py::desinstalar_gancho": 0.03,
+    "executor/publicar_experimentos.py::e5_run": 0.76,
+    "executor/placar.py::dec": 0.03,
+    "integracao/hooks/jev_guarda_comando.py::_marca": 0.05
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000124572,
+   "latencia_ms": 1205.56
+  },
+  {
+   "id": "d027",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/publicar_experimentos.py::e5_run"
+   ],
+   "ordem": [
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico",
+    "executor/publicar_experimentos.py::e5_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000240996,
+   "latencia_ms": 2076.87
+  },
+  {
+   "id": "d028",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/instalar.py::instalar",
+    "integracao/hooks/jev_guarda_comando.py::avaliar"
+   ],
+   "ordem": [
+    "integracao/instalar.py::instalar",
+    "integracao/hooks/jev_guarda_comando.py::avaliar",
+    "executor/runner.py::validate_contract",
+    "executor/run_e4_ressalvas.py::tokens",
+    "laboratorio/r1_r3_estresse.py::corpus",
+    "executor/run_e4_ressalvas.py::normalizar",
+    "integracao/avaliacao/skills.py::main",
+    "executor/run_e3_evidencia.py::regra_simples"
+   ],
+   "notas": {
+    "integracao/instalar.py::instalar": 0.94,
+    "integracao/hooks/jev_guarda_comando.py::avaliar": 0.89,
+    "executor/runner.py::validate_contract": 0.03,
+    "executor/run_e4_ressalvas.py::tokens": 0.03,
+    "laboratorio/r1_r3_estresse.py::corpus": 0.03,
+    "executor/run_e4_ressalvas.py::normalizar": 0.03,
+    "executor/run_e3_evidencia.py::regra_simples": 0.02,
+    "integracao/avaliacao/skills.py::main": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000127386,
+   "latencia_ms": 1161.94
+  },
+  {
+   "id": "d028",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/instalar.py::instalar",
+    "integracao/hooks/jev_guarda_comando.py::avaliar"
+   ],
+   "ordem": [
+    "integracao/instalar.py::instalar",
+    "integracao/hooks/jev_guarda_comando.py::avaliar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000246456,
+   "latencia_ms": 2363.75
+  },
+  {
+   "id": "d029",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/placar.py::gabaritos_do_conjunto",
+    "executor/exportar_extrato.py::exportar"
+   ],
+   "ordem": [
+    "executor/placar.py::gabaritos_do_conjunto",
+    "executor/exportar_extrato.py::exportar",
+    "integracao/hooks/jev_guarda_comando.py::avaliar",
+    "laboratorio/r14_autorrecursivo.py::executar",
+    "executor/run_e15.py::questions_hash",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "executor/run_e10_llm_economico.py::carregar",
+    "executor/adjudicar_e12.py::main"
+   ],
+   "notas": {
+    "executor/placar.py::gabaritos_do_conjunto": 0.9,
+    "executor/run_e15.py::questions_hash": 0.03,
+    "integracao/hooks/jev_guarda_comando.py::avaliar": 0.05,
+    "laboratorio/r14_autorrecursivo.py::executar": 0.05,
+    "executor/exportar_extrato.py::exportar": 0.73,
+    "laboratorio/r4_r7_limites.py::criterios_com": 0.03,
+    "executor/run_e10_llm_economico.py::carregar": 0.03,
+    "executor/adjudicar_e12.py::main": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 9.5382e-05,
+   "latencia_ms": 1167.91
+  },
+  {
+   "id": "d029",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/placar.py::gabaritos_do_conjunto",
+    "executor/exportar_extrato.py::exportar"
+   ],
+   "ordem": [
+    "executor/placar.py::gabaritos_do_conjunto",
+    "executor/exportar_extrato.py::exportar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000181902,
+   "latencia_ms": 2726.27
+  },
+  {
+   "id": "d030",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/placar.py::limite_superior_erro_da_politica"
+   ],
+   "ordem": [
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/placar.py::limite_superior_erro_da_politica",
+    "laboratorio/r12_r13_contexto.py::main",
+    "executor/erro_grave.py::relatorio",
+    "executor/run_e12_replicacao.py::faltantes",
+    "executor/publish_simple_round.py::state",
+    "integracao/jev_router/roteador.py::para_o_cache",
+    "integracao/jev_router/roteador.py::do_cache"
+   ],
+   "notas": {
+    "laboratorio/r12_r13_contexto.py::main": 0.04,
+    "executor/placar.py::limite_superior_erro_da_politica": 0.92,
+    "executor/erro_grave.py::relatorio": 0.03,
+    "executor/run_e12_replicacao.py::faltantes": 0.03,
+    "executor/run_e10_llm_economico.py::interpretar": 0.96,
+    "executor/publish_simple_round.py::state": 0.03,
+    "integracao/jev_router/roteador.py::para_o_cache": 0.03,
+    "integracao/jev_router/roteador.py::do_cache": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000118314,
+   "latencia_ms": 1073.35
+  },
+  {
+   "id": "d030",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/placar.py::limite_superior_erro_da_politica"
+   ],
+   "ordem": [
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/placar.py::limite_superior_erro_da_politica"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000228522,
+   "latencia_ms": 2225.2299999999996
+  },
+  {
+   "id": "d031",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "executor/publicar_experimentos.py::custo_do_ledger"
+   ],
+   "ordem": [
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "laboratorio/r8_r9_adversarial.py::main",
+    "laboratorio/r12_r13_contexto.py::executar",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/pricing.py::observed_nusd",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/gabarito.py::rotulo"
+   ],
+   "notas": {
+    "laboratorio/r8_r9_adversarial.py::main": 0.07,
+    "executor/run_e10_llm_economico.py::interpretar": 0.05,
+    "executor/publicar_experimentos.py::tentativas_orfas_run": 0.88,
+    "executor/gabarito.py::rotulo": 0.02,
+    "executor/pricing.py::observed_nusd": 0.04,
+    "executor/publicar_experimentos.py::custo_do_ledger": 0.04,
+    "laboratorio/r12_r13_contexto.py::executar": 0.06,
+    "executor/run_e3_evidencia.py::macro_f1_3": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000157416,
+   "latencia_ms": 2452.31
+  },
+  {
+   "id": "d031",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "executor/publicar_experimentos.py::custo_do_ledger"
+   ],
+   "ordem": [
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "executor/publicar_experimentos.py::tentativas_orfas_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00030681,
+   "latencia_ms": 2903.46
+  },
+  {
+   "id": "d032",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e4_ressalvas.py::ndcg"
+   ],
+   "ordem": [
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e4_ressalvas.py::ndcg",
+    "executor/run_e12_replicacao.py::completar",
+    "executor/adjudicar_e11.py::main",
+    "executor/placar.py::desempate_depende_do_gabarito",
+    "executor/run_e10_llm_economico.py::prompt",
+    "integracao/instalar.py::gravar",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "notas": {
+    "executor/run_e4_ressalvas.py::ndcg": 0.08,
+    "executor/run_e12_replicacao.py::completar": 0.03,
+    "executor/run_e10_llm_economico.py::prompt": 0.02,
+    "executor/run_e3_evidencia.py::macro_f1_3": 0.88,
+    "integracao/instalar.py::gravar": 0.02,
+    "executor/adjudicar_e11.py::main": 0.03,
+    "executor/run_e12_replicacao.py::executar_todos": 0.02,
+    "executor/placar.py::desempate_depende_do_gabarito": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 9.4332e-05,
+   "latencia_ms": 2436.0
+  },
+  {
+   "id": "d032",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e4_ressalvas.py::ndcg"
+   ],
+   "ordem": [
+    "executor/run_e3_evidencia.py::macro_f1_3",
+    "executor/run_e4_ressalvas.py::ndcg"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00018081,
+   "latencia_ms": 3186.7799999999997
+  },
+  {
+   "id": "d033",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e12_replicacao.py::falha_de_transporte",
+    "executor/run_e4_ressalvas.py::bm25"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::falha_de_transporte",
+    "executor/run_e4_ressalvas.py::bm25",
+    "integracao/avaliacao/amostrar.py::carregar",
+    "executor/run_e10b_piloto.py::carregar",
+    "executor/simple_round.py::main",
+    "executor/run_e3_evidencia.py::main",
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "executor/run_e15.py::sha"
+   ],
+   "notas": {
+    "executor/run_e10b_piloto.py::carregar": 0.05,
+    "executor/simple_round.py::main": 0.04,
+    "executor/run_e3_evidencia.py::main": 0.04,
+    "laboratorio/r10_injecao_comparada.py::tarefas": 0.03,
+    "executor/run_e12_replicacao.py::falha_de_transporte": 0.89,
+    "integracao/avaliacao/amostrar.py::carregar": 0.18,
+    "executor/run_e15.py::sha": 0.03,
+    "executor/run_e4_ressalvas.py::bm25": 0.88
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000110166,
+   "latencia_ms": 1154.79
+  },
+  {
+   "id": "d033",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e12_replicacao.py::falha_de_transporte",
+    "executor/run_e4_ressalvas.py::bm25"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::falha_de_transporte",
+    "executor/run_e4_ressalvas.py::bm25"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.0002121,
+   "latencia_ms": 2400.93
+  },
+  {
+   "id": "d034",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/placar.py::fonte_com_gabarito",
+    "executor/run_e9_prevalencia.py::carregar"
+   ],
+   "ordem": [
+    "executor/run_e9_prevalencia.py::carregar",
+    "executor/placar.py::fonte_com_gabarito",
+    "laboratorio/r4_r7_limites.py::corpus",
+    "integracao/hooks/jev_guarda_comando.py::main",
+    "executor/run_e12_replicacao.py::registrar_bracos",
+    "executor/publicar_experimentos.py::publicar",
+    "integracao/instalar.py::desinstalar_gancho",
+    "executor/publish_simple_round.py::save"
+   ],
+   "notas": {
+    "laboratorio/r4_r7_limites.py::corpus": 0.05,
+    "executor/run_e12_replicacao.py::registrar_bracos": 0.04,
+    "integracao/hooks/jev_guarda_comando.py::main": 0.05,
+    "integracao/instalar.py::desinstalar_gancho": 0.03,
+    "executor/publish_simple_round.py::save": 0.03,
+    "executor/publicar_experimentos.py::publicar": 0.04,
+    "executor/run_e9_prevalencia.py::carregar": 0.64,
+    "executor/placar.py::fonte_com_gabarito": 0.2
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000110964,
+   "latencia_ms": 5545.59
+  },
+  {
+   "id": "d034",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/placar.py::fonte_com_gabarito",
+    "executor/run_e9_prevalencia.py::carregar"
+   ],
+   "ordem": [
+    "executor/placar.py::fonte_com_gabarito",
+    "executor/run_e9_prevalencia.py::carregar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000213738,
+   "latencia_ms": 4130.09
+  },
+  {
+   "id": "d035",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/runner.py::estimate_input_tokens",
+    "laboratorio/r1_r3_estresse.py::executar"
+   ],
+   "ordem": [
+    "executor/runner.py::estimate_input_tokens",
+    "laboratorio/r1_r3_estresse.py::executar",
+    "executor/publicar_experimentos.py::e2b_run",
+    "lab/server.py::main",
+    "laboratorio/r8_r9_adversarial.py::tarefas",
+    "executor/run_e15.py::questions_hash",
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "integracao/jev_router/orcamento.py::situacao"
+   ],
+   "notas": {
+    "lab/server.py::main": 0.03,
+    "laboratorio/r8_r9_adversarial.py::tarefas": 0.03,
+    "executor/runner.py::estimate_input_tokens": 0.95,
+    "executor/publicar_experimentos.py::e2b_run": 0.04,
+    "laboratorio/r1_r3_estresse.py::executar": 0.89,
+    "executor/run_e15.py::questions_hash": 0.03,
+    "integracao/jev_router/orcamento.py::situacao": 0.02,
+    "laboratorio/r15_adversario_externo.py::tarefas": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 9.6474e-05,
+   "latencia_ms": 987.0
+  },
+  {
+   "id": "d035",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/runner.py::estimate_input_tokens",
+    "laboratorio/r1_r3_estresse.py::executar"
+   ],
+   "ordem": [
+    "executor/runner.py::estimate_input_tokens",
+    "laboratorio/r1_r3_estresse.py::executar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000184674,
+   "latencia_ms": 2417.08
+  },
+  {
+   "id": "d036",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/gabarito.py::do_autor"
+   ],
+   "ordem": [
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/gabarito.py::do_autor",
+    "laboratorio/r8_r9_adversarial.py::resumo",
+    "executor/run_e12_replicacao.py::braco_comparador",
+    "executor/adjudicar_e12.py::desacordos",
+    "laboratorio/r1_r3_estresse.py::corpus",
+    "integracao/avaliacao/rodar.py::main",
+    "executor/run_e12_replicacao.py::erro_grave"
+   ],
+   "notas": {
+    "laboratorio/r1_r3_estresse.py::corpus": 0.04,
+    "integracao/avaliacao/rodar.py::main": 0.04,
+    "integracao/avaliacao/com_contexto.py::rodar": 0.96,
+    "laboratorio/r8_r9_adversarial.py::resumo": 0.07,
+    "executor/run_e12_replicacao.py::braco_comparador": 0.05,
+    "executor/run_e12_replicacao.py::erro_grave": 0.04,
+    "executor/adjudicar_e12.py::desacordos": 0.05,
+    "executor/gabarito.py::do_autor": 0.75
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000114072,
+   "latencia_ms": 2300.71
+  },
+  {
+   "id": "d036",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/gabarito.py::do_autor"
+   ],
+   "ordem": [
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/gabarito.py::do_autor"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00021987,
+   "latencia_ms": 3766.2299999999996
+  },
+  {
+   "id": "d037",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/skills.py::regexes",
+    "executor/publicar_experimentos.py::e10_run"
+   ],
+   "ordem": [],
+   "notas": {},
+   "chamadas": 1,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "id": "d037",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/skills.py::regexes",
+    "executor/publicar_experimentos.py::e10_run"
+   ],
+   "ordem": [
+    "integracao/avaliacao/skills.py::regexes",
+    "executor/publicar_experimentos.py::e10_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000274134,
+   "latencia_ms": 7434.57
+  },
+  {
+   "id": "d038",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "executor/run_e2_fatorial.py::executar_lote"
+   ],
+   "ordem": [
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "executor/run_e2_fatorial.py::executar_lote",
+    "executor/publicar_experimentos.py::tentativas_orfas_run",
+    "executor/run_e12_replicacao.py::gabaritos",
+    "executor/run_e12_replicacao.py::custo_liquidado",
+    "executor/placar.py::publicar",
+    "laboratorio/r17_economia_de_contexto.py::tokeniza",
+    "executor/run_e1_triagem.py::resumo"
+   ],
+   "notas": {
+    "executor/publicar_experimentos.py::tentativas_orfas_run": 0.04,
+    "executor/run_e12_replicacao.py::gabaritos": 0.03,
+    "executor/run_e12_replicacao.py::custo_liquidado": 0.03,
+    "laboratorio/r17_economia_de_contexto.py::pool": 0.94,
+    "executor/placar.py::publicar": 0.03,
+    "laboratorio/r17_economia_de_contexto.py::tokeniza": 0.03,
+    "executor/run_e1_triagem.py::resumo": 0.03,
+    "executor/run_e2_fatorial.py::executar_lote": 0.3
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000162498,
+   "latencia_ms": 1817.91
+  },
+  {
+   "id": "d038",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "executor/run_e2_fatorial.py::executar_lote"
+   ],
+   "ordem": [
+    null,
+    "executor/run_e2_fatorial.py::executar_lote"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00015855,
+   "latencia_ms": 1220.04
+  },
+  {
+   "id": "d039",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e15.py::prepare",
+    "executor/run_e12_replicacao.py::repescar"
+   ],
+   "ordem": [
+    "executor/run_e15.py::prepare",
+    "executor/run_e12_replicacao.py::repescar",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "executor/gabarito.py::desempenho_do_estudo",
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "integracao/avaliacao/amostrar_com_contexto.py::e_digitado",
+    "integracao/instalar.py::entrada_de",
+    "executor/adjudicar_e12.py::montar_prompt"
+   ],
+   "notas": {
+    "executor/run_e15.py::prepare": 0.96,
+    "executor/gabarito.py::desempenho_do_estudo": 0.03,
+    "executor/run_e12_replicacao.py::repescar": 0.9,
+    "executor/run_e12_replicacao.py::carteira_do_ledger": 0.04,
+    "executor/run_e9_prevalencia.py::aceitacao": 0.03,
+    "integracao/avaliacao/amostrar_com_contexto.py::e_digitado": 0.02,
+    "integracao/instalar.py::entrada_de": 0.02,
+    "executor/adjudicar_e12.py::montar_prompt": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00012516,
+   "latencia_ms": 1715.68
+  },
+  {
+   "id": "d039",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e15.py::prepare",
+    "executor/run_e12_replicacao.py::repescar"
+   ],
+   "ordem": [
+    "executor/run_e15.py::prepare",
+    "executor/run_e12_replicacao.py::repescar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00024255000000000001,
+   "latencia_ms": 4077.4700000000003
+  },
+  {
+   "id": "d040",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/jev_router/cliente.py::perguntar",
+    "executor/publicar_experimentos.py::e11_run"
+   ],
+   "ordem": [
+    "integracao/jev_router/cliente.py::perguntar",
+    "executor/publicar_experimentos.py::e11_run",
+    "laboratorio/r15_adversario_externo.py::executar",
+    "executor/run_e12_replicacao.py::payload_chat",
+    "executor/run_e15.py::excerpt",
+    "executor/run_e15.py::wilson",
+    "laboratorio/r16_guarda_de_comando.py::placar",
+    "integracao/instalar.py::ja_instalado"
+   ],
+   "notas": {
+    "laboratorio/r15_adversario_externo.py::executar": 0.1,
+    "executor/run_e15.py::wilson": 0.05,
+    "integracao/instalar.py::ja_instalado": 0.03,
+    "laboratorio/r16_guarda_de_comando.py::placar": 0.04,
+    "executor/publicar_experimentos.py::e11_run": 0.71,
+    "executor/run_e15.py::excerpt": 0.07,
+    "executor/run_e12_replicacao.py::payload_chat": 0.08,
+    "integracao/jev_router/cliente.py::perguntar": 0.92
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000138684,
+   "latencia_ms": 999.84
+  },
+  {
+   "id": "d040",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/jev_router/cliente.py::perguntar",
+    "executor/publicar_experimentos.py::e11_run"
+   ],
+   "ordem": [
+    "integracao/jev_router/cliente.py::perguntar",
+    "executor/publicar_experimentos.py::e11_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000269094,
+   "latencia_ms": 2372.18
+  },
+  {
+   "id": "d041",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r1_r3_estresse.py::condicoes",
+    "executor/shared.py::current_prices"
+   ],
+   "ordem": [
+    "executor/shared.py::current_prices",
+    "laboratorio/r1_r3_estresse.py::condicoes",
+    "laboratorio/r15_adversario_externo.py::executar",
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "executor/run_e11_desempate.py::braco_jev",
+    "integracao/hooks/jev_guarda_comando.py::main",
+    "executor/run_e4_ressalvas.py::tokens",
+    "executor/adjudicar_e12.py::consolidar"
+   ],
+   "notas": {
+    "laboratorio/r15_adversario_externo.py::executar": 0.03,
+    "laboratorio/r1_r3_estresse.py::condicoes": 0.93,
+    "executor/shared.py::current_prices": 0.94,
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de": 0.03,
+    "integracao/hooks/jev_guarda_comando.py::main": 0.02,
+    "executor/run_e4_ressalvas.py::tokens": 0.02,
+    "executor/adjudicar_e12.py::consolidar": 0.02,
+    "executor/run_e11_desempate.py::braco_jev": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000159894,
+   "latencia_ms": 1247.18
+  },
+  {
+   "id": "d041",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r1_r3_estresse.py::condicoes",
+    "executor/shared.py::current_prices"
+   ],
+   "ordem": [
+    "laboratorio/r1_r3_estresse.py::condicoes",
+    "executor/shared.py::current_prices"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000311724,
+   "latencia_ms": 5966.12
+  },
+  {
+   "id": "d042",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e2_fatorial.py::executar_individual",
+    "executor/smoke_mcp.py::main"
+   ],
+   "ordem": [
+    "executor/smoke_mcp.py::main",
+    "executor/run_e2_fatorial.py::executar_individual",
+    "laboratorio/r20_k_adaptativo.py::ordenar",
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/adjudicar_e11.py::cegar",
+    "executor/run_e3_evidencia.py::regra_simples",
+    "laboratorio/r19_armadilha_de_sujeito.py::main",
+    "executor/publish_simple_round.py::state"
+   ],
+   "notas": {
+    "executor/run_e2_fatorial.py::executar_individual": 0.9,
+    "executor/adjudicar_e11.py::cegar": 0.03,
+    "laboratorio/r20_k_adaptativo.py::ordenar": 0.45,
+    "integracao/jev_router/roteador.py::classificar": 0.05,
+    "executor/run_e3_evidencia.py::regra_simples": 0.03,
+    "executor/smoke_mcp.py::main": 0.93,
+    "laboratorio/r19_armadilha_de_sujeito.py::main": 0.03,
+    "executor/publish_simple_round.py::state": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000112476,
+   "latencia_ms": 1254.73
+  },
+  {
+   "id": "d042",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e2_fatorial.py::executar_individual",
+    "executor/smoke_mcp.py::main"
+   ],
+   "ordem": [
+    "executor/run_e2_fatorial.py::executar_individual",
+    "executor/smoke_mcp.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000216636,
+   "latencia_ms": 2278.0600000000004
+  },
+  {
+   "id": "d043",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e12_replicacao.py::erro_grave"
+   ],
+   "ordem": [
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e12_replicacao.py::erro_grave",
+    "executor/shared.py::import_legacy",
+    "laboratorio/nucleo.py::wilson",
+    "laboratorio/r15b_familias.py::main",
+    "executor/run_e8_anotador.py::perguntar",
+    "executor/run_e10b_piloto.py::carregar",
+    "executor/pricing.py::usd_to_nusd"
+   ],
+   "notas": {
+    "executor/run_e3_evidencia.py::resumo": 0.9,
+    "executor/shared.py::import_legacy": 0.04,
+    "laboratorio/nucleo.py::wilson": 0.04,
+    "executor/run_e10b_piloto.py::carregar": 0.03,
+    "laboratorio/r15b_familias.py::main": 0.04,
+    "executor/run_e12_replicacao.py::erro_grave": 0.78,
+    "executor/pricing.py::usd_to_nusd": 0.03,
+    "executor/run_e8_anotador.py::perguntar": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000177744,
+   "latencia_ms": 1362.15
+  },
+  {
+   "id": "d043",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e12_replicacao.py::erro_grave"
+   ],
+   "ordem": [
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e12_replicacao.py::erro_grave"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00034692,
+   "latencia_ms": 2364.23
+  },
+  {
+   "id": "d044",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/erro_grave.py::medir",
+    "executor/runner.py::reservation_output_tokens"
+   ],
+   "ordem": [
+    "executor/runner.py::reservation_output_tokens",
+    "executor/erro_grave.py::medir",
+    "executor/run_e5_provedores.py::carregar_chave",
+    "lab/server.py::text",
+    "executor/publicar_experimentos.py::e6_run",
+    "executor/placar.py::gabarito_do_corpus",
+    "executor/placar.py::publicar",
+    "integracao/instalar.py::gravar"
+   ],
+   "notas": {
+    "executor/publicar_experimentos.py::e6_run": 0.03,
+    "executor/erro_grave.py::medir": 0.82,
+    "lab/server.py::text": 0.04,
+    "executor/runner.py::reservation_output_tokens": 0.92,
+    "executor/placar.py::gabarito_do_corpus": 0.03,
+    "executor/run_e5_provedores.py::carregar_chave": 0.09,
+    "executor/placar.py::publicar": 0.03,
+    "integracao/instalar.py::gravar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 8.6058e-05,
+   "latencia_ms": 3981.64
+  },
+  {
+   "id": "d044",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/erro_grave.py::medir",
+    "executor/runner.py::reservation_output_tokens"
+   ],
+   "ordem": [
+    "executor/erro_grave.py::medir",
+    "executor/runner.py::reservation_output_tokens"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000164178,
+   "latencia_ms": 2365.44
+  },
+  {
+   "id": "d045",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/shared.py::import_legacy"
+   ],
+   "ordem": [
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/shared.py::import_legacy",
+    "integracao/avaliacao/amostrar.py::carregar",
+    "laboratorio/r20_k_adaptativo.py::rodar",
+    "integracao/avaliacao/com_contexto.py::rodar",
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "laboratorio/r1_r3_estresse.py::corpus",
+    "laboratorio/r16_guarda_de_comando.py::placar"
+   ],
+   "notas": {
+    "executor/shared.py::import_legacy": 0.93,
+    "integracao/avaliacao/comandos.py::extrair": 0.94,
+    "executor/run_e9_prevalencia.py::aceitacao": 0.02,
+    "laboratorio/r1_r3_estresse.py::corpus": 0.02,
+    "laboratorio/r20_k_adaptativo.py::rodar": 0.03,
+    "integracao/avaliacao/com_contexto.py::rodar": 0.03,
+    "integracao/avaliacao/amostrar.py::carregar": 0.04,
+    "laboratorio/r16_guarda_de_comando.py::placar": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000142926,
+   "latencia_ms": 1267.27
+  },
+  {
+   "id": "d045",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/shared.py::import_legacy"
+   ],
+   "ordem": [
+    "integracao/avaliacao/comandos.py::extrair",
+    "executor/shared.py::import_legacy"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000277788,
+   "latencia_ms": 2307.81
+  },
+  {
+   "id": "d046",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "executor/adjudicar_e11.py::desacordos"
+   ],
+   "ordem": [
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "executor/adjudicar_e11.py::desacordos",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/publicar_experimentos.py::custo_do_ledger",
+    "executor/runner.py::payload_for",
+    "integracao/hooks/jev_guarda_comando.py::main",
+    "executor/ledger.py::now_utc",
+    "integracao/avaliacao/auditar_producao.py::marca"
+   ],
+   "notas": {
+    "executor/publicar_experimentos.py::custo_do_ledger": 0.04,
+    "executor/run_e10_llm_economico.py::interpretar": 0.06,
+    "executor/runner.py::payload_for": 0.04,
+    "executor/ledger.py::now_utc": 0.03,
+    "integracao/hooks/jev_guarda_comando.py::main": 0.04,
+    "laboratorio/nucleo.py::gasto_do_programa": 0.93,
+    "executor/adjudicar_e11.py::desacordos": 0.76,
+    "integracao/avaliacao/auditar_producao.py::marca": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 9.03e-05,
+   "latencia_ms": 1347.86
+  },
+  {
+   "id": "d046",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "executor/adjudicar_e11.py::desacordos"
+   ],
+   "ordem": [
+    "laboratorio/nucleo.py::gasto_do_programa",
+    "executor/adjudicar_e11.py::desacordos"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00017203200000000002,
+   "latencia_ms": 2072.06
+  },
+  {
+   "id": "d047",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/probe_contract.py::send",
+    "executor/placar.py::faixa_dos_gabaritos"
+   ],
+   "ordem": [
+    "executor/probe_contract.py::send",
+    "executor/run_e12_replicacao.py::analisar",
+    "executor/placar.py::faixa_dos_gabaritos",
+    "executor/placar.py::texto_da_replicacao",
+    "executor/publicar_experimentos.py::e12_run",
+    "executor/run_e11_desempate.py::mcnemar_exato",
+    "executor/placar.py::dec",
+    "executor/placar.py::politica_de_referencia"
+   ],
+   "notas": {
+    "executor/run_e11_desempate.py::mcnemar_exato": 0.03,
+    "executor/placar.py::dec": 0.03,
+    "executor/placar.py::texto_da_replicacao": 0.06,
+    "executor/placar.py::politica_de_referencia": 0.03,
+    "executor/run_e12_replicacao.py::analisar": 0.47,
+    "executor/placar.py::faixa_dos_gabaritos": 0.14,
+    "executor/probe_contract.py::send": 0.92,
+    "executor/publicar_experimentos.py::e12_run": 0.05
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000178962,
+   "latencia_ms": 1146.08
+  },
+  {
+   "id": "d047",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/probe_contract.py::send",
+    "executor/placar.py::faixa_dos_gabaritos"
+   ],
+   "ordem": [
+    "executor/probe_contract.py::send",
+    "executor/run_e12_replicacao.py::analisar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000349692,
+   "latencia_ms": 2988.7700000000004
+  },
+  {
+   "id": "d048",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/pricing.py::load_prices",
+    "executor/adjudicar_e12.py::montar_prompt"
+   ],
+   "ordem": [
+    "executor/pricing.py::load_prices",
+    "executor/adjudicar_e12.py::montar_prompt",
+    "executor/run_e10_llm_economico.py::prompt",
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/publish_simple_round.py::note_for",
+    "executor/adjudicar_e12.py::consolidar",
+    "executor/assist.py::main",
+    "laboratorio/r1_r3_estresse.py::pareado"
+   ],
+   "notas": {
+    "executor/adjudicar_e12.py::montar_prompt": 0.83,
+    "laboratorio/r16_guarda_de_comando.py::executar": 0.03,
+    "executor/pricing.py::load_prices": 0.94,
+    "executor/run_e10_llm_economico.py::prompt": 0.06,
+    "executor/publish_simple_round.py::note_for": 0.03,
+    "executor/assist.py::main": 0.02,
+    "executor/adjudicar_e12.py::consolidar": 0.03,
+    "laboratorio/r1_r3_estresse.py::pareado": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000113022,
+   "latencia_ms": 1412.04
+  },
+  {
+   "id": "d048",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/pricing.py::load_prices",
+    "executor/adjudicar_e12.py::montar_prompt"
+   ],
+   "ordem": [
+    "executor/pricing.py::load_prices",
+    "executor/adjudicar_e12.py::montar_prompt"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00021777,
+   "latencia_ms": 3721.1
+  },
+  {
+   "id": "d049",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r20_k_adaptativo.py::main",
+    "laboratorio/r4_r7_limites.py::tarefas_r4"
+   ],
+   "ordem": [
+    "laboratorio/r20_k_adaptativo.py::main",
+    "laboratorio/r4_r7_limites.py::tarefas_r4",
+    "laboratorio/r18_escala.py::analisar",
+    "integracao/jev_router/roteador.py::classificar",
+    "executor/placar.py::pendencias",
+    "laboratorio/r17_economia_de_contexto.py::montar",
+    "lab/server.py::validate_run_update",
+    "laboratorio/r15b_familias.py::main"
+   ],
+   "notas": {
+    "laboratorio/r18_escala.py::analisar": 0.05,
+    "executor/placar.py::pendencias": 0.04,
+    "laboratorio/r20_k_adaptativo.py::main": 0.92,
+    "laboratorio/r4_r7_limites.py::tarefas_r4": 0.91,
+    "lab/server.py::validate_run_update": 0.03,
+    "laboratorio/r17_economia_de_contexto.py::montar": 0.04,
+    "laboratorio/r15b_familias.py::main": 0.03,
+    "integracao/jev_router/roteador.py::classificar": 0.05
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000217392,
+   "latencia_ms": 4463.79
+  },
+  {
+   "id": "d049",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r20_k_adaptativo.py::main",
+    "laboratorio/r4_r7_limites.py::tarefas_r4"
+   ],
+   "ordem": [
+    "laboratorio/r20_k_adaptativo.py::main",
+    "laboratorio/r4_r7_limites.py::tarefas_r4"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000427014,
+   "latencia_ms": 3710.76
+  },
+  {
+   "id": "d050",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "laboratorio/r11_extremos.py::resumo"
+   ],
+   "ordem": [
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "laboratorio/r11_extremos.py::resumo",
+    "laboratorio/r19_armadilha_de_sujeito.py::executar",
+    "executor/run_e10b_piloto.py::main",
+    "executor/analise.py::analisar_posicao_e2b",
+    "executor/baseline_regra.py::normalizar",
+    "executor/gabarito.py::rotulo",
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de"
+   ],
+   "notas": {
+    "executor/baseline_regra.py::normalizar": 0.03,
+    "laboratorio/r19_armadilha_de_sujeito.py::executar": 0.1,
+    "laboratorio/r11_extremos.py::resumo": 0.56,
+    "executor/gabarito.py::rotulo": 0.03,
+    "executor/analise.py::analisar_posicao_e2b": 0.05,
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de": 0.03,
+    "executor/run_e9_prevalencia.py::limite_superior_erro": 0.86,
+    "executor/run_e10b_piloto.py::main": 0.08
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000155988,
+   "latencia_ms": 1140.71
+  },
+  {
+   "id": "d050",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "laboratorio/r11_extremos.py::resumo"
+   ],
+   "ordem": [
+    "executor/run_e9_prevalencia.py::limite_superior_erro",
+    "laboratorio/r11_extremos.py::resumo"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000303954,
+   "latencia_ms": 2164.01
+  },
+  {
+   "id": "d051",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/adjudicar_e12.py::main",
+    "executor/adjudicar_e11.py::cegar"
+   ],
+   "ordem": [
+    "executor/adjudicar_e12.py::main",
+    "executor/adjudicar_e11.py::cegar",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/erro_grave.py::gabaritos",
+    "integracao/avaliacao/rodar.py::rodar",
+    "executor/ledger.py::now_utc",
+    "executor/run_e2_fatorial.py::executar_lote",
+    "executor/placar.py::dec"
+   ],
+   "notas": {
+    "executor/erro_grave.py::gabaritos": 0.03,
+    "integracao/avaliacao/rodar.py::rodar": 0.03,
+    "executor/ledger.py::now_utc": 0.03,
+    "executor/adjudicar_e12.py::main": 0.91,
+    "executor/adjudicar_e11.py::cegar": 0.67,
+    "executor/adjudicar_e11.py::montar_prompt": 0.04,
+    "executor/run_e2_fatorial.py::executar_lote": 0.03,
+    "executor/placar.py::dec": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000104706,
+   "latencia_ms": 2121.94
+  },
+  {
+   "id": "d051",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/adjudicar_e12.py::main",
+    "executor/adjudicar_e11.py::cegar"
+   ],
+   "ordem": [
+    "executor/adjudicar_e12.py::main",
+    "executor/adjudicar_e12.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000201516,
+   "latencia_ms": 3634.3500000000004
+  },
+  {
+   "id": "d052",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/runner.py::load_api_key",
+    "integracao/jev_router/politica.py::texto_para_o_agente"
+   ],
+   "ordem": [
+    "integracao/jev_router/politica.py::texto_para_o_agente",
+    "executor/runner.py::load_api_key",
+    "laboratorio/r19_armadilha_de_sujeito.py::main",
+    "executor/run_e12_replicacao.py::faltantes",
+    "laboratorio/r4_r7_limites.py::corpus",
+    "executor/smoke_mcp.py::main",
+    "laboratorio/r8_r9_adversarial.py::resumo",
+    "executor/run_e4_ressalvas.py::bm25"
+   ],
+   "notas": {
+    "laboratorio/r19_armadilha_de_sujeito.py::main": 0.06,
+    "executor/run_e12_replicacao.py::faltantes": 0.04,
+    "integracao/jev_router/politica.py::texto_para_o_agente": 0.68,
+    "laboratorio/r4_r7_limites.py::corpus": 0.03,
+    "executor/runner.py::load_api_key": 0.25,
+    "executor/smoke_mcp.py::main": 0.03,
+    "laboratorio/r8_r9_adversarial.py::resumo": 0.02,
+    "executor/run_e4_ressalvas.py::bm25": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 9.1518e-05,
+   "latencia_ms": 990.4
+  },
+  {
+   "id": "d052",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/runner.py::load_api_key",
+    "integracao/jev_router/politica.py::texto_para_o_agente"
+   ],
+   "ordem": [
+    "nenhum",
+    "integracao/jev_router/politica.py::texto_para_o_agente"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000174888,
+   "latencia_ms": 4165.62
+  },
+  {
+   "id": "d053",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+    "integracao/avaliacao/comandos.py::rodar"
+   ],
+   "ordem": [
+    "integracao/avaliacao/comandos.py::rodar",
+    "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+    "executor/run_e10_llm_economico.py::prompt",
+    "integracao/avaliacao/auditar_producao.py::marca",
+    "executor/adjudicar_e11.py::montar_prompt",
+    "executor/run_e10_llm_economico.py::executar",
+    "executor/shared.py::strict_answers",
+    "executor/run_e5_provedores.py::transporte_direto"
+   ],
+   "notas": {
+    "executor/run_e5_provedores.py::transporte_direto": 0.02,
+    "integracao/avaliacao/comandos.py::rodar": 0.96,
+    "executor/run_e10_llm_economico.py::prompt": 0.03,
+    "integracao/avaliacao/auditar_producao.py::marca": 0.03,
+    "executor/adjudicar_e11.py::montar_prompt": 0.03,
+    "executor/run_e10_llm_economico.py::executar": 0.03,
+    "executor/shared.py::strict_answers": 0.03,
+    "executor/run_e12_replicacao.py::fundir_com_o_corpus": 0.09
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000115584,
+   "latencia_ms": 1352.0
+  },
+  {
+   "id": "d053",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e12_replicacao.py::fundir_com_o_corpus",
+    "integracao/avaliacao/comandos.py::rodar"
+   ],
+   "ordem": [
+    "integracao/avaliacao/comandos.py::rodar",
+    "integracao/avaliacao/comandos.py::rodar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00022230600000000002,
+   "latencia_ms": 4789.3
+  },
+  {
+   "id": "d054",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/com_contexto.py::medir",
+    "integracao/avaliacao/com_contexto.py::main"
+   ],
+   "ordem": [
+    "integracao/avaliacao/com_contexto.py::medir",
+    "integracao/avaliacao/variantes.py::main",
+    "integracao/avaliacao/com_contexto.py::main",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "integracao/instalar.py::ver",
+    "executor/publicar_experimentos.py::decisao",
+    "executor/run_e16.py::prepare",
+    "laboratorio/r1_r3_estresse.py::pareado"
+   ],
+   "notas": {
+    "integracao/avaliacao/variantes.py::main": 0.45,
+    "executor/run_e10_llm_economico.py::interpretar": 0.09,
+    "executor/publicar_experimentos.py::decisao": 0.04,
+    "executor/run_e16.py::prepare": 0.04,
+    "integracao/avaliacao/com_contexto.py::main": 0.24,
+    "integracao/avaliacao/com_contexto.py::medir": 0.89,
+    "integracao/instalar.py::ver": 0.07,
+    "laboratorio/r1_r3_estresse.py::pareado": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000148218,
+   "latencia_ms": 1389.92
+  },
+  {
+   "id": "d054",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/com_contexto.py::medir",
+    "integracao/avaliacao/com_contexto.py::main"
+   ],
+   "ordem": [
+    "integracao/avaliacao/com_contexto.py::medir",
+    "integracao/avaliacao/variantes.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000287952,
+   "latencia_ms": 2057.6
+  },
+  {
+   "id": "d055",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e1_triagem.py::macro_f1",
+    "laboratorio/r18_escala.py::main"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::macro_f1",
+    "laboratorio/r18_escala.py::main",
+    "executor/run_e15.py::excerpt",
+    "executor/run_canaries.py::provider_snapshot",
+    "laboratorio/r17_economia_de_contexto.py::responder",
+    "executor/analise.py::analisar_e3",
+    "executor/run_e8_anotador.py::perguntar",
+    "executor/run_e11_desempate.py::braco_jev"
+   ],
+   "notas": {
+    "executor/run_canaries.py::provider_snapshot": 0.13,
+    "executor/analise.py::analisar_e3": 0.05,
+    "laboratorio/r18_escala.py::main": 0.48,
+    "executor/run_e8_anotador.py::perguntar": 0.05,
+    "executor/run_e11_desempate.py::braco_jev": 0.05,
+    "executor/run_e1_triagem.py::macro_f1": 0.91,
+    "executor/run_e15.py::excerpt": 0.15,
+    "laboratorio/r17_economia_de_contexto.py::responder": 0.11
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000101136,
+   "latencia_ms": 1142.18
+  },
+  {
+   "id": "d055",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e1_triagem.py::macro_f1",
+    "laboratorio/r18_escala.py::main"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::macro_f1",
+    "laboratorio/r18_escala.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00019445999999999998,
+   "latencia_ms": 3232.2599999999998
+  },
+  {
+   "id": "d056",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e15.py::excerpt",
+    "executor/publicar_experimentos.py::e2b_run"
+   ],
+   "ordem": [
+    "executor/run_e15.py::excerpt",
+    "executor/publicar_experimentos.py::e2b_run",
+    "integracao/hooks/jev_guarda_comando.py::registrar",
+    "executor/adjudicar_e11.py::cegar",
+    "laboratorio/r11_extremos.py::resumo",
+    "laboratorio/r4_r7_limites.py::tarefas_r6",
+    "laboratorio/r18_escala.py::ordenar",
+    "laboratorio/r0_calibracao.py::calibrar"
+   ],
+   "notas": {
+    "integracao/hooks/jev_guarda_comando.py::registrar": 0.04,
+    "executor/publicar_experimentos.py::e2b_run": 0.88,
+    "executor/run_e15.py::excerpt": 0.92,
+    "executor/adjudicar_e11.py::cegar": 0.04,
+    "laboratorio/r11_extremos.py::resumo": 0.04,
+    "laboratorio/r4_r7_limites.py::tarefas_r6": 0.03,
+    "laboratorio/r18_escala.py::ordenar": 0.03,
+    "laboratorio/r0_calibracao.py::calibrar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000121884,
+   "latencia_ms": 1346.89
+  },
+  {
+   "id": "d056",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e15.py::excerpt",
+    "executor/publicar_experimentos.py::e2b_run"
+   ],
+   "ordem": [
+    "executor/run_e15.py::excerpt",
+    "executor/publicar_experimentos.py::e2b_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000235578,
+   "latencia_ms": 6452.14
+  },
+  {
+   "id": "d057",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r1_r3_estresse.py::acuracia",
+    "laboratorio/r0_calibracao.py::main"
+   ],
+   "ordem": [
+    "laboratorio/r1_r3_estresse.py::acuracia",
+    "laboratorio/r10_injecao_comparada.py::tarefas",
+    "integracao/avaliacao/comandos.py::main",
+    "executor/run_e11_desempate.py::leitura",
+    "executor/run_e10b_piloto.py::pareamento",
+    "laboratorio/r0_calibracao.py::main",
+    "executor/run_e5_provedores.py::transporte_direto",
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico"
+   ],
+   "notas": {
+    "laboratorio/r10_injecao_comparada.py::tarefas": 0.12,
+    "executor/run_e11_desempate.py::leitura": 0.05,
+    "executor/run_e5_provedores.py::transporte_direto": 0.03,
+    "integracao/avaliacao/comandos.py::main": 0.1,
+    "integracao/avaliacao/auditar_producao.py::pedidos_do_historico": 0.03,
+    "executor/run_e10b_piloto.py::pareamento": 0.05,
+    "laboratorio/r0_calibracao.py::main": 0.05,
+    "laboratorio/r1_r3_estresse.py::acuracia": 0.94
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000137046,
+   "latencia_ms": 1128.9
+  },
+  {
+   "id": "d057",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r1_r3_estresse.py::acuracia",
+    "laboratorio/r0_calibracao.py::main"
+   ],
+   "ordem": [
+    "laboratorio/r1_r3_estresse.py::acuracia",
+    "laboratorio/r0_calibracao.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00026598599999999996,
+   "latencia_ms": 2554.1800000000003
+  },
+  {
+   "id": "d058",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/adjudicar_e12.py::desacordos",
+    "executor/run_e16.py::report"
+   ],
+   "ordem": [
+    "executor/run_e16.py::report",
+    "executor/adjudicar_e12.py::desacordos",
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "integracao/avaliacao/skills.py::main",
+    "laboratorio/r4_r7_limites.py::executar",
+    "laboratorio/r15_adversario_externo.py::gerar_vetores",
+    "executor/placar.py::limite_superior_erro_da_politica",
+    "executor/runner.py::dry_run"
+   ],
+   "notas": {
+    "laboratorio/r15_adversario_externo.py::gerar_vetores": 0.04,
+    "integracao/avaliacao/skills.py::main": 0.05,
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de": 0.26,
+    "executor/placar.py::limite_superior_erro_da_politica": 0.03,
+    "executor/runner.py::dry_run": 0.03,
+    "executor/run_e16.py::report": 0.84,
+    "executor/adjudicar_e12.py::desacordos": 0.67,
+    "laboratorio/r4_r7_limites.py::executar": 0.05
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000153258,
+   "latencia_ms": 4675.54
+  },
+  {
+   "id": "d058",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/adjudicar_e12.py::desacordos",
+    "executor/run_e16.py::report"
+   ],
+   "ordem": [
+    "executor/adjudicar_e12.py::desacordos",
+    "executor/run_e16.py::report"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000298494,
+   "latencia_ms": 2103.83
+  },
+  {
+   "id": "d059",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/amostrar.py::carregar",
+    "executor/run_e12_replicacao.py::leitura"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::leitura",
+    "integracao/avaliacao/amostrar.py::carregar",
+    "integracao/jev_mcp.py::call",
+    "laboratorio/r12_r13_contexto.py::main",
+    "executor/placar.py::pendencias",
+    "executor/simple_round.py::main",
+    "executor/run_e12_replicacao.py::gravar",
+    "integracao/instalar.py::backup"
+   ],
+   "notas": {
+    "executor/run_e12_replicacao.py::leitura": 0.9,
+    "integracao/jev_mcp.py::call": 0.43,
+    "integracao/avaliacao/amostrar.py::carregar": 0.86,
+    "executor/placar.py::pendencias": 0.03,
+    "laboratorio/r12_r13_contexto.py::main": 0.04,
+    "executor/simple_round.py::main": 0.03,
+    "executor/run_e12_replicacao.py::gravar": 0.03,
+    "integracao/instalar.py::backup": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000157458,
+   "latencia_ms": 1147.32
+  },
+  {
+   "id": "d059",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/amostrar.py::carregar",
+    "executor/run_e12_replicacao.py::leitura"
+   ],
+   "ordem": [
+    "integracao/avaliacao/amostrar.py::carregar",
+    "executor/run_e12_replicacao.py::leitura"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00030681,
+   "latencia_ms": 2269.16
+  },
+  {
+   "id": "d060",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/publish_simple_round.py::main"
+   ],
+   "ordem": [
+    "executor/publish_simple_round.py::main",
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "laboratorio/r17_economia_de_contexto.py::main",
+    "executor/placar.py::fonte_com_gabarito",
+    "integracao/instalar.py::instalar",
+    "executor/placar.py::gabarito_do_corpus",
+    "executor/run_e4_ressalvas.py::normalizar",
+    "laboratorio/nucleo.py::gasto_do_programa"
+   ],
+   "notas": {
+    "laboratorio/r17_economia_de_contexto.py::main": 0.12,
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos": 0.85,
+    "integracao/instalar.py::instalar": 0.03,
+    "executor/publish_simple_round.py::main": 0.86,
+    "executor/run_e4_ressalvas.py::normalizar": 0.02,
+    "laboratorio/nucleo.py::gasto_do_programa": 0.02,
+    "executor/placar.py::gabarito_do_corpus": 0.03,
+    "executor/placar.py::fonte_com_gabarito": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000151998,
+   "latencia_ms": 2308.87
+  },
+  {
+   "id": "d060",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/publish_simple_round.py::main"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::cobertura_dos_bracos",
+    "executor/publish_simple_round.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000295932,
+   "latencia_ms": 2099.93
+  },
+  {
+   "id": "d061",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e12_replicacao.py::completar",
+    "executor/gabarito.py::do_anotador_local"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::completar",
+    "laboratorio/r16_guarda_de_comando.py::main",
+    "integracao/jev_router/orcamento.py::pode_gastar",
+    "executor/gabarito.py::do_anotador_local",
+    "executor/placar.py::texto_da_replicacao",
+    "executor/placar.py::leitura_dos_gabaritos",
+    "executor/run_e10_llm_economico.py::carregar",
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo"
+   ],
+   "notas": {
+    "laboratorio/r16_guarda_de_comando.py::main": 0.22,
+    "executor/placar.py::texto_da_replicacao": 0.06,
+    "executor/run_e12_replicacao.py::completar": 0.67,
+    "executor/placar.py::leitura_dos_gabaritos": 0.06,
+    "laboratorio/r20_k_adaptativo.py::k_adaptativo": 0.04,
+    "executor/gabarito.py::do_anotador_local": 0.08,
+    "integracao/jev_router/orcamento.py::pode_gastar": 0.09,
+    "executor/run_e10_llm_economico.py::carregar": 0.05
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000152292,
+   "latencia_ms": 937.91
+  },
+  {
+   "id": "d061",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e12_replicacao.py::completar",
+    "executor/gabarito.py::do_anotador_local"
+   ],
+   "ordem": [
+    "executor/run_e12_replicacao.py::completar",
+    "executor/gabarito.py::do_anotador_local"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000296352,
+   "latencia_ms": 2290.29
+  },
+  {
+   "id": "d062",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_canaries.py::prepare",
+    "executor/publicar_experimentos.py::e6_run"
+   ],
+   "ordem": [
+    "executor/run_canaries.py::prepare",
+    "executor/publicar_experimentos.py::e6_run",
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "integracao/jev_router/roteador.py::do_cache",
+    "integracao/jev_router/roteador.py::guardar_pedido",
+    "executor/run_e12_replicacao.py::comparar",
+    "laboratorio/r18_escala.py::gerar",
+    "laboratorio/r10_injecao_comparada.py::executar"
+   ],
+   "notas": {
+    "integracao/jev_router/roteador.py::do_cache": 0.03,
+    "integracao/jev_router/roteador.py::guardar_pedido": 0.03,
+    "executor/run_canaries.py::prepare": 0.93,
+    "executor/run_e12_replicacao.py::comparar": 0.03,
+    "laboratorio/r18_escala.py::gerar": 0.03,
+    "laboratorio/r10_injecao_comparada.py::executar": 0.03,
+    "laboratorio/r16_guarda_de_comando.py::executar": 0.04,
+    "executor/publicar_experimentos.py::e6_run": 0.34
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000151074,
+   "latencia_ms": 2512.4
+  },
+  {
+   "id": "d062",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_canaries.py::prepare",
+    "executor/publicar_experimentos.py::e6_run"
+   ],
+   "ordem": [
+    "executor/run_canaries.py::prepare",
+    "executor/publicar_experimentos.py::e6_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000294336,
+   "latencia_ms": 3602.3999999999996
+  },
+  {
+   "id": "d063",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/placar.py::replicacao_depende_do_gabarito",
+    "executor/run_e2_fatorial.py::resumir"
+   ],
+   "ordem": [
+    "executor/placar.py::replicacao_depende_do_gabarito",
+    "executor/run_e2_fatorial.py::resumir",
+    "executor/run_canaries.py::main",
+    "laboratorio/nucleo.py::chave",
+    "executor/publish_simple_round.py::main",
+    "executor/publish_simple_round.py::note_for",
+    "executor/pricing.py::_ceil_div",
+    "integracao/avaliacao/amostrar_com_contexto.py::main"
+   ],
+   "notas": {
+    "executor/run_canaries.py::main": 0.06,
+    "executor/placar.py::replicacao_depende_do_gabarito": 0.76,
+    "executor/run_e2_fatorial.py::resumir": 0.66,
+    "executor/publish_simple_round.py::main": 0.03,
+    "executor/publish_simple_round.py::note_for": 0.03,
+    "laboratorio/nucleo.py::chave": 0.05,
+    "executor/pricing.py::_ceil_div": 0.02,
+    "integracao/avaliacao/amostrar_com_contexto.py::main": 0.02
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000143304,
+   "latencia_ms": 1553.68
+  },
+  {
+   "id": "d063",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/placar.py::replicacao_depende_do_gabarito",
+    "executor/run_e2_fatorial.py::resumir"
+   ],
+   "ordem": [
+    "executor/placar.py::replicacao_depende_do_gabarito",
+    "executor/run_e2_fatorial.py::resumir"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00027854400000000004,
+   "latencia_ms": 2259.84
+  },
+  {
+   "id": "d064",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e9_prevalencia.py::aceitacao"
+   ],
+   "ordem": [
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e3_evidencia.py::resumo",
+    "executor/run_e12_replicacao.py::carteira_do_ledger",
+    "executor/exportar_extrato.py::exportar",
+    "integracao/avaliacao/comandos.py::extrair",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r18_escala.py::main"
+   ],
+   "notas": {
+    "integracao/avaliacao/comandos.py::extrair": 0.02,
+    "executor/pricing.py::observed_nusd": 0.9,
+    "laboratorio/r4_r7_limites.py::criterios_com": 0.02,
+    "laboratorio/r18_escala.py::main": 0.02,
+    "executor/run_e12_replicacao.py::carteira_do_ledger": 0.03,
+    "executor/run_e3_evidencia.py::resumo": 0.04,
+    "executor/run_e9_prevalencia.py::aceitacao": 0.92,
+    "executor/exportar_extrato.py::exportar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000113652,
+   "latencia_ms": 2043.84
+  },
+  {
+   "id": "d064",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e9_prevalencia.py::aceitacao"
+   ],
+   "ordem": [
+    "executor/pricing.py::observed_nusd",
+    "executor/run_e9_prevalencia.py::aceitacao"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00021882,
+   "latencia_ms": 2545.9
+  },
+  {
+   "id": "d065",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "laboratorio/gerar_mapa_visual.py::main"
+   ],
+   "ordem": [
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "laboratorio/gerar_mapa_visual.py::main",
+    "executor/publicar_experimentos.py::e2b_run",
+    "laboratorio/r4_r7_limites.py::corpus",
+    "laboratorio/r0_calibracao.py::casos",
+    "executor/run_e11_desempate.py::recuperar",
+    "laboratorio/nucleo.py::em_paralelo",
+    "lab/build_ui.py::build"
+   ],
+   "notas": {
+    "executor/publicar_experimentos.py::e2b_run": 0.04,
+    "executor/run_e11_desempate.py::recuperar": 0.03,
+    "laboratorio/gerar_mapa_visual.py::main": 0.8,
+    "laboratorio/nucleo.py::em_paralelo": 0.03,
+    "laboratorio/r4_r7_limites.py::corpus": 0.04,
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de": 0.9,
+    "laboratorio/r0_calibracao.py::casos": 0.04,
+    "lab/build_ui.py::build": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000133812,
+   "latencia_ms": 1646.18
+  },
+  {
+   "id": "d065",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "laboratorio/gerar_mapa_visual.py::main"
+   ],
+   "ordem": [
+    "integracao/avaliacao/amostrar_com_contexto.py::pares_de",
+    "laboratorio/gerar_mapa_visual.py::main"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00025914000000000004,
+   "latencia_ms": 8273.34
+  },
+  {
+   "id": "d066",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/smoke_mcp.py::exchange",
+    "executor/gabarito.py::contagem_bruta"
+   ],
+   "ordem": [
+    "executor/gabarito.py::contagem_bruta",
+    "executor/smoke_mcp.py::exchange",
+    "executor/run_e10_llm_economico.py::executar",
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "laboratorio/r18_escala.py::gerar",
+    "executor/simple_round.py::main",
+    "integracao/jev_router/roteador.py::do_cache",
+    "executor/adjudicar_e11.py::cegar"
+   ],
+   "notas": {
+    "executor/simple_round.py::main": 0.03,
+    "executor/run_e10_llm_economico.py::executar": 0.04,
+    "laboratorio/r17_economia_de_contexto.py::pool": 0.04,
+    "laboratorio/r18_escala.py::gerar": 0.04,
+    "executor/adjudicar_e11.py::cegar": 0.02,
+    "executor/smoke_mcp.py::exchange": 0.89,
+    "integracao/jev_router/roteador.py::do_cache": 0.03,
+    "executor/gabarito.py::contagem_bruta": 0.9
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000150948,
+   "latencia_ms": 971.8
+  },
+  {
+   "id": "d066",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/smoke_mcp.py::exchange",
+    "executor/gabarito.py::contagem_bruta"
+   ],
+   "ordem": [
+    "executor/smoke_mcp.py::exchange",
+    "executor/gabarito.py::contagem_bruta"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000294,
+   "latencia_ms": 2749.66
+  },
+  {
+   "id": "d067",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r12_r13_contexto.py::executar"
+   ],
+   "ordem": [
+    "laboratorio/r12_r13_contexto.py::executar",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r4_r7_limites.py::main",
+    "executor/pricing.py::entry",
+    "executor/runner.py::dry_run",
+    "executor/run_e12_replicacao.py::gabaritos",
+    "executor/run_e5_provedores.py::transporte_direto",
+    "integracao/jev_router/orcamento.py::_linhas"
+   ],
+   "notas": {
+    "laboratorio/r4_r7_limites.py::criterios_com": 0.8,
+    "executor/runner.py::dry_run": 0.04,
+    "executor/run_e5_provedores.py::transporte_direto": 0.03,
+    "laboratorio/r4_r7_limites.py::main": 0.27,
+    "integracao/jev_router/orcamento.py::_linhas": 0.03,
+    "executor/run_e12_replicacao.py::gabaritos": 0.04,
+    "laboratorio/r12_r13_contexto.py::executar": 0.88,
+    "executor/pricing.py::entry": 0.06
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000142464,
+   "latencia_ms": 1153.45
+  },
+  {
+   "id": "d067",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r12_r13_contexto.py::executar"
+   ],
+   "ordem": [
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "laboratorio/r12_r13_contexto.py::executar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00027656999999999996,
+   "latencia_ms": 2259.25
+  },
+  {
+   "id": "d068",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r15_adversario_externo.py::http",
+    "laboratorio/r0_calibracao.py::calibrar"
+   ],
+   "ordem": [
+    "laboratorio/r15_adversario_externo.py::http",
+    "laboratorio/r0_calibracao.py::calibrar",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/run_e3_evidencia.py::main",
+    "integracao/avaliacao/skills.py::main",
+    "integracao/jev_mcp.py::metrics",
+    "executor/placar.py::valor_entre_gabaritos",
+    "integracao/avaliacao/com_contexto.py::rodar"
+   ],
+   "notas": {
+    "executor/run_e3_evidencia.py::main": 0.05,
+    "integracao/jev_mcp.py::metrics": 0.04,
+    "laboratorio/r15_adversario_externo.py::http": 0.88,
+    "integracao/avaliacao/skills.py::main": 0.05,
+    "executor/placar.py::valor_entre_gabaritos": 0.04,
+    "integracao/avaliacao/com_contexto.py::rodar": 0.04,
+    "laboratorio/r0_calibracao.py::calibrar": 0.88,
+    "executor/run_e10_llm_economico.py::interpretar": 0.06
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000182784,
+   "latencia_ms": 2473.12
+  },
+  {
+   "id": "d068",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r15_adversario_externo.py::http",
+    "laboratorio/r0_calibracao.py::calibrar"
+   ],
+   "ordem": [
+    "laboratorio/r15_adversario_externo.py::http",
+    "laboratorio/r0_calibracao.py::calibrar"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000357756,
+   "latencia_ms": 4339.25
+  },
+  {
+   "id": "d069",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/rodar.py::comparar",
+    "executor/run_canaries.py::provider_snapshot"
+   ],
+   "ordem": [
+    "executor/run_canaries.py::provider_snapshot",
+    "integracao/avaliacao/rodar.py::comparar",
+    "executor/publicar_experimentos.py::ler",
+    "executor/publicar_experimentos.py::e2b_run",
+    "executor/run_e11_desempate.py::braco_jev",
+    "laboratorio/r17_economia_de_contexto.py::pool",
+    "laboratorio/r18_escala.py::analisar",
+    "executor/run_e3_evidencia.py::macro_f1_3"
+   ],
+   "notas": {
+    "laboratorio/r17_economia_de_contexto.py::pool": 0.03,
+    "integracao/avaliacao/rodar.py::comparar": 0.89,
+    "executor/publicar_experimentos.py::ler": 0.04,
+    "executor/run_canaries.py::provider_snapshot": 0.91,
+    "executor/publicar_experimentos.py::e2b_run": 0.04,
+    "executor/run_e11_desempate.py::braco_jev": 0.04,
+    "executor/run_e3_evidencia.py::macro_f1_3": 0.02,
+    "laboratorio/r18_escala.py::analisar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000185514,
+   "latencia_ms": 1567.52
+  },
+  {
+   "id": "d069",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/rodar.py::comparar",
+    "executor/run_canaries.py::provider_snapshot"
+   ],
+   "ordem": [
+    "integracao/avaliacao/rodar.py::comparar",
+    "executor/run_canaries.py::provider_snapshot"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000362628,
+   "latencia_ms": 2057.88
+  },
+  {
+   "id": "d070",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "laboratorio/r11_extremos.py::diluir"
+   ],
+   "ordem": [
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "laboratorio/r11_extremos.py::diluir",
+    "laboratorio/r16_guarda_de_comando.py::main",
+    "laboratorio/r11_extremos.py::corpus",
+    "executor/placar.py::contem_zero",
+    "executor/smoke_mcp.py::exchange",
+    "executor/run_e12_replicacao.py::executar_todos",
+    "integracao/instalar.py::gravar_modo"
+   ],
+   "notas": {
+    "executor/placar.py::contem_zero": 0.03,
+    "executor/smoke_mcp.py::exchange": 0.03,
+    "laboratorio/r11_extremos.py::corpus": 0.05,
+    "executor/run_e12_replicacao.py::executar_todos": 0.03,
+    "integracao/avaliacao/amostrar_com_contexto.py::main": 0.89,
+    "integracao/instalar.py::gravar_modo": 0.03,
+    "laboratorio/r16_guarda_de_comando.py::main": 0.41,
+    "laboratorio/r11_extremos.py::diluir": 0.83
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000105756,
+   "latencia_ms": 1091.34
+  },
+  {
+   "id": "d070",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "laboratorio/r11_extremos.py::diluir"
+   ],
+   "ordem": [
+    "integracao/avaliacao/amostrar_com_contexto.py::main",
+    "laboratorio/r11_extremos.py::diluir"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00020370000000000002,
+   "latencia_ms": 3125.7700000000004
+  },
+  {
+   "id": "d071",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e1_triagem.py::wilson",
+    "executor/run_e12_replicacao.py::custo_liquidado"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::wilson",
+    "executor/run_e12_replicacao.py::custo_liquidado",
+    "executor/run_e12_replicacao.py::custo_por_mil",
+    "executor/run_e12_replicacao.py::main",
+    "executor/run_e10_llm_economico.py::interpretar",
+    "executor/run_e12_replicacao.py::faltantes",
+    "executor/publicar_experimentos.py::ler",
+    "integracao/instalar.py::ja_instalado"
+   ],
+   "notas": {
+    "integracao/instalar.py::ja_instalado": 0.03,
+    "executor/run_e12_replicacao.py::custo_por_mil": 0.36,
+    "executor/run_e10_llm_economico.py::interpretar": 0.04,
+    "executor/run_e12_replicacao.py::faltantes": 0.04,
+    "executor/run_e12_replicacao.py::main": 0.05,
+    "executor/run_e1_triagem.py::wilson": 0.93,
+    "executor/run_e12_replicacao.py::custo_liquidado": 0.84,
+    "executor/publicar_experimentos.py::ler": 0.04
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000109578,
+   "latencia_ms": 965.15
+  },
+  {
+   "id": "d071",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e1_triagem.py::wilson",
+    "executor/run_e12_replicacao.py::custo_liquidado"
+   ],
+   "ordem": [
+    "executor/run_e1_triagem.py::wilson",
+    "executor/run_e12_replicacao.py::custo_liquidado"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000211344,
+   "latencia_ms": 5073.53
+  },
+  {
+   "id": "d072",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "integracao/avaliacao/amostrar_com_contexto.py::texto"
+   ],
+   "ordem": [
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "laboratorio/r11_extremos.py::executar",
+    "integracao/avaliacao/amostrar_com_contexto.py::texto",
+    "executor/publicar_experimentos.py::gabarito",
+    "executor/adjudicar_e12.py::cegar",
+    "executor/pricing.py::_ceil_div",
+    "integracao/avaliacao/com_contexto.py::estado_sem",
+    "integracao/avaliacao/auditar_producao.py::marca"
+   ],
+   "notas": {
+    "executor/adjudicar_e12.py::cegar": 0.03,
+    "executor/publicar_experimentos.py::gabarito": 0.04,
+    "executor/pricing.py::_ceil_div": 0.03,
+    "laboratorio/r15_adversario_externo.py::tarefas": 0.94,
+    "integracao/avaliacao/com_contexto.py::estado_sem": 0.03,
+    "laboratorio/r11_extremos.py::executar": 0.51,
+    "integracao/avaliacao/auditar_producao.py::marca": 0.03,
+    "integracao/avaliacao/amostrar_com_contexto.py::texto": 0.41
+   },
+   "chamadas": 1,
+   "custo_usd": 6.3882e-05,
+   "latencia_ms": 975.13
+  },
+  {
+   "id": "d072",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "integracao/avaliacao/amostrar_com_contexto.py::texto"
+   ],
+   "ordem": [
+    "laboratorio/r15_adversario_externo.py::tarefas",
+    "integracao/avaliacao/amostrar_com_contexto.py::texto"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000119196,
+   "latencia_ms": 4289.93
+  },
+  {
+   "id": "d073",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/publicar_experimentos.py::e7_run",
+    "executor/run_e3_evidencia.py::regra_simples"
+   ],
+   "ordem": [
+    "executor/run_e3_evidencia.py::regra_simples",
+    "executor/publicar_experimentos.py::e7_run",
+    "executor/run_e10_llm_economico.py::main",
+    "executor/run_e8_anotador.py::main",
+    "laboratorio/nucleo.py::perguntar",
+    "executor/placar.py::pct",
+    "executor/ledger.py::now_utc",
+    "executor/runner.py::estimate_input_tokens"
+   ],
+   "notas": {
+    "executor/run_e8_anotador.py::main": 0.05,
+    "executor/run_e10_llm_economico.py::main": 0.1,
+    "executor/publicar_experimentos.py::e7_run": 0.8,
+    "executor/placar.py::pct": 0.03,
+    "executor/ledger.py::now_utc": 0.03,
+    "laboratorio/nucleo.py::perguntar": 0.05,
+    "executor/runner.py::estimate_input_tokens": 0.03,
+    "executor/run_e3_evidencia.py::regra_simples": 0.93
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000164724,
+   "latencia_ms": 1143.69
+  },
+  {
+   "id": "d073",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/publicar_experimentos.py::e7_run",
+    "executor/run_e3_evidencia.py::regra_simples"
+   ],
+   "ordem": [
+    "executor/publicar_experimentos.py::e7_run",
+    null
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000160482,
+   "latencia_ms": 1733.59
+  },
+  {
+   "id": "d074",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "executor/publicar_experimentos.py::e2_run"
+   ],
+   "ordem": [
+    "executor/publicar_experimentos.py::e2_run",
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "integracao/avaliacao/rodar.py::rodar",
+    "executor/run_e1_triagem.py::macro_f1",
+    "executor/run_e5_provedores.py::carregar_chave",
+    "executor/analise.py::main",
+    "laboratorio/r10_injecao_comparada.py::main",
+    "laboratorio/r18_escala.py::com_cabecalho"
+   ],
+   "notas": {
+    "integracao/avaliacao/rodar.py::rodar": 0.12,
+    "executor/publicar_experimentos.py::e2_run": 0.9,
+    "laboratorio/r10_injecao_comparada.py::main": 0.04,
+    "executor/run_e1_triagem.py::macro_f1": 0.05,
+    "executor/run_e5_provedores.py::carregar_chave": 0.05,
+    "executor/analise.py::main": 0.05,
+    "executor/run_e9_prevalencia.py::acuracia_por_classe": 0.6,
+    "laboratorio/r18_escala.py::com_cabecalho": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000147294,
+   "latencia_ms": 1109.83
+  },
+  {
+   "id": "d074",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "executor/publicar_experimentos.py::e2_run"
+   ],
+   "ordem": [
+    "executor/run_e9_prevalencia.py::acuracia_por_classe",
+    "executor/publicar_experimentos.py::e2_run"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000286482,
+   "latencia_ms": 2910.76
+  },
+  {
+   "id": "d075",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "ordem": [
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/run_e12_replicacao.py::executar_todos",
+    "executor/run_e11_desempate.py::gravar",
+    "integracao/jev_router/orcamento.py::registrar",
+    "lab/server.py::require",
+    "executor/placar.py::titulo_do_veredito",
+    "executor/baseline_regra.py::classificar",
+    "executor/run_e3_evidencia.py::macro_f1_3"
+   ],
+   "notas": {
+    "executor/run_e11_desempate.py::gravar": 0.03,
+    "executor/run_e12_replicacao.py::executar_todos": 0.75,
+    "integracao/jev_router/orcamento.py::registrar": 0.03,
+    "lab/server.py::require": 0.03,
+    "executor/placar.py::titulo_do_veredito": 0.03,
+    "executor/run_e3_evidencia.py::macro_f1_3": 0.02,
+    "laboratorio/r16_guarda_de_comando.py::executar": 0.94,
+    "executor/baseline_regra.py::classificar": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000100506,
+   "latencia_ms": 4220.7
+  },
+  {
+   "id": "d075",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "ordem": [
+    "laboratorio/r16_guarda_de_comando.py::executar",
+    "executor/run_e12_replicacao.py::executar_todos"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000192696,
+   "latencia_ms": 2278.8199999999997
+  },
+  {
+   "id": "d076",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/adjudicar_e11.py::consolidar",
+    "executor/runner.py::usage_from"
+   ],
+   "ordem": [
+    "executor/runner.py::usage_from",
+    "executor/adjudicar_e11.py::consolidar",
+    "executor/publicar_experimentos.py::publicar",
+    "laboratorio/r18_escala.py::rodar",
+    "executor/runner.py::http_transport",
+    "laboratorio/r4_r7_limites.py::tarefas_r4",
+    "executor/run_e12_replicacao.py::completar",
+    "executor/run_canaries.py::prepare"
+   ],
+   "notas": {
+    "laboratorio/r4_r7_limites.py::tarefas_r4": 0.04,
+    "executor/adjudicar_e11.py::consolidar": 0.73,
+    "laboratorio/r18_escala.py::rodar": 0.06,
+    "executor/runner.py::http_transport": 0.05,
+    "executor/runner.py::usage_from": 0.82,
+    "executor/run_canaries.py::prepare": 0.03,
+    "executor/run_e12_replicacao.py::completar": 0.04,
+    "executor/publicar_experimentos.py::publicar": 0.14
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000139188,
+   "latencia_ms": 1210.4
+  },
+  {
+   "id": "d076",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/adjudicar_e11.py::consolidar",
+    "executor/runner.py::usage_from"
+   ],
+   "ordem": [
+    "executor/adjudicar_e11.py::consolidar",
+    "executor/runner.py::usage_from"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00027026999999999997,
+   "latencia_ms": 2499.06
+  },
+  {
+   "id": "d077",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "lab/server.py::validate_run_update",
+    "executor/placar.py::pendencias"
+   ],
+   "ordem": [
+    "lab/server.py::validate_run_update",
+    "executor/run_e12_replicacao.py::braco_comparador",
+    "executor/runner.py::http_transport",
+    "executor/placar.py::pendencias",
+    "laboratorio/r12_r13_contexto.py::tarefas_r12",
+    "executor/adjudicar_e11.py::consolidar",
+    "laboratorio/r8_r9_adversarial.py::executar",
+    "executor/placar.py::pct"
+   ],
+   "notas": {
+    "executor/runner.py::http_transport": 0.19,
+    "executor/run_e12_replicacao.py::braco_comparador": 0.33,
+    "laboratorio/r12_r13_contexto.py::tarefas_r12": 0.12,
+    "laboratorio/r8_r9_adversarial.py::executar": 0.1,
+    "executor/placar.py::pendencias": 0.15,
+    "executor/placar.py::pct": 0.05,
+    "lab/server.py::validate_run_update": 0.9,
+    "executor/adjudicar_e11.py::consolidar": 0.12
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000133686,
+   "latencia_ms": 1145.89
+  },
+  {
+   "id": "d077",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "lab/server.py::validate_run_update",
+    "executor/placar.py::pendencias"
+   ],
+   "ordem": [
+    "lab/server.py::validate_run_update",
+    "executor/placar.py::pendencias"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.00025935,
+   "latencia_ms": 2155.66
+  },
+  {
+   "id": "d078",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "laboratorio/r12_r13_contexto.py::tarefas_r13",
+    "integracao/instalar.py::entrada_de"
+   ],
+   "ordem": [
+    "laboratorio/r12_r13_contexto.py::tarefas_r13",
+    "integracao/instalar.py::entrada_de",
+    "integracao/avaliacao/comandos.py::medir",
+    "executor/run_e9_prevalencia.py::aceitacao",
+    "laboratorio/r1_r3_estresse.py::com_erro",
+    "laboratorio/r4_r7_limites.py::criterios_com",
+    "executor/run_e7_confirmacao.py::carregar",
+    "executor/run_e12_replicacao.py::braco_comparador"
+   ],
+   "notas": {
+    "integracao/instalar.py::entrada_de": 0.92,
+    "executor/run_e9_prevalencia.py::aceitacao": 0.03,
+    "laboratorio/r1_r3_estresse.py::com_erro": 0.03,
+    "laboratorio/r4_r7_limites.py::criterios_com": 0.03,
+    "laboratorio/r12_r13_contexto.py::tarefas_r13": 0.93,
+    "executor/run_e7_confirmacao.py::carregar": 0.03,
+    "integracao/avaliacao/comandos.py::medir": 0.06,
+    "executor/run_e12_replicacao.py::braco_comparador": 0.03
+   },
+   "chamadas": 1,
+   "custo_usd": 0.00011718,
+   "latencia_ms": 1176.5
+  },
+  {
+   "id": "d078",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "laboratorio/r12_r13_contexto.py::tarefas_r13",
+    "integracao/instalar.py::entrada_de"
+   ],
+   "ordem": [
+    "laboratorio/r12_r13_contexto.py::tarefas_r13",
+    "integracao/instalar.py::entrada_de"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000226044,
+   "latencia_ms": 2392.95
+  },
+  {
+   "id": "d079",
+   "arranjo": "lista-noul",
+   "alvos": [
+    "executor/run_e16.py::execute",
+    "executor/publish_simple_round.py::note_for"
+   ],
+   "ordem": [
+    "executor/publish_simple_round.py::note_for",
+    "executor/run_e16.py::execute",
+    "executor/publish_simple_round.py::main",
+    "integracao/instalar.py::gravar_modo",
+    "laboratorio/r1_r3_estresse.py::pareado",
+    "executor/analise.py::main",
+    "laboratorio/r17_economia_de_contexto.py::main",
+    "executor/adjudicar_e12.py::desacordos"
+   ],
+   "notas": {
+    "laboratorio/r1_r3_estresse.py::pareado": 0.04,
+    "executor/publish_simple_round.py::note_for": 0.95,
+    "integracao/instalar.py::gravar_modo": 0.07,
+    "executor/publish_simple_round.py::main": 0.1,
+    "laboratorio/r17_economia_de_contexto.py::main": 0.03,
+    "executor/adjudicar_e12.py::desacordos": 0.03,
+    "executor/analise.py::main": 0.04,
+    "executor/run_e16.py::execute": 0.8
+   },
+   "chamadas": 1,
+   "custo_usd": 0.000159054,
+   "latencia_ms": 1147.68
+  },
+  {
+   "id": "d079",
+   "arranjo": "lista-por-subpergunta",
+   "alvos": [
+    "executor/run_e16.py::execute",
+    "executor/publish_simple_round.py::note_for"
+   ],
+   "ordem": [
+    "executor/run_e16.py::execute",
+    "executor/publish_simple_round.py::note_for"
+   ],
+   "chamadas": 2,
+   "custo_usd": 0.000310296,
+   "latencia_ms": 1982.83
+  }
+ ]
+}
