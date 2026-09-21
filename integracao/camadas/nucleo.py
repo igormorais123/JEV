@@ -188,8 +188,16 @@ def classificar_em_paralelo(estados, perguntas, *, origem, tempo_total=TEMPO_TOT
         restante = tempo_total - (time.time() - inicio)
         if restante <= 0.3:
             return None, {'erro': 'sem tempo', 'sent': False}
-        return cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
-                                 transporte=transporte, origem=origem, limite=limite)
+        resultado = cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
+                                      transporte=transporte, origem=origem, limite=limite)
+        # O livro-caixa é um SQLite partilhado por todos os hooks; com dois hooks classificando
+        # ao mesmo tempo, uma escrita pode bater no bloqueio (visto uma vez, em 2026-09-21: 13
+        # chamadas pagas jogadas fora por uma que falhou). Uma segunda tentativa, se há tempo.
+        restante = tempo_total - (time.time() - inicio)
+        if resultado[0] is None and (resultado[1] or {}).get('erro') == 'OperationalError'                 and restante > 1.0:
+            resultado = cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
+                                          transporte=transporte, origem=origem, limite=limite)
+        return resultado
 
     with ThreadPoolExecutor(max_workers=min(TRABALHADORES, max(1, len(estados)))) as pool:
         return list(pool.map(uma, estados))

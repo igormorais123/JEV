@@ -186,6 +186,18 @@ class Saida(unittest.TestCase):
         self.assertEqual(saida.analisar('ok\n' * 10, transporte=quebrado)['motivo'], 'saida curta')
         self.assertEqual(saida.analisar('ok\n' * 2000, transporte=quebrado)['motivo'], 'sem marca de erro')
 
+    def test_codigo_fonte_que_fala_de_erro_nao_e_saida_com_erro(self):
+        """A marca antiga casava a palavra; 149 de 153 disparos reais eram arquivo lido."""
+        from camadas import saida
+        fonte = ('    except OSError:\n        raise ValueError("not found")\n'
+                 '    # error: cannot open, permission denied, failed\n') * 60
+        self.assertEqual(saida.analisar(fonte, 'cat a.py', transporte=quebrado)['motivo'],
+                         'sem marca de erro')
+        for linha in ('ValueError: ruim', '/usr/bin/bash: line 1: eza: command not found',
+                      '===== 3 failed, 2 passed in 1s =====', 'E       AssertionError: 1 != 2',
+                      'fatal: not a git repository'):
+            self.assertTrue(saida.MARCA_DE_ERRO.search('ok\n' + linha + '\nok\n'), linha)
+
 
 class Verificar(unittest.TestCase):
 

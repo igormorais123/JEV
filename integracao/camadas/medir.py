@@ -95,6 +95,12 @@ def leitura(linhas):
         'classificados': len(com_chamada),
         'estreitados': len(estreitadas),
         'estreitados_ativos': len(ativas),
+        # Por onde a leitura veio: o `Read`, ou um `cat` dentro de comando do shell (`via: bash`).
+        'por_via': {via: {'vistos': sum(1 for l in todas if (l.get('via') or 'read') == via),
+                          'estreitados_ativos': sum(1 for l in ativas if (l.get('via') or 'read') == via),
+                          'tokens_evitados': sum(l.get('tokens_evitados_estimados') or 0 for l in ativas
+                                                 if (l.get('via') or 'read') == via)}
+                    for via in ('read', 'bash')},
         'motivos': dict(Counter(l.get('motivo') for l in todas if l.get('acao') != 'estreitar')),
         'linhas_evitadas': sum(l.get('linhas_evitadas') or 0 for l in ativas),
         'tokens_evitados': tokens,
@@ -293,7 +299,7 @@ Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ulti
 | camada | ponto do fluxo | o que decide | base no estudo |
 |---|---|---|---|
 | tema (roteador) | `UserPromptSubmit` | sobre o que é o pedido; sugere a skill | E1, E13: 9 de 23 temas, 0 falsos |
-| leitura | `PreToolUse` em `Read` | que janela do arquivo entra | E16, R18, R20, R26: top-3 mantém a resposta, corta 74% |
+| leitura | `PreToolUse` em `Read` e em `Bash` com `cat ARQUIVO` | que janela do arquivo entra | E16, R18, R20, R26: top-3 mantém a resposta, corta 74% |
 | busca | `PostToolUse` em `Grep`, `Glob`, WebSearch, buscas do Gmail, Drive e Agenda | por qual item começar | E1, E16: triagem 92–99%, 8 de 8 essenciais no topo |
 | sentinela | `PostToolUse` em conteúdo externo e no conteúdo colado no prompt | se o texto tenta dar ordens | R23, R27: 95% de detecção, 2,4% de alarme falso |
 | saída | `PostToolUse` em `Bash` com erro e 3 mil caracteres ou mais | em que parte da saída está a causa | não medida no estudo; só aponta com confiança ≥ 0,90 |
@@ -310,11 +316,13 @@ Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ulti
 | chamadas ao Jev pelas camadas | {n(T['chamadas_jev'])} |
 | custo do Jev, todas as camadas e o roteador | **US$ {n(T['custo_jev_usd'])}** |
 
-## Leitura (`Read`)
+## Leitura (`Read`, e `cat` dentro de comando do shell)
 
 | | valor |
 |---|---|
-| Reads vistos pelo hook | {n(L['reads'])} |
+| leituras vistas pelos hooks | {n(L['reads'])} |
+| por via: `Read` | {n(L['por_via']['read']['vistos'])} vistas, {n(L['por_via']['read']['estreitados_ativos'])} estreitadas, {n(L['por_via']['read']['tokens_evitados'])} tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | {n(L['por_via']['bash']['vistos'])} vistas, {n(L['por_via']['bash']['estreitados_ativos'])} estreitadas, {n(L['por_via']['bash']['tokens_evitados'])} tokens evitados |
 | com pedido vigente na sessão | {n(L['com_pedido'])} |
 | classificados (arquivo grande, com pedido) | {n(L['classificados'])} |
 | estreitados | {n(L['estreitados'])} (em modo ativo: {n(L['estreitados_ativos'])}) |

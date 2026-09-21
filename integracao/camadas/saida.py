@@ -22,9 +22,16 @@ MINIMO_DE_CARACTERES = 3000
 CONFIANCA_MINIMA = 0.90
 FERRAMENTAS = ('Bash', 'PowerShell')
 
-MARCA_DE_ERRO = re.compile(r'Traceback|Error|Exception|FAILED|failed|error:|fatal|panic|'
-                           r'Unhandled|ERR!|npm ERR|Errno|denied|not found|cannot|exit code',
-                           re.IGNORECASE)
+# A marca é de LINHA de erro, não de palavra. A primeira versão casava "Error", "not found" ou
+# "cannot" em qualquer ponto, sem distinguir maiúscula, e disparava em todo arquivo-fonte lido
+# pelo shell: em 362 saídas longas de sessões reais ela casou 153 vezes, e só 4 das 66
+# classificadas tinham causa a apontar. Esta casa 14 das mesmas 362, inclusive as 5 que o
+# Claude Code marcou como erro — mesma cobertura do que falhou, um décimo das chamadas.
+MARCA_DE_ERRO = re.compile(
+    r'^Traceback \(most recent call last\)|^[A-Za-z_][\w.]*(?:Error|Exception): |^E {3,}\S|'
+    r'^FAILED |^ERROR |^=+ .*\b(?:failed|error)s?\b.*=+$|^npm ERR!|^fatal: |'
+    r'^error(?:\[\w+\])?: |^panic: |: command not found$|: No such file or directory$|'
+    r': Permission denied$|^Exit code [1-9]|^\S+:\d+:\d+: error', re.MULTILINE)
 
 PERGUNTA = {
     'papel': {

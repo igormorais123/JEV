@@ -63,6 +63,19 @@ GANCHOS = {
         'rotulo': 'o Jev está escolhendo que parte do arquivo ler',
         'matcher': 'Read',
     },
+    # A mesma política da leitura, na porta por onde 81% do texto entra: `cat ARQUIVO` dentro
+    # de um comando de shell que é só leitura. Reescreve o comando, então só no Claude Code.
+    'leitura-shell': {
+        'evento': 'PreToolUse',
+        'arquivo': RAIZ / 'hooks' / 'jev_leitura_shell.py',
+        'marca': 'jev_leitura_shell.py',
+        'variavel': 'JEV_LEITURA_SHELL_MODO',
+        'modo_arquivo': RAIZ / 'modo-leitura-shell.txt',
+        'timeout': 10,
+        'rotulo': 'o Jev está escolhendo que parte do arquivo o comando lê',
+        'matcher': 'Bash',
+        'so_claude': True,
+    },
     'busca': {
         'evento': 'PostToolUse',
         'arquivo': RAIZ / 'hooks' / 'jev_busca.py',
