@@ -6,7 +6,7 @@ arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
 Registros: **36** (2026-09-20T20:44:33 a 2026-09-20T23:58:57).
-Última rotina automática: 2026-09-20T23:58:46 (completa, parou em auditoria).
+Última rotina automática: 2026-09-21T00:00:02 (completa, ok, commit).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -28,7 +28,7 @@ Registros: **36** (2026-09-20T20:44:33 a 2026-09-20T23:58:57).
 | tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **17.219** |
 | o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,2583 |
 | chamadas ao Jev pelas camadas | 135 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,007479** |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,007507** |
 
 ## Leitura (`Read`)
 
@@ -122,7 +122,7 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 24.
 | decisões do roteador de tema em produção | 113 (sugeriu skill em 77; 71 do cache) |
 | latência mediana sem cache | 690 ms |
 | custo do roteador | US$ 0,001263 |
-| guarda de comando (sombra) | 41 chamadas, US$ 0,001095 |
+| guarda de comando (sombra) | 42 chamadas, US$ 0,001123 |
 
 ## O que esta página não prova
 

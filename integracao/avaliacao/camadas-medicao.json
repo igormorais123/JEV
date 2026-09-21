@@ -101,8 +101,8 @@
   "latencia_mediana_ms": 690
  },
  "guarda": {
-  "chamadas": 41,
-  "custo_usd": 0.001095
+  "chamadas": 42,
+  "custo_usd": 0.001123
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -113,7 +113,7 @@
  "total": {
   "tokens_evitados": 17219,
   "valor_evitado_usd_ao_preco_declarado": 0.2583,
-  "custo_jev_usd": 0.007479,
+  "custo_jev_usd": 0.007507,
   "chamadas_jev": 135,
   "registros": 36,
   "primeiro_registro": "2026-09-20T20:44:33",
