@@ -6,7 +6,7 @@ arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
 Registros: **6** (2026-09-20T20:44:33 a 2026-09-20T23:41:50).
-Última rotina automática: nunca rodou.
+Última rotina automática: 2026-09-20T23:44:04 (completa, ok, commit).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
