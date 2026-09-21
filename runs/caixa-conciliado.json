@@ -1,6 +1,6 @@
 {
- "chamadas": 31419,
- "usd": 1.018496897,
+ "chamadas": 40457,
+ "usd": 1.518661701,
  "por_experimento": [
   {
    "experimento": "exp-canarios-contrato",
@@ -69,20 +69,20 @@
   },
   {
    "experimento": "shared-lab",
-   "chamadas": 25528,
-   "usd": 0.69579302
+   "chamadas": 32983,
+   "usd": 1.139954426
   },
   {
    "experimento": "shared-router",
-   "chamadas": 1309,
-   "usd": 0.038232876
+   "chamadas": 2039,
+   "usd": 0.069782068
   },
   {
    "experimento": "shared-tools",
-   "chamadas": 25,
-   "usd": 0.000863617
+   "chamadas": 878,
+   "usd": 0.025317823
   }
  ],
- "em": "2026-09-21T00:00:13",
- "corte_utc": "2026-09-21T03:00:13.971127+00:00"
+ "em": "2026-09-21T13:23:18",
+ "corte_utc": "2026-09-21T16:23:18.348679+00:00"
 }

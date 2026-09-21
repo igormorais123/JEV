@@ -1,59 +1,79 @@
 {
  "leitura": {
-  "reads": 6,
-  "com_pedido": 6,
-  "classificados": 3,
-  "estreitados": 3,
-  "estreitados_ativos": 3,
-  "motivos": {
-   "read ja delimitado": 1,
-   "tipo de arquivo fora da camada": 2
+  "reads": 52,
+  "com_pedido": 52,
+  "classificados": 17,
+  "estreitados": 5,
+  "estreitados_ativos": 5,
+  "por_via": {
+   "read": {
+    "vistos": 47,
+    "estreitados_ativos": 4,
+    "tokens_evitados": 28292
+   },
+   "bash": {
+    "vistos": 5,
+    "estreitados_ativos": 1,
+    "tokens_evitados": 8387
+   }
   },
-  "linhas_evitadas": 988,
-  "tokens_evitados": 16480,
-  "releituras": 1,
-  "linhas_relidas": 0,
+  "motivos": {
+   "read ja delimitado": 16,
+   "tipo de arquivo fora da camada": 14,
+   "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 11,
+   "arquivo pequeno": 5,
+   "economia pequena demais para valer o intervalo": 1
+  },
+  "linhas_evitadas": 1936,
+  "tokens_evitados": 36679,
+  "releituras": 2,
+  "linhas_relidas": 164,
   "releituras_sem_intervalo_registrado": 1,
-  "custo_usd": 0.001043,
-  "chamadas": 27,
-  "latencia_mediana_ms": 2148,
-  "latencia_p90_ms": 3035,
+  "custo_usd": 0.012807,
+  "chamadas": 203,
+  "latencia_mediana_ms": 3879,
+  "latencia_p90_ms": 4035,
   "blocos_por_classe": {
-   "essencial": 4,
-   "complementar": 20,
-   "irrelevante": 2,
+   "essencial": 105,
+   "complementar": 66,
+   "irrelevante": 31,
    "incerto": 1
   },
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 1,
+  "greps": 2,
   "por_ferramenta": {
-   "Grep": 1
+   "Grep": 2
   },
-  "classificados": 0,
-  "sugeridos": 0,
-  "sugeridos_ativos": 0,
-  "arquivos_no_topo": 0,
+  "classificados": 1,
+  "sugeridos": 1,
+  "sugeridos_ativos": 1,
+  "arquivos_no_topo": 3,
   "arquivos_no_topo_lidos_depois": 0,
   "arquivos_fora": 0,
   "motivos": {
    "poucos itens": 1
   },
-  "custo_usd": 0,
-  "chamadas": 0,
-  "latencia_mediana_ms": null
+  "custo_usd": 0.000403,
+  "chamadas": 16,
+  "latencia_mediana_ms": 4466
  },
  "sentinela": {
-  "conteudos": 1,
-  "inspecionados": 0,
-  "partes": 0,
-  "acusados": 0,
-  "por_ferramenta": {},
-  "acusados_por_ferramenta": {},
-  "custo_usd": 0,
-  "chamadas": 0,
-  "latencia_mediana_ms": null
+  "conteudos": 10,
+  "inspecionados": 9,
+  "partes": 27,
+  "acusados": 2,
+  "por_ferramenta": {
+   "prompt/pasted_content": 3,
+   "WebFetch": 6
+  },
+  "acusados_por_ferramenta": {
+   "prompt/pasted_content": 2
+  },
+  "custo_usd": 0.001227,
+  "chamadas": 27,
+  "latencia_mediana_ms": 1349
  },
  "ler": {
   "usos": 2,
@@ -67,21 +87,21 @@
   "chamadas": 6
  },
  "saida": {
-  "saidas_com_erro": 25,
-  "classificadas": 25,
-  "apontadas": 1,
+  "saidas_com_erro": 68,
+  "classificadas": 68,
+  "apontadas": 3,
   "partes_por_classe": {
-   "normal": 95,
-   "consequencia": 2,
-   "causa": 1,
+   "normal": 193,
+   "consequencia": 4,
+   "causa": 6,
    "incerto": 1
   },
   "motivos": {
-   "nenhuma parte com causa acima do corte": 24
+   "nenhuma parte com causa acima do corte": 65
   },
-  "custo_usd": 0.003532,
-  "chamadas": 99,
-  "latencia_mediana_ms": 1381
+  "custo_usd": 0.009603,
+  "chamadas": 204,
+  "latencia_mediana_ms": 1340
  },
  "verificar": {
   "usos": 1,
@@ -94,15 +114,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 113,
-  "sugeriu": 77,
-  "cache": 71,
-  "custo_usd": 0.001263,
-  "latencia_mediana_ms": 690
+  "decisoes": 161,
+  "sugeriu": 83,
+  "cache": 78,
+  "custo_usd": 0.002589,
+  "latencia_mediana_ms": 895
  },
  "guarda": {
-  "chamadas": 42,
-  "custo_usd": 0.001123
+  "chamadas": 260,
+  "custo_usd": 0.007844
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -111,12 +131,12 @@
   "janela_de_concordancia": 8
  },
  "total": {
-  "tokens_evitados": 17219,
-  "valor_evitado_usd_ao_preco_declarado": 0.2583,
-  "custo_jev_usd": 0.007507,
-  "chamadas_jev": 135,
-  "registros": 36,
+  "tokens_evitados": 37418,
+  "valor_evitado_usd_ao_preco_declarado": 0.5613,
+  "custo_jev_usd": 0.035019,
+  "chamadas_jev": 459,
+  "registros": 136,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-20T23:58:57"
+  "ultimo_registro": "2026-09-21T13:21:16"
  }
 }
