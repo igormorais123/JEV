@@ -71,11 +71,15 @@ def leitura(linhas):
     for l in todas:
         por_sessao[l.get('sessao')].append(l)
     releituras = 0
+    linhas_relidas = 0
     for l in ativas:
         seq = por_sessao[l.get('sessao')]
         i = seq.index(l)
-        if any(s.get('arquivo') == l.get('arquivo') for s in seq[i+1:i+1+JANELA_DE_RELEITURA]):
+        voltas = [s for s in seq[i+1:i+1+JANELA_DE_RELEITURA] if s.get('arquivo') == l.get('arquivo')]
+        if voltas:
             releituras += 1
+            # Uma volta sem intervalo é o arquivo inteiro de novo: a economia daquela leitura zera.
+            linhas_relidas += sum(v.get('limit') or l.get('linhas') or 0 for v in voltas)
     tokens = sum(l.get('tokens_evitados_estimados') or 0 for l in ativas)
     return {
         'reads': len(todas),
@@ -87,6 +91,7 @@ def leitura(linhas):
         'linhas_evitadas': sum(l.get('linhas_evitadas') or 0 for l in ativas),
         'tokens_evitados': tokens,
         'releituras': releituras,
+        'linhas_relidas': linhas_relidas,
         'custo_usd': round(sum(l.get('custo_usd') or 0 for l in todas), 6),
         'chamadas': sum(l.get('chamadas') or 0 for l in todas),
         'latencia_mediana_ms': _mediana([l.get('latencia_ms') for l in com_chamada]),
@@ -258,6 +263,7 @@ Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ulti
 | linhas evitadas | {n(L['linhas_evitadas'])} |
 | tokens evitados (estimados) | **{n(L['tokens_evitados'])}** |
 | releitura do mesmo arquivo em até {JANELA_DE_RELEITURA} leituras (arrependimento) | **{releitura}** |
+| linhas relidas nessas voltas (o que fez falta) | {n(L['linhas_relidas'])} de {n(L['linhas_evitadas'])} evitadas |
 | blocos por classe | {', '.join(f'{k}: {v}' for k, v in sorted(L['blocos_por_classe'].items())) or '—'} |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | {n(L['descartaveis_a_099'])} |
 | latência mediana / p90 do hook | {n(L['latencia_mediana_ms'])} ms / {n(L['latencia_p90_ms'])} ms |

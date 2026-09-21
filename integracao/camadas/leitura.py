@@ -64,7 +64,10 @@ def analisar(caminho, pedido, tool_input=None, *, transporte=None,
     base = {'arquivo': str(caminho), 'acao': 'nada'}
 
     if tool_input.get('offset') is not None or tool_input.get('limit') is not None:
-        return {**base, 'motivo': 'read ja delimitado'}
+        # Registra o intervalo: uma releitura depois de um Read estreitado é o sinal de
+        # arrependimento, e o tamanho dela diz quanto do que ficou de fora fez falta.
+        return {**base, 'motivo': 'read ja delimitado',
+                'offset': tool_input.get('offset'), 'limit': tool_input.get('limit')}
     if not pedido:
         return {**base, 'motivo': 'sem pedido vigente'}
     if caminho.suffix.lower() in BINARIOS or caminho.name.lower() in NAO_TOCAR:

@@ -5,7 +5,7 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **1** (2026-09-20T20:44:33 a 2026-09-20T20:44:33).
+Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -22,28 +22,29 @@ Registros: **1** (2026-09-20T20:44:33 a 2026-09-20T20:44:33).
 
 | | valor |
 |---|---|
-| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **0** |
-| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0 |
-| chamadas ao Jev pelas camadas | 3 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,001335** |
+| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **8.269** |
+| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,124 |
+| chamadas ao Jev pelas camadas | 17 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,002129** |
 
 ## Leitura (`Read`)
 
 | | valor |
 |---|---|
-| Reads vistos pelo hook | 0 |
-| com pedido vigente na sessão | 0 |
-| classificados (arquivo grande, com pedido) | 0 |
-| estreitados | 0 (em modo ativo: 0) |
-| linhas evitadas | 0 |
-| tokens evitados (estimados) | **0** |
-| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **—** |
-| blocos por classe | — |
+| Reads vistos pelo hook | 2 |
+| com pedido vigente na sessão | 2 |
+| classificados (arquivo grande, com pedido) | 1 |
+| estreitados | 1 (em modo ativo: 1) |
+| linhas evitadas | 604 |
+| tokens evitados (estimados) | **8.269** |
+| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **1 de 1** |
+| linhas relidas nessas voltas (o que fez falta) | 784 de 604 evitadas |
+| blocos por classe | complementar: 7, essencial: 4, incerto: 1, irrelevante: 2 |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | 0 |
-| latência mediana / p90 do hook | — ms / — ms |
-| custo | US$ 0 em 0 chamadas |
+| latência mediana / p90 do hook | 3.035 ms / 3.035 ms |
+| custo | US$ 0,00073 em 14 chamadas |
 
-Por que não estreitou: —.
+Por que não estreitou: read ja delimitado: 1.
 
 ## Busca (`Grep`)
 
@@ -90,10 +91,10 @@ vira medida de acerto quando alguém revisar as acusações.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 85 (sugeriu skill em 59; 53 do cache) |
-| latência mediana sem cache | 613 ms |
-| custo do roteador | US$ 0,000928 |
-| guarda de comando (sombra) | 9 chamadas, US$ 0,000226 |
+| decisões do roteador de tema em produção | 92 (sugeriu skill em 65; 59 do cache) |
+| latência mediana sem cache | 622 ms |
+| custo do roteador | US$ 0,000963 |
+| guarda de comando (sombra) | 10 chamadas, US$ 0,000255 |
 
 ## O que esta página não prova
 

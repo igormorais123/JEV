@@ -276,7 +276,8 @@ class Medidor(unittest.TestCase):
              'custo_usd': 0.0002, 'latencia_ms': 900, 'linhas_evitadas': 300,
              'tokens_evitados_estimados': 4000, 'blocos_classes': [['essencial', 1, True]]},
             {'em': '2026-09-20T10:00:05', 'camada': 'leitura', 'modo': 'ativo', 'sessao': 's1',
-             'com_pedido': True, 'arquivo': 'a.py', 'acao': 'nada', 'motivo': 'read ja delimitado'},
+             'com_pedido': True, 'arquivo': 'a.py', 'acao': 'nada', 'motivo': 'read ja delimitado',
+             'offset': 480, 'limit': 40},
             {'em': '2026-09-20T10:01:00', 'camada': 'busca', 'modo': 'ativo', 'sessao': 's1',
              'acao': 'sugerir', 'chamadas': 6, 'custo_usd': 0.0001, 'latencia_ms': 800,
              'primeiro': ['x/b.py'], 'fora': []},
@@ -299,6 +300,7 @@ class Medidor(unittest.TestCase):
         self.assertEqual(d['leitura']['reads'], 3)
         self.assertEqual(d['leitura']['estreitados_ativos'], 1)
         self.assertEqual(d['leitura']['releituras'], 1)
+        self.assertEqual(d['leitura']['linhas_relidas'], 40)
         self.assertEqual(d['leitura']['tokens_evitados'], 4000)
         self.assertEqual(d['busca']['arquivos_no_topo_lidos_depois'], 1)
         self.assertEqual(d['sentinela']['acusados'], 1)
