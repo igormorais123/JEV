@@ -2,6 +2,8 @@
 
 Projeto experimental para testes com o modelo de classificação JEV.
 
+Mapa navegável de todas as pastas, arquivos e ligações: [MAPA.md](MAPA.md).
+
 ## Execução realizada
 
 - **[Relatório final](docs/RELATORIO-FINAL-JEV.md)** — recomendação, os nove experimentos, contra-hipóteses
