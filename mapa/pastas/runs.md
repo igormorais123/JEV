@@ -29,6 +29,7 @@ Resultados dos experimentos: um diretório por experimento com `relatorio.json` 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [analise-pareada.json](../../runs/analise-pareada.json) | dado | 116 l. | Objeto com 9 chaves: e1_triagem, e3_evidencia, e2b_posicao, calibracao_0.9, calibracao_0.95, calibracao_0.99, calibracao_confirmacao_0.9, calibracao_confirmaca… |
+| [caixa-conciliado.json](../../runs/caixa-conciliado.json) | dado | 88 l. | Objeto com 5 chaves: chamadas, usd, por_experimento, em, corte_utc |
 | [erro-grave.json](../../runs/erro-grave.json) | dado | 319 l. | Objeto com 2 chaves: definicao, por_conjunto |
 | [extrato-ledger.json](../../runs/extrato-ledger.json) | dado | 19174 l. | Objeto com 9 chaves: gerado_em, banco, sha256_do_banco, tentativas, comprometido_nusd, comprometido_usd, reservas_pendentes_sem_liquidacao, colunas_omitidas, l… |
 
@@ -38,9 +39,14 @@ Resultados dos experimentos: um diretório por experimento com `relatorio.json` 
 
 - **é usado por** — citação: [`executor/analise.py`](../../executor/analise.py), [`executor/placar.py`](../../executor/placar.py)
 
+### caixa-conciliado.json
+
+- **é usado por** — citação: [`integracao/camadas/rotina.py`](../../integracao/camadas/rotina.py), [`laboratorio/caixa.py`](../../laboratorio/caixa.py), [`laboratorio/conciliar_caixa.py`](../../laboratorio/conciliar_caixa.py)
+
 ### erro-grave.json
 
 - **é usado por** — citação: [`executor/erro_grave.py`](../../executor/erro_grave.py), [`executor/placar.py`](../../executor/placar.py)
+- **menciona 4 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (2×), [E7](../../mapa/conhecimento/experimentos.md#e7) (1×), [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×)
 
 ### extrato-ledger.json
 

@@ -19,10 +19,28 @@ Resultados do experimento E8 (anotador): relatório agregado e, quando houve, ad
 
 ## Ligações e conteúdo de cada arquivo
 
+### adjudicacao-bruta.jsonl
+
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)
+
+### adjudicacao-mapa.json
+
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)
+
 ### adjudicacao.json
 
 - **é usado por** — citação: [`executor/tests/test_coerencia_placar.py`](../../executor/tests/test_coerencia_placar.py)
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)
+
+### casos-cegos.json
+
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)
+
+### prompt-adjudicacao.txt
+
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)
 
 ### relatorio.json
 
 - **é usado por** — citação: [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`laboratorio/r21-prosa.json`](../../laboratorio/r21-prosa.json)
+- **papel nos estudos** — resultado [E8](../../mapa/conhecimento/experimentos.md#e8)

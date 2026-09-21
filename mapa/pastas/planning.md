@@ -87,75 +87,103 @@ flowchart LR
 
 - **usa** — citação: [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`lab/build_ui.py`](../../lab/build_ui.py), [`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf`](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf), [`planning/plan.json`](../../planning/plan.json), [`research/hermes/fase2-decisoes-do-pdf.csv`](../../research/hermes/fase2-decisoes-do-pdf.csv)
 - **é usado por** — citação: [`README.md`](../../README.md), [`executor/tests/test_entregaveis.py`](../../executor/tests/test_entregaveis.py), [`planning/build_guia_pdf.py`](../../planning/build_guia_pdf.py), [`planning/build_relatorio_pdf.py`](../../planning/build_relatorio_pdf.py)
+- **menciona 3 conceitos** — [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×), [V13](../../mapa/conhecimento/revisoes.md#v13) (1×)
 - **conteúdo** — [markup](../../planning/build_deliverables.py#L29) (l. 29), [PlanDoc](../../planning/build_deliverables.py#L43) (l. 43), [footer](../../planning/build_deliverables.py#L53) (l. 53), [build_pdf](../../planning/build_deliverables.py#L95) (l. 95), [main](../../planning/build_deliverables.py#L195) (l. 195)
 
 ### build_guia_pdf.py
 
 - **usa** — import: [`executor/__init__.py`](../../executor/__init__.py), [`executor/gabarito.py`](../../executor/gabarito.py), [`executor/placar.py`](../../executor/placar.py); citação: [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`output/pdf/GUIA-PRATICO-JEV.pdf`](../../output/pdf/GUIA-PRATICO-JEV.pdf), [`planning/build_deliverables.py`](../../planning/build_deliverables.py), [`runs/e1-triagem/relatorio.json`](../../runs/e1-triagem/relatorio.json), [`runs/e11-desempate/relatorio.json`](../../runs/e11-desempate/relatorio.json), [`runs/e12-replicacao/relatorio.json`](../../runs/e12-replicacao/relatorio.json), [`runs/e7-confirmacao/relatorio.json`](../../runs/e7-confirmacao/relatorio.json)
+- **chama de outros arquivos** — [`gabarito.desempenho_do_estudo`](../../executor/gabarito.py#L145), [`placar.faixa_dos_gabaritos`](../../executor/placar.py#L81), [`placar.montar`](../../executor/placar.py#L641)
+- **menciona 2 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×)
 - **conteúdo** — [corte_que_zera_o_erro](../../planning/build_guia_pdf.py#L23) (l. 23), [capa](../../planning/build_guia_pdf.py#L43) (l. 43), [main](../../planning/build_guia_pdf.py#L84) (l. 84)
 
 ### build_plan.py
 
 - **usa** — citação: [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/matriz-testes.csv`](../../planning/matriz-testes.csv), [`planning/plan.json`](../../planning/plan.json), [`planning/protocolo.md`](../../planning/protocolo.md), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/sources-manifest.json`](../../research/sources-manifest.json)
 - **é usado por** — citação: [`README.md`](../../README.md)
+- **menciona 15 conceitos** — [S01](../../mapa/conhecimento/sistemas.md#s01) (1×), [S02](../../mapa/conhecimento/sistemas.md#s02) (1×), [S03](../../mapa/conhecimento/sistemas.md#s03) (1×), [S04](../../mapa/conhecimento/sistemas.md#s04) (1×), [S05](../../mapa/conhecimento/sistemas.md#s05) (1×), [S06](../../mapa/conhecimento/sistemas.md#s06) (1×), [S07](../../mapa/conhecimento/sistemas.md#s07) (1×), [S08](../../mapa/conhecimento/sistemas.md#s08) (1×), [S09](../../mapa/conhecimento/sistemas.md#s09) (1×), [S10](../../mapa/conhecimento/sistemas.md#s10) (1×), [S11](../../mapa/conhecimento/sistemas.md#s11) (1×), [S12](../../mapa/conhecimento/sistemas.md#s12) (1×), [S13](../../mapa/conhecimento/sistemas.md#s13) (1×), [S14](../../mapa/conhecimento/sistemas.md#s14) (1×), [S15](../../mapa/conhecimento/sistemas.md#s15) (1×)
 - **conteúdo** — [system](../../planning/build_plan.py#L11) (l. 11), [main](../../planning/build_plan.py#L129) (l. 129)
 
 ### build_relatorio_pdf.py
 
 - **usa** — import: [`executor/__init__.py`](../../executor/__init__.py), [`executor/gabarito.py`](../../executor/gabarito.py), [`executor/placar.py`](../../executor/placar.py); citação: [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`output/pdf/RELATORIO-FINAL-JEV.pdf`](../../output/pdf/RELATORIO-FINAL-JEV.pdf), [`planning/build_deliverables.py`](../../planning/build_deliverables.py), [`runs/e1-triagem/relatorio.json`](../../runs/e1-triagem/relatorio.json), [`runs/e11-desempate/relatorio.json`](../../runs/e11-desempate/relatorio.json), [`runs/e12-replicacao/relatorio.json`](../../runs/e12-replicacao/relatorio.json), [`runs/e7-confirmacao/relatorio.json`](../../runs/e7-confirmacao/relatorio.json)
+- **chama de outros arquivos** — [`gabarito.desempenho_do_estudo`](../../executor/gabarito.py#L145), [`placar.faixa_dos_gabaritos`](../../executor/placar.py#L81), [`placar.montar`](../../executor/placar.py#L641)
+- **menciona 3 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×), [V13](../../mapa/conhecimento/revisoes.md#v13) (1×)
 - **conteúdo** — [negrito](../../planning/build_relatorio_pdf.py#L27) (l. 27), [capa](../../planning/build_relatorio_pdf.py#L34) (l. 34), [main](../../planning/build_relatorio_pdf.py#L69) (l. 69)
+
+### emenda-E15-01.md
+
+- **papel nos estudos** — emenda [E15](../../mapa/conhecimento/experimentos.md#e15)
 
 ### matriz-testes.csv
 
 - **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`lab/dashboard.js`](../../lab/dashboard.js), [`lab/index.html`](../../lab/index.html), [`lab/server.py`](../../lab/server.py), [`planning/build_plan.py`](../../planning/build_plan.py)
+- **menciona 15 conceitos** — [S01](../../mapa/conhecimento/sistemas.md#s01) (1×), [S02](../../mapa/conhecimento/sistemas.md#s02) (1×), [S03](../../mapa/conhecimento/sistemas.md#s03) (1×), [S04](../../mapa/conhecimento/sistemas.md#s04) (1×), [S05](../../mapa/conhecimento/sistemas.md#s05) (1×), [S06](../../mapa/conhecimento/sistemas.md#s06) (1×), [S07](../../mapa/conhecimento/sistemas.md#s07) (1×), [S08](../../mapa/conhecimento/sistemas.md#s08) (1×), [S09](../../mapa/conhecimento/sistemas.md#s09) (1×), [S10](../../mapa/conhecimento/sistemas.md#s10) (1×), [S11](../../mapa/conhecimento/sistemas.md#s11) (1×), [S12](../../mapa/conhecimento/sistemas.md#s12) (1×), [S13](../../mapa/conhecimento/sistemas.md#s13) (1×), [S14](../../mapa/conhecimento/sistemas.md#s14) (1×), [S15](../../mapa/conhecimento/sistemas.md#s15) (1×)
 
 ### plan.json
 
 - **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`executor/simple_round.py`](../../executor/simple_round.py), [`lab/build_ui.py`](../../lab/build_ui.py), [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/index.html`](../../lab/index.html), [`planning/build_deliverables.py`](../../planning/build_deliverables.py), [`planning/build_plan.py`](../../planning/build_plan.py)
+- **menciona 15 conceitos** — [S01](../../mapa/conhecimento/sistemas.md#s01) (1×), [S02](../../mapa/conhecimento/sistemas.md#s02) (1×), [S03](../../mapa/conhecimento/sistemas.md#s03) (1×), [S04](../../mapa/conhecimento/sistemas.md#s04) (1×), [S05](../../mapa/conhecimento/sistemas.md#s05) (1×), [S06](../../mapa/conhecimento/sistemas.md#s06) (1×), [S07](../../mapa/conhecimento/sistemas.md#s07) (1×), [S08](../../mapa/conhecimento/sistemas.md#s08) (1×), [S09](../../mapa/conhecimento/sistemas.md#s09) (1×), [S10](../../mapa/conhecimento/sistemas.md#s10) (1×), [S11](../../mapa/conhecimento/sistemas.md#s11) (1×), [S12](../../mapa/conhecimento/sistemas.md#s12) (1×), [S13](../../mapa/conhecimento/sistemas.md#s13) (1×), [S14](../../mapa/conhecimento/sistemas.md#s14) (1×), [S15](../../mapa/conhecimento/sistemas.md#s15) (1×)
 
 ### preregistro-E1-triagem.md
 
 - **usa** — citação: [`executor/analise.py`](../../executor/analise.py), [`executor/baseline_regra.py`](../../executor/baseline_regra.py)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`docs/RELATORIO-EXECUCAO-JEV-HELENA.md`](../../docs/RELATORIO-EXECUCAO-JEV-HELENA.md), [`executor/baseline_regra.py`](../../executor/baseline_regra.py), [`executor/run_e1_triagem.py`](../../executor/run_e1_triagem.py), [`runs/e1-triagem/relatorio.json`](../../runs/e1-triagem/relatorio.json)
+- **papel nos estudos** — pré-registra [E1](../../mapa/conhecimento/experimentos.md#e1)
+- **menciona 1 conceito** — [E3](../../mapa/conhecimento/experimentos.md#e3) (1×)
 - **conteúdo** — Pergunta (l. 6), Tarefa (l. 12), Desenho (l. 29), Gabarito (l. 43), Comparadores (l. 49), Métrica principal e critério (l. 56), Erros graves (l. 65), O que este piloto não pode concluir (l. 70)
 
 ### preregistro-E10-llm-economico.md
 
 - **usa** — citação: [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/run_e10_llm_economico.py`](../../executor/run_e10_llm_economico.py), [`executor/run_e10b_piloto.py`](../../executor/run_e10b_piloto.py), [`runs/e10-llm-economico/relatorio.json`](../../runs/e10-llm-economico/relatorio.json), [`runs/e10b-piloto/relatorio.json`](../../runs/e10b-piloto/relatorio.json)
+- **papel nos estudos** — pré-registra [E10](../../mapa/conhecimento/experimentos.md#e10)
+- **menciona 4 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (5×), [E10b](../../mapa/conhecimento/experimentos.md#e10b) (3×), [E7](../../mapa/conhecimento/experimentos.md#e7) (2×), [E8](../../mapa/conhecimento/experimentos.md#e8) (1×)
 - **conteúdo** — Por que este experimento existe (l. 5), Hipótese (l. 18), Desenho (l. 29), Regra de decisão, congelada antes de olhar (l. 46), Orçamento (l. 60), O que este experimento não pode concluir (l. 82)
 
 ### preregistro-E11-desempate.md
 
 - **usa** — citação: [`data/corpus/triagem-desempate.jsonl`](../../data/corpus/triagem-desempate.jsonl), [`runs/e11-desempate/respostas.jsonl`](../../runs/e11-desempate/respostas.jsonl)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/adjudicar_e11.py`](../../executor/adjudicar_e11.py), [`executor/run_e11_desempate.py`](../../executor/run_e11_desempate.py), [`runs/e11-desempate/adjudicacao.json`](../../runs/e11-desempate/adjudicacao.json), [`runs/e11-desempate/relatorio.json`](../../runs/e11-desempate/relatorio.json)
+- **papel nos estudos** — pré-registra [E11](../../mapa/conhecimento/experimentos.md#e11)
+- **menciona 6 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (5×), [E10](../../mapa/conhecimento/experimentos.md#e10) (2×), [E7](../../mapa/conhecimento/experimentos.md#e7) (1×), [E8](../../mapa/conhecimento/experimentos.md#e8) (1×), [E9](../../mapa/conhecimento/experimentos.md#e9) (1×), [E10b](../../mapa/conhecimento/experimentos.md#e10b) (1×)
 - **conteúdo** — Por que este experimento existe (l. 6), Hipótese (l. 24), Desenho (l. 33), As 20 famílias, declaradas antes de escrever os casos (l. 48), Métrica primária e regra de decisão, congeladas antes de existir dado (l. 73), Orçamento (l. 96), O que este experimento continua não podendo concluir (l. 109)
 
 ### preregistro-E12-replicacao.md
 
 - **usa** — citação: [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`executor/prices.json`](../../executor/prices.json)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/adjudicar_e12.py`](../../executor/adjudicar_e12.py), [`executor/run_e12_replicacao.py`](../../executor/run_e12_replicacao.py), [`runs/e12-replicacao/adjudicacao.json`](../../runs/e12-replicacao/adjudicacao.json), [`runs/e12-replicacao/anuladas-emenda-3.json`](../../runs/e12-replicacao/anuladas-emenda-3.json), [`runs/e12-replicacao/relatorio.json`](../../runs/e12-replicacao/relatorio.json)
+- **papel nos estudos** — pré-registra [E12](../../mapa/conhecimento/experimentos.md#e12)
+- **menciona 4 conceitos** — [E10](../../mapa/conhecimento/experimentos.md#e10) (6×), [E11](../../mapa/conhecimento/experimentos.md#e11) (6×), [E1](../../mapa/conhecimento/experimentos.md#e1) (3×), [E6](../../mapa/conhecimento/experimentos.md#e6) (1×)
 - **conteúdo** — Por que este experimento existe (l. 6), Hipótese (l. 22), Desenho (l. 32), As 30 famílias, declaradas antes de escrever os casos (l. 63), Regra de decisão, congelada antes de existir qualquer dado (l. 102), O que este experimento não decide (l. 140), Orçamento (l. 149), Emenda 1 — falha de transporte não é resposta errada (l. 161), Emenda 2 — cobertura mínima de um braço (l. 188), Emenda 3 — teto de saída suficiente para modelo que raciocina antes de responder (l. 215)
 
 ### preregistro-E15-implantacao.md
 
 - **é usado por** — citação: [`executor/run_e15.py`](../../executor/run_e15.py), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md)
+- **papel nos estudos** — pré-registra [E15](../../mapa/conhecimento/experimentos.md#e15)
+- **menciona 1 conceito** — [R11](../../mapa/conhecimento/rodadas.md#r11) (1×)
 - **conteúdo** — Perguntas e decisões congeladas (l. 5), Desenho e limites (l. 24), Implantação (l. 39)
 
 ### preregistro-E16-recuperacao.md
 
 - **é usado por** — citação: [`executor/run_e16.py`](../../executor/run_e16.py)
+- **papel nos estudos** — pré-registra [E16](../../mapa/conhecimento/experimentos.md#e16)
+- **menciona 1 conceito** — [E15](../../mapa/conhecimento/experimentos.md#e15) (5×)
 
 ### preregistro-E7-confirmacao.md
 
 - **usa** — citação: [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl), [`executor/baseline_regra.py`](../../executor/baseline_regra.py), [`executor/run_e1_triagem.py`](../../executor/run_e1_triagem.py)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/run_e7_confirmacao.py`](../../executor/run_e7_confirmacao.py), [`runs/e7-confirmacao/relatorio.json`](../../runs/e7-confirmacao/relatorio.json)
+- **papel nos estudos** — pré-registra [E7](../../mapa/conhecimento/experimentos.md#e7)
+- **menciona 1 conceito** — [E1](../../mapa/conhecimento/experimentos.md#e1) (7×)
 - **conteúdo** — Por que este experimento existe (l. 9), Hipótese (l. 17), Desenho (l. 24), Critério de decisão, fixado antes (l. 40), O que este experimento NÃO resolve (l. 51), Orçamento (l. 61), Emenda 1 — 2026-09-19, depois da execução (l. 68)
 
 ### protocolo.md
 
 - **usa** — link: [`lab/index.html`](../../lab/index.html), [`planning/matriz-testes.csv`](../../planning/matriz-testes.csv), [`planning/plan.json`](../../planning/plan.json), [`planning/schema.sql`](../../planning/schema.sql), [`research/FONTES.md`](../../research/FONTES.md), [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/hermes/fase2-decisoes-do-pdf.csv`](../../research/hermes/fase2-decisoes-do-pdf.csv), [`research/sources-manifest.json`](../../research/sources-manifest.json); citação: [`research/hermes/manifest.json`](../../research/hermes/manifest.json)
 - **é usado por** — citação: [`README.md`](../../README.md), [`executor/README.md`](../../executor/README.md), [`planning/build_plan.py`](../../planning/build_plan.py)
+- **papel nos estudos** — define [S01](../../mapa/conhecimento/sistemas.md#s01), define [S02](../../mapa/conhecimento/sistemas.md#s02), define [S03](../../mapa/conhecimento/sistemas.md#s03), define [S04](../../mapa/conhecimento/sistemas.md#s04), define [S05](../../mapa/conhecimento/sistemas.md#s05), define [S06](../../mapa/conhecimento/sistemas.md#s06), define [S07](../../mapa/conhecimento/sistemas.md#s07), define [S08](../../mapa/conhecimento/sistemas.md#s08), define [S09](../../mapa/conhecimento/sistemas.md#s09), define [S10](../../mapa/conhecimento/sistemas.md#s10), define [S11](../../mapa/conhecimento/sistemas.md#s11), define [S12](../../mapa/conhecimento/sistemas.md#s12), define [S13](../../mapa/conhecimento/sistemas.md#s13), define [S14](../../mapa/conhecimento/sistemas.md#s14), define [S15](../../mapa/conhecimento/sistemas.md#s15)
+- **menciona 5 conceitos** — [E4](../../mapa/conhecimento/experimentos.md#e4) (3×), [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E2](../../mapa/conhecimento/experimentos.md#e2) (1×), [E3](../../mapa/conhecimento/experimentos.md#e3) (1×), [E5](../../mapa/conhecimento/experimentos.md#e5) (1×)
 - **conteúdo** — 1. O que os testes anteriores realmente estabelecem (l. 13), 2. Objetivo, perguntas e critérios de utilidade (l. 46), 3. Cobertura: todos entram, cada um com um teste honesto (l. 64), 4. Desenho dos dados e gabaritos (l. 92), 5. Experimentos: separar as causas (l. 118), 6. Análise quantitativa e limites de inferência (l. 150), 7. Quanto gastar e como impedir estouro (l. 168), 8. OpenRouter ou TypeSafe direto: escolha e procedimento (l. 207), 9. Registro dos dados e interface do laboratório (l. 233), 10. Fluxo de execução e entregáveis por etapa (l. 263), 11. Regra final de adoção e aproveitamento de tokens (l. 281), 12. Fontes e arquivos de trabalho (l. 293)
 
 ### schema.sql

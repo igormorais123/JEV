@@ -11,3 +11,9 @@ Resultados do experimento E6 (repetibilidade): relatório agregado e, quando hou
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [relatorio.json](../../runs/e6-repetibilidade/relatorio.json) | dado | 2913 l. | Objeto com 14 chaves: at, modelo, repeticoes, casos, formato, casos_instaveis, n_instaveis, acuracia_por_rodada, acertos_por_rodada, acuracia_voto_majoritario,… |
+
+## Ligações e conteúdo de cada arquivo
+
+### relatorio.json
+
+- **papel nos estudos** — resultado [E6](../../mapa/conhecimento/experimentos.md#e6)

@@ -11,3 +11,9 @@ Resultados do experimento E2b (posicao): relatório agregado e, quando houve, ad
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [relatorio.json](../../runs/e2b-posicao/relatorio.json) | dado | 3011 l. | Objeto com 8 chaves: at, sementes, tamanho_lote, observacoes, por_posicao, por_caso, wallet_committed_nusd, wallet_available_nusd |
+
+## Ligações e conteúdo de cada arquivo
+
+### relatorio.json
+
+- **papel nos estudos** — resultado [E2b](../../mapa/conhecimento/experimentos.md#e2b)

@@ -11,3 +11,9 @@ Resultados do experimento E5 (provedores): relatório agregado e, quando houve, 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [relatorio.json](../../runs/e5-provedores/relatorio.json) | dado | 993 l. | Objeto com 9 chaves: at, resumo, concordancia, casos, taxa_concordancia, divergencias, resultados, wallet_committed_nusd, wallet_available_nusd |
+
+## Ligações e conteúdo de cada arquivo
+
+### relatorio.json
+
+- **papel nos estudos** — resultado [E5](../../mapa/conhecimento/experimentos.md#e5)

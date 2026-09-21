@@ -15,4 +15,5 @@ Testes do servidor do painel.
 ### test_server.py
 
 - **usa** — citação: [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/server.py`](../../lab/server.py)
+- **menciona 1 conceito** — [S01](../../mapa/conhecimento/sistemas.md#s01) (2×)
 - **conteúdo** — [fresh](../../lab/tests/test_server.py#L18) (l. 18), [run_record](../../lab/tests/test_server.py#L22) (l. 22), [ServerTests](../../lab/tests/test_server.py#L27) (l. 27)

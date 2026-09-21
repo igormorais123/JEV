@@ -1,6 +1,6 @@
 # Instruções do projeto JEV
 
-- Para achar qualquer arquivo, função ou relação entre partes do projeto, comece por `MAPA.md` (índice, grafos, experimentos e testes; símbolos em `mapa/simbolos.md`, grafo em `mapa/grafo.json`). Depois de criar, mover ou apagar arquivos, regenere com `python mapa/gerar_mapa.py --verificar`.
+- Para achar qualquer arquivo, função, estudo ou relação entre partes do projeto, comece por `MAPA.md` (índice, grafos, experimentos, rodadas, hipóteses, perguntas, testes e lacunas) ou pergunte ao grafo com `python mapa/consultar.py TERMO` (`--caminho A B`, `--vizinhos X`). Depois de criar, mover ou apagar arquivos, regenere com `python mapa/gerar_mapa.py --verificar`.
 - A chave OpenRouter está somente no arquivo local `.env`, ignorado pelo Git. Nunca exibir, registrar em logs, copiar para documentação ou versionar a chave.
 - O orçamento TOTAL acumulado autorizado para testes OpenRouter é de US$ 5,00, não por execução. Não ultrapassar esse valor.
 - Antes de chamadas pagas, implementar controle persistente de gastos e verificar preços e custo máximo previsto por chamada, incluindo limites de tokens. Interromper antes de esgotar o saldo; se não for possível garantir o teto, não executar chamadas pagas.

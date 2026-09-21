@@ -18,3 +18,4 @@ Resultados do experimento E10 (llm economico): relatório agregado e, quando hou
 
 - **usa** — citação: [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md)
 - **é usado por** — citação: [`executor/placar.py`](../../executor/placar.py)
+- **papel nos estudos** — resultado [E10](../../mapa/conhecimento/experimentos.md#e10)

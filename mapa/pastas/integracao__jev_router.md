@@ -24,6 +24,7 @@ Nós em negrito são desta pasta; setas cheias são imports, tracejadas são lin
 flowchart LR
   n_executor___init___py["executor/__init__.py"]
   n_executor_assist_py["executor/assist.py"]
+  n_executor_credenciais_py["executor/credenciais.py"]
   n_executor_ledger_py["executor/ledger.py"]
   n_executor_pricing_py["executor/pricing.py"]
   n_executor_shared_py["executor/shared.py"]
@@ -73,6 +74,7 @@ flowchart LR
   n_integracao_jev_router_cli_py --> n_integracao_jev_router_politica_py
   n_integracao_jev_router_cli_py --> n_integracao_jev_router_roteador_py
   n_integracao_jev_router_cliente_py --> n_executor___init___py
+  n_integracao_jev_router_cliente_py --> n_executor_credenciais_py
   n_integracao_jev_router_cliente_py --> n_executor_ledger_py
   n_integracao_jev_router_cliente_py --> n_executor_pricing_py
   n_integracao_jev_router_cliente_py --> n_executor_shared_py
@@ -101,32 +103,35 @@ flowchart LR
 
 - **usa** — import: [`integracao/jev_router/orcamento.py`](../../integracao/jev_router/orcamento.py), [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py)
 - **é usado por** — citação: [`integracao/README.md`](../../integracao/README.md), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json)
+- **chama de outros arquivos** — [`orcamento.custo_maximo_por_chamada_usd`](../../integracao/jev_router/orcamento.py#L34), [`orcamento.situacao`](../../integracao/jev_router/orcamento.py#L55), [`politica.texto_para_o_agente`](../../integracao/jev_router/politica.py#L109), [`roteador.classificar`](../../integracao/jev_router/roteador.py#L81)
 - **conteúdo** — [main](../../integracao/jev_router/cli.py#L18) (l. 18)
 
 ### cliente.py
 
-- **usa** — import: [`executor/__init__.py`](../../executor/__init__.py), [`executor/ledger.py`](../../executor/ledger.py), [`executor/pricing.py`](../../executor/pricing.py), [`executor/shared.py`](../../executor/shared.py), [`integracao/jev_router/orcamento.py`](../../integracao/jev_router/orcamento.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py); citação: [`executor/runner.py`](../../executor/runner.py)
+- **usa** — import: [`executor/__init__.py`](../../executor/__init__.py), [`executor/credenciais.py`](../../executor/credenciais.py), [`executor/ledger.py`](../../executor/ledger.py), [`executor/pricing.py`](../../executor/pricing.py), [`executor/shared.py`](../../executor/shared.py), [`integracao/jev_router/orcamento.py`](../../integracao/jev_router/orcamento.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py); citação: [`executor/runner.py`](../../executor/runner.py)
 - **é usado por** — import: [`integracao/avaliacao/com_contexto.py`](../../integracao/avaliacao/com_contexto.py), [`integracao/avaliacao/comandos.py`](../../integracao/avaliacao/comandos.py), [`integracao/avaliacao/skills.py`](../../integracao/avaliacao/skills.py), [`integracao/avaliacao/variantes.py`](../../integracao/avaliacao/variantes.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py); citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [chave](../../integracao/jev_router/cliente.py#L29) (l. 29), [transporte_http](../../integracao/jev_router/cliente.py#L41) (l. 41), [perguntar](../../integracao/jev_router/cliente.py#L57) (l. 57)
+- **chama de outros arquivos** — [`credenciais.chave`](../../executor/credenciais.py#L71), [`credenciais.provedor`](../../executor/credenciais.py#L59), [`ledger.Ledger`](../../executor/ledger.py#L32), [`pricing.load_prices`](../../executor/pricing.py#L18), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74), [`shared.ask`](../../executor/shared.py#L125), [`orcamento.pode_gastar`](../../integracao/jev_router/orcamento.py#L70), [`orcamento.registrar`](../../integracao/jev_router/orcamento.py#L81), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
+- **conteúdo** — [chave](../../integracao/jev_router/cliente.py#L29) (l. 29), [transporte_http](../../integracao/jev_router/cliente.py#L41) (l. 41), [perguntar](../../integracao/jev_router/cliente.py#L57) (l. 57; usado em 7)
 
 ### orcamento.py
 
 - **usa** — citação: [`executor/ledger.py`](../../executor/ledger.py), [`executor/prices.json`](../../executor/prices.json)
 - **é usado por** — import: [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py); citação: [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [custo_maximo_por_chamada_usd](../../integracao/jev_router/orcamento.py#L34) (l. 34), [_linhas](../../integracao/jev_router/orcamento.py#L40) (l. 40), [situacao](../../integracao/jev_router/orcamento.py#L55) (l. 55), [pode_gastar](../../integracao/jev_router/orcamento.py#L70) (l. 70), [registrar](../../integracao/jev_router/orcamento.py#L81) (l. 81)
+- **conteúdo** — [custo_maximo_por_chamada_usd](../../integracao/jev_router/orcamento.py#L34) (l. 34; usado em 2), [_linhas](../../integracao/jev_router/orcamento.py#L40) (l. 40), [situacao](../../integracao/jev_router/orcamento.py#L55) (l. 55; usado em 1), [pode_gastar](../../integracao/jev_router/orcamento.py#L70) (l. 70; usado em 2), [registrar](../../integracao/jev_router/orcamento.py#L81) (l. 81; usado em 1)
 
 ### politica.py
 
 - **é usado por** — import: [`integracao/avaliacao/rodar.py`](../../integracao/avaliacao/rodar.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py), [`integracao/tests/test_roteador.py`](../../integracao/tests/test_roteador.py); citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [decidir](../../integracao/jev_router/politica.py#L84) (l. 84), [texto_para_o_agente](../../integracao/jev_router/politica.py#L109) (l. 109)
+- **conteúdo** — [decidir](../../integracao/jev_router/politica.py#L84) (l. 84; usado em 2), [texto_para_o_agente](../../integracao/jev_router/politica.py#L109) (l. 109; usado em 3)
 
 ### redacao.py
 
 - **é usado por** — import: [`executor/assist.py`](../../executor/assist.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/jev_mcp.py`](../../integracao/jev_mcp.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py), [`integracao/tests/test_redacao.py`](../../integracao/tests/test_redacao.py), [`laboratorio/nucleo.py`](../../laboratorio/nucleo.py); citação: [`integracao/README.md`](../../integracao/README.md), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [limpar](../../integracao/jev_router/redacao.py#L43) (l. 43)
+- **conteúdo** — [limpar](../../integracao/jev_router/redacao.py#L43) (l. 43; usado em 8)
 
 ### roteador.py
 
 - **usa** — import: [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py), [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py); citação: [`.gitignore`](../../.gitignore)
 - **é usado por** — import: [`integracao/avaliacao/rodar.py`](../../integracao/avaliacao/rodar.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py), [`integracao/tests/test_roteador.py`](../../integracao/tests/test_roteador.py); citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [impressao](../../integracao/jev_router/roteador.py#L30) (l. 30), [do_cache](../../integracao/jev_router/roteador.py#L37) (l. 37), [para_o_cache](../../integracao/jev_router/roteador.py#L47) (l. 47), [guardar_pedido](../../integracao/jev_router/roteador.py#L56) (l. 56), [registrar](../../integracao/jev_router/roteador.py#L73) (l. 73), [classificar](../../integracao/jev_router/roteador.py#L81) (l. 81)
+- **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57), [`politica.decidir`](../../integracao/jev_router/politica.py#L84), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
+- **conteúdo** — [impressao](../../integracao/jev_router/roteador.py#L30) (l. 30; usado em 1), [do_cache](../../integracao/jev_router/roteador.py#L37) (l. 37), [para_o_cache](../../integracao/jev_router/roteador.py#L47) (l. 47; usado em 1), [guardar_pedido](../../integracao/jev_router/roteador.py#L56) (l. 56), [registrar](../../integracao/jev_router/roteador.py#L73) (l. 73), [classificar](../../integracao/jev_router/roteador.py#L81) (l. 81; usado em 3)

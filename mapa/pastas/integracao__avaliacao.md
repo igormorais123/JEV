@@ -11,7 +11,7 @@ Avaliação da integração com tráfego real do Igor (E13): amostragem, gabarit
 | [amostrar.py](../../integracao/avaliacao/amostrar.py) | código | 57 l. | Sorteia prompts reais do histórico do Claude Code para avaliar o roteador. |
 | [amostrar_com_contexto.py](../../integracao/avaliacao/amostrar_com_contexto.py) | código | 126 l. | Monta pares (contexto anterior, pedido) a partir dos transcripts reais do Claude Code. |
 | [auditar_producao.py](../../integracao/avaliacao/auditar_producao.py) | código | 122 l. | Movimento 1 — o roteador em produção: o que ele decidiu sobre os meus próprios pedidos. |
-| [camadas-medicao.json](../../integracao/avaliacao/camadas-medicao.json) | dado | 120 l. | Objeto com 10 chaves: leitura, busca, sentinela, ler, saida, verificar, roteador, guarda, parametros, total |
+| [camadas-medicao.json](../../integracao/avaliacao/camadas-medicao.json) | dado | 122 l. | Objeto com 10 chaves: leitura, busca, sentinela, ler, saida, verificar, roteador, guarda, parametros, total |
 | [com-contexto.json](../../integracao/avaliacao/com-contexto.json) | dado | 539 l. | Objeto com 3 chaves: sem-contexto, com-contexto, mudaram_com_o_contexto |
 | [com_contexto.py](../../integracao/avaliacao/com_contexto.py) | código | 128 l. | O teste decisivo: a mesma pergunta, com e sem o contexto anterior da conversa. |
 | [comandos.py](../../integracao/avaliacao/comandos.py) | código | 173 l. | Extrai comandos de shell realmente executados e testa o Jev como guarda de irreversível. |
@@ -85,17 +85,21 @@ flowchart LR
 
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py); citação: [`integracao/avaliacao/com-contexto.json`](../../integracao/avaliacao/com-contexto.json), [`integracao/avaliacao/gabarito-contexto.json`](../../integracao/avaliacao/gabarito-contexto.json)
 - **é usado por** — citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
+- **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57)
 - **conteúdo** — [estado_sem](../../integracao/avaliacao/com_contexto.py#L49) (l. 49), [estado_com](../../integracao/avaliacao/com_contexto.py#L53) (l. 53), [rodar](../../integracao/avaliacao/com_contexto.py#L61) (l. 61), [medir](../../integracao/avaliacao/com_contexto.py#L73) (l. 73), [main](../../integracao/avaliacao/com_contexto.py#L102) (l. 102)
 
 ### comandos.py
 
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py); citação: [`integracao/avaliacao/gabarito-comandos.json`](../../integracao/avaliacao/gabarito-comandos.json)
 - **é usado por** — import: [`laboratorio/r16_guarda_de_comando.py`](../../laboratorio/r16_guarda_de_comando.py); citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **conteúdo** — [extrair](../../integracao/avaliacao/comandos.py#L52) (l. 52), [rodar](../../integracao/avaliacao/comandos.py#L84) (l. 84), [medir](../../integracao/avaliacao/comandos.py#L97) (l. 97), [main](../../integracao/avaliacao/comandos.py#L125) (l. 125)
+- **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57)
+- **menciona 1 conceito** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×)
+- **conteúdo** — [extrair](../../integracao/avaliacao/comandos.py#L52) (l. 52; usado em 1), [rodar](../../integracao/avaliacao/comandos.py#L84) (l. 84), [medir](../../integracao/avaliacao/comandos.py#L97) (l. 97), [main](../../integracao/avaliacao/comandos.py#L125) (l. 125)
 
 ### gabarito-autor.json
 
 - **é usado por** — citação: [`integracao/avaliacao/rodar.py`](../../integracao/avaliacao/rodar.py), [`integracao/avaliacao/variantes.py`](../../integracao/avaliacao/variantes.py)
+- **menciona 3 conceitos** — [E8](../../mapa/conhecimento/experimentos.md#e8) (1×), [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×)
 
 ### gabarito-comandos.json
 
@@ -104,6 +108,7 @@ flowchart LR
 ### gabarito-contexto.json
 
 - **é usado por** — citação: [`integracao/avaliacao/com_contexto.py`](../../integracao/avaliacao/com_contexto.py)
+- **menciona 1 conceito** — [E8](../../mapa/conhecimento/experimentos.md#e8) (1×)
 
 ### gabarito-skills.json
 
@@ -123,6 +128,8 @@ flowchart LR
 
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py); citação: [`integracao/avaliacao/gabarito-skills.json`](../../integracao/avaliacao/gabarito-skills.json), [`integracao/avaliacao/skills-resultado.json`](../../integracao/avaliacao/skills-resultado.json)
 - **é usado por** — citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
+- **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57)
+- **menciona 1 conceito** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×)
 - **conteúdo** — [regexes](../../integracao/avaliacao/skills.py#L56) (l. 56), [pela_regra](../../integracao/avaliacao/skills.py#L71) (l. 71), [main](../../integracao/avaliacao/skills.py#L76) (l. 76)
 
 ### variantes.json
@@ -133,4 +140,6 @@ flowchart LR
 
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py); citação: [`integracao/avaliacao/gabarito-autor.json`](../../integracao/avaliacao/gabarito-autor.json), [`integracao/avaliacao/variantes.json`](../../integracao/avaliacao/variantes.json)
 - **é usado por** — citação: [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
+- **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57)
+- **menciona 1 conceito** — [E3](../../mapa/conhecimento/experimentos.md#e3) (1×)
 - **conteúdo** — [main](../../integracao/avaliacao/variantes.py#L72) (l. 72)

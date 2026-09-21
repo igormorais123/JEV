@@ -20,23 +20,36 @@ Resultados do experimento E12 (replicacao): relatório agregado e, quando houve,
 
 ## Ligações e conteúdo de cada arquivo
 
+### adjudicacao-mapa.json
+
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
+
 ### adjudicacao.json
 
 - **usa** — citação: [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md)
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
 
 ### anuladas-emenda-3.json
 
 - **usa** — citação: [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md)
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
+
+### casos-cegos.json
+
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
 
 ### prompt-adjudicacao.txt
 
 - **é usado por** — citação: [`executor/adjudicar_e12.py`](../../executor/adjudicar_e12.py)
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
 
 ### relatorio.json
 
 - **usa** — citação: [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md)
 - **é usado por** — citação: [`executor/erro_grave.py`](../../executor/erro_grave.py), [`executor/placar.py`](../../executor/placar.py), [`executor/run_e8_anotador.py`](../../executor/run_e8_anotador.py), [`laboratorio/r0_calibracao.py`](../../laboratorio/r0_calibracao.py), [`planning/build_guia_pdf.py`](../../planning/build_guia_pdf.py), [`planning/build_relatorio_pdf.py`](../../planning/build_relatorio_pdf.py)
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)
 
 ### respostas.jsonl
 
 - **é usado por** — citação: [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`executor/run_e12_replicacao.py`](../../executor/run_e12_replicacao.py), [`executor/tests/test_achados_revisao16.py`](../../executor/tests/test_achados_revisao16.py), [`laboratorio/r21-prosa.json`](../../laboratorio/r21-prosa.json)
+- **papel nos estudos** — resultado [E12](../../mapa/conhecimento/experimentos.md#e12)

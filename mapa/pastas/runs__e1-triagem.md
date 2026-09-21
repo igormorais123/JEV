@@ -18,3 +18,4 @@ Resultados do experimento E1 (triagem): relatório agregado e, quando houve, adj
 
 - **usa** — citação: [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md)
 - **é usado por** — citação: [`executor/erro_grave.py`](../../executor/erro_grave.py), [`executor/gabarito.py`](../../executor/gabarito.py), [`executor/placar.py`](../../executor/placar.py), [`executor/run_e8_anotador.py`](../../executor/run_e8_anotador.py), [`executor/tests/test_coerencia_placar.py`](../../executor/tests/test_coerencia_placar.py), [`laboratorio/r0_calibracao.py`](../../laboratorio/r0_calibracao.py), [`planning/build_guia_pdf.py`](../../planning/build_guia_pdf.py), [`planning/build_relatorio_pdf.py`](../../planning/build_relatorio_pdf.py)
+- **papel nos estudos** — resultado [E1](../../mapa/conhecimento/experimentos.md#e1)

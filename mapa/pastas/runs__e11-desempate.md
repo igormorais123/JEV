@@ -20,20 +20,36 @@ Resultados do experimento E11 (desempate): relatório agregado e, quando houve, 
 
 ## Ligações e conteúdo de cada arquivo
 
+### adjudicacao-bruta.jsonl
+
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
+
+### adjudicacao-mapa.json
+
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
+
 ### adjudicacao.json
 
 - **usa** — citação: [`data/corpus/triagem-desempate.jsonl`](../../data/corpus/triagem-desempate.jsonl), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md)
 - **é usado por** — citação: [`runs/e11-desempate/relatorio.json`](../../runs/e11-desempate/relatorio.json)
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
+
+### casos-cegos.json
+
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
 
 ### prompt-adjudicacao.txt
 
 - **é usado por** — citação: [`executor/adjudicar_e11.py`](../../executor/adjudicar_e11.py)
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
 
 ### relatorio.json
 
 - **usa** — citação: [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md), [`runs/e11-desempate/adjudicacao.json`](../../runs/e11-desempate/adjudicacao.json)
 - **é usado por** — citação: [`executor/erro_grave.py`](../../executor/erro_grave.py), [`executor/placar.py`](../../executor/placar.py), [`executor/run_e8_anotador.py`](../../executor/run_e8_anotador.py), [`executor/tests/test_coerencia_placar.py`](../../executor/tests/test_coerencia_placar.py), [`laboratorio/r0_calibracao.py`](../../laboratorio/r0_calibracao.py), [`planning/build_guia_pdf.py`](../../planning/build_guia_pdf.py), [`planning/build_relatorio_pdf.py`](../../planning/build_relatorio_pdf.py)
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)
 
 ### respostas.jsonl
 
 - **é usado por** — citação: [`executor/run_e11_desempate.py`](../../executor/run_e11_desempate.py), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md)
+- **papel nos estudos** — resultado [E11](../../mapa/conhecimento/experimentos.md#e11)

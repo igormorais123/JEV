@@ -17,3 +17,4 @@ Resultados do experimento E3 (evidencia): relatório agregado e, quando houve, a
 ### relatorio.json
 
 - **é usado por** — citação: [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`executor/placar.py`](../../executor/placar.py), [`laboratorio/r21-prosa.json`](../../laboratorio/r21-prosa.json)
+- **papel nos estudos** — resultado [E3](../../mapa/conhecimento/experimentos.md#e3)

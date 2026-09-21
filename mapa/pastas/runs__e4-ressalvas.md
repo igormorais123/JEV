@@ -11,3 +11,9 @@ Resultados do experimento E4 (ressalvas): relatório agregado e, quando houve, a
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [relatorio.json](../../runs/e4-ressalvas/relatorio.json) | dado | 726 l. | Objeto com 10 chaves: at, modelo, topo, original, bm25, jev, ordens, detalhes, wallet_committed_nusd, wallet_available_nusd |
+
+## Ligações e conteúdo de cada arquivo
+
+### relatorio.json
+
+- **papel nos estudos** — resultado [E4](../../mapa/conhecimento/experimentos.md#e4)

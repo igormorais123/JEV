@@ -17,3 +17,5 @@ Resultados do experimento E9 (prevalencia): relatório agregado e, quando houve,
 ### relatorio.json
 
 - **é usado por** — citação: [`executor/tests/test_coerencia_placar.py`](../../executor/tests/test_coerencia_placar.py)
+- **papel nos estudos** — resultado [E9](../../mapa/conhecimento/experimentos.md#e9)
+- **menciona 2 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E7](../../mapa/conhecimento/experimentos.md#e7) (1×)
