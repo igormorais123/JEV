@@ -11,7 +11,8 @@
   "linhas_evitadas": 604,
   "tokens_evitados": 8269,
   "releituras": 1,
-  "linhas_relidas": 784,
+  "linhas_relidas": 0,
+  "releituras_sem_intervalo_registrado": 1,
   "custo_usd": 0.00073,
   "chamadas": 14,
   "latencia_mediana_ms": 3035,
@@ -60,9 +61,9 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 92,
-  "sugeriu": 65,
-  "cache": 59,
+  "decisoes": 94,
+  "sugeriu": 67,
+  "cache": 61,
   "custo_usd": 0.000963,
   "latencia_mediana_ms": 622
  },

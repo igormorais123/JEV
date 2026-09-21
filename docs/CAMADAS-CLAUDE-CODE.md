@@ -38,7 +38,7 @@ Registros: **3** (2026-09-20T20:44:33 a 2026-09-20T22:29:37).
 | linhas evitadas | 604 |
 | tokens evitados (estimados) | **8.269** |
 | releitura do mesmo arquivo em até 10 leituras (arrependimento) | **1 de 1** |
-| linhas relidas nessas voltas (o que fez falta) | 784 de 604 evitadas |
+| linhas relidas nessas voltas (o que fez falta) | 0 de 604 evitadas (mais 1 volta(s) de tamanho não registrado) |
 | blocos por classe | complementar: 7, essencial: 4, incerto: 1, irrelevante: 2 |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | 0 |
 | latência mediana / p90 do hook | 3.035 ms / 3.035 ms |
@@ -91,7 +91,7 @@ vira medida de acerto quando alguém revisar as acusações.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 92 (sugeriu skill em 65; 59 do cache) |
+| decisões do roteador de tema em produção | 94 (sugeriu skill em 67; 61 do cache) |
 | latência mediana sem cache | 622 ms |
 | custo do roteador | US$ 0,000963 |
 | guarda de comando (sombra) | 10 chamadas, US$ 0,000255 |
