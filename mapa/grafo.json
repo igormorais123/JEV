@@ -20,7 +20,7 @@
    "id": ".",
    "finalidade": "Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex.",
    "pagina": "mapa/pastas/_raiz.md",
-   "arquivos": 300
+   "arquivos": 322
   },
   {
    "id": ".reticle",
@@ -57,6 +57,66 @@
    "finalidade": "Testes do executor: livro-caixa, preços, runner, placar, achados de cada revisão adversarial, entregáveis, MCP.",
    "pagina": "mapa/pastas/executor__tests.md",
    "arquivos": 18
+  },
+  {
+   "id": "hermes",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes.md",
+   "arquivos": 22
+  },
+  {
+   "id": "hermes/jev_hermes",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__jev_hermes.md",
+   "arquivos": 5
+  },
+  {
+   "id": "hermes/plugin",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__plugin.md",
+   "arquivos": 4
+  },
+  {
+   "id": "hermes/plugin/jev-advisor",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__plugin__jev-advisor.md",
+   "arquivos": 2
+  },
+  {
+   "id": "hermes/plugin/jev-camadas",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__plugin__jev-camadas.md",
+   "arquivos": 2
+  },
+  {
+   "id": "hermes/portoes",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__portoes.md",
+   "arquivos": 5
+  },
+  {
+   "id": "hermes/rotinas",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__rotinas.md",
+   "arquivos": 5
+  },
+  {
+   "id": "hermes/skill",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__skill.md",
+   "arquivos": 1
+  },
+  {
+   "id": "hermes/skill/jev",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__skill__jev.md",
+   "arquivos": 1
+  },
+  {
+   "id": "hermes/tests",
+   "finalidade": "",
+   "pagina": "mapa/pastas/hermes__tests.md",
+   "arquivos": 1
   },
   {
    "id": "integracao",
@@ -1595,6 +1655,321 @@
     "test_legacy_import_is_idempotent_and_fail_closed:61",
     "test_bad_confidence_rejected:76",
     "test_concurrent_consumers_share_wallet:83"
+   ]
+  },
+  {
+   "id": "hermes/README.md",
+   "pasta": "hermes",
+   "tipo": "doc",
+   "bytes": 4002,
+   "linhas": 60,
+   "descricao": "O Jev no Hermes da VPS — Implantado em 21/09/2026. Fonte versionada aqui; cópia viva na VPS (`ssh hermes`). Regra de",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/jev_hermes/__init__.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 89,
+   "linhas": 1,
+   "descricao": "O Jev no Hermes da VPS: núcleo, camadas do plugin, porteiros de cron e medição.",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 25745,
+   "linhas": 520,
+   "descricao": "As camadas do Jev dentro do Hermes: decidem o que entra no contexto do modelo caro.",
+   "simbolos": [
+    "registrar:31",
+    "tokens:36",
+    "guardar_pedido:42",
+    "pedido_vigente:60",
+    "_seguro:72",
+    "limpar_sessoes:76",
+    "tema:182",
+    "dividir_em_blocos:224",
+    "_json_do_resultado:240",
+    "posicao:252",
+    "leitura:261",
+    "itens_da_busca:350",
+    "busca:376",
+    "texto_de:425",
+    "sentinela:449",
+    "saida:489"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/medir.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 6962,
+   "linhas": 149,
+   "descricao": "Medição do Jev no Hermes, recalculada dos registros: `python3 medir.py [--gravar]`.",
+   "simbolos": [
+    "linhas:25",
+    "tamanho_medio_do_prompt:39",
+    "medir:52",
+    "pagina:107"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 20126,
+   "linhas": 466,
+   "descricao": "O cliente único do Jev no Hermes da VPS: chaves, provedores, teto, cache e registro.",
+   "simbolos": [
+    "_ler_arquivo:66",
+    "configuracao:80",
+    "tetos:86",
+    "ordem_de_provedores:95",
+    "desligado:103",
+    "redigir:131",
+    "_banco:147",
+    "_agora:160",
+    "pior_caso_usd:164",
+    "situacao:174",
+    "_reservar:193",
+    "_liquidar:222",
+    "_chave_de_cache:229",
+    "_do_cache:234",
+    "_para_o_cache:245",
+    "ErroDeContrato:257",
+    "validar:261",
+    "transporte_http:289",
+    "_custo:310",
+    "registrar:322",
+    "_resumo_das_respostas:332",
+    "perguntar:339",
+    "classificar_em_paralelo:422",
+    "resumo_das_chamadas:440",
+    "escolha:454",
+    "dec:459"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 6250,
+   "linhas": 130,
+   "descricao": "O que os porteiros de cron compartilham: decidir se o modelo caro precisa acordar.",
+   "simbolos": [
+    "registrar:30",
+    "encerrar:35",
+    "executar:44",
+    "rodar:57",
+    "json_da_saida:65",
+    "gmail_listar:76",
+    "gmail_cabecalhos:83",
+    "probabilidade:120",
+    "email_descartavel:126"
+   ]
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py",
+   "pasta": "hermes/plugin/jev-advisor",
+   "tipo": "código",
+   "bytes": 7833,
+   "linhas": 167,
+   "descricao": "Plugin jev-advisor v3: a ferramenta que o modelo do Hermes chama para delegar Sistema 1 ao Jev.",
+   "simbolos": [
+    "_fallback:73",
+    "_revisao:77",
+    "_compacto:88",
+    "_lote:100",
+    "_unica:125",
+    "handle:151",
+    "register:166"
+   ]
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/plugin.yaml",
+   "pasta": "hermes/plugin/jev-advisor",
+   "tipo": "outro",
+   "bytes": 182,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py",
+   "pasta": "hermes/plugin/jev-camadas",
+   "tipo": "código",
+   "bytes": 5591,
+   "linhas": 132,
+   "descricao": "Plugin jev-camadas: o Jev decide o que entra no contexto do modelo caro do Hermes.",
+   "simbolos": [
+    "_ativas:28",
+    "_camadas:35",
+    "_pre_llm_call:40",
+    "_marcar_leitura_parcial:57",
+    "_transform_tool_result:68",
+    "_transform_terminal_output:96",
+    "_on_session_end:121",
+    "register:128"
+   ]
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/plugin.yaml",
+   "pasta": "hermes/plugin/jev-camadas",
+   "tipo": "outro",
+   "bytes": 363,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "pasta": "hermes/portoes",
+   "tipo": "código",
+   "bytes": 5325,
+   "linhas": 116,
+   "descricao": "Watchdog urgente de mensagens novas de Fábio Medina Osório (job 07bde220eec7, sem agente).",
+   "simbolos": [
+    "load_state:50",
+    "save_state:57",
+    "fmt_ts:63",
+    "main:67"
+   ]
+  },
+  {
+   "id": "hermes/portoes/jev_gate_arcano_email.py",
+   "pasta": "hermes/portoes",
+   "tipo": "código",
+   "bytes": 3666,
+   "linhas": 76,
+   "descricao": "Porteiro do job ARCANO — e-mails de Fábio (6b539f9271ed), a cada 30 minutos.",
+   "simbolos": [
+    "main:44"
+   ]
+  },
+  {
+   "id": "hermes/portoes/jev_gate_email_diario.py",
+   "pasta": "hermes/portoes",
+   "tipo": "código",
+   "bytes": 2893,
+   "linhas": 56,
+   "descricao": "Porteiro do job email-revisao-diaria-whatsapp (a3288e4d3f60), uma vez ao dia.",
+   "simbolos": [
+    "main:25"
+   ]
+  },
+  {
+   "id": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "pasta": "hermes/portoes",
+   "tipo": "código",
+   "bytes": 5734,
+   "linhas": 108,
+   "descricao": "Porteiro do job Monitor Fábio Osório — WhatsApp pessoal (19fa0f01b2c5), 3 vezes ao dia.",
+   "simbolos": [
+    "mensagens_novas:52",
+    "main:62"
+   ]
+  },
+  {
+   "id": "hermes/portoes/jev_gate_radar_ia.py",
+   "pasta": "hermes/portoes",
+   "tipo": "código",
+   "bytes": 6600,
+   "linhas": 125,
+   "descricao": "Porteiro do job Radar e assimilação de IA (29f2c9f69bb3), uma vez ao dia.",
+   "simbolos": [
+    "perguntas:29",
+    "descartar_todos:51",
+    "main:70"
+   ]
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "pasta": "hermes/rotinas",
+   "tipo": "código",
+   "bytes": 3283,
+   "linhas": 68,
+   "descricao": "Agenda do dia, às 7h, com o Jev marcando o que exige preparo. Sem modelo principal.",
+   "simbolos": [
+    "main:31"
+   ]
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "pasta": "hermes/rotinas",
+   "tipo": "código",
+   "bytes": 3345,
+   "linhas": 63,
+   "descricao": "Caixa vigiada pelo Jev: e-mail que pede atenção vira alerta no WhatsApp na hora.",
+   "simbolos": [
+    "main:29"
+   ]
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_economia.py",
+   "pasta": "hermes/rotinas",
+   "tipo": "código",
+   "bytes": 1261,
+   "linhas": 29,
+   "descricao": "Medição do Jev no Hermes. `--gravar`: regrava o relatório local (diário, silencioso). `--semanal`: resumo curto para o WhatsApp (segundas às 8h05). Sem modelo…",
+   "simbolos": [
+    "main:10"
+   ]
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_economia_semanal.py",
+   "pasta": "hermes/rotinas",
+   "tipo": "código",
+   "bytes": 313,
+   "linhas": 11,
+   "descricao": "Resumo semanal da economia do Jev para o WhatsApp (segundas às 8h05).",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "pasta": "hermes/rotinas",
+   "tipo": "código",
+   "bytes": 2173,
+   "linhas": 48,
+   "descricao": "Saúde do coletor do WhatsApp pessoal, às 8h. Regra determinística: nada de modelo.",
+   "simbolos": [
+    "main:22"
+   ]
+  },
+  {
+   "id": "hermes/skill/jev/SKILL.md",
+   "pasta": "hermes/skill/jev",
+   "tipo": "doc",
+   "bytes": 3792,
+   "linhas": 71,
+   "descricao": "Jev no Hermes — name: jev",
+   "simbolos": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py",
+   "pasta": "hermes/tests",
+   "tipo": "código",
+   "bytes": 7770,
+   "linhas": 174,
+   "descricao": "Testes offline do Jev no Hermes: transporte simulado, diretório temporário, nenhuma chamada paga.",
+   "simbolos": [
+    "jev:20",
+    "responder:33",
+    "test_resposta_liquida_custo_e_segunda_vem_do_cache:59",
+    "test_429_do_openrouter_cai_para_typesafe:70",
+    "test_erro_de_contrato_nao_troca_de_provedor:78",
+    "test_teto_recusa_antes_de_enviar:85",
+    "test_credencial_nao_sai_no_estado:93",
+    "test_registro_nao_guarda_o_texto:103",
+    "test_interruptor_desliga_sem_enviar:109",
+    "_arquivo_numerado:117",
+    "test_leitura_recorta_na_janela_dos_essenciais:121",
+    "test_leitura_respeita_intervalo_pedido_pelo_agente:133",
+    "test_busca_anexa_ordem_sem_esconder_nada:140",
+    "test_sentinela_avisa_quando_o_texto_da_ordens:151",
+    "test_portao_termina_com_sinal_para_o_agendador:160",
+    "test_portao_acorda_quando_falha:169"
    ]
   },
   {
@@ -15501,6 +15876,908 @@
    "usado_por": []
   },
   {
+   "id": "hermes/jev_hermes/camadas.py::registrar",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "registrar",
+   "tipo": "função",
+   "linha": 31,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::tokens",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "tokens",
+   "tipo": "função",
+   "linha": 36,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::guardar_pedido",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "guardar_pedido",
+   "tipo": "função",
+   "linha": 42,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::pedido_vigente",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "pedido_vigente",
+   "tipo": "função",
+   "linha": 60,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::_seguro",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "_seguro",
+   "tipo": "função",
+   "linha": 72,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::limpar_sessoes",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "limpar_sessoes",
+   "tipo": "função",
+   "linha": 76,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::tema",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "tema",
+   "tipo": "função",
+   "linha": 182,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::dividir_em_blocos",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "dividir_em_blocos",
+   "tipo": "função",
+   "linha": 224,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::_json_do_resultado",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "_json_do_resultado",
+   "tipo": "função",
+   "linha": 240,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::posicao",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "posicao",
+   "tipo": "função",
+   "linha": 252,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::leitura",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "leitura",
+   "tipo": "função",
+   "linha": 261,
+   "usado_por": [
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::itens_da_busca",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "itens_da_busca",
+   "tipo": "função",
+   "linha": 350,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::busca",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "busca",
+   "tipo": "função",
+   "linha": 376,
+   "usado_por": [
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::texto_de",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "texto_de",
+   "tipo": "função",
+   "linha": 425,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::sentinela",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "sentinela",
+   "tipo": "função",
+   "linha": 449,
+   "usado_por": [
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/camadas.py::saida",
+   "arquivo": "hermes/jev_hermes/camadas.py",
+   "nome": "saida",
+   "tipo": "função",
+   "linha": 489,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/medir.py::linhas",
+   "arquivo": "hermes/jev_hermes/medir.py",
+   "nome": "linhas",
+   "tipo": "função",
+   "linha": 25,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/medir.py::tamanho_medio_do_prompt",
+   "arquivo": "hermes/jev_hermes/medir.py",
+   "nome": "tamanho_medio_do_prompt",
+   "tipo": "função",
+   "linha": 39,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/medir.py::medir",
+   "arquivo": "hermes/jev_hermes/medir.py",
+   "nome": "medir",
+   "tipo": "função",
+   "linha": 52,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_economia.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/medir.py::pagina",
+   "arquivo": "hermes/jev_hermes/medir.py",
+   "nome": "pagina",
+   "tipo": "função",
+   "linha": 107,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_economia.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_ler_arquivo",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_ler_arquivo",
+   "tipo": "função",
+   "linha": 66,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::configuracao",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "configuracao",
+   "tipo": "função",
+   "linha": 80,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::tetos",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "tetos",
+   "tipo": "função",
+   "linha": 86,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::ordem_de_provedores",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "ordem_de_provedores",
+   "tipo": "função",
+   "linha": 95,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::desligado",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "desligado",
+   "tipo": "função",
+   "linha": 103,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::redigir",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "redigir",
+   "tipo": "função",
+   "linha": 131,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_banco",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_banco",
+   "tipo": "função",
+   "linha": 147,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_agora",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_agora",
+   "tipo": "função",
+   "linha": 160,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/jev_hermes/medir.py",
+    "hermes/jev_hermes/portao.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::pior_caso_usd",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "pior_caso_usd",
+   "tipo": "função",
+   "linha": 164,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::situacao",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "situacao",
+   "tipo": "função",
+   "linha": 174,
+   "usado_por": [
+    "hermes/jev_hermes/medir.py",
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_reservar",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_reservar",
+   "tipo": "função",
+   "linha": 193,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_liquidar",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_liquidar",
+   "tipo": "função",
+   "linha": 222,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_chave_de_cache",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_chave_de_cache",
+   "tipo": "função",
+   "linha": 229,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_do_cache",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_do_cache",
+   "tipo": "função",
+   "linha": 234,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_para_o_cache",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_para_o_cache",
+   "tipo": "função",
+   "linha": 245,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::ErroDeContrato",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "ErroDeContrato",
+   "tipo": "classe",
+   "linha": 257,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::validar",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "validar",
+   "tipo": "função",
+   "linha": 261,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::transporte_http",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "transporte_http",
+   "tipo": "função",
+   "linha": 289,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_custo",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_custo",
+   "tipo": "função",
+   "linha": 310,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::registrar",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "registrar",
+   "tipo": "função",
+   "linha": 322,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/jev_hermes/portao.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::_resumo_das_respostas",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "_resumo_das_respostas",
+   "tipo": "função",
+   "linha": 332,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::perguntar",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "perguntar",
+   "tipo": "função",
+   "linha": 339,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/portoes/jev_fabio_urgent_watch.py",
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "classificar_em_paralelo",
+   "tipo": "função",
+   "linha": 422,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "resumo_das_chamadas",
+   "tipo": "função",
+   "linha": 440,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::escolha",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "escolha",
+   "tipo": "função",
+   "linha": 454,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/portoes/jev_fabio_urgent_watch.py",
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/nucleo.py::dec",
+   "arquivo": "hermes/jev_hermes/nucleo.py",
+   "nome": "dec",
+   "tipo": "função",
+   "linha": 459,
+   "usado_por": [
+    "hermes/jev_hermes/camadas.py",
+    "hermes/portoes/jev_fabio_urgent_watch.py",
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_fabio_whatsapp.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::registrar",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "registrar",
+   "tipo": "função",
+   "linha": 30,
+   "usado_por": [
+    "hermes/portoes/jev_fabio_urgent_watch.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+    "hermes/rotinas/jev_rotina_saude_whatsapp.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::encerrar",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "encerrar",
+   "tipo": "função",
+   "linha": 35,
+   "usado_por": [
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::executar",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "executar",
+   "tipo": "função",
+   "linha": 44,
+   "usado_por": [
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::rodar",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "rodar",
+   "tipo": "função",
+   "linha": 57,
+   "usado_por": [
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::json_da_saida",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "json_da_saida",
+   "tipo": "função",
+   "linha": 65,
+   "usado_por": [
+    "hermes/portoes/jev_gate_fabio_whatsapp.py",
+    "hermes/portoes/jev_gate_radar_ia.py",
+    "hermes/rotinas/jev_rotina_agenda_dia.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::gmail_listar",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "gmail_listar",
+   "tipo": "função",
+   "linha": 76,
+   "usado_por": [
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::gmail_cabecalhos",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "gmail_cabecalhos",
+   "tipo": "função",
+   "linha": 83,
+   "usado_por": [
+    "hermes/portoes/jev_gate_arcano_email.py",
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::probabilidade",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "probabilidade",
+   "tipo": "função",
+   "linha": 120,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/portao.py::email_descartavel",
+   "arquivo": "hermes/jev_hermes/portao.py",
+   "nome": "email_descartavel",
+   "tipo": "função",
+   "linha": 126,
+   "usado_por": [
+    "hermes/portoes/jev_gate_email_diario.py",
+    "hermes/rotinas/jev_rotina_caixa_vigiada.py"
+   ]
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::_fallback",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "_fallback",
+   "tipo": "função",
+   "linha": 73,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::_revisao",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "_revisao",
+   "tipo": "função",
+   "linha": 77,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::_compacto",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "_compacto",
+   "tipo": "função",
+   "linha": 88,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::_lote",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "_lote",
+   "tipo": "função",
+   "linha": 100,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::_unica",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "_unica",
+   "tipo": "função",
+   "linha": 125,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::handle",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "handle",
+   "tipo": "função",
+   "linha": 151,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-advisor/__init__.py::register",
+   "arquivo": "hermes/plugin/jev-advisor/__init__.py",
+   "nome": "register",
+   "tipo": "função",
+   "linha": 166,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_ativas",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_ativas",
+   "tipo": "função",
+   "linha": 28,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_camadas",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_camadas",
+   "tipo": "função",
+   "linha": 35,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_pre_llm_call",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_pre_llm_call",
+   "tipo": "função",
+   "linha": 40,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_marcar_leitura_parcial",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_marcar_leitura_parcial",
+   "tipo": "função",
+   "linha": 57,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_transform_tool_result",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_transform_tool_result",
+   "tipo": "função",
+   "linha": 68,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_transform_terminal_output",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_transform_terminal_output",
+   "tipo": "função",
+   "linha": 96,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::_on_session_end",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "_on_session_end",
+   "tipo": "função",
+   "linha": 121,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/plugin/jev-camadas/__init__.py::register",
+   "arquivo": "hermes/plugin/jev-camadas/__init__.py",
+   "nome": "register",
+   "tipo": "função",
+   "linha": 128,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_fabio_urgent_watch.py::load_state",
+   "arquivo": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "nome": "load_state",
+   "tipo": "função",
+   "linha": 50,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_fabio_urgent_watch.py::save_state",
+   "arquivo": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "nome": "save_state",
+   "tipo": "função",
+   "linha": 57,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_fabio_urgent_watch.py::fmt_ts",
+   "arquivo": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "nome": "fmt_ts",
+   "tipo": "função",
+   "linha": 63,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_fabio_urgent_watch.py::main",
+   "arquivo": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 67,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_arcano_email.py::main",
+   "arquivo": "hermes/portoes/jev_gate_arcano_email.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 44,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_email_diario.py::main",
+   "arquivo": "hermes/portoes/jev_gate_email_diario.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 25,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_fabio_whatsapp.py::mensagens_novas",
+   "arquivo": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "nome": "mensagens_novas",
+   "tipo": "função",
+   "linha": 52,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_fabio_whatsapp.py::main",
+   "arquivo": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 62,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_radar_ia.py::perguntas",
+   "arquivo": "hermes/portoes/jev_gate_radar_ia.py",
+   "nome": "perguntas",
+   "tipo": "função",
+   "linha": 29,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_radar_ia.py::descartar_todos",
+   "arquivo": "hermes/portoes/jev_gate_radar_ia.py",
+   "nome": "descartar_todos",
+   "tipo": "função",
+   "linha": 51,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/portoes/jev_gate_radar_ia.py::main",
+   "arquivo": "hermes/portoes/jev_gate_radar_ia.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 70,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_agenda_dia.py::main",
+   "arquivo": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 31,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_caixa_vigiada.py::main",
+   "arquivo": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 29,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_economia.py::main",
+   "arquivo": "hermes/rotinas/jev_rotina_economia.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 10,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_economia_semanal.py"
+   ]
+  },
+  {
+   "id": "hermes/rotinas/jev_rotina_saude_whatsapp.py::main",
+   "arquivo": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 22,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::jev",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "jev",
+   "tipo": "função",
+   "linha": 20,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::responder",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "responder",
+   "tipo": "função",
+   "linha": 33,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_resposta_liquida_custo_e_segunda_vem_do_cache",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_resposta_liquida_custo_e_segunda_vem_do_cache",
+   "tipo": "função",
+   "linha": 59,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_429_do_openrouter_cai_para_typesafe",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_429_do_openrouter_cai_para_typesafe",
+   "tipo": "função",
+   "linha": 70,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_erro_de_contrato_nao_troca_de_provedor",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_erro_de_contrato_nao_troca_de_provedor",
+   "tipo": "função",
+   "linha": 78,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_teto_recusa_antes_de_enviar",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_teto_recusa_antes_de_enviar",
+   "tipo": "função",
+   "linha": 85,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_credencial_nao_sai_no_estado",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_credencial_nao_sai_no_estado",
+   "tipo": "função",
+   "linha": 93,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_registro_nao_guarda_o_texto",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_registro_nao_guarda_o_texto",
+   "tipo": "função",
+   "linha": 103,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_interruptor_desliga_sem_enviar",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_interruptor_desliga_sem_enviar",
+   "tipo": "função",
+   "linha": 109,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::_arquivo_numerado",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "_arquivo_numerado",
+   "tipo": "função",
+   "linha": 117,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_leitura_recorta_na_janela_dos_essenciais",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_leitura_recorta_na_janela_dos_essenciais",
+   "tipo": "função",
+   "linha": 121,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_leitura_respeita_intervalo_pedido_pelo_agente",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_leitura_respeita_intervalo_pedido_pelo_agente",
+   "tipo": "função",
+   "linha": 133,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_busca_anexa_ordem_sem_esconder_nada",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_busca_anexa_ordem_sem_esconder_nada",
+   "tipo": "função",
+   "linha": 140,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_sentinela_avisa_quando_o_texto_da_ordens",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_sentinela_avisa_quando_o_texto_da_ordens",
+   "tipo": "função",
+   "linha": 151,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_portao_termina_com_sinal_para_o_agendador",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_portao_termina_com_sinal_para_o_agendador",
+   "tipo": "função",
+   "linha": 160,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_portao_acorda_quando_falha",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_portao_acorda_quando_falha",
+   "tipo": "função",
+   "linha": 169,
+   "usado_por": []
+  },
+  {
    "id": "integracao/avaliacao/amostrar.py::carregar",
    "arquivo": "integracao/avaliacao/amostrar.py",
    "nome": "carregar",
@@ -23797,6 +25074,191 @@
    "tipo": "importa"
   },
   {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "docs/CAMADAS-CLAUDE-CODE.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/jev_hermes/medir.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/jev_hermes/medir.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/jev_hermes/nucleo.py",
+   "para": "executor/prices.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "hermes/jev_hermes/nucleo.py",
+   "para": "executor/runner.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "hermes/jev_hermes/portao.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia.py",
+   "para": "hermes/jev_hermes/medir.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia_semanal.py",
+   "para": "hermes/rotinas/jev_rotina_economia.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/camadas.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/portao.py",
+   "tipo": "importa"
+  },
+  {
    "de": "integracao/README.md",
    "para": ".gitignore",
    "tipo": "cita"
@@ -23969,6 +25431,11 @@
   {
    "de": "integracao/camadas/leitura.py",
    "para": "executor/ledger.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "integracao/camadas/leitura.py",
+   "para": "hermes/skill/jev/SKILL.md",
    "tipo": "cita"
   },
   {
@@ -29894,6 +31361,356 @@
   {
    "de": "executor/tests/test_shared.py",
    "para": "executor/shared.py::strict_answers",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::_agora",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::redigir",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/medir.py",
+   "para": "hermes/jev_hermes/nucleo.py::_agora",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/medir.py",
+   "para": "hermes/jev_hermes/nucleo.py::situacao",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/portao.py",
+   "para": "hermes/jev_hermes/nucleo.py::_agora",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/portao.py",
+   "para": "hermes/jev_hermes/nucleo.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/nucleo.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "hermes/jev_hermes/portao.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/nucleo.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/portao.py::encerrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/portao.py::executar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_cabecalhos",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_arcano_email.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_listar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py::email_descartavel",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py::encerrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py::executar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_cabecalhos",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_email_diario.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_listar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/nucleo.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py::encerrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py::executar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py::json_da_saida",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py::rodar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/portao.py::encerrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/portao.py::executar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/portoes/jev_gate_radar_ia.py",
+   "para": "hermes/jev_hermes/portao.py::json_da_saida",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/portao.py::json_da_saida",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/portao.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
+   "para": "hermes/jev_hermes/portao.py::rodar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py::email_descartavel",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_cabecalhos",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py::gmail_listar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py::probabilidade",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
+   "para": "hermes/jev_hermes/portao.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia.py",
+   "para": "hermes/jev_hermes/medir.py::medir",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia.py",
+   "para": "hermes/jev_hermes/medir.py::pagina",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_economia_semanal.py",
+   "para": "hermes/rotinas/jev_rotina_economia.py::main",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "para": "hermes/jev_hermes/portao.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/camadas.py::busca",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/camadas.py::leitura",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/camadas.py::sentinela",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/nucleo.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/nucleo.py::situacao",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/portao.py::encerrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/portao.py::executar",
    "tipo": "usa"
   },
   {
@@ -36072,6 +37889,78 @@
   {
    "de": "executor/tests/test_runner.py",
    "para": "S01",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "E1",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "E13",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "E16",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "R18",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "R20",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "R23",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "R26",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/camadas.py",
+   "para": "R27",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/jev_hermes/nucleo.py",
+   "para": "E5",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/portoes/jev_fabio_urgent_watch.py",
+   "para": "E1",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/skill/jev/SKILL.md",
+   "para": "E14",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "hermes/skill/jev/SKILL.md",
+   "para": "R24",
    "tipo": "menciona",
    "peso": 1
   },

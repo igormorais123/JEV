@@ -105,7 +105,7 @@ flowchart LR
 
 ### leitura.py
 
-- **usa** — import: [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py); citação: [`AGENTS.md`](../../AGENTS.md), [`executor/ledger.py`](../../executor/ledger.py)
+- **usa** — import: [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py); citação: [`AGENTS.md`](../../AGENTS.md), [`executor/ledger.py`](../../executor/ledger.py), [`hermes/skill/jev/SKILL.md`](../../hermes/skill/jev/SKILL.md)
 - **é usado por** — import: [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.dividir_em_blocos`](../../integracao/camadas/nucleo.py#L215), [`nucleo.escolha`](../../integracao/camadas/nucleo.py#L247), [`nucleo.estado_do_trecho`](../../integracao/camadas/nucleo.py#L243), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198), [`nucleo.tokens`](../../integracao/camadas/nucleo.py#L91)
 - **menciona 3 conceitos** — [R26](../../mapa/conhecimento/rodadas.md#r26) (3×), [R18](../../mapa/conhecimento/rodadas.md#r18) (1×), [R20](../../mapa/conhecimento/rodadas.md#r20) (1×)

@@ -67,7 +67,7 @@ A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: med
 
 ## Código sem teste direto
 
-19 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
+21 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
 
 ## Pendências declaradas nos documentos
 
@@ -135,6 +135,10 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 - [l. 8](../../executor/README.md#L8) — `gasto liquidado + reservas pendentes + pior custo da próxima tentativa <= teto global e teto do bloco`
 - [l. 102](../../executor/README.md#L102) — 2. Repetir a conciliação por extrato: o agregado do provedor tem defasagem e ainda não refletia as chamadas
 - [l. 104](../../executor/README.md#L104) — 3. Mapear os formatos `noul` e `score`, ainda não aceitos nas sondas feitas.
+
+**[hermes/skill/jev/SKILL.md](../../hermes/skill/jev/SKILL.md)**
+
+- [l. 22](../../hermes/skill/jev/SKILL.md#L22) — 3. Escrever, planejar, julgar em aberto, conversar com Igor: você.
 
 **[integracao/README.md](../../integracao/README.md)**
 

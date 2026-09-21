@@ -2,10 +2,11 @@
 
 Ponto de entrada para qualquer pessoa ou IA achar qualquer coisa nesta pasta. Gerado por `python mapa/gerar_mapa.py`; não editar à mão, regenerar depois de mudar arquivos.
 
-**300 arquivos** em **41 pastas** e **276 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões), ligados por **3914 relações**: 350 imports, 62 links, 930 citações entre arquivos; 554 usos de função ou classe de outro arquivo; 1715 ligações arquivo–conceito e 303 conceito–conceito.
+**322 arquivos** em **51 pastas** e **276 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões), ligados por **4034 relações**: 384 imports, 62 links, 934 citações entre arquivos; 624 usos de função ou classe de outro arquivo; 1727 ligações arquivo–conceito e 303 conceito–conceito.
 
 ## Como usar este mapa
 
+- **Ver o grafo:** abra [MAPA.html](MAPA.html) no navegador (busca, filtros por tipo de ponto e de ligação, foco na vizinhança, painel com tudo sobre cada ponto e link para o arquivo).
 - **Perguntar ao grafo direto:** `python mapa/consultar.py TERMO` (arquivo, função, `H012`, `R17`, `Q042`, palavra), `--caminho A B` (como duas coisas se ligam), `--vizinhos X --profundidade 2`. Só biblioteca padrão, lê `mapa/grafo.json`.
 - **Achar um arquivo por assunto:** a tabela "Onde está" abaixo, depois a página da pasta.
 - **Achar um estudo, hipótese ou pergunta:** a seção "Conhecimento do estudo" abaixo; cada conceito diz onde está, em que se apoia, o que sustenta e quem o menciona.
@@ -50,7 +51,7 @@ Os conceitos são nós do grafo, lidos da fonte que os define. Cada página diz,
 | Perguntas estratégicas | 100 | [perguntas.md](mapa/conhecimento/perguntas.md) | 76 respondidas por dado medido; as demais por conta declarada ou coleta nova |
 | Sistemas avaliados | 15 | [sistemas.md](mapa/conhecimento/sistemas.md) | os sistemas do ecossistema Jev cobertos pelo plano |
 | Revisões adversariais | 10 | [revisoes.md](mapa/conhecimento/revisoes.md) | revisões independentes do executor e os testes que fixam cada achado |
-| Testes | 27 | [testes.md](mapa/conhecimento/testes.md) | o que cada teste exercita e que estudo fixa; código sem teste direto |
+| Testes | 28 | [testes.md](mapa/conhecimento/testes.md) | o que cada teste exercita e que estudo fixa; código sem teste direto |
 | Lacunas e ideias | — | [lacunas.md](mapa/conhecimento/lacunas.md) | hipóteses que caíram, respostas sem dado medido, peças faltando, pendências declaradas |
 
 Como os tipos de conceito se apoiam uns nos outros (número de ligações), e quantas ligações os arquivos fazem a cada tipo:
@@ -70,10 +71,10 @@ flowchart LR
   Q -->|74| R
   R -->|25| E
   R -.->|30 entre si| R
-  ARQ -.->|345| E
+  ARQ -.->|351| E
   ARQ -.->|433| H
   ARQ -.->|229| Q
-  ARQ -.->|515| R
+  ARQ -.->|521| R
   ARQ -.->|171| S
   ARQ -.->|22| V
 ```
@@ -82,13 +83,23 @@ flowchart LR
 
 | pasta | arquivos | finalidade |
 |---|---:|---|
-| [raiz](mapa/pastas/_raiz.md) | 300 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
+| [raiz](mapa/pastas/_raiz.md) | 322 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[.reticle/](mapa/pastas/reticle.md) | 1 | Pasta de ferramenta local; só o .gitignore é versionado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[data/](mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[corpus/](mapa/pastas/data__corpus.md) | 6 | Corpus congelado dos experimentos (triagem, evidência, ressalvas), em JSONL. É o insumo dos executores `executor/run_e*.py`. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[docs/](mapa/pastas/docs.md) | 12 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[executor/](mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/executor__tests.md) | 18 | Testes do executor: livro-caixa, preços, runner, placar, achados de cada revisão adversarial, entregáveis, MCP. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[hermes/](mapa/pastas/hermes.md) | 22 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev_hermes/](mapa/pastas/hermes__jev_hermes.md) | 5 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[plugin/](mapa/pastas/hermes__plugin.md) | 4 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev-advisor/](mapa/pastas/hermes__plugin__jev-advisor.md) | 2 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev-camadas/](mapa/pastas/hermes__plugin__jev-camadas.md) | 2 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[portoes/](mapa/pastas/hermes__portoes.md) | 5 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[rotinas/](mapa/pastas/hermes__rotinas.md) | 5 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[skill/](mapa/pastas/hermes__skill.md) | 1 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev/](mapa/pastas/hermes__skill__jev.md) | 1 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/hermes__tests.md) | 1 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;[integracao/](mapa/pastas/integracao.md) | 48 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[avaliacao/](mapa/pastas/integracao__avaliacao.md) | 17 | Avaliação da integração com tráfego real do Igor (E13): amostragem, gabaritos e relatórios agregados. O texto original é privado e fica fora do Git. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[camadas/](mapa/pastas/integracao__camadas.md) | 10 | As camadas que decidem o que entra no contexto do modelo caro: leitura, busca, sentinela, saída, verificação, `ler` (skill /jev-ler), medição e rotina. |
@@ -172,19 +183,20 @@ flowchart LR
 
 Matriz completa (linha usa coluna; imports + citações + links):
 
-| de → para | .reticle/ | data/ | docs/ | executor/ | integracao/ | lab/ | laboratorio/ | output/ | planning/ | research/ | runs/ |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| **.reticle/** |  |  |  |  |  |  |  |  |  |  |  |
-| **data/** |  |  |  |  |  |  |  |  |  |  |  |
-| **docs/** |  |  |  | 5 | 2 | 1 | 47 | 3 | 4 | 9 | 4 |
-| **executor/** |  | 25 | 5 |  | 3 | 3 |  | 2 | 15 | 2 | 33 |
-| **integracao/** |  |  | 11 | 17 |  |  | 7 |  |  |  | 2 |
-| **lab/** |  |  | 6 | 13 |  |  |  | 4 | 10 | 10 |  |
-| **laboratorio/** |  | 4 | 22 | 180 | 85 | 10 |  | 4 | 1 | 3 | 9 |
-| **output/** |  |  | 1 |  |  |  | 3 |  |  |  |  |
-| **planning/** |  | 4 | 5 | 11 |  | 2 |  | 3 |  | 9 | 9 |
-| **research/** |  |  | 1 |  |  |  |  |  |  |  |  |
-| **runs/** |  | 3 |  |  |  |  |  |  | 9 |  |  |
+| de → para | .reticle/ | data/ | docs/ | executor/ | hermes/ | integracao/ | lab/ | laboratorio/ | output/ | planning/ | research/ | runs/ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **.reticle/** |  |  |  |  |  |  |  |  |  |  |  |  |
+| **data/** |  |  |  |  |  |  |  |  |  |  |  |  |
+| **docs/** |  |  |  | 5 |  | 2 | 1 | 47 | 3 | 4 | 9 | 4 |
+| **executor/** |  | 25 | 5 |  |  | 3 | 3 |  | 2 | 15 | 2 | 33 |
+| **hermes/** |  |  | 1 | 2 |  |  |  |  |  |  |  |  |
+| **integracao/** |  |  | 11 | 17 | 1 |  |  | 7 |  |  |  | 2 |
+| **lab/** |  |  | 6 | 13 |  |  |  |  | 4 | 10 | 10 |  |
+| **laboratorio/** |  | 4 | 22 | 180 |  | 85 | 10 |  | 4 | 1 | 3 | 9 |
+| **output/** |  |  | 1 |  |  |  |  | 3 |  |  |  |  |
+| **planning/** |  | 4 | 5 | 11 |  |  | 2 |  | 3 |  | 9 | 9 |
+| **research/** |  |  | 1 |  |  |  |  |  |  |  |  |  |
+| **runs/** |  | 3 |  |  |  |  |  |  |  | 9 |  |  |
 
 ## Como as partes se ligam
 
@@ -277,6 +289,9 @@ Pré-registro, executor, adjudicação, testes e resultados do mesmo experimento
 | [`executor/run_e9_prevalencia.py`](executor/run_e9_prevalencia.py) | [test_achados_revisao4.py](executor/tests/test_achados_revisao4.py) |
 | [`executor/runner.py`](executor/runner.py) | [test_achados_revisao.py](executor/tests/test_achados_revisao.py), [test_achados_revisao4.py](executor/tests/test_achados_revisao4.py), [test_credenciais.py](executor/tests/test_credenciais.py), [test_runner.py](executor/tests/test_runner.py), [test_shared.py](executor/tests/test_shared.py) |
 | [`executor/shared.py`](executor/shared.py) | [test_shared.py](executor/tests/test_shared.py) |
+| [`hermes/jev_hermes/camadas.py`](hermes/jev_hermes/camadas.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
+| [`hermes/jev_hermes/nucleo.py`](hermes/jev_hermes/nucleo.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
+| [`hermes/jev_hermes/portao.py`](hermes/jev_hermes/portao.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
 | [`integracao/camadas/busca.py`](integracao/camadas/busca.py) | [test_camadas.py](integracao/tests/test_camadas.py) |
 | [`integracao/camadas/leitura.py`](integracao/camadas/leitura.py) | [test_camadas.py](integracao/tests/test_camadas.py) |
 | [`integracao/camadas/ler.py`](integracao/camadas/ler.py) | [test_camadas.py](integracao/tests/test_camadas.py) |
@@ -312,7 +327,7 @@ Os que mais outros arquivos importam, linkam ou citam: mudar um deles tem efeito
 | [`executor/ledger.py`](executor/ledger.py) | 34 | Controle financeiro com reserva atomica antes de cada tentativa paga. |
 | [`executor/pricing.py`](executor/pricing.py) | 34 | Tabela de precos e custo em nanodolares inteiros. |
 | [`laboratorio/nucleo.py`](laboratorio/nucleo.py) | 34 | Núcleo do programa E14: despacho paralelo com teto próprio, e a estatística que uso sempre. |
-| [`executor/runner.py`](executor/runner.py) | 32 | Despacho de chamadas Jev com reserva financeira obrigatoria. |
+| [`executor/runner.py`](executor/runner.py) | 33 | Despacho de chamadas Jev com reserva financeira obrigatoria. |
 | [`executor/run_e1_triagem.py`](executor/run_e1_triagem.py) | 25 | E1 piloto, tarefa de triagem: Jev contra regra simples, no corpus pré-registrado. |
 | [`executor/gabarito.py`](executor/gabarito.py) | 19 | O gabarito oficial do estudo, num lugar só. |
 | [`executor/run_e12_replicacao.py`](executor/run_e12_replicacao.py) | 16 | E12: a replicação do desempate com 30 famílias novas e quatro comparadores econômicos. |
@@ -328,4 +343,4 @@ Os que mais outros arquivos importam, linkam ou citam: mudar um deles tem efeito
 | [`docs/GUIA-PRATICO-JEV.md`](docs/GUIA-PRATICO-JEV.md) | 11 | Como aplicar o Jev — guia de uso — *Documento de aplicação. Todos os números vêm dos experimentos E1 a E16 e do livro-caixa; nenhum |
 | [`docs/RELATORIO-FINAL-JEV.md`](docs/RELATORIO-FINAL-JEV.md) | 11 | Jev 1.13 — relatório final de avaliação — **Autoria:** Dra. Helena Strategos, Cientista-Chefe de Inteligência da INTEIA |
 | [`executor/__init__.py`](executor/__init__.py) | 11 | Executor financeiro do projeto JEV. |
-| [`integracao/jev_router/__init__.py`](integracao/jev_router/__init__.py) | 11 | Roteador de trabalho baseado no Jev: classifica o pedido antes de gastar modelo caro. |
+| [`hermes/jev_hermes/__init__.py`](hermes/jev_hermes/__init__.py) | 11 | O Jev no Hermes da VPS: núcleo, camadas do plugin, porteiros de cron e medição. |

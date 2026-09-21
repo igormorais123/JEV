@@ -21,7 +21,7 @@ from pathlib import Path, PurePosixPath
 RAIZ = Path(__file__).resolve().parents[1]
 SAIDA = RAIZ / 'mapa'
 PASTAS = SAIDA / 'pastas'
-PROPRIOS = {'MAPA.md', 'mapa/simbolos.md', 'mapa/grafo.json', 'mapa/gerar_mapa.py'}
+PROPRIOS = {'MAPA.md', 'MAPA.html', 'mapa/simbolos.md', 'mapa/grafo.json', 'mapa/gerar_mapa.py'}
 
 # Finalidade de cada pasta, escrita à mão: é o que a varredura automática não sabe dizer.
 FINALIDADE = {
@@ -450,6 +450,8 @@ def escrever(dados: dict) -> list[str]:
          f'{sum(1 for *_, t in arestas if t == "cita")} citações entre arquivos; {len(dados["usos"])} usos de função ou classe de outro arquivo; '
          f'{sum(1 for (_, _, t) in ac if t != "apoia-se em")} ligações arquivo–conceito e {sum(1 for (_, _, t) in ac if t == "apoia-se em")} conceito–conceito.', '',
          '## Como usar este mapa', '',
+         '- **Ver o grafo:** abra ' + lnk('MAPA.md', 'MAPA.html', 'MAPA.html') + ' no navegador (busca, filtros por tipo de ponto e de ligação, '
+         'foco na vizinhança, painel com tudo sobre cada ponto e link para o arquivo).',
          '- **Perguntar ao grafo direto:** `python mapa/consultar.py TERMO` (arquivo, função, `H012`, `R17`, `Q042`, palavra), '
          '`--caminho A B` (como duas coisas se ligam), `--vizinhos X --profundidade 2`. Só biblioteca padrão, lê `mapa/grafo.json`.',
          '- **Achar um arquivo por assunto:** a tabela "Onde está" abaixo, depois a página da pasta.',
@@ -731,6 +733,9 @@ def escrever(dados: dict) -> list[str]:
                         + [{'de': a, 'para': b, 'tipo': t} | ({'peso': p} if t == 'menciona' else {}) for (a, b, t), p in sorted(ac.items())]}
     (SAIDA / 'grafo.json').write_text(json.dumps(grafo, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     gerados.append('mapa/grafo.json')
+    import visual
+    (RAIZ / 'MAPA.html').write_text(visual.gerar_html(grafo, RAIZ), encoding='utf-8')
+    gerados.append('MAPA.html')
     return gerados
 
 
