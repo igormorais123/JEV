@@ -36,7 +36,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** mediana 614 ms com duas perguntas contra 594 ms com uma, em 4898 e 17491 chamadas
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:56](../../laboratorio/h100/provas.py#L56); registra [laboratorio/h100/registro.py:48](../../laboratorio/h100/registro.py#L48); documenta [docs/CEM-HIPOTESES.md:113](../../docs/CEM-HIPOTESES.md#L113)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H040](../../mapa/conhecimento/hipoteses.md#h040) (complementar, 0.50), [H037](../../mapa/conhecimento/hipoteses.md#h037) (complementar, 0.47), [H045](../../mapa/conhecimento/hipoteses.md#h045) (complementar, 0.47), [H039](../../mapa/conhecimento/hipoteses.md#h039) (complementar, 0.35), [H046](../../mapa/conhecimento/hipoteses.md#h046) (complementar, 0.32), [H004](../../mapa/conhecimento/hipoteses.md#h004) (complementar, 0.32), [H041](../../mapa/conhecimento/hipoteses.md#h041) (complementar, 0.31), [R33](../../mapa/conhecimento/rodadas.md#r33) (complementar, 0.26), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [H040](../../mapa/conhecimento/hipoteses.md#h040) (complementar, 0.50), [H037](../../mapa/conhecimento/hipoteses.md#h037) (complementar, 0.47), [H045](../../mapa/conhecimento/hipoteses.md#h045) (complementar, 0.47), [R49](../../mapa/conhecimento/rodadas.md#r49) (complementar, 0.39), [H039](../../mapa/conhecimento/hipoteses.md#h039) (complementar, 0.35), [H046](../../mapa/conhecimento/hipoteses.md#h046) (complementar, 0.32), [H004](../../mapa/conhecimento/hipoteses.md#h004) (complementar, 0.32), [H041](../../mapa/conhecimento/hipoteses.md#h041) (complementar, 0.31), [R33](../../mapa/conhecimento/rodadas.md#r33) (complementar, 0.26), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
 
 <a id="h002"></a>
 
@@ -53,7 +53,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **emendas:** 2026-09-20: o custo passa a ser medido sobre as chamadas que voltaram com resposta
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:75](../../laboratorio/h100/provas.py#L75); registra [laboratorio/h100/registro.py:52](../../laboratorio/h100/registro.py#L52); documenta [docs/CEM-HIPOTESES.md:114](../../docs/CEM-HIPOTESES.md#L114)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H003](../../mapa/conhecimento/hipoteses.md#h003) (mesmo assunto, 0.63), [H004](../../mapa/conhecimento/hipoteses.md#h004) (complementar, 0.48)
+- **semelhantes (julgados pelo Jev):** [H003](../../mapa/conhecimento/hipoteses.md#h003) (mesmo assunto, 0.63), [H004](../../mapa/conhecimento/hipoteses.md#h004) (complementar, 0.48), [R49](../../mapa/conhecimento/rodadas.md#r49) (complementar, 0.29)
 
 <a id="h003"></a>
 
@@ -120,7 +120,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:109](../../laboratorio/h100/provas.py#L109); registra [laboratorio/h100/registro.py:68](../../laboratorio/h100/registro.py#L68); documenta [docs/CEM-HIPOTESES.md:118](../../docs/CEM-HIPOTESES.md#L118)
 - **apoia-se em:** [R1](../../mapa/conhecimento/rodadas.md#r1), [R2](../../mapa/conhecimento/rodadas.md#r2), [R3](../../mapa/conhecimento/rodadas.md#r3)
 - **tema:** [T06 · opções, ordem, pontos](../../mapa/conhecimento/temas.md#t06)
-- **semelhantes (julgados pelo Jev):** [H088](../../mapa/conhecimento/hipoteses.md#h088) (complementar, 0.55), [H021](../../mapa/conhecimento/hipoteses.md#h021) (complementar, 0.51), [R6](../../mapa/conhecimento/rodadas.md#r6) (mesmo assunto, 0.39), [H034](../../mapa/conhecimento/hipoteses.md#h034) (complementar, 0.35), [Q007](../../mapa/conhecimento/perguntas.md#q007) (mesmo assunto, 0.32), [laboratorio/r1_r3_estresse.py](../../laboratorio/r1_r3_estresse.py) (complementar, 0.32), [E2](../../mapa/conhecimento/experimentos.md#e2) (complementar, 0.24), [executor/run_e2_fatorial.py](../../executor/run_e2_fatorial.py) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [H088](../../mapa/conhecimento/hipoteses.md#h088) (complementar, 0.56), [H021](../../mapa/conhecimento/hipoteses.md#h021) (complementar, 0.51), [R6](../../mapa/conhecimento/rodadas.md#r6) (mesmo assunto, 0.39), [H034](../../mapa/conhecimento/hipoteses.md#h034) (complementar, 0.35), [Q007](../../mapa/conhecimento/perguntas.md#q007) (mesmo assunto, 0.32), [laboratorio/r1_r3_estresse.py](../../laboratorio/r1_r3_estresse.py) (complementar, 0.32), [E2](../../mapa/conhecimento/experimentos.md#e2) (complementar, 0.24), [executor/run_e2_fatorial.py](../../executor/run_e2_fatorial.py) (complementar, 0.22)
 
 <a id="h007"></a>
 
@@ -155,7 +155,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:126](../../laboratorio/h100/provas.py#L126); registra [laboratorio/h100/registro.py:76](../../laboratorio/h100/registro.py#L76); documenta [docs/CEM-HIPOTESES.md:120](../../docs/CEM-HIPOTESES.md#L120)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 - **tema:** [T01 · ruído, degrada, confiança](../../mapa/conhecimento/temas.md#t01)
-- **semelhantes (julgados pelo Jev):** [H007](../../mapa/conhecimento/hipoteses.md#h007) (complementar, 0.64), [H009](../../mapa/conhecimento/hipoteses.md#h009) (complementar, 0.32), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.30), [H087](../../mapa/conhecimento/hipoteses.md#h087) (complementar, 0.26), [Q083](../../mapa/conhecimento/perguntas.md#q083) (tensão (a conferir), 0.23), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.21), [Q041](../../mapa/conhecimento/perguntas.md#q041) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [H007](../../mapa/conhecimento/hipoteses.md#h007) (complementar, 0.64), [H009](../../mapa/conhecimento/hipoteses.md#h009) (complementar, 0.32), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.30), [H087](../../mapa/conhecimento/hipoteses.md#h087) (complementar, 0.26), [Q083](../../mapa/conhecimento/perguntas.md#q083) (tensão (a conferir), 0.24), [Q041](../../mapa/conhecimento/perguntas.md#q041) (complementar, 0.21), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.21)
 - **mencionado em 5 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h009"></a>
@@ -227,7 +227,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:171](../../laboratorio/h100/provas.py#L171); registra [laboratorio/h100/registro.py:92](../../laboratorio/h100/registro.py#L92); documenta [docs/CEM-HIPOTESES.md:124](../../docs/CEM-HIPOTESES.md#L124)
 - **apoia-se em:** [R4](../../mapa/conhecimento/rodadas.md#r4), [R5](../../mapa/conhecimento/rodadas.md#r5), [R6](../../mapa/conhecimento/rodadas.md#r6), [R7](../../mapa/conhecimento/rodadas.md#r7)
 - **tema:** [T19 · fora, probabilidade, vetor](../../mapa/conhecimento/temas.md#t19)
-- **semelhantes (julgados pelo Jev):** [H027](../../mapa/conhecimento/hipoteses.md#h027) (complementar, 0.33), [H031](../../mapa/conhecimento/hipoteses.md#h031) (complementar, 0.32), [laboratorio/r0_calibracao.py](../../laboratorio/r0_calibracao.py) (mesmo assunto, 0.26), [H032](../../mapa/conhecimento/hipoteses.md#h032) (complementar, 0.25), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.23), [R20](../../mapa/conhecimento/rodadas.md#r20) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H027](../../mapa/conhecimento/hipoteses.md#h027) (complementar, 0.33), [H031](../../mapa/conhecimento/hipoteses.md#h031) (complementar, 0.31), [laboratorio/r0_calibracao.py](../../laboratorio/r0_calibracao.py) (mesmo assunto, 0.25), [H032](../../mapa/conhecimento/hipoteses.md#h032) (complementar, 0.24), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.23), [R20](../../mapa/conhecimento/rodadas.md#r20) (complementar, 0.21)
 - **mencionado em 2 arquivos:** [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×)
 
 <a id="h013"></a>
@@ -448,7 +448,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **natureza:** exploratoria
 - **detalhe:** AUC sobre 2626 decisões
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:321](../../laboratorio/h100/provas.py#L321); registra [laboratorio/h100/registro.py:146](../../laboratorio/h100/registro.py#L146); documenta [docs/CEM-HIPOTESES.md:157](../../docs/CEM-HIPOTESES.md#L157)
-- **semelhantes (julgados pelo Jev):** [H030](../../mapa/conhecimento/hipoteses.md#h030) (complementar, 0.45)
+- **semelhantes (julgados pelo Jev):** [H030](../../mapa/conhecimento/hipoteses.md#h030) (complementar, 0.46)
 
 <a id="h026"></a>
 
@@ -477,7 +477,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **natureza:** exploratoria
 - **detalhe:** 6751 de 27287 vetores
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:344](../../laboratorio/h100/provas.py#L344); registra [laboratorio/h100/registro.py:156](../../laboratorio/h100/registro.py#L156); documenta [docs/CEM-HIPOTESES.md:181](../../docs/CEM-HIPOTESES.md#L181)
-- **semelhantes (julgados pelo Jev):** [H028](../../mapa/conhecimento/hipoteses.md#h028) (complementar, 0.43), [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.33), [H032](../../mapa/conhecimento/hipoteses.md#h032) (mesmo assunto, 0.32), [E9](../../mapa/conhecimento/experimentos.md#e9) (complementar, 0.23), [H015](../../mapa/conhecimento/hipoteses.md#h015) (mesmo assunto, 0.23), [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [H028](../../mapa/conhecimento/hipoteses.md#h028) (complementar, 0.43), [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.33), [H032](../../mapa/conhecimento/hipoteses.md#h032) (mesmo assunto, 0.32), [E9](../../mapa/conhecimento/experimentos.md#e9) (complementar, 0.23), [H015](../../mapa/conhecimento/hipoteses.md#h015) (mesmo assunto, 0.23), [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.22), [executor/run_e9_prevalencia.py](../../executor/run_e9_prevalencia.py) (complementar, 0.20)
 
 <a id="h028"></a>
 
@@ -525,7 +525,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** AUC da margem 0.8768, AUC da confiança 0.8718
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:377](../../laboratorio/h100/provas.py#L377); registra [laboratorio/h100/registro.py:168](../../laboratorio/h100/registro.py#L168); documenta [docs/CEM-HIPOTESES.md:184](../../docs/CEM-HIPOTESES.md#L184)
 - **apoia-se em:** [R4](../../mapa/conhecimento/rodadas.md#r4), [R5](../../mapa/conhecimento/rodadas.md#r5), [R6](../../mapa/conhecimento/rodadas.md#r6), [R7](../../mapa/conhecimento/rodadas.md#r7)
-- **semelhantes (julgados pelo Jev):** [H025](../../mapa/conhecimento/hipoteses.md#h025) (complementar, 0.45)
+- **semelhantes (julgados pelo Jev):** [H025](../../mapa/conhecimento/hipoteses.md#h025) (complementar, 0.46)
 - **mencionado em 1 arquivo:** [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×)
 
 <a id="h031"></a>
@@ -543,7 +543,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:391](../../laboratorio/h100/provas.py#L391); registra [laboratorio/h100/registro.py:172](../../laboratorio/h100/registro.py#L172); documenta [docs/CEM-HIPOTESES.md:185](../../docs/CEM-HIPOTESES.md#L185)
 - **apoia-se em:** [R4](../../mapa/conhecimento/rodadas.md#r4), [R5](../../mapa/conhecimento/rodadas.md#r5), [R6](../../mapa/conhecimento/rodadas.md#r6), [R7](../../mapa/conhecimento/rodadas.md#r7)
 - **tema:** [T19 · fora, probabilidade, vetor](../../mapa/conhecimento/temas.md#t19)
-- **semelhantes (julgados pelo Jev):** [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.32), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.26)
+- **semelhantes (julgados pelo Jev):** [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.31), [H011](../../mapa/conhecimento/hipoteses.md#h011) (complementar, 0.26)
 
 <a id="h032"></a>
 
@@ -559,7 +559,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** 6751 de 27287
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:399](../../laboratorio/h100/provas.py#L399); registra [laboratorio/h100/registro.py:176](../../laboratorio/h100/registro.py#L176); documenta [docs/CEM-HIPOTESES.md:186](../../docs/CEM-HIPOTESES.md#L186)
 - **tema:** [T21 · certo, erra, probabilidade](../../mapa/conhecimento/temas.md#t21)
-- **semelhantes (julgados pelo Jev):** [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.40), [H027](../../mapa/conhecimento/hipoteses.md#h027) (mesmo assunto, 0.32), [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.40), [H027](../../mapa/conhecimento/hipoteses.md#h027) (mesmo assunto, 0.32), [H012](../../mapa/conhecimento/hipoteses.md#h012) (complementar, 0.24)
 
 <a id="h033"></a>
 
@@ -576,7 +576,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:410](../../laboratorio/h100/provas.py#L410); registra [laboratorio/h100/registro.py:180](../../laboratorio/h100/registro.py#L180); documenta [docs/CEM-HIPOTESES.md:187](../../docs/CEM-HIPOTESES.md#L187)
 - **apoia-se em:** [R4](../../mapa/conhecimento/rodadas.md#r4), [R5](../../mapa/conhecimento/rodadas.md#r5), [R6](../../mapa/conhecimento/rodadas.md#r6), [R7](../../mapa/conhecimento/rodadas.md#r7)
 - **tema:** [T21 · certo, erra, probabilidade](../../mapa/conhecimento/temas.md#t21)
-- **semelhantes (julgados pelo Jev):** [H032](../../mapa/conhecimento/hipoteses.md#h032) (complementar, 0.40), [E8](../../mapa/conhecimento/experimentos.md#e8) (complementar, 0.26), [H060](../../mapa/conhecimento/hipoteses.md#h060) (complementar, 0.23), [H027](../../mapa/conhecimento/hipoteses.md#h027) (complementar, 0.23), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (complementar, 0.21), [R16b](../../mapa/conhecimento/rodadas.md#r16b) (mesmo assunto, 0.20)
+- **semelhantes (julgados pelo Jev):** [H032](../../mapa/conhecimento/hipoteses.md#h032) (complementar, 0.40), [E8](../../mapa/conhecimento/experimentos.md#e8) (complementar, 0.26), [H060](../../mapa/conhecimento/hipoteses.md#h060) (complementar, 0.23), [H027](../../mapa/conhecimento/hipoteses.md#h027) (complementar, 0.22), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (complementar, 0.21), [R16b](../../mapa/conhecimento/rodadas.md#r16b) (mesmo assunto, 0.20)
 
 <a id="h034"></a>
 
@@ -610,7 +610,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:437](../../laboratorio/h100/provas.py#L437); registra [laboratorio/h100/registro.py:188](../../laboratorio/h100/registro.py#L188); documenta [docs/CEM-HIPOTESES.md:189](../../docs/CEM-HIPOTESES.md#L189)
 - **apoia-se em:** [R4](../../mapa/conhecimento/rodadas.md#r4), [R5](../../mapa/conhecimento/rodadas.md#r5), [R6](../../mapa/conhecimento/rodadas.md#r6), [R7](../../mapa/conhecimento/rodadas.md#r7)
 - **tema:** [T20 · bits, entropia, sujo](../../mapa/conhecimento/temas.md#t20)
-- **semelhantes (julgados pelo Jev):** [H036](../../mapa/conhecimento/hipoteses.md#h036) (complementar, 0.69), [H034](../../mapa/conhecimento/hipoteses.md#h034) (complementar, 0.56), [H029](../../mapa/conhecimento/hipoteses.md#h029) (complementar, 0.52), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H036](../../mapa/conhecimento/hipoteses.md#h036) (complementar, 0.69), [H034](../../mapa/conhecimento/hipoteses.md#h034) (complementar, 0.56), [H029](../../mapa/conhecimento/hipoteses.md#h029) (complementar, 0.52), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.26)
 
 <a id="h036"></a>
 
@@ -742,7 +742,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:535](../../laboratorio/h100/provas.py#L535); registra [laboratorio/h100/registro.py:222](../../laboratorio/h100/registro.py#L222); documenta [docs/CEM-HIPOTESES.md:215](../../docs/CEM-HIPOTESES.md#L215)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.30), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (mesmo assunto, 0.28), [R0](../../mapa/conhecimento/rodadas.md#r0) (complementar, 0.25), [Q014](../../mapa/conhecimento/perguntas.md#q014) (mesmo assunto, 0.24), [Q010](../../mapa/conhecimento/perguntas.md#q010) (mesmo assunto, 0.23), [R34](../../mapa/conhecimento/rodadas.md#r34) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.30), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (mesmo assunto, 0.28), [R0](../../mapa/conhecimento/rodadas.md#r0) (complementar, 0.25), [Q014](../../mapa/conhecimento/perguntas.md#q014) (mesmo assunto, 0.24), [Q010](../../mapa/conhecimento/perguntas.md#q010) (mesmo assunto, 0.23)
 - **mencionado em 5 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h044"></a>
@@ -775,7 +775,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** 27847 nUSD contra 23269 nUSD
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:565](../../laboratorio/h100/provas.py#L565); registra [laboratorio/h100/registro.py:230](../../laboratorio/h100/registro.py#L230); documenta [docs/CEM-HIPOTESES.md:217](../../docs/CEM-HIPOTESES.md#L217)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H001](../../mapa/conhecimento/hipoteses.md#h001) (complementar, 0.47), [H040](../../mapa/conhecimento/hipoteses.md#h040) (complementar, 0.46), [H044](../../mapa/conhecimento/hipoteses.md#h044) (complementar, 0.43), [executor/pricing.py](../../executor/pricing.py) (complementar, 0.35), [Q019](../../mapa/conhecimento/perguntas.md#q019) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [H001](../../mapa/conhecimento/hipoteses.md#h001) (complementar, 0.47), [H040](../../mapa/conhecimento/hipoteses.md#h040) (complementar, 0.46), [H044](../../mapa/conhecimento/hipoteses.md#h044) (complementar, 0.43), [executor/pricing.py](../../executor/pricing.py) (complementar, 0.36), [Q019](../../mapa/conhecimento/perguntas.md#q019) (complementar, 0.23)
 
 <a id="h046"></a>
 
@@ -859,7 +859,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:624](../../laboratorio/h100/provas.py#L624); registra [laboratorio/h100/registro.py:252](../../laboratorio/h100/registro.py#L252); documenta [docs/CEM-HIPOTESES.md:242](../../docs/CEM-HIPOTESES.md#L242)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T10 · trechos, perdidos, pareado](../../mapa/conhecimento/temas.md#t10)
-- **semelhantes (julgados pelo Jev):** [R38](../../mapa/conhecimento/rodadas.md#r38) (complementar, 0.38), [H051](../../mapa/conhecimento/hipoteses.md#h051) (complementar, 0.31), [R26](../../mapa/conhecimento/rodadas.md#r26) (complementar, 0.26), [H049](../../mapa/conhecimento/hipoteses.md#h049) (mesmo assunto, 0.26)
+- **semelhantes (julgados pelo Jev):** [R38](../../mapa/conhecimento/rodadas.md#r38) (complementar, 0.39), [H051](../../mapa/conhecimento/hipoteses.md#h051) (complementar, 0.31), [R26](../../mapa/conhecimento/rodadas.md#r26) (complementar, 0.26), [H049](../../mapa/conhecimento/hipoteses.md#h049) (mesmo assunto, 0.26)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h051"></a>
@@ -931,7 +931,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:656](../../laboratorio/h100/provas.py#L656); registra [laboratorio/h100/registro.py:268](../../laboratorio/h100/registro.py#L268); documenta [docs/CEM-HIPOTESES.md:246](../../docs/CEM-HIPOTESES.md#L246)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T07 · importa, contexto, caracteres](../../mapa/conhecimento/temas.md#t07)
-- **semelhantes (julgados pelo Jev):** [H056](../../mapa/conhecimento/hipoteses.md#h056) (complementar, 0.28), [H055](../../mapa/conhecimento/hipoteses.md#h055) (complementar, 0.27), [H091](../../mapa/conhecimento/hipoteses.md#h091) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [H056](../../mapa/conhecimento/hipoteses.md#h056) (complementar, 0.28), [H055](../../mapa/conhecimento/hipoteses.md#h055) (complementar, 0.27), [H100](../../mapa/conhecimento/hipoteses.md#h100) (complementar, 0.21), [H091](../../mapa/conhecimento/hipoteses.md#h091) (complementar, 0.21)
 
 <a id="h055"></a>
 
@@ -1034,7 +1034,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:727](../../laboratorio/h100/provas.py#L727); registra [laboratorio/h100/registro.py:292](../../laboratorio/h100/registro.py#L292); documenta [docs/CEM-HIPOTESES.md:252](../../docs/CEM-HIPOTESES.md#L252)
 - **apoia-se em:** [R15b](../../mapa/conhecimento/rodadas.md#r15b), [R18](../../mapa/conhecimento/rodadas.md#r18), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T21 · certo, erra, probabilidade](../../mapa/conhecimento/temas.md#t21)
-- **semelhantes (julgados pelo Jev):** [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.23), [E4](../../mapa/conhecimento/experimentos.md#e4) (complementar, 0.20), [H051](../../mapa/conhecimento/hipoteses.md#h051) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H033](../../mapa/conhecimento/hipoteses.md#h033) (complementar, 0.23), [R49](../../mapa/conhecimento/rodadas.md#r49) (complementar, 0.22), [H051](../../mapa/conhecimento/hipoteses.md#h051) (complementar, 0.20), [E4](../../mapa/conhecimento/experimentos.md#e4) (complementar, 0.20)
 
 <a id="h061"></a>
 
@@ -1123,7 +1123,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:783](../../laboratorio/h100/provas.py#L783); registra [laboratorio/h100/registro.py:314](../../laboratorio/h100/registro.py#L314); documenta [docs/CEM-HIPOTESES.md:277](../../docs/CEM-HIPOTESES.md#L277)
 - **apoia-se em:** [R15](../../mapa/conhecimento/rodadas.md#r15)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [H062](../../mapa/conhecimento/hipoteses.md#h062) (complementar, 0.34), [hermes/rotinas/jev_rotina_painel_manha.py](../../hermes/rotinas/jev_rotina_painel_manha.py) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H062](../../mapa/conhecimento/hipoteses.md#h062) (complementar, 0.34)
 - **mencionado em 5 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h066"></a>
@@ -1140,7 +1140,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** mais eficaz 15, menos eficaz 2, entre 8 vetores listados
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:792](../../laboratorio/h100/provas.py#L792); registra [laboratorio/h100/registro.py:318](../../laboratorio/h100/registro.py#L318); documenta [docs/CEM-HIPOTESES.md:278](../../docs/CEM-HIPOTESES.md#L278)
 - **apoia-se em:** [R15](../../mapa/conhecimento/rodadas.md#r15)
-- **tema:** [T04 · sentinela, payload, sanitizador](../../mapa/conhecimento/temas.md#t04)
+- **tema:** [T04 · sentinela, sanitizador, ordem](../../mapa/conhecimento/temas.md#t04)
 - **semelhantes (julgados pelo Jev):** [Q042](../../mapa/conhecimento/perguntas.md#q042) (mesmo assunto, 0.26)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
@@ -1195,7 +1195,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:821](../../laboratorio/h100/provas.py#L821); registra [laboratorio/h100/registro.py:330](../../laboratorio/h100/registro.py#L330); documenta [docs/CEM-HIPOTESES.md:281](../../docs/CEM-HIPOTESES.md#L281)
 - **apoia-se em:** [R16](../../mapa/conhecimento/rodadas.md#r16), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
 - **tema:** [T13 · guarda, irreversível, comando](../../mapa/conhecimento/temas.md#t13)
-- **semelhantes (julgados pelo Jev):** [H071](../../mapa/conhecimento/hipoteses.md#h071) (complementar, 0.48), [Q047](../../mapa/conhecimento/perguntas.md#q047) (mesmo assunto, 0.32), [laboratorio/r16_guarda_de_comando.py](../../laboratorio/r16_guarda_de_comando.py) (mesmo assunto, 0.25), [integracao/avaliacao/comandos.py](../../integracao/avaliacao/comandos.py) (mesmo assunto, 0.24)
+- **semelhantes (julgados pelo Jev):** [H071](../../mapa/conhecimento/hipoteses.md#h071) (complementar, 0.49), [Q047](../../mapa/conhecimento/perguntas.md#q047) (mesmo assunto, 0.32), [laboratorio/r16_guarda_de_comando.py](../../laboratorio/r16_guarda_de_comando.py) (mesmo assunto, 0.25), [integracao/avaliacao/comandos.py](../../integracao/avaliacao/comandos.py) (mesmo assunto, 0.25)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h070"></a>
@@ -1231,7 +1231,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:837](../../laboratorio/h100/provas.py#L837); registra [laboratorio/h100/registro.py:338](../../laboratorio/h100/registro.py#L338); documenta [docs/CEM-HIPOTESES.md:283](../../docs/CEM-HIPOTESES.md#L283)
 - **apoia-se em:** [R16](../../mapa/conhecimento/rodadas.md#r16), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
 - **tema:** [T13 · guarda, irreversível, comando](../../mapa/conhecimento/temas.md#t13)
-- **semelhantes (julgados pelo Jev):** [H069](../../mapa/conhecimento/hipoteses.md#h069) (complementar, 0.48)
+- **semelhantes (julgados pelo Jev):** [H069](../../mapa/conhecimento/hipoteses.md#h069) (complementar, 0.49)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h072"></a>
@@ -1494,7 +1494,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:979](../../laboratorio/h100/provas.py#L979); registra [laboratorio/h100/registro.py:402](../../laboratorio/h100/registro.py#L402); documenta [docs/CEM-HIPOTESES.md:338](../../docs/CEM-HIPOTESES.md#L338)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 - **tema:** [T01 · ruído, degrada, confiança](../../mapa/conhecimento/temas.md#t01)
-- **semelhantes (julgados pelo Jev):** [H085](../../mapa/conhecimento/hipoteses.md#h085) (complementar, 0.57), [H088](../../mapa/conhecimento/hipoteses.md#h088) (complementar, 0.46), [H089](../../mapa/conhecimento/hipoteses.md#h089) (complementar, 0.42), [H018](../../mapa/conhecimento/hipoteses.md#h018) (mesmo assunto, 0.38), [Q058](../../mapa/conhecimento/perguntas.md#q058) (mesmo assunto, 0.35), [H092](../../mapa/conhecimento/hipoteses.md#h092) (complementar, 0.35), [H090](../../mapa/conhecimento/hipoteses.md#h090) (complementar, 0.33), [R36](../../mapa/conhecimento/rodadas.md#r36) (complementar, 0.32), [H035](../../mapa/conhecimento/hipoteses.md#h035) (complementar, 0.25), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.25)
+- **semelhantes (julgados pelo Jev):** [H085](../../mapa/conhecimento/hipoteses.md#h085) (complementar, 0.57), [H088](../../mapa/conhecimento/hipoteses.md#h088) (complementar, 0.46), [H089](../../mapa/conhecimento/hipoteses.md#h089) (complementar, 0.42), [H018](../../mapa/conhecimento/hipoteses.md#h018) (mesmo assunto, 0.38), [Q058](../../mapa/conhecimento/perguntas.md#q058) (mesmo assunto, 0.35), [H092](../../mapa/conhecimento/hipoteses.md#h092) (complementar, 0.35), [H090](../../mapa/conhecimento/hipoteses.md#h090) (complementar, 0.33), [R36](../../mapa/conhecimento/rodadas.md#r36) (complementar, 0.32), [H035](../../mapa/conhecimento/hipoteses.md#h035) (complementar, 0.26), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.25)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h087"></a>
@@ -1513,7 +1513,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:986](../../laboratorio/h100/provas.py#L986); registra [laboratorio/h100/registro.py:406](../../laboratorio/h100/registro.py#L406); documenta [docs/CEM-HIPOTESES.md:339](../../docs/CEM-HIPOTESES.md#L339)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11), [R12](../../mapa/conhecimento/rodadas.md#r12), [R13](../../mapa/conhecimento/rodadas.md#r13)
 - **tema:** [T01 · ruído, degrada, confiança](../../mapa/conhecimento/temas.md#t01)
-- **semelhantes (julgados pelo Jev):** [H019](../../mapa/conhecimento/hipoteses.md#h019) (tensão (a conferir), 0.55), [Q023](../../mapa/conhecimento/perguntas.md#q023) (complementar, 0.30), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.29), [H008](../../mapa/conhecimento/hipoteses.md#h008) (complementar, 0.26)
+- **semelhantes (julgados pelo Jev):** [H019](../../mapa/conhecimento/hipoteses.md#h019) (tensão (a conferir), 0.55), [Q023](../../mapa/conhecimento/perguntas.md#q023) (complementar, 0.31), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.29), [H008](../../mapa/conhecimento/hipoteses.md#h008) (complementar, 0.26)
 - **mencionado em 3 arquivos:** [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/auditoria.py](../../laboratorio/auditoria.py) (1×), [laboratorio/h100/dados.py](../../laboratorio/h100/dados.py) (1×)
 
 <a id="h088"></a>
@@ -1531,7 +1531,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:999](../../laboratorio/h100/provas.py#L999); registra [laboratorio/h100/registro.py:410](../../laboratorio/h100/registro.py#L410); documenta [docs/CEM-HIPOTESES.md:340](../../docs/CEM-HIPOTESES.md#L340)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 - **tema:** [T06 · opções, ordem, pontos](../../mapa/conhecimento/temas.md#t06)
-- **semelhantes (julgados pelo Jev):** [H021](../../mapa/conhecimento/hipoteses.md#h021) (mesmo assunto, 0.61), [H006](../../mapa/conhecimento/hipoteses.md#h006) (complementar, 0.55), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.46), [R6](../../mapa/conhecimento/rodadas.md#r6) (complementar, 0.42), [H090](../../mapa/conhecimento/hipoteses.md#h090) (complementar, 0.36), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.31), [E2](../../mapa/conhecimento/experimentos.md#e2) (complementar, 0.24), [executor/run_e2_fatorial.py](../../executor/run_e2_fatorial.py) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [H021](../../mapa/conhecimento/hipoteses.md#h021) (mesmo assunto, 0.61), [H006](../../mapa/conhecimento/hipoteses.md#h006) (complementar, 0.56), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.46), [R6](../../mapa/conhecimento/rodadas.md#r6) (complementar, 0.42), [H090](../../mapa/conhecimento/hipoteses.md#h090) (complementar, 0.36), [H010](../../mapa/conhecimento/hipoteses.md#h010) (complementar, 0.31), [E2](../../mapa/conhecimento/experimentos.md#e2) (complementar, 0.24), [executor/run_e2_fatorial.py](../../executor/run_e2_fatorial.py) (complementar, 0.24)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h089"></a>
@@ -1603,7 +1603,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:1041](../../laboratorio/h100/provas.py#L1041); registra [laboratorio/h100/registro.py:426](../../laboratorio/h100/registro.py#L426); documenta [docs/CEM-HIPOTESES.md:344](../../docs/CEM-HIPOTESES.md#L344)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 - **tema:** [T01 · ruído, degrada, confiança](../../mapa/conhecimento/temas.md#t01)
-- **semelhantes (julgados pelo Jev):** [Q058](../../mapa/conhecimento/perguntas.md#q058) (mesmo assunto, 0.38), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.35), [R8](../../mapa/conhecimento/rodadas.md#r8) (mesmo assunto, 0.34), [H018](../../mapa/conhecimento/hipoteses.md#h018) (complementar, 0.34), [H083](../../mapa/conhecimento/hipoteses.md#h083) (complementar, 0.32), [H017](../../mapa/conhecimento/hipoteses.md#h017) (complementar, 0.28), [H015](../../mapa/conhecimento/hipoteses.md#h015) (complementar, 0.27), [H013](../../mapa/conhecimento/hipoteses.md#h013) (complementar, 0.27)
+- **semelhantes (julgados pelo Jev):** [Q058](../../mapa/conhecimento/perguntas.md#q058) (mesmo assunto, 0.38), [H086](../../mapa/conhecimento/hipoteses.md#h086) (complementar, 0.35), [R8](../../mapa/conhecimento/rodadas.md#r8) (mesmo assunto, 0.34), [H018](../../mapa/conhecimento/hipoteses.md#h018) (complementar, 0.34), [H083](../../mapa/conhecimento/hipoteses.md#h083) (complementar, 0.32), [H017](../../mapa/conhecimento/hipoteses.md#h017) (complementar, 0.28), [H013](../../mapa/conhecimento/hipoteses.md#h013) (complementar, 0.27), [H015](../../mapa/conhecimento/hipoteses.md#h015) (complementar, 0.27)
 - **mencionado em 4 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h093"></a>
@@ -1657,7 +1657,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:1078](../../laboratorio/h100/provas.py#L1078); registra [laboratorio/h100/registro.py:440](../../laboratorio/h100/registro.py#L440); documenta [docs/CEM-HIPOTESES.md:365](../../docs/CEM-HIPOTESES.md#L365)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T05 · família, terceiro, domínio](../../mapa/conhecimento/temas.md#t05)
-- **semelhantes (julgados pelo Jev):** [R25](../../mapa/conhecimento/rodadas.md#r25) (complementar, 0.32), [laboratorio/r25_terceiro_dominio.py](../../laboratorio/r25_terceiro_dominio.py) (complementar, 0.29), [H076](../../mapa/conhecimento/hipoteses.md#h076) (complementar, 0.28), [Q026](../../mapa/conhecimento/perguntas.md#q026) (mesmo assunto, 0.26), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.25)
+- **semelhantes (julgados pelo Jev):** [R25](../../mapa/conhecimento/rodadas.md#r25) (complementar, 0.32), [laboratorio/r25_terceiro_dominio.py](../../laboratorio/r25_terceiro_dominio.py) (complementar, 0.30), [H076](../../mapa/conhecimento/hipoteses.md#h076) (complementar, 0.28), [Q026](../../mapa/conhecimento/perguntas.md#q026) (mesmo assunto, 0.26), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.25)
 - **mencionado em 7 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h096"></a>
@@ -1674,7 +1674,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **detalhe:** inglês 76.6% contra português 78.5%; pareado 1 a 1, p = 1.0
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:1088](../../laboratorio/h100/provas.py#L1088); registra [laboratorio/h100/registro.py:444](../../laboratorio/h100/registro.py#L444); documenta [docs/CEM-HIPOTESES.md:366](../../docs/CEM-HIPOTESES.md#L366)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
-- **semelhantes (julgados pelo Jev):** [H009](../../mapa/conhecimento/hipoteses.md#h009) (mesmo assunto, 0.65), [H097](../../mapa/conhecimento/hipoteses.md#h097) (mesmo assunto, 0.55), [Q051](../../mapa/conhecimento/perguntas.md#q051) (mesmo assunto, 0.28), [laboratorio/r1_r3_estresse.py](../../laboratorio/r1_r3_estresse.py) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [H009](../../mapa/conhecimento/hipoteses.md#h009) (mesmo assunto, 0.65), [H097](../../mapa/conhecimento/hipoteses.md#h097) (mesmo assunto, 0.55), [Q051](../../mapa/conhecimento/perguntas.md#q051) (mesmo assunto, 0.28), [laboratorio/r1_r3_estresse.py](../../laboratorio/r1_r3_estresse.py) (complementar, 0.23)
 - **mencionado em 6 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h097"></a>
@@ -1727,7 +1727,7 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:1133](../../laboratorio/h100/provas.py#L1133); registra [laboratorio/h100/registro.py:456](../../laboratorio/h100/registro.py#L456); documenta [docs/CEM-HIPOTESES.md:369](../../docs/CEM-HIPOTESES.md#L369)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T12 · sujeito, molde, formulação](../../mapa/conhecimento/temas.md#t12)
-- **semelhantes (julgados pelo Jev):** [H079](../../mapa/conhecimento/hipoteses.md#h079) (complementar, 0.36), [H082](../../mapa/conhecimento/hipoteses.md#h082) (complementar, 0.35), [Q026](../../mapa/conhecimento/perguntas.md#q026) (mesmo assunto, 0.30), [Q052](../../mapa/conhecimento/perguntas.md#q052) (mesmo assunto, 0.29), [H078](../../mapa/conhecimento/hipoteses.md#h078) (complementar, 0.29), [H077](../../mapa/conhecimento/hipoteses.md#h077) (complementar, 0.29), [H007](../../mapa/conhecimento/hipoteses.md#h007) (complementar, 0.25), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.24)
+- **semelhantes (julgados pelo Jev):** [H079](../../mapa/conhecimento/hipoteses.md#h079) (complementar, 0.36), [H082](../../mapa/conhecimento/hipoteses.md#h082) (complementar, 0.35), [Q026](../../mapa/conhecimento/perguntas.md#q026) (mesmo assunto, 0.30), [Q052](../../mapa/conhecimento/perguntas.md#q052) (mesmo assunto, 0.30), [H078](../../mapa/conhecimento/hipoteses.md#h078) (complementar, 0.29), [H077](../../mapa/conhecimento/hipoteses.md#h077) (complementar, 0.29), [H007](../../mapa/conhecimento/hipoteses.md#h007) (complementar, 0.25), [Q038](../../mapa/conhecimento/perguntas.md#q038) (mesmo assunto, 0.24)
 - **mencionado em 6 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)
 
 <a id="h100"></a>
@@ -1745,5 +1745,5 @@ Placar: **81** sustentada, **18** falsificada, **1** inconclusiva.
 - **onde está:** resultado [laboratorio/h100-resultados.json](../../laboratorio/h100-resultados.json); prova [laboratorio/h100/provas.py:1144](../../laboratorio/h100/provas.py#L1144); registra [laboratorio/h100/registro.py:460](../../laboratorio/h100/registro.py#L460); documenta [docs/CEM-HIPOTESES.md:370](../../docs/CEM-HIPOTESES.md#L370)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.59), [Q063](../../mapa/conhecimento/perguntas.md#q063) (mesmo assunto, 0.45), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.35), [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.28), [H052](../../mapa/conhecimento/hipoteses.md#h052) (complementar, 0.27), [executor/run_e4_ressalvas.py](../../executor/run_e4_ressalvas.py) (complementar, 0.24), [Q070](../../mapa/conhecimento/perguntas.md#q070) (mesmo assunto, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.59), [Q063](../../mapa/conhecimento/perguntas.md#q063) (mesmo assunto, 0.45), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.35), [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.28), [H052](../../mapa/conhecimento/hipoteses.md#h052) (complementar, 0.27), [executor/run_e4_ressalvas.py](../../executor/run_e4_ressalvas.py) (complementar, 0.24), [Q070](../../mapa/conhecimento/perguntas.md#q070) (mesmo assunto, 0.23), [H054](../../mapa/conhecimento/hipoteses.md#h054) (complementar, 0.21)
 - **mencionado em 9 arquivos:** [laboratorio/r30-bruto.json](../../laboratorio/r30-bruto.json) (8×), [laboratorio/r30_hipotese_e_prova.py](../../laboratorio/r30_hipotese_e_prova.py) (2×), [laboratorio/r34-ordenar-numa-chamada-bruto.json](../../laboratorio/r34-ordenar-numa-chamada-bruto.json) (2×), [laboratorio/r34-ordenar-numa-chamada.json](../../laboratorio/r34-ordenar-numa-chamada.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (1×), [laboratorio/r30-hipotese-e-prova.json](../../laboratorio/r30-hipotese-e-prova.json) (1×)

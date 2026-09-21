@@ -14,7 +14,7 @@ Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário d
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
-| [FONTES.md](../../research/FONTES.md) | doc | 272 l. | Fontes e revisões — triagem JEV — Coleta: 18/09/2026. As 18 cópias foram obtidas por Git, sem instalar dependências ou executar código dos projetos. O manifest… |
+| [FONTES.md](../../research/FONTES.md) | doc | 285 l. | Fontes e revisões — triagem JEV — Coleta: 18/09/2026. As 18 cópias foram obtidas por Git, sem instalar dependências ou executar código dos projetos. O manifest… |
 | [audit_hermes_pdf.py](../../research/audit_hermes_pdf.py) | código | 96 l. | Recalcula tabelas do PDF, sem rede e sem importar codigo do Hermes. |
 | [collect_sources.py](../../research/collect_sources.py) | código | 12 l. | Define: fetch |
 | [inventario-sistemas.json](../../research/inventario-sistemas.json) | dado | 242 l. | Lista de 15 itens (id, name, repo, langs, files, test_files, decisions_api, systemone_api, openrouter, jev_model) |
@@ -52,7 +52,7 @@ flowchart LR
 
 - **usa** — link: [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`research/sources-manifest.json`](../../research/sources-manifest.json); citação: [`.gitattributes`](../../.gitattributes), [`.gitignore`](../../.gitignore), [`AGENTS.md`](../../AGENTS.md), [`README.md`](../../README.md)
 - **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`lab/dashboard.js`](../../lab/dashboard.js), [`lab/index.html`](../../lab/index.html), [`lab/server.py`](../../lab/server.py)
-- **conteúdo** — Documentação externa consultada (l. 7), Catálogo por revisão (l. 17), Enquadramento da análise (l. 268)
+- **conteúdo** — Documentação externa consultada (l. 7), Catálogo por revisão (l. 17), Enquadramento da análise (l. 268), Vídeo de Battisti — integração prática (l. 283)
 
 ### audit_hermes_pdf.py
 

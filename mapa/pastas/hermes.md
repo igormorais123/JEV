@@ -9,7 +9,7 @@
 | subpasta | arquivos | finalidade |
 |---|---:|---|
 | [infra/](../../mapa/pastas/hermes__infra.md) | 1 |  |
-| [jev_hermes/](../../mapa/pastas/hermes__jev_hermes.md) | 6 |  |
+| [jev_hermes/](../../mapa/pastas/hermes__jev_hermes.md) | 7 |  |
 | [plugin/](../../mapa/pastas/hermes__plugin.md) | 4 |  |
 | [portoes/](../../mapa/pastas/hermes__portoes.md) | 6 |  |
 | [rotinas/](../../mapa/pastas/hermes__rotinas.md) | 6 |  |
@@ -26,5 +26,5 @@
 
 ### README.md
 
-- **parecidos (julgados pelo Jev)** — [`hermes/skill/jev/SKILL.md`](../../hermes/skill/jev/SKILL.md) (complementar, 0.38), [`hermes/jev_hermes/__init__.py`](../../hermes/jev_hermes/__init__.py) (complementar, 0.37)
+- **parecidos (julgados pelo Jev)** — [`hermes/jev_hermes/__init__.py`](../../hermes/jev_hermes/__init__.py) (complementar, 0.37), [`hermes/skill/jev/SKILL.md`](../../hermes/skill/jev/SKILL.md) (complementar, 0.34)
 - **conteúdo** — Onde está cada peça (l. 7), Modelo principal e economia da cota (desde 21/09/2026) (l. 22), Jobs de cron com o Jev (l. 38), Segurança e falhas (l. 53), Operar (l. 61), Testes (l. 76)

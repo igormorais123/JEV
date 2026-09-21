@@ -2,7 +2,7 @@
 
 Ponto de entrada para qualquer pessoa ou IA achar qualquer coisa nesta pasta. Gerado por `python mapa/gerar_mapa.py`; não editar à mão, regenerar depois de mudar arquivos.
 
-**369 arquivos** em **52 pastas** e **317 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões e temas), ligados por **6402 relações**: 437 imports, 62 links, 1602 citações entre arquivos; 687 usos de função ou classe de outro arquivo; 2411 ligações arquivo–conceito, 308 conceito–conceito, 202 de pertença a tema e 693 de semelhança de conteúdo julgadas pelo Jev.
+**374 arquivos** em **53 pastas** e **322 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões e temas), ligados por **6493 relações**: 449 imports, 62 links, 1608 citações entre arquivos; 711 usos de função ou classe de outro arquivo; 2436 ligações arquivo–conceito, 308 conceito–conceito, 202 de pertença a tema e 717 de semelhança de conteúdo julgadas pelo Jev.
 
 ## Como usar este mapa
 
@@ -47,12 +47,12 @@ Os conceitos são nós do grafo, lidos da fonte que os define. Cada página diz,
 | conceito | quantos | página | o que tem |
 |---|---:|---|---|
 | Experimentos | 18 | [experimentos.md](mapa/conhecimento/experimentos.md) | pré-registro, executor, adjudicação, testes e resultado de cada um |
-| Rodadas do laboratório | 51 | [rodadas.md](mapa/conhecimento/rodadas.md) | pré-registro, script, artefato e retratações de cada rodada; linhagem entre rodadas |
+| Rodadas do laboratório | 56 | [rodadas.md](mapa/conhecimento/rodadas.md) | pré-registro, script, artefato e retratações de cada rodada; linhagem entre rodadas |
 | Hipóteses | 100 | [hipoteses.md](mapa/conhecimento/hipoteses.md) | 81 sustentada, 18 falsificada, 1 inconclusiva; cada uma com as rodadas em que a prova se apoia |
 | Perguntas estratégicas | 100 | [perguntas.md](mapa/conhecimento/perguntas.md) | 76 respondidas por dado medido; as demais por conta declarada ou coleta nova |
 | Sistemas avaliados | 15 | [sistemas.md](mapa/conhecimento/sistemas.md) | os sistemas do ecossistema Jev cobertos pelo plano |
 | Revisões adversariais | 10 | [revisoes.md](mapa/conhecimento/revisoes.md) | revisões independentes do executor e os testes que fixam cada achado |
-| Temas | 23 | [temas.md](mapa/conhecimento/temas.md) | grupos por semelhança de conteúdo, com 36 contrastes de veredito; 693 ligações de semelhança julgadas pelo Jev |
+| Temas | 23 | [temas.md](mapa/conhecimento/temas.md) | grupos por semelhança de conteúdo, com 36 contrastes de veredito; 717 ligações de semelhança julgadas pelo Jev |
 | Testes | 28 | [testes.md](mapa/conhecimento/testes.md) | o que cada teste exercita e que estudo fixa; código sem teste direto |
 | Lacunas e ideias | — | [lacunas.md](mapa/conhecimento/lacunas.md) | hipóteses que caíram, respostas sem dado medido, peças faltando, pendências declaradas |
 
@@ -62,7 +62,7 @@ Como os tipos de conceito se apoiam uns nos outros (número de ligações), e qu
 flowchart LR
   ARQ(["arquivos"])
   E["Experimentos (18)"]
-  R["Rodadas do laboratório (51)"]
+  R["Rodadas do laboratório (56)"]
   H["Hipóteses (100)"]
   Q["Perguntas estratégicas (100)"]
   S["Sistemas avaliados (15)"]
@@ -77,7 +77,7 @@ flowchart LR
   ARQ -.->|355| E
   ARQ -.->|636| H
   ARQ -.->|445| Q
-  ARQ -.->|782| R
+  ARQ -.->|807| R
   ARQ -.->|171| S
   ARQ -.->|22| V
 ```
@@ -86,16 +86,16 @@ flowchart LR
 
 | pasta | arquivos | finalidade |
 |---|---:|---|
-| [raiz](mapa/pastas/_raiz.md) | 369 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
+| [raiz](mapa/pastas/_raiz.md) | 374 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[.reticle/](mapa/pastas/reticle.md) | 1 | Pasta de ferramenta local; só o .gitignore é versionado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[data/](mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[corpus/](mapa/pastas/data__corpus.md) | 6 | Corpus congelado dos experimentos (triagem, evidência, ressalvas), em JSONL. É o insumo dos executores `executor/run_e*.py`. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[docs/](mapa/pastas/docs.md) | 13 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[executor/](mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/executor__tests.md) | 18 | Testes do executor: livro-caixa, preços, runner, placar, achados de cada revisão adversarial, entregáveis, MCP. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[hermes/](mapa/pastas/hermes.md) | 26 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;[hermes/](mapa/pastas/hermes.md) | 27 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[infra/](mapa/pastas/hermes__infra.md) | 1 |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev_hermes/](mapa/pastas/hermes__jev_hermes.md) | 6 |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev_hermes/](mapa/pastas/hermes__jev_hermes.md) | 7 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[plugin/](mapa/pastas/hermes__plugin.md) | 4 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev-advisor/](mapa/pastas/hermes__plugin__jev-advisor.md) | 2 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev-camadas/](mapa/pastas/hermes__plugin__jev-camadas.md) | 2 |  |
@@ -104,16 +104,17 @@ flowchart LR
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[skill/](mapa/pastas/hermes__skill.md) | 1 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev/](mapa/pastas/hermes__skill__jev.md) | 1 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/hermes__tests.md) | 1 |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;[integracao/](mapa/pastas/integracao.md) | 48 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[integracao/](mapa/pastas/integracao.md) | 50 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[avaliacao/](mapa/pastas/integracao__avaliacao.md) | 17 | Avaliação da integração com tráfego real do Igor (E13): amostragem, gabaritos e relatórios agregados. O texto original é privado e fica fora do Git. |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[camadas/](mapa/pastas/integracao__camadas.md) | 10 | As camadas que decidem o que entra no contexto do modelo caro: leitura, busca, sentinela, saída, verificação, `ler` (skill /jev-ler), medição e rotina. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[camadas/](mapa/pastas/integracao__camadas.md) | 12 | As camadas que decidem o que entra no contexto do modelo caro: leitura, busca, sentinela, saída, verificação, `ler` (skill /jev-ler), medição e rotina. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[listas/](mapa/pastas/integracao__camadas__listas.md) | 1 |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[hooks/](mapa/pastas/integracao__hooks.md) | 6 | Os scripts de hook instalados no Claude Code/Codex; cada um é um invólucro fino sobre uma camada. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[jev_router/](mapa/pastas/integracao__jev_router.md) | 7 | Roteador de prompts: política, orçamento, redação de credenciais, cliente do provedor e CLI. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/integracao__tests.md) | 5 | Testes da integração: camadas, guarda de comando, redação, roteador e rotina. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[lab/](mapa/pastas/lab.md) | 13 | Painel local de acompanhamento (servidor stdlib + HTML/JS): fila de rodadas, execuções, métricas e orçamento. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[data/](mapa/pastas/lab__data.md) | 1 | Estado compartilhado do painel (`execution.json`). |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/lab__tests.md) | 1 | Testes do servidor do painel. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[laboratorio/](mapa/pastas/laboratorio.md) | 130 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[laboratorio/](mapa/pastas/laboratorio.md) | 132 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[h100/](mapa/pastas/laboratorio__h100.md) | 6 | Bateria H100: as cem hipóteses (dados, provas, avaliação, registro, relatório). |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[q100/](mapa/pastas/laboratorio__q100.md) | 4 | Bateria Q100: as cem perguntas estratégicas (respostas, registro, relatório). |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/laboratorio__tests.md) | 5 | Testes do laboratório: auditoria, canários, H100, Q100. |
@@ -148,14 +149,14 @@ flowchart LR
   n_data["data/ (6)"]
   n_docs["docs/ (13)"]
   n_executor["executor/ (57)"]
-  n_integracao["integracao/ (48)"]
+  n_integracao["integracao/ (50)"]
   n_lab["lab/ (13)"]
-  n_laboratorio["laboratorio/ (130)"]
+  n_laboratorio["laboratorio/ (132)"]
   n_planning["planning/ (16)"]
   n_research["research/ (12)"]
   n_runs["runs/ (36)"]
   n_docs -.->|5| n_executor
-  n_docs -.->|55| n_laboratorio
+  n_docs -.->|57| n_laboratorio
   n_docs -.->|9| n_research
   n_executor -.->|25| n_data
   n_executor -.->|5| n_docs
@@ -173,7 +174,7 @@ flowchart LR
   n_laboratorio -.->|23| n_docs
   n_laboratorio -->|21| n_executor
   n_laboratorio -.->|460| n_executor
-  n_laboratorio -->|3| n_integracao
+  n_laboratorio -->|5| n_integracao
   n_laboratorio -.->|241| n_integracao
   n_laboratorio -.->|24| n_lab
   n_laboratorio -.->|9| n_runs
@@ -191,12 +192,12 @@ Matriz completa (linha usa coluna; imports + citações + links):
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | **.reticle/** |  |  |  |  |  |  |  |  |  |  |  |  |
 | **data/** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **docs/** |  |  |  | 5 |  | 2 | 1 | 55 | 3 | 4 | 9 | 4 |
+| **docs/** |  |  |  | 5 |  | 4 | 1 | 57 | 3 | 4 | 9 | 4 |
 | **executor/** |  | 25 | 5 |  |  | 3 | 3 |  | 2 | 15 | 2 | 33 |
 | **hermes/** |  |  | 1 | 2 |  |  |  |  |  |  |  |  |
 | **integracao/** |  |  | 11 | 17 | 1 |  |  | 7 |  |  |  | 2 |
 | **lab/** |  |  | 6 | 13 |  |  |  |  | 4 | 10 | 10 |  |
-| **laboratorio/** |  | 4 | 23 | 481 |  | 244 | 24 |  | 4 | 1 | 3 | 9 |
+| **laboratorio/** |  | 4 | 23 | 481 |  | 246 | 24 |  | 4 | 1 | 3 | 9 |
 | **output/** |  |  | 1 |  |  |  |  | 3 |  |  |  |  |
 | **planning/** |  | 4 | 5 | 11 |  |  | 2 |  | 3 |  | 9 | 9 |
 | **research/** |  |  | 1 |  |  |  |  |  |  |  |  |  |
@@ -294,6 +295,8 @@ Pré-registro, executor, adjudicação, testes e resultados do mesmo experimento
 | [R43](mapa/conhecimento/rodadas.md#r43) | [r43-tamanho-da-lista-bruto.json](laboratorio/r43-tamanho-da-lista-bruto.json) · [r43-tamanho-da-lista.json](laboratorio/r43-tamanho-da-lista.json) |
 | [R44](mapa/conhecimento/rodadas.md#r44) | [r44-candidato-envenenado-bruto.json](laboratorio/r44-candidato-envenenado-bruto.json) · [r44-candidato-envenenado.json](laboratorio/r44-candidato-envenenado.json) |
 | [R45](mapa/conhecimento/rodadas.md#r45) | [r45-lista-nas-duas-ordens-bruto.json](laboratorio/r45-lista-nas-duas-ordens-bruto.json) · [r45-lista-nas-duas-ordens.json](laboratorio/r45-lista-nas-duas-ordens.json) · [r45_lista_nas_duas_ordens.py](laboratorio/r45_lista_nas_duas_ordens.py) |
+| [R46](mapa/conhecimento/rodadas.md#r46) [R49](mapa/conhecimento/rodadas.md#r49) | [r46_r49_pontos_do_video.py](laboratorio/r46_r49_pontos_do_video.py) |
+| [R50](mapa/conhecimento/rodadas.md#r50) | [r50_checklist_de_contrato.py](laboratorio/r50_checklist_de_contrato.py) |
 
 ## Código e seus testes
 
@@ -315,6 +318,7 @@ Pré-registro, executor, adjudicação, testes e resultados do mesmo experimento
 | [`executor/shared.py`](executor/shared.py) | [test_shared.py](executor/tests/test_shared.py) |
 | [`hermes/jev_hermes/camadas.py`](hermes/jev_hermes/camadas.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
 | [`hermes/jev_hermes/nucleo.py`](hermes/jev_hermes/nucleo.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
+| [`hermes/jev_hermes/pendencias.py`](hermes/jev_hermes/pendencias.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
 | [`hermes/jev_hermes/ponte_openai.py`](hermes/jev_hermes/ponte_openai.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
 | [`hermes/jev_hermes/portao.py`](hermes/jev_hermes/portao.py) | [test_jev_hermes.py](hermes/tests/test_jev_hermes.py) |
 | [`integracao/camadas/busca.py`](integracao/camadas/busca.py) | [test_camadas.py](integracao/tests/test_camadas.py) |
@@ -349,7 +353,7 @@ Os que mais outros arquivos importam, linkam ou citam: mudar um deles tem efeito
 
 | arquivo | recebe | descrição |
 |---|---:|---|
-| [`laboratorio/nucleo.py`](laboratorio/nucleo.py) | 51 | Núcleo do programa E14: despacho paralelo com teto próprio, e a estatística que uso sempre. |
+| [`laboratorio/nucleo.py`](laboratorio/nucleo.py) | 53 | Núcleo do programa E14: despacho paralelo com teto próprio, e a estatística que uso sempre. |
 | [`executor/pricing.py`](executor/pricing.py) | 44 | Tabela de precos e custo em nanodolares inteiros. |
 | [`executor/runner.py`](executor/runner.py) | 43 | Despacho de chamadas Jev com reserva financeira obrigatoria. |
 | [`executor/ledger.py`](executor/ledger.py) | 40 | Controle financeiro com reserva atomica antes de cada tentativa paga. |

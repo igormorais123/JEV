@@ -1,0 +1,1287 @@
+{
+ "4-perguntas": {
+  "chamadas": 24,
+  "todas_respondidas": 24,
+  "latencia_mediana_ms": 1216.4250000000002,
+  "rede_mediana_ms": 731.4449999999999,
+  "custo_medio_usd": 2.9406999999999998e-05,
+  "copias_estaveis": {
+   "acertos": 96,
+   "n": 96,
+   "taxa": 1.0,
+   "ic95": [
+    0.9615,
+    1.0
+   ]
+  }
+ },
+ "16-perguntas": {
+  "chamadas": 24,
+  "todas_respondidas": 24,
+  "latencia_mediana_ms": 1130.495,
+  "rede_mediana_ms": 743.165,
+  "custo_medio_usd": 8.1676e-05,
+  "copias_estaveis": {
+   "acertos": 96,
+   "n": 96,
+   "taxa": 1.0,
+   "ic95": [
+    0.9615,
+    1.0
+   ]
+  }
+ },
+ "64-perguntas": {
+  "chamadas": 23,
+  "todas_respondidas": 23,
+  "latencia_mediana_ms": 1156.13,
+  "rede_mediana_ms": 769.91,
+  "custo_medio_usd": 0.0002917575652173913,
+  "copias_estaveis": {
+   "acertos": 92,
+   "n": 92,
+   "taxa": 1.0,
+   "ic95": [
+    0.9599,
+    1.0
+   ]
+  }
+ },
+ "base_igual_entre_4_e_64": {
+  "acertos": 92,
+  "n": 96,
+  "taxa": 0.9583,
+  "ic95": [
+   0.8977,
+   0.9837
+  ]
+ },
+ "chamadas": 72,
+ "custo_usd": 0.009376,
+ "detalhe": [
+  {
+   "mensagem": 0,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 715.57,
+   "custo_usd": 2.9568e-05,
+   "latencia_ms": 1569.28
+  },
+  {
+   "mensagem": 0,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 777.44,
+   "custo_usd": 2.9568e-05,
+   "latencia_ms": 1238.41
+  },
+  {
+   "mensagem": 0,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 721.88,
+   "custo_usd": 2.9568e-05,
+   "latencia_ms": 2215.93
+  },
+  {
+   "mensagem": 0,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 752.26,
+   "custo_usd": 2.9568e-05,
+   "latencia_ms": 1869.1
+  },
+  {
+   "mensagem": 0,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 705.05,
+   "custo_usd": 8.1858e-05,
+   "latencia_ms": 1309.39
+  },
+  {
+   "mensagem": 0,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 739.16,
+   "custo_usd": 8.1858e-05,
+   "latencia_ms": 1275.11
+  },
+  {
+   "mensagem": 0,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 783.96,
+   "custo_usd": 8.1858e-05,
+   "latencia_ms": 1272.62
+  },
+  {
+   "mensagem": 0,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 760.67,
+   "custo_usd": 8.1858e-05,
+   "latencia_ms": 1167.7
+  },
+  {
+   "mensagem": 0,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 835.38,
+   "custo_usd": 0.000292026,
+   "latencia_ms": 1229.74
+  },
+  {
+   "mensagem": 0,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 753.46,
+   "custo_usd": 0.000292026,
+   "latencia_ms": 1281.64
+  },
+  {
+   "mensagem": 0,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 783.48,
+   "custo_usd": 0.000292026,
+   "latencia_ms": 1312.28
+  },
+  {
+   "mensagem": 0,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 784.14,
+   "custo_usd": 0.000292026,
+   "latencia_ms": 1257.68
+  },
+  {
+   "mensagem": 1,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 709.41,
+   "custo_usd": 2.982e-05,
+   "latencia_ms": 1309.4
+  },
+  {
+   "mensagem": 1,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 753.95,
+   "custo_usd": 2.982e-05,
+   "latencia_ms": 1244.22
+  },
+  {
+   "mensagem": 1,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 721.57,
+   "custo_usd": 2.982e-05,
+   "latencia_ms": 1260.49
+  },
+  {
+   "mensagem": 1,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 732.92,
+   "custo_usd": 2.982e-05,
+   "latencia_ms": 1273.8
+  },
+  {
+   "mensagem": 1,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 738.45,
+   "custo_usd": 8.2362e-05,
+   "latencia_ms": 1258.25
+  },
+  {
+   "mensagem": 1,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 760.18,
+   "custo_usd": 8.2362e-05,
+   "latencia_ms": 1291.24
+  },
+  {
+   "mensagem": 1,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 772.22,
+   "custo_usd": 8.2362e-05,
+   "latencia_ms": 1245.03
+  },
+  {
+   "mensagem": 1,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 791.09,
+   "custo_usd": 8.2362e-05,
+   "latencia_ms": 1228.45
+  },
+  {
+   "mensagem": 1,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 754.38,
+   "custo_usd": 0.000293538,
+   "latencia_ms": 1198.51
+  },
+  {
+   "mensagem": 1,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 834.77,
+   "custo_usd": 0.000293538,
+   "latencia_ms": 1133.42
+  },
+  {
+   "mensagem": 1,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 872.38,
+   "custo_usd": 0.000293538,
+   "latencia_ms": 1153.45
+  },
+  {
+   "mensagem": 1,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "irritado"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 767.12,
+   "custo_usd": 0.000293538,
+   "latencia_ms": 1135.91
+  },
+  {
+   "mensagem": 2,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 763.03,
+   "custo_usd": 2.9064e-05,
+   "latencia_ms": 1105.92
+  },
+  {
+   "mensagem": 2,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 680.44,
+   "custo_usd": 2.9064e-05,
+   "latencia_ms": 1167.85
+  },
+  {
+   "mensagem": 2,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 711.05,
+   "custo_usd": 2.9064e-05,
+   "latencia_ms": 1114.57
+  },
+  {
+   "mensagem": 2,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 762.18,
+   "custo_usd": 2.9064e-05,
+   "latencia_ms": 1104.86
+  },
+  {
+   "mensagem": 2,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 818.87,
+   "custo_usd": 8.1228e-05,
+   "latencia_ms": 1115.1
+  },
+  {
+   "mensagem": 2,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 724.14,
+   "custo_usd": 8.1228e-05,
+   "latencia_ms": 1087.36
+  },
+  {
+   "mensagem": 2,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 725.63,
+   "custo_usd": 8.1228e-05,
+   "latencia_ms": 1090.15
+  },
+  {
+   "mensagem": 2,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 744.36,
+   "custo_usd": 8.1228e-05,
+   "latencia_ms": 1106.17
+  },
+  {
+   "mensagem": 2,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 716.63,
+   "custo_usd": 0.000290892,
+   "latencia_ms": 1125.25
+  },
+  {
+   "mensagem": 2,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 761.32,
+   "custo_usd": 0.000290892,
+   "latencia_ms": 1107.64
+  },
+  {
+   "mensagem": 2,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 742.02,
+   "custo_usd": 0.000290892,
+   "latencia_ms": 1156.13
+  },
+  {
+   "mensagem": 2,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "cobranca",
+    "cancelamento": "envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 769.91,
+   "custo_usd": 0.000290892,
+   "latencia_ms": 1152.87
+  },
+  {
+   "mensagem": 3,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 730.86,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1149.36
+  },
+  {
+   "mensagem": 3,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 762.62,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1150.02
+  },
+  {
+   "mensagem": 3,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 728.13,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1132.37
+  },
+  {
+   "mensagem": 3,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 694.51,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1116.81
+  },
+  {
+   "mensagem": 3,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 862.63,
+   "custo_usd": 8.1648e-05,
+   "latencia_ms": 1119.39
+  },
+  {
+   "mensagem": 3,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 715.99,
+   "custo_usd": 8.1648e-05,
+   "latencia_ms": 1146.7
+  },
+  {
+   "mensagem": 3,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 717.15,
+   "custo_usd": 8.1648e-05,
+   "latencia_ms": 1081.67
+  },
+  {
+   "mensagem": 3,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 740.96,
+   "custo_usd": 8.1648e-05,
+   "latencia_ms": 1207.24
+  },
+  {
+   "mensagem": 3,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 738.64,
+   "custo_usd": 0.000291816,
+   "latencia_ms": 1191.54
+  },
+  {
+   "mensagem": 3,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 0,
+   "base": {
+    "assunto": null,
+    "cancelamento": null,
+    "dado-faltando": null,
+    "tom": null
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": null,
+   "custo_usd": 0.0,
+   "latencia_ms": null
+  },
+  {
+   "mensagem": 3,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 804.8,
+   "custo_usd": 0.000291816,
+   "latencia_ms": 1390.67
+  },
+  {
+   "mensagem": 3,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "entrega",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 774.91,
+   "custo_usd": 0.000291816,
+   "latencia_ms": 1115.86
+  },
+  {
+   "mensagem": 4,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 730.6,
+   "custo_usd": 2.9274e-05,
+   "latencia_ms": 1295.12
+  },
+  {
+   "mensagem": 4,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 797.39,
+   "custo_usd": 2.9274e-05,
+   "latencia_ms": 1307.04
+  },
+  {
+   "mensagem": 4,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 762.51,
+   "custo_usd": 2.9274e-05,
+   "latencia_ms": 1043.7
+  },
+  {
+   "mensagem": 4,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 719.85,
+   "custo_usd": 2.9274e-05,
+   "latencia_ms": 1038.65
+  },
+  {
+   "mensagem": 4,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 773.02,
+   "custo_usd": 8.1564e-05,
+   "latencia_ms": 1092.85
+  },
+  {
+   "mensagem": 4,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 721.91,
+   "custo_usd": 8.1564e-05,
+   "latencia_ms": 1065.45
+  },
+  {
+   "mensagem": 4,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 732.28,
+   "custo_usd": 8.1564e-05,
+   "latencia_ms": 1077.09
+  },
+  {
+   "mensagem": 4,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 775.44,
+   "custo_usd": 8.1564e-05,
+   "latencia_ms": 1075.63
+  },
+  {
+   "mensagem": 4,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 793.54,
+   "custo_usd": 0.000291732,
+   "latencia_ms": 1139.67
+  },
+  {
+   "mensagem": 4,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 772.85,
+   "custo_usd": 0.000291732,
+   "latencia_ms": 1215.18
+  },
+  {
+   "mensagem": 4,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 763.68,
+   "custo_usd": 0.000291732,
+   "latencia_ms": 1260.83
+  },
+  {
+   "mensagem": 4,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "nao-envolve",
+    "dado-faltando": "falta",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 775.89,
+   "custo_usd": 0.000291732,
+   "latencia_ms": 1293.07
+  },
+  {
+   "mensagem": 5,
+   "copias": 1,
+   "repeticao": 0,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 721.7,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1288.76
+  },
+  {
+   "mensagem": 5,
+   "copias": 1,
+   "repeticao": 1,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 766.58,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1241.74
+  },
+  {
+   "mensagem": 5,
+   "copias": 1,
+   "repeticao": 2,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 732.03,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1194.44
+  },
+  {
+   "mensagem": 5,
+   "copias": 1,
+   "repeticao": 3,
+   "perguntas": 4,
+   "respondidas": 4,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 841.23,
+   "custo_usd": 2.9358e-05,
+   "latencia_ms": 1167.84
+  },
+  {
+   "mensagem": 5,
+   "copias": 4,
+   "repeticao": 0,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 741.97,
+   "custo_usd": 8.1396e-05,
+   "latencia_ms": 1074.66
+  },
+  {
+   "mensagem": 5,
+   "copias": 4,
+   "repeticao": 1,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 757.44,
+   "custo_usd": 8.1396e-05,
+   "latencia_ms": 1076.96
+  },
+  {
+   "mensagem": 5,
+   "copias": 4,
+   "repeticao": 2,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 774.43,
+   "custo_usd": 8.1396e-05,
+   "latencia_ms": 1141.6
+  },
+  {
+   "mensagem": 5,
+   "copias": 4,
+   "repeticao": 3,
+   "perguntas": 16,
+   "respondidas": 16,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 739.01,
+   "custo_usd": 8.1396e-05,
+   "latencia_ms": 1227.22
+  },
+  {
+   "mensagem": 5,
+   "copias": 16,
+   "repeticao": 0,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 765.84,
+   "custo_usd": 0.000290556,
+   "latencia_ms": 1307.27
+  },
+  {
+   "mensagem": 5,
+   "copias": 16,
+   "repeticao": 1,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 751.08,
+   "custo_usd": 0.000290556,
+   "latencia_ms": 1069.58
+  },
+  {
+   "mensagem": 5,
+   "copias": 16,
+   "repeticao": 2,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 747.4,
+   "custo_usd": 0.000290556,
+   "latencia_ms": 1053.51
+  },
+  {
+   "mensagem": 5,
+   "copias": 16,
+   "repeticao": 3,
+   "perguntas": 64,
+   "respondidas": 64,
+   "base": {
+    "assunto": "outro",
+    "cancelamento": "envolve",
+    "dado-faltando": "completo",
+    "tom": "calmo"
+   },
+   "perguntas_de_base_com_a_mesma_resposta_em_todas_as_copias": 4,
+   "rede_ms": 791.62,
+   "custo_usd": 0.000290556,
+   "latencia_ms": 1087.04
+  }
+ ]
+}

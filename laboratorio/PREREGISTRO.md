@@ -1208,3 +1208,34 @@ Escolhido 0 vezes em 167; a vigia acusa 100% e dá alarme falso em 27% do códig
 
 `laboratorio/r45_lista_nas_duas_ordens.py`. As ordens concordam em 61/80 e, quando concordam,
 acertam 60/61.
+
+
+# Bloco de 2026-09-21 — R46 a R50, a partir de duas avaliações externas em vídeo
+
+Previsões nos cabeçalhos de `laboratorio/r46_r49_pontos_do_video.py` e
+`laboratorio/r50_checklist_de_contrato.py`, commitados antes de rodar (`3c48d97`, `578130d`).
+Leitura completa na seção 8 de `docs/ESSENCIA-DO-JEV.md`.
+
+## R46 — conta embutida na leitura
+
+O erro relatado no vídeo ("metade agora" lido como o total) não reproduziu: 39 de 40 na
+pergunta direta, 30 de 30 com total e regra separados e a conta em código.
+
+## R47 — o fiscal diante de evidência incompleta
+
+Veredito direto: 10 de 12 `inconclusiva` na observação parcial, 2 condenações indevidas. Com
+duas perguntas e o veredito montado em código, 47 de 47.
+
+## R48 — Banking77, a primeira referência pública
+
+116/151 = 76,8% com 77 classes; com probabilidade da escolha de 0,99 ou mais, 79/80 e cobertura
+de 53%.
+
+## R49 — 64 perguntas no mesmo payload
+
+Latência igual à de 4 perguntas, todas respondidas, custo dez vezes maior.
+
+## R50 — o checklist de contrato
+
+Uma chamada com oito perguntas: 287/288, igual a oito chamadas separadas, em 1,2 s e um terço
+do custo; 279 de 279 entre os itens decididos sem gente.

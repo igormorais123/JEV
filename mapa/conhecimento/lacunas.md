@@ -110,12 +110,12 @@ Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos difere
 
 - **experimentos sem pré-registro próprio em `planning/`:** [E2](../../mapa/conhecimento/experimentos.md#e2), [E2b](../../mapa/conhecimento/experimentos.md#e2b), [E3](../../mapa/conhecimento/experimentos.md#e3), [E4](../../mapa/conhecimento/experimentos.md#e4), [E5](../../mapa/conhecimento/experimentos.md#e5), [E6](../../mapa/conhecimento/experimentos.md#e6), [E8](../../mapa/conhecimento/experimentos.md#e8), [E9](../../mapa/conhecimento/experimentos.md#e9), [E10b](../../mapa/conhecimento/experimentos.md#e10b), [E13](../../mapa/conhecimento/experimentos.md#e13)
 - **rodadas sem script próprio** (medidas dentro do script de outra rodada ou só documentadas): [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
-- **rodadas sem artefato de resultado próprio:** [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
+- **rodadas sem artefato de resultado próprio:** [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b), [R46](../../mapa/conhecimento/rodadas.md#r46), [R47](../../mapa/conhecimento/rodadas.md#r47), [R48](../../mapa/conhecimento/rodadas.md#r48), [R49](../../mapa/conhecimento/rodadas.md#r49), [R50](../../mapa/conhecimento/rodadas.md#r50)
 - **rodadas com condição retratada:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 
 ## Código sem teste direto
 
-29 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
+30 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
 
 ## Pendências declaradas nos documentos
 
@@ -127,11 +127,12 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[README.md](../../README.md)**
 
-- [l. 19](../../README.md#L19) — medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
-- [l. 23](../../README.md#L23) — declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
-- [l. 55](../../README.md#L55) — ledger a 4.558 tentativas e 0,283629435 de unidade de conta; **essa parte ainda não foi
-- [l. 82](../../README.md#L82) — O plano previa rodada simples e rodada aprofundada para os 15 sistemas. A rodada simples foi executada como suíte offline de cada repositório, o que mede estado de códig…
-- [l. 84](../../README.md#L84) — O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, den…
+- [l. 13](../../README.md#L13) — Complemento: exemplos do vídeo de ViktorKav, com trechos marcados, limites das demonstrações e cinco propostas de teste ainda não executadas.
+- [l. 27](../../README.md#L27) — medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
+- [l. 31](../../README.md#L31) — declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
+- [l. 63](../../README.md#L63) — ledger a 4.558 tentativas e 0,283629435 de unidade de conta; **essa parte ainda não foi
+- [l. 90](../../README.md#L90) — O plano previa rodada simples e rodada aprofundada para os 15 sistemas. A rodada simples foi executada como suíte offline de cada repositório, o que mede estado de códig…
+- [l. 92](../../README.md#L92) — O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, den…
 
 **[docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md)**
 
@@ -190,6 +191,7 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 **[hermes/skill/jev/SKILL.md](../../hermes/skill/jev/SKILL.md)**
 
 - [l. 22](../../hermes/skill/jev/SKILL.md#L22) — 3. Escrever, planejar, julgar em aberto, conversar com Igor: você.
+- [l. 100](../../hermes/skill/jev/SKILL.md#L100) — "o que está pendente/quem me espera/o que prometi" em vez de ler as conversas. Leitura apenas.
 
 **[integracao/README.md](../../integracao/README.md)**
 

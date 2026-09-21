@@ -344,6 +344,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "0db5eb058f2773a30be5": {
+   "a": "H008",
+   "attempt_id": "e45f3753-8e49-492e-8032-0962e86b9ca0",
+   "b": "R50",
+   "confianca": 0.53,
+   "em": "2026-09-21",
+   "relacao": "sem-relacao"
+  },
   "0dc8adbd797a9c9ae322": {
    "a": "H047",
    "attempt_id": "ec612ed7-afb1-4577-bbea-6bed72a1f041",
@@ -488,6 +496,14 @@
    "em": "2026-09-21",
    "relacao": "sem-relacao"
   },
+  "14016c71006e32ed4246": {
+   "a": "R38",
+   "attempt_id": "c46a391f-e2c9-4dcb-8b5d-9c4e4a50b86c",
+   "b": "laboratorio/r26_dois_trechos.py",
+   "confianca": 0.51,
+   "em": "2026-09-21",
+   "relacao": "mesmo-assunto"
+  },
   "14881c351fca0a02260f": {
    "a": "hermes/portoes/jev_fabio_urgent_watch.py",
    "attempt_id": "8208e751-119e-4250-999c-c5c00d8c2270",
@@ -551,6 +567,14 @@
    "confianca": 0.26,
    "em": "2026-09-21",
    "relacao": "complementares"
+  },
+  "1760bdcb98d4690d6eff": {
+   "a": "R33",
+   "attempt_id": "e358fe1d-34c7-4f98-acfe-be6b740e61ad",
+   "b": "R49",
+   "confianca": 0.86,
+   "em": "2026-09-21",
+   "relacao": "mesmo-assunto"
   },
   "1791acabed2a5c6a1af3": {
    "a": "E9",
@@ -640,6 +664,14 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "1be1750175f603661613": {
+   "a": "R49",
+   "attempt_id": "467b54e2-24a7-44cb-bec1-5aaa6d7f591b",
+   "b": "executor/run_e10_llm_economico.py",
+   "confianca": 0.78,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "1be421dcb9da2d94a2e3": {
    "a": "Q012",
    "attempt_id": "44c64a12-03a6-4791-b37f-dced055e2481",
@@ -701,6 +733,14 @@
    "attempt_id": "307e09fa-9361-44f1-acea-3d7c767e3178",
    "b": "H076",
    "confianca": 0.39,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "1d7ffbcd716c7cb08af1": {
+   "a": "R17",
+   "attempt_id": "4e7da187-a4b8-491b-80ac-765f609e7f24",
+   "b": "R49",
+   "confianca": 0.53,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -968,6 +1008,14 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "24b290b0d832ed4362cf": {
+   "a": "H047",
+   "attempt_id": "61b89c08-1817-4d4b-a603-ba88a1450d75",
+   "b": "Q073",
+   "confianca": 0.99,
+   "em": "2026-09-21",
+   "relacao": "mesmo-assunto"
+  },
   "250bfa8c17efbac8b063": {
    "a": "planning/preregistro-E10-llm-economico.md",
    "attempt_id": "db8f9288-4f13-4282-857d-3f30b2c096e3",
@@ -999,6 +1047,14 @@
    "confianca": 0.78,
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
+  },
+  "25ef1d7275dbdaef0754": {
+   "a": "H002",
+   "attempt_id": "587a6f77-39e5-4689-a807-feaa7057b6b3",
+   "b": "R49",
+   "confianca": 0.44,
+   "em": "2026-09-21",
+   "relacao": "complementares"
   },
   "25f6d3e2e925922ca055": {
    "a": "Q063",
@@ -1045,6 +1101,14 @@
    "attempt_id": "1d395e4a-3382-4f30-98c8-bf1651b0840d",
    "b": "R20",
    "confianca": 0.5,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "27d47603b6717f481efa": {
+   "a": "hermes/jev_hermes/pendencias.py",
+   "attempt_id": "e30726f5-1d5d-46f0-8e2c-00822f84e22f",
+   "b": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "confianca": 0.64,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -1245,6 +1309,14 @@
    "attempt_id": "a4297ef2-5fd4-43a3-8bf7-78337e5c718a",
    "b": "laboratorio/q100/relatorio.py",
    "confianca": 0.94,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "3063c515706935a30cc2": {
+   "a": "R50",
+   "attempt_id": "89e5f941-d1e4-4398-b758-7f0513b31532",
+   "b": "research/hermes/VALIDACAO-LOCAL.md",
+   "confianca": 0.78,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -1584,6 +1656,14 @@
    "em": "2026-09-21",
    "relacao": "sem-relacao"
   },
+  "3f9c9d6b1353d1873cca": {
+   "a": "hermes/plugin/jev-advisor/__init__.py",
+   "attempt_id": "e8d84cc4-782a-4cab-9764-ca4eb7c7e907",
+   "b": "hermes/skill/jev/SKILL.md",
+   "confianca": 0.74,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "3fcafe8e1460a0cec66f": {
    "a": "hermes/jev_hermes/medir.py",
    "attempt_id": "e07a616a-76d2-45ec-a375-140f1e165369",
@@ -1824,6 +1904,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "490b6de99d1f907bb191": {
+   "a": "docs/RELATORIO-EXECUCAO-JEV-HELENA.md",
+   "attempt_id": "6ee9c412-3a74-49fa-aac4-aef66527299e",
+   "b": "laboratorio/PREREGISTRO.md",
+   "confianca": 0.78,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "4911399f0d8a015bbaa5": {
    "a": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "attempt_id": "22013c6f-000e-4031-8574-bebda2d34795",
@@ -1976,6 +2064,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "4e3765eec1e46b491f97": {
+   "a": "R46",
+   "attempt_id": "6ab6df90-d7b7-4cdb-8d9f-95c4c8acaa61",
+   "b": "integracao/camadas/__init__.py",
+   "confianca": 0.58,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "4ed768568b9cabcc01e8": {
    "a": "R43",
    "attempt_id": "2dd7d9dd-0f0e-4f5e-ac2a-dcbd10981ee7",
@@ -2087,6 +2183,14 @@
    "confianca": 0.79,
    "em": "2026-09-21",
    "relacao": "complementares"
+  },
+  "5396ab250faa13cd911a": {
+   "a": "H047",
+   "attempt_id": "bf6ea81a-7c1f-4d08-8117-4812513c021f",
+   "b": "Q017",
+   "confianca": 0.49,
+   "em": "2026-09-21",
+   "relacao": "mesmo-assunto"
   },
   "53df325f109528156fbb": {
    "a": "H021",
@@ -2208,6 +2312,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "59c6d5d8e10f213739da": {
+   "a": "R42",
+   "attempt_id": "9036b71c-4c29-48e8-bee1-ccc4d1828666",
+   "b": "R49",
+   "confianca": 0.71,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "5a4968a3ca5f7ff8374c": {
    "a": "H083",
    "attempt_id": "d9d76827-3404-4e78-87dc-1e03f5d22a49",
@@ -2288,6 +2400,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "5c688f9b5c57018cdc18": {
+   "a": "Q071",
+   "attempt_id": "91c9193e-ed8e-41d9-9201-0ac7b2a4361e",
+   "b": "Q073",
+   "confianca": 0.92,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "5dcc4aa63686f68729e6": {
    "a": "H063",
    "attempt_id": "ac9d2a01-611e-4ca1-b2ab-c6751723dab4",
@@ -2352,6 +2472,14 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "5f277686103ab4f7f37a": {
+   "a": "H008",
+   "attempt_id": "c2a73dac-069d-437f-82e2-411fa081020d",
+   "b": "R48",
+   "confianca": 0.33,
+   "em": "2026-09-21",
+   "relacao": "sem-relacao"
+  },
   "5fb46a1e1548540e4108": {
    "a": "H065",
    "attempt_id": "e8941480-4c84-4551-b2de-a322fb5f3519",
@@ -2413,6 +2541,14 @@
    "attempt_id": "5bd679ec-2c9f-47cf-93bf-73e7a8d3aa84",
    "b": "H063",
    "confianca": 0.68,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "647ea3bb7d895c0c2181": {
+   "a": "R35",
+   "attempt_id": "dc206c70-6e09-4b27-9aea-6c941bbbfa73",
+   "b": "integracao/hooks/jev_sentinela.py",
+   "confianca": 0.39,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -2541,6 +2677,14 @@
    "attempt_id": "ea0a85d3-5c91-4a3d-aaf8-18fdf0c19966",
    "b": "lab/server.py",
    "confianca": 0.87,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "694abd613faa022cc2a0": {
+   "a": "R38",
+   "attempt_id": "f13d43a8-866e-4b8f-9550-482cbc9155c8",
+   "b": "integracao/camadas/checklist.py",
+   "confianca": 0.59,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -2751,6 +2895,14 @@
    "confianca": 0.19,
    "em": "2026-09-21",
    "relacao": "complementares"
+  },
+  "70c734d6a77a59883577": {
+   "a": "H051",
+   "attempt_id": "2e1472e2-c600-4b2f-8fc5-da5f838463aa",
+   "b": "R50",
+   "confianca": 0.56,
+   "em": "2026-09-21",
+   "relacao": "sem-relacao"
   },
   "711c9c70ef248aface66": {
    "a": "H052",
@@ -3063,6 +3215,14 @@
    "confianca": 0.84,
    "em": "2026-09-21",
    "relacao": "complementares"
+  },
+  "7e94cd33f25c58782590": {
+   "a": "R49",
+   "attempt_id": "6486003a-1d47-415e-b9cb-a9161ff5b436",
+   "b": "laboratorio/r28_ato_de_fala.py",
+   "confianca": 0.32,
+   "em": "2026-09-21",
+   "relacao": "mesmo-assunto"
   },
   "7eb8b943773b770ac074": {
    "a": "laboratorio/gerar_bateria.py",
@@ -3584,6 +3744,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "92b5be295b5158c4d6e6": {
+   "a": "Q027",
+   "attempt_id": "e9328624-15db-4fd9-95ea-6ddce3b61e47",
+   "b": "R49",
+   "confianca": 0.74,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "92cf2307f00fa1222473": {
    "a": "Q030",
    "attempt_id": "dba03b55-03ee-4f50-af95-50eacb1c5421",
@@ -3901,6 +4069,14 @@
    "attempt_id": "b1e2ed81-8817-42a2-8d8e-5567d54d6eb1",
    "b": "R42",
    "confianca": 0.66,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "9cdcceb149b4689d9f88": {
+   "a": "H060",
+   "attempt_id": "7e93ef46-5d9a-4b3f-9163-ddd002d75184",
+   "b": "R49",
+   "confianca": 0.82,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -4360,6 +4536,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "aea492647e6aaf29683a": {
+   "a": "H041",
+   "attempt_id": "a30c3a92-2534-4bda-8e8a-4893bbd6345e",
+   "b": "Q073",
+   "confianca": 0.8,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "aec5b67e3161af09353d": {
    "a": "R43",
    "attempt_id": "3f063c02-563e-40fa-8f37-c4a36d901a3b",
@@ -4391,6 +4575,14 @@
    "confianca": 0.46,
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
+  },
+  "afd62dd2de9be881ad4e": {
+   "a": "Q037",
+   "attempt_id": "32e7c924-2833-4714-a2d2-3f49a9f58979",
+   "b": "Q073",
+   "confianca": 0.82,
+   "em": "2026-09-21",
+   "relacao": "complementares"
   },
   "afdb4879c63f8f09d776": {
    "a": "H054",
@@ -4583,6 +4775,14 @@
    "confianca": 0.52,
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
+  },
+  "b6eec500ab6f25f0dcb9": {
+   "a": "R34",
+   "attempt_id": "8477de0f-94dd-4bbc-ae01-7b7b17d29f41",
+   "b": "laboratorio/r50_checklist_de_contrato.py",
+   "confianca": 0.53,
+   "em": "2026-09-21",
+   "relacao": "complementares"
   },
   "b7551a5878f76ef73e95": {
    "a": "H039",
@@ -4832,6 +5032,14 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "bf1e2664d01db64d324d": {
+   "a": "integracao/camadas/checklist.py",
+   "attempt_id": "bda9917f-3794-4673-95cf-cbcc98194a8f",
+   "b": "laboratorio/r45_lista_nas_duas_ordens.py",
+   "confianca": 0.43,
+   "em": "2026-09-21",
+   "relacao": "sem-relacao"
+  },
   "bffee9b235eb50705442": {
    "a": "H077",
    "attempt_id": "7e27f5ec-e3c2-4b7f-bac1-02b6a5b8a539",
@@ -4989,6 +5197,14 @@
    "attempt_id": "e068e1ed-5eaa-4c37-8eac-ee150eddd6eb",
    "b": "laboratorio/canarios_de_comportamento.py",
    "confianca": 0.47,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "c507a80e9fcee8a3e142": {
+   "a": "integracao/avaliacao/skills.py",
+   "attempt_id": "d75bc5ae-4030-4bf9-a2f2-d15fa800a0e6",
+   "b": "laboratorio/r50_checklist_de_contrato.py",
+   "confianca": 0.28,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -5168,6 +5384,14 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "ca6a29ca85b033bb81df": {
+   "a": "R43",
+   "attempt_id": "ff04c226-da36-49d0-8fa9-742dc2b8f181",
+   "b": "integracao/camadas/checklist.py",
+   "confianca": 0.35,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "ca8abc496aba314a4e75": {
    "a": "Q043",
    "attempt_id": "9d340307-a665-4c24-915c-82743580ca3c",
@@ -5311,6 +5535,14 @@
    "confianca": 0.81,
    "em": "2026-09-21",
    "relacao": "complementares"
+  },
+  "cff52f6d587fc136173a": {
+   "a": "H008",
+   "attempt_id": "1e9d2bce-5e46-424f-9b6b-1ac1db161625",
+   "b": "laboratorio/r50_checklist_de_contrato.py",
+   "confianca": 0.38,
+   "em": "2026-09-21",
+   "relacao": "sem-relacao"
   },
   "d0096e986305f21a3230": {
    "a": "Q051",
@@ -5552,6 +5784,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "d8aec3a48a5fd4545c18": {
+   "a": "R49",
+   "attempt_id": "db0ffdd6-809f-4f69-8492-e8879758df60",
+   "b": "executor/runner.py",
+   "confianca": 0.34,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "d8d52039462634bcb940": {
    "a": "H027",
    "attempt_id": "ced13a6a-e1ae-471f-bbf4-84439e0a751c",
@@ -5712,6 +5952,14 @@
    "em": "2026-09-21",
    "relacao": "complementares"
   },
+  "df043eb61af50190455d": {
+   "a": "integracao/camadas/checklist.py",
+   "attempt_id": "bcfda7e0-ffd9-40b3-8ee5-48b3bd823bdd",
+   "b": "research/hermes/VALIDACAO-LOCAL.md",
+   "confianca": 0.84,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "df3e6bb1da93f8c31405": {
    "a": "Q010",
    "attempt_id": "b865ce2d-b944-4dcf-9e95-80df1de67b5c",
@@ -5749,6 +5997,14 @@
    "attempt_id": "6c8eaa1a-a741-465a-8b32-80245dfa05eb",
    "b": "planning/preregistro-E11-desempate.md",
    "confianca": 0.8,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "e0d147e47cc877847776": {
+   "a": "H027",
+   "attempt_id": "18d3f3e8-bae9-4c65-a36e-4f68a5b40e67",
+   "b": "executor/run_e9_prevalencia.py",
+   "confianca": 0.42,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -5797,6 +6053,14 @@
    "attempt_id": "6ad32869-38ab-4fd2-82cd-da0ec13d6dc4",
    "b": "hermes/plugin/jev-camadas/__init__.py",
    "confianca": 0.9,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "e35c6c1c8379630f6a83": {
+   "a": "R49",
+   "attempt_id": "755e7f35-cab5-4eee-94c4-3b15960e53ef",
+   "b": "laboratorio/r42_r44_quarta_leva.py",
+   "confianca": 0.75,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -5919,6 +6183,14 @@
    "confianca": 0.34,
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
+  },
+  "e9964ba7bdbd76bb0a86": {
+   "a": "R39",
+   "attempt_id": "69dfbd71-c238-41c6-99ea-c34d95058510",
+   "b": "integracao/camadas/checklist.py",
+   "confianca": 0.33,
+   "em": "2026-09-21",
+   "relacao": "complementares"
   },
   "e99ac6a59284d4784bc6": {
    "a": "E11",
@@ -6069,6 +6341,14 @@
    "attempt_id": "27ed52e3-8b2b-460b-a376-d957cf5dafda",
    "b": "laboratorio/r11_extremos.py",
    "confianca": 0.42,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "ee1e4994c5a7b48d659d": {
+   "a": "Q017",
+   "attempt_id": "f89e8ce9-fd5a-463f-9c71-e7d3dc302ed4",
+   "b": "executor/runner.py",
+   "confianca": 0.71,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -6224,6 +6504,22 @@
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
   },
+  "f25a44ad08df8eedf517": {
+   "a": "R3",
+   "attempt_id": "a971c346-a6e4-47b8-afc5-d8df913e6085",
+   "b": "hermes/jev_hermes/pendencias.py",
+   "confianca": 0.67,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "f2e155cd096de01a2486": {
+   "a": "H001",
+   "attempt_id": "872643da-cd01-4433-990f-d75ab450320c",
+   "b": "R49",
+   "confianca": 0.67,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
   "f2ef7a44e0ae6d2307f1": {
    "a": "integracao/avaliacao/amostrar.py",
    "attempt_id": "f07453e0-2769-410e-aafd-16095da33bd7",
@@ -6253,6 +6549,14 @@
    "attempt_id": "12b82004-b652-4cf9-8114-13917812915d",
    "b": "planning/preregistro-E7-confirmacao.md",
    "confianca": 0.77,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "f3ce426d89dbc06f2dde": {
+   "a": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "attempt_id": "93137f86-2e31-4880-aa04-f7fe369607a1",
+   "b": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "confianca": 0.61,
    "em": "2026-09-21",
    "relacao": "complementares"
   },
@@ -6287,6 +6591,14 @@
    "confianca": 0.34,
    "em": "2026-09-21",
    "relacao": "mesmo-assunto"
+  },
+  "f6be6c227a60a55a7546": {
+   "a": "R27",
+   "attempt_id": "1a3fe45f-c76f-4bba-bd2d-97227973230b",
+   "b": "R49",
+   "confianca": 0.34,
+   "em": "2026-09-21",
+   "relacao": "complementares"
   },
   "f7152c024c3a0bd2d7d0": {
    "a": "Q056",
@@ -6397,6 +6709,14 @@
    "attempt_id": "63f2d796-8cee-459e-ad30-c5808b8db8ef",
    "b": "laboratorio/h100/relatorio.py",
    "confianca": 0.94,
+   "em": "2026-09-21",
+   "relacao": "complementares"
+  },
+  "fd69a5830a49ca888439": {
+   "a": "R45",
+   "attempt_id": "b4f3f0aa-e9f4-416c-87b9-92643927af35",
+   "b": "integracao/camadas/checklist.py",
+   "confianca": 0.6,
    "em": "2026-09-21",
    "relacao": "complementares"
   },

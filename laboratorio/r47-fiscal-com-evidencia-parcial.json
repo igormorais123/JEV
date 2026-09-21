@@ -1,0 +1,1060 @@
+{
+ "direta/completa-certa": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 12,
+   "defeito": 0,
+   "inconclusiva": 0
+  },
+  "erros_acima_do_corte": 0
+ },
+ "direta/completa-errada": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 12,
+   "inconclusiva": 0
+  },
+  "erros_acima_do_corte": 0
+ },
+ "direta/parcial-coerente": {
+  "acertos": 10,
+  "n": 12,
+  "taxa": 0.8333,
+  "ic95": [
+   0.552,
+   0.953
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 2,
+   "inconclusiva": 10
+  },
+  "erros_acima_do_corte": 0
+ },
+ "direta/parcial-ja-errada": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 12,
+   "inconclusiva": 0
+  },
+  "erros_acima_do_corte": 0
+ },
+ "direta/conjunto": {
+  "acertos": 46,
+  "n": 48,
+  "taxa": 0.9583,
+  "ic95": [
+   0.8602,
+   0.9885
+  ]
+ },
+ "decomposta/completa-certa": {
+  "acertos": 11,
+  "n": 11,
+  "taxa": 1.0,
+  "ic95": [
+   0.7412,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 11,
+   "defeito": 0,
+   "inconclusiva": 0
+  },
+  "alcance_certo": 11,
+  "contraria_certo": 11
+ },
+ "decomposta/completa-errada": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 12,
+   "inconclusiva": 0
+  },
+  "alcance_certo": 12,
+  "contraria_certo": 12
+ },
+ "decomposta/parcial-coerente": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 0,
+   "inconclusiva": 12
+  },
+  "alcance_certo": 12,
+  "contraria_certo": 12
+ },
+ "decomposta/parcial-ja-errada": {
+  "acertos": 12,
+  "n": 12,
+  "taxa": 1.0,
+  "ic95": [
+   0.7575,
+   1.0
+  ],
+  "vereditos": {
+   "aprovado": 0,
+   "defeito": 12,
+   "inconclusiva": 0
+  },
+  "alcance_certo": 12,
+  "contraria_certo": 12
+ },
+ "decomposta/conjunto": {
+  "acertos": 47,
+  "n": 47,
+  "taxa": 1.0,
+  "ic95": [
+   0.9244,
+   1.0
+  ]
+ },
+ "chamadas": 96,
+ "custo_usd": 0.00203,
+ "detalhe": [
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.9908e-05,
+   "latencia_ms": 4760.03,
+   "veredito": "aprovado",
+   "confianca": 0.96
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2512e-05,
+   "latencia_ms": 3659.5,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.9866e-05,
+   "latencia_ms": 1533.7,
+   "veredito": "aprovado",
+   "confianca": 0.95
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.247e-05,
+   "latencia_ms": 2859.08,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 7745.98,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 1864.09,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 1152.42,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 3392.63,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0076e-05,
+   "latencia_ms": 1363.5,
+   "veredito": "aprovado",
+   "confianca": 0.98
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 3197.16,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.995e-05,
+   "latencia_ms": 5317.5,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2554e-05,
+   "latencia_ms": 1543.64,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.9866e-05,
+   "latencia_ms": 1464.27,
+   "veredito": "aprovado",
+   "confianca": 0.96
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 0.0,
+   "latencia_ms": null,
+   "veredito": null,
+   "alcance_certo": false,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 3802.72,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 2531.92,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 997.73,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 1107.36,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.9992e-05,
+   "latencia_ms": 1307.69,
+   "veredito": "aprovado",
+   "confianca": 0.98
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1275.29,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 1.9866e-05,
+   "latencia_ms": 2602.95,
+   "veredito": "aprovado",
+   "confianca": 0.95
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.247e-05,
+   "latencia_ms": 2266.11,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "direta",
+   "custo_usd": 2.0076e-05,
+   "latencia_ms": 4075.35,
+   "veredito": "aprovado",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-certa",
+   "gold": "aprovado",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 1102.08,
+   "veredito": "aprovado",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 1055.35,
+   "veredito": "defeito",
+   "confianca": 0.98
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2554e-05,
+   "latencia_ms": 1077.5,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 1076.64,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2554e-05,
+   "latencia_ms": 10370.07,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1637.24,
+   "veredito": "defeito",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 2736.0,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1067.2,
+   "veredito": "defeito",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 1343.57,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0076e-05,
+   "latencia_ms": 1606.12,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1041.85,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0034e-05,
+   "latencia_ms": 1058.08,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2554e-05,
+   "latencia_ms": 1657.76,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1098.36,
+   "veredito": "defeito",
+   "confianca": 0.99
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 1664.85,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 1.9908e-05,
+   "latencia_ms": 1955.84,
+   "veredito": "defeito",
+   "confianca": 0.98
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2428e-05,
+   "latencia_ms": 1133.85,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0076e-05,
+   "latencia_ms": 1170.59,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 5097.25,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 1.9992e-05,
+   "latencia_ms": 1140.16,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2512e-05,
+   "latencia_ms": 1979.74,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1144.3,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 1115.01,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 1.9992e-05,
+   "latencia_ms": 1129.97,
+   "veredito": "defeito",
+   "confianca": 1.0
+  },
+  {
+   "tipo": "completa-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2512e-05,
+   "latencia_ms": 1405.4,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0286e-05,
+   "latencia_ms": 1099.97,
+   "veredito": "inconclusiva",
+   "confianca": 0.63
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2806e-05,
+   "latencia_ms": 1662.36,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 1366.58,
+   "veredito": "inconclusiva",
+   "confianca": 0.24
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 1071.0,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 3142.11,
+   "veredito": "inconclusiva",
+   "confianca": 0.33
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 3693.06,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0202e-05,
+   "latencia_ms": 1139.1,
+   "veredito": "inconclusiva",
+   "confianca": 0.4
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 1427.72,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 2287.74,
+   "veredito": "inconclusiva",
+   "confianca": 0.42
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 1160.27,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 1167.17,
+   "veredito": "inconclusiva",
+   "confianca": 0.43
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 10413.14,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 1951.7,
+   "veredito": "defeito",
+   "confianca": 0.35
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 2092.19,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 1544.45,
+   "veredito": "inconclusiva",
+   "confianca": 0.56
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 983.67,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0328e-05,
+   "latencia_ms": 960.38,
+   "veredito": "inconclusiva",
+   "confianca": 0.32
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2848e-05,
+   "latencia_ms": 2370.53,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 2100.6,
+   "veredito": "defeito",
+   "confianca": 0.31
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 1852.41,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0202e-05,
+   "latencia_ms": 1131.36,
+   "veredito": "inconclusiva",
+   "confianca": 0.69
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 3229.93,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 1161.78,
+   "veredito": "inconclusiva",
+   "confianca": 0.53
+  },
+  {
+   "tipo": "parcial-coerente",
+   "gold": "inconclusiva",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2764e-05,
+   "latencia_ms": 1050.78,
+   "veredito": "inconclusiva",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 1054.92,
+   "veredito": "defeito",
+   "confianca": 0.83
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1052.09,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 2391.2,
+   "veredito": "defeito",
+   "confianca": 0.82
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1575.28,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1018.88,
+   "veredito": "defeito",
+   "confianca": 0.85
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 1026.88,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 2055.13,
+   "veredito": "defeito",
+   "confianca": 0.8
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1052.54,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0244e-05,
+   "latencia_ms": 2042.23,
+   "veredito": "defeito",
+   "confianca": 0.76
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2722e-05,
+   "latencia_ms": 3922.38,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0202e-05,
+   "latencia_ms": 1009.49,
+   "veredito": "defeito",
+   "confianca": 0.74
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 3953.83,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0202e-05,
+   "latencia_ms": 990.45,
+   "veredito": "defeito",
+   "confianca": 0.78
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 2355.91,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 1053.23,
+   "veredito": "defeito",
+   "confianca": 0.77
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1070.16,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0118e-05,
+   "latencia_ms": 2685.51,
+   "veredito": "defeito",
+   "confianca": 0.76
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2596e-05,
+   "latencia_ms": 1119.88,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.0202e-05,
+   "latencia_ms": 1871.56,
+   "veredito": "defeito",
+   "confianca": 0.8
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.268e-05,
+   "latencia_ms": 1060.97,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 1008.23,
+   "veredito": "defeito",
+   "confianca": 0.81
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 1199.88,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "direta",
+   "custo_usd": 2.016e-05,
+   "latencia_ms": 931.42,
+   "veredito": "defeito",
+   "confianca": 0.76
+  },
+  {
+   "tipo": "parcial-ja-errada",
+   "gold": "defeito",
+   "arranjo": "decomposta",
+   "custo_usd": 2.2638e-05,
+   "latencia_ms": 969.9,
+   "veredito": "defeito",
+   "alcance_certo": true,
+   "contraria_certo": true
+  }
+ ]
+}

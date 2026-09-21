@@ -22,7 +22,7 @@
    "id": ".",
    "finalidade": "Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex.",
    "pagina": "mapa/pastas/_raiz.md",
-   "arquivos": 369
+   "arquivos": 374
   },
   {
    "id": ".reticle",
@@ -64,7 +64,7 @@
    "id": "hermes",
    "finalidade": "",
    "pagina": "mapa/pastas/hermes.md",
-   "arquivos": 26
+   "arquivos": 27
   },
   {
    "id": "hermes/infra",
@@ -76,7 +76,7 @@
    "id": "hermes/jev_hermes",
    "finalidade": "",
    "pagina": "mapa/pastas/hermes__jev_hermes.md",
-   "arquivos": 6
+   "arquivos": 7
   },
   {
    "id": "hermes/plugin",
@@ -130,7 +130,7 @@
    "id": "integracao",
    "finalidade": "O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex.",
    "pagina": "mapa/pastas/integracao.md",
-   "arquivos": 48
+   "arquivos": 50
   },
   {
    "id": "integracao/avaliacao",
@@ -142,7 +142,13 @@
    "id": "integracao/camadas",
    "finalidade": "As camadas que decidem o que entra no contexto do modelo caro: leitura, busca, sentinela, saída, verificação, `ler` (skill /jev-ler), medição e rotina.",
    "pagina": "mapa/pastas/integracao__camadas.md",
-   "arquivos": 10
+   "arquivos": 12
+  },
+  {
+   "id": "integracao/camadas/listas",
+   "finalidade": "",
+   "pagina": "mapa/pastas/integracao__camadas__listas.md",
+   "arquivos": 1
   },
   {
    "id": "integracao/hooks",
@@ -184,7 +190,7 @@
    "id": "laboratorio",
    "finalidade": "Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites.",
    "pagina": "mapa/pastas/laboratorio.md",
-   "arquivos": 130
+   "arquivos": 132
   },
   {
    "id": "laboratorio/h100",
@@ -381,8 +387,8 @@
    "id": "README.md",
    "pasta": ".",
    "tipo": "doc",
-   "bytes": 10058,
-   "linhas": 116,
+   "bytes": 10827,
+   "linhas": 126,
    "descricao": "JEV — Projeto experimental para testes com o modelo de classificação JEV.",
    "simbolos": []
   },
@@ -462,7 +468,7 @@
    "id": "docs/CAMADAS-CLAUDE-CODE.md",
    "pasta": "docs",
    "tipo": "doc",
-   "bytes": 5979,
+   "bytes": 6118,
    "linhas": 134,
    "descricao": "O Jev em camadas no Claude Code — medição — *Página gerada por `integracao/camadas/medir.py --gravar`; não edite à mão. Os números saem",
    "simbolos": []
@@ -498,8 +504,8 @@
    "id": "docs/ESSENCIA-DO-JEV.md",
    "pasta": "docs",
    "tipo": "doc",
-   "bytes": 22379,
-   "linhas": 242,
+   "bytes": 27364,
+   "linhas": 272,
    "descricao": "A essência do Jev — o que ele é, o que descobri relendo tudo e o que 18 rodadas novas mostraram — *Escrito em 2026-09-21 por Claude (Fable 5.1), a pedido do Ig…",
    "simbolos": []
   },
@@ -1678,7 +1684,7 @@
    "id": "hermes/README.md",
    "pasta": "hermes",
    "tipo": "doc",
-   "bytes": 5870,
+   "bytes": 5964,
    "linhas": 78,
    "descricao": "O Jev no Hermes da VPS — Implantado em 21/09/2026. Fonte versionada aqui; cópia viva na VPS (`ssh hermes`). Regra de",
    "simbolos": []
@@ -1776,6 +1782,24 @@
     "resumo_das_chamadas:451",
     "escolha:465",
     "dec:470"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py",
+   "pasta": "hermes/jev_hermes",
+   "tipo": "código",
+   "bytes": 9781,
+   "linhas": 200,
+   "descricao": "Pendências do WhatsApp pessoal de Igor, decididas pelo Jev. Sem modelo principal.",
+   "simbolos": [
+    "canal_do_hermes:72",
+    "_conectar:82",
+    "_linha:88",
+    "_nome:94",
+    "_conversas:104",
+    "esperando_igor:120",
+    "promessas_abertas:148",
+    "main:190"
    ]
   },
   {
@@ -1990,13 +2014,14 @@
    "id": "hermes/rotinas/jev_rotina_painel_manha.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 5769,
-   "linhas": 110,
+   "bytes": 7160,
+   "linhas": 136,
    "descricao": "Painel da manhã, às 7h: uma prioridade, o próximo gesto e a agenda. Sem modelo principal.",
    "simbolos": [
     "compromissos:34",
     "demandas:51",
-    "main:66"
+    "whatsapp:72",
+    "main:88"
    ]
   },
   {
@@ -2014,8 +2039,8 @@
    "id": "hermes/skill/jev/SKILL.md",
    "pasta": "hermes/skill/jev",
    "tipo": "doc",
-   "bytes": 5749,
-   "linhas": 102,
+   "bytes": 6216,
+   "linhas": 110,
    "descricao": "Jev no Hermes — name: jev",
    "simbolos": []
   },
@@ -2023,8 +2048,8 @@
    "id": "hermes/tests/test_jev_hermes.py",
    "pasta": "hermes/tests",
    "tipo": "código",
-   "bytes": 11430,
-   "linhas": 243,
+   "bytes": 12900,
+   "linhas": 268,
    "descricao": "Testes offline do Jev no Hermes: transporte simulado, diretório temporário, nenhuma chamada paga.",
    "simbolos": [
     "jev:20",
@@ -2047,7 +2072,8 @@
     "test_ponte_traduz_chat_para_decisao:185",
     "test_recorte_mantem_essenciais_com_vizinhas_e_pontas:216",
     "test_recorte_deixa_inteira_saida_que_termina_em_falha:230",
-    "test_tema_de_pesquisa_sugere_delegar:237"
+    "test_tema_de_pesquisa_sugere_delegar:237",
+    "test_pendencias_acha_quem_espera_e_ignora_social:246"
    ]
   },
   {
@@ -2102,8 +2128,8 @@
    "id": "integracao/avaliacao/camadas-medicao.json",
    "pasta": "integracao/avaliacao",
    "tipo": "dado",
-   "bytes": 2550,
-   "linhas": 122,
+   "bytes": 2715,
+   "linhas": 125,
    "descricao": "Objeto com 10 chaves: leitura, busca, sentinela, ler, saida, verificar, roteador, guarda, parametros, total",
    "simbolos": []
   },
@@ -2274,6 +2300,24 @@
    ]
   },
   {
+   "id": "integracao/camadas/checklist.py",
+   "pasta": "integracao/camadas",
+   "tipo": "código",
+   "bytes": 10717,
+   "linhas": 200,
+   "descricao": "Checklist: um documento, uma lista fixa de perguntas, um semáforo por item — numa chamada só.",
+   "simbolos": [
+    "carregar_lista:49",
+    "validar_lista:58",
+    "perguntas_da:92",
+    "ler_item:107",
+    "probabilidade_valida:127",
+    "semaforo:131",
+    "auditar:141",
+    "main:168"
+   ]
+  },
+  {
    "id": "integracao/camadas/leitura.py",
    "pasta": "integracao/camadas",
    "tipo": "código",
@@ -2299,6 +2343,15 @@
     "imprimir:136",
     "main:163"
    ]
+  },
+  {
+   "id": "integracao/camadas/listas/contrato-prestacao-de-servicos.json",
+   "pasta": "integracao/camadas/listas",
+   "tipo": "dado",
+   "bytes": 3210,
+   "linhas": 39,
+   "descricao": "Objeto com 3 chaves: nome, parte, itens",
+   "simbolos": []
   },
   {
    "id": "integracao/camadas/medir.py",
@@ -2970,8 +3023,8 @@
    "id": "laboratorio/PREREGISTRO.md",
    "pasta": "laboratorio",
    "tipo": "doc",
-   "bytes": 68416,
-   "linhas": 1210,
+   "bytes": 69833,
+   "linhas": 1241,
    "descricao": "Programa E14 — exploração sistemática das capacidades do Jev — *Pré-registro vivo. Cada rodada é escrita aqui **antes** de rodar, com hipótese, medida e",
    "simbolos": []
   },
@@ -4612,6 +4665,23 @@
    ]
   },
   {
+   "id": "laboratorio/r46_r49_pontos_do_video.py",
+   "pasta": "laboratorio",
+   "tipo": "código",
+   "bytes": 18909,
+   "linhas": 301,
+   "descricao": "R46 a R49 — quatro pontos levantados por uma avaliação externa do Jev, refeitos com o método da casa.",
+   "simbolos": [
+    "casos_r46:75",
+    "rodar_r46:88",
+    "casos_r47:140",
+    "rodar_r47:165",
+    "rodar_r48:207",
+    "rodar_r49:258",
+    "main:290"
+   ]
+  },
+  {
    "id": "laboratorio/r4_r7_limites.py",
    "pasta": "laboratorio",
    "tipo": "código",
@@ -4627,6 +4697,18 @@
     "executar:196",
     "acuracia:207",
     "main:220"
+   ]
+  },
+  {
+   "id": "laboratorio/r50_checklist_de_contrato.py",
+   "pasta": "laboratorio",
+   "tipo": "código",
+   "bytes": 10627,
+   "linhas": 151,
+   "descricao": "R50 — o checklist de contrato: uma chamada com oito perguntas contra oito chamadas de uma.",
+   "simbolos": [
+    "montar_contratos:77",
+    "main:93"
    ]
   },
   {
@@ -4967,8 +5049,8 @@
    "id": "research/FONTES.md",
    "pasta": "research",
    "tipo": "doc",
-   "bytes": 21943,
-   "linhas": 272,
+   "bytes": 23367,
+   "linhas": 285,
    "descricao": "Fontes e revisões — triagem JEV — Coleta: 18/09/2026. As 18 cópias foram obtidas por Git, sem instalar dependências ou executar código dos projetos. O manifest…",
    "simbolos": []
   },
@@ -5499,15 +5581,15 @@
   {
    "id": "T04",
    "tipo": "tema",
-   "titulo": "sentinela, payload, sanitizador",
+   "titulo": "sentinela, sanitizador, ordem",
    "pagina": "mapa/conhecimento/temas.md",
    "definido_em": [],
    "atributos": {
     "termos": [
      "sentinela",
-     "payload",
      "sanitizador",
-     "ordem"
+     "ordem",
+     "direta"
     ],
     "vereditos": {
      "sustentada": 1
@@ -5608,7 +5690,7 @@
      "canário",
      "corrida",
      "vazia",
-     "publicada"
+     "monitoramento"
     ],
     "vereditos": {
      "sustentada": 1
@@ -5852,7 +5934,7 @@
     },
     "confianca_das_respostas": {},
     "contrastes": [
-     "H012 × H031 (0.32)",
+     "H012 × H031 (0.31)",
      "H011 × H012 (0.23)"
     ]
    }
@@ -8165,6 +8247,136 @@
     },
     {
      "arquivo": "laboratorio/r45_lista_nas_duas_ordens.py",
+     "linha": null,
+     "papel": "executa"
+    }
+   ]
+  },
+  {
+   "id": "R46",
+   "tipo": "rodada",
+   "titulo": "conta embutida na leitura",
+   "pagina": "mapa/conhecimento/rodadas.md",
+   "atributos": {
+    "secoes": [
+     {
+      "linha": 1219,
+      "titulo": "conta embutida na leitura"
+     }
+    ]
+   },
+   "definido_em": [
+    {
+     "arquivo": "laboratorio/PREREGISTRO.md",
+     "linha": 1219,
+     "papel": "pré-registra"
+    },
+    {
+     "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+     "linha": null,
+     "papel": "executa"
+    }
+   ]
+  },
+  {
+   "id": "R47",
+   "tipo": "rodada",
+   "titulo": "o fiscal diante de evidência incompleta",
+   "pagina": "mapa/conhecimento/rodadas.md",
+   "atributos": {
+    "secoes": [
+     {
+      "linha": 1224,
+      "titulo": "o fiscal diante de evidência incompleta"
+     }
+    ]
+   },
+   "definido_em": [
+    {
+     "arquivo": "laboratorio/PREREGISTRO.md",
+     "linha": 1224,
+     "papel": "pré-registra"
+    },
+    {
+     "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+     "linha": null,
+     "papel": "executa"
+    }
+   ]
+  },
+  {
+   "id": "R48",
+   "tipo": "rodada",
+   "titulo": "Banking77, a primeira referência pública",
+   "pagina": "mapa/conhecimento/rodadas.md",
+   "atributos": {
+    "secoes": [
+     {
+      "linha": 1229,
+      "titulo": "Banking77, a primeira referência pública"
+     }
+    ]
+   },
+   "definido_em": [
+    {
+     "arquivo": "laboratorio/PREREGISTRO.md",
+     "linha": 1229,
+     "papel": "pré-registra"
+    },
+    {
+     "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+     "linha": null,
+     "papel": "executa"
+    }
+   ]
+  },
+  {
+   "id": "R49",
+   "tipo": "rodada",
+   "titulo": "64 perguntas no mesmo payload",
+   "pagina": "mapa/conhecimento/rodadas.md",
+   "atributos": {
+    "secoes": [
+     {
+      "linha": 1234,
+      "titulo": "64 perguntas no mesmo payload"
+     }
+    ]
+   },
+   "definido_em": [
+    {
+     "arquivo": "laboratorio/PREREGISTRO.md",
+     "linha": 1234,
+     "papel": "pré-registra"
+    },
+    {
+     "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+     "linha": null,
+     "papel": "executa"
+    }
+   ]
+  },
+  {
+   "id": "R50",
+   "tipo": "rodada",
+   "titulo": "o checklist de contrato",
+   "pagina": "mapa/conhecimento/rodadas.md",
+   "atributos": {
+    "secoes": [
+     {
+      "linha": 1238,
+      "titulo": "o checklist de contrato"
+     }
+    ]
+   },
+   "definido_em": [
+    {
+     "arquivo": "laboratorio/PREREGISTRO.md",
+     "linha": 1238,
+     "papel": "pré-registra"
+    },
+    {
+     "arquivo": "laboratorio/r50_checklist_de_contrato.py",
      "linha": null,
      "papel": "executa"
     }
@@ -12400,7 +12612,7 @@
    "pagina": "mapa/conhecimento/perguntas.md",
    "atributos": {
     "familia": "B · Unidade econômica",
-    "resposta": "266 tentativas de 24.523 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.",
+    "resposta": "266 tentativas de 24.533 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.",
     "fonte_da_resposta": "dado medido",
     "confianca": "alta",
     "decide": "Decide quanto reservar de folga no próximo programa."
@@ -13800,7 +14012,7 @@
    "pagina": "mapa/conhecimento/perguntas.md",
    "atributos": {
     "familia": "H · Operação e manutenção",
-    "resposta": "**1,1%** das 24.523 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.",
+    "resposta": "**1,1%** das 24.533 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.",
     "fonte_da_resposta": "dado medido",
     "confianca": "alta",
     "decide": "Decide o desenho da repescagem."
@@ -17967,6 +18179,7 @@
    "linha": 433,
    "usado_por": [
     "hermes/jev_hermes/camadas.py",
+    "hermes/jev_hermes/pendencias.py",
     "hermes/portoes/jev_gate_email_diario.py",
     "hermes/portoes/jev_gate_radar_ia.py",
     "hermes/portoes/jev_gate_sono_memoria.py",
@@ -17983,6 +18196,7 @@
    "linha": 451,
    "usado_por": [
     "hermes/jev_hermes/camadas.py",
+    "hermes/jev_hermes/pendencias.py",
     "hermes/portoes/jev_gate_email_diario.py",
     "hermes/portoes/jev_gate_radar_ia.py",
     "hermes/portoes/jev_gate_sono_memoria.py",
@@ -17999,6 +18213,7 @@
    "linha": 465,
    "usado_por": [
     "hermes/jev_hermes/camadas.py",
+    "hermes/jev_hermes/pendencias.py",
     "hermes/portoes/jev_fabio_urgent_watch.py",
     "hermes/portoes/jev_gate_arcano_email.py",
     "hermes/portoes/jev_gate_email_diario.py",
@@ -18023,6 +18238,75 @@
     "hermes/portoes/jev_gate_fabio_whatsapp.py",
     "hermes/portoes/jev_gate_sono_memoria.py"
    ]
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::canal_do_hermes",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "canal_do_hermes",
+   "tipo": "função",
+   "linha": 72,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::_conectar",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "_conectar",
+   "tipo": "função",
+   "linha": 82,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::_linha",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "_linha",
+   "tipo": "função",
+   "linha": 88,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::_nome",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "_nome",
+   "tipo": "função",
+   "linha": 94,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::_conversas",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "_conversas",
+   "tipo": "função",
+   "linha": 104,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::esperando_igor",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "esperando_igor",
+   "tipo": "função",
+   "linha": 120,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_painel_manha.py",
+    "hermes/tests/test_jev_hermes.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::promessas_abertas",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "promessas_abertas",
+   "tipo": "função",
+   "linha": 148,
+   "usado_por": [
+    "hermes/rotinas/jev_rotina_painel_manha.py"
+   ]
+  },
+  {
+   "id": "hermes/jev_hermes/pendencias.py::main",
+   "arquivo": "hermes/jev_hermes/pendencias.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 190,
+   "usado_por": []
   },
   {
    "id": "hermes/jev_hermes/ponte_openai.py::texto_da_mensagem",
@@ -18456,11 +18740,19 @@
    "usado_por": []
   },
   {
+   "id": "hermes/rotinas/jev_rotina_painel_manha.py::whatsapp",
+   "arquivo": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "nome": "whatsapp",
+   "tipo": "função",
+   "linha": 72,
+   "usado_por": []
+  },
+  {
    "id": "hermes/rotinas/jev_rotina_painel_manha.py::main",
    "arquivo": "hermes/rotinas/jev_rotina_painel_manha.py",
    "nome": "main",
    "tipo": "função",
-   "linha": 66,
+   "linha": 88,
    "usado_por": []
   },
   {
@@ -18637,6 +18929,14 @@
    "nome": "test_tema_de_pesquisa_sugere_delegar",
    "tipo": "função",
    "linha": 237,
+   "usado_por": []
+  },
+  {
+   "id": "hermes/tests/test_jev_hermes.py::test_pendencias_acha_quem_espera_e_ignora_social",
+   "arquivo": "hermes/tests/test_jev_hermes.py",
+   "nome": "test_pendencias_acha_quem_espera_e_ignora_social",
+   "tipo": "função",
+   "linha": 246,
    "usado_por": []
   },
   {
@@ -18928,6 +19228,78 @@
    ]
   },
   {
+   "id": "integracao/camadas/checklist.py::carregar_lista",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "carregar_lista",
+   "tipo": "função",
+   "linha": 49,
+   "usado_por": [
+    "laboratorio/r50_checklist_de_contrato.py"
+   ]
+  },
+  {
+   "id": "integracao/camadas/checklist.py::validar_lista",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "validar_lista",
+   "tipo": "função",
+   "linha": 58,
+   "usado_por": []
+  },
+  {
+   "id": "integracao/camadas/checklist.py::perguntas_da",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "perguntas_da",
+   "tipo": "função",
+   "linha": 92,
+   "usado_por": [
+    "laboratorio/r50_checklist_de_contrato.py"
+   ]
+  },
+  {
+   "id": "integracao/camadas/checklist.py::ler_item",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "ler_item",
+   "tipo": "função",
+   "linha": 107,
+   "usado_por": [
+    "laboratorio/r50_checklist_de_contrato.py"
+   ]
+  },
+  {
+   "id": "integracao/camadas/checklist.py::probabilidade_valida",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "probabilidade_valida",
+   "tipo": "função",
+   "linha": 127,
+   "usado_por": []
+  },
+  {
+   "id": "integracao/camadas/checklist.py::semaforo",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "semaforo",
+   "tipo": "função",
+   "linha": 131,
+   "usado_por": [
+    "laboratorio/r50_checklist_de_contrato.py"
+   ]
+  },
+  {
+   "id": "integracao/camadas/checklist.py::auditar",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "auditar",
+   "tipo": "função",
+   "linha": 141,
+   "usado_por": []
+  },
+  {
+   "id": "integracao/camadas/checklist.py::main",
+   "arquivo": "integracao/camadas/checklist.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 168,
+   "usado_por": []
+  },
+  {
    "id": "integracao/camadas/leitura.py::analisar",
    "arquivo": "integracao/camadas/leitura.py",
    "nome": "analisar",
@@ -19139,6 +19511,7 @@
    "tipo": "função",
    "linha": 79,
    "usado_por": [
+    "integracao/camadas/checklist.py",
     "integracao/camadas/ler.py",
     "integracao/camadas/verificar.py",
     "integracao/hooks/jev_busca.py",
@@ -19168,6 +19541,7 @@
    "tipo": "função",
    "linha": 95,
    "usado_por": [
+    "integracao/camadas/checklist.py",
     "integracao/camadas/ler.py",
     "integracao/camadas/saida.py",
     "integracao/camadas/sentinela.py",
@@ -19223,6 +19597,7 @@
    "linha": 176,
    "usado_por": [
     "integracao/camadas/busca.py",
+    "integracao/camadas/checklist.py",
     "integracao/camadas/leitura.py",
     "integracao/camadas/ler.py",
     "integracao/camadas/saida.py",
@@ -19238,6 +19613,7 @@
    "linha": 198,
    "usado_por": [
     "integracao/camadas/busca.py",
+    "integracao/camadas/checklist.py",
     "integracao/camadas/leitura.py",
     "integracao/camadas/ler.py",
     "integracao/camadas/saida.py",
@@ -22592,7 +22968,9 @@
     "laboratorio/r38_r41_terceira_leva.py",
     "laboratorio/r42_r44_quarta_leva.py",
     "laboratorio/r45_lista_nas_duas_ordens.py",
+    "laboratorio/r46_r49_pontos_do_video.py",
     "laboratorio/r4_r7_limites.py",
+    "laboratorio/r50_checklist_de_contrato.py",
     "laboratorio/r8_r9_adversarial.py"
    ]
   },
@@ -24722,7 +25100,9 @@
    "linha": 89,
    "usado_por": [
     "laboratorio/r38_r41_terceira_leva.py",
-    "laboratorio/r42_r44_quarta_leva.py"
+    "laboratorio/r42_r44_quarta_leva.py",
+    "laboratorio/r46_r49_pontos_do_video.py",
+    "laboratorio/r50_checklist_de_contrato.py"
    ]
   },
   {
@@ -24734,7 +25114,9 @@
    "usado_por": [
     "laboratorio/r38_r41_terceira_leva.py",
     "laboratorio/r42_r44_quarta_leva.py",
-    "laboratorio/r45_lista_nas_duas_ordens.py"
+    "laboratorio/r45_lista_nas_duas_ordens.py",
+    "laboratorio/r46_r49_pontos_do_video.py",
+    "laboratorio/r50_checklist_de_contrato.py"
    ]
   },
   {
@@ -24746,7 +25128,9 @@
    "usado_por": [
     "laboratorio/r38_r41_terceira_leva.py",
     "laboratorio/r42_r44_quarta_leva.py",
-    "laboratorio/r45_lista_nas_duas_ordens.py"
+    "laboratorio/r45_lista_nas_duas_ordens.py",
+    "laboratorio/r46_r49_pontos_do_video.py",
+    "laboratorio/r50_checklist_de_contrato.py"
    ]
   },
   {
@@ -24758,7 +25142,9 @@
    "usado_por": [
     "laboratorio/r38_r41_terceira_leva.py",
     "laboratorio/r42_r44_quarta_leva.py",
-    "laboratorio/r45_lista_nas_duas_ordens.py"
+    "laboratorio/r45_lista_nas_duas_ordens.py",
+    "laboratorio/r46_r49_pontos_do_video.py",
+    "laboratorio/r50_checklist_de_contrato.py"
    ]
   },
   {
@@ -24960,6 +25346,62 @@
    "usado_por": []
   },
   {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::casos_r46",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "casos_r46",
+   "tipo": "função",
+   "linha": 75,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::rodar_r46",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "rodar_r46",
+   "tipo": "função",
+   "linha": 88,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::casos_r47",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "casos_r47",
+   "tipo": "função",
+   "linha": 140,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::rodar_r47",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "rodar_r47",
+   "tipo": "função",
+   "linha": 165,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::rodar_r48",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "rodar_r48",
+   "tipo": "função",
+   "linha": 207,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::rodar_r49",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "rodar_r49",
+   "tipo": "função",
+   "linha": 258,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r46_r49_pontos_do_video.py::main",
+   "arquivo": "laboratorio/r46_r49_pontos_do_video.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 290,
+   "usado_por": []
+  },
+  {
    "id": "laboratorio/r4_r7_limites.py::criterios_com",
    "arquivo": "laboratorio/r4_r7_limites.py",
    "nome": "criterios_com",
@@ -25021,6 +25463,22 @@
    "nome": "main",
    "tipo": "função",
    "linha": 220,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r50_checklist_de_contrato.py::montar_contratos",
+   "arquivo": "laboratorio/r50_checklist_de_contrato.py",
+   "nome": "montar_contratos",
+   "tipo": "função",
+   "linha": 77,
+   "usado_por": []
+  },
+  {
+   "id": "laboratorio/r50_checklist_de_contrato.py::main",
+   "arquivo": "laboratorio/r50_checklist_de_contrato.py",
+   "nome": "main",
+   "tipo": "função",
+   "linha": 93,
    "usado_por": []
   },
   {
@@ -25953,6 +26411,16 @@
   },
   {
    "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "integracao/camadas/checklist.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "integracao/camadas/listas/contrato-prestacao-de-servicos.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
    "para": "laboratorio/q100/respostas.py",
    "tipo": "cita"
   },
@@ -25989,6 +26457,16 @@
   {
    "de": "docs/ESSENCIA-DO-JEV.md",
    "para": "laboratorio/r45_lista_nas_duas_ordens.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "laboratorio/r46_r49_pontos_do_video.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "laboratorio/r50_checklist_de_contrato.py",
    "tipo": "cita"
   },
   {
@@ -27402,6 +27880,16 @@
    "tipo": "cita"
   },
   {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/jev_hermes/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
    "de": "hermes/jev_hermes/ponte_openai.py",
    "para": "hermes/jev_hermes/__init__.py",
    "tipo": "importa"
@@ -27563,6 +28051,11 @@
   },
   {
    "de": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "para": "hermes/jev_hermes/pendencias.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_painel_manha.py",
    "para": "hermes/jev_hermes/portao.py",
    "tipo": "importa"
   },
@@ -27589,6 +28082,11 @@
   {
    "de": "hermes/tests/test_jev_hermes.py",
    "para": "hermes/jev_hermes/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/pendencias.py",
    "tipo": "importa"
   },
   {
@@ -27763,6 +28261,16 @@
   },
   {
    "de": "integracao/camadas/busca.py",
+   "para": "integracao/camadas/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "integracao/camadas/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
    "para": "integracao/camadas/nucleo.py",
    "tipo": "importa"
   },
@@ -28774,6 +29282,16 @@
   {
    "de": "laboratorio/PREREGISTRO.md",
    "para": "laboratorio/r45_lista_nas_duas_ordens.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "laboratorio/r46_r49_pontos_do_video.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "laboratorio/r50_checklist_de_contrato.py",
    "tipo": "cita"
   },
   {
@@ -35442,6 +35960,16 @@
    "tipo": "importa"
   },
   {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py",
+   "tipo": "importa"
+  },
+  {
    "de": "laboratorio/r4_r7_limites.py",
    "para": "data/corpus/triagem-replicacao.jsonl",
    "tipo": "cita"
@@ -35465,6 +35993,26 @@
    "de": "laboratorio/r4_r7_limites.py",
    "para": "laboratorio/r4-r7-limites.json",
    "tipo": "cita"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/__init__.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/checklist.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/nucleo.py",
+   "tipo": "importa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py",
+   "tipo": "importa"
   },
   {
    "de": "laboratorio/r8_r9_adversarial.py",
@@ -35990,7 +36538,7 @@
    "de": "AGENTS.md",
    "para": "E13",
    "tipo": "semelhante",
-   "peso": 0.213,
+   "peso": 0.209,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -35998,7 +36546,7 @@
    "de": "AGENTS.md",
    "para": "R17",
    "tipo": "semelhante",
-   "peso": 0.226,
+   "peso": 0.227,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -36006,7 +36554,7 @@
    "de": "AGENTS.md",
    "para": "laboratorio/r27_integracao.py",
    "tipo": "semelhante",
-   "peso": 0.21,
+   "peso": 0.207,
    "relacao": "complementares",
    "confianca": 0.9
   },
@@ -36022,7 +36570,7 @@
    "de": "E1",
    "para": "Q061",
    "tipo": "semelhante",
-   "peso": 0.255,
+   "peso": 0.256,
    "relacao": "mesmo-assunto",
    "confianca": 0.52
   },
@@ -36054,7 +36602,7 @@
    "de": "E10",
    "para": "E11",
    "tipo": "semelhante",
-   "peso": 0.242,
+   "peso": 0.244,
    "relacao": "complementares",
    "confianca": 0.84
   },
@@ -36062,7 +36610,7 @@
    "de": "E10b",
    "para": "E12",
    "tipo": "semelhante",
-   "peso": 0.341,
+   "peso": 0.342,
    "relacao": "mesmo-assunto",
    "confianca": 0.35
   },
@@ -36078,7 +36626,7 @@
    "de": "E10b",
    "para": "integracao/avaliacao/rodar.py",
    "tipo": "semelhante",
-   "peso": 0.233,
+   "peso": 0.234,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -36086,7 +36634,7 @@
    "de": "E11",
    "para": "E12",
    "tipo": "semelhante",
-   "peso": 0.25,
+   "peso": 0.251,
    "relacao": "mesmo-assunto",
    "confianca": 0.61
   },
@@ -36094,7 +36642,7 @@
    "de": "E11",
    "para": "E9",
    "tipo": "semelhante",
-   "peso": 0.277,
+   "peso": 0.278,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -36118,7 +36666,7 @@
    "de": "E12",
    "para": "executor/run_e10b_piloto.py",
    "tipo": "semelhante",
-   "peso": 0.275,
+   "peso": 0.277,
    "relacao": "mesmo-assunto",
    "confianca": 0.43
   },
@@ -36126,7 +36674,7 @@
    "de": "E12",
    "para": "integracao/avaliacao/rodar.py",
    "tipo": "semelhante",
-   "peso": 0.244,
+   "peso": 0.245,
    "relacao": "complementares",
    "confianca": 0.7
   },
@@ -36134,7 +36682,7 @@
    "de": "E13",
    "para": "Q005",
    "tipo": "semelhante",
-   "peso": 0.214,
+   "peso": 0.21,
    "relacao": "complementares",
    "confianca": 0.82
   },
@@ -36142,7 +36690,7 @@
    "de": "E13",
    "para": "integracao/avaliacao/rodar.py",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.251,
    "relacao": "complementares",
    "confianca": 0.38
   },
@@ -36174,7 +36722,7 @@
    "de": "E2",
    "para": "R2",
    "tipo": "semelhante",
-   "peso": 0.242,
+   "peso": 0.243,
    "relacao": "complementares",
    "confianca": 0.43
   },
@@ -36190,7 +36738,7 @@
    "de": "E2b",
    "para": "Q028",
    "tipo": "semelhante",
-   "peso": 0.243,
+   "peso": 0.244,
    "relacao": "mesmo-assunto",
    "confianca": 0.57
   },
@@ -36198,7 +36746,7 @@
    "de": "E3",
    "para": "laboratorio/gerar_dossie.py",
    "tipo": "semelhante",
-   "peso": 0.318,
+   "peso": 0.312,
    "relacao": "complementares",
    "confianca": 0.83
   },
@@ -36214,7 +36762,7 @@
    "de": "E4",
    "para": "H056",
    "tipo": "semelhante",
-   "peso": 0.223,
+   "peso": 0.224,
    "relacao": "complementares",
    "confianca": 0.51
   },
@@ -36222,7 +36770,7 @@
    "de": "E4",
    "para": "H060",
    "tipo": "semelhante",
-   "peso": 0.202,
+   "peso": 0.201,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -36230,7 +36778,7 @@
    "de": "E4",
    "para": "integracao/camadas/verificar.py",
    "tipo": "semelhante",
-   "peso": 0.213,
+   "peso": 0.214,
    "relacao": "complementares",
    "confianca": 0.33
   },
@@ -36262,7 +36810,7 @@
    "de": "E9",
    "para": "H027",
    "tipo": "semelhante",
-   "peso": 0.233,
+   "peso": 0.235,
    "relacao": "complementares",
    "confianca": 0.51
   },
@@ -36270,7 +36818,7 @@
    "de": "H001",
    "para": "H004",
    "tipo": "semelhante",
-   "peso": 0.316,
+   "peso": 0.317,
    "relacao": "complementares",
    "confianca": 0.62
   },
@@ -36278,7 +36826,7 @@
    "de": "H001",
    "para": "H037",
    "tipo": "semelhante",
-   "peso": 0.471,
+   "peso": 0.472,
    "relacao": "complementares",
    "confianca": 0.62
   },
@@ -36294,7 +36842,7 @@
    "de": "H001",
    "para": "H040",
    "tipo": "semelhante",
-   "peso": 0.502,
+   "peso": 0.503,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -36310,7 +36858,7 @@
    "de": "H001",
    "para": "H045",
    "tipo": "semelhante",
-   "peso": 0.466,
+   "peso": 0.465,
    "relacao": "complementares",
    "confianca": 0.4
   },
@@ -36318,7 +36866,7 @@
    "de": "H001",
    "para": "H046",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.32,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -36326,7 +36874,7 @@
    "de": "H001",
    "para": "Q024",
    "tipo": "semelhante",
-   "peso": 0.212,
+   "peso": 0.213,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -36334,15 +36882,23 @@
    "de": "H001",
    "para": "R33",
    "tipo": "semelhante",
-   "peso": 0.262,
+   "peso": 0.257,
    "relacao": "complementares",
    "confianca": 0.74
+  },
+  {
+   "de": "H001",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.388,
+   "relacao": "complementares",
+   "confianca": 0.67
   },
   {
    "de": "H002",
    "para": "H003",
    "tipo": "semelhante",
-   "peso": 0.633,
+   "peso": 0.634,
    "relacao": "mesmo-assunto",
    "confianca": 0.33
   },
@@ -36350,15 +36906,23 @@
    "de": "H002",
    "para": "H004",
    "tipo": "semelhante",
-   "peso": 0.48,
+   "peso": 0.481,
    "relacao": "complementares",
    "confianca": 0.77
+  },
+  {
+   "de": "H002",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.286,
+   "relacao": "complementares",
+   "confianca": 0.44
   },
   {
    "de": "H003",
    "para": "H004",
    "tipo": "semelhante",
-   "peso": 0.528,
+   "peso": 0.529,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -36366,7 +36930,7 @@
    "de": "H003",
    "para": "H044",
    "tipo": "semelhante",
-   "peso": 0.216,
+   "peso": 0.217,
    "relacao": "mesmo-assunto",
    "confianca": 0.56
   },
@@ -36374,7 +36938,7 @@
    "de": "H003",
    "para": "Q018",
    "tipo": "semelhante",
-   "peso": 0.21,
+   "peso": 0.208,
    "relacao": "conflito",
    "confianca": 0.43
   },
@@ -36382,7 +36946,7 @@
    "de": "H004",
    "para": "H037",
    "tipo": "semelhante",
-   "peso": 0.297,
+   "peso": 0.298,
    "relacao": "complementares",
    "confianca": 0.59
   },
@@ -36406,7 +36970,7 @@
    "de": "H005",
    "para": "H068",
    "tipo": "semelhante",
-   "peso": 0.234,
+   "peso": 0.235,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -36430,7 +36994,7 @@
    "de": "H006",
    "para": "H034",
    "tipo": "semelhante",
-   "peso": 0.354,
+   "peso": 0.355,
    "relacao": "complementares",
    "confianca": 0.83
   },
@@ -36438,7 +37002,7 @@
    "de": "H006",
    "para": "H088",
    "tipo": "semelhante",
-   "peso": 0.554,
+   "peso": 0.555,
    "relacao": "complementares",
    "confianca": 0.36
   },
@@ -36454,7 +37018,7 @@
    "de": "H006",
    "para": "R6",
    "tipo": "semelhante",
-   "peso": 0.385,
+   "peso": 0.386,
    "relacao": "mesmo-assunto",
    "confianca": 0.68
   },
@@ -36470,7 +37034,7 @@
    "de": "H006",
    "para": "laboratorio/r1_r3_estresse.py",
    "tipo": "semelhante",
-   "peso": 0.315,
+   "peso": 0.317,
    "relacao": "complementares",
    "confianca": 0.76
   },
@@ -36478,7 +37042,7 @@
    "de": "H007",
    "para": "H008",
    "tipo": "semelhante",
-   "peso": 0.638,
+   "peso": 0.639,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -36486,7 +37050,7 @@
    "de": "H007",
    "para": "H010",
    "tipo": "semelhante",
-   "peso": 0.269,
+   "peso": 0.266,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -36494,7 +37058,7 @@
    "de": "H007",
    "para": "H099",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.248,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -36502,7 +37066,7 @@
    "de": "H007",
    "para": "laboratorio/r29_o_que_carrega_a_decisao.py",
    "tipo": "semelhante",
-   "peso": 0.256,
+   "peso": 0.258,
    "relacao": "mesmo-assunto",
    "confianca": 0.66
   },
@@ -36510,7 +37074,7 @@
    "de": "H008",
    "para": "H009",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.315,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -36518,7 +37082,7 @@
    "de": "H008",
    "para": "H010",
    "tipo": "semelhante",
-   "peso": 0.301,
+   "peso": 0.296,
    "relacao": "complementares",
    "confianca": 0.47
   },
@@ -36534,7 +37098,7 @@
    "de": "H008",
    "para": "H087",
    "tipo": "semelhante",
-   "peso": 0.258,
+   "peso": 0.255,
    "relacao": "complementares",
    "confianca": 0.33
   },
@@ -36542,7 +37106,7 @@
    "de": "H008",
    "para": "Q041",
    "tipo": "semelhante",
-   "peso": 0.209,
+   "peso": 0.21,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -36550,7 +37114,7 @@
    "de": "H008",
    "para": "Q083",
    "tipo": "semelhante",
-   "peso": 0.235,
+   "peso": 0.238,
    "relacao": "conflito",
    "confianca": 0.39
   },
@@ -36558,7 +37122,7 @@
    "de": "H009",
    "para": "H010",
    "tipo": "semelhante",
-   "peso": 0.493,
+   "peso": 0.491,
    "relacao": "complementares",
    "confianca": 0.75
   },
@@ -36566,7 +37130,7 @@
    "de": "H009",
    "para": "H085",
    "tipo": "semelhante",
-   "peso": 0.281,
+   "peso": 0.279,
    "relacao": "complementares",
    "confianca": 0.82
   },
@@ -36574,7 +37138,7 @@
    "de": "H009",
    "para": "H096",
    "tipo": "semelhante",
-   "peso": 0.648,
+   "peso": 0.649,
    "relacao": "mesmo-assunto",
    "confianca": 0.73
   },
@@ -36590,7 +37154,7 @@
    "de": "H010",
    "para": "H085",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.316,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -36598,7 +37162,7 @@
    "de": "H010",
    "para": "H087",
    "tipo": "semelhante",
-   "peso": 0.289,
+   "peso": 0.287,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -36622,7 +37186,7 @@
    "de": "H010",
    "para": "laboratorio/r17b_sensibilidade.py",
    "tipo": "semelhante",
-   "peso": 0.231,
+   "peso": 0.232,
    "relacao": "complementares",
    "confianca": 0.51
   },
@@ -36630,7 +37194,7 @@
    "de": "H011",
    "para": "H012",
    "tipo": "semelhante",
-   "peso": 0.231,
+   "peso": 0.232,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -36646,7 +37210,7 @@
    "de": "H012",
    "para": "H027",
    "tipo": "semelhante",
-   "peso": 0.33,
+   "peso": 0.325,
    "relacao": "complementares",
    "confianca": 0.37
   },
@@ -36654,7 +37218,7 @@
    "de": "H012",
    "para": "H031",
    "tipo": "semelhante",
-   "peso": 0.315,
+   "peso": 0.312,
    "relacao": "complementares",
    "confianca": 0.59
   },
@@ -36662,7 +37226,7 @@
    "de": "H012",
    "para": "H032",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.242,
    "relacao": "complementares",
    "confianca": 0.44
   },
@@ -36670,7 +37234,7 @@
    "de": "H012",
    "para": "R20",
    "tipo": "semelhante",
-   "peso": 0.204,
+   "peso": 0.206,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -36678,7 +37242,7 @@
    "de": "H012",
    "para": "laboratorio/r0_calibracao.py",
    "tipo": "semelhante",
-   "peso": 0.256,
+   "peso": 0.252,
    "relacao": "mesmo-assunto",
    "confianca": 0.88
   },
@@ -36686,7 +37250,7 @@
    "de": "H013",
    "para": "H024",
    "tipo": "semelhante",
-   "peso": 0.313,
+   "peso": 0.314,
    "relacao": "mesmo-assunto",
    "confianca": 0.72
   },
@@ -36694,7 +37258,7 @@
    "de": "H013",
    "para": "H029",
    "tipo": "semelhante",
-   "peso": 0.32,
+   "peso": 0.321,
    "relacao": "complementares",
    "confianca": 0.59
   },
@@ -36710,7 +37274,7 @@
    "de": "H013",
    "para": "H092",
    "tipo": "semelhante",
-   "peso": 0.269,
+   "peso": 0.27,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -36742,7 +37306,7 @@
    "de": "H014",
    "para": "H079",
    "tipo": "semelhante",
-   "peso": 0.373,
+   "peso": 0.374,
    "relacao": "complementares",
    "confianca": 0.62
   },
@@ -36750,7 +37314,7 @@
    "de": "H015",
    "para": "H027",
    "tipo": "semelhante",
-   "peso": 0.227,
+   "peso": 0.228,
    "relacao": "mesmo-assunto",
    "confianca": 0.97
   },
@@ -36766,7 +37330,7 @@
    "de": "H015",
    "para": "H083",
    "tipo": "semelhante",
-   "peso": 0.238,
+   "peso": 0.239,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -36782,7 +37346,7 @@
    "de": "H016",
    "para": "H017",
    "tipo": "semelhante",
-   "peso": 0.257,
+   "peso": 0.258,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -36790,7 +37354,7 @@
    "de": "H016",
    "para": "H021",
    "tipo": "semelhante",
-   "peso": 0.27,
+   "peso": 0.271,
    "relacao": "complementares",
    "confianca": 0.6
   },
@@ -36798,7 +37362,7 @@
    "de": "H016",
    "para": "Q008",
    "tipo": "semelhante",
-   "peso": 0.277,
+   "peso": 0.278,
    "relacao": "complementares",
    "confianca": 0.54
   },
@@ -36806,7 +37370,7 @@
    "de": "H016",
    "para": "R0",
    "tipo": "semelhante",
-   "peso": 0.266,
+   "peso": 0.267,
    "relacao": "mesmo-assunto",
    "confianca": 0.45
   },
@@ -36862,7 +37426,7 @@
    "de": "H018",
    "para": "H021",
    "tipo": "semelhante",
-   "peso": 0.418,
+   "peso": 0.419,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -36870,7 +37434,7 @@
    "de": "H018",
    "para": "H022",
    "tipo": "semelhante",
-   "peso": 0.309,
+   "peso": 0.31,
    "relacao": "complementares",
    "confianca": 0.54
   },
@@ -36902,7 +37466,7 @@
    "de": "H018",
    "para": "H092",
    "tipo": "semelhante",
-   "peso": 0.335,
+   "peso": 0.336,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -36910,7 +37474,7 @@
    "de": "H018",
    "para": "Q058",
    "tipo": "semelhante",
-   "peso": 0.284,
+   "peso": 0.285,
    "relacao": "mesmo-assunto",
    "confianca": 0.53
   },
@@ -36918,7 +37482,7 @@
    "de": "H019",
    "para": "H020",
    "tipo": "semelhante",
-   "peso": 0.317,
+   "peso": 0.319,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -36926,7 +37490,7 @@
    "de": "H019",
    "para": "H021",
    "tipo": "semelhante",
-   "peso": 0.3,
+   "peso": 0.303,
    "relacao": "complementares",
    "confianca": 0.4
   },
@@ -36934,7 +37498,7 @@
    "de": "H019",
    "para": "H022",
    "tipo": "semelhante",
-   "peso": 0.351,
+   "peso": 0.353,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -36942,7 +37506,7 @@
    "de": "H019",
    "para": "H087",
    "tipo": "semelhante",
-   "peso": 0.55,
+   "peso": 0.547,
    "relacao": "conflito",
    "confianca": 0.47
   },
@@ -36950,7 +37514,7 @@
    "de": "H020",
    "para": "H022",
    "tipo": "semelhante",
-   "peso": 0.398,
+   "peso": 0.399,
    "relacao": "complementares",
    "confianca": 0.51
   },
@@ -37022,7 +37586,7 @@
    "de": "H021",
    "para": "H022",
    "tipo": "semelhante",
-   "peso": 0.343,
+   "peso": 0.344,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -37030,7 +37594,7 @@
    "de": "H021",
    "para": "H034",
    "tipo": "semelhante",
-   "peso": 0.49,
+   "peso": 0.491,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -37070,7 +37634,7 @@
    "de": "H023",
    "para": "laboratorio/r0_calibracao.py",
    "tipo": "semelhante",
-   "peso": 0.226,
+   "peso": 0.227,
    "relacao": "complementares",
    "confianca": 0.58
   },
@@ -37078,7 +37642,7 @@
    "de": "H024",
    "para": "executor/gabarito.py",
    "tipo": "semelhante",
-   "peso": 0.354,
+   "peso": 0.355,
    "relacao": "complementares",
    "confianca": 0.76
   },
@@ -37086,7 +37650,7 @@
    "de": "H025",
    "para": "H030",
    "tipo": "semelhante",
-   "peso": 0.454,
+   "peso": 0.455,
    "relacao": "complementares",
    "confianca": 0.42
   },
@@ -37094,7 +37658,7 @@
    "de": "H027",
    "para": "H028",
    "tipo": "semelhante",
-   "peso": 0.433,
+   "peso": 0.434,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -37102,7 +37666,7 @@
    "de": "H027",
    "para": "H032",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.317,
    "relacao": "mesmo-assunto",
    "confianca": 0.96
   },
@@ -37110,9 +37674,17 @@
    "de": "H027",
    "para": "H033",
    "tipo": "semelhante",
-   "peso": 0.226,
+   "peso": 0.224,
    "relacao": "complementares",
    "confianca": 0.85
+  },
+  {
+   "de": "H027",
+   "para": "executor/run_e9_prevalencia.py",
+   "tipo": "semelhante",
+   "peso": 0.201,
+   "relacao": "complementares",
+   "confianca": 0.42
   },
   {
    "de": "H029",
@@ -37142,7 +37714,7 @@
    "de": "H032",
    "para": "H033",
    "tipo": "semelhante",
-   "peso": 0.404,
+   "peso": 0.403,
    "relacao": "complementares",
    "confianca": 0.63
   },
@@ -37150,7 +37722,7 @@
    "de": "H033",
    "para": "H060",
    "tipo": "semelhante",
-   "peso": 0.231,
+   "peso": 0.232,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -37166,7 +37738,7 @@
    "de": "H033",
    "para": "executor/run_e8_anotador.py",
    "tipo": "semelhante",
-   "peso": 0.208,
+   "peso": 0.209,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -37174,7 +37746,7 @@
    "de": "H034",
    "para": "H035",
    "tipo": "semelhante",
-   "peso": 0.563,
+   "peso": 0.562,
    "relacao": "complementares",
    "confianca": 0.44
   },
@@ -37182,7 +37754,7 @@
    "de": "H034",
    "para": "H036",
    "tipo": "semelhante",
-   "peso": 0.546,
+   "peso": 0.545,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -37190,7 +37762,7 @@
    "de": "H034",
    "para": "R1",
    "tipo": "semelhante",
-   "peso": 0.231,
+   "peso": 0.232,
    "relacao": "complementares",
    "confianca": 0.54
   },
@@ -37198,7 +37770,7 @@
    "de": "H034",
    "para": "R2",
    "tipo": "semelhante",
-   "peso": 0.21,
+   "peso": 0.211,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -37214,7 +37786,7 @@
    "de": "H035",
    "para": "H086",
    "tipo": "semelhante",
-   "peso": 0.254,
+   "peso": 0.255,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -37262,7 +37834,7 @@
    "de": "H037",
    "para": "H046",
    "tipo": "semelhante",
-   "peso": 0.284,
+   "peso": 0.285,
    "relacao": "complementares",
    "confianca": 0.76
   },
@@ -37310,7 +37882,7 @@
    "de": "H040",
    "para": "H045",
    "tipo": "semelhante",
-   "peso": 0.455,
+   "peso": 0.456,
    "relacao": "complementares",
    "confianca": 0.56
   },
@@ -37318,7 +37890,7 @@
    "de": "H040",
    "para": "H048",
    "tipo": "semelhante",
-   "peso": 0.396,
+   "peso": 0.397,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -37336,7 +37908,7 @@
    "tipo": "semelhante",
    "peso": 0.203,
    "relacao": "complementares",
-   "confianca": 0.79
+   "confianca": 0.8
   },
   {
    "de": "H043",
@@ -37364,17 +37936,9 @@
   },
   {
    "de": "H043",
-   "para": "R34",
-   "tipo": "semelhante",
-   "peso": 0.222,
-   "relacao": "complementares",
-   "confianca": 0.54
-  },
-  {
-   "de": "H043",
    "para": "R39",
    "tipo": "semelhante",
-   "peso": 0.297,
+   "peso": 0.299,
    "relacao": "complementares",
    "confianca": 0.34
   },
@@ -37382,7 +37946,7 @@
    "de": "H043",
    "para": "laboratorio/r17_economia_de_contexto.py",
    "tipo": "semelhante",
-   "peso": 0.276,
+   "peso": 0.277,
    "relacao": "mesmo-assunto",
    "confianca": 0.41
   },
@@ -37406,7 +37970,7 @@
    "de": "H045",
    "para": "Q019",
    "tipo": "semelhante",
-   "peso": 0.232,
+   "peso": 0.231,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -37414,7 +37978,7 @@
    "de": "H045",
    "para": "executor/pricing.py",
    "tipo": "semelhante",
-   "peso": 0.355,
+   "peso": 0.356,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -37422,7 +37986,7 @@
    "de": "H046",
    "para": "Q078",
    "tipo": "semelhante",
-   "peso": 0.593,
+   "peso": 0.592,
    "relacao": "mesmo-assunto",
    "confianca": 0.9
   },
@@ -37432,13 +37996,13 @@
    "tipo": "semelhante",
    "peso": 0.264,
    "relacao": "mesmo-assunto",
-   "confianca": 0.43
+   "confianca": 0.49
   },
   {
    "de": "H047",
    "para": "Q073",
    "tipo": "semelhante",
-   "peso": 0.352,
+   "peso": 0.353,
    "relacao": "mesmo-assunto",
    "confianca": 0.99
   },
@@ -37446,7 +38010,7 @@
    "de": "H049",
    "para": "H050",
    "tipo": "semelhante",
-   "peso": 0.257,
+   "peso": 0.258,
    "relacao": "mesmo-assunto",
    "confianca": 0.53
   },
@@ -37454,7 +38018,7 @@
    "de": "H049",
    "para": "H052",
    "tipo": "semelhante",
-   "peso": 0.326,
+   "peso": 0.327,
    "relacao": "complementares",
    "confianca": 0.72
   },
@@ -37462,7 +38026,7 @@
    "de": "H049",
    "para": "Q024",
    "tipo": "semelhante",
-   "peso": 0.211,
+   "peso": 0.212,
    "relacao": "mesmo-assunto",
    "confianca": 0.18
   },
@@ -37470,7 +38034,7 @@
    "de": "H049",
    "para": "R38",
    "tipo": "semelhante",
-   "peso": 0.227,
+   "peso": 0.228,
    "relacao": "mesmo-assunto",
    "confianca": 0.39
   },
@@ -37478,7 +38042,7 @@
    "de": "H050",
    "para": "H051",
    "tipo": "semelhante",
-   "peso": 0.311,
+   "peso": 0.313,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -37494,7 +38058,7 @@
    "de": "H050",
    "para": "R38",
    "tipo": "semelhante",
-   "peso": 0.382,
+   "peso": 0.386,
    "relacao": "complementares",
    "confianca": 0.42
   },
@@ -37502,7 +38066,7 @@
    "de": "H051",
    "para": "H060",
    "tipo": "semelhante",
-   "peso": 0.201,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -37510,7 +38074,7 @@
    "de": "H051",
    "para": "R38",
    "tipo": "semelhante",
-   "peso": 0.287,
+   "peso": 0.291,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -37526,7 +38090,7 @@
    "de": "H052",
    "para": "Q088",
    "tipo": "semelhante",
-   "peso": 0.228,
+   "peso": 0.23,
    "relacao": "mesmo-assunto",
    "confianca": 0.9
   },
@@ -37534,7 +38098,7 @@
    "de": "H052",
    "para": "laboratorio/r30_hipotese_e_prova.py",
    "tipo": "semelhante",
-   "peso": 0.277,
+   "peso": 0.278,
    "relacao": "mesmo-assunto",
    "confianca": 0.55
   },
@@ -37542,7 +38106,7 @@
    "de": "H053",
    "para": "integracao/avaliacao/amostrar.py",
    "tipo": "semelhante",
-   "peso": 0.27,
+   "peso": 0.271,
    "relacao": "complementares",
    "confianca": 0.68
   },
@@ -37558,7 +38122,7 @@
    "de": "H054",
    "para": "H056",
    "tipo": "semelhante",
-   "peso": 0.278,
+   "peso": 0.279,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -37566,9 +38130,17 @@
    "de": "H054",
    "para": "H091",
    "tipo": "semelhante",
-   "peso": 0.212,
+   "peso": 0.213,
    "relacao": "complementares",
    "confianca": 0.32
+  },
+  {
+   "de": "H054",
+   "para": "H100",
+   "tipo": "semelhante",
+   "peso": 0.213,
+   "relacao": "complementares",
+   "confianca": 0.75
   },
   {
    "de": "H055",
@@ -37590,7 +38162,7 @@
    "de": "H055",
    "para": "H091",
    "tipo": "semelhante",
-   "peso": 0.398,
+   "peso": 0.397,
    "relacao": "complementares",
    "confianca": 0.71
   },
@@ -37627,6 +38199,14 @@
    "confianca": 0.86
   },
   {
+   "de": "H060",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.219,
+   "relacao": "complementares",
+   "confianca": 0.82
+  },
+  {
    "de": "H061",
    "para": "H062",
    "tipo": "semelhante",
@@ -37638,7 +38218,7 @@
    "de": "H061",
    "para": "H063",
    "tipo": "semelhante",
-   "peso": 0.393,
+   "peso": 0.392,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -37670,7 +38250,7 @@
    "de": "H062",
    "para": "H063",
    "tipo": "semelhante",
-   "peso": 0.534,
+   "peso": 0.533,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -37734,7 +38314,7 @@
    "de": "H063",
    "para": "Q045",
    "tipo": "semelhante",
-   "peso": 0.387,
+   "peso": 0.388,
    "relacao": "mesmo-assunto",
    "confianca": 0.31
   },
@@ -37750,23 +38330,15 @@
    "de": "H064",
    "para": "Q045",
    "tipo": "semelhante",
-   "peso": 0.29,
+   "peso": 0.291,
    "relacao": "mesmo-assunto",
    "confianca": 0.75
-  },
-  {
-   "de": "H065",
-   "para": "hermes/rotinas/jev_rotina_painel_manha.py",
-   "tipo": "semelhante",
-   "peso": 0.204,
-   "relacao": "complementares",
-   "confianca": 0.31
   },
   {
    "de": "H066",
    "para": "Q042",
    "tipo": "semelhante",
-   "peso": 0.261,
+   "peso": 0.26,
    "relacao": "mesmo-assunto",
    "confianca": 0.76
   },
@@ -37774,7 +38346,7 @@
    "de": "H067",
    "para": "H068",
    "tipo": "semelhante",
-   "peso": 0.448,
+   "peso": 0.449,
    "relacao": "complementares",
    "confianca": 0.47
   },
@@ -37790,7 +38362,7 @@
    "de": "H067",
    "para": "R15b",
    "tipo": "semelhante",
-   "peso": 0.265,
+   "peso": 0.266,
    "relacao": "complementares",
    "confianca": 0.34
   },
@@ -37806,7 +38378,7 @@
    "de": "H068",
    "para": "Q064",
    "tipo": "semelhante",
-   "peso": 0.217,
+   "peso": 0.218,
    "relacao": "complementares",
    "confianca": 0.56
   },
@@ -37814,7 +38386,7 @@
    "de": "H068",
    "para": "R15",
    "tipo": "semelhante",
-   "peso": 0.458,
+   "peso": 0.457,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -37838,7 +38410,7 @@
    "de": "H069",
    "para": "H071",
    "tipo": "semelhante",
-   "peso": 0.483,
+   "peso": 0.488,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -37854,7 +38426,7 @@
    "de": "H069",
    "para": "integracao/avaliacao/comandos.py",
    "tipo": "semelhante",
-   "peso": 0.245,
+   "peso": 0.246,
    "relacao": "mesmo-assunto",
    "confianca": 0.56
   },
@@ -37870,7 +38442,7 @@
    "de": "H070",
    "para": "H072",
    "tipo": "semelhante",
-   "peso": 0.217,
+   "peso": 0.218,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -37934,7 +38506,7 @@
    "de": "H073",
    "para": "R25",
    "tipo": "semelhante",
-   "peso": 0.261,
+   "peso": 0.262,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -37942,7 +38514,7 @@
    "de": "H074",
    "para": "H075",
    "tipo": "semelhante",
-   "peso": 0.545,
+   "peso": 0.546,
    "relacao": "complementares",
    "confianca": 0.58
   },
@@ -37966,7 +38538,7 @@
    "de": "H075",
    "para": "H084",
    "tipo": "semelhante",
-   "peso": 0.518,
+   "peso": 0.519,
    "relacao": "complementares",
    "confianca": 0.36
   },
@@ -37974,7 +38546,7 @@
    "de": "H076",
    "para": "H095",
    "tipo": "semelhante",
-   "peso": 0.278,
+   "peso": 0.279,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -38006,7 +38578,7 @@
    "de": "H077",
    "para": "R25",
    "tipo": "semelhante",
-   "peso": 0.253,
+   "peso": 0.254,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -38014,7 +38586,7 @@
    "de": "H078",
    "para": "H079",
    "tipo": "semelhante",
-   "peso": 0.229,
+   "peso": 0.23,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -38070,7 +38642,7 @@
    "de": "H079",
    "para": "Q027",
    "tipo": "semelhante",
-   "peso": 0.384,
+   "peso": 0.383,
    "relacao": "mesmo-assunto",
    "confianca": 0.69
   },
@@ -38086,7 +38658,7 @@
    "de": "H081",
    "para": "H083",
    "tipo": "semelhante",
-   "peso": 0.448,
+   "peso": 0.447,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -38110,7 +38682,7 @@
    "de": "H083",
    "para": "H092",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.32,
    "relacao": "complementares",
    "confianca": 0.6
   },
@@ -38126,7 +38698,7 @@
    "de": "H083",
    "para": "Q025",
    "tipo": "semelhante",
-   "peso": 0.393,
+   "peso": 0.394,
    "relacao": "mesmo-assunto",
    "confianca": 0.97
   },
@@ -38134,7 +38706,7 @@
    "de": "H083",
    "para": "Q036",
    "tipo": "semelhante",
-   "peso": 0.301,
+   "peso": 0.302,
    "relacao": "mesmo-assunto",
    "confianca": 0.88
   },
@@ -38150,7 +38722,7 @@
    "de": "H085",
    "para": "H086",
    "tipo": "semelhante",
-   "peso": 0.566,
+   "peso": 0.567,
    "relacao": "complementares",
    "confianca": 0.68
   },
@@ -38158,7 +38730,7 @@
    "de": "H085",
    "para": "H089",
    "tipo": "semelhante",
-   "peso": 0.372,
+   "peso": 0.373,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -38166,7 +38738,7 @@
    "de": "H085",
    "para": "Q058",
    "tipo": "semelhante",
-   "peso": 0.359,
+   "peso": 0.36,
    "relacao": "mesmo-assunto",
    "confianca": 0.73
   },
@@ -38190,7 +38762,7 @@
    "de": "H086",
    "para": "H089",
    "tipo": "semelhante",
-   "peso": 0.423,
+   "peso": 0.424,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -38238,7 +38810,7 @@
    "de": "H087",
    "para": "Q023",
    "tipo": "semelhante",
-   "peso": 0.305,
+   "peso": 0.306,
    "relacao": "complementares",
    "confianca": 0.67
   },
@@ -38254,7 +38826,7 @@
    "de": "H088",
    "para": "R6",
    "tipo": "semelhante",
-   "peso": 0.424,
+   "peso": 0.423,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -38262,7 +38834,7 @@
    "de": "H088",
    "para": "executor/run_e2_fatorial.py",
    "tipo": "semelhante",
-   "peso": 0.235,
+   "peso": 0.236,
    "relacao": "complementares",
    "confianca": 0.6
   },
@@ -38270,7 +38842,7 @@
    "de": "H089",
    "para": "H090",
    "tipo": "semelhante",
-   "peso": 0.341,
+   "peso": 0.342,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -38310,7 +38882,7 @@
    "de": "H092",
    "para": "R8",
    "tipo": "semelhante",
-   "peso": 0.338,
+   "peso": 0.339,
    "relacao": "mesmo-assunto",
    "confianca": 0.75
   },
@@ -38358,7 +38930,7 @@
    "de": "H095",
    "para": "Q038",
    "tipo": "semelhante",
-   "peso": 0.248,
+   "peso": 0.249,
    "relacao": "mesmo-assunto",
    "confianca": 0.7
   },
@@ -38366,7 +38938,7 @@
    "de": "H095",
    "para": "R25",
    "tipo": "semelhante",
-   "peso": 0.322,
+   "peso": 0.323,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -38374,7 +38946,7 @@
    "de": "H095",
    "para": "laboratorio/r25_terceiro_dominio.py",
    "tipo": "semelhante",
-   "peso": 0.295,
+   "peso": 0.296,
    "relacao": "complementares",
    "confianca": 0.7
   },
@@ -38398,7 +38970,7 @@
    "de": "H096",
    "para": "laboratorio/r1_r3_estresse.py",
    "tipo": "semelhante",
-   "peso": 0.223,
+   "peso": 0.225,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -38454,7 +39026,7 @@
    "de": "H099",
    "para": "Q052",
    "tipo": "semelhante",
-   "peso": 0.295,
+   "peso": 0.296,
    "relacao": "mesmo-assunto",
    "confianca": 0.35
   },
@@ -38462,7 +39034,7 @@
    "de": "H100",
    "para": "Q003",
    "tipo": "semelhante",
-   "peso": 0.283,
+   "peso": 0.284,
    "relacao": "mesmo-assunto",
    "confianca": 0.51
   },
@@ -38502,7 +39074,7 @@
    "de": "H100",
    "para": "executor/run_e4_ressalvas.py",
    "tipo": "semelhante",
-   "peso": 0.237,
+   "peso": 0.238,
    "relacao": "complementares",
    "confianca": 0.45
   },
@@ -38510,7 +39082,7 @@
    "de": "Q001",
    "para": "Q002",
    "tipo": "semelhante",
-   "peso": 0.359,
+   "peso": 0.36,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -38518,7 +39090,7 @@
    "de": "Q001",
    "para": "Q003",
    "tipo": "semelhante",
-   "peso": 0.282,
+   "peso": 0.279,
    "relacao": "complementares",
    "confianca": 0.87
   },
@@ -38526,7 +39098,7 @@
    "de": "Q001",
    "para": "Q061",
    "tipo": "semelhante",
-   "peso": 0.441,
+   "peso": 0.439,
    "relacao": "mesmo-assunto",
    "confianca": 0.58
   },
@@ -38534,7 +39106,7 @@
    "de": "Q001",
    "para": "Q068",
    "tipo": "semelhante",
-   "peso": 0.25,
+   "peso": 0.249,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -38542,7 +39114,7 @@
    "de": "Q001",
    "para": "Q069",
    "tipo": "semelhante",
-   "peso": 0.396,
+   "peso": 0.395,
    "relacao": "complementares",
    "confianca": 0.59
   },
@@ -38550,7 +39122,7 @@
    "de": "Q001",
    "para": "docs/GUIA-PRATICO-JEV.md",
    "tipo": "semelhante",
-   "peso": 0.252,
+   "peso": 0.251,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -38566,7 +39138,7 @@
    "de": "Q002",
    "para": "Q012",
    "tipo": "semelhante",
-   "peso": 0.256,
+   "peso": 0.257,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -38590,7 +39162,7 @@
    "de": "Q003",
    "para": "Q053",
    "tipo": "semelhante",
-   "peso": 0.27,
+   "peso": 0.271,
    "relacao": "mesmo-assunto",
    "confianca": 0.35
   },
@@ -38598,7 +39170,7 @@
    "de": "Q003",
    "para": "Q070",
    "tipo": "semelhante",
-   "peso": 0.508,
+   "peso": 0.51,
    "relacao": "mesmo-assunto",
    "confianca": 0.45
   },
@@ -38622,7 +39194,7 @@
    "de": "Q004",
    "para": "Q086",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.247,
    "relacao": "complementares",
    "confianca": 0.37
   },
@@ -38630,7 +39202,7 @@
    "de": "Q004",
    "para": "executor/run_e8_anotador.py",
    "tipo": "semelhante",
-   "peso": 0.249,
+   "peso": 0.25,
    "relacao": "mesmo-assunto",
    "confianca": 0.52
   },
@@ -38638,7 +39210,7 @@
    "de": "Q005",
    "para": "Q066",
    "tipo": "semelhante",
-   "peso": 0.202,
+   "peso": 0.203,
    "relacao": "mesmo-assunto",
    "confianca": 0.43
   },
@@ -38694,7 +39266,7 @@
    "de": "Q008",
    "para": "Q021",
    "tipo": "semelhante",
-   "peso": 0.204,
+   "peso": 0.205,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -38702,7 +39274,7 @@
    "de": "Q008",
    "para": "Q033",
    "tipo": "semelhante",
-   "peso": 0.203,
+   "peso": 0.204,
    "relacao": "complementares",
    "confianca": 0.89
   },
@@ -38718,7 +39290,7 @@
    "de": "Q010",
    "para": "Q012",
    "tipo": "semelhante",
-   "peso": 0.233,
+   "peso": 0.234,
    "relacao": "mesmo-assunto",
    "confianca": 0.52
   },
@@ -38726,7 +39298,7 @@
    "de": "Q010",
    "para": "Q047",
    "tipo": "semelhante",
-   "peso": 0.233,
+   "peso": 0.234,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -38734,7 +39306,7 @@
    "de": "Q010",
    "para": "R17",
    "tipo": "semelhante",
-   "peso": 0.226,
+   "peso": 0.227,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -38750,7 +39322,7 @@
    "de": "Q011",
    "para": "Q050",
    "tipo": "semelhante",
-   "peso": 0.222,
+   "peso": 0.223,
    "relacao": "complementares",
    "confianca": 0.68
   },
@@ -38758,7 +39330,7 @@
    "de": "Q011",
    "para": "executor/exportar_extrato.py",
    "tipo": "semelhante",
-   "peso": 0.3,
+   "peso": 0.303,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -38766,7 +39338,7 @@
    "de": "Q011",
    "para": "laboratorio/conciliar_caixa.py",
    "tipo": "semelhante",
-   "peso": 0.245,
+   "peso": 0.246,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -38774,7 +39346,7 @@
    "de": "Q012",
    "para": "Q013",
    "tipo": "semelhante",
-   "peso": 0.379,
+   "peso": 0.381,
    "relacao": "complementares",
    "confianca": 0.45
   },
@@ -38782,7 +39354,7 @@
    "de": "Q012",
    "para": "Q014",
    "tipo": "semelhante",
-   "peso": 0.266,
+   "peso": 0.268,
    "relacao": "mesmo-assunto",
    "confianca": 0.6
   },
@@ -38790,7 +39362,7 @@
    "de": "Q012",
    "para": "Q016",
    "tipo": "semelhante",
-   "peso": 0.303,
+   "peso": 0.304,
    "relacao": "mesmo-assunto",
    "confianca": 0.76
   },
@@ -38806,7 +39378,7 @@
    "de": "Q013",
    "para": "laboratorio/r17_economia_de_contexto.py",
    "tipo": "semelhante",
-   "peso": 0.255,
+   "peso": 0.256,
    "relacao": "complementares",
    "confianca": 0.42
   },
@@ -38822,7 +39394,7 @@
    "de": "Q014",
    "para": "Q018",
    "tipo": "semelhante",
-   "peso": 0.23,
+   "peso": 0.231,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -38830,7 +39402,7 @@
    "de": "Q014",
    "para": "R43",
    "tipo": "semelhante",
-   "peso": 0.286,
+   "peso": 0.288,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -38838,7 +39410,7 @@
    "de": "Q016",
    "para": "R17",
    "tipo": "semelhante",
-   "peso": 0.397,
+   "peso": 0.396,
    "relacao": "mesmo-assunto",
    "confianca": 0.86
   },
@@ -38854,9 +39426,9 @@
    "de": "Q017",
    "para": "executor/runner.py",
    "tipo": "semelhante",
-   "peso": 0.217,
+   "peso": 0.218,
    "relacao": "complementares",
-   "confianca": 0.68
+   "confianca": 0.71
   },
   {
    "de": "Q018",
@@ -38870,7 +39442,7 @@
    "de": "Q018",
    "para": "Q056",
    "tipo": "semelhante",
-   "peso": 0.323,
+   "peso": 0.324,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -38926,7 +39498,7 @@
    "de": "Q020",
    "para": "Q090",
    "tipo": "semelhante",
-   "peso": 0.311,
+   "peso": 0.312,
    "relacao": "complementares",
    "confianca": 0.33
   },
@@ -38966,7 +39538,7 @@
    "de": "Q021",
    "para": "Q033",
    "tipo": "semelhante",
-   "peso": 0.27,
+   "peso": 0.271,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -38974,7 +39546,7 @@
    "de": "Q024",
    "para": "Q026",
    "tipo": "semelhante",
-   "peso": 0.213,
+   "peso": 0.214,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -38982,7 +39554,7 @@
    "de": "Q024",
    "para": "Q095",
    "tipo": "semelhante",
-   "peso": 0.206,
+   "peso": 0.207,
    "relacao": "complementares",
    "confianca": 0.32
   },
@@ -39014,9 +39586,17 @@
    "de": "Q027",
    "para": "R33",
    "tipo": "semelhante",
-   "peso": 0.226,
+   "peso": 0.222,
    "relacao": "complementares",
    "confianca": 0.81
+  },
+  {
+   "de": "Q027",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.334,
+   "relacao": "complementares",
+   "confianca": 0.74
   },
   {
    "de": "Q028",
@@ -39038,7 +39618,7 @@
    "de": "Q030",
    "para": "Q059",
    "tipo": "semelhante",
-   "peso": 0.673,
+   "peso": 0.67,
    "relacao": "mesmo-assunto",
    "confianca": 0.92
   },
@@ -39046,7 +39626,7 @@
    "de": "Q031",
    "para": "Q033",
    "tipo": "semelhante",
-   "peso": 0.229,
+   "peso": 0.23,
    "relacao": "complementares",
    "confianca": 0.87
   },
@@ -39070,7 +39650,7 @@
    "de": "Q032",
    "para": "Q033",
    "tipo": "semelhante",
-   "peso": 0.358,
+   "peso": 0.359,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -39078,7 +39658,7 @@
    "de": "Q032",
    "para": "Q034",
    "tipo": "semelhante",
-   "peso": 0.275,
+   "peso": 0.276,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -39102,7 +39682,7 @@
    "de": "Q033",
    "para": "Q039",
    "tipo": "semelhante",
-   "peso": 0.254,
+   "peso": 0.255,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -39110,7 +39690,7 @@
    "de": "Q033",
    "para": "Q050",
    "tipo": "semelhante",
-   "peso": 0.232,
+   "peso": 0.233,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -39118,7 +39698,7 @@
    "de": "Q033",
    "para": "executor/erro_grave.py",
    "tipo": "semelhante",
-   "peso": 0.273,
+   "peso": 0.274,
    "relacao": "complementares",
    "confianca": 0.83
   },
@@ -39142,7 +39722,7 @@
    "de": "Q035",
    "para": "executor/run_e9_prevalencia.py",
    "tipo": "semelhante",
-   "peso": 0.204,
+   "peso": 0.205,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -39184,13 +39764,13 @@
    "tipo": "semelhante",
    "peso": 0.203,
    "relacao": "complementares",
-   "confianca": 0.83
+   "confianca": 0.82
   },
   {
    "de": "Q038",
    "para": "Q054",
    "tipo": "semelhante",
-   "peso": 0.232,
+   "peso": 0.231,
    "relacao": "complementares",
    "confianca": 0.77
   },
@@ -39198,7 +39778,7 @@
    "de": "Q038",
    "para": "Q058",
    "tipo": "semelhante",
-   "peso": 0.27,
+   "peso": 0.269,
    "relacao": "complementares",
    "confianca": 0.34
   },
@@ -39214,7 +39794,7 @@
    "de": "Q042",
    "para": "Q046",
    "tipo": "semelhante",
-   "peso": 0.244,
+   "peso": 0.245,
    "relacao": "complementares",
    "confianca": 0.79
   },
@@ -39230,7 +39810,7 @@
    "de": "Q042",
    "para": "Q098",
    "tipo": "semelhante",
-   "peso": 0.224,
+   "peso": 0.223,
    "relacao": "complementares",
    "confianca": 0.45
   },
@@ -39238,7 +39818,7 @@
    "de": "Q042",
    "para": "laboratorio/r22_defesas.py",
    "tipo": "semelhante",
-   "peso": 0.275,
+   "peso": 0.276,
    "relacao": "mesmo-assunto",
    "confianca": 0.73
   },
@@ -39246,7 +39826,7 @@
    "de": "Q042",
    "para": "laboratorio/r23_parafrase.py",
    "tipo": "semelhante",
-   "peso": 0.296,
+   "peso": 0.297,
    "relacao": "mesmo-assunto",
    "confianca": 0.67
   },
@@ -39254,7 +39834,7 @@
    "de": "Q043",
    "para": "Q046",
    "tipo": "semelhante",
-   "peso": 0.327,
+   "peso": 0.329,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -39262,7 +39842,7 @@
    "de": "Q043",
    "para": "Q049",
    "tipo": "semelhante",
-   "peso": 0.243,
+   "peso": 0.244,
    "relacao": "complementares",
    "confianca": 0.77
   },
@@ -39270,7 +39850,7 @@
    "de": "Q043",
    "para": "Q050",
    "tipo": "semelhante",
-   "peso": 0.272,
+   "peso": 0.271,
    "relacao": "complementares",
    "confianca": 0.85
   },
@@ -39294,7 +39874,7 @@
    "de": "Q043",
    "para": "integracao/camadas/sentinela.py",
    "tipo": "semelhante",
-   "peso": 0.238,
+   "peso": 0.237,
    "relacao": "mesmo-assunto",
    "confianca": 0.56
   },
@@ -39310,7 +39890,7 @@
    "de": "Q045",
    "para": "Q048",
    "tipo": "semelhante",
-   "peso": 0.263,
+   "peso": 0.262,
    "relacao": "complementares",
    "confianca": 0.72
   },
@@ -39318,7 +39898,7 @@
    "de": "Q046",
    "para": "Q050",
    "tipo": "semelhante",
-   "peso": 0.265,
+   "peso": 0.267,
    "relacao": "complementares",
    "confianca": 0.62
   },
@@ -39334,7 +39914,7 @@
    "de": "Q046",
    "para": "laboratorio/r27_integracao.py",
    "tipo": "semelhante",
-   "peso": 0.282,
+   "peso": 0.283,
    "relacao": "mesmo-assunto",
    "confianca": 0.72
   },
@@ -39366,7 +39946,7 @@
    "de": "Q050",
    "para": "R27",
    "tipo": "semelhante",
-   "peso": 0.316,
+   "peso": 0.314,
    "relacao": "mesmo-assunto",
    "confianca": 0.44
   },
@@ -39398,7 +39978,7 @@
    "de": "Q052",
    "para": "Q055",
    "tipo": "semelhante",
-   "peso": 0.228,
+   "peso": 0.229,
    "relacao": "complementares",
    "confianca": 0.96
   },
@@ -39406,7 +39986,7 @@
    "de": "Q052",
    "para": "Q060",
    "tipo": "semelhante",
-   "peso": 0.31,
+   "peso": 0.311,
    "relacao": "complementares",
    "confianca": 0.32
   },
@@ -39422,7 +40002,7 @@
    "de": "Q052",
    "para": "laboratorio/r21_generalizacao.py",
    "tipo": "semelhante",
-   "peso": 0.32,
+   "peso": 0.321,
    "relacao": "complementares",
    "confianca": 0.85
   },
@@ -39430,7 +40010,7 @@
    "de": "Q053",
    "para": "Q062",
    "tipo": "semelhante",
-   "peso": 0.45,
+   "peso": 0.449,
    "relacao": "complementares",
    "confianca": 0.44
   },
@@ -39452,11 +40032,11 @@
   },
   {
    "de": "Q053",
-   "para": "R39",
+   "para": "executor/run_e4_ressalvas.py",
    "tipo": "semelhante",
-   "peso": 0.209,
+   "peso": 0.201,
    "relacao": "complementares",
-   "confianca": 0.56
+   "confianca": 0.44
   },
   {
    "de": "Q053",
@@ -39478,7 +40058,7 @@
    "de": "Q054",
    "para": "Q060",
    "tipo": "semelhante",
-   "peso": 0.257,
+   "peso": 0.256,
    "relacao": "complementares",
    "confianca": 0.68
   },
@@ -39486,7 +40066,7 @@
    "de": "Q055",
    "para": "Q060",
    "tipo": "semelhante",
-   "peso": 0.266,
+   "peso": 0.267,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -39510,7 +40090,7 @@
    "de": "Q060",
    "para": "Q091",
    "tipo": "semelhante",
-   "peso": 0.362,
+   "peso": 0.363,
    "relacao": "mesmo-assunto",
    "confianca": 0.38
   },
@@ -39518,7 +40098,7 @@
    "de": "Q061",
    "para": "Q068",
    "tipo": "semelhante",
-   "peso": 0.35,
+   "peso": 0.348,
    "relacao": "complementares",
    "confianca": 0.84
   },
@@ -39526,7 +40106,7 @@
    "de": "Q061",
    "para": "Q069",
    "tipo": "semelhante",
-   "peso": 0.356,
+   "peso": 0.354,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -39550,7 +40130,7 @@
    "de": "Q062",
    "para": "R39",
    "tipo": "semelhante",
-   "peso": 0.39,
+   "peso": 0.393,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -39558,7 +40138,7 @@
    "de": "Q063",
    "para": "Q069",
    "tipo": "semelhante",
-   "peso": 0.364,
+   "peso": 0.365,
    "relacao": "complementares",
    "confianca": 0.47
   },
@@ -39566,7 +40146,7 @@
    "de": "Q063",
    "para": "R34",
    "tipo": "semelhante",
-   "peso": 0.285,
+   "peso": 0.287,
    "relacao": "complementares",
    "confianca": 0.61
   },
@@ -39614,15 +40194,23 @@
    "de": "Q066",
    "para": "Q067",
    "tipo": "semelhante",
-   "peso": 0.305,
+   "peso": 0.307,
    "relacao": "complementares",
    "confianca": 0.93
+  },
+  {
+   "de": "Q066",
+   "para": "Q070",
+   "tipo": "semelhante",
+   "peso": 0.2,
+   "relacao": "complementares",
+   "confianca": 0.85
   },
   {
    "de": "Q067",
    "para": "executor/run_e8_anotador.py",
    "tipo": "semelhante",
-   "peso": 0.214,
+   "peso": 0.215,
    "relacao": "mesmo-assunto",
    "confianca": 0.34
   },
@@ -39638,7 +40226,7 @@
    "de": "Q069",
    "para": "executor/run_e1_triagem.py",
    "tipo": "semelhante",
-   "peso": 0.218,
+   "peso": 0.219,
    "relacao": "complementares",
    "confianca": 0.38
   },
@@ -39646,7 +40234,7 @@
    "de": "Q071",
    "para": "Q072",
    "tipo": "semelhante",
-   "peso": 0.291,
+   "peso": 0.29,
    "relacao": "mesmo-assunto",
    "confianca": 0.45
   },
@@ -39654,15 +40242,15 @@
    "de": "Q071",
    "para": "Q073",
    "tipo": "semelhante",
-   "peso": 0.39,
+   "peso": 0.389,
    "relacao": "complementares",
-   "confianca": 0.91
+   "confianca": 0.92
   },
   {
    "de": "Q071",
    "para": "Q078",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.247,
    "relacao": "complementares",
    "confianca": 0.92
   },
@@ -39670,7 +40258,7 @@
    "de": "Q074",
    "para": "Q076",
    "tipo": "semelhante",
-   "peso": 0.292,
+   "peso": 0.293,
    "relacao": "complementares",
    "confianca": 0.44
   },
@@ -39702,7 +40290,7 @@
    "de": "Q075",
    "para": "Q076",
    "tipo": "semelhante",
-   "peso": 0.315,
+   "peso": 0.316,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -39710,7 +40298,7 @@
    "de": "Q076",
    "para": "Q077",
    "tipo": "semelhante",
-   "peso": 0.281,
+   "peso": 0.282,
    "relacao": "complementares",
    "confianca": 0.92
   },
@@ -39726,7 +40314,7 @@
    "de": "Q079",
    "para": "Q085",
    "tipo": "semelhante",
-   "peso": 0.564,
+   "peso": 0.566,
    "relacao": "mesmo-assunto",
    "confianca": 0.93
   },
@@ -39734,7 +40322,7 @@
    "de": "Q079",
    "para": "Q100",
    "tipo": "semelhante",
-   "peso": 0.247,
+   "peso": 0.246,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -39742,7 +40330,7 @@
    "de": "Q079",
    "para": "docs/AUDITORIA-DE-NUMEROS.md",
    "tipo": "semelhante",
-   "peso": 0.242,
+   "peso": 0.241,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -39750,7 +40338,7 @@
    "de": "Q079",
    "para": "laboratorio/auditoria.py",
    "tipo": "semelhante",
-   "peso": 0.248,
+   "peso": 0.246,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -39766,7 +40354,7 @@
    "de": "Q081",
    "para": "Q090",
    "tipo": "semelhante",
-   "peso": 0.299,
+   "peso": 0.301,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -39782,7 +40370,7 @@
    "de": "Q081",
    "para": "docs/AUDITORIA-DE-NUMEROS.md",
    "tipo": "semelhante",
-   "peso": 0.3,
+   "peso": 0.301,
    "relacao": "mesmo-assunto",
    "confianca": 0.34
   },
@@ -39790,7 +40378,7 @@
    "de": "Q082",
    "para": "Q087",
    "tipo": "semelhante",
-   "peso": 0.232,
+   "peso": 0.234,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -39798,7 +40386,7 @@
    "de": "Q082",
    "para": "Q088",
    "tipo": "semelhante",
-   "peso": 0.21,
+   "peso": 0.211,
    "relacao": "complementares",
    "confianca": 0.72
   },
@@ -39806,7 +40394,7 @@
    "de": "Q082",
    "para": "laboratorio/gerar_dossie.py",
    "tipo": "semelhante",
-   "peso": 0.262,
+   "peso": 0.26,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -39822,7 +40410,7 @@
    "de": "Q085",
    "para": "Q100",
    "tipo": "semelhante",
-   "peso": 0.202,
+   "peso": 0.201,
    "relacao": "complementares",
    "confianca": 0.95
   },
@@ -39830,7 +40418,7 @@
    "de": "Q087",
    "para": "laboratorio/h100/registro.py",
    "tipo": "semelhante",
-   "peso": 0.201,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.67
   },
@@ -39838,7 +40426,7 @@
    "de": "Q088",
    "para": "docs/DOSSIE-DE-EVIDENCIAS.md",
    "tipo": "semelhante",
-   "peso": 0.369,
+   "peso": 0.373,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -39846,7 +40434,7 @@
    "de": "Q091",
    "para": "R25",
    "tipo": "semelhante",
-   "peso": 0.25,
+   "peso": 0.251,
    "relacao": "mesmo-assunto",
    "confianca": 0.67
   },
@@ -39854,7 +40442,7 @@
    "de": "Q091",
    "para": "laboratorio/r25_terceiro_dominio.py",
    "tipo": "semelhante",
-   "peso": 0.319,
+   "peso": 0.32,
    "relacao": "mesmo-assunto",
    "confianca": 0.77
   },
@@ -39870,7 +40458,7 @@
    "de": "Q092",
    "para": "integracao/avaliacao/auditar_producao.py",
    "tipo": "semelhante",
-   "peso": 0.229,
+   "peso": 0.23,
    "relacao": "mesmo-assunto",
    "confianca": 0.33
   },
@@ -39902,7 +40490,7 @@
    "de": "Q098",
    "para": "R22",
    "tipo": "semelhante",
-   "peso": 0.289,
+   "peso": 0.29,
    "relacao": "mesmo-assunto",
    "confianca": 0.55
   },
@@ -39918,7 +40506,7 @@
    "de": "R1",
    "para": "R3",
    "tipo": "semelhante",
-   "peso": 0.433,
+   "peso": 0.436,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -39926,7 +40514,7 @@
    "de": "R10",
    "para": "executor/gabarito.py",
    "tipo": "semelhante",
-   "peso": 0.264,
+   "peso": 0.265,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -39934,7 +40522,7 @@
    "de": "R10",
    "para": "executor/run_e10_llm_economico.py",
    "tipo": "semelhante",
-   "peso": 0.263,
+   "peso": 0.264,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -39942,7 +40530,7 @@
    "de": "R15",
    "para": "R15b",
    "tipo": "semelhante",
-   "peso": 0.322,
+   "peso": 0.323,
    "relacao": "complementares",
    "confianca": 0.61
   },
@@ -39958,15 +40546,23 @@
    "de": "R16",
    "para": "integracao/avaliacao/comandos.py",
    "tipo": "semelhante",
-   "peso": 0.481,
+   "peso": 0.482,
    "relacao": "mesmo-assunto",
    "confianca": 0.57
+  },
+  {
+   "de": "R17",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.24,
+   "relacao": "complementares",
+   "confianca": 0.53
   },
   {
    "de": "R18",
    "para": "laboratorio/r17_economia_de_contexto.py",
    "tipo": "semelhante",
-   "peso": 0.21,
+   "peso": 0.209,
    "relacao": "complementares",
    "confianca": 0.75
   },
@@ -39974,7 +40570,7 @@
    "de": "R2",
    "para": "R6",
    "tipo": "semelhante",
-   "peso": 0.237,
+   "peso": 0.238,
    "relacao": "complementares",
    "confianca": 0.54
   },
@@ -39998,7 +40594,7 @@
    "de": "R23",
    "para": "laboratorio/r1_r3_estresse.py",
    "tipo": "semelhante",
-   "peso": 0.406,
+   "peso": 0.408,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -40014,7 +40610,7 @@
    "de": "R25",
    "para": "R31",
    "tipo": "semelhante",
-   "peso": 0.241,
+   "peso": 0.242,
    "relacao": "complementares",
    "confianca": 0.75
   },
@@ -40022,7 +40618,7 @@
    "de": "R25",
    "para": "R40",
    "tipo": "semelhante",
-   "peso": 0.266,
+   "peso": 0.267,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -40030,7 +40626,7 @@
    "de": "R26",
    "para": "R38",
    "tipo": "semelhante",
-   "peso": 0.24,
+   "peso": 0.243,
    "relacao": "complementares",
    "confianca": 0.27
   },
@@ -40038,7 +40634,7 @@
    "de": "R27",
    "para": "R33",
    "tipo": "semelhante",
-   "peso": 0.287,
+   "peso": 0.283,
    "relacao": "complementares",
    "confianca": 0.49
   },
@@ -40046,7 +40642,7 @@
    "de": "R27",
    "para": "R35",
    "tipo": "semelhante",
-   "peso": 0.329,
+   "peso": 0.334,
    "relacao": "complementares",
    "confianca": 0.34
   },
@@ -40054,31 +40650,55 @@
    "de": "R27",
    "para": "R42",
    "tipo": "semelhante",
-   "peso": 0.247,
+   "peso": 0.243,
    "relacao": "complementares",
    "confianca": 0.66
   },
   {
    "de": "R27",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.427,
+   "relacao": "complementares",
+   "confianca": 0.34
+  },
+  {
+   "de": "R27",
    "para": "laboratorio/r23_parafrase.py",
    "tipo": "semelhante",
-   "peso": 0.29,
+   "peso": 0.292,
    "relacao": "mesmo-assunto",
    "confianca": 0.54
+  },
+  {
+   "de": "R3",
+   "para": "hermes/jev_hermes/pendencias.py",
+   "tipo": "semelhante",
+   "peso": 0.226,
+   "relacao": "complementares",
+   "confianca": 0.67
   },
   {
    "de": "R33",
    "para": "R42",
    "tipo": "semelhante",
-   "peso": 0.253,
+   "peso": 0.249,
    "relacao": "complementares",
    "confianca": 0.72
   },
   {
    "de": "R33",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.663,
+   "relacao": "mesmo-assunto",
+   "confianca": 0.86
+  },
+  {
+   "de": "R33",
    "para": "laboratorio/r28_ato_de_fala.py",
    "tipo": "semelhante",
-   "peso": 0.502,
+   "peso": 0.499,
    "relacao": "mesmo-assunto",
    "confianca": 0.7
   },
@@ -40086,7 +40706,7 @@
    "de": "R34",
    "para": "R39",
    "tipo": "semelhante",
-   "peso": 0.538,
+   "peso": 0.534,
    "relacao": "mesmo-assunto",
    "confianca": 0.22
   },
@@ -40094,7 +40714,7 @@
    "de": "R34",
    "para": "laboratorio/r21_generalizacao.py",
    "tipo": "semelhante",
-   "peso": 0.298,
+   "peso": 0.301,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -40102,15 +40722,23 @@
    "de": "R34",
    "para": "laboratorio/r30_hipotese_e_prova.py",
    "tipo": "semelhante",
-   "peso": 0.221,
+   "peso": 0.223,
    "relacao": "complementares",
    "confianca": 0.58
+  },
+  {
+   "de": "R34",
+   "para": "laboratorio/r50_checklist_de_contrato.py",
+   "tipo": "semelhante",
+   "peso": 0.328,
+   "relacao": "complementares",
+   "confianca": 0.53
   },
   {
    "de": "R35",
    "para": "R7",
    "tipo": "semelhante",
-   "peso": 0.227,
+   "peso": 0.23,
    "relacao": "complementares",
    "confianca": 0.48
   },
@@ -40118,15 +40746,23 @@
    "de": "R35",
    "para": "executor/exportar_extrato.py",
    "tipo": "semelhante",
-   "peso": 0.292,
+   "peso": 0.288,
    "relacao": "complementares",
    "confianca": 0.44
   },
   {
    "de": "R35",
+   "para": "integracao/hooks/jev_sentinela.py",
+   "tipo": "semelhante",
+   "peso": 0.201,
+   "relacao": "complementares",
+   "confianca": 0.39
+  },
+  {
+   "de": "R35",
    "para": "laboratorio/auditoria.py",
    "tipo": "semelhante",
-   "peso": 0.367,
+   "peso": 0.36,
    "relacao": "mesmo-assunto",
    "confianca": 0.39
   },
@@ -40142,7 +40778,7 @@
    "de": "R37",
    "para": "laboratorio/r22_defesas.py",
    "tipo": "semelhante",
-   "peso": 0.219,
+   "peso": 0.22,
    "relacao": "mesmo-assunto",
    "confianca": 0.34
   },
@@ -40158,7 +40794,7 @@
    "de": "R38",
    "para": "R43",
    "tipo": "semelhante",
-   "peso": 0.448,
+   "peso": 0.443,
    "relacao": "complementares",
    "confianca": 0.38
   },
@@ -40166,7 +40802,7 @@
    "de": "R38",
    "para": "R44",
    "tipo": "semelhante",
-   "peso": 0.289,
+   "peso": 0.285,
    "relacao": "complementares",
    "confianca": 0.28
   },
@@ -40174,7 +40810,7 @@
    "de": "R38",
    "para": "R45",
    "tipo": "semelhante",
-   "peso": 0.365,
+   "peso": 0.36,
    "relacao": "mesmo-assunto",
    "confianca": 0.56
   },
@@ -40182,15 +40818,31 @@
    "de": "R38",
    "para": "integracao/camadas/busca.py",
    "tipo": "semelhante",
-   "peso": 0.289,
+   "peso": 0.284,
    "relacao": "complementares",
    "confianca": 0.48
   },
   {
    "de": "R38",
+   "para": "integracao/camadas/checklist.py",
+   "tipo": "semelhante",
+   "peso": 0.45,
+   "relacao": "complementares",
+   "confianca": 0.59
+  },
+  {
+   "de": "R38",
+   "para": "laboratorio/r26_dois_trechos.py",
+   "tipo": "semelhante",
+   "peso": 0.215,
+   "relacao": "mesmo-assunto",
+   "confianca": 0.51
+  },
+  {
+   "de": "R38",
    "para": "laboratorio/r42_r44_quarta_leva.py",
    "tipo": "semelhante",
-   "peso": 0.274,
+   "peso": 0.27,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -40198,23 +40850,23 @@
    "de": "R38",
    "para": "laboratorio/r45_lista_nas_duas_ordens.py",
    "tipo": "semelhante",
-   "peso": 0.281,
+   "peso": 0.277,
    "relacao": "mesmo-assunto",
    "confianca": 0.32
   },
   {
-   "de": "R40",
-   "para": "hermes/skill/jev/SKILL.md",
+   "de": "R39",
+   "para": "integracao/camadas/checklist.py",
    "tipo": "semelhante",
-   "peso": 0.208,
+   "peso": 0.22,
    "relacao": "complementares",
-   "confianca": 0.43
+   "confianca": 0.33
   },
   {
    "de": "R41",
    "para": "integracao/avaliacao/comandos.py",
    "tipo": "semelhante",
-   "peso": 0.236,
+   "peso": 0.237,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -40227,10 +40879,18 @@
    "confianca": 0.43
   },
   {
+   "de": "R42",
+   "para": "R49",
+   "tipo": "semelhante",
+   "peso": 0.376,
+   "relacao": "complementares",
+   "confianca": 0.71
+  },
+  {
    "de": "R43",
    "para": "R44",
    "tipo": "semelhante",
-   "peso": 0.645,
+   "peso": 0.643,
    "relacao": "complementares",
    "confianca": 0.62
   },
@@ -40238,7 +40898,7 @@
    "de": "R43",
    "para": "R45",
    "tipo": "semelhante",
-   "peso": 0.373,
+   "peso": 0.367,
    "relacao": "complementares",
    "confianca": 0.37
   },
@@ -40246,15 +40906,23 @@
    "de": "R43",
    "para": "integracao/camadas/busca.py",
    "tipo": "semelhante",
-   "peso": 0.461,
+   "peso": 0.458,
    "relacao": "complementares",
    "confianca": 0.76
   },
   {
    "de": "R43",
+   "para": "integracao/camadas/checklist.py",
+   "tipo": "semelhante",
+   "peso": 0.332,
+   "relacao": "complementares",
+   "confianca": 0.35
+  },
+  {
+   "de": "R43",
    "para": "integracao/camadas/ler.py",
    "tipo": "semelhante",
-   "peso": 0.329,
+   "peso": 0.332,
    "relacao": "complementares",
    "confianca": 0.55
   },
@@ -40262,7 +40930,7 @@
    "de": "R43",
    "para": "planning/preregistro-E16-recuperacao.md",
    "tipo": "semelhante",
-   "peso": 0.268,
+   "peso": 0.27,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -40270,23 +40938,79 @@
    "de": "R44",
    "para": "R45",
    "tipo": "semelhante",
-   "peso": 0.241,
+   "peso": 0.236,
    "relacao": "complementares",
    "confianca": 0.44
   },
   {
    "de": "R45",
+   "para": "integracao/camadas/checklist.py",
+   "tipo": "semelhante",
+   "peso": 0.269,
+   "relacao": "complementares",
+   "confianca": 0.6
+  },
+  {
+   "de": "R45",
    "para": "laboratorio/r42_r44_quarta_leva.py",
    "tipo": "semelhante",
-   "peso": 0.25,
+   "peso": 0.247,
    "relacao": "complementares",
    "confianca": 0.7
+  },
+  {
+   "de": "R46",
+   "para": "integracao/camadas/__init__.py",
+   "tipo": "semelhante",
+   "peso": 0.254,
+   "relacao": "complementares",
+   "confianca": 0.58
+  },
+  {
+   "de": "R49",
+   "para": "executor/run_e10_llm_economico.py",
+   "tipo": "semelhante",
+   "peso": 0.204,
+   "relacao": "complementares",
+   "confianca": 0.78
+  },
+  {
+   "de": "R49",
+   "para": "executor/runner.py",
+   "tipo": "semelhante",
+   "peso": 0.213,
+   "relacao": "complementares",
+   "confianca": 0.34
+  },
+  {
+   "de": "R49",
+   "para": "laboratorio/r28_ato_de_fala.py",
+   "tipo": "semelhante",
+   "peso": 0.37,
+   "relacao": "mesmo-assunto",
+   "confianca": 0.32
+  },
+  {
+   "de": "R49",
+   "para": "laboratorio/r42_r44_quarta_leva.py",
+   "tipo": "semelhante",
+   "peso": 0.224,
+   "relacao": "complementares",
+   "confianca": 0.75
+  },
+  {
+   "de": "R50",
+   "para": "research/hermes/VALIDACAO-LOCAL.md",
+   "tipo": "semelhante",
+   "peso": 0.201,
+   "relacao": "complementares",
+   "confianca": 0.78
   },
   {
    "de": "R9",
    "para": "executor/gabarito.py",
    "tipo": "semelhante",
-   "peso": 0.264,
+   "peso": 0.265,
    "relacao": "complementares",
    "confianca": 0.72
   },
@@ -40294,7 +41018,7 @@
    "de": "R9",
    "para": "executor/run_e10_llm_economico.py",
    "tipo": "semelhante",
-   "peso": 0.263,
+   "peso": 0.264,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -40302,7 +41026,7 @@
    "de": "docs/AUDITORIA-DE-NUMEROS.md",
    "para": "laboratorio/caixa.py",
    "tipo": "semelhante",
-   "peso": 0.242,
+   "peso": 0.24,
    "relacao": "mesmo-assunto",
    "confianca": 0.83
   },
@@ -40310,7 +41034,7 @@
    "de": "docs/CAMADAS-CLAUDE-CODE.md",
    "para": "integracao/camadas/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.432,
+   "peso": 0.434,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -40339,6 +41063,14 @@
    "confianca": 0.96
   },
   {
+   "de": "docs/RELATORIO-EXECUCAO-JEV-HELENA.md",
+   "para": "laboratorio/PREREGISTRO.md",
+   "tipo": "semelhante",
+   "peso": 0.201,
+   "relacao": "complementares",
+   "confianca": 0.78
+  },
+  {
    "de": "docs/RELATORIO-FINAL-JEV.md",
    "para": "executor/run_e12_replicacao.py",
    "tipo": "semelhante",
@@ -40350,7 +41082,7 @@
    "de": "docs/RELATORIO-FINAL-JEV.md",
    "para": "planning/preregistro-E1-triagem.md",
    "tipo": "semelhante",
-   "peso": 0.216,
+   "peso": 0.215,
    "relacao": "complementares",
    "confianca": 0.75
   },
@@ -40366,7 +41098,7 @@
    "de": "docs/RELATORIO-FINAL-JEV.md",
    "para": "planning/protocolo.md",
    "tipo": "semelhante",
-   "peso": 0.203,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.76
   },
@@ -40374,7 +41106,7 @@
    "de": "docs/TRIAGEM-JEV-HELENA.md",
    "para": "planning/preregistro-E7-confirmacao.md",
    "tipo": "semelhante",
-   "peso": 0.203,
+   "peso": 0.204,
    "relacao": "complementares",
    "confianca": 0.84
   },
@@ -40390,7 +41122,7 @@
    "de": "executor/README.md",
    "para": "executor/probe_contract.py",
    "tipo": "semelhante",
-   "peso": 0.448,
+   "peso": 0.447,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -40398,7 +41130,7 @@
    "de": "executor/README.md",
    "para": "executor/run_canaries.py",
    "tipo": "semelhante",
-   "peso": 0.36,
+   "peso": 0.359,
    "relacao": "complementares",
    "confianca": 0.79
   },
@@ -40414,7 +41146,7 @@
    "de": "executor/analise.py",
    "para": "executor/run_e2b_posicao.py",
    "tipo": "semelhante",
-   "peso": 0.257,
+   "peso": 0.256,
    "relacao": "complementares",
    "confianca": 0.17
   },
@@ -40422,7 +41154,7 @@
    "de": "executor/assist.py",
    "para": "executor/smoke_mcp.py",
    "tipo": "semelhante",
-   "peso": 0.203,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.29
   },
@@ -40438,7 +41170,7 @@
    "de": "executor/credenciais.py",
    "para": "hermes/jev_hermes/nucleo.py",
    "tipo": "semelhante",
-   "peso": 0.291,
+   "peso": 0.292,
    "relacao": "mesmo-assunto",
    "confianca": 0.35
   },
@@ -40446,7 +41178,7 @@
    "de": "executor/credenciais.py",
    "para": "integracao/jev_router/redacao.py",
    "tipo": "semelhante",
-   "peso": 0.208,
+   "peso": 0.209,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -40454,7 +41186,7 @@
    "de": "executor/exportar_extrato.py",
    "para": "integracao/jev_router/orcamento.py",
    "tipo": "semelhante",
-   "peso": 0.206,
+   "peso": 0.208,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -40462,7 +41194,7 @@
    "de": "executor/exportar_extrato.py",
    "para": "laboratorio/auditoria.py",
    "tipo": "semelhante",
-   "peso": 0.228,
+   "peso": 0.225,
    "relacao": "complementares",
    "confianca": 0.79
   },
@@ -40470,7 +41202,7 @@
    "de": "executor/exportar_extrato.py",
    "para": "laboratorio/caixa.py",
    "tipo": "semelhante",
-   "peso": 0.281,
+   "peso": 0.282,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -40478,7 +41210,7 @@
    "de": "executor/exportar_extrato.py",
    "para": "laboratorio/conciliar_caixa.py",
    "tipo": "semelhante",
-   "peso": 0.403,
+   "peso": 0.408,
    "relacao": "complementares",
    "confianca": 0.77
   },
@@ -40486,7 +41218,7 @@
    "de": "executor/probe_contract.py",
    "para": "executor/run_canaries.py",
    "tipo": "semelhante",
-   "peso": 0.375,
+   "peso": 0.374,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -40502,7 +41234,7 @@
    "de": "executor/publish_simple_round.py",
    "para": "lab/server.py",
    "tipo": "semelhante",
-   "peso": 0.213,
+   "peso": 0.214,
    "relacao": "complementares",
    "confianca": 0.87
   },
@@ -40510,7 +41242,7 @@
    "de": "executor/run_e10_llm_economico.py",
    "para": "laboratorio/r10_injecao_comparada.py",
    "tipo": "semelhante",
-   "peso": 0.284,
+   "peso": 0.285,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -40518,7 +41250,7 @@
    "de": "executor/run_e10b_piloto.py",
    "para": "integracao/avaliacao/rodar.py",
    "tipo": "semelhante",
-   "peso": 0.294,
+   "peso": 0.293,
    "relacao": "complementares",
    "confianca": 0.71
   },
@@ -40526,7 +41258,7 @@
    "de": "executor/run_e11_desempate.py",
    "para": "planning/preregistro-E10-llm-economico.md",
    "tipo": "semelhante",
-   "peso": 0.277,
+   "peso": 0.278,
    "relacao": "complementares",
    "confianca": 0.89
   },
@@ -40566,7 +41298,7 @@
    "de": "executor/run_e2_fatorial.py",
    "para": "laboratorio/r1_r3_estresse.py",
    "tipo": "semelhante",
-   "peso": 0.351,
+   "peso": 0.353,
    "relacao": "complementares",
    "confianca": 0.33
   },
@@ -40582,7 +41314,7 @@
    "de": "executor/run_e3_evidencia.py",
    "para": "laboratorio/gerar_dossie.py",
    "tipo": "semelhante",
-   "peso": 0.279,
+   "peso": 0.273,
    "relacao": "complementares",
    "confianca": 0.65
   },
@@ -40590,7 +41322,7 @@
    "de": "executor/run_e5_provedores.py",
    "para": "integracao/jev_router/cliente.py",
    "tipo": "semelhante",
-   "peso": 0.218,
+   "peso": 0.217,
    "relacao": "complementares",
    "confianca": 0.6
   },
@@ -40598,7 +41330,7 @@
    "de": "executor/run_e7_confirmacao.py",
    "para": "executor/run_e8_anotador.py",
    "tipo": "semelhante",
-   "peso": 0.202,
+   "peso": 0.2,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -40606,7 +41338,7 @@
    "de": "executor/run_e8_anotador.py",
    "para": "integracao/avaliacao/rodar.py",
    "tipo": "semelhante",
-   "peso": 0.23,
+   "peso": 0.229,
    "relacao": "complementares",
    "confianca": 0.51
   },
@@ -40614,7 +41346,7 @@
    "de": "hermes/README.md",
    "para": "hermes/jev_hermes/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.368,
+   "peso": 0.367,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -40622,7 +41354,7 @@
    "de": "hermes/README.md",
    "para": "hermes/skill/jev/SKILL.md",
    "tipo": "semelhante",
-   "peso": 0.377,
+   "peso": 0.336,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -40630,7 +41362,7 @@
    "de": "hermes/jev_hermes/__init__.py",
    "para": "hermes/plugin/jev-advisor/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.231,
+   "peso": 0.23,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -40638,7 +41370,7 @@
    "de": "hermes/jev_hermes/__init__.py",
    "para": "hermes/plugin/jev-camadas/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.244,
+   "peso": 0.243,
    "relacao": "complementares",
    "confianca": 0.9
   },
@@ -40646,7 +41378,7 @@
    "de": "hermes/jev_hermes/camadas.py",
    "para": "hermes/plugin/jev-camadas/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.279,
+   "peso": 0.277,
    "relacao": "mesmo-assunto",
    "confianca": 0.97
   },
@@ -40654,7 +41386,7 @@
    "de": "hermes/jev_hermes/camadas.py",
    "para": "integracao/camadas/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.276,
+   "peso": 0.275,
    "relacao": "complementares",
    "confianca": 0.4
   },
@@ -40662,7 +41394,7 @@
    "de": "hermes/jev_hermes/camadas.py",
    "para": "integracao/camadas/medir.py",
    "tipo": "semelhante",
-   "peso": 0.235,
+   "peso": 0.234,
    "relacao": "complementares",
    "confianca": 0.77
   },
@@ -40670,7 +41402,7 @@
    "de": "hermes/jev_hermes/camadas.py",
    "para": "integracao/camadas/nucleo.py",
    "tipo": "semelhante",
-   "peso": 0.358,
+   "peso": 0.359,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -40678,7 +41410,7 @@
    "de": "hermes/jev_hermes/camadas.py",
    "para": "integracao/hooks/jev_prompt_router.py",
    "tipo": "semelhante",
-   "peso": 0.267,
+   "peso": 0.268,
    "relacao": "complementares",
    "confianca": 0.91
   },
@@ -40686,7 +41418,7 @@
    "de": "hermes/jev_hermes/medir.py",
    "para": "integracao/camadas/medir.py",
    "tipo": "semelhante",
-   "peso": 0.315,
+   "peso": 0.317,
    "relacao": "complementares",
    "confianca": 0.32
   },
@@ -40694,7 +41426,7 @@
    "de": "hermes/jev_hermes/medir.py",
    "para": "research/audit_hermes_pdf.py",
    "tipo": "semelhante",
-   "peso": 0.212,
+   "peso": 0.21,
    "relacao": "mesmo-assunto",
    "confianca": 0.54
   },
@@ -40718,15 +41450,23 @@
    "de": "hermes/jev_hermes/nucleo.py",
    "para": "integracao/jev_router/roteador.py",
    "tipo": "semelhante",
-   "peso": 0.432,
+   "peso": 0.433,
    "relacao": "complementares",
    "confianca": 0.84
+  },
+  {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "tipo": "semelhante",
+   "peso": 0.312,
+   "relacao": "complementares",
+   "confianca": 0.64
   },
   {
    "de": "hermes/jev_hermes/ponte_openai.py",
    "para": "lab/server.py",
    "tipo": "semelhante",
-   "peso": 0.3,
+   "peso": 0.301,
    "relacao": "complementares",
    "confianca": 0.59
   },
@@ -40739,10 +41479,18 @@
    "confianca": 0.92
   },
   {
+   "de": "hermes/plugin/jev-advisor/__init__.py",
+   "para": "hermes/skill/jev/SKILL.md",
+   "tipo": "semelhante",
+   "peso": 0.207,
+   "relacao": "complementares",
+   "confianca": 0.74
+  },
+  {
    "de": "hermes/portoes/jev_fabio_urgent_watch.py",
    "para": "hermes/portoes/jev_gate_arcano_email.py",
    "tipo": "semelhante",
-   "peso": 0.295,
+   "peso": 0.294,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -40750,7 +41498,7 @@
    "de": "hermes/portoes/jev_fabio_urgent_watch.py",
    "para": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "tipo": "semelhante",
-   "peso": 0.457,
+   "peso": 0.461,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -40758,7 +41506,7 @@
    "de": "hermes/portoes/jev_gate_arcano_email.py",
    "para": "hermes/portoes/jev_gate_email_diario.py",
    "tipo": "semelhante",
-   "peso": 0.322,
+   "peso": 0.323,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -40766,7 +41514,7 @@
    "de": "hermes/portoes/jev_gate_arcano_email.py",
    "para": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "tipo": "semelhante",
-   "peso": 0.406,
+   "peso": 0.41,
    "relacao": "complementares",
    "confianca": 0.53
   },
@@ -40782,7 +41530,7 @@
    "de": "hermes/portoes/jev_gate_arcano_email.py",
    "para": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
    "tipo": "semelhante",
-   "peso": 0.252,
+   "peso": 0.253,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -40790,7 +41538,7 @@
    "de": "hermes/portoes/jev_gate_email_diario.py",
    "para": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "tipo": "semelhante",
-   "peso": 0.432,
+   "peso": 0.428,
    "relacao": "complementares",
    "confianca": 0.31
   },
@@ -40798,7 +41546,7 @@
    "de": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "para": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
    "tipo": "semelhante",
-   "peso": 0.314,
+   "peso": 0.295,
    "relacao": "complementares",
    "confianca": 0.61
   },
@@ -40814,7 +41562,7 @@
    "de": "hermes/portoes/jev_gate_sono_memoria.py",
    "para": "hermes/rotinas/jev_rotina_economia.py",
    "tipo": "semelhante",
-   "peso": 0.326,
+   "peso": 0.327,
    "relacao": "complementares",
    "confianca": 0.45
   },
@@ -40822,7 +41570,7 @@
    "de": "hermes/portoes/jev_gate_sono_memoria.py",
    "para": "research/hermes/VALIDACAO-LOCAL.md",
    "tipo": "semelhante",
-   "peso": 0.31,
+   "peso": 0.304,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -40830,7 +41578,7 @@
    "de": "hermes/rotinas/jev_rotina_agenda_dia.py",
    "para": "hermes/rotinas/jev_rotina_painel_manha.py",
    "tipo": "semelhante",
-   "peso": 0.436,
+   "peso": 0.4,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -40838,15 +41586,23 @@
    "de": "hermes/rotinas/jev_rotina_economia.py",
    "para": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
    "tipo": "semelhante",
-   "peso": 0.255,
+   "peso": 0.249,
    "relacao": "complementares",
    "confianca": 0.76
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "para": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
+   "tipo": "semelhante",
+   "peso": 0.254,
+   "relacao": "complementares",
+   "confianca": 0.61
   },
   {
    "de": "integracao/README.md",
    "para": "integracao/jev_router/politica.py",
    "tipo": "semelhante",
-   "peso": 0.341,
+   "peso": 0.342,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -40854,7 +41610,7 @@
    "de": "integracao/avaliacao/amostrar.py",
    "para": "integracao/avaliacao/amostrar_com_contexto.py",
    "tipo": "semelhante",
-   "peso": 0.298,
+   "peso": 0.299,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -40862,7 +41618,7 @@
    "de": "integracao/avaliacao/amostrar.py",
    "para": "integracao/avaliacao/auditar_producao.py",
    "tipo": "semelhante",
-   "peso": 0.257,
+   "peso": 0.258,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -40870,7 +41626,7 @@
    "de": "integracao/avaliacao/amostrar.py",
    "para": "integracao/jev_router/politica.py",
    "tipo": "semelhante",
-   "peso": 0.247,
+   "peso": 0.249,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -40886,7 +41642,7 @@
    "de": "integracao/avaliacao/amostrar_com_contexto.py",
    "para": "integracao/jev_router/politica.py",
    "tipo": "semelhante",
-   "peso": 0.209,
+   "peso": 0.21,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -40894,7 +41650,7 @@
    "de": "integracao/avaliacao/auditar_producao.py",
    "para": "integracao/jev_router/__init__.py",
    "tipo": "semelhante",
-   "peso": 0.288,
+   "peso": 0.289,
    "relacao": "complementares",
    "confianca": 0.42
   },
@@ -40916,25 +41672,9 @@
   },
   {
    "de": "integracao/avaliacao/com_contexto.py",
-   "para": "integracao/avaliacao/comandos.py",
-   "tipo": "semelhante",
-   "peso": 0.215,
-   "relacao": "complementares",
-   "confianca": 0.49
-  },
-  {
-   "de": "integracao/avaliacao/com_contexto.py",
-   "para": "laboratorio/r26_dois_trechos.py",
-   "tipo": "semelhante",
-   "peso": 0.203,
-   "relacao": "complementares",
-   "confianca": 0.39
-  },
-  {
-   "de": "integracao/avaliacao/com_contexto.py",
    "para": "laboratorio/r38_r41_terceira_leva.py",
    "tipo": "semelhante",
-   "peso": 0.241,
+   "peso": 0.22,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -40947,26 +41687,26 @@
    "confianca": 0.69
   },
   {
-   "de": "integracao/camadas/__init__.py",
-   "para": "integracao/camadas/medir.py",
+   "de": "integracao/avaliacao/skills.py",
+   "para": "laboratorio/r50_checklist_de_contrato.py",
    "tipo": "semelhante",
-   "peso": 0.301,
+   "peso": 0.265,
    "relacao": "complementares",
-   "confianca": 0.83
+   "confianca": 0.28
   },
   {
    "de": "integracao/camadas/__init__.py",
-   "para": "integracao/jev_router/politica.py",
+   "para": "integracao/camadas/medir.py",
    "tipo": "semelhante",
-   "peso": 0.24,
+   "peso": 0.299,
    "relacao": "complementares",
-   "confianca": 0.93
+   "confianca": 0.83
   },
   {
    "de": "integracao/camadas/busca.py",
    "para": "integracao/camadas/leitura.py",
    "tipo": "semelhante",
-   "peso": 0.34,
+   "peso": 0.342,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -40974,15 +41714,23 @@
    "de": "integracao/camadas/busca.py",
    "para": "integracao/camadas/ler.py",
    "tipo": "semelhante",
-   "peso": 0.232,
+   "peso": 0.233,
    "relacao": "complementares",
    "confianca": 0.92
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "research/hermes/VALIDACAO-LOCAL.md",
+   "tipo": "semelhante",
+   "peso": 0.257,
+   "relacao": "complementares",
+   "confianca": 0.84
   },
   {
    "de": "integracao/camadas/leitura.py",
    "para": "integracao/camadas/ler.py",
    "tipo": "semelhante",
-   "peso": 0.26,
+   "peso": 0.256,
    "relacao": "mesmo-assunto",
    "confianca": 0.94
   },
@@ -40990,7 +41738,7 @@
    "de": "integracao/camadas/leitura.py",
    "para": "integracao/camadas/saida.py",
    "tipo": "semelhante",
-   "peso": 0.314,
+   "peso": 0.315,
    "relacao": "complementares",
    "confianca": 0.84
   },
@@ -40998,7 +41746,7 @@
    "de": "integracao/camadas/leitura.py",
    "para": "integracao/camadas/sentinela.py",
    "tipo": "semelhante",
-   "peso": 0.435,
+   "peso": 0.437,
    "relacao": "complementares",
    "confianca": 0.74
   },
@@ -41006,7 +41754,7 @@
    "de": "integracao/camadas/ler.py",
    "para": "planning/preregistro-E16-recuperacao.md",
    "tipo": "semelhante",
-   "peso": 0.218,
+   "peso": 0.219,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -41014,7 +41762,7 @@
    "de": "integracao/camadas/nucleo.py",
    "para": "integracao/hooks/jev_guarda_comando.py",
    "tipo": "semelhante",
-   "peso": 0.209,
+   "peso": 0.21,
    "relacao": "complementares",
    "confianca": 0.79
   },
@@ -41030,7 +41778,7 @@
    "de": "integracao/camadas/rotina.py",
    "para": "laboratorio/h100/avaliar.py",
    "tipo": "semelhante",
-   "peso": 0.219,
+   "peso": 0.218,
    "relacao": "complementares",
    "confianca": 0.8
   },
@@ -41054,7 +41802,7 @@
    "de": "integracao/hooks/jev_busca.py",
    "para": "integracao/hooks/jev_sentinela.py",
    "tipo": "semelhante",
-   "peso": 0.236,
+   "peso": 0.24,
    "relacao": "complementares",
    "confianca": 0.87
   },
@@ -41062,7 +41810,7 @@
    "de": "integracao/hooks/jev_guarda_comando.py",
    "para": "integracao/hooks/jev_leitura.py",
    "tipo": "semelhante",
-   "peso": 0.297,
+   "peso": 0.298,
    "relacao": "complementares",
    "confianca": 0.64
   },
@@ -41078,7 +41826,7 @@
    "de": "integracao/hooks/jev_saida.py",
    "para": "integracao/hooks/jev_sentinela.py",
    "tipo": "semelhante",
-   "peso": 0.273,
+   "peso": 0.277,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -41094,7 +41842,7 @@
    "de": "integracao/instalar.py",
    "para": "integracao/jev_router/politica.py",
    "tipo": "semelhante",
-   "peso": 0.258,
+   "peso": 0.259,
    "relacao": "complementares",
    "confianca": 0.96
   },
@@ -41110,7 +41858,7 @@
    "de": "integracao/jev_router/orcamento.py",
    "para": "laboratorio/conciliar_caixa.py",
    "tipo": "semelhante",
-   "peso": 0.299,
+   "peso": 0.3,
    "relacao": "complementares",
    "confianca": 0.73
   },
@@ -41118,7 +41866,7 @@
    "de": "integracao/jev_router/politica.py",
    "para": "laboratorio/q100/registro.py",
    "tipo": "semelhante",
-   "peso": 0.267,
+   "peso": 0.264,
    "relacao": "complementares",
    "confianca": 0.41
   },
@@ -41134,7 +41882,7 @@
    "de": "lab/server.py",
    "para": "research/hermes/VALIDACAO-LOCAL.md",
    "tipo": "semelhante",
-   "peso": 0.262,
+   "peso": 0.247,
    "relacao": "complementares",
    "confianca": 0.57
   },
@@ -41150,7 +41898,7 @@
    "de": "laboratorio/gerar_bateria.py",
    "para": "laboratorio/h100/relatorio.py",
    "tipo": "semelhante",
-   "peso": 0.266,
+   "peso": 0.265,
    "relacao": "complementares",
    "confianca": 0.88
   },
@@ -41214,7 +41962,7 @@
    "de": "laboratorio/h100/dados.py",
    "para": "laboratorio/q100/registro.py",
    "tipo": "semelhante",
-   "peso": 0.204,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.86
   },
@@ -41222,7 +41970,7 @@
    "de": "laboratorio/h100/registro.py",
    "para": "laboratorio/q100/registro.py",
    "tipo": "semelhante",
-   "peso": 0.2,
+   "peso": 0.202,
    "relacao": "complementares",
    "confianca": 0.75
   },
@@ -41230,7 +41978,7 @@
    "de": "laboratorio/h100/relatorio.py",
    "para": "laboratorio/q100/relatorio.py",
    "tipo": "semelhante",
-   "peso": 0.704,
+   "peso": 0.703,
    "relacao": "complementares",
    "confianca": 0.94
   },
@@ -41238,17 +41986,9 @@
    "de": "laboratorio/q100/relatorio.py",
    "para": "laboratorio/r17_economia_de_contexto.py",
    "tipo": "semelhante",
-   "peso": 0.233,
+   "peso": 0.23,
    "relacao": "complementares",
    "confianca": 0.4
-  },
-  {
-   "de": "laboratorio/q100/relatorio.py",
-   "para": "laboratorio/r26_dois_trechos.py",
-   "tipo": "semelhante",
-   "peso": 0.215,
-   "relacao": "complementares",
-   "confianca": 0.63
   },
   {
    "de": "laboratorio/r10_injecao_comparada.py",
@@ -41310,7 +42050,7 @@
    "de": "laboratorio/r18_escala.py",
    "para": "laboratorio/r26_dois_trechos.py",
    "tipo": "semelhante",
-   "peso": 0.246,
+   "peso": 0.245,
    "relacao": "complementares",
    "confianca": 0.45
   },
@@ -41318,7 +42058,7 @@
    "de": "laboratorio/r19_armadilha_de_sujeito.py",
    "para": "laboratorio/r31_r37_segunda_leva.py",
    "tipo": "semelhante",
-   "peso": 0.214,
+   "peso": 0.213,
    "relacao": "complementares",
    "confianca": 0.84
   },
@@ -41326,7 +42066,7 @@
    "de": "laboratorio/r1_r3_estresse.py",
    "para": "laboratorio/r23_parafrase.py",
    "tipo": "semelhante",
-   "peso": 0.292,
+   "peso": 0.293,
    "relacao": "complementares",
    "confianca": 0.5
   },
@@ -41342,7 +42082,7 @@
    "de": "laboratorio/r20_k_adaptativo.py",
    "para": "laboratorio/r31_r37_segunda_leva.py",
    "tipo": "semelhante",
-   "peso": 0.208,
+   "peso": 0.206,
    "relacao": "complementares",
    "confianca": 0.92
   },
@@ -41350,7 +42090,7 @@
    "de": "laboratorio/r21b_cruzamento.py",
    "para": "laboratorio/r25_terceiro_dominio.py",
    "tipo": "semelhante",
-   "peso": 0.297,
+   "peso": 0.296,
    "relacao": "complementares",
    "confianca": 0.42
   },
@@ -41358,7 +42098,7 @@
    "de": "laboratorio/r22_defesas.py",
    "para": "laboratorio/r29_o_que_carrega_a_decisao.py",
    "tipo": "semelhante",
-   "peso": 0.307,
+   "peso": 0.306,
    "relacao": "complementares",
    "confianca": 0.78
   },
@@ -41366,7 +42106,7 @@
    "de": "laboratorio/r23_parafrase.py",
    "para": "laboratorio/r27_integracao.py",
    "tipo": "semelhante",
-   "peso": 0.322,
+   "peso": 0.324,
    "relacao": "complementares",
    "confianca": 0.72
   },
@@ -41374,7 +42114,7 @@
    "de": "laboratorio/r26_dois_trechos.py",
    "para": "laboratorio/r27_integracao.py",
    "tipo": "semelhante",
-   "peso": 0.235,
+   "peso": 0.234,
    "relacao": "complementares",
    "confianca": 0.69
   },
@@ -41382,7 +42122,7 @@
    "de": "laboratorio/r26_dois_trechos.py",
    "para": "laboratorio/r29_o_que_carrega_a_decisao.py",
    "tipo": "semelhante",
-   "peso": 0.262,
+   "peso": 0.258,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -41398,7 +42138,7 @@
    "de": "laboratorio/r27_integracao.py",
    "para": "laboratorio/r29_o_que_carrega_a_decisao.py",
    "tipo": "semelhante",
-   "peso": 0.261,
+   "peso": 0.26,
    "relacao": "complementares",
    "confianca": 0.63
   },
@@ -41406,7 +42146,7 @@
    "de": "laboratorio/r38_r41_terceira_leva.py",
    "para": "laboratorio/r42_r44_quarta_leva.py",
    "tipo": "semelhante",
-   "peso": 0.216,
+   "peso": 0.214,
    "relacao": "complementares",
    "confianca": 0.92
   },
@@ -41422,7 +42162,7 @@
    "de": "laboratorio/r4_r7_limites.py",
    "para": "planning/preregistro-E1-triagem.md",
    "tipo": "semelhante",
-   "peso": 0.245,
+   "peso": 0.246,
    "relacao": "complementares",
    "confianca": 0.58
   },
@@ -41430,7 +42170,7 @@
    "de": "planning/build_deliverables.py",
    "para": "research/audit_hermes_pdf.py",
    "tipo": "semelhante",
-   "peso": 0.343,
+   "peso": 0.344,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -41438,7 +42178,7 @@
    "de": "planning/build_guia_pdf.py",
    "para": "planning/build_relatorio_pdf.py",
    "tipo": "semelhante",
-   "peso": 0.652,
+   "peso": 0.654,
    "relacao": "complementares",
    "confianca": 0.81
   },
@@ -41454,7 +42194,7 @@
    "de": "planning/emenda-E15-01.md",
    "para": "planning/preregistro-E7-confirmacao.md",
    "tipo": "semelhante",
-   "peso": 0.227,
+   "peso": 0.228,
    "relacao": "complementares",
    "confianca": 0.85
   },
@@ -41462,7 +42202,7 @@
    "de": "planning/preregistro-E1-triagem.md",
    "para": "planning/preregistro-E10-llm-economico.md",
    "tipo": "semelhante",
-   "peso": 0.281,
+   "peso": 0.282,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -41478,7 +42218,7 @@
    "de": "planning/preregistro-E1-triagem.md",
    "para": "planning/preregistro-E7-confirmacao.md",
    "tipo": "semelhante",
-   "peso": 0.264,
+   "peso": 0.265,
    "relacao": "complementares",
    "confianca": 0.66
   },
@@ -41502,7 +42242,7 @@
    "de": "planning/preregistro-E10-llm-economico.md",
    "para": "planning/preregistro-E7-confirmacao.md",
    "tipo": "semelhante",
-   "peso": 0.479,
+   "peso": 0.48,
    "relacao": "complementares",
    "confianca": 0.52
   },
@@ -41526,7 +42266,7 @@
    "de": "planning/preregistro-E12-replicacao.md",
    "para": "planning/preregistro-E7-confirmacao.md",
    "tipo": "semelhante",
-   "peso": 0.379,
+   "peso": 0.38,
    "relacao": "complementares",
    "confianca": 0.82
   },
@@ -42816,6 +43556,21 @@
    "tipo": "usa"
   },
   {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/jev_hermes/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/jev_hermes/nucleo.py::escolha",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/jev_hermes/pendencias.py",
+   "para": "hermes/jev_hermes/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
    "de": "hermes/jev_hermes/ponte_openai.py",
    "para": "hermes/jev_hermes/nucleo.py::desligado",
    "tipo": "usa"
@@ -43132,6 +43887,16 @@
   },
   {
    "de": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "para": "hermes/jev_hermes/pendencias.py::esperando_igor",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_painel_manha.py",
+   "para": "hermes/jev_hermes/pendencias.py::promessas_abertas",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/rotinas/jev_rotina_painel_manha.py",
    "para": "hermes/jev_hermes/portao.py::json_da_saida",
    "tipo": "usa"
   },
@@ -43187,6 +43952,11 @@
   },
   {
    "de": "hermes/tests/test_jev_hermes.py",
+   "para": "hermes/jev_hermes/pendencias.py::esperando_igor",
+   "tipo": "usa"
+  },
+  {
+   "de": "hermes/tests/test_jev_hermes.py",
    "para": "hermes/jev_hermes/ponte_openai.py::Ponte",
    "tipo": "usa"
   },
@@ -43237,6 +44007,26 @@
   },
   {
    "de": "integracao/camadas/busca.py",
+   "para": "integracao/camadas/nucleo.py::resumo_das_chamadas",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "integracao/camadas/nucleo.py::classificar_em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "integracao/camadas/nucleo.py::dec",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "integracao/camadas/nucleo.py::registrar",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
    "para": "integracao/camadas/nucleo.py::resumo_das_chamadas",
    "tipo": "usa"
   },
@@ -44836,6 +45626,31 @@
    "tipo": "usa"
   },
   {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/nucleo.py::em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::gravar",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::medidas",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::taxa",
+   "tipo": "usa"
+  },
+  {
    "de": "laboratorio/r4_r7_limites.py",
    "para": "laboratorio/nucleo.py::em_paralelo",
    "tipo": "usa"
@@ -44853,6 +45668,51 @@
   {
    "de": "laboratorio/r4_r7_limites.py",
    "para": "laboratorio/r1_r3_estresse.py::com_erro",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/checklist.py::carregar_lista",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/checklist.py::ler_item",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/checklist.py::perguntas_da",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "integracao/camadas/checklist.py::semaforo",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/nucleo.py::em_paralelo",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::gravar",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::medidas",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::perguntar",
+   "tipo": "usa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "laboratorio/r31_r37_segunda_leva.py::taxa",
    "tipo": "usa"
   },
   {
@@ -47412,11 +48272,6 @@
    "tipo": "no tema"
   },
   {
-   "de": "R33",
-   "para": "T04",
-   "tipo": "no tema"
-  },
-  {
    "de": "R34",
    "para": "T11",
    "tipo": "no tema"
@@ -47457,8 +48312,8 @@
    "tipo": "no tema"
   },
   {
-   "de": "R42",
-   "para": "T04",
+   "de": "R48",
+   "para": "T01",
    "tipo": "no tema"
   },
   {
@@ -47470,6 +48325,11 @@
    "de": "R5",
    "para": "R3",
    "tipo": "apoia-se em"
+  },
+  {
+   "de": "R50",
+   "para": "T01",
+   "tipo": "no tema"
   },
   {
    "de": "R6",
@@ -49275,7 +50135,7 @@
    "de": "docs/ESSENCIA-DO-JEV.md",
    "para": "R13",
    "tipo": "menciona",
-   "peso": 1
+   "peso": 2
   },
   {
    "de": "docs/ESSENCIA-DO-JEV.md",
@@ -49426,6 +50286,36 @@
    "para": "R45",
    "tipo": "menciona",
    "peso": 3
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "R46",
+   "tipo": "menciona",
+   "peso": 4
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "R47",
+   "tipo": "menciona",
+   "peso": 3
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "R48",
+   "tipo": "menciona",
+   "peso": 3
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "R49",
+   "tipo": "menciona",
+   "peso": 3
+  },
+  {
+   "de": "docs/ESSENCIA-DO-JEV.md",
+   "para": "R50",
+   "tipo": "menciona",
+   "peso": 4
   },
   {
    "de": "docs/ESSENCIA-DO-JEV.md",
@@ -51112,6 +52002,48 @@
    "peso": 1
   },
   {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R13",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R28",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R31",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R32",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R33",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R49",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "integracao/camadas/checklist.py",
+   "para": "R50",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
    "de": "integracao/camadas/leitura.py",
    "para": "R18",
    "tipo": "menciona",
@@ -51997,7 +52929,32 @@
   },
   {
    "de": "laboratorio/PREREGISTRO.md",
+   "para": "R46",
+   "tipo": "pré-registra"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "R47",
+   "tipo": "pré-registra"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "R48",
+   "tipo": "pré-registra"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "R49",
+   "tipo": "pré-registra"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
    "para": "R5",
+   "tipo": "pré-registra"
+  },
+  {
+   "de": "laboratorio/PREREGISTRO.md",
+   "para": "R50",
    "tipo": "pré-registra"
   },
   {
@@ -60014,6 +60971,32 @@
    "tipo": "executa"
   },
   {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "R33",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "R46",
+   "tipo": "executa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "R47",
+   "tipo": "executa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "R48",
+   "tipo": "executa"
+  },
+  {
+   "de": "laboratorio/r46_r49_pontos_do_video.py",
+   "para": "R49",
+   "tipo": "executa"
+  },
+  {
    "de": "laboratorio/r4_r7_limites.py",
    "para": "R4",
    "tipo": "executa"
@@ -60031,6 +61014,23 @@
   {
    "de": "laboratorio/r4_r7_limites.py",
    "para": "R7",
+   "tipo": "executa"
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "R33",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "R49",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "laboratorio/r50_checklist_de_contrato.py",
+   "para": "R50",
    "tipo": "executa"
   },
   {

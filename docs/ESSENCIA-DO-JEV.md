@@ -225,6 +225,34 @@ No meio: H31d (o `noul` no corte 0,5 acertou um caso a menos que o `choice`) e H
 4. **Lista com respondedor forte.** A vantagem de selecionar foi medida com respondedor barato; com um modelo de fronteira o ganho de acurácia deve ser menor [Inferência], o de custo não.
 5. **O acerto de cada atributo do painel de 16** não tem gabarito.
 
+## 8. Duas avaliações externas em vídeo, refeitas aqui (R46 a R50)
+
+Dois vídeos de 2026-09-21 testaram o Jev por conta própria. A leitura documental do primeiro, com as propostas V01 a V05, está em `docs/VIDEO-JEV-VIKTORKAV-2026-09-21.md`. Aqui está o que aconteceu quando refiz os exemplos deles com gabarito por construção. O que os vídeos afirmam é relato dos autores; não tive acesso aos payloads deles.
+
+**Primeiro vídeo — "Jev: IA de Decisões Rápidas e de Baixíssimo Custo" (ViktorKav, https://youtu.be/RZNmluFIgK0).**
+
+| exemplo do vídeo | o que ele relata | o que medi |
+|---|---|---|
+| "10 hubs USB, metade agora, metade mês que vem": quantidade do primeiro lote | respondeu 10 em 3 de 3, com 96–98% | **Não reproduziu.** 39 de 40 pedidos certos, com "metade" e "um terço" em 10 de 10 cada (R46). A frase literal do vídeo, em três redações da pergunta, deu 5 em 6 de 6. O defeito dele depende de algo no payload que não conheço. Decompor (total e regra, conta em código) deu 30 de 30 e continua sendo o desenho mais seguro. |
+| Fiscal de outro agente com evidência incompleta | condenou (`defeito`) em 12 de 12, havendo a opção `inconclusiva` | **Reproduziu em parte:** 10 de 12 `inconclusiva`, 2 de 12 condenações indevidas (R47). Com duas perguntas — a observação mostra tudo? o que foi visto contraria o pedido? — e o veredito montado em código: **47 de 47**. É uma resposta medida à pergunta aberta NC12 do conhecimento consolidado. |
+| Banking77 (77 classes, inglês), 154 mensagens | 83,8%; com probabilidade ≥ 0,95, 103 de 105 | 76,8% (116/151), abaixo do que previ. Com p ≥ 0,95: 94/99 = 94,9% e cobertura de 66%; com p ≥ 0,99: **79/80** e cobertura de 53% (R48). É a primeira referência pública do estudo. O corte dele não se transporta para a minha amostra, como a seção 2.4 prevê. A fórmula da confiança valeu em 95,4% com K = 77. |
+| 64 perguntas no mesmo payload | 254 ms com uma, 263 ms com 64 | Latência igual (1.216 ms com 4, 1.156 ms com 64), todas respondidas, cópias da mesma pergunta 100% coerentes (R49). Custo de 64 perguntas: dez vezes o de 4. |
+
+Dois pontos do vídeo que a pasta não tinha e que valem registro:
+
+- **A nossa latência é mais que o quádruplo da dele** (cerca de 1.200 ms contra 254 ms). O recibo separa: cerca de 730 ms são rede e perto de 450 ms são nossos (reserva e liquidação no livro-caixa, conexão nova a cada chamada). Ele mede "depois de estabelecer a conexão". [Inferência] Reaproveitar a conexão e enxugar o caminho do livro-caixa deve cortar parte disso. Não medi: a regra da pasta proíbe transporte pago paralelo, então a mudança teria de ser feita no transporte único.
+- **O contrato tem uma quarta operação**, localizar um trecho dentro do texto, além de `choice`, `score` e `noul`. Nenhuma rodada desta pasta a usou. [Não verificado]
+
+**Segundo vídeo — "Coloquei o GPT 6 Astra e o Jev no mesmo app" (Hora de Codar, https://youtu.be/NPog8eJRojM).** Um auditor de contrato: oito perguntas de risco, semáforo por item, corte de 0,6 para revisão manual, lista de perguntas editável por quem não programa, e um modelo gerador para o resumo. O autor manda **uma pergunta por chamada, em sequência**, e diz que esse é o jeito certo (3,8 s no total).
+
+A ideia é boa e está implantada: `integracao/camadas/checklist.py`, com a lista `integracao/camadas/listas/contrato-prestacao-de-servicos.json` e a skill `/jev-checklist` no Claude Code. Três coisas mudam em relação ao vídeo, todas por medição desta pasta:
+
+1. **Uma chamada, não oito.** Na R50, 36 contratos construídos e 288 julgamentos: 287 certos numa chamada só, 283 de 284 item por item, respostas iguais em 99,3%. A chamada única levou 1,2 s e custou US$ 0,000096; as oito chamadas custaram US$ 0,000286 e, feitas em sequência, somam a espera de oito.
+2. **Corte na probabilidade, em 0,90, e não 0,6 na confiança.** Abaixo de 0,5 a resposta oscila entre chamadas idênticas (2.10), e a confiança muda com o número de opções (2.4). Com 0,90, 96,9% dos itens saíram decididos sem gente, 279 de 279 certos, e nenhum ponto arriscado saiu verde.
+3. **Toda pergunta ganha `nao-consta`, e um sentinela vai junto.** Ponto ausente foi reconhecido em 94 de 95. Sem a classe de escape o Jev inventa uma resposta com confiança alta (R13).
+
+Ressalva da R50: as cláusulas foram escritas por mim, limpas e sem ambiguidade, pelo mesmo autor das descrições das opções. Contrato de verdade é mais turvo. O número diz que o mecanismo funciona e que uma chamada basta; não diz que o acerto em contrato real é 99%. O exemplo do próprio vídeo aponta o limite certo: a pergunta de juízo global ("vale a pena assinar?") voltou com 42% de confiança, e o lugar dela é o amarelo.
+
 ## 7. Custo e reprodução
 
 Sessão inteira: 6.620 chamadas ao Jev e 95 ao gerador, cerca de US$ 0,40. O livro-caixa está em US$ 1,45 liquidados dos US$ 5,00 autorizados.
@@ -237,6 +265,8 @@ python laboratorio/r31_r37_segunda_leva.py --gerar --rodar R31 R32 R34 R35 R36 R
 python laboratorio/r38_r41_terceira_leva.py --rodar R38 R39 R40 R41
 python laboratorio/r42_r44_quarta_leva.py --rodar R42 R43 R44
 python laboratorio/r45_lista_nas_duas_ordens.py --rodar
+python laboratorio/r46_r49_pontos_do_video.py --rodar R46 R47 R48 R49 --banking <test.csv do Banking77>
+python laboratorio/r50_checklist_de_contrato.py --rodar
 ```
 
 Cada script grava o bruto antes de analisar. As análises sem custo desta página (fórmula da confiança, decomposição por molde, deriva entre dias) leem só `runs/ledger.sqlite3` e os artefatos `laboratorio/r19`, `r21`, `r25`.

@@ -1,0 +1,6698 @@
+[
+ {
+  "i": 0,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.94,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 2947.11
+ },
+ {
+  "i": 1,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.9,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.4794e-05,
+  "latencia_ms": 1613.37
+ },
+ {
+  "i": 2,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.96,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.576e-05,
+  "latencia_ms": 1831.73
+ },
+ {
+  "i": 3,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.61,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.5802e-05,
+  "latencia_ms": 3228.25
+ },
+ {
+  "i": 4,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.996e-05,
+  "latencia_ms": 13736.91
+ },
+ {
+  "i": 5,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.7146e-05,
+  "latencia_ms": 2051.31
+ },
+ {
+  "i": 6,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.4416e-05,
+  "latencia_ms": 1191.31
+ },
+ {
+  "i": 7,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 0.99,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.85,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.492e-05,
+  "latencia_ms": 3243.68
+ },
+ {
+  "i": 8,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.492e-05,
+  "latencia_ms": 1290.14
+ },
+ {
+  "i": 9,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.88,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.9876e-05,
+  "latencia_ms": 1087.9
+ },
+ {
+  "i": 10,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.87e-05,
+  "latencia_ms": 1092.15
+ },
+ {
+  "i": 11,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.7944e-05,
+  "latencia_ms": 1146.55
+ },
+ {
+  "i": 12,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.93,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.24e-05,
+  "latencia_ms": 1012.55
+ },
+ {
+  "i": 13,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.8532e-05,
+  "latencia_ms": 5641.06
+ },
+ {
+  "i": 14,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.5718e-05,
+  "latencia_ms": 1183.0
+ },
+ {
+  "i": 15,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.954e-05,
+  "latencia_ms": 1155.91
+ },
+ {
+  "i": 16,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.6978e-05,
+  "latencia_ms": 3779.92
+ },
+ {
+  "i": 17,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 0.5,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.8238e-05,
+  "latencia_ms": 1677.72
+ },
+ {
+  "i": 18,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.6096e-05,
+  "latencia_ms": 1099.82
+ },
+ {
+  "i": 19,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.6096e-05,
+  "latencia_ms": 1049.25
+ },
+ {
+  "i": 20,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.6978e-05,
+  "latencia_ms": 1069.7
+ },
+ {
+  "i": 21,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.87,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.7,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.4416e-05,
+  "latencia_ms": 1045.37
+ },
+ {
+  "i": 22,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.64,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.7146e-05,
+  "latencia_ms": 1031.74
+ },
+ {
+  "i": 23,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 0.00010017,
+  "latencia_ms": 1002.27
+ },
+ {
+  "i": 24,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.261e-05,
+  "latencia_ms": 2067.33
+ },
+ {
+  "i": 25,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.97,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.7482e-05,
+  "latencia_ms": 1020.34
+ },
+ {
+  "i": 26,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.94,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.429e-05,
+  "latencia_ms": 1821.35
+ },
+ {
+  "i": 27,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 0.000100716,
+  "latencia_ms": 1033.29
+ },
+ {
+  "i": 28,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.2736e-05,
+  "latencia_ms": 2379.51
+ },
+ {
+  "i": 29,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.97,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.3366e-05,
+  "latencia_ms": 1050.31
+ },
+ {
+  "i": 30,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.97,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.2106e-05,
+  "latencia_ms": 7728.41
+ },
+ {
+  "i": 31,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.57,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.8658e-05,
+  "latencia_ms": 1061.24
+ },
+ {
+  "i": 32,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.849e-05,
+  "latencia_ms": 1044.71
+ },
+ {
+  "i": 33,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   },
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.54,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 9.7482e-05,
+  "latencia_ms": 1028.66
+ },
+ {
+  "i": 34,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   },
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   },
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   },
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.94,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   },
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 9.492e-05,
+  "latencia_ms": 1296.26
+ },
+ {
+  "i": 35,
+  "arranjo": "uma-chamada",
+  "item": null,
+  "sentinela": "nao-tenta",
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   },
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   },
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   },
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.94,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   },
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   },
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   },
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 9.8112e-05,
+  "latencia_ms": 1043.73
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 2.9526e-05,
+  "latencia_ms": 3359.18
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 2.9736e-05,
+  "latencia_ms": 1313.94
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 2.9568e-05,
+  "latencia_ms": 1049.16
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 2.9064e-05,
+  "latencia_ms": 1060.3
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.92,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 2.9316e-05,
+  "latencia_ms": 1023.2
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.045e-05,
+  "latencia_ms": 994.51
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.0282e-05,
+  "latencia_ms": 2300.61
+ },
+ {
+  "i": 0,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 2.9736e-05,
+  "latencia_ms": 1009.89
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4608e-05,
+  "latencia_ms": 1029.66
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.486e-05,
+  "latencia_ms": 1281.87
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": null,
+    "p": null,
+    "gold": "multa-equilibrada",
+    "cor": "não verificado"
+   }
+  },
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4104e-05,
+  "latencia_ms": 1018.38
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.87,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.444e-05,
+  "latencia_ms": 1013.18
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5574e-05,
+  "latencia_ms": 1005.24
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5406e-05,
+  "latencia_ms": 983.68
+ },
+ {
+  "i": 1,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4944e-05,
+  "latencia_ms": 6680.35
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5364e-05,
+  "latencia_ms": 978.38
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 1001.86
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5574e-05,
+  "latencia_ms": 991.48
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4944e-05,
+  "latencia_ms": 1984.76
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5196e-05,
+  "latencia_ms": 1003.13
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6288e-05,
+  "latencia_ms": 998.73
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6246e-05,
+  "latencia_ms": 2023.07
+ },
+ {
+  "i": 2,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.57e-05,
+  "latencia_ms": 987.68
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5532e-05,
+  "latencia_ms": 1278.05
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5742e-05,
+  "latencia_ms": 1018.02
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 1061.76
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5028e-05,
+  "latencia_ms": 3654.47
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5406e-05,
+  "latencia_ms": 1055.26
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6414e-05,
+  "latencia_ms": 1045.46
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.58,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.6288e-05,
+  "latencia_ms": 1048.78
+ },
+ {
+  "i": 3,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5826e-05,
+  "latencia_ms": 1323.08
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9522e-05,
+  "latencia_ms": 2204.11
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9774e-05,
+  "latencia_ms": 4488.77
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9732e-05,
+  "latencia_ms": 2082.14
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.906e-05,
+  "latencia_ms": 1151.87
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9438e-05,
+  "latencia_ms": 2080.49
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 4.0446e-05,
+  "latencia_ms": 1971.08
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0404e-05,
+  "latencia_ms": 1100.23
+ },
+ {
+  "i": 4,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9858e-05,
+  "latencia_ms": 1075.3
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.675e-05,
+  "latencia_ms": 1026.93
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7002e-05,
+  "latencia_ms": 966.16
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.696e-05,
+  "latencia_ms": 4135.16
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6288e-05,
+  "latencia_ms": 2331.93
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6582e-05,
+  "latencia_ms": 1306.81
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7716e-05,
+  "latencia_ms": 1054.36
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7632e-05,
+  "latencia_ms": 1119.21
+ },
+ {
+  "i": 5,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7086e-05,
+  "latencia_ms": 1065.69
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4146e-05,
+  "latencia_ms": 1501.88
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4398e-05,
+  "latencia_ms": 2581.08
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.423e-05,
+  "latencia_ms": 1782.88
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3726e-05,
+  "latencia_ms": 2752.04
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.402e-05,
+  "latencia_ms": 990.59
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5112e-05,
+  "latencia_ms": 1008.14
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5028e-05,
+  "latencia_ms": 3365.15
+ },
+ {
+  "i": 6,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4398e-05,
+  "latencia_ms": 1023.17
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 0.99,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4692e-05,
+  "latencia_ms": 1021.59
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4902e-05,
+  "latencia_ms": 1781.92
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4734e-05,
+  "latencia_ms": 2577.29
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4146e-05,
+  "latencia_ms": 1786.93
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.85,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.4482e-05,
+  "latencia_ms": 3800.0
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 1024.91
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5532e-05,
+  "latencia_ms": 1067.59
+ },
+ {
+  "i": 7,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4986e-05,
+  "latencia_ms": 1025.88
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4692e-05,
+  "latencia_ms": 2505.74
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4944e-05,
+  "latencia_ms": 1028.41
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4818e-05,
+  "latencia_ms": 1020.73
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4188e-05,
+  "latencia_ms": 1750.11
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4608e-05,
+  "latencia_ms": 4249.66
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 980.11
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5574e-05,
+  "latencia_ms": 982.19
+ },
+ {
+  "i": 8,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4944e-05,
+  "latencia_ms": 2984.56
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9522e-05,
+  "latencia_ms": 1264.44
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9732e-05,
+  "latencia_ms": 981.42
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.969e-05,
+  "latencia_ms": 3000.97
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8976e-05,
+  "latencia_ms": 1007.11
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.85,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.9312e-05,
+  "latencia_ms": 998.16
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0446e-05,
+  "latencia_ms": 2825.01
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.0362e-05,
+  "latencia_ms": 984.95
+ },
+ {
+  "i": 9,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9816e-05,
+  "latencia_ms": 1024.58
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8472e-05,
+  "latencia_ms": 1538.13
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.8682e-05,
+  "latencia_ms": 1248.95
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8556e-05,
+  "latencia_ms": 1041.85
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7926e-05,
+  "latencia_ms": 1075.77
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8346e-05,
+  "latencia_ms": 1067.68
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.927e-05,
+  "latencia_ms": 1327.02
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9312e-05,
+  "latencia_ms": 1039.79
+ },
+ {
+  "i": 10,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8766e-05,
+  "latencia_ms": 1009.41
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.759e-05,
+  "latencia_ms": 2521.41
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.78e-05,
+  "latencia_ms": 1010.68
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7674e-05,
+  "latencia_ms": 1052.13
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7128e-05,
+  "latencia_ms": 7464.43
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7464e-05,
+  "latencia_ms": 1281.19
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8514e-05,
+  "latencia_ms": 2253.33
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.8346e-05,
+  "latencia_ms": 7890.27
+ },
+ {
+  "i": 11,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7884e-05,
+  "latencia_ms": 3778.59
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2214e-05,
+  "latencia_ms": 993.04
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.2466e-05,
+  "latencia_ms": 1501.25
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.234e-05,
+  "latencia_ms": 1002.11
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.1794e-05,
+  "latencia_ms": 997.35
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.92,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2046e-05,
+  "latencia_ms": 1035.64
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.318e-05,
+  "latencia_ms": 1262.22
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3012e-05,
+  "latencia_ms": 1009.75
+ },
+ {
+  "i": 12,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2466e-05,
+  "latencia_ms": 1042.77
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.822e-05,
+  "latencia_ms": 2075.84
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8472e-05,
+  "latencia_ms": 1573.46
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8346e-05,
+  "latencia_ms": 1825.68
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.78e-05,
+  "latencia_ms": 1019.06
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8094e-05,
+  "latencia_ms": 1009.35
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9186e-05,
+  "latencia_ms": 1324.08
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9102e-05,
+  "latencia_ms": 1339.77
+ },
+ {
+  "i": 13,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.8472e-05,
+  "latencia_ms": 5240.92
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.549e-05,
+  "latencia_ms": 2311.37
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5742e-05,
+  "latencia_ms": 1075.34
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 2499.48
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5028e-05,
+  "latencia_ms": 1042.34
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5322e-05,
+  "latencia_ms": 1025.03
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6456e-05,
+  "latencia_ms": 974.96
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6372e-05,
+  "latencia_ms": 2482.53
+ },
+ {
+  "i": 14,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5742e-05,
+  "latencia_ms": 1447.74
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9102e-05,
+  "latencia_ms": 1731.75
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9312e-05,
+  "latencia_ms": 1462.28
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9186e-05,
+  "latencia_ms": 991.11
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.864e-05,
+  "latencia_ms": 2698.3
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8976e-05,
+  "latencia_ms": 1022.06
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratante",
+    "p": 1.0,
+    "gold": "foro-do-contratante",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0026e-05,
+  "latencia_ms": 3329.0
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9942e-05,
+  "latencia_ms": 1137.25
+ },
+ {
+  "i": 15,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9396e-05,
+  "latencia_ms": 8537.98
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6624e-05,
+  "latencia_ms": 1165.95
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6834e-05,
+  "latencia_ms": 1161.22
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6792e-05,
+  "latencia_ms": 1662.25
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6078e-05,
+  "latencia_ms": 1003.75
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6498e-05,
+  "latencia_ms": 1148.7
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7548e-05,
+  "latencia_ms": 1137.95
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7464e-05,
+  "latencia_ms": 1437.53
+ },
+ {
+  "i": 16,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6834e-05,
+  "latencia_ms": 2518.83
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7968e-05,
+  "latencia_ms": 1453.12
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8178e-05,
+  "latencia_ms": 8084.1
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8136e-05,
+  "latencia_ms": 1072.87
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7464e-05,
+  "latencia_ms": 7832.69
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.96,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7758e-05,
+  "latencia_ms": 1100.34
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8766e-05,
+  "latencia_ms": 1323.67
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.5,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.8724e-05,
+  "latencia_ms": 1024.93
+ },
+ {
+  "i": 17,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8262e-05,
+  "latencia_ms": 1041.59
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5742e-05,
+  "latencia_ms": 1007.2
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5994e-05,
+  "latencia_ms": 9789.36
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5826e-05,
+  "latencia_ms": 1012.26
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5322e-05,
+  "latencia_ms": 967.29
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.5616e-05,
+  "latencia_ms": 951.42
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6708e-05,
+  "latencia_ms": 989.22
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6624e-05,
+  "latencia_ms": 1014.63
+ },
+ {
+  "i": 18,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6078e-05,
+  "latencia_ms": 1043.84
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5952e-05,
+  "latencia_ms": 1017.76
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6204e-05,
+  "latencia_ms": 1031.4
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6078e-05,
+  "latencia_ms": 1038.94
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5448e-05,
+  "latencia_ms": 1053.54
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5868e-05,
+  "latencia_ms": 6774.24
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6792e-05,
+  "latencia_ms": 1069.68
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6834e-05,
+  "latencia_ms": 1067.8
+ },
+ {
+  "i": 19,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6204e-05,
+  "latencia_ms": 1821.37
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6834e-05,
+  "latencia_ms": 1024.6
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7086e-05,
+  "latencia_ms": 999.91
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.6918e-05,
+  "latencia_ms": 1275.23
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.633e-05,
+  "latencia_ms": 1070.47
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6708e-05,
+  "latencia_ms": 1615.46
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7674e-05,
+  "latencia_ms": 1054.89
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7716e-05,
+  "latencia_ms": 1088.19
+ },
+ {
+  "i": 20,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.717e-05,
+  "latencia_ms": 1054.56
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4272e-05,
+  "latencia_ms": 1008.39
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4482e-05,
+  "latencia_ms": 2248.27
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": null,
+    "p": null,
+    "gold": "nao-consta",
+    "cor": "não verificado"
+   }
+  },
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.3768e-05,
+  "latencia_ms": 1981.46
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.89,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.4062e-05,
+  "latencia_ms": 970.96
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5154e-05,
+  "latencia_ms": 992.69
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.59,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.5028e-05,
+  "latencia_ms": 1802.08
+ },
+ {
+  "i": 21,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4566e-05,
+  "latencia_ms": 1013.35
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.6834e-05,
+  "latencia_ms": 1048.18
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7044e-05,
+  "latencia_ms": 7526.62
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6918e-05,
+  "latencia_ms": 3157.22
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.633e-05,
+  "latencia_ms": 1036.25
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.6708e-05,
+  "latencia_ms": 1015.18
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7758e-05,
+  "latencia_ms": 1039.18
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.64,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.759e-05,
+  "latencia_ms": 5899.38
+ },
+ {
+  "i": 22,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7128e-05,
+  "latencia_ms": 1060.52
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.9774e-05,
+  "latencia_ms": 1063.57
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0026e-05,
+  "latencia_ms": 1059.27
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9984e-05,
+  "latencia_ms": 1063.67
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.927e-05,
+  "latencia_ms": 1492.94
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9648e-05,
+  "latencia_ms": 2041.07
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.074e-05,
+  "latencia_ms": 1242.73
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0656e-05,
+  "latencia_ms": 4344.68
+ },
+ {
+  "i": 23,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.011e-05,
+  "latencia_ms": 5394.7
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2592e-05,
+  "latencia_ms": 1002.88
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.2844e-05,
+  "latencia_ms": 1042.94
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2676e-05,
+  "latencia_ms": 1029.2
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.2088e-05,
+  "latencia_ms": 1027.61
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2424e-05,
+  "latencia_ms": 1030.52
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.3432e-05,
+  "latencia_ms": 1047.75
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3474e-05,
+  "latencia_ms": 1020.49
+ },
+ {
+  "i": 24,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2844e-05,
+  "latencia_ms": 1769.64
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7254e-05,
+  "latencia_ms": 963.07
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7464e-05,
+  "latencia_ms": 979.27
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": null,
+    "p": null,
+    "gold": "multa-equilibrada",
+    "cor": "não verificado"
+   }
+  },
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.675e-05,
+  "latencia_ms": 9501.03
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.98,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7044e-05,
+  "latencia_ms": 1062.18
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8178e-05,
+  "latencia_ms": 1043.93
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8094e-05,
+  "latencia_ms": 1306.4
+ },
+ {
+  "i": 25,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7464e-05,
+  "latencia_ms": 4479.81
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3936e-05,
+  "latencia_ms": 1038.45
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4188e-05,
+  "latencia_ms": 1290.82
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.4146e-05,
+  "latencia_ms": 2493.41
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3516e-05,
+  "latencia_ms": 1057.43
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3768e-05,
+  "latencia_ms": 4575.9
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4902e-05,
+  "latencia_ms": 1453.3
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4818e-05,
+  "latencia_ms": 1185.98
+ },
+ {
+  "i": 26,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4188e-05,
+  "latencia_ms": 1984.26
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.0488e-05,
+  "latencia_ms": 1734.07
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.0698e-05,
+  "latencia_ms": 1043.57
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.0572e-05,
+  "latencia_ms": 1040.79
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9942e-05,
+  "latencia_ms": 960.94
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.0362e-05,
+  "latencia_ms": 1167.87
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.1286e-05,
+  "latencia_ms": 2329.89
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 4.1328e-05,
+  "latencia_ms": 1538.8
+ },
+ {
+  "i": 27,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 4.0782e-05,
+  "latencia_ms": 977.34
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2424e-05,
+  "latencia_ms": 2127.58
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.2676e-05,
+  "latencia_ms": 1390.4
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2508e-05,
+  "latencia_ms": 1388.71
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2004e-05,
+  "latencia_ms": 1307.33
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.234e-05,
+  "latencia_ms": 9620.71
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.339e-05,
+  "latencia_ms": 1060.98
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3306e-05,
+  "latencia_ms": 1059.96
+ },
+ {
+  "i": 28,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2676e-05,
+  "latencia_ms": 3546.44
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3012e-05,
+  "latencia_ms": 1040.69
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.3264e-05,
+  "latencia_ms": 1029.15
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3138e-05,
+  "latencia_ms": 1529.23
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2592e-05,
+  "latencia_ms": 976.48
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.97,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2844e-05,
+  "latencia_ms": 1023.24
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3978e-05,
+  "latencia_ms": 1025.82
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3894e-05,
+  "latencia_ms": 1059.85
+ },
+ {
+  "i": 29,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.3348e-05,
+  "latencia_ms": 4199.52
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.1794e-05,
+  "latencia_ms": 2703.55
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "nao-consta",
+    "p": 0.99,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2046e-05,
+  "latencia_ms": 985.35
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.192e-05,
+  "latencia_ms": 1200.14
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.1374e-05,
+  "latencia_ms": 1123.07
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.96,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.1626e-05,
+  "latencia_ms": 1208.87
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.2718e-05,
+  "latencia_ms": 975.98
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 1.0,
+    "gold": "aprovacao-sem-limite",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.2676e-05,
+  "latencia_ms": 2247.5
+ },
+ {
+  "i": 30,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.213e-05,
+  "latencia_ms": 2787.76
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.8514e-05,
+  "latencia_ms": 2766.34
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8766e-05,
+  "latencia_ms": 1225.54
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.864e-05,
+  "latencia_ms": 964.37
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8052e-05,
+  "latencia_ms": 2241.41
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8388e-05,
+  "latencia_ms": 1010.75
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9354e-05,
+  "latencia_ms": 1539.53
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-sem-limite",
+    "p": 0.58,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.9396e-05,
+  "latencia_ms": 2184.81
+ },
+ {
+  "i": 31,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.885e-05,
+  "latencia_ms": 1021.53
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 1.0,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8388e-05,
+  "latencia_ms": 1034.35
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8598e-05,
+  "latencia_ms": 1271.62
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.843e-05,
+  "latencia_ms": 2782.39
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7884e-05,
+  "latencia_ms": 1264.74
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-automatica",
+    "p": 1.0,
+    "gold": "renovacao-automatica",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.822e-05,
+  "latencia_ms": 2774.81
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.9186e-05,
+  "latencia_ms": 4492.65
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.9228e-05,
+  "latencia_ms": 987.38
+ },
+ {
+  "i": 32,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.8598e-05,
+  "latencia_ms": 1269.68
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7212e-05,
+  "latencia_ms": 1097.51
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": null,
+    "p": null,
+    "gold": "cessao-limitada",
+    "cor": "não verificado"
+   }
+  },
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7422e-05,
+  "latencia_ms": 2239.53
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-longo",
+    "p": 1.0,
+    "gold": "prazo-longo",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.675e-05,
+  "latencia_ms": 997.73
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "renovacao-por-acordo",
+    "p": 1.0,
+    "gold": "renovacao-por-acordo",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7128e-05,
+  "latencia_ms": 1027.82
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.8052e-05,
+  "latencia_ms": 5585.54
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 0.61,
+    "gold": "nao-consta",
+    "cor": "amarelo"
+   }
+  },
+  "custo_usd": 3.801e-05,
+  "latencia_ms": 2996.9
+ },
+ {
+  "i": 33,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-ilimitada",
+    "p": 1.0,
+    "gold": "responsabilidade-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7548e-05,
+  "latencia_ms": 987.89
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "sem-exclusividade",
+    "p": 1.0,
+    "gold": "sem-exclusividade",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.486e-05,
+  "latencia_ms": 1731.99
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-limitada",
+    "p": 1.0,
+    "gold": "cessao-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.5112e-05,
+  "latencia_ms": 987.41
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-so-do-contratado",
+    "p": 1.0,
+    "gold": "multa-so-do-contratado",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.507e-05,
+  "latencia_ms": 964.49
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "prazo-normal",
+    "p": 1.0,
+    "gold": "prazo-normal",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.4356e-05,
+  "latencia_ms": 2227.57
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.95,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.4692e-05,
+  "latencia_ms": 4462.81
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "arbitragem",
+    "p": 1.0,
+    "gold": "arbitragem",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.57e-05,
+  "latencia_ms": 961.25
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5658e-05,
+  "latencia_ms": 977.58
+ },
+ {
+  "i": 34,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.5112e-05,
+  "latencia_ms": 3131.45
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "exclusividade",
+  "sentinela": null,
+  "lidos": {
+   "exclusividade": {
+    "resposta": "exclusividade-ampla",
+    "p": 0.99,
+    "gold": "exclusividade-ampla",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7758e-05,
+  "latencia_ms": 1778.28
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "imagem",
+  "sentinela": null,
+  "lidos": {
+   "imagem": {
+    "resposta": "cessao-ilimitada",
+    "p": 1.0,
+    "gold": "cessao-ilimitada",
+    "cor": "vermelho"
+   }
+  },
+  "custo_usd": 3.7968e-05,
+  "latencia_ms": 990.67
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "multa",
+  "sentinela": null,
+  "lidos": {
+   "multa": {
+    "resposta": "multa-equilibrada",
+    "p": 1.0,
+    "gold": "multa-equilibrada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.7842e-05,
+  "latencia_ms": 2037.05
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "pagamento",
+  "sentinela": null,
+  "lidos": {
+   "pagamento": {
+    "resposta": "nao-consta",
+    "p": 1.0,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7296e-05,
+  "latencia_ms": 985.89
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "renovacao",
+  "sentinela": null,
+  "lidos": {
+   "renovacao": {
+    "resposta": "nao-consta",
+    "p": 0.93,
+    "gold": "nao-consta",
+    "cor": "não consta"
+   }
+  },
+  "custo_usd": 3.7548e-05,
+  "latencia_ms": 2490.43
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "foro",
+  "sentinela": null,
+  "lidos": {
+   "foro": {
+    "resposta": "foro-do-contratado",
+    "p": 1.0,
+    "gold": "foro-do-contratado",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8682e-05,
+  "latencia_ms": 1027.97
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "aprovacao",
+  "sentinela": null,
+  "lidos": {
+   "aprovacao": {
+    "resposta": "aprovacao-com-limite",
+    "p": 1.0,
+    "gold": "aprovacao-com-limite",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8598e-05,
+  "latencia_ms": 1040.38
+ },
+ {
+  "i": 35,
+  "arranjo": "item-por-item",
+  "item": "responsabilidade",
+  "sentinela": null,
+  "lidos": {
+   "responsabilidade": {
+    "resposta": "responsabilidade-limitada",
+    "p": 1.0,
+    "gold": "responsabilidade-limitada",
+    "cor": "verde"
+   }
+  },
+  "custo_usd": 3.8052e-05,
+  "latencia_ms": 929.84
+ }
+]

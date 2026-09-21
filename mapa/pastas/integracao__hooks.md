@@ -103,7 +103,7 @@ flowchart LR
 - **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py)
 - **é usado por** — citação: [`integracao/instalar.py`](../../integracao/instalar.py)
 - **chama de outros arquivos** — [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`saida.analisar`](../../integracao/camadas/saida.py#L46), [`saida.nota_para_o_agente`](../../integracao/camadas/saida.py#L79)
-- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py) (complementar, 0.27)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py) (complementar, 0.28)
 - **conteúdo** — [main](../../integracao/hooks/jev_saida.py#L18) (l. 18)
 
 ### jev_sentinela.py
@@ -111,5 +111,5 @@ flowchart LR
 - **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py)
 - **é usado por** — citação: [`integracao/instalar.py`](../../integracao/instalar.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`sentinela.analisar`](../../integracao/camadas/sentinela.py#L41), [`sentinela.nota_para_o_agente`](../../integracao/camadas/sentinela.py#L69)
-- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py) (complementar, 0.27), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py) (complementar, 0.24)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py) (complementar, 0.28), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py) (complementar, 0.24), [R35](../../mapa/conhecimento/rodadas.md#r35) (complementar, 0.20)
 - **conteúdo** — [main](../../integracao/hooks/jev_sentinela.py#L19) (l. 19)

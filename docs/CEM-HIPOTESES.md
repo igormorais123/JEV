@@ -229,7 +229,7 @@ Sobrepor o sentido das classes custa 3,3 pontos e sujar a superfície custa 16,7
 - **H044** · fonte: livro-caixa, recibos · quartil superior 34270 nUSD contra inferior 23573 nUSD
 - **H045** · fonte: livro-caixa, recibos · 27847 nUSD contra 23269 nUSD
 - **H046** · fonte: livro-caixa, recibos por consumidor · paralelo 602 ms em 22406 contra sequencial 924 ms em 372
-- **H047** · fonte: livro-caixa, tabela attempts · 266 falhas em 24523 tentativas: success 24043, reserved 214, timeout 119, http_error 107, sent 32, invalid_response 8
+- **H047** · fonte: livro-caixa, tabela attempts · 266 falhas em 24533 tentativas: success 24043, reserved 224, timeout 119, http_error 107, sent 32, invalid_response 8
 - **H048** · fonte: livro-caixa, tabela attempts com uso registrado · mediana sobre 22668 recibos; máximo 135
 
 ### E · Seleção de contexto

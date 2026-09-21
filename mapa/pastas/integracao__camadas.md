@@ -4,12 +4,19 @@ As camadas que decidem o que entra no contexto do modelo caro: leitura, busca, s
 
 ← [MAPA.md](../../MAPA.md) · pasta acima: [integracao](../../mapa/pastas/integracao.md) · abrir a pasta: [integracao/camadas/](../../integracao/camadas)
 
+## Subpastas
+
+| subpasta | arquivos | finalidade |
+|---|---:|---|
+| [listas/](../../mapa/pastas/integracao__camadas__listas.md) | 1 |  |
+
 ## Arquivos
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [__init__.py](../../integracao/camadas/__init__.py) | código | 1 l. | As camadas do Jev no Claude Code: leitura, busca, sentinela e a ferramenta de leitura seletiva. |
 | [busca.py](../../integracao/camadas/busca.py) | código | 187 l. | Camada de busca: depois de uma listagem com muitos itens, o Jev diz por onde começar. |
+| [checklist.py](../../integracao/camadas/checklist.py) | código | 200 l. | Checklist: um documento, uma lista fixa de perguntas, um semáforo por item — numa chamada só. |
 | [leitura.py](../../integracao/camadas/leitura.py) | código | 149 l. | Camada de leitura: antes de um `Read` grande, o Jev diz que parte do arquivo interessa. |
 | [ler.py](../../integracao/camadas/ler.py) | código | 188 l. | Leitura seletiva: o agente pergunta, o Jev diz quais trechos entram no contexto. |
 | [medir.py](../../integracao/camadas/medir.py) | código | 433 l. | A medição das camadas: o que o Jev poupou, custou e errou, recalculado do registro. |
@@ -27,6 +34,7 @@ Nós em negrito são desta pasta; setas cheias são imports, tracejadas são lin
 flowchart LR
   n_integracao_camadas___init___py["<b>__init__.py</b>"]
   n_integracao_camadas_busca_py["<b>busca.py</b>"]
+  n_integracao_camadas_checklist_py["<b>checklist.py</b>"]
   n_integracao_camadas_leitura_py["<b>leitura.py</b>"]
   n_integracao_camadas_ler_py["<b>ler.py</b>"]
   n_integracao_camadas_medir_py["<b>medir.py</b>"]
@@ -46,7 +54,10 @@ flowchart LR
   n_integracao_jev_router_redacao_py["integracao/jev_router/redacao.py"]
   n_integracao_tests_test_camadas_py["integracao/tests/test_camadas.py"]
   n_integracao_tests_test_rotina_py["integracao/tests/test_rotina.py"]
+  n_laboratorio_r50_checklist_de_contrato_py["laboratorio/r50_checklist_de_contrato.py"]
   n_integracao_camadas_busca_py --> n_integracao_camadas_nucleo_py
+  n_integracao_camadas_checklist_py --> n_integracao_camadas___init___py
+  n_integracao_camadas_checklist_py --> n_integracao_camadas_nucleo_py
   n_integracao_camadas_leitura_py --> n_integracao_camadas_nucleo_py
   n_integracao_camadas_ler_py --> n_integracao_camadas___init___py
   n_integracao_camadas_ler_py --> n_integracao_camadas_nucleo_py
@@ -87,30 +98,41 @@ flowchart LR
   n_integracao_tests_test_camadas_py --> n_integracao_camadas_verificar_py
   n_integracao_tests_test_rotina_py --> n_integracao_camadas___init___py
   n_integracao_tests_test_rotina_py --> n_integracao_camadas_rotina_py
+  n_laboratorio_r50_checklist_de_contrato_py --> n_integracao_camadas___init___py
+  n_laboratorio_r50_checklist_de_contrato_py --> n_integracao_camadas_checklist_py
 ```
 
 ## Ligações e conteúdo de cada arquivo
 
 ### __init__.py
 
-- **é usado por** — import: [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py), [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py), [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py), [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py), [`integracao/tests/test_rotina.py`](../../integracao/tests/test_rotina.py)
-- **parecidos (julgados pelo Jev)** — [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md) (complementar, 0.43), [`integracao/camadas/medir.py`](../../integracao/camadas/medir.py) (complementar, 0.30), [`hermes/jev_hermes/camadas.py`](../../hermes/jev_hermes/camadas.py) (complementar, 0.28), [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py) (complementar, 0.24)
+- **é usado por** — import: [`integracao/camadas/checklist.py`](../../integracao/camadas/checklist.py), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py), [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py), [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py), [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py), [`integracao/tests/test_rotina.py`](../../integracao/tests/test_rotina.py), [`laboratorio/r50_checklist_de_contrato.py`](../../laboratorio/r50_checklist_de_contrato.py)
+- **parecidos (julgados pelo Jev)** — [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md) (complementar, 0.43), [`integracao/camadas/medir.py`](../../integracao/camadas/medir.py) (complementar, 0.30), [`hermes/jev_hermes/camadas.py`](../../hermes/jev_hermes/camadas.py) (complementar, 0.28), [R46](../../mapa/conhecimento/rodadas.md#r46) (complementar, 0.25)
 
 ### busca.py
 
 - **usa** — import: [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py)
 - **é usado por** — import: [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py), [`integracao/instalar.py`](../../integracao/instalar.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.escolha`](../../integracao/camadas/nucleo.py#L247), [`nucleo.estado_do_trecho`](../../integracao/camadas/nucleo.py#L243), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198)
-- **parecidos (julgados pelo Jev)** — [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.46), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.34), [R38](../../mapa/conhecimento/rodadas.md#r38) (complementar, 0.29), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (complementar, 0.23)
+- **parecidos (julgados pelo Jev)** — [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.46), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.34), [R38](../../mapa/conhecimento/rodadas.md#r38) (complementar, 0.28), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (complementar, 0.23)
 - **menciona 2 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E16](../../mapa/conhecimento/experimentos.md#e16) (1×)
 - **conteúdo** — [texto_da_resposta](../../integracao/camadas/busca.py#L47) (l. 47; usado em 3), [agrupar](../../integracao/camadas/busca.py#L70) (l. 70; usado em 1), [_maior_lista_de_dicionarios](../../integracao/camadas/busca.py#L90) (l. 90), [itens_de_listagem](../../integracao/camadas/busca.py#L110) (l. 110; usado em 1), [candidatos](../../integracao/camadas/busca.py#L129) (l. 129), [analisar](../../integracao/camadas/busca.py#L138) (l. 138; usado em 2), [nota_para_o_agente](../../integracao/camadas/busca.py#L177) (l. 177; usado em 2)
+
+### checklist.py
+
+- **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py)
+- **é usado por** — import: [`laboratorio/r50_checklist_de_contrato.py`](../../laboratorio/r50_checklist_de_contrato.py); citação: [`docs/ESSENCIA-DO-JEV.md`](../../docs/ESSENCIA-DO-JEV.md)
+- **chama de outros arquivos** — [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.dec`](../../integracao/camadas/nucleo.py#L95), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198)
+- **parecidos (julgados pelo Jev)** — [R38](../../mapa/conhecimento/rodadas.md#r38) (complementar, 0.45), [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.33), [R45](../../mapa/conhecimento/rodadas.md#r45) (complementar, 0.27), [`research/hermes/VALIDACAO-LOCAL.md`](../../research/hermes/VALIDACAO-LOCAL.md) (complementar, 0.26), [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.22)
+- **menciona 7 conceitos** — [R13](../../mapa/conhecimento/rodadas.md#r13) (1×), [R28](../../mapa/conhecimento/rodadas.md#r28) (1×), [R31](../../mapa/conhecimento/rodadas.md#r31) (1×), [R32](../../mapa/conhecimento/rodadas.md#r32) (1×), [R33](../../mapa/conhecimento/rodadas.md#r33) (1×), [R49](../../mapa/conhecimento/rodadas.md#r49) (1×), [R50](../../mapa/conhecimento/rodadas.md#r50) (1×)
+- **conteúdo** — [carregar_lista](../../integracao/camadas/checklist.py#L49) (l. 49; usado em 1), [validar_lista](../../integracao/camadas/checklist.py#L58) (l. 58), [perguntas_da](../../integracao/camadas/checklist.py#L92) (l. 92; usado em 1), [ler_item](../../integracao/camadas/checklist.py#L107) (l. 107; usado em 1), [probabilidade_valida](../../integracao/camadas/checklist.py#L127) (l. 127), [semaforo](../../integracao/camadas/checklist.py#L131) (l. 131; usado em 1), [auditar](../../integracao/camadas/checklist.py#L141) (l. 141), [main](../../integracao/camadas/checklist.py#L168) (l. 168)
 
 ### leitura.py
 
 - **usa** — import: [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py); citação: [`AGENTS.md`](../../AGENTS.md), [`executor/ledger.py`](../../executor/ledger.py), [`hermes/skill/jev/SKILL.md`](../../hermes/skill/jev/SKILL.md)
 - **é usado por** — import: [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.dividir_em_blocos`](../../integracao/camadas/nucleo.py#L215), [`nucleo.escolha`](../../integracao/camadas/nucleo.py#L247), [`nucleo.estado_do_trecho`](../../integracao/camadas/nucleo.py#L243), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198), [`nucleo.tokens`](../../integracao/camadas/nucleo.py#L91)
-- **parecidos (julgados pelo Jev)** — [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py) (complementar, 0.43), [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py) (complementar, 0.34), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py) (complementar, 0.31), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (mesmo assunto, 0.26)
+- **parecidos (julgados pelo Jev)** — [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py) (complementar, 0.44), [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py) (complementar, 0.34), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py) (complementar, 0.32), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (mesmo assunto, 0.26)
 - **menciona 3 conceitos** — [R26](../../mapa/conhecimento/rodadas.md#r26) (3×), [R18](../../mapa/conhecimento/rodadas.md#r18) (1×), [R20](../../mapa/conhecimento/rodadas.md#r20) (1×)
 - **conteúdo** — [analisar](../../integracao/camadas/leitura.py#L54) (l. 54; usado em 2), [nota_para_o_agente](../../integracao/camadas/leitura.py#L141) (l. 141; usado em 2)
 
@@ -134,10 +156,10 @@ flowchart LR
 ### nucleo.py
 
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py); citação: [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md)
-- **é usado por** — import: [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py), [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py), [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py), [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py); citação: [`laboratorio/r45-lista-nas-duas-ordens-bruto.json`](../../laboratorio/r45-lista-nas-duas-ordens-bruto.json), [`laboratorio/r45-lista-nas-duas-ordens.json`](../../laboratorio/r45-lista-nas-duas-ordens.json)
+- **é usado por** — import: [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py), [`integracao/camadas/checklist.py`](../../integracao/camadas/checklist.py), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py), [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py), [`integracao/hooks/jev_busca.py`](../../integracao/hooks/jev_busca.py), [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py), [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py); citação: [`laboratorio/r45-lista-nas-duas-ordens-bruto.json`](../../laboratorio/r45-lista-nas-duas-ordens-bruto.json), [`laboratorio/r45-lista-nas-duas-ordens.json`](../../laboratorio/r45-lista-nas-duas-ordens.json)
 - **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
 - **parecidos (julgados pelo Jev)** — [`hermes/jev_hermes/camadas.py`](../../hermes/jev_hermes/camadas.py) (complementar, 0.36), [`hermes/jev_hermes/nucleo.py`](../../hermes/jev_hermes/nucleo.py) (complementar, 0.26), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py) (complementar, 0.26), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (complementar, 0.21), [`integracao/avaliacao/amostrar_com_contexto.py`](../../integracao/avaliacao/amostrar_com_contexto.py) (complementar, 0.20)
-- **conteúdo** — [modo_vigente](../../integracao/camadas/nucleo.py#L68) (l. 68; usado em 4), [registrar](../../integracao/camadas/nucleo.py#L79) (l. 79; usado em 8), [tokens](../../integracao/camadas/nucleo.py#L91) (l. 91; usado em 3), [dec](../../integracao/camadas/nucleo.py#L95) (l. 95; usado em 4), [arquivo_da_sessao](../../integracao/camadas/nucleo.py#L104) (l. 104; usado em 1), [guardar_pedido](../../integracao/camadas/nucleo.py#L108) (l. 108; usado em 2), [pedido_vigente](../../integracao/camadas/nucleo.py#L125) (l. 125; usado em 3), [_pedido_do_transcript](../../integracao/camadas/nucleo.py#L145) (l. 145), [classificar_em_paralelo](../../integracao/camadas/nucleo.py#L176) (l. 176; usado em 6), [resumo_das_chamadas](../../integracao/camadas/nucleo.py#L198) (l. 198; usado em 6), [dividir_em_blocos](../../integracao/camadas/nucleo.py#L215) (l. 215; usado em 2), [estado_do_trecho](../../integracao/camadas/nucleo.py#L243) (l. 243; usado em 3), [escolha](../../integracao/camadas/nucleo.py#L247) (l. 247; usado em 6)
+- **conteúdo** — [modo_vigente](../../integracao/camadas/nucleo.py#L68) (l. 68; usado em 4), [registrar](../../integracao/camadas/nucleo.py#L79) (l. 79; usado em 9), [tokens](../../integracao/camadas/nucleo.py#L91) (l. 91; usado em 3), [dec](../../integracao/camadas/nucleo.py#L95) (l. 95; usado em 5), [arquivo_da_sessao](../../integracao/camadas/nucleo.py#L104) (l. 104; usado em 1), [guardar_pedido](../../integracao/camadas/nucleo.py#L108) (l. 108; usado em 2), [pedido_vigente](../../integracao/camadas/nucleo.py#L125) (l. 125; usado em 3), [_pedido_do_transcript](../../integracao/camadas/nucleo.py#L145) (l. 145), [classificar_em_paralelo](../../integracao/camadas/nucleo.py#L176) (l. 176; usado em 7), [resumo_das_chamadas](../../integracao/camadas/nucleo.py#L198) (l. 198; usado em 7), [dividir_em_blocos](../../integracao/camadas/nucleo.py#L215) (l. 215; usado em 2), [estado_do_trecho](../../integracao/camadas/nucleo.py#L243) (l. 243; usado em 3), [escolha](../../integracao/camadas/nucleo.py#L247) (l. 247; usado em 6)
 
 ### rotina.py
 
@@ -151,7 +173,7 @@ flowchart LR
 - **usa** — import: [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py); citação: [`executor/assist.py`](../../executor/assist.py)
 - **é usado por** — import: [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`busca.texto_da_resposta`](../../integracao/camadas/busca.py#L47), [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.dec`](../../integracao/camadas/nucleo.py#L95), [`nucleo.escolha`](../../integracao/camadas/nucleo.py#L247), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198)
-- **parecidos (julgados pelo Jev)** — [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.31), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py) (complementar, 0.29), [H081](../../mapa/conhecimento/hipoteses.md#h081) (complementar, 0.22), [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py) (complementar, 0.20)
+- **parecidos (julgados pelo Jev)** — [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.32), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py) (complementar, 0.29), [H081](../../mapa/conhecimento/hipoteses.md#h081) (complementar, 0.22), [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py) (complementar, 0.20)
 - **conteúdo** — [analisar](../../integracao/camadas/saida.py#L46) (l. 46; usado em 2), [nota_para_o_agente](../../integracao/camadas/saida.py#L79) (l. 79; usado em 2)
 
 ### sentinela.py
@@ -159,7 +181,7 @@ flowchart LR
 - **usa** — import: [`integracao/camadas/busca.py`](../../integracao/camadas/busca.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py)
 - **é usado por** — import: [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py), [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py), [`integracao/instalar.py`](../../integracao/instalar.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py); citação: [`laboratorio/r43-tamanho-da-lista-bruto.json`](../../laboratorio/r43-tamanho-da-lista-bruto.json), [`laboratorio/r43-tamanho-da-lista.json`](../../laboratorio/r43-tamanho-da-lista.json)
 - **chama de outros arquivos** — [`busca.texto_da_resposta`](../../integracao/camadas/busca.py#L47), [`nucleo.classificar_em_paralelo`](../../integracao/camadas/nucleo.py#L176), [`nucleo.dec`](../../integracao/camadas/nucleo.py#L95), [`nucleo.escolha`](../../integracao/camadas/nucleo.py#L247), [`nucleo.resumo_das_chamadas`](../../integracao/camadas/nucleo.py#L198)
-- **parecidos (julgados pelo Jev)** — [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.43), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py) (complementar, 0.29), [Q043](../../mapa/conhecimento/perguntas.md#q043) (mesmo assunto, 0.24)
+- **parecidos (julgados pelo Jev)** — [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py) (complementar, 0.44), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py) (complementar, 0.29), [Q043](../../mapa/conhecimento/perguntas.md#q043) (mesmo assunto, 0.24)
 - **menciona 2 conceitos** — [R23](../../mapa/conhecimento/rodadas.md#r23) (2×), [R27](../../mapa/conhecimento/rodadas.md#r27) (1×)
 - **conteúdo** — [partes_de](../../integracao/camadas/sentinela.py#L36) (l. 36), [analisar](../../integracao/camadas/sentinela.py#L41) (l. 41; usado em 3), [nota_para_o_agente](../../integracao/camadas/sentinela.py#L69) (l. 69; usado em 3)
 

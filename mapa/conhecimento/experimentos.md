@@ -63,7 +63,7 @@ Os experimentos pré-registrados do estudo (E1–E16). Cada um liga pré-registr
 ### E3 — Relação afirmação/evidência em três classes, com o contraste que mais custa caro.
 
 - **onde está:** executa [executor/run_e3_evidencia.py](../../executor/run_e3_evidencia.py); resultado [runs/e3-evidencia/relatorio.json](../../runs/e3-evidencia/relatorio.json)
-- **semelhantes (julgados pelo Jev):** [laboratorio/gerar_dossie.py](../../laboratorio/gerar_dossie.py) (complementar, 0.32)
+- **semelhantes (julgados pelo Jev):** [laboratorio/gerar_dossie.py](../../laboratorio/gerar_dossie.py) (complementar, 0.31)
 - **mencionado em 16 arquivos:** [docs/RELATORIO-EXECUCAO-JEV-HELENA.md](../../docs/RELATORIO-EXECUCAO-JEV-HELENA.md) (3×), [executor/placar.py](../../executor/placar.py) (3×), [lab/data/execution.json](../../lab/data/execution.json) (3×), [lab/index.html](../../lab/index.html) (3×), [docs/RELATORIO-FINAL-JEV.md](../../docs/RELATORIO-FINAL-JEV.md) (2×), [laboratorio/r21-prosa.json](../../laboratorio/r21-prosa.json) (2×), [docs/CAMADAS-CLAUDE-CODE.md](../../docs/CAMADAS-CLAUDE-CODE.md) (1×), [docs/GUIA-PRATICO-JEV.md](../../docs/GUIA-PRATICO-JEV.md) (1×), [docs/PLANO-CIENTIFICO-JEV-HELENA.md](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md) (1×), [executor/gabarito.py](../../executor/gabarito.py) (1×), [integracao/README.md](../../integracao/README.md) (1×), [integracao/avaliacao/variantes.py](../../integracao/avaliacao/variantes.py) (1×) … e mais 4
 
 <a id="e4"></a>

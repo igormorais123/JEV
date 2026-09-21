@@ -42,7 +42,7 @@ flowchart LR
 
 ### VALIDACAO-LOCAL.md
 
-- **parecidos (julgados pelo Jev)** — [`hermes/portoes/jev_gate_sono_memoria.py`](../../hermes/portoes/jev_gate_sono_memoria.py) (complementar, 0.31), [`lab/server.py`](../../lab/server.py) (complementar, 0.26)
+- **parecidos (julgados pelo Jev)** — [`hermes/portoes/jev_gate_sono_memoria.py`](../../hermes/portoes/jev_gate_sono_memoria.py) (complementar, 0.30), [`integracao/camadas/checklist.py`](../../integracao/camadas/checklist.py) (complementar, 0.26), [`lab/server.py`](../../lab/server.py) (complementar, 0.25), [R50](../../mapa/conhecimento/rodadas.md#r50) (complementar, 0.20)
 
 ### auditoria-local.json
 
