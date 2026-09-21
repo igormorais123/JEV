@@ -1,0 +1,10 @@
+name: jev-camadas
+version: 1.0.0
+description: "O Jev decide o que entra no contexto do modelo caro: tema e risco do pedido, recorte de leitura grande, ordem de busca, sentinela em conteúdo externo e causa de erro em saída longa."
+author: INTEIA
+kind: standalone
+hooks:
+  - pre_llm_call
+  - transform_tool_result
+  - transform_terminal_output
+  - on_session_end

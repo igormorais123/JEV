@@ -1,0 +1,5 @@
+name: jev-advisor
+version: 3.0.0
+description: Jev como Sistema 1 do Hermes — classificação, triagem, filtro e ordenação baratos, com modo lote.
+provides_tools:
+  - jev_advisor
