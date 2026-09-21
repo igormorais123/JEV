@@ -40,6 +40,10 @@ flowchart LR
 
 - **é usado por** — citação: [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py)
 
+### VALIDACAO-LOCAL.md
+
+- **parecidos (julgados pelo Jev)** — [`hermes/portoes/jev_gate_sono_memoria.py`](../../hermes/portoes/jev_gate_sono_memoria.py) (complementar, 0.31), [`lab/server.py`](../../lab/server.py) (complementar, 0.26)
+
 ### auditoria-local.json
 
 - **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`lab/dashboard.js`](../../lab/dashboard.js), [`lab/index.html`](../../lab/index.html), [`lab/server.py`](../../lab/server.py), [`planning/build_plan.py`](../../planning/build_plan.py), [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py)

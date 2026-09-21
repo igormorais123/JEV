@@ -59,6 +59,7 @@ ONDE = [
     ('Regras do projeto, orçamento de US$ 5 e cuidado com a chave', ['AGENTS.md']),
     ('Visão geral e como rodar o painel', ['README.md', 'lab/server.py']),
     ('Resultado final do estudo', ['docs/RELATORIO-FINAL-JEV.md', 'output/pdf/RELATORIO-FINAL-JEV.pdf']),
+    ('Essência do Jev e descobertas das rodadas R28–R45 (comece por aqui)', ['docs/ESSENCIA-DO-JEV.md']),
     ('Como aplicar o Jev na prática', ['docs/GUIA-PRATICO-JEV.md']),
     ('Onde o Jev falha', ['docs/LIMITES-DO-JEV.md', 'laboratorio/mapa-de-limites.json', 'output/mapa-de-limites.html']),
     ('Plano científico e protocolo', ['docs/PLANO-CIENTIFICO-JEV-HELENA.md', 'planning/protocolo.md']),
@@ -334,8 +335,31 @@ def montar() -> dict:
     sys.path.insert(0, str(SAIDA))
     import conhecimento  # mesmo diretório; separado porque é outra camada do mapa
     saber = conhecimento.extrair(nos, textos)
+
+    import semelhanca
+    ligados = {(a, b) for a, b, _ in arestas} | {(a, b) for (a, b, _) in saber['arestas']} | {(a, alvo) for a, alvo, _ in usos}
+    parecido = semelhanca.calcular(saber['conceitos'], nos, textos, ligados)
+    for tid, tema in parecido['temas'].items():
+        saber['conceitos'][tid] = {'id': tid, 'tipo': 'tema', 'titulo': tema['titulo'], 'pagina': conhecimento.pagina(tid),
+                                   'definido_em': [], 'atributos': {'termos': tema['termos'], 'vereditos': tema['vereditos'],
+                                                                    'confianca_das_respostas': tema['confianca'],
+                                                                    'contrastes': [f'{a} × {b} ({s:.2f})' for a, b, s in tema['contrastes']]}}
+        for m in tema['membros']:
+            saber['arestas'][(m, tid, 'no tema')] = 1
+
+    # o julgamento do Jev sobre cada par semelhante, lido do cache (regenerar não chama o provedor)
+    import julgar_com_jev as jj
+    julgados = jj.carregar_cache()['julgamentos']
+    julgamento = {}
+    for par in set(parecido['arestas']) | {tuple(sorted((a, b))) for t in parecido['temas'].values() for a, b, _ in t['contrastes']}:
+        j = julgados.get(jj.chave(jj.estado_do_par(par[0], par[1], saber['conceitos'], nos)))
+        if j:
+            julgamento[par] = j
     return {'nos': nos, 'arestas': sorted(arestas), 'pastas': pastas, 'textos': textos, 'usos': sorted(usos),
-            'conceitos': saber['conceitos'], 'arestas_c': saber['arestas']}
+            'conceitos': saber['conceitos'], 'arestas_c': saber['arestas'], 'semelhantes': parecido['arestas'], 'temas': parecido['temas'],
+            'julgamento': julgamento,
+            # a semelhança que vai para o mapa: a que o Jev não descartou como coincidência de palavras
+            'semelhantes_validos': {p: s for p, s in parecido['arestas'].items() if julgamento.get(p, {}).get('relacao') != 'sem-relacao'}}
 
 
 # ---------- escrita ----------
@@ -431,7 +455,12 @@ def escrever(dados: dict) -> list[str]:
     for (a, b, t), peso in ac.items():
         if a in nos:
             conceitos_do_arquivo[a].append((b, t, peso))
-    n_arestas_total = len(arestas) + len(ac) + len(dados['usos'])
+    sem_arquivo = defaultdict(list)
+    for (a, b), s_ in dados['semelhantes_validos'].items():
+        r_ = dados['julgamento'].get((a, b), {}).get('relacao')
+        sem_arquivo[a].append((b, s_, r_))
+        sem_arquivo[b].append((a, s_, r_))
+    n_arestas_total = len(arestas) + len(ac) + len(dados['usos']) + len(dados['semelhantes_validos'])
     gerados = []
     PASTAS.mkdir(parents=True, exist_ok=True)
     for velho in PASTAS.glob('*.md'):
@@ -445,10 +474,11 @@ def escrever(dados: dict) -> list[str]:
          'Ponto de entrada para qualquer pessoa ou IA achar qualquer coisa nesta pasta. Gerado por '
          '`python mapa/gerar_mapa.py`; não editar à mão, regenerar depois de mudar arquivos.', '',
          f'**{len(nos)} arquivos** em **{len(pastas)} pastas** e **{len(conceitos)} conceitos do estudo** '
-         f'(experimentos, rodadas, hipóteses, perguntas, sistemas, revisões), ligados por **{n_arestas_total} relações**: '
+         f'(experimentos, rodadas, hipóteses, perguntas, sistemas, revisões e temas), ligados por **{n_arestas_total} relações**: '
          f'{sum(1 for *_, t in arestas if t == "importa")} imports, {sum(1 for *_, t in arestas if t == "link")} links, '
          f'{sum(1 for *_, t in arestas if t == "cita")} citações entre arquivos; {len(dados["usos"])} usos de função ou classe de outro arquivo; '
-         f'{sum(1 for (_, _, t) in ac if t != "apoia-se em")} ligações arquivo–conceito e {sum(1 for (_, _, t) in ac if t == "apoia-se em")} conceito–conceito.', '',
+         f'{sum(1 for (_, _, t) in ac if t not in ("apoia-se em", "no tema"))} ligações arquivo–conceito, {sum(1 for (_, _, t) in ac if t == "apoia-se em")} conceito–conceito, '
+         f'{sum(1 for (_, _, t) in ac if t == "no tema")} de pertença a tema e {len(dados["semelhantes_validos"])} de semelhança de conteúdo julgadas pelo Jev.', '',
          '## Como usar este mapa', '',
          '- **Ver o grafo:** abra ' + lnk('MAPA.md', 'MAPA.html', 'MAPA.html') + ' no navegador (busca, filtros por tipo de ponto e de ligação, '
          'foco na vizinhança, painel com tudo sobre cada ponto e link para o arquivo).',
@@ -478,7 +508,9 @@ def escrever(dados: dict) -> list[str]:
               'H': ', '.join(f'{n} {v}' for v, n in placar_h.most_common()) + '; cada uma com as rodadas em que a prova se apoia',
               'Q': f'{q_medidas} respondidas por dado medido; as demais por conta declarada ou coleta nova',
               'S': 'os sistemas do ecossistema Jev cobertos pelo plano',
-              'V': 'revisões independentes do executor e os testes que fixam cada achado'}
+              'V': 'revisões independentes do executor e os testes que fixam cada achado',
+              'T': f'grupos por semelhança de conteúdo, com {sum(len(t["contrastes"]) for t in dados["temas"].values())} contrastes de veredito; '
+                   f'{len(dados["semelhantes_validos"])} ligações de semelhança julgadas pelo Jev'}
     m += ['', '## Conhecimento do estudo', '',
           'Os conceitos são nós do grafo, lidos da fonte que os define. Cada página diz, por conceito, onde ele está, '
           'em que se apoia, o que sustenta e que arquivos o mencionam.', '',
@@ -646,7 +678,7 @@ def escrever(dados: dict) -> list[str]:
                 linhas += ['```', '']
             elif locais:
                 linhas += [f'_Grafo local omitido: {len(locais)} relações, grande demais para desenhar; ver as ligações abaixo ou `mapa/grafo.json`._', '']
-            com_ligacao = [c for c in meus if saem[c] or chegam[c] or nos[c]['simbolos'] or conceitos_do_arquivo[c]]
+            com_ligacao = [c for c in meus if saem[c] or chegam[c] or nos[c]['simbolos'] or conceitos_do_arquivo[c] or sem_arquivo[c]]
             if com_ligacao:
                 linhas += ['## Ligações e conteúdo de cada arquivo', '']
                 for c in com_ligacao:
@@ -667,6 +699,10 @@ def escrever(dados: dict) -> list[str]:
                     if usa_de[c]:
                         linhas.append('- **chama de outros arquivos** — ' + ', '.join(
                             f'[`{PurePosixPath(alvo).stem}.{nome}`]({rel(pag, alvo)}#L{linha_do_simbolo(nos, alvo, nome)})' for alvo, nome in sorted(usa_de[c])))
+                    if sem_arquivo[c]:
+                        linhas.append('- **parecidos (julgados pelo Jev)** — ' + ', '.join(
+                            (f'[{o}]({rel(pag, k.pagina(o))}#{k.ancora(o)})' if o in conceitos else f'[`{o}`]({rel(pag, o)})')
+                            + f' ({RELACAO_ROTULO.get(r_, r_)}, {s_:.2f})' for o, s_, r_ in sorted(sem_arquivo[c], key=lambda x: -x[1])[:8]))
                     papeis = [(b, t) for b, t, _ in conceitos_do_arquivo[c] if t != 'menciona']
                     if papeis:
                         linhas.append('- **papel nos estudos** — ' + ', '.join(
@@ -721,7 +757,10 @@ def escrever(dados: dict) -> list[str]:
                                  'define/executa/resultado/pré-registra/prova/registra/documenta/responde/adjudica/testa/emenda':
                                      'arquivo → conceito: o papel do arquivo naquele estudo',
                                  'menciona': 'arquivo → conceito: cita o identificador; `peso` = número de menções',
-                                 'apoia-se em': 'conceito → conceito: a evidência de um vem do outro'},
+                                 'apoia-se em': 'conceito → conceito: a evidência de um vem do outro',
+                                 'no tema': 'conceito → tema: grupo por semelhança de conteúdo',
+                                 'semelhante': 'nó ↔ nó sem ligação direta: conteúdo parecido (peso = cosseno TF-IDF); `relacao` é o julgamento do Jev '
+                                               '(mesmo-assunto, complementares, conflito), pares que ele julgou sem relação ficam de fora'},
              'pastas': [{'id': p, 'finalidade': finalidade(p), 'pagina': pagina_da_pasta(p), 'arquivos': total(p)} for p in pastas],
              'nos': [{k_: v for k_, v in n.items() if k_ != 'simbolos'} | {'simbolos': [f'{x["nome"]}:{x["linha"]}' for x in n['simbolos'] if x['tipo'] != 'seção']} for n in nos.values()],
              'conceitos': [conceitos[c] for c in sorted(conceitos, key=k.ordem)],
@@ -729,6 +768,10 @@ def escrever(dados: dict) -> list[str]:
                            'usado_por': sorted(usados_por.get((c, x['nome']), set()))}
                           for c, n in nos.items() for x in n['simbolos'] if x['tipo'] in ('função', 'classe')],
              'arestas': [{'de': a, 'para': b, 'tipo': t} for a, b, t in arestas]
+                        + [{'de': a, 'para': b, 'tipo': 'semelhante', 'peso': s_,
+                            'relacao': dados['julgamento'].get((a, b), {}).get('relacao'),
+                            'confianca': dados['julgamento'].get((a, b), {}).get('confianca')}
+                           for (a, b), s_ in sorted(dados['semelhantes_validos'].items())]
                         + [{'de': a, 'para': f'{alvo}::{nome}', 'tipo': 'usa'} for a, alvo, nome in dados['usos']]
                         + [{'de': a, 'para': b, 'tipo': t} | ({'peso': p} if t == 'menciona' else {}) for (a, b, t), p in sorted(ac.items())]}
     (SAIDA / 'grafo.json').write_text(json.dumps(grafo, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
@@ -752,7 +795,11 @@ PAGINAS_C = {
     'Q': ('Perguntas estratégicas', 'As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado medido, conta declarada, coleta nova) e com que confiança.'),
     'S': ('Sistemas avaliados', 'Os 15 sistemas do ecossistema Jev cobertos pelo plano (S01–S15), da tabela do protocolo.'),
     'V': ('Revisões adversariais', 'As rodadas de revisão independente do executor, marcadas `[Rn]` nos comentários do código (não confundir com as rodadas do laboratório). Os testes `test_achados_revisaoN.py` fixam o que cada uma achou.'),
+    'T': ('Temas', 'Grupos de hipóteses, perguntas, rodadas e experimentos que falam da mesma coisa, achados pela semelhança de conteúdo '
+                   '(`mapa/semelhanca.py`, TF-IDF sobre radicais e propagação de rótulos). O nome de cada tema são as palavras que mais pesam nos membros. '
+                   'Os contrastes são pares semelhantes do mesmo tema com vereditos diferentes: é onde o estudo tem mais a explicar.'),
 }
+RELACAO_ROTULO = {'mesmo-assunto': 'mesmo assunto', 'complementares': 'complementar', 'conflito': 'tensão (a conferir)', None: 'não julgado'}
 RE_PENDENCIA = re.compile(r'\b(não medid[ao]s?|pendentes?|bloquead[ao]s?|próximos? passos?|próximos movimentos|em aberto|não testad[ao]s?|'
                           r'não executad[ao]s?|decisão do Igor|ainda não|falta medir|sem medida)\b', re.I)
 
@@ -780,6 +827,11 @@ def escrever_conhecimento(dados: dict, usados_por: dict) -> list[str]:
     por_tipo = defaultdict(list)
     for cid in sorted(conceitos, key=k.ordem):
         por_tipo[cid[0]].append(cid)
+    semelhantes_de = defaultdict(dict)  # nó -> {outro: (score, relação do Jev)}
+    for (a, b), s in dados['semelhantes_validos'].items():
+        rel_ = dados['julgamento'].get((a, b), {}).get('relacao')
+        semelhantes_de[a][b] = (s, rel_)
+        semelhantes_de[b][a] = (s, rel_)
 
     for letra, (titulo, intro) in PAGINAS_C.items():
         pag = k.TIPOS[letra][1]
@@ -843,6 +895,32 @@ def escrever_conhecimento(dados: dict, usados_por: dict) -> list[str]:
             sustenta = sorted({a for a, t, _ in chegam[c] if t == 'apoia-se em' and a in conceitos}, key=k.ordem)
             if sustenta:
                 L.append('- **sustenta:** ' + ', '.join(lc(pag, a) for a in sustenta))
+            if letra == 'T':
+                membros = sorted((a for a, t, _ in chegam[c] if t == 'no tema'), key=k.ordem)
+                for x in 'ERHQ':
+                    grupo = [m for m in membros if m[0] == x]
+                    if grupo:
+                        L.append(f'- **{PAGINAS_C[x][0].lower()} ({len(grupo)}):** ' + ', '.join(
+                            lc(pag, m, m + (f' ({conceitos[m]["atributos"]["veredito"]})' if conceitos[m]['atributos'].get('veredito') else ''))
+                            for m in grupo))
+                tema = dados['temas'][c]
+                if tema['contrastes']:
+                    L.append('- **contrastes (semelhantes, vereditos diferentes):** ' + '; '.join(
+                        f'{lc(pag, a)} {conceitos[a]["atributos"].get("veredito")} × {lc(pag, b)} {conceitos[b]["atributos"].get("veredito")}'
+                        + (f' — Jev: {RELACAO_ROTULO.get(dados["julgamento"].get((a, b), {}).get("relacao"), "?")}' if (a, b) in dados['julgamento'] else '')
+                        for a, b, _ in tema['contrastes']))
+                arqs = Counter(o for m in membros for o in semelhantes_de.get(m, {}) if o in nos)
+                if arqs:
+                    L.append('- **arquivos parecidos com os membros:** ' + ', '.join(f'{la(pag, a, texto=a)} ({n})' for a, n in arqs.most_common(8)))
+            else:
+                temas_do = [b for b, t, _ in saem[c] if t == 'no tema']
+                if temas_do:
+                    L.append('- **tema:** ' + ', '.join(lc(pag, t_, f'{t_} · {conceitos[t_]["titulo"]}') for t_ in temas_do))
+            parecidos = sorted(semelhantes_de.get(c, {}).items(), key=lambda x: -x[1][0])
+            if parecidos:
+                L.append('- **semelhantes (julgados pelo Jev):** ' + ', '.join(
+                    (lc(pag, o) if o in conceitos else la(pag, o, texto=o)) + f' ({RELACAO_ROTULO.get(rel_, rel_)}, {s:.2f})'
+                    for o, (s, rel_) in parecidos[:10]))
             mencoes = sorted(((a, p) for a, t, p in chegam[c] if t == 'menciona' and a in nos), key=lambda x: (-x[1], x[0]))
             if mencoes:
                 L.append(f'- **mencionado em {len(mencoes)} arquivo' + ('s' if len(mencoes) > 1 else '') + ':** ' + ', '.join(f'{la(pag, a, texto=a)} ({p}×)' for a, p in mencoes[:12])
@@ -904,6 +982,17 @@ def escrever_conhecimento(dados: dict, usados_por: dict) -> list[str]:
     L += ['', f'## Perguntas respondidas sem dado medido ou sem confiança alta ({len(fracas)})', '',
           'A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: medir isso é trabalho com retorno direto.', '']
     L += [f'- {lc(pag, c)} ({conceitos[c]["atributos"].get("fonte_da_resposta", "?")}; confiança {conceitos[c]["atributos"].get("confianca", "?")}) — {conceitos[c]["titulo"]}' for c in fracas]
+    contrastes = [(t_, a, b) for t_ in por_tipo['T'] for a, b, _ in dados['temas'][t_]['contrastes']]
+    L += ['', f'## Tensões entre resultados parecidos ({len(contrastes)} por veredito, '
+          f'{sum(1 for j in dados["julgamento"].values() if j["relacao"] == "conflito")} apontadas pelo Jev)', '',
+          'Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos diferentes. Cada par pede uma frase que explique a diferença '
+          '(condição, domínio, medida); sem ela, um dos dois resultados está mal enunciado.', '']
+    L += [f'- {lc(pag, t_, t_)} · {lc(pag, a)} ({conceitos[a]["atributos"].get("veredito")}) × {lc(pag, b)} ({conceitos[b]["atributos"].get("veredito")}): '
+          f'{conceitos[a]["titulo"][:80]} / {conceitos[b]["titulo"][:80]}' for t_, a, b in contrastes]
+    conflitos = sorted(((j['a'], j['b'], j['confianca']) for j in dados['julgamento'].values() if j['relacao'] == 'conflito'), key=lambda x: -x[2])
+    if conflitos:
+        L += ['', '**Conflitos apontados pelo Jev** (rubrica sem gabarito; numa conferência manual de 4 destes, 2 eram tensão real e 2 não — confira antes de usar):', '']
+        L += [f'- {lc(pag, a) if a in conceitos else la(pag, a, texto=a)} × {lc(pag, b) if b in conceitos else la(pag, b, texto=b)} (confiança {cf:.2f})' for a, b, cf in conflitos]
     sem_prereg = [c for c in por_tipo['E'] if not any(d['papel'] == 'pré-registra' for d in conceitos[c]['definido_em'])]
     sem_script = [c for c in por_tipo['R'] if not any(d['papel'] == 'executa' for d in conceitos[c]['definido_em'])]
     sem_result = [c for c in por_tipo['R'] if not any(d['papel'] == 'resultado' for d in conceitos[c]['definido_em'])]

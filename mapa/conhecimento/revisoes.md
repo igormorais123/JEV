@@ -2,7 +2,7 @@
 
 As rodadas de revisão independente do executor, marcadas `[Rn]` nos comentários do código (não confundir com as rodadas do laboratório). Os testes `test_achados_revisaoN.py` fixam o que cada uma achou.
 
-← [MAPA.md](../../MAPA.md) · [Experimentos](../../mapa/conhecimento/experimentos.md) · [Rodadas do laboratório](../../mapa/conhecimento/rodadas.md) · [Hipóteses](../../mapa/conhecimento/hipoteses.md) · [Perguntas estratégicas](../../mapa/conhecimento/perguntas.md) · [Sistemas avaliados](../../mapa/conhecimento/sistemas.md) · [Testes](../../mapa/conhecimento/testes.md) · [Lacunas e ideias](../../mapa/conhecimento/lacunas.md)
+← [MAPA.md](../../MAPA.md) · [Experimentos](../../mapa/conhecimento/experimentos.md) · [Rodadas do laboratório](../../mapa/conhecimento/rodadas.md) · [Hipóteses](../../mapa/conhecimento/hipoteses.md) · [Perguntas estratégicas](../../mapa/conhecimento/perguntas.md) · [Sistemas avaliados](../../mapa/conhecimento/sistemas.md) · [Temas](../../mapa/conhecimento/temas.md) · [Testes](../../mapa/conhecimento/testes.md) · [Lacunas e ideias](../../mapa/conhecimento/lacunas.md)
 
 **10** itens: [V1](../../mapa/conhecimento/revisoes.md#v1) [V2](../../mapa/conhecimento/revisoes.md#v2) [V3](../../mapa/conhecimento/revisoes.md#v3) [V4](../../mapa/conhecimento/revisoes.md#v4) [V7](../../mapa/conhecimento/revisoes.md#v7) [V11](../../mapa/conhecimento/revisoes.md#v11) [V13](../../mapa/conhecimento/revisoes.md#v13) [V14](../../mapa/conhecimento/revisoes.md#v14) [V15](../../mapa/conhecimento/revisoes.md#v15) [V16](../../mapa/conhecimento/revisoes.md#v16)
 

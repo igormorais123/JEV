@@ -10,12 +10,12 @@ Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador b
 |---|---:|---|
 | [.reticle/](../../mapa/pastas/reticle.md) | 1 | Pasta de ferramenta local; só o .gitignore é versionado. |
 | [data/](../../mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
-| [docs/](../../mapa/pastas/docs.md) | 12 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
+| [docs/](../../mapa/pastas/docs.md) | 13 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
 | [executor/](../../mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
-| [hermes/](../../mapa/pastas/hermes.md) | 22 |  |
+| [hermes/](../../mapa/pastas/hermes.md) | 26 |  |
 | [integracao/](../../mapa/pastas/integracao.md) | 48 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
 | [lab/](../../mapa/pastas/lab.md) | 13 | Painel local de acompanhamento (servidor stdlib + HTML/JS): fila de rodadas, execuções, métricas e orçamento. |
-| [laboratorio/](../../mapa/pastas/laboratorio.md) | 88 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
+| [laboratorio/](../../mapa/pastas/laboratorio.md) | 130 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
 | [output/](../../mapa/pastas/output.md) | 5 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
 | [planning/](../../mapa/pastas/planning.md) | 16 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
 | [research/](../../mapa/pastas/research.md) | 12 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes. |
@@ -123,6 +123,7 @@ flowchart LR
 
 - **usa** — citação: [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md), [`executor/credenciais.py`](../../executor/credenciais.py), [`executor/shared.py`](../../executor/shared.py), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py)
 - **é usado por** — citação: [`README.md`](../../README.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py), [`research/FONTES.md`](../../research/FONTES.md), [`research/sources-manifest.json`](../../research/sources-manifest.json)
+- **parecidos (julgados pelo Jev)** — [R17](../../mapa/conhecimento/rodadas.md#r17) (complementar, 0.23), [E13](../../mapa/conhecimento/experimentos.md#e13) (complementar, 0.21), [`laboratorio/r27_integracao.py`](../../laboratorio/r27_integracao.py) (complementar, 0.21)
 - **menciona 1 conceito** — [E15](../../mapa/conhecimento/experimentos.md#e15) (1×)
 - **conteúdo** — Integração assistida medida (l. 9)
 

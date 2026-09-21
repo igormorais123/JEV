@@ -58,6 +58,7 @@ flowchart LR
 
 - **usa** — citação: [`research/hermes/Jev-Dossie-Quantitativo.txt`](../../research/hermes/Jev-Dossie-Quantitativo.txt), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/hermes/fase2-decisoes-do-pdf.csv`](../../research/hermes/fase2-decisoes-do-pdf.csv)
 - **é usado por** — link: [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`README.md`](../../README.md)
+- **parecidos (julgados pelo Jev)** — [`planning/build_deliverables.py`](../../planning/build_deliverables.py) (complementar, 0.34), [`hermes/jev_hermes/medir.py`](../../hermes/jev_hermes/medir.py) (mesmo assunto, 0.21)
 - **conteúdo** — [wilson](../../research/audit_hermes_pdf.py#L20) (l. 20), [main](../../research/audit_hermes_pdf.py#L27) (l. 27)
 
 ### collect_sources.py

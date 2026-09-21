@@ -1116,3 +1116,95 @@ alvos só em 17. k = 1 vale para fonte única; sem saber, k = 3.
 **Um erro meu, pago.** A primeira corrida fez todas as chamadas e quebrou na análise por um erro
 de precedência, sem ter gravado o bruto — a lição do E11, reaprendida a US$ 0,02. O script agora
 grava o bruto antes de analisar, e as 897 chamadas perdidas constam do livro-caixa.
+
+
+---
+
+# Bloco de 2026-09-21 — R28 a R45, depois de reler o estudo inteiro pelo mapa
+
+Dezoito rodadas escritas por Claude (Fable 5.1) a pedido do Igor. Cada uma tem hipótese, previsão
+e critério de falsificação no cabeçalho do próprio script, commitado antes da primeira chamada
+(`ddc6807`, `45b98e5`, `c2dd8f2`, `ac0da79`). A síntese, com o que muda no guia e no relatório,
+está em `docs/ESSENCIA-DO-JEV.md`. 6.620 chamadas, cerca de US$ 0,40.
+
+## R28 — o Jev lê o tema ou o ato de fala?
+
+`laboratorio/r28_ato_de_fala.py`. Todos os erros dos domínios novos têm gabarito `informacao` e
+caem na ação mencionada. A pergunta de tema acerta 95,7%; a de ato de fala, 86,2%, e destrói o
+mesmo molde que a R19 destruiu. O rótulo `nao-pede-acao` ganha da base, 20 a 5.
+
+## R29 — fora de casa, o que carrega a decisão
+
+`laboratorio/r29_o_que_carrega_a_decisao.py`. Rótulo opaco quase não custa, ordem inversa muda
+6,2% das respostas, e a instrução reescrita ganha 20 a 0: quatro conclusões eram efeito de teto.
+
+## R30 — ligar uma hipótese à rodada que a testou
+
+`laboratorio/r30_hipotese_e_prova.py`. Em prosa longe do teto, Jev 43/49 contra BM25 34/49,
+pareado 11 a 2, p = 0,0225.
+
+## R31 — quarto domínio, corpus nunca visto
+
+`laboratorio/r31_r37_segunda_leva.py`. Base 61,4%, 34 de 34 erros na ação mencionada; instrução
+reescrita mais rótulo renomeado, 96,6% (31 a 0); aceitos por concordância, 52/53.
+
+## R32 — a confiança é (K·p − 1)/(K − 1)
+
+A fórmula reproduz 98,7% das respostas ao vivo; cinco classes a mais mudam a confiança de 37%
+das mensagens sem mudar a escolha.
+
+## R33 — quantas perguntas cabem no mesmo payload
+
+Com 8 e 16 perguntas a resposta principal se mantém em 97%; o custo cresce 4,2 vezes e a
+latência não muda.
+
+## R34 — ordenar oito textos de prosa numa chamada só
+
+Lista por `choice` 43/49, igual ao pontual com um oitavo das chamadas; por `score`, 39/48.
+
+## R35 — auditoria de sentido
+
+Falsificada: 68% de acerto em respostas trocadas entre perguntas da mesma família, e 2 de 6
+defeitos reais acusados.
+
+## R36 — o ruído de repetição depende do provedor?
+
+Não: 3/75 contra 1/76. Toda oscilação acontece com confiança de 0,5 ou menos.
+
+## R37 — a regra do acordo sob ordem direta
+
+A concordância rejeita 14 de 29 viradas; com o sentinela, nenhuma passa.
+
+## R38 — a pergunta de dois trechos, em lista
+
+Os dois alvos no top-2 em 68/78 com oito perguntas `noul` numa chamada, contra 42/80 do pontual.
+
+## R39 — ordenar código numa chamada só
+
+Alvo em primeiro em 164/167; com confiança de 0,90 ou mais, 150/150.
+
+## R40 — a receita nos três domínios antigos
+
+Atendimento 92,8%, jurídico 98,6%, clínica 94,7%, e 94,8% com cinco classes-distratoras.
+
+## R41 — o guarda de comando pelo tipo `noul`
+
+AUC 0,87; no limiar fixado antes, 44 liberações e nenhum irreversível.
+
+## R42 — o payload de produção sob ataque
+
+Texto limpo: 229/232 entre os aceitos. Sob ataque: 147 viradas, 30 acima do corte, nenhuma
+aceita pela política de três condições.
+
+## R43 — listas de 16 e 32 candidatos
+
+92,5% e 88,8% em primeiro, com viés contra a segunda metade da lista.
+
+## R44 — um candidato envenenado dentro da lista
+
+Escolhido 0 vezes em 167; a vigia acusa 100% e dá alarme falso em 27% do código limpo.
+
+## R45 — a lista lida nas duas ordens
+
+`laboratorio/r45_lista_nas_duas_ordens.py`. As ordens concordam em 61/80 e, quando concordam,
+acertam 60/61.

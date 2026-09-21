@@ -12,7 +12,9 @@ import subprocess
 from collections import Counter
 from pathlib import Path
 
-GRUPO_DE_ARESTA = {'importa': 'importa', 'link': 'link', 'cita': 'cita', 'menciona': 'menciona', 'apoia-se em': 'apoia', 'usa': 'usa_s'}
+GRUPO_DE_ARESTA = {'importa': 'importa', 'link': 'link', 'cita': 'cita', 'menciona': 'menciona', 'apoia-se em': 'apoia', 'usa': 'usa_s', 'no tema': 'tema'}
+GRUPO_DE_SEMELHANCA = {'mesmo-assunto': ('sem_mesmo', 'semelhante · mesmo assunto'), 'complementares': ('sem_comp', 'semelhante · complementar'),
+                       'conflito': ('sem_conf', 'semelhante · tensão apontada pelo Jev'), None: ('sem_comp', 'semelhante · não julgado')}
 
 
 def base_github(raiz: Path) -> str:
@@ -46,6 +48,10 @@ def dados_compactos(grafo: dict) -> dict:
     usa_arquivo = Counter()
     for a in grafo['arestas']:
         tipo = a['tipo']
+        if tipo == 'semelhante':
+            grupo, tipo = GRUPO_DE_SEMELHANCA.get(a.get('relacao'), GRUPO_DE_SEMELHANCA[None])
+            arestas.append([a['de'], a['para'], grupo, a['peso'], tipo])
+            continue
         grupo = GRUPO_DE_ARESTA.get(tipo, 'papel')
         arestas.append([a['de'], a['para'], grupo, a.get('peso') or 1, tipo])
         if tipo == 'usa':
@@ -135,7 +141,8 @@ canvas.sobre { cursor: pointer; }
 .grupo-viz summary { cursor: pointer; font-weight: 600; font-size: 13px; }
 .grupo-viz ul { list-style: none; margin: 4px 0 0; padding: 0; }
 .grupo-viz li { padding: 2px 0; font-size: 13px; display: flex; gap: 6px; align-items: baseline; }
-.grupo-viz li span.id { cursor: pointer; color: var(--realce); word-break: break-all; }
+.grupo-viz li span.id { cursor: pointer; color: var(--realce); word-break: break-all; flex: 0 1 auto; min-width: 4.2em; }
+.grupo-viz li small { flex: 1 1 auto; }
 .grupo-viz li small { color: var(--suave); }
 .acoes { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 12px; }
 .fechar { float: right; }
@@ -170,6 +177,12 @@ canvas.sobre { cursor: pointer; }
     </div>
     <label class="op" style="margin-top:6px">Profundidade do foco
       <select id="profundidade" style="margin-left:auto"><option>1</option><option selected>2</option><option>3</option></select></label>
+    <h2>Cor</h2>
+    <div class="linha-botoes">
+      <button id="cor-tipo" class="ligado">Por pasta e tipo</button>
+      <button id="cor-tema">Por tema</button>
+    </div>
+    <div id="lista-temas" style="display:none;margin-top:6px"></div>
     <h2>Arquivos por pasta</h2>
     <div id="f-pastas"></div>
     <h2>Conceitos do estudo</h2>
@@ -197,8 +210,8 @@ canvas.sobre { cursor: pointer; }
 <script>
 const D = JSON.parse(document.getElementById('dados').textContent);
 const $ = s => document.querySelector(s);
-const TIPOS_C = {E: 'Experimentos', R: 'Rodadas', H: 'Hipóteses', Q: 'Perguntas', S: 'Sistemas', V: 'Revisões'};
-const CORES_C = {E: '#d9480f', R: '#c2255c', H: '#7048e8', Q: '#1c7ed6', S: '#0ca678', V: '#e8590c'};
+const TIPOS_C = {T: 'Temas', E: 'Experimentos', R: 'Rodadas', H: 'Hipóteses', Q: 'Perguntas', S: 'Sistemas', V: 'Revisões'};
+const CORES_C = {T: '#f5b400', E: '#d9480f', R: '#c2255c', H: '#7048e8', Q: '#1c7ed6', S: '#0ca678', V: '#e8590c'};
 const PALETA = ['#8a6d3b', '#5c7cfa', '#20c997', '#f59f00', '#e64980', '#15aabf', '#74b816', '#be4bdb', '#fd7e14', '#4263eb', '#868e96', '#d6336c', '#0b7285', '#e67700', '#5f3dc4', '#2b8a3e'];
 const ARESTAS = {
   importa: {nome: 'Import de código', cor: '#4c6ef5', ligado: true},
@@ -209,6 +222,10 @@ const ARESTAS = {
   cita: {nome: 'Citação entre arquivos', cor: '#adb5bd', ligado: false, tracejado: true},
   menciona: {nome: 'Menção a conceito', cor: '#ced4da', ligado: false, tracejado: true},
   usa_s: {nome: 'Arquivo → função usada', cor: '#12b886', ligado: true, soSimbolos: true},
+  tema: {nome: 'Pertence ao tema', cor: '#f5b400', ligado: true},
+  sem_mesmo: {nome: 'Semelhante: mesmo assunto (Jev)', cor: '#9c36b5', ligado: true},
+  sem_comp: {nome: 'Semelhante: complementar (Jev)', cor: '#cc5de8', ligado: false, tracejado: true},
+  sem_conf: {nome: 'Tensão apontada pelo Jev', cor: '#fa5252', ligado: true},
 };
 const nos = D.nos, porId = new Map(nos.map(n => [n.id, n]));
 const pastas = [...new Set(nos.filter(n => n.c === 'f').map(n => n.g))].sort();
@@ -226,13 +243,27 @@ arestas.forEach(a => {
 });
 
 const estado = {pastas: new Set(pastas), conceitos: new Set(Object.keys(TIPOS_C)), simbolos: false,
-  arestas: new Set(Object.keys(ARESTAS).filter(k => ARESTAS[k].ligado)), modo: 'tudo', escolhido: null, sobre: null, rotulos: 'auto'};
+  arestas: new Set(Object.keys(ARESTAS).filter(k => ARESTAS[k].ligado)), modo: 'tudo', escolhido: null, sobre: null, rotulos: 'auto', cor: 'tipo'};
 try { const salvo = JSON.parse(localStorage.getItem('mapa-jev-filtros') || 'null');
-  if (salvo) { estado.arestas = new Set(salvo.arestas); estado.simbolos = !!salvo.simbolos; } } catch (e) {}
+  if (salvo && salvo.versao === 2) { estado.arestas = new Set(salvo.arestas); estado.simbolos = !!salvo.simbolos; } } catch (e) {}
 
-function corNo(n) { return n.c === 'k' ? CORES_C[n.g] : n.c === 's' ? '#9aa0aa' : corPasta[n.g]; }
+// cor por tema: conceito pelo tema a que pertence; arquivo pelo tema do conceito mais parecido com ele
+const temas = nos.filter(n => n.c === 'k' && n.g === 'T').map(n => n.id).sort();
+const corTema = Object.fromEntries(temas.map((t, i) => [t, d3.hsl((i * 137.508 + 20) % 360, 0.62, i % 2 ? 0.46 : 0.58).formatHex()]));
+const temaDe = new Map();
+arestas.filter(a => a.g === 'tema').forEach(a => temaDe.set(a.s, a.t));
+temas.forEach(t => temaDe.set(t, t));
+const melhorTema = new Map();
+arestas.filter(a => a.g.startsWith('sem_')).forEach(a => [[a.s, a.t], [a.t, a.s]].forEach(([x, y]) => {
+  if (!temaDe.has(x) && temaDe.has(y) && (!melhorTema.has(x) || melhorTema.get(x)[1] < a.w)) melhorTema.set(x, [temaDe.get(y), a.w]);
+}));
+melhorTema.forEach(([t], x) => temaDe.set(x, t));
+function corNo(n) {
+  if (estado.cor === 'tema') return temaDe.has(n.id) ? corTema[temaDe.get(n.id)] : '#b8bcc4';
+  return n.c === 'k' ? CORES_C[n.g] : n.c === 's' ? '#9aa0aa' : corPasta[n.g];
+}
 function rotuloTipo(n) {
-  if (n.c === 'k') return TIPOS_C[n.g].replace(/s$/, '').replace('Hipótese', 'Hipótese').replace('Revisõe', 'Revisão');
+  if (n.c === 'k') return {T: 'Tema', E: 'Experimento', R: 'Rodada', H: 'Hipótese', Q: 'Pergunta', S: 'Sistema', V: 'Revisão'}[n.g];
   return n.c === 's' ? 'Função ou classe' : 'Arquivo · ' + n.g;
 }
 
@@ -256,7 +287,7 @@ Object.entries(ARESTAS).forEach(([k, e]) => opcao($('#f-arestas'), {texto: e.nom
 $('#n-simbolos').textContent = nos.filter(n => n.c === 's').length;
 $('#f-simbolos').checked = estado.simbolos;
 $('#f-simbolos').addEventListener('change', e => { estado.simbolos = e.target.checked; guardar(); atualizar(); });
-function guardar() { try { localStorage.setItem('mapa-jev-filtros', JSON.stringify({arestas: [...estado.arestas], simbolos: estado.simbolos})); } catch (e) {} }
+function guardar() { try { localStorage.setItem('mapa-jev-filtros', JSON.stringify({versao: 2, arestas: [...estado.arestas], simbolos: estado.simbolos})); } catch (e) {} }
 
 // ---------- visibilidade ----------
 function noPassa(n) {
@@ -302,11 +333,11 @@ nos.forEach(n => { const a = ancoraDe(n) || [0, 0]; n.x = a[0] + (Math.random() 
 
 const sim = d3.forceSimulation().alphaDecay(0.03)
   .force('carga', d3.forceManyBody().strength(n => n.c === 's' ? -8 : -40 - n.grau * 0.6).distanceMax(600))
-  .force('ligacao', d3.forceLink().id(n => n.id).distance(a => a.g === 'contem' ? 12 : a.g === 'menciona' || a.g === 'cita' ? 90 : 55)
-    .strength(a => a.g === 'contem' ? 0.9 : a.g === 'menciona' || a.g === 'cita' ? 0.02 : 0.12))
+  .force('ligacao', d3.forceLink().id(n => n.id).distance(a => a.g === 'contem' ? 12 : a.g === 'menciona' || a.g === 'cita' ? 90 : a.g === 'tema' ? 45 : 55)
+    .strength(a => a.g === 'contem' ? 0.9 : a.g === 'menciona' || a.g === 'cita' ? 0.02 : a.g === 'tema' ? 0.2 : a.g.startsWith('sem_') ? 0.06 : 0.12))
   .force('colisao', d3.forceCollide(n => n.r + 1.5))
-  .force('x', d3.forceX(n => { const a = ancoraDe(n); return a ? a[0] : 0; }).strength(n => n.c === 's' ? 0 : 0.035))
-  .force('y', d3.forceY(n => { const a = ancoraDe(n); return a ? a[1] : 0; }).strength(n => n.c === 's' ? 0 : 0.035))
+  .force('x', d3.forceX(n => { const a = ancoraDe(n); return a ? a[0] : 0; }).strength(n => n.c === 's' || n.g === 'T' ? 0 : 0.035))
+  .force('y', d3.forceY(n => { const a = ancoraDe(n); return a ? a[1] : 0; }).strength(n => n.c === 's' || n.g === 'T' ? 0 : 0.035))
   .on('tick', () => { quad = null; desenhar(); });
 
 function atualizar(reiniciar = true) {
@@ -432,7 +463,7 @@ function mostrarDetalhe(n) {
   ordem.forEach((g, i) => {
     const lista = grupos[g].sort((a, b) => (b.a.w || 1) - (a.a.w || 1) || a.o.localeCompare(b.o));
     h += `<details class="grupo-viz" ${i < 4 ? 'open' : ''}><summary>${esc(g)} (${lista.length})</summary><ul>` +
-      lista.slice(0, 80).map(v => { const o = porId.get(v.o); return `<li><span class="bola" style="background:${corNo(o)}"></span><span class="id" data-id="${esc(v.o)}">${esc(v.o)}</span>${v.a.w > 1 ? `<small>${v.a.w}×</small>` : ''}</li>`; }).join('') +
+      lista.slice(0, 80).map(v => { const o = porId.get(v.o); const peso = v.a.g.startsWith('sem_') ? `<small>${Math.round(v.a.w * 100)}% parecido</small>` : v.a.w > 1 ? `<small>${v.a.w}×</small>` : ''; return `<li><span class="bola" style="background:${corNo(o)}"></span><span class="id" data-id="${esc(v.o)}">${esc(v.o)}</span><small>${esc(o.c === 'k' ? o.d.slice(0, 60) : '')}</small>${peso}</li>`; }).join('') +
       (lista.length > 80 ? `<li><small>… e mais ${lista.length - 80}</small></li>` : '') + '</ul></details>';
   });
   painel.innerHTML = h;
@@ -460,6 +491,14 @@ function enquadrar(animar = true) {
   const alvo = d3.zoomIdentity.translate(largura / 2, altura / 2).scale(k).translate(-(x0 + x1) / 2, -(y0 + y1) / 2);
   animar ? d3.select(canvas).transition().duration(500).call(zoom.transform, alvo) : d3.select(canvas).call(zoom.transform, alvo);
 }
+function definirCor(c) {
+  estado.cor = c; $('#cor-tipo').classList.toggle('ligado', c === 'tipo'); $('#cor-tema').classList.toggle('ligado', c === 'tema');
+  $('#lista-temas').style.display = c === 'tema' ? 'block' : 'none'; desenhar();
+}
+$('#cor-tipo').addEventListener('click', () => definirCor('tipo'));
+$('#cor-tema').addEventListener('click', () => definirCor('tema'));
+$('#lista-temas').innerHTML = temas.map(t => `<label class="op" data-t="${t}" style="cursor:pointer"><span class="bola" style="background:${corTema[t]}"></span><span>${t} · ${esc(porId.get(t).d)}</span></label>`).join('');
+$('#lista-temas').querySelectorAll('label').forEach(l => l.addEventListener('click', () => escolher(l.dataset.t)));
 $('#menu').addEventListener('click', () => $('#filtros').classList.toggle('aberto'));
 $('#tema').addEventListener('click', () => {
   const atual = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -508,6 +547,7 @@ for (let i = 0; i < 320; i++) sim.tick();
 enquadrar(false); sim.alpha(0.02).restart();
 const inicial = decodeURIComponent(location.hash.slice(1));
 if (inicial && porId.has(inicial)) setTimeout(() => escolher(inicial), 100);
+window.addEventListener('hashchange', () => { const id = decodeURIComponent(location.hash.slice(1)); if (id && id !== estado.escolhido && porId.has(id)) escolher(id); });
 </script>
 </body>
 </html>
