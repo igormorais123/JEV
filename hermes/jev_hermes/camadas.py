@@ -143,7 +143,7 @@ TEMAS = {
     'nenhum': 'Nenhum dos temas acima: conversa, pergunta rapida ou assunto que nao se encaixa.',
 }
 SKILLS_DO_TEMA = {
-    'juridico': '`cicero`, `fabrica-melhoria-peticoes`',
+    'juridico': '`cicero`, `fabrica-melhoria-peticoes`; contrato ou edital: checklist do Jev (skill `jev`) antes de ler inteiro',
     'estrategia': '`helena`',
     'pesquisa': '`oracle`, `research`',
     'engenharia': '`efesto`, `devops`',

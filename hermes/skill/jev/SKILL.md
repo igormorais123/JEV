@@ -98,6 +98,15 @@ leitura a subagente com contrato fechado e faça você o julgamento e a redaçã
 - **Pendências do WhatsApp pessoal** (quem espera Igor e promessas dele sem entrega, 7 dias):
   `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.pendencias` → JSON. Use isto para
   "o que está pendente/quem me espera/o que prometi" em vez de ler as conversas. Leitura apenas.
+- **Checklist de documento** (contrato, edital, proposta, política; R50: 287 de 288 itens certos
+  em contratos construídos, nenhum ponto arriscado saiu verde, uma chamada, ~US$ 0,0001):
+  `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.checklist --documento ARQ.pdf|.docx|.txt --lista NOME`.
+  Rode ANTES de ler o documento inteiro; leia você só os itens VERMELHO e AMARELO e cite a
+  cláusula. Listas em `jev_hermes/listas/` (hoje: `contrato-prestacao-de-servicos`, visão do
+  contratado). Sem lista para o tipo, escreva uma (JSON: `nome`, `itens` com `id`, `tipo`
+  choice/noul, `pergunta` sobre o que o documento ESTABELECE, `opcoes`, `risco`), salve lá e
+  reutilize; `nao-consta` e o sentinela entram sozinhos. Até 60 mil caracteres; divida por
+  capítulo acima disso. Verde é triagem, não parecer; a análise jurídica continua sua.
 - **Painel da manhã** (7h, sem você): agenda + demandas do escritório + pendências do WhatsApp,
   com uma prioridade e o próximo gesto.
 

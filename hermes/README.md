@@ -45,6 +45,7 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 | Radar de IA (diário) | Sol lia todo candidato | Jev lê contra as missões; tudo trivial → descarte pelo helper, sem Sol |
 | Watchdog urgente Fábio | 22 palavras-chave | Jev decide relevância; palavras só se o Jev falhar |
 | Caixa vigiada (novo, 30 min, 7–22h) | — | alerta imediato de e-mail que pede ação, cliente, jurídico, financeiro |
+| Checklist de documento (sob demanda) | Astra lia o contrato inteiro | `jev_hermes/checklist.py` (porte da R50): uma chamada, semáforo por item; o Astra lê só vermelho e amarelo |
 | Painel da manhã (novo, 7h) | — | agenda + demandas do escritório + pendências do WhatsApp pessoal (quem espera Igor, promessas sem entrega — `jev_hermes/pendencias.py`); o Jev pontua urgência e preparo; uma prioridade e o próximo gesto |
 | Sono de memória (diário) | Sol colhia e escolhia entre ~20 candidatos; 33 de 50 sem promover | porteiro roda colheita e snapshot; o Jev classifica; só acorda com P(durável) ≥ 0,30 |
 | Saúde do coletor WhatsApp (novo, 8h) | — | avisa coletor parado ou deslogado (regra, sem Jev) |
