@@ -19,6 +19,22 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 | contrato | `/root/HERMES.md`, linha "Sistema 1 é do Jev" | Jev por padrão em toda decisão fechada |
 | medição | `jev_hermes/medir.py` → `estado/RELATORIO.md` | recalculada dos registros, diária |
 
+## Modelo principal e economia da cota (desde 21/09/2026)
+
+- Conversa com Igor: `gpt-6-astra`, esforço baixo, conta Pro (igor@inteia.com.br) primeiro no pool
+  `openai-codex`, conta team depois. Guarda: `/root/.hermes/bin/hermes-enforce-stable-model`
+  (cópia em `infra/`), que roda antes do gateway e a cada 2 min no stability-guard.
+- Fora da cota do Astra, pelo OmniRoute (`providers.omniroute`, chave `OMNIROUTE_API_KEY`):
+  reserva `sol` → `luna` → Astra; tarefas auxiliares (compressão, resumo de página, títulos,
+  aprovação, curador, MCP...) em `luna`; subagentes (`delegate_task`) e cron sem modelo fixado em `sol`.
+- Contexto: compressão com teto absoluto de 100 mil tokens (`compression.threshold_tokens`; o
+  Astra tem janela de 1,05 M e comprimiria só em 525 mil) e poda sem modelo de resultados de
+  ferramenta velhos acima de 48 mil (`proactive_prune_tokens`).
+- Smoke do stability-guard a cada 6 h (era 30 min: ~1 M tokens/dia do Astra).
+- `HERMES.md`: regra "Economia da cota do modelo principal" (delegar pesquisa e coleta).
+- Camada `tema`: nota `[jev/economia]` quando P(pesquisa)+P(relatório) ≥ 0,70.
+- Backup e restauração: `/root/backups/hermes-astra-jev-20260921T041649Z` (config, auth, guardas).
+
 ## Jobs de cron com o Jev
 
 | job | antes | agora |

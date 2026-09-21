@@ -175,6 +175,10 @@ PERGUNTAS_DE_TEMA = {
     },
 }
 CORTE_DO_TEMA = 0.90
+# Pesquisa e relatório foram 42% dos tokens do WhatsApp em 60 dias; o subagente roda no
+# OmniRoute, fora da cota do modelo principal.
+TEMAS_DE_DELEGAR = ('pesquisa', 'relatorio')
+CORTE_DE_DELEGAR = 0.70   # soma das duas; é só sugestão. Pesquisa jurídica divide com `juridico` (0,81)
 
 
 # ------------------------------------------------------------------------------- tema
@@ -199,6 +203,11 @@ def tema(mensagem):
     if assunto in SKILLS_DO_TEMA and (confianca or 0) >= CORTE_DO_TEMA:
         partes.append(f'[jev/tema] assunto {assunto} (confiança {nucleo.dec(confianca)}); '
                       f'skills para isto: {SKILLS_DO_TEMA[assunto]}.')
+    p_delegar = sum(((respostas.get('tema') or {}).get('probabilities') or {}).get(t) or 0 for t in TEMAS_DE_DELEGAR)
+    decisao['p_delegar'] = round(p_delegar, 3)
+    if p_delegar >= CORTE_DE_DELEGAR:
+        partes.append('[jev/economia] a coleta e a leitura de fontes cabem a um subagente (`delegate_task`, '
+                      'fora da sua cota); receba a síntese com evidência e faça você o julgamento e a redação final.')
     if risco == 'irreversivel':
         partes.append('[jev/risco] o pedido tem efeito que não se desfaz ou que sai do servidor: '
                       'confirme o alvo antes de executar.')

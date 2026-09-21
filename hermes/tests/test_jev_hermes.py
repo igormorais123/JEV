@@ -232,3 +232,12 @@ def test_recorte_deixa_inteira_saida_que_termina_em_falha(jev):
     texto = 'y' * 20000 + '\nTraceback (most recent call last):\n'
     novo, decisao = camadas.recortar_terminal('cmd | tail', texto, 'pedido longo o bastante aqui')
     assert novo is None and decisao['motivo'] == 'falha na cauda'
+
+
+def test_tema_de_pesquisa_sugere_delegar(jev, monkeypatch):
+    nucleo, camadas, _ = jev
+    t = responder({'tema': 'pesquisa', 'risco': 'seguro'})  # probabilities: pesquisa 0,97
+    real = nucleo.perguntar
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+    nota, decisao = camadas.tema('Levante a jurisprudência recente do STJ sobre dano moral coletivo.')
+    assert decisao['acao'] == 'sugerir' and '[jev/economia]' in nota and 'delegate_task' in nota
