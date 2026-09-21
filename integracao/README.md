@@ -41,7 +41,15 @@ python integracao/instalar.py --instalar --gancho busca --modo ativo
 python integracao/instalar.py --instalar --gancho sentinela --modo ativo
 python integracao/instalar.py --instalar --gancho saida --modo ativo
 python integracao/instalar.py --desinstalar --gancho todos
+python integracao/instalar.py --agendar        # tarefa diária do Windows com a rotina completa
 ```
+
+**A medição não depende de ninguém lembrar.** Ao fim de cada sessão do Claude Code, o hook
+`SessionEnd` regera `docs/CAMADAS-CLAUDE-CODE.md`; uma vez por dia, às 23h30, a tarefa agendada
+`JEV-medicao-das-camadas` roda `integracao/camadas/rotina.py` inteira: mede, concilia o
+livro-caixa (as chamadas dos hooks entram nele), regera as páginas que citam o caixa, audita e
+faz commit local por lista explícita de arquivos — nunca push. Se a auditoria não fechar, a
+rotina para sem commitar e o motivo fica em `integracao/estado/rotina.log`.
 
 O que **não** está nas camadas, por medida: roteamento de esforço (cobertura útil 0% em 60
 pedidos reais), escolha de modelo, e qualquer decisão de permissão — o Jev não libera nada

@@ -253,6 +253,16 @@ def medir():
     return dado
 
 
+def _rotina():
+    """A última execução da rotina automática, para a página dizer se ela está viva."""
+    try:
+        r = json.loads((RAIZ / 'estado' / 'rotina-ultima.json').read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return 'nunca rodou'
+    estado = 'ok' if r.get('ok') else f"parou em {r.get('parou_em')}"
+    return f"{r.get('em')} ({r.get('modo')}, {estado}{', commit' if r.get('commit') else ''})"
+
+
 def n(v):
     if v is None:
         return '—'
@@ -276,6 +286,7 @@ arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
 Registros: **{n(T['registros'])}** ({T['primeiro_registro'] or '—'} a {T['ultimo_registro'] or '—'}).
+Última rotina automática: {_rotina()}.
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 

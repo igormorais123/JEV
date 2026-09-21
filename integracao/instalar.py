@@ -11,6 +11,7 @@ depender do backup.
 import argparse
 import json
 import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -82,6 +83,21 @@ GANCHOS = {
         'rotulo': 'o Jev está procurando a causa na saída',
         'matcher': 'Bash|PowerShell',
     },
+    # Não classifica nada: ao fim de cada sessão regera a página de medição das camadas, para
+    # que ela nunca dependa de alguém lembrar de rodar o medidor. Só no Claude Code: o Codex
+    # não tem SessionEnd. A rotina completa (caixa, páginas, auditoria, commit) é a tarefa
+    # agendada do Windows, criada por `--agendar`.
+    'medicao': {
+        'evento': 'SessionEnd',
+        'arquivo': RAIZ / 'camadas' / 'rotina.py',
+        'marca': 'camadas/rotina.py',
+        'argumentos': '--so-medir',
+        'variavel': None,
+        'modo_arquivo': None,
+        'timeout': 60,
+        'rotulo': 'regerando a medição das camadas do Jev',
+        'so_claude': True,
+    },
     'sentinela': {
         'evento': 'PostToolUse',
         'arquivo': RAIZ / 'hooks' / 'jev_sentinela.py',
@@ -102,8 +118,11 @@ GANCHOS['sentinela']['matcher'] = _MATCHER_SENTINELA
 
 def entrada_de(nome):
     ganho = GANCHOS[nome]
+    comando = f'python "{ganho["arquivo"].as_posix()}"'
+    if ganho.get('argumentos'):
+        comando += ' ' + ganho['argumentos']
     bloco = {'hooks': [{'type': 'command',
-                        'command': f'python "{ganho["arquivo"].as_posix()}"',
+                        'command': comando,
                         'timeout': ganho['timeout'],
                         'statusMessage': ganho['rotulo']}]}
     if ganho.get('matcher'):
@@ -128,7 +147,10 @@ def instalar_gancho(caminho, nome, modo, define_ambiente):
     if not ganho['arquivo'].exists():
         print(f'  hook {nome} nao encontrado em {ganho["arquivo"]}', file=sys.stderr)
         return
-    ganho['modo_arquivo'].write_text(modo + chr(10), encoding='utf-8')
+    if ganho.get('so_claude') and caminho != CLAUDE:
+        return
+    if ganho.get('modo_arquivo'):
+        ganho['modo_arquivo'].write_text(modo + chr(10), encoding='utf-8')
     dados = carregar(caminho)
     if instalado_em(dados, nome):
         print(f'  {caminho.name}: {nome} ja instalado')
@@ -143,7 +165,7 @@ def instalar_gancho(caminho, nome, modo, define_ambiente):
         dados.setdefault('hooks', {}).setdefault(ganho['evento'], []).append(entrada_de(nome))
         print(f'  {caminho.name}: {nome} acrescentado em {ganho["evento"]} '
               f'(backup em {copia.name})')
-    if define_ambiente:
+    if define_ambiente and ganho.get('variavel'):
         dados.setdefault('env', {})[ganho['variavel']] = modo
         print(f'  {caminho.name}: {ganho["variavel"]}={modo}')
     gravar(caminho, dados)
@@ -169,7 +191,8 @@ def desinstalar_gancho(caminho, nome):
         dados['hooks'][ganho['evento']] = restantes
     else:
         dados['hooks'].pop(ganho['evento'], None)
-    (dados.get('env') or {}).pop(ganho['variavel'], None)
+    if ganho.get('variavel'):
+        (dados.get('env') or {}).pop(ganho['variavel'], None)
     gravar(caminho, dados)
     print(f'  {caminho.name}: {nome} removido (backup em {copia.name})')
 
@@ -241,17 +264,39 @@ def desinstalar(caminho):
     print(f'  {caminho.name}: hook removido (backup em {copia.name})')
 
 
+TAREFA = 'JEV-medicao-das-camadas'
+
+
+def agendar():
+    """Tarefa diária do Agendador do Windows: a rotina completa, às 23h30, sem janela."""
+    rotina = (RAIZ / 'camadas' / 'rotina.py').as_posix()
+    comando = f'cmd /c cd /d "{RAIZ.parent.as_posix()}" && python "{rotina}" >> "{(RAIZ / "estado" / "rotina-tarefa.log").as_posix()}" 2>&1'
+    proc = subprocess.run(['schtasks', '/Create', '/F', '/SC', 'DAILY', '/ST', '23:30',
+                           '/TN', TAREFA, '/TR', comando], capture_output=True, text=True,
+                          encoding='utf-8', errors='replace')
+    print((proc.stdout + proc.stderr).strip())
+    return proc.returncode
+
+
 def ver():
+    proc = subprocess.run(['schtasks', '/Query', '/TN', TAREFA, '/FO', 'LIST'], capture_output=True,
+                          text=True, encoding='utf-8', errors='replace')
+    print(f'tarefa agendada {TAREFA}: ' + ('existe' if proc.returncode == 0 else 'não existe (use --agendar)'))
     for caminho in (CLAUDE, CODEX):
         if not caminho.exists():
             print(f'{caminho}: nao existe')
             continue
         dados = carregar(caminho)
         for nome, ganho in GANCHOS.items():
-            arquivo = ganho['modo_arquivo']
-            padrao = arquivo.read_text(encoding='utf-8').strip() if arquivo.exists() else 'sombra'
-            modo = (dados.get('env') or {}).get(ganho['variavel'],
-                                                f'{padrao} (de {arquivo.name})')
+            if ganho.get('so_claude') and caminho != CLAUDE:
+                continue
+            arquivo = ganho.get('modo_arquivo')
+            if not arquivo:
+                modo = 'sempre'
+            else:
+                padrao = arquivo.read_text(encoding='utf-8').strip() if arquivo.exists() else 'sombra'
+                modo = (dados.get('env') or {}).get(ganho['variavel'],
+                                                    f'{padrao} (de {arquivo.name})')
             print(f'{caminho.name}: {nome:9} instalado={instalado_em(dados, nome)} | '
                   f'modo={modo}')
 
@@ -262,6 +307,8 @@ def main():
     parser.add_argument('--desinstalar', action='store_true')
     parser.add_argument('--ver', action='store_true')
     parser.add_argument('--modo', default='sombra', choices=('sombra', 'ativo'))
+    parser.add_argument('--agendar', action='store_true',
+                        help='cria a tarefa diária do Windows que roda a rotina completa')
     parser.add_argument('--gancho', default='roteador',
                         choices=tuple(GANCHOS) + ('todos',),
                         help='qual hook instalar ou remover')
@@ -272,10 +319,13 @@ def main():
     if args.desinstalar:
         print('removendo:')
         for nome in alvos:
-            GANCHOS[nome]['modo_arquivo'].write_text('sombra' + chr(10), encoding='utf-8')
+            if GANCHOS[nome].get('modo_arquivo'):
+                GANCHOS[nome]['modo_arquivo'].write_text('sombra' + chr(10), encoding='utf-8')
             for caminho in (CLAUDE, CODEX):
                 desinstalar_gancho(caminho, nome)
         return 0
+    if args.agendar:
+        return agendar()
     if args.instalar:
         print(f'instalando {", ".join(alvos)} em modo {args.modo}:')
         for nome in alvos:
