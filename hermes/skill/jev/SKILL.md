@@ -102,7 +102,9 @@ leitura a subagente com contrato fechado e faça você o julgamento e a redaçã
   em contratos construídos, nenhum ponto arriscado saiu verde, uma chamada, ~US$ 0,0001):
   `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.checklist --documento ARQ.pdf|.docx|.txt --lista NOME`.
   Rode ANTES de ler o documento inteiro; leia você só os itens VERMELHO e AMARELO e cite a
-  cláusula. Listas em `jev_hermes/listas/` (hoje: `contrato-prestacao-de-servicos`, visão do
+  cláusula. Listas em `jev_hermes/listas/`: `acordao-triagem` (resultado, votação, Súmula 7, multa
+  protelatória, honorários recursais, tese vinculante, embargos; use `--inicio` em inteiro teor longo;
+  útil para triar lotes de precedentes antes de memoriais e embargos) e `contrato-prestacao-de-servicos` (visão do
   contratado). Sem lista para o tipo, escreva uma (JSON: `nome`, `itens` com `id`, `tipo`
   choice/noul, `pergunta` sobre o que o documento ESTABELECE, `opcoes`, `risco`), salve lá e
   reutilize; `nao-consta` e o sentinela entram sozinhos. Até 60 mil caracteres; divida por

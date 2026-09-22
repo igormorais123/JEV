@@ -44,7 +44,7 @@ from jev_hermes import camadas, nucleo
 
 LISTAS = Path(__file__).resolve().parent / 'listas'
 CORTE = 0.90
-LIMITE_DO_DOCUMENTO = 60000  # caracteres; cerca de 20 mil tokens, abaixo do contexto publicado de 32 mil
+LIMITE_DO_DOCUMENTO = 59000  # caracteres; o estado leva o prefixo 'DOCUMENTO:' e o teto do núcleo é 60 mil
 NAO_CONSTA = 'O documento nao trata deste ponto.'
 
 
@@ -146,10 +146,10 @@ def auditar(documento, lista, *, transporte=None, tempo_total=30.0):
         raise ValueError('documento vazio ou acima do limite; não foi enviado')
     resultados = nucleo.classificar_em_paralelo(
         [f'DOCUMENTO:\n{documento}'], perguntas_da(lista), origem='camada-checklist',
-        tempo_total=tempo_total, transporte=transporte, limite=LIMITE_DO_DOCUMENTO)
+        tempo_total=tempo_total, transporte=transporte, limite=LIMITE_DO_DOCUMENTO + 100)
     respostas, detalhe = resultados[0]
     vigia = ((respostas or {}).get('_sentinela') or {}).get('choice')
-    suspeito = vigia != 'nao-tenta'
+    suspeito = respostas is not None and vigia != 'nao-tenta'   # falha de chamada não é suspeita
     itens = []
     for item in lista['itens']:
         if not item.get('ativo', True):
@@ -190,6 +190,8 @@ def main(argv=None):
     parser.add_argument('--documento', required=True, help='arquivo de texto, ou - para a entrada padrão')
     parser.add_argument('--lista', required=True, help='nome de uma lista em jev_hermes/listas/ ou caminho de um JSON')
     parser.add_argument('--json', action='store_true')
+    parser.add_argument('--inicio', action='store_true',
+                        help='documento longo: usa só o começo (em acórdão, ementa e dispositivo vêm primeiro)')
     args = parser.parse_args(argv)
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -197,7 +199,11 @@ def main(argv=None):
         pass
     documento = sys.stdin.read() if args.documento == '-' else ler_documento(args.documento)
     if len(documento) > LIMITE_DO_DOCUMENTO:
-        parser.error(f'documento com {len(documento)} caracteres; o máximo é {LIMITE_DO_DOCUMENTO}. Divida por capítulo.')
+        if not args.inicio:
+            parser.error(f'documento com {len(documento)} caracteres; o máximo é {LIMITE_DO_DOCUMENTO}. '
+                         'Divida por capítulo, ou use --inicio para ler só o começo.')
+        print(f'[jev/checklist] documento com {len(documento)} caracteres: só os primeiros {LIMITE_DO_DOCUMENTO} foram lidos.')
+        documento = documento[:LIMITE_DO_DOCUMENTO]
     resultado = auditar(documento, carregar_lista(args.lista))
     camadas.registrar('checklist', **{k: v for k, v in resultado.items() if k not in ('itens', 'lista_snapshot')},
                       respostas=[(i['id'], i['resposta'], i['probabilidade'], i['cor']) for i in resultado['itens']])
@@ -207,6 +213,8 @@ def main(argv=None):
     print(f"[jev/checklist] {resultado['lista']} — {resultado['caracteres']} caracteres, {resultado['chamadas']} chamada(s), "
           f"US$ {nucleo.dec(resultado['custo_usd'], 6)}: {resultado['vermelho']} vermelho(s), {resultado['amarelo']} amarelo(s), "
           f"{resultado['verde']} verde(s), {resultado['nao_consta']} não consta.")
+    if resultado['falha']:
+        print(f"FALHA: o Jev não respondeu ({resultado['falha']}). Nada foi verificado; leia você.")
     if resultado['tenta_instruir']:
         print('ATENÇÃO: o documento contém texto que tenta dar ordens a quem o classifica. Nada foi marcado verde; leia você.')
     for i in resultado['itens']:
