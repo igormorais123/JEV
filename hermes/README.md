@@ -132,9 +132,10 @@ contra 38. A ressalva honesta: a véspera sozinha custou 31 mil, abaixo da execu
 porteiro — a variância entre dias é grande e uma execução não fecha a conta.
 
 A lição vale para todo porteiro que injeta candidatos: o contexto é reenviado a cada volta de
-ferramenta. O boletim passou a 15 itens com trecho de 180 caracteres (contexto de 11 mil) e a
-tese a resumos de 450 (contexto de 6,7 mil). Título, fonte, hora e link bastam para escolher o
-que abrir — o texto inteiro já foi lido pelo Jev na triagem.
+ferramenta. O boletim passou a 15 itens com trecho de 180 caracteres, e o contexto caiu de 18
+para 11 mil. Título, fonte, hora e link bastam para escolher o que abrir — o texto inteiro já
+foi lido pelo Jev na triagem. A tese ficou como estava, com 5 artigos e resumo de 900
+caracteres (contexto de 7,2 mil): o problema é o número de itens, não o tamanho de cada um.
 
 A tese acadêmica rodou às 11h do mesmo dia, já com o contexto enxuto, e é a primeira medida
 limpa do ganho. Comparada às 15 execuções anteriores do mesmo job:
