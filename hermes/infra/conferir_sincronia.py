@@ -42,13 +42,21 @@ print(json.dumps(saida))
 '''
 
 
+def versionados():
+    """Só o que o git já rastreia: arquivo novo em edição ainda não é promessa de nada."""
+    fim = subprocess.run(['git', '-C', str(RAIZ), 'ls-files'], capture_output=True, text=True)
+    return {(RAIZ / linha).resolve() for linha in fim.stdout.splitlines() if linha}
+
+
 def arquivos():
     """(caminho local, caminho na VPS) de tudo que é publicado."""
+    rastreados = versionados()
     for pasta, destino in DESTINOS.items():
         base = RAIZ / pasta
         for caminho in sorted(base.rglob('*')):
             if (caminho.is_file() and caminho.suffix in EXTENSOES
-                    and '__pycache__' not in caminho.parts):
+                    and '__pycache__' not in caminho.parts
+                    and caminho.resolve() in rastreados):
                 dentro = caminho.relative_to(base)
                 # rotinas e porteiros são publicados achatados, em /root/.hermes/scripts
                 relativo = dentro.name if pasta in ('rotinas', 'portoes') else dentro.as_posix()
@@ -57,6 +65,22 @@ def arquivos():
 
 def digest(caminho):
     return hashlib.md5(caminho.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+
+
+def lado_da_diferenca(caminho, md5_remoto):
+    """De quem é a versão que está na VPS: da última que commitamos, ou de mais ninguém.
+
+    Com dois agentes mexendo no mesmo repositório, "difere" sozinho não diz nada. Se a VPS é igual
+    ao HEAD, a diferença é uma edição local em curso — publique quando terminar. Se não é, a VPS
+    tem código que não está versionado: leia antes de sobrescrever.
+    """
+    relativo = caminho.relative_to(RAIZ.parent).as_posix()
+    fim = subprocess.run(['git', '-C', str(RAIZ), 'show', f'HEAD:{relativo}'],
+                         capture_output=True)
+    if fim.returncode != 0:
+        return 'não está no HEAD'
+    no_head = hashlib.md5(fim.stdout.replace(b'\r\n', b'\n')).hexdigest()
+    return 'edição local ainda não publicada' if no_head == md5_remoto else 'a VPS tem o que não está aqui'
 
 
 def conferir():
@@ -72,16 +96,16 @@ def conferir():
     iguais, diferem, ausentes = [], [], []
     for local, remoto in pares:
         if la.get(remoto) is None:
-            ausentes.append((local, remoto))
+            ausentes.append((local, remoto, ''))
         elif la[remoto] == digest(local):
-            iguais.append((local, remoto))
+            iguais.append((local, remoto, ''))
         else:
-            diferem.append((local, remoto))
+            diferem.append((local, remoto, lado_da_diferenca(local, la[remoto])))
     return iguais, diferem, ausentes
 
 
 def puxar(pares):
-    for local, remoto in pares:
+    for local, remoto, _ in pares:
         fim = subprocess.run(['scp', f'{MAQUINA}:{remoto}', str(local)], capture_output=True, text=True)
         if fim.returncode == 0:
             local.write_bytes(local.read_bytes().replace(b'\r\n', b'\n'))
@@ -96,13 +120,15 @@ def main():
     escolhas = opcoes.parse_args()
     iguais, diferem, ausentes = conferir()
     print(f'{len(iguais)} arquivo(s) iguais ao que roda na VPS.')
-    for local, remoto in diferem:
-        print(f'DIFERE   {local.relative_to(RAIZ)}  ->  {remoto}')
-    for local, remoto in ausentes:
+    for local, remoto, lado in diferem:
+        print(f'DIFERE   {local.relative_to(RAIZ)}  ->  {remoto}  [{lado}]')
+    for local, remoto, _ in ausentes:
         print(f'AUSENTE  {local.relative_to(RAIZ)}  ->  {remoto} (versionado aqui, não publicado lá)')
     if diferem and escolhas.puxar:
-        print('Puxando as divergências (revise o diff e rode os testes antes de versionar):')
-        puxar(diferem)
+        trazer = [p for p in diferem if p[2] == 'a VPS tem o que não está aqui']
+        print(f'Puxando {len(trazer)} (revise o diff e rode os testes antes de versionar); '
+              'edição local em curso fica como está:')
+        puxar(trazer)
     return 1 if (diferem or ausentes) else 0
 
 

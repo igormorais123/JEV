@@ -174,6 +174,37 @@ def medir():
     }
 
 
+def linhas_da_rota(dias=7):
+    """A nota `[jev/ferramenta]` bateu com a ferramenta usada? Acumula no relatório, dia a dia."""
+    try:
+        from jev_hermes import aferir_rota
+        m = aferir_rota.aferir(dias)
+    except Exception:
+        return []
+    if not m.get('turnos'):
+        return []
+    placar = m.get('placar') or {}
+    decididos = (placar.get('acertou') or 0) + (placar.get('errou') or 0)
+    linhas_ = ['## Rota de ferramenta (últimos %d dias)' % dias, '']
+    if decididos:
+        linhas_.append(f"- {placar.get('acertou', 0)} de {decididos} turno(s) decididos usaram a ferramenta "
+                       f"sugerida ({(m['acerto'] or 0) * 100:.0f}%).")
+    else:
+        linhas_.append('- nenhum turno decidido ainda: a nota só conta quando o modelo chega a chamar '
+                       'alguma ferramenta.')
+    if m.get('fora_da_conta'):
+        linhas_.append(f"- {m['fora_da_conta']} fora da conta (sessão de prova, fora do agente).")
+    if placar.get('abaixo do corte'):
+        linhas_.append(f"- {placar['abaixo do corte']} abaixo do corte de "
+                       f"{camadas_corte():.2f}: o Jev julgou e preferiu calar.")
+    return linhas_ + ['']
+
+
+def camadas_corte():
+    from jev_hermes import camadas
+    return getattr(camadas, 'CORTE_DA_FERRAMENTA', 0.9)
+
+
 def mil(n):
     """Milhar com ponto, como se escreve em português."""
     return f'{n:,}'.replace(',', '.')
@@ -223,7 +254,7 @@ def pagina(m):
         partes.append(f"- {nome}: " + ', '.join(f'{k} {v}' for k, v in sorted(contagem.items())))
     partes += ['', f"Entrada evitada pelos recortes (leitura, terminal, skill, sessões, resultado, transcrição): "
                f"{mil(m['entrada_evitada_pelos_recortes'])} tokens.", '',
-               '## Ferramentas sustentadas pelo Jev', '']
+               *linhas_da_rota(), '## Ferramentas sustentadas pelo Jev', '']
     usadas = [(n, m['por_origem'][n]) for n in FERRAMENTAS if n in m['por_origem']]
     if usadas:
         for nome, o in usadas:
