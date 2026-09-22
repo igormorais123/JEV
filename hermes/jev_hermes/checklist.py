@@ -142,8 +142,13 @@ def semaforo(item, resposta, p, suspeito):
 
 def auditar(documento, lista, *, transporte=None, tempo_total=30.0):
     validar_lista(lista)
-    if not isinstance(documento, str) or not documento.strip() or len(documento) > LIMITE_DO_DOCUMENTO:
-        raise ValueError('documento vazio ou acima do limite; não foi enviado')
+    if not isinstance(documento, str) or not documento.strip():
+        # PDF digitalizado devolve quase nada: dizer "vazio" manda a pessoa procurar o erro no
+        # lugar errado. Dos anexos reais de Igor, peça em PDF de imagem é caso comum.
+        raise ValueError('documento sem texto: se for PDF digitalizado, precisa de OCR antes')
+    if len(documento) > LIMITE_DO_DOCUMENTO:
+        raise ValueError(f'documento com {len(documento)} caracteres, acima do limite de '
+                         f'{LIMITE_DO_DOCUMENTO}; use --inicio ou audite por partes')
     resultados = nucleo.classificar_em_paralelo(
         [f'DOCUMENTO:\n{documento}'], perguntas_da(lista), origem='camada-checklist',
         tempo_total=tempo_total, transporte=transporte, limite=LIMITE_DO_DOCUMENTO + 100)
@@ -204,7 +209,11 @@ def main(argv=None):
                          'Divida por capítulo, ou use --inicio para ler só o começo.')
         print(f'[jev/checklist] documento com {len(documento)} caracteres: só os primeiros {LIMITE_DO_DOCUMENTO} foram lidos.')
         documento = documento[:LIMITE_DO_DOCUMENTO]
-    resultado = auditar(documento, carregar_lista(args.lista))
+    try:
+        resultado = auditar(documento, carregar_lista(args.lista))
+    except ValueError as erro:   # documento sem texto ou lista malformada: motivo, não pilha
+        print(f'[jev/checklist] não auditei: {erro}')
+        return 2
     camadas.registrar('checklist', **{k: v for k, v in resultado.items() if k not in ('itens', 'lista_snapshot')},
                       respostas=[(i['id'], i['resposta'], i['probabilidade'], i['cor']) for i in resultado['itens']])
     if args.json:

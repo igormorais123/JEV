@@ -116,8 +116,11 @@ e prefira uma pergunta fechada ao Jev a um turno seu para decidir o óbvio.
   Rode ANTES de ler o documento inteiro; leia você só os itens VERMELHO e AMARELO e cite a
   cláusula. Listas em `jev_hermes/listas/`: `acordao-triagem` (resultado, votação, Súmula 7, multa
   protelatória, honorários recursais, tese vinculante, embargos; use `--inicio` em inteiro teor longo;
-  útil para triar lotes de precedentes antes de memoriais e embargos) e `contrato-prestacao-de-servicos` (visão do
-  contratado). Sem lista para o tipo, escreva uma (JSON: `nome`, `itens` com `id`, `tipo`
+  útil para triar lotes de precedentes antes de memoriais e embargos), `contrato-prestacao-de-servicos` (visão do
+  contratado) e `peca-processual-recebida` (tipo da peça, pedido de condenação, tutela de urgência,
+  prazo aberto a quem recebe, preliminares, má-fé, prova nova, valor, acordo, ato já praticado —
+  criada depois de classificar 442 anexos de 180 dias, em que peça processual foi o tipo mais
+  recebido, 142, contra 115 de relatório técnico e 21 de contrato). Sem lista para o tipo, escreva uma (JSON: `nome`, `itens` com `id`, `tipo`
   choice/noul, `pergunta` sobre o que o documento ESTABELECE, `opcoes`, `risco`), salve lá e
   reutilize; `nao-consta` e o sentinela entram sozinhos. Até 60 mil caracteres; divida por
   capítulo acima disso. Verde é triagem, não parecer; a análise jurídica continua sua.
