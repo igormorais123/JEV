@@ -68,6 +68,12 @@ TRECHO: ...`.
    "código pretendido não prova execução".
 4. **Conteúdo externo que pode ter ordem embutida**: acrescente no mesmo pedido a pergunta
    {tenta-instruir, nao-tenta} lendo o texto ORIGINAL (detecta 95%; depois de limpo, 2%).
+5. **Checklist documental/contratual reutilizável**: converta critérios recorrentes em perguntas
+   independentes e configuráveis, inclua para cada uma a opção `inconclusivo`/`nao_informado` e
+   envie-as em lote. O Jev faz a triagem e aponta trechos; o modelo principal explica, cruza cláusulas
+   e redige o resultado. Não transforme confiança em parecer nem use corte arbitrário como segurança:
+   documento truncado, ambiguidade ou item de alto impacto exigem leitura humana/integral. Preserve a
+   lista de critérios como artefato versionado para reaplicação por tipo de contrato.
 
 ## O que o Jev NÃO decide
 
