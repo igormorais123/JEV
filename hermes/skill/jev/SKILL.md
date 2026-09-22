@@ -129,6 +129,11 @@ e prefira uma pergunta fechada ao Jev a um turno seu para decidir o óbvio.
   põe na agenda na véspera, às 9h, e avisa só o que mudou. Para "quais são meus prazos?":
   `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.prazos --listar` (só leitura).
   Não crie outro controle de prazos; o script antigo `prazos_medina_osorio.py` está aposentado.
+- **Triagem de anexo recebido** (job 8h e 15h): o Jev diz o tipo de cada anexo novo pelo nome e pelo
+  assunto; peça processual, decisão judicial e contrato são baixados e passam pela checklist antes
+  de alguém abrir. Para saber o que já foi triado: `python3 -m jev_hermes.anexos --listar`
+  (só leitura). Se Igor perguntar sobre um anexo recente, consulte isso antes de baixar o arquivo
+  de novo — os pontos vermelhos já estão medidos.
 - **Painel da manhã** (7h, sem você): agenda + demandas do escritório + pendências do WhatsApp,
   com uma prioridade e o próximo gesto.
 
