@@ -107,6 +107,11 @@ leitura a subagente com contrato fechado e faça você o julgamento e a redaçã
   choice/noul, `pergunta` sobre o que o documento ESTABELECE, `opcoes`, `risco`), salve lá e
   reutilize; `nao-consta` e o sentinela entram sozinhos. Até 60 mil caracteres; divida por
   capítulo acima disso. Verde é triagem, não parecer; a análise jurídica continua sua.
+- **Controle de prazos por e-mail** (job a cada 2 h, 7h–21h): o Jev tria a caixa, lê os fios que
+  podem ter prazo, escolhe o prazo final de Igor entre as datas do texto e reconhece a entrega;
+  põe na agenda na véspera, às 9h, e avisa só o que mudou. Para "quais são meus prazos?":
+  `cd /root/.hermes/integrations/jev && python3 -m jev_hermes.prazos --listar` (só leitura).
+  Não crie outro controle de prazos; o script antigo `prazos_medina_osorio.py` está aposentado.
 - **Painel da manhã** (7h, sem você): agenda + demandas do escritório + pendências do WhatsApp,
   com uma prioridade e o próximo gesto.
 

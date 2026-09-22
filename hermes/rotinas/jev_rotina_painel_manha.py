@@ -12,7 +12,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, '/root/.hermes/integrations/jev')
-from jev_hermes import nucleo, pendencias, portao  # noqa: E402
+from jev_hermes import nucleo, pendencias, portao, prazos  # noqa: E402
 
 FUSO = timezone(timedelta(hours=-3))
 PAINEL = ['/root/.hermes/bin/office-demand-panel', 'priorities', '--json', '--limit', '20']
@@ -85,11 +85,25 @@ def whatsapp():
     return itens, None
 
 
+def prazos_abertos():
+    """Prazos de e-mail em aberto nos próximos 10 dias (controle de prazos do Jev)."""
+    itens = []
+    for l in prazos.em_aberto(dias_a_frente=10):
+        if l['estado'] != 'pendente':
+            continue
+        dia = l['prazo'][8:10] + '/' + l['prazo'][5:7]
+        itens.append({'tipo': 'prazo', 'titulo': f"Prazo {dia}: {l['assunto'][:90]}",
+                      'gesto': f"entregar até a véspera ({dia} é o prazo final)", 'prazo': dia,
+                      'faltam': (datetime.fromisoformat(l['prazo']).date() - datetime.now(FUSO).date()).days,
+                      'estado': f"PRAZO FINAL DE IGOR EM {l['prazo']}: {l['assunto']}\n{l['evidencia'] or ''}"})
+    return itens, None
+
+
 def main():
     hoje = datetime.now(FUSO).replace(hour=0, minute=0, second=0, microsecond=0)
     itens = []
     avisos = []
-    for fonte in (lambda: (compromissos(hoje), None), demandas, whatsapp):
+    for fonte in (lambda: (compromissos(hoje), None), demandas, whatsapp, prazos_abertos):
         try:
             achados, aviso = fonte()
             itens += achados
@@ -105,6 +119,8 @@ def main():
     for item, (respostas, _) in zip(itens, resultados):
         item['nota'] = ((respostas or {}).get('urgencia') or {}).get('score')
         item['preparo'] = ((respostas or {}).get('preparo') or {}).get('noul') or 0
+        if item['tipo'] == 'prazo' and item.get('faltam', 99) <= 2:
+            item['nota'] = 3   # regra fixa: prazo final em até dois dias é sempre urgente
         if item['tipo'] == 'compromisso':
             item['gesto'] = (f"preparar antes das {item['hora']}" if item['preparo'] >= 0.6
                              else f"estar lá às {item['hora']}")
@@ -121,6 +137,9 @@ def main():
     if agenda:
         linhas.append('📅 ' + '; '.join(f"{i['hora']} {i['titulo'][:50]}" + (' ⚠ preparar' if i['preparo'] >= 0.6 else '')
                                         for i in agenda))
+    vencendo = [i for i in itens if i['tipo'] == 'prazo']
+    if vencendo:
+        linhas.append(f'⚖️ Prazos ({len(vencendo)}): ' + '; '.join(i['titulo'][:80] for i in vencendo[:4]) + '.')
     zap = [i for i in itens if i['tipo'] == 'whatsapp']
     if zap:
         linhas.append(f'💬 WhatsApp ({len(zap)}): ' + '; '.join(i['titulo'][:80] for i in zap[:4])
