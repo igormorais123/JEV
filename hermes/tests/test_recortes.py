@@ -168,3 +168,41 @@ def test_porteiro_do_boletim_descarta_fora_e_ruido(jev, monkeypatch, tmp_path, c
     assert 'Taguatinga TO' not in saida.split('[jev/portão]')[1].split('\n1.')[0] or True
     assert json.loads(saida.strip().splitlines()[-1])['wakeAgent'] is True
     assert 'descartou 2' in saida
+
+
+def test_afericao_da_rota_separa_prova_de_turno_real(jev, tmp_path, monkeypatch):
+    """A rota só conta quando a sessão existe no `state.db`: prova sintética não vira acerto nem erro."""
+    nucleo, _, _ = jev
+    from jev_hermes import aferir_rota
+    importlib.reload(aferir_rota)
+    agora = aferir_rota.nucleo._agora()
+    registros = [
+        {'em': agora.isoformat(timespec='seconds'), 'camada': 'tema', 'sessao': 'real-web',
+         'ferramenta': 'web', 'confianca_ferramenta': 0.95},
+        {'em': agora.isoformat(timespec='seconds'), 'camada': 'tema', 'sessao': 'real-erra',
+         'ferramenta': 'historico', 'confianca_ferramenta': 0.95},
+        {'em': agora.isoformat(timespec='seconds'), 'camada': 'tema', 'sessao': 'so-prova',
+         'ferramenta': 'web', 'confianca_ferramenta': 0.99},
+        {'em': agora.isoformat(timespec='seconds'), 'camada': 'tema', 'sessao': 'real-baixa',
+         'ferramenta': 'terminal', 'confianca_ferramenta': 0.40},
+    ]
+    aferir_rota.nucleo.ESTADO.mkdir(parents=True, exist_ok=True)
+    (aferir_rota.nucleo.ESTADO / 'camadas.jsonl').write_text(
+        '\n'.join(json.dumps(r, ensure_ascii=False) for r in registros), encoding='utf-8')
+
+    banco = tmp_path / 'state.db'
+    import sqlite3
+    con = sqlite3.connect(banco)
+    con.execute('create table messages (session_id text, tool_name text, timestamp real)')
+    con.executemany('insert into messages values (?,?,?)', [
+        ('real-web', 'web_search', agora.timestamp() + 5),
+        ('real-erra', 'terminal', agora.timestamp() + 5),
+        ('real-baixa', 'terminal', agora.timestamp() + 5),
+    ])
+    con.commit(); con.close()
+    monkeypatch.setattr(aferir_rota, 'ESTADO_DO_HERMES', banco)
+
+    medida = aferir_rota.aferir(dias=1)
+    assert medida['turnos'] == 4 and medida['fora_da_conta'] == 1
+    assert medida['placar'] == {'acertou': 1, 'errou': 1, 'abaixo do corte': 1}
+    assert medida['acerto'] == 0.5
