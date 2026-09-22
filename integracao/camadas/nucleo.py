@@ -248,8 +248,21 @@ def dividir_em_blocos(linhas, alvo_de_linhas=60, maximo_de_blocos=24, limite=LIM
     return blocos
 
 
+# O estado de uma classificação é PEDIDO + trecho, e o limite vale para a soma. Um pedido longo
+# — texto colado, prompt de sistema, pedido que já veio com contexto — empurra o estado para fora
+# do limite e derruba a camada inteira antes de a chamada sair. No Hermes isso aconteceu em 7 de
+# 12 resultados grandes reais (medição de 22/09). Os últimos 800 caracteres bastam para julgar
+# relevância, e num pedido que começa por preâmbulo é onde a tarefa está.
+PEDIDO_PARA_CLASSIFICAR = 800
+
+
+def pedido_curto(pedido, maximo=PEDIDO_PARA_CLASSIFICAR):
+    pedido = (pedido or '').strip()
+    return pedido if len(pedido) <= maximo else '…' + pedido[-maximo:]
+
+
 def estado_do_trecho(pedido, rotulo, texto):
-    return f'PEDIDO:\n{pedido}\n\n{rotulo}\n{texto}'
+    return f'PEDIDO:\n{pedido_curto(pedido)}\n\n{rotulo}\n{texto}'
 
 
 def escolha(respostas, nome):

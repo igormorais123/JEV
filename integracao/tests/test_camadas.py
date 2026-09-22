@@ -430,3 +430,19 @@ class Orcamento(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PedidoCurto(unittest.TestCase):
+    """PEDIDO + trecho contam para o mesmo limite: um pedido longo derrubava a camada inteira."""
+
+    def test_o_pedido_entra_curto_no_estado(self):
+        longo = 'preâmbulo irrelevante ' * 300 + 'A TAREFA: achar o teto diário.'
+        estado = nucleo.estado_do_trecho(longo, 'ARQUIVO x, linhas 1-60:', 'y' * 9000)
+        self.assertLess(len(estado), nucleo.LIMITE_DO_TRECHO)
+        self.assertIn('A TAREFA', estado)
+        pedido_no_estado = estado.split('PEDIDO:', 1)[1].split('ARQUIVO')[0].strip()
+        self.assertLessEqual(len(pedido_no_estado), nucleo.PEDIDO_PARA_CLASSIFICAR + 1)
+        self.assertTrue(pedido_no_estado.startswith('…'))  # o começo ficou de fora, o fim é a tarefa
+
+    def test_pedido_curto_passa_inteiro(self):
+        self.assertEqual(nucleo.pedido_curto('onde está a função alvo?'), 'onde está a função alvo?')
