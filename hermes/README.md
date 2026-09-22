@@ -125,10 +125,33 @@ eventos e não saiu procurando notícia. Mas o prompt foi de 3.731 para 20.869 c
 que se poupou em busca voltou pelo prompt: o dia fechou em 62 mil tokens de entrada, o mesmo
 da véspera sem porteiro, com 47 chamadas de ferramenta contra 71 (queda de 34%).
 
+Essa primeira conta somava o dia inteiro, que inclui outro job de cron. Medindo só as sessões
+do boletim (`rotinas/jev_comparar_job.py 7e5e2b895040`), a execução com porteiro custou 37 mil
+tokens de entrada contra uma média de 123 mil nas cinco anteriores e 21 chamadas de ferramenta
+contra 38. A ressalva honesta: a véspera sozinha custou 31 mil, abaixo da execução com
+porteiro — a variância entre dias é grande e uma execução não fecha a conta.
+
 A lição vale para todo porteiro que injeta candidatos: o contexto é reenviado a cada volta de
 ferramenta. O boletim passou a 15 itens com trecho de 180 caracteres (contexto de 11 mil) e a
 tese a resumos de 450 (contexto de 6,7 mil). Título, fonte, hora e link bastam para escolher o
 que abrir — o texto inteiro já foi lido pelo Jev na triagem.
+
+A tese acadêmica rodou às 11h do mesmo dia, já com o contexto enxuto, e é a primeira medida
+limpa do ganho. Comparada às 15 execuções anteriores do mesmo job:
+
+| | antes (média de 15) | 22/09 com porteiro |
+|---|---|---|
+| prompt | 13.516 caracteres | 20.735 |
+| tokens de entrada | 82.519 | 35.450 |
+| chamadas de ferramenta | 25 | 5 |
+
+O porteiro coletou 32 candidatos no Crossref e no OpenAlex, o Jev aprovou 12 e mandou 5 ao
+contexto. O agente abriu dois deles e escreveu a ficha; não fez uma única busca para descobrir
+artigo. Os 7,2 mil caracteres a mais de prompt compraram 47 mil tokens de entrada a menos.
+
+O custo de Jev registrado nessa execução foi zero porque as mesmas fichas já haviam sido
+classificadas nos testes manuais do dia e vieram do cache. Uma execução fria de 32 candidatos
+com duas perguntas custa cerca de US$ 0,003.
 
 ## Medir uma implantação nova
 
@@ -141,6 +164,10 @@ terminal, senão ele morre com a sessão de SSH:
 ```sh
 systemd-run --unit=jev-observar-porteiros --collect /usr/bin/python3 /root/.hermes/scripts/jev_observar_porteiros.py
 ```
+
+Passada a primeira execução, `rotinas/jev_comparar_job.py <id do job>` põe lado a lado as
+sessões daquele job — prompt, tokens de entrada, ferramentas — e tira a média do antes e do
+depois. Medir por dia mistura jobs e engana; medir por job é a conta certa.
 
 O agendador do Hermes usa `America/Sao_Paulo` (`config.yaml`), não UTC: `0 7 * * *` é 10h UTC.
 
