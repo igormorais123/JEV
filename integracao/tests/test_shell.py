@@ -11,7 +11,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ))
 
-from camadas import nucleo, shell  # noqa: E402
+from camadas import leitura, nucleo, shell  # noqa: E402
 from tests.test_camadas import arquivo_com_alvo, quebrado, transporte_por_trecho  # noqa: E402
 
 
@@ -111,6 +111,39 @@ class Reescrita(unittest.TestCase):
         finally:
             for copia in copias:
                 copia.unlink(missing_ok=True)
+
+
+class Estruturados(unittest.TestCase):
+    """Recortar .json ou .yaml por linhas entrega um pedaço sintaticamente inválido."""
+
+    def setUp(self):
+        self.pedido = 'qual é o teto diário configurado?'
+        self.transporte = transporte_por_trecho(lambda t: ('essencial', 0.98))
+
+    def test_leitura_recusa_formato_estruturado(self):
+        import json as _json
+        for nome in ('_teste_estrutura.json', '_teste_estrutura.yaml', '_teste_estrutura.csv'):
+            arquivo = nucleo.ESTADO / nome
+            arquivo.write_text(_json.dumps({'itens': [{'i': i} for i in range(500)]}, indent=1),
+                               encoding='utf-8')
+            try:
+                d = leitura.analisar(arquivo, self.pedido, {}, transporte=self.transporte)
+                self.assertEqual(d['motivo'], 'tipo de arquivo fora da camada', nome)
+            finally:
+                arquivo.unlink(missing_ok=True)
+
+    def test_shell_nao_reescreve_cat_de_json(self):
+        import json as _json
+        arquivo = nucleo.ESTADO / '_teste_estrutura.json'
+        arquivo.write_text(_json.dumps({'itens': [{'i': i} for i in range(500)]}, indent=1),
+                           encoding='utf-8')
+        try:
+            d = shell.analisar('cat _teste_estrutura.json', self.pedido, str(arquivo.parent),
+                               transporte=self.transporte)
+            self.assertEqual(d['acao'], 'nada')
+            self.assertEqual(d['leituras'][0]['motivo'], 'tipo de arquivo fora da camada')
+        finally:
+            arquivo.unlink(missing_ok=True)
 
 
 if __name__ == '__main__':

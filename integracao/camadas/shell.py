@@ -19,6 +19,9 @@ estreitas, todas para o lado de não mexer:
 - Só se estreita leitura do arquivo inteiro (`cat ARQUIVO`, ou `head`/`sed` cujo intervalo
   cobre o arquivo todo). `sed -n '300,420p'` é o agente dizendo o que quer: fica, e é
   registrado, porque é por ele que se mede o arrependimento depois de um `cat` estreitado.
+- O que `leitura.analisar` recusa continua recusado aqui, inclusive arquivo estruturado
+  (`.json`, `.yaml`, `.csv`): no shell não há numeração de linha para avisar que veio um
+  pedaço, e um JSON cortado ao meio é pior do que um arquivo inteiro.
 - No máximo dois arquivos estreitados por comando, classificados em paralelo.
 - O segmento novo é sempre `sed -n 'A,Bp' ARQUIVO`: leitura, como o que substitui.
 """

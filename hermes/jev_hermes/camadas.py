@@ -321,6 +321,11 @@ LIMITE_DO_BLOCO = 12000
 ORDEM = {'essencial': 3, 'complementar': 2, 'incerto': 1, 'irrelevante': 0}
 NAO_TOCAR = {'claude.md', 'agents.md', 'skill.md', 'memory.md', 'readme.md', 'soul.md', 'user.md',
              'hermes.md'}
+# Recortar por linhas um arquivo estruturado entrega um pedaço sintaticamente inválido: metade de
+# um objeto JSON, um YAML sem a chave-mãe, um CSV sem cabeçalho. O agente costuma querer o objeto
+# inteiro, e a economia não paga o risco. `.jsonl` e `.ndjson` ficam de fora da exclusão: cada
+# linha é um registro completo, e um pedaço deles continua válido.
+ESTRUTURADOS = {'.json', '.yaml', '.yml', '.xml', '.toml', '.csv', '.tsv', '.ini', '.cfg', '.plist'}
 LINHA_NUMERADA = re.compile(r'^\s*(\d+)\|')
 
 
@@ -377,6 +382,8 @@ def leitura(resultado, argumentos, pedido):
         return None, {**base, 'motivo': 'sem pedido vigente'}
     if Path(caminho).name.lower() in NAO_TOCAR:
         return None, {**base, 'motivo': 'arquivo de instrução'}
+    if Path(caminho).suffix.lower() in ESTRUTURADOS:
+        return None, {**base, 'motivo': 'formato estruturado: o recorte quebraria a sintaxe'}
     dado, cauda = _json_do_resultado(resultado)
     if not isinstance(dado, dict) or not isinstance(dado.get('content'), str) or dado.get('error'):
         return None, {**base, 'motivo': 'resultado sem conteúdo'}

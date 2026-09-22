@@ -246,3 +246,17 @@ def test_afericao_da_rota_separa_prova_de_turno_real(jev, tmp_path, monkeypatch)
     assert medida['turnos'] == 4 and medida['fora_da_conta'] == 1
     assert medida['placar'] == {'acertou': 1, 'errou': 1, 'abaixo do corte': 1}
     assert medida['acerto'] == 0.5
+
+
+def test_leitura_nao_recorta_arquivo_estruturado(jev):
+    _, camadas, _ = jev
+    # Um JSON grande recortado por linhas viraria um pedaço inválido; o agente quer o objeto.
+    conteudo = json.dumps({'itens': [{'id': i, 'texto': 'x' * 60} for i in range(400)]}, indent=1)
+    resultado = json.dumps({'content': conteudo})
+    for caminho in ('/root/.hermes/state/arcano-fabio-email-monitor.json', '/tmp/config.yaml', '/tmp/base.csv'):
+        novo, decisao = camadas.leitura(resultado, {'path': caminho}, PEDIDO)
+        assert novo is None and decisao['motivo'] == 'formato estruturado: o recorte quebraria a sintaxe', caminho
+    # .jsonl continua valendo: cada linha é um registro completo.
+    linhas = '\n'.join(json.dumps({'id': i, 'texto': 'y' * 60}) for i in range(400))
+    decisao = camadas.leitura(json.dumps({'content': linhas}), {'path': '/tmp/eventos.jsonl'}, PEDIDO)[1]
+    assert decisao['motivo'] != 'formato estruturado: o recorte quebraria a sintaxe'

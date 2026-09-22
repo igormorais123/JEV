@@ -47,6 +47,11 @@ LINHAS_MINIMAS_EVITADAS = 80
 TAMANHO_MAXIMO = 2_000_000  # bytes; acima disso o mecanismo de blocos não cabe
 
 NAO_TOCAR = {'claude.md', 'agents.md', 'skill.md', 'memory.md', 'readme.md'}
+# Recortar por linhas um arquivo estruturado entrega um pedaço sintaticamente inválido: metade de
+# um objeto JSON, um YAML sem a chave-mãe, um CSV sem cabeçalho. O agente costuma querer o objeto
+# inteiro, e a economia não paga o risco. `.jsonl` e `.ndjson` ficam de fora da exclusão: cada
+# linha é um registro completo, e um pedaço deles continua válido.
+ESTRUTURADOS = {'.json', '.yaml', '.yml', '.xml', '.toml', '.csv', '.tsv', '.ini', '.cfg', '.plist'}
 BINARIOS = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.pdf', '.ipynb', '.sqlite', '.sqlite3',
             '.db', '.zip', '.gz', '.exe', '.dll', '.bin', '.woff', '.woff2', '.ttf', '.ico'}
 
@@ -70,7 +75,8 @@ def analisar(caminho, pedido, tool_input=None, *, transporte=None,
                 'offset': tool_input.get('offset'), 'limit': tool_input.get('limit')}
     if not pedido:
         return {**base, 'motivo': 'sem pedido vigente'}
-    if caminho.suffix.lower() in BINARIOS or caminho.name.lower() in NAO_TOCAR:
+    if caminho.suffix.lower() in BINARIOS or caminho.name.lower() in NAO_TOCAR \
+            or caminho.suffix.lower() in ESTRUTURADOS:
         return {**base, 'motivo': 'tipo de arquivo fora da camada'}
     try:
         if caminho.stat().st_size > TAMANHO_MAXIMO:
