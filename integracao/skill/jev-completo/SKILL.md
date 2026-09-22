@@ -120,7 +120,7 @@ opção `nenhum`. Medido: 8 trechos de código → alvo em primeiro 98,2% (150/1
 | MCP | `integracao/jev_mcp.py`: `jev_assist` (log, evidência), `jev_rank_context`, `jev_classify_sources`, `jev_read_context` |
 | Hermes (VPS) | ferramenta `jev_advisor` (`app: lote`), porteiros de cron em `hermes/portoes/`, skill `jev`; ponte OpenAI-compatível no OmniRoute (combo `jev`) |
 | roteador de prompt por tema | `integracao/jev_router/` (redação de credenciais antes do envio) |
-| Jev escolhendo a ferramenta de cada turno do agente | `jev-claude` / `jev-codex` no lugar de `claude` / `codex` (jev-gateway, proxy local; `hint` no Claude Code, `forced` no Codex); `--routing off` para linha de base, `--dashboard`; gasto entra no caixa por `integracao/gateway/conciliar.py`; ver `docs/JEV-GATEWAY.md` (+2 s e ~US$ 0,0008 por turno com 133 ferramentas; ganha em depuração, não em toda tarefa) |
+| Jev escolhendo a ferramenta de cada turno do agente | `jev-claude` / `jev-codex` no lugar de `claude` / `codex` (jev-gateway, proxy local; `hint` no Claude Code, `forced` no Codex); `--routing off` para linha de base, `--dashboard`; gasto entra no caixa por `integracao/gateway/conciliar.py`; cortes: 0,75 no Claude Code (só sugere) e 0,90 no Codex (força); nunca passe `-c` extra ao `jev-codex` (desvia do gateway); ver `docs/JEV-GATEWAY.md` (+2 s e ~US$ 0,0008 por turno com 133 ferramentas; ganha em depuração, não em toda tarefa) |
 | grafo do estudo | `python mapa/consultar.py H019` · `--caminho A B` · `--vizinhos X` |
 | canários semanais (deriva do modelo em < 24 h já vista) | `laboratorio/canarios_de_comportamento.py` |
 | medir corte no seu dado | rodada nova em `laboratorio/` com previsão no cabeçalho, commit antes de rodar |
