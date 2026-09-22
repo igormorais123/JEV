@@ -48,11 +48,25 @@ Leitura: o Jev acertou a ferramenta nos quatro turnos. No Claude Code o preço �
 
 Nada disso mede economia: dois turnos não têm comparação sem roteamento. A comparação certa é o `--routing off` do próprio gateway (modo linha de base, que continua contando tokens) em tarefas parecidas, ou o `jev-gateway-bench` com `--agent claude --model claude-fable-5-1 --user-tools`.
 
+### 3b. A mesma tarefa com roteamento ligado e desligado (2026-09-22, uma rodada de cada)
+
+Tarefa de dois passos: ler `integracao/camadas/checklist.py`, procurar `CORTE` em `integracao/` com Grep e responder numa linha (gabarito: 8 funções). Corte de confiança em 0,90 nos dois agentes.
+
+| | Claude Code (Opus 5 no `-p`), ligado | desligado |
+|---|---|---|
+| turnos com ferramentas | 12 requisições, **nenhuma roteada**: Jev escolheu `Read` a 0,80–0,87, abaixo do corte | 2 |
+| resposta | 8 funções e a lista de arquivos, correta | "8 funções, não 9 — errei na linha acima" (correta depois de tropeçar) |
+| tokens do LLM (entrada / saída) | 220.011 / 713 nas duas requisições que responderam | 226.652 / 474 |
+
+Duas coisas que só o log mostra. Primeiro, a API da Anthropic devolveu **529 (sobrecarregada) sete vezes** seguidas e o Claude Code repetiu a requisição idêntica sete vezes; o gateway perguntou ao Jev de novo em cada repetição (12.920 tokens por vez, cerca de US$ 0,005 jogados fora nesta rodada). Um cache de decisão por hash da requisição resolveria; é sugestão para o autor. Segundo, com 100+ ferramentas a confiança da escolha não chega a 0,90 nem quando a escolha é óbvia (`Read` no primeiro turno): a fórmula da confiança com K grande e descrições parecidas (Read, Glob, Grep, `mcp__*read*`) espalha a probabilidade. É por isso que o corte do Claude Code ficou em 0,75 (seção 4). Com uma rodada de cada, a diferença de tokens não significa nada; o ganho real de qualidade da resposta pode ser acaso.
+
+O Codex está na mesma comparação; o resultado entra aqui quando a rodada terminar.
+
 ## 4. Como ficou instalado neste PC
 
 - `npm install -g jev-gateway` (Node 24). Chave: a TypeSafe do cofre, copiada para `~/.jev-gateway/.env` (permissão 0600 no autor; no Windows, arquivo do usuário). `JEV_PROVIDER=typesafe`.
 - Portas: Claude Code 8789; Codex **8793** (`JEV_CODEX_PORT` no mesmo `.env`), porque 8790 e 8792 estavam ocupadas por `python -m http.server` antigos (um deles em `0.0.0.0`, que capturava as chamadas do painel). Antes de escolher porta, `netstat -ano | findstr LISTEN`.
-- Ajustes nossos no `.env`, pelo que o estudo mediu: `JEV_MIN_CONFIDENCE=0.90` (o padrão 0,7 é folgado demais para `forced`, que age; 0,90 é o nosso corte de "usar") e `JEV_DIRECT_CALLS=false` (nunca responder sem o LLM: uma chamada montada errada pelo gateway passa sem ninguém olhar; as ferramentas de código são abertas e não perdem nada). Conferido em `/router/decide`: o exemplo das luzes, que saía `direct`, passou a sair `forced`.
+- Ajustes nossos, pelo que o estudo mediu: `JEV_MIN_CONFIDENCE=0.90` no `.env` para o **Codex** (o padrão 0,7 é folgado demais para `forced`, que age; 0,90 é o nosso corte de "usar"); para o **Claude Code**, 0,75 exportado pelos wrappers `~/bin/jev-claude*` (a variável do shell vence a do arquivo), porque lá o gateway só sugere e, no teste da seção 3b, a escolha entre 103–134 ferramentas ficou em 0,80–0,87: com 0,90 nenhum turno foi roteado. E `JEV_DIRECT_CALLS=false` (nunca responder sem o LLM: uma chamada montada errada pelo gateway passa sem ninguém olhar; as ferramentas de código são abertas e não perdem nada). Conferido em `/router/decide`: o exemplo das luzes, que saía `direct`, passou a sair `forced`.
 - **Windows:** o lançador chama `spawn("claude")` sem shell, e o Node só encontra `.exe` no PATH; `claude` e `codex` estão instalados como `.cmd`. Os wrappers `~/bin/jev-claude.cmd` e `~/bin/jev-codex.cmd` (a pasta `~/bin` vem antes do npm no PATH) põem a pasta dos executáveis nativos no PATH e delegam ao lançador original. Sem eles: `could not run claude: spawn claude ENOENT`.
 - Codex: o lançador detecta o login ChatGPT em `~/.codex/auth.json` e encaminha para `chatgpt.com/backend-api/codex`; os perfis `omniroute` do `config.toml` não são afetados (o gateway injeta `-c model_provider="jev-gateway"` só na sessão lançada).
 
