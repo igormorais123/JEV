@@ -12,10 +12,10 @@ Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador b
 | [data/](../../mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
 | [docs/](../../mapa/pastas/docs.md) | 13 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
 | [executor/](../../mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
-| [hermes/](../../mapa/pastas/hermes.md) | 27 |  |
-| [integracao/](../../mapa/pastas/integracao.md) | 50 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
+| [hermes/](../../mapa/pastas/hermes.md) | 38 |  |
+| [integracao/](../../mapa/pastas/integracao.md) | 54 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
 | [lab/](../../mapa/pastas/lab.md) | 13 | Painel local de acompanhamento (servidor stdlib + HTML/JS): fila de rodadas, execuções, métricas e orçamento. |
-| [laboratorio/](../../mapa/pastas/laboratorio.md) | 132 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
+| [laboratorio/](../../mapa/pastas/laboratorio.md) | 142 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
 | [output/](../../mapa/pastas/output.md) | 5 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
 | [planning/](../../mapa/pastas/planning.md) | 16 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
 | [research/](../../mapa/pastas/research.md) | 12 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes. |

@@ -57,7 +57,7 @@ A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: med
 - [Q093](../../mapa/conhecimento/perguntas.md#q093) (conta declarada; confiança baixa) — Quanto custaria anotar 200 mensagens reais?
 - [Q096](../../mapa/conhecimento/perguntas.md#q096) (conta declarada; confiança alta) — Quanto resta do orçamento, e o que ele compra?
 
-## Tensões entre resultados parecidos (36 por veredito, 5 apontadas pelo Jev)
+## Tensões entre resultados parecidos (36 por veredito, 4 apontadas pelo Jev)
 
 Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos diferentes. Cada par pede uma frase que explique a diferença (condição, domínio, medida); sem ela, um dos dois resultados está mal enunciado.
 
@@ -102,7 +102,6 @@ Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos difere
 
 - [H063](../../mapa/conhecimento/hipoteses.md#h063) × [Q036](../../mapa/conhecimento/perguntas.md#q036) (confiança 0.67)
 - [H019](../../mapa/conhecimento/hipoteses.md#h019) × [H087](../../mapa/conhecimento/hipoteses.md#h087) (confiança 0.47)
-- [H003](../../mapa/conhecimento/hipoteses.md#h003) × [Q018](../../mapa/conhecimento/perguntas.md#q018) (confiança 0.43)
 - [H008](../../mapa/conhecimento/hipoteses.md#h008) × [Q083](../../mapa/conhecimento/perguntas.md#q083) (confiança 0.39)
 - [H063](../../mapa/conhecimento/hipoteses.md#h063) × [H064](../../mapa/conhecimento/hipoteses.md#h064) (confiança 0.22)
 
@@ -110,7 +109,7 @@ Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos difere
 
 - **experimentos sem pré-registro próprio em `planning/`:** [E2](../../mapa/conhecimento/experimentos.md#e2), [E2b](../../mapa/conhecimento/experimentos.md#e2b), [E3](../../mapa/conhecimento/experimentos.md#e3), [E4](../../mapa/conhecimento/experimentos.md#e4), [E5](../../mapa/conhecimento/experimentos.md#e5), [E6](../../mapa/conhecimento/experimentos.md#e6), [E8](../../mapa/conhecimento/experimentos.md#e8), [E9](../../mapa/conhecimento/experimentos.md#e9), [E10b](../../mapa/conhecimento/experimentos.md#e10b), [E13](../../mapa/conhecimento/experimentos.md#e13)
 - **rodadas sem script próprio** (medidas dentro do script de outra rodada ou só documentadas): [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
-- **rodadas sem artefato de resultado próprio:** [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b), [R46](../../mapa/conhecimento/rodadas.md#r46), [R47](../../mapa/conhecimento/rodadas.md#r47), [R48](../../mapa/conhecimento/rodadas.md#r48), [R49](../../mapa/conhecimento/rodadas.md#r49), [R50](../../mapa/conhecimento/rodadas.md#r50)
+- **rodadas sem artefato de resultado próprio:** [R0b](../../mapa/conhecimento/rodadas.md#r0b), [R16b](../../mapa/conhecimento/rodadas.md#r16b)
 - **rodadas com condição retratada:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 
 ## Código sem teste direto
@@ -141,13 +140,13 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[docs/CAMADAS-CLAUDE-CODE.md](../../docs/CAMADAS-CLAUDE-CODE.md)**
 
-- [l. 94](../../docs/CAMADAS-CLAUDE-CODE.md#L94) — Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
+- [l. 96](../../docs/CAMADAS-CLAUDE-CODE.md#L96) — Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
 
 **[docs/CEM-PERGUNTAS-ESTRATEGICAS.md](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md)**
 
-- [l. 508](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L508) — US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.339×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**…
+- [l. 508](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L508) — US$ 0,4000 contra US$ 0,000038 por decisão — o humano custa **10.660×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**…
 - [l. 664](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L664) — J · Os próximos movimentos
-- [l. 706](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L706) — 18 falsificadas e 1 inconclusiva — **19% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva d…
+- [l. 706](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L706) — 19 falsificadas e 1 inconclusiva — **20% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva d…
 - [l. 710](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L710) — Q098 — Qual risco identificado ainda não tem mitigação medida?
 
 **[docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md)**
@@ -195,7 +194,7 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[integracao/README.md](../../integracao/README.md)**
 
-- [l. 231](../../integracao/README.md#L231) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
+- [l. 233](../../integracao/README.md#L233) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
 
 **[lab/README.md](../../lab/README.md)**
 

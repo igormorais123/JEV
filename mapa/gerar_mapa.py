@@ -60,6 +60,7 @@ ONDE = [
     ('Visão geral e como rodar o painel', ['README.md', 'lab/server.py']),
     ('Resultado final do estudo', ['docs/RELATORIO-FINAL-JEV.md', 'output/pdf/RELATORIO-FINAL-JEV.pdf']),
     ('Essência do Jev e descobertas das rodadas R28–R45 (comece por aqui)', ['docs/ESSENCIA-DO-JEV.md']),
+    ('jev-gateway: o Jev escolhendo a ferramenta de cada turno do Codex e do Claude Code', ['docs/JEV-GATEWAY.md']),
     ('Como aplicar o Jev na prática', ['docs/GUIA-PRATICO-JEV.md']),
     ('Onde o Jev falha', ['docs/LIMITES-DO-JEV.md', 'laboratorio/mapa-de-limites.json', 'output/mapa-de-limites.html']),
     ('Plano científico e protocolo', ['docs/PLANO-CIENTIFICO-JEV-HELENA.md', 'planning/protocolo.md']),

@@ -87,7 +87,7 @@ flowchart LR
 
 - **usa** — citação: [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`lab/build_ui.py`](../../lab/build_ui.py), [`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf`](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf), [`planning/plan.json`](../../planning/plan.json), [`research/hermes/fase2-decisoes-do-pdf.csv`](../../research/hermes/fase2-decisoes-do-pdf.csv)
 - **é usado por** — citação: [`README.md`](../../README.md), [`executor/tests/test_entregaveis.py`](../../executor/tests/test_entregaveis.py), [`planning/build_guia_pdf.py`](../../planning/build_guia_pdf.py), [`planning/build_relatorio_pdf.py`](../../planning/build_relatorio_pdf.py)
-- **parecidos (julgados pelo Jev)** — [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py) (complementar, 0.34)
+- **parecidos (julgados pelo Jev)** — [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py) (complementar, 0.34), [`hermes/portoes/jev_gate_boletim_taguatinga.py`](../../hermes/portoes/jev_gate_boletim_taguatinga.py) (não julgado, 0.26)
 - **menciona 3 conceitos** — [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×), [V13](../../mapa/conhecimento/revisoes.md#v13) (1×)
 - **conteúdo** — [markup](../../planning/build_deliverables.py#L29) (l. 29), [PlanDoc](../../planning/build_deliverables.py#L43) (l. 43), [footer](../../planning/build_deliverables.py#L53) (l. 53), [build_pdf](../../planning/build_deliverables.py#L95) (l. 95), [main](../../planning/build_deliverables.py#L195) (l. 195)
 
@@ -133,7 +133,7 @@ flowchart LR
 
 - **usa** — citação: [`executor/analise.py`](../../executor/analise.py), [`executor/baseline_regra.py`](../../executor/baseline_regra.py)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`docs/RELATORIO-EXECUCAO-JEV-HELENA.md`](../../docs/RELATORIO-EXECUCAO-JEV-HELENA.md), [`executor/baseline_regra.py`](../../executor/baseline_regra.py), [`executor/run_e1_triagem.py`](../../executor/run_e1_triagem.py), [`runs/e1-triagem/relatorio.json`](../../runs/e1-triagem/relatorio.json)
-- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md) (complementar, 0.28), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md) (complementar, 0.27), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.26), [`laboratorio/r4_r7_limites.py`](../../laboratorio/r4_r7_limites.py) (complementar, 0.25), [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md) (complementar, 0.21)
+- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md) (complementar, 0.28), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md) (complementar, 0.26), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.26), [`laboratorio/r4_r7_limites.py`](../../laboratorio/r4_r7_limites.py) (complementar, 0.25), [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md) (complementar, 0.21)
 - **papel nos estudos** — pré-registra [E1](../../mapa/conhecimento/experimentos.md#e1)
 - **menciona 1 conceito** — [E3](../../mapa/conhecimento/experimentos.md#e3) (1×)
 - **conteúdo** — Pergunta (l. 6), Tarefa (l. 12), Desenho (l. 29), Gabarito (l. 43), Comparadores (l. 49), Métrica principal e critério (l. 56), Erros graves (l. 65), O que este piloto não pode concluir (l. 70)
@@ -142,7 +142,7 @@ flowchart LR
 
 - **usa** — citação: [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/run_e10_llm_economico.py`](../../executor/run_e10_llm_economico.py), [`executor/run_e10b_piloto.py`](../../executor/run_e10b_piloto.py), [`runs/e10-llm-economico/relatorio.json`](../../runs/e10-llm-economico/relatorio.json), [`runs/e10b-piloto/relatorio.json`](../../runs/e10b-piloto/relatorio.json)
-- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.58), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md) (complementar, 0.48), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md) (complementar, 0.43), [E11](../../mapa/conhecimento/experimentos.md#e11) (complementar, 0.30), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md) (complementar, 0.28), [`executor/run_e11_desempate.py`](../../executor/run_e11_desempate.py) (complementar, 0.28)
+- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.58), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md) (complementar, 0.48), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md) (complementar, 0.43), [E11](../../mapa/conhecimento/experimentos.md#e11) (complementar, 0.29), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md) (complementar, 0.28), [`executor/run_e11_desempate.py`](../../executor/run_e11_desempate.py) (complementar, 0.28)
 - **papel nos estudos** — pré-registra [E10](../../mapa/conhecimento/experimentos.md#e10)
 - **menciona 4 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (5×), [E10b](../../mapa/conhecimento/experimentos.md#e10b) (3×), [E7](../../mapa/conhecimento/experimentos.md#e7) (2×), [E8](../../mapa/conhecimento/experimentos.md#e8) (1×)
 - **conteúdo** — Por que este experimento existe (l. 5), Hipótese (l. 18), Desenho (l. 29), Regra de decisão, congelada antes de olhar (l. 46), Orçamento (l. 60), O que este experimento não pode concluir (l. 82)
@@ -176,7 +176,7 @@ flowchart LR
 ### preregistro-E16-recuperacao.md
 
 - **é usado por** — citação: [`executor/run_e16.py`](../../executor/run_e16.py)
-- **parecidos (julgados pelo Jev)** — [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.27), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (complementar, 0.22)
+- **parecidos (julgados pelo Jev)** — [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.26), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py) (complementar, 0.21)
 - **papel nos estudos** — pré-registra [E16](../../mapa/conhecimento/experimentos.md#e16)
 - **menciona 1 conceito** — [E15](../../mapa/conhecimento/experimentos.md#e15) (5×)
 
@@ -184,7 +184,7 @@ flowchart LR
 
 - **usa** — citação: [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl), [`executor/baseline_regra.py`](../../executor/baseline_regra.py), [`executor/run_e1_triagem.py`](../../executor/run_e1_triagem.py)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`executor/run_e7_confirmacao.py`](../../executor/run_e7_confirmacao.py), [`runs/e7-confirmacao/relatorio.json`](../../runs/e7-confirmacao/relatorio.json)
-- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md) (complementar, 0.48), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.39), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md) (complementar, 0.38), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md) (complementar, 0.27), [`planning/emenda-E15-01.md`](../../planning/emenda-E15-01.md) (complementar, 0.23), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md) (complementar, 0.20)
+- **parecidos (julgados pelo Jev)** — [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md) (complementar, 0.48), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md) (complementar, 0.39), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md) (complementar, 0.38), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md) (complementar, 0.26), [`planning/emenda-E15-01.md`](../../planning/emenda-E15-01.md) (complementar, 0.23), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md) (complementar, 0.20)
 - **papel nos estudos** — pré-registra [E7](../../mapa/conhecimento/experimentos.md#e7)
 - **menciona 1 conceito** — [E1](../../mapa/conhecimento/experimentos.md#e1) (7×)
 - **conteúdo** — Por que este experimento existe (l. 9), Hipótese (l. 17), Desenho (l. 24), Critério de decisão, fixado antes (l. 40), O que este experimento NÃO resolve (l. 51), Orçamento (l. 61), Emenda 1 — 2026-09-19, depois da execução (l. 68)

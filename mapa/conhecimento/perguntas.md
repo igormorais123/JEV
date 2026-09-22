@@ -57,7 +57,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:105](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L105); responde [laboratorio/q100/respostas.py:235](../../laboratorio/q100/respostas.py#L235)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [Q070](../../mapa/conhecimento/perguntas.md#q070) (mesmo assunto, 0.51), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.28), [Q001](../../mapa/conhecimento/perguntas.md#q001) (complementar, 0.28), [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.27)
+- **semelhantes (julgados pelo Jev):** [Q070](../../mapa/conhecimento/perguntas.md#q070) (mesmo assunto, 0.51), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.29), [Q001](../../mapa/conhecimento/perguntas.md#q001) (complementar, 0.28), [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.27)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q004"></a>
@@ -72,7 +72,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:111](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L111); responde [laboratorio/q100/respostas.py:249](../../laboratorio/q100/respostas.py#L249)
 - **apoia-se em:** [E10](../../mapa/conhecimento/experimentos.md#e10), [E11](../../mapa/conhecimento/experimentos.md#e11), [E12](../../mapa/conhecimento/experimentos.md#e12)
 - **tema:** [T18 · anotador, independente, justificativa](../../mapa/conhecimento/temas.md#t18)
-- **semelhantes (julgados pelo Jev):** [Q064](../../mapa/conhecimento/perguntas.md#q064) (mesmo assunto, 0.63), [E8](../../mapa/conhecimento/experimentos.md#e8) (mesmo assunto, 0.31), [Q065](../../mapa/conhecimento/perguntas.md#q065) (complementar, 0.30), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (mesmo assunto, 0.25), [Q086](../../mapa/conhecimento/perguntas.md#q086) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [Q064](../../mapa/conhecimento/perguntas.md#q064) (mesmo assunto, 0.63), [E8](../../mapa/conhecimento/experimentos.md#e8) (mesmo assunto, 0.31), [Q065](../../mapa/conhecimento/perguntas.md#q065) (complementar, 0.30), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (mesmo assunto, 0.25), [Q086](../../mapa/conhecimento/perguntas.md#q086) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q005"></a>
@@ -80,13 +80,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q005 — Qual o volume mensal mínimo em que o custo de integrar se paga?
 
 - **família:** A · A decisão de adotar
-- **resposta:** Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000032 contra US$ 0,4000 da revisão humana.
+- **resposta:** Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000038 contra US$ 0,4000 da revisão humana.
 - **origem da resposta:** conta declarada
 - **confiança:** baixa
 - **decide:** Decide se vale integrar ou rodar na mão.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:117](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L117); responde [laboratorio/q100/respostas.py:258](../../laboratorio/q100/respostas.py#L258)
 - **tema:** [T15 · integração, método, atual](../../mapa/conhecimento/temas.md#t15)
-- **semelhantes (julgados pelo Jev):** [Q068](../../mapa/conhecimento/perguntas.md#q068) (complementar, 0.36), [E13](../../mapa/conhecimento/experimentos.md#e13) (complementar, 0.21), [Q066](../../mapa/conhecimento/perguntas.md#q066) (mesmo assunto, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q068](../../mapa/conhecimento/perguntas.md#q068) (não julgado, 0.36), [E13](../../mapa/conhecimento/experimentos.md#e13) (não julgado, 0.21), [Q066](../../mapa/conhecimento/perguntas.md#q066) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q006"></a>
@@ -128,8 +128,8 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se existe dependência de trabalho humano prévio.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:135](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L135); responde [laboratorio/q100/respostas.py:294](../../laboratorio/q100/respostas.py#L294)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [H016](../../mapa/conhecimento/hipoteses.md#h016) (complementar, 0.28), [Q006](../../mapa/conhecimento/perguntas.md#q006) (complementar, 0.24), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.20), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.20)
-- **mencionado em 3 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×)
+- **semelhantes (julgados pelo Jev):** [H016](../../mapa/conhecimento/hipoteses.md#h016) (complementar, 0.28), [Q006](../../mapa/conhecimento/perguntas.md#q006) (complementar, 0.24), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.21), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.20)
+- **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [integracao/skill/jev-completo/SKILL.md](../../integracao/skill/jev-completo/SKILL.md) (1×)
 
 <a id="q009"></a>
 
@@ -142,7 +142,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o formato do piloto.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:141](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L141); responde [laboratorio/q100/respostas.py:304](../../laboratorio/q100/respostas.py#L304)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20), [R21](../../mapa/conhecimento/rodadas.md#r21), [R21b](../../mapa/conhecimento/rodadas.md#r21b), [R22](../../mapa/conhecimento/rodadas.md#r22)
-- **semelhantes (julgados pelo Jev):** [Q086](../../mapa/conhecimento/perguntas.md#q086) (complementar, 0.28)
+- **semelhantes (julgados pelo Jev):** [Q086](../../mapa/conhecimento/perguntas.md#q086) (complementar, 0.26)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q010"></a>
@@ -156,7 +156,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide a alocação de esforço.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:147](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L147); responde [laboratorio/q100/respostas.py:321](../../laboratorio/q100/respostas.py#L321)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.23), [Q047](../../mapa/conhecimento/perguntas.md#q047) (complementar, 0.23), [H043](../../mapa/conhecimento/hipoteses.md#h043) (mesmo assunto, 0.23), [R17](../../mapa/conhecimento/rodadas.md#r17) (complementar, 0.23), [Q002](../../mapa/conhecimento/perguntas.md#q002) (mesmo assunto, 0.21)
+- **semelhantes (julgados pelo Jev):** [Q047](../../mapa/conhecimento/perguntas.md#q047) (complementar, 0.23), [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.23), [H043](../../mapa/conhecimento/hipoteses.md#h043) (mesmo assunto, 0.23), [R17](../../mapa/conhecimento/rodadas.md#r17) (complementar, 0.23), [Q002](../../mapa/conhecimento/perguntas.md#q002) (mesmo assunto, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q011"></a>
@@ -164,13 +164,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q011 — Quanto custa mil decisões, medido e não estimado?
 
 - **família:** B · Unidade econômica
-- **resposta:** **US$ 0,032 por mil decisões**, medido sobre 31.419 chamadas reais que somam US$ 1,0185 no livro-caixa. Não é estimativa: é o extrato.
+- **resposta:** **US$ 0,038 por mil decisões**, medido sobre 40.542 chamadas reais que somam US$ 1,5213 no livro-caixa. Não é estimativa: é o extrato.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide a linha do orçamento.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:157](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L157); responde [laboratorio/q100/respostas.py:332](../../laboratorio/q100/respostas.py#L332)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [executor/exportar_extrato.py](../../executor/exportar_extrato.py) (complementar, 0.30), [laboratorio/conciliar_caixa.py](../../laboratorio/conciliar_caixa.py) (complementar, 0.25), [Q016](../../mapa/conhecimento/perguntas.md#q016) (complementar, 0.24), [Q050](../../mapa/conhecimento/perguntas.md#q050) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [executor/exportar_extrato.py](../../executor/exportar_extrato.py) (não julgado, 0.30), [laboratorio/conciliar_caixa.py](../../laboratorio/conciliar_caixa.py) (não julgado, 0.24), [Q016](../../mapa/conhecimento/perguntas.md#q016) (não julgado, 0.24), [Q050](../../mapa/conhecimento/perguntas.md#q050) (não julgado, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q012"></a>
@@ -185,7 +185,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:163](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L163); responde [laboratorio/q100/respostas.py:342](../../laboratorio/q100/respostas.py#L342)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [Q013](../../mapa/conhecimento/perguntas.md#q013) (complementar, 0.38), [Q016](../../mapa/conhecimento/perguntas.md#q016) (mesmo assunto, 0.30), [Q014](../../mapa/conhecimento/perguntas.md#q014) (mesmo assunto, 0.27), [Q002](../../mapa/conhecimento/perguntas.md#q002) (complementar, 0.26), [Q010](../../mapa/conhecimento/perguntas.md#q010) (mesmo assunto, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q013](../../mapa/conhecimento/perguntas.md#q013) (complementar, 0.38), [Q016](../../mapa/conhecimento/perguntas.md#q016) (mesmo assunto, 0.30), [Q014](../../mapa/conhecimento/perguntas.md#q014) (mesmo assunto, 0.26), [Q002](../../mapa/conhecimento/perguntas.md#q002) (complementar, 0.26), [Q010](../../mapa/conhecimento/perguntas.md#q010) (mesmo assunto, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q013"></a>
@@ -215,7 +215,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:175](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L175); responde [laboratorio/q100/respostas.py:387](../../laboratorio/q100/respostas.py#L387)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.29), [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.27), [Q016](../../mapa/conhecimento/perguntas.md#q016) (complementar, 0.25), [H043](../../mapa/conhecimento/hipoteses.md#h043) (mesmo assunto, 0.24), [Q018](../../mapa/conhecimento/perguntas.md#q018) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [R43](../../mapa/conhecimento/rodadas.md#r43) (complementar, 0.28), [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.26), [Q016](../../mapa/conhecimento/perguntas.md#q016) (complementar, 0.25), [H043](../../mapa/conhecimento/hipoteses.md#h043) (mesmo assunto, 0.24), [Q018](../../mapa/conhecimento/perguntas.md#q018) (não julgado, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q015"></a>
@@ -243,7 +243,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:187](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L187); responde [laboratorio/q100/respostas.py:422](../../laboratorio/q100/respostas.py#L422)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20)
 - **tema:** [T09 · econômico, ordenação, unidade](../../mapa/conhecimento/temas.md#t09)
-- **semelhantes (julgados pelo Jev):** [R17](../../mapa/conhecimento/rodadas.md#r17) (mesmo assunto, 0.40), [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.30), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (mesmo assunto, 0.26), [Q014](../../mapa/conhecimento/perguntas.md#q014) (complementar, 0.25), [Q011](../../mapa/conhecimento/perguntas.md#q011) (complementar, 0.24), [Q013](../../mapa/conhecimento/perguntas.md#q013) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [R17](../../mapa/conhecimento/rodadas.md#r17) (mesmo assunto, 0.40), [Q012](../../mapa/conhecimento/perguntas.md#q012) (mesmo assunto, 0.30), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (mesmo assunto, 0.26), [Q014](../../mapa/conhecimento/perguntas.md#q014) (complementar, 0.25), [Q013](../../mapa/conhecimento/perguntas.md#q013) (complementar, 0.24), [Q011](../../mapa/conhecimento/perguntas.md#q011) (não julgado, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q017"></a>
@@ -251,14 +251,14 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q017 — Que fração do orçamento do estudo virou chamada inútil?
 
 - **família:** B · Unidade econômica
-- **resposta:** 266 tentativas de 24.533 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
+- **resposta:** 274 tentativas de 33.500 terminaram em falha — **0,8%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide quanto reservar de folga no próximo programa.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:193](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L193); responde [laboratorio/q100/respostas.py:443](../../laboratorio/q100/respostas.py#L443)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H047](../../mapa/conhecimento/hipoteses.md#h047) (mesmo assunto, 0.26), [executor/runner.py](../../executor/runner.py) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [H047](../../mapa/conhecimento/hipoteses.md#h047) (não julgado, 0.26), [executor/runner.py](../../executor/runner.py) (não julgado, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q018"></a>
@@ -266,13 +266,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q018 — O custo por decisão cresce com o texto de um jeito que quebre a conta?
 
 - **família:** B · Unidade econômica
-- **resposta:** Não quebra: o custo é quase linear no tamanho do estado (r = 0,26), e o quartil de textos maiores custa 1,5× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há mo…
+- **resposta:** Não quebra: o custo é quase linear no tamanho do estado (r = 0,78), e o quartil de textos maiores custa 2,2× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há mo…
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide se há limite de tamanho a impor na entrada.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:199](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L199); responde [laboratorio/q100/respostas.py:456](../../laboratorio/q100/respostas.py#L456)
 - **tema:** [T07 · importa, contexto, caracteres](../../mapa/conhecimento/temas.md#t07)
-- **semelhantes (julgados pelo Jev):** [Q039](../../mapa/conhecimento/perguntas.md#q039) (complementar, 0.36), [Q056](../../mapa/conhecimento/perguntas.md#q056) (complementar, 0.32), [H091](../../mapa/conhecimento/hipoteses.md#h091) (complementar, 0.24), [Q014](../../mapa/conhecimento/perguntas.md#q014) (complementar, 0.23), [H003](../../mapa/conhecimento/hipoteses.md#h003) (tensão (a conferir), 0.21)
+- **semelhantes (julgados pelo Jev):** [Q039](../../mapa/conhecimento/perguntas.md#q039) (não julgado, 0.36), [Q056](../../mapa/conhecimento/perguntas.md#q056) (não julgado, 0.33), [H091](../../mapa/conhecimento/hipoteses.md#h091) (não julgado, 0.24), [Q014](../../mapa/conhecimento/perguntas.md#q014) (não julgado, 0.23), [H003](../../mapa/conhecimento/hipoteses.md#h003) (não julgado, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q019"></a>
@@ -280,13 +280,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q019 — Votar em três chamadas triplica o custo — isso cabe no custo por decisão?
 
 - **família:** B · Unidade econômica
-- **resposta:** Cabe folgado — três chamadas custam US$ 0,000097 por decisão contra US$ 200,00 de um erro grave — mas a R24 mostrou que votar a **mesma** pergunta três vezes não compra nada: em 148 casos, 0 oscilaram. O que vale o triplo do custo é perguntar de **três formulações** diferentes, que no jurídico levou de 79,7% para 92,8…
+- **resposta:** Cabe folgado — três chamadas custam US$ 0,000113 por decisão contra US$ 200,00 de um erro grave — mas a R24 mostrou que votar a **mesma** pergunta três vezes não compra nada: em 148 casos, 0 oscilaram. O que vale o triplo do custo é perguntar de **três formulações** diferentes, que no jurídico levou de 79,7% para 92,8…
 - **origem da resposta:** conta declarada
 - **confiança:** média
 - **decide:** Decide se a política de votação é viável para a classe irreversível.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:205](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L205); responde [laboratorio/q100/respostas.py:472](../../laboratorio/q100/respostas.py#L472)
 - **apoia-se em:** [R24](../../mapa/conhecimento/rodadas.md#r24)
-- **semelhantes (julgados pelo Jev):** [Q029](../../mapa/conhecimento/perguntas.md#q029) (mesmo assunto, 0.41), [Q040](../../mapa/conhecimento/perguntas.md#q040) (mesmo assunto, 0.38), [laboratorio/r24_votacao.py](../../laboratorio/r24_votacao.py) (mesmo assunto, 0.24), [H045](../../mapa/conhecimento/hipoteses.md#h045) (complementar, 0.23), [Q032](../../mapa/conhecimento/perguntas.md#q032) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q029](../../mapa/conhecimento/perguntas.md#q029) (não julgado, 0.41), [Q040](../../mapa/conhecimento/perguntas.md#q040) (não julgado, 0.38), [laboratorio/r24_votacao.py](../../laboratorio/r24_votacao.py) (não julgado, 0.24), [H045](../../mapa/conhecimento/hipoteses.md#h045) (não julgado, 0.23), [Q032](../../mapa/conhecimento/perguntas.md#q032) (não julgado, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q020"></a>
@@ -300,7 +300,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se o monitoramento contínuo entra no orçamento.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:211](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L211); responde [laboratorio/q100/respostas.py:488](../../laboratorio/q100/respostas.py#L488)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [Q075](../../mapa/conhecimento/perguntas.md#q075) (mesmo assunto, 0.58), [Q090](../../mapa/conhecimento/perguntas.md#q090) (complementar, 0.31), [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.26), [laboratorio/canarios_de_comportamento.py](../../laboratorio/canarios_de_comportamento.py) (complementar, 0.26)
+- **semelhantes (julgados pelo Jev):** [Q075](../../mapa/conhecimento/perguntas.md#q075) (mesmo assunto, 0.59), [Q090](../../mapa/conhecimento/perguntas.md#q090) (não julgado, 0.31), [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.26), [laboratorio/canarios_de_comportamento.py](../../laboratorio/canarios_de_comportamento.py) (complementar, 0.26)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q021"></a>
@@ -314,7 +314,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o corte a configurar em produção.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:221](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L221); responde [laboratorio/q100/respostas.py:515](../../laboratorio/q100/respostas.py#L515)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [Q022](../../mapa/conhecimento/perguntas.md#q022) (mesmo assunto, 0.31), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.27), [H017](../../mapa/conhecimento/hipoteses.md#h017) (complementar, 0.26), [Q029](../../mapa/conhecimento/perguntas.md#q029) (complementar, 0.26), [Q023](../../mapa/conhecimento/perguntas.md#q023) (mesmo assunto, 0.24), [Q008](../../mapa/conhecimento/perguntas.md#q008) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q022](../../mapa/conhecimento/perguntas.md#q022) (mesmo assunto, 0.31), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.27), [H017](../../mapa/conhecimento/hipoteses.md#h017) (complementar, 0.26), [Q029](../../mapa/conhecimento/perguntas.md#q029) (complementar, 0.26), [Q023](../../mapa/conhecimento/perguntas.md#q023) (mesmo assunto, 0.24), [Q008](../../mapa/conhecimento/perguntas.md#q008) (complementar, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q022"></a>
@@ -357,8 +357,8 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o parâmetro padrão da Aplicação 3.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:239](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L239); responde [laboratorio/q100/respostas.py:576](../../laboratorio/q100/respostas.py#L576)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R19](../../mapa/conhecimento/rodadas.md#r19), [R20](../../mapa/conhecimento/rodadas.md#r20)
-- **tema:** [T12 · sujeito, molde, formulação](../../mapa/conhecimento/temas.md#t12)
-- **semelhantes (julgados pelo Jev):** [Q026](../../mapa/conhecimento/perguntas.md#q026) (complementar, 0.21), [H001](../../mapa/conhecimento/hipoteses.md#h001) (complementar, 0.21), [H049](../../mapa/conhecimento/hipoteses.md#h049) (mesmo assunto, 0.21), [Q095](../../mapa/conhecimento/perguntas.md#q095) (complementar, 0.21)
+- **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
+- **semelhantes (julgados pelo Jev):** [H001](../../mapa/conhecimento/hipoteses.md#h001) (complementar, 0.21), [H049](../../mapa/conhecimento/hipoteses.md#h049) (mesmo assunto, 0.21), [Q026](../../mapa/conhecimento/perguntas.md#q026) (complementar, 0.21), [Q095](../../mapa/conhecimento/perguntas.md#q095) (complementar, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q025"></a>
@@ -372,7 +372,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o padrão de desenho de taxonomia.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:245](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L245); responde [laboratorio/q100/respostas.py:586](../../laboratorio/q100/respostas.py#L586)
 - **tema:** [T22 · escape, classe, textos](../../mapa/conhecimento/temas.md#t22)
-- **semelhantes (julgados pelo Jev):** [H083](../../mapa/conhecimento/hipoteses.md#h083) (mesmo assunto, 0.39), [Q006](../../mapa/conhecimento/perguntas.md#q006) (mesmo assunto, 0.38), [Q036](../../mapa/conhecimento/perguntas.md#q036) (mesmo assunto, 0.37), [Q026](../../mapa/conhecimento/perguntas.md#q026) (complementar, 0.33), [Q099](../../mapa/conhecimento/perguntas.md#q099) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H083](../../mapa/conhecimento/hipoteses.md#h083) (mesmo assunto, 0.40), [Q006](../../mapa/conhecimento/perguntas.md#q006) (mesmo assunto, 0.38), [Q036](../../mapa/conhecimento/perguntas.md#q036) (mesmo assunto, 0.37), [Q026](../../mapa/conhecimento/perguntas.md#q026) (complementar, 0.32), [Q099](../../mapa/conhecimento/perguntas.md#q099) (complementar, 0.20)
 - **mencionado em 4 arquivos:** [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (2×), [laboratorio/r31_r37_segunda_leva.py](../../laboratorio/r31_r37_segunda_leva.py) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (1×)
 
 <a id="q026"></a>
@@ -388,7 +388,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **apoia-se em:** [R19](../../mapa/conhecimento/rodadas.md#r19)
 - **sustenta:** [Q034](../../mapa/conhecimento/perguntas.md#q034)
 - **tema:** [T12 · sujeito, molde, formulação](../../mapa/conhecimento/temas.md#t12)
-- **semelhantes (julgados pelo Jev):** [Q025](../../mapa/conhecimento/perguntas.md#q025) (complementar, 0.33), [H078](../../mapa/conhecimento/hipoteses.md#h078) (mesmo assunto, 0.31), [H099](../../mapa/conhecimento/hipoteses.md#h099) (mesmo assunto, 0.30), [H095](../../mapa/conhecimento/hipoteses.md#h095) (mesmo assunto, 0.26), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [Q025](../../mapa/conhecimento/perguntas.md#q025) (complementar, 0.32), [H078](../../mapa/conhecimento/hipoteses.md#h078) (mesmo assunto, 0.31), [H099](../../mapa/conhecimento/hipoteses.md#h099) (mesmo assunto, 0.30), [H095](../../mapa/conhecimento/hipoteses.md#h095) (mesmo assunto, 0.26), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/r31_r37_segunda_leva.py](../../laboratorio/r31_r37_segunda_leva.py) (1×), [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (1×)
 
 <a id="q027"></a>
@@ -430,7 +430,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide a política de repetição na classe irreversível.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:269](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L269); responde [laboratorio/q100/respostas.py:627](../../laboratorio/q100/respostas.py#L627)
 - **apoia-se em:** [E6](../../mapa/conhecimento/experimentos.md#e6), [R24](../../mapa/conhecimento/rodadas.md#r24), [Q040](../../mapa/conhecimento/perguntas.md#q040)
-- **semelhantes (julgados pelo Jev):** [Q019](../../mapa/conhecimento/perguntas.md#q019) (mesmo assunto, 0.41), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.26), [R36](../../mapa/conhecimento/rodadas.md#r36) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [Q019](../../mapa/conhecimento/perguntas.md#q019) (não julgado, 0.41), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.26), [R36](../../mapa/conhecimento/rodadas.md#r36) (complementar, 0.21)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/r31_r37_segunda_leva.py](../../laboratorio/r31_r37_segunda_leva.py) (1×), [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (1×)
 
 <a id="q030"></a>
@@ -465,13 +465,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q032 — Quanto custa um erro grave comparado ao custo da decisão?
 
 - **família:** D · Risco e custo do erro
-- **resposta:** Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000032 — razão de **6.169.680 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
+- **resposta:** Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000038 — razão de **5.329.784 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
 - **origem da resposta:** conta declarada
 - **confiança:** baixa
 - **decide:** Decide quanto vale gastar em salvaguarda.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:291](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L291); responde [laboratorio/q100/respostas.py:657](../../laboratorio/q100/respostas.py#L657)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.36), [Q034](../../mapa/conhecimento/perguntas.md#q034) (complementar, 0.28), [Q036](../../mapa/conhecimento/perguntas.md#q036) (complementar, 0.27), [Q019](../../mapa/conhecimento/perguntas.md#q019) (complementar, 0.23), [Q040](../../mapa/conhecimento/perguntas.md#q040) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [Q033](../../mapa/conhecimento/perguntas.md#q033) (não julgado, 0.36), [Q034](../../mapa/conhecimento/perguntas.md#q034) (não julgado, 0.28), [Q036](../../mapa/conhecimento/perguntas.md#q036) (não julgado, 0.27), [Q019](../../mapa/conhecimento/perguntas.md#q019) (não julgado, 0.23), [Q040](../../mapa/conhecimento/perguntas.md#q040) (não julgado, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q033"></a>
@@ -485,7 +485,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o número que entra na avaliação de risco.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:297](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L297); responde [laboratorio/q100/respostas.py:668](../../laboratorio/q100/respostas.py#L668)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [Q032](../../mapa/conhecimento/perguntas.md#q032) (complementar, 0.36), [executor/erro_grave.py](../../executor/erro_grave.py) (complementar, 0.27), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.27), [Q039](../../mapa/conhecimento/perguntas.md#q039) (complementar, 0.26), [Q050](../../mapa/conhecimento/perguntas.md#q050) (complementar, 0.23), [Q031](../../mapa/conhecimento/perguntas.md#q031) (complementar, 0.23), [Q008](../../mapa/conhecimento/perguntas.md#q008) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q032](../../mapa/conhecimento/perguntas.md#q032) (não julgado, 0.36), [executor/erro_grave.py](../../executor/erro_grave.py) (complementar, 0.28), [Q021](../../mapa/conhecimento/perguntas.md#q021) (complementar, 0.27), [Q039](../../mapa/conhecimento/perguntas.md#q039) (complementar, 0.26), [Q050](../../mapa/conhecimento/perguntas.md#q050) (complementar, 0.23), [Q031](../../mapa/conhecimento/perguntas.md#q031) (complementar, 0.23), [Q008](../../mapa/conhecimento/perguntas.md#q008) (complementar, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q034"></a>
@@ -500,7 +500,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:303](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L303); responde [laboratorio/q100/respostas.py:681](../../laboratorio/q100/respostas.py#L681)
 - **apoia-se em:** [R8](../../mapa/conhecimento/rodadas.md#r8), [R9](../../mapa/conhecimento/rodadas.md#r9), [Q026](../../mapa/conhecimento/perguntas.md#q026)
 - **tema:** [T05 · família, terceiro, domínio](../../mapa/conhecimento/temas.md#t05)
-- **semelhantes (julgados pelo Jev):** [Q032](../../mapa/conhecimento/perguntas.md#q032) (complementar, 0.28), [H073](../../mapa/conhecimento/hipoteses.md#h073) (mesmo assunto, 0.26), [H077](../../mapa/conhecimento/hipoteses.md#h077) (complementar, 0.24), [Q035](../../mapa/conhecimento/perguntas.md#q035) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [Q032](../../mapa/conhecimento/perguntas.md#q032) (não julgado, 0.28), [H073](../../mapa/conhecimento/hipoteses.md#h073) (mesmo assunto, 0.26), [H077](../../mapa/conhecimento/hipoteses.md#h077) (complementar, 0.24), [Q035](../../mapa/conhecimento/perguntas.md#q035) (complementar, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q035"></a>
@@ -513,7 +513,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide se a revisão pode ser seletiva por classe.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:309](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L309); responde [laboratorio/q100/respostas.py:691](../../laboratorio/q100/respostas.py#L691)
-- **semelhantes (julgados pelo Jev):** [Q031](../../mapa/conhecimento/perguntas.md#q031) (complementar, 0.28), [Q037](../../mapa/conhecimento/perguntas.md#q037) (complementar, 0.26), [Q034](../../mapa/conhecimento/perguntas.md#q034) (complementar, 0.22), [H094](../../mapa/conhecimento/hipoteses.md#h094) (mesmo assunto, 0.22), [executor/run_e9_prevalencia.py](../../executor/run_e9_prevalencia.py) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q031](../../mapa/conhecimento/perguntas.md#q031) (complementar, 0.28), [Q037](../../mapa/conhecimento/perguntas.md#q037) (complementar, 0.26), [Q034](../../mapa/conhecimento/perguntas.md#q034) (complementar, 0.23), [H094](../../mapa/conhecimento/hipoteses.md#h094) (mesmo assunto, 0.22), [executor/run_e9_prevalencia.py](../../executor/run_e9_prevalencia.py) (complementar, 0.21)
 - **mencionado em 3 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×)
 
 <a id="q036"></a>
@@ -527,7 +527,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se o corte basta como salvaguarda.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:315](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L315); responde [laboratorio/q100/respostas.py:704](../../laboratorio/q100/respostas.py#L704)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [H063](../../mapa/conhecimento/hipoteses.md#h063) (tensão (a conferir), 0.40), [Q025](../../mapa/conhecimento/perguntas.md#q025) (mesmo assunto, 0.37), [H064](../../mapa/conhecimento/hipoteses.md#h064) (mesmo assunto, 0.31), [H083](../../mapa/conhecimento/hipoteses.md#h083) (mesmo assunto, 0.30), [Q045](../../mapa/conhecimento/perguntas.md#q045) (mesmo assunto, 0.30), [Q032](../../mapa/conhecimento/perguntas.md#q032) (complementar, 0.27), [R13](../../mapa/conhecimento/rodadas.md#r13) (mesmo assunto, 0.24), [Q099](../../mapa/conhecimento/perguntas.md#q099) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H063](../../mapa/conhecimento/hipoteses.md#h063) (tensão (a conferir), 0.40), [Q025](../../mapa/conhecimento/perguntas.md#q025) (mesmo assunto, 0.37), [H083](../../mapa/conhecimento/hipoteses.md#h083) (mesmo assunto, 0.30), [H064](../../mapa/conhecimento/hipoteses.md#h064) (mesmo assunto, 0.30), [Q045](../../mapa/conhecimento/perguntas.md#q045) (mesmo assunto, 0.30), [Q032](../../mapa/conhecimento/perguntas.md#q032) (não julgado, 0.27), [R13](../../mapa/conhecimento/rodadas.md#r13) (mesmo assunto, 0.24), [Q099](../../mapa/conhecimento/perguntas.md#q099) (complementar, 0.20)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/q100/relatorio.py](../../laboratorio/q100/relatorio.py) (1×)
 
 <a id="q037"></a>
@@ -542,7 +542,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:321](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L321); responde [laboratorio/q100/respostas.py:713](../../laboratorio/q100/respostas.py#L713)
 - **apoia-se em:** [R11](../../mapa/conhecimento/rodadas.md#r11)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H093](../../mapa/conhecimento/hipoteses.md#h093) (mesmo assunto, 0.38), [Q035](../../mapa/conhecimento/perguntas.md#q035) (complementar, 0.26), [Q072](../../mapa/conhecimento/perguntas.md#q072) (complementar, 0.25), [Q002](../../mapa/conhecimento/perguntas.md#q002) (complementar, 0.23), [Q073](../../mapa/conhecimento/perguntas.md#q073) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H093](../../mapa/conhecimento/hipoteses.md#h093) (mesmo assunto, 0.38), [Q035](../../mapa/conhecimento/perguntas.md#q035) (complementar, 0.26), [Q072](../../mapa/conhecimento/perguntas.md#q072) (não julgado, 0.24), [Q002](../../mapa/conhecimento/perguntas.md#q002) (complementar, 0.23), [Q073](../../mapa/conhecimento/perguntas.md#q073) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q038"></a>
@@ -571,7 +571,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:333](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L333); responde [laboratorio/q100/respostas.py:735](../../laboratorio/q100/respostas.py#L735)
 - **apoia-se em:** [R12](../../mapa/conhecimento/rodadas.md#r12), [R13](../../mapa/conhecimento/rodadas.md#r13)
 - **tema:** [T07 · importa, contexto, caracteres](../../mapa/conhecimento/temas.md#t07)
-- **semelhantes (julgados pelo Jev):** [Q056](../../mapa/conhecimento/perguntas.md#q056) (mesmo assunto, 0.43), [Q018](../../mapa/conhecimento/perguntas.md#q018) (complementar, 0.36), [H091](../../mapa/conhecimento/hipoteses.md#h091) (complementar, 0.28), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.26)
+- **semelhantes (julgados pelo Jev):** [Q056](../../mapa/conhecimento/perguntas.md#q056) (mesmo assunto, 0.44), [Q018](../../mapa/conhecimento/perguntas.md#q018) (não julgado, 0.36), [H091](../../mapa/conhecimento/hipoteses.md#h091) (complementar, 0.28), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.26)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q040"></a>
@@ -586,7 +586,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:339](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L339); responde [laboratorio/q100/respostas.py:745](../../laboratorio/q100/respostas.py#L745)
 - **apoia-se em:** [R24](../../mapa/conhecimento/rodadas.md#r24)
 - **sustenta:** [Q029](../../mapa/conhecimento/perguntas.md#q029)
-- **semelhantes (julgados pelo Jev):** [Q019](../../mapa/conhecimento/perguntas.md#q019) (mesmo assunto, 0.38), [Q032](../../mapa/conhecimento/perguntas.md#q032) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [Q019](../../mapa/conhecimento/perguntas.md#q019) (não julgado, 0.38), [Q032](../../mapa/conhecimento/perguntas.md#q032) (não julgado, 0.22)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/r24_votacao.py](../../laboratorio/r24_votacao.py) (1×)
 
 <a id="q041"></a>
@@ -615,7 +615,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:355](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L355); responde [laboratorio/q100/respostas.py:780](../../laboratorio/q100/respostas.py#L780)
 - **apoia-se em:** [R22](../../mapa/conhecimento/rodadas.md#r22), [R23](../../mapa/conhecimento/rodadas.md#r23), [Q043](../../mapa/conhecimento/perguntas.md#q043)
 - **tema:** [T04 · sentinela, sanitizador, ordem](../../mapa/conhecimento/temas.md#t04)
-- **semelhantes (julgados pelo Jev):** [laboratorio/r23_parafrase.py](../../laboratorio/r23_parafrase.py) (mesmo assunto, 0.30), [laboratorio/r22_defesas.py](../../laboratorio/r22_defesas.py) (mesmo assunto, 0.28), [H066](../../mapa/conhecimento/hipoteses.md#h066) (mesmo assunto, 0.26), [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.24), [Q098](../../mapa/conhecimento/perguntas.md#q098) (complementar, 0.22), [Q049](../../mapa/conhecimento/perguntas.md#q049) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [laboratorio/r23_parafrase.py](../../laboratorio/r23_parafrase.py) (mesmo assunto, 0.30), [laboratorio/r22_defesas.py](../../laboratorio/r22_defesas.py) (mesmo assunto, 0.28), [H066](../../mapa/conhecimento/hipoteses.md#h066) (mesmo assunto, 0.26), [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.24), [Q098](../../mapa/conhecimento/perguntas.md#q098) (complementar, 0.22), [Q049](../../mapa/conhecimento/perguntas.md#q049) (complementar, 0.21)
 - **mencionado em 5 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/GUIA-PRATICO-JEV.md](../../docs/GUIA-PRATICO-JEV.md) (1×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/q100/relatorio.py](../../laboratorio/q100/relatorio.py) (1×)
 
 <a id="q043"></a>
@@ -631,7 +631,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **apoia-se em:** [R22](../../mapa/conhecimento/rodadas.md#r22), [R23](../../mapa/conhecimento/rodadas.md#r23), [R27](../../mapa/conhecimento/rodadas.md#r27)
 - **sustenta:** [Q027](../../mapa/conhecimento/perguntas.md#q027), [Q042](../../mapa/conhecimento/perguntas.md#q042)
 - **tema:** [T04 · sentinela, sanitizador, ordem](../../mapa/conhecimento/temas.md#t04)
-- **semelhantes (julgados pelo Jev):** [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.33), [Q050](../../mapa/conhecimento/perguntas.md#q050) (complementar, 0.27), [Q098](../../mapa/conhecimento/perguntas.md#q098) (complementar, 0.27), [R42](../../mapa/conhecimento/rodadas.md#r42) (complementar, 0.26), [Q049](../../mapa/conhecimento/perguntas.md#q049) (complementar, 0.24), [integracao/camadas/sentinela.py](../../integracao/camadas/sentinela.py) (mesmo assunto, 0.24)
+- **semelhantes (julgados pelo Jev):** [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.33), [Q098](../../mapa/conhecimento/perguntas.md#q098) (complementar, 0.27), [Q050](../../mapa/conhecimento/perguntas.md#q050) (complementar, 0.27), [R42](../../mapa/conhecimento/rodadas.md#r42) (complementar, 0.26), [Q049](../../mapa/conhecimento/perguntas.md#q049) (complementar, 0.24), [integracao/camadas/sentinela.py](../../integracao/camadas/sentinela.py) (mesmo assunto, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q044"></a>
@@ -646,7 +646,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:367](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L367); responde [laboratorio/q100/respostas.py:836](../../laboratorio/q100/respostas.py#L836)
 - **apoia-se em:** [R22](../../mapa/conhecimento/rodadas.md#r22)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [H061](../../mapa/conhecimento/hipoteses.md#h061) (mesmo assunto, 0.24), [Q045](../../mapa/conhecimento/perguntas.md#q045) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [H061](../../mapa/conhecimento/hipoteses.md#h061) (mesmo assunto, 0.24), [Q045](../../mapa/conhecimento/perguntas.md#q045) (complementar, 0.23)
 - **mencionado em 6 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/GUIA-PRATICO-JEV.md](../../docs/GUIA-PRATICO-JEV.md) (1×), [integracao/README.md](../../integracao/README.md) (1×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/q100/relatorio.py](../../laboratorio/q100/relatorio.py) (1×)
 
 <a id="q045"></a>
@@ -660,7 +660,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se o corte pode ser contado como controle de segurança.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:373](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L373); responde [laboratorio/q100/respostas.py:850](../../laboratorio/q100/respostas.py#L850)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [H063](../../mapa/conhecimento/hipoteses.md#h063) (mesmo assunto, 0.39), [H098](../../mapa/conhecimento/hipoteses.md#h098) (mesmo assunto, 0.31), [Q036](../../mapa/conhecimento/perguntas.md#q036) (mesmo assunto, 0.30), [H064](../../mapa/conhecimento/hipoteses.md#h064) (mesmo assunto, 0.29), [Q048](../../mapa/conhecimento/perguntas.md#q048) (complementar, 0.26), [Q044](../../mapa/conhecimento/perguntas.md#q044) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [H063](../../mapa/conhecimento/hipoteses.md#h063) (mesmo assunto, 0.39), [Q036](../../mapa/conhecimento/perguntas.md#q036) (mesmo assunto, 0.30), [H098](../../mapa/conhecimento/hipoteses.md#h098) (mesmo assunto, 0.30), [H064](../../mapa/conhecimento/hipoteses.md#h064) (mesmo assunto, 0.28), [Q048](../../mapa/conhecimento/perguntas.md#q048) (complementar, 0.26), [Q044](../../mapa/conhecimento/perguntas.md#q044) (complementar, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q046"></a>
@@ -704,7 +704,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o desenho do controle compensatório.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:391](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L391); responde [laboratorio/q100/respostas.py:900](../../laboratorio/q100/respostas.py#L900)
 - **tema:** [T03 · viradas, corte, confiança](../../mapa/conhecimento/temas.md#t03)
-- **semelhantes (julgados pelo Jev):** [Q045](../../mapa/conhecimento/perguntas.md#q045) (complementar, 0.26), [H068](../../mapa/conhecimento/hipoteses.md#h068) (complementar, 0.22), [H098](../../mapa/conhecimento/hipoteses.md#h098) (mesmo assunto, 0.21), [H020](../../mapa/conhecimento/hipoteses.md#h020) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q045](../../mapa/conhecimento/perguntas.md#q045) (complementar, 0.26), [H068](../../mapa/conhecimento/hipoteses.md#h068) (complementar, 0.22), [H020](../../mapa/conhecimento/hipoteses.md#h020) (complementar, 0.20), [H098](../../mapa/conhecimento/hipoteses.md#h098) (mesmo assunto, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q049"></a>
@@ -719,7 +719,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:397](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L397); responde [laboratorio/q100/respostas.py:910](../../laboratorio/q100/respostas.py#L910)
 - **apoia-se em:** [R22](../../mapa/conhecimento/rodadas.md#r22), [R23](../../mapa/conhecimento/rodadas.md#r23)
 - **tema:** [T04 · sentinela, sanitizador, ordem](../../mapa/conhecimento/temas.md#t04)
-- **semelhantes (julgados pelo Jev):** [Q043](../../mapa/conhecimento/perguntas.md#q043) (complementar, 0.24), [Q042](../../mapa/conhecimento/perguntas.md#q042) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q043](../../mapa/conhecimento/perguntas.md#q043) (complementar, 0.24), [Q042](../../mapa/conhecimento/perguntas.md#q042) (complementar, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q050"></a>
@@ -733,7 +733,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se a defesa cabe no custo por decisão.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:403](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L403); responde [laboratorio/q100/respostas.py:945](../../laboratorio/q100/respostas.py#L945)
 - **tema:** [T04 · sentinela, sanitizador, ordem](../../mapa/conhecimento/temas.md#t04)
-- **semelhantes (julgados pelo Jev):** [R27](../../mapa/conhecimento/rodadas.md#r27) (mesmo assunto, 0.31), [Q043](../../mapa/conhecimento/perguntas.md#q043) (complementar, 0.27), [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.27), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.23), [Q011](../../mapa/conhecimento/perguntas.md#q011) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [R27](../../mapa/conhecimento/rodadas.md#r27) (mesmo assunto, 0.32), [Q043](../../mapa/conhecimento/perguntas.md#q043) (complementar, 0.27), [Q046](../../mapa/conhecimento/perguntas.md#q046) (complementar, 0.27), [Q033](../../mapa/conhecimento/perguntas.md#q033) (complementar, 0.23), [Q011](../../mapa/conhecimento/perguntas.md#q011) (não julgado, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q051"></a>
@@ -747,8 +747,8 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide onde o estudo pode ser citado sem ressalva.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:413](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L413); responde [laboratorio/q100/respostas.py:956](../../laboratorio/q100/respostas.py#L956)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
-- **semelhantes (julgados pelo Jev):** [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.37), [H097](../../mapa/conhecimento/hipoteses.md#h097) (mesmo assunto, 0.28), [H096](../../mapa/conhecimento/hipoteses.md#h096) (mesmo assunto, 0.28), [Q054](../../mapa/conhecimento/perguntas.md#q054) (complementar, 0.24), [Q055](../../mapa/conhecimento/perguntas.md#q055) (complementar, 0.23)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
+- **semelhantes (julgados pelo Jev):** [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.37), [H097](../../mapa/conhecimento/hipoteses.md#h097) (mesmo assunto, 0.28), [H096](../../mapa/conhecimento/hipoteses.md#h096) (mesmo assunto, 0.28), [Q054](../../mapa/conhecimento/perguntas.md#q054) (complementar, 0.24), [Q055](../../mapa/conhecimento/perguntas.md#q055) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q052"></a>
@@ -762,8 +762,8 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide onde o estudo pode ser citado sem ressalva.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:419](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L419); responde [laboratorio/q100/respostas.py:966](../../laboratorio/q100/respostas.py#L966)
 - **sustenta:** [Q030](../../mapa/conhecimento/perguntas.md#q030)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
-- **semelhantes (julgados pelo Jev):** [Q051](../../mapa/conhecimento/perguntas.md#q051) (complementar, 0.37), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.32), [Q060](../../mapa/conhecimento/perguntas.md#q060) (complementar, 0.31), [H099](../../mapa/conhecimento/hipoteses.md#h099) (mesmo assunto, 0.30), [Q055](../../mapa/conhecimento/perguntas.md#q055) (complementar, 0.23), [Q091](../../mapa/conhecimento/perguntas.md#q091) (complementar, 0.22)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
+- **semelhantes (julgados pelo Jev):** [Q051](../../mapa/conhecimento/perguntas.md#q051) (complementar, 0.37), [Q060](../../mapa/conhecimento/perguntas.md#q060) (complementar, 0.31), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.31), [H099](../../mapa/conhecimento/hipoteses.md#h099) (mesmo assunto, 0.30), [Q055](../../mapa/conhecimento/perguntas.md#q055) (complementar, 0.23), [Q091](../../mapa/conhecimento/perguntas.md#q091) (complementar, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q053"></a>
@@ -778,7 +778,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:425](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L425); responde [laboratorio/q100/respostas.py:976](../../laboratorio/q100/respostas.py#L976)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18), [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.59), [Q063](../../mapa/conhecimento/perguntas.md#q063) (mesmo assunto, 0.49), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.45), [Q069](../../mapa/conhecimento/perguntas.md#q069) (complementar, 0.33), [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.27), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.27), [executor/run_e4_ressalvas.py](../../executor/run_e4_ressalvas.py) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.59), [Q063](../../mapa/conhecimento/perguntas.md#q063) (mesmo assunto, 0.49), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.45), [Q069](../../mapa/conhecimento/perguntas.md#q069) (complementar, 0.33), [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.27), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.26), [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.21), [executor/run_e4_ressalvas.py](../../executor/run_e4_ressalvas.py) (complementar, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q054"></a>
@@ -791,7 +791,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide o que declarar como limite.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:431](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L431); responde [laboratorio/q100/respostas.py:987](../../laboratorio/q100/respostas.py#L987)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
 - **semelhantes (julgados pelo Jev):** [Q060](../../mapa/conhecimento/perguntas.md#q060) (complementar, 0.26), [Q051](../../mapa/conhecimento/perguntas.md#q051) (complementar, 0.24), [Q038](../../mapa/conhecimento/perguntas.md#q038) (complementar, 0.23), [Q055](../../mapa/conhecimento/perguntas.md#q055) (mesmo assunto, 0.22)
 - **mencionado em 3 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×)
 
@@ -805,8 +805,8 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide a próxima coleta.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:437](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L437); responde [laboratorio/q100/respostas.py:997](../../laboratorio/q100/respostas.py#L997)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
-- **semelhantes (julgados pelo Jev):** [Q060](../../mapa/conhecimento/perguntas.md#q060) (complementar, 0.27), [Q051](../../mapa/conhecimento/perguntas.md#q051) (complementar, 0.23), [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.23), [Q054](../../mapa/conhecimento/perguntas.md#q054) (mesmo assunto, 0.22)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
+- **semelhantes (julgados pelo Jev):** [Q060](../../mapa/conhecimento/perguntas.md#q060) (complementar, 0.27), [Q051](../../mapa/conhecimento/perguntas.md#q051) (complementar, 0.24), [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.23), [Q054](../../mapa/conhecimento/perguntas.md#q054) (mesmo assunto, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q056"></a>
@@ -821,7 +821,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:443](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L443); responde [laboratorio/q100/respostas.py:1006](../../laboratorio/q100/respostas.py#L1006)
 - **apoia-se em:** [R12](../../mapa/conhecimento/rodadas.md#r12), [R13](../../mapa/conhecimento/rodadas.md#r13)
 - **tema:** [T07 · importa, contexto, caracteres](../../mapa/conhecimento/temas.md#t07)
-- **semelhantes (julgados pelo Jev):** [H091](../../mapa/conhecimento/hipoteses.md#h091) (mesmo assunto, 0.55), [Q039](../../mapa/conhecimento/perguntas.md#q039) (mesmo assunto, 0.43), [Q018](../../mapa/conhecimento/perguntas.md#q018) (complementar, 0.32), [Q057](../../mapa/conhecimento/perguntas.md#q057) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H091](../../mapa/conhecimento/hipoteses.md#h091) (mesmo assunto, 0.54), [Q039](../../mapa/conhecimento/perguntas.md#q039) (mesmo assunto, 0.44), [Q018](../../mapa/conhecimento/perguntas.md#q018) (não julgado, 0.33), [Q057](../../mapa/conhecimento/perguntas.md#q057) (complementar, 0.25)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q057"></a>
@@ -877,7 +877,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o desenho da próxima rodada.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:467](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L467); responde [laboratorio/q100/respostas.py:1044](../../laboratorio/q100/respostas.py#L1044)
 - **apoia-se em:** [R25](../../mapa/conhecimento/rodadas.md#r25)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
 - **semelhantes (julgados pelo Jev):** [Q091](../../mapa/conhecimento/perguntas.md#q091) (mesmo assunto, 0.36), [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.31), [Q055](../../mapa/conhecimento/perguntas.md#q055) (complementar, 0.27), [Q054](../../mapa/conhecimento/perguntas.md#q054) (complementar, 0.26)
 - **mencionado em 6 arquivos:** [laboratorio/gerar_bateria.py](../../laboratorio/gerar_bateria.py) (2×), [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/BATERIA-COMPLEMENTAR.md](../../docs/BATERIA-COMPLEMENTAR.md) (1×), [docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md) (1×), [laboratorio/r25_terceiro_dominio.py](../../laboratorio/r25_terceiro_dominio.py) (1×)
 
@@ -907,7 +907,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:483](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L483); responde [laboratorio/q100/respostas.py:1065](../../laboratorio/q100/respostas.py#L1065)
 - **apoia-se em:** [R18](../../mapa/conhecimento/rodadas.md#r18)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (complementar, 0.45), [Q063](../../mapa/conhecimento/perguntas.md#q063) (complementar, 0.42), [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.39), [H100](../../mapa/conhecimento/hipoteses.md#h100) (complementar, 0.35), [Q065](../../mapa/conhecimento/perguntas.md#q065) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (complementar, 0.45), [Q063](../../mapa/conhecimento/perguntas.md#q063) (complementar, 0.42), [R39](../../mapa/conhecimento/rodadas.md#r39) (complementar, 0.40), [H100](../../mapa/conhecimento/hipoteses.md#h100) (complementar, 0.35), [Q065](../../mapa/conhecimento/perguntas.md#q065) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q063"></a>
@@ -922,7 +922,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:489](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L489); responde [laboratorio/q100/respostas.py:1074](../../laboratorio/q100/respostas.py#L1074)
 - **apoia-se em:** [R21](../../mapa/conhecimento/rodadas.md#r21)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.49), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.45), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.42), [Q069](../../mapa/conhecimento/perguntas.md#q069) (complementar, 0.36), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.35), [R34](../../mapa/conhecimento/rodadas.md#r34) (complementar, 0.29), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [Q053](../../mapa/conhecimento/perguntas.md#q053) (mesmo assunto, 0.49), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.45), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.42), [Q069](../../mapa/conhecimento/perguntas.md#q069) (complementar, 0.36), [laboratorio/r21_generalizacao.py](../../laboratorio/r21_generalizacao.py) (complementar, 0.34), [R34](../../mapa/conhecimento/rodadas.md#r34) (complementar, 0.29), [laboratorio/r17_economia_de_contexto.py](../../laboratorio/r17_economia_de_contexto.py) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q064"></a>
@@ -952,7 +952,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:501](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L501); responde [laboratorio/q100/respostas.py:1092](../../laboratorio/q100/respostas.py#L1092)
 - **apoia-se em:** [R15b](../../mapa/conhecimento/rodadas.md#r15b)
 - **tema:** [T18 · anotador, independente, justificativa](../../mapa/conhecimento/temas.md#t18)
-- **semelhantes (julgados pelo Jev):** [Q064](../../mapa/conhecimento/perguntas.md#q064) (complementar, 0.31), [Q004](../../mapa/conhecimento/perguntas.md#q004) (complementar, 0.30), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.24), [H020](../../mapa/conhecimento/hipoteses.md#h020) (complementar, 0.24), [R22](../../mapa/conhecimento/rodadas.md#r22) (complementar, 0.22)
+- **semelhantes (julgados pelo Jev):** [Q064](../../mapa/conhecimento/perguntas.md#q064) (complementar, 0.31), [Q004](../../mapa/conhecimento/perguntas.md#q004) (complementar, 0.30), [Q062](../../mapa/conhecimento/perguntas.md#q062) (complementar, 0.24), [H020](../../mapa/conhecimento/hipoteses.md#h020) (complementar, 0.24), [R22](../../mapa/conhecimento/rodadas.md#r22) (complementar, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q066"></a>
@@ -960,12 +960,12 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q066 — Contra revisão humana, qual a diferença de custo?
 
 - **família:** G · As alternativas
-- **resposta:** US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.339×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
+- **resposta:** US$ 0,4000 contra US$ 0,000038 por decisão — o humano custa **10.660×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
 - **origem da resposta:** conta declarada
 - **confiança:** baixa
 - **decide:** Decide quanto a automação parcial economiza.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:507](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L507); responde [laboratorio/q100/respostas.py:1105](../../laboratorio/q100/respostas.py#L1105)
-- **semelhantes (julgados pelo Jev):** [Q067](../../mapa/conhecimento/perguntas.md#q067) (complementar, 0.31), [Q005](../../mapa/conhecimento/perguntas.md#q005) (mesmo assunto, 0.20), [Q070](../../mapa/conhecimento/perguntas.md#q070) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q067](../../mapa/conhecimento/perguntas.md#q067) (não julgado, 0.31), [Q005](../../mapa/conhecimento/perguntas.md#q005) (não julgado, 0.20), [Q070](../../mapa/conhecimento/perguntas.md#q070) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q067"></a>
@@ -979,7 +979,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se a automação perde qualidade.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:513](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L513); responde [laboratorio/q100/respostas.py:1118](../../laboratorio/q100/respostas.py#L1118)
 - **apoia-se em:** [E8](../../mapa/conhecimento/experimentos.md#e8)
-- **semelhantes (julgados pelo Jev):** [Q066](../../mapa/conhecimento/perguntas.md#q066) (complementar, 0.31), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (mesmo assunto, 0.21)
+- **semelhantes (julgados pelo Jev):** [Q066](../../mapa/conhecimento/perguntas.md#q066) (não julgado, 0.31), [executor/run_e8_anotador.py](../../executor/run_e8_anotador.py) (mesmo assunto, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q068"></a>
@@ -993,7 +993,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o custo da inação.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:519](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L519); responde [laboratorio/q100/respostas.py:1128](../../laboratorio/q100/respostas.py#L1128)
 - **tema:** [T15 · integração, método, atual](../../mapa/conhecimento/temas.md#t15)
-- **semelhantes (julgados pelo Jev):** [Q005](../../mapa/conhecimento/perguntas.md#q005) (complementar, 0.36), [Q061](../../mapa/conhecimento/perguntas.md#q061) (complementar, 0.35), [Q001](../../mapa/conhecimento/perguntas.md#q001) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [Q005](../../mapa/conhecimento/perguntas.md#q005) (não julgado, 0.36), [Q061](../../mapa/conhecimento/perguntas.md#q061) (complementar, 0.35), [Q001](../../mapa/conhecimento/perguntas.md#q001) (complementar, 0.25)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q069"></a>
@@ -1021,7 +1021,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide onde não usar o Jev.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:531](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L531); responde [laboratorio/q100/respostas.py:1150](../../laboratorio/q100/respostas.py#L1150)
 - **tema:** [T11 · prosa, bm25, código](../../mapa/conhecimento/temas.md#t11)
-- **semelhantes (julgados pelo Jev):** [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.51), [Q069](../../mapa/conhecimento/perguntas.md#q069) (mesmo assunto, 0.26), [Q064](../../mapa/conhecimento/perguntas.md#q064) (complementar, 0.24), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.23), [Q066](../../mapa/conhecimento/perguntas.md#q066) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q003](../../mapa/conhecimento/perguntas.md#q003) (mesmo assunto, 0.51), [Q069](../../mapa/conhecimento/perguntas.md#q069) (mesmo assunto, 0.26), [Q064](../../mapa/conhecimento/perguntas.md#q064) (complementar, 0.24), [H100](../../mapa/conhecimento/hipoteses.md#h100) (mesmo assunto, 0.23), [Q066](../../mapa/conhecimento/perguntas.md#q066) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q071"></a>
@@ -1029,13 +1029,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q071 — Qual latência esperar, mediana e cauda?
 
 - **família:** H · Operação e manutenção
-- **resposta:** Mediana **602 ms**, p90 1816 ms, p99 5640 ms, máximo 32256 ms, sobre 22.668 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
+- **resposta:** Mediana **715 ms**, p90 2327 ms, p99 6259 ms, máximo 32256 ms, sobre 31.625 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide o orçamento de tempo do fluxo.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:541](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L541); responde [laboratorio/q100/respostas.py:1160](../../laboratorio/q100/respostas.py#L1160)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H038](../../mapa/conhecimento/hipoteses.md#h038) (mesmo assunto, 0.50), [Q073](../../mapa/conhecimento/perguntas.md#q073) (complementar, 0.39), [H039](../../mapa/conhecimento/hipoteses.md#h039) (mesmo assunto, 0.38), [Q072](../../mapa/conhecimento/perguntas.md#q072) (mesmo assunto, 0.29), [Q078](../../mapa/conhecimento/perguntas.md#q078) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H038](../../mapa/conhecimento/hipoteses.md#h038) (não julgado, 0.50), [Q073](../../mapa/conhecimento/perguntas.md#q073) (não julgado, 0.39), [H039](../../mapa/conhecimento/hipoteses.md#h039) (não julgado, 0.38), [Q072](../../mapa/conhecimento/perguntas.md#q072) (não julgado, 0.29), [Q078](../../mapa/conhecimento/perguntas.md#q078) (não julgado, 0.25)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q072"></a>
@@ -1043,13 +1043,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q072 — A latência cabe num gancho interativo de editor?
 
 - **família:** H · Operação e manutenção
-- **resposta:** Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5640 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma re…
+- **resposta:** Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 6259 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma re…
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide se dá para usar no caminho quente.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:547](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L547); responde [laboratorio/q100/respostas.py:1175](../../laboratorio/q100/respostas.py#L1175)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H038](../../mapa/conhecimento/hipoteses.md#h038) (mesmo assunto, 0.37), [H037](../../mapa/conhecimento/hipoteses.md#h037) (mesmo assunto, 0.29), [Q071](../../mapa/conhecimento/perguntas.md#q071) (mesmo assunto, 0.29), [Q037](../../mapa/conhecimento/perguntas.md#q037) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H038](../../mapa/conhecimento/hipoteses.md#h038) (não julgado, 0.37), [H037](../../mapa/conhecimento/hipoteses.md#h037) (não julgado, 0.29), [Q071](../../mapa/conhecimento/perguntas.md#q071) (não julgado, 0.29), [Q037](../../mapa/conhecimento/perguntas.md#q037) (não julgado, 0.24)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [docs/CEM-HIPOTESES.md](../../docs/CEM-HIPOTESES.md) (1×), [laboratorio/h100/relatorio.py](../../laboratorio/h100/relatorio.py) (1×)
 
 <a id="q073"></a>
@@ -1057,13 +1057,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q073 — Qual a taxa de falha de transporte a esperar?
 
 - **família:** H · Operação e manutenção
-- **resposta:** **1,1%** das 24.533 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+- **resposta:** **0,8%** das 33.500 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 40 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide o desenho da repescagem.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:553](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L553); responde [laboratorio/q100/respostas.py:1197](../../laboratorio/q100/respostas.py#L1197)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [Q071](../../mapa/conhecimento/perguntas.md#q071) (complementar, 0.39), [H047](../../mapa/conhecimento/hipoteses.md#h047) (mesmo assunto, 0.35), [H041](../../mapa/conhecimento/hipoteses.md#h041) (complementar, 0.20), [Q037](../../mapa/conhecimento/perguntas.md#q037) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q071](../../mapa/conhecimento/perguntas.md#q071) (não julgado, 0.39), [H047](../../mapa/conhecimento/hipoteses.md#h047) (não julgado, 0.35), [H041](../../mapa/conhecimento/hipoteses.md#h041) (não julgado, 0.20), [Q037](../../mapa/conhecimento/perguntas.md#q037) (não julgado, 0.20)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/q100/relatorio.py](../../laboratorio/q100/relatorio.py) (1×)
 
 <a id="q074"></a>
@@ -1077,7 +1077,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide a frequência de reverificação.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:559](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L559); responde [laboratorio/q100/respostas.py:1211](../../laboratorio/q100/respostas.py#L1211)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.29), [H093](../../mapa/conhecimento/hipoteses.md#h093) (complementar, 0.26), [Q077](../../mapa/conhecimento/perguntas.md#q077) (complementar, 0.23), [Q084](../../mapa/conhecimento/perguntas.md#q084) (mesmo assunto, 0.22), [Q083](../../mapa/conhecimento/perguntas.md#q083) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.29), [H093](../../mapa/conhecimento/hipoteses.md#h093) (complementar, 0.27), [Q077](../../mapa/conhecimento/perguntas.md#q077) (complementar, 0.23), [Q084](../../mapa/conhecimento/perguntas.md#q084) (mesmo assunto, 0.22), [Q083](../../mapa/conhecimento/perguntas.md#q083) (complementar, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q075"></a>
@@ -1091,7 +1091,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se o monitoramento entra no orçamento.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:565](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L565); responde [laboratorio/q100/respostas.py:1221](../../laboratorio/q100/respostas.py#L1221)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [Q020](../../mapa/conhecimento/perguntas.md#q020) (mesmo assunto, 0.58), [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.32)
+- **semelhantes (julgados pelo Jev):** [Q020](../../mapa/conhecimento/perguntas.md#q020) (mesmo assunto, 0.59), [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.32)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q076"></a>
@@ -1119,7 +1119,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o procedimento operacional.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:577](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L577); responde [laboratorio/q100/respostas.py:1241](../../laboratorio/q100/respostas.py#L1241)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.28), [Q074](../../mapa/conhecimento/perguntas.md#q074) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q076](../../mapa/conhecimento/perguntas.md#q076) (complementar, 0.28), [Q074](../../mapa/conhecimento/perguntas.md#q074) (complementar, 0.23), [R36](../../mapa/conhecimento/rodadas.md#r36) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q078"></a>
@@ -1134,7 +1134,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:583](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L583); responde [laboratorio/q100/respostas.py:1251](../../laboratorio/q100/respostas.py#L1251)
 - **apoia-se em:** [E12](../../mapa/conhecimento/experimentos.md#e12)
 - **tema:** [T02 · latência, chamadas, abaixo](../../mapa/conhecimento/temas.md#t02)
-- **semelhantes (julgados pelo Jev):** [H046](../../mapa/conhecimento/hipoteses.md#h046) (mesmo assunto, 0.59), [Q071](../../mapa/conhecimento/perguntas.md#q071) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [H046](../../mapa/conhecimento/hipoteses.md#h046) (mesmo assunto, 0.59), [Q071](../../mapa/conhecimento/perguntas.md#q071) (não julgado, 0.25)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q079"></a>
@@ -1147,7 +1147,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide o que um terceiro consegue refazer.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:589](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L589); responde [laboratorio/q100/respostas.py:1260](../../laboratorio/q100/respostas.py#L1260)
-- **semelhantes (julgados pelo Jev):** [Q085](../../mapa/conhecimento/perguntas.md#q085) (mesmo assunto, 0.57), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.25), [laboratorio/auditoria.py](../../laboratorio/auditoria.py) (complementar, 0.25), [docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md) (complementar, 0.24)
+- **semelhantes (julgados pelo Jev):** [Q085](../../mapa/conhecimento/perguntas.md#q085) (mesmo assunto, 0.56), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.25), [laboratorio/auditoria.py](../../laboratorio/auditoria.py) (complementar, 0.24), [docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q080"></a>
@@ -1175,7 +1175,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide quanta confiança a documentação merece.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:605](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L605); responde [laboratorio/q100/respostas.py:1281](../../laboratorio/q100/respostas.py#L1281)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md) (mesmo assunto, 0.30), [Q090](../../mapa/conhecimento/perguntas.md#q090) (complementar, 0.30), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q090](../../mapa/conhecimento/perguntas.md#q090) (não julgado, 0.30), [docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md) (mesmo assunto, 0.30), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q082"></a>
@@ -1183,12 +1183,12 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q082 — Quantas afirmações são demonstradas, e quantas são só direção?
 
 - **família:** I · Governança e prova
-- **resposta:** Das cem hipóteses: **81 sustentadas**, 18 falsificadas, 1 inconclusiva. No dossiê de evidências, quatro afirmações são `demonstrado`, duas são `direção consistente`, uma é `medição única`, duas são `falsificado`, uma foi `corrigida` e uma `derivou`. Só as quatro primeiras podem ser ditas sem ressalva.
+- **resposta:** Das cem hipóteses: **80 sustentadas**, 19 falsificadas, 1 inconclusiva. No dossiê de evidências, quatro afirmações são `demonstrado`, duas são `direção consistente`, uma é `medição única`, duas são `falsificado`, uma foi `corrigida` e uma `derivou`. Só as quatro primeiras podem ser ditas sem ressalva.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide o que pode ser dito sem ressalva.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:611](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L611); responde [laboratorio/q100/respostas.py:1292](../../laboratorio/q100/respostas.py#L1292)
-- **semelhantes (julgados pelo Jev):** [laboratorio/gerar_dossie.py](../../laboratorio/gerar_dossie.py) (complementar, 0.26), [Q087](../../mapa/conhecimento/perguntas.md#q087) (complementar, 0.23), [Q088](../../mapa/conhecimento/perguntas.md#q088) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [laboratorio/gerar_dossie.py](../../laboratorio/gerar_dossie.py) (não julgado, 0.26), [Q087](../../mapa/conhecimento/perguntas.md#q087) (não julgado, 0.23), [Q088](../../mapa/conhecimento/perguntas.md#q088) (não julgado, 0.21), [Q097](../../mapa/conhecimento/perguntas.md#q097) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q083"></a>
@@ -1231,7 +1231,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide se o trabalho é publicável.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:629](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L629); responde [laboratorio/q100/respostas.py:1322](../../laboratorio/q100/respostas.py#L1322)
-- **semelhantes (julgados pelo Jev):** [Q079](../../mapa/conhecimento/perguntas.md#q079) (mesmo assunto, 0.57), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q079](../../mapa/conhecimento/perguntas.md#q079) (mesmo assunto, 0.56), [Q100](../../mapa/conhecimento/perguntas.md#q100) (complementar, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q086"></a>
@@ -1244,7 +1244,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide quanto peso dar aos resultados de acurácia.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:635](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L635); responde [laboratorio/q100/respostas.py:1332](../../laboratorio/q100/respostas.py#L1332)
-- **semelhantes (julgados pelo Jev):** [Q009](../../mapa/conhecimento/perguntas.md#q009) (complementar, 0.28), [Q004](../../mapa/conhecimento/perguntas.md#q004) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [Q009](../../mapa/conhecimento/perguntas.md#q009) (complementar, 0.26), [Q004](../../mapa/conhecimento/perguntas.md#q004) (complementar, 0.24)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q087"></a>
@@ -1252,12 +1252,12 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q087 — A taxa de falsificação das cem hipóteses é compatível com acaso?
 
 - **família:** I · Governança e prova
-- **resposta:** Não. Foram 18 falsificações, contra 5 esperadas por acaso se todas as hipóteses fossem verdadeiras e o teste tivesse 5% de erro — **3,8× o acaso**. Ainda assim, nenhuma falsificação isolada decide sozinha, e por isso as que mudam recomendação foram refeitas com coleta nova antes de entrar no guia.
+- **resposta:** Não. Foram 19 falsificações, contra 5 esperadas por acaso se todas as hipóteses fossem verdadeiras e o teste tivesse 5% de erro — **4,0× o acaso**. Ainda assim, nenhuma falsificação isolada decide sozinha, e por isso as que mudam recomendação foram refeitas com coleta nova antes de entrar no guia.
 - **origem da resposta:** conta declarada
 - **confiança:** média
 - **decide:** Decide se as falsificações merecem crédito individual.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:641](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L641); responde [laboratorio/q100/respostas.py:1343](../../laboratorio/q100/respostas.py#L1343)
-- **semelhantes (julgados pelo Jev):** [Q082](../../mapa/conhecimento/perguntas.md#q082) (complementar, 0.23), [laboratorio/h100/registro.py](../../laboratorio/h100/registro.py) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q082](../../mapa/conhecimento/perguntas.md#q082) (não julgado, 0.23), [laboratorio/h100/registro.py](../../laboratorio/h100/registro.py) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q088"></a>
@@ -1271,7 +1271,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o que pode virar material externo.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:647](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L647); responde [laboratorio/q100/respostas.py:1357](../../laboratorio/q100/respostas.py#L1357)
 - **tema:** [T10 · trechos, perdidos, pareado](../../mapa/conhecimento/temas.md#t10)
-- **semelhantes (julgados pelo Jev):** [docs/DOSSIE-DE-EVIDENCIAS.md](../../docs/DOSSIE-DE-EVIDENCIAS.md) (complementar, 0.37), [H052](../../mapa/conhecimento/hipoteses.md#h052) (mesmo assunto, 0.23), [Q082](../../mapa/conhecimento/perguntas.md#q082) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [docs/DOSSIE-DE-EVIDENCIAS.md](../../docs/DOSSIE-DE-EVIDENCIAS.md) (complementar, 0.37), [H052](../../mapa/conhecimento/hipoteses.md#h052) (mesmo assunto, 0.23), [Q082](../../mapa/conhecimento/perguntas.md#q082) (não julgado, 0.21)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q089"></a>
@@ -1292,13 +1292,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q090 — O orçamento autorizado foi respeitado?
 
 - **família:** I · Governança e prova
-- **resposta:** Sim. **US$ 1,0185 de US$ 5,00** autorizados, em 31.419 chamadas — 20,4% do teto, com US$ 3,9815 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
+- **resposta:** Sim. **US$ 1,5213 de US$ 5,00** autorizados, em 40.542 chamadas — 30,4% do teto, com US$ 3,4787 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide se há autorização para continuar.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:659](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L659); responde [laboratorio/q100/respostas.py:1377](../../laboratorio/q100/respostas.py#L1377)
 - **tema:** [T08 · canário, corrida, vazia](../../mapa/conhecimento/temas.md#t08)
-- **semelhantes (julgados pelo Jev):** [Q020](../../mapa/conhecimento/perguntas.md#q020) (complementar, 0.31), [Q081](../../mapa/conhecimento/perguntas.md#q081) (complementar, 0.30)
+- **semelhantes (julgados pelo Jev):** [Q020](../../mapa/conhecimento/perguntas.md#q020) (não julgado, 0.31), [Q081](../../mapa/conhecimento/perguntas.md#q081) (não julgado, 0.30)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q091"></a>
@@ -1311,7 +1311,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **confiança:** alta
 - **decide:** Decide a próxima rodada.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:669](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L669); responde [laboratorio/q100/respostas.py:1388](../../laboratorio/q100/respostas.py#L1388)
-- **tema:** [T14 · escopo, vale, estudo](../../mapa/conhecimento/temas.md#t14)
+- **tema:** [T14 · escopo, vale, domínio](../../mapa/conhecimento/temas.md#t14)
 - **semelhantes (julgados pelo Jev):** [Q060](../../mapa/conhecimento/perguntas.md#q060) (mesmo assunto, 0.36), [laboratorio/r25_terceiro_dominio.py](../../laboratorio/r25_terceiro_dominio.py) (mesmo assunto, 0.32), [R25](../../mapa/conhecimento/rodadas.md#r25) (mesmo assunto, 0.25), [Q052](../../mapa/conhecimento/perguntas.md#q052) (complementar, 0.22)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
@@ -1320,13 +1320,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q092 — Quanto custaria medir o acerto do roteador em produção?
 
 - **família:** J · Os próximos movimentos
-- **resposta:** Quase nada em dinheiro — 500 decisões custam US$ 0,0162 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
+- **resposta:** Quase nada em dinheiro — 500 decisões custam US$ 0,0188 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
 - **origem da resposta:** conta declarada
 - **confiança:** alta
 - **decide:** Decide se essa lacuna é barata de fechar.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:675](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L675); responde [laboratorio/q100/respostas.py:1397](../../laboratorio/q100/respostas.py#L1397)
 - **tema:** [T23 · acesso, próximos, movimentos](../../mapa/conhecimento/temas.md#t23)
-- **semelhantes (julgados pelo Jev):** [Q093](../../mapa/conhecimento/perguntas.md#q093) (complementar, 0.25), [integracao/avaliacao/auditar_producao.py](../../integracao/avaliacao/auditar_producao.py) (mesmo assunto, 0.23)
+- **semelhantes (julgados pelo Jev):** [Q093](../../mapa/conhecimento/perguntas.md#q093) (não julgado, 0.25), [integracao/avaliacao/auditar_producao.py](../../integracao/avaliacao/auditar_producao.py) (não julgado, 0.23)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q093"></a>
@@ -1340,7 +1340,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide se a lacuna que destrava tudo é de dinheiro ou de acesso.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:681](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L681); responde [laboratorio/q100/respostas.py:1407](../../laboratorio/q100/respostas.py#L1407)
 - **tema:** [T23 · acesso, próximos, movimentos](../../mapa/conhecimento/temas.md#t23)
-- **semelhantes (julgados pelo Jev):** [Q096](../../mapa/conhecimento/perguntas.md#q096) (complementar, 0.35), [Q094](../../mapa/conhecimento/perguntas.md#q094) (mesmo assunto, 0.32), [Q092](../../mapa/conhecimento/perguntas.md#q092) (complementar, 0.25)
+- **semelhantes (julgados pelo Jev):** [Q096](../../mapa/conhecimento/perguntas.md#q096) (não julgado, 0.35), [Q094](../../mapa/conhecimento/perguntas.md#q094) (mesmo assunto, 0.32), [Q092](../../mapa/conhecimento/perguntas.md#q092) (não julgado, 0.25)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q094"></a>
@@ -1368,7 +1368,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o teste adversarial a fazer antes de escalar.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:693](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L693); responde [laboratorio/q100/respostas.py:1428](../../laboratorio/q100/respostas.py#L1428)
 - **apoia-se em:** [R26](../../mapa/conhecimento/rodadas.md#r26)
-- **semelhantes (julgados pelo Jev):** [Q099](../../mapa/conhecimento/perguntas.md#q099) (mesmo assunto, 0.26), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
+- **semelhantes (julgados pelo Jev):** [Q099](../../mapa/conhecimento/perguntas.md#q099) (mesmo assunto, 0.25), [Q024](../../mapa/conhecimento/perguntas.md#q024) (complementar, 0.21)
 - **mencionado em 6 arquivos:** [laboratorio/gerar_bateria.py](../../laboratorio/gerar_bateria.py) (3×), [docs/BATERIA-COMPLEMENTAR.md](../../docs/BATERIA-COMPLEMENTAR.md) (2×), [laboratorio/r26_dois_trechos.py](../../laboratorio/r26_dois_trechos.py) (2×), [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×)
 
 <a id="q096"></a>
@@ -1376,13 +1376,13 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q096 — Quanto resta do orçamento, e o que ele compra?
 
 - **família:** J · Os próximos movimentos
-- **resposta:** Restam **US$ 3,9815**, que compram cerca de 122.823 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.419 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+- **resposta:** Restam **US$ 3,4787**, que compram cerca de 92.703 chamadas — mais de nove vezes tudo que foi gasto até aqui (40.542 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 - **origem da resposta:** conta declarada
 - **confiança:** alta
 - **decide:** Decide o tamanho do próximo programa.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:699](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L699); responde [laboratorio/q100/respostas.py:1452](../../laboratorio/q100/respostas.py#L1452)
 - **tema:** [T23 · acesso, próximos, movimentos](../../mapa/conhecimento/temas.md#t23)
-- **semelhantes (julgados pelo Jev):** [Q093](../../mapa/conhecimento/perguntas.md#q093) (complementar, 0.35)
+- **semelhantes (julgados pelo Jev):** [Q093](../../mapa/conhecimento/perguntas.md#q093) (não julgado, 0.35)
 - **mencionado em 4 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×), [laboratorio/PREREGISTRO.md](../../laboratorio/PREREGISTRO.md) (1×), [laboratorio/q100/relatorio.py](../../laboratorio/q100/relatorio.py) (1×)
 
 <a id="q097"></a>
@@ -1390,11 +1390,12 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 ### Q097 — Que fração das cem hipóteses aponta para trabalho novo?
 
 - **família:** J · Os próximos movimentos
-- **resposta:** 18 falsificadas e 1 inconclusiva — **19% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva declarada, que é a forma honesta de deixar trabalho em aberto.
+- **resposta:** 19 falsificadas e 1 inconclusiva — **20% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva declarada, que é a forma honesta de deixar trabalho em aberto.
 - **origem da resposta:** dado medido
 - **confiança:** alta
 - **decide:** Decide quanto trabalho a varredura gerou.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:705](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L705); responde [laboratorio/q100/respostas.py:1465](../../laboratorio/q100/respostas.py#L1465)
+- **semelhantes (julgados pelo Jev):** [Q082](../../mapa/conhecimento/perguntas.md#q082) (não julgado, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q098"></a>
@@ -1423,7 +1424,7 @@ As cem perguntas de decisão (Q001–Q100): a resposta, de onde ela vem (dado me
 - **decide:** Decide o plano de implantação.
 - **onde está:** documenta [docs/CEM-PERGUNTAS-ESTRATEGICAS.md:717](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L717); responde [laboratorio/q100/respostas.py:1495](../../laboratorio/q100/respostas.py#L1495)
 - **apoia-se em:** [R26](../../mapa/conhecimento/rodadas.md#r26)
-- **semelhantes (julgados pelo Jev):** [Q095](../../mapa/conhecimento/perguntas.md#q095) (mesmo assunto, 0.26), [Q025](../../mapa/conhecimento/perguntas.md#q025) (complementar, 0.20), [Q036](../../mapa/conhecimento/perguntas.md#q036) (complementar, 0.20)
+- **semelhantes (julgados pelo Jev):** [Q095](../../mapa/conhecimento/perguntas.md#q095) (mesmo assunto, 0.25), [Q025](../../mapa/conhecimento/perguntas.md#q025) (complementar, 0.20), [Q036](../../mapa/conhecimento/perguntas.md#q036) (complementar, 0.20)
 - **mencionado em 2 arquivos:** [laboratorio/r35-auditoria-de-sentido-bruto.json](../../laboratorio/r35-auditoria-de-sentido-bruto.json) (2×), [laboratorio/r35-auditoria-de-sentido.json](../../laboratorio/r35-auditoria-de-sentido.json) (2×)
 
 <a id="q100"></a>

@@ -38,8 +38,12 @@ ARQUIVOS_DO_COMMIT = [
     'runs/extrato-ledger.json', 'runs/caixa-conciliado.json', 'laboratorio/auditoria-placar.json',
 ]
 
-PASSOS_COMPLETOS = [
+PASSOS_RAPIDOS = [
     ('medir', [sys.executable, 'integracao/camadas/medir.py', '--gravar']),
+    # O jev-gateway gasta por fora do transporte único: o que ele chamou entra no caixa aqui.
+    ('gateway', [sys.executable, 'integracao/gateway/conciliar.py']),
+]
+PASSOS_COMPLETOS = PASSOS_RAPIDOS + [
     ('conciliar', [sys.executable, 'laboratorio/conciliar_caixa.py', '--gravar']),
     # As páginas das cem hipóteses e das cem perguntas citam o placar da auditoria, e a
     # auditoria confere as páginas: por isso ela roda antes (grava o placar) e depois (confere).
@@ -84,7 +88,7 @@ def _commit(passos):
 
 
 def executar(so_medir=False):
-    passos = PASSOS_COMPLETOS[:1] if so_medir else PASSOS_COMPLETOS
+    passos = PASSOS_RAPIDOS if so_medir else PASSOS_COMPLETOS
     feitos = []
     resultado = {'em': time.strftime('%Y-%m-%dT%H:%M:%S'), 'modo': 'so-medir' if so_medir else 'completa',
                  'ok': True, 'passos': feitos, 'commit': False}

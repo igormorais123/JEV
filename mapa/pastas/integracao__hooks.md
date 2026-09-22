@@ -11,6 +11,7 @@ Os scripts de hook instalados no Claude Code/Codex; cada um é um invólucro fin
 | [jev_busca.py](../../integracao/hooks/jev_busca.py) | código | 56 l. | Hook PostToolUse (Grep, Glob, WebSearch, buscas do Gmail, Drive e Agenda): numa listagem com muitos itens, o Jev diz por onde começar. |
 | [jev_guarda_comando.py](../../integracao/hooks/jev_guarda_comando.py) | código | 158 l. | Hook PreToolUse: o Jev reduz as confirmações que o guarda por palavra pede à toa. |
 | [jev_leitura.py](../../integracao/hooks/jev_leitura.py) | código | 69 l. | Hook PreToolUse (Read): antes de ler um arquivo grande, o Jev encolhe o intervalo. |
+| [jev_leitura_shell.py](../../integracao/hooks/jev_leitura_shell.py) | código | 75 l. | Hook PreToolUse (Bash): o filtro de leitura do Jev para `cat ARQUIVO` dentro de um comando. |
 | [jev_prompt_router.py](../../integracao/hooks/jev_prompt_router.py) | código | 133 l. | Hook UserPromptSubmit: o Jev diz o tema do pedido e sugere a skill certa. |
 | [jev_saida.py](../../integracao/hooks/jev_saida.py) | código | 54 l. | Hook PostToolUse (Bash, PowerShell): em saída longa com erro, o Jev aponta a parte da causa. |
 | [jev_sentinela.py](../../integracao/hooks/jev_sentinela.py) | código | 54 l. | Hook PostToolUse (conteúdo externo): o sentinela lê o que a ferramenta devolveu. |
@@ -27,9 +28,11 @@ flowchart LR
   n_integracao_camadas_nucleo_py["integracao/camadas/nucleo.py"]
   n_integracao_camadas_saida_py["integracao/camadas/saida.py"]
   n_integracao_camadas_sentinela_py["integracao/camadas/sentinela.py"]
+  n_integracao_camadas_shell_py["integracao/camadas/shell.py"]
   n_integracao_hooks_jev_busca_py["<b>jev_busca.py</b>"]
   n_integracao_hooks_jev_guarda_comando_py["<b>jev_guarda_comando.py</b>"]
   n_integracao_hooks_jev_leitura_py["<b>jev_leitura.py</b>"]
+  n_integracao_hooks_jev_leitura_shell_py["<b>jev_leitura_shell.py</b>"]
   n_integracao_hooks_jev_prompt_router_py["<b>jev_prompt_router.py</b>"]
   n_integracao_hooks_jev_saida_py["<b>jev_saida.py</b>"]
   n_integracao_hooks_jev_sentinela_py["<b>jev_sentinela.py</b>"]
@@ -47,6 +50,9 @@ flowchart LR
   n_integracao_hooks_jev_leitura_py --> n_integracao_camadas___init___py
   n_integracao_hooks_jev_leitura_py --> n_integracao_camadas_leitura_py
   n_integracao_hooks_jev_leitura_py --> n_integracao_camadas_nucleo_py
+  n_integracao_hooks_jev_leitura_shell_py --> n_integracao_camadas___init___py
+  n_integracao_hooks_jev_leitura_shell_py --> n_integracao_camadas_nucleo_py
+  n_integracao_hooks_jev_leitura_shell_py --> n_integracao_camadas_shell_py
   n_integracao_hooks_jev_prompt_router_py --> n_integracao_camadas___init___py
   n_integracao_hooks_jev_prompt_router_py --> n_integracao_camadas_nucleo_py
   n_integracao_hooks_jev_prompt_router_py --> n_integracao_camadas_sentinela_py
@@ -78,7 +84,7 @@ flowchart LR
 - **usa** — import: [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py)
 - **é usado por** — import: [`integracao/tests/test_guarda_comando.py`](../../integracao/tests/test_guarda_comando.py); citação: [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`integracao/README.md`](../../integracao/README.md), [`integracao/instalar.py`](../../integracao/instalar.py), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json), [`laboratorio/r38-dois-trechos-em-lista-bruto.json`](../../laboratorio/r38-dois-trechos-em-lista-bruto.json), [`laboratorio/r38-dois-trechos-em-lista.json`](../../laboratorio/r38-dois-trechos-em-lista.json), [`laboratorio/r39-codigo-numa-chamada-bruto.json`](../../laboratorio/r39-codigo-numa-chamada-bruto.json), [`laboratorio/r39-codigo-numa-chamada.json`](../../laboratorio/r39-codigo-numa-chamada.json), [`laboratorio/r43-tamanho-da-lista-bruto.json`](../../laboratorio/r43-tamanho-da-lista-bruto.json), [`laboratorio/r43-tamanho-da-lista.json`](../../laboratorio/r43-tamanho-da-lista.json), [`laboratorio/r44-candidato-envenenado-bruto.json`](../../laboratorio/r44-candidato-envenenado-bruto.json), [`laboratorio/r44-candidato-envenenado.json`](../../laboratorio/r44-candidato-envenenado.json), [`laboratorio/r45-lista-nas-duas-ordens-bruto.json`](../../laboratorio/r45-lista-nas-duas-ordens-bruto.json), [`laboratorio/r45-lista-nas-duas-ordens.json`](../../laboratorio/r45-lista-nas-duas-ordens.json)
 - **chama de outros arquivos** — [`cliente.perguntar`](../../integracao/jev_router/cliente.py#L57)
-- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py) (complementar, 0.30), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py) (complementar, 0.27), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py) (complementar, 0.21)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py) (complementar, 0.29), [`integracao/hooks/jev_prompt_router.py`](../../integracao/hooks/jev_prompt_router.py) (complementar, 0.27), [`integracao/hooks/jev_leitura_shell.py`](../../integracao/hooks/jev_leitura_shell.py) (não julgado, 0.24), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py) (complementar, 0.21)
 - **menciona 1 conceito** — [R16](../../mapa/conhecimento/rodadas.md#r16) (3×)
 - **conteúdo** — [modo_vigente](../../integracao/hooks/jev_guarda_comando.py#L73) (l. 73), [registrar](../../integracao/hooks/jev_guarda_comando.py#L83) (l. 83), [avaliar](../../integracao/hooks/jev_guarda_comando.py#L93) (l. 93; usado em 1), [main](../../integracao/hooks/jev_guarda_comando.py#L112) (l. 112; usado em 1), [_marca](../../integracao/hooks/jev_guarda_comando.py#L152) (l. 152)
 
@@ -87,23 +93,31 @@ flowchart LR
 - **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/leitura.py`](../../integracao/camadas/leitura.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py)
 - **é usado por** — citação: [`integracao/instalar.py`](../../integracao/instalar.py), [`integracao/tests/test_camadas.py`](../../integracao/tests/test_camadas.py)
 - **chama de outros arquivos** — [`leitura.analisar`](../../integracao/camadas/leitura.py#L54), [`leitura.nota_para_o_agente`](../../integracao/camadas/leitura.py#L141), [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.pedido_vigente`](../../integracao/camadas/nucleo.py#L125), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79)
-- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (complementar, 0.30)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_leitura_shell.py`](../../integracao/hooks/jev_leitura_shell.py) (não julgado, 0.33), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (complementar, 0.29), [`integracao/camadas/shell.py`](../../integracao/camadas/shell.py) (não julgado, 0.22)
 - **conteúdo** — [main](../../integracao/hooks/jev_leitura.py#L23) (l. 23)
+
+### jev_leitura_shell.py
+
+- **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/camadas/shell.py`](../../integracao/camadas/shell.py)
+- **é usado por** — citação: [`integracao/instalar.py`](../../integracao/instalar.py)
+- **chama de outros arquivos** — [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.pedido_vigente`](../../integracao/camadas/nucleo.py#L125), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`shell.analisar`](../../integracao/camadas/shell.py#L142), [`shell.dividir`](../../integracao/camadas/shell.py#L38), [`shell.nota_para_o_agente`](../../integracao/camadas/shell.py#L207)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_leitura.py`](../../integracao/hooks/jev_leitura.py) (não julgado, 0.33), [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md) (não julgado, 0.30), [`integracao/jev_router/cli.py`](../../integracao/jev_router/cli.py) (não julgado, 0.26), [`integracao/hooks/jev_saida.py`](../../integracao/hooks/jev_saida.py) (não julgado, 0.24), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (não julgado, 0.24)
+- **conteúdo** — [main](../../integracao/hooks/jev_leitura_shell.py#L26) (l. 26)
 
 ### jev_prompt_router.py
 
 - **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/camadas/sentinela.py`](../../integracao/camadas/sentinela.py), [`integracao/jev_router/__init__.py`](../../integracao/jev_router/__init__.py), [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py), [`integracao/jev_router/roteador.py`](../../integracao/jev_router/roteador.py)
 - **é usado por** — citação: [`integracao/README.md`](../../integracao/README.md), [`integracao/instalar.py`](../../integracao/instalar.py), [`integracao/tests/test_roteador.py`](../../integracao/tests/test_roteador.py), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json), [`laboratorio/r38-dois-trechos-em-lista-bruto.json`](../../laboratorio/r38-dois-trechos-em-lista-bruto.json), [`laboratorio/r38-dois-trechos-em-lista.json`](../../laboratorio/r38-dois-trechos-em-lista.json), [`laboratorio/r39-codigo-numa-chamada-bruto.json`](../../laboratorio/r39-codigo-numa-chamada-bruto.json), [`laboratorio/r39-codigo-numa-chamada.json`](../../laboratorio/r39-codigo-numa-chamada.json), [`laboratorio/r44-candidato-envenenado-bruto.json`](../../laboratorio/r44-candidato-envenenado-bruto.json), [`laboratorio/r44-candidato-envenenado.json`](../../laboratorio/r44-candidato-envenenado.json)
 - **chama de outros arquivos** — [`nucleo.guardar_pedido`](../../integracao/camadas/nucleo.py#L108), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`sentinela.analisar`](../../integracao/camadas/sentinela.py#L41), [`sentinela.nota_para_o_agente`](../../integracao/camadas/sentinela.py#L69), [`politica.texto_para_o_agente`](../../integracao/jev_router/politica.py#L109), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43), [`roteador.classificar`](../../integracao/jev_router/roteador.py#L81)
-- **parecidos (julgados pelo Jev)** — [`hermes/jev_hermes/camadas.py`](../../hermes/jev_hermes/camadas.py) (complementar, 0.27), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (complementar, 0.27)
+- **parecidos (julgados pelo Jev)** — [`hermes/jev_hermes/camadas.py`](../../hermes/jev_hermes/camadas.py) (complementar, 0.28), [`integracao/hooks/jev_guarda_comando.py`](../../integracao/hooks/jev_guarda_comando.py) (complementar, 0.27)
 - **conteúdo** — [modo_vigente](../../integracao/hooks/jev_prompt_router.py#L31) (l. 31), [guardar_estado](../../integracao/hooks/jev_prompt_router.py#L47) (l. 47), [sentinela_do_colado](../../integracao/hooks/jev_prompt_router.py#L58) (l. 58), [main](../../integracao/hooks/jev_prompt_router.py#L76) (l. 76)
 
 ### jev_saida.py
 
 - **usa** — import: [`integracao/camadas/__init__.py`](../../integracao/camadas/__init__.py), [`integracao/camadas/nucleo.py`](../../integracao/camadas/nucleo.py), [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py)
 - **é usado por** — citação: [`integracao/instalar.py`](../../integracao/instalar.py)
-- **chama de outros arquivos** — [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`saida.analisar`](../../integracao/camadas/saida.py#L46), [`saida.nota_para_o_agente`](../../integracao/camadas/saida.py#L79)
-- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py) (complementar, 0.28)
+- **chama de outros arquivos** — [`nucleo.modo_vigente`](../../integracao/camadas/nucleo.py#L68), [`nucleo.registrar`](../../integracao/camadas/nucleo.py#L79), [`saida.analisar`](../../integracao/camadas/saida.py#L53), [`saida.nota_para_o_agente`](../../integracao/camadas/saida.py#L86)
+- **parecidos (julgados pelo Jev)** — [`integracao/hooks/jev_sentinela.py`](../../integracao/hooks/jev_sentinela.py) (complementar, 0.28), [`integracao/hooks/jev_leitura_shell.py`](../../integracao/hooks/jev_leitura_shell.py) (não julgado, 0.24)
 - **conteúdo** — [main](../../integracao/hooks/jev_saida.py#L18) (l. 18)
 
 ### jev_sentinela.py

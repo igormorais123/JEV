@@ -4,7 +4,7 @@ description: >
   Tudo o que se sabe e se mediu sobre o Jev (TypeSafe, jev-1.13) num lugar só: o que ele é, a
   receita de pergunta que funciona em qualquer domínio, a fórmula da confiança, como ordenar
   candidatos numa chamada, as três defesas contra texto de fora, os limites, e as ferramentas
-  prontas — 8 camadas nossas, 16 sistemas abertos do ecossistema e o jev-cli. Ative sempre que
+  prontas — 8 camadas nossas, 17 sistemas abertos do ecossistema, o jev-cli e o jev-gateway. Ative sempre que
   houver decisão fechada sobre texto (classificar, triar, filtrar, ordenar, verificar, sim/não,
   checklist de documento, guarda de comando, porteiro de cron) ou ao desenhar qualquer
   integração com o Jev. Use com: /jev, jev, typesafe, triagem, classificar, rerank, sentinela.
@@ -120,6 +120,7 @@ opção `nenhum`. Medido: 8 trechos de código → alvo em primeiro 98,2% (150/1
 | MCP | `integracao/jev_mcp.py`: `jev_assist` (log, evidência), `jev_rank_context`, `jev_classify_sources`, `jev_read_context` |
 | Hermes (VPS) | ferramenta `jev_advisor` (`app: lote`), porteiros de cron em `hermes/portoes/`, skill `jev`; ponte OpenAI-compatível no OmniRoute (combo `jev`) |
 | roteador de prompt por tema | `integracao/jev_router/` (redação de credenciais antes do envio) |
+| Jev escolhendo a ferramenta de cada turno do agente | `jev-claude` / `jev-codex` no lugar de `claude` / `codex` (jev-gateway, proxy local; `hint` no Claude Code, `forced` no Codex); `--routing off` para linha de base, `--dashboard`; gasto entra no caixa por `integracao/gateway/conciliar.py`; ver `docs/JEV-GATEWAY.md` (+2 s e ~US$ 0,0008 por turno com 133 ferramentas; ganha em depuração, não em toda tarefa) |
 | grafo do estudo | `python mapa/consultar.py H019` · `--caminho A B` · `--vizinhos X` |
 | canários semanais (deriva do modelo em < 24 h já vista) | `laboratorio/canarios_de_comportamento.py` |
 | medir corte no seu dado | rodada nova em `laboratorio/` com previsão no cabeçalho, commit antes de rodar |
@@ -129,6 +130,7 @@ opção `nenhum`. Medido: 8 trechos de código → alvo em primeiro 98,2% (150/1
 | sistema | o que aproveitar |
 |---|---|
 | `jev-cli` (`npm i -g jevctl`) | CLI pronta: `verify`, `screen` (hijack + vale ler?), `classify`, `extract` (span), `find`, `rerank`, `match` (dedupe), `route` (handler + argumentos), `ask`, `compact` (que chamadas velhas do transcript importam), `batch`; plugin Claude `jev@jev-cli` |
+| `jev-gateway` (`npm i -g jev-gateway`, instalado aqui) | proxy entre Codex/Claude Code/OpenCode/Gemini e o LLM: uma chamada ao Jev por turno decide a ferramenta (`choice` + `noul` de contraprova + argumentos fechados); listas > 120 ferramentas em duas passagens; `POST /router/decide` testa sem LLM; `jev-gateway-bench` mede custo por tarefa resolvida com verificador oculto |
 | `jevcal` (Python) | mede o corte no **seu** dado, escolhe limiar por meta de acurácia, calcula quanto ainda vai ao LLM e quebra o CI se o modelo mudar — é o Q008/R32 em ferramenta |
 | `Janus` | roteia pequeno×grande pela confiança medida em dataset rotulado ou log; sem limiar padrão |
 | `pi-warden` | guarda de agente: regras do projeto em Markdown julgadas a cada write/edit; detecta slop, "stuck" (3 falhas iguais), "done" sem teste; 0 quebras em 150 runs |

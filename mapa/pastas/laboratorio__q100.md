@@ -57,7 +57,7 @@ flowchart LR
 ### registro.py
 
 - **é usado por** — import: [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/q100/relatorio.py`](../../laboratorio/q100/relatorio.py), [`laboratorio/tests/test_q100.py`](../../laboratorio/tests/test_q100.py); citação: [`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md)
-- **parecidos (julgados pelo Jev)** — [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py) (complementar, 0.26), [`laboratorio/h100/dados.py`](../../laboratorio/h100/dados.py) (complementar, 0.20), [`laboratorio/h100/registro.py`](../../laboratorio/h100/registro.py) (complementar, 0.20)
+- **parecidos (julgados pelo Jev)** — [`integracao/jev_router/politica.py`](../../integracao/jev_router/politica.py) (complementar, 0.26), [`laboratorio/h100/registro.py`](../../laboratorio/h100/registro.py) (complementar, 0.20), [`laboratorio/h100/dados.py`](../../laboratorio/h100/dados.py) (complementar, 0.20)
 - **conteúdo** — [Q](../../laboratorio/q100/registro.py#L45) (l. 45)
 
 ### relatorio.py
@@ -65,7 +65,7 @@ flowchart LR
 - **usa** — import: [`laboratorio/q100/__init__.py`](../../laboratorio/q100/__init__.py), [`laboratorio/q100/registro.py`](../../laboratorio/q100/registro.py), [`laboratorio/q100/respostas.py`](../../laboratorio/q100/respostas.py); citação: [`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md), [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py)
 - **é usado por** — import: [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/tests/test_q100.py`](../../laboratorio/tests/test_q100.py); citação: [`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md)
 - **chama de outros arquivos** — [`respostas.mil`](../../laboratorio/q100/respostas.py#L46)
-- **parecidos (julgados pelo Jev)** — [`laboratorio/h100/relatorio.py`](../../laboratorio/h100/relatorio.py) (complementar, 0.70), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py) (complementar, 0.31), [`laboratorio/gerar_bateria.py`](../../laboratorio/gerar_bateria.py) (complementar, 0.28), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py) (complementar, 0.23), [`laboratorio/gerar_mapa_visual.py`](../../laboratorio/gerar_mapa_visual.py) (complementar, 0.20)
+- **parecidos (julgados pelo Jev)** — [`laboratorio/h100/relatorio.py`](../../laboratorio/h100/relatorio.py) (complementar, 0.70), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py) (complementar, 0.31), [`laboratorio/gerar_bateria.py`](../../laboratorio/gerar_bateria.py) (complementar, 0.28), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py) (complementar, 0.23), [`laboratorio/gerar_mapa_visual.py`](../../laboratorio/gerar_mapa_visual.py) (complementar, 0.21)
 - **menciona 7 conceitos** — [R11](../../mapa/conhecimento/rodadas.md#r11) (1×), [Q023](../../mapa/conhecimento/perguntas.md#q023) (1×), [Q036](../../mapa/conhecimento/perguntas.md#q036) (1×), [Q042](../../mapa/conhecimento/perguntas.md#q042) (1×), [Q044](../../mapa/conhecimento/perguntas.md#q044) (1×), [Q073](../../mapa/conhecimento/perguntas.md#q073) (1×), [Q096](../../mapa/conhecimento/perguntas.md#q096) (1×)
 - **conteúdo** — [montar](../../laboratorio/q100/relatorio.py#L62) (l. 62; usado em 2), [main](../../laboratorio/q100/relatorio.py#L174) (l. 174)
 
