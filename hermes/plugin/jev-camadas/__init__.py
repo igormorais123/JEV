@@ -59,14 +59,17 @@ def _recortes():
 
 
 def _pre_llm_call(session_id=None, user_message=None, platform=None, parent_session_id=None,
-                  is_first_turn=None, task_id=None, **_):
+                  is_first_turn=None, task_id=None, turn_id=None, **_):
     try:
         if not isinstance(user_message, str):
             return None
         camadas = _camadas()
-        camadas.guardar_pedido(session_id, user_message)
-        if task_id and task_id != session_id:
-            camadas.guardar_pedido(task_id, user_message)
+        # O pedido fica guardado por todos os identificadores do turno: numa sessão de subagente o
+        # `session_id` do pre_llm_call (sa-0-…) não é o que o resultado de ferramenta recebe
+        # (visto em 22/09: 13 de 13 buscas "sem pedido vigente" numa sessão com o pedido guardado
+        # sob outro nome). O `turn_id` é o mesmo nos dois ganchos.
+        for chave in {session_id, task_id, turn_id} - {None, ''}:
+            camadas.guardar_pedido(chave, user_message)
         if 'tema' not in _ativas() or (platform or '') in PLATAFORMAS_SEM_TEMA or parent_session_id:
             return None
         nota, decisao = camadas.tema(user_message)
@@ -88,8 +91,16 @@ def _marcar_leitura_parcial(task_id, argumentos):
         logger.debug('jev-camadas leitura parcial: %s', erro)
 
 
+def _pedido(camadas, *chaves):
+    for chave in chaves:
+        pedido = camadas.pedido_vigente(chave) if chave else None
+        if pedido:
+            return pedido
+    return None
+
+
 def _transform_tool_result(tool_name=None, args=None, result=None, task_id=None, session_id=None,
-                           status=None, **_):
+                           status=None, turn_id=None, **_):
     try:
         if not isinstance(result, str) or status == 'error':
             return None
@@ -97,7 +108,7 @@ def _transform_tool_result(tool_name=None, args=None, result=None, task_id=None,
         camadas = _camadas()
         args = args or {}
         sessao = str(session_id)[:40]
-        pedido = camadas.pedido_vigente(session_id)
+        pedido = _pedido(camadas, session_id, task_id, turn_id)
         if tool_name == 'read_file' and 'leitura' in ativas:
             novo, decisao = camadas.leitura(result, args, pedido)
             camadas.registrar('leitura', sessao=sessao, **decisao)

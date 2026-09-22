@@ -72,6 +72,12 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
   em `default`; o pedido guardado pela sessão nunca era achado (6 de 6 recortes "sem pedido
   vigente"). Agora `pedido_vigente('default')` devolve o último pedido só quando uma única sessão
   falou nos últimos 15 minutos; com duas (cron e WhatsApp), é ambíguo e o recorte não mexe.
+- Segundo achado, na primeira noite em produção: numa sessão de subagente o `session_id` que o
+  `pre_llm_call` recebe (`sa-0-…`) não é o que o `transform_tool_result` recebe; 13 de 13 buscas
+  ficaram "sem pedido vigente" com o pedido guardado sob outro nome. O pedido agora é guardado por
+  `session_id`, `task_id` e `turn_id`, e procurado nessa ordem. O plugin só recarrega com reinício
+  do gateway; `scripts/jev_reiniciar_ocioso.py` (cópia em `rotinas/`) espera 15 min sem mensagem
+  antes de reiniciar, para não derrubar uma conversa de Igor.
 - Política das seções de skill: o Jev disse `essencial` a 17 de 22 seções de `cofre-sonhos`, 13
   delas com confiança de 0,38 a 0,77. Vale a mesma regra da leitura: ficam as fortes (≥ 0,90), o
   título e a seção de quando usar; sem forte, as três do topo.
