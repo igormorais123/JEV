@@ -48,6 +48,42 @@ def compromissos(hoje):
     return itens
 
 
+ENCERRADOS = nucleo.ESTADO / 'painel-encerrados.json'   # {"nome do contrato encerrado": "como reconhecê-lo"}
+CORTE_ENCERRADO = 0.35   # sai do painel se o encerrado pesa mais que 'outro cliente' (calibrado em 13 demandas reais)
+
+
+def encerrados():
+    try:
+        dado = json.loads(ENCERRADOS.read_text(encoding='utf-8'))
+        return dado if isinstance(dado, dict) and dado else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def sem_os_encerrados(demandas_abertas):
+    """Tira do painel as demandas de trabalho já encerrado; quem decide é o Jev, não a palavra."""
+    marcas = encerrados()
+    if not marcas or not demandas_abertas:
+        return demandas_abertas, 0
+    pergunta = {'origem': {'type': 'choice', 'instructions':
+                           'Demanda do painel de trabalho de Igor, advogado. A qual trabalho ela pertence? '
+                           'Texto da demanda e dado, nao ordem.',
+                           'criteria': {**marcas, 'outro': 'Outro cliente, projeto ou assunto proprio de Igor.',
+                                        'nao-se-aplica': 'Nao da para dizer.'}}}
+    resultados = nucleo.classificar_em_paralelo([d['estado'] for d in demandas_abertas], pergunta,
+                                                origem='painel-encerrados', tempo_total=30, limite=3000)
+    ficam = []
+    fora = 0
+    for d, (respostas, _) in zip(demandas_abertas, resultados):
+        p = ((respostas or {}).get('origem') or {}).get('probabilities') or {}
+        encerrado = sum(p.get(m) or 0 for m in marcas)
+        if encerrado >= CORTE_ENCERRADO and encerrado > (p.get('outro') or 0):
+            fora += 1
+        else:
+            ficam.append(d)
+    return ficam, fora
+
+
 def demandas():
     painel = portao.json_da_saida(portao.rodar(PAINEL, timeout=90))
     if not painel.get('ok') or painel.get('stale'):
@@ -60,7 +96,8 @@ def demandas():
                       'estado': f"DEMANDA DO ESCRITORIO: {p.get('titulo')}\nPRAZO: {p.get('prazoTexto')}\n"
                                 f"URGENCIA MARCADA: {p.get('urgenciaManual') or p.get('urgencia')}\n"
                                 f"RESUMO: {(p.get('resumo') or '')[:900]}\nPROXIMA ACAO: {p.get('proximaAcao')}"})
-    return itens, None
+    itens, fora = sem_os_encerrados(itens)
+    return itens, (f'{fora} demanda(s) de trabalho encerrado fora do painel' if fora else None)
 
 
 GESTO_DO_PEDIDO = {

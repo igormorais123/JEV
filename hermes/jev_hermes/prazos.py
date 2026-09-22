@@ -333,6 +333,9 @@ def atualizar(dias=10, agenda=True, maximo_de_fios=60):
                 _fora(conexao, fio, ultima)
                 descartados.add(fio)
         for fio, ultima, antes in [m for m in mudaram if m[0] not in descartados][:maximo_de_fios]:
+            if antes and antes['estado'] == 'ignorado':   # Igor mandou ignorar: não volta
+                conexao.execute('UPDATE prazos SET ultima_mensagem=? WHERE fio=?', (ultima, fio))
+                continue
             d = decidir(mensagens_do_fio(fio))
             if d is None:
                 _fora(conexao, fio, ultima)
@@ -359,6 +362,21 @@ def atualizar(dias=10, agenda=True, maximo_de_fios=60):
             if estado != antes_estado or linha['prazo'] != antes_prazo:
                 mudancas.append({**dict(linha), 'antes': antes_estado, 'agenda': acao})
     return mudancas, round(custo, 6)
+
+
+def ignorar(fio, apagar_evento=True):
+    """Tira um fio do controle e apaga o evento que o sistema criou. Não volta em novas rodadas."""
+    with _banco() as conexao:
+        linha = conexao.execute('SELECT * FROM prazos WHERE fio=?', (fio,)).fetchone()
+        if not linha:
+            return None
+        if apagar_evento and linha['evento']:
+            try:
+                _gws_evento('delete', {'eventId': linha['evento']})
+            except Exception as erro:
+                return f'evento não apagado ({type(erro).__name__})'
+        conexao.execute("UPDATE prazos SET estado='ignorado', evento=NULL, evento_prazo=NULL WHERE fio=?", (fio,))
+    return 'ignorado'
 
 
 def em_aberto(dias_a_frente=30):
