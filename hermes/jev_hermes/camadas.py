@@ -100,6 +100,19 @@ def _pedido_recente():
     return vivas[-1].get('pedido')
 
 
+# O estado de uma classificação é PEDIDO + trecho. Guardamos o pedido em até 3.000 caracteres
+# para a camada `tema`, mas mandá-lo inteiro junto de uma parte de 3.500 estoura o limite da
+# chamada: em 22/09, 7 de 12 resultados grandes reais falharam com "estado grande demais" antes
+# de sair. Os últimos 800 caracteres bastam para julgar relevância, e num prompt de cron — que
+# começa pelas skills e termina na tarefa — são a melhor parte.
+PEDIDO_PARA_CLASSIFICAR = 800
+
+
+def pedido_curto(pedido, maximo=PEDIDO_PARA_CLASSIFICAR):
+    pedido = (pedido or '').strip()
+    return pedido if len(pedido) <= maximo else '…' + pedido[-maximo:]
+
+
 def pedido_vigente(sessao, validade=6 * 3600):
     if not sessao:
         return None
@@ -400,7 +413,8 @@ def leitura(resultado, argumentos, pedido):
         casou = LINHA_NUMERADA.match(linhas[indice])
         return int(casou.group(1)) if casou else indice + 1
 
-    estados = [f'PEDIDO:\n{pedido}\n\nARQUIVO {Path(caminho).name}, linhas {numero(a)}-{numero(b - 1)} '
+    curto = pedido_curto(pedido)
+    estados = [f'PEDIDO:\n{curto}\n\nARQUIVO {Path(caminho).name}, linhas {numero(a)}-{numero(b - 1)} '
                f'de {total}:\n' + '\n'.join(linhas[a:b]) for a, b in blocos]
     resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-leitura',
                                                 tempo_total=TEMPO_DA_CAMADA, limite=LIMITE_DO_BLOCO + 4000)
@@ -496,7 +510,7 @@ def busca(ferramenta, resultado, argumentos, pedido):
     if len(itens) < MINIMO_DE_ITENS:
         return None, {**base, 'motivo': 'poucos itens'}
     escolhidos = itens[:MAXIMO_DE_ITENS]
-    estados = [f'PEDIDO:\n{pedido}\n\nITEM DA BUSCA "{padrao}" ({ferramenta}) — {rotulo}:\n{corpo}'
+    estados = [f'PEDIDO:\n{pedido_curto(pedido)}\n\nITEM DA BUSCA "{padrao}" ({ferramenta}) — {rotulo}:\n{corpo}'
                for rotulo, corpo in escolhidos]
     resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-busca',
                                                 tempo_total=TEMPO_DA_CAMADA, limite=6000)
@@ -640,10 +654,13 @@ MAXIMO_DE_PARTES_DO_RECORTE = 30
 FALHA_NA_CAUDA = re.compile(r'Traceback|FAILED|fatal:|panic:|npm ERR!|Unhandled|Segmentation fault')
 
 
-def recortar_terminal(comando, texto, pedido):
+def recortar_terminal(comando, texto, pedido, *, vizinhas=True):
     """Numa saída longa e sem erro (cat, grep, log, listagem), mantém só as partes que importam ao
     pedido vigente, com vizinhas, mais a primeira e a última; as demais viram um marcador que diz
-    como recuperá-las. Saída que termina em falha fica inteira: a camada `saida` cuida dela."""
+    como recuperá-las. Saída que termina em falha fica inteira: a camada `saida` cuida dela.
+
+    `vizinhas=False` mantém só as partes essenciais e as pontas: serve ao resultado de ferramenta
+    de web, onde não há a continuidade que faz a linha de erro e seu contexto andarem juntos."""
     inicio = time.time()
     base = {'acao': 'nada', 'caracteres': len(texto or '')}
     if not texto or len(texto) < MINIMO_DO_RECORTE:
@@ -656,23 +673,29 @@ def recortar_terminal(comando, texto, pedido):
     total = len(partes)
     if total > MAXIMO_DE_PARTES_DO_RECORTE:
         return None, {**base, 'motivo': 'saída grande demais'}
-    estados = [f'PEDIDO:\n{pedido}\n\nCOMANDO: {(comando or "")[:160]}\nSAIDA (parte {i} de {total}):\n{p}'
+    estados = [f'PEDIDO:\n{pedido_curto(pedido)}\n\nCOMANDO: {(comando or "")[:160]}\nSAIDA (parte {i} de {total}):\n{p}'
                for i, p in enumerate(partes, 1)]
     resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-recorte',
-                                                tempo_total=TEMPO_DA_CAMADA, limite=5000)
+                                                tempo_total=TEMPO_DA_CAMADA,
+                                                limite=TAMANHO_DA_PARTE + PEDIDO_PARA_CLASSIFICAR + 1200)
     resumo = nucleo.resumo_das_chamadas(resultados)
     base.update({**resumo, 'partes': total, 'latencia_ms': round((time.time() - inicio) * 1000)})
     if resumo['falha']:
         return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
     classes = [nucleo.escolha(respostas, 'relevancia') for respostas, _ in resultados]
-    fortes = [i for i, (classe, confianca) in enumerate(classes)
-              if classe == 'essencial' and (confianca or 0) >= CONFIANCA_ESSENCIAL]
-    base['essenciais'] = [i + 1 for i in fortes]
-    if not fortes:
+    # A CLASSE decide, não a confiança: em 63 partes de seis resultados grandes reais, 50 vieram
+    # `essencial` entre 0,50 e 0,67 e nenhuma passou de 0,90 — o corte forte nunca disparava, e a
+    # camada gastava treze chamadas para não cortar nada. Sem nenhuma essencial, segue inteiro:
+    # separar por confianças que diferem em centésimos seria apostar em ruído.
+    essenciais = [i for i, (classe, _) in enumerate(classes) if classe == 'essencial']
+    base['essenciais'] = [i + 1 for i in essenciais]
+    base['confianca_media'] = nucleo.dec(sum(k or 0 for c, k in classes if c == 'essencial')
+                                  / len(essenciais)) if essenciais else None
+    if not essenciais:
         return None, {**base, 'motivo': 'nenhuma parte essencial'}
     manter = {0, total - 1}
-    for i in fortes:
-        manter.update(j for j in (i - 1, i, i + 1) if 0 <= j < total)
+    for i in essenciais:
+        manter.update(j for j in ((i - 1, i, i + 1) if vizinhas else (i,)) if 0 <= j < total)
     evitados = sum(len(partes[i]) for i in range(total) if i not in manter)
     base.update({'partes_mantidas': len(manter), 'caracteres_evitados': evitados,
                  'tokens_evitados_estimados': tokens(evitados)})

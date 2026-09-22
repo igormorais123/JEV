@@ -94,6 +94,17 @@ e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 
   `session_id`, `task_id` e `turn_id`, e procurado nessa ordem. O plugin só recarrega com reinício
   do gateway; `scripts/jev_reiniciar_ocioso.py` (cópia em `rotinas/`) espera 15 min sem mensagem
   antes de reiniciar, para não derrubar uma conversa de Igor.
+- Terceiro achado, medindo as camadas novas contra os resultados grandes reais (12 casos do
+  `state.db`, 22/09): a camada de resultado não cortava nada. Duas causas, as duas corrigidas.
+  O estado ia com o pedido inteiro (até 3.000 caracteres) e estourava o limite da chamada em 7
+  dos 12 — agora vai com os últimos 800, que num prompt de cron são justamente a tarefa. E a
+  regra "essencial ≥ 0,90 com vizinhas", que serve à leitura de arquivo, nunca dispara em texto
+  da web: das 63 partes classificadas, 50 vieram `essencial` entre 0,50 e 0,67 e nenhuma passou
+  de 0,90. Passou a valer a CLASSE: fica toda parte essencial, mais a primeira e a última; sem
+  nenhuma essencial, nada é cortado. Depois da correção, 3 dos 12 casos recortam, 51 mil
+  caracteres evitados no conjunto; os outros nove param em "economia pequena demais" (quase
+  tudo é essencial) ou "nenhuma parte essencial". Custo por resultado grande: 13 chamadas,
+  cerca de US$ 0,0007.
 - Política das seções de skill: o Jev disse `essencial` a 17 de 22 seções de `cofre-sonhos`, 13
   delas com confiança de 0,38 a 0,77. Vale a mesma regra da leitura: ficam as fortes (≥ 0,90), o
   título e a seção de quando usar; sem forte, as três do topo.

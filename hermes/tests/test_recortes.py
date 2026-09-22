@@ -260,3 +260,42 @@ def test_leitura_nao_recorta_arquivo_estruturado(jev):
     linhas = '\n'.join(json.dumps({'id': i, 'texto': 'y' * 60}) for i in range(400))
     decisao = camadas.leitura(json.dumps({'content': linhas}), {'path': '/tmp/eventos.jsonl'}, PEDIDO)[1]
     assert decisao['motivo'] != 'formato estruturado: o recorte quebraria a sintaxe'
+
+
+def test_pedido_longo_nao_estoura_o_limite_da_chamada(jev, monkeypatch):
+    """7 de 12 resultados grandes reais falhavam com 'estado grande demais' antes de sair."""
+    nucleo, camadas, _ = jev
+    pedido = 'contexto irrelevante ' * 200 + 'A TAREFA REAL: achar o teto diario configurado.'
+    assert len(camadas.pedido_curto(pedido)) <= camadas.PEDIDO_PARA_CLASSIFICAR + 1
+    assert 'A TAREFA REAL' in camadas.pedido_curto(pedido)
+    tamanhos = []
+    real = nucleo.perguntar
+
+    def espiar(estado, perguntas, **kw):
+        tamanhos.append(len(estado))
+        assert len(estado) <= kw.get('limite', nucleo.LIMITE_PADRAO), 'estado maior que o limite'
+        return real(estado, perguntas, **{**kw, 'transporte': responder({'relevancia': 'essencial'})})
+    monkeypatch.setattr(nucleo, 'perguntar', espiar)
+    texto = ''.join(f'{i:02d}' + 'z' * 3498 for i in range(1, 8))
+    novo, decisao = camadas.recortar_terminal('cat log', texto, pedido)
+    assert decisao['falha'] is None and tamanhos and max(tamanhos) < 5000
+
+
+def test_recorte_age_com_essencial_de_confianca_fraca(jev, monkeypatch):
+    """Em texto de web nenhuma parte passa de 0,90; a classe é que separa (medição de 22/09)."""
+    nucleo, camadas, _ = jev
+    fraco = responder(lambda estado: 'essencial' if 'parte 5 de' in estado or 'parte 6 de' in estado
+                      else 'complementar', )
+    real = nucleo.perguntar
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': fraco}))
+    texto = ''.join(f'{i:02d}' + 'w' * 3498 for i in range(1, 13))
+    novo, decisao = camadas.recortar_terminal('cat log', texto, 'onde está o teto diário?')
+    assert decisao['acao'] == 'recortar' and decisao['essenciais'] == [5, 6]
+    for mantida in ('01', '04', '05', '06', '07', '12'):
+        assert mantida + 'w' in novo, mantida
+    assert '02w' not in novo and '09w' not in novo
+
+    # Sem vizinhas (resultado de web), só as essenciais e as pontas ficam.
+    from jev_hermes import recortes
+    novo, decisao = recortes.resultado('web_extract', texto, 'onde está o teto diário?')
+    assert decisao['acao'] == 'recortar' and '04w' not in novo and '05w' in novo and '12w' in novo

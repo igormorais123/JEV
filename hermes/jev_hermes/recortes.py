@@ -146,9 +146,11 @@ def skill(resultado, argumentos, pedido):
     secoes = agrupar_secoes(secoes)
     base['secoes'] = len(secoes)
     cabecalho = conteudo[:secoes[0][1]]
-    estados = [f'PEDIDO:\n{pedido}\n\nSEÇÃO «{titulo}» DA SKILL {nome}:\n{conteudo[a:b][:TAMANHO_DA_PARTE * 2]}'
+    curto = camadas.pedido_curto(pedido)
+    estados = [f'PEDIDO:\n{curto}\n\nSEÇÃO «{titulo}» DA SKILL {nome}:\n{conteudo[a:b][:TAMANHO_DA_PARTE * 2]}'
                for titulo, a, b, _ in secoes]
-    resultados, resumo = _classificar(estados, camadas.RELEVANCIA, 'camada-skill', limite=TAMANHO_DA_PARTE * 2 + 4000)
+    resultados, resumo = _classificar(estados, camadas.RELEVANCIA, 'camada-skill',
+                                      limite=TAMANHO_DA_PARTE * 2 + camadas.PEDIDO_PARA_CLASSIFICAR + 1200)
     base.update({**resumo, 'latencia_ms': round((time.time() - inicio) * 1000)})
     if resumo['falha']:
         return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
@@ -206,7 +208,7 @@ def resultado(ferramenta, texto, pedido):
     if not isinstance(texto, str) or len(texto) < MINIMO_DO_RESULTADO:
         return None, {'acao': 'nada', 'ferramenta': ferramenta, 'motivo': 'resultado curto',
                       'caracteres': len(texto or '')}
-    novo, decisao = camadas.recortar_terminal(f'{ferramenta}', texto, pedido)
+    novo, decisao = camadas.recortar_terminal(f'{ferramenta}', texto, pedido, vizinhas=False)
     decisao['ferramenta'] = ferramenta
     if novo:
         novo = novo.replace('rode o comando de novo filtrando (grep, sed -n, head/tail)',
@@ -233,8 +235,10 @@ def sessoes(texto, argumentos, pedido):
     estados = []
     for i, r in enumerate(escolhidos):
         corpo = json.dumps(r, ensure_ascii=False)[:TAMANHO_DA_PARTE]
-        estados.append(f'PEDIDO:\n{pedido}\n\nSESSÃO {i + 1} ENCONTRADA POR session_search "{consulta}":\n{corpo}')
-    resultados, resumo = _classificar(estados, camadas.RELEVANCIA, 'camada-sessoes', limite=TAMANHO_DA_PARTE + 4000)
+        estados.append(f'PEDIDO:\n{camadas.pedido_curto(pedido)}\n\n'
+                       f'SESSÃO {i + 1} ENCONTRADA POR session_search "{consulta}":\n{corpo}')
+    resultados, resumo = _classificar(estados, camadas.RELEVANCIA, 'camada-sessoes',
+                                      limite=TAMANHO_DA_PARTE + camadas.PEDIDO_PARA_CLASSIFICAR + 1200)
     base.update({**resumo, 'latencia_ms': round((time.time() - inicio) * 1000)})
     if resumo['falha']:
         return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
