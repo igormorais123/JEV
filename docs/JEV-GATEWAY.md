@@ -51,7 +51,8 @@ Nada disso mede economia: dois turnos não têm comparação sem roteamento. A c
 ## 4. Como ficou instalado neste PC
 
 - `npm install -g jev-gateway` (Node 24). Chave: a TypeSafe do cofre, copiada para `~/.jev-gateway/.env` (permissão 0600 no autor; no Windows, arquivo do usuário). `JEV_PROVIDER=typesafe`.
-- Portas: Claude Code 8789; Codex **8792** (`JEV_CODEX_PORT` no mesmo `.env`), porque 8790 estava ocupada por um `python -m http.server` antigo servindo `output/`.
+- Portas: Claude Code 8789; Codex **8793** (`JEV_CODEX_PORT` no mesmo `.env`), porque 8790 e 8792 estavam ocupadas por `python -m http.server` antigos (um deles em `0.0.0.0`, que capturava as chamadas do painel). Antes de escolher porta, `netstat -ano | findstr LISTEN`.
+- Ajustes nossos no `.env`, pelo que o estudo mediu: `JEV_MIN_CONFIDENCE=0.90` (o padrão 0,7 é folgado demais para `forced`, que age; 0,90 é o nosso corte de "usar") e `JEV_DIRECT_CALLS=false` (nunca responder sem o LLM: uma chamada montada errada pelo gateway passa sem ninguém olhar; as ferramentas de código são abertas e não perdem nada). Conferido em `/router/decide`: o exemplo das luzes, que saía `direct`, passou a sair `forced`.
 - **Windows:** o lançador chama `spawn("claude")` sem shell, e o Node só encontra `.exe` no PATH; `claude` e `codex` estão instalados como `.cmd`. Os wrappers `~/bin/jev-claude.cmd` e `~/bin/jev-codex.cmd` (a pasta `~/bin` vem antes do npm no PATH) põem a pasta dos executáveis nativos no PATH e delegam ao lançador original. Sem eles: `could not run claude: spawn claude ENOENT`.
 - Codex: o lançador detecta o login ChatGPT em `~/.codex/auth.json` e encaminha para `chatgpt.com/backend-api/codex`; os perfis `omniroute` do `config.toml` não são afetados (o gateway injeta `-c model_provider="jev-gateway"` só na sessão lançada).
 
@@ -74,7 +75,8 @@ Roda sozinho no `SessionEnd` do Claude Code (`integracao/camadas/rotina.py --so-
 - **Latência:** +2 s por turno no Claude Code com 133 ferramentas. Em sessões longas de edição, é perceptível.
 - **Privacidade:** a conversa inteira (até 60 mil caracteres, mensagens cortadas a 4 mil) vai à TypeSafe a cada turno, como já vai pelos nossos hooks de leitura. Imagens viram marcador.
 - **Segurança local:** um gateway aberto pelo lançador não tem chave própria; qualquer processo desta máquina pode usá-lo para chamar o Jev com a nossa chave (`/router/decide`) e para falar com o provedor usando a credencial que o cliente enviar. Só escuta em `127.0.0.1`.
-- **O corte de 0,7 na confiança** é o padrão do autor. Pela nossa fórmula (`confiança = (K·p − 1)/(K − 1)`), com 120 opções isso equivale a p ≈ 0,70; com 13 opções, p ≈ 0,72. É um corte mais folgado do que o 0,90 que usamos em produção; `JEV_MIN_CONFIDENCE` sobe no `.env`.
+- **O corte de 0,7 na confiança** é o padrão do autor; aqui está em 0,90. Pela nossa fórmula (`confiança = (K·p − 1)/(K − 1)`), com 120 opções 0,7 equivale a p ≈ 0,70 e 0,90 a p ≈ 0,90; com 13 opções, 0,72 e 0,91. O corte mais alto roteia menos turnos (o benchmark do autor foi com 0,7); se o painel mostrar quase tudo em `passthrough` por "low confidence", é o preço dessa escolha, não defeito.
+- **Painel:** `jev-claude --dashboard`. A página de um gateway tenta ler os outros nas portas padrão e nas passadas em `?peers=`; um gateway em porta não padrão só aparece na própria página (`localhost:8793/dashboard`) por bloqueio de CORS entre origens.
 - **O `hint` é um `<system-reminder>` anexado ao turno do usuário.** Nossa sentinela não o vê (ela olha o que as ferramentas leem), e o texto é fixo ("A tool-routing model suggests the "X" tool is the most relevant next step. Ignore this if it does not fit"). Vale saber que ele existe ao ler transcrições.
 
 ## 7. O que o repositório dele tem que já usamos ou podemos usar

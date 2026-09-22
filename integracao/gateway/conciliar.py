@@ -150,6 +150,7 @@ def desligar_roteamento(clientes=('claude', 'codex')):
 
 def relatorio(pasta=PASTA_DO_GATEWAY):
     """Por cliente e por dia: turnos, modos, taxa em que o Jev decidiu, latência e tokens."""
+    precos = load_prices()
     linhas = []
     for cliente in CLIENTES:
         por_dia = defaultdict(list)
@@ -166,7 +167,7 @@ def relatorio(pasta=PASTA_DO_GATEWAY):
                 'chamadas_jev': len(jev),
                 'latencia_jev_mediana_ms': statistics.median(j['latencyMs'] for j in jev) if jev else None,
                 'tokens_jev': sum(j.get('inputTokens') or 0 for j in jev),
-                'custo_jev_piso_usd': round(sum(custo_nusd(e, load_prices()) for e in eventos) / 1e9, 6),
+                'custo_jev_piso_usd': round(sum(custo_nusd(e, precos) for e in eventos) / 1e9, 6),
                 'llm_entrada': sum(u.get('input') or 0 for u in uso), 'llm_cache': sum(u.get('cached') or 0 for u in uso),
                 'llm_saida': sum(u.get('output') or 0 for u in uso),
                 'duracao_mediana_ms': statistics.median(e['durationMs'] for e in eventos if e.get('durationMs')) if any(e.get('durationMs') for e in eventos) else None,
