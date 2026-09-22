@@ -25,7 +25,14 @@ from jev_hermes import nucleo, portao  # noqa: E402
 JOB = 'boletim-taguatinga'
 CONSULTAS = ['Taguatinga DF when:1d', '"Celina Leão" when:1d', '"Celina Leao" when:1d']
 CORTE_FORA = 0.90
-MAXIMO_NO_CONTEXTO = 25
+# O contexto do porteiro é reenviado a cada volta de ferramenta do agente. Na primeira
+# execução real (22/09), 25 itens com trecho de 400 caracteres levaram o prompt de 3.731
+# para 20.869 caracteres, e o que se poupou em busca voltou pelo prompt: o dia fechou em
+# 62 mil tokens de entrada, como na véspera sem porteiro, com 47 chamadas de ferramenta
+# contra 71. Título, fonte, hora e link bastam para escolher o que abrir; o trecho inteiro
+# já foi lido pelo Jev na triagem.
+MAXIMO_NO_CONTEXTO = 15
+TRECHO_NO_CONTEXTO = 180
 
 PERGUNTAS = {
     'pauta': {
@@ -92,7 +99,7 @@ def contexto(mantidos, descartados, total):
         j = c['jev']
         linhas.append(f"\n{i}. [{j['pauta']} {nucleo.dec(j['confianca_pauta'])} | {j['valor']} "
                       f"{nucleo.dec(j['confianca_valor'])}] {c['titulo']} — {c['fonte']} ({c['quando']})\n"
-                      f"   {c['link']}\n   {c['trecho']}")
+                      f"   {c['link']}\n   {c['trecho'][:TRECHO_NO_CONTEXTO]}")
     return '\n'.join(linhas)
 
 

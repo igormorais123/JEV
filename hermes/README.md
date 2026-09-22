@@ -117,6 +117,19 @@ e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 
 - Credenciais são mascaradas antes de qualquer envio; o registro guarda hash, tamanho, classes e custo, nunca o texto.
 - Tetos: US$ 0,50 por dia e US$ 5,00 por mês (`jev.env`). Chegando ao teto, tudo segue sem o Jev.
 
+## O contexto do porteiro também é pago
+
+Primeira execução agendada do boletim com porteiro (22/09, 7h): 86 itens coletados, 24
+descartados pelo Jev, 15 no contexto, US$ 0,00077 de Jev. O agente entregou o PDF com 12
+eventos e não saiu procurando notícia. Mas o prompt foi de 3.731 para 20.869 caracteres, e o
+que se poupou em busca voltou pelo prompt: o dia fechou em 62 mil tokens de entrada, o mesmo
+da véspera sem porteiro, com 47 chamadas de ferramenta contra 71 (queda de 34%).
+
+A lição vale para todo porteiro que injeta candidatos: o contexto é reenviado a cada volta de
+ferramenta. O boletim passou a 15 itens com trecho de 180 caracteres (contexto de 11 mil) e a
+tese a resumos de 450 (contexto de 6,7 mil). Título, fonte, hora e link bastam para escolher o
+que abrir — o texto inteiro já foi lido pelo Jev na triagem.
+
 ## Medir uma implantação nova
 
 Porteiro novo só prova valor na execução agendada, não na manual. `scripts/jev_observar_porteiros.py`
