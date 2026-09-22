@@ -118,7 +118,7 @@ def test_pedido_recente_so_vale_quando_um_pedido_foi_feito(jev):
     assert camadas.pedido_vigente('default') is None
 
 
-def _porteiro(nome, monkeypatch, tmp_path):
+def _porteiro(nome):
     caminho = Path(__file__).resolve().parents[1] / 'portoes' / f'{nome}.py'
     spec = importlib.util.spec_from_file_location(nome, caminho)
     modulo = importlib.util.module_from_spec(spec)
@@ -126,30 +126,70 @@ def _porteiro(nome, monkeypatch, tmp_path):
     return modulo
 
 
-def test_porteiro_da_tese_acorda_com_candidatos_ordenados(jev, monkeypatch, tmp_path, capsys):
-    nucleo, _, portao = jev
-    modulo = _porteiro('jev_gate_tese_diaria', monkeypatch, tmp_path)
-    modulo.WIKI = tmp_path / 'notas'; modulo.WIKI.mkdir()
-    (modulo.WIKI / 'velho.md').write_text('---\ndoi: 10.1/velho\n---\n', encoding='utf-8')
-    candidatos = [{'doi': '10.1/velho', 'titulo': 'Velho', 'resumo': 'r', 'ano': 2025, 'autores': 'A', 'revista': 'J'},
-                  {'doi': '10.1/bom', 'titulo': 'Bom artigo sobre PPI', 'resumo': 'ppi', 'ano': 2025, 'autores': 'B', 'revista': 'J'},
-                  {'doi': '10.1/fraco', 'titulo': 'Fraco', 'resumo': 'x', 'ano': 2024, 'autores': 'C', 'revista': 'J'}]
-    monkeypatch.setattr(modulo, 'coletar', lambda pilar: candidatos)
-    t = responder_por_pergunta(lambda e, nome: ('central' if 'Bom artigo' in e else 'marginal')
-                               if nome == 'aproveitamento' else 'ppi-validacao')
+CANDIDATOS = [
+    {'doi': '10.1/velho', 'titulo': 'Velho', 'resumo': 'r', 'ano': 2025, 'autores': 'A', 'revista': 'J'},
+    {'doi': '10.1/bom', 'titulo': 'Bom artigo sobre PPI', 'resumo': 'ppi', 'ano': 2025, 'autores': 'B', 'revista': 'J'},
+    {'doi': '10.1/fraco', 'titulo': 'Fraco', 'resumo': 'x', 'ano': 2024, 'autores': 'C', 'revista': 'J'},
+]
+
+
+def _academico(jev, monkeypatch, tmp_path, escolher, candidatos=CANDIDATOS):
+    nucleo, _, _ = jev
+    from jev_hermes import academico
+    importlib.reload(academico)
+    academico.WIKI = tmp_path / 'notas'
+    academico.WIKI.mkdir(exist_ok=True)
+    (academico.WIKI / 'velho.md').write_text('---\ndoi: 10.1/velho\n---\n', encoding='utf-8')
+    monkeypatch.setattr(academico, 'coletar', lambda consultas: candidatos)
     real = nucleo.perguntar
-    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
-    monkeypatch.setattr(modulo, 'pilar_do_dia', lambda hoje=None: 'ppi-validacao')
-    modulo.main()
+    transporte = responder_por_pergunta(escolher)
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': transporte}))
+    return academico
+
+
+def test_porteiro_da_tese_acorda_com_candidatos_ordenados(jev, monkeypatch, tmp_path, capsys):
+    academico = _academico(jev, monkeypatch, tmp_path,
+                           lambda e, nome: ('central' if 'Bom artigo' in e else 'marginal')
+                           if nome == 'aproveitamento' else 'ppi-validacao')
+    monkeypatch.setattr(academico, 'pilar_do_dia', lambda hoje=None: 'ppi-validacao')
+    academico.executar('tese-diaria')
     saida = capsys.readouterr().out
     assert '10.1/bom' in saida and '10.1/velho' not in saida and '10.1/fraco' not in saida
-    assert saida.strip().splitlines()[-1] == '{"wakeAgent": true, "jev_portao": "1 candidato(s) bom(ns) de 2; 1 no contexto"}'
+    assert json.loads(saida.strip().splitlines()[-1]) == {
+        'wakeAgent': True, 'jev_portao': '1 candidato(s) bom(ns) de 2; 1 no contexto'}
     assert 'ESCOLHA UM DESTES' in saida
+
+
+def test_radar_tematico_usa_as_consultas_do_perfil_e_pede_tres(jev, monkeypatch, tmp_path, capsys):
+    academico = _academico(jev, monkeypatch, tmp_path,
+                           lambda e, nome: 'central' if nome == 'aproveitamento' else 'adocao-ia-setor-publico')
+    perfil = academico.PERFIS['radar-tematico']
+    consultas = academico.consultas_do(perfil, 'adocao-ia-setor-publico')
+    assert any('Brazil' in c for c in consultas) and len(consultas) == len(perfil['consultas'])
+    assert perfil['pilares'] and academico.PERFIS['tese-diaria']['pilares'] is None
+    academico.executar('radar-tematico')
+    saida = capsys.readouterr().out
+    assert 'ESCOLHA TRES DESTES'.replace('TRES', 'TRÊS') in saida
+    assert '10.1/bom' in saida and '10.1/fraco' in saida and '10.1/velho' not in saida
+    assert json.loads(saida.strip().splitlines()[-1])['wakeAgent'] is True
+
+
+def test_porteiro_academico_acorda_quando_a_coleta_falha(jev, monkeypatch, tmp_path, capsys):
+    _, _, portao = jev
+    from jev_hermes import academico
+    importlib.reload(academico)
+
+    def explode(consultas):
+        raise RuntimeError('rede fora')
+    monkeypatch.setattr(academico, 'coletar', explode)
+    portao.executar('tese-diaria', lambda: academico.executar('tese-diaria'))
+    ultima = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert ultima['wakeAgent'] is True and 'falha do porteiro' in ultima['jev_portao']
 
 
 def test_porteiro_do_boletim_descarta_fora_e_ruido(jev, monkeypatch, tmp_path, capsys):
     nucleo, _, portao = jev
-    modulo = _porteiro('jev_gate_boletim_taguatinga', monkeypatch, tmp_path)
+    modulo = _porteiro('jev_gate_boletim_taguatinga')
     itens = [{'titulo': 'Obra em Taguatinga Norte', 'link': 'l1', 'quando': 'h', 'fonte': 'F', 'trecho': 't', 'consulta': 'q'},
              {'titulo': 'Festa em Taguatinga TO', 'link': 'l2', 'quando': 'h', 'fonte': 'F', 'trecho': 't', 'consulta': 'q'},
              {'titulo': 'Horóscopo do dia', 'link': 'l3', 'quando': 'h', 'fonte': 'F', 'trecho': 't', 'consulta': 'q'}]
