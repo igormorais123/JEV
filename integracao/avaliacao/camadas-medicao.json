@@ -1,27 +1,27 @@
 {
  "leitura": {
-  "reads": 72,
-  "com_pedido": 72,
+  "reads": 82,
+  "com_pedido": 82,
   "classificados": 17,
   "estreitados": 5,
   "estreitados_ativos": 5,
   "por_via": {
    "read": {
-    "vistos": 52,
+    "vistos": 57,
     "estreitados_ativos": 4,
     "tokens_evitados": 28292
    },
    "bash": {
-    "vistos": 20,
+    "vistos": 25,
     "estreitados_ativos": 1,
     "tokens_evitados": 8387
    }
   },
   "motivos": {
-   "read ja delimitado": 30,
+   "read ja delimitado": 37,
    "tipo de arquivo fora da camada": 15,
    "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 11,
-   "arquivo pequeno": 10,
+   "arquivo pequeno": 13,
    "economia pequena demais para valer o intervalo": 1
   },
   "linhas_evitadas": 1936,
@@ -42,25 +42,26 @@
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 4,
+  "greps": 5,
   "por_ferramenta": {
-   "Grep": 4
+   "Grep": 4,
+   "Glob": 1
   },
-  "classificados": 1,
-  "sugeridos": 1,
-  "sugeridos_ativos": 1,
-  "arquivos_no_topo": 3,
+  "classificados": 2,
+  "sugeridos": 2,
+  "sugeridos_ativos": 2,
+  "arquivos_no_topo": 19,
   "arquivos_no_topo_lidos_depois": 0,
   "arquivos_fora": 0,
   "motivos": {
    "poucos itens": 3
   },
-  "custo_usd": 0.000403,
-  "chamadas": 16,
-  "latencia_mediana_ms": 4466
+  "custo_usd": 0.000767,
+  "chamadas": 32,
+  "latencia_mediana_ms": 4946
  },
  "sentinela": {
-  "conteudos": 10,
+  "conteudos": 12,
   "inspecionados": 9,
   "partes": 27,
   "acusados": 2,
@@ -114,15 +115,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 168,
-  "sugeriu": 85,
-  "cache": 80,
-  "custo_usd": 0.002791,
-  "latencia_mediana_ms": 915
+  "decisoes": 174,
+  "sugeriu": 87,
+  "cache": 82,
+  "custo_usd": 0.002954,
+  "latencia_mediana_ms": 928
  },
  "guarda": {
-  "chamadas": 340,
-  "custo_usd": 0.010317
+  "chamadas": 383,
+  "custo_usd": 0.011643
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -133,10 +134,10 @@
  "total": {
   "tokens_evitados": 37418,
   "valor_evitado_usd_ao_preco_declarado": 0.5613,
-  "custo_jev_usd": 0.037694,
-  "chamadas_jev": 459,
-  "registros": 158,
+  "custo_jev_usd": 0.039547,
+  "chamadas_jev": 475,
+  "registros": 171,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-21T23:28:14"
+  "ultimo_registro": "2026-09-22T00:33:44"
  }
 }

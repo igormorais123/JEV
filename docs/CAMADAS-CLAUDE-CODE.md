@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **158** (2026-09-20T20:44:33 a 2026-09-21T23:28:14).
-Última rotina automática: 2026-09-21T13:23:18 (completa, ok, commit).
+Registros: **171** (2026-09-20T20:44:33 a 2026-09-22T00:33:44).
+Última rotina automática: 2026-09-22T00:33:43 (so-medir, ok).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -27,17 +27,17 @@ Registros: **158** (2026-09-20T20:44:33 a 2026-09-21T23:28:14).
 |---|---|
 | tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **37.418** |
 | o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,5613 |
-| chamadas ao Jev pelas camadas | 459 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,037694** |
+| chamadas ao Jev pelas camadas | 475 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,039547** |
 
 ## Leitura (`Read`, e `cat` dentro de comando do shell)
 
 | | valor |
 |---|---|
-| leituras vistas pelos hooks | 72 |
-| por via: `Read` | 52 vistas, 4 estreitadas, 28.292 tokens evitados |
-| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 20 vistas, 1 estreitadas, 8.387 tokens evitados |
-| com pedido vigente na sessão | 72 |
+| leituras vistas pelos hooks | 82 |
+| por via: `Read` | 57 vistas, 4 estreitadas, 28.292 tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 25 vistas, 1 estreitadas, 8.387 tokens evitados |
+| com pedido vigente na sessão | 82 |
 | classificados (arquivo grande, com pedido) | 17 |
 | estreitados | 5 (em modo ativo: 5) |
 | linhas evitadas | 1.936 |
@@ -49,20 +49,20 @@ Registros: **158** (2026-09-20T20:44:33 a 2026-09-21T23:28:14).
 | latência mediana / p90 do hook | 3.879 ms / 4.035 ms |
 | custo | US$ 0,012807 em 203 chamadas |
 
-Por que não estreitou: read ja delimitado: 30, tipo de arquivo fora da camada: 15, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 11, arquivo pequeno: 10, economia pequena demais para valer o intervalo: 1.
+Por que não estreitou: read ja delimitado: 37, tipo de arquivo fora da camada: 15, arquivo pequeno: 13, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 11, economia pequena demais para valer o intervalo: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| listagens vistas | 4 (Grep: 4) |
-| classificados (6 ou mais arquivos, com pedido) | 1 |
-| com sugestão | 1 (em modo ativo: 1) |
-| arquivos postos em "leia primeiro" | 3 |
-| desses, lidos pelo agente nas 8 leituras seguintes | **0 de 3** |
+| listagens vistas | 5 (Glob: 1, Grep: 4) |
+| classificados (6 ou mais arquivos, com pedido) | 2 |
+| com sugestão | 2 (em modo ativo: 2) |
+| arquivos postos em "leia primeiro" | 19 |
+| desses, lidos pelo agente nas 8 leituras seguintes | **0 de 19** |
 | arquivos marcados irrelevantes com ≥ 0,99 | 0 |
-| latência mediana | 4.466 ms |
-| custo | US$ 0,000403 em 16 chamadas |
+| latência mediana | 4.946 ms |
+| custo | US$ 0,000767 em 32 chamadas |
 
 Por que não sugeriu: poucos itens: 3.
 
@@ -70,7 +70,7 @@ Por que não sugeriu: poucos itens: 3.
 
 | | valor |
 |---|---|
-| conteúdos vistos | 10 |
+| conteúdos vistos | 12 |
 | inspecionados (partes de 3.500 caracteres) | 9 (27 partes) |
 | acusados | **2** |
 | por ferramenta | WebFetch: 6, prompt/pasted_content: 3 |
@@ -121,10 +121,10 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 65.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 168 (sugeriu skill em 85; 80 do cache) |
-| latência mediana sem cache | 915 ms |
-| custo do roteador | US$ 0,002791 |
-| guarda de comando (sombra) | 340 chamadas, US$ 0,010317 |
+| decisões do roteador de tema em produção | 174 (sugeriu skill em 87; 82 do cache) |
+| latência mediana sem cache | 928 ms |
+| custo do roteador | US$ 0,002954 |
+| guarda de comando (sombra) | 383 chamadas, US$ 0,011643 |
 
 ## O que esta página não prova
 
