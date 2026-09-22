@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **136** (2026-09-20T20:44:33 a 2026-09-21T13:21:16).
-Última rotina automática: 2026-09-21T13:22:23 (completa, parou em auditoria).
+Registros: **158** (2026-09-20T20:44:33 a 2026-09-21T23:28:14).
+Última rotina automática: 2026-09-21T13:23:18 (completa, ok, commit).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -28,16 +28,16 @@ Registros: **136** (2026-09-20T20:44:33 a 2026-09-21T13:21:16).
 | tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **37.418** |
 | o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,5613 |
 | chamadas ao Jev pelas camadas | 459 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,035019** |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,037694** |
 
 ## Leitura (`Read`, e `cat` dentro de comando do shell)
 
 | | valor |
 |---|---|
-| leituras vistas pelos hooks | 52 |
-| por via: `Read` | 47 vistas, 4 estreitadas, 28.292 tokens evitados |
-| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 5 vistas, 1 estreitadas, 8.387 tokens evitados |
-| com pedido vigente na sessão | 52 |
+| leituras vistas pelos hooks | 72 |
+| por via: `Read` | 52 vistas, 4 estreitadas, 28.292 tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 20 vistas, 1 estreitadas, 8.387 tokens evitados |
+| com pedido vigente na sessão | 72 |
 | classificados (arquivo grande, com pedido) | 17 |
 | estreitados | 5 (em modo ativo: 5) |
 | linhas evitadas | 1.936 |
@@ -49,13 +49,13 @@ Registros: **136** (2026-09-20T20:44:33 a 2026-09-21T13:21:16).
 | latência mediana / p90 do hook | 3.879 ms / 4.035 ms |
 | custo | US$ 0,012807 em 203 chamadas |
 
-Por que não estreitou: read ja delimitado: 16, tipo de arquivo fora da camada: 14, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 11, arquivo pequeno: 5, economia pequena demais para valer o intervalo: 1.
+Por que não estreitou: read ja delimitado: 30, tipo de arquivo fora da camada: 15, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 11, arquivo pequeno: 10, economia pequena demais para valer o intervalo: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| listagens vistas | 2 (Grep: 2) |
+| listagens vistas | 4 (Grep: 4) |
 | classificados (6 ou mais arquivos, com pedido) | 1 |
 | com sugestão | 1 (em modo ativo: 1) |
 | arquivos postos em "leia primeiro" | 3 |
@@ -64,7 +64,7 @@ Por que não estreitou: read ja delimitado: 16, tipo de arquivo fora da camada: 
 | latência mediana | 4.466 ms |
 | custo | US$ 0,000403 em 16 chamadas |
 
-Por que não sugeriu: poucos itens: 1.
+Por que não sugeriu: poucos itens: 3.
 
 ## Sentinela (conteúdo externo)
 
@@ -121,10 +121,10 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 65.
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 161 (sugeriu skill em 83; 78 do cache) |
-| latência mediana sem cache | 895 ms |
-| custo do roteador | US$ 0,002589 |
-| guarda de comando (sombra) | 260 chamadas, US$ 0,007844 |
+| decisões do roteador de tema em produção | 168 (sugeriu skill em 85; 80 do cache) |
+| latência mediana sem cache | 915 ms |
+| custo do roteador | US$ 0,002791 |
+| guarda de comando (sombra) | 340 chamadas, US$ 0,010317 |
 
 ## O que esta página não prova
 

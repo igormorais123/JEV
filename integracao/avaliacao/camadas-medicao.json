@@ -1,27 +1,27 @@
 {
  "leitura": {
-  "reads": 52,
-  "com_pedido": 52,
+  "reads": 72,
+  "com_pedido": 72,
   "classificados": 17,
   "estreitados": 5,
   "estreitados_ativos": 5,
   "por_via": {
    "read": {
-    "vistos": 47,
+    "vistos": 52,
     "estreitados_ativos": 4,
     "tokens_evitados": 28292
    },
    "bash": {
-    "vistos": 5,
+    "vistos": 20,
     "estreitados_ativos": 1,
     "tokens_evitados": 8387
    }
   },
   "motivos": {
-   "read ja delimitado": 16,
-   "tipo de arquivo fora da camada": 14,
+   "read ja delimitado": 30,
+   "tipo de arquivo fora da camada": 15,
    "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 11,
-   "arquivo pequeno": 5,
+   "arquivo pequeno": 10,
    "economia pequena demais para valer o intervalo": 1
   },
   "linhas_evitadas": 1936,
@@ -42,9 +42,9 @@
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 2,
+  "greps": 4,
   "por_ferramenta": {
-   "Grep": 2
+   "Grep": 4
   },
   "classificados": 1,
   "sugeridos": 1,
@@ -53,7 +53,7 @@
   "arquivos_no_topo_lidos_depois": 0,
   "arquivos_fora": 0,
   "motivos": {
-   "poucos itens": 1
+   "poucos itens": 3
   },
   "custo_usd": 0.000403,
   "chamadas": 16,
@@ -114,15 +114,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 161,
-  "sugeriu": 83,
-  "cache": 78,
-  "custo_usd": 0.002589,
-  "latencia_mediana_ms": 895
+  "decisoes": 168,
+  "sugeriu": 85,
+  "cache": 80,
+  "custo_usd": 0.002791,
+  "latencia_mediana_ms": 915
  },
  "guarda": {
-  "chamadas": 260,
-  "custo_usd": 0.007844
+  "chamadas": 340,
+  "custo_usd": 0.010317
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -133,10 +133,10 @@
  "total": {
   "tokens_evitados": 37418,
   "valor_evitado_usd_ao_preco_declarado": 0.5613,
-  "custo_jev_usd": 0.035019,
+  "custo_jev_usd": 0.037694,
   "chamadas_jev": 459,
-  "registros": 136,
+  "registros": 158,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-21T13:21:16"
+  "ultimo_registro": "2026-09-21T23:28:14"
  }
 }
