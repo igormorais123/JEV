@@ -349,7 +349,7 @@ classe perigosa, e recalibre no seu próprio material antes de subir o volume.
 | Mil decisões do LLM genérico mais barato testado | US$ 0,006 |
 | Revisar tudo com gente (2 min a US$ 12/h, **parâmetro declarado, não cronometrado**) | US$ 0,40 por decisão |
 | Com corte de confiança e revisão só do resto | US$ 0,05 por decisão |
-| Toda a avaliação, 40.610 chamadas reais | US$ 1,5253 (dossiê conciliado: US$ 0,0357) |
+| Toda a avaliação, 40.712 chamadas reais | US$ 1,5351 (dossiê conciliado: US$ 0,0357) |
 
 A conta que decide **não é a do modelo** — é a do tempo de pessoa. O custo por decisão do Jev é
 de dois centésimos de centavo; o da revisão humana é vinte mil vezes maior. Por isso o passo 3
@@ -418,7 +418,7 @@ erros). Passar na própria suíte não diz que o componente é bom; diz que ele 
 
 ## 9. Placar final: todos os testes, o resultado e a consequência
 
-Dezessete experimentos e uma suíte de canários, 40.610 chamadas reais, US$ 1,5253 pelo livro-caixa — dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esses dois números
+Dezessete experimentos e uma suíte de canários, 40.712 chamadas reais, US$ 1,5351 pelo livro-caixa — dos quais US$ 0,0357 já conciliados contra extrato do provedor. Esses dois números
 são conferidos contra o livro-caixa por `laboratorio/auditoria.py`, junto com cada número desta
 página, e a conferência é exata de propósito: quem gasta atualiza o número, ou a suíte de testes
 quebra. Foi assim que a diferença de 476 chamadas deixada pela R20 apareceu. Esta é a lista inteira — o que cada um

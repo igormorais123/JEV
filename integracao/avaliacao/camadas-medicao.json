@@ -1,27 +1,27 @@
 {
  "leitura": {
-  "reads": 82,
-  "com_pedido": 82,
-  "classificados": 17,
+  "reads": 106,
+  "com_pedido": 106,
+  "classificados": 19,
   "estreitados": 5,
   "estreitados_ativos": 5,
   "por_via": {
    "read": {
-    "vistos": 57,
+    "vistos": 67,
     "estreitados_ativos": 4,
     "tokens_evitados": 28292
    },
    "bash": {
-    "vistos": 25,
+    "vistos": 39,
     "estreitados_ativos": 1,
     "tokens_evitados": 8387
    }
   },
   "motivos": {
-   "read ja delimitado": 37,
-   "tipo de arquivo fora da camada": 15,
-   "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 11,
-   "arquivo pequeno": 13,
+   "read ja delimitado": 55,
+   "tipo de arquivo fora da camada": 17,
+   "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 13,
+   "arquivo pequeno": 15,
    "economia pequena demais para valer o intervalo": 1
   },
   "linhas_evitadas": 1936,
@@ -29,52 +29,54 @@
   "releituras": 2,
   "linhas_relidas": 164,
   "releituras_sem_intervalo_registrado": 1,
-  "custo_usd": 0.012807,
-  "chamadas": 203,
-  "latencia_mediana_ms": 3879,
+  "custo_usd": 0.013239,
+  "chamadas": 211,
+  "latencia_mediana_ms": 3476,
   "latencia_p90_ms": 4035,
   "blocos_por_classe": {
-   "essencial": 105,
-   "complementar": 66,
-   "irrelevante": 31,
+   "essencial": 109,
+   "complementar": 69,
+   "irrelevante": 32,
    "incerto": 1
   },
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 5,
+  "greps": 8,
   "por_ferramenta": {
-   "Grep": 4,
-   "Glob": 1
+   "Grep": 6,
+   "Glob": 1,
+   "WebSearch": 1
   },
-  "classificados": 2,
-  "sugeridos": 2,
-  "sugeridos_ativos": 2,
-  "arquivos_no_topo": 19,
+  "classificados": 4,
+  "sugeridos": 3,
+  "sugeridos_ativos": 3,
+  "arquivos_no_topo": 28,
   "arquivos_no_topo_lidos_depois": 0,
   "arquivos_fora": 0,
   "motivos": {
-   "poucos itens": 3
+   "poucos itens": 4,
+   "nada a ordenar: nenhum essencial nem descartável": 1
   },
-  "custo_usd": 0.000767,
-  "chamadas": 32,
-  "latencia_mediana_ms": 4946
+  "custo_usd": 0.001245,
+  "chamadas": 51,
+  "latencia_mediana_ms": 4091
  },
  "sentinela": {
-  "conteudos": 12,
-  "inspecionados": 9,
-  "partes": 27,
+  "conteudos": 14,
+  "inspecionados": 10,
+  "partes": 29,
   "acusados": 2,
   "por_ferramenta": {
    "prompt/pasted_content": 3,
-   "WebFetch": 6
+   "WebFetch": 7
   },
   "acusados_por_ferramenta": {
    "prompt/pasted_content": 2
   },
-  "custo_usd": 0.001227,
-  "chamadas": 27,
-  "latencia_mediana_ms": 1349
+  "custo_usd": 0.001313,
+  "chamadas": 29,
+  "latencia_mediana_ms": 1335
  },
  "ler": {
   "usos": 2,
@@ -115,15 +117,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 174,
-  "sugeriu": 87,
-  "cache": 82,
-  "custo_usd": 0.002954,
-  "latencia_mediana_ms": 928
+  "decisoes": 185,
+  "sugeriu": 93,
+  "cache": 88,
+  "custo_usd": 0.003158,
+  "latencia_mediana_ms": 935
  },
  "guarda": {
-  "chamadas": 383,
-  "custo_usd": 0.011643
+  "chamadas": 439,
+  "custo_usd": 0.013274
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -134,10 +136,10 @@
  "total": {
   "tokens_evitados": 37418,
   "valor_evitado_usd_ao_preco_declarado": 0.5613,
-  "custo_jev_usd": 0.039547,
-  "chamadas_jev": 475,
-  "registros": 171,
+  "custo_jev_usd": 0.042378,
+  "chamadas_jev": 504,
+  "registros": 200,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-22T00:33:44"
+  "ultimo_registro": "2026-09-22T03:26:29"
  }
 }
