@@ -120,6 +120,17 @@ plugin jev-advisor v2, HERMES.md, scripts originais). Para voltar um job ao scri
 `hermes cron edit <id> --script <antigo>` (ARCANO e monitor: `--script ""`; radar:
 `ai_intelligence_tick.py`; watchdog: `fabio_osorio_urgent_watch.py`).
 
+Do lado do PC, antes de confiar no que este repositório diz:
+
+```sh
+python hermes/infra/conferir_sincronia.py          # o que roda na VPS é o que está versionado?
+python hermes/infra/conferir_sincronia.py --puxar  # traz as divergências para revisar e versionar
+```
+
+Em 22/09/2026 uma camada inteira (a rota de ferramenta) foi escrita direto na VPS e ficou fora do
+repositório e sem teste. Quem edita lá pode ter razão; o que não pode é a divergência passar
+despercebida. Sai com código 1 quando algo diverge ou não foi publicado.
+
 ## Testes
 
 `python -m pytest hermes/tests -q` — offline, transporte simulado, nenhuma chamada paga.
