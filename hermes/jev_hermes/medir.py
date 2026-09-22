@@ -27,7 +27,8 @@ CONFIG_DO_HERMES = Path('/root/.hermes/config.yaml')
 DIAS_DO_CACHE = 14
 JOBS = {'arcano-email-fabio': '6b539f9271ed', 'monitor-fabio-whatsapp': '19fa0f01b2c5',
         'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3', 'sono-memoria': '99ce108c2539',
-        'tese-diaria': '8f2260d9fe4a', 'boletim-taguatinga': '7e5e2b895040'}
+        'tese-diaria': '8f2260d9fe4a', 'boletim-taguatinga': '7e5e2b895040',
+        'radar-tematico': '452a2e509020'}
 # Camadas que tiram texto do contexto (as outras só anotam). Cada registro traz a estimativa.
 CAMADAS_QUE_RECORTAM = ('leitura', 'recorte', 'skill', 'sessoes', 'resultado', 'transcricao')
 CARACTERES_POR_TOKEN = 4

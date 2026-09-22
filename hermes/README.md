@@ -106,6 +106,20 @@ e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 
 - Credenciais são mascaradas antes de qualquer envio; o registro guarda hash, tamanho, classes e custo, nunca o texto.
 - Tetos: US$ 0,50 por dia e US$ 5,00 por mês (`jev.env`). Chegando ao teto, tudo segue sem o Jev.
 
+## Medir uma implantação nova
+
+Porteiro novo só prova valor na execução agendada, não na manual. `scripts/jev_observar_porteiros.py`
+(cópia em `rotinas/`) espera a próxima execução de cada job e escreve em
+`estado/primeiras-execucoes.md` a decisão do porteiro, o tamanho do prompt e quantas buscas na web
+o agente ainda fez — a medida de o porteiro ter mesmo substituído a descoberta. Suba-o solto do
+terminal, senão ele morre com a sessão de SSH:
+
+```sh
+systemd-run --unit=jev-observar-porteiros --collect /usr/bin/python3 /root/.hermes/scripts/jev_observar_porteiros.py
+```
+
+O agendador do Hermes usa `America/Sao_Paulo` (`config.yaml`), não UTC: `0 7 * * *` é 10h UTC.
+
 ## Operar
 
 ```sh
