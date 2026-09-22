@@ -152,7 +152,7 @@ mais custou a escrever e a única que impede o resto de virar propaganda.
 
 ## Contabilidade
 
-O livro-caixa SQLite em `runs/ledger.sqlite3` registra **40.712 chamadas** liquidadas, somando **US$ 1,5351** do teto de US$ 5,00 autorizado — restam US$ 3,4649. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
+O livro-caixa SQLite em `runs/ledger.sqlite3` registra **40.754 chamadas** liquidadas, somando **US$ 1,5387** do teto de US$ 5,00 autorizado — restam US$ 3,4613. O livro-caixa é a fonte única: os JSONL do laboratório são cópias do mesmo evento e somá-los junto contaria duas vezes, defeito que já esteve no painel e foi corrigido.
 
 ## Como conferir
 
