@@ -12,7 +12,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, '/root/.hermes/integrations/jev')
-from jev_hermes import nucleo, pendencias, portao, prazos  # noqa: E402
+from jev_hermes import anexos, nucleo, pendencias, portao, prazos  # noqa: E402
 
 FUSO = timezone(timedelta(hours=-3))
 PAINEL = ['/root/.hermes/bin/office-demand-panel', 'priorities', '--json', '--limit', '20']
@@ -136,11 +136,24 @@ def prazos_abertos():
     return itens, None
 
 
+def anexos_vermelhos():
+    """Anexo recebido nos últimos 3 dias cuja checklist acendeu vermelho (`jev_hermes/anexos.py`)."""
+    itens = []
+    for a in anexos.em_aberto(dias=3):
+        pontos = ', '.join(v['item'] for v in a['vermelhos'][:3])
+        itens.append({'tipo': 'anexo', 'titulo': f"{a['nome'][:60]}: {pontos}",
+                      'gesto': f"ler os pontos vermelhos de {a['nome'][:40]} antes de responder",
+                      'estado': f"ANEXO RECEBIDO POR IGOR, JA TRIADO PELA CHECKLIST ({a['lista']}).\n"
+                                f"ARQUIVO: {a['nome']}\nASSUNTO: {a['assunto']}\nDE: {a['de']}\n"
+                                f"PONTOS VERMELHOS: {json.dumps(a['vermelhos'], ensure_ascii=False)}"})
+    return itens, None
+
+
 def main():
     hoje = datetime.now(FUSO).replace(hour=0, minute=0, second=0, microsecond=0)
     itens = []
     avisos = []
-    for fonte in (lambda: (compromissos(hoje), None), demandas, whatsapp, prazos_abertos):
+    for fonte in (lambda: (compromissos(hoje), None), demandas, whatsapp, prazos_abertos, anexos_vermelhos):
         try:
             achados, aviso = fonte()
             itens += achados
@@ -181,6 +194,10 @@ def main():
     if zap:
         linhas.append(f'💬 WhatsApp ({len(zap)}): ' + '; '.join(i['titulo'][:80] for i in zap[:4])
                       + ('; …' if len(zap) > 4 else '') + '.')
+    recebidos = [i for i in itens if i['tipo'] == 'anexo']
+    if recebidos:
+        linhas.append(f'📎 Anexos triados ({len(recebidos)}): ' + '; '.join(i['titulo'][:80] for i in recebidos[:3])
+                      + ('; …' if len(recebidos) > 3 else '') + '.')
     if avisos:
         linhas.append('Obs.: ' + '; '.join(avisos) + '.')
     portao.registrar('painel-manha', True, f"prioridade: {topo['tipo']}", itens=len(itens),

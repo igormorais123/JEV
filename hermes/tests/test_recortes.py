@@ -299,3 +299,39 @@ def test_recorte_age_com_essencial_de_confianca_fraca(jev, monkeypatch):
     from jev_hermes import recortes
     novo, decisao = recortes.resultado('web_extract', texto, 'onde está o teto diário?')
     assert decisao['acao'] == 'recortar' and '04w' not in novo and '05w' in novo and '12w' in novo
+
+
+def test_anexo_de_peca_e_triado_e_o_resto_so_registrado(jev, monkeypatch, tmp_path):
+    """O tipo decide se baixa: peça vai à checklist, arte nem é buscada; cada anexo é visto uma vez."""
+    nucleo, _, portao = jev
+    from jev_hermes import anexos
+    importlib.reload(anexos)
+
+    baixados = []
+    monkeypatch.setattr(anexos, '_listar', lambda consulta, maximo=120: ['m1'])
+    monkeypatch.setattr(anexos, '_mensagem', lambda ident: (
+        'Intimação - processo 123', 'cartorio@tjdft.jus.br',
+        [{'nome': 'manifestacao.pdf', 'anexo': 'a1', 'bytes': 1000},
+         {'nome': 'convite.pdf', 'anexo': 'a2', 'bytes': 1000},
+         {'nome': 'logo.png', 'anexo': 'a3', 'bytes': 10}]))
+
+    def baixar(mensagem, anexo, nome):
+        baixados.append(anexo)
+        caminho = tmp_path / nome.replace('.pdf', '.txt')
+        caminho.write_text('peticao com pedido de tutela de urgencia', encoding='utf-8')
+        return caminho
+    monkeypatch.setattr(anexos, '_baixar', baixar)
+    monkeypatch.setattr(anexos, '_triar', lambda caminho, lista: ([{'item': 'tutela-de-urgencia',
+                                                                   'resposta': 'sim', 'probabilidade': 0.97}], None))
+    t = responder(lambda estado: 'peca-processual' if 'manifestacao' in estado else 'marketing-ou-arte')
+    real = nucleo.perguntar
+    monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+
+    novidades, _ = anexos.atualizar(dias=3)
+    assert baixados == ['a1']                      # só o que tem lista é baixado
+    assert [n['nome'] for n in novidades] == ['manifestacao.pdf']
+    assert novidades[0]['vermelhos'][0]['item'] == 'tutela-de-urgencia'
+    assert [i['nome'] for i in anexos.em_aberto()] == ['manifestacao.pdf']
+
+    novamente, _ = anexos.atualizar(dias=3)        # segunda rodada não repete nada
+    assert novamente == [] and baixados == ['a1']
