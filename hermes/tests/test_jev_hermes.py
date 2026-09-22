@@ -242,6 +242,25 @@ def test_tema_de_pesquisa_sugere_delegar(jev, monkeypatch):
     assert decisao['acao'] == 'sugerir' and '[jev/economia]' in nota and 'delegate_task' in nota
 
 
+def test_rota_de_ferramenta_e_conselho_e_some_quando_incerta(jev, monkeypatch):
+    """A nota de ferramenta aconselha e não autoriza; abaixo do corte, ou incerta, não sai nada."""
+    nucleo, camadas, _ = jev
+    real = nucleo.perguntar
+
+    def com(respostas):
+        t = responder(respostas)
+        monkeypatch.setattr(nucleo, 'perguntar', lambda *a, **k: real(*a, **{**k, 'transporte': t}))
+
+    com({'tema': 'engenharia', 'risco': 'seguro', 'ferramenta': 'terminal'})
+    nota, decisao = camadas.tema('Rode a suíte de testes do projeto e me diga o que falhou.')
+    assert decisao['ferramenta'] == 'terminal' and '[jev/ferramenta]' in nota
+    assert 'aconselhamento' in nota and 'autorização' in nota
+
+    com({'tema': 'engenharia', 'risco': 'seguro', 'ferramenta': 'incerta'})
+    nota, decisao = camadas.tema('Me explique o que você entendeu do combinado até aqui, sem mexer em nada.')
+    assert decisao['ferramenta'] == 'incerta' and '[jev/ferramenta]' not in (nota or '')
+
+
 def test_pendencias_acha_quem_espera_e_ignora_social(jev, monkeypatch, tmp_path):
     nucleo, _, _ = jev
     import sqlite3, time

@@ -15,6 +15,8 @@ ganchos do Hermes. Cada função recebe o que o gancho recebeu e devolve uma dec
 Nenhuma camada autoriza ação, descarta evidência ou esconde item de uma listagem.
 """
 import json
+import os
+import hashlib
 import re
 import time
 from pathlib import Path
@@ -28,9 +30,12 @@ CORTE_DE_DESCARTE = 0.99
 TEMPO_DA_CAMADA = 6.0
 
 
+BUILD_HASH = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:16]
+
+
 def registrar(camada, **campos):
-    nucleo.registrar({'em': nucleo._agora().isoformat(timespec='seconds'), 'camada': camada, **campos},
-                     CAMADAS)
+    nucleo.registrar({'em': nucleo._agora().isoformat(timespec='seconds'), 'camada': camada, **campos,
+                     'pid': os.getpid(), 'build_hash': BUILD_HASH}, CAMADAS)
 
 
 def tokens(caracteres):
@@ -220,6 +225,42 @@ CORTE_DO_TEMA = 0.90
 TEMAS_DE_DELEGAR = ('pesquisa', 'relatorio')
 CORTE_DE_DELEGAR = 0.70   # soma das duas; é só sugestão. Pesquisa jurídica divide com `juridico` (0,81)
 
+# Orientação consultiva de ferramenta. O Jev não executa, autoriza, bloqueia nem remove
+# ferramentas: apenas acrescenta uma nota efêmera ao pedido do turno. As categorias são
+# estáveis e apontam para capacidades já existentes no Hermes default.
+ROTAS_DE_FERRAMENTA = {
+    'arquivos': ('Inspecionar arquivos locais, código ou configuração.',
+                 '`read_file`/`search_files`; para alterar, `patch` ou `write_file`.'),
+    'terminal': ('Executar comando, teste, build, git, serviço ou processo local.',
+                 '`terminal`; processos longos usam `process`.'),
+    'web': ('Pesquisar ou extrair conteúdo atual da web sem interação visual.',
+            '`web_search` e depois `web_extract`.'),
+    'navegador': ('Interagir com página dinâmica, formulário, login ou interface visual.',
+                  '`browser_navigate` e ferramentas `browser_*`.'),
+    'historico': ('Recuperar algo dito ou decidido em conversa anterior.',
+                  '`session_search`.'),
+    'imagem': ('Criar, editar ou analisar imagem.',
+               '`image_generate` para criar/editar; `vision_analyze` para analisar.'),
+    'delegacao': ('Trabalho amplo que pode ser isolado em subagente.',
+                  '`delegate_task` se disponível; o agente principal valida o artefato.'),
+    'especializada': ('A tarefa depende de integração ou ferramenta especializada não carregada.',
+                      'carregue a skill aplicável; use `tool_search`/`tool_describe` antes de `tool_call`.'),
+    'nenhuma': ('Responder diretamente sem ferramenta é suficiente.',
+                'nenhuma ferramenta.'),
+    'incerta': ('Não há evidência suficiente para escolher uma rota.',
+                'ignore esta orientação e selecione normalmente.'),
+}
+PERGUNTAS_DE_FERRAMENTA = {
+    'ferramenta': {
+        'type': 'choice',
+        'instructions': ('Qual categoria de ferramenta é a melhor PRIMEIRA ação para atender o PEDIDO? '
+                         'Escolha só pela necessidade operacional explícita; não invente acesso nem ação. '
+                         'Se resposta direta bastar, escolha nenhuma; se ambíguo, incerta.'),
+        'criteria': {k: v[0] for k, v in ROTAS_DE_FERRAMENTA.items()},
+    },
+}
+CORTE_DA_FERRAMENTA = 0.90  # guarda consultiva provisória; não é calibração nem autorização
+
 
 # ------------------------------------------------------------------------------- tema
 
@@ -229,7 +270,8 @@ def tema(mensagem):
     if not mensagem or len(mensagem.strip()) < 25:
         return None, {'acao': 'nada', 'motivo': 'mensagem curta'}
     texto = mensagem.strip()[:4000]
-    respostas, detalhe = nucleo.perguntar(f'PEDIDO:\n{texto}', PERGUNTAS_DE_TEMA, origem='camada-tema',
+    perguntas = {**PERGUNTAS_DE_TEMA, **PERGUNTAS_DE_FERRAMENTA}
+    respostas, detalhe = nucleo.perguntar(f'PEDIDO:\n{texto}', perguntas, origem='camada-tema-ferramenta-v1',
                                           timeout=4.0, limite=4200)
     decisao = {'custo_usd': detalhe.get('custo_usd'), 'cache': detalhe.get('cache'),
                'latencia_ms': round((time.time() - inicio) * 1000)}
@@ -240,6 +282,14 @@ def tema(mensagem):
     decisao.update({'tema': assunto, 'confianca': confianca, 'risco': risco,
                     'confianca_risco': confianca_risco})
     partes = []
+    ferramenta, confianca_ferramenta = nucleo.escolha(respostas, 'ferramenta')
+    decisao.update({'ferramenta': ferramenta, 'confianca_ferramenta': confianca_ferramenta})
+    if (ferramenta in ROTAS_DE_FERRAMENTA and ferramenta not in ('nenhuma', 'incerta')
+            and (confianca_ferramenta or 0) >= CORTE_DA_FERRAMENTA):
+        sugestao = ROTAS_DE_FERRAMENTA[ferramenta][1]
+        partes.append(f'[jev/ferramenta] primeira rota sugerida: {ferramenta} '
+                      f'(confiança {nucleo.dec(confianca_ferramenta)}): {sugestao} '
+                      'Isto é aconselhamento; valide no contexto e mantenha suas regras normais de autorização.')
     if assunto in SKILLS_DO_TEMA and (confianca or 0) >= CORTE_DO_TEMA:
         partes.append(f'[jev/tema] assunto {assunto} (confiança {nucleo.dec(confianca)}); '
                       f'skills para isto: {SKILLS_DO_TEMA[assunto]}.')
