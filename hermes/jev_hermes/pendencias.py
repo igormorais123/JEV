@@ -157,9 +157,9 @@ def promessas_abertas(dias=5, origem='pendencias-whatsapp'):
                 if (m['direction'] == 'out' and len(texto) >= 12 and agora - dias * 86400 <= m['timestamp']
                         <= agora - 12 * 3600):
                     depois = [x for x in mensagens[i + 1:] if x['direction'] == 'out']
-                    candidatos.append({'tipo': 'promessa', 'contato': m['chat_name'] or chat_id,
+                    candidatos.append({'tipo': 'promessa', 'contato': nome,
                                        'desde': m['timestamp'], 'trecho': texto[:160],
-                                       'estado': f'MENSAGEM DE IGOR PARA {m["chat_name"] or "contato"}:\n{texto[:800]}',
+                                       'estado': f'MENSAGEM DE IGOR PARA {nome}:\n{texto[:800]}',
                                        'depois': '\n'.join(_linha(x) for x in depois[:6])})
     if not candidatos:
         return [], {'chamadas': 0, 'custo_usd': 0}

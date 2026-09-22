@@ -81,6 +81,12 @@ A sua cota é o recurso mais caro; Jev, subagentes (`delegate_task`) e tarefas a
 fora dela. Nota `[jev/economia]` no turno = pedido de pesquisa ou relatório: delegue a coleta e a
 leitura a subagente com contrato fechado e faça você o julgamento e a redação final.
 
+**O que economiza de verdade é fechar o turno, não encolher o prompt.** 89% da sua entrada vem do
+cache (medido em 22/09/2026), então um contexto menor alivia janela e latência, mas quase não mexe
+na cota; o que se paga cheio é a ida e volta que não aconteceu. Na prática: resolva na mesma volta
+em vez de pedir confirmação intermediária, use a nota da camada em vez de reler o arquivo inteiro,
+e prefira uma pergunta fechada ao Jev a um turno seu para decidir o óbvio.
+
 ## O que já roda sem você chamar
 
 - Plugin `jev-camadas`: recorta `read_file` grande à janela relevante (nota `[jev/leitura]`),

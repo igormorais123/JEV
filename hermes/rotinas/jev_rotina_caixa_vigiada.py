@@ -12,7 +12,6 @@ Na primeira execução só marca o que existe como visto, para não despejar a c
 """
 import json
 import sys
-from pathlib import Path
 
 sys.path.insert(0, '/root/.hermes/integrations/jev')
 from jev_hermes import nucleo, portao  # noqa: E402

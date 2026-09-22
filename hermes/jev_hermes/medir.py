@@ -5,8 +5,14 @@ Fontes: `estado/decisoes.jsonl` (toda chamada), `estado/camadas.jsonl` (plugin),
 sem declarar: tokens evitados usam 4 caracteres por token; execuções evitadas do modelo caro
 são contadas uma a uma, e o tamanho de cada uma é a média dos prompts reais daquele job em
 `/root/.hermes/cron/output` — piso, porque um job com ferramentas reenvia o contexto a cada volta.
+
+Os dois números não valem o mesmo, e o relatório não os soma. Medido em 22/09 no
+`session_model_usage`, 89% da entrada do modelo principal vem do cache: token de entrada
+poupado por um recorte alivia a janela e a latência, mas quase não mexe na cota. Turno evitado
+por um porteiro não é entrada nenhuma — leva junto a saída e o raciocínio, que se pagam cheios.
 """
 import json
+import sqlite3
 import statistics
 import sys
 from collections import Counter, defaultdict
@@ -16,6 +22,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from jev_hermes import nucleo  # noqa: E402
 
 SAIDAS_DE_CRON = Path('/root/.hermes/cron/output')
+ESTADO_DO_HERMES = Path('/root/.hermes/state.db')
+CONFIG_DO_HERMES = Path('/root/.hermes/config.yaml')
+DIAS_DO_CACHE = 14
 JOBS = {'arcano-email-fabio': '6b539f9271ed', 'monitor-fabio-whatsapp': '19fa0f01b2c5',
         'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3', 'sono-memoria': '99ce108c2539',
         'tese-diaria': '8f2260d9fe4a', 'boletim-taguatinga': '7e5e2b895040'}
@@ -58,6 +67,55 @@ def tamanho_medio_do_prompt(job_id):
         fim = texto.find('\n## Response')
         tamanhos.append(fim if fim > 0 else len(texto))
     return int(statistics.mean(tamanhos)) if tamanhos else None
+
+
+def modelo_principal():
+    """O modelo da conversa, lido do config do Hermes — não o que mais consumiu (esse é o do cron)."""
+    try:
+        texto = CONFIG_DO_HERMES.read_text(encoding='utf-8')
+    except OSError:
+        return None
+    # `model:` abre um bloco (`default: gpt-6-astra`) ou traz o nome na própria linha.
+    dentro = False
+    for linha in texto.splitlines():
+        if linha.startswith('model:'):
+            nome = linha.split(':', 1)[1].strip().strip('"\'')
+            if nome:
+                return nome
+            dentro = True
+        elif dentro:
+            if not linha.startswith((' ', '\t')):
+                return None
+            if linha.strip().startswith('default:'):
+                return linha.split(':', 1)[1].strip().strip('"\'') or None
+    return None
+
+
+def cache_do_modelo_principal(dias=DIAS_DO_CACHE):
+    """Quanto da entrada do modelo principal veio do cache — o desconto a aplicar na leitura.
+
+    Sem isso o relatório se engana sozinho: um recorte de 20 mil tokens de entrada parece valer o
+    mesmo que um turno inteiro evitado, e não vale.
+    """
+    consulta = ('select model, sum(input_tokens), sum(cache_read_tokens), sum(output_tokens), '
+                "sum(reasoning_tokens), sum(api_call_count) from session_model_usage "
+                "where last_seen > strftime('%s','now') - ? {} group by model order by 2 desc limit 1")
+    modelo = modelo_principal()
+    try:
+        with sqlite3.connect(f'file:{ESTADO_DO_HERMES}?mode=ro', uri=True) as con:
+            linha = None
+            if modelo:
+                linha = con.execute(consulta.format('and model = ?'), (dias * 86400, modelo)).fetchone()
+            if not linha or not linha[0]:   # modelo recém-trocado ainda não aparece no uso
+                linha = con.execute(consulta.format(''), (dias * 86400,)).fetchone()
+    except sqlite3.Error:
+        return None
+    if not linha or not linha[0]:
+        return None
+    modelo, entrada, cache, saida, raciocinio, chamadas = (linha[0], *(v or 0 for v in linha[1:]))
+    return {'modelo': modelo, 'dias': dias, 'entrada': entrada, 'cache': cache, 'saida': saida,
+            'raciocinio': raciocinio, 'chamadas': chamadas,
+            'parte_em_cache': round(cache / (entrada + cache), 4) if entrada + cache else None}
 
 
 def medir():
@@ -106,13 +164,30 @@ def medir():
         'situacao': situacao,
         'por_origem': origens,
         'camadas': {k: dict(v) for k, v in por_camada.items()},
-        'tokens_evitados_pelos_recortes': tokens_evitados,
+        'cache_do_modelo_principal': cache_do_modelo_principal(),
+        'entrada_evitada_pelos_recortes': tokens_evitados,
         'portoes': execucoes,
         'watchdog_fabio': {'avaliacoes': len(watchdog), 'alertou': sum(1 for p in watchdog if p.get('acordou'))},
-        'tokens_do_modelo_caro_evitados_piso': tokens_evitados + sum(
-            e['tokens_evitados_piso'] or 0 for e in execucoes.values()),
+        'turnos_evitados': sum(e['agente_evitado'] for e in execucoes.values()),
+        'entrada_evitada_pelos_portoes_piso': sum(e['tokens_evitados_piso'] or 0 for e in execucoes.values()),
         'custo_total_jev_usd': round(sum(v['custo_usd'] for v in origens.values()), 6),
     }
+
+
+def mil(n):
+    """Milhar com ponto, como se escreve em português."""
+    return f'{n:,}'.replace(',', '.')
+
+
+def nota_de_cache(c):
+    if not c or c.get('parte_em_cache') is None:
+        return ['> Sem leitura do `state.db`: não dá para dizer quanto da entrada vem do cache.', '']
+    return [
+        f"> **Como ler:** nos últimos {c['dias']} dias, {c['parte_em_cache'] * 100:.0f}% da entrada do "
+        f"`{c['modelo']}` veio do cache ({mil(c['cache'])} contra {mil(c['entrada'])} novos), em "
+        f"{mil(c['chamadas'])} chamadas que produziram {mil(c['saida'])} tokens de saída e "
+        f"{mil(c['raciocinio'])} de raciocínio. Por isso os dois números acima não se somam: entrada "
+        f"poupada é barata, turno evitado é caro.", '']
 
 
 def pagina(m):
@@ -125,10 +200,14 @@ def pagina(m):
         '',
         f"- Gasto do Jev hoje: US$ {s['gasto_hoje_usd']:.6f} de US$ {s['teto_diario_usd']:.2f}; "
         f"no mês: US$ {s['gasto_mes_usd']:.6f} de US$ {s['teto_mensal_usd']:.2f}.",
-        f"- Tokens do modelo principal que deixaram de ser gastos (piso): "
-        f"**{m['tokens_do_modelo_caro_evitados_piso']:,}**".replace(',', '.'),
+        f"- **{m['turnos_evitados']} turno(s) do modelo principal evitados** pelos porteiros de cron — "
+        f"cada um leva junto a saída e o raciocínio, e é a economia que se paga cheia "
+        f"(piso de {mil(m['entrada_evitada_pelos_portoes_piso'])} tokens só de entrada).",
+        f"- {mil(m['entrada_evitada_pelos_recortes'])} tokens de entrada poupados pelos recortes das "
+        f"camadas — alívio de janela e de latência, não de cota (veja a nota de cache abaixo).",
         f"- Custo total do Jev registrado: US$ {m['custo_total_jev_usd']:.6f}.",
         '',
+        *nota_de_cache(m.get('cache_do_modelo_principal')),
         '## Porteiros de cron',
         '',
         '| job | avaliações | agente evitado | agente acordado | prompt médio (caracteres) | tokens evitados (piso) |',
@@ -142,8 +221,8 @@ def pagina(m):
                f"{w['alertou']} alertas.", '', '## Camadas do plugin', '']
     for nome, contagem in sorted(m['camadas'].items()):
         partes.append(f"- {nome}: " + ', '.join(f'{k} {v}' for k, v in sorted(contagem.items())))
-    partes += ['', f"Tokens evitados pelos recortes (leitura, terminal, skill, sessões, resultado, transcrição): "
-               f"{m['tokens_evitados_pelos_recortes']}.", '',
+    partes += ['', f"Entrada evitada pelos recortes (leitura, terminal, skill, sessões, resultado, transcrição): "
+               f"{mil(m['entrada_evitada_pelos_recortes'])} tokens.", '',
                '## Ferramentas sustentadas pelo Jev', '']
     usadas = [(n, m['por_origem'][n]) for n in FERRAMENTAS if n in m['por_origem']]
     if usadas:

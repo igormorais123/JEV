@@ -22,7 +22,6 @@ import html
 import json
 import re
 import sqlite3
-import time
 from contextlib import contextmanager
 from email.utils import parsedate_to_datetime
 

@@ -35,6 +35,21 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 - Camada `tema`: nota `[jev/economia]` quando P(pesquisa)+P(relatório) ≥ 0,70.
 - Backup e restauração: `/root/backups/hermes-astra-jev-20260921T041649Z` (config, auth, guardas).
 
+### Onde a economia é real (medido em 22/09/2026)
+
+89% da entrada do Astra vem do cache (153,5 M contra 19,1 M novos em 14 dias, `session_model_usage`),
+e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 KB de system prompt
+(`hermes prompt-size`). Daí três regras:
+
+1. **Turno evitado vale muito mais que token de entrada poupado.** Um porteiro de cron que não acorda
+   o agente economiza entrada, saída e raciocínio; um recorte de 20 mil tokens de entrada economiza
+   janela e latência, e quase nada de cota. `medir.py` mostra os dois separados, nunca somados.
+2. **Não mexer no prefixo.** Filtrar o índice de skills ou a lista de ferramentas por turno
+   invalidaria o cache e custaria mais do que pouparia. As camadas cortam o texto *antes* de ele
+   entrar no histórico, uma vez só; depois disso o prefixo fica estável.
+3. **A métrica é custo por tarefa resolvida, contando as falhas** — um recorte que obriga a reler o
+   arquivo gastou duas vezes. Por isso as camadas preferem não agir quando estão em dúvida.
+
 ## Jobs de cron com o Jev
 
 | job | antes | agora |
