@@ -109,6 +109,24 @@ def secoes_da_skill(conteudo):
     return secoes
 
 
+def agrupar_secoes(secoes):
+    """Cabe uma pergunta por seção até o teto; acima dele, seções vizinhas entram juntas.
+
+    Truncar (as primeiras 23 e um "(restante)") era pior do que não recortar: na skill
+    `google-workspace`, de 53 seções, 30 caíam num bloco só que saía inteiro do contexto.
+    """
+    if len(secoes) <= MAXIMO_DE_PARTES:
+        return secoes
+    grupos = []
+    for n in range(MAXIMO_DE_PARTES):
+        pedaco = secoes[len(secoes) * n // MAXIMO_DE_PARTES:len(secoes) * (n + 1) // MAXIMO_DE_PARTES]
+        if not pedaco:
+            continue
+        titulo = pedaco[0][0] if len(pedaco) == 1 else f'{pedaco[0][0]} … {pedaco[-1][0]}'
+        grupos.append((titulo, pedaco[0][1], pedaco[-1][2], pedaco[0][3]))
+    return grupos
+
+
 def skill(resultado, argumentos, pedido):
     inicio = time.time()
     nome = str((argumentos or {}).get('name') or '')
@@ -125,8 +143,7 @@ def skill(resultado, argumentos, pedido):
     secoes = secoes_da_skill(conteudo)
     if len(secoes) < MINIMO_DE_SECOES:
         return None, {**base, 'motivo': 'poucas seções'}
-    if len(secoes) > MAXIMO_DE_PARTES:
-        secoes = secoes[:MAXIMO_DE_PARTES - 1] + [('(restante)', secoes[MAXIMO_DE_PARTES - 1][1], len(conteudo), 2)]
+    secoes = agrupar_secoes(secoes)
     base['secoes'] = len(secoes)
     cabecalho = conteudo[:secoes[0][1]]
     estados = [f'PEDIDO:\n{pedido}\n\nSEÇÃO «{titulo}» DA SKILL {nome}:\n{conteudo[a:b][:TAMANHO_DA_PARTE * 2]}'
@@ -136,10 +153,13 @@ def skill(resultado, argumentos, pedido):
     if resumo['falha']:
         return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
     classes = []
-    for (titulo, a, b, nivel), (respostas, _) in zip(secoes, resultados):
+    # Fixa é a primeira seção (o título da skill) e a de quando usar. Não vale "todo cabeçalho de
+    # nível 1": a skill `google-workspace` põe 45 das 53 seções em `#`, e a regra antiga protegia
+    # 22 de 24 delas — inclusive seções que o Jev deu como irrelevantes com confiança 0,99.
+    for i, ((titulo, a, b, nivel), (respostas, _)) in enumerate(zip(secoes, resultados)):
         classe, confianca = nucleo.escolha(respostas, 'relevancia')
         classes.append({'secao': titulo[:80], 'classe': classe, 'confianca': confianca,
-                        'fixa': nivel == 1 or bool(SEMPRE_FICA.search(titulo))})
+                        'fixa': i == 0 or bool(SEMPRE_FICA.search(titulo))})
     base['classes'] = classes
     if not any(c['classe'] == 'essencial' for c in classes):
         return None, {**base, 'motivo': 'nenhuma seção essencial'}
@@ -220,11 +240,13 @@ def sessoes(texto, argumentos, pedido):
         return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
     classes = [nucleo.escolha(respostas, 'relevancia') for respostas, _ in resultados]
     base['classes'] = [{'classe': c, 'confianca': k} for c, k in classes]
-    if not any(c == 'essencial' for c, _ in classes):
-        return None, {**base, 'motivo': 'nenhuma sessão essencial'}
+    # Busca que só traz sessão irrelevante é o caso mais comum e o de maior economia: aqui não se
+    # exige uma essencial, mas a melhor colocada fica inteira, para o modelo ver que a busca falhou.
+    melhor = max(range(len(classes)),
+                 key=lambda i: camadas.posicao({'classe': classes[i][0], 'confianca': classes[i][1]}))
     novos, omitidas, encurtadas = [], 0, 0
-    for r, (classe, confianca) in zip(escolhidos, classes):
-        if classe == 'irrelevante' and (confianca or 0) >= CORTE_DE_IRRELEVANTE:
+    for i, (r, (classe, confianca)) in enumerate(zip(escolhidos, classes)):
+        if i != melhor and classe == 'irrelevante' and (confianca or 0) >= CORTE_DE_IRRELEVANTE:
             novos.append({'session_id': r.get('session_id'), 'title': r.get('title'),
                           '_jev': f'omitida: irrelevante ao pedido (confiança {nucleo.dec(confianca)})'})
             omitidas += 1
