@@ -148,12 +148,26 @@ def redigir(texto):
 @contextmanager
 def _banco():
     ESTADO.mkdir(parents=True, exist_ok=True)
-    conexao = sqlite3.connect(BANCO, timeout=10, isolation_level=None)
+    conexao = None
+    # Oito chamadas paralelas abrem o banco ao mesmo tempo; trocar o journal para WAL e criar as
+    # tabelas exigem tranca exclusiva, e o `timeout` não cobre toda corrida (visto uma vez em
+    # teste, e uma vez nos hooks do Claude Code). Três tentativas antes de desistir.
+    for tentativa in range(3):
+        try:
+            conexao = sqlite3.connect(BANCO, timeout=10, isolation_level=None)
+            conexao.execute('PRAGMA journal_mode=WAL')
+            conexao.execute('CREATE TABLE IF NOT EXISTS gastos (id INTEGER PRIMARY KEY, em TEXT, dia TEXT, '
+                            'mes TEXT, origem TEXT, provedor TEXT, reservado REAL, custo REAL, status TEXT)')
+            conexao.execute('CREATE TABLE IF NOT EXISTS cache (chave TEXT PRIMARY KEY, em REAL, respostas TEXT)')
+            break
+        except sqlite3.OperationalError:
+            if conexao is not None:
+                conexao.close()
+            conexao = None
+            if tentativa == 2:
+                raise
+            time.sleep(0.05 * (tentativa + 1))
     try:
-        conexao.execute('PRAGMA journal_mode=WAL')
-        conexao.execute('CREATE TABLE IF NOT EXISTS gastos (id INTEGER PRIMARY KEY, em TEXT, dia TEXT, '
-                        'mes TEXT, origem TEXT, provedor TEXT, reservado REAL, custo REAL, status TEXT)')
-        conexao.execute('CREATE TABLE IF NOT EXISTS cache (chave TEXT PRIMARY KEY, em REAL, respostas TEXT)')
         yield conexao
     finally:
         conexao.close()

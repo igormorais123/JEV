@@ -17,9 +17,20 @@ from jev_hermes import nucleo  # noqa: E402
 
 SAIDAS_DE_CRON = Path('/root/.hermes/cron/output')
 JOBS = {'arcano-email-fabio': '6b539f9271ed', 'monitor-fabio-whatsapp': '19fa0f01b2c5',
-        'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3', 'sono-memoria': '99ce108c2539'}
+        'email-revisao-diaria': 'a3288e4d3f60', 'radar-ia': '29f2c9f69bb3', 'sono-memoria': '99ce108c2539',
+        'tese-diaria': '8f2260d9fe4a', 'boletim-taguatinga': '7e5e2b895040'}
+# Camadas que tiram texto do contexto (as outras só anotam). Cada registro traz a estimativa.
+CAMADAS_QUE_RECORTAM = ('leitura', 'recorte', 'skill', 'sessoes', 'resultado', 'transcricao')
 CARACTERES_POR_TOKEN = 4
 RELATORIO = nucleo.ESTADO / 'RELATORIO.md'
+# Ferramentas que o Jev sustenta sozinho: origem no registro -> o que ela faz por Igor.
+FERRAMENTAS = {
+    'pendencias-whatsapp': 'pendências do WhatsApp (quem espera resposta e o que foi prometido)',
+    'prazos': 'controle de prazos por e-mail, com evento na véspera',
+    'camada-checklist': 'checklist de documento (contrato, triagem de acórdão)',
+    'painel-encerrados': 'demandas de trabalho encerrado fora do painel da manhã',
+    'rotina-painel-manha': 'painel da manhã (prioridade do dia e agenda)',
+}
 
 
 def linhas(arquivo):
@@ -77,7 +88,7 @@ def medir():
     tokens_evitados = 0
     for c in camadas:
         por_camada[c.get('camada')][c.get('acao', 'nada')] += 1
-        if c.get('camada') == 'leitura' and c.get('acao') == 'recortar':
+        if c.get('camada') in CAMADAS_QUE_RECORTAM and c.get('acao') == 'recortar':
             tokens_evitados += c.get('tokens_evitados_estimados') or 0
 
     execucoes = {}
@@ -95,7 +106,7 @@ def medir():
         'situacao': situacao,
         'por_origem': origens,
         'camadas': {k: dict(v) for k, v in por_camada.items()},
-        'tokens_evitados_pela_leitura': tokens_evitados,
+        'tokens_evitados_pelos_recortes': tokens_evitados,
         'portoes': execucoes,
         'watchdog_fabio': {'avaliacoes': len(watchdog), 'alertou': sum(1 for p in watchdog if p.get('acordou'))},
         'tokens_do_modelo_caro_evitados_piso': tokens_evitados + sum(
@@ -131,9 +142,19 @@ def pagina(m):
                f"{w['alertou']} alertas.", '', '## Camadas do plugin', '']
     for nome, contagem in sorted(m['camadas'].items()):
         partes.append(f"- {nome}: " + ', '.join(f'{k} {v}' for k, v in sorted(contagem.items())))
-    partes += ['', f"Tokens evitados pela leitura recortada: {m['tokens_evitados_pela_leitura']}.", '',
-               '## Chamadas por origem', '', '| origem | pagas | cache | falhas | custo US$ | latência mediana |',
-               '|---|---|---|---|---|---|']
+    partes += ['', f"Tokens evitados pelos recortes (leitura, terminal, skill, sessões, resultado, transcrição): "
+               f"{m['tokens_evitados_pelos_recortes']}.", '',
+               '## Ferramentas sustentadas pelo Jev', '']
+    usadas = [(n, m['por_origem'][n]) for n in FERRAMENTAS if n in m['por_origem']]
+    if usadas:
+        for nome, o in usadas:
+            feitas = o['chamadas'] + o['do_cache']
+            partes.append(f"- {FERRAMENTAS[nome]}: {feitas} julgamento(s), US$ {o['custo_usd']:.6f}"
+                          + (f", {o['falhas']} falha(s)" if o['falhas'] else '') + '.')
+    else:
+        partes.append('- nenhuma rodou ainda.')
+    partes += ['', '## Chamadas por origem', '',
+               '| origem | pagas | cache | falhas | custo US$ | latência mediana |', '|---|---|---|---|---|---|']
     for nome, o in m['por_origem'].items():
         partes.append(f"| {nome} | {o['chamadas']} | {o['do_cache']} | {o['falhas']} | {o['custo_usd']:.6f} | "
                       f"{o['latencia_mediana_ms'] or '—'} ms |")

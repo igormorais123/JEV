@@ -52,14 +52,51 @@ def guardar_pedido(sessao, mensagem):
         SESSOES.mkdir(parents=True, exist_ok=True)
         (SESSOES / f'{_seguro(sessao)}.json').write_text(
             json.dumps({'pedido': texto, 'em': time.time()}, ensure_ascii=False), encoding='utf-8')
+        _guardar_recente(sessao, texto)
     except OSError:
         pass
     return texto
 
 
+# O gancho do terminal recebe o task_id do contêiner, que o Hermes colapsa em "default" para
+# toda sessão comum (tools/terminal_tool.py, `_resolve_container_task_id`): o pedido guardado
+# pela sessão nunca é achado por ele — 6 de 6 recortes de terminal ficaram "sem pedido vigente"
+# em 21/09. A saída é a lista dos pedidos recentes: se nos últimos minutos só uma sessão falou,
+# o pedido dela é o vigente; se duas falaram (cron e WhatsApp ao mesmo tempo), é ambíguo e o
+# recorte não mexe — errar o pedido custaria uma releitura, não errar custa só a economia.
+RECENTES = 'default'
+JANELA_DE_RECENTES = 15 * 60
+
+
+def _guardar_recente(sessao, texto):
+    arquivo = SESSOES / f'{RECENTES}.json'
+    try:
+        lista = json.loads(arquivo.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        lista = []
+    agora = time.time()
+    lista = [r for r in lista if agora - r.get('em', 0) <= JANELA_DE_RECENTES][-8:]
+    lista.append({'sessao': str(sessao)[:80], 'pedido': texto, 'em': agora})
+    arquivo.write_text(json.dumps(lista, ensure_ascii=False), encoding='utf-8')
+
+
+def _pedido_recente():
+    try:
+        lista = json.loads((SESSOES / f'{RECENTES}.json').read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return None
+    agora = time.time()
+    vivas = [r for r in lista if agora - r.get('em', 0) <= JANELA_DE_RECENTES]
+    if not vivas or len({r.get('sessao') for r in vivas}) != 1:
+        return None
+    return vivas[-1].get('pedido')
+
+
 def pedido_vigente(sessao, validade=6 * 3600):
     if not sessao:
         return None
+    if str(sessao) == RECENTES:
+        return _pedido_recente()
     try:
         dado = json.loads((SESSOES / f'{_seguro(sessao)}.json').read_text(encoding='utf-8'))
         if time.time() - dado.get('em', 0) <= validade:
@@ -219,6 +256,10 @@ def tema(mensagem):
 # ---------------------------------------------------------------------------- leitura
 
 MINIMO_DE_LINHAS = 200
+# `read_file_tool(path, offset=1, limit=2000)`: o Hermes entrega os argumentos já com os padrões
+# preenchidos, então um `limit` de 2.000 não é escolha do agente — é a leitura inteira. Tratá-lo
+# como intervalo pedido anulava a camada (63 de 65 leituras ficaram "já delimitada" em 21/09).
+LIMITE_ABERTO = {'None', '2000'}
 CONFIANCA_ESSENCIAL = 0.90
 BLOCOS_NO_TOPO = 3
 ECONOMIA_MINIMA = 0.25
@@ -277,7 +318,7 @@ def leitura(resultado, argumentos, pedido):
     argumentos = argumentos or {}
     caminho = str(argumentos.get('path') or '')
     base = {'acao': 'nada', 'arquivo': Path(caminho).name}
-    if (argumentos.get('offset') not in (None, 1, '1')) or argumentos.get('limit') is not None:
+    if (argumentos.get('offset') not in (None, 1, '1')) or str(argumentos.get('limit')) not in LIMITE_ABERTO:
         return None, {**base, 'motivo': 'leitura já delimitada'}
     if not pedido:
         return None, {**base, 'motivo': 'sem pedido vigente'}
