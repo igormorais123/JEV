@@ -107,9 +107,12 @@ def test_transcricao_curta_ou_sem_enchimento_fica_inteira(recortes):
     assert novo is None and decisao['motivo'] == 'sem enchimento seguro'
 
 
-def test_pedido_recente_so_vale_quando_uma_sessao_falou(jev):
+def test_pedido_recente_so_vale_quando_um_pedido_foi_feito(jev):
     _, camadas, _ = jev
     camadas.guardar_pedido('sessao-a', 'um pedido comprido o bastante para valer')
+    assert camadas.pedido_vigente('default') == 'um pedido comprido o bastante para valer'
+    # a mesma chamada grava sessão e tarefa: duas entradas, um pedido só — ainda vale
+    camadas.guardar_pedido('tarefa-a', 'um pedido comprido o bastante para valer')
     assert camadas.pedido_vigente('default') == 'um pedido comprido o bastante para valer'
     camadas.guardar_pedido('sessao-b', 'outro pedido comprido o bastante para valer')
     assert camadas.pedido_vigente('default') is None

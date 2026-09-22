@@ -64,8 +64,11 @@ def guardar_pedido(sessao, mensagem):
 # em 21/09. A saída é a lista dos pedidos recentes: se nos últimos minutos só uma sessão falou,
 # o pedido dela é o vigente; se duas falaram (cron e WhatsApp ao mesmo tempo), é ambíguo e o
 # recorte não mexe — errar o pedido custaria uma releitura, não errar custa só a economia.
+# O consenso é pelo TEXTO do pedido, não pelo identificador da sessão: a mesma chamada grava duas
+# entradas (session_id e task_id), e contá-las como sessões diferentes deixava tudo ambíguo.
 RECENTES = 'default'
 JANELA_DE_RECENTES = 15 * 60
+JANELA_DO_CONSENSO = 4 * 60   # o terminal responde ao que se pediu agora, não ao de um quarto de hora
 
 
 def _guardar_recente(sessao, texto):
@@ -86,8 +89,8 @@ def _pedido_recente():
     except (OSError, ValueError):
         return None
     agora = time.time()
-    vivas = [r for r in lista if agora - r.get('em', 0) <= JANELA_DE_RECENTES]
-    if not vivas or len({r.get('sessao') for r in vivas}) != 1:
+    vivas = [r for r in lista if agora - r.get('em', 0) <= JANELA_DO_CONSENSO]
+    if not vivas or len({r.get('pedido') for r in vivas}) != 1:
         return None
     return vivas[-1].get('pedido')
 
