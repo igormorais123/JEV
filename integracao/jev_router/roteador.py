@@ -79,7 +79,7 @@ def registrar(decisao):
 
 
 def classificar(pedido, *, contexto='', modo='sombra', usar_cache=True, transporte=None,
-                origem='hook'):
+                origem='hook', pasta_de_skills=None, configuracao=None):
     """Devolve a decisão para um pedido, ou None se não houve classificação.
 
     None significa "siga como antes": é o resultado de pedido curto, de falha de rede, de teto
@@ -111,7 +111,7 @@ def classificar(pedido, *, contexto='', modo='sombra', usar_cache=True, transpor
         if usar_cache:
             para_o_cache(marca, respostas)
 
-    decisao = politica.decidir(respostas)
+    decisao = politica.decidir(respostas, pasta_de_skills, configuracao)
     decisao.update({'em': time.strftime('%Y-%m-%dT%H:%M:%S'), 'modo': modo, 'marca': marca,
                     'classificou': True, 'cache': veio_do_cache, 'latencia_ms': latencia,
                     'custo_usd': custo, 'origem': origem,

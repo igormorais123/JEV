@@ -654,3 +654,21 @@ def test_laudo_leva_ao_juiz_o_codigo_que_cita(jev, tmp_path):
     citados = [o for o in obs if o.tipo == 'artefato']
     assert Path(citados[0].referencia).as_posix().endswith('pedidos/cupom.py') and 'def aplicar' in citados[0].conteudo
     assert not any('outro.py' in o.referencia for o in citados)
+
+
+def test_lembrete_so_cala_bloqueio_pessoal_com_confianca(jev):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'lembrete', Path(__file__).resolve().parents[1] / 'rotinas' / 'jev_rotina_lembrete_compromisso.py')
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    agora = datetime(2026, 9, 28, 13, 5, tzinfo=m.FUSO)
+    ev = lambda t, link='': {'titulo': t, 'inicio': datetime(2026, 9, 28, 14, 0, tzinfo=m.FUSO),   # noqa: E731
+                             'link': link, 'local': ''}
+    r = lambda nat, conf, prep=0.1: {'natureza': {'choice': nat, 'confidence': conf},   # noqa: E731
+                                     'preparo': {'noul': prep}}
+    linhas, pessoais = m.decidir([ev('Foco'), ev('Almoço'), ev('Audiência', 'https://meet'), ev('Sem Jev')],
+                                 [(r('bloqueio-pessoal', 0.98), {}), (r('bloqueio-pessoal', 0.77), {}),
+                                  (r('com-outras-pessoas', 0.99, 0.88), {}), (None, {})], agora)
+    assert pessoais == 1 and len(linhas) == 3
+    assert linhas[1] == '⏰ Em 55 min (14:00): Audiência — Meet: https://meet — ⚠ pede preparo'

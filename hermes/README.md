@@ -13,7 +13,7 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 | camadas | `/root/.hermes/plugins/jev-camadas/` + `jev_hermes/camadas.py` | tema/risco do pedido, recorte de `read_file`, ordem de busca, sentinela em conteúdo externo, causa de erro no terminal, recorte de saída longa sem erro do terminal (≥ 16 mil caracteres: fica o essencial ao pedido, com vizinhas, primeira e última parte); desde 22/09 (estudo de 30 dias do `state.db`): seções de `skill_view` (`recortes.skill`), sessões de `session_search` (`recortes.sessoes`), resultado longo de `web_extract`/Apify/`execute_code` (`recortes.resultado`) e a transcrição do YouTube na ponte `youtube-auto-bridge` (`recortes.transcricao`: sem enchimento, com a frente de Igor) |
 | ferramenta | `/root/.hermes/plugins/jev-advisor/` (v3) | `jev_advisor` para o modelo, com modo `lote` (até 60 textos) |
 | porteiros | `/root/.hermes/scripts/jev_gate_*.py` | decidem se o job de cron acorda o modelo principal |
-| rotinas | `/root/.hermes/scripts/jev_rotina_*.py` | jobs sem modelo principal: caixa vigiada, agenda, saúde do coletor, medição |
+| rotinas | `/root/.hermes/scripts/jev_rotina_*.py` | jobs sem modelo principal: caixa vigiada, agenda, lembrete de compromisso, saúde do coletor, medição |
 | ponte OpenAI | `hermes-jev-ponte.service`, `172.17.0.1:20145` (só a rede Docker) | traduz chat do OmniRoute para decisão do Jev; a chave vem no Bearer. No OmniRoute: nós `jev-openrouter` e `jev-typesafe`, combo `jev` |
 | skill | `/root/.hermes/skills/jev/SKILL.md` | quando e como delegar ao Jev |
 | contrato | `/root/HERMES.md`, linha "Sistema 1 é do Jev" | Jev por padrão em toda decisão fechada |
@@ -21,7 +21,9 @@ fundo, do estudo: o Jev decide, não escreve; o ganho em dinheiro aparece quando
 
 ## Modelo principal e economia da cota (desde 21/09/2026)
 
-- Conversa com Igor: `gpt-6-astra`, esforço baixo, conta Pro (igor@inteia.com.br) primeiro no pool
+- Conversa com Igor: `gpt-6-sol`, esforço alto (desde 22/09/2026, por pedido de Igor; a guarda
+  fixa o modelo e o esforço; entre 21 e 22/09 foi `gpt-6-astra` com esforço baixo, e é desse
+  período a medição de cache abaixo), conta Pro (igor@inteia.com.br) primeiro no pool
   `openai-codex`, conta team depois. Guarda: `/root/.hermes/bin/hermes-enforce-stable-model`
   (cópia em `infra/`), que roda antes do gateway e a cada 2 min no stability-guard.
 - Fora da cota do Astra, pelo OmniRoute (`providers.omniroute`, chave `OMNIROUTE_API_KEY`):
@@ -67,6 +69,7 @@ e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 
 | Radar temático — IA no setor público (sexta 17h, `452a2e509020`) | Astra buscava 3 artigos sozinho pela skill `research` | o mesmo porteiro acadêmico, perfil `radar-tematico` de `jev_hermes/academico.py`: consultas voltadas a Brasil e América Latina, 8 candidatos no contexto; rodou em 17 s e trouxe 2 artigos latino-americanos entre os 8 |
 | Boletim Taguatinga e Celina Leão (7h, `7e5e2b895040`) | Astra descobria as notícias sozinho; 110 mil tokens por edição | `jev_gate_boletim_taguatinga.py`: Google Notícias (RSS, 24 h) das duas pautas; o Jev separa Taguatinga-DF da do Tocantins e fato de ruído; o agente acorda com a lista triada e só abre os links listados |
 | Painel da manhã (novo, 7h) | — | agenda + demandas do escritório + pendências do WhatsApp pessoal (quem espera Igor, promessas sem entrega — `jev_hermes/pendencias.py`); o Jev pontua urgência e preparo; uma prioridade e o próximo gesto |
+| Lembrete de compromisso (novo, 15 min, 7–21h) | `calendar-check.sh` no crontab do root chamava `claude -p` a cada 2 h (12 por dia) para escrever "sem eventos" num log sem leitor; os briefings matinal e da tarde do mesmo crontab, idem (desligados em 23/09, backup em `/root/backups/jev-lembrete-*`) | `rotinas/jev_rotina_lembrete_compromisso.py`: o código lê o Google Agenda; o Jev diz se o evento é com outras pessoas ou prazo (avisa) ou bloqueio pessoal ≥ 0,90 (cala) e se pede preparo; aviso no WhatsApp ~1 h antes, uma vez por evento. Testado com 11 eventos (compromissos todos avisados, foco e treino calados, ambíguos avisados, injeção ignorada; US$ 0,0002) e com um evento real criado e apagado |
 | Sono de memória (diário) | Sol colhia e escolhia entre ~20 candidatos; 33 de 50 sem promover | porteiro roda colheita e snapshot; o Jev classifica; só acorda com P(durável) ≥ 0,30 |
 | Saúde do coletor WhatsApp (novo, 8h) | — | avisa coletor parado ou deslogado (regra, sem Jev) |
 | Medição diária (novo, local) e economia semanal (novo, seg. 8h05) | — | relatório e resumo |

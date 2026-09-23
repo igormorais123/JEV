@@ -42,10 +42,22 @@ class PoliticaDeSugestao(unittest.TestCase):
         self.assertFalse(abaixo['sugere'])
         self.assertIn('abaixo do corte', abaixo['motivo'])
 
-        acima = politica.decidir({'tema': {'choice': 'juridico', 'confidence': 0.95},
-                                  'risco': {'choice': 'seguro'}})
-        self.assertTrue(acima['sugere'])
-        self.assertIn('/ash', acima['skills'])
+        import tempfile
+        with tempfile.TemporaryDirectory() as pasta:
+            pasta = Path(pasta)
+            (pasta / 'skills' / 'cicero').mkdir(parents=True)
+            (pasta / 'skills' / 'cicero' / 'SKILL.md').write_text('x', encoding='utf-8')
+            (pasta / 'skills' / 'arcano').mkdir(parents=True)
+            (pasta / 'skills' / 'arcano' / 'SKILL.md').write_text('x', encoding='utf-8')
+            (pasta / 'settings.json').write_text('{"skillOverrides": {"arcano": "off"}}', encoding='utf-8')
+            acima = politica.decidir({'tema': {'choice': 'juridico', 'confidence': 0.95},
+                                      'risco': {'choice': 'seguro'}}, pasta / 'skills', pasta / 'settings.json')
+            self.assertTrue(acima['sugere'])
+            self.assertIn('/cicero', acima['skills'])
+            self.assertNotIn('/arcano', acima['skills'])      # desligada: não é sugerida
+            vazio = politica.decidir({'tema': {'choice': 'estrategia', 'confidence': 0.95},
+                                      'risco': {'choice': 'seguro'}}, pasta / 'skills', pasta / 'settings.json')
+            self.assertFalse(vazio['sugere'])                 # nenhuma skill do tema existe ali
 
     def test_sem_tema_nao_sugere_nada(self):
         """Em 37 dos 60 pedidos reais não havia tema: o silêncio é o caso comum."""
@@ -211,7 +223,7 @@ class Hook(unittest.TestCase):
         # Decodificado como UTF-8 puro: se o hook escrevesse pelo console, isto quebraria.
         nota = json.loads(r.stdout.decode('utf-8'))['hookSpecificOutput']['additionalContext']
         self.assertIn('confiança', nota)
-        self.assertIn('jurisprudência', nota)
+        self.assertIn('jurídica', nota)
 
 
 if __name__ == '__main__':

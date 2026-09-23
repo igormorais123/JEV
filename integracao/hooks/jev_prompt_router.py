@@ -90,8 +90,16 @@ def main():
     from jev_router import politica, roteador
 
     modo = modo_vigente()
-    decisao = roteador.classificar(pedido, contexto=dados.get('cwd') or '', modo=modo,
-                                   origem='claude-code/UserPromptSubmit')
+    # O mesmo gancho serve ao Claude Code e ao Codex; o transcript diz quem chamou, e cada um
+    # tem a própria pasta de skills (sugestão só do que existe ali).
+    codex = '.codex' in Path(str(dados.get('transcript_path') or '')).as_posix()
+    if codex:
+        casa = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex')
+        pasta, configuracao, origem = casa / 'skills', casa / 'sem-overrides.json', 'codex/UserPromptSubmit'
+    else:
+        pasta, configuracao, origem = None, None, 'claude-code/UserPromptSubmit'
+    decisao = roteador.classificar(pedido, contexto=dados.get('cwd') or '', modo=modo, origem=origem,
+                                   pasta_de_skills=pasta, configuracao=configuracao)
     if not decisao:
         return 0
 
