@@ -110,6 +110,33 @@ e o peso fixo por chamada é de 35 ferramentas com 53,9 KB de esquema mais 51,8 
   delas com confiança de 0,38 a 0,77. Vale a mesma regra da leitura: ficam as fortes (≥ 0,90), o
   título e a seção de quando usar; sem forte, as três do topo.
 
+## Os seis fluxos do quadro "5 casos de uso do JEV" (desde 23/09/2026)
+
+Fonte: os diagramas do quadro de aula (`fluxos_jev_mermaid_pt.md`, guia em PDF). Em todos o JEV
+ocupa o mesmo lugar — o ponto em que o sistema decide o que acontece em seguida — e a decisão
+**muda o fluxo**. Os `jev_workflows` de 22/09 davam só a sugestão (consultivos, nunca agem); os
+módulos abaixo fecham cada fluxo com o que acontece depois. Motor comum: `jev_hermes/ciclo.py`.
+
+| fluxo | módulo | o que o código decide | o que o Jev decide | o que acontece depois |
+|---|---|---|---|---|
+| 1 avaliações | `avaliacao.py` | faltas objetivas lidas da saída de teste e do diff que o harness observou; mesmas faltas duas vezes → pessoa | critérios de aceite contra a evidência (via `workflows.judge`) | aprovado; refazer com as faltas devolvidas ao agente e o modelo um nível acima; ou aviso a Igor |
+| 2 agentes | `agentes.py` | guardas: testar só código novo, revisar só o que passou, concluir só com teste + revisão + judge | quem trabalha agora, entre as funções permitidas | o agente escolhido roda (Claude Code); testador é o harness |
+| 3 modelos | `modelos.py` | escalada por falha; orçamento (desce de nível ou para) | o tipo de trabalho da subtarefa | `claude -p` com o modelo e o esforço do nível |
+| 4 triagem | `triagem.py` + caixa vigiada | cortes 0,90 (age) e 0,50 (confira); idempotência; lembrete único | categoria pelo que o item pede + sentinela, no mesmo pedido | cartão no kanban (incidente, oportunidade com acompanhamento, pendência) e alerta |
+| 5 bancada | `bancada.py` | mesmas tarefas, pasta nova, verificador oculto depois, IC95 | — (a comparação é conta) | relatório com as 5 medidas em `estado/bancada/` |
+| 6 ciclo | `agenda.py` + plugin `jev-fluxos` | guardas: reservar só com escolha; concluir só com evento lido como `confirmed`; reconfere o horário antes | leitura do pedido, resposta livre de Igor, próxima ação quando há mais de uma | pergunta a Igor com as opções; reserva no Google Agenda sem convidados |
+
+Níveis de modelo (fluxo 3): Haiku é proibido nos projetos de Igor, então pequeno = Sonnet com
+esforço baixo, especialista = Opus, fronteira = Fable. Custos do `claude -p` são nominais (a
+assinatura Max não cobra por chamada), mas são a medida comparável entre arquiteturas.
+
+Validação de implantação (23/09): 147 testes offline na VPS; ao vivo, o roteador de modelos pôs
+"classificar 30 e-mails" no pequeno, "corrigir função" no especialista e "planejar migração" na
+fronteira; o ciclo de agenda leu "semana que vem à tarde", achou três horários livres reais e,
+com "nenhum desses", ofereceu outros dias (nada reservado; a chamada de reserva foi conferida em
+`--dry-run`); a triagem criou e arquivou um cartão de teste em `engenharia-inteia`.
+Backup: `/root/backups/jev-fluxos-20260923T062122Z`.
+
 ## Segurança e falhas
 
 - Todo porteiro falha para **acordar**: se algo quebrar, o job roda como antes.

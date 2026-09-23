@@ -144,3 +144,32 @@ e prefira uma pergunta fechada ao Jev a um turno seu para decidir o óbvio.
 - Desligar tudo sem reiniciar: `touch /root/.hermes/integrations/jev/DESLIGADO`
 - Tetos: US$ 0,50/dia e US$ 5/mês em `/root/.hermes/integrations/jev/jev.env`.
 - Runbook: `/root/.hermes/integrations/jev/README-HERMES-JEV.md`.
+
+## Cinco workflows consultivos (`jev_workflows`)
+
+No perfil default, o plugin `jev-workflows` expõe `judge`, `agente`, `modelo`, `triagem` e `experimento`. O código vive em `/root/.hermes/integrations/jev/jev_hermes/workflows.py`; o plugin em `/root/.hermes/plugins/jev-workflows`. Primeiro confira `hermes plugins list --user --json` e `hermes plugins doctor --ci jev-workflows`; o gateway pode recarregar o plugin sem reinício, mas a ferramenta nova só entra na sessão seguinte.
+
+O `judge` chamado pela ferramenta ou CLI recebe somente alegações de quem chama: mesmo com `fonte=hermes` e referência plausível, ele deve devolver `revisao_humana`, nunca `passou` ou `retry`. Apenas código de harness que executou testes/leu artefatos por conta própria deve chamar `workflows.judge(..., observacoes=[Observacao(...)])`; `observar_arquivo` lê e calcula hash dentro de raízes dadas pelo harness, mas prova conteúdo, não autoria. Não usar relatos do agente nem nomes de fontes como prova. O comparador só aponta indício de vencedor quando o IC do líder se separa dos ICs de *todas* as alternativas elegíveis; IC95 aproximado não é teste formal nem corrige múltiplas comparações.
+
+Para alterar: staging isolado + teste offline com `python3 -m unittest discover -s tests -p 'test_workflows.py' -v`, revisão adversarial de falso `passou` e matemática, backup dos destinos/config, promoção de arquivos verificados e `hermes plugins enable --no-allow-tool-override jev-workflows` (recarrega plugin sem restart, ferramentas na sessão seguinte). Verifique readback do plugin, hash dos arquivos, PID/health do gateway. Nunca acione transporte real durante testes; mantenha `JEV_WORKFLOWS_OFFLINE=1` e registro em scratch.
+
+## Os seis fluxos que agem (quadro "5 casos de uso do JEV", 23/09/2026)
+
+Os `jev_workflows` acima dão sugestão; os fluxos abaixo **mudam o caminho**: o código define as
+ações e as guardas, o Jev decide só onde há escolha real, e o resultado dispara o próximo passo.
+Código em `/root/.hermes/integrations/jev/jev_hermes/`; motor comum `ciclo.py` (observar →
+decidir → agir, guarda em código, limite de passos, repetição e erros levam a uma pessoa).
+
+| fluxo | pergunta | como usar |
+|---|---|---|
+| 1 avaliações | ficou bom para seguir? | `python3 -m jev_hermes.avaliacao --pasta DIR --pedido TASK.md --teste "CMD" [--criterio "id: texto"] --avisar` — o harness roda os testes e lê o diff; APROVADO, REFAZER (devolve as faltas ao agente, sobe o modelo) ou HUMANO (mesmas faltas duas vezes, tentativas esgotadas, caso sensível) |
+| 2 agentes | quem trabalha agora? | `python3 -m jev_hermes.agentes --pasta DIR --chamado ARQ --teste "CMD" --avisar` — pesquisador, programador, testador (o harness) e revisor escolhidos pelo estado; conclui só com teste passando, revisão aprovada e judge aprovando |
+| 3 modelos | vale gastar inteligência aqui? | ferramenta `jev_fluxos` operação `modelo`, ou `python3 -m jev_hermes.modelos --subtarefa "..."`; `python3 -m jev_hermes.modelos` mostra "N decisões → M escaladas". Níveis: pequeno = Sonnet esforço baixo, especialista = Opus, fronteira = Fable (Haiku é proibido). O Jev lê o TIPO do trabalho; a dificuldade aparece na falha, que sobe um nível |
+| 4 triagem | o que chegou e que trabalho nasce? | automático na caixa vigiada (30 min): defeito crítico → cartão Incidente em `colmeia-operacional` + alerta; oportunidade → cartão em `gabinete-igor` com acompanhamento em 2 dias úteis + alerta; pedido de funcionalidade → cartão em `engenharia-inteia`. Cartões nascem `blocked`, sem responsável. Avulso: `python3 -m jev_hermes.triagem --texto "..." --de "..." --assunto "..."` |
+| 5 bancada | qual arquitetura é melhor? | `systemd-run --unit=jev-bancada --collect python3 -m jev_hermes.bancada --arquiteturas esteira jev --repeticoes N` — mesmas 4 tarefas (defeito, funcionalidade, pesquisa, refatoração), verificador oculto escrito só depois, 5 medidas; relatório em `estado/bancada/` |
+| 6 ciclo agêntico | qual é a próxima ação? | ferramenta `jev_fluxos`: `agendar` {pedido, titulo?, duracao_min?} → se `aguardando_usuario`, repasse a `pergunta` a Igor exatamente como veio e chame `responder` {id, resposta} com a resposta literal dele. Nunca escolha por ele. `concluido` só vem depois do evento lido de volta como confirmado; evento sem convidados |
+
+Regras que valem para os seis: refazer é o erro barato e aprovar é o caro (só o `judge` com
+evidência do harness aprova); amarelo (0,50–0,90) vai para gente; texto com ordem embutida não
+gera ação; tudo falha para o lado seguro (sem Jev, vale a regra do fluxo ou uma pessoa).
+Fluxos 1, 2 e 5 rodam agentes Claude Code na assinatura: demoram minutos, rode com `systemd-run`.

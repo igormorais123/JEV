@@ -1,0 +1,17 @@
+{
+ "id": "defeito-frete",
+ "tipo": "defeito",
+ "pedido": "Chamado: clientes com compra de exatamente R$ 200,00 estão pagando frete. A regra da loja é frete grátis a partir de R$ 200,00 (inclusive). Corrija o defeito em loja/frete.py e acrescente um teste que cubra o caso.",
+ "arquivos": {
+  "loja/__init__.py": "",
+  "loja/frete.py": "def calcular_frete(subtotal, distancia_km):\n    \"\"\"Frete grátis a partir de R$ 200; senão R$ 15 fixos mais R$ 0,50 por km acima de 10 km.\"\"\"\n    if subtotal > 200:\n        return 0.0\n    extra = max(0, distancia_km - 10) * 0.5\n    return round(15 + extra, 2)\n",
+  "tests/test_frete.py": "from loja.frete import calcular_frete\n\n\ndef test_frete_basico():\n    assert calcular_frete(100, 5) == 15.0\n\n\ndef test_frete_distante():\n    assert calcular_frete(100, 20) == 20.0\n"
+ },
+ "verificador": {
+  "comando": "{python} -m pytest -q -p no:cacheprovider --noconftest -c {vazio} --rootdir . verificador_oculto.py",
+  "arquivos": {
+   "verificador_oculto.py": "from loja.frete import calcular_frete\n\n\ndef test_limite_exato():\n    assert calcular_frete(200, 30) == 0.0\n\n\ndef test_acima():\n    assert calcular_frete(250.5, 3) == 0.0\n\n\ndef test_abaixo():\n    assert calcular_frete(199.99, 10) == 15.0\n\n\ndef test_km():\n    assert calcular_frete(50, 14) == 17.0\n"
+  }
+ },
+ "teste_visivel": "{python} -m pytest -q -p no:cacheprovider tests"
+}

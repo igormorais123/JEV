@@ -1,0 +1,16 @@
+{
+ "id": "refatoracao-moeda",
+ "tipo": "refatoracao",
+ "pedido": "Refatore relatorio.py: a formatação de moeda brasileira está repetida em três funções. Extraia uma função formatar_moeda(valor) -> str (por exemplo, 1234.5 vira 'R$ 1.234,50') e use-a nas três, sem mudar nenhuma saída.",
+ "arquivos": {
+  "relatorio.py": "def linha_produto(nome, preco):\n    return f\"{nome}: R$ {preco:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_frete(valor):\n    return \"Frete: R$ \" + f\"{valor:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_total(total):\n    texto = f\"{total:,.2f}\"\n    texto = texto.replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n    return \"TOTAL: R$ \" + texto\n",
+  "tests/test_relatorio.py": "import relatorio\n\n\ndef test_produto():\n    assert relatorio.linha_produto('Caneta', 2.5) == 'Caneta: R$ 2,50'\n\n\ndef test_total():\n    assert relatorio.linha_total(1234.5) == 'TOTAL: R$ 1.234,50'\n"
+ },
+ "verificador": {
+  "comando": "{python} -m pytest -q -p no:cacheprovider --noconftest -c {vazio} --rootdir . verificador_oculto.py",
+  "arquivos": {
+   "verificador_oculto.py": "import inspect\n\nimport relatorio\n\n\ndef test_funcao_existe():\n    assert relatorio.formatar_moeda(1234.5) == 'R$ 1.234,50'\n    assert relatorio.formatar_moeda(0) == 'R$ 0,00'\n\n\ndef test_saidas_iguais():\n    assert relatorio.linha_produto('Caneta', 1234.5) == 'Caneta: R$ 1.234,50'\n    assert relatorio.linha_frete(15) == 'Frete: R$ 15,00'\n    assert relatorio.linha_total(1000000) == 'TOTAL: R$ 1.000.000,00'\n\n\ndef test_sem_duplicacao():\n    for nome in ('linha_produto', 'linha_frete', 'linha_total'):\n        fonte = inspect.getsource(getattr(relatorio, nome))\n        assert 'formatar_moeda' in fonte and 'replace' not in fonte\n"
+  }
+ },
+ "teste_visivel": "{python} -m pytest -q -p no:cacheprovider tests"
+}

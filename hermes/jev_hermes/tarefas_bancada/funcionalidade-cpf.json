@@ -1,0 +1,17 @@
+{
+ "id": "funcionalidade-cpf",
+ "tipo": "funcionalidade",
+ "pedido": "Implemente validar_cpf em cadastro/cpf.py: aceitar CPF com ou sem pontuação, conferir os dois dígitos verificadores e rejeitar tamanho errado, letras e sequências de um só dígito repetido (111.111.111-11).",
+ "arquivos": {
+  "cadastro/__init__.py": "",
+  "cadastro/cpf.py": "def validar_cpf(cpf: str) -> bool:\n    \"\"\"Valida um CPF brasileiro. A implementar.\"\"\"\n    raise NotImplementedError\n",
+  "tests/test_cpf.py": "from cadastro.cpf import validar_cpf\n\n\ndef test_cpf_valido_com_pontuacao():\n    assert validar_cpf('529.982.247-25') is True\n\n\ndef test_cpf_invalido():\n    assert validar_cpf('529.982.247-24') is False\n"
+ },
+ "verificador": {
+  "comando": "{python} -m pytest -q -p no:cacheprovider --noconftest -c {vazio} --rootdir . verificador_oculto.py",
+  "arquivos": {
+   "verificador_oculto.py": "from cadastro.cpf import validar_cpf\n\n\ndef test_sem_pontuacao():\n    assert validar_cpf('52998224725') is True\n\n\ndef test_outro_valido():\n    assert validar_cpf('111.444.777-35') is True\n\n\ndef test_repetidos():\n    assert validar_cpf('111.111.111-11') is False\n\n\ndef test_tamanho():\n    assert validar_cpf('5299822472') is False\n\n\ndef test_letras():\n    assert validar_cpf('529.982.24a-25') is False\n\n\ndef test_segundo_digito():\n    assert validar_cpf('111.444.777-36') is False\n"
+  }
+ },
+ "teste_visivel": "{python} -m pytest -q -p no:cacheprovider tests"
+}
