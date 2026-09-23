@@ -1,0 +1,12 @@
+{
+  "data": "2026-09-23",
+  "o_que": "Sentimento de manchetes da Sala de Monitoramento (efeito para a campanha de Celina Leão): concordância com o rótulo do LLM (codex:default) nas 167 manchetes que ele rotulou",
+  "banco": "CAMPANHAsilvSalaMonitoramento/SALA DE MONITORAMENTO/data/sala.db (somente leitura)",
+  "distribuicao_llm": {"POS": 58, "NEG": 39, "NEU": 36, "MIX": 34},
+  "heuristica_ptbr_v1": {"concorda": 38, "de": 167, "taxa": 0.23, "nota": "marca NEU em 84% dos 16.663 itens que rotula"},
+  "jev_todas": {"concorda": 100, "de": 167, "taxa": 0.60},
+  "jev_por_corte": {"0.7": {"cobre": 72, "concorda": 56}, "0.8": {"cobre": 58, "concorda": 48}, "0.9": {"cobre": 30, "concorda": 27}},
+  "erro_principal_do_jev": "MIX do LLM vira NEG (17) ou POS (12): o Jev escolhe um lado no ambíguo",
+  "custo_usd": 0.0035,
+  "script": "integracao/avaliacao/sala_sentimento.py"
+}
