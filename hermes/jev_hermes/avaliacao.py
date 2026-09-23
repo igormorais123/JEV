@@ -23,16 +23,21 @@ import json
 import os
 import re
 import shlex
+import shutil
 import subprocess
 import time
 from pathlib import Path
 
-from . import modelos, nucleo, workflows
+from . import isolamento, modelos, nucleo, workflows
 
 REGISTRO = nucleo.ESTADO / 'avaliacoes.jsonl'
 CORTE_REFAZER = 0.90
 MAX_TENTATIVAS = 3
 CAUDA = 3500   # caracteres finais da saída de teste que entram na evidência
+# Sem critério declarado: o pedido, qualquer que seja o tipo (correção, funcionalidade, pesquisa).
+CRITERIO_PADRAO = {'id': 'pedido-atendido', 'descricao': (
+    'As mudancas observadas fazem o que o PEDIDO ORIGINAL pede (correcao, funcionalidade, refatoracao '
+    'ou o arquivo de resposta pedido) e respeitam o que ele proibe.')}
 
 
 # ------------------------------------------------------------------------ observadores
@@ -56,10 +61,13 @@ def contar(texto, codigo_saida):
 
 
 def observar_testes(comando, pasta, timeout=600):
-    """Roda o comando de teste (sem shell) e devolve a Observacao com a contagem lida."""
+    """Roda o comando de teste (sem shell, isolado) e devolve a Observacao com a contagem lida."""
     partes = shlex.split(comando)
     try:
-        processo = subprocess.run(partes, cwd=str(pasta), capture_output=True, text=True, timeout=timeout)
+        if not (shutil.which(partes[0]) or (Path(pasta) / partes[0]).exists()):
+            raise FileNotFoundError(partes[0])   # dentro do bwrap viraria só "saiu com 1"
+        processo = subprocess.run(isolamento.isolar(partes, pasta), cwd=str(pasta), capture_output=True, text=True,
+                                  timeout=timeout)
         texto, codigo = (processo.stdout or '') + (processo.stderr or ''), processo.returncode
     except subprocess.TimeoutExpired:
         texto, codigo = f'tempo esgotado depois de {timeout} s', 124
@@ -166,7 +174,7 @@ def laco(pedido, criterios, implementar, observar, *, max_tentativas=MAX_TENTATI
     `observar()` devolve a lista de `workflows.Observacao` que o harness leu depois da tentativa.
     """
     max_tentativas = max(1, min(int(max_tentativas), workflows.MAXIMO_DE_TENTATIVAS))
-    criterios = list(criterios) or [{'id': 'pedido-atendido', 'descricao': 'O que o pedido pede foi feito.'}]
+    criterios = list(criterios) or [CRITERIO_PADRAO]
     historico, retorno, faltas_anteriores = [], None, None
     for tentativa in range(1, max_tentativas + 1):
         inicio = time.time()
@@ -218,6 +226,14 @@ FERRAMENTAS_DE_EDICAO = ['Read', 'Edit', 'Write', 'Glob', 'Grep', 'Bash(git diff
                          'Bash(ls:*)', 'Bash(cat:*)']
 
 
+# O que o agente entrega além do código. O juiz só aceita o que o harness observa: teste novo vira
+# evidência; verificação feita à mão, não. Relato com o que não aparece no diff leva a "insuficiente".
+ENTREGA = ('Não altere nem apague os testes existentes. Se o pedido permite mudar código, acrescente testes '
+           'novos que provem o que ele exige: eles viram evidência. Ao terminar, relate em até cinco linhas só '
+           'o que aparece nas mudanças (arquivos, funções, testes acrescentados); não cite verificações feitas à '
+           'mão nem contagens de testes, pois quem roda e confere os testes é o harness.')
+
+
 def prompt_de_implementacao(pedido, criterios, comando_teste, retorno, tentativa):
     partes = [f'Você trabalha nesta pasta isolada. Tarefa:\n{pedido}']
     if criterios:
@@ -226,9 +242,7 @@ def prompt_de_implementacao(pedido, criterios, comando_teste, retorno, tentativa
         partes.append(f'Esta é a tentativa {tentativa}. A avaliação da tentativa anterior encontrou:\n'
                       + '\n'.join(f'- {f}' for f in retorno['faltas'])
                       + f"\nFinal da saída dos testes:\n{retorno['saida_dos_testes']}")
-    partes.append(f'Teste exatamente com: {comando_teste} (outro Python pode não ter pytest). Não altere os '
-                  'testes para passar. Ao terminar, descreva em até cinco linhas só o que mudou no código; quem '
-                  'confere os testes é o harness.')
+    partes.append(f'Teste exatamente com: {comando_teste} (outro Python pode não ter pytest). {ENTREGA}')
     return '\n\n'.join(partes)
 
 

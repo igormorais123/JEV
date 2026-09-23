@@ -130,6 +130,17 @@ Níveis de modelo (fluxo 3): Haiku é proibido nos projetos de Igor, então pequ
 esforço baixo, especialista = Opus, fronteira = Fable. Custos do `claude -p` são nominais (a
 assinatura Max não cobra por chamada), mas são a medida comparável entre arquiteturas.
 
+Isolamento (`isolamento.py`, com `bwrap`): o código que o agente escreve roda sem ver o resto da
+máquina. Os testes que o harness roda não têm rede; o `claude` do agente tem rede (fala com a API)
+e a própria configuração, mas /root e /tmp viram diretórios vazios em memória, e só a pasta da
+tarefa aceita gravação. Conferido na VPS com um teste que tentava ler `~/.hermes/.env` (bloqueado)
+e gravar em /root (a gravação caiu no diretório temporário e sumiu). O sandbox nativo do Claude
+Code não roda neste servidor (o seccomp dele falha em `setgroups`), por isso o bwrap por fora.
+
+Critério de conclusão: o juiz só aprova o que o harness observa. Por isso o programador acrescenta
+testes que provam o pedido (viram evidência) e relata apenas o que aparece nas mudanças; relato
+com verificações feitas à mão é lido como "insuficiente" e vai para uma pessoa, como deve.
+
 Validação de implantação (23/09): 147 testes offline na VPS; ao vivo, o roteador de modelos pôs
 "classificar 30 e-mails" no pequeno, "corrigir função" no especialista e "planejar migração" na
 fronteira; o ciclo de agenda leu "semana que vem à tarde", achou três horários livres reais e,

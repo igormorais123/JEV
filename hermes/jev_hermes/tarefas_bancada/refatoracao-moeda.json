@@ -3,7 +3,7 @@
  "tipo": "refatoracao",
  "pedido": "Refatore relatorio.py: a formatação de moeda brasileira está repetida em três funções. Extraia uma função formatar_moeda(valor) -> str (por exemplo, 1234.5 vira 'R$ 1.234,50') e use-a nas três, sem mudar nenhuma saída.",
  "arquivos": {
-  "relatorio.py": "def linha_produto(nome, preco):\n    return f\"{nome}: R$ {preco:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_frete(valor):\n    return \"Frete: R$ \" + f\"{valor:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_total(total):\n    texto = f\"{total:,.2f}\"\n    texto = texto.replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n    return \"TOTAL: R$ \" + texto\n",
+  "relatorio.py": "def linha_produto(nome, preco):\n    return f\"{nome}: R$ \" + f\"{preco:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_frete(valor):\n    return \"Frete: R$ \" + f\"{valor:,.2f}\".replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n\n\ndef linha_total(total):\n    texto = f\"{total:,.2f}\"\n    texto = texto.replace(\",\", \"X\").replace(\".\", \",\").replace(\"X\", \".\")\n    return \"TOTAL: R$ \" + texto\n",
   "tests/test_relatorio.py": "import relatorio\n\n\ndef test_produto():\n    assert relatorio.linha_produto('Caneta', 2.5) == 'Caneta: R$ 2,50'\n\n\ndef test_total():\n    assert relatorio.linha_total(1234.5) == 'TOTAL: R$ 1.234,50'\n"
  },
  "verificador": {

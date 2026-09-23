@@ -24,7 +24,7 @@ import subprocess
 import time
 from datetime import timedelta
 
-from . import nucleo
+from . import isolamento, nucleo
 
 REGISTRO = nucleo.ESTADO / 'modelos.jsonl'
 ORDEM = ['pequeno', 'especialista', 'fronteira']
@@ -128,6 +128,7 @@ def executar_claude(prompt, pasta, decisao, *, ferramentas=None, timeout=900, ma
     """Roda `claude -p` na pasta com o modelo decidido. Devolve texto, custo nominal, turnos e duração.
 
     Permissão: `acceptEdits` só na pasta; comandos de terminal apenas os listados em `ferramentas`.
+    Isolado (`isolamento`): o agente não vê o resto de /root nem grava fora da pasta.
     `--max-budget-usd` com o restante do orçamento: o próprio Claude Code para ao alcançá-lo.
     """
     comando = ['claude', '-p', '--output-format', 'json', '--model', decisao['modelo'],
@@ -137,9 +138,11 @@ def executar_claude(prompt, pasta, decisao, *, ferramentas=None, timeout=900, ma
         comando += ['--allowedTools', ','.join(ferramentas)]
     if orcamento is not None and orcamento.restante > 0:
         comando += ['--max-budget-usd', f'{orcamento.restante:.2f}']
+    interpretes = [shlex.split(f[5:-3])[0] for f in ferramentas or () if f.startswith('Bash(') and f.endswith(':*)')]
     inicio = time.time()
     try:   # o pedido vai pela entrada padrão: nenhuma opção variádica o engole
-        processo = subprocess.run(comando, input=prompt, cwd=str(pasta), capture_output=True, text=True,
+        processo = subprocess.run(isolamento.isolar(comando, pasta, rede=True, executaveis=interpretes, claude=True),
+                                  input=prompt, cwd=str(pasta), capture_output=True, text=True,
                                   timeout=timeout, env=dict(os.environ, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC='1'))
         saida = processo.stdout
     except subprocess.TimeoutExpired as erro:

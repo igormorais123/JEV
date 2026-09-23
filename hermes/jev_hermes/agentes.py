@@ -33,10 +33,9 @@ MAX_PESQUISAS = 2
 PROMPTS = {
     'PESQUISAR': ('Você é o PESQUISADOR. Não altere arquivos. Leia o código e diga onde está o problema do '
                   'chamado, a causa provável e o que precisa mudar, em até 15 linhas.'),
-    'PROGRAMAR': ('Você é o PROGRAMADOR. Faça a menor mudança que resolve o chamado. Não altere os testes '
-                  'para passar. Rode os testes exatamente com o COMANDO DE TESTE DO PROJETO (outro Python pode '
-                  'não ter pytest). Ao terminar, descreva em até cinco linhas só o que mudou no código; quem '
-                  'confere os testes é o harness.'),
+    'PROGRAMAR': ('Você é o PROGRAMADOR. Faça a menor mudança que resolve o chamado. Rode os testes '
+                  'exatamente com o COMANDO DE TESTE DO PROJETO (outro Python pode não ter pytest). '
+                  + avaliacao.ENTREGA),
     'REVISAR': ('Você é o REVISOR. Não altere arquivos. Leia o `git diff` e diga se a mudança resolve o '
                 'chamado sem quebrar outra coisa. Termine com uma linha exatamente "VEREDITO: aprovado" '
                 'ou "VEREDITO: mudancas" seguida do que mudar.'),
@@ -121,8 +120,7 @@ def montar(pasta, comando_teste, orcamento, *, esteira=False, transporte=None):
     def concluir(estado):
         veredito = workflows.judge(
             {'pedido_original': estado['objetivo'][:workflows.MAX_TEXTO],
-             'criterios': estado.get('criterios') or [{'id': 'chamado-resolvido',
-                                                       'descricao': 'O problema do chamado foi corrigido.'}],
+             'criterios': estado.get('criterios') or [avaliacao.CRITERIO_PADRAO],
              'resultado': (estado.get('relato') or 'sem relato')[:workflows.MAX_TEXTO],
              'tentativa': 1, 'max_tentativas': 0, 'sensivel': bool(estado.get('sensivel'))},
             observacoes=[o for o in (avaliacao.observar_testes(comando_teste, pasta),

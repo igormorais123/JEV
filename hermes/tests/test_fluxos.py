@@ -596,3 +596,18 @@ def test_programador_recebe_o_comando_de_teste(jev, oficina, monkeypatch):
                                                 if k in p['criteria']))
     jev.agentes.resolver(pasta, 'ok.txt deve conter 1', teste, transporte=t)
     assert prompts and all(f'COMANDO DE TESTE DO PROJETO: {teste}' in p for p in prompts)
+
+
+def test_isolamento_sem_rede_so_grava_na_pasta(jev, monkeypatch, tmp_path):
+    from jev_hermes import isolamento
+    monkeypatch.delenv('JEV_ISOLAMENTO', raising=False)
+    monkeypatch.setattr(isolamento.shutil, 'which', lambda nome: '/usr/bin/bwrap' if nome == 'bwrap' else None)
+    cmd = isolamento.isolar(['python3', '-m', 'pytest'], tmp_path)
+    pasta = str(tmp_path.resolve())
+    assert cmd[0] == '/usr/bin/bwrap' and cmd[-3:] == ['python3', '-m', 'pytest']
+    assert ['--tmpfs', '/root'] == cmd[4:6] and '--unshare-all' in cmd and '--share-net' not in cmd
+    assert cmd[cmd.index('--bind') + 1:cmd.index('--bind') + 3] == [pasta, pasta]
+    com_rede = isolamento.isolar(['claude', '-p'], tmp_path, rede=True, claude=True)
+    assert '--share-net' in com_rede
+    monkeypatch.setenv('JEV_ISOLAMENTO', '0')
+    assert isolamento.isolar(['python3'], tmp_path) == ['python3']
