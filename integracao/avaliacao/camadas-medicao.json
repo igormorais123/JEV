@@ -1,82 +1,84 @@
 {
  "leitura": {
-  "reads": 112,
-  "com_pedido": 112,
-  "classificados": 20,
-  "estreitados": 5,
-  "estreitados_ativos": 5,
+  "reads": 240,
+  "com_pedido": 240,
+  "classificados": 21,
+  "estreitados": 6,
+  "estreitados_ativos": 6,
   "por_via": {
    "read": {
-    "vistos": 69,
-    "estreitados_ativos": 4,
-    "tokens_evitados": 28292
+    "vistos": 151,
+    "estreitados_ativos": 5,
+    "tokens_evitados": 33297
    },
    "bash": {
-    "vistos": 43,
+    "vistos": 89,
     "estreitados_ativos": 1,
     "tokens_evitados": 8387
    }
   },
   "motivos": {
-   "read ja delimitado": 55,
-   "tipo de arquivo fora da camada": 17,
+   "read ja delimitado": 92,
+   "tipo de arquivo fora da camada": 90,
    "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 14,
-   "arquivo pequeno": 20,
+   "arquivo pequeno": 37,
    "economia pequena demais para valer o intervalo": 1
   },
-  "linhas_evitadas": 1936,
-  "tokens_evitados": 36679,
-  "releituras": 2,
-  "linhas_relidas": 164,
+  "linhas_evitadas": 2136,
+  "tokens_evitados": 41684,
+  "releituras": 3,
+  "linhas_relidas": 284,
   "releituras_sem_intervalo_registrado": 1,
-  "custo_usd": 0.013456,
-  "chamadas": 215,
-  "latencia_mediana_ms": 3341,
-  "latencia_p90_ms": 4035,
+  "custo_usd": 0.014104,
+  "chamadas": 222,
+  "latencia_mediana_ms": 3206,
+  "latencia_p90_ms": 3992,
   "blocos_por_classe": {
-   "essencial": 111,
-   "complementar": 70,
+   "essencial": 113,
+   "complementar": 75,
    "irrelevante": 33,
    "incerto": 1
   },
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 9,
+  "greps": 20,
   "por_ferramenta": {
-   "Grep": 7,
+   "Grep": 18,
    "Glob": 1,
    "WebSearch": 1
   },
-  "classificados": 5,
-  "sugeridos": 4,
-  "sugeridos_ativos": 4,
-  "arquivos_no_topo": 36,
-  "arquivos_no_topo_lidos_depois": 0,
-  "arquivos_fora": 0,
+  "classificados": 16,
+  "sugeridos": 8,
+  "sugeridos_ativos": 8,
+  "arquivos_no_topo": 41,
+  "arquivos_no_topo_lidos_depois": 2,
+  "arquivos_fora": 1,
   "motivos": {
    "poucos itens": 4,
-   "nada a ordenar: nenhum essencial nem descartável": 1
+   "nada a ordenar: nenhum essencial nem descartável": 6,
+   "falha: timeout": 2
   },
-  "custo_usd": 0.001469,
-  "chamadas": 60,
-  "latencia_mediana_ms": 3716
+  "custo_usd": 0.005277,
+  "chamadas": 202,
+  "latencia_mediana_ms": 5780
  },
  "sentinela": {
-  "conteudos": 14,
-  "inspecionados": 10,
-  "partes": 29,
-  "acusados": 2,
+  "conteudos": 19,
+  "inspecionados": 15,
+  "partes": 49,
+  "acusados": 3,
   "por_ferramenta": {
    "prompt/pasted_content": 3,
-   "WebFetch": 7
+   "WebFetch": 12
   },
   "acusados_por_ferramenta": {
-   "prompt/pasted_content": 2
+   "prompt/pasted_content": 2,
+   "WebFetch": 1
   },
-  "custo_usd": 0.001313,
-  "chamadas": 29,
-  "latencia_mediana_ms": 1335
+  "custo_usd": 0.002216,
+  "chamadas": 49,
+  "latencia_mediana_ms": 2413
  },
  "ler": {
   "usos": 2,
@@ -90,21 +92,22 @@
   "chamadas": 6
  },
  "saida": {
-  "saidas_com_erro": 69,
-  "classificadas": 69,
-  "apontadas": 4,
+  "saidas_com_erro": 87,
+  "classificadas": 87,
+  "apontadas": 8,
   "partes_por_classe": {
-   "normal": 193,
-   "consequencia": 4,
-   "causa": 7,
+   "normal": 199,
+   "consequencia": 16,
+   "causa": 23,
    "incerto": 3
   },
   "motivos": {
-   "nenhuma parte com causa acima do corte": 65
+   "nenhuma parte com causa acima do corte": 78,
+   "falha: timeout": 1
   },
-  "custo_usd": 0.009781,
-  "chamadas": 207,
-  "latencia_mediana_ms": 1344
+  "custo_usd": 0.011952,
+  "chamadas": 250,
+  "latencia_mediana_ms": 1470
  },
  "verificar": {
   "usos": 1,
@@ -117,15 +120,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 199,
-  "sugeriu": 99,
-  "cache": 95,
-  "custo_usd": 0.003476,
-  "latencia_mediana_ms": 960
+  "decisoes": 275,
+  "sugeriu": 106,
+  "cache": 111,
+  "custo_usd": 0.005792,
+  "latencia_mediana_ms": 1008
  },
  "guarda": {
-  "chamadas": 455,
-  "custo_usd": 0.013819
+  "chamadas": 537,
+  "custo_usd": 0.016229
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -134,12 +137,12 @@
   "janela_de_concordancia": 8
  },
  "total": {
-  "tokens_evitados": 37418,
-  "valor_evitado_usd_ao_preco_declarado": 0.5613,
-  "custo_jev_usd": 0.04386,
-  "chamadas_jev": 520,
-  "registros": 208,
+  "tokens_evitados": 42423,
+  "valor_evitado_usd_ao_preco_declarado": 0.6363,
+  "custo_jev_usd": 0.056116,
+  "chamadas_jev": 732,
+  "registros": 370,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-22T04:38:26"
+  "ultimo_registro": "2026-09-22T23:05:22"
  }
 }
