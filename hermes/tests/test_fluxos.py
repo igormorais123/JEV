@@ -630,3 +630,27 @@ def test_limite_da_assinatura_desce_de_nivel_ate_o_reinicio(jev, monkeypatch, tm
     assert d['nivel'] == 'pequeno' and 'limite da assinatura' in d['motivo']
     depois = datetime.now(tz.utc) + timedelta(days=2)
     assert jev.modelos.no_limite('opus', agora=depois) is None
+
+
+def test_diff_ignora_cache_do_python(jev, tmp_path):
+    (tmp_path / 'a.py').write_text('x = 1\n', encoding='utf-8')
+    jev.avaliacao.preparar_git(tmp_path)
+    base = jev.avaliacao.linha_de_base(tmp_path)
+    (tmp_path / '__pycache__').mkdir()
+    (tmp_path / '__pycache__' / 'a.cpython-311.pyc').write_bytes(b'\x00\x01')
+    (tmp_path / 'novo.py').write_text('y = 2\n', encoding='utf-8')
+    conteudo = jev.avaliacao.observar_diff(tmp_path, base).conteudo
+    assert 'novo.py' in conteudo and 'pyc' not in conteudo
+
+
+def test_laudo_leva_ao_juiz_o_codigo_que_cita(jev, tmp_path):
+    (tmp_path / 'pedidos').mkdir()
+    (tmp_path / 'pedidos' / 'cupom.py').write_text('def aplicar(s, p):\n    return s\n', encoding='utf-8')
+    (tmp_path / 'outro.py').write_text('x = 1\n', encoding='utf-8')
+    jev.avaliacao.preparar_git(tmp_path)
+    base = jev.avaliacao.linha_de_base(tmp_path)
+    (tmp_path / 'CAUSA.md').write_text('A causa está em `pedidos/cupom.py:2`, função aplicar.\n', encoding='utf-8')
+    obs = jev.avaliacao.observar_tudo(f'"{PY}" -c "print(\'1 passed\')"', tmp_path, base)
+    citados = [o for o in obs if o.tipo == 'artefato']
+    assert Path(citados[0].referencia).as_posix().endswith('pedidos/cupom.py') and 'def aplicar' in citados[0].conteudo
+    assert not any('outro.py' in o.referencia for o in citados)

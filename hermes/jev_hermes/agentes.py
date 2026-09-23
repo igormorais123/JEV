@@ -121,9 +121,7 @@ def montar(pasta, comando_teste, orcamento, *, esteira=False, transporte=None):
         return {**observacao, 'aprovada': aprovado}
 
     def concluir(estado):
-        observacoes = [o for o in (avaliacao.observar_testes(comando_teste, pasta),
-                                   avaliacao.observar_diff(pasta, estado.get('base')),
-                                   avaliacao.observar_integridade(pasta, estado.get('base'))) if o is not None]
+        observacoes = avaliacao.observar_tudo(comando_teste, pasta, estado.get('base'))
         veredito = workflows.judge(
             {'pedido_original': estado['objetivo'][:workflows.MAX_TEXTO],
              'criterios': estado.get('criterios') or [avaliacao.CRITERIO_PADRAO],

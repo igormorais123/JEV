@@ -91,9 +91,14 @@ def linha_de_base(pasta):
     return {'commit': base, 'nao_rastreados': sorted(antes)}
 
 
+# Caches que rodar o Python e o pytest geram: não são mudança do agente e, no diff, só apareciam como
+# "arquivo binário novo", ruído que baixava a confiança do juiz abaixo do corte.
+CACHE = re.compile(r'(^|/)(__pycache__|\.pytest_cache|\.mypy_cache|\.ruff_cache)/|\.py[co]$')
+
+
 def _novos(pasta, base):
     agora = set(_git(pasta, 'ls-files', '--others', '--exclude-standard').stdout.splitlines())
-    return sorted(agora - set(base['nao_rastreados']))
+    return sorted(n for n in agora - set(base['nao_rastreados']) if not CACHE.search(n))
 
 
 def observar_diff(pasta, base=None):
@@ -135,6 +140,38 @@ def observar_integridade(pasta, base):
     return workflows.Observacao(tipo='teste', origem='harness:integridade', referencia='integridade dos testes',
                                 conteudo='O agente mexeu no que o avalia:\n' + '\n'.join(problemas),
                                 resultado={'executados': 1, 'passaram': 0, 'falharam': 1, 'codigo_saida': 1})
+
+
+CITADO = re.compile(r'[\w./-]+\.[A-Za-z]{1,5}\b')
+MAX_CITADOS, MAX_CITADO = 3, 3000
+
+
+def observar_citados(pasta, diff):
+    """Arquivos do repositório que as mudanças citam sem alterá-los — o código que um laudo aponta,
+    por exemplo. Sem eles o juiz vê a conclusão, mas não a fonte para conferi-la. Só arquivos
+    rastreados, pequenos e sem nome de segredo (`workflows.observar_arquivo` recusa o resto)."""
+    if diff is None:
+        return []
+    rastreados = set(_git(pasta, 'ls-files').stdout.splitlines())
+    alterados = set(re.findall(r'^diff --git a/(\S+)', diff.conteudo, re.M))
+    acrescentado = '\n'.join(l[1:] for l in diff.conteudo.splitlines() if l.startswith('+') and not l.startswith('+++'))
+    citados = []
+    for nome in dict.fromkeys(m.removeprefix('./') for m in CITADO.findall(acrescentado)):
+        if nome in rastreados and nome not in alterados and (Path(pasta) / nome).stat().st_size <= MAX_CITADO:
+            try:
+                citados.append(workflows.observar_arquivo(nome, [pasta], tipo='artefato'))
+            except workflows.EntradaInvalida:
+                continue
+        if len(citados) == MAX_CITADOS:
+            break
+    return citados
+
+
+def observar_tudo(comando_teste, pasta, base):
+    """A evidência que o juiz recebe nos fluxos 1 e 2: testes, diff, arquivos citados e integridade."""
+    diff = observar_diff(pasta, base)
+    return [o for o in (observar_testes(comando_teste, pasta), diff, *observar_citados(pasta, diff),
+                        observar_integridade(pasta, base)) if o is not None]
 
 
 def preparar_git(pasta):
@@ -271,7 +308,7 @@ def tarefa_de_codigo(pasta, pedido, comando_teste, criterios=(), *, max_tentativ
         return feito
 
     def observar():
-        return [observar_testes(comando_teste, pasta), observar_diff(pasta, base), observar_integridade(pasta, base)]
+        return observar_tudo(comando_teste, pasta, base)
 
     saida = laco(pedido, list(criterios), implementar, observar, max_tentativas=max_tentativas,
                  sensivel=sensivel, transporte=transporte)
