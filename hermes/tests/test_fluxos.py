@@ -585,3 +585,14 @@ def test_jev_que_insiste_em_programar_e_barrado_pela_guarda(jev, oficina):
     assert fim['situacao'] == 'concluido', (fim['motivo'], fim['passos'])
     passos = [p.split(' ')[1] for p in fim['passos']]
     assert passos == ['PROGRAMAR', 'TESTAR', 'REVISAR', 'CONCLUIDO']
+
+
+def test_programador_recebe_o_comando_de_teste(jev, oficina, monkeypatch):
+    pasta, teste, _ = oficina
+    prompts = []
+    original = jev.modelos.executar_claude
+    monkeypatch.setattr(jev.modelos, 'executar_claude', lambda p, *a, **k: prompts.append(p) or original(p, *a, **k))
+    t = Jev(**JUDGE_OK, acao=lambda e, p: next((k, 0.95) for k in ('CONCLUIDO', 'REVISAR', 'TESTAR', 'PROGRAMAR')
+                                                if k in p['criteria']))
+    jev.agentes.resolver(pasta, 'ok.txt deve conter 1', teste, transporte=t)
+    assert prompts and all(f'COMANDO DE TESTE DO PROJETO: {teste}' in p for p in prompts)

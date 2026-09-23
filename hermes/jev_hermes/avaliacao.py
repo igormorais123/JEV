@@ -226,8 +226,9 @@ def prompt_de_implementacao(pedido, criterios, comando_teste, retorno, tentativa
         partes.append(f'Esta é a tentativa {tentativa}. A avaliação da tentativa anterior encontrou:\n'
                       + '\n'.join(f'- {f}' for f in retorno['faltas'])
                       + f"\nFinal da saída dos testes:\n{retorno['saida_dos_testes']}")
-    partes.append(f'Teste com: {comando_teste}. Não altere os testes para passar. '
-                  'Ao terminar, descreva em até cinco linhas o que mudou.')
+    partes.append(f'Teste exatamente com: {comando_teste} (outro Python pode não ter pytest). Não altere os '
+                  'testes para passar. Ao terminar, descreva em até cinco linhas só o que mudou no código; quem '
+                  'confere os testes é o harness.')
     return '\n\n'.join(partes)
 
 

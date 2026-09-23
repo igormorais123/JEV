@@ -34,7 +34,9 @@ PROMPTS = {
     'PESQUISAR': ('Você é o PESQUISADOR. Não altere arquivos. Leia o código e diga onde está o problema do '
                   'chamado, a causa provável e o que precisa mudar, em até 15 linhas.'),
     'PROGRAMAR': ('Você é o PROGRAMADOR. Faça a menor mudança que resolve o chamado. Não altere os testes '
-                  'para passar. Ao terminar, descreva em até cinco linhas o que mudou.'),
+                  'para passar. Rode os testes exatamente com o COMANDO DE TESTE DO PROJETO (outro Python pode '
+                  'não ter pytest). Ao terminar, descreva em até cinco linhas só o que mudou no código; quem '
+                  'confere os testes é o harness.'),
     'REVISAR': ('Você é o REVISOR. Não altere arquivos. Leia o `git diff` e diga se a mudança resolve o '
                 'chamado sem quebrar outra coisa. Termine com uma linha exatamente "VEREDITO: aprovado" '
                 'ou "VEREDITO: mudancas" seguida do que mudar.'),
@@ -42,7 +44,7 @@ PROMPTS = {
 
 
 def _contexto(estado):
-    partes = [f"CHAMADO:\n{estado['objetivo']}"]
+    partes = [f"CHAMADO:\n{estado['objetivo']}", f"COMANDO DE TESTE DO PROJETO: {estado.get('comando_teste')}"]
     if estado.get('diagnostico'):
         partes.append(f"DIAGNÓSTICO DO PESQUISADOR:\n{estado['diagnostico']}")
     if estado.get('teste'):
