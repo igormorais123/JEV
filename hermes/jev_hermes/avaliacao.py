@@ -266,6 +266,8 @@ def tarefa_de_codigo(pasta, pedido, comando_teste, criterios=(), *, max_tentativ
         feito = modelos.executar_claude(prompt_de_implementacao(pedido_, criterios, comando_teste, retorno, tentativa),
                                         pasta, decisao, ferramentas=ferramentas, orcamento=orcamento)
         modelos.registrar(decisao, feito['custo_usd'])
+        if feito.get('limite'):   # limite da assinatura: a próxima tentativa escolhe de novo, sem subir
+            estado['nivel'] = None
         return feito
 
     def observar():

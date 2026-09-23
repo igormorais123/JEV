@@ -75,6 +75,9 @@ def montar(pasta, comando_teste, orcamento, *, esteira=False, transporte=None):
             feito = modelos.executar_claude(f"{PROMPTS[papel]}\n\n{_contexto(estado)}", pasta, decisao,
                                             ferramentas=ferramentas, orcamento=orcamento)
             modelos.registrar(decisao, feito['custo_usd'])
+            if feito.get('limite'):   # limite da assinatura: a tentativa não aconteceu, não sobe de nível
+                tentativas[papel] -= 1
+                estado['nivel_por_papel'].pop(papel, None)
             estado['custo_agentes_usd'] = round(estado.get('custo_agentes_usd', 0) + (feito['custo_usd'] or 0), 4)
             if papel == 'REVISAR':   # o veredito é a última linha: lido do texto inteiro, antes do corte
                 achado = VEREDITO.findall(feito['texto'])
@@ -118,16 +121,21 @@ def montar(pasta, comando_teste, orcamento, *, esteira=False, transporte=None):
         return {**observacao, 'aprovada': aprovado}
 
     def concluir(estado):
+        observacoes = [o for o in (avaliacao.observar_testes(comando_teste, pasta),
+                                   avaliacao.observar_diff(pasta, estado.get('base')),
+                                   avaliacao.observar_integridade(pasta, estado.get('base'))) if o is not None]
         veredito = workflows.judge(
             {'pedido_original': estado['objetivo'][:workflows.MAX_TEXTO],
              'criterios': estado.get('criterios') or [avaliacao.CRITERIO_PADRAO],
              'resultado': (estado.get('relato') or 'sem relato')[:workflows.MAX_TEXTO],
              'tentativa': 1, 'max_tentativas': 0, 'sensivel': bool(estado.get('sensivel'))},
-            observacoes=[o for o in (avaliacao.observar_testes(comando_teste, pasta),
-                                     avaliacao.observar_diff(pasta, estado.get('base')),
-                                     avaliacao.observar_integridade(pasta, estado.get('base'))) if o is not None],
-            transporte=transporte, sensivel_por_regra=False)
+            observacoes=observacoes, transporte=transporte, sensivel_por_regra=False)
         estado['judge'] = veredito['veredito']
+        # Trilha de auditoria: o que o juiz viu e o que concluiu, para quem for conferir depois.
+        estado['avaliacao_final'] = {
+            'evidencias': [{'tipo': o.tipo, 'referencia': o.referencia, 'conteudo': o.conteudo} for o in observacoes],
+            'criterios': veredito.get('criterios'), 'relato': veredito.get('relato_vs_evidencia'),
+            'motivos': veredito.get('motivos')}
         if veredito['veredito'] == 'passou':
             return {'fim': True, 'resposta': f"Chamado resolvido na versão {estado.get('versao', 0)}: testes "
                                              'passando, revisão aprovada e avaliação final aprovada.'}

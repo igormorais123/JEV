@@ -611,3 +611,22 @@ def test_isolamento_sem_rede_so_grava_na_pasta(jev, monkeypatch, tmp_path):
     assert '--share-net' in com_rede
     monkeypatch.setenv('JEV_ISOLAMENTO', '0')
     assert isolamento.isolar(['python3'], tmp_path) == ['python3']
+
+
+def test_limite_da_assinatura_desce_de_nivel_ate_o_reinicio(jev, monkeypatch, tmp_path):
+    from datetime import timezone as tz
+
+    class Limite:
+        returncode = 1
+        stdout = json.dumps({'result': "You've hit your session limit · resets 8:20am (UTC)", 'is_error': True,
+                             'total_cost_usd': 0})
+        stderr = ''
+    monkeypatch.setattr(jev.modelos.subprocess, 'run', lambda cmd, **k: Limite())
+    r = jev.modelos.executar_claude('x', tmp_path, jev.modelos.NIVEIS['especialista'] | {'nivel': 'especialista'})
+    assert r['erro'] and r['limite']
+    ate = jev.modelos.no_limite('opus')
+    assert ate and (ate.hour, ate.minute) == (8, 20) and ate.tzinfo is not None
+    d = jev.modelos.escolher('corrigir função', jev.modelos.Orcamento(5), tentativa=2, nivel_anterior='pequeno')
+    assert d['nivel'] == 'pequeno' and 'limite da assinatura' in d['motivo']
+    depois = datetime.now(tz.utc) + timedelta(days=2)
+    assert jev.modelos.no_limite('opus', agora=depois) is None

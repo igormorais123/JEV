@@ -12,6 +12,9 @@ especialista (código) ou de fronteira (difícil); "42 decisões → só 3 escal
 - **O orçamento é conta.** Nível cujo custo estimado não cabe no que resta desce para o mais caro
   que cabe; se nenhum cabe, a subtarefa não roda e vai para uma pessoa.
 - Confiança abaixo do corte, Jev fora ou escape: o nível padrão de quem chamou.
+- **Limite da assinatura não é falha da subtarefa.** Quando o `claude` responde "hit your ... limit",
+  o modelo fica fora até o horário de reinício (`estado/limites-modelos.json`) e a escolha desce para
+  o nível disponível mais alto; subir de nível aí só pioraria.
 
 Níveis (sem Haiku, proibido nos projetos de Igor): pequeno = Sonnet com esforço baixo;
 especialista = Opus; fronteira = Fable. Cada decisão vai para `estado/modelos.jsonl`;
@@ -19,14 +22,18 @@ especialista = Opus; fronteira = Fable. Cada decisão vai para `estado/modelos.j
 """
 import json
 import os
+import re
 import shlex
 import subprocess
 import time
-from datetime import timedelta
+from datetime import datetime, timedelta, timezone
 
 from . import isolamento, nucleo
 
 REGISTRO = nucleo.ESTADO / 'modelos.jsonl'
+LIMITES = nucleo.ESTADO / 'limites-modelos.json'
+LIMITE = re.compile(r"hit your [\w ]*limit", re.IGNORECASE)
+REINICIO = re.compile(r"resets? (?:at )?(\d{1,2})(?::(\d{2}))?\s*(am|pm)?", re.IGNORECASE)
 ORDEM = ['pequeno', 'especialista', 'fronteira']
 NIVEIS = {
     'pequeno': {'modelo': 'sonnet', 'esforco': 'low'},
@@ -88,6 +95,40 @@ def custo_estimado(nivel):
     return round(sum(custos) / len(custos), 4) if len(custos) >= 5 else CUSTO_INICIAL[nivel]
 
 
+def _limites():
+    try:
+        return json.loads(LIMITES.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+
+
+def no_limite(modelo, agora=None):
+    """Até quando o modelo está fora por limite da assinatura (datetime em UTC), ou None."""
+    ate = _limites().get(modelo)
+    if not ate:
+        return None
+    ate = datetime.fromisoformat(ate)
+    return ate if ate > (agora or datetime.now(timezone.utc)) else None
+
+
+def marcar_limite(modelo, texto, agora=None):
+    """Lê o horário de reinício ("resets 8:20am (UTC)"); sem horário legível, uma hora."""
+    agora = agora or datetime.now(timezone.utc)
+    achado = REINICIO.search(texto or '')
+    ate = agora + timedelta(hours=1)
+    if achado:
+        hora, minuto, periodo = int(achado.group(1)), int(achado.group(2) or 0), (achado.group(3) or '').lower()
+        hora = hora % 12 + (12 if periodo == 'pm' else 0) if periodo else hora
+        if hora < 24:
+            ate = agora.replace(hour=hora, minute=minuto, second=0, microsecond=0)
+            ate += timedelta(days=1) if ate <= agora else timedelta(0)
+    limites = _limites()
+    limites[modelo] = ate.isoformat(timespec='seconds')
+    LIMITES.parent.mkdir(parents=True, exist_ok=True)
+    LIMITES.write_text(json.dumps(limites), encoding='utf-8')
+    return ate
+
+
 def escolher(subtarefa, orcamento, *, tentativa=1, nivel_anterior=None, padrao='especialista',
              transporte=None, origem='fluxo-modelos'):
     """Nível e modelo de uma subtarefa. Não executa nada; `executar` usa a decisão."""
@@ -106,13 +147,17 @@ def escolher(subtarefa, orcamento, *, tentativa=1, nivel_anterior=None, padrao='
             decisao.update(nivel=padrao, fonte='padrao', confianca=confianca,
                            motivo='Jev indisponível' if respostas is None else 'tipo incerto: nível padrão')
     pedido = decisao['nivel']
-    cabem = [n for n in ORDEM[:ORDEM.index(pedido) + 1] if custo_estimado(n) <= orcamento.restante]
+    candidatos = ORDEM[:ORDEM.index(pedido) + 1]
+    livres = [n for n in candidatos if not no_limite(NIVEIS[n]['modelo'])]
+    cabem = [n for n in livres if custo_estimado(n) <= orcamento.restante]
     if not cabem:
-        decisao.update(nivel=None, modelo=None, motivo=f'orçamento restante US$ {orcamento.restante:.2f} '
-                       f'não cobre nem o nível pequeno', humano=True)
+        motivo = (f'orçamento restante US$ {orcamento.restante:.2f} não cobre nem o nível pequeno' if livres
+                  else 'todos os modelos até este nível estão no limite da assinatura')
+        decisao.update(nivel=None, modelo=None, motivo=motivo, humano=True)
     else:
         if cabem[-1] != pedido:
-            decisao['motivo'] += f'; {pedido} não cabe no orçamento, desce para {cabem[-1]}'
+            causa = 'não cabe no orçamento' if pedido in livres else 'está no limite da assinatura'
+            decisao['motivo'] += f'; {pedido} {causa}, desce para {cabem[-1]}'
         decisao.update(nivel=cabem[-1], **NIVEIS[cabem[-1]])
     decisao['escalada'] = decisao.get('nivel') == 'fronteira'
     return decisao
@@ -156,8 +201,12 @@ def executar_claude(prompt, pasta, decisao, *, ferramentas=None, timeout=900, ma
     custo = dado.get('total_cost_usd')
     if orcamento is not None:
         orcamento.gastar(custo)
-    return {'texto': (dado.get('result') or '')[:8000], 'custo_usd': custo, 'turnos': dado.get('num_turns'),
-            'erro': processo is None or bool(dado.get('is_error')) or (processo.returncode != 0 and not dado),
+    erro = processo is None or bool(dado.get('is_error')) or (processo.returncode != 0 and not dado)
+    texto = (dado.get('result') or (processo.stderr if processo else '') or '')[:8000]
+    limite = erro and LIMITE.search(texto)
+    if limite:
+        marcar_limite(decisao['modelo'], texto)
+    return {'texto': texto, 'custo_usd': custo, 'turnos': dado.get('num_turns'), 'erro': erro, 'limite': bool(limite),
             'segundos': duracao, 'modelo': decisao['modelo'],
             'comando': ' '.join(shlex.quote(p) for p in comando[:10])}
 
