@@ -146,7 +146,29 @@ Validação de implantação (23/09): 147 testes offline na VPS; ao vivo, o rote
 fronteira; o ciclo de agenda leu "semana que vem à tarde", achou três horários livres reais e,
 com "nenhum desses", ofereceu outros dias (nada reservado; a chamada de reserva foi conferida em
 `--dry-run`); a triagem criou e arquivou um cartão de teste em `engenharia-inteia`.
-Backup: `/root/backups/jev-fluxos-20260923T062122Z`.
+Backup: `/root/backups/jev-fluxos-20260923T062122Z` (e `jev-isolamento-20260923T065006Z`).
+
+Depois, ao vivo: o ciclo de agenda reservou um evento real (segunda 28/09, 8h, sem convidados, com a
+marca `jev_ciclo`), leu-o de volta como `confirmed` e o evento de teste foi apagado. A caixa
+vigiada nova rodou 10 vezes na manhã de 23/09: 2 alertas, o fluxo 4 classificou cada e-mail novo
+e não abriu cartão (nenhum chegou a 0,90), US$ 0,0014 de Jev somado.
+
+Bancada (fluxo 5), 4 tarefas × 2 arquiteturas por rodada, cada rodada corrigindo o que a anterior
+mostrou:
+
+| rodada | o que corrigiu | código certo (verificador oculto) | concluiu sem pessoa (esteira / jev) |
+|---|---|---|---|
+| 4 | comando de teste no contexto do agente | 7/8 | 1/4 / 1/4 |
+| 5 | critério serve a pesquisa; relato só do que o diff mostra; tarefa sem ambiguidade | 8/8 | 2/4 / 1/4 |
+| 7 | isolamento, limite da assinatura, trilha da avaliação | 8/8 | 2/4 / 2/4 |
+| 8 | diff sem `__pycache__`; arquivos citados viram evidência | 8/8 | 2/4 / 3/4 |
+
+(A rodada 6 não mediu nada: o Opus bateu no limite de sessão da assinatura, o que levou à regra do
+limite.) Na rodada 8 a arquitetura Jev custou em média US$ 2,03 nominais contra 1,55 da esteira,
+por uma volta extra no CPF. Com n = 4 por arquitetura, a comparação é **inconclusiva** (IC95 se
+sobrepõem); para separar as arquiteturas são precisas repetições. A refatoração segue pedindo
+uma pessoa nas duas: repetido sem cache, o juiz dá 0,79–0,91 ao mesmo diff correto (ruído de
+±0,05 em torno de 0,85), a faixa "confira" dos diagramas. O corte de 0,90 fica como está.
 
 ## Segurança e falhas
 
