@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **370** (2026-09-20T20:44:33 a 2026-09-22T23:05:22).
-Última rotina automática: 2026-09-22T20:32:37 (so-medir, ok).
+Registros: **790** (2026-09-20T20:44:33 a 2026-09-23T22:18:03).
+Última rotina automática: 2026-09-23T07:20:11 (so-medir, ok).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -25,58 +25,58 @@ Registros: **370** (2026-09-20T20:44:33 a 2026-09-22T23:05:22).
 
 | | valor |
 |---|---|
-| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **42.423** |
-| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 0,6363 |
-| chamadas ao Jev pelas camadas | 732 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,056116** |
+| tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **80.522** |
+| o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 1,2078 |
+| chamadas ao Jev pelas camadas | 980 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,097838** |
 
 ## Leitura (`Read`, e `cat` dentro de comando do shell)
 
 | | valor |
 |---|---|
-| leituras vistas pelos hooks | 240 |
-| por via: `Read` | 151 vistas, 5 estreitadas, 33.297 tokens evitados |
-| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 89 vistas, 1 estreitadas, 8.387 tokens evitados |
-| com pedido vigente na sessão | 240 |
-| classificados (arquivo grande, com pedido) | 21 |
-| estreitados | 6 (em modo ativo: 6) |
-| linhas evitadas | 2.136 |
-| tokens evitados (estimados) | **41.684** |
-| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **3 de 6** |
-| linhas relidas nessas voltas (o que fez falta) | 284 de 2.136 evitadas (mais 1 volta(s) de tamanho não registrado) |
-| blocos por classe | complementar: 75, essencial: 113, incerto: 1, irrelevante: 33 |
+| leituras vistas pelos hooks | 645 |
+| por via: `Read` | 479 vistas, 11 estreitadas, 65.773 tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 166 vistas, 2 estreitadas, 14.010 tokens evitados |
+| com pedido vigente na sessão | 645 |
+| classificados (arquivo grande, com pedido) | 47 |
+| estreitados | 13 (em modo ativo: 13) |
+| linhas evitadas | 4.881 |
+| tokens evitados (estimados) | **79.783** |
+| releitura do mesmo arquivo em até 10 leituras (arrependimento) | **7 de 13** |
+| linhas relidas nessas voltas (o que fez falta) | 2.195 de 4.881 evitadas (mais 1 volta(s) de tamanho não registrado) |
+| blocos por classe | complementar: 125, essencial: 142, incerto: 2, irrelevante: 135 |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | 0 |
-| latência mediana / p90 do hook | 3.206 ms / 3.992 ms |
-| custo | US$ 0,014104 em 222 chamadas |
+| latência mediana / p90 do hook | 3.264 ms / 5.761 ms |
+| custo | US$ 0,03466 em 429 chamadas |
 
-Por que não estreitou: read ja delimitado: 92, tipo de arquivo fora da camada: 90, arquivo pequeno: 37, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 14, economia pequena demais para valer o intervalo: 1.
+Por que não estreitou: tipo de arquivo fora da camada: 358, read ja delimitado: 173, arquivo pequeno: 67, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 20, economia pequena demais para valer o intervalo: 12, falha: http_error: 1, falha: sem tempo: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| listagens vistas | 20 (Glob: 1, Grep: 18, WebSearch: 1) |
-| classificados (6 ou mais arquivos, com pedido) | 16 |
+| listagens vistas | 21 (Glob: 1, Grep: 18, WebSearch: 2) |
+| classificados (6 ou mais arquivos, com pedido) | 17 |
 | com sugestão | 8 (em modo ativo: 8) |
 | arquivos postos em "leia primeiro" | 41 |
 | desses, lidos pelo agente nas 8 leituras seguintes | **2 de 41** |
 | arquivos marcados irrelevantes com ≥ 0,99 | 1 |
-| latência mediana | 5.780 ms |
-| custo | US$ 0,005277 em 202 chamadas |
+| latência mediana | 5.476 ms |
+| custo | US$ 0,005583 em 211 chamadas |
 
-Por que não sugeriu: nada a ordenar: nenhum essencial nem descartável: 6, poucos itens: 4, falha: timeout: 2.
+Por que não sugeriu: nada a ordenar: nenhum essencial nem descartável: 7, poucos itens: 4, falha: timeout: 2.
 
 ## Sentinela (conteúdo externo)
 
 | | valor |
 |---|---|
-| conteúdos vistos | 19 |
-| inspecionados (partes de 3.500 caracteres) | 15 (49 partes) |
-| acusados | **3** |
-| por ferramenta | WebFetch: 12, prompt/pasted_content: 3 |
-| acusados por ferramenta | WebFetch: 1, prompt/pasted_content: 2 |
-| latência mediana | 2.413 ms |
-| custo | US$ 0,002216 em 49 chamadas |
+| conteúdos vistos | 24 |
+| inspecionados (partes de 3.500 caracteres) | 19 (53 partes) |
+| acusados | **5** |
+| por ferramenta | WebFetch: 12, prompt/pasted_content: 7 |
+| acusados por ferramenta | WebFetch: 1, prompt/pasted_content: 4 |
+| latência mediana | 1.441 ms |
+| custo | US$ 0,002353 em 53 chamadas |
 
 Uma acusação não é bloqueio: o conteúdo continua no contexto com um aviso. A R23 mede 2,4% de
 alarme falso em texto limpo e 7 de 24 em texto legítimo com palavra-gatilho; a taxa aqui só
@@ -86,15 +86,15 @@ vira medida de acerto quando alguém revisar as acusações.
 
 | | valor |
 |---|---|
-| saídas longas com marca de erro | 87 |
-| classificadas | 87 |
-| com causa apontada (confiança ≥ 0,90) | **8** |
-| partes por classe | causa: 23, consequencia: 16, incerto: 3, normal: 199 |
+| saídas longas com marca de erro | 96 |
+| classificadas | 96 |
+| com causa apontada (confiança ≥ 0,90) | **11** |
+| partes por classe | causa: 32, consequencia: 17, incerto: 3, normal: 217 |
 | latência mediana | 1.470 ms |
-| custo | US$ 0,011952 em 250 chamadas |
+| custo | US$ 0,013734 em 278 chamadas |
 
 Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
-a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 78, falha: timeout: 1.
+a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 84, falha: timeout: 1.
 
 ## Verificação pela skill (`/jev-verificar`)
 
@@ -121,10 +121,10 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 78, 
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 275 (sugeriu skill em 106; 111 do cache) |
-| latência mediana sem cache | 1.008 ms |
-| custo do roteador | US$ 0,005792 |
-| guarda de comando (sombra) | 537 chamadas, US$ 0,016229 |
+| decisões do roteador de tema em produção | 345 (sugeriu skill em 113; 115 do cache) |
+| latência mediana sem cache | 982 ms |
+| custo do roteador | US$ 0,008035 |
+| guarda de comando (sombra) | 742 chamadas, US$ 0,032927 |
 
 ## O que esta página não prova
 
