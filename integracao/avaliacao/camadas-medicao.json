@@ -1,28 +1,28 @@
 {
  "leitura": {
-  "reads": 645,
-  "com_pedido": 645,
-  "classificados": 47,
+  "reads": 868,
+  "com_pedido": 868,
+  "classificados": 48,
   "estreitados": 13,
   "estreitados_ativos": 13,
   "por_via": {
    "read": {
-    "vistos": 479,
+    "vistos": 674,
     "estreitados_ativos": 11,
     "tokens_evitados": 65773
    },
    "bash": {
-    "vistos": 166,
+    "vistos": 194,
     "estreitados_ativos": 2,
     "tokens_evitados": 14010
    }
   },
   "motivos": {
-   "read ja delimitado": 173,
-   "tipo de arquivo fora da camada": 358,
+   "read ja delimitado": 201,
+   "tipo de arquivo fora da camada": 548,
    "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 20,
-   "arquivo pequeno": 67,
-   "economia pequena demais para valer o intervalo": 12,
+   "arquivo pequeno": 71,
+   "economia pequena demais para valer o intervalo": 13,
    "falha: http_error": 1,
    "falha: sem tempo": 1
   },
@@ -31,14 +31,14 @@
   "releituras": 7,
   "linhas_relidas": 2195,
   "releituras_sem_intervalo_registrado": 1,
-  "custo_usd": 0.03466,
-  "chamadas": 429,
-  "latencia_mediana_ms": 3264,
+  "custo_usd": 0.035068,
+  "chamadas": 434,
+  "latencia_mediana_ms": 3370,
   "latencia_p90_ms": 5761,
   "blocos_por_classe": {
    "essencial": 142,
-   "complementar": 125,
-   "irrelevante": 135,
+   "complementar": 129,
+   "irrelevante": 136,
    "incerto": 2
   },
   "descartaveis_a_099": 0
@@ -122,15 +122,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 345,
-  "sugeriu": 113,
-  "cache": 115,
-  "custo_usd": 0.008035,
-  "latencia_mediana_ms": 982
+  "decisoes": 394,
+  "sugeriu": 115,
+  "cache": 117,
+  "custo_usd": 0.009251,
+  "latencia_mediana_ms": 986
  },
  "guarda": {
-  "chamadas": 742,
-  "custo_usd": 0.032927
+  "chamadas": 781,
+  "custo_usd": 0.03445
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -141,10 +141,10 @@
  "total": {
   "tokens_evitados": 80522,
   "valor_evitado_usd_ao_preco_declarado": 1.2078,
-  "custo_jev_usd": 0.097838,
-  "chamadas_jev": 980,
-  "registros": 790,
+  "custo_jev_usd": 0.100985,
+  "chamadas_jev": 985,
+  "registros": 1013,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-23T22:18:03"
+  "ultimo_registro": "2026-09-24T23:23:23"
  }
 }

@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **790** (2026-09-20T20:44:33 a 2026-09-23T22:18:03).
-Última rotina automática: 2026-09-23T07:20:11 (so-medir, ok).
+Registros: **1.013** (2026-09-20T20:44:33 a 2026-09-24T23:23:23).
+Última rotina automática: 2026-09-24T08:33:45 (so-medir, ok).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -27,29 +27,29 @@ Registros: **790** (2026-09-20T20:44:33 a 2026-09-23T22:18:03).
 |---|---|
 | tokens que deixaram de entrar no contexto (estimados, 4 caracteres por token) | **80.522** |
 | o que isso vale ao preço declarado de US$ 15/M de entrada (parâmetro, não preço lido) | US$ 1,2078 |
-| chamadas ao Jev pelas camadas | 980 |
-| custo do Jev, todas as camadas e o roteador | **US$ 0,097838** |
+| chamadas ao Jev pelas camadas | 985 |
+| custo do Jev, todas as camadas e o roteador | **US$ 0,100985** |
 
 ## Leitura (`Read`, e `cat` dentro de comando do shell)
 
 | | valor |
 |---|---|
-| leituras vistas pelos hooks | 645 |
-| por via: `Read` | 479 vistas, 11 estreitadas, 65.773 tokens evitados |
-| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 166 vistas, 2 estreitadas, 14.010 tokens evitados |
-| com pedido vigente na sessão | 645 |
-| classificados (arquivo grande, com pedido) | 47 |
+| leituras vistas pelos hooks | 868 |
+| por via: `Read` | 674 vistas, 11 estreitadas, 65.773 tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 194 vistas, 2 estreitadas, 14.010 tokens evitados |
+| com pedido vigente na sessão | 868 |
+| classificados (arquivo grande, com pedido) | 48 |
 | estreitados | 13 (em modo ativo: 13) |
 | linhas evitadas | 4.881 |
 | tokens evitados (estimados) | **79.783** |
 | releitura do mesmo arquivo em até 10 leituras (arrependimento) | **7 de 13** |
 | linhas relidas nessas voltas (o que fez falta) | 2.195 de 4.881 evitadas (mais 1 volta(s) de tamanho não registrado) |
-| blocos por classe | complementar: 125, essencial: 142, incerto: 2, irrelevante: 135 |
+| blocos por classe | complementar: 129, essencial: 142, incerto: 2, irrelevante: 136 |
 | blocos que uma regra "irrelevante ≥ 0,99" descartaria | 0 |
-| latência mediana / p90 do hook | 3.264 ms / 5.761 ms |
-| custo | US$ 0,03466 em 429 chamadas |
+| latência mediana / p90 do hook | 3.370 ms / 5.761 ms |
+| custo | US$ 0,035068 em 434 chamadas |
 
-Por que não estreitou: tipo de arquivo fora da camada: 358, read ja delimitado: 173, arquivo pequeno: 67, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 20, economia pequena demais para valer o intervalo: 12, falha: http_error: 1, falha: sem tempo: 1.
+Por que não estreitou: tipo de arquivo fora da camada: 548, read ja delimitado: 201, arquivo pequeno: 71, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 20, economia pequena demais para valer o intervalo: 13, falha: http_error: 1, falha: sem tempo: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
@@ -121,10 +121,10 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 84, 
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 345 (sugeriu skill em 113; 115 do cache) |
-| latência mediana sem cache | 982 ms |
-| custo do roteador | US$ 0,008035 |
-| guarda de comando (sombra) | 742 chamadas, US$ 0,032927 |
+| decisões do roteador de tema em produção | 394 (sugeriu skill em 115; 117 do cache) |
+| latência mediana sem cache | 986 ms |
+| custo do roteador | US$ 0,009251 |
+| guarda de comando (sombra) | 781 chamadas, US$ 0,03445 |
 
 ## O que esta página não prova
 
