@@ -5,8 +5,8 @@ de `integracao/estado/camadas.jsonl`, `decisoes.jsonl` e `gastos.jsonl`, e cada 
 arquivos é uma decisão de verdade tomada numa sessão desta máquina, nos dois modos. Sessões
 de teste de ponta a ponta (`smoke-*`) ficam fora.*
 
-Registros: **1.726** (2026-09-20T20:44:33 a 2026-09-25T23:30:00).
-Última rotina automática: 2026-09-25T08:34:07 (so-medir, ok).
+Registros: **1.900** (2026-09-20T20:44:33 a 2026-09-26T22:34:03).
+Última rotina automática: 2026-09-26T11:16:15 (so-medir, ok).
 
 ## As camadas, e o que cada uma faz com o contexto do modelo caro
 
@@ -34,10 +34,10 @@ Registros: **1.726** (2026-09-20T20:44:33 a 2026-09-25T23:30:00).
 
 | | valor |
 |---|---|
-| leituras vistas pelos hooks | 1.273 |
-| por via: `Read` | 1.031 vistas, 13 estreitadas, 75.922 tokens evitados |
-| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 242 vistas, 2 estreitadas, 14.010 tokens evitados |
-| com pedido vigente na sessão | 1.273 |
+| leituras vistas pelos hooks | 1.430 |
+| por via: `Read` | 1.175 vistas, 13 estreitadas, 75.922 tokens evitados |
+| por via: shell (`cat`, `sed -n`, `head` em comando só de leitura) | 255 vistas, 2 estreitadas, 14.010 tokens evitados |
+| com pedido vigente na sessão | 1.418 |
 | classificados (arquivo grande, com pedido) | 50 |
 | estreitados | 15 (em modo ativo: 15) |
 | linhas evitadas | 5.681 |
@@ -49,13 +49,13 @@ Registros: **1.726** (2026-09-20T20:44:33 a 2026-09-25T23:30:00).
 | latência mediana / p90 do hook | 3.556 ms / 5.761 ms |
 | custo | US$ 0,036574 em 456 chamadas |
 
-Por que não estreitou: tipo de arquivo fora da camada: 888, read ja delimitado: 244, arquivo pequeno: 91, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 20, economia pequena demais para valer o intervalo: 13, falha: http_error: 1, falha: sem tempo: 1.
+Por que não estreitou: tipo de arquivo fora da camada: 911, read ja delimitado: 314, arquivo pequeno: 103, falha: BudgetError: 36, metade ou mais dos blocos e essencial; arquivo inteiro interessa: 20, economia pequena demais para valer o intervalo: 13, sem pedido vigente: 12, nao coube em blocos: 2, nao foi possivel ler: 2, falha: http_error: 1, falha: sem tempo: 1.
 
 ## Busca (`Grep`, `Glob` e listagens externas)
 
 | | valor |
 |---|---|
-| listagens vistas | 55 (Glob: 1, Grep: 18, WebSearch: 35, mcp__claude_ai_Gmail__search_threads: 1) |
+| listagens vistas | 60 (Glob: 1, Grep: 18, WebSearch: 40, mcp__claude_ai_Gmail__search_threads: 1) |
 | classificados (6 ou mais arquivos, com pedido) | 36 |
 | com sugestão | 8 (em modo ativo: 8) |
 | arquivos postos em "leia primeiro" | 41 |
@@ -64,13 +64,13 @@ Por que não estreitou: tipo de arquivo fora da camada: 888, read ja delimitado:
 | latência mediana | 6.788 ms |
 | custo | US$ 0,010062 em 375 chamadas |
 
-Por que não sugeriu: nada a ordenar: nenhum essencial nem descartável: 23, falha: BudgetError: 17, poucos itens: 4, falha: timeout: 2, falha: OperationalError: 1.
+Por que não sugeriu: nada a ordenar: nenhum essencial nem descartável: 23, falha: BudgetError: 22, poucos itens: 4, falha: timeout: 2, falha: OperationalError: 1.
 
 ## Sentinela (conteúdo externo)
 
 | | valor |
 |---|---|
-| conteúdos vistos | 294 |
+| conteúdos vistos | 302 |
 | inspecionados (partes de 3.500 caracteres) | 151 (194 partes) |
 | acusados | **12** |
 | por ferramenta | WebFetch: 140, mcp__claude_ai_Gmail__get_thread: 2, mcp__claude_ai_Gmail__search_threads: 1, prompt/pasted_content: 8 |
@@ -86,7 +86,7 @@ vira medida de acerto quando alguém revisar as acusações.
 
 | | valor |
 |---|---|
-| saídas longas com marca de erro | 100 |
+| saídas longas com marca de erro | 104 |
 | classificadas | 100 |
 | com causa apontada (confiança ≥ 0,90) | **13** |
 | partes por classe | causa: 39, consequencia: 17, incerto: 3, normal: 218 |
@@ -94,7 +94,7 @@ vira medida de acerto quando alguém revisar as acusações.
 | custo | US$ 0,014181 em 286 chamadas |
 
 Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
-a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 86, falha: timeout: 1.
+a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 86, falha: BudgetError: 4, falha: timeout: 1.
 
 ## Verificação pela skill (`/jev-verificar`)
 
@@ -121,8 +121,8 @@ a causa real. Por que não apontou: nenhuma parte com causa acima do corte: 86, 
 
 | | valor |
 |---|---|
-| decisões do roteador de tema em produção | 471 (sugeriu skill em 119; 117 do cache) |
-| latência mediana sem cache | 985 ms |
+| decisões do roteador de tema em produção | 524 (sugeriu skill em 119; 117 do cache) |
+| latência mediana sem cache | 841 ms |
 | custo do roteador | US$ 0,012742 |
 | guarda de comando (sombra) | 906 chamadas, US$ 0,039159 |
 

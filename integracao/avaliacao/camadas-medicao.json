@@ -1,30 +1,34 @@
 {
  "leitura": {
-  "reads": 1273,
-  "com_pedido": 1273,
+  "reads": 1430,
+  "com_pedido": 1418,
   "classificados": 50,
   "estreitados": 15,
   "estreitados_ativos": 15,
   "por_via": {
    "read": {
-    "vistos": 1031,
+    "vistos": 1175,
     "estreitados_ativos": 13,
     "tokens_evitados": 75922
    },
    "bash": {
-    "vistos": 242,
+    "vistos": 255,
     "estreitados_ativos": 2,
     "tokens_evitados": 14010
    }
   },
   "motivos": {
-   "read ja delimitado": 244,
-   "tipo de arquivo fora da camada": 888,
+   "read ja delimitado": 314,
+   "tipo de arquivo fora da camada": 911,
    "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 20,
-   "arquivo pequeno": 91,
+   "arquivo pequeno": 103,
    "economia pequena demais para valer o intervalo": 13,
    "falha: http_error": 1,
-   "falha: sem tempo": 1
+   "falha: sem tempo": 1,
+   "nao coube em blocos": 2,
+   "falha: BudgetError": 36,
+   "sem pedido vigente": 12,
+   "nao foi possivel ler": 2
   },
   "linhas_evitadas": 5681,
   "tokens_evitados": 89932,
@@ -44,11 +48,11 @@
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 55,
+  "greps": 60,
   "por_ferramenta": {
    "Grep": 18,
    "Glob": 1,
-   "WebSearch": 35,
+   "WebSearch": 40,
    "mcp__claude_ai_Gmail__search_threads": 1
   },
   "classificados": 36,
@@ -62,14 +66,14 @@
    "nada a ordenar: nenhum essencial nem descartável": 23,
    "falha: timeout": 2,
    "falha: OperationalError": 1,
-   "falha: BudgetError": 17
+   "falha: BudgetError": 22
   },
   "custo_usd": 0.010062,
   "chamadas": 375,
   "latencia_mediana_ms": 6788
  },
  "sentinela": {
-  "conteudos": 294,
+  "conteudos": 302,
   "inspecionados": 151,
   "partes": 194,
   "acusados": 12,
@@ -100,7 +104,7 @@
   "chamadas": 6
  },
  "saida": {
-  "saidas_com_erro": 100,
+  "saidas_com_erro": 104,
   "classificadas": 100,
   "apontadas": 13,
   "partes_por_classe": {
@@ -111,7 +115,8 @@
   },
   "motivos": {
    "nenhuma parte com causa acima do corte": 86,
-   "falha: timeout": 1
+   "falha: timeout": 1,
+   "falha: BudgetError": 4
   },
   "custo_usd": 0.014181,
   "chamadas": 286,
@@ -128,11 +133,11 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 471,
+  "decisoes": 524,
   "sugeriu": 119,
   "cache": 117,
   "custo_usd": 0.012742,
-  "latencia_mediana_ms": 985
+  "latencia_mediana_ms": 841
  },
  "guarda": {
   "chamadas": 906,
@@ -149,8 +154,8 @@
   "valor_evitado_usd_ao_preco_declarado": 1.3601,
   "custo_jev_usd": 0.119877,
   "chamadas_jev": 1320,
-  "registros": 1726,
+  "registros": 1900,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-25T23:30:00"
+  "ultimo_registro": "2026-09-26T22:34:03"
  }
 }
