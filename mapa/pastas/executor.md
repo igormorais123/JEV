@@ -19,7 +19,7 @@ Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômic
 | [adjudicar_e11.py](../../executor/adjudicar_e11.py) | código | 147 l. | Terceiro juiz cego nos 10 desacordos do corpus de desempate (E11). |
 | [adjudicar_e12.py](../../executor/adjudicar_e12.py) | código | 148 l. | Terceiro juiz cego nos desacordos do corpus de replicação (E12). |
 | [analise.py](../../executor/analise.py) | código | 198 l. | Análise pareada com a unidade de agrupamento correta. |
-| [assist.py](../../executor/assist.py) | código | 81 l. | JEV assistive tools: closed rubrics, provenance and no executable actions. |
+| [assist.py](../../executor/assist.py) | código | 64 l. | JEV assistive tools: closed rubrics, provenance and no executable actions. |
 | [baseline_regra.py](../../executor/baseline_regra.py) | código | 39 l. | Comparador determinístico da tarefa de triagem. |
 | [credenciais.py](../../executor/credenciais.py) | código | 88 l. | Onde qualquer instância desta máquina acha as chaves do Jev, e qual provedor prefere. |
 | [erro_grave.py](../../executor/erro_grave.py) | código | 105 l. | Erro grave: confundir `cancelar` com qualquer outra classe, nos dois sentidos. |
@@ -50,7 +50,7 @@ Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômic
 | [run_e8_anotador.py](../../executor/run_e8_anotador.py) | código | 165 l. | E8: segundo anotador independente e cego sobre o gabarito dos 80 casos. |
 | [run_e9_prevalencia.py](../../executor/run_e9_prevalencia.py) | código | 204 l. | E9: o que acontece com o desempenho quando a distribuição de classes não é a do corpus. |
 | [runner.py](../../executor/runner.py) | código | 285 l. | Despacho de chamadas Jev com reserva financeira obrigatoria. |
-| [shared.py](../../executor/shared.py) | código | 202 l. | Single financial path for local JEV consumers. Never truncates inputs. |
+| [shared.py](../../executor/shared.py) | código | 236 l. | Single financial path for local JEV consumers. Never truncates inputs. |
 | [simple_round.py](../../executor/simple_round.py) | código | 135 l. | Rodada simples: teste offline do codigo de cada sistema, no ambiente que o proprio repo declara. |
 | [smoke_mcp.py](../../executor/smoke_mcp.py) | código | 50 l. | Real stdio smoke: public local test error, reviews, metrics; explicit paid action. |
 
@@ -96,8 +96,8 @@ _Grafo local omitido: 163 relações, grande demais para desenhar; ver as ligaç
 
 - **usa** — import: [`executor/shared.py`](../../executor/shared.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py)
 - **é usado por** — import: [`executor/run_e15.py`](../../executor/run_e15.py), [`executor/run_e16.py`](../../executor/run_e16.py), [`executor/tests/test_shared.py`](../../executor/tests/test_shared.py), [`integracao/jev_mcp.py`](../../integracao/jev_mcp.py); citação: [`integracao/camadas/saida.py`](../../integracao/camadas/saida.py), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **chama de outros arquivos** — [`shared.ask`](../../executor/shared.py#L125), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
-- **conteúdo** — [evaluate](../../executor/assist.py#L51) (l. 51; usado em 2), [main](../../executor/assist.py#L71) (l. 71)
+- **chama de outros arquivos** — [`shared.ask`](../../executor/shared.py#L152), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
+- **conteúdo** — [evaluate](../../executor/assist.py#L39) (l. 39; usado em 3), [main](../../executor/assist.py#L54) (l. 54)
 
 ### baseline_regra.py
 
@@ -229,7 +229,7 @@ _Grafo local omitido: 163 relações, grande demais para desenhar; ver as ligaç
 
 - **usa** — import: [`executor/assist.py`](../../executor/assist.py), [`executor/run_e1_triagem.py`](../../executor/run_e1_triagem.py), [`executor/shared.py`](../../executor/shared.py); citação: [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`executor/runner.py`](../../executor/runner.py), [`planning/preregistro-E15-implantacao.md`](../../planning/preregistro-E15-implantacao.md), [`research/hermes/manifest.json`](../../research/hermes/manifest.json)
 - **é usado por** — import: [`executor/run_e16.py`](../../executor/run_e16.py); citação: [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **chama de outros arquivos** — [`assist.evaluate`](../../executor/assist.py#L51), [`shared.ask`](../../executor/shared.py#L125), [`shared.current_prices`](../../executor/shared.py#L29)
+- **chama de outros arquivos** — [`assist.evaluate`](../../executor/assist.py#L39), [`shared.ask`](../../executor/shared.py#L152), [`shared.current_prices`](../../executor/shared.py#L56)
 - **papel nos estudos** — executa [E15](../../mapa/conhecimento/experimentos.md#e15)
 - **conteúdo** — [sha](../../executor/run_e15.py#L23) (l. 23; usado em 1), [encoded](../../executor/run_e15.py#L27) (l. 27; usado em 1), [excerpt](../../executor/run_e15.py#L31) (l. 31; usado em 1), [corpus](../../executor/run_e15.py#L39) (l. 39), [questions_hash](../../executor/run_e15.py#L114) (l. 114), [prepare](../../executor/run_e15.py#L118) (l. 118), [execute](../../executor/run_e15.py#L135) (l. 135), [wilson](../../executor/run_e15.py#L172) (l. 172), [report](../../executor/run_e15.py#L181) (l. 181)
 
@@ -237,7 +237,7 @@ _Grafo local omitido: 163 relações, grande demais para desenhar; ver as ligaç
 
 - **usa** — import: [`executor/assist.py`](../../executor/assist.py), [`executor/run_e15.py`](../../executor/run_e15.py), [`executor/shared.py`](../../executor/shared.py); citação: [`executor/runner.py`](../../executor/runner.py), [`planning/preregistro-E16-recuperacao.md`](../../planning/preregistro-E16-recuperacao.md), [`research/hermes/manifest.json`](../../research/hermes/manifest.json)
 - **é usado por** — citação: [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **chama de outros arquivos** — [`assist.evaluate`](../../executor/assist.py#L51), [`run_e15.encoded`](../../executor/run_e15.py#L27), [`run_e15.excerpt`](../../executor/run_e15.py#L31), [`run_e15.sha`](../../executor/run_e15.py#L23)
+- **chama de outros arquivos** — [`assist.evaluate`](../../executor/assist.py#L39), [`run_e15.encoded`](../../executor/run_e15.py#L27), [`run_e15.excerpt`](../../executor/run_e15.py#L31), [`run_e15.sha`](../../executor/run_e15.py#L23)
 - **papel nos estudos** — executa [E16](../../mapa/conhecimento/experimentos.md#e16)
 - **conteúdo** — [prepare](../../executor/run_e16.py#L27) (l. 27), [execute](../../executor/run_e16.py#L54) (l. 54), [read_results](../../executor/run_e16.py#L76) (l. 76), [report](../../executor/run_e16.py#L81) (l. 81)
 
@@ -342,11 +342,11 @@ _Grafo local omitido: 163 relações, grande demais para desenhar; ver as ligaç
 - **é usado por** — import: [`executor/assist.py`](../../executor/assist.py), [`executor/run_e15.py`](../../executor/run_e15.py), [`executor/run_e16.py`](../../executor/run_e16.py), [`executor/smoke_mcp.py`](../../executor/smoke_mcp.py), [`executor/tests/test_shared.py`](../../executor/tests/test_shared.py), [`integracao/jev_mcp.py`](../../integracao/jev_mcp.py), [`integracao/jev_router/cliente.py`](../../integracao/jev_router/cliente.py), [`laboratorio/nucleo.py`](../../laboratorio/nucleo.py); citação: [`AGENTS.md`](../../AGENTS.md), [`integracao/camadas/ler.py`](../../integracao/camadas/ler.py), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r17_economia_de_contexto.py`](../../laboratorio/r17_economia_de_contexto.py), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
 - **chama de outros arquivos** — [`credenciais.provedor`](../../executor/credenciais.py#L59), [`ledger.BudgetError`](../../executor/ledger.py#L20), [`ledger.Ledger`](../../executor/ledger.py#L32), [`pricing.load_prices`](../../executor/pricing.py#L18), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74), [`pricing.worst_case_nusd`](../../executor/pricing.py#L56), [`runner.dispatch`](../../executor/runner.py#L187), [`runner.http_transport`](../../executor/runner.py#L84), [`runner.load_api_key`](../../executor/runner.py#L29), [`runner.payload_sha256`](../../executor/runner.py#L47), [`runner.validate_contract`](../../executor/runner.py#L103)
 - **menciona 1 conceito** — [S01](../../mapa/conhecimento/sistemas.md#s01) (1×)
-- **conteúdo** — [current_prices](../../executor/shared.py#L29) (l. 29; usado em 1), [import_legacy](../../executor/shared.py#L67) (l. 67; usado em 1), [strict_answers](../../executor/shared.py#L111) (l. 111; usado em 1), [ask](../../executor/shared.py#L125) (l. 125; usado em 5)
+- **conteúdo** — [active_runtime](../../executor/shared.py#L30) (l. 30; usado em 1), [current_prices](../../executor/shared.py#L56) (l. 56; usado em 1), [import_legacy](../../executor/shared.py#L94) (l. 94; usado em 1), [strict_answers](../../executor/shared.py#L138) (l. 138; usado em 1), [ask](../../executor/shared.py#L152) (l. 152; usado em 5)
 
 ### simple_round.py
 
-- **usa** — citação: [`planning/plan.json`](../../planning/plan.json)
+- **usa** — citação: [`planning/arquitetura/package.json`](../../planning/arquitetura/package.json), [`planning/plan.json`](../../planning/plan.json)
 - **é usado por** — citação: [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
 - **conteúdo** — [clean_env](../../executor/simple_round.py#L27) (l. 27), [detect](../../executor/simple_round.py#L35) (l. 35), [install_node](../../executor/simple_round.py#L64) (l. 64), [run_one](../../executor/simple_round.py#L78) (l. 78), [main](../../executor/simple_round.py#L118) (l. 118)
 

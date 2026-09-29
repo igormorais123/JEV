@@ -9,7 +9,7 @@
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [__init__.py](../../hermes/plugin/jev-camadas/__init__.py) | código | 132 l. | Plugin jev-camadas: o Jev decide o que entra no contexto do modelo caro do Hermes. |
-| [plugin.yaml](../../hermes/plugin/jev-camadas/plugin.yaml) | outro | 363 B | Arquivo |
+| [plugin.yaml](../../hermes/plugin/jev-camadas/plugin.yaml) | outro | 373 B | Arquivo |
 
 ## Ligações e conteúdo de cada arquivo
 

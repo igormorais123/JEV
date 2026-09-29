@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-21",
+  "status": "local_tests_and_cli_live_smoke_complete_other_live_evaluations_pending",
+  "paid_status": "shared_runtime_profile_checked_on_each_call",
+  "systems": [
+    {
+      "system": "every",
+      "revision": "aaa72d582a831420dfd23a788e3bc948c798c248",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 78,
+      "tests_failed": 0,
+      "tests_skipped": 2,
+      "decision": "every_live_smoke_passed",
+      "live_inference_tested_this_round": true
+    },
+    {
+      "system": "heist-one",
+      "revision": "632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": 6,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "scripted_demo_only",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "Janus",
+      "revision": "9cb66c488cf884e5997356a0de45f75aa3148774",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 38,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "offline_replay_available",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "Jeeves",
+      "revision": "65bc21494e18fa7c2beca180c545eed6bc3ce4ce",
+      "python_env": false,
+      "node_dependencies": false,
+      "tests_passed": 100,
+      "tests_failed": 0,
+      "tests_skipped": 24,
+      "decision": "built_database_and_accounts_pending",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jev-cli",
+      "revision": "02ca80177aaef0b30a897959207f99df1e0c8446",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": 180,
+      "tests_failed": 4,
+      "tests_skipped": 0,
+      "decision": "direct_candidate_live_smoke_passed",
+      "live_inference_tested_this_round": true
+    },
+    {
+      "system": "jev-rerank-bench",
+      "revision": "cd9a35b22aeb4187334f7018a0ee1960a7470586",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 9,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "benchmark_live_pending",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jev-review",
+      "revision": "31f89602797fb7bea007f8a480bf368bf564954e",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": null,
+      "tests_failed": null,
+      "tests_skipped": null,
+      "decision": "static_checks_pass_live_review_pending",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jev-search",
+      "revision": "f7e2d4b9f342b882726e49dd668fdc8336571eef",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": 68,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "built_search_credentials_and_wallet_adapter_pending",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jev-ultrafast",
+      "revision": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 31,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "live_browser_and_wallet_adapter_pending",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jevcal",
+      "revision": "ae8f3144d69c9cb0e5e0a2c17f70b9d14714cb9f",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 24,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "synthetic_demo_available",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "jevstudio",
+      "revision": "373d3a86d78d2f807d9bedef1e0e83e966c91149",
+      "python_env": false,
+      "node_dependencies": false,
+      "tests_passed": 177,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "ui_ready_inference_blocked_missing_wallet",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "openjev",
+      "revision": "b9cb32537e78be65f19abfcb1de8fc504b627d84",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 15,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "cpu_environment_ready_weights_not_validated",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "pi-model-router",
+      "revision": "31d8fc2441d5af458928040afbcc384314a34289",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": 58,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "pi_extension_not_codex_integration",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "pi-warden",
+      "revision": "84a3bc9aa6c2807b608df42bc77a951d9531d70b",
+      "python_env": false,
+      "node_dependencies": true,
+      "tests_passed": 206,
+      "tests_failed": 4,
+      "tests_skipped": 0,
+      "decision": "pi_extension_not_codex_integration",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "should-ai-kill-us-all",
+      "revision": "6b6b55cbe05ec24c844db3a691e3521f65eae258",
+      "python_env": false,
+      "node_dependencies": false,
+      "tests_passed": 2,
+      "tests_failed": 0,
+      "tests_skipped": 0,
+      "decision": "custom_mocked_worker_checks_only",
+      "live_inference_tested_this_round": false
+    },
+    {
+      "system": "system-one-adapter-python",
+      "revision": "adffc2eab300a4fa3c0e92252d4ffd6ceaa53700",
+      "python_env": true,
+      "node_dependencies": false,
+      "tests_passed": 198,
+      "tests_failed": 31,
+      "tests_skipped": 0,
+      "decision": "adoption_pending_failures",
+      "live_inference_tested_this_round": false
+    }
+  ],
+  "mcp": "jev-harness: registered; new Codex session required",
+  "report": "integracao/harness/RELATORIO.md",
+  "panel_url": "http://127.0.0.1:8767",
+  "live_cli_smoke": {
+    "date": "2026-09-21",
+    "correct": 7,
+    "total": 7,
+    "corpus": "synthetic_assistant_authored",
+    "file": "runs/harness-20260921/live.json",
+    "scope": "integration_smoke_not_production_benchmark"
+  },
+  "every_live_smoke": {
+    "origin": "synthetic_assistant_authored",
+    "expected": {
+      "normalize": true,
+      "add": false
+    },
+    "actual_scores": {
+      "normalize": 0.97,
+      "add": 0.04
+    },
+    "correct": 2,
+    "total": 2,
+    "receipt": {
+      "attempt_id": "d4e3ee97-a259-4837-94e5-bc79024dfd39",
+      "status": "success",
+      "settled_nusd": 28350,
+      "cost_source": "usage_priced",
+      "latency_ms": 796.52,
+      "payload_sha256": "cb49e98a888ce31d1ba1859a1ced3b8b273d37c34a1ca141494939e3d34a6a67",
+      "state_chars": 178,
+      "payload_bytes": 1604,
+      "consumer": "typesafe-smoke-20260921",
+      "usage": {
+        "input_tokens": 675,
+        "output_tokens": 38
+      },
+      "provider": "typesafe",
+      "model": "jev-1.13.0",
+      "network_ms": 790.58,
+      "model_resolved": "jev-1.13.0",
+      "price_snapshot": "typesafe-models-2026-09-21-output-free",
+      "wallet_committed_nusd": 462210,
+      "evidence_level": "live_component",
+      "sent": true,
+      "custo_usd": null
+    },
+    "note": "Upstream estimate is not the financial receipt; 401 before fix used ephemeral dummy key, no paid decision."
+  }
+}

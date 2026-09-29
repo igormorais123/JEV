@@ -10,26 +10,26 @@ Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador b
 |---|---:|---|
 | [.reticle/](../../mapa/pastas/reticle.md) | 1 | Pasta de ferramenta local; só o .gitignore é versionado. |
 | [data/](../../mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
-| [docs/](../../mapa/pastas/docs.md) | 12 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
+| [docs/](../../mapa/pastas/docs.md) | 27 | Documentos e proposta de arquitetura: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
 | [executor/](../../mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
 | [hermes/](../../mapa/pastas/hermes.md) | 22 |  |
 | [integracao/](../../mapa/pastas/integracao.md) | 48 | O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex. |
 | [lab/](../../mapa/pastas/lab.md) | 13 | Painel local de acompanhamento (servidor stdlib + HTML/JS): fila de rodadas, execuções, métricas e orçamento. |
 | [laboratorio/](../../mapa/pastas/laboratorio.md) | 88 | Programa E14 de rodadas R0–R27: cada `rNN_*.py` roda uma rodada e grava `rNN-*.json`. Inclui auditoria do placar, canários, dossiê e mapa de limites. |
-| [output/](../../mapa/pastas/output.md) | 5 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
-| [planning/](../../mapa/pastas/planning.md) | 16 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
-| [research/](../../mapa/pastas/research.md) | 12 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes. |
+| [output/](../../mapa/pastas/output.md) | 7 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
+| [planning/](../../mapa/pastas/planning.md) | 24 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
+| [research/](../../mapa/pastas/research.md) | 14 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, referências adicionais e auditoria do PDF do Hermes. |
 | [runs/](../../mapa/pastas/runs.md) | 36 | Resultados dos experimentos: um diretório por experimento com `relatorio.json` agregado; extrato do livro-caixa e erro grave. O banco `ledger.sqlite3` não é versionado. |
 
 ## Arquivos
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
-| [.gitattributes](../../.gitattributes) | outro | 39 B | Arquivo |
+| [.gitattributes](../../.gitattributes) | outro | 40 B | Arquivo |
 | [.gitignore](../../.gitignore) | outro | 4 KB | Arquivo |
-| [.graphifyignore](../../.graphifyignore) | outro | 379 B | Arquivo |
+| [.graphifyignore](../../.graphifyignore) | outro | 402 B | Arquivo |
 | [AGENTS.md](../../AGENTS.md) | doc | 30 l. | Instruções do projeto JEV — preferido `typesafe`. Nunca imprimir, registrar ou versionar valor de chave. |
-| [README.md](../../README.md) | doc | 116 l. | JEV — Projeto experimental para testes com o modelo de classificação JEV. |
+| [README.md](../../README.md) | doc | 124 l. | JEV — Projeto experimental para testes com o modelo de classificação JEV. |
 | [pytest.ini](../../pytest.ini) | config | 6 l. | [pytest] |
 
 ## Grafo de imports e links
@@ -44,6 +44,8 @@ flowchart LR
   n_data_corpus_triagem_confirmacao_jsonl["data/corpus/triagem-confirmacao.jsonl"]
   n_data_corpus_triagem_piloto_jsonl["data/corpus/triagem-piloto.jsonl"]
   n_data_corpus_triagem_replicacao_jsonl["data/corpus/triagem-replicacao.jsonl"]
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md["docs/ARQUITETURA-DO-JEV-REVISAO.md"]
+  n_docs_ARQUITETURA_DO_JEV_pdf["docs/ARQUITETURA-DO-JEV.pdf"]
   n_docs_AUDITORIA_DE_NUMEROS_md["docs/AUDITORIA-DE-NUMEROS.md"]
   n_docs_BATERIA_COMPLEMENTAR_md["docs/BATERIA-COMPLEMENTAR.md"]
   n_docs_CAMADAS_CLAUDE_CODE_md["docs/CAMADAS-CLAUDE-CODE.md"]
@@ -56,12 +58,17 @@ flowchart LR
   n_docs_RELATORIO_EXECUCAO_JEV_HELENA_md["docs/RELATORIO-EXECUCAO-JEV-HELENA.md"]
   n_docs_RELATORIO_FINAL_JEV_md["docs/RELATORIO-FINAL-JEV.md"]
   n_docs_TRIAGEM_JEV_HELENA_md["docs/TRIAGEM-JEV-HELENA.md"]
+  n_docs_arquitetura_assets_fonte_original_md["docs/arquitetura-assets/fonte-original.md"]
   n_executor_README_md["executor/README.md"]
   n_integracao_README_md["integracao/README.md"]
   n_lab_README_md["lab/README.md"]
   n_lab_index_html["lab/index.html"]
   n_laboratorio_PREREGISTRO_md["laboratorio/PREREGISTRO.md"]
+  n_output_arquitetura_jev_html["output/arquitetura-jev.html"]
+  n_output_pdf_ARQUITETURA_DO_JEV_REVISAO_pdf["output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf"]
   n_output_pdf_PLANO_CIENTIFICO_JEV_HELENA_pdf["output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf"]
+  n_planning_arquitetura_README_md["planning/arquitetura/README.md"]
+  n_planning_arquitetura_VERIFICACAO_md["planning/arquitetura/VERIFICACAO.md"]
   n_planning_matriz_testes_csv["planning/matriz-testes.csv"]
   n_planning_plan_json["planning/plan.json"]
   n_planning_preregistro_E1_triagem_md["planning/preregistro-E1-triagem.md"]
@@ -71,6 +78,8 @@ flowchart LR
   n_planning_preregistro_E7_confirmacao_md["planning/preregistro-E7-confirmacao.md"]
   n_planning_schema_sql["planning/schema.sql"]
   n_research_FONTES_md["research/FONTES.md"]
+  n_research_JEV_FLOW_md["research/JEV-FLOW.md"]
+  n_research_TEN_LEVELS_OF_JEV_md["research/TEN-LEVELS-OF-JEV.md"]
   n_research_hermes_auditoria_local_json["research/hermes/auditoria-local.json"]
   n_research_sources_manifest_json["research/sources-manifest.json"]
   n_README_md -.-> n_data_corpus_evidencia_piloto_jsonl
@@ -78,6 +87,8 @@ flowchart LR
   n_README_md -.-> n_data_corpus_triagem_confirmacao_jsonl
   n_README_md -.-> n_data_corpus_triagem_piloto_jsonl
   n_README_md -.-> n_data_corpus_triagem_replicacao_jsonl
+  n_README_md -.-> n_docs_ARQUITETURA_DO_JEV_REVISAO_md
+  n_README_md -.-> n_docs_ARQUITETURA_DO_JEV_pdf
   n_README_md -.-> n_docs_AUDITORIA_DE_NUMEROS_md
   n_README_md -.-> n_docs_BATERIA_COMPLEMENTAR_md
   n_README_md -.-> n_docs_CAMADAS_CLAUDE_CODE_md
@@ -90,12 +101,17 @@ flowchart LR
   n_README_md -.-> n_docs_RELATORIO_EXECUCAO_JEV_HELENA_md
   n_README_md -.-> n_docs_RELATORIO_FINAL_JEV_md
   n_README_md -.-> n_docs_TRIAGEM_JEV_HELENA_md
+  n_README_md -.-> n_docs_arquitetura_assets_fonte_original_md
   n_README_md -.-> n_executor_README_md
   n_README_md -.-> n_integracao_README_md
   n_README_md -.-> n_lab_README_md
   n_README_md -.-> n_lab_index_html
   n_README_md -.-> n_laboratorio_PREREGISTRO_md
+  n_README_md -.-> n_output_arquitetura_jev_html
+  n_README_md -.-> n_output_pdf_ARQUITETURA_DO_JEV_REVISAO_pdf
   n_README_md -.-> n_output_pdf_PLANO_CIENTIFICO_JEV_HELENA_pdf
+  n_README_md -.-> n_planning_arquitetura_README_md
+  n_README_md -.-> n_planning_arquitetura_VERIFICACAO_md
   n_README_md -.-> n_planning_matriz_testes_csv
   n_README_md -.-> n_planning_plan_json
   n_README_md -.-> n_planning_preregistro_E1_triagem_md
@@ -105,6 +121,8 @@ flowchart LR
   n_README_md -.-> n_planning_preregistro_E7_confirmacao_md
   n_README_md -.-> n_planning_schema_sql
   n_README_md -.-> n_research_FONTES_md
+  n_README_md -.-> n_research_JEV_FLOW_md
+  n_README_md -.-> n_research_TEN_LEVELS_OF_JEV_md
   n_README_md -.-> n_research_hermes_auditoria_local_json
   n_README_md -.-> n_research_sources_manifest_json
 ```
@@ -128,7 +146,7 @@ flowchart LR
 
 ### README.md
 
-- **usa** — link: [`data/corpus/evidencia-piloto.jsonl`](../../data/corpus/evidencia-piloto.jsonl), [`data/corpus/ressalvas-piloto.jsonl`](../../data/corpus/ressalvas-piloto.jsonl), [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl), [`data/corpus/triagem-piloto.jsonl`](../../data/corpus/triagem-piloto.jsonl), [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`docs/BATERIA-COMPLEMENTAR.md`](../../docs/BATERIA-COMPLEMENTAR.md), [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md), [`docs/CEM-HIPOTESES.md`](../../docs/CEM-HIPOTESES.md), [`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md), [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`docs/RELATORIO-EXECUCAO-JEV-HELENA.md`](../../docs/RELATORIO-EXECUCAO-JEV-HELENA.md), [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`executor/README.md`](../../executor/README.md), [`integracao/README.md`](../../integracao/README.md), [`lab/README.md`](../../lab/README.md), [`lab/index.html`](../../lab/index.html), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf`](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf), [`planning/matriz-testes.csv`](../../planning/matriz-testes.csv), [`planning/plan.json`](../../planning/plan.json), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md), [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md), [`planning/schema.sql`](../../planning/schema.sql), [`research/FONTES.md`](../../research/FONTES.md), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/sources-manifest.json`](../../research/sources-manifest.json); citação: [`AGENTS.md`](../../AGENTS.md), [`executor/exportar_extrato.py`](../../executor/exportar_extrato.py), [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/server.py`](../../lab/server.py), [`laboratorio/canarios_de_comportamento.py`](../../laboratorio/canarios_de_comportamento.py), [`planning/build_deliverables.py`](../../planning/build_deliverables.py), [`planning/build_plan.py`](../../planning/build_plan.py), [`planning/protocolo.md`](../../planning/protocolo.md), [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py), [`runs/extrato-ledger.json`](../../runs/extrato-ledger.json)
+- **usa** — link: [`data/corpus/evidencia-piloto.jsonl`](../../data/corpus/evidencia-piloto.jsonl), [`data/corpus/ressalvas-piloto.jsonl`](../../data/corpus/ressalvas-piloto.jsonl), [`data/corpus/triagem-confirmacao.jsonl`](../../data/corpus/triagem-confirmacao.jsonl), [`data/corpus/triagem-piloto.jsonl`](../../data/corpus/triagem-piloto.jsonl), [`data/corpus/triagem-replicacao.jsonl`](../../data/corpus/triagem-replicacao.jsonl), [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`docs/ARQUITETURA-DO-JEV.pdf`](../../docs/ARQUITETURA-DO-JEV.pdf), [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`docs/BATERIA-COMPLEMENTAR.md`](../../docs/BATERIA-COMPLEMENTAR.md), [`docs/CAMADAS-CLAUDE-CODE.md`](../../docs/CAMADAS-CLAUDE-CODE.md), [`docs/CEM-HIPOTESES.md`](../../docs/CEM-HIPOTESES.md), [`docs/CEM-PERGUNTAS-ESTRATEGICAS.md`](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md), [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`docs/RELATORIO-EXECUCAO-JEV-HELENA.md`](../../docs/RELATORIO-EXECUCAO-JEV-HELENA.md), [`docs/RELATORIO-FINAL-JEV.md`](../../docs/RELATORIO-FINAL-JEV.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`docs/arquitetura-assets/fonte-original.md`](../../docs/arquitetura-assets/fonte-original.md), [`executor/README.md`](../../executor/README.md), [`integracao/README.md`](../../integracao/README.md), [`lab/README.md`](../../lab/README.md), [`lab/index.html`](../../lab/index.html), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html), [`output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf`](../../output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf), [`output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf`](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf), [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`planning/matriz-testes.csv`](../../planning/matriz-testes.csv), [`planning/plan.json`](../../planning/plan.json), [`planning/preregistro-E1-triagem.md`](../../planning/preregistro-E1-triagem.md), [`planning/preregistro-E10-llm-economico.md`](../../planning/preregistro-E10-llm-economico.md), [`planning/preregistro-E11-desempate.md`](../../planning/preregistro-E11-desempate.md), [`planning/preregistro-E12-replicacao.md`](../../planning/preregistro-E12-replicacao.md), [`planning/preregistro-E7-confirmacao.md`](../../planning/preregistro-E7-confirmacao.md), [`planning/schema.sql`](../../planning/schema.sql), [`research/FONTES.md`](../../research/FONTES.md), [`research/JEV-FLOW.md`](../../research/JEV-FLOW.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/sources-manifest.json`](../../research/sources-manifest.json); citação: [`AGENTS.md`](../../AGENTS.md), [`executor/exportar_extrato.py`](../../executor/exportar_extrato.py), [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/server.py`](../../lab/server.py), [`laboratorio/canarios_de_comportamento.py`](../../laboratorio/canarios_de_comportamento.py), [`planning/build_deliverables.py`](../../planning/build_deliverables.py), [`planning/build_plan.py`](../../planning/build_plan.py), [`planning/protocolo.md`](../../planning/protocolo.md), [`research/audit_hermes_pdf.py`](../../research/audit_hermes_pdf.py), [`runs/extrato-ledger.json`](../../runs/extrato-ledger.json)
 - **é usado por** — citação: [`executor/tests/test_achados_revisao16.py`](../../executor/tests/test_achados_revisao16.py), [`executor/tests/test_coerencia_placar.py`](../../executor/tests/test_coerencia_placar.py), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`research/FONTES.md`](../../research/FONTES.md), [`research/sources-manifest.json`](../../research/sources-manifest.json)
 - **menciona 9 conceitos** — [E12](../../mapa/conhecimento/experimentos.md#e12) (4×), [E14](../../mapa/conhecimento/experimentos.md#e14) (3×), [E1](../../mapa/conhecimento/experimentos.md#e1) (2×), [E5](../../mapa/conhecimento/experimentos.md#e5) (1×), [E7](../../mapa/conhecimento/experimentos.md#e7) (1×), [E9](../../mapa/conhecimento/experimentos.md#e9) (1×), [E10](../../mapa/conhecimento/experimentos.md#e10) (1×), [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E15](../../mapa/conhecimento/experimentos.md#e15) (1×)
-- **conteúdo** — Execução realizada (l. 7), Plano de testes atual (l. 72), Estudo inicial (l. 96), Continuar em outra máquina (l. 104)
+- **conteúdo** — Documento de arquitetura (l. 7), Execução realizada (l. 13), Plano de testes atual (l. 78), Estudo inicial (l. 102), Continuar em outra máquina (l. 112)

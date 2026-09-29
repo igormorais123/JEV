@@ -1,5 +1,9 @@
 # O Jev dentro do Claude Code e do Codex
 
+Instalação global e uso cotidiano nesta máquina: [JEV no Codex e Claude Code](USO-CODEX.md).
+Inclui skill oficial TypeSafe, skill `jev-assist` e MCP; o estado financeiro precisa ser
+recuperado separadamente quando o projeto é trazido de outro PC pelo Git.
+
 ## As camadas (2026-09-20): o Jev decide o que entra no contexto do modelo caro
 
 Depois do estudo (31 mil chamadas, 27 rodadas), o Jev foi posto nos pontos do fluxo do

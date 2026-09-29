@@ -22,6 +22,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `AchadosP1.test_liquidacao_sem_model_usa_o_reservado_e_nao_o_do_braco` (método) — [executor/tests/test_achados_revisao.py:60](../executor/tests/test_achados_revisao.py#L60)
 - `AchadosP1.test_sem_max_completion_tokens_nao_reserva` (método) — [executor/tests/test_achados_revisao.py:95](../executor/tests/test_achados_revisao.py#L95)
 - `AchadosP1.test_taxa_negativa_nao_precifica` (método) — [executor/tests/test_achados_revisao.py:100](../executor/tests/test_achados_revisao.py#L100)
+- `active_runtime` (função) — [executor/shared.py:30](../executor/shared.py#L30) · usado em 1: jev_mcp.py
 - `activity` (função) — [lab/dashboard.js:54](../lab/dashboard.js#L54)
 - `_acuracia` (função) — [laboratorio/h100/provas.py:40](../laboratorio/h100/provas.py#L40)
 - `acuracia` (função) — [laboratorio/r1_r3_estresse.py:170](../laboratorio/r1_r3_estresse.py#L170)
@@ -62,7 +63,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `artefato` (função) — [laboratorio/h100/dados.py:31](../laboratorio/h100/dados.py#L31) · usado em 2: provas.py, respostas.py
 - `_artefato` (função) — [laboratorio/q100/respostas.py:116](../laboratorio/q100/respostas.py#L116)
 - `artifactURL` (função) — [lab/dashboard.js:97](../lab/dashboard.js#L97)
-- `ask` (função) — [executor/shared.py:125](../executor/shared.py#L125) · usado em 5: assist.py, run_e15.py, test_shared.py, cliente.py, nucleo.py
+- `ask` (função) — [executor/shared.py:152](../executor/shared.py#L152) · usado em 5: assist.py, run_e15.py, test_shared.py, cliente.py, nucleo.py
 - `assert` (função) — [lab/dashboard.js:156](../lab/dashboard.js#L156)
 - `assertRunUpdate` (função) — [lab/dashboard.js:189](../lab/dashboard.js#L189)
 - `_ativas` (função) — [hermes/plugin/jev-camadas/__init__.py:28](../hermes/plugin/jev-camadas/__init__.py#L28)
@@ -137,7 +138,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `CalibracaoDoCorpusNovo.test_o_erro_veio_acima_do_corte_antigo` (método) — [executor/tests/test_calibracao_e12.py:57](../executor/tests/test_calibracao_e12.py#L57)
 - `CalibracaoDoCorpusNovo.test_o_guia_nao_recomenda_um_corte_que_deixa_passar_erro` (método) — [executor/tests/test_calibracao_e12.py:74](../executor/tests/test_calibracao_e12.py#L74)
 - `calibrar` (função) — [laboratorio/r0_calibracao.py:56](../laboratorio/r0_calibracao.py#L56)
-- `call` (função) — [integracao/jev_mcp.py:109](../integracao/jev_mcp.py#L109) · usado em 1: test_mcp.py
+- `call` (função) — [integracao/jev_mcp.py:91](../integracao/jev_mcp.py#L91) · usado em 1: test_mcp.py
 - `_camadas` (função) — [hermes/plugin/jev-camadas/__init__.py:35](../hermes/plugin/jev-camadas/__init__.py#L35)
 - `canarios` (função) — [laboratorio/canarios_de_comportamento.py:66](../laboratorio/canarios_de_comportamento.py#L66) · usado em 1: test_canarios_de_comportamento.py
 - `candidatos` (função) — [integracao/camadas/busca.py:129](../integracao/camadas/busca.py#L129)
@@ -280,7 +281,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `criterios_com` (função) — [laboratorio/r11_extremos.py:60](../laboratorio/r11_extremos.py#L60)
 - `criterios_com` (função) — [laboratorio/r4_r7_limites.py:67](../laboratorio/r4_r7_limites.py#L67)
 - `criterios_invertidos` (função) — [laboratorio/r24_votacao.py:71](../laboratorio/r24_votacao.py#L71)
-- `current_prices` (função) — [executor/shared.py:29](../executor/shared.py#L29) · usado em 1: run_e15.py
+- `current_prices` (função) — [executor/shared.py:56](../executor/shared.py#L56) · usado em 1: run_e15.py
 - `_curva_risco_cobertura` (função) — [laboratorio/q100/respostas.py:503](../laboratorio/q100/respostas.py#L503)
 - `_custo` (função) — [hermes/jev_hermes/nucleo.py:310](../hermes/jev_hermes/nucleo.py#L310)
 - `custo_do_ledger` (função) — [executor/publicar_experimentos.py:295](../executor/publicar_experimentos.py#L295)
@@ -373,7 +374,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `EstatisticaRound2.test_p_de_permutacao_nunca_e_zero` (método) — [executor/tests/test_achados_revisao2.py:233](../executor/tests/test_achados_revisao2.py#L233)
 - `estilo_igor` (função) — [laboratorio/r1_r3_estresse.py:98](../laboratorio/r1_r3_estresse.py#L98)
 - `estimate_input_tokens` (função) — [executor/runner.py:51](../executor/runner.py#L51) · usado em 1: test_runner.py
-- `evaluate` (função) — [executor/assist.py:51](../executor/assist.py#L51) · usado em 2: run_e15.py, run_e16.py
+- `evaluate` (função) — [executor/assist.py:39](../executor/assist.py#L39) · usado em 3: run_e15.py, run_e16.py, jev_mcp.py
 - `event` (função) — [lab/dashboard.js:137](../lab/dashboard.js#L137)
 - `evidencia_dividida` (função) — [executor/placar.py:428](../executor/placar.py#L428)
 - `EvidenciaCitadaEstaVersionada` (classe) — [executor/tests/test_achados_revisao16.py:37](../executor/tests/test_achados_revisao16.py#L37)
@@ -597,7 +598,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `h100` (função) — [laboratorio/h100/provas.py:1145](../laboratorio/h100/provas.py#L1145)
 - `_h100` (função) — [laboratorio/q100/respostas.py:174](../laboratorio/q100/respostas.py#L174)
 - `handle` (função) — [hermes/plugin/jev-advisor/__init__.py:151](../hermes/plugin/jev-advisor/__init__.py#L151)
-- `handle` (função) — [integracao/jev_mcp.py:166](../integracao/jev_mcp.py#L166) · usado em 1: test_mcp.py
+- `handle` (função) — [integracao/jev_mcp.py:152](../integracao/jev_mcp.py#L152) · usado em 1: test_mcp.py
 - `Handler` (classe) — [lab/server.py:215](../lab/server.py#L215)
 - `Handler.allowed_host` (método) — [lab/server.py:219](../lab/server.py#L219)
 - `Handler.do_GET` (método) — [lab/server.py:234](../lab/server.py#L234)
@@ -631,7 +632,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 ## I
 
 - `idade_horas` (função) — [laboratorio/caixa.py:70](../laboratorio/caixa.py#L70) · usado em 1: auditoria.py
-- `import_legacy` (função) — [executor/shared.py:67](../executor/shared.py#L67) · usado em 1: test_shared.py
+- `import_legacy` (função) — [executor/shared.py:94](../executor/shared.py#L94) · usado em 1: test_shared.py
 - `impressao` (função) — [integracao/jev_router/roteador.py:30](../integracao/jev_router/roteador.py#L30) · usado em 1: test_roteador.py
 - `imprimir` (função) — [integracao/camadas/ler.py:136](../integracao/camadas/ler.py#L136) · usado em 1: test_camadas.py
 - `imprimir` (função) — [laboratorio/canarios_de_comportamento.py:244](../laboratorio/canarios_de_comportamento.py#L244)
@@ -799,7 +800,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [executor/adjudicar_e11.py:119](../executor/adjudicar_e11.py#L119)
 - `main` (função) — [executor/adjudicar_e12.py:120](../executor/adjudicar_e12.py#L120)
 - `main` (função) — [executor/analise.py:177](../executor/analise.py#L177) · usado em 1: test_achados_revisao4.py
-- `main` (função) — [executor/assist.py:71](../executor/assist.py#L71)
+- `main` (função) — [executor/assist.py:54](../executor/assist.py#L54)
 - `main` (função) — [executor/probe_contract.py:64](../executor/probe_contract.py#L64)
 - `main` (função) — [executor/publish_simple_round.py:38](../executor/publish_simple_round.py#L38)
 - `main` (função) — [executor/run_canaries.py:45](../executor/run_canaries.py#L45)
@@ -847,7 +848,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [integracao/hooks/jev_saida.py:18](../integracao/hooks/jev_saida.py#L18)
 - `main` (função) — [integracao/hooks/jev_sentinela.py:19](../integracao/hooks/jev_sentinela.py#L19)
 - `main` (função) — [integracao/instalar.py:304](../integracao/instalar.py#L304)
-- `main` (função) — [integracao/jev_mcp.py:193](../integracao/jev_mcp.py#L193)
+- `main` (função) — [integracao/jev_mcp.py:179](../integracao/jev_mcp.py#L179)
 - `main` (função) — [integracao/jev_router/cli.py:18](../integracao/jev_router/cli.py#L18)
 - `main` (função) — [lab/server.py:290](../lab/server.py#L290)
 - `main` (função) — [laboratorio/auditoria.py:1264](../laboratorio/auditoria.py#L1264)
@@ -917,7 +918,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `MetricasDoE8eE9.test_kappa_e_zero_no_nivel_do_acaso` (método) — [executor/tests/test_achados_revisao4.py:113](../executor/tests/test_achados_revisao4.py#L113)
 - `MetricasDoE8eE9.test_politica_conta_erro_entre_aceitos` (método) — [executor/tests/test_achados_revisao4.py:125](../executor/tests/test_achados_revisao4.py#L125)
 - `metricCard` (função) — [lab/metrics.js:35](../lab/metrics.js#L35)
-- `metrics` (função) — [integracao/jev_mcp.py:97](../integracao/jev_mcp.py#L97)
+- `metrics` (função) — [integracao/jev_mcp.py:72](../integracao/jev_mcp.py#L72)
 - `metrics` (função) — [lab/dashboard.js:42](../lab/dashboard.js#L42)
 - `metricSelection` (função) — [lab/metrics.js:23](../lab/metrics.js#L23)
 - `metricsView` (função) — [lab/metrics.js:36](../lab/metrics.js#L36)
@@ -1426,7 +1427,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `SoOlhaOQueARegraBarrou.test_comando_marcado_pela_regra_e_avaliado` (método) — [integracao/tests/test_guarda_comando.py:48](../integracao/tests/test_guarda_comando.py#L48)
 - `SoOlhaOQueARegraBarrou.test_comando_que_a_regra_nao_marca_nao_gasta_chamada` (método) — [integracao/tests/test_guarda_comando.py:41](../integracao/tests/test_guarda_comando.py#L41)
 - `state` (função) — [executor/publish_simple_round.py:16](../executor/publish_simple_round.py#L16)
-- `strict_answers` (função) — [executor/shared.py:111](../executor/shared.py#L111) · usado em 1: test_shared.py
+- `strict_answers` (função) — [executor/shared.py:138](../executor/shared.py#L138) · usado em 1: test_shared.py
 - `system` (função) — [planning/build_plan.py:11](../planning/build_plan.py#L11)
 - `systemsView` (função) — [lab/dashboard.js:69](../lab/dashboard.js#L69)
 
@@ -1464,7 +1465,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `test_alguma_conta_declara_parametro` (função) — [laboratorio/tests/test_q100.py:67](../laboratorio/tests/test_q100.py#L67)
 - `test_as_emendas_estao_datadas_e_justificadas` (função) — [laboratorio/tests/test_h100.py:57](../laboratorio/tests/test_h100.py#L57)
 - `test_as_familias_todas_tem_pergunta` (função) — [laboratorio/tests/test_q100.py:124](../laboratorio/tests/test_q100.py#L124)
-- `test_bad_arguments_cannot_call_provider` (função) — [executor/tests/test_mcp.py:35](../executor/tests/test_mcp.py#L35)
+- `test_bad_arguments_cannot_call_provider` (função) — [executor/tests/test_mcp.py:37](../executor/tests/test_mcp.py#L37)
 - `test_bad_confidence_rejected` (função) — [executor/tests/test_shared.py:76](../executor/tests/test_shared.py#L76)
 - `test_busca_anexa_ordem_sem_esconder_nada` (função) — [hermes/tests/test_jev_hermes.py:140](../hermes/tests/test_jev_hermes.py#L140)
 - `test_cartao_e8_reage_a_mudanca_no_gabarito_do_anotador_local` (função) — [executor/tests/test_coerencia_placar.py:375](../executor/tests/test_coerencia_placar.py#L375)
@@ -1493,7 +1494,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `test_oversized_input_abstains_without_dispatch` (função) — [executor/tests/test_shared.py:45](../executor/tests/test_shared.py#L45)
 - `test_portao_acorda_quando_falha` (função) — [hermes/tests/test_jev_hermes.py:169](../hermes/tests/test_jev_hermes.py#L169)
 - `test_portao_termina_com_sinal_para_o_agendador` (função) — [hermes/tests/test_jev_hermes.py:160](../hermes/tests/test_jev_hermes.py#L160)
-- `test_rank_keeps_all_candidates_and_ids` (função) — [executor/tests/test_mcp.py:24](../executor/tests/test_mcp.py#L24)
+- `test_rank_keeps_all_candidates_and_ids` (função) — [executor/tests/test_mcp.py:26](../executor/tests/test_mcp.py#L26)
 - `test_registro_nao_guarda_o_texto` (função) — [hermes/tests/test_jev_hermes.py:103](../hermes/tests/test_jev_hermes.py#L103)
 - `test_resposta_liquida_custo_e_segunda_vem_do_cache` (função) — [hermes/tests/test_jev_hermes.py:59](../hermes/tests/test_jev_hermes.py#L59)
 - `test_resposta_que_afirma_medida_carrega_a_medida_conferivel` (função) — [laboratorio/tests/test_q100.py:105](../laboratorio/tests/test_q100.py#L105)

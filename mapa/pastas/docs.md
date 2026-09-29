@@ -1,13 +1,21 @@
 # docs/
 
-Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.
+Documentos e proposta de arquitetura: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.
 
 ← [MAPA.md](../../MAPA.md) · pasta acima: [raiz](../../mapa/pastas/_raiz.md) · abrir a pasta: [docs/](../../docs)
+
+## Subpastas
+
+| subpasta | arquivos | finalidade |
+|---|---:|---|
+| [arquitetura-assets/](../../mapa/pastas/docs__arquitetura-assets.md) | 13 | Capa ilustrada, diagramas vetoriais e Markdown original da arquitetura. Os SVGs são gerados a partir da edição revisada. |
 
 ## Arquivos
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
+| [ARQUITETURA-DO-JEV-REVISAO.md](../../docs/ARQUITETURA-DO-JEV-REVISAO.md) | doc | 581 l. | Arquitetura<br>do JEV — Um núcleo de decisão.<br>Seis políticas de trabalho. |
+| [ARQUITETURA-DO-JEV.pdf](../../docs/ARQUITETURA-DO-JEV.pdf) | pdf | 1 MB | Documento PDF (binário) |
 | [AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md) | doc | 1341 l. | Auditoria dos números publicados — Gerado por `python laboratorio/auditoria.py --escrever`, e preso na suíte de testes |
 | [BATERIA-COMPLEMENTAR.md](../../docs/BATERIA-COMPLEMENTAR.md) | doc | 197 l. | Bateria complementar: as lacunas que o estudo declarou, medidas — **Cinco rodadas, 16.110 chamadas novas, US$ 0,4010.** O que cada uma fecha: |
 | [CAMADAS-CLAUDE-CODE.md](../../docs/CAMADAS-CLAUDE-CODE.md) | doc | 134 l. | O Jev em camadas no Claude Code — medição — *Página gerada por `integracao/camadas/medir.py --gravar`; não edite à mão. Os números saem |
@@ -28,6 +36,8 @@ Nós em negrito são desta pasta; setas cheias são imports, tracejadas são lin
 ```mermaid
 flowchart LR
   n_README_md["README.md"]
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md["<b>ARQUITETURA-DO-JEV-REVISAO.md</b>"]
+  n_docs_ARQUITETURA_DO_JEV_pdf["<b>ARQUITETURA-DO-JEV.pdf</b>"]
   n_docs_AUDITORIA_DE_NUMEROS_md["<b>AUDITORIA-DE-NUMEROS.md</b>"]
   n_docs_BATERIA_COMPLEMENTAR_md["<b>BATERIA-COMPLEMENTAR.md</b>"]
   n_docs_CAMADAS_CLAUDE_CODE_md["<b>CAMADAS-CLAUDE-CODE.md</b>"]
@@ -40,17 +50,30 @@ flowchart LR
   n_docs_RELATORIO_EXECUCAO_JEV_HELENA_md["<b>RELATORIO-EXECUCAO-JEV-HELENA.md</b>"]
   n_docs_RELATORIO_FINAL_JEV_md["<b>RELATORIO-FINAL-JEV.md</b>"]
   n_docs_TRIAGEM_JEV_HELENA_md["<b>TRIAGEM-JEV-HELENA.md</b>"]
+  n_docs_arquitetura_assets_capa_png["docs/arquitetura-assets/capa.png"]
+  n_docs_arquitetura_assets_inteia_marca_svg["docs/arquitetura-assets/inteia-marca.svg"]
+  n_executor_tests_test_ledger_py["executor/tests/test_ledger.py"]
+  n_executor_tests_test_liquidacao_429_py["executor/tests/test_liquidacao_429.py"]
   n_integracao_README_md["integracao/README.md"]
   n_lab_index_html["lab/index.html"]
   n_laboratorio_PREREGISTRO_md["laboratorio/PREREGISTRO.md"]
+  n_laboratorio_r18_r20_consolidado_json["laboratorio/r18-r20-consolidado.json"]
+  n_laboratorio_r21b_cruzamento_json["laboratorio/r21b-cruzamento.json"]
+  n_laboratorio_r26_dois_trechos_json["laboratorio/r26-dois-trechos.json"]
+  n_planning_arquitetura_README_md["planning/arquitetura/README.md"]
+  n_planning_arquitetura_VERIFICACAO_md["planning/arquitetura/VERIFICACAO.md"]
   n_planning_matriz_testes_csv["planning/matriz-testes.csv"]
   n_planning_plan_json["planning/plan.json"]
   n_planning_schema_sql["planning/schema.sql"]
   n_research_FONTES_md["research/FONTES.md"]
+  n_research_JEV_FLOW_md["research/JEV-FLOW.md"]
+  n_research_TEN_LEVELS_OF_JEV_md["research/TEN-LEVELS-OF-JEV.md"]
   n_research_audit_hermes_pdf_py["research/audit_hermes_pdf.py"]
   n_research_hermes_auditoria_local_json["research/hermes/auditoria-local.json"]
   n_research_hermes_fase2_decisoes_do_pdf_csv["research/hermes/fase2-decisoes-do-pdf.csv"]
   n_research_sources_manifest_json["research/sources-manifest.json"]
+  n_README_md -.-> n_docs_ARQUITETURA_DO_JEV_REVISAO_md
+  n_README_md -.-> n_docs_ARQUITETURA_DO_JEV_pdf
   n_README_md -.-> n_docs_AUDITORIA_DE_NUMEROS_md
   n_README_md -.-> n_docs_BATERIA_COMPLEMENTAR_md
   n_README_md -.-> n_docs_CAMADAS_CLAUDE_CODE_md
@@ -63,6 +86,17 @@ flowchart LR
   n_README_md -.-> n_docs_RELATORIO_EXECUCAO_JEV_HELENA_md
   n_README_md -.-> n_docs_RELATORIO_FINAL_JEV_md
   n_README_md -.-> n_docs_TRIAGEM_JEV_HELENA_md
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_docs_DOSSIE_DE_EVIDENCIAS_md
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_docs_LIMITES_DO_JEV_md
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_docs_arquitetura_assets_capa_png
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_docs_arquitetura_assets_inteia_marca_svg
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_executor_tests_test_ledger_py
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_executor_tests_test_liquidacao_429_py
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_laboratorio_r18_r20_consolidado_json
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_laboratorio_r21b_cruzamento_json
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_laboratorio_r26_dois_trechos_json
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_research_JEV_FLOW_md
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_research_TEN_LEVELS_OF_JEV_md
   n_docs_DOSSIE_DE_EVIDENCIAS_md -.-> n_docs_AUDITORIA_DE_NUMEROS_md
   n_docs_DOSSIE_DE_EVIDENCIAS_md -.-> n_docs_GUIA_PRATICO_JEV_md
   n_docs_DOSSIE_DE_EVIDENCIAS_md -.-> n_docs_LIMITES_DO_JEV_md
@@ -80,10 +114,25 @@ flowchart LR
   n_docs_TRIAGEM_JEV_HELENA_md -.-> n_docs_PLANO_CIENTIFICO_JEV_HELENA_md
   n_docs_TRIAGEM_JEV_HELENA_md -.-> n_research_FONTES_md
   n_integracao_README_md -.-> n_docs_CAMADAS_CLAUDE_CODE_md
+  n_planning_arquitetura_README_md -.-> n_docs_ARQUITETURA_DO_JEV_REVISAO_md
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_docs_DOSSIE_DE_EVIDENCIAS_md
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_docs_LIMITES_DO_JEV_md
   n_research_FONTES_md -.-> n_docs_TRIAGEM_JEV_HELENA_md
+  n_research_TEN_LEVELS_OF_JEV_md -.-> n_docs_ARQUITETURA_DO_JEV_REVISAO_md
 ```
 
 ## Ligações e conteúdo de cada arquivo
+
+### ARQUITETURA-DO-JEV-REVISAO.md
+
+- **usa** — link: [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`docs/arquitetura-assets/capa.png`](../../docs/arquitetura-assets/capa.png), [`docs/arquitetura-assets/inteia-marca.svg`](../../docs/arquitetura-assets/inteia-marca.svg), [`executor/tests/test_ledger.py`](../../executor/tests/test_ledger.py), [`executor/tests/test_liquidacao_429.py`](../../executor/tests/test_liquidacao_429.py), [`laboratorio/r18-r20-consolidado.json`](../../laboratorio/r18-r20-consolidado.json), [`laboratorio/r21b-cruzamento.json`](../../laboratorio/r21b-cruzamento.json), [`laboratorio/r26-dois-trechos.json`](../../laboratorio/r26-dois-trechos.json), [`research/JEV-FLOW.md`](../../research/JEV-FLOW.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md)
+- **é usado por** — link: [`README.md`](../../README.md), [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt), [`planning/arquitetura/validacao-layout.json`](../../planning/arquitetura/validacao-layout.json)
+- **menciona 5 conceitos** — [R18](../../mapa/conhecimento/rodadas.md#r18) (4×), [R20](../../mapa/conhecimento/rodadas.md#r20) (4×), [R19](../../mapa/conhecimento/rodadas.md#r19) (2×), [R21b](../../mapa/conhecimento/rodadas.md#r21b) (2×), [R26](../../mapa/conhecimento/rodadas.md#r26) (2×)
+- **conteúdo** — Regras claras, evidência preservada (l. 17), Uma arquitetura, responsabilidades definidas (l. 47), O que as experiências mudam no projeto (l. 86), O núcleo decide em ordem (l. 108), Estado suficiente para continuar (l. 138), Reserva e recibo acompanham a operação (l. 163), 1 · Triagem (l. 199), Contexto: selecionar sem perder a resposta (l. 235), 2 · Orquestração de agentes (l. 271), 3 · Roteamento de modelos (l. 309), 4 · Ciclo de execução (l. 347), 5 · Avaliação (l. 387), 6 · Comparação (l. 426), As seis políticas trabalham juntas (l. 463), Implantação por evidência (l. 502), Parâmetros que precisam de medida (l. 532), Fontes e evidências de implementação (l. 553)
+
+### ARQUITETURA-DO-JEV.pdf
+
+- **é usado por** — link: [`README.md`](../../README.md); citação: [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
 
 ### AUDITORIA-DE-NUMEROS.md
 
@@ -125,7 +174,7 @@ flowchart LR
 ### DOSSIE-DE-EVIDENCIAS.md
 
 - **usa** — link: [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md); citação: [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/canarios-de-comportamento.jsonl`](../../laboratorio/canarios-de-comportamento.jsonl), [`laboratorio/canarios_de_comportamento.py`](../../laboratorio/canarios_de_comportamento.py), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py), [`laboratorio/r10-injecao-comparada.json`](../../laboratorio/r10-injecao-comparada.json), [`laboratorio/r11-extremos.json`](../../laboratorio/r11-extremos.json), [`laboratorio/r15-adversario-externo.json`](../../laboratorio/r15-adversario-externo.json), [`laboratorio/r15b-familias.json`](../../laboratorio/r15b-familias.json), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-r20-consolidado.json`](../../laboratorio/r18-r20-consolidado.json), [`laboratorio/r19-armadilha.json`](../../laboratorio/r19-armadilha.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r21-generalizacao.json`](../../laboratorio/r21-generalizacao.json), [`laboratorio/r21b-cruzamento.json`](../../laboratorio/r21b-cruzamento.json)
-- **é usado por** — link: [`README.md`](../../README.md); citação: [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`integracao/camadas/rotina.py`](../../integracao/camadas/rotina.py), [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/canarios_de_comportamento.py`](../../laboratorio/canarios_de_comportamento.py), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py)
+- **é usado por** — link: [`README.md`](../../README.md), [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md); citação: [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`integracao/camadas/rotina.py`](../../integracao/camadas/rotina.py), [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/canarios_de_comportamento.py`](../../laboratorio/canarios_de_comportamento.py), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py), [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html)
 - **menciona 9 conceitos** — [R17](../../mapa/conhecimento/rodadas.md#r17) (3×), [R11](../../mapa/conhecimento/rodadas.md#r11) (2×), [R18](../../mapa/conhecimento/rodadas.md#r18) (2×), [R15](../../mapa/conhecimento/rodadas.md#r15) (1×), [R15b](../../mapa/conhecimento/rodadas.md#r15b) (1×), [R16](../../mapa/conhecimento/rodadas.md#r16) (1×), [R19](../../mapa/conhecimento/rodadas.md#r19) (1×), [R20](../../mapa/conhecimento/rodadas.md#r20) (1×), [R21](../../mapa/conhecimento/rodadas.md#r21) (1×)
 - **conteúdo** — Como ler (l. 13), As afirmações (l. 30), Fichas das rodadas do programa E17 (l. 142), Contabilidade (l. 153), Como conferir (l. 157)
 
@@ -139,7 +188,7 @@ flowchart LR
 ### LIMITES-DO-JEV.md
 
 - **usa** — citação: [`docs/CEM-HIPOTESES.md`](../../docs/CEM-HIPOTESES.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`laboratorio/mapa-de-limites.json`](../../laboratorio/mapa-de-limites.json), [`laboratorio/r12-r13-contexto.json`](../../laboratorio/r12-r13-contexto.json), [`laboratorio/r14-decisoes.json`](../../laboratorio/r14-decisoes.json), [`laboratorio/r15-adversario-externo.json`](../../laboratorio/r15-adversario-externo.json), [`laboratorio/r15-vetores-gerados.json`](../../laboratorio/r15-vetores-gerados.json), [`laboratorio/r15b-familias.json`](../../laboratorio/r15b-familias.json), [`laboratorio/r21-generalizacao.json`](../../laboratorio/r21-generalizacao.json), [`laboratorio/r21b-cruzamento.json`](../../laboratorio/r21b-cruzamento.json), [`output/mapa-de-limites.html`](../../output/mapa-de-limites.html)
-- **é usado por** — link: [`README.md`](../../README.md), [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md); citação: [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py)
+- **é usado por** — link: [`README.md`](../../README.md), [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md); citação: [`docs/AUDITORIA-DE-NUMEROS.md`](../../docs/AUDITORIA-DE-NUMEROS.md), [`docs/GUIA-PRATICO-JEV.md`](../../docs/GUIA-PRATICO-JEV.md), [`laboratorio/PREREGISTRO.md`](../../laboratorio/PREREGISTRO.md), [`laboratorio/auditoria.py`](../../laboratorio/auditoria.py), [`laboratorio/gerar_dossie.py`](../../laboratorio/gerar_dossie.py), [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html)
 - **menciona 13 conceitos** — [E10](../../mapa/conhecimento/experimentos.md#e10) (2×), [R15](../../mapa/conhecimento/rodadas.md#r15) (2×), [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×), [E13](../../mapa/conhecimento/experimentos.md#e13) (1×), [E14](../../mapa/conhecimento/experimentos.md#e14) (1×), [E15](../../mapa/conhecimento/experimentos.md#e15) (1×), [R11](../../mapa/conhecimento/rodadas.md#r11) (1×), [R12](../../mapa/conhecimento/rodadas.md#r12) (1×), [R13](../../mapa/conhecimento/rodadas.md#r13) (1×), [R21](../../mapa/conhecimento/rodadas.md#r21) (1×), [R21b](../../mapa/conhecimento/rodadas.md#r21b) (1×), [H098](../../mapa/conhecimento/hipoteses.md#h098) (1×)
 - **conteúdo** — 1. O achado que fecha a questão aberta desde o E10 (l. 15), 2. O modo de falha mais perigoso, e a mitigação de uma linha (l. 118), 3. Onde ele quebra de verdade (l. 137), 4. Onde ele não quebra (e o que isso contradiz no guia) (l. 159), 5. O falso achado que eu produzi, e por que ele fica no registro (l. 181), 6. Ciclo autorrecursivo: o Jev decidindo sobre os dados do Jev (l. 199), 7. Calibração (l. 220), 8. Consequências para quem aplica (l. 228)
 

@@ -1,0 +1,21 @@
+{
+  "origin": "synthetic_assistant_authored",
+  "frozen_before_calls": "2026-09-21",
+  "scope": "smoke test de integracao, nao benchmark de producao",
+  "classification": [
+    {"id":"c01","text":"O aplicativo fecha sozinho quando abro um arquivo.","expected":"bug"},
+    {"id":"c02","text":"Gostaria de poder exportar a lista para CSV.","expected":"melhoria"},
+    {"id":"c03","text":"Bom dia, obrigado pela ajuda de ontem.","expected":"outro"},
+    {"id":"c04","text":"Nao estou relatando um erro; quero sugerir um botao para exportar CSV.","expected":"melhoria"}
+  ],
+  "evidence": [
+    {"id":"e01","claim":"O pagamento foi realizado.","source":"O pagamento foi agendado para amanha, mas ainda nao foi executado.","expected":"contradicted"},
+    {"id":"e02","claim":"A versao 2.1 permite exportar CSV.","source":"A versao 2.1 permite exportar CSV.","expected":"verified"},
+    {"id":"e03","claim":"O aplicativo suporta Linux.","source":"O aplicativo permite exportar CSV.","expected":"unsupported"}
+  ],
+  "ranking": {
+    "query":"Como exportar os registros em CSV?",
+    "candidates":[{"id":"csv","text":"Abra Registros, clique Exportar e selecione CSV."},{"id":"senha","text":"Para trocar a senha, abra Seguranca."},{"id":"limite","text":"A exportacao CSV inclui apenas os registros visiveis no filtro atual."}],
+    "expected_relevant":["csv","limite"]
+  }
+}

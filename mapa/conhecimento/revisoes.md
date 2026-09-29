@@ -4,7 +4,7 @@ As rodadas de revisão independente do executor, marcadas `[Rn]` nos comentário
 
 ← [MAPA.md](../../MAPA.md) · [Experimentos](../../mapa/conhecimento/experimentos.md) · [Rodadas do laboratório](../../mapa/conhecimento/rodadas.md) · [Hipóteses](../../mapa/conhecimento/hipoteses.md) · [Perguntas estratégicas](../../mapa/conhecimento/perguntas.md) · [Sistemas avaliados](../../mapa/conhecimento/sistemas.md) · [Testes](../../mapa/conhecimento/testes.md) · [Lacunas e ideias](../../mapa/conhecimento/lacunas.md)
 
-**10** itens: [V1](../../mapa/conhecimento/revisoes.md#v1) [V2](../../mapa/conhecimento/revisoes.md#v2) [V3](../../mapa/conhecimento/revisoes.md#v3) [V4](../../mapa/conhecimento/revisoes.md#v4) [V7](../../mapa/conhecimento/revisoes.md#v7) [V11](../../mapa/conhecimento/revisoes.md#v11) [V13](../../mapa/conhecimento/revisoes.md#v13) [V14](../../mapa/conhecimento/revisoes.md#v14) [V15](../../mapa/conhecimento/revisoes.md#v15) [V16](../../mapa/conhecimento/revisoes.md#v16)
+**11** itens: [V1](../../mapa/conhecimento/revisoes.md#v1) [V2](../../mapa/conhecimento/revisoes.md#v2) [V3](../../mapa/conhecimento/revisoes.md#v3) [V4](../../mapa/conhecimento/revisoes.md#v4) [V7](../../mapa/conhecimento/revisoes.md#v7) [V11](../../mapa/conhecimento/revisoes.md#v11) [V13](../../mapa/conhecimento/revisoes.md#v13) [V14](../../mapa/conhecimento/revisoes.md#v14) [V15](../../mapa/conhecimento/revisoes.md#v15) [V16](../../mapa/conhecimento/revisoes.md#v16) [V26](../../mapa/conhecimento/revisoes.md#v26)
 
 ## Itens
 
@@ -79,3 +79,10 @@ As rodadas de revisão independente do executor, marcadas `[Rn]` nos comentário
 
 - **marca no código:** [R16]
 - **onde está:** testa [executor/tests/test_achados_revisao16.py](../../executor/tests/test_achados_revisao16.py)
+
+<a id="v26"></a>
+
+### V26 — Revisão adversarial 26
+
+- **marca no código:** [R26]
+- **mencionado em 1 arquivo:** [planning/arquitetura/VERIFICACAO.md](../../planning/arquitetura/VERIFICACAO.md) (1×)

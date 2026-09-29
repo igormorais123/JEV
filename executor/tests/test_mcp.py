@@ -17,7 +17,9 @@ def test_stdio_handshake_and_catalog():
                              capture_output=True, timeout=15, check=True)
     responses = [json.loads(line) for line in result.stdout.splitlines()]
     assert len(responses) == 2
-    assert len(responses[1]['result']['tools']) == 4
+    assert {t['name'] for t in responses[1]['result']['tools']} == {
+        'jev_assist', 'jev_rank_context', 'jev_metrics', 'jev_record_review', 'jev_status', 'jev_judge',
+        'jev_select_tool', 'jev_select_skill', 'jev_route'}
     assert result.stderr == b''
 
 

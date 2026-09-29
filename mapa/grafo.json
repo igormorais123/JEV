@@ -20,7 +20,7 @@
    "id": ".",
    "finalidade": "Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex.",
    "pagina": "mapa/pastas/_raiz.md",
-   "arquivos": 322
+   "arquivos": 349
   },
   {
    "id": ".reticle",
@@ -42,9 +42,15 @@
   },
   {
    "id": "docs",
-   "finalidade": "Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.",
+   "finalidade": "Documentos e proposta de arquitetura: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.",
    "pagina": "mapa/pastas/docs.md",
-   "arquivos": 12
+   "arquivos": 27
+  },
+  {
+   "id": "docs/arquitetura-assets",
+   "finalidade": "Capa ilustrada, diagramas vetoriais e Markdown original da arquitetura. Os SVGs são gerados a partir da edição revisada.",
+   "pagina": "mapa/pastas/docs__arquitetura-assets.md",
+   "arquivos": 13
   },
   {
    "id": "executor",
@@ -200,25 +206,31 @@
    "id": "output",
    "finalidade": "Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`.",
    "pagina": "mapa/pastas/output.md",
-   "arquivos": 5
+   "arquivos": 7
   },
   {
    "id": "output/pdf",
    "finalidade": "PDFs finais: guia prático, plano científico e relatório final.",
    "pagina": "mapa/pastas/output__pdf.md",
-   "arquivos": 4
+   "arquivos": 5
   },
   {
    "id": "planning",
    "finalidade": "Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs.",
    "pagina": "mapa/pastas/planning.md",
-   "arquivos": 16
+   "arquivos": 24
+  },
+  {
+   "id": "planning/arquitetura",
+   "finalidade": "Gerador da arquitetura em HTML/PDF, leiaute dos diagramas, estilos e registro de fontes e validação.",
+   "pagina": "mapa/pastas/planning__arquitetura.md",
+   "arquivos": 8
   },
   {
    "id": "research",
-   "finalidade": "Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes.",
+   "finalidade": "Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, referências adicionais e auditoria do PDF do Hermes.",
    "pagina": "mapa/pastas/research.md",
-   "arquivos": 12
+   "arquivos": 14
   },
   {
    "id": "research/hermes",
@@ -328,7 +340,7 @@
    "id": ".gitattributes",
    "pasta": ".",
    "tipo": "outro",
-   "bytes": 39,
+   "bytes": 40,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -337,7 +349,7 @@
    "id": ".gitignore",
    "pasta": ".",
    "tipo": "outro",
-   "bytes": 3904,
+   "bytes": 4062,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -346,7 +358,7 @@
    "id": ".graphifyignore",
    "pasta": ".",
    "tipo": "outro",
-   "bytes": 379,
+   "bytes": 402,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -355,7 +367,7 @@
    "id": ".reticle/.gitignore",
    "pasta": ".reticle",
    "tipo": "outro",
-   "bytes": 698,
+   "bytes": 720,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -373,8 +385,8 @@
    "id": "README.md",
    "pasta": ".",
    "tipo": "doc",
-   "bytes": 10058,
-   "linhas": 116,
+   "bytes": 10955,
+   "linhas": 124,
    "descricao": "JEV — Projeto experimental para testes com o modelo de classificação JEV.",
    "simbolos": []
   },
@@ -382,7 +394,7 @@
    "id": "data/corpus/evidencia-piloto.jsonl",
    "pasta": "data/corpus",
    "tipo": "dado",
-   "bytes": 6980,
+   "bytes": 7004,
    "linhas": 24,
    "descricao": "24 registros JSONL (campos: case_id, family, kind, state, claim, gold, rationale)",
    "simbolos": []
@@ -391,7 +403,7 @@
    "id": "data/corpus/ressalvas-piloto.jsonl",
    "pasta": "data/corpus",
    "tipo": "dado",
-   "bytes": 6597,
+   "bytes": 6605,
    "linhas": 8,
    "descricao": "8 registros JSONL (campos: query_id, query, candidates)",
    "simbolos": []
@@ -418,7 +430,7 @@
    "id": "data/corpus/triagem-piloto.jsonl",
    "pasta": "data/corpus",
    "tipo": "dado",
-   "bytes": 9614,
+   "bytes": 9654,
    "linhas": 40,
    "descricao": "40 registros JSONL (campos: case_id, family, kind, text, gold, rationale)",
    "simbolos": []
@@ -427,9 +439,27 @@
    "id": "data/corpus/triagem-replicacao.jsonl",
    "pasta": "data/corpus",
    "tipo": "dado",
-   "bytes": 28208,
+   "bytes": 28298,
    "linhas": 90,
    "descricao": "90 registros JSONL (campos: case_id, family, gold, text, rationale, revisado_antes_de_executar)",
+   "simbolos": []
+  },
+  {
+   "id": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "pasta": "docs",
+   "tipo": "doc",
+   "bytes": 25579,
+   "linhas": 581,
+   "descricao": "Arquitetura<br>do JEV — Um núcleo de decisão.<br>Seis políticas de trabalho.",
+   "simbolos": []
+  },
+  {
+   "id": "docs/ARQUITETURA-DO-JEV.pdf",
+   "pasta": "docs",
+   "tipo": "pdf",
+   "bytes": 1571604,
+   "linhas": null,
+   "descricao": "Documento PDF (binário)",
    "simbolos": []
   },
   {
@@ -508,7 +538,7 @@
    "id": "docs/PLANO-CIENTIFICO-JEV-HELENA.md",
    "pasta": "docs",
    "tipo": "doc",
-   "bytes": 61317,
+   "bytes": 61892,
    "linhas": 575,
    "descricao": "Plano científico de avaliação do ecossistema Jev — **Helena · versão 1.0 · 18 de setembro de 2026**",
    "simbolos": []
@@ -541,6 +571,123 @@
    "simbolos": []
   },
   {
+   "id": "docs/arquitetura-assets/capa.png",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 1850330,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-01.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 5769,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-02.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 5369,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-03.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 6289,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-04.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 5273,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-05.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 6587,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-06.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 6395,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-07.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 7790,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-08.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 7182,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-09.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 5734,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/diagrama-10.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 5096,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/fonte-original.md",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "doc",
+   "bytes": 148056,
+   "linhas": 2110,
+   "descricao": "Arquitetura do JEV: fonte editável — Fonte completa do PDF “Arquitetura do JEV” (14 páginas, A4 paisagem): textos de cada página, sistema visual, código SVG do…",
+   "simbolos": []
+  },
+  {
+   "id": "docs/arquitetura-assets/inteia-marca.svg",
+   "pasta": "docs/arquitetura-assets",
+   "tipo": "outro",
+   "bytes": 1292,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
    "id": "executor/README.md",
    "pasta": "executor",
    "tipo": "doc",
@@ -553,7 +700,7 @@
    "id": "executor/__init__.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 42,
+   "bytes": 43,
    "linhas": 1,
    "descricao": "Executor financeiro do projeto JEV.",
    "simbolos": []
@@ -562,7 +709,7 @@
    "id": "executor/adjudicar_e11.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 6769,
+   "bytes": 6916,
    "linhas": 147,
    "descricao": "Terceiro juiz cego nos 10 desacordos do corpus de desempate (E11).",
    "simbolos": [
@@ -577,7 +724,7 @@
    "id": "executor/adjudicar_e12.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 6879,
+   "bytes": 7027,
    "linhas": 148,
    "descricao": "Terceiro juiz cego nos desacordos do corpus de replicação (E12).",
    "simbolos": [
@@ -609,19 +756,19 @@
    "id": "executor/assist.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 4071,
-   "linhas": 81,
+   "bytes": 3383,
+   "linhas": 64,
    "descricao": "JEV assistive tools: closed rubrics, provenance and no executable actions.",
    "simbolos": [
-    "evaluate:51",
-    "main:71"
+    "evaluate:39",
+    "main:54"
    ]
   },
   {
    "id": "executor/baseline_regra.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 1579,
+   "bytes": 1618,
    "linhas": 39,
    "descricao": "Comparador determinístico da tarefa de triagem.",
    "simbolos": [
@@ -633,7 +780,7 @@
    "id": "executor/credenciais.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 3526,
+   "bytes": 3614,
    "linhas": 88,
    "descricao": "Onde qualquer instância desta máquina acha as chaves do Jev, e qual provedor prefere.",
    "simbolos": [
@@ -885,7 +1032,7 @@
    "id": "executor/run_e10b_piloto.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 5038,
+   "bytes": 5152,
    "linhas": 114,
    "descricao": "E10b: o mesmo comparador econômico nas 10 famílias do piloto, para dobrar o poder.",
    "simbolos": [
@@ -951,7 +1098,7 @@
    "id": "executor/run_e15.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 11552,
+   "bytes": 11768,
    "linhas": 216,
    "descricao": "Preregistered real-call evaluation; public code excerpts and labelled synthetic cases.",
    "simbolos": [
@@ -970,7 +1117,7 @@
    "id": "executor/run_e16.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 5596,
+   "bytes": 5709,
    "linhas": 113,
    "descricao": "Real repository retrieval experiment with a frozen lexical comparator.",
    "simbolos": [
@@ -999,7 +1146,7 @@
    "id": "executor/run_e2_fatorial.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 8962,
+   "bytes": 9149,
    "linhas": 187,
    "descricao": "E2: fatorial 2x2x2 separando lote, ordem das opções e distração.",
    "simbolos": [
@@ -1016,7 +1163,7 @@
    "id": "executor/run_e2b_posicao.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 5786,
+   "bytes": 5902,
    "linhas": 116,
    "descricao": "E2b: desconfunde posição no lote e identidade do caso.",
    "simbolos": [
@@ -1027,7 +1174,7 @@
    "id": "executor/run_e3_evidencia.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 7594,
+   "bytes": 7754,
    "linhas": 160,
    "descricao": "E3: relação afirmação/evidência em três classes, com o contraste que mais custa caro.",
    "simbolos": [
@@ -1059,7 +1206,7 @@
    "id": "executor/run_e5_provedores.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 8365,
+   "bytes": 8529,
    "linhas": 164,
    "descricao": "E5 (pergunta P6): OpenRouter contra TypeSafe direto, nos mesmos casos.",
    "simbolos": [
@@ -1072,7 +1219,7 @@
    "id": "executor/run_e6_repetibilidade.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 6907,
+   "bytes": 7039,
    "linhas": 132,
    "descricao": "E6: o mesmo caso, sozinho, repetido. Separa instabilidade do modelo de efeito do lote.",
    "simbolos": [
@@ -1150,14 +1297,15 @@
    "id": "executor/shared.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 11735,
-   "linhas": 202,
+   "bytes": 13694,
+   "linhas": 236,
    "descricao": "Single financial path for local JEV consumers. Never truncates inputs.",
    "simbolos": [
-    "current_prices:29",
-    "import_legacy:67",
-    "strict_answers:111",
-    "ask:125"
+    "active_runtime:30",
+    "current_prices:56",
+    "import_legacy:94",
+    "strict_answers:138",
+    "ask:152"
    ]
   },
   {
@@ -1179,7 +1327,7 @@
    "id": "executor/smoke_mcp.py",
    "pasta": "executor",
    "tipo": "código",
-   "bytes": 2600,
+   "bytes": 2650,
    "linhas": 50,
    "descricao": "Real stdio smoke: public local test error, reviews, metrics; explicit paid action.",
    "simbolos": [
@@ -1226,7 +1374,7 @@
    "id": "executor/tests/test_achados_revisao16.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 5698,
+   "bytes": 5814,
    "linhas": 116,
    "descricao": "O que a décima sexta rodada de revisão adversarial encontrou, travado contra regressão.",
    "simbolos": [
@@ -1283,7 +1431,7 @@
    "id": "executor/tests/test_achados_revisao3.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 9793,
+   "bytes": 9984,
    "linhas": 191,
    "descricao": "Regressão dos achados da QUINTA rodada de revisão independente (2026-09-19).",
    "simbolos": [
@@ -1441,7 +1589,7 @@
    "id": "executor/tests/test_credenciais.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 3558,
+   "bytes": 3633,
    "linhas": 75,
    "descricao": "As chaves do Jev são achadas na ordem certa, o provedor preferido é o declarado, e nenhum valor de chave vaza em erro, log ou diagnóstico.",
    "simbolos": [
@@ -1492,7 +1640,7 @@
    "id": "executor/tests/test_entregaveis.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 3105,
+   "bytes": 3134,
    "linhas": 70,
    "descricao": "Cada PDF entregue tem de conter o documento que o nome dele promete.",
    "simbolos": [
@@ -1569,13 +1717,13 @@
    "id": "executor/tests/test_mcp.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 1759,
-   "linhas": 40,
+   "bytes": 1906,
+   "linhas": 42,
    "descricao": "Define: test_stdio_handshake_and_catalog, test_rank_keeps_all_candidates_and_ids, test_bad_arguments_cannot_call_provider",
    "simbolos": [
     "test_stdio_handshake_and_catalog:9",
-    "test_rank_keeps_all_candidates_and_ids:24",
-    "test_bad_arguments_cannot_call_provider:35"
+    "test_rank_keeps_all_candidates_and_ids:26",
+    "test_bad_arguments_cannot_call_provider:37"
    ]
   },
   {
@@ -1596,7 +1744,7 @@
    "id": "executor/tests/test_precos.py",
    "pasta": "executor/tests",
    "tipo": "código",
-   "bytes": 2296,
+   "bytes": 2346,
    "linhas": 50,
    "descricao": "O preço declarado tem de ser o preço bruto do provedor, na unidade certa.",
    "simbolos": [
@@ -1661,7 +1809,7 @@
    "id": "hermes/README.md",
    "pasta": "hermes",
    "tipo": "doc",
-   "bytes": 4002,
+   "bytes": 4062,
    "linhas": 60,
    "descricao": "O Jev no Hermes da VPS — Implantado em 21/09/2026. Fonte versionada aqui; cópia viva na VPS (`ssh hermes`). Regra de",
    "simbolos": []
@@ -1670,7 +1818,7 @@
    "id": "hermes/jev_hermes/__init__.py",
    "pasta": "hermes/jev_hermes",
    "tipo": "código",
-   "bytes": 89,
+   "bytes": 90,
    "linhas": 1,
    "descricao": "O Jev no Hermes da VPS: núcleo, camadas do plugin, porteiros de cron e medição.",
    "simbolos": []
@@ -1705,7 +1853,7 @@
    "id": "hermes/jev_hermes/medir.py",
    "pasta": "hermes/jev_hermes",
    "tipo": "código",
-   "bytes": 6962,
+   "bytes": 7111,
    "linhas": 149,
    "descricao": "Medição do Jev no Hermes, recalculada dos registros: `python3 medir.py [--gravar]`.",
    "simbolos": [
@@ -1719,7 +1867,7 @@
    "id": "hermes/jev_hermes/nucleo.py",
    "pasta": "hermes/jev_hermes",
    "tipo": "código",
-   "bytes": 20126,
+   "bytes": 20592,
    "linhas": 466,
    "descricao": "O cliente único do Jev no Hermes da VPS: chaves, provedores, teto, cache e registro.",
    "simbolos": [
@@ -1774,7 +1922,7 @@
    "id": "hermes/plugin/jev-advisor/__init__.py",
    "pasta": "hermes/plugin/jev-advisor",
    "tipo": "código",
-   "bytes": 7833,
+   "bytes": 8000,
    "linhas": 167,
    "descricao": "Plugin jev-advisor v3: a ferramenta que o modelo do Hermes chama para delegar Sistema 1 ao Jev.",
    "simbolos": [
@@ -1791,7 +1939,7 @@
    "id": "hermes/plugin/jev-advisor/plugin.yaml",
    "pasta": "hermes/plugin/jev-advisor",
    "tipo": "outro",
-   "bytes": 182,
+   "bytes": 187,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -1800,7 +1948,7 @@
    "id": "hermes/plugin/jev-camadas/__init__.py",
    "pasta": "hermes/plugin/jev-camadas",
    "tipo": "código",
-   "bytes": 5591,
+   "bytes": 5723,
    "linhas": 132,
    "descricao": "Plugin jev-camadas: o Jev decide o que entra no contexto do modelo caro do Hermes.",
    "simbolos": [
@@ -1818,7 +1966,7 @@
    "id": "hermes/plugin/jev-camadas/plugin.yaml",
    "pasta": "hermes/plugin/jev-camadas",
    "tipo": "outro",
-   "bytes": 363,
+   "bytes": 373,
    "linhas": null,
    "descricao": "Arquivo",
    "simbolos": []
@@ -1827,7 +1975,7 @@
    "id": "hermes/portoes/jev_fabio_urgent_watch.py",
    "pasta": "hermes/portoes",
    "tipo": "código",
-   "bytes": 5325,
+   "bytes": 5441,
    "linhas": 116,
    "descricao": "Watchdog urgente de mensagens novas de Fábio Medina Osório (job 07bde220eec7, sem agente).",
    "simbolos": [
@@ -1841,7 +1989,7 @@
    "id": "hermes/portoes/jev_gate_arcano_email.py",
    "pasta": "hermes/portoes",
    "tipo": "código",
-   "bytes": 3666,
+   "bytes": 3742,
    "linhas": 76,
    "descricao": "Porteiro do job ARCANO — e-mails de Fábio (6b539f9271ed), a cada 30 minutos.",
    "simbolos": [
@@ -1863,7 +2011,7 @@
    "id": "hermes/portoes/jev_gate_fabio_whatsapp.py",
    "pasta": "hermes/portoes",
    "tipo": "código",
-   "bytes": 5734,
+   "bytes": 5842,
    "linhas": 108,
    "descricao": "Porteiro do job Monitor Fábio Osório — WhatsApp pessoal (19fa0f01b2c5), 3 vezes ao dia.",
    "simbolos": [
@@ -1875,7 +2023,7 @@
    "id": "hermes/portoes/jev_gate_radar_ia.py",
    "pasta": "hermes/portoes",
    "tipo": "código",
-   "bytes": 6600,
+   "bytes": 6725,
    "linhas": 125,
    "descricao": "Porteiro do job Radar e assimilação de IA (29f2c9f69bb3), uma vez ao dia.",
    "simbolos": [
@@ -1888,7 +2036,7 @@
    "id": "hermes/rotinas/jev_rotina_agenda_dia.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 3283,
+   "bytes": 3351,
    "linhas": 68,
    "descricao": "Agenda do dia, às 7h, com o Jev marcando o que exige preparo. Sem modelo principal.",
    "simbolos": [
@@ -1899,7 +2047,7 @@
    "id": "hermes/rotinas/jev_rotina_caixa_vigiada.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 3345,
+   "bytes": 3408,
    "linhas": 63,
    "descricao": "Caixa vigiada pelo Jev: e-mail que pede atenção vira alerta no WhatsApp na hora.",
    "simbolos": [
@@ -1910,7 +2058,7 @@
    "id": "hermes/rotinas/jev_rotina_economia.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 1261,
+   "bytes": 1290,
    "linhas": 29,
    "descricao": "Medição do Jev no Hermes. `--gravar`: regrava o relatório local (diário, silencioso). `--semanal`: resumo curto para o WhatsApp (segundas às 8h05). Sem modelo…",
    "simbolos": [
@@ -1921,7 +2069,7 @@
    "id": "hermes/rotinas/jev_rotina_economia_semanal.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 313,
+   "bytes": 324,
    "linhas": 11,
    "descricao": "Resumo semanal da economia do Jev para o WhatsApp (segundas às 8h05).",
    "simbolos": []
@@ -1930,7 +2078,7 @@
    "id": "hermes/rotinas/jev_rotina_saude_whatsapp.py",
    "pasta": "hermes/rotinas",
    "tipo": "código",
-   "bytes": 2173,
+   "bytes": 2221,
    "linhas": 48,
    "descricao": "Saúde do coletor do WhatsApp pessoal, às 8h. Regra determinística: nada de modelo.",
    "simbolos": [
@@ -1941,7 +2089,7 @@
    "id": "hermes/skill/jev/SKILL.md",
    "pasta": "hermes/skill/jev",
    "tipo": "doc",
-   "bytes": 3792,
+   "bytes": 3863,
    "linhas": 71,
    "descricao": "Jev no Hermes — name: jev",
    "simbolos": []
@@ -1950,7 +2098,7 @@
    "id": "hermes/tests/test_jev_hermes.py",
    "pasta": "hermes/tests",
    "tipo": "código",
-   "bytes": 7770,
+   "bytes": 7944,
    "linhas": 174,
    "descricao": "Testes offline do Jev no Hermes: transporte simulado, diretório temporário, nenhuma chamada paga.",
    "simbolos": [
@@ -1976,16 +2124,16 @@
    "id": "integracao/README.md",
    "pasta": "integracao",
    "tipo": "doc",
-   "bytes": 15141,
-   "linhas": 254,
-   "descricao": "O Jev dentro do Claude Code e do Codex — Depois do estudo (31 mil chamadas, 27 rodadas), o Jev foi posto nos pontos do fluxo do",
+   "bytes": 15401,
+   "linhas": 258,
+   "descricao": "O Jev dentro do Claude Code e do Codex — Instalação global e uso cotidiano nesta máquina: JEV no Codex e Claude Code.",
    "simbolos": []
   },
   {
    "id": "integracao/avaliacao/amostrar.py",
    "pasta": "integracao/avaliacao",
    "tipo": "código",
-   "bytes": 2044,
+   "bytes": 2101,
    "linhas": 57,
    "descricao": "Sorteia prompts reais do histórico do Claude Code para avaliar o roteador.",
    "simbolos": [
@@ -2042,7 +2190,7 @@
    "id": "integracao/avaliacao/com_contexto.py",
    "pasta": "integracao/avaliacao",
    "tipo": "código",
-   "bytes": 5200,
+   "bytes": 5328,
    "linhas": 128,
    "descricao": "O teste decisivo: a mesma pergunta, com e sem o contexto anterior da conversa.",
    "simbolos": [
@@ -2057,7 +2205,7 @@
    "id": "integracao/avaliacao/comandos.py",
    "pasta": "integracao/avaliacao",
    "tipo": "código",
-   "bytes": 8067,
+   "bytes": 8240,
    "linhas": 173,
    "descricao": "Extrai comandos de shell realmente executados e testa o Jev como guarda de irreversível.",
    "simbolos": [
@@ -2071,7 +2219,7 @@
    "id": "integracao/avaliacao/gabarito-autor.json",
    "pasta": "integracao/avaliacao",
    "tipo": "dado",
-   "bytes": 4221,
+   "bytes": 4288,
    "linhas": 67,
    "descricao": "Objeto com 4 chaves: anotador, viés_declarado, anotado_em, gabarito",
    "simbolos": []
@@ -2089,7 +2237,7 @@
    "id": "integracao/avaliacao/gabarito-contexto.json",
    "pasta": "integracao/avaliacao",
    "tipo": "dado",
-   "bytes": 2647,
+   "bytes": 2694,
    "linhas": 47,
    "descricao": "Objeto com 5 chaves: anotador, viés_declarado, escala, omitidos, gabarito",
    "simbolos": []
@@ -2116,7 +2264,7 @@
    "id": "integracao/avaliacao/rodar.py",
    "pasta": "integracao/avaliacao",
    "tipo": "código",
-   "bytes": 6534,
+   "bytes": 6682,
    "linhas": 148,
    "descricao": "Roteia a amostra de pedidos reais com o Jev e compara com os gabaritos.",
    "simbolos": [
@@ -2162,7 +2310,7 @@
    "id": "integracao/avaliacao/variantes.py",
    "pasta": "integracao/avaliacao",
    "tipo": "código",
-   "bytes": 5470,
+   "bytes": 5593,
    "linhas": 123,
    "descricao": "Testa formulações concorrentes da pergunta de roteamento contra o gabarito do autor.",
    "simbolos": [
@@ -2173,7 +2321,7 @@
    "id": "integracao/camadas/__init__.py",
    "pasta": "integracao/camadas",
    "tipo": "código",
-   "bytes": 102,
+   "bytes": 103,
    "linhas": 1,
    "descricao": "As camadas do Jev no Claude Code: leitura, busca, sentinela e a ferramenta de leitura seletiva.",
    "simbolos": []
@@ -2182,7 +2330,7 @@
    "id": "integracao/camadas/busca.py",
    "pasta": "integracao/camadas",
    "tipo": "código",
-   "bytes": 8817,
+   "bytes": 9004,
    "linhas": 187,
    "descricao": "Camada de busca: depois de uma listagem com muitos itens, o Jev diz por onde começar.",
    "simbolos": [
@@ -2289,7 +2437,7 @@
    "id": "integracao/camadas/saida.py",
    "pasta": "integracao/camadas",
    "tipo": "código",
-   "bytes": 4207,
+   "bytes": 4292,
    "linhas": 85,
    "descricao": "Camada de saída: numa saída longa de comando com erro, o Jev aponta onde está a causa.",
    "simbolos": [
@@ -2314,7 +2462,7 @@
    "id": "integracao/camadas/verificar.py",
    "pasta": "integracao/camadas",
    "tipo": "código",
-   "bytes": 6348,
+   "bytes": 6474,
    "linhas": 126,
    "descricao": "Verificação: a afirmação se sustenta na fonte? O Jev responde suportado, contradito ou não informado.",
    "simbolos": [
@@ -2338,7 +2486,7 @@
    "id": "integracao/hooks/jev_guarda_comando.py",
    "pasta": "integracao/hooks",
    "tipo": "código",
-   "bytes": 6815,
+   "bytes": 6973,
    "linhas": 158,
    "descricao": "Hook PreToolUse: o Jev reduz as confirmações que o guarda por palavra pede à toa.",
    "simbolos": [
@@ -2378,7 +2526,7 @@
    "id": "integracao/hooks/jev_saida.py",
    "pasta": "integracao/hooks",
    "tipo": "código",
-   "bytes": 1976,
+   "bytes": 2030,
    "linhas": 54,
    "descricao": "Hook PostToolUse (Bash, PowerShell): em saída longa com erro, o Jev aponta a parte da causa.",
    "simbolos": [
@@ -2389,7 +2537,7 @@
    "id": "integracao/hooks/jev_sentinela.py",
    "pasta": "integracao/hooks",
    "tipo": "código",
-   "bytes": 1905,
+   "bytes": 1959,
    "linhas": 54,
    "descricao": "Hook PostToolUse (conteúdo externo): o sentinela lê o que a ferramenta devolveu.",
    "simbolos": [
@@ -2424,21 +2572,21 @@
    "id": "integracao/jev_mcp.py",
    "pasta": "integracao",
    "tipo": "código",
-   "bytes": 12228,
-   "linhas": 206,
+   "bytes": 11301,
+   "linhas": 192,
    "descricao": "Minimal MCP stdio server: no dependencies, no shell execution, no secret in config.",
    "simbolos": [
-    "metrics:97",
-    "call:109",
-    "handle:166",
-    "main:193"
+    "metrics:72",
+    "call:91",
+    "handle:152",
+    "main:179"
    ]
   },
   {
    "id": "integracao/jev_router/__init__.py",
    "pasta": "integracao/jev_router",
    "tipo": "código",
-   "bytes": 92,
+   "bytes": 93,
    "linhas": 1,
    "descricao": "Roteador de trabalho baseado no Jev: classifica o pedido antes de gastar modelo caro.",
    "simbolos": []
@@ -2498,7 +2646,7 @@
    "id": "integracao/jev_router/redacao.py",
    "pasta": "integracao/jev_router",
    "tipo": "código",
-   "bytes": 2483,
+   "bytes": 2536,
    "linhas": 53,
    "descricao": "Mascara segredo antes de o pedido sair desta máquina.",
    "simbolos": [
@@ -2584,7 +2732,7 @@
    "id": "integracao/tests/test_guarda_comando.py",
    "pasta": "integracao/tests",
    "tipo": "código",
-   "bytes": 6418,
+   "bytes": 6566,
    "linhas": 148,
    "descricao": "O guarda de comando: o que ele pode fazer, e sobretudo o que ele não pode.",
    "simbolos": [
@@ -2613,7 +2761,7 @@
    "id": "integracao/tests/test_redacao.py",
    "pasta": "integracao/tests",
    "tipo": "código",
-   "bytes": 3334,
+   "bytes": 3411,
    "linhas": 77,
    "descricao": "Nenhuma credencial pode atravessar a fronteira desta máquina dentro de um pedido.",
    "simbolos": [
@@ -2664,7 +2812,7 @@
    "id": "integracao/tests/test_rotina.py",
    "pasta": "integracao/tests",
    "tipo": "código",
-   "bytes": 2249,
+   "bytes": 2308,
    "linhas": 59,
    "descricao": "A rotina automática para no primeiro passo que falha e só commita quando tudo fechou.",
    "simbolos": [
@@ -2680,7 +2828,7 @@
    "id": "lab/README.md",
    "pasta": "lab",
    "tipo": "doc",
-   "bytes": 7660,
+   "bytes": 7781,
    "linhas": 121,
    "descricao": "JEV — interface de acompanhamento — Abra `lab/index.html` no navegador ou execute, na raiz do projeto:",
    "simbolos": []
@@ -2689,7 +2837,7 @@
    "id": "lab/VALIDACAO.md",
    "pasta": "lab",
    "tipo": "doc",
-   "bytes": 1858,
+   "bytes": 1876,
    "linhas": 18,
    "descricao": "Verificação da interface — 18/09/2026 — O estado entregue permanece com **zero execuções novas**. As 96 decisões do Hermes continuam na base histórica separada…",
    "simbolos": []
@@ -2709,7 +2857,7 @@
    "id": "lab/dashboard.css",
    "pasta": "lab",
    "tipo": "web",
-   "bytes": 22295,
+   "bytes": 22314,
    "linhas": 19,
    "descricao": "Folha de estilo",
    "simbolos": []
@@ -2718,7 +2866,7 @@
    "id": "lab/dashboard.html",
    "pasta": "lab",
    "tipo": "web",
-   "bytes": 4341,
+   "bytes": 4375,
    "linhas": 34,
    "descricao": "Página: JEV / Terminal de testes",
    "simbolos": []
@@ -2727,7 +2875,7 @@
    "id": "lab/dashboard.js",
    "pasta": "lab",
    "tipo": "web",
-   "bytes": 49189,
+   "bytes": 50094,
    "linhas": 208,
    "descricao": "JavaScript; 40 funções",
    "simbolos": [
@@ -2777,8 +2925,8 @@
    "id": "lab/data/execution.json",
    "pasta": "lab/data",
    "tipo": "dado",
-   "bytes": 1063900,
-   "linhas": 35974,
+   "bytes": 1214186,
+   "linhas": 36437,
    "descricao": "Objeto com 8 chaves: schema_version, revision, updated_at, system_progress, stage_progress, runs, events, decision",
    "simbolos": []
   },
@@ -2786,7 +2934,7 @@
    "id": "lab/index.html",
    "pasta": "lab",
    "tipo": "web",
-   "bytes": 1009754,
+   "bytes": 1021714,
    "linhas": 387,
    "descricao": "Página: JEV / Terminal de testes",
    "simbolos": []
@@ -2892,7 +3040,7 @@
    "id": "laboratorio/PREREGISTRO.md",
    "pasta": "laboratorio",
    "tipo": "doc",
-   "bytes": 64946,
+   "bytes": 65041,
    "linhas": 1118,
    "descricao": "Programa E14 — exploração sistemática das capacidades do Jev — *Pré-registro vivo. Cada rodada é escrita aqui **antes** de rodar, com hipótese, medida e",
    "simbolos": []
@@ -3102,7 +3250,7 @@
    "id": "laboratorio/h100/avaliar.py",
    "pasta": "laboratorio/h100",
    "tipo": "código",
-   "bytes": 3015,
+   "bytes": 3096,
    "linhas": 81,
    "descricao": "Roda as cem provas, guarda o veredito e devolve o placar.",
    "simbolos": [
@@ -3327,7 +3475,7 @@
    "id": "laboratorio/q100/registro.py",
    "pasta": "laboratorio/q100",
    "tipo": "código",
-   "bytes": 21423,
+   "bytes": 21798,
    "linhas": 375,
    "descricao": "Cem perguntas estratégicas sobre o Jev: o que decidir, e o que decide.",
    "simbolos": [
@@ -3491,7 +3639,7 @@
    "id": "laboratorio/r0_calibracao.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 5942,
+   "bytes": 6074,
    "linhas": 132,
    "descricao": "R0 — a confiança do Jev é uma probabilidade, ou apenas uma ordenação?",
    "simbolos": [
@@ -3523,7 +3671,7 @@
    "id": "laboratorio/r10_injecao_comparada.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 7632,
+   "bytes": 7784,
    "linhas": 152,
    "descricao": "R10 — o desempate que o estudo arrasta desde o E10.",
    "simbolos": [
@@ -3545,7 +3693,7 @@
    "id": "laboratorio/r11_extremos.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 13388,
+   "bytes": 13658,
    "linhas": 270,
    "descricao": "R11 — a varredura dos extremos: onde exatamente o Jev quebra.",
    "simbolos": [
@@ -3573,7 +3721,7 @@
    "id": "laboratorio/r12_r13_contexto.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 8066,
+   "bytes": 8220,
    "linhas": 154,
    "descricao": "R12 e R13 — diluição de contexto medida direito, e o que ele faz sem resposta certa.",
    "simbolos": [
@@ -3596,7 +3744,7 @@
    "id": "laboratorio/r14_autorrecursivo.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 7575,
+   "bytes": 7723,
    "linhas": 148,
    "descricao": "R14 — o Jev lê o mapa de limites do Jev e decide o que fazer com ele.",
    "simbolos": [
@@ -3627,7 +3775,7 @@
    "id": "laboratorio/r15_adversario_externo.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 11006,
+   "bytes": 11226,
    "linhas": 220,
    "descricao": "R15 — a injeção escrita por outro, não por mim.",
    "simbolos": [
@@ -3651,7 +3799,7 @@
    "id": "laboratorio/r15b_familias.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 8099,
+   "bytes": 8242,
    "linhas": 143,
    "descricao": "R15b — a emenda que a R15 obrigou: \"injeção\" eram duas coisas diferentes.",
    "simbolos": [
@@ -3671,7 +3819,7 @@
    "id": "laboratorio/r16_guarda_de_comando.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 13336,
+   "bytes": 13589,
    "linhas": 253,
    "descricao": "R16 — consertar o guarda de comando irreversível aplicando o que a R8 descobriu.",
    "simbolos": [
@@ -3720,7 +3868,7 @@
    "id": "laboratorio/r17b_sensibilidade.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 4413,
+   "bytes": 4506,
    "linhas": 93,
    "descricao": "R17b — análise de sensibilidade: o que muda se a minha verificação estivesse certa.",
    "simbolos": [
@@ -3794,7 +3942,7 @@
    "id": "laboratorio/r19_armadilha_de_sujeito.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 14582,
+   "bytes": 14870,
    "linhas": 288,
    "descricao": "R19 — atacar a pior fraqueza medida, e testar uma capacidade do contrato que ninguém usou.",
    "simbolos": [
@@ -3808,7 +3956,7 @@
    "id": "laboratorio/r1_r3_estresse.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 12587,
+   "bytes": 12851,
    "linhas": 264,
    "descricao": "R1, R2 e R3 — quantas opções, em que ordem, e escrito de que jeito.",
    "simbolos": [
@@ -3845,7 +3993,7 @@
    "id": "laboratorio/r20_k_adaptativo.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 15028,
+   "bytes": 15348,
    "linhas": 320,
    "descricao": "R20 — replicar a curva com amostra nova, e deixar a confiança escolher quantos trechos mandar.",
    "simbolos": [
@@ -3918,7 +4066,7 @@
    "id": "laboratorio/r21b_cruzamento.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 5266,
+   "bytes": 5378,
    "linhas": 112,
    "descricao": "R21b — o que explica a queda da imunidade: o domínio ou o vetor?",
    "simbolos": [
@@ -3939,7 +4087,7 @@
    "id": "laboratorio/r22_defesas.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 11221,
+   "bytes": 11452,
    "linhas": 231,
    "descricao": "R22 — as três defesas contra ordem direta, medidas em vez de prescritas.",
    "simbolos": [
@@ -3996,7 +4144,7 @@
    "id": "laboratorio/r24_votacao.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 11091,
+   "bytes": 11312,
    "linhas": 221,
    "descricao": "R24 — votar em três chamadas, medido de ponta a ponta.",
    "simbolos": [
@@ -4029,7 +4177,7 @@
    "id": "laboratorio/r25_terceiro_dominio.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 11049,
+   "bytes": 11267,
    "linhas": 218,
    "descricao": "R25 — um terceiro domínio, para saber de quem é a queda do jurídico.",
    "simbolos": [
@@ -4087,7 +4235,7 @@
    "id": "laboratorio/r27_integracao.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 9675,
+   "bytes": 9853,
    "linhas": 178,
    "descricao": "R27 — sanitizador e sentinela no mesmo payload: a integração que o guia recomenda, medida.",
    "simbolos": [
@@ -4110,7 +4258,7 @@
    "id": "laboratorio/r4_r7_limites.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 16524,
+   "bytes": 16825,
    "linhas": 301,
    "descricao": "R4, R6 e R7 — coerência lógica, ponto de quebra da taxonomia, e os dois tipos de dificuldade.",
    "simbolos": [
@@ -4137,7 +4285,7 @@
    "id": "laboratorio/r8_r9_adversarial.py",
    "pasta": "laboratorio",
    "tipo": "código",
-   "bytes": 13398,
+   "bytes": 13608,
    "linhas": 210,
    "descricao": "R8 e R9 — a armadilha semântica de verdade, e a manipulação vinda de dentro do texto.",
    "simbolos": [
@@ -4151,7 +4299,7 @@
    "id": "laboratorio/retratacoes.json",
    "pasta": "laboratorio",
    "tipo": "dado",
-   "bytes": 1281,
+   "bytes": 1295,
    "linhas": 14,
    "descricao": "Objeto com 3 chaves: proposito, regra, retratadas",
    "simbolos": []
@@ -4169,7 +4317,7 @@
    "id": "laboratorio/tests/test_auditoria.py",
    "pasta": "laboratorio/tests",
    "tipo": "código",
-   "bytes": 2020,
+   "bytes": 2066,
    "linhas": 46,
    "descricao": "Prende a auditoria na suíte: nenhum número publicado pode divergir do dado bruto.",
    "simbolos": [
@@ -4184,7 +4332,7 @@
    "id": "laboratorio/tests/test_canarios_de_comportamento.py",
    "pasta": "laboratorio/tests",
    "tipo": "código",
-   "bytes": 2762,
+   "bytes": 2829,
    "linhas": 67,
    "descricao": "Testa o desenho dos canários sem gastar um centavo.",
    "simbolos": [
@@ -4201,7 +4349,7 @@
    "id": "laboratorio/tests/test_h100.py",
    "pasta": "laboratorio/tests",
    "tipo": "código",
-   "bytes": 2969,
+   "bytes": 3041,
    "linhas": 72,
    "descricao": "Prende o registro das cem hipóteses e as provas delas.",
    "simbolos": [
@@ -4243,6 +4391,15 @@
    ]
   },
   {
+   "id": "output/arquitetura-jev.html",
+   "pasta": "output",
+   "tipo": "web",
+   "bytes": 2563196,
+   "linhas": 374,
+   "descricao": "Página: Arquitetura do JEV — Professor Igor Vasconcelos · INTEIA",
+   "simbolos": []
+  },
+  {
    "id": "output/mapa-de-limites.html",
    "pasta": "output",
    "tipo": "web",
@@ -4252,12 +4409,21 @@
    "simbolos": []
   },
   {
+   "id": "output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf",
+   "pasta": "output/pdf",
+   "tipo": "pdf",
+   "bytes": 2389921,
+   "linhas": null,
+   "descricao": "Documento PDF (binário)",
+   "simbolos": []
+  },
+  {
    "id": "output/pdf/GUIA-PRATICO-JEV.pdf",
    "pasta": "output/pdf",
    "tipo": "pdf",
    "bytes": 91366,
    "linhas": null,
-   "descricao": "PDF gerado (binário)",
+   "descricao": "Documento PDF (binário)",
    "simbolos": []
   },
   {
@@ -4266,7 +4432,7 @@
    "tipo": "pdf",
    "bytes": 147384,
    "linhas": null,
-   "descricao": "PDF gerado (binário)",
+   "descricao": "Documento PDF (binário)",
    "simbolos": []
   },
   {
@@ -4275,7 +4441,7 @@
    "tipo": "pdf",
    "bytes": 147744,
    "linhas": null,
-   "descricao": "PDF gerado (binário)",
+   "descricao": "Documento PDF (binário)",
    "simbolos": []
   },
   {
@@ -4284,7 +4450,79 @@
    "tipo": "pdf",
    "bytes": 101684,
    "linhas": null,
-   "descricao": "PDF gerado (binário)",
+   "descricao": "Documento PDF (binário)",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/README.md",
+   "pasta": "planning/arquitetura",
+   "tipo": "doc",
+   "bytes": 2545,
+   "linhas": 41,
+   "descricao": "Documento de arquitetura — Requer Node.js 20 ou superior e Google Chrome. Na pasta `planning/arquitetura`:",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/VERIFICACAO.md",
+   "pasta": "planning/arquitetura",
+   "tipo": "doc",
+   "bytes": 8060,
+   "linhas": 79,
+   "descricao": "Arquitetura do JEV — fontes e validação — Data da revisão: 24/09/2026.",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/arquivos-mapa.txt",
+   "pasta": "planning/arquitetura",
+   "tipo": "texto",
+   "bytes": 980,
+   "linhas": 27,
+   "descricao": "docs/ARQUITETURA-DO-JEV.pdf",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/diagrams.mjs",
+   "pasta": "planning/arquitetura",
+   "tipo": "outro",
+   "bytes": 7542,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/package.json",
+   "pasta": "planning/arquitetura",
+   "tipo": "dado",
+   "bytes": 207,
+   "linhas": 10,
+   "descricao": "Objeto com 5 chaves: name, private, type, scripts, dependencies",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/render.mjs",
+   "pasta": "planning/arquitetura",
+   "tipo": "outro",
+   "bytes": 8506,
+   "linhas": null,
+   "descricao": "Arquivo",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/style.css",
+   "pasta": "planning/arquitetura",
+   "tipo": "web",
+   "bytes": 5580,
+   "linhas": 73,
+   "descricao": "Folha de estilo",
+   "simbolos": []
+  },
+  {
+   "id": "planning/arquitetura/validacao-layout.json",
+   "pasta": "planning/arquitetura",
+   "tipo": "dado",
+   "bytes": 4942,
+   "linhas": 217,
+   "descricao": "Objeto com 9 chaves: source, source_sha256, pages, diagrams, html_sha256, pdf_sha256, cover_sha256, diagramChecks, layout",
    "simbolos": []
   },
   {
@@ -4345,7 +4583,7 @@
    "id": "planning/emenda-E15-01.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 379,
+   "bytes": 385,
    "linhas": 6,
    "descricao": "Emenda anterior à execução paga — 2026-09-19 — O usuário autorizou até US$ 2 nesta rodada. O teto do bloco E15 passa de US$ 0,20",
    "simbolos": []
@@ -4354,7 +4592,7 @@
    "id": "planning/matriz-testes.csv",
    "pasta": "planning",
    "tipo": "dado",
-   "bytes": 16453,
+   "bytes": 16469,
    "linhas": 16,
    "descricao": "15 linhas; colunas: ﻿id, name, repo, url, sha, family, smoke_unit, smoke_units, smoke_jev_call_cap, smoke_llm_call_cap, question, smoke",
    "simbolos": []
@@ -4372,7 +4610,7 @@
    "id": "planning/preregistro-E1-triagem.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 7057,
+   "bytes": 7104,
    "linhas": 120,
    "descricao": "Pré-registro — E1 piloto, tarefa de triagem — **Congelado em 2026-09-18, antes de qualquer resultado desta tarefa.** Alterações posteriores só como",
    "simbolos": []
@@ -4381,7 +4619,7 @@
    "id": "planning/preregistro-E10-llm-economico.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 9006,
+   "bytes": 9069,
    "linhas": 149,
    "descricao": "Pré-registro E10 — o braço do LLM econômico — **Registrado em 19 de setembro de 2026, antes de qualquer chamada paga a este modelo.**",
    "simbolos": []
@@ -4390,7 +4628,7 @@
    "id": "planning/preregistro-E11-desempate.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 12532,
+   "bytes": 12744,
    "linhas": 212,
    "descricao": "Pré-registro E11 — o desempate entre o Jev e o LLM econômico — **Registrado em 19 de setembro de 2026, antes de escrever uma única linha do corpus novo e antes",
    "simbolos": []
@@ -4399,7 +4637,7 @@
    "id": "planning/preregistro-E12-replicacao.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 15668,
+   "bytes": 15912,
    "linhas": 244,
    "descricao": "Pré-registro E12 — a replicação do desempate com mais famílias e mais comparadores — **Registrado em 19 de setembro de 2026, antes de escrever uma única linha…",
    "simbolos": []
@@ -4408,7 +4646,7 @@
    "id": "planning/preregistro-E15-implantacao.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 3009,
+   "bytes": 3053,
    "linhas": 44,
    "descricao": "E15 — limites e implantação assistida do JEV — Registro anterior às chamadas desta rodada, 2026-09-19. Autor: Codex.",
    "simbolos": []
@@ -4417,7 +4655,7 @@
    "id": "planning/preregistro-E16-recuperacao.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 1400,
+   "bytes": 1422,
    "linhas": 22,
    "descricao": "E16 — recuperação de contexto com candidatos reais — Registrado após E15 e antes de despachar E16, 2026-09-19.",
    "simbolos": []
@@ -4426,7 +4664,7 @@
    "id": "planning/preregistro-E7-confirmacao.md",
    "pasta": "planning",
    "tipo": "doc",
-   "bytes": 5473,
+   "bytes": 5565,
    "linhas": 92,
    "descricao": "Pré-registro E7 — conjunto de confirmação da triagem — **Registrado em:** 2026-09-19, antes de qualquer chamada paga sobre este corpus.",
    "simbolos": []
@@ -4462,9 +4700,27 @@
    "id": "research/FONTES.md",
    "pasta": "research",
    "tipo": "doc",
-   "bytes": 21943,
-   "linhas": 272,
+   "bytes": 23089,
+   "linhas": 280,
    "descricao": "Fontes e revisões — triagem JEV — Coleta: 18/09/2026. As 18 cópias foram obtidas por Git, sem instalar dependências ou executar código dos projetos. O manifest…",
+   "simbolos": []
+  },
+  {
+   "id": "research/JEV-FLOW.md",
+   "pasta": "research",
+   "tipo": "doc",
+   "bytes": 4194,
+   "linhas": 32,
+   "descricao": "Jev Flow — ficha de referência — **Repositório:** igormorais123/jev-flow (fork de daltonrpj/jev-flow)",
+   "simbolos": []
+  },
+  {
+   "id": "research/TEN-LEVELS-OF-JEV.md",
+   "pasta": "research",
+   "tipo": "doc",
+   "bytes": 7429,
+   "linhas": 48,
+   "descricao": "10 Levels of Jev — contribuições à arquitetura — Os caminhos abaixo pertencem a `apps/ten-levels/src/levels/`, na revisão indicada.",
    "simbolos": []
   },
   {
@@ -4483,7 +4739,7 @@
    "id": "research/collect_sources.py",
    "pasta": "research",
    "tipo": "código",
-   "bytes": 1229,
+   "bytes": 1230,
    "linhas": 12,
    "descricao": "Define: fetch",
    "simbolos": [
@@ -4494,7 +4750,7 @@
    "id": "research/hermes/Jev-Dossie-Quantitativo.txt",
    "pasta": "research/hermes",
    "tipo": "texto",
-   "bytes": 112381,
+   "bytes": 114688,
    "linhas": 2308,
    "descricao": "=== PAGINA 1 ===",
    "simbolos": []
@@ -4503,7 +4759,7 @@
    "id": "research/hermes/RELATORIO-FINAL-HELENA.txt",
    "pasta": "research/hermes",
    "tipo": "texto",
-   "bytes": 12800,
+   "bytes": 13017,
    "linhas": 218,
    "descricao": "=== PAGINA 1 ===",
    "simbolos": []
@@ -4521,7 +4777,7 @@
    "id": "research/hermes/auditoria-local.json",
    "pasta": "research/hermes",
    "tipo": "dado",
-   "bytes": 6132,
+   "bytes": 6435,
    "linhas": 303,
    "descricao": "Objeto com 15 chaves: method, paid_calls, new_cost_usd, input_sha256, source, n_rows, n_unique_cases, n_calls, caveat, summary, paired, historical_budget_from_…",
    "simbolos": []
@@ -4530,7 +4786,7 @@
    "id": "research/hermes/fase2-decisoes-do-pdf.csv",
    "pasta": "research/hermes",
    "tipo": "dado",
-   "bytes": 11417,
+   "bytes": 11514,
    "linhas": 97,
    "descricao": "96 linhas; colunas: phase, mode, call_id, case_id, app, split, expected, predicted, correct, confidence_pdf, source_page, provenance",
    "simbolos": []
@@ -4539,7 +4795,7 @@
    "id": "research/hermes/manifest.json",
    "pasta": "research/hermes",
    "tipo": "dado",
-   "bytes": 409,
+   "bytes": 422,
    "linhas": 14,
    "descricao": "Lista de 2 itens (file, sha256, pages, text_chars)",
    "simbolos": []
@@ -4548,7 +4804,7 @@
    "id": "research/hermes/openrouter-key-usage-snapshot.json",
    "pasta": "research/hermes",
    "tipo": "dado",
-   "bytes": 272,
+   "bytes": 283,
    "linhas": 12,
    "descricao": "Objeto com 10 chaves: usage, limit, limit_remaining, limit_reset, usage_daily, usage_weekly, usage_monthly, is_free_tier, queried_at_utc, kind",
    "simbolos": []
@@ -4566,7 +4822,7 @@
    "id": "research/sources-manifest.json",
    "pasta": "research",
    "tipo": "dado",
-   "bytes": 12084,
+   "bytes": 12600,
    "linhas": 517,
    "descricao": "Lista de 18 itens (repo, sha, url, path, retrieved_date, commit_date, root_entries, test_files, license_files)",
    "simbolos": []
@@ -4629,7 +4885,7 @@
    "id": "runs/e11-desempate/adjudicacao-bruta.jsonl",
    "pasta": "runs/e11-desempate",
    "tipo": "dado",
-   "bytes": 1457,
+   "bytes": 1467,
    "linhas": 10,
    "descricao": "10 registros JSONL (campos: case_id, escolha, classe, motivo)",
    "simbolos": []
@@ -4818,7 +5074,7 @@
    "id": "runs/e8-anotador/adjudicacao-bruta.jsonl",
    "pasta": "runs/e8-anotador",
    "tipo": "dado",
-   "bytes": 1361,
+   "bytes": 1370,
    "linhas": 9,
    "descricao": "9 registros JSONL (campos: case_id, escolha, classe, motivo)",
    "simbolos": []
@@ -13173,6 +13429,16 @@
      "papel": "testa"
     }
    ]
+  },
+  {
+   "id": "V26",
+   "tipo": "revisão",
+   "titulo": "Revisão adversarial 26",
+   "pagina": "mapa/conhecimento/revisoes.md",
+   "atributos": {
+    "rotulo_no_codigo": "[R26]"
+   },
+   "definido_em": []
   }
  ],
  "simbolos": [
@@ -13329,10 +13595,11 @@
    "arquivo": "executor/assist.py",
    "nome": "evaluate",
    "tipo": "função",
-   "linha": 51,
+   "linha": 39,
    "usado_por": [
     "executor/run_e15.py",
-    "executor/run_e16.py"
+    "executor/run_e16.py",
+    "integracao/jev_mcp.py"
    ]
   },
   {
@@ -13340,7 +13607,7 @@
    "arquivo": "executor/assist.py",
    "nome": "main",
    "tipo": "função",
-   "linha": 71,
+   "linha": 54,
    "usado_por": []
   },
   {
@@ -15216,11 +15483,21 @@
    ]
   },
   {
+   "id": "executor/shared.py::active_runtime",
+   "arquivo": "executor/shared.py",
+   "nome": "active_runtime",
+   "tipo": "função",
+   "linha": 30,
+   "usado_por": [
+    "integracao/jev_mcp.py"
+   ]
+  },
+  {
    "id": "executor/shared.py::current_prices",
    "arquivo": "executor/shared.py",
    "nome": "current_prices",
    "tipo": "função",
-   "linha": 29,
+   "linha": 56,
    "usado_por": [
     "executor/run_e15.py"
    ]
@@ -15230,7 +15507,7 @@
    "arquivo": "executor/shared.py",
    "nome": "import_legacy",
    "tipo": "função",
-   "linha": 67,
+   "linha": 94,
    "usado_por": [
     "executor/tests/test_shared.py"
    ]
@@ -15240,7 +15517,7 @@
    "arquivo": "executor/shared.py",
    "nome": "strict_answers",
    "tipo": "função",
-   "linha": 111,
+   "linha": 138,
    "usado_por": [
     "executor/tests/test_shared.py"
    ]
@@ -15250,7 +15527,7 @@
    "arquivo": "executor/shared.py",
    "nome": "ask",
    "tipo": "função",
-   "linha": 125,
+   "linha": 152,
    "usado_por": [
     "executor/assist.py",
     "executor/run_e15.py",
@@ -15744,7 +16021,7 @@
    "arquivo": "executor/tests/test_mcp.py",
    "nome": "test_rank_keeps_all_candidates_and_ids",
    "tipo": "função",
-   "linha": 24,
+   "linha": 26,
    "usado_por": []
   },
   {
@@ -15752,7 +16029,7 @@
    "arquivo": "executor/tests/test_mcp.py",
    "nome": "test_bad_arguments_cannot_call_provider",
    "tipo": "função",
-   "linha": 35,
+   "linha": 37,
    "usado_por": []
   },
   {
@@ -17768,7 +18045,7 @@
    "arquivo": "integracao/jev_mcp.py",
    "nome": "metrics",
    "tipo": "função",
-   "linha": 97,
+   "linha": 72,
    "usado_por": []
   },
   {
@@ -17776,7 +18053,7 @@
    "arquivo": "integracao/jev_mcp.py",
    "nome": "call",
    "tipo": "função",
-   "linha": 109,
+   "linha": 91,
    "usado_por": [
     "executor/tests/test_mcp.py"
    ]
@@ -17786,7 +18063,7 @@
    "arquivo": "integracao/jev_mcp.py",
    "nome": "handle",
    "tipo": "função",
-   "linha": 166,
+   "linha": 152,
    "usado_por": [
     "executor/tests/test_mcp.py"
    ]
@@ -17796,7 +18073,7 @@
    "arquivo": "integracao/jev_mcp.py",
    "nome": "main",
    "tipo": "função",
-   "linha": 193,
+   "linha": 179,
    "usado_por": []
   },
   {
@@ -23280,6 +23557,16 @@
   },
   {
    "de": "README.md",
+   "para": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
+   "para": "docs/ARQUITETURA-DO-JEV.pdf",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
    "para": "docs/AUDITORIA-DE-NUMEROS.md",
    "tipo": "link"
   },
@@ -23340,6 +23627,11 @@
   },
   {
    "de": "README.md",
+   "para": "docs/arquitetura-assets/fonte-original.md",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
    "para": "executor/README.md",
    "tipo": "link"
   },
@@ -23385,7 +23677,27 @@
   },
   {
    "de": "README.md",
+   "para": "output/arquitetura-jev.html",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
+   "para": "output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
    "para": "output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
+   "para": "planning/arquitetura/README.md",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
+   "para": "planning/arquitetura/VERIFICACAO.md",
    "tipo": "link"
   },
   {
@@ -23450,6 +23762,16 @@
   },
   {
    "de": "README.md",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "link"
+  },
+  {
+   "de": "README.md",
    "para": "research/audit_hermes_pdf.py",
    "tipo": "cita"
   },
@@ -23467,6 +23789,61 @@
    "de": "README.md",
    "para": "runs/extrato-ledger.json",
    "tipo": "cita"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "docs/DOSSIE-DE-EVIDENCIAS.md",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "docs/LIMITES-DO-JEV.md",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "docs/arquitetura-assets/capa.png",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "docs/arquitetura-assets/inteia-marca.svg",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "executor/tests/test_ledger.py",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "executor/tests/test_liquidacao_429.py",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "laboratorio/r18-r20-consolidado.json",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "laboratorio/r21b-cruzamento.json",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "laboratorio/r26-dois-trechos.json",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "link"
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "link"
   },
   {
    "de": "docs/AUDITORIA-DE-NUMEROS.md",
@@ -24717,6 +25094,11 @@
    "de": "executor/shared.py",
    "para": "executor/runner.py",
    "tipo": "importa"
+  },
+  {
+   "de": "executor/simple_round.py",
+   "para": "planning/arquitetura/package.json",
+   "tipo": "cita"
   },
   {
    "de": "executor/simple_round.py",
@@ -26160,6 +26542,11 @@
   },
   {
    "de": "lab/data/execution.json",
+   "para": "planning/arquitetura/package.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "lab/data/execution.json",
    "para": "planning/plan.json",
    "tipo": "cita"
   },
@@ -26211,6 +26598,11 @@
   {
    "de": "lab/index.html",
    "para": "output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf",
+   "tipo": "cita"
+  },
+  {
+   "de": "lab/index.html",
+   "para": "planning/arquitetura/package.json",
    "tipo": "cita"
   },
   {
@@ -29714,6 +30106,51 @@
    "tipo": "importa"
   },
   {
+   "de": "output/arquitetura-jev.html",
+   "para": "docs/DOSSIE-DE-EVIDENCIAS.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "docs/LIMITES-DO-JEV.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "executor/tests/test_ledger.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "executor/tests/test_liquidacao_429.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "laboratorio/r18-r20-consolidado.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "laboratorio/r21b-cruzamento.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "laboratorio/r26-dois-trechos.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "cita"
+  },
+  {
    "de": "output/mapa-de-limites.html",
    "para": "docs/BATERIA-COMPLEMENTAR.md",
    "tipo": "cita"
@@ -29731,6 +30168,261 @@
   {
    "de": "output/mapa-de-limites.html",
    "para": "laboratorio/mapa-de-limites.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "output/arquitetura-jev.html",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "planning/arquitetura/VERIFICACAO.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "planning/arquitetura/arquivos-mapa.txt",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "planning/arquitetura/diagrams.mjs",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "planning/arquitetura/style.css",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/README.md",
+   "para": "planning/arquitetura/validacao-layout.json",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/ARQUITETURA-DO-JEV.pdf",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/DOSSIE-DE-EVIDENCIAS.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/LIMITES-DO-JEV.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/arquitetura-assets/capa.png",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/arquitetura-assets/fonte-original.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "docs/arquitetura-assets/inteia-marca.svg",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "executor/tests/test_ledger.py",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "executor/tests/test_liquidacao_429.py",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "laboratorio/r18-r20-consolidado.json",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "laboratorio/r21b-cruzamento.json",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "laboratorio/r26-dois-trechos.json",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "laboratorio/tests/test_auditoria.py",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "planning/arquitetura/validacao-layout.json",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "link"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/ARQUITETURA-DO-JEV.pdf",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/capa.png",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-01.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-02.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-03.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-04.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-05.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-06.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-07.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-08.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-09.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/diagrama-10.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/fonte-original.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "docs/arquitetura-assets/inteia-marca.svg",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "output/arquitetura-jev.html",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/README.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/VERIFICACAO.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/diagrams.mjs",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/package.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/render.mjs",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/style.css",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "planning/arquitetura/validacao-layout.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/arquivos-mapa.txt",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/package.json",
+   "para": "planning/arquitetura/render.mjs",
+   "tipo": "cita"
+  },
+  {
+   "de": "planning/arquitetura/validacao-layout.json",
+   "para": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
    "tipo": "cita"
   },
   {
@@ -30020,7 +30712,27 @@
   },
   {
    "de": "research/FONTES.md",
+   "para": "planning/arquitetura/package.json",
+   "tipo": "cita"
+  },
+  {
+   "de": "research/FONTES.md",
+   "para": "research/JEV-FLOW.md",
+   "tipo": "link"
+  },
+  {
+   "de": "research/FONTES.md",
+   "para": "research/TEN-LEVELS-OF-JEV.md",
+   "tipo": "link"
+  },
+  {
+   "de": "research/FONTES.md",
    "para": "research/sources-manifest.json",
+   "tipo": "link"
+  },
+  {
+   "de": "research/TEN-LEVELS-OF-JEV.md",
+   "para": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
    "tipo": "link"
   },
   {
@@ -30061,6 +30773,11 @@
   {
    "de": "research/sources-manifest.json",
    "para": "README.md",
+   "tipo": "cita"
+  },
+  {
+   "de": "research/sources-manifest.json",
+   "para": "planning/arquitetura/package.json",
    "tipo": "cita"
   },
   {
@@ -32036,6 +32753,16 @@
   {
    "de": "integracao/hooks/jev_sentinela.py",
    "para": "integracao/camadas/sentinela.py::nota_para_o_agente",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/jev_mcp.py",
+   "para": "executor/assist.py::evaluate",
+   "tipo": "usa"
+  },
+  {
+   "de": "integracao/jev_mcp.py",
+   "para": "executor/shared.py::active_runtime",
    "tipo": "usa"
   },
   {
@@ -34822,6 +35549,36 @@
    "para": "E9",
    "tipo": "menciona",
    "peso": 1
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "R18",
+   "tipo": "menciona",
+   "peso": 4
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "R19",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "R20",
+   "tipo": "menciona",
+   "peso": 4
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "R21b",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
+   "de": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+   "para": "R26",
+   "tipo": "menciona",
+   "peso": 2
   },
   {
    "de": "docs/AUDITORIA-DE-NUMEROS.md",
@@ -38297,91 +39054,91 @@
    "de": "lab/data/execution.json",
    "para": "S01",
    "tipo": "menciona",
-   "peso": 19
+   "peso": 23
   },
   {
    "de": "lab/data/execution.json",
    "para": "S02",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S03",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S04",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S05",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S06",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S07",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 7
   },
   {
    "de": "lab/data/execution.json",
    "para": "S08",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S09",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 7
   },
   {
    "de": "lab/data/execution.json",
    "para": "S10",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S11",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S12",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S13",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 6
   },
   {
    "de": "lab/data/execution.json",
    "para": "S14",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 7
   },
   {
    "de": "lab/data/execution.json",
    "para": "S15",
    "tipo": "menciona",
-   "peso": 4
+   "peso": 7
   },
   {
    "de": "lab/data/execution.json",
@@ -38477,91 +39234,91 @@
    "de": "lab/index.html",
    "para": "S01",
    "tipo": "menciona",
-   "peso": 20
+   "peso": 24
   },
   {
    "de": "lab/index.html",
    "para": "S02",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S03",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S04",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S05",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S06",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S07",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 8
   },
   {
    "de": "lab/index.html",
    "para": "S08",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S09",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 8
   },
   {
    "de": "lab/index.html",
    "para": "S10",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S11",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S12",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S13",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 7
   },
   {
    "de": "lab/index.html",
    "para": "S14",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 8
   },
   {
    "de": "lab/index.html",
    "para": "S15",
    "tipo": "menciona",
-   "peso": 5
+   "peso": 8
   },
   {
    "de": "lab/index.html",
@@ -43385,6 +44142,48 @@
    "peso": 1
   },
   {
+   "de": "output/arquitetura-jev.html",
+   "para": "E3",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R1",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R18",
+   "tipo": "menciona",
+   "peso": 4
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R19",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R20",
+   "tipo": "menciona",
+   "peso": 4
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R21b",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
+   "de": "output/arquitetura-jev.html",
+   "para": "R26",
+   "tipo": "menciona",
+   "peso": 2
+  },
+  {
    "de": "output/mapa-de-limites.html",
    "para": "E12",
    "tipo": "menciona",
@@ -43483,6 +44282,12 @@
   {
    "de": "output/mapa-de-limites.html",
    "para": "R23",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "planning/arquitetura/VERIFICACAO.md",
+   "para": "V26",
    "tipo": "menciona",
    "peso": 1
   },
@@ -44056,6 +44861,18 @@
    "de": "planning/protocolo.md",
    "para": "S15",
    "tipo": "define"
+  },
+  {
+   "de": "research/JEV-FLOW.md",
+   "para": "S01",
+   "tipo": "menciona",
+   "peso": 1
+  },
+  {
+   "de": "research/JEV-FLOW.md",
+   "para": "S15",
+   "tipo": "menciona",
+   "peso": 1
   },
   {
    "de": "research/inventario-sistemas.json",

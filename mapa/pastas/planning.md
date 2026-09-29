@@ -4,6 +4,12 @@ Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de test
 
 ← [MAPA.md](../../MAPA.md) · pasta acima: [raiz](../../mapa/pastas/_raiz.md) · abrir a pasta: [planning/](../../planning)
 
+## Subpastas
+
+| subpasta | arquivos | finalidade |
+|---|---:|---|
+| [arquitetura/](../../mapa/pastas/planning__arquitetura.md) | 8 | Gerador da arquitetura em HTML/PDF, leiaute dos diagramas, estilos e registro de fontes e validação. |
+
 ## Arquivos
 
 | arquivo | tipo | tamanho | descrição |

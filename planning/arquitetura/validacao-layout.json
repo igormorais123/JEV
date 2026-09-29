@@ -1,0 +1,217 @@
+{
+  "source": "docs/ARQUITETURA-DO-JEV-REVISAO.md",
+  "source_sha256": "44253af294ba4e7b691343a92f5b6572b3cef2e9ab9034c2910b8cb2ce077bb0",
+  "pages": 18,
+  "diagrams": 10,
+  "html_sha256": "7cc60046e1b57efeae01dac6b59a2eab302f3aa53fadf075ab0b45bed12c9941",
+  "pdf_sha256": "13b474f76917b4fec235df8f75a29a5d09b426818435331b499c54ec399450d9",
+  "cover_sha256": "2d385633dceeec5c0603e32dfd1cd18d90fc9ca2e7f70d08f564df2517201874",
+  "diagramChecks": [
+    {
+      "id": "diagrama-01",
+      "nodes": 9,
+      "edges": 11,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-02",
+      "nodes": 8,
+      "edges": 8,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-03",
+      "nodes": 9,
+      "edges": 9,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-04",
+      "nodes": 8,
+      "edges": 8,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-05",
+      "nodes": 9,
+      "edges": 12,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-06",
+      "nodes": 10,
+      "edges": 9,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-07",
+      "nodes": 11,
+      "edges": 13,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-08",
+      "nodes": 11,
+      "edges": 10,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-09",
+      "nodes": 9,
+      "edges": 9,
+      "textOverflow": []
+    },
+    {
+      "id": "diagrama-10",
+      "nodes": 9,
+      "edges": 12,
+      "textOverflow": []
+    }
+  ],
+  "layout": [
+    {
+      "page": 1,
+      "title": "Arquitetura do JEV",
+      "contentBottom": 793.7,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 2,
+      "title": "Regras claras, evidência preservada",
+      "contentBottom": 630.6,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 3,
+      "title": "Uma arquitetura, responsabilidades definidas",
+      "contentBottom": 677.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 4,
+      "title": "O que as experiências mudam no projeto",
+      "contentBottom": 652.8,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 5,
+      "title": "O núcleo decide em ordem",
+      "contentBottom": 637.7,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 6,
+      "title": "Estado suficiente para continuar",
+      "contentBottom": 670.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 7,
+      "title": "Reserva e recibo acompanham a operação",
+      "contentBottom": 699.2,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 8,
+      "title": "1 · Triagem",
+      "contentBottom": 677.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 9,
+      "title": "Contexto: selecionar sem perder a resposta",
+      "contentBottom": 721.3,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 10,
+      "title": "2 · Orquestração de agentes",
+      "contentBottom": 699.2,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 11,
+      "title": "3 · Roteamento de modelos",
+      "contentBottom": 677.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 12,
+      "title": "4 · Ciclo de execução",
+      "contentBottom": 699.2,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 13,
+      "title": "5 · Avaliação",
+      "contentBottom": 677.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 14,
+      "title": "6 · Comparação",
+      "contentBottom": 687.9,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 10.9
+    },
+    {
+      "page": 15,
+      "title": "As seis políticas trabalham juntas",
+      "contentBottom": 721.3,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": 11.24
+    },
+    {
+      "page": 16,
+      "title": "Implantação por evidência",
+      "contentBottom": 615.1,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 17,
+      "title": "Parâmetros que precisam de medida",
+      "contentBottom": 687.9,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    },
+    {
+      "page": 18,
+      "title": "Fontes e evidências de implementação",
+      "contentBottom": 567.9,
+      "contentLimit": 745.7,
+      "overflow": false,
+      "diagramFontPt": null
+    }
+  ]
+}

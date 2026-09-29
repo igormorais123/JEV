@@ -24,6 +24,33 @@ PRICE_URL = 'https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints'
 LEGACY = (ROOT / 'laboratorio/gastos.jsonl', ROOT / 'integracao/gastos.jsonl')
 PRICE_CACHE = ROOT / 'runs/shared-price.json'
 CAPS = {'e15': '2.00', 'lab': '2.00', 'router': '1.00', 'tools': '0.20'}
+ACTIVE_PROFILE = ROOT / 'integracao/runtime.local.json'
+
+
+def active_runtime(require_fresh=True):
+    """Explicit local opt-in to the separately authorized USD 0.03 wallet. Never initializes it."""
+    if not ACTIVE_PROFILE.exists():
+        return None
+    config = json.loads(ACTIVE_PROFILE.read_text(encoding='utf-8'))
+    if config != {'schema_version': 1, 'profile': 'typesafe-local-20260921'}:
+        raise BudgetError('Perfil local desconhecido; não usar outra carteira como fallback')
+    folder = ROOT / 'runs/typesafe-smoke-20260921'
+    db = folder / 'ledger.sqlite3'
+    if not db.is_file():
+        raise BudgetError('Carteira TypeSafe autorizada não encontrada')
+    prices = load_prices(folder / 'precos.json')
+    age = (datetime.now(timezone.utc) - datetime.fromisoformat(prices['captured_at_utc'])).total_seconds()
+    if require_fresh and not 0 <= age <= 86400:
+        raise BudgetError('Revalidar preço TypeSafe: conferência válida por 24 horas')
+    import sqlite3
+    with sqlite3.connect(f'file:{db.as_posix()}?mode=ro', uri=True) as connection:
+        cap = connection.execute("SELECT cap_nusd FROM wallet WHERE wallet_id='default'").fetchone()
+    if not cap or not 0 < cap[0] <= usd_to_nusd('0.03'):
+        raise BudgetError('Teto da carteira local excede autorização de US$ 0,03')
+    consumer = 'typesafe-smoke-20260921'
+    CAPS[consumer] = '0.03'
+    return {'db_path': db, 'prices': prices, 'consumer': consumer,
+            'provider': 'typesafe', 'legacy_paths': ()}
 
 
 def current_prices():
@@ -131,6 +158,11 @@ def ask(state, questions, *, consumer='tools', timeout=15, api_key=None,
     TypeSafe vem da tabela local (documentação oficial, conferida em 2026-09-19); o do
     OpenRouter continua sendo lido do provedor a cada hora.
     """
+    if transport is None and Path(db_path).resolve() == DB.resolve():
+        runtime = active_runtime()
+        if runtime:
+            db_path, prices, consumer, provider, legacy_paths = (
+                runtime[k] for k in ('db_path', 'prices', 'consumer', 'provider', 'legacy_paths'))
     if consumer not in CAPS:
         raise ValueError('Unknown consumer')
     provider = provider or credenciais.provedor()
@@ -139,6 +171,8 @@ def ask(state, questions, *, consumer='tools', timeout=15, api_key=None,
     model = credenciais.PROVEDORES[provider]['modelo']
     if transport is not None and Path(db_path).resolve() == DB.resolve():
         raise ValueError('Test transport requires isolated ledger')
+    if transport is None and not Path(db_path).is_file():
+        raise BudgetError('Livro-caixa ausente; recuperar o registro acumulado antes de chamadas pagas')
     if not isinstance(state, str) or not isinstance(questions, dict) or not questions:
         raise ValueError('Invalid request')
     payload = {'model': model, 'state': state, 'questions': questions}

@@ -4,6 +4,8 @@ Coleta: 18/09/2026. As 18 cópias foram obtidas por Git, sem instalar dependênc
 
 [Documento de análise](../docs/TRIAGEM-JEV-HELENA.md) · [Manifesto](sources-manifest.json)
 
+**Referência adicional de 24/09/2026:** [Jev Flow — ficha de análise](JEV-FLOW.md), revisão `75e63491f63691418251534f50e8c8ddca9a5fc0`, cópia em `research/sources/jev-flow/`. Foi incluída depois do fechamento do conjunto original de 18 fontes; os resultados e contagens históricos abaixo permanecem desse conjunto.
+
 ## Documentação externa consultada
 
 - [Modelos e limites TypeSafe](https://docs.typesafe.ai/models)
@@ -265,7 +267,13 @@ A rota OpenRouter Decisions foi identificada no código do Jev CLI, não validad
   - [src/moderation](https://github.com/Infrawrench/Jeeves/tree/65bc21494e18fa7c2beca180c545eed6bc3ce4ce/src/moderation)
   - [src/twitch](https://github.com/Infrawrench/Jeeves/tree/65bc21494e18fa7c2beca180c545eed6bc3ce4ce/src/twitch)
 
-## Enquadramento da análise
+## Referência complementar de 28/09/2026
+
+- [10 Levels of Jev For Agentic Engineers](https://www.youtube.com/watch?v=_U-O5lYhJ7Q), IndyDevDan, publicado em 28/09/2026.
+- Código: [disler/ten-levels-of-jev](https://github.com/disler/ten-levels-of-jev/tree/777adaf47d37ae0553220d35b2f15b3a3a063305), revisão `777adaf47d37ae0553220d35b2f15b3a3a063305`.
+- [Análise, seleção e aplicação](TEN-LEVELS-OF-JEV.md) à arquitetura existente. Referência posterior ao conjunto de 15 sistemas do plano; sem alteração desse inventário.
+
+## Enquadramento da análise original
 
 Persona solicitada: skill local Helena Strategos Inteia, em `C:/Users/igorm/.claude/skills/helena/SKILL.md`, com protocolo POLARIS e revisão por contra-hipóteses. Usada como estrutura analítica; nenhum experimento ou resultado foi simulado para compor a decisão.
 

@@ -1,13 +1,14 @@
 """Gera o mapa navegável do repositório: MAPA.md, mapa/pastas/*.md, mapa/simbolos.md e mapa/grafo.json.
 
-Varre só arquivos versionados no Git (o mapa vai para o repositório, e link para arquivo sem commit
-quebraria para quem clona); nunca abre `.env` nem nada que o .gitignore exclua. Arquivo novo entra no
-mapa depois do commit dele. Liga os arquivos por três tipos de aresta: `importa` (import Python resolvido para
+Varre os arquivos versionados no Git. A opção --incluir aceita arquivos novos indicados explicitamente,
+dentro do repositório e não ignorados pelo Git, para mapear documentação ainda em edição.
+Liga os arquivos por três tipos de aresta: `importa` (import Python resolvido para
 arquivo do repositório), `link` (link Markdown) e `cita` (o texto do arquivo nomeia outro arquivo pelo
-caminho, ou pelo nome quando o nome é único). Uso: python mapa/gerar_mapa.py [--verificar]
+caminho, ou pelo nome quando o nome é único). Uso: python mapa/gerar_mapa.py [--verificar] [--incluir ARQUIVO ...]
 """
 from __future__ import annotations
 
+import argparse
 import ast
 import csv
 import io
@@ -29,7 +30,8 @@ FINALIDADE = {
     '.reticle': 'Pasta de ferramenta local; só o .gitignore é versionado.',
     'data': 'Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado.',
     'data/corpus': 'Corpus congelado dos experimentos (triagem, evidência, ressalvas), em JSONL. É o insumo dos executores `executor/run_e*.py`.',
-    'docs': 'Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.',
+    'docs': 'Documentos e proposta de arquitetura: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas.',
+    'docs/arquitetura-assets': 'Capa ilustrada, diagramas vetoriais e Markdown original da arquitetura. Os SVGs são gerados a partir da edição revisada.',
     'executor': 'Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento.',
     'executor/tests': 'Testes do executor: livro-caixa, preços, runner, placar, achados de cada revisão adversarial, entregáveis, MCP.',
     'integracao': 'O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor MCP, instalador, leitura de contexto para o Codex.',
@@ -48,7 +50,8 @@ FINALIDADE = {
     'output': 'Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`.',
     'output/pdf': 'PDFs finais: guia prático, plano científico e relatório final.',
     'planning': 'Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs.',
-    'research': 'Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes.',
+    'planning/arquitetura': 'Gerador da arquitetura em HTML/PDF, leiaute dos diagramas, estilos e registro de fontes e validação.',
+    'research': 'Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, referências adicionais e auditoria do PDF do Hermes.',
     'research/hermes': 'Material do Hermes: relatório final da Helena, dossiê quantitativo, auditoria local e decisões extraídas do PDF.',
     'runs': 'Resultados dos experimentos: um diretório por experimento com `relatorio.json` agregado; extrato do livro-caixa e erro grave. O banco `ledger.sqlite3` não é versionado.',
     'mapa': 'Este mapa: gerador, índice de símbolos, grafo em JSON e uma página por pasta.',
@@ -62,6 +65,10 @@ ONDE = [
     ('Como aplicar o Jev na prática', ['docs/GUIA-PRATICO-JEV.md']),
     ('Onde o Jev falha', ['docs/LIMITES-DO-JEV.md', 'laboratorio/mapa-de-limites.json', 'output/mapa-de-limites.html']),
     ('Plano científico e protocolo', ['docs/PLANO-CIENTIFICO-JEV-HELENA.md', 'planning/protocolo.md']),
+    ('Arquitetura do JEV: edição revisada, diagramas e PDF', ['docs/ARQUITETURA-DO-JEV-REVISAO.md', 'output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf', 'planning/arquitetura/README.md']),
+    ('Documentos originais de arquitetura', ['docs/ARQUITETURA-DO-JEV.pdf', 'docs/arquitetura-assets/fonte-original.md']),
+    ('Referência adicional Jev Flow', ['research/JEV-FLOW.md', 'research/FONTES.md']),
+    ('Vídeo 10 Levels of Jev: técnicas incorporadas à arquitetura', ['research/TEN-LEVELS-OF-JEV.md', 'docs/ARQUITETURA-DO-JEV-REVISAO.md']),
     ('Controle de gasto (reserva atômica, teto)', ['executor/ledger.py', 'executor/pricing.py', 'executor/prices.json', 'executor/README.md']),
     ('Chamar o Jev pelo transporte compartilhado', ['executor/shared.py']),
     ('Extrato do gasto conferível', ['runs/extrato-ledger.json', 'executor/exportar_extrato.py']),
@@ -86,6 +93,25 @@ def arquivos_do_git() -> list[str]:
                            capture_output=True, check=True).stdout.decode('utf-8')
     return sorted(p for p in saida.split('\0') if p and (RAIZ / p).is_file() and p not in PROPRIOS
                   and not p.startswith('mapa/'))
+
+
+def arquivos_explicitos(caminhos: list[str]) -> list[str]:
+    """Aceita arquivos locais explícitos sem tocar no índice Git ou ler itens ignorados."""
+    aceitos = []
+    for nome in caminhos:
+        arquivo = (RAIZ / nome).resolve()
+        if not arquivo.is_relative_to(RAIZ) or not arquivo.is_file():
+            raise ValueError(f'Arquivo ausente ou fora do repositório: {nome}')
+        relativo = arquivo.relative_to(RAIZ).as_posix()
+        if '.git' in arquivo.relative_to(RAIZ).parts or arquivo.name.startswith('.env'):
+            raise ValueError(f'Arquivo reservado: {nome}')
+        resultado = subprocess.run(['git', 'check-ignore', '--no-index', '-q', '--', relativo], cwd=RAIZ)
+        if resultado.returncode != 1:
+            raise ValueError(f'Arquivo ignorado ou verificação Git indisponível: {nome}')
+        if relativo in PROPRIOS or relativo.startswith('mapa/'):
+            raise ValueError(f'O próprio mapa não pode ser incluído: {nome}')
+        aceitos.append(relativo)
+    return aceitos
 
 
 def ler(caminho: str) -> str:
@@ -174,7 +200,7 @@ def descrever(caminho: str, texto: str) -> tuple[str, list[dict]]:
         tabelas = re.findall(r'CREATE TABLE(?: IF NOT EXISTS)?\s+(\w+)', texto, re.I)
         return resumo_curto('Esquema SQL; tabelas: ' + ', '.join(tabelas)), []
     if ext == '.pdf':
-        return 'PDF gerado (binário)', []
+        return 'Documento PDF (binário)', []
     if ext in TEXTO:
         primeira = next((l.strip() for l in texto.splitlines() if l.strip()), '')
         return resumo_curto(primeira or 'Texto'), []
@@ -267,8 +293,8 @@ def usos_de_simbolos(origem: str, texto: str, conjunto: set[str], simbolos: dict
     return {u for u in usos if u[0] != origem}
 
 
-def montar() -> dict:
-    lista = arquivos_do_git()
+def montar(incluir: list[str] | None = None) -> dict:
+    lista = sorted(set(arquivos_do_git()) | set(arquivos_explicitos(incluir or [])))
     conjunto = set(lista)
     nos = {}
     textos = {}
@@ -975,14 +1001,18 @@ def verificar(gerados: list[str]) -> list[str]:
 
 
 def main() -> int:
-    dados = montar()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--verificar', action='store_true')
+    parser.add_argument('--incluir', nargs='+', default=[], metavar='ARQUIVO')
+    args = parser.parse_args()
+    dados = montar(args.incluir)
     gerados = escrever(dados)
     quebrados = verificar(gerados)
     print(f'{len(dados["nos"])} arquivos, {len(dados["pastas"])} pastas, {len(dados["arestas"])} relações; {len(gerados)} arquivos do mapa gerados.')
     if quebrados:
         print(f'{len(quebrados)} links quebrados:', *quebrados[:30], sep='\n  ')
         return 1
-    if '--verificar' in sys.argv:
+    if args.verificar:
         print('Todos os links do mapa resolvem.')
     return 0
 

@@ -2,7 +2,7 @@
 
 Ponto de entrada para qualquer pessoa ou IA achar qualquer coisa nesta pasta. Gerado por `python mapa/gerar_mapa.py`; não editar à mão, regenerar depois de mudar arquivos.
 
-**322 arquivos** em **51 pastas** e **276 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões), ligados por **4034 relações**: 384 imports, 62 links, 934 citações entre arquivos; 624 usos de função ou classe de outro arquivo; 1727 ligações arquivo–conceito e 303 conceito–conceito.
+**349 arquivos** em **53 pastas** e **277 conceitos do estudo** (experimentos, rodadas, hipóteses, perguntas, sistemas, revisões), ligados por **4139 relações**: 384 imports, 102 links, 982 citações entre arquivos; 626 usos de função ou classe de outro arquivo; 1742 ligações arquivo–conceito e 303 conceito–conceito.
 
 ## Como usar este mapa
 
@@ -26,6 +26,10 @@ Ponto de entrada para qualquer pessoa ou IA achar qualquer coisa nesta pasta. Ge
 | Como aplicar o Jev na prática | [`docs/GUIA-PRATICO-JEV.md`](docs/GUIA-PRATICO-JEV.md) |
 | Onde o Jev falha | [`docs/LIMITES-DO-JEV.md`](docs/LIMITES-DO-JEV.md), [`laboratorio/mapa-de-limites.json`](laboratorio/mapa-de-limites.json), [`output/mapa-de-limites.html`](output/mapa-de-limites.html) |
 | Plano científico e protocolo | [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](planning/protocolo.md) |
+| Arquitetura do JEV: edição revisada, diagramas e PDF | [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](docs/ARQUITETURA-DO-JEV-REVISAO.md), [`output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf`](output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf), [`planning/arquitetura/README.md`](planning/arquitetura/README.md) |
+| Documentos originais de arquitetura | [`docs/ARQUITETURA-DO-JEV.pdf`](docs/ARQUITETURA-DO-JEV.pdf), [`docs/arquitetura-assets/fonte-original.md`](docs/arquitetura-assets/fonte-original.md) |
+| Referência adicional Jev Flow | [`research/JEV-FLOW.md`](research/JEV-FLOW.md), [`research/FONTES.md`](research/FONTES.md) |
+| Vídeo 10 Levels of Jev: técnicas incorporadas à arquitetura | [`research/TEN-LEVELS-OF-JEV.md`](research/TEN-LEVELS-OF-JEV.md), [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](docs/ARQUITETURA-DO-JEV-REVISAO.md) |
 | Controle de gasto (reserva atômica, teto) | [`executor/ledger.py`](executor/ledger.py), [`executor/pricing.py`](executor/pricing.py), [`executor/prices.json`](executor/prices.json), [`executor/README.md`](executor/README.md) |
 | Chamar o Jev pelo transporte compartilhado | [`executor/shared.py`](executor/shared.py) |
 | Extrato do gasto conferível | [`runs/extrato-ledger.json`](runs/extrato-ledger.json), [`executor/exportar_extrato.py`](executor/exportar_extrato.py) |
@@ -50,7 +54,7 @@ Os conceitos são nós do grafo, lidos da fonte que os define. Cada página diz,
 | Hipóteses | 100 | [hipoteses.md](mapa/conhecimento/hipoteses.md) | 81 sustentada, 18 falsificada, 1 inconclusiva; cada uma com as rodadas em que a prova se apoia |
 | Perguntas estratégicas | 100 | [perguntas.md](mapa/conhecimento/perguntas.md) | 76 respondidas por dado medido; as demais por conta declarada ou coleta nova |
 | Sistemas avaliados | 15 | [sistemas.md](mapa/conhecimento/sistemas.md) | os sistemas do ecossistema Jev cobertos pelo plano |
-| Revisões adversariais | 10 | [revisoes.md](mapa/conhecimento/revisoes.md) | revisões independentes do executor e os testes que fixam cada achado |
+| Revisões adversariais | 11 | [revisoes.md](mapa/conhecimento/revisoes.md) | revisões independentes do executor e os testes que fixam cada achado |
 | Testes | 28 | [testes.md](mapa/conhecimento/testes.md) | o que cada teste exercita e que estudo fixa; código sem teste direto |
 | Lacunas e ideias | — | [lacunas.md](mapa/conhecimento/lacunas.md) | hipóteses que caíram, respostas sem dado medido, peças faltando, pendências declaradas |
 
@@ -64,30 +68,31 @@ flowchart LR
   H["Hipóteses (100)"]
   Q["Perguntas estratégicas (100)"]
   S["Sistemas avaliados (15)"]
-  V["Revisões adversariais (10)"]
+  V["Revisões adversariais (11)"]
   H -->|162| R
   Q -->|8| E
   Q -.->|4 entre si| Q
   Q -->|74| R
   R -->|25| E
   R -.->|30 entre si| R
-  ARQ -.->|351| E
+  ARQ -.->|352| E
   ARQ -.->|433| H
   ARQ -.->|229| Q
-  ARQ -.->|521| R
-  ARQ -.->|171| S
-  ARQ -.->|22| V
+  ARQ -.->|532| R
+  ARQ -.->|173| S
+  ARQ -.->|23| V
 ```
 
 ## Pastas
 
 | pasta | arquivos | finalidade |
 |---|---:|---|
-| [raiz](mapa/pastas/_raiz.md) | 322 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
+| [raiz](mapa/pastas/_raiz.md) | 349 | Raiz do projeto JEV: avaliação científica do modelo Jev 1.13 (classificador barato via OpenRouter) e sua integração medida no Claude Code e no Codex. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[.reticle/](mapa/pastas/reticle.md) | 1 | Pasta de ferramenta local; só o .gitignore é versionado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[data/](mapa/pastas/data.md) | 6 | Dados locais. Só o corpus de avaliação é versionado; o resto é ignorado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[corpus/](mapa/pastas/data__corpus.md) | 6 | Corpus congelado dos experimentos (triagem, evidência, ressalvas), em JSONL. É o insumo dos executores `executor/run_e*.py`. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[docs/](mapa/pastas/docs.md) | 12 | Documentos finais em Markdown: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[docs/](mapa/pastas/docs.md) | 27 | Documentos e proposta de arquitetura: plano científico, relatórios, guia prático, limites, auditoria de números, hipóteses e medições das camadas. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[arquitetura-assets/](mapa/pastas/docs__arquitetura-assets.md) | 13 | Capa ilustrada, diagramas vetoriais e Markdown original da arquitetura. Os SVGs são gerados a partir da edição revisada. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[executor/](mapa/pastas/executor.md) | 57 | Executor financeiro e dos experimentos E1–E16: livro-caixa com reserva atômica (`ledger.py`), preços, transporte compartilhado (`shared.py`), placar e um `run_e*.py` por experimento. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/executor__tests.md) | 18 | Testes do executor: livro-caixa, preços, runner, placar, achados de cada revisão adversarial, entregáveis, MCP. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[hermes/](mapa/pastas/hermes.md) | 22 |  |
@@ -113,10 +118,11 @@ flowchart LR
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[h100/](mapa/pastas/laboratorio__h100.md) | 6 | Bateria H100: as cem hipóteses (dados, provas, avaliação, registro, relatório). |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[q100/](mapa/pastas/laboratorio__q100.md) | 4 | Bateria Q100: as cem perguntas estratégicas (respostas, registro, relatório). |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[tests/](mapa/pastas/laboratorio__tests.md) | 5 | Testes do laboratório: auditoria, canários, H100, Q100. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[output/](mapa/pastas/output.md) | 5 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[pdf/](mapa/pastas/output__pdf.md) | 4 | PDFs finais: guia prático, plano científico e relatório final. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[planning/](mapa/pastas/planning.md) | 16 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[research/](mapa/pastas/research.md) | 12 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, auditoria do PDF do Hermes. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[output/](mapa/pastas/output.md) | 7 | Entregáveis gerados (HTML e PDF). Não editar à mão: regenerar pelos scripts de `planning/` e `laboratorio/`. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[pdf/](mapa/pastas/output__pdf.md) | 5 | PDFs finais: guia prático, plano científico e relatório final. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[planning/](mapa/pastas/planning.md) | 24 | Protocolo, pré-registros dos experimentos, emendas, esquema SQL, matriz de testes e os geradores dos documentos/PDFs. |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[arquitetura/](mapa/pastas/planning__arquitetura.md) | 8 | Gerador da arquitetura em HTML/PDF, leiaute dos diagramas, estilos e registro de fontes e validação. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[research/](mapa/pastas/research.md) | 14 | Pesquisa de base: fontes consultadas, manifesto das fontes GitHub, inventário de sistemas, referências adicionais e auditoria do PDF do Hermes. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[hermes/](mapa/pastas/research__hermes.md) | 7 | Material do Hermes: relatório final da Helena, dossiê quantitativo, auditoria local e decisões extraídas do PDF. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[runs/](mapa/pastas/runs.md) | 36 | Resultados dos experimentos: um diretório por experimento com `relatorio.json` agregado; extrato do livro-caixa e erro grave. O banco `ledger.sqlite3` não é versionado. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[canaries/](mapa/pastas/runs__canaries.md) | 1 | Resumo dos canários de comportamento (verificação de que o modelo servido não mudou). |
@@ -142,21 +148,22 @@ Setas cheias: imports de código (todos). Tracejadas: documentos e dados que cit
 ```mermaid
 flowchart LR
   n_data["data/ (6)"]
-  n_docs["docs/ (12)"]
+  n_docs["docs/ (27)"]
   n_executor["executor/ (57)"]
   n_integracao["integracao/ (48)"]
   n_lab["lab/ (13)"]
   n_laboratorio["laboratorio/ (88)"]
-  n_planning["planning/ (16)"]
-  n_research["research/ (12)"]
+  n_output["output/ (7)"]
+  n_planning["planning/ (24)"]
+  n_research["research/ (14)"]
   n_runs["runs/ (36)"]
-  n_docs -.->|5| n_executor
-  n_docs -.->|47| n_laboratorio
-  n_docs -.->|9| n_research
+  n_docs -.->|7| n_executor
+  n_docs -.->|50| n_laboratorio
+  n_docs -.->|11| n_research
   n_executor -.->|25| n_data
   n_executor -.->|5| n_docs
   n_executor -->|2| n_integracao
-  n_executor -.->|15| n_planning
+  n_executor -.->|16| n_planning
   n_executor -.->|33| n_runs
   n_integracao -.->|11| n_docs
   n_integracao -->|7| n_executor
@@ -164,7 +171,7 @@ flowchart LR
   n_integracao -.->|7| n_laboratorio
   n_lab -.->|6| n_docs
   n_lab -.->|13| n_executor
-  n_lab -.->|10| n_planning
+  n_lab -.->|12| n_planning
   n_lab -.->|10| n_research
   n_laboratorio -.->|22| n_docs
   n_laboratorio -->|16| n_executor
@@ -173,10 +180,12 @@ flowchart LR
   n_laboratorio -.->|83| n_integracao
   n_laboratorio -.->|10| n_lab
   n_laboratorio -.->|9| n_runs
-  n_planning -.->|5| n_docs
+  n_output -.->|6| n_laboratorio
+  n_planning -.->|28| n_docs
   n_planning -->|6| n_executor
-  n_planning -.->|5| n_executor
-  n_planning -.->|9| n_research
+  n_planning -.->|7| n_executor
+  n_planning -.->|7| n_output
+  n_planning -.->|13| n_research
   n_planning -.->|9| n_runs
   n_runs -.->|9| n_planning
 ```
@@ -187,15 +196,15 @@ Matriz completa (linha usa coluna; imports + citações + links):
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | **.reticle/** |  |  |  |  |  |  |  |  |  |  |  |  |
 | **data/** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **docs/** |  |  |  | 5 |  | 2 | 1 | 47 | 3 | 4 | 9 | 4 |
-| **executor/** |  | 25 | 5 |  |  | 3 | 3 |  | 2 | 15 | 2 | 33 |
+| **docs/** |  |  |  | 7 |  | 2 | 1 | 50 | 3 | 4 | 11 | 4 |
+| **executor/** |  | 25 | 5 |  |  | 3 | 3 |  | 2 | 16 | 2 | 33 |
 | **hermes/** |  |  | 1 | 2 |  |  |  |  |  |  |  |  |
 | **integracao/** |  |  | 11 | 17 | 1 |  |  | 7 |  |  |  | 2 |
-| **lab/** |  |  | 6 | 13 |  |  |  |  | 4 | 10 | 10 |  |
+| **lab/** |  |  | 6 | 13 |  |  |  |  | 4 | 12 | 10 |  |
 | **laboratorio/** |  | 4 | 22 | 180 |  | 85 | 10 |  | 4 | 1 | 3 | 9 |
-| **output/** |  |  | 1 |  |  |  |  | 3 |  |  |  |  |
-| **planning/** |  | 4 | 5 | 11 |  |  | 2 |  | 3 |  | 9 | 9 |
-| **research/** |  |  | 1 |  |  |  |  |  |  |  |  |  |
+| **output/** |  |  | 3 | 2 |  |  |  | 6 |  |  | 2 |  |
+| **planning/** |  | 4 | 28 | 13 |  |  | 2 | 4 | 7 |  | 13 | 9 |
+| **research/** |  |  | 2 |  |  |  |  |  |  | 2 |  |  |
 | **runs/** |  | 3 |  |  |  |  |  |  |  | 9 |  |  |
 
 ## Como as partes se ligam

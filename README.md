@@ -4,6 +4,12 @@ Projeto experimental para testes com o modelo de classificação JEV.
 
 Mapa navegável de todas as pastas, arquivos e ligações: [MAPA.md](MAPA.md).
 
+## Documento de arquitetura
+
+- **[Arquitetura do JEV — edição revisada (PDF)](output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf)** — 18 páginas, capa ilustrada e 10 diagramas; estudos locais, testes do executor/harness, Jev Flow e contribuições selecionadas de *10 Levels of Jev* (28/09/2026).
+- [Fonte editável em Markdown com Mermaid](docs/ARQUITETURA-DO-JEV-REVISAO.md) · [Leitura em HTML](output/arquitetura-jev.html) · [Gerador e reprodução](planning/arquitetura/README.md) · [Fontes e validação](planning/arquitetura/VERIFICACAO.md).
+- Material original: [PDF de 14 páginas](docs/ARQUITETURA-DO-JEV.pdf) e [Markdown fornecido](docs/arquitetura-assets/fonte-original.md).
+
 ## Execução realizada
 
 - **[Relatório final](docs/RELATORIO-FINAL-JEV.md)** — recomendação, os nove experimentos, contra-hipóteses
@@ -98,6 +104,8 @@ python planning/build_deliverables.py
 - [Triagem de projetos e plano de avaliação — Helena](docs/TRIAGEM-JEV-HELENA.md)
 - [Fontes, arquivos e revisões consultadas](research/FONTES.md)
 - [Manifesto das 18 fontes GitHub](research/sources-manifest.json)
+- [Jev Flow — referência adicional analisada em 24/09/2026](research/JEV-FLOW.md)
+- [10 Levels of Jev — vídeo, técnicas selecionadas e aplicação à arquitetura](research/TEN-LEVELS-OF-JEV.md)
 
 Pesquisa de 18/09/2026, sem inferências pagas. Orçamento cumulativo máximo para testes futuros: **US$ 5**. A credencial fica somente no `.env` local; consultar `AGENTS.md` antes de executar experimentos.
 

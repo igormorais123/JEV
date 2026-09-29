@@ -79,11 +79,22 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[README.md](../../README.md)**
 
-- [l. 19](../../README.md#L19) — medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
-- [l. 23](../../README.md#L23) — declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
-- [l. 55](../../README.md#L55) — ledger a 4.558 tentativas e 0,283629435 de unidade de conta; **essa parte ainda não foi
-- [l. 82](../../README.md#L82) — O plano previa rodada simples e rodada aprofundada para os 15 sistemas. A rodada simples foi executada como suíte offline de cada repositório, o que mede estado de códig…
-- [l. 84](../../README.md#L84) — O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, den…
+- [l. 25](../../README.md#L25) — medido, 19 com conta sobre o medido e 5 exigiram coleta nova. Os parâmetros não medidos estão declarados
+- [l. 29](../../README.md#L29) — declarado em aberto: a sanitização por lista não generaliza (o sentinela sim), votar a mesma pergunta não
+- [l. 61](../../README.md#L61) — ledger a 4.558 tentativas e 0,283629435 de unidade de conta; **essa parte ainda não foi
+- [l. 88](../../README.md#L88) — O plano previa rodada simples e rodada aprofundada para os 15 sistemas. A rodada simples foi executada como suíte offline de cada repositório, o que mede estado de códig…
+- [l. 90](../../README.md#L90) — O teto autorizado é de **US$ 5,00 de gasto novo**, decidido em 18/09/2026: o histórico de US$ 3,002937546 não ocupa esse limite. Os blocos planejados somam US$ 1,70, den…
+
+**[docs/ARQUITETURA-DO-JEV-REVISAO.md](../../docs/ARQUITETURA-DO-JEV-REVISAO.md)**
+
+- [l. 74](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L74) — Separa fatos observados, interpretações e operações pendentes. Toda atualização informa a versão que leu; um conflito exige reler o estado antes de decidir.
+- [l. 78](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L78) — Escolhe o próximo passo permitido. Uma proposta do modelo só é aproveitada quando corresponde ao contrato e ao estado atual.
+- [l. 159](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L159) — Uma pergunta pendente guarda seu identificador. A resposta atualiza o estado e retoma o fluxo; o sistema consulta esse registro antes de perguntar novamente.
+- [l. 277](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L277) — S["Estado do caso<br>critério ainda pendente"] --> D{"O que falta<br>para avançar?"}
+- [l. 305](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L305) — O coordenador compara as entregas com o pedido inteiro. Achados sem fonte e entregas fora do escopo voltam à revisão. Aprovação de um papel não substitui critérios pende…
+- [l. 343](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L343) — Manter as preferências explícitas do usuário. O Jev pode classificar a família da tarefa; a política e o responsável decidem o modelo. Evidência ausente fica como “não m…
+- [l. 389](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L389) — Conferir o resultado contra o pedido e apontar o próximo passo útil.
+- [l. 549](../../docs/ARQUITETURA-DO-JEV-REVISAO.md#L549) — Não concluir sem prova. Não duplicar operação pendente. Não ultrapassar orçamento. Não transformar dado recebido em autorização. Preservar fontes, parâmetros e versão pa…
 
 **[docs/AUDITORIA-DE-NUMEROS.md](../../docs/AUDITORIA-DE-NUMEROS.md)**
 
@@ -130,6 +141,11 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 - [l. 356](../../docs/TRIAGEM-JEV-HELENA.md#L356) — Estrutura proposta para a etapa posterior, **ainda não implementada**:
 - [l. 381](../../docs/TRIAGEM-JEV-HELENA.md#L381) — Confiança:** alta na distinção entre funções e nas incompatibilidades observadas nos clientes; média na prioridade de utilidade, pois o corpus real ainda não foi escolhi…
 
+**[docs/arquitetura-assets/fonte-original.md](../../docs/arquitetura-assets/fonte-original.md)**
+
+- [l. 135](../../docs/arquitetura-assets/fonte-original.md#L135) — 1. **Cancelamento.** Encerra, mesmo com operação pendente.
+- [l. 1981](../../docs/arquitetura-assets/fonte-original.md#L1981) — <li><div><div class="t">Cancelamento</div><div class="d">Encerra, mesmo com operação pendente.</div></div></li
+
 **[executor/README.md](../../executor/README.md)**
 
 - [l. 8](../../executor/README.md#L8) — `gasto liquidado + reservas pendentes + pior custo da próxima tentativa <= teto global e teto do bloco`
@@ -142,7 +158,7 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[integracao/README.md](../../integracao/README.md)**
 
-- [l. 231](../../integracao/README.md#L231) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
+- [l. 235](../../integracao/README.md#L235) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
 
 **[lab/README.md](../../lab/README.md)**
 

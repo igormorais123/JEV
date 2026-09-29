@@ -8,10 +8,11 @@ PDFs finais: guia prático, plano científico e relatório final.
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
-| [GUIA-PRATICO-JEV.pdf](../../output/pdf/GUIA-PRATICO-JEV.pdf) | pdf | 89 KB | PDF gerado (binário) |
-| [PLANO-CIENTIFICO-JEV-HELENA.pdf](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf) | pdf | 144 KB | PDF gerado (binário) |
-| [RELATORIO-FINAL-JEV.pdf](../../output/pdf/RELATORIO-FINAL-JEV.pdf) | pdf | 144 KB | PDF gerado (binário) |
-| [_teste.pdf](../../output/pdf/_teste.pdf) | pdf | 99 KB | PDF gerado (binário) |
+| [ARQUITETURA-DO-JEV-REVISAO.pdf](../../output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf) | pdf | 2 MB | Documento PDF (binário) |
+| [GUIA-PRATICO-JEV.pdf](../../output/pdf/GUIA-PRATICO-JEV.pdf) | pdf | 89 KB | Documento PDF (binário) |
+| [PLANO-CIENTIFICO-JEV-HELENA.pdf](../../output/pdf/PLANO-CIENTIFICO-JEV-HELENA.pdf) | pdf | 144 KB | Documento PDF (binário) |
+| [RELATORIO-FINAL-JEV.pdf](../../output/pdf/RELATORIO-FINAL-JEV.pdf) | pdf | 144 KB | Documento PDF (binário) |
+| [_teste.pdf](../../output/pdf/_teste.pdf) | pdf | 99 KB | Documento PDF (binário) |
 
 ## Grafo de imports e links
 
@@ -20,11 +21,19 @@ Nós em negrito são desta pasta; setas cheias são imports, tracejadas são lin
 ```mermaid
 flowchart LR
   n_README_md["README.md"]
+  n_output_pdf_ARQUITETURA_DO_JEV_REVISAO_pdf["<b>ARQUITETURA-DO-JEV-REVISAO.pdf</b>"]
   n_output_pdf_PLANO_CIENTIFICO_JEV_HELENA_pdf["<b>PLANO-CIENTIFICO-JEV-HELENA.pdf</b>"]
+  n_planning_arquitetura_README_md["planning/arquitetura/README.md"]
+  n_README_md -.-> n_output_pdf_ARQUITETURA_DO_JEV_REVISAO_pdf
   n_README_md -.-> n_output_pdf_PLANO_CIENTIFICO_JEV_HELENA_pdf
+  n_planning_arquitetura_README_md -.-> n_output_pdf_ARQUITETURA_DO_JEV_REVISAO_pdf
 ```
 
 ## Ligações e conteúdo de cada arquivo
+
+### ARQUITETURA-DO-JEV-REVISAO.pdf
+
+- **é usado por** — link: [`README.md`](../../README.md), [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
 
 ### GUIA-PRATICO-JEV.pdf
 

@@ -1,0 +1,21 @@
+diff --git a/src/config.ts b/src/config.ts
+index 7cbb678..395d793 100644
+--- a/src/config.ts
++++ b/src/config.ts
+@@ -1,6 +1,7 @@
+ import { readFileSync, existsSync } from "node:fs";
+ import { homedir } from "node:os";
+ import { join } from "node:path";
++import { fileURLToPath } from "node:url";
+ import type { RouterCriteria, CriteriaCategory } from "./types.js";
+ import { THINKING_LEVELS } from "./types.js";
+ 
+@@ -55,7 +56,7 @@ export function mergeCriteria(base: RouterCriteria, override: Partial<RouterCrit
+ }
+ 
+ export function loadDefaultCriteria(): RouterCriteria {
+-  return readJson(DEFAULT_CRITERIA_PATH.pathname) as RouterCriteria;
++  return readJson(fileURLToPath(DEFAULT_CRITERIA_PATH)) as RouterCriteria;
+ }
+ 
+ /**

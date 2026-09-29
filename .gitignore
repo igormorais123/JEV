@@ -81,7 +81,11 @@ lab/data/*.tmp
 
 # Screenshots de verificacao do painel
 *.png
+!docs/arquitetura-assets/capa.png
 .playwright-mcp/
+
+# Dependências do gerador do documento de arquitetura
+planning/arquitetura/node_modules/
 
 # --- integracao/ : o roteador que roda nos fluxos desta maquina ---
 # Estado operacional: nao e resultado de experimento, muda a cada mensagem.
@@ -90,6 +94,7 @@ integracao/estado/
 integracao/gastos.jsonl
 integracao/decisoes.jsonl
 integracao/modo.txt
+integracao/runtime.local.json
 # Material real do Igor. A amostra do E13 saiu do historico dele e traz CPF, nome de
 # familiar, caminho de cliente do escritorio e comando com credencial. Os gabaritos
 # (id -> rotulo) e os relatorios agregados VAO para o Git; o texto original, nunca.

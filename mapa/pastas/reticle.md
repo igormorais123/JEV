@@ -8,4 +8,4 @@ Pasta de ferramenta local; só o .gitignore é versionado.
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
-| [.gitignore](../../.reticle/.gitignore) | outro | 698 B | Arquivo |
+| [.gitignore](../../.reticle/.gitignore) | outro | 720 B | Arquivo |

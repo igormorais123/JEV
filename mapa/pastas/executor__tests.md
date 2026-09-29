@@ -21,7 +21,7 @@ Testes do executor: livro-caixa, preços, runner, placar, achados de cada revis�
 | [test_entregaveis.py](../../executor/tests/test_entregaveis.py) | código | 70 l. | Cada PDF entregue tem de conter o documento que o nome dele promete. |
 | [test_ledger.py](../../executor/tests/test_ledger.py) | código | 318 l. | Testes offline do controle financeiro: concorrencia, reinicio, timeout, usage ausente e arredondamento. |
 | [test_liquidacao_429.py](../../executor/tests/test_liquidacao_429.py) | código | 78 l. | HTTP 429 não custa nada, e o livro-caixa tem de saber disso. |
-| [test_mcp.py](../../executor/tests/test_mcp.py) | código | 40 l. | Define: test_stdio_handshake_and_catalog, test_rank_keeps_all_candidates_and_ids, test_bad_arguments_cannot_call_provider |
+| [test_mcp.py](../../executor/tests/test_mcp.py) | código | 42 l. | Define: test_stdio_handshake_and_catalog, test_rank_keeps_all_candidates_and_ids, test_bad_arguments_cannot_call_provider |
 | [test_mutacao.py](../../executor/tests/test_mutacao.py) | código | 79 l. | Auditoria de mutação: perturbar o dado bruto tem de mover o painel. |
 | [test_precos.py](../../executor/tests/test_precos.py) | código | 50 l. | O preço declarado tem de ser o preço bruto do provedor, na unidade certa. |
 | [test_runner.py](../../executor/tests/test_runner.py) | código | 192 l. | Testes do despacho com transporte simulado. Nenhuma chamada de rede e nenhum custo. |
@@ -33,6 +33,7 @@ Nós em negrito são desta pasta; setas cheias são imports, tracejadas são lin
 
 ```mermaid
 flowchart LR
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md["docs/ARQUITETURA-DO-JEV-REVISAO.md"]
   n_executor___init___py["executor/__init__.py"]
   n_executor_analise_py["executor/analise.py"]
   n_executor_assist_py["executor/assist.py"]
@@ -62,6 +63,9 @@ flowchart LR
   n_executor_tests_test_runner_py["<b>test_runner.py</b>"]
   n_executor_tests_test_shared_py["<b>test_shared.py</b>"]
   n_integracao_jev_mcp_py["integracao/jev_mcp.py"]
+  n_planning_arquitetura_VERIFICACAO_md["planning/arquitetura/VERIFICACAO.md"]
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_executor_tests_test_ledger_py
+  n_docs_ARQUITETURA_DO_JEV_REVISAO_md -.-> n_executor_tests_test_liquidacao_429_py
   n_executor_tests_test_achados_revisao_py --> n_executor___init___py
   n_executor_tests_test_achados_revisao_py --> n_executor_ledger_py
   n_executor_tests_test_achados_revisao_py --> n_executor_pricing_py
@@ -106,6 +110,8 @@ flowchart LR
   n_executor_tests_test_shared_py --> n_executor_pricing_py
   n_executor_tests_test_shared_py --> n_executor_runner_py
   n_executor_tests_test_shared_py --> n_executor_shared_py
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_executor_tests_test_ledger_py
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_executor_tests_test_liquidacao_429_py
 ```
 
 ## Ligações e conteúdo de cada arquivo
@@ -188,6 +194,7 @@ flowchart LR
 ### test_ledger.py
 
 - **usa** — import: [`executor/ledger.py`](../../executor/ledger.py), [`executor/pricing.py`](../../executor/pricing.py)
+- **é usado por** — link: [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md); citação: [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html)
 - **chama de outros arquivos** — [`ledger.BudgetError`](../../executor/ledger.py#L20), [`ledger.Ledger`](../../executor/ledger.py#L32), [`ledger.LedgerStateError`](../../executor/ledger.py#L24), [`pricing.PricingError`](../../executor/pricing.py#L14), [`pricing.load_prices`](../../executor/pricing.py#L18), [`pricing.observed_nusd`](../../executor/pricing.py#L65), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74), [`pricing.worst_case_nusd`](../../executor/pricing.py#L56)
 - **menciona 2 conceitos** — [S01](../../mapa/conhecimento/sistemas.md#s01) (2×), [S02](../../mapa/conhecimento/sistemas.md#s02) (1×)
 - **conteúdo** — [reserve_args](../../executor/tests/test_ledger.py#L36) (l. 36), [LedgerTests](../../executor/tests/test_ledger.py#L45) (l. 45), [RealPriceTableTests](../../executor/tests/test_ledger.py#L293) (l. 293)
@@ -195,6 +202,7 @@ flowchart LR
 ### test_liquidacao_429.py
 
 - **usa** — import: [`executor/ledger.py`](../../executor/ledger.py), [`executor/pricing.py`](../../executor/pricing.py)
+- **é usado por** — link: [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md); citação: [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html)
 - **chama de outros arquivos** — [`ledger.Ledger`](../../executor/ledger.py#L32), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74)
 - **menciona 2 conceitos** — [E12](../../mapa/conhecimento/experimentos.md#e12) (2×), [S01](../../mapa/conhecimento/sistemas.md#s01) (1×)
 - **conteúdo** — [LiquidacaoDeRequisicaoRecusada](../../executor/tests/test_liquidacao_429.py#L23) (l. 23)
@@ -202,8 +210,8 @@ flowchart LR
 ### test_mcp.py
 
 - **usa** — import: [`integracao/jev_mcp.py`](../../integracao/jev_mcp.py)
-- **chama de outros arquivos** — [`jev_mcp.call`](../../integracao/jev_mcp.py#L109), [`jev_mcp.handle`](../../integracao/jev_mcp.py#L166)
-- **conteúdo** — [test_stdio_handshake_and_catalog](../../executor/tests/test_mcp.py#L9) (l. 9), [test_rank_keeps_all_candidates_and_ids](../../executor/tests/test_mcp.py#L24) (l. 24), [test_bad_arguments_cannot_call_provider](../../executor/tests/test_mcp.py#L35) (l. 35)
+- **chama de outros arquivos** — [`jev_mcp.call`](../../integracao/jev_mcp.py#L91), [`jev_mcp.handle`](../../integracao/jev_mcp.py#L152)
+- **conteúdo** — [test_stdio_handshake_and_catalog](../../executor/tests/test_mcp.py#L9) (l. 9), [test_rank_keeps_all_candidates_and_ids](../../executor/tests/test_mcp.py#L26) (l. 26), [test_bad_arguments_cannot_call_provider](../../executor/tests/test_mcp.py#L37) (l. 37)
 
 ### test_mutacao.py
 
@@ -228,5 +236,5 @@ flowchart LR
 ### test_shared.py
 
 - **usa** — import: [`executor/assist.py`](../../executor/assist.py), [`executor/ledger.py`](../../executor/ledger.py), [`executor/pricing.py`](../../executor/pricing.py), [`executor/runner.py`](../../executor/runner.py), [`executor/shared.py`](../../executor/shared.py)
-- **chama de outros arquivos** — [`ledger.BudgetError`](../../executor/ledger.py#L20), [`ledger.Ledger`](../../executor/ledger.py#L32), [`pricing.load_prices`](../../executor/pricing.py#L18), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74), [`runner.ContractError`](../../executor/runner.py#L25), [`runner.TransportTimeout`](../../executor/runner.py#L21), [`shared.ask`](../../executor/shared.py#L125), [`shared.import_legacy`](../../executor/shared.py#L67), [`shared.strict_answers`](../../executor/shared.py#L111)
+- **chama de outros arquivos** — [`ledger.BudgetError`](../../executor/ledger.py#L20), [`ledger.Ledger`](../../executor/ledger.py#L32), [`pricing.load_prices`](../../executor/pricing.py#L18), [`pricing.usd_to_nusd`](../../executor/pricing.py#L74), [`runner.ContractError`](../../executor/runner.py#L25), [`runner.TransportTimeout`](../../executor/runner.py#L21), [`shared.ask`](../../executor/shared.py#L152), [`shared.import_legacy`](../../executor/shared.py#L94), [`shared.strict_answers`](../../executor/shared.py#L138)
 - **conteúdo** — [wallet](../../executor/tests/test_shared.py#L15) (l. 15), [query](../../executor/tests/test_shared.py#L22) (l. 22), [response](../../executor/tests/test_shared.py#L27) (l. 27), [test_full_input_is_sent](../../executor/tests/test_shared.py#L33) (l. 33), [test_oversized_input_abstains_without_dispatch](../../executor/tests/test_shared.py#L45) (l. 45), [test_timeout_keeps_reservation](../../executor/tests/test_shared.py#L52) (l. 52), [test_legacy_import_is_idempotent_and_fail_closed](../../executor/tests/test_shared.py#L61) (l. 61), [test_bad_confidence_rejected](../../executor/tests/test_shared.py#L76) (l. 76), [test_concurrent_consumers_share_wallet](../../executor/tests/test_shared.py#L83) (l. 83)

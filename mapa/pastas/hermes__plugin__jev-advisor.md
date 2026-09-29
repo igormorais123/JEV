@@ -9,7 +9,7 @@
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
 | [__init__.py](../../hermes/plugin/jev-advisor/__init__.py) | código | 167 l. | Plugin jev-advisor v3: a ferramenta que o modelo do Hermes chama para delegar Sistema 1 ao Jev. |
-| [plugin.yaml](../../hermes/plugin/jev-advisor/plugin.yaml) | outro | 182 B | Arquivo |
+| [plugin.yaml](../../hermes/plugin/jev-advisor/plugin.yaml) | outro | 187 B | Arquivo |
 
 ## Ligações e conteúdo de cada arquivo
 

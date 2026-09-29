@@ -18,9 +18,9 @@ O Jev dentro do fluxo real: roteador de prompts, hooks do Claude Code, servidor 
 
 | arquivo | tipo | tamanho | descrição |
 |---|---|---:|---|
-| [README.md](../../integracao/README.md) | doc | 254 l. | O Jev dentro do Claude Code e do Codex — Depois do estudo (31 mil chamadas, 27 rodadas), o Jev foi posto nos pontos do fluxo do |
+| [README.md](../../integracao/README.md) | doc | 258 l. | O Jev dentro do Claude Code e do Codex — Instalação global e uso cotidiano nesta máquina: JEV no Codex e Claude Code. |
 | [instalar.py](../../integracao/instalar.py) | código | 341 l. | Instala (ou remove) o hook do Jev no Claude Code e no Codex. |
-| [jev_mcp.py](../../integracao/jev_mcp.py) | código | 206 l. | Minimal MCP stdio server: no dependencies, no shell execution, no secret in config. |
+| [jev_mcp.py](../../integracao/jev_mcp.py) | código | 192 l. | Minimal MCP stdio server: no dependencies, no shell execution, no secret in config. |
 
 ## Grafo de imports e links
 
@@ -57,7 +57,7 @@ flowchart LR
 - **é usado por** — link: [`README.md`](../../README.md)
 - **papel nos estudos** — define [E13](../../mapa/conhecimento/experimentos.md#e13)
 - **menciona 9 conceitos** — [E1](../../mapa/conhecimento/experimentos.md#e1) (1×), [E3](../../mapa/conhecimento/experimentos.md#e3) (1×), [E5](../../mapa/conhecimento/experimentos.md#e5) (1×), [E8](../../mapa/conhecimento/experimentos.md#e8) (1×), [E11](../../mapa/conhecimento/experimentos.md#e11) (1×), [E12](../../mapa/conhecimento/experimentos.md#e12) (1×), [R16](../../mapa/conhecimento/rodadas.md#r16) (1×), [H038](../../mapa/conhecimento/hipoteses.md#h038) (1×), [Q044](../../mapa/conhecimento/perguntas.md#q044) (1×)
-- **conteúdo** — As camadas (2026-09-20): o Jev decide o que entra no contexto do modelo caro (l. 3), O que não funcionou, e por quê (l. 81), O que funciona, e está instalado (l. 143), Como está instalado (l. 164), Garantias de operação (l. 187), Como refazer a medição (l. 202), O que se mediu do roteador em produção (l. 218), Os dois hooks, e como mexer neles (l. 239)
+- **conteúdo** — As camadas (2026-09-20): o Jev decide o que entra no contexto do modelo caro (l. 7), O que não funcionou, e por quê (l. 85), O que funciona, e está instalado (l. 147), Como está instalado (l. 168), Garantias de operação (l. 191), Como refazer a medição (l. 206), O que se mediu do roteador em produção (l. 222), Os dois hooks, e como mexer neles (l. 243)
 
 ### instalar.py
 
@@ -70,5 +70,5 @@ flowchart LR
 
 - **usa** — import: [`executor/assist.py`](../../executor/assist.py), [`executor/shared.py`](../../executor/shared.py), [`integracao/jev_router/redacao.py`](../../integracao/jev_router/redacao.py)
 - **é usado por** — import: [`executor/tests/test_mcp.py`](../../executor/tests/test_mcp.py); citação: [`executor/smoke_mcp.py`](../../executor/smoke_mcp.py), [`laboratorio/r17-economia-de-contexto.json`](../../laboratorio/r17-economia-de-contexto.json), [`laboratorio/r18-escala.json`](../../laboratorio/r18-escala.json), [`laboratorio/r18-perguntas.json`](../../laboratorio/r18-perguntas.json), [`laboratorio/r20-k-adaptativo.json`](../../laboratorio/r20-k-adaptativo.json), [`laboratorio/r20-perguntas.json`](../../laboratorio/r20-perguntas.json)
-- **chama de outros arquivos** — [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
-- **conteúdo** — [metrics](../../integracao/jev_mcp.py#L97) (l. 97), [call](../../integracao/jev_mcp.py#L109) (l. 109; usado em 1), [handle](../../integracao/jev_mcp.py#L166) (l. 166; usado em 1), [main](../../integracao/jev_mcp.py#L193) (l. 193)
+- **chama de outros arquivos** — [`assist.evaluate`](../../executor/assist.py#L39), [`shared.active_runtime`](../../executor/shared.py#L30), [`redacao.limpar`](../../integracao/jev_router/redacao.py#L43)
+- **conteúdo** — [metrics](../../integracao/jev_mcp.py#L72) (l. 72), [call](../../integracao/jev_mcp.py#L91) (l. 91; usado em 1), [handle](../../integracao/jev_mcp.py#L152) (l. 152; usado em 1), [main](../../integracao/jev_mcp.py#L179) (l. 179)
