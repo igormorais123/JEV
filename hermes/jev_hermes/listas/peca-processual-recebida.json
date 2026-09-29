@@ -1,0 +1,100 @@
+{
+  "nome": "Peça processual recebida — o que exige resposta",
+  "nota": "Criada em 2026-09-22 depois de classificar os 442 anexos que Igor recebeu por e-mail em 180 dias: peça processual é o tipo mais frequente (142), à frente de relatório técnico (115), financeiro (32), contrato (21) e decisão judicial (11). Vermelho marca o que costuma criar prazo, risco de preclusão ou pedido contra a parte de Igor — não julga mérito nem qualidade da peça. Sem gabarito medido: confira os vermelhos no texto antes de agir.",
+  "itens": [
+    {
+      "id": "tipo-da-peca",
+      "tipo": "choice",
+      "pergunta": "Que peca processual e esta?",
+      "opcoes": {
+        "peticao-inicial": "Peticao inicial que abre o processo.",
+        "contestacao-ou-defesa": "Contestacao, defesa, impugnacao ou reconvencao.",
+        "recurso": "Apelacao, agravo, recurso especial, extraordinario, ordinario ou embargos.",
+        "replica-ou-impugnacao": "Replica a contestacao, impugnacao a reconvencao ou resposta a defesa da outra parte.",
+        "manifestacao-ou-peticao-simples": "Manifestacao, peticao intercorrente, cumprimento de despacho ou juntada.",
+        "parecer-ou-memorial": "Parecer juridico ou memorial, sem pedido proprio ao juizo.",
+        "contrarrazoes": "Contrarrazoes ou resposta a recurso da outra parte."
+      },
+      "risco": []
+    },
+    {
+      "id": "pedido-de-condenacao",
+      "tipo": "noul",
+      "pergunta": "A peca pede ao juizo condenacao em dinheiro, bloqueio, penhora, obrigacao de fazer ou de nao fazer contra a parte adversa? Responda pelo que o texto pede, nao por quem o escreveu.",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "tutela-de-urgencia",
+      "tipo": "noul",
+      "pergunta": "A peca pede tutela de urgencia, liminar, tutela de evidencia ou medida cautelar, com efeito imediato antes do julgamento final?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "prazo-para-responder",
+      "tipo": "choice",
+      "pergunta": "O texto abre para quem o RECEBE um prazo de manifestacao neste processo? Prazo de contrato, prazo legal citado em tese e prazo ja vencido narrado nos fatos nao contam.",
+      "opcoes": {
+        "prazo-em-dias": "Manda quem recebe se manifestar em um numero de dias (15 dias para contestar, 5 dias para dizer sobre documentos).",
+        "prazo-com-data": "Marca data limite ou audiencia futura a que quem recebe deve comparecer.",
+        "prazo-em-aberto": "Pede manifestacao ou cumprimento sem dizer o prazo."
+      },
+      "risco": [
+        "prazo-em-dias",
+        "prazo-com-data"
+      ]
+    },
+    {
+      "id": "preliminares",
+      "tipo": "noul",
+      "pergunta": "A peca levanta preliminar ou prejudicial processual (incompetencia, ilegitimidade, inepcia, prescricao, decadencia, intempestividade, coisa julgada, falta de interesse)?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "ma-fe-ou-multa",
+      "tipo": "noul",
+      "pergunta": "A peca pede litigancia de ma-fe, multa, ato atentatorio a dignidade da justica ou sancao processual contra a parte de Igor ou contra o advogado?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "prova-nova",
+      "tipo": "noul",
+      "pergunta": "A peca junta documento novo, pede pericia, oitiva de testemunha ou outra producao de prova que exija resposta tecnica?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "valor-em-discussao",
+      "tipo": "choice",
+      "pergunta": "A peca indica valor em discussao (valor da causa, valor do pedido, calculo ou planilha de debito)?",
+      "opcoes": {
+        "valor-indicado": "Ha valor em numero no texto.",
+        "valor-a-apurar": "Fala em valor a ser apurado, em liquidacao ou por arbitramento.",
+        "sem-valor": "Nao trata de valor."
+      },
+      "risco": []
+    },
+    {
+      "id": "proposta-de-acordo",
+      "tipo": "noul",
+      "pergunta": "A peca propoe acordo, transacao, conciliacao, desistencia ou renuncia?",
+      "risco": []
+    },
+    {
+      "id": "ato-ja-praticado",
+      "tipo": "noul",
+      "pergunta": "A peca informa ato ja praticado que muda a situacao de fato (deposito, pagamento, cumprimento de obrigacao, bloqueio efetivado, intimacao ja realizada)?",
+      "risco": [
+        "sim"
+      ]
+    }
+  ]
+}

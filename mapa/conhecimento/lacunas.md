@@ -28,7 +28,7 @@ Cada uma é um limite medido do Jev, ou uma pergunta que a medição não fechou
 - [H098](../../mapa/conhecimento/hipoteses.md#h098) (falsificada, mediu 21) — A imunidade a meta-instrução não depende do domínio de atendimento.
 - [H100](../../mapa/conhecimento/hipoteses.md#h100) (falsificada, mediu 0) — A seleção de contexto funciona em prosa, não só em código.
 
-## Perguntas respondidas sem dado medido ou sem confiança alta (25)
+## Perguntas respondidas sem dado medido ou sem confiança alta (24)
 
 A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: medir isso é trabalho com retorno direto.
 
@@ -40,7 +40,6 @@ A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: med
 - [Q016](../../mapa/conhecimento/perguntas.md#q016) (conta declarada; confiança média) — Quanto se economiza, em dólares, por mil perguntas no arranjo recomendado?
 - [Q019](../../mapa/conhecimento/perguntas.md#q019) (conta declarada; confiança média) — Votar em três chamadas triplica o custo — isso cabe no custo por decisão?
 - [Q020](../../mapa/conhecimento/perguntas.md#q020) (conta declarada; confiança alta) — Quanto custa rodar a suíte de canários todo dia por um ano?
-- [Q025](../../mapa/conhecimento/perguntas.md#q025) (dado medido; confiança média) — A classe de escape deve ser obrigatória em toda taxonomia?
 - [Q032](../../mapa/conhecimento/perguntas.md#q032) (conta declarada; confiança baixa) — Quanto custa um erro grave comparado ao custo da decisão?
 - [Q033](../../mapa/conhecimento/perguntas.md#q033) (conta declarada; confiança baixa) — Qual a exposição esperada por mil decisões no corte recomendado?
 - [Q042](../../mapa/conhecimento/perguntas.md#q042) (coleta nova; confiança alta) — Sanitizar a entrada restaura a resistência à ordem direta?
@@ -58,6 +57,54 @@ A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: med
 - [Q093](../../mapa/conhecimento/perguntas.md#q093) (conta declarada; confiança baixa) — Quanto custaria anotar 200 mensagens reais?
 - [Q096](../../mapa/conhecimento/perguntas.md#q096) (conta declarada; confiança alta) — Quanto resta do orçamento, e o que ele compra?
 
+## Tensões entre resultados parecidos (36 por veredito, 4 apontadas pelo Jev)
+
+Hipóteses do mesmo tema, com conteúdo semelhante, que tiveram vereditos diferentes. Cada par pede uma frase que explique a diferença (condição, domínio, medida); sem ela, um dos dois resultados está mal enunciado.
+
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H038](../../mapa/conhecimento/hipoteses.md#h038) (falsificada) × [H039](../../mapa/conhecimento/hipoteses.md#h039) (sustentada): A cauda de latência não estoura o orçamento de um gancho de editor. / A latência tem cauda longa em relação à mediana.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H044](../../mapa/conhecimento/hipoteses.md#h044) (falsificada) × [H045](../../mapa/conhecimento/hipoteses.md#h045) (sustentada): Dobrar o estado aproximadamente dobra o custo. / Chamadas com duas perguntas não custam o dobro.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H037](../../mapa/conhecimento/hipoteses.md#h037) (sustentada) × [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva): A latência mediana cabe dentro de um passo interativo. / Chamadas que falharam são mais lentas que as que deram certo.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H001](../../mapa/conhecimento/hipoteses.md#h001) (sustentada) × [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva): Mandar duas perguntas no mesmo payload não custa mais latência que mandar uma. / Chamadas que falharam são mais lentas que as que deram certo.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H040](../../mapa/conhecimento/hipoteses.md#h040) (sustentada) × [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva): O custo por chamada é desprezível na mediana. / Chamadas que falharam são mais lentas que as que deram certo.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H004](../../mapa/conhecimento/hipoteses.md#h004) (sustentada) × [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva): A latência é dominada por custo fixo, não pelo tamanho do que se manda. / Chamadas que falharam são mais lentas que as que deram certo.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva) × [H047](../../mapa/conhecimento/hipoteses.md#h047) (sustentada): Chamadas que falharam são mais lentas que as que deram certo. / A taxa de falha de transporte do estudo inteiro é baixa.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H039](../../mapa/conhecimento/hipoteses.md#h039) (sustentada) × [H041](../../mapa/conhecimento/hipoteses.md#h041) (inconclusiva): A latência tem cauda longa em relação à mediana. / Chamadas que falharam são mais lentas que as que deram certo.
+- [T01](../../mapa/conhecimento/temas.md#t01) · [H003](../../mapa/conhecimento/hipoteses.md#h003) (sustentada) × [H044](../../mapa/conhecimento/hipoteses.md#h044) (falsificada): O tamanho do estado domina o custo: o resto do payload é ruído contábil. / Dobrar o estado aproximadamente dobra o custo.
+- [T02](../../mapa/conhecimento/temas.md#t02) · [H086](../../mapa/conhecimento/hipoteses.md#h086) (sustentada) × [H089](../../mapa/conhecimento/hipoteses.md#h089) (falsificada): Ruído pesado degrada muito. / Sobrepor o sentido das classes é pior que sujar a superfície do texto.
+- [T02](../../mapa/conhecimento/temas.md#t02) · [H085](../../mapa/conhecimento/hipoteses.md#h085) (sustentada) × [H089](../../mapa/conhecimento/hipoteses.md#h089) (falsificada): Ruído leve de digitação não degrada. / Sobrepor o sentido das classes é pior que sujar a superfície do texto.
+- [T02](../../mapa/conhecimento/temas.md#t02) · [H089](../../mapa/conhecimento/hipoteses.md#h089) (falsificada) × [H090](../../mapa/conhecimento/hipoteses.md#h090) (sustentada): Sobrepor o sentido das classes é pior que sujar a superfície do texto. / Empilhar degradações machuca mais que a pior delas isolada.
+- [T02](../../mapa/conhecimento/temas.md#t02) · [H018](../../mapa/conhecimento/hipoteses.md#h018) (sustentada) × [H089](../../mapa/conhecimento/hipoteses.md#h089) (falsificada): Ruído no texto derruba a confiança, não só a acurácia. / Sobrepor o sentido das classes é pior que sujar a superfície do texto.
+- [T03](../../mapa/conhecimento/temas.md#t03) · [H061](../../mapa/conhecimento/hipoteses.md#h061) (sustentada) × [H098](../../mapa/conhecimento/hipoteses.md#h098) (falsificada): Meta-instrução escrita dentro do texto do cliente não vira a decisão do Jev. / A imunidade a meta-instrução não depende do domínio de atendimento.
+- [T03](../../mapa/conhecimento/temas.md#t03) · [H062](../../mapa/conhecimento/hipoteses.md#h062) (sustentada) × [H065](../../mapa/conhecimento/hipoteses.md#h065) (falsificada): Texto que insere um pedido real vira a decisão do Jev. / O Jev é o menos manipulável do painel.
+- [T03](../../mapa/conhecimento/temas.md#t03) · [H063](../../mapa/conhecimento/hipoteses.md#h063) (sustentada) × [H098](../../mapa/conhecimento/hipoteses.md#h098) (falsificada): Quando o Jev vira, ele avisa: nenhuma virada passa do corte de 0,90. / A imunidade a meta-instrução não depende do domínio de atendimento.
+- [T03](../../mapa/conhecimento/temas.md#t03) · [H062](../../mapa/conhecimento/hipoteses.md#h062) (sustentada) × [H098](../../mapa/conhecimento/hipoteses.md#h098) (falsificada): Texto que insere um pedido real vira a decisão do Jev. / A imunidade a meta-instrução não depende do domínio de atendimento.
+- [T03](../../mapa/conhecimento/temas.md#t03) · [H062](../../mapa/conhecimento/hipoteses.md#h062) (sustentada) × [H094](../../mapa/conhecimento/hipoteses.md#h094) (falsificada): Texto que insere um pedido real vira a decisão do Jev. / O erro que importa — confundir informação com ação destrutiva — é raro.
+- [T04](../../mapa/conhecimento/temas.md#t04) · [H021](../../mapa/conhecimento/hipoteses.md#h021) (falsificada) × [H088](../../mapa/conhecimento/hipoteses.md#h088) (sustentada): Mais opções derrubam a confiança. / Cento e quarenta e sete opções degradam.
+- [T04](../../mapa/conhecimento/temas.md#t04) · [H006](../../mapa/conhecimento/hipoteses.md#h006) (sustentada) × [H021](../../mapa/conhecimento/hipoteses.md#h021) (falsificada): Até doze opções, o número de classes não custa acurácia. / Mais opções derrubam a confiança.
+- [T06](../../mapa/conhecimento/temas.md#t06) · [H055](../../mapa/conhecimento/hipoteses.md#h055) (falsificada) × [H056](../../mapa/conhecimento/hipoteses.md#h056) (sustentada): Com o alvo presente, mandar mais trechos não ajuda. / Mandar mais bytes, com o alvo já presente, atrapalha.
+- [T06](../../mapa/conhecimento/temas.md#t06) · [H055](../../mapa/conhecimento/hipoteses.md#h055) (falsificada) × [H091](../../mapa/conhecimento/hipoteses.md#h091) (sustentada): Com o alvo presente, mandar mais trechos não ajuda. / Onde o texto alvo aparece no contexto diluído não importa.
+- [T06](../../mapa/conhecimento/temas.md#t06) · [H055](../../mapa/conhecimento/hipoteses.md#h055) (falsificada) × [H059](../../mapa/conhecimento/hipoteses.md#h059) (sustentada): Com o alvo presente, mandar mais trechos não ajuda. / Recortar com o cabeçalho do módulo melhora achar e piora responder.
+- [T06](../../mapa/conhecimento/temas.md#t06) · [H054](../../mapa/conhecimento/hipoteses.md#h054) (sustentada) × [H055](../../mapa/conhecimento/hipoteses.md#h055) (falsificada): Ter o trecho certo no contexto é quase condição necessária para acertar. / Com o alvo presente, mandar mais trechos não ajuda.
+- [T06](../../mapa/conhecimento/temas.md#t06) · [H055](../../mapa/conhecimento/hipoteses.md#h055) (falsificada) × [H066](../../mapa/conhecimento/hipoteses.md#h066) (sustentada): Com o alvo presente, mandar mais trechos não ajuda. / Vetores escritos por modelos diferentes não são igualmente eficazes.
+- [T07](../../mapa/conhecimento/temas.md#t07) · [H076](../../mapa/conhecimento/hipoteses.md#h076) (sustentada) × [H095](../../mapa/conhecimento/hipoteses.md#h095) (falsificada): Pedido já concluído é classificado corretamente. / O Jev classifica intenção em domínio jurídico pt-BR tão bem quanto em atendiment
+- [T07](../../mapa/conhecimento/temas.md#t07) · [H074](../../mapa/conhecimento/hipoteses.md#h074) (sustentada) × [H095](../../mapa/conhecimento/hipoteses.md#h095) (falsificada): Pedido negado é classificado corretamente. / O Jev classifica intenção em domínio jurídico pt-BR tão bem quanto em atendiment
+- [T07](../../mapa/conhecimento/temas.md#t07) · [H075](../../mapa/conhecimento/hipoteses.md#h075) (sustentada) × [H095](../../mapa/conhecimento/hipoteses.md#h095) (falsificada): Pedido adiado é classificado corretamente. / O Jev classifica intenção em domínio jurídico pt-BR tão bem quanto em atendiment
+- [T16](../../mapa/conhecimento/temas.md#t16) · [H035](../../mapa/conhecimento/hipoteses.md#h035) (sustentada) × [H036](../../mapa/conhecimento/hipoteses.md#h036) (falsificada): Ruído espalha a probabilidade. / A armadilha semântica espalha a probabilidade mais que a dificuldade de superfíc
+- [T16](../../mapa/conhecimento/temas.md#t16) · [H034](../../mapa/conhecimento/hipoteses.md#h034) (sustentada) × [H036](../../mapa/conhecimento/hipoteses.md#h036) (falsificada): Mais opções espalham a probabilidade. / A armadilha semântica espalha a probabilidade mais que a dificuldade de superfíc
+- [T16](../../mapa/conhecimento/temas.md#t16) · [H029](../../mapa/conhecimento/hipoteses.md#h029) (sustentada) × [H036](../../mapa/conhecimento/hipoteses.md#h036) (falsificada): A entropia da distribuição prediz erro. / A armadilha semântica espalha a probabilidade mais que a dificuldade de superfíc
+- [T17](../../mapa/conhecimento/temas.md#t17) · [H067](../../mapa/conhecimento/hipoteses.md#h067) (falsificada) × [H068](../../mapa/conhecimento/hipoteses.md#h068) (sustentada): A injeção com aparência de autoridade é a mais eficaz. / Para o Jev, a injeção não muda o resultado: com e sem dão o mesmo.
+- [T17](../../mapa/conhecimento/temas.md#t17) · [H020](../../mapa/conhecimento/hipoteses.md#h020) (sustentada) × [H067](../../mapa/conhecimento/hipoteses.md#h067) (falsificada): A injeção derruba a confiança mesmo quando não muda a resposta. / A injeção com aparência de autoridade é a mais eficaz.
+- [T20](../../mapa/conhecimento/temas.md#t20) · [H012](../../mapa/conhecimento/hipoteses.md#h012) (falsificada) × [H031](../../mapa/conhecimento/hipoteses.md#h031) (sustentada): A confiança relatada é a probabilidade da classe escolhida, não um número à part / O vetor de probabilidades soma 1.
+- [T20](../../mapa/conhecimento/temas.md#t20) · [H011](../../mapa/conhecimento/hipoteses.md#h011) (sustentada) × [H012](../../mapa/conhecimento/hipoteses.md#h012) (falsificada): O contrato nunca devolve uma classe que não estava nos critérios. / A confiança relatada é a probabilidade da classe escolhida, não um número à part
+- [T21](../../mapa/conhecimento/temas.md#t21) · [H032](../../mapa/conhecimento/hipoteses.md#h032) (falsificada) × [H033](../../mapa/conhecimento/hipoteses.md#h033) (sustentada): A segunda opção quase nunca recebe massa. / Quando erra, a classe certa costuma estar em segundo lugar.
+
+**Conflitos apontados pelo Jev** (rubrica sem gabarito; numa conferência manual de 4 destes, 2 eram tensão real e 2 não — confira antes de usar):
+
+- [H063](../../mapa/conhecimento/hipoteses.md#h063) × [Q036](../../mapa/conhecimento/perguntas.md#q036) (confiança 0.67)
+- [H019](../../mapa/conhecimento/hipoteses.md#h019) × [H087](../../mapa/conhecimento/hipoteses.md#h087) (confiança 0.47)
+- [H008](../../mapa/conhecimento/hipoteses.md#h008) × [Q083](../../mapa/conhecimento/perguntas.md#q083) (confiança 0.39)
+- [H063](../../mapa/conhecimento/hipoteses.md#h063) × [H064](../../mapa/conhecimento/hipoteses.md#h064) (confiança 0.22)
+
 ## Estudos com peça faltando
 
 - **experimentos sem pré-registro próprio em `planning/`:** [E2](../../mapa/conhecimento/experimentos.md#e2), [E2b](../../mapa/conhecimento/experimentos.md#e2b), [E3](../../mapa/conhecimento/experimentos.md#e3), [E4](../../mapa/conhecimento/experimentos.md#e4), [E5](../../mapa/conhecimento/experimentos.md#e5), [E6](../../mapa/conhecimento/experimentos.md#e6), [E8](../../mapa/conhecimento/experimentos.md#e8), [E9](../../mapa/conhecimento/experimentos.md#e9), [E10b](../../mapa/conhecimento/experimentos.md#e10b), [E13](../../mapa/conhecimento/experimentos.md#e13)
@@ -67,7 +114,7 @@ A resposta existe, mas depende de parâmetro declarado ou de coleta pequena: med
 
 ## Código sem teste direto
 
-21 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
+37 módulos usados por outros módulos não têm teste que os importe: lista em [Testes](../../mapa/conhecimento/testes.md).
 
 ## Pendências declaradas nos documentos
 
@@ -103,15 +150,22 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 
 **[docs/CAMADAS-CLAUDE-CODE.md](../../docs/CAMADAS-CLAUDE-CODE.md)**
 
-- [l. 94](../../docs/CAMADAS-CLAUDE-CODE.md#L94) — Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
+- [l. 96](../../docs/CAMADAS-CLAUDE-CODE.md#L96) — Aplicação não medida no estudo: a parte apontada só vira acerto quando alguém conferir contra
 
 **[docs/CEM-PERGUNTAS-ESTRATEGICAS.md](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md)**
 
-- [l. 246](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L246) — Não vale a complexidade hoje. Ela empata com k = 1 fixo em acerto e em economia. Implemente a regra simples; a adaptativa fica como opção para corpus onde a ordenação er…
-- [l. 508](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L508) — US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.339×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**…
+- [l. 508](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L508) — US$ 0,4000 contra US$ 0,000043 por decisão — o humano custa **9.376×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**.…
 - [l. 664](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L664) — J · Os próximos movimentos
-- [l. 706](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L706) — 18 falsificadas e 1 inconclusiva — **19% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva d…
+- [l. 706](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L706) — 20 falsificadas e 1 inconclusiva — **21% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva d…
 - [l. 710](../../docs/CEM-PERGUNTAS-ESTRATEGICAS.md#L710) — Q098 — Qual risco identificado ainda não tem mitigação medida?
+
+**[docs/ESSENCIA-DO-JEV.md](../../docs/ESSENCIA-DO-JEV.md)**
+
+- [l. 70](../../docs/ESSENCIA-DO-JEV.md#L70) — Ressalva honesta: **depois** de aplicar a receita da seção 2.2 a concordância quase não acrescenta nada em texto limpo (R42: 98,7% com ela, 98,8% só com o corte), porque…
+
+**[docs/JEV-GATEWAY.md](../../docs/JEV-GATEWAY.md)**
+
+- [l. 65](../../docs/JEV-GATEWAY.md#L65) — Codex: não medido.** A mesma tarefa de dois passos travou três vezes em 300 s (com e sem roteamento) sem que nenhuma requisição chegasse ao gateway, enquanto "responda o…
 
 **[docs/PLANO-CIENTIFICO-JEV-HELENA.md](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md)**
 
@@ -152,13 +206,45 @@ Linhas dos documentos que dizem "não medido", "pendente", "bloqueado", "em aber
 - [l. 102](../../executor/README.md#L102) — 2. Repetir a conciliação por extrato: o agregado do provedor tem defasagem e ainda não refletia as chamadas
 - [l. 104](../../executor/README.md#L104) — 3. Mapear os formatos `noul` e `score`, ainda não aceitos nas sondas feitas.
 
+**[hermes/README.md](../../hermes/README.md)**
+
+- [l. 139](../../hermes/README.md#L139) — tarefa aceita gravação. Conferido na VPS com um teste que tentava ler `~/.hermes/.env` (bloqueado)
+
 **[hermes/skill/jev/SKILL.md](../../hermes/skill/jev/SKILL.md)**
 
 - [l. 22](../../hermes/skill/jev/SKILL.md#L22) — 3. Escrever, planejar, julgar em aberto, conversar com Igor: você.
+- [l. 123](../../hermes/skill/jev/SKILL.md#L123) — "o que está pendente/quem me espera/o que prometi" em vez de ler as conversas. Leitura apenas.
+- [l. 170](../../hermes/skill/jev/SKILL.md#L170) — ações e as guardas, o Jev decide só onde há escolha real, e o resultado dispara o próximo passo.
 
 **[integracao/README.md](../../integracao/README.md)**
 
-- [l. 235](../../integracao/README.md#L235) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
+- [l. 237](../../integracao/README.md#L237) — O hook não atrapalha o fluxo e custa quase nada. Se ele acerta, ainda não se sabe, e a razão é
+
+**[integracao/USO-CODEX.md](../../integracao/USO-CODEX.md)**
+
+- [l. 15](../../integracao/USO-CODEX.md#L15) — ainda não listar as ferramentas MCP. A skill `typesafe-ai` é a oficial; `jev-assist`
+
+**[integracao/harness/AGENT-GUIDE.md](../../integracao/harness/AGENT-GUIDE.md)**
+
+- [l. 23](../../integracao/harness/AGENT-GUIDE.md#L23) — 3. Preserve `job_id`. Use `harness_wait` com até 20 segundos. `running` ainda não é conclusão; continue aguardando conforme necessário. Não reenvie a operação porque ela…
+
+**[integracao/harness/PREREGISTRO.md](../../integracao/harness/PREREGISTRO.md)**
+
+- [l. 20](../../integracao/harness/PREREGISTRO.md#L20) — Antes do ensaio da API v1: submeter o mesmo pedido lógico duas vezes com a mesma chave deve retornar um único job, sem segunda inferência. Fixture: AFIRMAÇÃO "O pagament…
+
+**[integracao/harness/RELATORIO.md](../../integracao/harness/RELATORIO.md)**
+
+- [l. 51](../../integracao/harness/RELATORIO.md#L51) — 2. Medir CLI, Every e Review contra respostas/defeitos conhecidos, incluindo falsos positivos, custo e tempo. Ainda não há prova nova de economia de contexto ou tempo do…
+
+**[integracao/harness/VALIDACAO-AGENTES.md](../../integracao/harness/VALIDACAO-AGENTES.md)**
+
+- [l. 9](../../integracao/harness/VALIDACAO-AGENTES.md#L9) — Ensaio real pré-registrado via preview → submit → wait → submit idêntico: job `ea9efd2cc27d06a7`, resultado `contradito`, confiança 0,99. A fonte dizia que o pagamento e…
+
+**[integracao/skills/jev-assist/SKILL.md](../../integracao/skills/jev-assist/SKILL.md)**
+
+- [l. 31](../../integracao/skills/jev-assist/SKILL.md#L31) — `jev_metrics`: registros locais, sem inferência. Economia do Astra ainda não medida.
+- [l. 35](../../integracao/skills/jev-assist/SKILL.md#L35) — Se o MCP ainda não foi carregado, use o Python local com `__JEV_ROOT__/integracao/usar.py`:
+- [l. 58](../../integracao/skills/jev-assist/SKILL.md#L58) — Passe `task` com o próximo passo, objetivo e restrições, e `candidates` com `id` e
 
 **[lab/README.md](../../lab/README.md)**
 

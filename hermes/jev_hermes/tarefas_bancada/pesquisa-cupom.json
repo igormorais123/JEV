@@ -1,0 +1,19 @@
+{
+ "id": "pesquisa-cupom",
+ "tipo": "pesquisa",
+ "pedido": "Pesquisa, sem alterar código: clientes com cupom de 100% estão pagando R$ 0,01 em vez de R$ 0,00. Descubra a causa e escreva em CAUSA.md o arquivo, a função e a linha responsáveis e por que acontece. Não altere nenhum arquivo .py.",
+ "arquivos": {
+  "pedidos/__init__.py": "",
+  "pedidos/cupom.py": "def aplicar_cupom(subtotal, percentual):\n    desconto = subtotal * percentual / 100\n    if desconto >= subtotal:\n        desconto = subtotal - 0.01   # nunca zera o pedido\n    return round(subtotal - desconto, 2)\n",
+  "pedidos/impostos.py": "def imposto(valor):\n    return round(valor * 0.05, 2)\n",
+  "pedidos/total.py": "from .cupom import aplicar_cupom\nfrom .impostos import imposto\n\n\ndef total_pedido(subtotal, percentual_cupom=0):\n    base = aplicar_cupom(subtotal, percentual_cupom) if percentual_cupom else subtotal\n    return round(base + imposto(base), 2)\n",
+  "tests/test_total.py": "from pedidos.total import total_pedido\n\n\ndef test_sem_cupom():\n    assert total_pedido(100) == 105.0\n\n\ndef test_cupom_10():\n    assert total_pedido(100, 10) == 94.5\n"
+ },
+ "verificador": {
+  "comando": "{python} -m pytest -q -p no:cacheprovider --noconftest -c {vazio} --rootdir . verificador_oculto.py",
+  "arquivos": {
+   "verificador_oculto.py": "import pathlib\n\n\ndef test_causa_aponta_o_lugar():\n    texto = pathlib.Path('CAUSA.md').read_text(encoding='utf-8').lower()\n    assert 'cupom.py' in texto and 'aplicar_cupom' in texto\n    assert '0.01' in texto or '0,01' in texto\n\n\ndef test_codigo_intocado():\n    assert 'desconto = subtotal - 0.01' in pathlib.Path('pedidos/cupom.py').read_text(encoding='utf-8')\n"
+  }
+ },
+ "teste_visivel": "{python} -m pytest -q -p no:cacheprovider tests"
+}

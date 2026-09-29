@@ -1,0 +1,5605 @@
+[
+ {
+  "i": 0,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1385.65
+ },
+ {
+  "i": 0,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "elogio": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "reclamacao": 0.0,
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "informacao": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8014e-05,
+  "latencia_ms": 2130.97
+ },
+ {
+  "i": 0,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 1.0,
+   "informacao": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 1746.74
+ },
+ {
+  "i": 0,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9712e-05,
+  "latencia_ms": 1932.39
+ },
+ {
+  "i": 1,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 4949.46
+ },
+ {
+  "i": 1,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7636e-05,
+  "latencia_ms": 1039.71
+ },
+ {
+  "i": 1,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 3245.95
+ },
+ {
+  "i": 1,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1391.12
+ },
+ {
+  "i": 2,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.0916e-05,
+  "latencia_ms": 1075.22
+ },
+ {
+  "i": 2,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.751e-05,
+  "latencia_ms": 1072.75
+ },
+ {
+  "i": 2,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4894e-05,
+  "latencia_ms": 1240.49
+ },
+ {
+  "i": 2,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9292e-05,
+  "latencia_ms": 1056.09
+ },
+ {
+  "i": 3,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 1071.8
+ },
+ {
+  "i": 3,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "documento": 1.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.835e-05,
+  "latencia_ms": 1570.71
+ },
+ {
+  "i": 3,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.565e-05,
+  "latencia_ms": 1005.83
+ },
+ {
+  "i": 3,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0048e-05,
+  "latencia_ms": 2553.02
+ },
+ {
+  "i": 4,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.121e-05,
+  "latencia_ms": 870.44
+ },
+ {
+  "i": 4,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7804e-05,
+  "latencia_ms": 7546.19
+ },
+ {
+  "i": 4,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 1052.46
+ },
+ {
+  "i": 4,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1041.31
+ },
+ {
+  "i": 5,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1032.41
+ },
+ {
+  "i": 5,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7678e-05,
+  "latencia_ms": 1133.7
+ },
+ {
+  "i": 5,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 2877.74
+ },
+ {
+  "i": 5,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 3362.9
+ },
+ {
+  "i": 6,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1099.01
+ },
+ {
+  "i": 6,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 1053.57
+ },
+ {
+  "i": 6,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 1025.26
+ },
+ {
+  "i": 6,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1033.36
+ },
+ {
+  "i": 7,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2302e-05,
+  "latencia_ms": 1064.62
+ },
+ {
+  "i": 7,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "vacina": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8896e-05,
+  "latencia_ms": 1070.5
+ },
+ {
+  "i": 7,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6238e-05,
+  "latencia_ms": 1380.08
+ },
+ {
+  "i": 7,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0636e-05,
+  "latencia_ms": 5389.14
+ },
+ {
+  "i": 8,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 3619.0
+ },
+ {
+  "i": 8,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "documento": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "agendar": 1.0,
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8014e-05,
+  "latencia_ms": 957.32
+ },
+ {
+  "i": 8,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 972.69
+ },
+ {
+  "i": 8,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9712e-05,
+  "latencia_ms": 1112.37
+ },
+ {
+  "i": 9,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1e-05,
+  "latencia_ms": 1105.13
+ },
+ {
+  "i": 9,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7594e-05,
+  "latencia_ms": 1087.16
+ },
+ {
+  "i": 9,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.502e-05,
+  "latencia_ms": 1086.45
+ },
+ {
+  "i": 9,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9418e-05,
+  "latencia_ms": 1031.93
+ },
+ {
+  "i": 10,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 1045.97
+ },
+ {
+  "i": 10,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7552e-05,
+  "latencia_ms": 1057.36
+ },
+ {
+  "i": 10,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4936e-05,
+  "latencia_ms": 1074.52
+ },
+ {
+  "i": 10,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9334e-05,
+  "latencia_ms": 1764.03
+ },
+ {
+  "i": 11,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1186.21
+ },
+ {
+  "i": 11,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7888e-05,
+  "latencia_ms": 4923.64
+ },
+ {
+  "i": 11,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5272e-05,
+  "latencia_ms": 4499.85
+ },
+ {
+  "i": 11,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1135.99
+ },
+ {
+  "i": 12,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1088.18
+ },
+ {
+  "i": 12,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "remarcar": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "elogio": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "informacao": 0.0,
+   "convenio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1303.67
+ },
+ {
+  "i": 12,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4978e-05,
+  "latencia_ms": 1069.89
+ },
+ {
+  "i": 12,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9376e-05,
+  "latencia_ms": 1103.01
+ },
+ {
+  "i": 13,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1071.25
+ },
+ {
+  "i": 13,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "remarcar": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1101.46
+ },
+ {
+  "i": 13,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5188e-05,
+  "latencia_ms": 1091.61
+ },
+ {
+  "i": 13,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9586e-05,
+  "latencia_ms": 2007.17
+ },
+ {
+  "i": 14,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1066.09
+ },
+ {
+  "i": 14,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1103.37
+ },
+ {
+  "i": 14,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 1085.86
+ },
+ {
+  "i": 14,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1359.89
+ },
+ {
+  "i": 15,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1115.51
+ },
+ {
+  "i": 15,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "elogio": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 963.73
+ },
+ {
+  "i": 15,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 1.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 1571.01
+ },
+ {
+  "i": 15,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9712e-05,
+  "latencia_ms": 1106.27
+ },
+ {
+  "i": 16,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 1.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 2074.88
+ },
+ {
+  "i": 16,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8182e-05,
+  "latencia_ms": 1562.02
+ },
+ {
+  "i": 16,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5482e-05,
+  "latencia_ms": 1033.26
+ },
+ {
+  "i": 16,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.988e-05,
+  "latencia_ms": 3350.01
+ },
+ {
+  "i": 17,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1641.7
+ },
+ {
+  "i": 17,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "documento": 0.0,
+   "convenio": 0.0,
+   "remarcar": 1.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7888e-05,
+  "latencia_ms": 988.84
+ },
+ {
+  "i": 17,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5272e-05,
+  "latencia_ms": 2236.85
+ },
+ {
+  "i": 17,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1179.31
+ },
+ {
+  "i": 18,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 1087.29
+ },
+ {
+  "i": 18,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7552e-05,
+  "latencia_ms": 1025.34
+ },
+ {
+  "i": 18,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 1.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4936e-05,
+  "latencia_ms": 3649.39
+ },
+ {
+  "i": 18,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9334e-05,
+  "latencia_ms": 7961.29
+ },
+ {
+  "i": 19,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1090.75
+ },
+ {
+  "i": 19,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1670.31
+ },
+ {
+  "i": 19,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 1076.38
+ },
+ {
+  "i": 19,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1037.39
+ },
+ {
+  "i": 20,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1261.41
+ },
+ {
+  "i": 20,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "remarcar": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 1.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8056e-05,
+  "latencia_ms": 1024.37
+ },
+ {
+  "i": 20,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5356e-05,
+  "latencia_ms": 1010.74
+ },
+ {
+  "i": 20,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9754e-05,
+  "latencia_ms": 2404.03
+ },
+ {
+  "i": 21,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1086.95
+ },
+ {
+  "i": 21,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "convenio": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7678e-05,
+  "latencia_ms": 1134.08
+ },
+ {
+  "i": 21,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 905.4
+ },
+ {
+  "i": 21,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1334.31
+ },
+ {
+  "i": 22,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1319.97
+ },
+ {
+  "i": 22,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "convenio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7888e-05,
+  "latencia_ms": 3191.78
+ },
+ {
+  "i": 22,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5188e-05,
+  "latencia_ms": 1077.18
+ },
+ {
+  "i": 22,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9586e-05,
+  "latencia_ms": 5683.72
+ },
+ {
+  "i": 23,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 1.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1063.08
+ },
+ {
+  "i": 23,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "elogio": 0.0,
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "convenio": 0.0,
+   "agendar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7846e-05,
+  "latencia_ms": 1989.69
+ },
+ {
+  "i": 23,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.523e-05,
+  "latencia_ms": 1125.58
+ },
+ {
+  "i": 23,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9628e-05,
+  "latencia_ms": 1076.11
+ },
+ {
+  "i": 24,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.72,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.78,
+   "resultado": 0.0,
+   "informacao": 0.22,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1106.45
+ },
+ {
+  "i": 24,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.93,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.06,
+   "agendar": 0.94,
+   "estacionamento": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7846e-05,
+  "latencia_ms": 11025.54
+ },
+ {
+  "i": 24,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.72,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.23,
+   "agendar": 0.77,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 932.02
+ },
+ {
+  "i": 24,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.73,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.21,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.79
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1179.46
+ },
+ {
+  "i": 25,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.7,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.3
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1924e-05,
+  "latencia_ms": 1146.14
+ },
+ {
+  "i": 25,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.46,
+  "probabilidades": {
+   "resultado": 0.48,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.52,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8518e-05,
+  "latencia_ms": 1145.96
+ },
+ {
+  "i": 25,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.6,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.68,
+   "resultado": 0.32
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5776e-05,
+  "latencia_ms": 1131.48
+ },
+ {
+  "i": 25,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.7,
+   "remarcar": 0.0,
+   "resultado": 0.3
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0174e-05,
+  "latencia_ms": 1146.19
+ },
+ {
+  "i": 26,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1798e-05,
+  "latencia_ms": 1127.03
+ },
+ {
+  "i": 26,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "convenio": 0.0,
+   "remarcar": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "estacionamento": 0.0,
+   "documento": 1.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8392e-05,
+  "latencia_ms": 1160.69
+ },
+ {
+  "i": 26,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.565e-05,
+  "latencia_ms": 3242.62
+ },
+ {
+  "i": 26,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0048e-05,
+  "latencia_ms": 1143.77
+ },
+ {
+  "i": 27,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.99,
+   "informacao": 0.01,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1161.13
+ },
+ {
+  "i": 27,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.99,
+   "documento": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.01,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8056e-05,
+  "latencia_ms": 1176.07
+ },
+ {
+  "i": 27,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "agendar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5356e-05,
+  "latencia_ms": 5811.55
+ },
+ {
+  "i": 27,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.99,
+   "informacao": 0.01,
+   "remarcar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9754e-05,
+  "latencia_ms": 1133.87
+ },
+ {
+  "i": 28,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 1120.26
+ },
+ {
+  "i": 28,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8098e-05,
+  "latencia_ms": 1103.75
+ },
+ {
+  "i": 28,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5398e-05,
+  "latencia_ms": 1120.59
+ },
+ {
+  "i": 28,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9796e-05,
+  "latencia_ms": 1991.76
+ },
+ {
+  "i": 29,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.1,
+   "resultado": 0.32,
+   "agendar": 0.58,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 940.74
+ },
+ {
+  "i": 29,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.46,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.12,
+   "agendar": 0.52,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.36
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8098e-05,
+  "latencia_ms": 944.54
+ },
+ {
+  "i": 29,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.5,
+  "probabilidades": {
+   "resultado": 0.28,
+   "informacao": 0.12,
+   "documento": 0.0,
+   "agendar": 0.6,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5398e-05,
+  "latencia_ms": 1132.19
+ },
+ {
+  "i": 29,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.49,
+  "probabilidades": {
+   "agendar": 0.6,
+   "remarcar": 0.0,
+   "resultado": 0.31,
+   "documento": 0.0,
+   "informacao": 0.09
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9796e-05,
+  "latencia_ms": 3511.56
+ },
+ {
+  "i": 30,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.85,
+  "probabilidades": {
+   "informacao": 0.12,
+   "documento": 0.88,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1085.31
+ },
+ {
+  "i": 30,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.94,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.05,
+   "reclamacao": 0.0,
+   "documento": 0.95,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8182e-05,
+  "latencia_ms": 1065.83
+ },
+ {
+  "i": 30,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.86,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.11,
+   "resultado": 0.0,
+   "documento": 0.89,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.544e-05,
+  "latencia_ms": 1059.11
+ },
+ {
+  "i": 30,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.85,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.88,
+   "informacao": 0.12
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9838e-05,
+  "latencia_ms": 1054.77
+ },
+ {
+  "i": 31,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.44,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.55,
+   "remarcar": 0.0,
+   "informacao": 0.45,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1090.49
+ },
+ {
+  "i": 31,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.65,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "informacao": 0.31,
+   "vacina": 0.0,
+   "agendar": 0.6900000000000001,
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.877e-05,
+  "latencia_ms": 1076.22
+ },
+ {
+  "i": 31,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.4,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.52,
+   "informacao": 0.48,
+   "resultado": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6028e-05,
+  "latencia_ms": 1074.72
+ },
+ {
+  "i": 31,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "probabilidades": {
+   "informacao": 0.42,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.58,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0426e-05,
+  "latencia_ms": 1075.62
+ },
+ {
+  "i": 32,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.52,
+  "probabilidades": {
+   "resultado": 0.38,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.62
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1090.83
+ },
+ {
+  "i": 32,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.46,
+  "probabilidades": {
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "vacina": 0.0,
+   "elogio": 0.0,
+   "estacionamento": 0.0,
+   "informacao": 0.52,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 0.48
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8266e-05,
+  "latencia_ms": 1085.57
+ },
+ {
+  "i": 32,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.59,
+  "probabilidades": {
+   "resultado": 0.33,
+   "documento": 0.0,
+   "informacao": 0.67,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5524e-05,
+  "latencia_ms": 2472.03
+ },
+ {
+  "i": 32,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.66,
+   "remarcar": 0.0,
+   "resultado": 0.34
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9922e-05,
+  "latencia_ms": 2483.92
+ },
+ {
+  "i": 33,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.91,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.93,
+   "remarcar": 0.0,
+   "informacao": 0.07,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 1103.59
+ },
+ {
+  "i": 33,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.95,
+  "probabilidades": {
+   "informacao": 0.04,
+   "resultado": 0.0,
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.96,
+   "estacionamento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8308e-05,
+  "latencia_ms": 1121.86
+ },
+ {
+  "i": 33,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.94,
+  "probabilidades": {
+   "agendar": 0.95,
+   "informacao": 0.05,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5566e-05,
+  "latencia_ms": 1110.54
+ },
+ {
+  "i": 33,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.93,
+  "probabilidades": {
+   "agendar": 0.94,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.06
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9964e-05,
+  "latencia_ms": 1112.93
+ },
+ {
+  "i": 34,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.67,
+   "resultado": 0.33
+  },
+  "respondidas": 1,
+  "custo_usd": 2.226e-05,
+  "latencia_ms": 3525.73
+ },
+ {
+  "i": 34,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.47,
+  "probabilidades": {
+   "documento": 0.0,
+   "elogio": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.48,
+   "reclamacao": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.52,
+   "convenio": 0.0,
+   "vacina": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8854e-05,
+  "latencia_ms": 2679.71
+ },
+ {
+  "i": 34,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.54,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.36,
+   "informacao": 0.64,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6112e-05,
+  "latencia_ms": 1070.4
+ },
+ {
+  "i": 34,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.7,
+   "resultado": 0.3,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0552e-05,
+  "latencia_ms": 1071.57
+ },
+ {
+  "i": 35,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1520.96
+ },
+ {
+  "i": 35,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8434e-05,
+  "latencia_ms": 1052.62
+ },
+ {
+  "i": 35,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5692e-05,
+  "latencia_ms": 2598.23
+ },
+ {
+  "i": 35,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 1.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.009e-05,
+  "latencia_ms": 1102.63
+ },
+ {
+  "i": 36,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.73,
+  "probabilidades": {
+   "informacao": 0.22,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.78,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1800.84
+ },
+ {
+  "i": 36,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.9,
+  "probabilidades": {
+   "elogio": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "documento": 0.0,
+   "estacionamento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.91,
+   "convenio": 0.0,
+   "informacao": 0.09,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8434e-05,
+  "latencia_ms": 1112.37
+ },
+ {
+  "i": 36,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.71,
+  "probabilidades": {
+   "agendar": 0.77,
+   "informacao": 0.23,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5692e-05,
+  "latencia_ms": 1100.13
+ },
+ {
+  "i": 36,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.7,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.76,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.24
+  },
+  "respondidas": 16,
+  "custo_usd": 9.009e-05,
+  "latencia_ms": 2493.01
+ },
+ {
+  "i": 37,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.7,
+   "resultado": 0.3,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 924.2
+ },
+ {
+  "i": 37,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.56,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.61,
+   "remarcar": 0.0,
+   "elogio": 0.0,
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "resultado": 0.39,
+   "reclamacao": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8266e-05,
+  "latencia_ms": 1071.64
+ },
+ {
+  "i": 37,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.7,
+   "documento": 0.0,
+   "resultado": 0.3,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5524e-05,
+  "latencia_ms": 1131.38
+ },
+ {
+  "i": 37,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.6,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.32,
+   "documento": 0.0,
+   "informacao": 0.68
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9922e-05,
+  "latencia_ms": 1146.17
+ },
+ {
+  "i": 38,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.78,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.17,
+   "documento": 0.83
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 1146.41
+ },
+ {
+  "i": 38,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.89,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.1,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "documento": 0.9,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8308e-05,
+  "latencia_ms": 2158.62
+ },
+ {
+  "i": 38,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.82,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.85,
+   "informacao": 0.15,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5566e-05,
+  "latencia_ms": 10060.95
+ },
+ {
+  "i": 38,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.77,
+  "probabilidades": {
+   "documento": 0.82,
+   "informacao": 0.18,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9964e-05,
+  "latencia_ms": 3783.08
+ },
+ {
+  "i": 39,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.99,
+   "informacao": 0.01,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2092e-05,
+  "latencia_ms": 1146.43
+ },
+ {
+  "i": 39,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "agendar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8686e-05,
+  "latencia_ms": 1111.13
+ },
+ {
+  "i": 39,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.98,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.02,
+   "agendar": 0.98,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5944e-05,
+  "latencia_ms": 1078.62
+ },
+ {
+  "i": 39,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.98,
+  "probabilidades": {
+   "informacao": 0.02,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "agendar": 0.98,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0342e-05,
+  "latencia_ms": 1223.43
+ },
+ {
+  "i": 40,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.79,
+  "probabilidades": {
+   "remarcar": 0.83,
+   "informacao": 0.17,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1217.27
+ },
+ {
+  "i": 40,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.9,
+  "probabilidades": {
+   "documento": 0.0,
+   "elogio": 0.0,
+   "remarcar": 0.91,
+   "resultado": 0.0,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.09,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.877e-05,
+  "latencia_ms": 980.85
+ },
+ {
+  "i": 40,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.82,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.85,
+   "informacao": 0.15,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.607e-05,
+  "latencia_ms": 997.08
+ },
+ {
+  "i": 40,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.82,
+  "probabilidades": {
+   "remarcar": 0.86,
+   "informacao": 0.14,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0468e-05,
+  "latencia_ms": 3336.65
+ },
+ {
+  "i": 41,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 2580.31
+ },
+ {
+  "i": 41,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 1.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0,
+   "convenio": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8014e-05,
+  "latencia_ms": 1402.83
+ },
+ {
+  "i": 41,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5272e-05,
+  "latencia_ms": 1404.36
+ },
+ {
+  "i": 41,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 962.94
+ },
+ {
+  "i": 42,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.39,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.08,
+   "documento": 0.51,
+   "informacao": 0.41
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 6552.26
+ },
+ {
+  "i": 42,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.54,
+  "probabilidades": {
+   "informacao": 0.31,
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.6,
+   "resultado": 0.09,
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 937.46
+ },
+ {
+  "i": 42,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.43,
+  "probabilidades": {
+   "informacao": 0.36,
+   "resultado": 0.1,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.54
+  },
+  "respondidas": 8,
+  "custo_usd": 5.502e-05,
+  "latencia_ms": 954.35
+ },
+ {
+  "i": 42,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.48,
+  "probabilidades": {
+   "informacao": 0.34,
+   "remarcar": 0.0,
+   "documento": 0.58,
+   "agendar": 0.0,
+   "resultado": 0.08
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9418e-05,
+  "latencia_ms": 1137.87
+ },
+ {
+  "i": 43,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.289e-05,
+  "latencia_ms": 2913.42
+ },
+ {
+  "i": 43,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "elogio": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "vacina": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.9484e-05,
+  "latencia_ms": 1057.5
+ },
+ {
+  "i": 43,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6784e-05,
+  "latencia_ms": 1067.12
+ },
+ {
+  "i": 43,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.114e-05,
+  "latencia_ms": 1094.95
+ },
+ {
+  "i": 44,
+  "arranjo": "k5",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 891.69
+ },
+ {
+  "i": 44,
+  "arranjo": "k10",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "agendar": 0.0,
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.898e-05,
+  "latencia_ms": 1120.36
+ },
+ {
+  "i": 44,
+  "arranjo": "painel8",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 1.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.628e-05,
+  "latencia_ms": 1089.68
+ },
+ {
+  "i": 44,
+  "arranjo": "painel16",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0678e-05,
+  "latencia_ms": 1074.71
+ },
+ {
+  "i": 45,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1082.25
+ },
+ {
+  "i": 45,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "elogio": 0.0,
+   "estacionamento": 0.0,
+   "informacao": 0.0,
+   "remarcar": 1.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8182e-05,
+  "latencia_ms": 1126.78
+ },
+ {
+  "i": 45,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5524e-05,
+  "latencia_ms": 1134.19
+ },
+ {
+  "i": 45,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9922e-05,
+  "latencia_ms": 1569.38
+ },
+ {
+  "i": 46,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.57,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.66,
+   "agendar": 0.34
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1100.6
+ },
+ {
+  "i": 46,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.59,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "agendar": 0.36,
+   "resultado": 0.64,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7846e-05,
+  "latencia_ms": 2001.89
+ },
+ {
+  "i": 46,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.59,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.68,
+   "agendar": 0.32,
+   "remarcar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5272e-05,
+  "latencia_ms": 1093.71
+ },
+ {
+  "i": 46,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.57,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.34,
+   "resultado": 0.66,
+   "informacao": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1106.71
+ },
+ {
+  "i": 47,
+  "arranjo": "k5",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 1.0,
+   "documento": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.163e-05,
+  "latencia_ms": 1131.16
+ },
+ {
+  "i": 47,
+  "arranjo": "k10",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0,
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8224e-05,
+  "latencia_ms": 1801.46
+ },
+ {
+  "i": 47,
+  "arranjo": "painel8",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 1.0,
+   "remarcar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5482e-05,
+  "latencia_ms": 3158.37
+ },
+ {
+  "i": 47,
+  "arranjo": "painel16",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 1.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9922e-05,
+  "latencia_ms": 1089.12
+ },
+ {
+  "i": 48,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": null,
+  "confianca": null,
+  "probabilidades": null,
+  "respondidas": 0,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 48,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "convenio": 0.0,
+   "reclamacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8266e-05,
+  "latencia_ms": 6116.74
+ },
+ {
+  "i": 48,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5692e-05,
+  "latencia_ms": 1084.15
+ },
+ {
+  "i": 48,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.009e-05,
+  "latencia_ms": 2944.8
+ },
+ {
+  "i": 49,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "informacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.247e-05,
+  "latencia_ms": 1133.94
+ },
+ {
+  "i": 49,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.9064e-05,
+  "latencia_ms": 1164.67
+ },
+ {
+  "i": 49,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6406e-05,
+  "latencia_ms": 4799.6
+ },
+ {
+  "i": 49,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.0804e-05,
+  "latencia_ms": 2323.45
+ },
+ {
+  "i": 50,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 1114.75
+ },
+ {
+  "i": 50,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.898e-05,
+  "latencia_ms": 1098.45
+ },
+ {
+  "i": 50,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.6322e-05,
+  "latencia_ms": 1066.85
+ },
+ {
+  "i": 50,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 9.072e-05,
+  "latencia_ms": 884.89
+ },
+ {
+  "i": 51,
+  "arranjo": "k5",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1384.12
+ },
+ {
+  "i": 51,
+  "arranjo": "k10",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "resultado": 1.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "convenio": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8056e-05,
+  "latencia_ms": 949.19
+ },
+ {
+  "i": 51,
+  "arranjo": "painel8",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.544e-05,
+  "latencia_ms": 942.57
+ },
+ {
+  "i": 51,
+  "arranjo": "painel16",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9796e-05,
+  "latencia_ms": 1131.73
+ },
+ {
+  "i": 52,
+  "arranjo": "k5",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 3844.72
+ },
+ {
+  "i": 52,
+  "arranjo": "k10",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "remarcar": 1.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 1112.53
+ },
+ {
+  "i": 52,
+  "arranjo": "painel8",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5272e-05,
+  "latencia_ms": 1096.12
+ },
+ {
+  "i": 52,
+  "arranjo": "painel16",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1081.24
+ },
+ {
+  "i": 53,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.04,
+   "remarcar": 0.02,
+   "informacao": 0.94,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 1111.63
+ },
+ {
+  "i": 53,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.57,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "convenio": 0.0,
+   "agendar": 0.11,
+   "elogio": 0.25,
+   "informacao": 0.62,
+   "remarcar": 0.02,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.835e-05,
+  "latencia_ms": 1119.29
+ },
+ {
+  "i": 53,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.89,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.06,
+   "remarcar": 0.02,
+   "informacao": 0.91,
+   "documento": 0.01
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5608e-05,
+  "latencia_ms": 2931.07
+ },
+ {
+  "i": 53,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92,
+  "probabilidades": {
+   "remarcar": 0.01,
+   "resultado": 0.0,
+   "agendar": 0.04,
+   "documento": 0.01,
+   "informacao": 0.94
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9964e-05,
+  "latencia_ms": 2710.57
+ },
+ {
+  "i": 54,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 958.63
+ },
+ {
+  "i": 54,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "convenio": 0.0,
+   "agendar": 0.0,
+   "estacionamento": 0.0,
+   "remarcar": 1.0,
+   "vacina": 0.0,
+   "documento": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7678e-05,
+  "latencia_ms": 1136.92
+ },
+ {
+  "i": 54,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 1.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 1141.41
+ },
+ {
+  "i": 54,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 2481.95
+ },
+ {
+  "i": 55,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.84,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.88,
+   "remarcar": 0.0,
+   "informacao": 0.12,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 1324.54
+ },
+ {
+  "i": 55,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.94,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.05,
+   "elogio": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.95
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7636e-05,
+  "latencia_ms": 1155.27
+ },
+ {
+  "i": 55,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.84,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "resultado": 0.87,
+   "agendar": 0.0,
+   "informacao": 0.13
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4978e-05,
+  "latencia_ms": 1151.16
+ },
+ {
+  "i": 55,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.8,
+  "probabilidades": {
+   "informacao": 0.16,
+   "resultado": 0.84,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9376e-05,
+  "latencia_ms": 1189.65
+ },
+ {
+  "i": 56,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.55,
+  "probabilidades": {
+   "informacao": 0.64,
+   "documento": 0.36,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 944.91
+ },
+ {
+  "i": 56,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "elogio",
+  "confianca": 0.36,
+  "probabilidades": {
+   "elogio": 0.43,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "documento": 0.39,
+   "informacao": 0.18,
+   "convenio": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 933.3
+ },
+ {
+  "i": 56,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.69,
+   "remarcar": 0.0,
+   "documento": 0.31
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 2389.39
+ },
+ {
+  "i": 56,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.51,
+  "probabilidades": {
+   "documento": 0.39,
+   "informacao": 0.61,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1175.37
+ },
+ {
+  "i": 57,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.26,
+  "probabilidades": {
+   "documento": 0.0,
+   "agendar": 0.42,
+   "resultado": 0.0,
+   "informacao": 0.4,
+   "remarcar": 0.18
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1129.29
+ },
+ {
+  "i": 57,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.42,
+  "probabilidades": {
+   "elogio": 0.06,
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.49,
+   "remarcar": 0.15,
+   "resultado": 0.0,
+   "informacao": 0.3,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7846e-05,
+  "latencia_ms": 1102.41
+ },
+ {
+  "i": 57,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.31,
+  "probabilidades": {
+   "agendar": 0.39,
+   "documento": 0.0,
+   "informacao": 0.45,
+   "remarcar": 0.16,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5146e-05,
+  "latencia_ms": 2393.5
+ },
+ {
+  "i": 57,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.32,
+  "probabilidades": {
+   "agendar": 0.41,
+   "informacao": 0.46,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.13
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 6410.87
+ },
+ {
+  "i": 58,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "probabilidades": {
+   "remarcar": 0.81,
+   "informacao": 0.19,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 1052.56
+ },
+ {
+  "i": 58,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.86,
+  "probabilidades": {
+   "convenio": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.88,
+   "estacionamento": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.12
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7636e-05,
+  "latencia_ms": 1000.79
+ },
+ {
+  "i": 58,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.78,
+  "probabilidades": {
+   "resultado": 0.0,
+   "informacao": 0.17,
+   "remarcar": 0.83,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.502e-05,
+  "latencia_ms": 1219.58
+ },
+ {
+  "i": 58,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.72,
+  "probabilidades": {
+   "informacao": 0.22,
+   "remarcar": 0.78,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9418e-05,
+  "latencia_ms": 1236.36
+ },
+ {
+  "i": 59,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.71,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 0.23,
+   "agendar": 0.0,
+   "resultado": 0.77,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1532.46
+ },
+ {
+  "i": 59,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.87,
+  "probabilidades": {
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "informacao": 0.1,
+   "elogio": 0.02,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.88,
+   "remarcar": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.8014e-05,
+  "latencia_ms": 3559.87
+ },
+ {
+  "i": 59,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.72,
+  "probabilidades": {
+   "informacao": 0.22,
+   "resultado": 0.78,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 1135.3
+ },
+ {
+  "i": 59,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.83,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.87,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.13
+  },
+  "respondidas": 16,
+  "custo_usd": 8.967e-05,
+  "latencia_ms": 1773.23
+ },
+ {
+  "i": 60,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.42,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.46,
+   "informacao": 0.54
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1084.07
+ },
+ {
+  "i": 60,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.38,
+  "probabilidades": {
+   "documento": 0.45,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.4,
+   "informacao": 0.15,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7888e-05,
+  "latencia_ms": 1073.1
+ },
+ {
+  "i": 60,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.48,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.41,
+   "informacao": 0.59,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5188e-05,
+  "latencia_ms": 1954.68
+ },
+ {
+  "i": 60,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.45,
+  "probabilidades": {
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "documento": 0.44,
+   "agendar": 0.0,
+   "informacao": 0.56
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9544e-05,
+  "latencia_ms": 1120.69
+ },
+ {
+  "i": 61,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 1.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2235.23
+ },
+ {
+  "i": 61,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.44,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "informacao": 0.5,
+   "reclamacao": 0.0,
+   "agendar": 0.01,
+   "elogio": 0.49
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 2481.37
+ },
+ {
+  "i": 61,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 1.0,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.502e-05,
+  "latencia_ms": 2464.68
+ },
+ {
+  "i": 61,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": null,
+  "confianca": null,
+  "probabilidades": null,
+  "respondidas": 0,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 62,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2704.17
+ },
+ {
+  "i": 62,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "vacina": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "informacao": 0.0,
+   "elogio": 0.0,
+   "remarcar": 1.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 892.36
+ },
+ {
+  "i": 62,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 1.0,
+   "informacao": 0.0,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 2217.96
+ },
+ {
+  "i": 62,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "probabilidades": {
+   "informacao": 0.0,
+   "remarcar": 1.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1101.71
+ },
+ {
+  "i": 63,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.98,
+  "probabilidades": {
+   "resultado": 0.99,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.01
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2044.11
+ },
+ {
+  "i": 63,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "probabilidades": {
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "resultado": 1.0,
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 4149.27
+ },
+ {
+  "i": 63,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "probabilidades": {
+   "informacao": 0.0,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 1151.92
+ },
+ {
+  "i": 63,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 1.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1104.9
+ },
+ {
+  "i": 64,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.52,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.39,
+   "informacao": 0.61,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1137.81
+ },
+ {
+  "i": 64,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "elogio",
+  "confianca": 0.48,
+  "probabilidades": {
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "documento": 0.38,
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "elogio": 0.54,
+   "remarcar": 0.0,
+   "informacao": 0.08
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 1561.89
+ },
+ {
+  "i": 64,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.52,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.62,
+   "documento": 0.38
+  },
+  "respondidas": 8,
+  "custo_usd": 5.523e-05,
+  "latencia_ms": 1088.81
+ },
+ {
+  "i": 64,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.41,
+  "probabilidades": {
+   "informacao": 0.53,
+   "remarcar": 0.0,
+   "documento": 0.47,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9586e-05,
+  "latencia_ms": 1342.35
+ },
+ {
+  "i": 65,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.54,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.37,
+   "resultado": 0.0,
+   "agendar": 0.63
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2780.79
+ },
+ {
+  "i": 65,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.62,
+  "probabilidades": {
+   "convenio": 0.0,
+   "estacionamento": 0.0,
+   "informacao": 0.34,
+   "elogio": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.66,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 917.5
+ },
+ {
+  "i": 65,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.55,
+  "probabilidades": {
+   "informacao": 0.36,
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "agendar": 0.64,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 4698.11
+ },
+ {
+  "i": 65,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.58,
+   "documento": 0.0,
+   "informacao": 0.42,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1127.31
+ },
+ {
+  "i": 66,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.63,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.71,
+   "agendar": 0.0,
+   "informacao": 0.29,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1137.17
+ },
+ {
+  "i": 66,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.69,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "informacao": 0.21,
+   "reclamacao": 0.0,
+   "remarcar": 0.72,
+   "resultado": 0.0,
+   "elogio": 0.07,
+   "documento": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 5189.28
+ },
+ {
+  "i": 66,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.57,
+  "probabilidades": {
+   "informacao": 0.34,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "remarcar": 0.66,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5314e-05,
+  "latencia_ms": 1151.3
+ },
+ {
+  "i": 66,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.55,
+  "probabilidades": {
+   "agendar": 0.0,
+   "remarcar": 0.64,
+   "documento": 0.0,
+   "informacao": 0.36,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9712e-05,
+  "latencia_ms": 1149.97
+ },
+ {
+  "i": 67,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.77,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.18,
+   "resultado": 0.8200000000000001,
+   "remarcar": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1182.14
+ },
+ {
+  "i": 67,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.81,
+  "probabilidades": {
+   "agendar": 0.0,
+   "elogio": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.83,
+   "estacionamento": 0.0,
+   "reclamacao": 0.0,
+   "informacao": 0.17,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1136.76
+ },
+ {
+  "i": 67,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.79,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.84,
+   "remarcar": 0.0,
+   "informacao": 0.16,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5146e-05,
+  "latencia_ms": 1978.84
+ },
+ {
+  "i": 67,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.76,
+  "probabilidades": {
+   "resultado": 0.81,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.19,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9544e-05,
+  "latencia_ms": 1056.35
+ },
+ {
+  "i": 68,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.77,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.18,
+   "documento": 0.82,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1023.69
+ },
+ {
+  "i": 68,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.77,
+  "probabilidades": {
+   "informacao": 0.06,
+   "estacionamento": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.15,
+   "vacina": 0.0,
+   "remarcar": 0.0,
+   "convenio": 0.0,
+   "documento": 0.79,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7972e-05,
+  "latencia_ms": 1034.5
+ },
+ {
+  "i": 68,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.85,
+  "probabilidades": {
+   "informacao": 0.12,
+   "remarcar": 0.0,
+   "documento": 0.88,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.523e-05,
+  "latencia_ms": 1316.89
+ },
+ {
+  "i": 68,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.78,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 0.17,
+   "resultado": 0.0,
+   "documento": 0.83,
+   "remarcar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9586e-05,
+  "latencia_ms": 1745.2
+ },
+ {
+  "i": 69,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.41,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.47,
+   "informacao": 0.53
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1129.68
+ },
+ {
+  "i": 69,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.54,
+  "probabilidades": {
+   "convenio": 0.0,
+   "documento": 0.0,
+   "agendar": 0.59,
+   "resultado": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "vacina": 0.0,
+   "reclamacao": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.41
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7804e-05,
+  "latencia_ms": 919.69
+ },
+ {
+  "i": 69,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.4,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.52,
+   "informacao": 0.48,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5062e-05,
+  "latencia_ms": 3603.47
+ },
+ {
+  "i": 69,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.4,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.47,
+   "resultado": 0.0,
+   "agendar": 0.53
+  },
+  "respondidas": 16,
+  "custo_usd": 8.946e-05,
+  "latencia_ms": 1330.6
+ },
+ {
+  "i": 70,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 1.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2070.65
+ },
+ {
+  "i": 70,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99,
+  "probabilidades": {
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "informacao": 1.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 2345.03
+ },
+ {
+  "i": 70,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "informacao": 1.0,
+   "remarcar": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 3351.71
+ },
+ {
+  "i": 70,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "documento": 0.0,
+   "informacao": 1.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1118.11
+ },
+ {
+  "i": 71,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.0,
+   "informacao": 1.0,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 3889.34
+ },
+ {
+  "i": 71,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "elogio",
+  "confianca": 0.58,
+  "probabilidades": {
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.37,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "elogio": 0.63,
+   "remarcar": 0.0,
+   "estacionamento": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7594e-05,
+  "latencia_ms": 1198.37
+ },
+ {
+  "i": 71,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 1.0,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.4894e-05,
+  "latencia_ms": 995.05
+ },
+ {
+  "i": 71,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "probabilidades": {
+   "agendar": 0.0,
+   "informacao": 1.0,
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "documento": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.925e-05,
+  "latencia_ms": 1036.43
+ },
+ {
+  "i": 72,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.97,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "informacao": 0.02,
+   "documento": 0.98,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1760.05
+ },
+ {
+  "i": 72,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.99,
+  "probabilidades": {
+   "agendar": 0.0,
+   "vacina": 0.0,
+   "resultado": 0.0,
+   "documento": 0.99,
+   "reclamacao": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.0,
+   "informacao": 0.01,
+   "remarcar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7972e-05,
+  "latencia_ms": 1747.97
+ },
+ {
+  "i": 72,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.97,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.02,
+   "documento": 0.98,
+   "resultado": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.523e-05,
+  "latencia_ms": 1022.35
+ },
+ {
+  "i": 72,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": null,
+  "confianca": null,
+  "probabilidades": null,
+  "respondidas": 0,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 73,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.87,
+  "probabilidades": {
+   "resultado": 0.0,
+   "agendar": 0.07,
+   "remarcar": 0.04,
+   "documento": 0.0,
+   "informacao": 0.89
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 981.5
+ },
+ {
+  "i": 73,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.53,
+  "probabilidades": {
+   "estacionamento": 0.0,
+   "vacina": 0.0,
+   "documento": 0.0,
+   "informacao": 0.59,
+   "agendar": 0.07,
+   "remarcar": 0.04,
+   "resultado": 0.0,
+   "reclamacao": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.3
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 1167.61
+ },
+ {
+  "i": 73,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92,
+  "probabilidades": {
+   "agendar": 0.05,
+   "informacao": 0.9299999999999999,
+   "resultado": 0.0,
+   "remarcar": 0.02,
+   "documento": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 1678.64
+ },
+ {
+  "i": 73,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.9,
+  "probabilidades": {
+   "remarcar": 0.03,
+   "informacao": 0.92,
+   "resultado": 0.0,
+   "documento": 0.0,
+   "agendar": 0.05
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9418e-05,
+  "latencia_ms": 1182.24
+ },
+ {
+  "i": 74,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.62,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.0,
+   "remarcar": 0.69,
+   "informacao": 0.31,
+   "agendar": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2513.77
+ },
+ {
+  "i": 74,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "probabilidades": {
+   "informacao": 0.21,
+   "documento": 0.0,
+   "estacionamento": 0.0,
+   "convenio": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "remarcar": 0.79,
+   "resultado": 0.0,
+   "elogio": 0.0,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.7762e-05,
+  "latencia_ms": 2028.52
+ },
+ {
+  "i": 74,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.63,
+  "probabilidades": {
+   "informacao": 0.29,
+   "remarcar": 0.71,
+   "documento": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5146e-05,
+  "latencia_ms": 2109.69
+ },
+ {
+  "i": 74,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.58,
+  "probabilidades": {
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.34,
+   "remarcar": 0.66,
+   "resultado": 0.0
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9544e-05,
+  "latencia_ms": 964.1
+ },
+ {
+  "i": 75,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.72,
+  "probabilidades": {
+   "resultado": 0.78,
+   "documento": 0.0,
+   "remarcar": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.22
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1007.63
+ },
+ {
+  "i": 75,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.88,
+  "probabilidades": {
+   "convenio": 0.0,
+   "informacao": 0.1,
+   "elogio": 0.0,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.9,
+   "documento": 0.0,
+   "agendar": 0.0,
+   "reclamacao": 0.0,
+   "vacina": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.772e-05,
+  "latencia_ms": 1950.06
+ },
+ {
+  "i": 75,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.78,
+  "probabilidades": {
+   "documento": 0.0,
+   "resultado": 0.82,
+   "informacao": 0.18,
+   "agendar": 0.0,
+   "remarcar": 0.0
+  },
+  "respondidas": 8,
+  "custo_usd": 5.5104e-05,
+  "latencia_ms": 1151.75
+ },
+ {
+  "i": 75,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.77,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.82,
+   "agendar": 0.0,
+   "documento": 0.0,
+   "informacao": 0.18
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9502e-05,
+  "latencia_ms": 1963.63
+ },
+ {
+  "i": 76,
+  "arranjo": "k5",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.48,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "documento": 0.41,
+   "informacao": 0.59,
+   "agendar": 0.0,
+   "resultado": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1110.73
+ },
+ {
+  "i": 76,
+  "arranjo": "k10",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.43,
+  "probabilidades": {
+   "documento": 0.5,
+   "remarcar": 0.0,
+   "estacionamento": 0.0,
+   "resultado": 0.0,
+   "vacina": 0.0,
+   "agendar": 0.0,
+   "convenio": 0.0,
+   "elogio": 0.38,
+   "informacao": 0.12,
+   "reclamacao": 0.0
+  },
+  "respondidas": 1,
+  "custo_usd": 2.793e-05,
+  "latencia_ms": 1101.7
+ },
+ {
+  "i": 76,
+  "arranjo": "painel8",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.38,
+  "probabilidades": {
+   "resultado": 0.0,
+   "documento": 0.49,
+   "agendar": 0.0,
+   "remarcar": 0.0,
+   "informacao": 0.51
+  },
+  "respondidas": 8,
+  "custo_usd": 5.523e-05,
+  "latencia_ms": 973.32
+ },
+ {
+  "i": 76,
+  "arranjo": "painel16",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.44,
+  "probabilidades": {
+   "remarcar": 0.0,
+   "resultado": 0.0,
+   "agendar": 0.0,
+   "informacao": 0.55,
+   "documento": 0.45
+  },
+  "respondidas": 16,
+  "custo_usd": 8.9586e-05,
+  "latencia_ms": 1259.64
+ }
+]

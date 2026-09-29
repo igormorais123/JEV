@@ -5,6 +5,9 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 
 ## A
 
+- `abertos` (função) — [hermes/jev_hermes/ciclo.py:87](../hermes/jev_hermes/ciclo.py#L87) · usado em 1: agenda.py
+- `_academico` (função) — [hermes/tests/test_recortes.py:136](../hermes/tests/test_recortes.py#L136)
+- `Acao` (classe) — [hermes/jev_hermes/ciclo.py:43](../hermes/jev_hermes/ciclo.py#L43) · usado em 2: agenda.py, agentes.py
 - `aceitacao` (função) — [executor/run_e9_prevalencia.py:104](../executor/run_e9_prevalencia.py#L104) · usado em 1: test_achados_revisao4.py
 - `_acertos_por_arranjo` (função) — [laboratorio/auditoria.py:114](../laboratorio/auditoria.py#L114)
 - `AchadoP1Metricas` (classe) — [executor/tests/test_achados_revisao.py:109](../executor/tests/test_achados_revisao.py#L109)
@@ -22,25 +25,49 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `AchadosP1.test_liquidacao_sem_model_usa_o_reservado_e_nao_o_do_braco` (método) — [executor/tests/test_achados_revisao.py:60](../executor/tests/test_achados_revisao.py#L60)
 - `AchadosP1.test_sem_max_completion_tokens_nao_reserva` (método) — [executor/tests/test_achados_revisao.py:95](../executor/tests/test_achados_revisao.py#L95)
 - `AchadosP1.test_taxa_negativa_nao_precifica` (método) — [executor/tests/test_achados_revisao.py:100](../executor/tests/test_achados_revisao.py#L100)
-- `active_runtime` (função) — [executor/shared.py:30](../executor/shared.py#L30) · usado em 1: jev_mcp.py
+- `acompanhamentos_vencidos` (função) — [hermes/jev_hermes/triagem.py:118](../hermes/jev_hermes/triagem.py#L118) · usado em 1: jev_rotina_caixa_vigiada.py
+- `activate` (função) — [integracao/hooks/jev_workflow.py:9](../integracao/hooks/jev_workflow.py#L9) · usado em 1: test_workflow.py
+- `active_runtime` (função) — [executor/shared.py:30](../executor/shared.py#L30) · usado em 4: apoio.py, ponte.py, jev_mcp.py, test_runtime_profile.py
 - `activity` (função) — [lab/dashboard.js:54](../lab/dashboard.js#L54)
 - `_acuracia` (função) — [laboratorio/h100/provas.py:40](../laboratorio/h100/provas.py#L40)
 - `acuracia` (função) — [laboratorio/r1_r3_estresse.py:170](../laboratorio/r1_r3_estresse.py#L170)
 - `acuracia` (função) — [laboratorio/r4_r7_limites.py:207](../laboratorio/r4_r7_limites.py#L207)
 - `acuracia_por_classe` (função) — [executor/run_e9_prevalencia.py:91](../executor/run_e9_prevalencia.py#L91) · usado em 1: test_achados_revisao4.py
+- `add` (função) — [integracao/harness/fixtures/exemplo.py:8](../integracao/harness/fixtures/exemplo.py#L8)
 - `adjudicado` (função) — [executor/gabarito.py:60](../executor/gabarito.py#L60) · usado em 5: erro_grave.py, run_e12_replicacao.py, run_e9_prevalencia.py, test_coerencia_placar.py, r0_calibracao.py
+- `aferir` (função) — [hermes/jev_hermes/aferir_rota.py:73](../hermes/jev_hermes/aferir_rota.py#L73) · usado em 2: medir.py, test_recortes.py
 - `afirmacoes` (função) — [laboratorio/auditoria.py:463](../laboratorio/auditoria.py#L463)
 - `afirmacoes` (função) — [laboratorio/gerar_dossie.py:60](../laboratorio/gerar_dossie.py#L60)
-- `agendar` (função) — [integracao/instalar.py:270](../integracao/instalar.py#L270)
-- `_agora` (função) — [hermes/jev_hermes/nucleo.py:160](../hermes/jev_hermes/nucleo.py#L160) · usado em 3: camadas.py, medir.py, portao.py
+- `AgendaFalsa` (classe) — [hermes/tests/test_fluxos.py:124](../hermes/tests/test_fluxos.py#L124)
+- `AgendaFalsa.criar` (método) — [hermes/tests/test_fluxos.py:135](../hermes/tests/test_fluxos.py#L135)
+- `AgendaFalsa.do_ciclo` (método) — [hermes/tests/test_fluxos.py:141](../hermes/tests/test_fluxos.py#L141)
+- `AgendaFalsa.ler` (método) — [hermes/tests/test_fluxos.py:147](../hermes/tests/test_fluxos.py#L147)
+- `AgendaFalsa.ocupados` (método) — [hermes/tests/test_fluxos.py:132](../hermes/tests/test_fluxos.py#L132)
+- `agendar` (função) — [hermes/jev_hermes/agenda.py:275](../hermes/jev_hermes/agenda.py#L275)
+- `agendar` (função) — [integracao/instalar.py:283](../integracao/instalar.py#L283)
+- `AgentError` (classe) — [integracao/harness/agent_layer.py:14](../integracao/harness/agent_layer.py#L14) · usado em 3: agent_client.py, painel.py, test_agents.py
+- `AgentTests` (classe) — [integracao/harness/test_agents.py:18](../integracao/harness/test_agents.py#L18)
+- `AgentTests.payload` (método) — [integracao/harness/test_agents.py:31](../integracao/harness/test_agents.py#L31)
+- `AgentTests.setUp` (método) — [integracao/harness/test_agents.py:19](../integracao/harness/test_agents.py#L19)
+- `AgentTests.tearDown` (método) — [integracao/harness/test_agents.py:27](../integracao/harness/test_agents.py#L27)
+- `AgentTests.test_compact_status_logs_pagination_and_old_job_lookup` (método) — [integracao/harness/test_agents.py:77](../integracao/harness/test_agents.py#L77)
+- `AgentTests.test_concurrent_duplicate_only_starts_one_job_and_survives_restart` (método) — [integracao/harness/test_agents.py:33](../integracao/harness/test_agents.py#L33)
+- `AgentTests.test_mcp_returns_structured_errors_and_resource` (método) — [integracao/harness/test_agents.py:89](../integracao/harness/test_agents.py#L89)
+- `AgentTests.test_paid_replay_key_returns_original_when_wallet_later_blocked` (método) — [integracao/harness/test_agents.py:52](../integracao/harness/test_agents.py#L52)
+- `AgentTests.test_pause_respected_and_cancel_is_idempotent` (método) — [integracao/harness/test_agents.py:65](../integracao/harness/test_agents.py#L65)
+- `AgentTests.test_preview_does_not_start_and_strict_schema_rejects_injection` (método) — [integracao/harness/test_agents.py:45](../integracao/harness/test_agents.py#L45)
+- `AgentTests.test_restart_marks_interruption_without_reexecuting` (método) — [integracao/harness/test_agents.py:101](../integracao/harness/test_agents.py#L101)
+- `_agora` (função) — [hermes/jev_hermes/nucleo.py:176](../hermes/jev_hermes/nucleo.py#L176) · usado em 10: aferir_rota.py, avaliacao.py, bancada.py, camadas.py, ciclo.py, medir.py …
 - `agrupar` (função) — [integracao/camadas/busca.py:70](../integracao/camadas/busca.py#L70) · usado em 1: test_camadas.py
+- `agrupar_secoes` (função) — [hermes/jev_hermes/recortes.py:112](../hermes/jev_hermes/recortes.py#L112)
 - `amostra` (função) — [laboratorio/r16_guarda_de_comando.py:108](../laboratorio/r16_guarda_de_comando.py#L108)
 - `_analisar` (função) — [executor/run_e11_desempate.py:211](../executor/run_e11_desempate.py#L211)
 - `analisar` (função) — [executor/run_e12_replicacao.py:446](../executor/run_e12_replicacao.py#L446)
 - `analisar` (função) — [integracao/camadas/busca.py:138](../integracao/camadas/busca.py#L138) · usado em 2: jev_busca.py, test_camadas.py
-- `analisar` (função) — [integracao/camadas/leitura.py:54](../integracao/camadas/leitura.py#L54) · usado em 2: jev_leitura.py, test_camadas.py
-- `analisar` (função) — [integracao/camadas/saida.py:46](../integracao/camadas/saida.py#L46) · usado em 2: jev_saida.py, test_camadas.py
+- `analisar` (função) — [integracao/camadas/leitura.py:59](../integracao/camadas/leitura.py#L59) · usado em 4: shell.py, jev_leitura.py, test_camadas.py, test_shell.py
+- `analisar` (função) — [integracao/camadas/saida.py:53](../integracao/camadas/saida.py#L53) · usado em 2: jev_saida.py, test_camadas.py
 - `analisar` (função) — [integracao/camadas/sentinela.py:41](../integracao/camadas/sentinela.py#L41) · usado em 3: jev_prompt_router.py, jev_sentinela.py, test_camadas.py
+- `analisar` (função) — [integracao/camadas/shell.py:145](../integracao/camadas/shell.py#L145) · usado em 2: jev_leitura_shell.py, test_shell.py
 - `analisar` (função) — [laboratorio/r18_escala.py:278](../laboratorio/r18_escala.py#L278)
 - `analisar` (função) — [laboratorio/r20_k_adaptativo.py:212](../laboratorio/r20_k_adaptativo.py#L212)
 - `analisar` (função) — [laboratorio/r22_defesas.py:129](../laboratorio/r22_defesas.py#L129)
@@ -49,25 +76,40 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `analisar` (função) — [laboratorio/r25_terceiro_dominio.py:140](../laboratorio/r25_terceiro_dominio.py#L140)
 - `analisar` (função) — [laboratorio/r26_dois_trechos.py:168](../laboratorio/r26_dois_trechos.py#L168)
 - `analisar` (função) — [laboratorio/r27_integracao.py:95](../laboratorio/r27_integracao.py#L95)
+- `analisar` (função) — [laboratorio/r28_ato_de_fala.py:149](../laboratorio/r28_ato_de_fala.py#L149)
+- `analisar` (função) — [laboratorio/r29_o_que_carrega_a_decisao.py:97](../laboratorio/r29_o_que_carrega_a_decisao.py#L97)
 - `analisar_calibracao` (função) — [executor/analise.py:136](../executor/analise.py#L136)
 - `analisar_e1` (função) — [executor/analise.py:78](../executor/analise.py#L78)
 - `analisar_e3` (função) — [executor/analise.py:86](../executor/analise.py#L86)
 - `analisar_posicao_e2b` (função) — [executor/analise.py:94](../executor/analise.py#L94)
 - `AnaliseNaoApagaCalibracaoDeConfirmacao` (classe) — [executor/tests/test_achados_revisao4.py:94](../executor/tests/test_achados_revisao4.py#L94)
 - `AnaliseNaoApagaCalibracaoDeConfirmacao.test_main_grava_confirmacao_quando_o_relatorio_existe` (método) — [executor/tests/test_achados_revisao4.py:97](../executor/tests/test_achados_revisao4.py#L97)
+- `anexar` (função) — [integracao/gateway/conciliar.py:119](../integracao/gateway/conciliar.py#L119)
+- `anexos_vermelhos` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:139](../hermes/rotinas/jev_rotina_painel_manha.py#L139)
 - `ao_vivo` (função) — [laboratorio/caixa.py:23](../laboratorio/caixa.py#L23) · usado em 2: auditoria.py, conciliar_caixa.py
+- `_apagar` (função) — [hermes/jev_hermes/anexos.py:117](../hermes/jev_hermes/anexos.py#L117)
 - `apenas_jev` (função) — [laboratorio/h100/dados.py:165](../laboratorio/h100/dados.py#L165) · usado em 2: provas.py, respostas.py
-- `arquivo_com_alvo` (função) — [integracao/tests/test_camadas.py:42](../integracao/tests/test_camadas.py#L42)
+- `api` (função) — [integracao/harness/web/app.js:8](../integracao/harness/web/app.js#L8)
+- `arq_agentes` (função) — [hermes/jev_hermes/bancada.py:78](../hermes/jev_hermes/bancada.py#L78)
+- `arq_avaliacao` (função) — [hermes/jev_hermes/bancada.py:89](../hermes/jev_hermes/bancada.py#L89)
+- `arquivo_com_alvo` (função) — [integracao/tests/test_camadas.py:42](../integracao/tests/test_camadas.py#L42) · usado em 1: test_shell.py
 - `arquivo_da_sessao` (função) — [integracao/camadas/nucleo.py:104](../integracao/camadas/nucleo.py#L104) · usado em 1: test_camadas.py
-- `_arquivo_numerado` (função) — [hermes/tests/test_jev_hermes.py:117](../hermes/tests/test_jev_hermes.py#L117)
+- `_arquivo_numerado` (função) — [hermes/tests/test_jev_hermes.py:116](../hermes/tests/test_jev_hermes.py#L116)
+- `arquivos` (função) — [hermes/infra/conferir_sincronia.py:51](../hermes/infra/conferir_sincronia.py#L51)
 - `artefato` (função) — [laboratorio/h100/dados.py:31](../laboratorio/h100/dados.py#L31) · usado em 2: provas.py, respostas.py
 - `_artefato` (função) — [laboratorio/q100/respostas.py:116](../laboratorio/q100/respostas.py#L116)
 - `artifactURL` (função) — [lab/dashboard.js:97](../lab/dashboard.js#L97)
-- `ask` (função) — [executor/shared.py:152](../executor/shared.py#L152) · usado em 5: assist.py, run_e15.py, test_shared.py, cliente.py, nucleo.py
+- `ask` (função) — [executor/shared.py:152](../executor/shared.py#L152) · usado em 12: assist.py, run_e15.py, test_shared.py, apoio.py, conciliar.py, ponte.py …
 - `assert` (função) — [lab/dashboard.js:156](../lab/dashboard.js#L156)
 - `assertRunUpdate` (função) — [lab/dashboard.js:189](../lab/dashboard.js#L189)
-- `_ativas` (função) — [hermes/plugin/jev-camadas/__init__.py:28](../hermes/plugin/jev-camadas/__init__.py#L28)
+- `_assinatura` (função) — [integracao/gateway/conciliar.py:90](../integracao/gateway/conciliar.py#L90)
+- `_ativas` (função) — [hermes/plugin/jev-camadas/__init__.py:44](../hermes/plugin/jev-camadas/__init__.py#L44)
+- `atualizar` (função) — [hermes/jev_hermes/anexos.py:145](../hermes/jev_hermes/anexos.py#L145) · usado em 2: jev_rotina_anexos.py, test_recortes.py
+- `atualizar` (função) — [hermes/jev_hermes/prazos.py:309](../hermes/jev_hermes/prazos.py#L309) · usado em 1: jev_rotina_prazos.py
 - `auc` (função) — [laboratorio/h100/dados.py:195](../laboratorio/h100/dados.py#L195) · usado em 1: provas.py
+- `auc` (função) — [laboratorio/r31_r37_segunda_leva.py:127](../laboratorio/r31_r37_segunda_leva.py#L127) · usado em 1: r38_r41_terceira_leva.py
+- `auditar` (função) — [hermes/jev_hermes/checklist.py:143](../hermes/jev_hermes/checklist.py#L143) · usado em 2: anexos.py, test_jev_hermes.py
+- `auditar` (função) — [integracao/camadas/checklist.py:97](../integracao/camadas/checklist.py#L97)
 - `auditar_caixa` (função) — [laboratorio/auditoria.py:592](../laboratorio/auditoria.py#L592)
 - `auditar_cem_hipoteses` (função) — [laboratorio/auditoria.py:1077](../laboratorio/auditoria.py#L1077)
 - `auditar_cem_perguntas` (função) — [laboratorio/auditoria.py:768](../laboratorio/auditoria.py#L768)
@@ -98,12 +140,21 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `ausente` (função) — [executor/placar.py:48](../executor/placar.py#L48)
 - `avaliar` (função) — [executor/run_e4_ressalvas.py:87](../executor/run_e4_ressalvas.py#L87)
 - `avaliar` (função) — [integracao/hooks/jev_guarda_comando.py:93](../integracao/hooks/jev_guarda_comando.py#L93) · usado em 1: test_guarda_comando.py
+- `avisar` (função) — [hermes/jev_hermes/avaliacao.py:319](../hermes/jev_hermes/avaliacao.py#L319) · usado em 1: agentes.py
 
 ## B
 
-- `backup` (função) — [integracao/instalar.py:205](../integracao/instalar.py#L205)
+- `backup` (função) — [integracao/instalar.py:218](../integracao/instalar.py#L218)
 - `backup` (função) — [lab/dashboard.js:200](../lab/dashboard.js#L200)
-- `_banco` (função) — [hermes/jev_hermes/nucleo.py:147](../hermes/jev_hermes/nucleo.py#L147)
+- `_baixar` (função) — [hermes/jev_hermes/academico.py:102](../hermes/jev_hermes/academico.py#L102)
+- `_baixar` (função) — [hermes/jev_hermes/anexos.py:104](../hermes/jev_hermes/anexos.py#L104)
+- `_banco` (função) — [hermes/jev_hermes/anexos.py:66](../hermes/jev_hermes/anexos.py#L66)
+- `_banco` (função) — [hermes/jev_hermes/nucleo.py:149](../hermes/jev_hermes/nucleo.py#L149)
+- `_banco` (função) — [hermes/jev_hermes/prazos.py:90](../hermes/jev_hermes/prazos.py#L90)
+- `_banco` (função) — [hermes/jev_hermes/triagem.py:101](../hermes/jev_hermes/triagem.py#L101)
+- `_base` (função) — [hermes/jev_hermes/workflows.py:213](../hermes/jev_hermes/workflows.py#L213)
+- `Base` (classe) — [hermes/tests/test_workflows.py:82](../hermes/tests/test_workflows.py#L82)
+- `Base.setUp` (método) — [hermes/tests/test_workflows.py:83](../hermes/tests/test_workflows.py#L83)
 - `bindMetrics` (função) — [lab/metrics.js:90](../lab/metrics.js#L90)
 - `bindView` (função) — [lab/dashboard.js:109](../lab/dashboard.js#L109)
 - `bm25` (função) — [executor/run_e4_ressalvas.py:54](../executor/run_e4_ressalvas.py#L54)
@@ -113,12 +164,16 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `braco_comparador` (função) — [executor/run_e12_replicacao.py:132](../executor/run_e12_replicacao.py#L132)
 - `braco_jev` (função) — [executor/run_e11_desempate.py:80](../executor/run_e11_desempate.py#L80)
 - `braco_jev` (função) — [executor/run_e12_replicacao.py:110](../executor/run_e12_replicacao.py#L110)
-- `BudgetError` (classe) — [executor/ledger.py:20](../executor/ledger.py#L20) · usado em 7: shared.py, test_achados_revisao2.py, test_achados_revisao3.py, test_achados_revisao4.py, test_ledger.py, test_runner.py …
+- `Bridge` (classe) — [integracao/harness/ponte.py:33](../integracao/harness/ponte.py#L33) · usado em 3: test_componentes.py, test_ponte.py, usar_ferramenta.py
+- `BridgeTests` (classe) — [integracao/harness/test_ponte.py:9](../integracao/harness/test_ponte.py#L9)
+- `BridgeTests.test_auth_origin_and_call_cap` (método) — [integracao/harness/test_ponte.py:14](../integracao/harness/test_ponte.py#L14)
+- `BridgeTests.test_missing_wallet_never_calls_model` (método) — [integracao/harness/test_ponte.py:10](../integracao/harness/test_ponte.py#L10)
+- `BudgetError` (classe) — [executor/ledger.py:20](../executor/ledger.py#L20) · usado em 9: shared.py, test_achados_revisao2.py, test_achados_revisao3.py, test_achados_revisao4.py, test_ledger.py, test_runner.py …
 - `budgetView` (função) — [lab/dashboard.js:91](../lab/dashboard.js#L91)
 - `build` (função) — [lab/build_ui.py:9](../lab/build_ui.py#L9)
 - `build_pdf` (função) — [planning/build_deliverables.py:95](../planning/build_deliverables.py#L95)
-- `busca` (função) — [hermes/jev_hermes/camadas.py:376](../hermes/jev_hermes/camadas.py#L376) · usado em 1: test_jev_hermes.py
-- `busca` (função) — [integracao/camadas/medir.py:114](../integracao/camadas/medir.py#L114)
+- `busca` (função) — [hermes/jev_hermes/camadas.py:500](../hermes/jev_hermes/camadas.py#L500) · usado em 1: test_jev_hermes.py
+- `busca` (função) — [integracao/camadas/medir.py:120](../integracao/camadas/medir.py#L120)
 - `Busca` (classe) — [integracao/tests/test_camadas.py:104](../integracao/tests/test_camadas.py#L104)
 - `Busca.setUp` (método) — [integracao/tests/test_camadas.py:106](../integracao/tests/test_camadas.py#L106)
 - `Busca.test_agrupa_caminho_do_windows_e_modo_so_arquivos` (método) — [integracao/tests/test_camadas.py:126](../integracao/tests/test_camadas.py#L126)
@@ -128,6 +183,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 
 ## C
 
+- `cache_do_modelo_principal` (função) — [hermes/jev_hermes/medir.py:95](../hermes/jev_hermes/medir.py#L95)
 - `caixa` (função) — [laboratorio/gerar_dossie.py:332](../laboratorio/gerar_dossie.py#L332)
 - `calibracao` (função) — [executor/tests/test_calibracao_e12.py:24](../executor/tests/test_calibracao_e12.py#L24)
 - `CalibracaoDoCorpusNovo` (classe) — [executor/tests/test_calibracao_e12.py:35](../executor/tests/test_calibracao_e12.py#L35)
@@ -138,14 +194,20 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `CalibracaoDoCorpusNovo.test_o_erro_veio_acima_do_corte_antigo` (método) — [executor/tests/test_calibracao_e12.py:57](../executor/tests/test_calibracao_e12.py#L57)
 - `CalibracaoDoCorpusNovo.test_o_guia_nao_recomenda_um_corte_que_deixa_passar_erro` (método) — [executor/tests/test_calibracao_e12.py:74](../executor/tests/test_calibracao_e12.py#L74)
 - `calibrar` (função) — [laboratorio/r0_calibracao.py:56](../laboratorio/r0_calibracao.py#L56)
-- `call` (função) — [integracao/jev_mcp.py:91](../integracao/jev_mcp.py#L91) · usado em 1: test_mcp.py
-- `_camadas` (função) — [hermes/plugin/jev-camadas/__init__.py:35](../hermes/plugin/jev-camadas/__init__.py#L35)
+- `call` (função) — [integracao/harness/mcp.py:45](../integracao/harness/mcp.py#L45)
+- `call` (função) — [integracao/jev_mcp.py:91](../integracao/jev_mcp.py#L91) · usado em 2: test_mcp.py, painel.py
+- `_camadas` (função) — [hermes/plugin/jev-camadas/__init__.py:51](../hermes/plugin/jev-camadas/__init__.py#L51)
+- `camadas_corte` (função) — [hermes/jev_hermes/medir.py:204](../hermes/jev_hermes/medir.py#L204)
+- `caminho` (função) — [hermes/jev_hermes/ciclo.py:67](../hermes/jev_hermes/ciclo.py#L67)
+- `_caminho` (função) — [integracao/camadas/shell.py:83](../integracao/camadas/shell.py#L83)
+- `canal_do_hermes` (função) — [hermes/jev_hermes/pendencias.py:72](../hermes/jev_hermes/pendencias.py#L72)
 - `canarios` (função) — [laboratorio/canarios_de_comportamento.py:66](../laboratorio/canarios_de_comportamento.py#L66) · usado em 1: test_canarios_de_comportamento.py
 - `candidatos` (função) — [integracao/camadas/busca.py:129](../integracao/camadas/busca.py#L129)
 - `candidatos_de` (função) — [integracao/camadas/ler.py:42](../integracao/camadas/ler.py#L42)
 - `candidatos_do_rg` (função) — [integracao/camadas/ler.py:69](../integracao/camadas/ler.py#L69) · usado em 1: test_camadas.py
 - `capa` (função) — [planning/build_guia_pdf.py:43](../planning/build_guia_pdf.py#L43)
 - `capa` (função) — [planning/build_relatorio_pdf.py:34](../planning/build_relatorio_pdf.py#L34)
+- `_capacidades` (função) — [hermes/jev_hermes/workflows.py:144](../hermes/jev_hermes/workflows.py#L144)
 - `carregar` (função) — [executor/run_e10_llm_economico.py:46](../executor/run_e10_llm_economico.py#L46)
 - `carregar` (função) — [executor/run_e10b_piloto.py:34](../executor/run_e10b_piloto.py#L34)
 - `carregar` (função) — [executor/run_e11_desempate.py:47](../executor/run_e11_desempate.py#L47)
@@ -155,28 +217,37 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `carregar` (função) — [executor/run_e7_confirmacao.py:37](../executor/run_e7_confirmacao.py#L37)
 - `carregar` (função) — [executor/run_e9_prevalencia.py:46](../executor/run_e9_prevalencia.py#L46)
 - `carregar` (função) — [executor/tests/test_e12_replicacao.py:28](../executor/tests/test_e12_replicacao.py#L28)
+- `carregar` (função) — [hermes/jev_hermes/ciclo.py:80](../hermes/jev_hermes/ciclo.py#L80)
 - `carregar` (função) — [integracao/avaliacao/amostrar.py:21](../integracao/avaliacao/amostrar.py#L21)
-- `carregar` (função) — [integracao/instalar.py:211](../integracao/instalar.py#L211)
+- `carregar` (função) — [integracao/instalar.py:224](../integracao/instalar.py#L224)
 - `carregar` (função) — [laboratorio/auditoria.py:58](../laboratorio/auditoria.py#L58)
 - `carregar` (função) — [laboratorio/gerar_bateria.py:22](../laboratorio/gerar_bateria.py#L22)
 - `carregar` (função) — [laboratorio/gerar_dossie.py:27](../laboratorio/gerar_dossie.py#L27)
 - `carregar_chave` (função) — [executor/run_e5_provedores.py:39](../executor/run_e5_provedores.py#L39)
 - `carregar_gabaritos` (função) — [integracao/avaliacao/rodar.py:43](../integracao/avaliacao/rodar.py#L43)
+- `carregar_lista` (função) — [hermes/jev_hermes/checklist.py:51](../hermes/jev_hermes/checklist.py#L51) · usado em 2: anexos.py, test_jev_hermes.py
+- `carregar_lista` (função) — [integracao/camadas/checklist.py:47](../integracao/camadas/checklist.py#L47) · usado em 1: r50_checklist_de_contrato.py
+- `carregar_plugin` (função) — [hermes/tests/test_workflows.py:808](../hermes/tests/test_workflows.py#L808)
+- `carregar_tarefas` (função) — [hermes/jev_hermes/bancada.py:46](../hermes/jev_hermes/bancada.py#L46)
 - `carregar_tudo` (função) — [executor/run_e8_anotador.py:46](../executor/run_e8_anotador.py#L46)
 - `cartao` (função) — [executor/placar.py:43](../executor/placar.py#L43)
 - `carteira_do_ledger` (função) — [executor/run_e12_replicacao.py:422](../executor/run_e12_replicacao.py#L422)
 - `casa` (função) — [laboratorio/r26_dois_trechos.py:111](../laboratorio/r26_dois_trechos.py#L111)
 - `casos` (função) — [laboratorio/r0_calibracao.py:32](../laboratorio/r0_calibracao.py#L32)
+- `casos_da_clinica` (função) — [laboratorio/r31_r37_segunda_leva.py:284](../laboratorio/r31_r37_segunda_leva.py#L284)
+- `casos_r46` (função) — [laboratorio/r46_r49_pontos_do_video.py:75](../laboratorio/r46_r49_pontos_do_video.py#L75)
+- `casos_r47` (função) — [laboratorio/r46_r49_pontos_do_video.py:140](../laboratorio/r46_r49_pontos_do_video.py#L140)
 - `cegar` (função) — [executor/adjudicar_e11.py:43](../executor/adjudicar_e11.py#L43)
 - `cegar` (função) — [executor/adjudicar_e12.py:43](../executor/adjudicar_e12.py#L43)
 - `_ceil_div` (função) — [executor/pricing.py:46](../executor/pricing.py#L46)
-- `chave` (função) — [executor/credenciais.py:71](../executor/credenciais.py#L71) · usado em 3: runner.py, test_credenciais.py, cliente.py
+- `chave` (função) — [executor/credenciais.py:71](../executor/credenciais.py#L71) · usado em 4: runner.py, test_credenciais.py, apoio.py, cliente.py
 - `chave` (função) — [integracao/jev_router/cliente.py:29](../integracao/jev_router/cliente.py#L29)
-- `chave` (função) — [laboratorio/nucleo.py:44](../laboratorio/nucleo.py#L44) · usado em 14: r10_injecao_comparada.py, r15_adversario_externo.py, r17_economia_de_contexto.py, r18_escala.py, r19_armadilha_de_sujeito.py, r20_k_adaptativo.py …
-- `_chave_de_cache` (função) — [hermes/jev_hermes/nucleo.py:229](../hermes/jev_hermes/nucleo.py#L229)
+- `chave` (função) — [laboratorio/nucleo.py:44](../laboratorio/nucleo.py#L44) · usado em 15: r10_injecao_comparada.py, r15_adversario_externo.py, r17_economia_de_contexto.py, r18_escala.py, r19_armadilha_de_sujeito.py, r20_k_adaptativo.py …
+- `_chave_de_cache` (função) — [hermes/jev_hermes/nucleo.py:245](../hermes/jev_hermes/nucleo.py#L245)
 - `ChaveAntesDaReserva` (classe) — [executor/tests/test_achados_revisao4.py:80](../executor/tests/test_achados_revisao4.py#L80)
 - `ChaveAntesDaReserva.test_dispatch_carrega_a_chave_antes_de_reservar` (método) — [executor/tests/test_achados_revisao4.py:83](../executor/tests/test_achados_revisao4.py#L83)
 - `classificar` (função) — [executor/baseline_regra.py:33](../executor/baseline_regra.py#L33) · usado em 2: run_e1_triagem.py, run_e7_confirmacao.py
+- `_classificar` (função) — [hermes/jev_hermes/recortes.py:82](../hermes/jev_hermes/recortes.py#L82)
 - `classificar` (função) — [integracao/jev_router/roteador.py:81](../integracao/jev_router/roteador.py#L81) · usado em 3: jev_prompt_router.py, cli.py, test_roteador.py
 - `classificar` (função) — [laboratorio/r21_generalizacao.py:389](../laboratorio/r21_generalizacao.py#L389)
 - `classificar` (função) — [laboratorio/r21b_cruzamento.py:43](../laboratorio/r21b_cruzamento.py#L43)
@@ -185,11 +256,20 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `classificar` (função) — [laboratorio/r24_votacao.py:76](../laboratorio/r24_votacao.py#L76)
 - `classificar` (função) — [laboratorio/r25_terceiro_dominio.py:125](../laboratorio/r25_terceiro_dominio.py#L125)
 - `classificar` (função) — [laboratorio/r27_integracao.py:79](../laboratorio/r27_integracao.py#L79)
-- `classificar_em_paralelo` (função) — [hermes/jev_hermes/nucleo.py:422](../hermes/jev_hermes/nucleo.py#L422) · usado em 5: camadas.py, jev_gate_email_diario.py, jev_gate_radar_ia.py, jev_rotina_agenda_dia.py, jev_rotina_caixa_vigiada.py
-- `classificar_em_paralelo` (função) — [integracao/camadas/nucleo.py:176](../integracao/camadas/nucleo.py#L176) · usado em 6: busca.py, leitura.py, ler.py, saida.py, sentinela.py, verificar.py
+- `classificar` (função) — [laboratorio/r28_ato_de_fala.py:120](../laboratorio/r28_ato_de_fala.py#L120)
+- `classificar` (função) — [laboratorio/r29_o_que_carrega_a_decisao.py:84](../laboratorio/r29_o_que_carrega_a_decisao.py#L84)
+- `classificar_em_paralelo` (função) — [hermes/jev_hermes/nucleo.py:447](../hermes/jev_hermes/nucleo.py#L447) · usado em 17: academico.py, anexos.py, camadas.py, checklist.py, pendencias.py, prazos.py …
+- `classificar_em_paralelo` (função) — [integracao/camadas/nucleo.py:176](../integracao/camadas/nucleo.py#L176) · usado em 9: sala_sentimento.py, busca.py, checklist.py, leitura.py, ler.py, saida.py …
 - `classificationStats` (função) — [lab/metrics.js:10](../lab/metrics.js#L10)
 - `className` (função) — [lab/metrics.js:5](../lab/metrics.js#L5)
 - `clean_env` (função) — [executor/simple_round.py:27](../executor/simple_round.py#L27)
+- `clean_env` (função) — [integracao/harness/painel.py:48](../integracao/harness/painel.py#L48) · usado em 1: test_componentes.py
+- `_clean_url` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:50](../hermes/plugin/youtube-auto-bridge/__init__.py#L50)
+- `Client` (classe) — [integracao/harness/agent_client.py:18](../integracao/harness/agent_client.py#L18) · usado em 4: agent_cli.py, mcp.py, test_agents.py, publicar_continuacao.py
+- `Client._request` (método) — [integracao/harness/agent_client.py:26](../integracao/harness/agent_client.py#L26)
+- `Client.bootstrap` (método) — [integracao/harness/agent_client.py:56](../integracao/harness/agent_client.py#L56)
+- `Client.call` (método) — [integracao/harness/agent_client.py:49](../integracao/harness/agent_client.py#L49)
+- `Client.session` (método) — [integracao/harness/agent_client.py:43](../integracao/harness/agent_client.py#L43)
 - `cobertura_dos_bracos` (função) — [executor/run_e12_replicacao.py:304](../executor/run_e12_replicacao.py#L304) · usado em 1: test_e12_replicacao.py
 - `CoberturaEAnulacao` (classe) — [executor/tests/test_e12_replicacao.py:133](../executor/tests/test_e12_replicacao.py#L133)
 - `CoberturaEAnulacao.test_anulacao_sozinha_apaga_a_resposta_anterior` (método) — [executor/tests/test_e12_replicacao.py:177](../executor/tests/test_e12_replicacao.py#L177)
@@ -210,14 +290,21 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `CoerenciaDoPlacar.test_politica_de_referencia_nao_cai_para_a_uniao` (método) — [executor/tests/test_coerencia_placar.py:110](../executor/tests/test_coerencia_placar.py#L110)
 - `CoerenciaDoPlacar.test_rotulo_de_corpus_pergunta_pela_divergencia_entre_anotadores` (método) — [executor/tests/test_coerencia_placar.py:81](../executor/tests/test_coerencia_placar.py#L81)
 - `CoerenciaDoPlacar.test_veredito_e_cartao_e9_citam_a_mesma_cobertura` (método) — [executor/tests/test_coerencia_placar.py:46](../executor/tests/test_coerencia_placar.py#L46)
+- `coletar` (função) — [hermes/jev_hermes/academico.py:170](../hermes/jev_hermes/academico.py#L170)
+- `coletar` (função) — [hermes/portoes/jev_gate_boletim_taguatinga.py:62](../hermes/portoes/jev_gate_boletim_taguatinga.py#L62)
 - `com_cabecalho` (função) — [laboratorio/r18_escala.py:156](../laboratorio/r18_escala.py#L156)
 - `com_erro` (função) — [laboratorio/r1_r3_estresse.py:81](../laboratorio/r1_r3_estresse.py#L81) · usado em 2: r11_extremos.py, r4_r7_limites.py
-- `_commit` (função) — [integracao/camadas/rotina.py:71](../integracao/camadas/rotina.py#L71)
+- `comando` (função) — [hermes/jev_hermes/bancada.py:42](../hermes/jev_hermes/bancada.py#L42)
+- `command` (função) — [integracao/harness/usar_ferramenta.py:14](../integracao/harness/usar_ferramenta.py#L14) · usado em 1: test_componentes.py
+- `_commit` (função) — [integracao/camadas/rotina.py:75](../integracao/camadas/rotina.py#L75)
 - `_compacto` (função) — [hermes/plugin/jev-advisor/__init__.py:88](../hermes/plugin/jev-advisor/__init__.py#L88)
 - `comparador_empatou` (função) — [executor/placar.py:376](../executor/placar.py#L376)
 - `comparar` (função) — [executor/run_e12_replicacao.py:283](../executor/run_e12_replicacao.py#L283)
+- `comparar` (função) — [hermes/jev_hermes/bancada.py:140](../hermes/jev_hermes/bancada.py#L140)
 - `comparar` (função) — [integracao/avaliacao/rodar.py:51](../integracao/avaliacao/rodar.py#L51)
+- `comparar_experimentos` (função) — [hermes/jev_hermes/workflows.py:719](../hermes/jev_hermes/workflows.py#L719) · usado em 2: bancada.py, test_workflows.py
 - `completar` (função) — [executor/run_e12_replicacao.py:236](../executor/run_e12_replicacao.py#L236)
+- `compromissos` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:34](../hermes/rotinas/jev_rotina_painel_manha.py#L34)
 - `ConciliacaoRound2` (classe) — [executor/tests/test_achados_revisao2.py:37](../executor/tests/test_achados_revisao2.py#L37)
 - `ConciliacaoRound2.setUp` (método) — [executor/tests/test_achados_revisao2.py:38](../executor/tests/test_achados_revisao2.py#L38)
 - `ConciliacaoRound2.tearDown` (método) — [executor/tests/test_achados_revisao2.py:47](../executor/tests/test_achados_revisao2.py#L47)
@@ -233,28 +320,45 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `ConciliacaoRound2.test_regularizacao_exige_provedor_e_modelo` (método) — [executor/tests/test_achados_revisao2.py:124](../executor/tests/test_achados_revisao2.py#L124)
 - `ConciliacaoRound2.test_regularizacao_liquida_pelo_pior_caso_e_nao_pela_tarifa_escolhida` (método) — [executor/tests/test_achados_revisao2.py:108](../executor/tests/test_achados_revisao2.py#L108)
 - `conciliado` (função) — [laboratorio/caixa.py:48](../laboratorio/caixa.py#L48) · usado em 3: auditoria.py, gerar_mapa_visual.py, dados.py
+- `conciliar` (função) — [integracao/gateway/conciliar.py:178](../integracao/gateway/conciliar.py#L178)
+- `concorda` (função) — [integracao/avaliacao/sala_sentimento.py:43](../integracao/avaliacao/sala_sentimento.py#L43)
 - `_condicao_r11` (função) — [laboratorio/h100/provas.py:47](../laboratorio/h100/provas.py#L47)
 - `condicoes` (função) — [executor/run_e2_fatorial.py:55](../executor/run_e2_fatorial.py#L55)
 - `condicoes` (função) — [laboratorio/r11_extremos.py:151](../laboratorio/r11_extremos.py#L151)
 - `condicoes` (função) — [laboratorio/r1_r3_estresse.py:120](../laboratorio/r1_r3_estresse.py#L120)
+- `_conectar` (função) — [hermes/jev_hermes/pendencias.py:82](../hermes/jev_hermes/pendencias.py#L82)
+- `conferir` (função) — [hermes/infra/conferir_sincronia.py:86](../hermes/infra/conferir_sincronia.py#L86)
 - `confianca_calculada` (função) — [executor/placar.py:191](../executor/placar.py#L191) · usado em 1: test_coerencia_placar.py
 - `ConfiancaCalculada` (classe) — [executor/tests/test_coerencia_placar.py:185](../executor/tests/test_coerencia_placar.py#L185)
 - `ConfiancaCalculada.test_cada_desconto_tem_motivo` (método) — [executor/tests/test_coerencia_placar.py:203](../executor/tests/test_coerencia_placar.py#L203)
 - `ConfiancaCalculada.test_erro_entre_aceitos_derruba_a_confianca` (método) — [executor/tests/test_coerencia_placar.py:188](../executor/tests/test_coerencia_placar.py#L188)
 - `ConfiancaCalculada.test_sem_particao_de_teste_a_confianca_cai_mais` (método) — [executor/tests/test_coerencia_placar.py:198](../executor/tests/test_coerencia_placar.py#L198)
 - `confidenceSection` (função) — [lab/metrics.js:87](../lab/metrics.js#L87)
-- `configuracao` (função) — [hermes/jev_hermes/nucleo.py:80](../hermes/jev_hermes/nucleo.py#L80)
+- `configuracao` (função) — [hermes/jev_hermes/nucleo.py:82](../hermes/jev_hermes/nucleo.py#L82)
+- `configure` (função) — [integracao/instalar_workflow.py:12](../integracao/instalar_workflow.py#L12) · usado em 1: test_workflow.py
 - `confusionSection` (função) — [lab/metrics.js:71](../lab/metrics.js#L71)
 - `connection` (função) — [lab/dashboard.js:36](../lab/dashboard.js#L36)
-- `_consolidado` (função) — [laboratorio/h100/provas.py:613](../laboratorio/h100/provas.py#L613)
+- `_consolidado` (função) — [laboratorio/h100/provas.py:615](../laboratorio/h100/provas.py#L615)
 - `consolidar` (função) — [executor/adjudicar_e11.py:80](../executor/adjudicar_e11.py#L80)
 - `consolidar` (função) — [executor/adjudicar_e12.py:80](../executor/adjudicar_e12.py#L80)
+- `_consultar` (função) — [hermes/jev_hermes/workflows.py:183](../hermes/jev_hermes/workflows.py#L183)
+- `consultas_do` (função) — [hermes/jev_hermes/academico.py:164](../hermes/jev_hermes/academico.py#L164) · usado em 1: test_recortes.py
 - `contagem_bruta` (função) — [executor/gabarito.py:180](../executor/gabarito.py#L180) · usado em 1: placar.py
+- `_contagens` (função) — [hermes/jev_hermes/workflows.py:291](../hermes/jev_hermes/workflows.py#L291)
+- `contar` (função) — [hermes/jev_hermes/avaliacao.py:45](../hermes/jev_hermes/avaliacao.py#L45) · usado em 1: test_fluxos.py
 - `contem_zero` (função) — [executor/placar.py:372](../executor/placar.py#L372)
+- `contexto` (função) — [hermes/jev_hermes/academico.py:186](../hermes/jev_hermes/academico.py#L186)
+- `_contexto` (função) — [hermes/jev_hermes/agentes.py:45](../hermes/jev_hermes/agentes.py#L45)
+- `contexto` (função) — [hermes/portoes/jev_gate_boletim_taguatinga.py:92](../hermes/portoes/jev_gate_boletim_taguatinga.py#L92)
+- `Contexto` (classe) — [hermes/tests/test_workflows.py:816](../hermes/tests/test_workflows.py#L816)
+- `Contexto.register_hook` (método) — [hermes/tests/test_workflows.py:823](../hermes/tests/test_workflows.py#L823)
+- `Contexto.register_tool` (método) — [hermes/tests/test_workflows.py:820](../hermes/tests/test_workflows.py#L820)
 - `ContraAsChavesQueExistemAqui` (classe) — [integracao/tests/test_redacao.py:50](../integracao/tests/test_redacao.py#L50)
 - `ContraAsChavesQueExistemAqui.segredos` (método) — [integracao/tests/test_redacao.py:52](../integracao/tests/test_redacao.py#L52)
 - `ContraAsChavesQueExistemAqui.test_nenhuma_chave_real_sobrevive_a_redacao` (método) — [integracao/tests/test_redacao.py:65](../integracao/tests/test_redacao.py#L65)
 - `ContractError` (classe) — [executor/runner.py:25](../executor/runner.py#L25) · usado em 1: test_shared.py
+- `contrato` (função) — [hermes/jev_hermes/ponte_openai.py:49](../hermes/jev_hermes/ponte_openai.py#L49)
+- `_conversas` (função) — [hermes/jev_hermes/pendencias.py:104](../hermes/jev_hermes/pendencias.py#L104)
 - `corpus` (função) — [executor/run_e15.py:39](../executor/run_e15.py#L39)
 - `corpus` (função) — [laboratorio/r11_extremos.py:143](../laboratorio/r11_extremos.py#L143) · usado em 1: r12_r13_contexto.py
 - `corpus` (função) — [laboratorio/r1_r3_estresse.py:115](../laboratorio/r1_r3_estresse.py#L115)
@@ -276,56 +380,93 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `Credenciais.test_ordem_ambiente_projeto_cofre` (método) — [executor/tests/test_credenciais.py:35](../executor/tests/test_credenciais.py#L35)
 - `Credenciais.test_provedor_preferido_e_o_declarado_com_chave` (método) — [executor/tests/test_credenciais.py:43](../executor/tests/test_credenciais.py#L43)
 - `Credenciais.test_url_por_provedor` (método) — [executor/tests/test_credenciais.py:67](../executor/tests/test_credenciais.py#L67)
+- `criar_cartao` (função) — [hermes/jev_hermes/triagem.py:82](../hermes/jev_hermes/triagem.py#L82)
 - `criterios` (função) — [executor/run_e2_fatorial.py:39](../executor/run_e2_fatorial.py#L39)
+- `_criterios` (função) — [hermes/jev_hermes/avaliacao.py:328](../hermes/jev_hermes/avaliacao.py#L328) · usado em 1: agentes.py
 - `criterios_12` (função) — [laboratorio/r1_r3_estresse.py:63](../laboratorio/r1_r3_estresse.py#L63)
 - `criterios_com` (função) — [laboratorio/r11_extremos.py:60](../laboratorio/r11_extremos.py#L60)
 - `criterios_com` (função) — [laboratorio/r4_r7_limites.py:67](../laboratorio/r4_r7_limites.py#L67)
 - `criterios_invertidos` (função) — [laboratorio/r24_votacao.py:71](../laboratorio/r24_votacao.py#L71)
+- `crossref` (função) — [hermes/jev_hermes/academico.py:112](../hermes/jev_hermes/academico.py#L112)
 - `current_prices` (função) — [executor/shared.py:56](../executor/shared.py#L56) · usado em 1: run_e15.py
 - `_curva_risco_cobertura` (função) — [laboratorio/q100/respostas.py:503](../laboratorio/q100/respostas.py#L503)
-- `_custo` (função) — [hermes/jev_hermes/nucleo.py:310](../hermes/jev_hermes/nucleo.py#L310)
+- `_custo` (função) — [hermes/jev_hermes/nucleo.py:326](../hermes/jev_hermes/nucleo.py#L326)
 - `custo_do_ledger` (função) — [executor/publicar_experimentos.py:295](../executor/publicar_experimentos.py#L295)
 - `custo_do_livro_caixa` (função) — [laboratorio/gerar_mapa_visual.py:34](../laboratorio/gerar_mapa_visual.py#L34)
+- `custo_estimado` (função) — [hermes/jev_hermes/modelos.py:91](../hermes/jev_hermes/modelos.py#L91)
 - `custo_liquidado` (função) — [executor/run_e12_replicacao.py:360](../executor/run_e12_replicacao.py#L360)
 - `custo_maximo_por_chamada_usd` (função) — [integracao/jev_router/orcamento.py:34](../integracao/jev_router/orcamento.py#L34) · usado em 2: cli.py, test_camadas.py
+- `custo_nusd` (função) — [integracao/gateway/conciliar.py:61](../integracao/gateway/conciliar.py#L61)
 - `_custo_por_decisao` (função) — [laboratorio/q100/respostas.py:125](../laboratorio/q100/respostas.py#L125)
 - `custo_por_experimento` (função) — [laboratorio/h100/dados.py:86](../laboratorio/h100/dados.py#L86) · usado em 1: provas.py
 - `custo_por_mil` (função) — [executor/run_e12_replicacao.py:383](../executor/run_e12_replicacao.py#L383)
 
 ## D
 
+- `_dados` (função) — [hermes/jev_hermes/workflows.py:218](../hermes/jev_hermes/workflows.py#L218)
+- `_data` (função) — [hermes/jev_hermes/agenda.py:94](../hermes/jev_hermes/agenda.py#L94)
+- `datas_candidatas` (função) — [hermes/jev_hermes/prazos.py:145](../hermes/jev_hermes/prazos.py#L145) · usado em 1: test_jev_hermes.py
 - `dec` (função) — [executor/placar.py:38](../executor/placar.py#L38)
-- `dec` (função) — [hermes/jev_hermes/nucleo.py:459](../hermes/jev_hermes/nucleo.py#L459) · usado em 5: camadas.py, jev_fabio_urgent_watch.py, jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py
-- `dec` (função) — [integracao/camadas/nucleo.py:95](../integracao/camadas/nucleo.py#L95) · usado em 4: ler.py, saida.py, sentinela.py, verificar.py
-- `decidir` (função) — [integracao/jev_router/politica.py:84](../integracao/jev_router/politica.py#L84) · usado em 2: roteador.py, test_roteador.py
+- `dec` (função) — [hermes/jev_hermes/nucleo.py:484](../hermes/jev_hermes/nucleo.py#L484) · usado em 16: academico.py, anexos.py, avaliacao.py, bancada.py, camadas.py, checklist.py …
+- `dec` (função) — [integracao/camadas/nucleo.py:95](../integracao/camadas/nucleo.py#L95) · usado em 5: checklist.py, ler.py, saida.py, sentinela.py, verificar.py
+- `decide` (função) — [integracao/harness/ponte.py:14](../integracao/harness/ponte.py#L14) · usado em 1: test_ponte.py
+- `decidir` (função) — [hermes/jev_hermes/ciclo.py:107](../hermes/jev_hermes/ciclo.py#L107)
+- `decidir` (função) — [hermes/jev_hermes/prazos.py:194](../hermes/jev_hermes/prazos.py#L194) · usado em 1: test_jev_hermes.py
+- `decidir` (função) — [hermes/portoes/jev_gate_sono_memoria.py:58](../hermes/portoes/jev_gate_sono_memoria.py#L58)
+- `decidir` (função) — [hermes/rotinas/jev_rotina_lembrete_compromisso.py:76](../hermes/rotinas/jev_rotina_lembrete_compromisso.py#L76)
+- `decidir` (função) — [integracao/jev_router/politica.py:108](../integracao/jev_router/politica.py#L108) · usado em 2: roteador.py, test_roteador.py
 - `decisao` (função) — [executor/publicar_experimentos.py:41](../executor/publicar_experimentos.py#L41)
 - `decisionBoard` (função) — [lab/terminal.js:14](../lab/terminal.js#L14)
 - `decisoes` (função) — [laboratorio/h100/dados.py:36](../laboratorio/h100/dados.py#L36) · usado em 2: provas.py, respostas.py
+- `_declaradas` (função) — [hermes/jev_hermes/workflows.py:297](../hermes/jev_hermes/workflows.py#L297)
 - `_declarar` (função) — [laboratorio/q100/respostas.py:98](../laboratorio/q100/respostas.py#L98)
 - `defesas` (função) — [laboratorio/gerar_mapa_visual.py:78](../laboratorio/gerar_mapa_visual.py#L78)
+- `definition` (função) — [integracao/harness/mcp.py:17](../integracao/harness/mcp.py#L17)
+- `demandas` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:87](../hermes/rotinas/jev_rotina_painel_manha.py#L87)
 - `desacordos` (função) — [executor/adjudicar_e11.py:29](../executor/adjudicar_e11.py#L29)
 - `desacordos` (função) — [executor/adjudicar_e12.py:29](../executor/adjudicar_e12.py#L29)
 - `descartar_todos` (função) — [hermes/portoes/jev_gate_radar_ia.py:51](../hermes/portoes/jev_gate_radar_ia.py#L51)
 - `desempate_depende_do_gabarito` (função) — [executor/placar.py:389](../executor/placar.py#L389)
 - `desempenho` (função) — [executor/gabarito.py:95](../executor/gabarito.py#L95) · usado em 2: placar.py, test_coerencia_placar.py
 - `desempenho_do_estudo` (função) — [executor/gabarito.py:145](../executor/gabarito.py#L145) · usado em 4: placar.py, test_coerencia_placar.py, build_guia_pdf.py, build_relatorio_pdf.py
-- `desinstalar` (função) — [integracao/instalar.py:244](../integracao/instalar.py#L244)
-- `desinstalar_gancho` (função) — [integracao/instalar.py:174](../integracao/instalar.py#L174)
-- `desligado` (função) — [hermes/jev_hermes/nucleo.py:103](../hermes/jev_hermes/nucleo.py#L103)
+- `desinstalar` (função) — [integracao/instalar.py:257](../integracao/instalar.py#L257)
+- `desinstalar_gancho` (função) — [integracao/instalar.py:187](../integracao/instalar.py#L187)
+- `Desk` (classe) — [integracao/harness/painel.py:73](../integracao/harness/painel.py#L73) · usado em 2: test_agents.py, test_painel.py
+- `Desk.append` (método) — [integracao/harness/painel.py:161](../integracao/harness/painel.py#L161)
+- `Desk.cancel` (método) — [integracao/harness/painel.py:236](../integracao/harness/painel.py#L236)
+- `Desk.catalog` (método) — [integracao/harness/painel.py:97](../integracao/harness/painel.py#L97)
+- `Desk.connect` (método) — [integracao/harness/painel.py:86](../integracao/harness/painel.py#L86)
+- `Desk.execute` (método) — [integracao/harness/painel.py:170](../integracao/harness/painel.py#L170)
+- `Desk.kill` (método) — [integracao/harness/painel.py:231](../integracao/harness/painel.py#L231)
+- `Desk.preference` (método) — [integracao/harness/painel.py:113](../integracao/harness/painel.py#L113)
+- `Desk.runs` (método) — [integracao/harness/painel.py:93](../integracao/harness/painel.py#L93)
+- `Desk.save_result` (método) — [integracao/harness/painel.py:166](../integracao/harness/painel.py#L166)
+- `Desk.start` (método) — [integracao/harness/painel.py:140](../integracao/harness/painel.py#L140)
+- `Desk.validate_operation` (método) — [integracao/harness/painel.py:117](../integracao/harness/painel.py#L117)
+- `_desligadas` (função) — [integracao/jev_router/politica.py:60](../integracao/jev_router/politica.py#L60)
+- `desligado` (função) — [hermes/jev_hermes/nucleo.py:105](../hermes/jev_hermes/nucleo.py#L105) · usado em 1: ponte_openai.py
+- `desligar_roteamento` (função) — [integracao/gateway/conciliar.py:137](../integracao/gateway/conciliar.py#L137)
+- `despachar` (função) — [hermes/jev_hermes/triagem.py:140](../hermes/jev_hermes/triagem.py#L140) · usado em 1: jev_rotina_caixa_vigiada.py
 - `detect` (função) — [executor/simple_round.py:35](../executor/simple_round.py#L35)
+- `dias_uteis_depois` (função) — [hermes/jev_hermes/triagem.py:109](../hermes/jev_hermes/triagem.py#L109)
+- `digest` (função) — [hermes/infra/conferir_sincronia.py:66](../hermes/infra/conferir_sincronia.py#L66)
 - `diluir` (função) — [laboratorio/r11_extremos.py:122](../laboratorio/r11_extremos.py#L122) · usado em 1: r12_r13_contexto.py
 - `dispatch` (função) — [executor/runner.py:187](../executor/runner.py#L187) · usado em 15: run_canaries.py, run_e11_desempate.py, run_e12_replicacao.py, run_e1_triagem.py, run_e2_fatorial.py, run_e2b_posicao.py …
+- `dispatch` (função) — [integracao/harness/agent_layer.py:92](../integracao/harness/agent_layer.py#L92) · usado em 1: painel.py
 - `dispatch_args` (função) — [executor/tests/test_runner.py:30](../executor/tests/test_runner.py#L30)
+- `disponiveis` (função) — [integracao/jev_router/politica.py:69](../integracao/jev_router/politica.py#L69)
 - `distratores_em_massa` (função) — [laboratorio/r11_extremos.py:48](../laboratorio/r11_extremos.py#L48)
-- `dividir_em_blocos` (função) — [hermes/jev_hermes/camadas.py:224](../hermes/jev_hermes/camadas.py#L224)
-- `dividir_em_blocos` (função) — [integracao/camadas/nucleo.py:215](../integracao/camadas/nucleo.py#L215) · usado em 2: leitura.py, ler.py
+- `dividir` (função) — [integracao/camadas/shell.py:41](../integracao/camadas/shell.py#L41) · usado em 2: jev_leitura_shell.py, test_shell.py
+- `dividir_em_blocos` (função) — [hermes/jev_hermes/camadas.py:345](../hermes/jev_hermes/camadas.py#L345)
+- `dividir_em_blocos` (função) — [integracao/camadas/nucleo.py:223](../integracao/camadas/nucleo.py#L223) · usado em 2: leitura.py, ler.py
 - `do_anotador_local` (função) — [executor/gabarito.py:32](../executor/gabarito.py#L32) · usado em 7: adjudicar_e11.py, adjudicar_e12.py, erro_grave.py, placar.py, run_e12_replicacao.py, test_coerencia_placar.py …
 - `_do_arquivo` (função) — [executor/credenciais.py:35](../executor/credenciais.py#L35)
 - `do_autor` (função) — [executor/gabarito.py:45](../executor/gabarito.py#L45) · usado em 4: erro_grave.py, placar.py, test_coerencia_placar.py, r0_calibracao.py
-- `_do_cache` (função) — [hermes/jev_hermes/nucleo.py:234](../hermes/jev_hermes/nucleo.py#L234)
+- `_do_cache` (função) — [hermes/jev_hermes/nucleo.py:250](../hermes/jev_hermes/nucleo.py#L250)
 - `do_cache` (função) — [integracao/jev_router/roteador.py:37](../integracao/jev_router/roteador.py#L37)
 - `DocumentoNaoArgumentaRecomendacaoAnterior` (classe) — [executor/tests/test_coerencia_placar.py:613](../executor/tests/test_coerencia_placar.py#L613)
 - `DocumentoNaoArgumentaRecomendacaoAnterior.test_nenhuma_frase_da_recomendacao_anterior_sobrevive` (método) — [executor/tests/test_coerencia_placar.py:625](../executor/tests/test_coerencia_placar.py#L625)
+- `dois_da_wiki` (função) — [hermes/jev_hermes/academico.py:146](../hermes/jev_hermes/academico.py#L146)
 - `download` (função) — [lab/dashboard.js:197](../lab/dashboard.js#L197)
 - `downloadCSV` (função) — [lab/dashboard.js:199](../lab/dashboard.js#L199)
 - `downloadJSON` (função) — [lab/dashboard.js:198](../lab/dashboard.js#L198)
@@ -344,11 +485,20 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `e7_run` (função) — [executor/publicar_experimentos.py:159](../executor/publicar_experimentos.py#L159)
 - `e_digitado` (função) — [integracao/avaliacao/amostrar_com_contexto.py:50](../integracao/avaliacao/amostrar_com_contexto.py#L50)
 - `economia` (função) — [integracao/avaliacao/rodar.py:105](../integracao/avaliacao/rodar.py#L105)
-- `em_paralelo` (função) — [laboratorio/nucleo.py:127](../laboratorio/nucleo.py#L127) · usado em 21: r10_injecao_comparada.py, r11_extremos.py, r12_r13_contexto.py, r14_autorrecursivo.py, r15_adversario_externo.py, r16_guarda_de_comando.py …
+- `em_aberto` (função) — [hermes/jev_hermes/anexos.py:194](../hermes/jev_hermes/anexos.py#L194) · usado em 2: jev_rotina_painel_manha.py, test_recortes.py
+- `em_aberto` (função) — [hermes/jev_hermes/prazos.py:381](../hermes/jev_hermes/prazos.py#L381) · usado em 2: jev_rotina_painel_manha.py, jev_rotina_prazos.py
+- `em_paralelo` (função) — [laboratorio/nucleo.py:127](../laboratorio/nucleo.py#L127) · usado em 30: r10_injecao_comparada.py, r11_extremos.py, r12_r13_contexto.py, r14_autorrecursivo.py, r15_adversario_externo.py, r16_guarda_de_comando.py …
 - `email_descartavel` (função) — [hermes/jev_hermes/portao.py:126](../hermes/jev_hermes/portao.py#L126) · usado em 2: jev_gate_email_diario.py, jev_rotina_caixa_vigiada.py
-- `encerrar` (função) — [hermes/jev_hermes/portao.py:35](../hermes/jev_hermes/portao.py#L35) · usado em 5: jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py, test_jev_hermes.py
+- `encerrados` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:55](../hermes/rotinas/jev_rotina_painel_manha.py#L55)
+- `_encerrar` (função) — [hermes/jev_hermes/ciclo.py:142](../hermes/jev_hermes/ciclo.py#L142)
+- `encerrar` (função) — [hermes/jev_hermes/portao.py:35](../hermes/jev_hermes/portao.py#L35) · usado em 8: academico.py, jev_gate_arcano_email.py, jev_gate_boletim_taguatinga.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py …
 - `encoded` (função) — [executor/run_e15.py:27](../executor/run_e15.py#L27) · usado em 1: run_e16.py
-- `entrada_de` (função) — [integracao/instalar.py:119](../integracao/instalar.py#L119)
+- `entrada_agente` (função) — [hermes/tests/test_workflows.py:443](../hermes/tests/test_workflows.py#L443)
+- `entrada_de` (função) — [integracao/instalar.py:132](../integracao/instalar.py#L132)
+- `entrada_experimento` (função) — [hermes/tests/test_workflows.py:663](../hermes/tests/test_workflows.py#L663)
+- `entrada_judge` (função) — [hermes/tests/test_workflows.py:89](../hermes/tests/test_workflows.py#L89)
+- `entrada_modelo` (função) — [hermes/tests/test_workflows.py:530](../hermes/tests/test_workflows.py#L530)
+- `EntradaInvalida` (classe) — [hermes/jev_hermes/workflows.py:85](../hermes/jev_hermes/workflows.py#L85) · usado em 2: avaliacao.py, test_workflows.py
 - `EntregaveisNaoSeConfundem` (classe) — [executor/tests/test_entregaveis.py:24](../executor/tests/test_entregaveis.py#L24)
 - `EntregaveisNaoSeConfundem.test_cada_pdf_abre_no_documento_que_promete` (método) — [executor/tests/test_entregaveis.py:26](../executor/tests/test_entregaveis.py#L26)
 - `EntregaveisNaoSeConfundem.test_os_dois_pdfs_sao_documentos_diferentes` (método) — [executor/tests/test_entregaveis.py:33](../executor/tests/test_entregaveis.py#L33)
@@ -356,17 +506,26 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `entropia` (função) — [laboratorio/h100/dados.py:173](../laboratorio/h100/dados.py#L173) · usado em 1: provas.py
 - `entry` (função) — [executor/pricing.py:32](../executor/pricing.py#L32) · usado em 1: runner.py
 - `erro_grave` (função) — [executor/run_e12_replicacao.py:343](../executor/run_e12_replicacao.py#L343)
-- `ErroDeContrato` (classe) — [hermes/jev_hermes/nucleo.py:257](../hermes/jev_hermes/nucleo.py#L257)
+- `ErroDeContrato` (classe) — [hermes/jev_hermes/nucleo.py:273](../hermes/jev_hermes/nucleo.py#L273)
 - `ErroGraveNaoEIndependenteDoGabarito` (classe) — [executor/tests/test_coerencia_placar.py:576](../executor/tests/test_coerencia_placar.py#L576)
 - `ErroGraveNaoEIndependenteDoGabarito.relatorio` (método) — [executor/tests/test_coerencia_placar.py:585](../executor/tests/test_coerencia_placar.py#L585)
 - `ErroGraveNaoEIndependenteDoGabarito.test_o_erro_grave_do_e11_e_reportado_sob_os_tres_gabaritos` (método) — [executor/tests/test_coerencia_placar.py:589](../executor/tests/test_coerencia_placar.py#L589)
 - `ErroGraveNaoEIndependenteDoGabarito.test_o_jev_nao_comete_erro_grave_em_nenhum_gabarito` (método) — [executor/tests/test_coerencia_placar.py:605](../executor/tests/test_coerencia_placar.py#L605)
 - `ErroGraveNaoEIndependenteDoGabarito.test_o_relatorio_nao_afirma_independencia_do_gabarito` (método) — [executor/tests/test_coerencia_placar.py:597](../executor/tests/test_coerencia_placar.py#L597)
-- `escolha` (função) — [hermes/jev_hermes/nucleo.py:454](../hermes/jev_hermes/nucleo.py#L454) · usado em 8: camadas.py, jev_fabio_urgent_watch.py, jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py …
-- `escolha` (função) — [integracao/camadas/nucleo.py:247](../integracao/camadas/nucleo.py#L247) · usado em 6: busca.py, leitura.py, ler.py, saida.py, sentinela.py, verificar.py
+- `error_body` (função) — [integracao/harness/agent_layer.py:20](../integracao/harness/agent_layer.py#L20) · usado em 3: agent_cli.py, mcp.py, painel.py
+- `escolha` (função) — [hermes/jev_hermes/nucleo.py:479](../hermes/jev_hermes/nucleo.py#L479) · usado em 20: academico.py, agenda.py, anexos.py, camadas.py, ciclo.py, modelos.py …
+- `_escolha` (função) — [hermes/jev_hermes/workflows.py:199](../hermes/jev_hermes/workflows.py#L199)
+- `escolha` (função) — [integracao/camadas/nucleo.py:268](../integracao/camadas/nucleo.py#L268) · usado em 7: sala_sentimento.py, busca.py, leitura.py, ler.py, saida.py, sentinela.py …
+- `escolher` (função) — [hermes/jev_hermes/modelos.py:132](../hermes/jev_hermes/modelos.py#L132) · usado em 2: agentes.py, avaliacao.py
+- `escolher_um` (função) — [laboratorio/r38_r41_terceira_leva.py:69](../laboratorio/r38_r41_terceira_leva.py#L69)
+- `escrever` (função) — [integracao/tests/test_gateway_conciliar.py:21](../integracao/tests/test_gateway_conciliar.py#L21)
+- `esperando_igor` (função) — [hermes/jev_hermes/pendencias.py:120](../hermes/jev_hermes/pendencias.py#L120) · usado em 2: jev_rotina_painel_manha.py, test_jev_hermes.py
 - `esta_retratada` (função) — [laboratorio/h100/dados.py:104](../laboratorio/h100/dados.py#L104) · usado em 2: provas.py, respostas.py
 - `estado_com` (função) — [integracao/avaliacao/com_contexto.py:53](../integracao/avaliacao/com_contexto.py#L53)
-- `estado_do_trecho` (função) — [integracao/camadas/nucleo.py:243](../integracao/camadas/nucleo.py#L243) · usado em 3: busca.py, leitura.py, ler.py
+- `estado_com_trechos` (função) — [laboratorio/r38_r41_terceira_leva.py:65](../laboratorio/r38_r41_terceira_leva.py#L65)
+- `estado_do_item` (função) — [hermes/jev_hermes/triagem.py:135](../hermes/jev_hermes/triagem.py#L135)
+- `estado_do_prazo` (função) — [hermes/jev_hermes/prazos.py:237](../hermes/jev_hermes/prazos.py#L237) · usado em 1: test_jev_hermes.py
+- `estado_do_trecho` (função) — [integracao/camadas/nucleo.py:264](../integracao/camadas/nucleo.py#L264) · usado em 4: busca.py, leitura.py, ler.py, test_camadas.py
 - `estado_sem` (função) — [integracao/avaliacao/com_contexto.py:49](../integracao/avaliacao/com_contexto.py#L49)
 - `EstatisticaRound2` (classe) — [executor/tests/test_achados_revisao2.py:218](../executor/tests/test_achados_revisao2.py#L218)
 - `EstatisticaRound2.test_limite_por_familia_e_mais_conservador_que_por_caso` (método) — [executor/tests/test_achados_revisao2.py:226](../executor/tests/test_achados_revisao2.py#L226)
@@ -374,8 +533,14 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `EstatisticaRound2.test_p_de_permutacao_nunca_e_zero` (método) — [executor/tests/test_achados_revisao2.py:233](../executor/tests/test_achados_revisao2.py#L233)
 - `estilo_igor` (função) — [laboratorio/r1_r3_estresse.py:98](../laboratorio/r1_r3_estresse.py#L98)
 - `estimate_input_tokens` (função) — [executor/runner.py:51](../executor/runner.py#L51) · usado em 1: test_runner.py
+- `Estruturados` (classe) — [integracao/tests/test_shell.py:116](../integracao/tests/test_shell.py#L116)
+- `Estruturados.setUp` (método) — [integracao/tests/test_shell.py:119](../integracao/tests/test_shell.py#L119)
+- `Estruturados.test_leitura_recusa_formato_estruturado` (método) — [integracao/tests/test_shell.py:123](../integracao/tests/test_shell.py#L123)
+- `Estruturados.test_shell_nao_reescreve_cat_de_json` (método) — [integracao/tests/test_shell.py:135](../integracao/tests/test_shell.py#L135)
 - `evaluate` (função) — [executor/assist.py:39](../executor/assist.py#L39) · usado em 3: run_e15.py, run_e16.py, jev_mcp.py
 - `event` (função) — [lab/dashboard.js:137](../lab/dashboard.js#L137)
+- `_evento` (função) — [hermes/jev_hermes/prazos.py:249](../hermes/jev_hermes/prazos.py#L249)
+- `eventos_do_log` (função) — [integracao/gateway/conciliar.py:44](../integracao/gateway/conciliar.py#L44)
 - `evidencia_dividida` (função) — [executor/placar.py:428](../executor/placar.py#L428)
 - `EvidenciaCitadaEstaVersionada` (classe) — [executor/tests/test_achados_revisao16.py:37](../executor/tests/test_achados_revisao16.py#L37)
 - `EvidenciaCitadaEstaVersionada.test_o_bruto_que_prova_a_cronologia_das_emendas_esta_versionado` (método) — [executor/tests/test_achados_revisao16.py:47](../executor/tests/test_achados_revisao16.py#L47)
@@ -383,8 +548,10 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `excerpt` (função) — [executor/run_e15.py:31](../executor/run_e15.py#L31) · usado em 1: run_e16.py
 - `exchange` (função) — [executor/smoke_mcp.py:9](../executor/smoke_mcp.py#L9)
 - `executar` (função) — [executor/run_e10_llm_economico.py:95](../executor/run_e10_llm_economico.py#L95) · usado em 1: run_e10b_piloto.py
-- `executar` (função) — [hermes/jev_hermes/portao.py:44](../hermes/jev_hermes/portao.py#L44) · usado em 5: jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py, test_jev_hermes.py
-- `executar` (função) — [integracao/camadas/rotina.py:86](../integracao/camadas/rotina.py#L86) · usado em 1: test_rotina.py
+- `executar` (função) — [hermes/jev_hermes/academico.py:198](../hermes/jev_hermes/academico.py#L198) · usado em 3: jev_gate_radar_tematico.py, jev_gate_tese_diaria.py, test_recortes.py
+- `executar` (função) — [hermes/jev_hermes/portao.py:44](../hermes/jev_hermes/portao.py#L44) · usado em 10: academico.py, jev_gate_arcano_email.py, jev_gate_boletim_taguatinga.py, jev_gate_email_diario.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py …
+- `executar` (função) — [hermes/jev_hermes/workflows.py:857](../hermes/jev_hermes/workflows.py#L857) · usado em 1: test_workflows.py
+- `executar` (função) — [integracao/camadas/rotina.py:90](../integracao/camadas/rotina.py#L90) · usado em 1: test_rotina.py
 - `executar` (função) — [laboratorio/r10_injecao_comparada.py:50](../laboratorio/r10_injecao_comparada.py#L50)
 - `executar` (função) — [laboratorio/r11_extremos.py:199](../laboratorio/r11_extremos.py#L199)
 - `executar` (função) — [laboratorio/r12_r13_contexto.py:84](../laboratorio/r12_r13_contexto.py#L84)
@@ -395,6 +562,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `executar` (função) — [laboratorio/r1_r3_estresse.py:158](../laboratorio/r1_r3_estresse.py#L158)
 - `executar` (função) — [laboratorio/r4_r7_limites.py:196](../laboratorio/r4_r7_limites.py#L196)
 - `executar` (função) — [laboratorio/r8_r9_adversarial.py:127](../laboratorio/r8_r9_adversarial.py#L127)
+- `executar_claude` (função) — [hermes/jev_hermes/modelos.py:172](../hermes/jev_hermes/modelos.py#L172) · usado em 2: agentes.py, avaliacao.py
 - `executar_individual` (função) — [executor/run_e2_fatorial.py:65](../executor/run_e2_fatorial.py#L65)
 - `executar_lote` (função) — [executor/run_e2_fatorial.py:85](../executor/run_e2_fatorial.py#L85)
 - `executar_os_dois` (função) — [executor/run_e11_desempate.py:196](../executor/run_e11_desempate.py#L196)
@@ -423,28 +591,36 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `falha_de_transporte` (função) — [executor/run_e12_replicacao.py:179](../executor/run_e12_replicacao.py#L179) · usado em 1: test_e12_replicacao.py
 - `FalhaDeTransporte` (classe) — [executor/tests/test_e12_replicacao.py:195](../executor/tests/test_e12_replicacao.py#L195)
 - `FalhaDeTransporte.test_o_que_e_repetido_e_o_que_nao_e` (método) — [executor/tests/test_e12_replicacao.py:197](../executor/tests/test_e12_replicacao.py#L197)
-- `FalhaParaOLadoAberto` (classe) — [integracao/tests/test_roteador.py:83](../integracao/tests/test_roteador.py#L83)
-- `FalhaParaOLadoAberto.setUp` (método) — [integracao/tests/test_roteador.py:85](../integracao/tests/test_roteador.py#L85)
-- `FalhaParaOLadoAberto.test_decisao_e_registrada` (método) — [integracao/tests/test_roteador.py:124](../integracao/tests/test_roteador.py#L124)
-- `FalhaParaOLadoAberto.test_erro_http_devolve_none` (método) — [integracao/tests/test_roteador.py:101](../integracao/tests/test_roteador.py#L101)
-- `FalhaParaOLadoAberto.test_guardar_o_pedido_nunca_derruba_a_decisao` (método) — [integracao/tests/test_roteador.py:152](../integracao/tests/test_roteador.py#L152)
-- `FalhaParaOLadoAberto.test_o_pedido_fica_recuperavel_e_redigido` (método) — [integracao/tests/test_roteador.py:133](../integracao/tests/test_roteador.py#L133)
-- `FalhaParaOLadoAberto.test_pedido_curto_nao_gasta_chamada` (método) — [integracao/tests/test_roteador.py:96](../integracao/tests/test_roteador.py#L96)
-- `FalhaParaOLadoAberto.test_sem_chave_devolve_none_sem_enviar` (método) — [integracao/tests/test_roteador.py:107](../integracao/tests/test_roteador.py#L107)
-- `FalhaParaOLadoAberto.test_teto_estourado_impede_o_envio` (método) — [integracao/tests/test_roteador.py:115](../integracao/tests/test_roteador.py#L115)
+- `FalhaParaOLadoAberto` (classe) — [integracao/tests/test_roteador.py:95](../integracao/tests/test_roteador.py#L95)
+- `FalhaParaOLadoAberto.setUp` (método) — [integracao/tests/test_roteador.py:97](../integracao/tests/test_roteador.py#L97)
+- `FalhaParaOLadoAberto.test_decisao_e_registrada` (método) — [integracao/tests/test_roteador.py:136](../integracao/tests/test_roteador.py#L136)
+- `FalhaParaOLadoAberto.test_erro_http_devolve_none` (método) — [integracao/tests/test_roteador.py:113](../integracao/tests/test_roteador.py#L113)
+- `FalhaParaOLadoAberto.test_guardar_o_pedido_nunca_derruba_a_decisao` (método) — [integracao/tests/test_roteador.py:164](../integracao/tests/test_roteador.py#L164)
+- `FalhaParaOLadoAberto.test_o_pedido_fica_recuperavel_e_redigido` (método) — [integracao/tests/test_roteador.py:145](../integracao/tests/test_roteador.py#L145)
+- `FalhaParaOLadoAberto.test_pedido_curto_nao_gasta_chamada` (método) — [integracao/tests/test_roteador.py:108](../integracao/tests/test_roteador.py#L108)
+- `FalhaParaOLadoAberto.test_sem_chave_devolve_none_sem_enviar` (método) — [integracao/tests/test_roteador.py:119](../integracao/tests/test_roteador.py#L119)
+- `FalhaParaOLadoAberto.test_teto_estourado_impede_o_envio` (método) — [integracao/tests/test_roteador.py:127](../integracao/tests/test_roteador.py#L127)
 - `_fallback` (função) — [hermes/plugin/jev-advisor/__init__.py:73](../hermes/plugin/jev-advisor/__init__.py#L73)
 - `faltantes` (função) — [executor/run_e12_replicacao.py:231](../executor/run_e12_replicacao.py#L231)
-- `_familia_acima` (função) — [laboratorio/h100/provas.py:871](../laboratorio/h100/provas.py#L871)
+- `_faltas_do_jev` (função) — [hermes/jev_hermes/avaliacao.py:190](../hermes/jev_hermes/avaliacao.py#L190) · usado em 1: agentes.py
+- `_faltas_objetivas` (função) — [hermes/jev_hermes/workflows.py:341](../hermes/jev_hermes/workflows.py#L341)
+- `_familia_acima` (função) — [laboratorio/h100/provas.py:873](../laboratorio/h100/provas.py#L873)
 - `_familias_de_instrucao_surpresa` (função) — [laboratorio/q100/respostas.py:189](../laboratorio/q100/respostas.py#L189)
-- `_familias_r15` (função) — [laboratorio/h100/provas.py:745](../laboratorio/h100/provas.py#L745)
-- `_familias_r8` (função) — [laboratorio/h100/provas.py:859](../laboratorio/h100/provas.py#L859)
+- `_familias_r15` (função) — [laboratorio/h100/provas.py:747](../laboratorio/h100/provas.py#L747)
+- `_familias_r8` (função) — [laboratorio/h100/provas.py:861](../laboratorio/h100/provas.py#L861)
 - `fetch` (função) — [research/collect_sources.py:4](../research/collect_sources.py#L4)
+- `_fetch_transcript` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:54](../hermes/plugin/youtube-auto-bridge/__init__.py#L54)
 - `fichas` (função) — [laboratorio/gerar_dossie.py:283](../laboratorio/gerar_dossie.py#L283)
 - `fichas` (função) — [laboratorio/r14_autorrecursivo.py:66](../laboratorio/r14_autorrecursivo.py#L66)
+- `fields` (função) — [integracao/harness/agent_layer.py:28](../integracao/harness/agent_layer.py#L28)
 - `filesView` (função) — [lab/dashboard.js:98](../lab/dashboard.js#L98)
+- `_fim` (função) — [hermes/jev_hermes/avaliacao.py:251](../hermes/jev_hermes/avaliacao.py#L251)
+- `Fluxo` (classe) — [hermes/jev_hermes/ciclo.py:51](../hermes/jev_hermes/ciclo.py#L51) · usado em 2: agenda.py, agentes.py
+- `fluxo_simples` (função) — [hermes/tests/test_fluxos.py:60](../hermes/tests/test_fluxos.py#L60)
 - `fmt_ts` (função) — [hermes/portoes/jev_fabio_urgent_watch.py:63](../hermes/portoes/jev_fabio_urgent_watch.py#L63)
 - `fonte_com_gabarito` (função) — [executor/placar.py:95](../executor/placar.py#L95)
 - `footer` (função) — [planning/build_deliverables.py:53](../planning/build_deliverables.py#L53)
+- `_fora` (função) — [hermes/jev_hermes/prazos.py:304](../hermes/jev_hermes/prazos.py#L304)
 - `Formas` (classe) — [integracao/tests/test_redacao.py:20](../integracao/tests/test_redacao.py#L20)
 - `Formas.test_mascara_atribuicao_em_env` (método) — [integracao/tests/test_redacao.py:32](../integracao/tests/test_redacao.py#L32)
 - `Formas.test_mascara_credencial_em_url` (método) — [integracao/tests/test_redacao.py:37](../integracao/tests/test_redacao.py#L37)
@@ -480,18 +656,36 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `gerar` (função) — [laboratorio/r23_parafrase.py:136](../laboratorio/r23_parafrase.py#L136)
 - `gerar` (função) — [laboratorio/r25_terceiro_dominio.py:86](../laboratorio/r25_terceiro_dominio.py#L86)
 - `gerar_prosa` (função) — [laboratorio/r21_generalizacao.py:261](../laboratorio/r21_generalizacao.py#L261)
+- `gerar_r31` (função) — [laboratorio/r31_r37_segunda_leva.py:163](../laboratorio/r31_r37_segunda_leva.py#L163)
 - `gerar_vetores` (função) — [laboratorio/r15_adversario_externo.py:59](../laboratorio/r15_adversario_externo.py#L59)
-- `gmail_cabecalhos` (função) — [hermes/jev_hermes/portao.py:83](../hermes/jev_hermes/portao.py#L83) · usado em 3: jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_rotina_caixa_vigiada.py
+- `_git` (função) — [hermes/jev_hermes/avaliacao.py:80](../hermes/jev_hermes/avaliacao.py#L80)
+- `gmail_cabecalhos` (função) — [hermes/jev_hermes/portao.py:83](../hermes/jev_hermes/portao.py#L83) · usado em 4: prazos.py, jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_rotina_caixa_vigiada.py
 - `gmail_listar` (função) — [hermes/jev_hermes/portao.py:76](../hermes/jev_hermes/portao.py#L76) · usado em 3: jev_gate_arcano_email.py, jev_gate_email_diario.py, jev_rotina_caixa_vigiada.py
+- `GoogleAgenda` (classe) — [hermes/jev_hermes/agenda.py:55](../hermes/jev_hermes/agenda.py#L55)
+- `GoogleAgenda._gws` (método) — [hermes/jev_hermes/agenda.py:61](../hermes/jev_hermes/agenda.py#L61)
+- `GoogleAgenda.criar` (método) — [hermes/jev_hermes/agenda.py:73](../hermes/jev_hermes/agenda.py#L73)
+- `GoogleAgenda.do_ciclo` (método) — [hermes/jev_hermes/agenda.py:81](../hermes/jev_hermes/agenda.py#L81)
+- `GoogleAgenda.ler` (método) — [hermes/jev_hermes/agenda.py:89](../hermes/jev_hermes/agenda.py#L89)
+- `GoogleAgenda.ocupados` (método) — [hermes/jev_hermes/agenda.py:66](../hermes/jev_hermes/agenda.py#L66)
+- `Gramatica` (classe) — [integracao/tests/test_shell.py:18](../integracao/tests/test_shell.py#L18)
+- `Gramatica.test_caminho_do_git_bash_vira_caminho_do_windows` (método) — [integracao/tests/test_shell.py:42](../integracao/tests/test_shell.py#L42)
+- `Gramatica.test_divide_nos_separadores_de_nivel_superior` (método) — [integracao/tests/test_shell.py:20](../integracao/tests/test_shell.py#L20)
+- `Gramatica.test_intervalos` (método) — [integracao/tests/test_shell.py:36](../integracao/tests/test_shell.py#L36)
+- `Gramatica.test_recusa_tudo_que_nao_entende` (método) — [integracao/tests/test_shell.py:25](../integracao/tests/test_shell.py#L25)
+- `Gramatica.test_so_leitura_pura_e_interpretada` (método) — [integracao/tests/test_shell.py:31](../integracao/tests/test_shell.py#L31)
 - `gravar` (função) — [executor/run_e11_desempate.py:52](../executor/run_e11_desempate.py#L52)
 - `gravar` (função) — [executor/run_e12_replicacao.py:61](../executor/run_e12_replicacao.py#L61)
-- `gravar` (função) — [integracao/instalar.py:215](../integracao/instalar.py#L215)
+- `gravar` (função) — [hermes/jev_hermes/ciclo.py:72](../hermes/jev_hermes/ciclo.py#L72)
+- `gravar` (função) — [integracao/instalar.py:228](../integracao/instalar.py#L228)
+- `gravar` (função) — [laboratorio/r31_r37_segunda_leva.py:117](../laboratorio/r31_r37_segunda_leva.py#L117) · usado em 5: r38_r41_terceira_leva.py, r42_r44_quarta_leva.py, r45_lista_nas_duas_ordens.py, r46_r49_pontos_do_video.py, r50_checklist_de_contrato.py
 - `gravar_instantaneo` (função) — [laboratorio/caixa.py:36](../laboratorio/caixa.py#L36) · usado em 1: conciliar_caixa.py
-- `gravar_modo` (função) — [integracao/instalar.py:200](../integracao/instalar.py#L200)
+- `gravar_modo` (função) — [integracao/instalar.py:213](../integracao/instalar.py#L213)
 - `guardar_estado` (função) — [integracao/hooks/jev_prompt_router.py:47](../integracao/hooks/jev_prompt_router.py#L47)
-- `guardar_pedido` (função) — [hermes/jev_hermes/camadas.py:42](../hermes/jev_hermes/camadas.py#L42)
+- `guardar_pedido` (função) — [hermes/jev_hermes/camadas.py:47](../hermes/jev_hermes/camadas.py#L47)
 - `guardar_pedido` (função) — [integracao/camadas/nucleo.py:108](../integracao/camadas/nucleo.py#L108) · usado em 2: jev_prompt_router.py, test_camadas.py
 - `guardar_pedido` (função) — [integracao/jev_router/roteador.py:56](../integracao/jev_router/roteador.py#L56)
+- `_guardar_recente` (função) — [hermes/jev_hermes/camadas.py:79](../hermes/jev_hermes/camadas.py#L79)
+- `_gws_evento` (função) — [hermes/jev_hermes/prazos.py:264](../hermes/jev_hermes/prazos.py#L264)
 
 ## H
 
@@ -507,98 +701,101 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `h009` (função) — [laboratorio/h100/provas.py:135](../laboratorio/h100/provas.py#L135)
 - `h010` (função) — [laboratorio/h100/provas.py:142](../laboratorio/h100/provas.py#L142)
 - `h011` (função) — [laboratorio/h100/provas.py:149](../laboratorio/h100/provas.py#L149)
-- `h012` (função) — [laboratorio/h100/provas.py:172](../laboratorio/h100/provas.py#L172)
-- `h013` (função) — [laboratorio/h100/provas.py:198](../laboratorio/h100/provas.py#L198)
-- `h014` (função) — [laboratorio/h100/provas.py:216](../laboratorio/h100/provas.py#L216)
-- `h015` (função) — [laboratorio/h100/provas.py:226](../laboratorio/h100/provas.py#L226)
-- `h016` (função) — [laboratorio/h100/provas.py:235](../laboratorio/h100/provas.py#L235)
-- `h017` (função) — [laboratorio/h100/provas.py:246](../laboratorio/h100/provas.py#L246)
-- `h018` (função) — [laboratorio/h100/provas.py:257](../laboratorio/h100/provas.py#L257)
-- `h019` (função) — [laboratorio/h100/provas.py:266](../laboratorio/h100/provas.py#L266)
-- `h020` (função) — [laboratorio/h100/provas.py:279](../laboratorio/h100/provas.py#L279)
-- `h021` (função) — [laboratorio/h100/provas.py:289](../laboratorio/h100/provas.py#L289)
-- `h022` (função) — [laboratorio/h100/provas.py:298](../laboratorio/h100/provas.py#L298)
-- `h023` (função) — [laboratorio/h100/provas.py:308](../laboratorio/h100/provas.py#L308)
-- `h024` (função) — [laboratorio/h100/provas.py:314](../laboratorio/h100/provas.py#L314)
-- `h025` (função) — [laboratorio/h100/provas.py:322](../laboratorio/h100/provas.py#L322)
-- `h026` (função) — [laboratorio/h100/provas.py:329](../laboratorio/h100/provas.py#L329)
-- `h027` (função) — [laboratorio/h100/provas.py:345](../laboratorio/h100/provas.py#L345)
-- `h028` (função) — [laboratorio/h100/provas.py:353](../laboratorio/h100/provas.py#L353)
-- `h029` (função) — [laboratorio/h100/provas.py:366](../laboratorio/h100/provas.py#L366)
-- `h030` (função) — [laboratorio/h100/provas.py:378](../laboratorio/h100/provas.py#L378)
-- `h031` (função) — [laboratorio/h100/provas.py:392](../laboratorio/h100/provas.py#L392)
-- `h032` (função) — [laboratorio/h100/provas.py:400](../laboratorio/h100/provas.py#L400)
-- `h033` (função) — [laboratorio/h100/provas.py:411](../laboratorio/h100/provas.py#L411)
-- `h034` (função) — [laboratorio/h100/provas.py:426](../laboratorio/h100/provas.py#L426)
-- `h035` (função) — [laboratorio/h100/provas.py:438](../laboratorio/h100/provas.py#L438)
-- `h036` (função) — [laboratorio/h100/provas.py:450](../laboratorio/h100/provas.py#L450)
-- `h037` (função) — [laboratorio/h100/provas.py:474](../laboratorio/h100/provas.py#L474)
-- `h038` (função) — [laboratorio/h100/provas.py:481](../laboratorio/h100/provas.py#L481)
-- `h039` (função) — [laboratorio/h100/provas.py:492](../laboratorio/h100/provas.py#L492)
-- `h040` (função) — [laboratorio/h100/provas.py:501](../laboratorio/h100/provas.py#L501)
-- `h041` (função) — [laboratorio/h100/provas.py:508](../laboratorio/h100/provas.py#L508)
-- `h042` (função) — [laboratorio/h100/provas.py:527](../laboratorio/h100/provas.py#L527)
-- `h043` (função) — [laboratorio/h100/provas.py:536](../laboratorio/h100/provas.py#L536)
-- `h044` (função) — [laboratorio/h100/provas.py:552](../laboratorio/h100/provas.py#L552)
-- `h045` (função) — [laboratorio/h100/provas.py:566](../laboratorio/h100/provas.py#L566)
-- `h046` (função) — [laboratorio/h100/provas.py:577](../laboratorio/h100/provas.py#L577)
-- `h047` (função) — [laboratorio/h100/provas.py:592](../laboratorio/h100/provas.py#L592)
-- `h048` (função) — [laboratorio/h100/provas.py:603](../laboratorio/h100/provas.py#L603)
-- `h049` (função) — [laboratorio/h100/provas.py:618](../laboratorio/h100/provas.py#L618)
-- `h050` (função) — [laboratorio/h100/provas.py:625](../laboratorio/h100/provas.py#L625)
-- `h051` (função) — [laboratorio/h100/provas.py:632](../laboratorio/h100/provas.py#L632)
-- `h052` (função) — [laboratorio/h100/provas.py:639](../laboratorio/h100/provas.py#L639)
-- `h053` (função) — [laboratorio/h100/provas.py:646](../laboratorio/h100/provas.py#L646)
-- `h054` (função) — [laboratorio/h100/provas.py:657](../laboratorio/h100/provas.py#L657)
-- `h055` (função) — [laboratorio/h100/provas.py:668](../laboratorio/h100/provas.py#L668)
-- `h056` (função) — [laboratorio/h100/provas.py:680](../laboratorio/h100/provas.py#L680)
-- `h057` (função) — [laboratorio/h100/provas.py:693](../laboratorio/h100/provas.py#L693)
-- `h058` (função) — [laboratorio/h100/provas.py:708](../laboratorio/h100/provas.py#L708)
-- `h059` (função) — [laboratorio/h100/provas.py:718](../laboratorio/h100/provas.py#L718)
-- `h060` (função) — [laboratorio/h100/provas.py:728](../laboratorio/h100/provas.py#L728)
-- `h061` (função) — [laboratorio/h100/provas.py:750](../laboratorio/h100/provas.py#L750)
-- `h062` (função) — [laboratorio/h100/provas.py:757](../laboratorio/h100/provas.py#L757)
-- `h063` (função) — [laboratorio/h100/provas.py:764](../laboratorio/h100/provas.py#L764)
-- `h064` (função) — [laboratorio/h100/provas.py:772](../laboratorio/h100/provas.py#L772)
-- `h065` (função) — [laboratorio/h100/provas.py:784](../laboratorio/h100/provas.py#L784)
-- `h066` (função) — [laboratorio/h100/provas.py:793](../laboratorio/h100/provas.py#L793)
-- `h067` (função) — [laboratorio/h100/provas.py:803](../laboratorio/h100/provas.py#L803)
-- `h068` (função) — [laboratorio/h100/provas.py:812](../laboratorio/h100/provas.py#L812)
-- `h069` (função) — [laboratorio/h100/provas.py:822](../laboratorio/h100/provas.py#L822)
-- `h070` (função) — [laboratorio/h100/provas.py:830](../laboratorio/h100/provas.py#L830)
-- `h071` (função) — [laboratorio/h100/provas.py:838](../laboratorio/h100/provas.py#L838)
-- `h072` (função) — [laboratorio/h100/provas.py:850](../laboratorio/h100/provas.py#L850)
-- `h073` (função) — [laboratorio/h100/provas.py:864](../laboratorio/h100/provas.py#L864)
-- `h074` (função) — [laboratorio/h100/provas.py:878](../laboratorio/h100/provas.py#L878)
-- `h075` (função) — [laboratorio/h100/provas.py:883](../laboratorio/h100/provas.py#L883)
-- `h076` (função) — [laboratorio/h100/provas.py:888](../laboratorio/h100/provas.py#L888)
-- `h077` (função) — [laboratorio/h100/provas.py:893](../laboratorio/h100/provas.py#L893)
-- `h078` (função) — [laboratorio/h100/provas.py:901](../laboratorio/h100/provas.py#L901)
-- `h079` (função) — [laboratorio/h100/provas.py:916](../laboratorio/h100/provas.py#L916)
-- `h080` (função) — [laboratorio/h100/provas.py:925](../laboratorio/h100/provas.py#L925)
-- `h081` (função) — [laboratorio/h100/provas.py:936](../laboratorio/h100/provas.py#L936)
-- `h082` (função) — [laboratorio/h100/provas.py:945](../laboratorio/h100/provas.py#L945)
-- `h083` (função) — [laboratorio/h100/provas.py:953](../laboratorio/h100/provas.py#L953)
-- `h084` (função) — [laboratorio/h100/provas.py:961](../laboratorio/h100/provas.py#L961)
-- `h085` (função) — [laboratorio/h100/provas.py:972](../laboratorio/h100/provas.py#L972)
-- `h086` (função) — [laboratorio/h100/provas.py:980](../laboratorio/h100/provas.py#L980)
-- `h087` (função) — [laboratorio/h100/provas.py:987](../laboratorio/h100/provas.py#L987)
-- `h088` (função) — [laboratorio/h100/provas.py:1000](../laboratorio/h100/provas.py#L1000)
-- `h089` (função) — [laboratorio/h100/provas.py:1007](../laboratorio/h100/provas.py#L1007)
-- `h090` (função) — [laboratorio/h100/provas.py:1015](../laboratorio/h100/provas.py#L1015)
-- `h091` (função) — [laboratorio/h100/provas.py:1026](../laboratorio/h100/provas.py#L1026)
-- `h092` (função) — [laboratorio/h100/provas.py:1042](../laboratorio/h100/provas.py#L1042)
-- `h093` (função) — [laboratorio/h100/provas.py:1050](../laboratorio/h100/provas.py#L1050)
-- `h094` (função) — [laboratorio/h100/provas.py:1061](../laboratorio/h100/provas.py#L1061)
-- `h095` (função) — [laboratorio/h100/provas.py:1079](../laboratorio/h100/provas.py#L1079)
-- `h096` (função) — [laboratorio/h100/provas.py:1089](../laboratorio/h100/provas.py#L1089)
-- `h097` (função) — [laboratorio/h100/provas.py:1100](../laboratorio/h100/provas.py#L1100)
-- `h098` (função) — [laboratorio/h100/provas.py:1111](../laboratorio/h100/provas.py#L1111)
-- `h099` (função) — [laboratorio/h100/provas.py:1134](../laboratorio/h100/provas.py#L1134)
-- `h100` (função) — [laboratorio/h100/provas.py:1145](../laboratorio/h100/provas.py#L1145)
+- `h012` (função) — [laboratorio/h100/provas.py:174](../laboratorio/h100/provas.py#L174)
+- `h013` (função) — [laboratorio/h100/provas.py:200](../laboratorio/h100/provas.py#L200)
+- `h014` (função) — [laboratorio/h100/provas.py:218](../laboratorio/h100/provas.py#L218)
+- `h015` (função) — [laboratorio/h100/provas.py:228](../laboratorio/h100/provas.py#L228)
+- `h016` (função) — [laboratorio/h100/provas.py:237](../laboratorio/h100/provas.py#L237)
+- `h017` (função) — [laboratorio/h100/provas.py:248](../laboratorio/h100/provas.py#L248)
+- `h018` (função) — [laboratorio/h100/provas.py:259](../laboratorio/h100/provas.py#L259)
+- `h019` (função) — [laboratorio/h100/provas.py:268](../laboratorio/h100/provas.py#L268)
+- `h020` (função) — [laboratorio/h100/provas.py:281](../laboratorio/h100/provas.py#L281)
+- `h021` (função) — [laboratorio/h100/provas.py:291](../laboratorio/h100/provas.py#L291)
+- `h022` (função) — [laboratorio/h100/provas.py:300](../laboratorio/h100/provas.py#L300)
+- `h023` (função) — [laboratorio/h100/provas.py:310](../laboratorio/h100/provas.py#L310)
+- `h024` (função) — [laboratorio/h100/provas.py:316](../laboratorio/h100/provas.py#L316)
+- `h025` (função) — [laboratorio/h100/provas.py:324](../laboratorio/h100/provas.py#L324)
+- `h026` (função) — [laboratorio/h100/provas.py:331](../laboratorio/h100/provas.py#L331)
+- `h027` (função) — [laboratorio/h100/provas.py:347](../laboratorio/h100/provas.py#L347)
+- `h028` (função) — [laboratorio/h100/provas.py:355](../laboratorio/h100/provas.py#L355)
+- `h029` (função) — [laboratorio/h100/provas.py:368](../laboratorio/h100/provas.py#L368)
+- `h030` (função) — [laboratorio/h100/provas.py:380](../laboratorio/h100/provas.py#L380)
+- `h031` (função) — [laboratorio/h100/provas.py:394](../laboratorio/h100/provas.py#L394)
+- `h032` (função) — [laboratorio/h100/provas.py:402](../laboratorio/h100/provas.py#L402)
+- `h033` (função) — [laboratorio/h100/provas.py:413](../laboratorio/h100/provas.py#L413)
+- `h034` (função) — [laboratorio/h100/provas.py:428](../laboratorio/h100/provas.py#L428)
+- `h035` (função) — [laboratorio/h100/provas.py:440](../laboratorio/h100/provas.py#L440)
+- `h036` (função) — [laboratorio/h100/provas.py:452](../laboratorio/h100/provas.py#L452)
+- `h037` (função) — [laboratorio/h100/provas.py:476](../laboratorio/h100/provas.py#L476)
+- `h038` (função) — [laboratorio/h100/provas.py:483](../laboratorio/h100/provas.py#L483)
+- `h039` (função) — [laboratorio/h100/provas.py:494](../laboratorio/h100/provas.py#L494)
+- `h040` (função) — [laboratorio/h100/provas.py:503](../laboratorio/h100/provas.py#L503)
+- `h041` (função) — [laboratorio/h100/provas.py:510](../laboratorio/h100/provas.py#L510)
+- `h042` (função) — [laboratorio/h100/provas.py:529](../laboratorio/h100/provas.py#L529)
+- `h043` (função) — [laboratorio/h100/provas.py:538](../laboratorio/h100/provas.py#L538)
+- `h044` (função) — [laboratorio/h100/provas.py:554](../laboratorio/h100/provas.py#L554)
+- `h045` (função) — [laboratorio/h100/provas.py:568](../laboratorio/h100/provas.py#L568)
+- `h046` (função) — [laboratorio/h100/provas.py:579](../laboratorio/h100/provas.py#L579)
+- `h047` (função) — [laboratorio/h100/provas.py:594](../laboratorio/h100/provas.py#L594)
+- `h048` (função) — [laboratorio/h100/provas.py:605](../laboratorio/h100/provas.py#L605)
+- `h049` (função) — [laboratorio/h100/provas.py:620](../laboratorio/h100/provas.py#L620)
+- `h050` (função) — [laboratorio/h100/provas.py:627](../laboratorio/h100/provas.py#L627)
+- `h051` (função) — [laboratorio/h100/provas.py:634](../laboratorio/h100/provas.py#L634)
+- `h052` (função) — [laboratorio/h100/provas.py:641](../laboratorio/h100/provas.py#L641)
+- `h053` (função) — [laboratorio/h100/provas.py:648](../laboratorio/h100/provas.py#L648)
+- `h054` (função) — [laboratorio/h100/provas.py:659](../laboratorio/h100/provas.py#L659)
+- `h055` (função) — [laboratorio/h100/provas.py:670](../laboratorio/h100/provas.py#L670)
+- `h056` (função) — [laboratorio/h100/provas.py:682](../laboratorio/h100/provas.py#L682)
+- `h057` (função) — [laboratorio/h100/provas.py:695](../laboratorio/h100/provas.py#L695)
+- `h058` (função) — [laboratorio/h100/provas.py:710](../laboratorio/h100/provas.py#L710)
+- `h059` (função) — [laboratorio/h100/provas.py:720](../laboratorio/h100/provas.py#L720)
+- `h060` (função) — [laboratorio/h100/provas.py:730](../laboratorio/h100/provas.py#L730)
+- `h061` (função) — [laboratorio/h100/provas.py:752](../laboratorio/h100/provas.py#L752)
+- `h062` (função) — [laboratorio/h100/provas.py:759](../laboratorio/h100/provas.py#L759)
+- `h063` (função) — [laboratorio/h100/provas.py:766](../laboratorio/h100/provas.py#L766)
+- `h064` (função) — [laboratorio/h100/provas.py:774](../laboratorio/h100/provas.py#L774)
+- `h065` (função) — [laboratorio/h100/provas.py:786](../laboratorio/h100/provas.py#L786)
+- `h066` (função) — [laboratorio/h100/provas.py:795](../laboratorio/h100/provas.py#L795)
+- `h067` (função) — [laboratorio/h100/provas.py:805](../laboratorio/h100/provas.py#L805)
+- `h068` (função) — [laboratorio/h100/provas.py:814](../laboratorio/h100/provas.py#L814)
+- `h069` (função) — [laboratorio/h100/provas.py:824](../laboratorio/h100/provas.py#L824)
+- `h070` (função) — [laboratorio/h100/provas.py:832](../laboratorio/h100/provas.py#L832)
+- `h071` (função) — [laboratorio/h100/provas.py:840](../laboratorio/h100/provas.py#L840)
+- `h072` (função) — [laboratorio/h100/provas.py:852](../laboratorio/h100/provas.py#L852)
+- `h073` (função) — [laboratorio/h100/provas.py:866](../laboratorio/h100/provas.py#L866)
+- `h074` (função) — [laboratorio/h100/provas.py:880](../laboratorio/h100/provas.py#L880)
+- `h075` (função) — [laboratorio/h100/provas.py:885](../laboratorio/h100/provas.py#L885)
+- `h076` (função) — [laboratorio/h100/provas.py:890](../laboratorio/h100/provas.py#L890)
+- `h077` (função) — [laboratorio/h100/provas.py:895](../laboratorio/h100/provas.py#L895)
+- `h078` (função) — [laboratorio/h100/provas.py:903](../laboratorio/h100/provas.py#L903)
+- `h079` (função) — [laboratorio/h100/provas.py:918](../laboratorio/h100/provas.py#L918)
+- `h080` (função) — [laboratorio/h100/provas.py:927](../laboratorio/h100/provas.py#L927)
+- `h081` (função) — [laboratorio/h100/provas.py:938](../laboratorio/h100/provas.py#L938)
+- `h082` (função) — [laboratorio/h100/provas.py:947](../laboratorio/h100/provas.py#L947)
+- `h083` (função) — [laboratorio/h100/provas.py:955](../laboratorio/h100/provas.py#L955)
+- `h084` (função) — [laboratorio/h100/provas.py:963](../laboratorio/h100/provas.py#L963)
+- `h085` (função) — [laboratorio/h100/provas.py:974](../laboratorio/h100/provas.py#L974)
+- `h086` (função) — [laboratorio/h100/provas.py:982](../laboratorio/h100/provas.py#L982)
+- `h087` (função) — [laboratorio/h100/provas.py:989](../laboratorio/h100/provas.py#L989)
+- `h088` (função) — [laboratorio/h100/provas.py:1002](../laboratorio/h100/provas.py#L1002)
+- `h089` (função) — [laboratorio/h100/provas.py:1009](../laboratorio/h100/provas.py#L1009)
+- `h090` (função) — [laboratorio/h100/provas.py:1017](../laboratorio/h100/provas.py#L1017)
+- `h091` (função) — [laboratorio/h100/provas.py:1028](../laboratorio/h100/provas.py#L1028)
+- `h092` (função) — [laboratorio/h100/provas.py:1044](../laboratorio/h100/provas.py#L1044)
+- `h093` (função) — [laboratorio/h100/provas.py:1052](../laboratorio/h100/provas.py#L1052)
+- `h094` (função) — [laboratorio/h100/provas.py:1063](../laboratorio/h100/provas.py#L1063)
+- `h095` (função) — [laboratorio/h100/provas.py:1081](../laboratorio/h100/provas.py#L1081)
+- `h096` (função) — [laboratorio/h100/provas.py:1091](../laboratorio/h100/provas.py#L1091)
+- `h097` (função) — [laboratorio/h100/provas.py:1102](../laboratorio/h100/provas.py#L1102)
+- `h098` (função) — [laboratorio/h100/provas.py:1113](../laboratorio/h100/provas.py#L1113)
+- `h099` (função) — [laboratorio/h100/provas.py:1136](../laboratorio/h100/provas.py#L1136)
+- `h100` (função) — [laboratorio/h100/provas.py:1147](../laboratorio/h100/provas.py#L1147)
 - `_h100` (função) — [laboratorio/q100/respostas.py:174](../laboratorio/q100/respostas.py#L174)
 - `handle` (função) — [hermes/plugin/jev-advisor/__init__.py:151](../hermes/plugin/jev-advisor/__init__.py#L151)
-- `handle` (função) — [integracao/jev_mcp.py:152](../integracao/jev_mcp.py#L152) · usado em 1: test_mcp.py
+- `handle` (função) — [hermes/plugin/jev-fluxos/__init__.py:53](../hermes/plugin/jev-fluxos/__init__.py#L53)
+- `handle` (função) — [hermes/plugin/jev-workflows/__init__.py:76](../hermes/plugin/jev-workflows/__init__.py#L76)
+- `handle` (função) — [integracao/harness/mcp.py:64](../integracao/harness/mcp.py#L64) · usado em 1: test_agents.py
+- `handle` (função) — [integracao/jev_mcp.py:152](../integracao/jev_mcp.py#L152) · usado em 2: test_mcp.py, usar.py
 - `Handler` (classe) — [lab/server.py:215](../lab/server.py#L215)
 - `Handler.allowed_host` (método) — [lab/server.py:219](../lab/server.py#L219)
 - `Handler.do_GET` (método) — [lab/server.py:234](../lab/server.py#L234)
@@ -607,65 +804,92 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `Handler.reply` (método) — [lab/server.py:222](../lab/server.py#L222)
 - `historico` (função) — [laboratorio/canarios_de_comportamento.py:253](../laboratorio/canarios_de_comportamento.py#L253)
 - `Hook` (classe) — [integracao/tests/test_guarda_comando.py:80](../integracao/tests/test_guarda_comando.py#L80)
-- `Hook` (classe) — [integracao/tests/test_roteador.py:160](../integracao/tests/test_roteador.py#L160)
+- `Hook` (classe) — [integracao/tests/test_roteador.py:172](../integracao/tests/test_roteador.py#L172)
 - `Hook.rodar` (método) — [integracao/tests/test_guarda_comando.py:89](../integracao/tests/test_guarda_comando.py#L89)
-- `Hook.rodar` (método) — [integracao/tests/test_roteador.py:163](../integracao/tests/test_roteador.py#L163)
+- `Hook.rodar` (método) — [integracao/tests/test_roteador.py:175](../integracao/tests/test_roteador.py#L175)
 - `Hook.setUp` (método) — [integracao/tests/test_guarda_comando.py:82](../integracao/tests/test_guarda_comando.py#L82)
-- `Hook.test_a_nota_sai_em_utf8_com_acento_intacto` (método) — [integracao/tests/test_roteador.py:187](../integracao/tests/test_roteador.py#L187)
+- `Hook.test_a_nota_sai_em_utf8_com_acento_intacto` (método) — [integracao/tests/test_roteador.py:199](../integracao/tests/test_roteador.py#L199)
 - `Hook.test_em_ativo_a_liberacao_sai_em_utf8_com_acento_intacto` (método) — [integracao/tests/test_guarda_comando.py:117](../integracao/tests/test_guarda_comando.py#L117)
 - `Hook.test_em_sombra_nao_escreve_nada_na_saida` (método) — [integracao/tests/test_guarda_comando.py:108](../integracao/tests/test_guarda_comando.py#L108)
-- `Hook.test_em_sombra_nao_injeta_contexto` (método) — [integracao/tests/test_roteador.py:183](../integracao/tests/test_roteador.py#L183)
-- `Hook.test_entrada_invalida_sai_limpo` (método) — [integracao/tests/test_roteador.py:171](../integracao/tests/test_roteador.py#L171)
+- `Hook.test_em_sombra_nao_injeta_contexto` (método) — [integracao/tests/test_roteador.py:195](../integracao/tests/test_roteador.py#L195)
+- `Hook.test_entrada_invalida_sai_limpo` (método) — [integracao/tests/test_roteador.py:183](../integracao/tests/test_roteador.py#L183)
 - `Hook.test_excecao_no_meio_nao_derruba_a_sessao` (método) — [integracao/tests/test_guarda_comando.py:126](../integracao/tests/test_guarda_comando.py#L126)
 - `Hook.test_ferramenta_de_outro_tipo_e_ignorada` (método) — [integracao/tests/test_guarda_comando.py:100](../integracao/tests/test_guarda_comando.py#L100)
 - `Hook.test_nao_libera_nunca_devolve_allow` (método) — [integracao/tests/test_guarda_comando.py:133](../integracao/tests/test_guarda_comando.py#L133)
 - `Hook.test_o_comando_nao_vai_para_o_registro_em_claro` (método) — [integracao/tests/test_guarda_comando.py:140](../integracao/tests/test_guarda_comando.py#L140)
-- `Hook.test_pedido_curto_sai_limpo_sem_rede` (método) — [integracao/tests/test_roteador.py:178](../integracao/tests/test_roteador.py#L178)
-- `Hooks` (classe) — [integracao/tests/test_camadas.py:302](../integracao/tests/test_camadas.py#L302)
-- `Hooks.rodar` (método) — [integracao/tests/test_camadas.py:305](../integracao/tests/test_camadas.py#L305)
-- `Hooks.test_leitura_em_ativo_devolve_updated_input_e_nota_em_utf8` (método) — [integracao/tests/test_camadas.py:333](../integracao/tests/test_camadas.py#L333)
-- `Hooks.test_leitura_em_sombra_cala` (método) — [integracao/tests/test_camadas.py:341](../integracao/tests/test_camadas.py#L341)
-- `Hooks.test_sentinela_ignora_ferramenta_fora_da_lista` (método) — [integracao/tests/test_camadas.py:346](../integracao/tests/test_camadas.py#L346)
-- `http` (função) — [laboratorio/r15_adversario_externo.py:96](../laboratorio/r15_adversario_externo.py#L96) · usado em 8: r17_economia_de_contexto.py, r18_escala.py, r19_armadilha_de_sujeito.py, r20_k_adaptativo.py, r21_generalizacao.py, r23_parafrase.py …
+- `Hook.test_pedido_curto_sai_limpo_sem_rede` (método) — [integracao/tests/test_roteador.py:190](../integracao/tests/test_roteador.py#L190)
+- `Hooks` (classe) — [integracao/tests/test_camadas.py:314](../integracao/tests/test_camadas.py#L314)
+- `Hooks.rodar` (método) — [integracao/tests/test_camadas.py:317](../integracao/tests/test_camadas.py#L317)
+- `Hooks.test_leitura_em_ativo_devolve_updated_input_e_nota_em_utf8` (método) — [integracao/tests/test_camadas.py:345](../integracao/tests/test_camadas.py#L345)
+- `Hooks.test_leitura_em_sombra_cala` (método) — [integracao/tests/test_camadas.py:353](../integracao/tests/test_camadas.py#L353)
+- `Hooks.test_sentinela_ignora_ferramenta_fora_da_lista` (método) — [integracao/tests/test_camadas.py:358](../integracao/tests/test_camadas.py#L358)
+- `http` (função) — [laboratorio/r15_adversario_externo.py:96](../laboratorio/r15_adversario_externo.py#L96) · usado em 9: r17_economia_de_contexto.py, r18_escala.py, r19_armadilha_de_sujeito.py, r20_k_adaptativo.py, r21_generalizacao.py, r23_parafrase.py …
 - `http_transport` (função) — [executor/runner.py:84](../executor/runner.py#L84) · usado em 4: run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, shared.py
 
 ## I
 
 - `idade_horas` (função) — [laboratorio/caixa.py:70](../laboratorio/caixa.py#L70) · usado em 1: auditoria.py
-- `import_legacy` (função) — [executor/shared.py:94](../executor/shared.py#L94) · usado em 1: test_shared.py
+- `_ident` (função) — [hermes/jev_hermes/workflows.py:113](../hermes/jev_hermes/workflows.py#L113)
+- `identity` (função) — [integracao/harness/agent_layer.py:39](../integracao/harness/agent_layer.py#L39)
+- `ignorar` (função) — [hermes/jev_hermes/prazos.py:366](../hermes/jev_hermes/prazos.py#L366)
+- `import_legacy` (função) — [executor/shared.py:94](../executor/shared.py#L94) · usado em 2: test_shared.py, conciliar.py
+- `importar_no_livro_caixa` (função) — [integracao/gateway/conciliar.py:125](../integracao/gateway/conciliar.py#L125)
+- `_impressao` (função) — [hermes/jev_hermes/ciclo.py:102](../hermes/jev_hermes/ciclo.py#L102)
 - `impressao` (função) — [integracao/jev_router/roteador.py:30](../integracao/jev_router/roteador.py#L30) · usado em 1: test_roteador.py
 - `imprimir` (função) — [integracao/camadas/ler.py:136](../integracao/camadas/ler.py#L136) · usado em 1: test_camadas.py
 - `imprimir` (função) — [laboratorio/canarios_de_comportamento.py:244](../laboratorio/canarios_de_comportamento.py#L244)
 - `inconclusiva` (função) — [laboratorio/h100/provas.py:36](../laboratorio/h100/provas.py#L36)
 - `initialize` (função) — [lab/dashboard.js:151](../lab/dashboard.js#L151)
 - `injecao_direta` (função) — [laboratorio/gerar_mapa_visual.py:48](../laboratorio/gerar_mapa_visual.py#L48)
-- `instalado_em` (função) — [integracao/instalar.py:133](../integracao/instalar.py#L133)
-- `instalar` (função) — [integracao/instalar.py:227](../integracao/instalar.py#L227)
-- `instalar_gancho` (função) — [integracao/instalar.py:142](../integracao/instalar.py#L142)
+- `instalado_em` (função) — [integracao/instalar.py:146](../integracao/instalar.py#L146)
+- `instalar` (função) — [integracao/instalar.py:240](../integracao/instalar.py#L240)
+- `instalar_gancho` (função) — [integracao/instalar.py:155](../integracao/instalar.py#L155)
 - `install_node` (função) — [executor/simple_round.py:64](../executor/simple_round.py#L64)
+- `integer` (função) — [integracao/harness/agent_layer.py:33](../integracao/harness/agent_layer.py#L33)
+- `IntegrationTests` (classe) — [integracao/harness/test_componentes.py:9](../integracao/harness/test_componentes.py#L9)
+- `IntegrationTests.test_cli_through_bridge` (método) — [integracao/harness/test_componentes.py:25](../integracao/harness/test_componentes.py#L25)
+- `IntegrationTests.test_every_uses_bridge_despite_upstream_default_url` (método) — [integracao/harness/test_componentes.py:10](../integracao/harness/test_componentes.py#L10)
+- `IntegrationTests.test_mcp_process` (método) — [integracao/harness/test_componentes.py:42](../integracao/harness/test_componentes.py#L42)
 - `interpretar` (função) — [executor/run_e10_llm_economico.py:66](../executor/run_e10_llm_economico.py#L66) · usado em 2: run_e11_desempate.py, run_e12_replicacao.py
-- `itens_da_busca` (função) — [hermes/jev_hermes/camadas.py:350](../hermes/jev_hermes/camadas.py#L350)
+- `interpretar` (função) — [hermes/jev_hermes/agenda.py:292](../hermes/jev_hermes/agenda.py#L292)
+- `interpretar` (função) — [integracao/camadas/shell.py:98](../integracao/camadas/shell.py#L98) · usado em 1: test_shell.py
+- `isolar` (função) — [hermes/jev_hermes/isolamento.py:34](../hermes/jev_hermes/isolamento.py#L34) · usado em 3: avaliacao.py, modelos.py, test_fluxos.py
+- `itens_da_busca` (função) — [hermes/jev_hermes/camadas.py:474](../hermes/jev_hermes/camadas.py#L474)
 - `itens_de_listagem` (função) — [integracao/camadas/busca.py:110](../integracao/camadas/busca.py#L110) · usado em 1: test_camadas.py
 
 ## J
 
-- `ja_instalado` (função) — [integracao/instalar.py:219](../integracao/instalar.py#L219)
-- `jev` (função) — [hermes/tests/test_jev_hermes.py:20](../hermes/tests/test_jev_hermes.py#L20)
-- `json_da_saida` (função) — [hermes/jev_hermes/portao.py:65](../hermes/jev_hermes/portao.py#L65) · usado em 3: jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py, jev_rotina_agenda_dia.py
-- `_json_do_resultado` (função) — [hermes/jev_hermes/camadas.py:240](../hermes/jev_hermes/camadas.py#L240)
+- `ja_instalado` (função) — [integracao/instalar.py:232](../integracao/instalar.py#L232)
+- `janela` (função) — [hermes/jev_hermes/agenda.py:104](../hermes/jev_hermes/agenda.py#L104) · usado em 1: test_fluxos.py
+- `jev` (função) — [hermes/tests/test_fluxos.py:20](../hermes/tests/test_fluxos.py#L20)
+- `Jev` (classe) — [hermes/tests/test_fluxos.py:34](../hermes/tests/test_fluxos.py#L34)
+- `jev` (função) — [hermes/tests/test_jev_hermes.py:19](../hermes/tests/test_jev_hermes.py#L19) · usado em 1: test_recortes.py
+- `Jev` (classe) — [hermes/tests/test_workflows.py:51](../hermes/tests/test_workflows.py#L51)
+- `Jev.perguntas` (método) — [hermes/tests/test_fluxos.py:54](../hermes/tests/test_fluxos.py#L54)
+- `jev_aprova` (função) — [hermes/tests/test_workflows.py:126](../hermes/tests/test_workflows.py#L126)
+- `jev_triagem` (função) — [hermes/tests/test_workflows.py:594](../hermes/tests/test_workflows.py#L594)
+- `job` (função) — [integracao/harness/agent_layer.py:73](../integracao/harness/agent_layer.py#L73)
+- `json_da_saida` (função) — [hermes/jev_hermes/portao.py:65](../hermes/jev_hermes/portao.py#L65) · usado em 8: agenda.py, anexos.py, prazos.py, jev_gate_fabio_whatsapp.py, jev_gate_radar_ia.py, jev_rotina_agenda_dia.py …
+- `_json_do_resultado` (função) — [hermes/jev_hermes/camadas.py:361](../hermes/jev_hermes/camadas.py#L361) · usado em 1: recortes.py
 - `_jsonl` (função) — [integracao/camadas/medir.py:42](../integracao/camadas/medir.py#L42)
+- `judge` (função) — [hermes/jev_hermes/workflows.py:356](../hermes/jev_hermes/workflows.py#L356) · usado em 3: agentes.py, avaliacao.py, test_workflows.py
+- `judge` (função) — [integracao/apoio.py:51](../integracao/apoio.py#L51) · usado em 2: jev_mcp.py, test_apoio.py
+- `julgar` (função) — [laboratorio/r30_hipotese_e_prova.py:94](../laboratorio/r30_hipotese_e_prova.py#L94)
 
 ## K
 
 - `k_adaptativo` (função) — [laboratorio/r20_k_adaptativo.py:56](../laboratorio/r20_k_adaptativo.py#L56)
+- `kanban` (função) — [hermes/jev_hermes/triagem.py:74](../hermes/jev_hermes/triagem.py#L74)
 - `kappa_cohen` (função) — [executor/run_e8_anotador.py:95](../executor/run_e8_anotador.py#L95) · usado em 1: test_achados_revisao4.py
 - `keys` (função) — [lab/server.py:39](../lab/server.py#L39)
 
 ## L
 
-- `_latencias` (função) — [laboratorio/h100/provas.py:462](../laboratorio/h100/provas.py#L462)
+- `laco` (função) — [hermes/jev_hermes/avaliacao.py:206](../hermes/jev_hermes/avaliacao.py#L206)
+- `lado_da_diferenca` (função) — [hermes/infra/conferir_sincronia.py:70](../hermes/infra/conferir_sincronia.py#L70)
+- `_latencias` (função) — [laboratorio/h100/provas.py:464](../laboratorio/h100/provas.py#L464)
 - `_latencias` (função) — [laboratorio/q100/respostas.py:178](../laboratorio/q100/respostas.py#L178)
-- `Ledger` (classe) — [executor/ledger.py:32](../executor/ledger.py#L32) · usado em 24: probe_contract.py, run_canaries.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e1_triagem.py …
+- `Ledger` (classe) — [executor/ledger.py:32](../executor/ledger.py#L32) · usado em 28: probe_contract.py, run_canaries.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e1_triagem.py …
 - `_ledger` (função) — [laboratorio/q100/respostas.py:120](../laboratorio/q100/respostas.py#L120)
 - `Ledger._baixas_de_excedente` (método) — [executor/ledger.py:552](../executor/ledger.py#L552)
 - `Ledger._event` (método) — [executor/ledger.py:758](../executor/ledger.py#L758)
@@ -734,7 +958,7 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `LedgerTests.test_usage_valido_liquida_pelo_custo_observado` (método) — [executor/tests/test_ledger.py:144](../executor/tests/test_ledger.py#L144)
 - `leitura` (função) — [executor/run_e11_desempate.py:145](../executor/run_e11_desempate.py#L145)
 - `leitura` (função) — [executor/run_e12_replicacao.py:321](../executor/run_e12_replicacao.py#L321) · usado em 1: test_e12_replicacao.py
-- `leitura` (função) — [hermes/jev_hermes/camadas.py:261](../hermes/jev_hermes/camadas.py#L261) · usado em 1: test_jev_hermes.py
+- `leitura` (função) — [hermes/jev_hermes/camadas.py:382](../hermes/jev_hermes/camadas.py#L382) · usado em 1: test_jev_hermes.py
 - `leitura` (função) — [integracao/camadas/medir.py:64](../integracao/camadas/medir.py#L64)
 - `Leitura` (classe) — [integracao/tests/test_camadas.py:48](../integracao/tests/test_camadas.py#L48)
 - `Leitura.setUp` (método) — [integracao/tests/test_camadas.py:50](../integracao/tests/test_camadas.py#L50)
@@ -753,23 +977,40 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `LeituraCongelada.test_vantagem_exige_todos_os_comparadores` (método) — [executor/tests/test_e12_replicacao.py:80](../executor/tests/test_e12_replicacao.py#L80)
 - `ler` (função) — [executor/placar.py:26](../executor/placar.py#L26)
 - `ler` (função) — [executor/publicar_experimentos.py:25](../executor/publicar_experimentos.py#L25)
-- `ler` (função) — [integracao/camadas/medir.py:192](../integracao/camadas/medir.py#L192)
-- `Ler` (classe) — [integracao/tests/test_camadas.py:236](../integracao/tests/test_camadas.py#L236)
-- `Ler.test_candidatos_do_rg_fundem_casamentos_proximos` (método) — [integracao/tests/test_camadas.py:248](../integracao/tests/test_camadas.py#L248)
-- `Ler.test_falha_devolve_tudo_e_diz_que_falhou` (método) — [integracao/tests/test_camadas.py:264](../integracao/tests/test_camadas.py#L264)
-- `Ler.test_seleciona_o_topo_e_todo_essencial` (método) — [integracao/tests/test_camadas.py:238](../integracao/tests/test_camadas.py#L238)
-- `_ler_arquivo` (função) — [hermes/jev_hermes/nucleo.py:66](../hermes/jev_hermes/nucleo.py#L66)
+- `ler` (função) — [integracao/camadas/medir.py:198](../integracao/camadas/medir.py#L198)
+- `Ler` (classe) — [integracao/tests/test_camadas.py:248](../integracao/tests/test_camadas.py#L248)
+- `Ler.test_candidatos_do_rg_fundem_casamentos_proximos` (método) — [integracao/tests/test_camadas.py:260](../integracao/tests/test_camadas.py#L260)
+- `Ler.test_falha_devolve_tudo_e_diz_que_falhou` (método) — [integracao/tests/test_camadas.py:276](../integracao/tests/test_camadas.py#L276)
+- `Ler.test_seleciona_o_topo_e_todo_essencial` (método) — [integracao/tests/test_camadas.py:250](../integracao/tests/test_camadas.py#L250)
+- `_ler_arquivo` (função) — [hermes/jev_hermes/nucleo.py:68](../hermes/jev_hermes/nucleo.py#L68)
+- `ler_documento` (função) — [hermes/jev_hermes/checklist.py:175](../hermes/jev_hermes/checklist.py#L175) · usado em 1: anexos.py
+- `_ler_estado` (função) — [integracao/gateway/conciliar.py:83](../integracao/gateway/conciliar.py#L83)
 - `ler_fonte` (função) — [integracao/camadas/verificar.py:47](../integracao/camadas/verificar.py#L47)
+- `ler_item` (função) — [hermes/jev_hermes/checklist.py:109](../hermes/jev_hermes/checklist.py#L109)
+- `ler_item` (função) — [integracao/camadas/checklist.py:72](../integracao/camadas/checklist.py#L72) · usado em 1: r50_checklist_de_contrato.py
+- `ler_pedido` (função) — [hermes/jev_hermes/agenda.py:118](../hermes/jev_hermes/agenda.py#L118)
+- `_limiar` (função) — [hermes/jev_hermes/workflows.py:164](../hermes/jev_hermes/workflows.py#L164)
 - `limite_superior_erro` (função) — [executor/analise.py:57](../executor/analise.py#L57) · usado em 2: run_e12_replicacao.py, test_achados_revisao2.py
 - `limite_superior_erro` (função) — [executor/run_e9_prevalencia.py:68](../executor/run_e9_prevalencia.py#L68) · usado em 1: erro_grave.py
 - `limite_superior_erro_da_politica` (função) — [executor/placar.py:280](../executor/placar.py#L280)
-- `limpar` (função) — [integracao/jev_router/redacao.py:43](../integracao/jev_router/redacao.py#L43) · usado em 8: assist.py, nucleo.py, jev_prompt_router.py, jev_mcp.py, cliente.py, roteador.py …
-- `limpar_sessoes` (função) — [hermes/jev_hermes/camadas.py:76](../hermes/jev_hermes/camadas.py#L76)
-- `linhas` (função) — [hermes/jev_hermes/medir.py:25](../hermes/jev_hermes/medir.py#L25)
+- `_limites` (função) — [hermes/jev_hermes/modelos.py:98](../hermes/jev_hermes/modelos.py#L98)
+- `_limpar` (função) — [hermes/jev_hermes/academico.py:108](../hermes/jev_hermes/academico.py#L108)
+- `limpar` (função) — [integracao/jev_router/redacao.py:43](../integracao/jev_router/redacao.py#L43) · usado em 12: assist.py, apoio.py, nucleo.py, painel.py, jev_prompt_router.py, jev_mcp.py …
+- `limpar_estado` (função) — [hermes/tests/test_workflows.py:77](../hermes/tests/test_workflows.py#L77)
+- `limpar_sessoes` (função) — [hermes/jev_hermes/camadas.py:134](../hermes/jev_hermes/camadas.py#L134)
+- `_linha` (função) — [hermes/jev_hermes/anexos.py:208](../hermes/jev_hermes/anexos.py#L208)
+- `_linha` (função) — [hermes/jev_hermes/pendencias.py:88](../hermes/jev_hermes/pendencias.py#L88)
+- `linha` (função) — [hermes/rotinas/jev_rotina_lembrete_compromisso.py:64](../hermes/rotinas/jev_rotina_lembrete_compromisso.py#L64)
+- `linha_de_base` (função) — [hermes/jev_hermes/avaliacao.py:84](../hermes/jev_hermes/avaliacao.py#L84) · usado em 1: agentes.py
+- `linha_de_gasto` (função) — [integracao/gateway/conciliar.py:68](../integracao/gateway/conciliar.py#L68)
+- `linha_do_prazo` (função) — [hermes/jev_hermes/prazos.py:390](../hermes/jev_hermes/prazos.py#L390) · usado em 1: jev_rotina_prazos.py
+- `linhas` (função) — [hermes/jev_hermes/medir.py:46](../hermes/jev_hermes/medir.py#L46)
+- `_linhas` (função) — [integracao/camadas/shell.py:135](../integracao/camadas/shell.py#L135)
 - `_linhas` (função) — [integracao/jev_router/orcamento.py:40](../integracao/jev_router/orcamento.py#L40)
 - `linhas_com_gabarito` (função) — [laboratorio/h100/dados.py:120](../laboratorio/h100/dados.py#L120) · usado em 2: provas.py, respostas.py
+- `linhas_da_rota` (função) — [hermes/jev_hermes/medir.py:178](../hermes/jev_hermes/medir.py#L178)
 - `_linhas_jev` (função) — [laboratorio/q100/respostas.py:134](../laboratorio/q100/respostas.py#L134) · usado em 1: test_q100.py
-- `_linhas_selecao` (função) — [laboratorio/h100/provas.py:651](../laboratorio/h100/provas.py#L651)
+- `_linhas_selecao` (função) — [laboratorio/h100/provas.py:653](../laboratorio/h100/provas.py#L653)
 - `_linhas_uso_normal` (função) — [laboratorio/q100/respostas.py:162](../laboratorio/q100/respostas.py#L162)
 - `LiquidacaoDeRequisicaoRecusada` (classe) — [executor/tests/test_liquidacao_429.py:23](../executor/tests/test_liquidacao_429.py#L23)
 - `LiquidacaoDeRequisicaoRecusada.reservar` (método) — [executor/tests/test_liquidacao_429.py:40](../executor/tests/test_liquidacao_429.py#L40)
@@ -779,18 +1020,24 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `LiquidacaoDeRequisicaoRecusada.test_5xx_e_timeout_continuam_no_pior_caso` (método) — [executor/tests/test_liquidacao_429.py:55](../executor/tests/test_liquidacao_429.py#L55)
 - `LiquidacaoDeRequisicaoRecusada.test_custo_reportado_pelo_provedor_tem_precedencia` (método) — [executor/tests/test_liquidacao_429.py:64](../executor/tests/test_liquidacao_429.py#L64)
 - `LiquidacaoDeRequisicaoRecusada.test_reserva_de_429_nao_segue_comprometida` (método) — [executor/tests/test_liquidacao_429.py:71](../executor/tests/test_liquidacao_429.py#L71)
-- `_liquidar` (função) — [hermes/jev_hermes/nucleo.py:222](../hermes/jev_hermes/nucleo.py#L222)
+- `_liquidar` (função) — [hermes/jev_hermes/nucleo.py:238](../hermes/jev_hermes/nucleo.py#L238)
+- `_lista` (função) — [hermes/jev_hermes/workflows.py:122](../hermes/jev_hermes/workflows.py#L122)
+- `lista` (função) — [laboratorio/r42_r44_quarta_leva.py:139](../laboratorio/r42_r44_quarta_leva.py#L139) · usado em 1: r45_lista_nas_duas_ordens.py
 - `lista` (função) — [laboratorio/tests/test_canarios_de_comportamento.py:14](../laboratorio/tests/test_canarios_de_comportamento.py#L14)
 - `Listagens` (classe) — [integracao/tests/test_camadas.py:138](../integracao/tests/test_camadas.py#L138)
 - `Listagens.test_itens_de_listagem_acha_a_lista_de_registros_no_json` (método) — [integracao/tests/test_camadas.py:140](../integracao/tests/test_camadas.py#L140)
 - `Listagens.test_o_matcher_da_busca_cobre_as_ferramentas` (método) — [integracao/tests/test_camadas.py:161](../integracao/tests/test_camadas.py#L161)
 - `Listagens.test_sugere_para_listagem_do_gmail` (método) — [integracao/tests/test_camadas.py:148](../integracao/tests/test_camadas.py#L148)
+- `_listar` (função) — [hermes/jev_hermes/anexos.py:80](../hermes/jev_hermes/anexos.py#L80)
+- `_listar` (função) — [hermes/jev_hermes/prazos.py:297](../hermes/jev_hermes/prazos.py#L297)
+- `livres` (função) — [hermes/jev_hermes/agenda.py:132](../hermes/jev_hermes/agenda.py#L132)
 - `livro_caixa` (função) — [laboratorio/conciliar_caixa.py:29](../laboratorio/conciliar_caixa.py#L29)
 - `load_api_key` (função) — [executor/runner.py:29](../executor/runner.py#L29) · usado em 15: probe_contract.py, run_canaries.py, run_e10_llm_economico.py, run_e10b_piloto.py, run_e11_desempate.py, run_e12_replicacao.py …
-- `load_prices` (função) — [executor/pricing.py:18](../executor/pricing.py#L18) · usado em 11: ledger.py, run_e10_llm_economico.py, run_e10b_piloto.py, run_e11_desempate.py, run_e12_replicacao.py, run_e5_provedores.py …
+- `load_prices` (função) — [executor/pricing.py:18](../executor/pricing.py#L18) · usado em 15: ledger.py, run_e10_llm_economico.py, run_e10b_piloto.py, run_e11_desempate.py, run_e12_replicacao.py, run_e5_provedores.py …
 - `load_state` (função) — [hermes/portoes/jev_fabio_urgent_watch.py:50](../hermes/portoes/jev_fabio_urgent_watch.py#L50)
 - `loadServer` (função) — [lab/dashboard.js:150](../lab/dashboard.js#L150)
-- `_log` (função) — [integracao/camadas/rotina.py:55](../integracao/camadas/rotina.py#L55)
+- `log` (função) — [hermes/rotinas/jev_reiniciar_ocioso.py:5](../hermes/rotinas/jev_reiniciar_ocioso.py#L5)
+- `_log` (função) — [integracao/camadas/rotina.py:59](../integracao/camadas/rotina.py#L59)
 - `_lote` (função) — [hermes/plugin/jev-advisor/__init__.py:100](../hermes/plugin/jev-advisor/__init__.py#L100)
 
 ## M
@@ -820,14 +1067,28 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [executor/run_e9_prevalencia.py:123](../executor/run_e9_prevalencia.py#L123)
 - `main` (função) — [executor/simple_round.py:118](../executor/simple_round.py#L118)
 - `main` (função) — [executor/smoke_mcp.py:18](../executor/smoke_mcp.py#L18)
+- `main` (função) — [hermes/infra/conferir_sincronia.py:117](../hermes/infra/conferir_sincronia.py#L117)
+- `main` (função) — [hermes/jev_hermes/aferir_rota.py:109](../hermes/jev_hermes/aferir_rota.py#L109)
+- `main` (função) — [hermes/jev_hermes/anexos.py:213](../hermes/jev_hermes/anexos.py#L213)
+- `main` (função) — [hermes/jev_hermes/checklist.py:193](../hermes/jev_hermes/checklist.py#L193)
+- `main` (função) — [hermes/jev_hermes/pendencias.py:190](../hermes/jev_hermes/pendencias.py#L190)
+- `main` (função) — [hermes/jev_hermes/ponte_openai.py:150](../hermes/jev_hermes/ponte_openai.py#L150)
 - `main` (função) — [hermes/portoes/jev_fabio_urgent_watch.py:67](../hermes/portoes/jev_fabio_urgent_watch.py#L67)
 - `main` (função) — [hermes/portoes/jev_gate_arcano_email.py:44](../hermes/portoes/jev_gate_arcano_email.py#L44)
+- `main` (função) — [hermes/portoes/jev_gate_boletim_taguatinga.py:106](../hermes/portoes/jev_gate_boletim_taguatinga.py#L106)
 - `main` (função) — [hermes/portoes/jev_gate_email_diario.py:25](../hermes/portoes/jev_gate_email_diario.py#L25)
 - `main` (função) — [hermes/portoes/jev_gate_fabio_whatsapp.py:62](../hermes/portoes/jev_gate_fabio_whatsapp.py#L62)
 - `main` (função) — [hermes/portoes/jev_gate_radar_ia.py:70](../hermes/portoes/jev_gate_radar_ia.py#L70)
+- `main` (função) — [hermes/portoes/jev_gate_sono_memoria.py:43](../hermes/portoes/jev_gate_sono_memoria.py#L43)
+- `main` (função) — [hermes/rotinas/jev_comparar_job.py:51](../hermes/rotinas/jev_comparar_job.py#L51)
+- `main` (função) — [hermes/rotinas/jev_observar_porteiros.py:57](../hermes/rotinas/jev_observar_porteiros.py#L57)
 - `main` (função) — [hermes/rotinas/jev_rotina_agenda_dia.py:31](../hermes/rotinas/jev_rotina_agenda_dia.py#L31)
-- `main` (função) — [hermes/rotinas/jev_rotina_caixa_vigiada.py:29](../hermes/rotinas/jev_rotina_caixa_vigiada.py#L29)
+- `main` (função) — [hermes/rotinas/jev_rotina_anexos.py:17](../hermes/rotinas/jev_rotina_anexos.py#L17)
+- `main` (função) — [hermes/rotinas/jev_rotina_caixa_vigiada.py:33](../hermes/rotinas/jev_rotina_caixa_vigiada.py#L33)
 - `main` (função) — [hermes/rotinas/jev_rotina_economia.py:10](../hermes/rotinas/jev_rotina_economia.py#L10) · usado em 1: jev_rotina_economia_semanal.py
+- `main` (função) — [hermes/rotinas/jev_rotina_lembrete_compromisso.py:89](../hermes/rotinas/jev_rotina_lembrete_compromisso.py#L89)
+- `main` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:152](../hermes/rotinas/jev_rotina_painel_manha.py#L152)
+- `main` (função) — [hermes/rotinas/jev_rotina_prazos.py:17](../hermes/rotinas/jev_rotina_prazos.py#L17)
 - `main` (função) — [hermes/rotinas/jev_rotina_saude_whatsapp.py:22](../hermes/rotinas/jev_rotina_saude_whatsapp.py#L22)
 - `main` (função) — [integracao/avaliacao/amostrar.py:41](../integracao/avaliacao/amostrar.py#L41)
 - `main` (função) — [integracao/avaliacao/amostrar_com_contexto.py:96](../integracao/avaliacao/amostrar_com_contexto.py#L96)
@@ -837,19 +1098,33 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [integracao/avaliacao/rodar.py:120](../integracao/avaliacao/rodar.py#L120)
 - `main` (função) — [integracao/avaliacao/skills.py:76](../integracao/avaliacao/skills.py#L76)
 - `main` (função) — [integracao/avaliacao/variantes.py:72](../integracao/avaliacao/variantes.py#L72)
+- `main` (função) — [integracao/camadas/checklist.py:115](../integracao/camadas/checklist.py#L115)
 - `main` (função) — [integracao/camadas/ler.py:163](../integracao/camadas/ler.py#L163)
-- `main` (função) — [integracao/camadas/medir.py:418](../integracao/camadas/medir.py#L418)
-- `main` (função) — [integracao/camadas/rotina.py:108](../integracao/camadas/rotina.py#L108)
+- `main` (função) — [integracao/camadas/medir.py:426](../integracao/camadas/medir.py#L426)
+- `main` (função) — [integracao/camadas/rotina.py:112](../integracao/camadas/rotina.py#L112)
 - `main` (função) — [integracao/camadas/verificar.py:91](../integracao/camadas/verificar.py#L91)
+- `main` (função) — [integracao/classificar_lote.py:18](../integracao/classificar_lote.py#L18)
+- `main` (função) — [integracao/gateway/conciliar.py:192](../integracao/gateway/conciliar.py#L192)
+- `main` (função) — [integracao/harness/agent_cli.py:12](../integracao/harness/agent_cli.py#L12)
+- `main` (função) — [integracao/harness/avaliar_ao_vivo.py:11](../integracao/harness/avaliar_ao_vivo.py#L11)
+- `main` (função) — [integracao/harness/painel.py:305](../integracao/harness/painel.py#L305)
+- `main` (função) — [integracao/harness/usar_ferramenta.py:45](../integracao/harness/usar_ferramenta.py#L45)
 - `main` (função) — [integracao/hooks/jev_busca.py:20](../integracao/hooks/jev_busca.py#L20)
 - `main` (função) — [integracao/hooks/jev_guarda_comando.py:112](../integracao/hooks/jev_guarda_comando.py#L112) · usado em 1: test_guarda_comando.py
 - `main` (função) — [integracao/hooks/jev_leitura.py:23](../integracao/hooks/jev_leitura.py#L23)
+- `main` (função) — [integracao/hooks/jev_leitura_shell.py:26](../integracao/hooks/jev_leitura_shell.py#L26)
 - `main` (função) — [integracao/hooks/jev_prompt_router.py:76](../integracao/hooks/jev_prompt_router.py#L76)
 - `main` (função) — [integracao/hooks/jev_saida.py:18](../integracao/hooks/jev_saida.py#L18)
 - `main` (função) — [integracao/hooks/jev_sentinela.py:19](../integracao/hooks/jev_sentinela.py#L19)
-- `main` (função) — [integracao/instalar.py:304](../integracao/instalar.py#L304)
+- `main` (função) — [integracao/hooks/jev_workflow.py:31](../integracao/hooks/jev_workflow.py#L31)
+- `main` (função) — [integracao/instalar.py:317](../integracao/instalar.py#L317)
+- `main` (função) — [integracao/instalar_workflow.py:30](../integracao/instalar_workflow.py#L30)
 - `main` (função) — [integracao/jev_mcp.py:179](../integracao/jev_mcp.py#L179)
 - `main` (função) — [integracao/jev_router/cli.py:18](../integracao/jev_router/cli.py#L18)
+- `main` (função) — [integracao/publicar_continuacao.py:35](../integracao/publicar_continuacao.py#L35)
+- `main` (função) — [integracao/publicar_smoke.py:13](../integracao/publicar_smoke.py#L13)
+- `main` (função) — [integracao/teste_real_typesafe.py:15](../integracao/teste_real_typesafe.py#L15)
+- `main` (função) — [integracao/usar.py:11](../integracao/usar.py#L11)
 - `main` (função) — [lab/server.py:290](../lab/server.py#L290)
 - `main` (função) — [laboratorio/auditoria.py:1264](../laboratorio/auditoria.py#L1264)
 - `main` (função) — [laboratorio/canarios_de_comportamento.py:262](../laboratorio/canarios_de_comportamento.py#L262)
@@ -882,7 +1157,16 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [laboratorio/r25_terceiro_dominio.py:182](../laboratorio/r25_terceiro_dominio.py#L182)
 - `main` (função) — [laboratorio/r26_dois_trechos.py:204](../laboratorio/r26_dois_trechos.py#L204)
 - `main` (função) — [laboratorio/r27_integracao.py:131](../laboratorio/r27_integracao.py#L131)
+- `main` (função) — [laboratorio/r28_ato_de_fala.py:220](../laboratorio/r28_ato_de_fala.py#L220)
+- `main` (função) — [laboratorio/r29_o_que_carrega_a_decisao.py:127](../laboratorio/r29_o_que_carrega_a_decisao.py#L127)
+- `main` (função) — [laboratorio/r30_hipotese_e_prova.py:104](../laboratorio/r30_hipotese_e_prova.py#L104)
+- `main` (função) — [laboratorio/r31_r37_segunda_leva.py:511](../laboratorio/r31_r37_segunda_leva.py#L511)
+- `main` (função) — [laboratorio/r38_r41_terceira_leva.py:248](../laboratorio/r38_r41_terceira_leva.py#L248)
+- `main` (função) — [laboratorio/r42_r44_quarta_leva.py:230](../laboratorio/r42_r44_quarta_leva.py#L230)
+- `main` (função) — [laboratorio/r45_lista_nas_duas_ordens.py:29](../laboratorio/r45_lista_nas_duas_ordens.py#L29)
+- `main` (função) — [laboratorio/r46_r49_pontos_do_video.py:290](../laboratorio/r46_r49_pontos_do_video.py#L290)
 - `main` (função) — [laboratorio/r4_r7_limites.py:220](../laboratorio/r4_r7_limites.py#L220)
+- `main` (função) — [laboratorio/r50_checklist_de_contrato.py:93](../laboratorio/r50_checklist_de_contrato.py#L93)
 - `main` (função) — [laboratorio/r8_r9_adversarial.py:152](../laboratorio/r8_r9_adversarial.py#L152)
 - `main` (função) — [planning/build_deliverables.py:195](../planning/build_deliverables.py#L195)
 - `main` (função) — [planning/build_guia_pdf.py:84](../planning/build_guia_pdf.py#L84)
@@ -890,26 +1174,34 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `main` (função) — [planning/build_relatorio_pdf.py:69](../planning/build_relatorio_pdf.py#L69)
 - `main` (função) — [research/audit_hermes_pdf.py:27](../research/audit_hermes_pdf.py#L27)
 - `_maior_lista_de_dicionarios` (função) — [integracao/camadas/busca.py:90](../integracao/camadas/busca.py#L90)
+- `make_server` (função) — [integracao/harness/painel.py:248](../integracao/harness/painel.py#L248) · usado em 2: test_agents.py, test_painel.py
+- `manifest` (função) — [integracao/harness/agent_layer.py:45](../integracao/harness/agent_layer.py#L45)
 - `marca` (função) — [integracao/avaliacao/auditar_producao.py:28](../integracao/avaliacao/auditar_producao.py#L28)
 - `_marca` (função) — [integracao/hooks/jev_guarda_comando.py:152](../integracao/hooks/jev_guarda_comando.py#L152)
-- `_marcar_leitura_parcial` (função) — [hermes/plugin/jev-camadas/__init__.py:57](../hermes/plugin/jev-camadas/__init__.py#L57)
+- `_marcar_leitura_parcial` (função) — [hermes/plugin/jev-camadas/__init__.py:83](../hermes/plugin/jev-camadas/__init__.py#L83)
+- `marcar_limite` (função) — [hermes/jev_hermes/modelos.py:114](../hermes/jev_hermes/modelos.py#L114)
 - `markup` (função) — [planning/build_deliverables.py:29](../planning/build_deliverables.py#L29)
 - `mcnemar` (função) — [laboratorio/auditoria.py:50](../laboratorio/auditoria.py#L50) · usado em 1: test_auditoria.py
 - `mcnemar_exato` (função) — [executor/run_e11_desempate.py:71](../executor/run_e11_desempate.py#L71) · usado em 1: run_e12_replicacao.py
-- `mcnemar_exato` (função) — [laboratorio/nucleo.py:167](../laboratorio/nucleo.py#L167) · usado em 15: r17_economia_de_contexto.py, r17b_sensibilidade.py, r18_escala.py, r19_armadilha_de_sujeito.py, r1_r3_estresse.py, r20_k_adaptativo.py …
+- `mcnemar_exato` (função) — [laboratorio/nucleo.py:167](../laboratorio/nucleo.py#L167) · usado em 20: r17_economia_de_contexto.py, r17b_sensibilidade.py, r18_escala.py, r19_armadilha_de_sujeito.py, r1_r3_estresse.py, r20_k_adaptativo.py …
+- `_media` (função) — [hermes/jev_hermes/bancada.py:133](../hermes/jev_hermes/bancada.py#L133)
 - `_mediana` (função) — [integracao/camadas/medir.py:54](../integracao/camadas/medir.py#L54)
 - `mediana` (função) — [laboratorio/h100/dados.py:219](../laboratorio/h100/dados.py#L219) · usado em 2: provas.py, respostas.py
 - `medianValue` (função) — [lab/metrics.js:9](../lab/metrics.js#L9)
-- `Medidor` (classe) — [integracao/tests/test_camadas.py:358](../integracao/tests/test_camadas.py#L358)
-- `Medidor` (classe) — [laboratorio/r21_generalizacao.py:62](../laboratorio/r21_generalizacao.py#L62) · usado em 7: r21b_cruzamento.py, r22_defesas.py, r23_parafrase.py, r24_votacao.py, r25_terceiro_dominio.py, r26_dois_trechos.py …
+- `_medida` (função) — [hermes/jev_hermes/workflows.py:695](../hermes/jev_hermes/workflows.py#L695)
+- `medidas` (função) — [laboratorio/r31_r37_segunda_leva.py:109](../laboratorio/r31_r37_segunda_leva.py#L109) · usado em 5: r38_r41_terceira_leva.py, r42_r44_quarta_leva.py, r45_lista_nas_duas_ordens.py, r46_r49_pontos_do_video.py, r50_checklist_de_contrato.py
+- `Medidor` (classe) — [integracao/tests/test_camadas.py:370](../integracao/tests/test_camadas.py#L370)
+- `Medidor` (classe) — [laboratorio/r21_generalizacao.py:62](../laboratorio/r21_generalizacao.py#L62) · usado em 10: r21b_cruzamento.py, r22_defesas.py, r23_parafrase.py, r24_votacao.py, r25_terceiro_dominio.py, r26_dois_trechos.py …
 - `Medidor._linhas_do_diario` (método) — [laboratorio/r21_generalizacao.py:79](../laboratorio/r21_generalizacao.py#L79)
 - `Medidor.gasto` (método) — [laboratorio/r21_generalizacao.py:85](../laboratorio/r21_generalizacao.py#L85)
-- `Medidor.test_recalcula_do_registro_e_ignora_sessoes_de_fumaca` (método) — [integracao/tests/test_camadas.py:360](../integracao/tests/test_camadas.py#L360)
+- `Medidor.test_recalcula_do_registro_e_ignora_sessoes_de_fumaca` (método) — [integracao/tests/test_camadas.py:372](../integracao/tests/test_camadas.py#L372)
 - `medir` (função) — [executor/erro_grave.py:45](../executor/erro_grave.py#L45)
-- `medir` (função) — [hermes/jev_hermes/medir.py:52](../hermes/jev_hermes/medir.py#L52) · usado em 1: jev_rotina_economia.py
+- `medir` (função) — [hermes/jev_hermes/medir.py:122](../hermes/jev_hermes/medir.py#L122) · usado em 1: jev_rotina_economia.py
 - `medir` (função) — [integracao/avaliacao/com_contexto.py:73](../integracao/avaliacao/com_contexto.py#L73)
 - `medir` (função) — [integracao/avaliacao/comandos.py:97](../integracao/avaliacao/comandos.py#L97)
-- `medir` (função) — [integracao/camadas/medir.py:231](../integracao/camadas/medir.py#L231) · usado em 1: test_camadas.py
+- `medir` (função) — [integracao/camadas/medir.py:237](../integracao/camadas/medir.py#L237) · usado em 1: test_camadas.py
+- `_mensagem` (função) — [hermes/jev_hermes/anexos.py:87](../hermes/jev_hermes/anexos.py#L87)
+- `mensagens_do_fio` (função) — [hermes/jev_hermes/prazos.py:127](../hermes/jev_hermes/prazos.py#L127)
 - `mensagens_novas` (função) — [hermes/portoes/jev_gate_fabio_whatsapp.py:52](../hermes/portoes/jev_gate_fabio_whatsapp.py#L52)
 - `MetricasDoE8eE9` (classe) — [executor/tests/test_achados_revisao4.py:106](../executor/tests/test_achados_revisao4.py#L106)
 - `MetricasDoE8eE9.test_ambigua_em_texto_nao_vira_verdadeiro` (método) — [executor/tests/test_achados_revisao4.py:133](../executor/tests/test_achados_revisao4.py#L133)
@@ -922,43 +1214,61 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `metrics` (função) — [lab/dashboard.js:42](../lab/dashboard.js#L42)
 - `metricSelection` (função) — [lab/metrics.js:23](../lab/metrics.js#L23)
 - `metricsView` (função) — [lab/metrics.js:36](../lab/metrics.js#L36)
+- `mil` (função) — [hermes/jev_hermes/medir.py:209](../hermes/jev_hermes/medir.py#L209) · usado em 1: jev_rotina_economia.py
 - `mil` (função) — [laboratorio/gerar_bateria.py:37](../laboratorio/gerar_bateria.py#L37)
 - `mil` (função) — [laboratorio/q100/respostas.py:46](../laboratorio/q100/respostas.py#L46) · usado em 1: relatorio.py
 - `milhar` (função) — [laboratorio/gerar_dossie.py:35](../laboratorio/gerar_dossie.py#L35)
-- `modo_vigente` (função) — [integracao/camadas/nucleo.py:68](../integracao/camadas/nucleo.py#L68) · usado em 4: jev_busca.py, jev_leitura.py, jev_saida.py, jev_sentinela.py
+- `modelo_principal` (função) — [hermes/jev_hermes/medir.py:73](../hermes/jev_hermes/medir.py#L73)
+- `modo_vigente` (função) — [integracao/camadas/nucleo.py:68](../integracao/camadas/nucleo.py#L68) · usado em 5: jev_busca.py, jev_leitura.py, jev_leitura_shell.py, jev_saida.py, jev_sentinela.py
 - `modo_vigente` (função) — [integracao/hooks/jev_guarda_comando.py:73](../integracao/hooks/jev_guarda_comando.py#L73)
 - `modo_vigente` (função) — [integracao/hooks/jev_prompt_router.py:31](../integracao/hooks/jev_prompt_router.py#L31)
 - `montar` (função) — [executor/placar.py:641](../executor/placar.py#L641) · usado em 4: test_coerencia_placar.py, test_mutacao.py, build_guia_pdf.py, build_relatorio_pdf.py
 - `montar` (função) — [executor/tests/test_mutacao.py:22](../executor/tests/test_mutacao.py#L22)
+- `montar` (função) — [hermes/jev_hermes/agenda.py:158](../hermes/jev_hermes/agenda.py#L158)
+- `montar` (função) — [hermes/jev_hermes/agentes.py:59](../hermes/jev_hermes/agentes.py#L59)
 - `montar` (função) — [laboratorio/gerar_bateria.py:299](../laboratorio/gerar_bateria.py#L299)
 - `montar` (função) — [laboratorio/gerar_dossie.py:369](../laboratorio/gerar_dossie.py#L369)
 - `montar` (função) — [laboratorio/h100/relatorio.py:88](../laboratorio/h100/relatorio.py#L88) · usado em 1: auditoria.py
 - `montar` (função) — [laboratorio/q100/relatorio.py:62](../laboratorio/q100/relatorio.py#L62) · usado em 2: auditoria.py, test_q100.py
 - `montar` (função) — [laboratorio/r17_economia_de_contexto.py:149](../laboratorio/r17_economia_de_contexto.py#L149)
 - `montar` (função) — [laboratorio/r27_integracao.py:58](../laboratorio/r27_integracao.py#L58)
-- `montar_casos` (função) — [laboratorio/r26_dois_trechos.py:54](../laboratorio/r26_dois_trechos.py#L54)
+- `montar` (função) — [laboratorio/r29_o_que_carrega_a_decisao.py:70](../laboratorio/r29_o_que_carrega_a_decisao.py#L70)
+- `montar_casos` (função) — [laboratorio/r26_dois_trechos.py:54](../laboratorio/r26_dois_trechos.py#L54) · usado em 1: r38_r41_terceira_leva.py
+- `montar_casos` (função) — [laboratorio/r30_hipotese_e_prova.py:71](../laboratorio/r30_hipotese_e_prova.py#L71) · usado em 1: r31_r37_segunda_leva.py
+- `montar_contratos` (função) — [laboratorio/r50_checklist_de_contrato.py:77](../laboratorio/r50_checklist_de_contrato.py#L77)
 - `montar_estado` (função) — [laboratorio/r22_defesas.py:92](../laboratorio/r22_defesas.py#L92)
 - `montar_prompt` (função) — [executor/adjudicar_e11.py:59](../executor/adjudicar_e11.py#L59)
 - `montar_prompt` (função) — [executor/adjudicar_e12.py:59](../executor/adjudicar_e12.py#L59)
 
 ## N
 
-- `n` (função) — [integracao/camadas/medir.py:266](../integracao/camadas/medir.py#L266)
+- `n` (função) — [integracao/camadas/medir.py:272](../integracao/camadas/medir.py#L272)
 - `navigate` (função) — [lab/dashboard.js:108](../lab/dashboard.js#L108)
 - `ndcg` (função) — [executor/run_e4_ressalvas.py:78](../executor/run_e4_ressalvas.py#L78)
 - `negrito` (função) — [planning/build_relatorio_pdf.py:27](../planning/build_relatorio_pdf.py#L27)
+- `no_limite` (função) — [hermes/jev_hermes/modelos.py:105](../hermes/jev_hermes/modelos.py#L105)
+- `node` (função) — [integracao/harness/web/app.js:6](../integracao/harness/web/app.js#L6)
+- `_nome` (função) — [hermes/jev_hermes/pendencias.py:94](../hermes/jev_hermes/pendencias.py#L94)
 - `normalizar` (função) — [executor/baseline_regra.py:27](../executor/baseline_regra.py#L27)
 - `normalizar` (função) — [executor/run_e3_evidencia.py:49](../executor/run_e3_evidencia.py#L49)
 - `normalizar` (função) — [executor/run_e4_ressalvas.py:45](../executor/run_e4_ressalvas.py#L45)
+- `normalize` (função) — [integracao/harness/fixtures/exemplo.py:4](../integracao/harness/fixtures/exemplo.py#L4)
+- `nota_de_cache` (função) — [hermes/jev_hermes/medir.py:214](../hermes/jev_hermes/medir.py#L214)
 - `nota_de_confianca` (função) — [executor/placar.py:295](../executor/placar.py#L295)
 - `nota_para_o_agente` (função) — [integracao/camadas/busca.py:177](../integracao/camadas/busca.py#L177) · usado em 2: jev_busca.py, test_camadas.py
-- `nota_para_o_agente` (função) — [integracao/camadas/leitura.py:141](../integracao/camadas/leitura.py#L141) · usado em 2: jev_leitura.py, test_camadas.py
-- `nota_para_o_agente` (função) — [integracao/camadas/saida.py:79](../integracao/camadas/saida.py#L79) · usado em 2: jev_saida.py, test_camadas.py
+- `nota_para_o_agente` (função) — [integracao/camadas/leitura.py:147](../integracao/camadas/leitura.py#L147) · usado em 2: jev_leitura.py, test_camadas.py
+- `nota_para_o_agente` (função) — [integracao/camadas/saida.py:86](../integracao/camadas/saida.py#L86) · usado em 2: jev_saida.py, test_camadas.py
 - `nota_para_o_agente` (função) — [integracao/camadas/sentinela.py:69](../integracao/camadas/sentinela.py#L69) · usado em 3: jev_prompt_router.py, jev_sentinela.py, test_camadas.py
+- `nota_para_o_agente` (função) — [integracao/camadas/shell.py:210](../integracao/camadas/shell.py#L210) · usado em 2: jev_leitura_shell.py, test_shell.py
 - `note_for` (função) — [executor/publish_simple_round.py:28](../executor/publish_simple_round.py#L28)
 - `notice` (função) — [lab/dashboard.js:35](../lab/dashboard.js#L35)
+- `novas_linhas` (função) — [integracao/gateway/conciliar.py:95](../integracao/gateway/conciliar.py#L95) · usado em 1: test_gateway_conciliar.py
+- `_novas_tentativas` (função) — [hermes/jev_hermes/bancada.py:72](../hermes/jev_hermes/bancada.py#L72)
+- `novo` (função) — [hermes/jev_hermes/ciclo.py:61](../hermes/jev_hermes/ciclo.py#L61) · usado em 2: agenda.py, agentes.py
+- `_novos` (função) — [hermes/jev_hermes/avaliacao.py:99](../hermes/jev_hermes/avaliacao.py#L99)
 - `now_utc` (função) — [executor/ledger.py:28](../executor/ledger.py#L28)
 - `numeric` (função) — [lab/server.py:48](../lab/server.py#L48)
+- `_numero` (função) — [hermes/jev_hermes/workflows.py:151](../hermes/jev_hermes/workflows.py#L151)
 - `NumeroDeErroGraveNoTextoVemDoDado` (classe) — [executor/tests/test_achados_revisao16.py:57](../executor/tests/test_achados_revisao16.py#L57)
 - `NumeroDeErroGraveNoTextoVemDoDado.setUp` (método) — [executor/tests/test_achados_revisao16.py:60](../executor/tests/test_achados_revisao16.py#L60)
 - `NumeroDeErroGraveNoTextoVemDoDado.test_a_frase_de_comparacao_bate_com_o_relatorio_json` (método) — [executor/tests/test_achados_revisao16.py:66](../executor/tests/test_achados_revisao16.py#L66)
@@ -977,24 +1287,41 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 ## O
 
 - `object` (função) — [lab/dashboard.js:157](../lab/dashboard.js#L157)
-- `observed_nusd` (função) — [executor/pricing.py:65](../executor/pricing.py#L65) · usado em 2: ledger.py, test_ledger.py
+- `_objeto` (função) — [hermes/jev_hermes/workflows.py:132](../hermes/jev_hermes/workflows.py#L132)
+- `Observacao` (classe) — [hermes/jev_hermes/workflows.py:225](../hermes/jev_hermes/workflows.py#L225) · usado em 2: avaliacao.py, test_workflows.py
+- `observacao_teste` (função) — [hermes/tests/test_fluxos.py:279](../hermes/tests/test_fluxos.py#L279)
+- `observacoes_ok` (função) — [hermes/tests/test_workflows.py:117](../hermes/tests/test_workflows.py#L117)
+- `observar_arquivo` (função) — [hermes/jev_hermes/workflows.py:237](../hermes/jev_hermes/workflows.py#L237) · usado em 2: avaliacao.py, test_workflows.py
+- `observar_citados` (função) — [hermes/jev_hermes/avaliacao.py:149](../hermes/jev_hermes/avaliacao.py#L149)
+- `observar_diff` (função) — [hermes/jev_hermes/avaliacao.py:104](../hermes/jev_hermes/avaliacao.py#L104)
+- `observar_integridade` (função) — [hermes/jev_hermes/avaliacao.py:124](../hermes/jev_hermes/avaliacao.py#L124)
+- `observar_testes` (função) — [hermes/jev_hermes/avaliacao.py:63](../hermes/jev_hermes/avaliacao.py#L63) · usado em 2: agentes.py, bancada.py
+- `observar_tudo` (função) — [hermes/jev_hermes/avaliacao.py:170](../hermes/jev_hermes/avaliacao.py#L170) · usado em 1: agentes.py
+- `observed_nusd` (função) — [executor/pricing.py:65](../executor/pricing.py#L65) · usado em 3: ledger.py, test_ledger.py, conciliar.py
+- `_offline` (função) — [hermes/jev_hermes/workflows.py:179](../hermes/jev_hermes/workflows.py#L179)
+- `oficina` (função) — [hermes/tests/test_fluxos.py:350](../hermes/tests/test_fluxos.py#L350)
 - `ok` (função) — [laboratorio/h100/provas.py:31](../laboratorio/h100/provas.py#L31)
-- `_on_session_end` (função) — [hermes/plugin/jev-camadas/__init__.py:121](../hermes/plugin/jev-camadas/__init__.py#L121)
+- `_on_session_end` (função) — [hermes/plugin/jev-camadas/__init__.py:185](../hermes/plugin/jev-camadas/__init__.py#L185)
 - `onlyKeys` (função) — [lab/dashboard.js:160](../lab/dashboard.js#L160)
 - `OPainelReageAoDadoBruto` (classe) — [executor/tests/test_mutacao.py:39](../executor/tests/test_mutacao.py#L39)
 - `OPainelReageAoDadoBruto.test_trocar_acertos_por_erros_move_algum_cartao` (método) — [executor/tests/test_mutacao.py:41](../executor/tests/test_mutacao.py#L41)
+- `openalex` (função) — [hermes/jev_hermes/academico.py:127](../hermes/jev_hermes/academico.py#L127)
 - `openImport` (função) — [lab/dashboard.js:179](../lab/dashboard.js#L179)
 - `operationalSection` (função) — [lab/metrics.js:74](../lab/metrics.js#L74)
 - `optionsStatus` (função) — [lab/dashboard.js:52](../lab/dashboard.js#L52)
-- `Orcamento` (classe) — [integracao/tests/test_camadas.py:404](../integracao/tests/test_camadas.py#L404)
-- `Orcamento.test_o_pior_caso_cresce_com_o_limite_e_e_conferido_antes` (método) — [integracao/tests/test_camadas.py:406](../integracao/tests/test_camadas.py#L406)
-- `ordem_de_provedores` (função) — [hermes/jev_hermes/nucleo.py:95](../hermes/jev_hermes/nucleo.py#L95)
+- `Orcamento` (classe) — [hermes/jev_hermes/modelos.py:58](../hermes/jev_hermes/modelos.py#L58) · usado em 2: agentes.py, avaliacao.py
+- `Orcamento` (classe) — [integracao/tests/test_camadas.py:416](../integracao/tests/test_camadas.py#L416)
+- `Orcamento.como_dict` (método) — [hermes/jev_hermes/modelos.py:72](../hermes/jev_hermes/modelos.py#L72)
+- `Orcamento.gastar` (método) — [hermes/jev_hermes/modelos.py:69](../hermes/jev_hermes/modelos.py#L69)
+- `Orcamento.restante` (método) — [hermes/jev_hermes/modelos.py:66](../hermes/jev_hermes/modelos.py#L66)
+- `Orcamento.test_o_pior_caso_cresce_com_o_limite_e_e_conferido_antes` (método) — [integracao/tests/test_camadas.py:418](../integracao/tests/test_camadas.py#L418)
+- `ordem_de_provedores` (função) — [hermes/jev_hermes/nucleo.py:97](../hermes/jev_hermes/nucleo.py#L97)
 - `ordenar` (função) — [laboratorio/r18_escala.py:174](../laboratorio/r18_escala.py#L174)
 - `ordenar` (função) — [laboratorio/r20_k_adaptativo.py:147](../laboratorio/r20_k_adaptativo.py#L147)
 - `ordenar` (função) — [laboratorio/r26_dois_trechos.py:82](../laboratorio/r26_dois_trechos.py#L82)
 - `ordenar_com_bm25` (função) — [laboratorio/r17_economia_de_contexto.py:202](../laboratorio/r17_economia_de_contexto.py#L202) · usado em 1: r18_escala.py
 - `ordenar_com_jev` (função) — [laboratorio/r17_economia_de_contexto.py:180](../laboratorio/r17_economia_de_contexto.py#L180)
-- `ordenar_prosa_bm25` (função) — [laboratorio/r21_generalizacao.py:341](../laboratorio/r21_generalizacao.py#L341)
+- `ordenar_prosa_bm25` (função) — [laboratorio/r21_generalizacao.py:341](../laboratorio/r21_generalizacao.py#L341) · usado em 1: r30_hipotese_e_prova.py
 - `ordenar_prosa_jev` (função) — [laboratorio/r21_generalizacao.py:363](../laboratorio/r21_generalizacao.py#L363)
 - `OrfasNaoSeApagam` (classe) — [executor/tests/test_coerencia_placar.py:500](../executor/tests/test_coerencia_placar.py#L500)
 - `OrfasNaoSeApagam.test_republicar_duas_vezes_nao_perde_orfas` (método) — [executor/tests/test_coerencia_placar.py:510](../executor/tests/test_coerencia_placar.py#L510)
@@ -1006,8 +1333,8 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `_p90` (função) — [integracao/camadas/medir.py:59](../integracao/camadas/medir.py#L59)
 - `p_escrito` (função) — [laboratorio/gerar_dossie.py:39](../laboratorio/gerar_dossie.py#L39)
 - `p_valor` (função) — [laboratorio/gerar_bateria.py:31](../laboratorio/gerar_bateria.py#L31)
-- `pagina` (função) — [hermes/jev_hermes/medir.py:107](../hermes/jev_hermes/medir.py#L107) · usado em 1: jev_rotina_economia.py
-- `pagina` (função) — [integracao/camadas/medir.py:274](../integracao/camadas/medir.py#L274) · usado em 1: test_camadas.py
+- `pagina` (função) — [hermes/jev_hermes/medir.py:225](../hermes/jev_hermes/medir.py#L225) · usado em 1: jev_rotina_economia.py
+- `pagina` (função) — [integracao/camadas/medir.py:280](../integracao/camadas/medir.py#L280) · usado em 1: test_camadas.py
 - `PainelEmPortugues` (classe) — [executor/tests/test_coerencia_placar.py:344](../executor/tests/test_coerencia_placar.py#L344)
 - `PainelEmPortugues.setUp` (método) — [executor/tests/test_coerencia_placar.py:351](../executor/tests/test_coerencia_placar.py#L351)
 - `PainelEmPortugues.test_nenhum_percentual_com_ponto_decimal` (método) — [executor/tests/test_coerencia_placar.py:370](../executor/tests/test_coerencia_placar.py#L370)
@@ -1016,12 +1343,24 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `PainelPublicadoEhReproduzivel` (classe) — [executor/tests/test_coerencia_placar.py:243](../executor/tests/test_coerencia_placar.py#L243)
 - `PainelPublicadoEhReproduzivel.test_bloco_publicado_bate_com_o_gerado` (método) — [executor/tests/test_coerencia_placar.py:250](../executor/tests/test_coerencia_placar.py#L250)
 - `PainelPublicadoEhReproduzivel.test_custo_somado_no_painel_fecha_com_o_ledger` (método) — [executor/tests/test_coerencia_placar.py:259](../executor/tests/test_coerencia_placar.py#L259)
-- `_para_o_cache` (função) — [hermes/jev_hermes/nucleo.py:245](../hermes/jev_hermes/nucleo.py#L245)
+- `PanelTests` (classe) — [integracao/harness/test_painel.py:14](../integracao/harness/test_painel.py#L14)
+- `PanelTests.request` (método) — [integracao/harness/test_painel.py:24](../integracao/harness/test_painel.py#L24)
+- `PanelTests.setUp` (método) — [integracao/harness/test_painel.py:15](../integracao/harness/test_painel.py#L15)
+- `PanelTests.tearDown` (método) — [integracao/harness/test_painel.py:22](../integracao/harness/test_painel.py#L22)
+- `PanelTests.test_cancel_stops_owned_process` (método) — [integracao/harness/test_painel.py:59](../integracao/harness/test_painel.py#L59)
+- `PanelTests.test_cross_origin_and_missing_token_cannot_execute` (método) — [integracao/harness/test_painel.py:27](../integracao/harness/test_painel.py#L27)
+- `PanelTests.test_inference_input_not_stored` (método) — [integracao/harness/test_painel.py:52](../integracao/harness/test_painel.py#L52)
+- `PanelTests.test_paid_operation_cannot_bypass_readiness` (método) — [integracao/harness/test_painel.py:36](../integracao/harness/test_painel.py#L36)
+- `PanelTests.test_real_replay_persists_result` (método) — [integracao/harness/test_painel.py:40](../integracao/harness/test_painel.py#L40)
+- `PanelTests.test_unknown_action_and_paused_tool_cannot_execute` (método) — [integracao/harness/test_painel.py:32](../integracao/harness/test_painel.py#L32)
+- `_para_o_cache` (função) — [hermes/jev_hermes/nucleo.py:261](../hermes/jev_hermes/nucleo.py#L261)
 - `para_o_cache` (função) — [integracao/jev_router/roteador.py:47](../integracao/jev_router/roteador.py#L47) · usado em 1: test_roteador.py
 - `paragrafos` (função) — [laboratorio/r21_generalizacao.py:246](../laboratorio/r21_generalizacao.py#L246)
 - `_pareado` (função) — [laboratorio/gerar_mapa_visual.py:71](../laboratorio/gerar_mapa_visual.py#L71)
 - `pareado` (função) — [laboratorio/r1_r3_estresse.py:180](../laboratorio/r1_r3_estresse.py#L180)
+- `pareado` (função) — [laboratorio/r28_ato_de_fala.py:142](../laboratorio/r28_ato_de_fala.py#L142)
 - `pareamento` (função) — [executor/run_e10b_piloto.py:39](../executor/run_e10b_piloto.py#L39)
+- `_pares` (função) — [hermes/jev_hermes/recortes.py:329](../hermes/jev_hermes/recortes.py#L329)
 - `_pares` (função) — [laboratorio/auditoria.py:124](../laboratorio/auditoria.py#L124)
 - `pares_de` (função) — [integracao/avaliacao/amostrar_com_contexto.py:54](../integracao/avaliacao/amostrar_com_contexto.py#L54)
 - `partes_de` (função) — [integracao/camadas/sentinela.py:36](../integracao/camadas/sentinela.py#L36)
@@ -1040,25 +1379,39 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `pct` (função) — [laboratorio/gerar_bateria.py:27](../laboratorio/gerar_bateria.py#L27)
 - `pct` (função) — [laboratorio/gerar_dossie.py:31](../laboratorio/gerar_dossie.py#L31)
 - `pearson` (função) — [laboratorio/h100/dados.py:182](../laboratorio/h100/dados.py#L182) · usado em 2: provas.py, respostas.py
+- `_pedido` (função) — [hermes/plugin/jev-camadas/__init__.py:94](../hermes/plugin/jev-camadas/__init__.py#L94)
+- `pedido_curto` (função) — [hermes/jev_hermes/camadas.py:111](../hermes/jev_hermes/camadas.py#L111) · usado em 1: recortes.py
+- `pedido_curto` (função) — [integracao/camadas/nucleo.py:259](../integracao/camadas/nucleo.py#L259) · usado em 1: test_camadas.py
 - `_pedido_do_transcript` (função) — [integracao/camadas/nucleo.py:145](../integracao/camadas/nucleo.py#L145)
-- `pedido_vigente` (função) — [hermes/jev_hermes/camadas.py:60](../hermes/jev_hermes/camadas.py#L60)
-- `pedido_vigente` (função) — [integracao/camadas/nucleo.py:125](../integracao/camadas/nucleo.py#L125) · usado em 3: jev_busca.py, jev_leitura.py, test_camadas.py
+- `_pedido_recente` (função) — [hermes/jev_hermes/camadas.py:91](../hermes/jev_hermes/camadas.py#L91)
+- `pedido_vigente` (função) — [hermes/jev_hermes/camadas.py:116](../hermes/jev_hermes/camadas.py#L116)
+- `pedido_vigente` (função) — [integracao/camadas/nucleo.py:125](../integracao/camadas/nucleo.py#L125) · usado em 4: jev_busca.py, jev_leitura.py, jev_leitura_shell.py, test_camadas.py
+- `PedidoCurto` (classe) — [integracao/tests/test_camadas.py:435](../integracao/tests/test_camadas.py#L435)
+- `PedidoCurto.test_o_pedido_entra_curto_no_estado` (método) — [integracao/tests/test_camadas.py:438](../integracao/tests/test_camadas.py#L438)
+- `PedidoCurto.test_pedido_curto_passa_inteiro` (método) — [integracao/tests/test_camadas.py:447](../integracao/tests/test_camadas.py#L447)
 - `pedidos_do_historico` (função) — [integracao/avaliacao/auditar_producao.py:32](../integracao/avaliacao/auditar_producao.py#L32)
-- `PedidoVigente` (classe) — [integracao/tests/test_camadas.py:275](../integracao/tests/test_camadas.py#L275)
-- `PedidoVigente.test_le_o_ultimo_pedido_substantivo_do_transcript` (método) — [integracao/tests/test_camadas.py:277](../integracao/tests/test_camadas.py#L277)
-- `PedidoVigente.test_o_arquivo_da_sessao_tem_prioridade_e_redige_segredo` (método) — [integracao/tests/test_camadas.py:293](../integracao/tests/test_camadas.py#L293)
+- `PedidoVigente` (classe) — [integracao/tests/test_camadas.py:287](../integracao/tests/test_camadas.py#L287)
+- `PedidoVigente.test_le_o_ultimo_pedido_substantivo_do_transcript` (método) — [integracao/tests/test_camadas.py:289](../integracao/tests/test_camadas.py#L289)
+- `PedidoVigente.test_o_arquivo_da_sessao_tem_prioridade_e_redige_segredo` (método) — [integracao/tests/test_camadas.py:305](../integracao/tests/test_camadas.py#L305)
 - `pela_regra` (função) — [integracao/avaliacao/skills.py:71](../integracao/avaliacao/skills.py#L71)
+- `_pelo_jev` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:25](../hermes/plugin/youtube-auto-bridge/__init__.py#L25)
 - `pendencias` (função) — [executor/placar.py:161](../executor/placar.py#L161)
 - `percent` (função) — [lab/metrics.js:6](../lab/metrics.js#L6)
 - `percentil` (função) — [laboratorio/h100/dados.py:211](../laboratorio/h100/dados.py#L211) · usado em 2: provas.py, respostas.py
 - `pergunta` (função) — [executor/run_e2_fatorial.py:46](../executor/run_e2_fatorial.py#L46)
 - `pergunta_de_acao` (função) — [laboratorio/canarios_de_comportamento.py:61](../laboratorio/canarios_de_comportamento.py#L61)
 - `perguntar` (função) — [executor/run_e8_anotador.py:63](../executor/run_e8_anotador.py#L63) · usado em 1: test_achados_revisao4.py
-- `perguntar` (função) — [hermes/jev_hermes/nucleo.py:339](../hermes/jev_hermes/nucleo.py#L339) · usado em 5: camadas.py, jev_fabio_urgent_watch.py, jev_gate_arcano_email.py, jev_gate_fabio_whatsapp.py, test_jev_hermes.py
+- `perguntar` (função) — [hermes/jev_hermes/nucleo.py:355](../hermes/jev_hermes/nucleo.py#L355) · usado em 12: agenda.py, camadas.py, ciclo.py, modelos.py, ponte_openai.py, prazos.py …
 - `perguntar` (função) — [integracao/jev_router/cliente.py:57](../integracao/jev_router/cliente.py#L57) · usado em 7: com_contexto.py, comandos.py, skills.py, variantes.py, nucleo.py, jev_guarda_comando.py …
-- `perguntar` (função) — [laboratorio/nucleo.py:103](../laboratorio/nucleo.py#L103) · usado em 21: canarios_de_comportamento.py, r11_extremos.py, r12_r13_contexto.py, r14_autorrecursivo.py, r15_adversario_externo.py, r16_guarda_de_comando.py …
+- `perguntar` (função) — [laboratorio/nucleo.py:103](../laboratorio/nucleo.py#L103) · usado em 24: canarios_de_comportamento.py, r11_extremos.py, r12_r13_contexto.py, r14_autorrecursivo.py, r15_adversario_externo.py, r16_guarda_de_comando.py …
+- `perguntar` (função) — [laboratorio/r31_r37_segunda_leva.py:89](../laboratorio/r31_r37_segunda_leva.py#L89) · usado em 4: r38_r41_terceira_leva.py, r42_r44_quarta_leva.py, r46_r49_pontos_do_video.py, r50_checklist_de_contrato.py
 - `perguntas` (função) — [hermes/portoes/jev_gate_radar_ia.py:29](../hermes/portoes/jev_gate_radar_ia.py#L29)
-- `pior_caso_usd` (função) — [hermes/jev_hermes/nucleo.py:164](../hermes/jev_hermes/nucleo.py#L164)
+- `perguntas_da` (função) — [hermes/jev_hermes/checklist.py:94](../hermes/jev_hermes/checklist.py#L94)
+- `perguntas_da` (função) — [integracao/camadas/checklist.py:60](../integracao/camadas/checklist.py#L60) · usado em 1: r50_checklist_de_contrato.py
+- `perguntas_de_codigo` (função) — [laboratorio/r42_r44_quarta_leva.py:129](../laboratorio/r42_r44_quarta_leva.py#L129) · usado em 1: r45_lista_nas_duas_ordens.py
+- `perguntas_do` (função) — [laboratorio/r28_ato_de_fala.py:104](../laboratorio/r28_ato_de_fala.py#L104)
+- `pilar_do_dia` (função) — [hermes/jev_hermes/academico.py:159](../hermes/jev_hermes/academico.py#L159)
+- `pior_caso_usd` (função) — [hermes/jev_hermes/nucleo.py:180](../hermes/jev_hermes/nucleo.py#L180)
 - `Placar` (classe) — [laboratorio/auditoria.py:73](../laboratorio/auditoria.py#L73)
 - `placar` (função) — [laboratorio/h100/avaliar.py:44](../laboratorio/h100/avaliar.py#L44)
 - `placar` (função) — [laboratorio/r16_guarda_de_comando.py:164](../laboratorio/r16_guarda_de_comando.py#L164)
@@ -1077,32 +1430,52 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `pode_gastar` (função) — [integracao/jev_router/orcamento.py:70](../integracao/jev_router/orcamento.py#L70) · usado em 2: cliente.py, test_camadas.py
 - `politica_de_referencia` (função) — [executor/placar.py:178](../executor/placar.py#L178) · usado em 1: test_coerencia_placar.py
 - `PoliticaDeSugestao` (classe) — [integracao/tests/test_roteador.py:37](../integracao/tests/test_roteador.py#L37)
-- `PoliticaDeSugestao.test_o_corte_publicado_e_o_que_o_dado_sustenta` (método) — [integracao/tests/test_roteador.py:67](../integracao/tests/test_roteador.py#L67)
-- `PoliticaDeSugestao.test_risco_irreversivel_avisa_mas_nao_decide` (método) — [integracao/tests/test_roteador.py:57](../integracao/tests/test_roteador.py#L57)
-- `PoliticaDeSugestao.test_sem_tema_nao_sugere_nada` (método) — [integracao/tests/test_roteador.py:50](../integracao/tests/test_roteador.py#L50)
+- `PoliticaDeSugestao.test_o_corte_publicado_e_o_que_o_dado_sustenta` (método) — [integracao/tests/test_roteador.py:79](../integracao/tests/test_roteador.py#L79)
+- `PoliticaDeSugestao.test_risco_irreversivel_avisa_mas_nao_decide` (método) — [integracao/tests/test_roteador.py:69](../integracao/tests/test_roteador.py#L69)
+- `PoliticaDeSugestao.test_sem_tema_nao_sugere_nada` (método) — [integracao/tests/test_roteador.py:62](../integracao/tests/test_roteador.py#L62)
 - `PoliticaDeSugestao.test_so_sugere_acima_do_corte` (método) — [integracao/tests/test_roteador.py:39](../integracao/tests/test_roteador.py#L39)
-- `PoliticaDeSugestao.test_tema_fora_do_contrato_nao_vira_sugestao` (método) — [integracao/tests/test_roteador.py:63](../integracao/tests/test_roteador.py#L63)
-- `pool` (função) — [laboratorio/r17_economia_de_contexto.py:122](../laboratorio/r17_economia_de_contexto.py#L122) · usado em 3: r18_escala.py, r20_k_adaptativo.py, r26_dois_trechos.py
+- `PoliticaDeSugestao.test_tema_fora_do_contrato_nao_vira_sugestao` (método) — [integracao/tests/test_roteador.py:75](../integracao/tests/test_roteador.py#L75)
+- `Ponte` (classe) — [hermes/jev_hermes/ponte_openai.py:77](../hermes/jev_hermes/ponte_openai.py#L77) · usado em 1: test_jev_hermes.py
+- `Ponte._erro` (método) — [hermes/jev_hermes/ponte_openai.py:91](../hermes/jev_hermes/ponte_openai.py#L91)
+- `Ponte._json` (método) — [hermes/jev_hermes/ponte_openai.py:83](../hermes/jev_hermes/ponte_openai.py#L83)
+- `Ponte.do_GET` (método) — [hermes/jev_hermes/ponte_openai.py:94](../hermes/jev_hermes/ponte_openai.py#L94)
+- `Ponte.do_POST` (método) — [hermes/jev_hermes/ponte_openai.py:103](../hermes/jev_hermes/ponte_openai.py#L103)
+- `Ponte.log_message` (método) — [hermes/jev_hermes/ponte_openai.py:80](../hermes/jev_hermes/ponte_openai.py#L80)
+- `pool` (função) — [laboratorio/r17_economia_de_contexto.py:122](../laboratorio/r17_economia_de_contexto.py#L122) · usado em 5: r18_escala.py, r20_k_adaptativo.py, r26_dois_trechos.py, r38_r41_terceira_leva.py, r42_r44_quarta_leva.py
 - `por_familia` (função) — [laboratorio/h100/avaliar.py:48](../laboratorio/h100/avaliar.py#L48)
-- `posicao` (função) — [hermes/jev_hermes/camadas.py:252](../hermes/jev_hermes/camadas.py#L252)
-- `_pre_llm_call` (função) — [hermes/plugin/jev-camadas/__init__.py:40](../hermes/plugin/jev-camadas/__init__.py#L40)
+- `_porteiro` (função) — [hermes/tests/test_recortes.py:121](../hermes/tests/test_recortes.py#L121)
+- `portoes` (função) — [hermes/rotinas/jev_observar_porteiros.py:22](../hermes/rotinas/jev_observar_porteiros.py#L22)
+- `posicao` (função) — [hermes/jev_hermes/camadas.py:373](../hermes/jev_hermes/camadas.py#L373) · usado em 1: recortes.py
+- `prazos_abertos` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:125](../hermes/rotinas/jev_rotina_painel_manha.py#L125)
+- `_pre_gateway_dispatch` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:116](../hermes/plugin/youtube-auto-bridge/__init__.py#L116)
+- `_pre_llm_call` (função) — [hermes/plugin/jev-camadas/__init__.py:61](../hermes/plugin/jev-camadas/__init__.py#L61)
 - `PrecoDeclaradoBateComOBruto` (classe) — [executor/tests/test_precos.py:21](../executor/tests/test_precos.py#L21)
 - `PrecoDeclaradoBateComOBruto.setUp` (método) — [executor/tests/test_precos.py:23](../executor/tests/test_precos.py#L23)
 - `PrecoDeclaradoBateComOBruto.test_cada_preco_declarado_deriva_do_preco_publicado` (método) — [executor/tests/test_precos.py:26](../executor/tests/test_precos.py#L26)
 - `PrecoDeclaradoBateComOBruto.test_tetos_de_reserva_sao_inteiros_positivos` (método) — [executor/tests/test_precos.py:40](../executor/tests/test_precos.py#L40)
+- `preparar` (função) — [hermes/jev_hermes/bancada.py:55](../hermes/jev_hermes/bancada.py#L55)
+- `preparar_git` (função) — [hermes/jev_hermes/avaliacao.py:177](../hermes/jev_hermes/avaliacao.py#L177) · usado em 1: agentes.py
 - `prepare` (função) — [executor/run_canaries.py:38](../executor/run_canaries.py#L38)
 - `prepare` (função) — [executor/run_e15.py:118](../executor/run_e15.py#L118)
 - `prepare` (função) — [executor/run_e16.py:27](../executor/run_e16.py#L27)
 - `prepareImport` (função) — [lab/dashboard.js:180](../lab/dashboard.js#L180)
 - `PricingError` (classe) — [executor/pricing.py:14](../executor/pricing.py#L14) · usado em 4: ledger.py, runner.py, test_achados_revisao.py, test_ledger.py
+- `primeira_ferramenta` (função) — [hermes/jev_hermes/aferir_rota.py:58](../hermes/jev_hermes/aferir_rota.py#L58)
 - `primeira_pagina` (função) — [executor/tests/test_entregaveis.py:18](../executor/tests/test_entregaveis.py#L18)
-- `probabilidade` (função) — [hermes/jev_hermes/portao.py:120](../hermes/jev_hermes/portao.py#L120) · usado em 1: jev_rotina_caixa_vigiada.py
+- `probabilidade` (função) — [hermes/jev_hermes/portao.py:120](../hermes/jev_hermes/portao.py#L120) · usado em 2: jev_gate_sono_memoria.py, jev_rotina_caixa_vigiada.py
+- `probabilidade_valida` (função) — [hermes/jev_hermes/checklist.py:129](../hermes/jev_hermes/checklist.py#L129)
+- `profile` (função) — [integracao/tests/test_runtime_profile.py:12](../integracao/tests/test_runtime_profile.py#L12)
+- `project` (função) — [integracao/harness/auditar_instalacoes.py:32](../integracao/harness/auditar_instalacoes.py#L32)
+- `promessas_abertas` (função) — [hermes/jev_hermes/pendencias.py:148](../hermes/jev_hermes/pendencias.py#L148) · usado em 1: jev_rotina_painel_manha.py
 - `prompt` (função) — [executor/run_e10_llm_economico.py:51](../executor/run_e10_llm_economico.py#L51) · usado em 1: run_e12_replicacao.py
+- `prompt_de_implementacao` (função) — [hermes/jev_hermes/avaliacao.py:274](../hermes/jev_hermes/avaliacao.py#L274)
 - `prova` (função) — [laboratorio/h100/provas.py:24](../laboratorio/h100/provas.py#L24)
 - `provedor` (função) — [executor/credenciais.py:59](../executor/credenciais.py#L59) · usado em 3: shared.py, test_credenciais.py, cliente.py
 - `provider_snapshot` (função) — [executor/run_canaries.py:28](../executor/run_canaries.py#L28)
+- `proximos` (função) — [hermes/rotinas/jev_rotina_lembrete_compromisso.py:43](../hermes/rotinas/jev_rotina_lembrete_compromisso.py#L43)
 - `publicar` (função) — [executor/placar.py:1101](../executor/placar.py#L1101)
 - `publicar` (função) — [executor/publicar_experimentos.py:427](../executor/publicar_experimentos.py#L427)
+- `puxar` (função) — [hermes/infra/conferir_sincronia.py:107](../hermes/infra/conferir_sincronia.py#L107)
 
 ## Q
 
@@ -1132,98 +1505,100 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `q023` (função) — [laboratorio/q100/respostas.py:547](../laboratorio/q100/respostas.py#L547)
 - `q024` (função) — [laboratorio/q100/respostas.py:577](../laboratorio/q100/respostas.py#L577)
 - `q025` (função) — [laboratorio/q100/respostas.py:587](../laboratorio/q100/respostas.py#L587)
-- `q026` (função) — [laboratorio/q100/respostas.py:595](../laboratorio/q100/respostas.py#L595)
-- `q027` (função) — [laboratorio/q100/respostas.py:606](../laboratorio/q100/respostas.py#L606)
-- `q028` (função) — [laboratorio/q100/respostas.py:616](../laboratorio/q100/respostas.py#L616)
+- `q026` (função) — [laboratorio/q100/respostas.py:598](../laboratorio/q100/respostas.py#L598)
+- `q027` (função) — [laboratorio/q100/respostas.py:608](../laboratorio/q100/respostas.py#L608)
+- `q028` (função) — [laboratorio/q100/respostas.py:620](../laboratorio/q100/respostas.py#L620)
 - `q029` (função) — [laboratorio/q100/respostas.py:628](../laboratorio/q100/respostas.py#L628)
-- `q030` (função) — [laboratorio/q100/respostas.py:636](../laboratorio/q100/respostas.py#L636)
-- `q031` (função) — [laboratorio/q100/respostas.py:645](../laboratorio/q100/respostas.py#L645)
-- `q032` (função) — [laboratorio/q100/respostas.py:654](../laboratorio/q100/respostas.py#L654)
-- `q033` (função) — [laboratorio/q100/respostas.py:665](../laboratorio/q100/respostas.py#L665)
-- `q034` (função) — [laboratorio/q100/respostas.py:678](../laboratorio/q100/respostas.py#L678)
-- `q035` (função) — [laboratorio/q100/respostas.py:688](../laboratorio/q100/respostas.py#L688)
-- `q036` (função) — [laboratorio/q100/respostas.py:701](../laboratorio/q100/respostas.py#L701)
-- `q037` (função) — [laboratorio/q100/respostas.py:710](../laboratorio/q100/respostas.py#L710)
-- `q038` (função) — [laboratorio/q100/respostas.py:723](../laboratorio/q100/respostas.py#L723)
-- `q039` (função) — [laboratorio/q100/respostas.py:732](../laboratorio/q100/respostas.py#L732)
-- `q040` (função) — [laboratorio/q100/respostas.py:742](../laboratorio/q100/respostas.py#L742)
-- `q041` (função) — [laboratorio/q100/respostas.py:766](../laboratorio/q100/respostas.py#L766)
-- `q042` (função) — [laboratorio/q100/respostas.py:777](../laboratorio/q100/respostas.py#L777)
-- `q043` (função) — [laboratorio/q100/respostas.py:808](../laboratorio/q100/respostas.py#L808)
-- `q044` (função) — [laboratorio/q100/respostas.py:833](../laboratorio/q100/respostas.py#L833)
-- `q045` (função) — [laboratorio/q100/respostas.py:847](../laboratorio/q100/respostas.py#L847)
-- `q046` (função) — [laboratorio/q100/respostas.py:856](../laboratorio/q100/respostas.py#L856)
-- `q047` (função) — [laboratorio/q100/respostas.py:883](../laboratorio/q100/respostas.py#L883)
-- `q048` (função) — [laboratorio/q100/respostas.py:897](../laboratorio/q100/respostas.py#L897)
-- `q049` (função) — [laboratorio/q100/respostas.py:907](../laboratorio/q100/respostas.py#L907)
-- `q050` (função) — [laboratorio/q100/respostas.py:942](../laboratorio/q100/respostas.py#L942)
-- `q051` (função) — [laboratorio/q100/respostas.py:953](../laboratorio/q100/respostas.py#L953)
-- `q052` (função) — [laboratorio/q100/respostas.py:963](../laboratorio/q100/respostas.py#L963)
-- `q053` (função) — [laboratorio/q100/respostas.py:973](../laboratorio/q100/respostas.py#L973)
-- `q054` (função) — [laboratorio/q100/respostas.py:984](../laboratorio/q100/respostas.py#L984)
-- `q055` (função) — [laboratorio/q100/respostas.py:994](../laboratorio/q100/respostas.py#L994)
-- `q056` (função) — [laboratorio/q100/respostas.py:1003](../laboratorio/q100/respostas.py#L1003)
-- `q057` (função) — [laboratorio/q100/respostas.py:1012](../laboratorio/q100/respostas.py#L1012)
-- `q058` (função) — [laboratorio/q100/respostas.py:1022](../laboratorio/q100/respostas.py#L1022)
-- `q059` (função) — [laboratorio/q100/respostas.py:1033](../laboratorio/q100/respostas.py#L1033)
-- `q060` (função) — [laboratorio/q100/respostas.py:1041](../laboratorio/q100/respostas.py#L1041)
-- `q061` (função) — [laboratorio/q100/respostas.py:1054](../laboratorio/q100/respostas.py#L1054)
-- `q062` (função) — [laboratorio/q100/respostas.py:1062](../laboratorio/q100/respostas.py#L1062)
-- `q063` (função) — [laboratorio/q100/respostas.py:1071](../laboratorio/q100/respostas.py#L1071)
-- `q064` (função) — [laboratorio/q100/respostas.py:1080](../laboratorio/q100/respostas.py#L1080)
-- `q065` (função) — [laboratorio/q100/respostas.py:1089](../laboratorio/q100/respostas.py#L1089)
-- `q066` (função) — [laboratorio/q100/respostas.py:1102](../laboratorio/q100/respostas.py#L1102)
-- `q067` (função) — [laboratorio/q100/respostas.py:1115](../laboratorio/q100/respostas.py#L1115)
-- `q068` (função) — [laboratorio/q100/respostas.py:1125](../laboratorio/q100/respostas.py#L1125)
-- `q069` (função) — [laboratorio/q100/respostas.py:1138](../laboratorio/q100/respostas.py#L1138)
-- `q070` (função) — [laboratorio/q100/respostas.py:1147](../laboratorio/q100/respostas.py#L1147)
-- `q071` (função) — [laboratorio/q100/respostas.py:1157](../laboratorio/q100/respostas.py#L1157)
-- `q072` (função) — [laboratorio/q100/respostas.py:1172](../laboratorio/q100/respostas.py#L1172)
-- `q073` (função) — [laboratorio/q100/respostas.py:1194](../laboratorio/q100/respostas.py#L1194)
-- `q074` (função) — [laboratorio/q100/respostas.py:1208](../laboratorio/q100/respostas.py#L1208)
-- `q075` (função) — [laboratorio/q100/respostas.py:1218](../laboratorio/q100/respostas.py#L1218)
-- `q076` (função) — [laboratorio/q100/respostas.py:1229](../laboratorio/q100/respostas.py#L1229)
-- `q077` (função) — [laboratorio/q100/respostas.py:1238](../laboratorio/q100/respostas.py#L1238)
-- `q078` (função) — [laboratorio/q100/respostas.py:1248](../laboratorio/q100/respostas.py#L1248)
-- `q079` (função) — [laboratorio/q100/respostas.py:1257](../laboratorio/q100/respostas.py#L1257)
-- `q080` (função) — [laboratorio/q100/respostas.py:1267](../laboratorio/q100/respostas.py#L1267)
-- `q081` (função) — [laboratorio/q100/respostas.py:1278](../laboratorio/q100/respostas.py#L1278)
-- `q082` (função) — [laboratorio/q100/respostas.py:1289](../laboratorio/q100/respostas.py#L1289)
-- `q083` (função) — [laboratorio/q100/respostas.py:1300](../laboratorio/q100/respostas.py#L1300)
-- `q084` (função) — [laboratorio/q100/respostas.py:1310](../laboratorio/q100/respostas.py#L1310)
-- `q085` (função) — [laboratorio/q100/respostas.py:1319](../laboratorio/q100/respostas.py#L1319)
-- `q086` (função) — [laboratorio/q100/respostas.py:1329](../laboratorio/q100/respostas.py#L1329)
-- `q087` (função) — [laboratorio/q100/respostas.py:1340](../laboratorio/q100/respostas.py#L1340)
-- `q088` (função) — [laboratorio/q100/respostas.py:1354](../laboratorio/q100/respostas.py#L1354)
-- `q089` (função) — [laboratorio/q100/respostas.py:1365](../laboratorio/q100/respostas.py#L1365)
-- `q090` (função) — [laboratorio/q100/respostas.py:1374](../laboratorio/q100/respostas.py#L1374)
-- `q091` (função) — [laboratorio/q100/respostas.py:1385](../laboratorio/q100/respostas.py#L1385)
-- `q092` (função) — [laboratorio/q100/respostas.py:1394](../laboratorio/q100/respostas.py#L1394)
-- `q093` (função) — [laboratorio/q100/respostas.py:1404](../laboratorio/q100/respostas.py#L1404)
-- `q094` (função) — [laboratorio/q100/respostas.py:1416](../laboratorio/q100/respostas.py#L1416)
-- `q095` (função) — [laboratorio/q100/respostas.py:1425](../laboratorio/q100/respostas.py#L1425)
-- `q096` (função) — [laboratorio/q100/respostas.py:1449](../laboratorio/q100/respostas.py#L1449)
-- `q097` (função) — [laboratorio/q100/respostas.py:1462](../laboratorio/q100/respostas.py#L1462)
-- `q098` (função) — [laboratorio/q100/respostas.py:1475](../laboratorio/q100/respostas.py#L1475)
-- `q099` (função) — [laboratorio/q100/respostas.py:1492](../laboratorio/q100/respostas.py#L1492)
-- `q100` (função) — [laboratorio/q100/respostas.py:1506](../laboratorio/q100/respostas.py#L1506)
+- `q030` (função) — [laboratorio/q100/respostas.py:640](../laboratorio/q100/respostas.py#L640)
+- `q031` (função) — [laboratorio/q100/respostas.py:649](../laboratorio/q100/respostas.py#L649)
+- `q032` (função) — [laboratorio/q100/respostas.py:658](../laboratorio/q100/respostas.py#L658)
+- `q033` (função) — [laboratorio/q100/respostas.py:669](../laboratorio/q100/respostas.py#L669)
+- `q034` (função) — [laboratorio/q100/respostas.py:682](../laboratorio/q100/respostas.py#L682)
+- `q035` (função) — [laboratorio/q100/respostas.py:692](../laboratorio/q100/respostas.py#L692)
+- `q036` (função) — [laboratorio/q100/respostas.py:705](../laboratorio/q100/respostas.py#L705)
+- `q037` (função) — [laboratorio/q100/respostas.py:714](../laboratorio/q100/respostas.py#L714)
+- `q038` (função) — [laboratorio/q100/respostas.py:727](../laboratorio/q100/respostas.py#L727)
+- `q039` (função) — [laboratorio/q100/respostas.py:736](../laboratorio/q100/respostas.py#L736)
+- `q040` (função) — [laboratorio/q100/respostas.py:746](../laboratorio/q100/respostas.py#L746)
+- `q041` (função) — [laboratorio/q100/respostas.py:770](../laboratorio/q100/respostas.py#L770)
+- `q042` (função) — [laboratorio/q100/respostas.py:781](../laboratorio/q100/respostas.py#L781)
+- `q043` (função) — [laboratorio/q100/respostas.py:812](../laboratorio/q100/respostas.py#L812)
+- `q044` (função) — [laboratorio/q100/respostas.py:837](../laboratorio/q100/respostas.py#L837)
+- `q045` (função) — [laboratorio/q100/respostas.py:851](../laboratorio/q100/respostas.py#L851)
+- `q046` (função) — [laboratorio/q100/respostas.py:860](../laboratorio/q100/respostas.py#L860)
+- `q047` (função) — [laboratorio/q100/respostas.py:887](../laboratorio/q100/respostas.py#L887)
+- `q048` (função) — [laboratorio/q100/respostas.py:901](../laboratorio/q100/respostas.py#L901)
+- `q049` (função) — [laboratorio/q100/respostas.py:911](../laboratorio/q100/respostas.py#L911)
+- `q050` (função) — [laboratorio/q100/respostas.py:946](../laboratorio/q100/respostas.py#L946)
+- `q051` (função) — [laboratorio/q100/respostas.py:957](../laboratorio/q100/respostas.py#L957)
+- `q052` (função) — [laboratorio/q100/respostas.py:967](../laboratorio/q100/respostas.py#L967)
+- `q053` (função) — [laboratorio/q100/respostas.py:977](../laboratorio/q100/respostas.py#L977)
+- `q054` (função) — [laboratorio/q100/respostas.py:988](../laboratorio/q100/respostas.py#L988)
+- `q055` (função) — [laboratorio/q100/respostas.py:998](../laboratorio/q100/respostas.py#L998)
+- `q056` (função) — [laboratorio/q100/respostas.py:1007](../laboratorio/q100/respostas.py#L1007)
+- `q057` (função) — [laboratorio/q100/respostas.py:1016](../laboratorio/q100/respostas.py#L1016)
+- `q058` (função) — [laboratorio/q100/respostas.py:1026](../laboratorio/q100/respostas.py#L1026)
+- `q059` (função) — [laboratorio/q100/respostas.py:1037](../laboratorio/q100/respostas.py#L1037)
+- `q060` (função) — [laboratorio/q100/respostas.py:1045](../laboratorio/q100/respostas.py#L1045)
+- `q061` (função) — [laboratorio/q100/respostas.py:1058](../laboratorio/q100/respostas.py#L1058)
+- `q062` (função) — [laboratorio/q100/respostas.py:1066](../laboratorio/q100/respostas.py#L1066)
+- `q063` (função) — [laboratorio/q100/respostas.py:1075](../laboratorio/q100/respostas.py#L1075)
+- `q064` (função) — [laboratorio/q100/respostas.py:1084](../laboratorio/q100/respostas.py#L1084)
+- `q065` (função) — [laboratorio/q100/respostas.py:1093](../laboratorio/q100/respostas.py#L1093)
+- `q066` (função) — [laboratorio/q100/respostas.py:1106](../laboratorio/q100/respostas.py#L1106)
+- `q067` (função) — [laboratorio/q100/respostas.py:1119](../laboratorio/q100/respostas.py#L1119)
+- `q068` (função) — [laboratorio/q100/respostas.py:1129](../laboratorio/q100/respostas.py#L1129)
+- `q069` (função) — [laboratorio/q100/respostas.py:1142](../laboratorio/q100/respostas.py#L1142)
+- `q070` (função) — [laboratorio/q100/respostas.py:1151](../laboratorio/q100/respostas.py#L1151)
+- `q071` (função) — [laboratorio/q100/respostas.py:1161](../laboratorio/q100/respostas.py#L1161)
+- `q072` (função) — [laboratorio/q100/respostas.py:1176](../laboratorio/q100/respostas.py#L1176)
+- `q073` (função) — [laboratorio/q100/respostas.py:1198](../laboratorio/q100/respostas.py#L1198)
+- `q074` (função) — [laboratorio/q100/respostas.py:1212](../laboratorio/q100/respostas.py#L1212)
+- `q075` (função) — [laboratorio/q100/respostas.py:1222](../laboratorio/q100/respostas.py#L1222)
+- `q076` (função) — [laboratorio/q100/respostas.py:1233](../laboratorio/q100/respostas.py#L1233)
+- `q077` (função) — [laboratorio/q100/respostas.py:1242](../laboratorio/q100/respostas.py#L1242)
+- `q078` (função) — [laboratorio/q100/respostas.py:1252](../laboratorio/q100/respostas.py#L1252)
+- `q079` (função) — [laboratorio/q100/respostas.py:1261](../laboratorio/q100/respostas.py#L1261)
+- `q080` (função) — [laboratorio/q100/respostas.py:1271](../laboratorio/q100/respostas.py#L1271)
+- `q081` (função) — [laboratorio/q100/respostas.py:1282](../laboratorio/q100/respostas.py#L1282)
+- `q082` (função) — [laboratorio/q100/respostas.py:1293](../laboratorio/q100/respostas.py#L1293)
+- `q083` (função) — [laboratorio/q100/respostas.py:1304](../laboratorio/q100/respostas.py#L1304)
+- `q084` (função) — [laboratorio/q100/respostas.py:1314](../laboratorio/q100/respostas.py#L1314)
+- `q085` (função) — [laboratorio/q100/respostas.py:1323](../laboratorio/q100/respostas.py#L1323)
+- `q086` (função) — [laboratorio/q100/respostas.py:1333](../laboratorio/q100/respostas.py#L1333)
+- `q087` (função) — [laboratorio/q100/respostas.py:1344](../laboratorio/q100/respostas.py#L1344)
+- `q088` (função) — [laboratorio/q100/respostas.py:1358](../laboratorio/q100/respostas.py#L1358)
+- `q089` (função) — [laboratorio/q100/respostas.py:1369](../laboratorio/q100/respostas.py#L1369)
+- `q090` (função) — [laboratorio/q100/respostas.py:1378](../laboratorio/q100/respostas.py#L1378)
+- `q091` (função) — [laboratorio/q100/respostas.py:1389](../laboratorio/q100/respostas.py#L1389)
+- `q092` (função) — [laboratorio/q100/respostas.py:1398](../laboratorio/q100/respostas.py#L1398)
+- `q093` (função) — [laboratorio/q100/respostas.py:1408](../laboratorio/q100/respostas.py#L1408)
+- `q094` (função) — [laboratorio/q100/respostas.py:1420](../laboratorio/q100/respostas.py#L1420)
+- `q095` (função) — [laboratorio/q100/respostas.py:1429](../laboratorio/q100/respostas.py#L1429)
+- `q096` (função) — [laboratorio/q100/respostas.py:1453](../laboratorio/q100/respostas.py#L1453)
+- `q097` (função) — [laboratorio/q100/respostas.py:1466](../laboratorio/q100/respostas.py#L1466)
+- `q098` (função) — [laboratorio/q100/respostas.py:1479](../laboratorio/q100/respostas.py#L1479)
+- `q099` (função) — [laboratorio/q100/respostas.py:1496](../laboratorio/q100/respostas.py#L1496)
+- `q100` (função) — [laboratorio/q100/respostas.py:1510](../laboratorio/q100/respostas.py#L1510)
 - `quantileNearest` (função) — [lab/metrics.js:8](../lab/metrics.js#L8)
-- `quebrado` (função) — [integracao/tests/test_camadas.py:38](../integracao/tests/test_camadas.py#L38)
+- `quebrado` (função) — [integracao/tests/test_camadas.py:38](../integracao/tests/test_camadas.py#L38) · usado em 1: test_shell.py
 - `quebrado` (função) — [integracao/tests/test_guarda_comando.py:27](../integracao/tests/test_guarda_comando.py#L27)
 - `quebrado` (função) — [integracao/tests/test_roteador.py:31](../integracao/tests/test_roteador.py#L31)
 - `query` (função) — [executor/tests/test_shared.py:22](../executor/tests/test_shared.py#L22)
+- `question` (função) — [integracao/tests/test_apoio.py:8](../integracao/tests/test_apoio.py#L8)
 - `questions_hash` (função) — [executor/run_e15.py:114](../executor/run_e15.py#L114)
 
 ## R
 
 - `R` (função) — [laboratorio/q100/respostas.py:68](../laboratorio/q100/respostas.py#L68)
-- `_r21` (função) — [laboratorio/h100/provas.py:1074](../laboratorio/h100/provas.py#L1074)
+- `_r21` (função) — [laboratorio/h100/provas.py:1076](../laboratorio/h100/provas.py#L1076)
 - `_r22` (função) — [laboratorio/q100/respostas.py:211](../laboratorio/q100/respostas.py#L211)
 - `_r23` (função) — [laboratorio/q100/respostas.py:185](../laboratorio/q100/respostas.py#L185)
 - `_r24` (função) — [laboratorio/q100/respostas.py:195](../laboratorio/q100/respostas.py#L195)
 - `_r25` (função) — [laboratorio/q100/respostas.py:199](../laboratorio/q100/respostas.py#L199)
 - `_r26` (função) — [laboratorio/q100/respostas.py:203](../laboratorio/q100/respostas.py#L203)
 - `_r27` (função) — [laboratorio/q100/respostas.py:207](../laboratorio/q100/respostas.py#L207)
+- `_raizes` (função) — [hermes/jev_hermes/isolamento.py:22](../hermes/jev_hermes/isolamento.py#L22)
 - `read_results` (função) — [executor/run_e16.py:76](../executor/run_e16.py#L76)
 - `read_state` (função) — [lab/server.py:174](../lab/server.py#L174)
 - `ReadmeNaoContradizOsDados` (classe) — [executor/tests/test_coerencia_placar.py:461](../executor/tests/test_coerencia_placar.py#L461)
@@ -1237,71 +1612,116 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `RealPriceTableTests.setUp` (método) — [executor/tests/test_ledger.py:296](../executor/tests/test_ledger.py#L296)
 - `RealPriceTableTests.test_tabela_real_carrega_e_confere_com_a_fonte` (método) — [executor/tests/test_ledger.py:300](../executor/tests/test_ledger.py#L300)
 - `_recibos_liquidados` (função) — [laboratorio/h100/provas.py:69](../laboratorio/h100/provas.py#L69)
+- `recortar_terminal` (função) — [hermes/jev_hermes/camadas.py:657](../hermes/jev_hermes/camadas.py#L657) · usado em 2: recortes.py, test_jev_hermes.py
+- `_recortes` (função) — [hermes/plugin/jev-camadas/__init__.py:56](../hermes/plugin/jev-camadas/__init__.py#L56)
+- `recortes` (função) — [hermes/tests/test_recortes.py:31](../hermes/tests/test_recortes.py#L31)
 - `recuperar` (função) — [executor/run_e11_desempate.py:59](../executor/run_e11_desempate.py#L59)
 - `recuperar` (função) — [executor/run_e12_replicacao.py:67](../executor/run_e12_replicacao.py#L67) · usado em 1: test_e12_replicacao.py
-- `redigir` (função) — [hermes/jev_hermes/nucleo.py:131](../hermes/jev_hermes/nucleo.py#L131) · usado em 1: camadas.py
+- `redigir` (função) — [hermes/jev_hermes/nucleo.py:133](../hermes/jev_hermes/nucleo.py#L133) · usado em 1: camadas.py
+- `Reescrita` (classe) — [integracao/tests/test_shell.py:49](../integracao/tests/test_shell.py#L49)
+- `Reescrita.analisar` (método) — [integracao/tests/test_shell.py:61](../integracao/tests/test_shell.py#L61)
+- `Reescrita.setUp` (método) — [integracao/tests/test_shell.py:51](../integracao/tests/test_shell.py#L51)
+- `Reescrita.tearDown` (método) — [integracao/tests/test_shell.py:58](../integracao/tests/test_shell.py#L58)
+- `Reescrita.test_cat_de_arquivo_grande_vira_sed_com_a_janela` (método) — [integracao/tests/test_shell.py:65](../integracao/tests/test_shell.py#L65)
+- `Reescrita.test_cd_muda_o_diretorio_de_resolucao` (método) — [integracao/tests/test_shell.py:77](../integracao/tests/test_shell.py#L77)
+- `Reescrita.test_falha_do_jev_e_falta_de_pedido_deixam_o_comando_como_veio` (método) — [integracao/tests/test_shell.py:98](../integracao/tests/test_shell.py#L98)
+- `Reescrita.test_head_que_cobre_o_arquivo_inteiro_conta_como_cat` (método) — [integracao/tests/test_shell.py:95](../integracao/tests/test_shell.py#L95)
+- `Reescrita.test_intervalo_pedido_fica_e_e_registrado` (método) — [integracao/tests/test_shell.py:89](../integracao/tests/test_shell.py#L89)
+- `Reescrita.test_no_maximo_dois_arquivos_por_comando` (método) — [integracao/tests/test_shell.py:102](../integracao/tests/test_shell.py#L102)
+- `Reescrita.test_um_segmento_que_nao_e_leitura_trava_o_comando_inteiro` (método) — [integracao/tests/test_shell.py:82](../integracao/tests/test_shell.py#L82)
 - `_referencia_r11` (função) — [laboratorio/h100/provas.py:51](../laboratorio/h100/provas.py#L51)
+- `refresh` (função) — [integracao/harness/web/app.js:9](../integracao/harness/web/app.js#L9)
 - `regexes` (função) — [integracao/avaliacao/skills.py:56](../integracao/avaliacao/skills.py#L56)
 - `register` (função) — [hermes/plugin/jev-advisor/__init__.py:166](../hermes/plugin/jev-advisor/__init__.py#L166)
-- `register` (função) — [hermes/plugin/jev-camadas/__init__.py:128](../hermes/plugin/jev-camadas/__init__.py#L128)
-- `registrar` (função) — [hermes/jev_hermes/camadas.py:31](../hermes/jev_hermes/camadas.py#L31)
-- `registrar` (função) — [hermes/jev_hermes/nucleo.py:322](../hermes/jev_hermes/nucleo.py#L322) · usado em 2: camadas.py, portao.py
-- `registrar` (função) — [hermes/jev_hermes/portao.py:30](../hermes/jev_hermes/portao.py#L30) · usado em 4: jev_fabio_urgent_watch.py, jev_rotina_agenda_dia.py, jev_rotina_caixa_vigiada.py, jev_rotina_saude_whatsapp.py
-- `registrar` (função) — [integracao/camadas/nucleo.py:79](../integracao/camadas/nucleo.py#L79) · usado em 8: ler.py, verificar.py, jev_busca.py, jev_leitura.py, jev_prompt_router.py, jev_saida.py …
+- `register` (função) — [hermes/plugin/jev-camadas/__init__.py:192](../hermes/plugin/jev-camadas/__init__.py#L192)
+- `register` (função) — [hermes/plugin/jev-fluxos/__init__.py:76](../hermes/plugin/jev-fluxos/__init__.py#L76)
+- `register` (função) — [hermes/plugin/jev-workflows/__init__.py:89](../hermes/plugin/jev-workflows/__init__.py#L89)
+- `register` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:152](../hermes/plugin/youtube-auto-bridge/__init__.py#L152)
+- `registrar` (função) — [hermes/jev_hermes/camadas.py:36](../hermes/jev_hermes/camadas.py#L36) · usado em 1: checklist.py
+- `_registrar` (função) — [hermes/jev_hermes/ciclo.py:137](../hermes/jev_hermes/ciclo.py#L137)
+- `registrar` (função) — [hermes/jev_hermes/modelos.py:166](../hermes/jev_hermes/modelos.py#L166) · usado em 2: agentes.py, avaliacao.py
+- `registrar` (função) — [hermes/jev_hermes/nucleo.py:338](../hermes/jev_hermes/nucleo.py#L338) · usado em 8: avaliacao.py, bancada.py, camadas.py, ciclo.py, modelos.py, portao.py …
+- `registrar` (função) — [hermes/jev_hermes/portao.py:30](../hermes/jev_hermes/portao.py#L30) · usado em 8: jev_fabio_urgent_watch.py, jev_rotina_agenda_dia.py, jev_rotina_anexos.py, jev_rotina_caixa_vigiada.py, jev_rotina_lembrete_compromisso.py, jev_rotina_painel_manha.py …
+- `_registrar` (função) — [hermes/jev_hermes/workflows.py:207](../hermes/jev_hermes/workflows.py#L207)
+- `registrar` (função) — [integracao/camadas/nucleo.py:79](../integracao/camadas/nucleo.py#L79) · usado em 10: checklist.py, ler.py, verificar.py, jev_busca.py, jev_leitura.py, jev_leitura_shell.py …
 - `registrar` (função) — [integracao/hooks/jev_guarda_comando.py:83](../integracao/hooks/jev_guarda_comando.py#L83)
 - `registrar` (função) — [integracao/jev_router/orcamento.py:81](../integracao/jev_router/orcamento.py#L81) · usado em 1: cliente.py
 - `registrar` (função) — [integracao/jev_router/roteador.py:73](../integracao/jev_router/roteador.py#L73)
-- `registrar` (função) — [laboratorio/nucleo.py:91](../laboratorio/nucleo.py#L91) · usado em 2: r10_injecao_comparada.py, r15_adversario_externo.py
+- `registrar` (função) — [laboratorio/nucleo.py:91](../laboratorio/nucleo.py#L91) · usado em 3: r10_injecao_comparada.py, r15_adversario_externo.py, r31_r37_segunda_leva.py
 - `registrar_bracos` (função) — [executor/run_e12_replicacao.py:400](../executor/run_e12_replicacao.py#L400)
+- `_registros` (função) — [hermes/jev_hermes/modelos.py:76](../hermes/jev_hermes/modelos.py#L76)
 - `regra_simples` (função) — [executor/run_e3_evidencia.py:54](../executor/run_e3_evidencia.py#L54)
+- `relatar` (função) — [hermes/rotinas/jev_observar_porteiros.py:41](../hermes/rotinas/jev_observar_porteiros.py#L41)
 - `relatorio` (função) — [executor/erro_grave.py:70](../executor/erro_grave.py#L70)
+- `relatorio` (função) — [hermes/jev_hermes/bancada.py:169](../hermes/jev_hermes/bancada.py#L169)
+- `relatorio` (função) — [hermes/portoes/jev_gate_sono_memoria.py:97](../hermes/portoes/jev_gate_sono_memoria.py#L97)
+- `relatorio` (função) — [integracao/gateway/conciliar.py:151](../integracao/gateway/conciliar.py#L151) · usado em 1: test_gateway_conciliar.py
 - `relatorio` (função) — [laboratorio/auditoria.py:1215](../laboratorio/auditoria.py#L1215)
 - `RelatorioFinalBateComOsDados` (classe) — [executor/tests/test_coerencia_placar.py:327](../executor/tests/test_coerencia_placar.py#L327)
 - `RelatorioFinalBateComOsDados.test_faixa_citada_no_relatorio_existe_nos_dados` (método) — [executor/tests/test_coerencia_placar.py:330](../executor/tests/test_coerencia_placar.py#L330)
 - `relatorios_com_casos` (função) — [executor/tests/test_mutacao.py:29](../executor/tests/test_mutacao.py#L29)
+- `render` (função) — [integracao/harness/web/app.js:13](../integracao/harness/web/app.js#L13)
 - `render` (função) — [lab/dashboard.js:101](../lab/dashboard.js#L101)
+- `_render_transcript_block` (função) — [hermes/plugin/youtube-auto-bridge/__init__.py:86](../hermes/plugin/youtube-auto-bridge/__init__.py#L86)
+- `renderDetail` (função) — [integracao/harness/web/app.js:16](../integracao/harness/web/app.js#L16)
+- `renderRun` (função) — [integracao/harness/web/app.js:20](../integracao/harness/web/app.js#L20)
+- `renderRuns` (função) — [integracao/harness/web/app.js:20](../integracao/harness/web/app.js#L20)
+- `renderTools` (função) — [integracao/harness/web/app.js:15](../integracao/harness/web/app.js#L15)
 - `repescar` (função) — [executor/run_e12_replicacao.py:192](../executor/run_e12_replicacao.py#L192)
 - `replicacao_depende_do_gabarito` (função) — [executor/placar.py:410](../executor/placar.py#L410)
 - `report` (função) — [executor/run_e15.py:181](../executor/run_e15.py#L181)
 - `report` (função) — [executor/run_e16.py:81](../executor/run_e16.py#L81)
 - `reported_cost_nusd` (função) — [executor/runner.py:159](../executor/runner.py#L159) · usado em 3: run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py
+- `repositorio` (função) — [hermes/tests/test_workflows.py:110](../hermes/tests/test_workflows.py#L110)
 - `require` (função) — [lab/server.py:34](../lab/server.py#L34)
 - `reserva` (função) — [executor/tests/test_achados_revisao.py:32](../executor/tests/test_achados_revisao.py#L32)
 - `reserva` (função) — [executor/tests/test_achados_revisao2.py:29](../executor/tests/test_achados_revisao2.py#L29)
 - `reserva` (função) — [executor/tests/test_achados_revisao3.py:29](../executor/tests/test_achados_revisao3.py#L29)
 - `reserva` (função) — [executor/tests/test_achados_revisao4.py:25](../executor/tests/test_achados_revisao4.py#L25)
-- `_reservar` (função) — [hermes/jev_hermes/nucleo.py:193](../hermes/jev_hermes/nucleo.py#L193)
+- `_reservar` (função) — [hermes/jev_hermes/nucleo.py:209](../hermes/jev_hermes/nucleo.py#L209)
 - `reservation_output_tokens` (função) — [executor/runner.py:75](../executor/runner.py#L75) · usado em 7: probe_contract.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e5_provedores.py, run_e6_repetibilidade.py …
 - `reservation_tokens` (função) — [executor/runner.py:61](../executor/runner.py#L61) · usado em 6: probe_contract.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e5_provedores.py, run_e6_repetibilidade.py
 - `reserve_args` (função) — [executor/tests/test_ledger.py:36](../executor/tests/test_ledger.py#L36)
-- `responder` (função) — [hermes/tests/test_jev_hermes.py:33](../hermes/tests/test_jev_hermes.py#L33)
+- `resolver` (função) — [hermes/jev_hermes/agentes.py:224](../hermes/jev_hermes/agentes.py#L224) · usado em 1: bancada.py
+- `responder` (função) — [hermes/jev_hermes/agenda.py:333](../hermes/jev_hermes/agenda.py#L333)
+- `responder` (função) — [hermes/jev_hermes/ciclo.py:212](../hermes/jev_hermes/ciclo.py#L212) · usado em 1: agenda.py
+- `_responder` (função) — [hermes/jev_hermes/ciclo.py:219](../hermes/jev_hermes/ciclo.py#L219)
+- `responder` (função) — [hermes/tests/test_jev_hermes.py:32](../hermes/tests/test_jev_hermes.py#L32) · usado em 1: test_recortes.py
 - `responder` (função) — [laboratorio/r17_economia_de_contexto.py:227](../laboratorio/r17_economia_de_contexto.py#L227)
 - `responder` (função) — [laboratorio/r18_escala.py:190](../laboratorio/r18_escala.py#L190) · usado em 1: r20_k_adaptativo.py
 - `responder` (função) — [laboratorio/r26_dois_trechos.py:96](../laboratorio/r26_dois_trechos.py#L96)
+- `responder_por_pergunta` (função) — [hermes/tests/test_recortes.py:16](../hermes/tests/test_recortes.py#L16)
 - `respondidas` (função) — [laboratorio/auditoria.py:62](../laboratorio/auditoria.py#L62)
 - `respondidas` (função) — [laboratorio/tests/test_q100.py:16](../laboratorio/tests/test_q100.py#L16)
 - `response` (função) — [executor/tests/test_shared.py:27](../executor/tests/test_shared.py#L27)
 - `resposta` (função) — [integracao/tests/test_guarda_comando.py:19](../integracao/tests/test_guarda_comando.py#L19)
 - `resposta` (função) — [integracao/tests/test_roteador.py:22](../integracao/tests/test_roteador.py#L22)
 - `resposta` (função) — [laboratorio/q100/respostas.py:30](../laboratorio/q100/respostas.py#L30)
+- `respostas` (função) — [hermes/tests/test_fluxos.py:414](../hermes/tests/test_fluxos.py#L414)
+- `resultado` (função) — [hermes/jev_hermes/recortes.py:205](../hermes/jev_hermes/recortes.py#L205) · usado em 1: test_recortes.py
 - `resultados` (função) — [laboratorio/tests/test_h100.py:14](../laboratorio/tests/test_h100.py#L14)
 - `resultRows` (função) — [lab/dashboard.js:73](../lab/dashboard.js#L73)
 - `resultsView` (função) — [lab/dashboard.js:78](../lab/dashboard.js#L78)
 - `resumir` (função) — [executor/run_e2_fatorial.py:113](../executor/run_e2_fatorial.py#L113)
 - `resumo` (função) — [executor/run_e1_triagem.py:70](../executor/run_e1_triagem.py#L70) · usado em 6: run_e10_llm_economico.py, run_e10b_piloto.py, run_e11_desempate.py, run_e12_replicacao.py, run_e7_confirmacao.py, test_achados_revisao.py
 - `resumo` (função) — [executor/run_e3_evidencia.py:69](../executor/run_e3_evidencia.py#L69)
+- `resumo` (função) — [hermes/jev_hermes/ciclo.py:238](../hermes/jev_hermes/ciclo.py#L238) · usado em 2: agenda.py, agentes.py
+- `resumo` (função) — [hermes/jev_hermes/modelos.py:214](../hermes/jev_hermes/modelos.py#L214)
 - `resumo` (função) — [laboratorio/r11_extremos.py:215](../laboratorio/r11_extremos.py#L215)
 - `resumo` (função) — [laboratorio/r8_r9_adversarial.py:139](../laboratorio/r8_r9_adversarial.py#L139)
-- `resumo_das_chamadas` (função) — [hermes/jev_hermes/nucleo.py:440](../hermes/jev_hermes/nucleo.py#L440) · usado em 5: camadas.py, jev_gate_email_diario.py, jev_gate_radar_ia.py, jev_rotina_agenda_dia.py, jev_rotina_caixa_vigiada.py
-- `resumo_das_chamadas` (função) — [integracao/camadas/nucleo.py:198](../integracao/camadas/nucleo.py#L198) · usado em 6: busca.py, leitura.py, ler.py, saida.py, sentinela.py, verificar.py
-- `_resumo_das_respostas` (função) — [hermes/jev_hermes/nucleo.py:332](../hermes/jev_hermes/nucleo.py#L332)
+- `resumo_das_chamadas` (função) — [hermes/jev_hermes/nucleo.py:465](../hermes/jev_hermes/nucleo.py#L465) · usado em 16: academico.py, anexos.py, camadas.py, checklist.py, pendencias.py, prazos.py …
+- `resumo_das_chamadas` (função) — [integracao/camadas/nucleo.py:206](../integracao/camadas/nucleo.py#L206) · usado em 9: sala_sentimento.py, busca.py, checklist.py, leitura.py, ler.py, saida.py …
+- `_resumo_das_respostas` (função) — [hermes/jev_hermes/nucleo.py:348](../hermes/jev_hermes/nucleo.py#L348)
+- `_resumo_jev` (função) — [hermes/jev_hermes/workflows.py:192](../hermes/jev_hermes/workflows.py#L192)
 - `retratacoes` (função) — [laboratorio/h100/dados.py:93](../laboratorio/h100/dados.py#L93) · usado em 3: auditoria.py, test_h100.py, test_q100.py
 - `_revisao` (função) — [hermes/plugin/jev-advisor/__init__.py:77](../hermes/plugin/jev-advisor/__init__.py#L77)
-- `rodar` (função) — [hermes/jev_hermes/portao.py:57](../hermes/jev_hermes/portao.py#L57) · usado em 2: jev_gate_fabio_whatsapp.py, jev_rotina_agenda_dia.py
+- `rodar` (função) — [hermes/jev_hermes/bancada.py:102](../hermes/jev_hermes/bancada.py#L102)
+- `rodar` (função) — [hermes/jev_hermes/ciclo.py:150](../hermes/jev_hermes/ciclo.py#L150) · usado em 2: agenda.py, agentes.py
+- `rodar` (função) — [hermes/jev_hermes/portao.py:57](../hermes/jev_hermes/portao.py#L57) · usado em 7: agenda.py, anexos.py, prazos.py, jev_gate_fabio_whatsapp.py, jev_rotina_agenda_dia.py, jev_rotina_lembrete_compromisso.py …
 - `rodar` (função) — [integracao/avaliacao/com_contexto.py:61](../integracao/avaliacao/com_contexto.py#L61)
 - `rodar` (função) — [integracao/avaliacao/comandos.py:84](../integracao/avaliacao/comandos.py#L84)
 - `rodar` (função) — [integracao/avaliacao/rodar.py:28](../integracao/avaliacao/rodar.py#L28)
-- `_rodar` (função) — [integracao/camadas/rotina.py:61](../integracao/camadas/rotina.py#L61)
+- `_rodar` (função) — [integracao/camadas/rotina.py:65](../integracao/camadas/rotina.py#L65)
 - `rodar` (função) — [laboratorio/auditoria.py:1141](../laboratorio/auditoria.py#L1141) · usado em 1: test_auditoria.py
 - `rodar` (função) — [laboratorio/canarios_de_comportamento.py:196](../laboratorio/canarios_de_comportamento.py#L196)
 - `rodar` (função) — [laboratorio/h100/avaliar.py:25](../laboratorio/h100/avaliar.py#L25) · usado em 4: auditoria.py, relatorio.py, respostas.py, test_h100.py
@@ -1309,8 +1729,27 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `rodar` (função) — [laboratorio/r19_armadilha_de_sujeito.py:183](../laboratorio/r19_armadilha_de_sujeito.py#L183)
 - `rodar` (função) — [laboratorio/r20_k_adaptativo.py:163](../laboratorio/r20_k_adaptativo.py#L163)
 - `rodar` (função) — [laboratorio/r26_dois_trechos.py:118](../laboratorio/r26_dois_trechos.py#L118)
-- `roteador_e_guarda` (função) — [integracao/camadas/medir.py:208](../integracao/camadas/medir.py#L208)
-- `_rotina` (função) — [integracao/camadas/medir.py:256](../integracao/camadas/medir.py#L256)
+- `rodar_laco` (função) — [hermes/tests/test_fluxos.py:285](../hermes/tests/test_fluxos.py#L285)
+- `rodar_r31` (função) — [laboratorio/r31_r37_segunda_leva.py:196](../laboratorio/r31_r37_segunda_leva.py#L196)
+- `rodar_r32_r33` (função) — [laboratorio/r31_r37_segunda_leva.py:288](../laboratorio/r31_r37_segunda_leva.py#L288)
+- `rodar_r34` (função) — [laboratorio/r31_r37_segunda_leva.py:342](../laboratorio/r31_r37_segunda_leva.py#L342)
+- `rodar_r35` (função) — [laboratorio/r31_r37_segunda_leva.py:396](../laboratorio/r31_r37_segunda_leva.py#L396)
+- `rodar_r36` (função) — [laboratorio/r31_r37_segunda_leva.py:441](../laboratorio/r31_r37_segunda_leva.py#L441)
+- `rodar_r37` (função) — [laboratorio/r31_r37_segunda_leva.py:475](../laboratorio/r31_r37_segunda_leva.py#L475)
+- `rodar_r38` (função) — [laboratorio/r38_r41_terceira_leva.py:82](../laboratorio/r38_r41_terceira_leva.py#L82)
+- `rodar_r39` (função) — [laboratorio/r38_r41_terceira_leva.py:122](../laboratorio/r38_r41_terceira_leva.py#L122)
+- `rodar_r40` (função) — [laboratorio/r38_r41_terceira_leva.py:159](../laboratorio/r38_r41_terceira_leva.py#L159)
+- `rodar_r41` (função) — [laboratorio/r38_r41_terceira_leva.py:215](../laboratorio/r38_r41_terceira_leva.py#L215)
+- `rodar_r42` (função) — [laboratorio/r42_r44_quarta_leva.py:70](../laboratorio/r42_r44_quarta_leva.py#L70)
+- `rodar_r43` (função) — [laboratorio/r42_r44_quarta_leva.py:154](../laboratorio/r42_r44_quarta_leva.py#L154)
+- `rodar_r44` (função) — [laboratorio/r42_r44_quarta_leva.py:193](../laboratorio/r42_r44_quarta_leva.py#L193)
+- `rodar_r46` (função) — [laboratorio/r46_r49_pontos_do_video.py:88](../laboratorio/r46_r49_pontos_do_video.py#L88)
+- `rodar_r47` (função) — [laboratorio/r46_r49_pontos_do_video.py:165](../laboratorio/r46_r49_pontos_do_video.py#L165)
+- `rodar_r48` (função) — [laboratorio/r46_r49_pontos_do_video.py:207](../laboratorio/r46_r49_pontos_do_video.py#L207)
+- `rodar_r49` (função) — [laboratorio/r46_r49_pontos_do_video.py:258](../laboratorio/r46_r49_pontos_do_video.py#L258)
+- `rota` (função) — [hermes/jev_hermes/ponte_openai.py:69](../hermes/jev_hermes/ponte_openai.py#L69)
+- `roteador_e_guarda` (função) — [integracao/camadas/medir.py:214](../integracao/camadas/medir.py#L214)
+- `_rotina` (função) — [integracao/camadas/medir.py:262](../integracao/camadas/medir.py#L262)
 - `Rotina` (classe) — [integracao/tests/test_rotina.py:14](../integracao/tests/test_rotina.py#L14)
 - `Rotina.setUp` (método) — [integracao/tests/test_rotina.py:16](../integracao/tests/test_rotina.py#L16)
 - `Rotina.tearDown` (método) — [integracao/tests/test_rotina.py:24](../integracao/tests/test_rotina.py#L24)
@@ -1318,6 +1757,8 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `Rotina.test_o_commit_nunca_faz_push` (método) — [integracao/tests/test_rotina.py:52](../integracao/tests/test_rotina.py#L52)
 - `Rotina.test_para_na_auditoria_e_nao_commita` (método) — [integracao/tests/test_rotina.py:30](../integracao/tests/test_rotina.py#L30)
 - `rotulo` (função) — [executor/gabarito.py:85](../executor/gabarito.py#L85) · usado em 2: run_e9_prevalencia.py, test_coerencia_placar.py
+- `rotulo` (função) — [hermes/jev_hermes/agenda.py:98](../hermes/jev_hermes/agenda.py#L98)
+- `_rotulo` (função) — [hermes/jev_hermes/workflows.py:108](../hermes/jev_hermes/workflows.py#L108)
 - `Round5` (classe) — [executor/tests/test_achados_revisao3.py:37](../executor/tests/test_achados_revisao3.py#L37)
 - `Round5.reabrir` (método) — [executor/tests/test_achados_revisao3.py:54](../executor/tests/test_achados_revisao3.py#L54)
 - `Round5.setUp` (método) — [executor/tests/test_achados_revisao3.py:38](../executor/tests/test_achados_revisao3.py#L38)
@@ -1335,6 +1776,10 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `Round5.test_retificacao_nao_pode_estourar_o_teto` (método) — [executor/tests/test_achados_revisao3.py:181](../executor/tests/test_achados_revisao3.py#L181)
 - `Round5.test_retomada_exige_motivo_e_evidencia` (método) — [executor/tests/test_achados_revisao3.py:157](../executor/tests/test_achados_revisao3.py#L157)
 - `Round5.test_retomada_negada_enquanto_o_teto_estiver_estourado` (método) — [executor/tests/test_achados_revisao3.py:151](../executor/tests/test_achados_revisao3.py#L151)
+- `route` (função) — [integracao/seletores.py:75](../integracao/seletores.py#L75) · usado em 2: jev_mcp.py, test_workflow.py
+- `route_definition` (função) — [integracao/seletores.py:91](../integracao/seletores.py#L91) · usado em 1: jev_mcp.py
+- `run` (função) — [integracao/harness/auditar_instalacoes.py:14](../integracao/harness/auditar_instalacoes.py#L14)
+- `run` (função) — [integracao/harness/web/app.js:19](../integracao/harness/web/app.js#L19)
 - `run_one` (função) — [executor/simple_round.py:78](../executor/simple_round.py#L78)
 - `run_record` (função) — [lab/tests/test_server.py:22](../lab/tests/test_server.py#L22)
 - `runList` (função) — [lab/dashboard.js:88](../lab/dashboard.js#L88)
@@ -1363,10 +1808,11 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 ## S
 
 - `safeLink` (função) — [lab/dashboard.js:132](../lab/dashboard.js#L132)
-- `saida` (função) — [hermes/jev_hermes/camadas.py:489](../hermes/jev_hermes/camadas.py#L489)
-- `saida` (função) — [integracao/camadas/medir.py:161](../integracao/camadas/medir.py#L161)
+- `saida` (função) — [hermes/jev_hermes/camadas.py:613](../hermes/jev_hermes/camadas.py#L613)
+- `saida` (função) — [integracao/camadas/medir.py:167](../integracao/camadas/medir.py#L167)
 - `Saida` (classe) — [integracao/tests/test_camadas.py:167](../integracao/tests/test_camadas.py#L167)
 - `Saida.test_aponta_a_parte_com_a_causa` (método) — [integracao/tests/test_camadas.py:175](../integracao/tests/test_camadas.py#L175)
+- `Saida.test_codigo_fonte_que_fala_de_erro_nao_e_saida_com_erro` (método) — [integracao/tests/test_camadas.py:189](../integracao/tests/test_camadas.py#L189)
 - `Saida.test_saida_curta_ou_sem_erro_nao_gasta` (método) — [integracao/tests/test_camadas.py:184](../integracao/tests/test_camadas.py#L184)
 - `Saida.transporte` (método) — [integracao/tests/test_camadas.py:169](../integracao/tests/test_camadas.py#L169)
 - `sanitizar` (função) — [laboratorio/r22_defesas.py:67](../laboratorio/r22_defesas.py#L67) · usado em 2: r25_terceiro_dominio.py, r27_integracao.py
@@ -1379,17 +1825,27 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `secao_r25` (função) — [laboratorio/gerar_bateria.py:224](../laboratorio/gerar_bateria.py#L224)
 - `secao_r26` (função) — [laboratorio/gerar_bateria.py:248](../laboratorio/gerar_bateria.py#L248)
 - `secao_r27` (função) — [laboratorio/gerar_bateria.py:276](../laboratorio/gerar_bateria.py#L276)
-- `_seguro` (função) — [hermes/jev_hermes/camadas.py:72](../hermes/jev_hermes/camadas.py#L72)
+- `secoes_da_skill` (função) — [hermes/jev_hermes/recortes.py:90](../hermes/jev_hermes/recortes.py#L90)
+- `_seguro` (função) — [hermes/jev_hermes/camadas.py:130](../hermes/jev_hermes/camadas.py#L130)
+- `_selecionar` (função) — [hermes/jev_hermes/workflows.py:476](../hermes/jev_hermes/workflows.py#L476)
 - `selecionar` (função) — [integracao/camadas/ler.py:105](../integracao/camadas/ler.py#L105) · usado em 1: test_camadas.py
+- `selecionar_agente` (função) — [hermes/jev_hermes/workflows.py:522](../hermes/jev_hermes/workflows.py#L522) · usado em 1: test_workflows.py
+- `selecionar_modelo` (função) — [hermes/jev_hermes/workflows.py:559](../hermes/jev_hermes/workflows.py#L559) · usado em 1: test_workflows.py
+- `select` (função) — [integracao/seletores.py:8](../integracao/seletores.py#L8) · usado em 2: jev_mcp.py, test_seletores.py
 - `sem_acento` (função) — [laboratorio/r11_extremos.py:136](../laboratorio/r11_extremos.py#L136)
 - `sem_acento` (função) — [laboratorio/r17b_sensibilidade.py:32](../laboratorio/r17b_sensibilidade.py#L32)
+- `sem_os_encerrados` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:63](../hermes/rotinas/jev_rotina_painel_manha.py#L63)
+- `_sem_rede` (função) — [hermes/tests/test_workflows.py:31](../hermes/tests/test_workflows.py#L31)
+- `semaforo` (função) — [hermes/jev_hermes/checklist.py:133](../hermes/jev_hermes/checklist.py#L133)
+- `semaforo` (função) — [integracao/camadas/checklist.py:87](../integracao/camadas/checklist.py#L87) · usado em 1: r50_checklist_de_contrato.py
 - `send` (função) — [executor/probe_contract.py:49](../executor/probe_contract.py#L49)
-- `sentinela` (função) — [hermes/jev_hermes/camadas.py:449](../hermes/jev_hermes/camadas.py#L449) · usado em 1: test_jev_hermes.py
-- `sentinela` (função) — [integracao/camadas/medir.py:144](../integracao/camadas/medir.py#L144)
-- `Sentinela` (classe) — [integracao/tests/test_camadas.py:212](../integracao/tests/test_camadas.py#L212)
-- `Sentinela.test_avisa_quando_o_texto_tenta_instruir` (método) — [integracao/tests/test_camadas.py:214](../integracao/tests/test_camadas.py#L214)
-- `Sentinela.test_cala_em_texto_limpo_e_em_texto_curto` (método) — [integracao/tests/test_camadas.py:223](../integracao/tests/test_camadas.py#L223)
-- `Sentinela.test_o_matcher_cobre_as_ferramentas_da_camada` (método) — [integracao/tests/test_camadas.py:230](../integracao/tests/test_camadas.py#L230)
+- `sensivel` (função) — [hermes/jev_hermes/workflows.py:173](../hermes/jev_hermes/workflows.py#L173)
+- `sentinela` (função) — [hermes/jev_hermes/camadas.py:573](../hermes/jev_hermes/camadas.py#L573) · usado em 1: test_jev_hermes.py
+- `sentinela` (função) — [integracao/camadas/medir.py:150](../integracao/camadas/medir.py#L150)
+- `Sentinela` (classe) — [integracao/tests/test_camadas.py:224](../integracao/tests/test_camadas.py#L224)
+- `Sentinela.test_avisa_quando_o_texto_tenta_instruir` (método) — [integracao/tests/test_camadas.py:226](../integracao/tests/test_camadas.py#L226)
+- `Sentinela.test_cala_em_texto_limpo_e_em_texto_curto` (método) — [integracao/tests/test_camadas.py:235](../integracao/tests/test_camadas.py#L235)
+- `Sentinela.test_o_matcher_cobre_as_ferramentas_da_camada` (método) — [integracao/tests/test_camadas.py:242](../integracao/tests/test_camadas.py#L242)
 - `sentinela_do_colado` (função) — [integracao/hooks/jev_prompt_router.py:58](../integracao/hooks/jev_prompt_router.py#L58)
 - `ServerTests` (classe) — [lab/tests/test_server.py:27](../lab/tests/test_server.py#L27)
 - `ServerTests.request` (método) — [lab/tests/test_server.py:48](../lab/tests/test_server.py#L48)
@@ -1404,6 +1860,8 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `ServerTests.test_reconcile_unknown_cost_without_duplicate` (método) — [lab/tests/test_server.py:68](../lab/tests/test_server.py#L68)
 - `ServerTests.test_save_revision_and_reject_stale` (método) — [lab/tests/test_server.py:59](../lab/tests/test_server.py#L59)
 - `ServerTests.test_secret_fields_rejected` (método) — [lab/tests/test_server.py:107](../lab/tests/test_server.py#L107)
+- `sessoes` (função) — [hermes/jev_hermes/recortes.py:221](../hermes/jev_hermes/recortes.py#L221) · usado em 1: test_recortes.py
+- `sessoes` (função) — [hermes/rotinas/jev_comparar_job.py:22](../hermes/rotinas/jev_comparar_job.py#L22)
 - `SetimaRodada` (classe) — [executor/tests/test_achados_revisao4.py:159](../executor/tests/test_achados_revisao4.py#L159)
 - `SetimaRodada.setUp` (método) — [executor/tests/test_achados_revisao4.py:162](../executor/tests/test_achados_revisao4.py#L162)
 - `SetimaRodada.tearDown` (método) — [executor/tests/test_achados_revisao4.py:168](../executor/tests/test_achados_revisao4.py#L168)
@@ -1414,26 +1872,35 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `SetimaRodada.test_reautorizar_nao_devolve_teto_que_a_emenda_tirou` (método) — [executor/tests/test_achados_revisao4.py:176](../executor/tests/test_achados_revisao4.py#L176)
 - `SetimaRodada.test_titulo_do_veredito_cai_quando_a_politica_deixa_erro` (método) — [executor/tests/test_achados_revisao4.py:204](../executor/tests/test_achados_revisao4.py#L204)
 - `SetimaRodada.teto` (método) — [executor/tests/test_achados_revisao4.py:172](../executor/tests/test_achados_revisao4.py#L172)
+- `setUpModule` (função) — [hermes/tests/test_workflows.py:38](../hermes/tests/test_workflows.py#L38)
 - `sha` (função) — [executor/run_e15.py:23](../executor/run_e15.py#L23) · usado em 1: run_e16.py
+- `show` (função) — [integracao/harness/web/app.js:10](../integracao/harness/web/app.js#L10)
 - `showRun` (função) — [lab/dashboard.js:133](../lab/dashboard.js#L133)
 - `showSystem` (função) — [lab/dashboard.js:127](../lab/dashboard.js#L127)
 - `simular` (função) — [laboratorio/canarios_de_comportamento.py:231](../laboratorio/canarios_de_comportamento.py#L231)
-- `situacao` (função) — [executor/credenciais.py:80](../executor/credenciais.py#L80) · usado em 1: test_credenciais.py
-- `situacao` (função) — [hermes/jev_hermes/nucleo.py:174](../hermes/jev_hermes/nucleo.py#L174) · usado em 2: medir.py, test_jev_hermes.py
+- `sincronizar_agenda` (função) — [hermes/jev_hermes/prazos.py:271](../hermes/jev_hermes/prazos.py#L271)
+- `situacao` (função) — [executor/credenciais.py:80](../executor/credenciais.py#L80) · usado em 2: test_credenciais.py, apoio.py
+- `situacao` (função) — [hermes/jev_hermes/nucleo.py:190](../hermes/jev_hermes/nucleo.py#L190) · usado em 2: medir.py, test_jev_hermes.py
 - `situacao` (função) — [integracao/jev_router/orcamento.py:55](../integracao/jev_router/orcamento.py#L55) · usado em 1: cli.py
+- `situacao_do_cartao` (função) — [hermes/jev_hermes/triagem.py:91](../hermes/jev_hermes/triagem.py#L91)
+- `skill` (função) — [hermes/jev_hermes/recortes.py:130](../hermes/jev_hermes/recortes.py#L130) · usado em 1: test_recortes.py
+- `skill_falsa` (função) — [hermes/tests/test_recortes.py:43](../hermes/tests/test_recortes.py#L43)
 - `snapshot_id` (função) — [executor/pricing.py:28](../executor/pricing.py#L28) · usado em 1: ledger.py
 - `sobre_programados` (função) — [executor/placar.py:52](../executor/placar.py#L52) · usado em 1: test_achados_revisao4.py
 - `SoOlhaOQueARegraBarrou` (classe) — [integracao/tests/test_guarda_comando.py:33](../integracao/tests/test_guarda_comando.py#L33)
 - `SoOlhaOQueARegraBarrou.test_comando_marcado_pela_regra_e_avaliado` (método) — [integracao/tests/test_guarda_comando.py:48](../integracao/tests/test_guarda_comando.py#L48)
 - `SoOlhaOQueARegraBarrou.test_comando_que_a_regra_nao_marca_nao_gasta_chamada` (método) — [integracao/tests/test_guarda_comando.py:41](../integracao/tests/test_guarda_comando.py#L41)
 - `state` (função) — [executor/publish_simple_round.py:16](../executor/publish_simple_round.py#L16)
+- `status` (função) — [integracao/apoio.py:10](../integracao/apoio.py#L10) · usado em 5: agent_layer.py, avaliar_ao_vivo.py, painel.py, jev_mcp.py, test_apoio.py
 - `strict_answers` (função) — [executor/shared.py:138](../executor/shared.py#L138) · usado em 1: test_shared.py
 - `system` (função) — [planning/build_plan.py:11](../planning/build_plan.py#L11)
 - `systemsView` (função) — [lab/dashboard.js:69](../lab/dashboard.js#L69)
 
 ## T
 
-- `tamanho_medio_do_prompt` (função) — [hermes/jev_hermes/medir.py:39](../hermes/jev_hermes/medir.py#L39)
+- `tamanho_medio_do_prompt` (função) — [hermes/jev_hermes/medir.py:60](../hermes/jev_hermes/medir.py#L60)
+- `_tarefa` (função) — [hermes/jev_hermes/workflows.py:514](../hermes/jev_hermes/workflows.py#L514)
+- `tarefa_de_codigo` (função) — [hermes/jev_hermes/avaliacao.py:286](../hermes/jev_hermes/avaliacao.py#L286) · usado em 1: bancada.py
 - `tarefas` (função) — [laboratorio/r10_injecao_comparada.py:37](../laboratorio/r10_injecao_comparada.py#L37)
 - `tarefas` (função) — [laboratorio/r15_adversario_externo.py:126](../laboratorio/r15_adversario_externo.py#L126)
 - `tarefas` (função) — [laboratorio/r8_r9_adversarial.py:113](../laboratorio/r8_r9_adversarial.py#L113)
@@ -1449,34 +1916,78 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `TarifaEMigracao.test_base_antiga_ganha_as_colunas_novas` (método) — [executor/tests/test_achados_revisao2.py:194](../executor/tests/test_achados_revisao2.py#L194)
 - `TarifaEMigracao.test_liquidar_com_tabela_de_precos_diferente_conserva_a_reserva` (método) — [executor/tests/test_achados_revisao2.py:179](../executor/tests/test_achados_revisao2.py#L179)
 - `taxa` (função) — [laboratorio/h100/dados.py:223](../laboratorio/h100/dados.py#L223)
+- `taxa` (função) — [laboratorio/r28_ato_de_fala.py:137](../laboratorio/r28_ato_de_fala.py#L137)
+- `taxa` (função) — [laboratorio/r31_r37_segunda_leva.py:113](../laboratorio/r31_r37_segunda_leva.py#L113) · usado em 5: r38_r41_terceira_leva.py, r42_r44_quarta_leva.py, r45_lista_nas_duas_ordens.py, r46_r49_pontos_do_video.py, r50_checklist_de_contrato.py
 - `tem_relatorios` (função) — [executor/tests/test_coerencia_placar.py:20](../executor/tests/test_coerencia_placar.py#L20)
-- `tema` (função) — [hermes/jev_hermes/camadas.py:182](../hermes/jev_hermes/camadas.py#L182)
+- `tema` (função) — [hermes/jev_hermes/camadas.py:280](../hermes/jev_hermes/camadas.py#L280) · usado em 1: test_jev_hermes.py
 - `tentativa` (função) — [executor/publicar_experimentos.py:34](../executor/publicar_experimentos.py#L34)
 - `tentativas` (função) — [laboratorio/h100/dados.py:70](../laboratorio/h100/dados.py#L70) · usado em 2: provas.py, respostas.py
 - `tentativas_orfas_run` (função) — [executor/publicar_experimentos.py:374](../executor/publicar_experimentos.py#L374) · usado em 1: test_coerencia_placar.py
 - `terminalLines` (função) — [lab/terminal.js:7](../lab/terminal.js#L7)
 - `terminalView` (função) — [lab/terminal.js:20](../lab/terminal.js#L20)
-- `test_429_do_openrouter_cai_para_typesafe` (função) — [hermes/tests/test_jev_hermes.py:70](../hermes/tests/test_jev_hermes.py#L70)
+- `test_429_do_openrouter_cai_para_typesafe` (função) — [hermes/tests/test_jev_hermes.py:69](../hermes/tests/test_jev_hermes.py#L69)
 - `test_a_auditoria_confere_algo_de_cada_rodada` (função) — [laboratorio/tests/test_auditoria.py:23](../laboratorio/tests/test_auditoria.py#L23)
 - `test_a_estatistica_independente_reproduz_a_do_laboratorio` (função) — [laboratorio/tests/test_auditoria.py:31](../laboratorio/tests/test_auditoria.py#L31)
 - `test_a_pagina_se_gera_e_cita_todas_as_perguntas` (função) — [laboratorio/tests/test_q100.py:129](../laboratorio/tests/test_q100.py#L129)
 - `test_a_suite_cabe_no_teto_declarado` (função) — [laboratorio/tests/test_canarios_de_comportamento.py:62](../laboratorio/tests/test_canarios_de_comportamento.py#L62)
 - `test_a_varredura_encontra_dos_dois_lados` (função) — [laboratorio/tests/test_h100.py:51](../laboratorio/tests/test_h100.py#L51)
+- `test_abstains` (função) — [integracao/tests/test_seletores.py:21](../integracao/tests/test_seletores.py#L21)
+- `test_afericao_da_rota_separa_prova_de_turno_real` (função) — [hermes/tests/test_recortes.py:213](../hermes/tests/test_recortes.py#L213)
+- `test_agendar_pergunta_tarde_com_tres_opcoes_e_so_conclui_depois_de_confirmado` (função) — [hermes/tests/test_fluxos.py:164](../hermes/tests/test_fluxos.py#L164)
+- `test_agente_que_enfraquece_o_teste_nao_e_aprovado` (função) — [hermes/tests/test_fluxos.py:548](../hermes/tests/test_fluxos.py#L548)
 - `test_alguma_conta_declara_parametro` (função) — [laboratorio/tests/test_q100.py:67](../laboratorio/tests/test_q100.py#L67)
+- `test_anexo_de_peca_e_triado_e_o_resto_so_registrado` (função) — [hermes/tests/test_recortes.py:304](../hermes/tests/test_recortes.py#L304)
 - `test_as_emendas_estao_datadas_e_justificadas` (função) — [laboratorio/tests/test_h100.py:57](../laboratorio/tests/test_h100.py#L57)
 - `test_as_familias_todas_tem_pergunta` (função) — [laboratorio/tests/test_q100.py:124](../laboratorio/tests/test_q100.py#L124)
 - `test_bad_arguments_cannot_call_provider` (função) — [executor/tests/test_mcp.py:37](../executor/tests/test_mcp.py#L37)
 - `test_bad_confidence_rejected` (função) — [executor/tests/test_shared.py:76](../executor/tests/test_shared.py#L76)
-- `test_busca_anexa_ordem_sem_esconder_nada` (função) — [hermes/tests/test_jev_hermes.py:140](../hermes/tests/test_jev_hermes.py#L140)
+- `test_bancada_mede_pelo_verificador_oculto_e_compara` (função) — [hermes/tests/test_fluxos.py:462](../hermes/tests/test_fluxos.py#L462)
+- `test_busca_anexa_ordem_sem_esconder_nada` (função) — [hermes/tests/test_jev_hermes.py:139](../hermes/tests/test_jev_hermes.py#L139)
 - `test_cartao_e8_reage_a_mudanca_no_gabarito_do_anotador_local` (função) — [executor/tests/test_coerencia_placar.py:375](../executor/tests/test_coerencia_placar.py#L375)
+- `test_chamado_que_cita_cliente_pode_ser_aprovado_pelo_harness` (função) — [hermes/tests/test_fluxos.py:504](../hermes/tests/test_fluxos.py#L504)
+- `test_checklist_numa_chamada_so_com_sentinela` (função) — [hermes/tests/test_jev_hermes.py:289](../hermes/tests/test_jev_hermes.py#L289)
+- `test_ciclo_conclui_so_quando_a_guarda_do_fim_libera` (função) — [hermes/tests/test_fluxos.py:94](../hermes/tests/test_fluxos.py#L94)
+- `test_commands` (função) — [integracao/harness/painel.py:54](../integracao/harness/painel.py#L54)
 - `test_concurrent_consumers_share_wallet` (função) — [executor/tests/test_shared.py:83](../executor/tests/test_shared.py#L83)
-- `test_credencial_nao_sai_no_estado` (função) — [hermes/tests/test_jev_hermes.py:93](../hermes/tests/test_jev_hermes.py#L93)
-- `test_erro_de_contrato_nao_troca_de_provedor` (função) — [hermes/tests/test_jev_hermes.py:78](../hermes/tests/test_jev_hermes.py#L78)
+- `test_confianca_baixa_usa_a_regra_e_escape_sem_regra_vai_para_pessoa` (função) — [hermes/tests/test_fluxos.py:86](../hermes/tests/test_fluxos.py#L86)
+- `test_conflito_na_hora_de_reservar_volta_a_buscar` (função) — [hermes/tests/test_fluxos.py:187](../hermes/tests/test_fluxos.py#L187)
+- `test_contagem_de_pytest_e_unittest` (função) — [hermes/tests/test_fluxos.py:270](../hermes/tests/test_fluxos.py#L270)
+- `test_credencial_nao_sai_no_estado` (função) — [hermes/tests/test_jev_hermes.py:92](../hermes/tests/test_jev_hermes.py#L92)
+- `test_criacao_que_expira_mas_grava_nao_duplica` (função) — [hermes/tests/test_fluxos.py:519](../hermes/tests/test_fluxos.py#L519)
+- `test_criterio_nao_atendido_com_confianca_alta_refaz` (função) — [hermes/tests/test_fluxos.py:310](../hermes/tests/test_fluxos.py#L310)
+- `test_diff_ignora_cache_do_python` (função) — [hermes/tests/test_fluxos.py:635](../hermes/tests/test_fluxos.py#L635)
+- `test_diff_so_mede_o_agente` (função) — [hermes/tests/test_fluxos.py:330](../hermes/tests/test_fluxos.py#L330)
+- `test_duplicate_ids_rejected_before_payment` (função) — [integracao/tests/test_seletores.py:37](../integracao/tests/test_seletores.py#L37)
+- `test_erro_de_contrato_nao_troca_de_provedor` (função) — [hermes/tests/test_jev_hermes.py:77](../hermes/tests/test_jev_hermes.py#L77)
+- `test_erros_seguidos_levam_a_pessoa` (função) — [hermes/tests/test_fluxos.py:111](../hermes/tests/test_fluxos.py#L111)
+- `test_esteira_segue_a_ordem_e_para_quando_falha` (função) — [hermes/tests/test_fluxos.py:383](../hermes/tests/test_fluxos.py#L383)
+- `test_executor_manda_o_pedido_pela_entrada_e_gasta_o_orcamento` (função) — [hermes/tests/test_fluxos.py:252](../hermes/tests/test_fluxos.py#L252)
+- `test_explicit_choices_do_not_pay` (função) — [integracao/tests/test_workflow.py:45](../integracao/tests/test_workflow.py#L45)
 - `test_full_input_is_sent` (função) — [executor/tests/test_shared.py:33](../executor/tests/test_shared.py#L33)
-- `test_interruptor_desliga_sem_enviar` (função) — [hermes/tests/test_jev_hermes.py:109](../hermes/tests/test_jev_hermes.py#L109)
+- `test_guarda_com_uma_acao_nao_chama_o_jev` (função) — [hermes/tests/test_fluxos.py:73](../hermes/tests/test_fluxos.py#L73)
+- `test_hook_contains_no_prompt_or_session_private_values` (função) — [integracao/tests/test_workflow.py:23](../integracao/tests/test_workflow.py#L23)
+- `test_horario_que_ja_passou_nao_e_reservado` (função) — [hermes/tests/test_fluxos.py:528](../hermes/tests/test_fluxos.py#L528)
+- `test_independent_questions_share_one_call` (função) — [integracao/tests/test_apoio.py:13](../integracao/tests/test_apoio.py#L13)
+- `test_installer_preserves_other_hooks_and_is_idempotent` (função) — [integracao/tests/test_workflow.py:6](../integracao/tests/test_workflow.py#L6)
+- `test_interruptor_desliga_sem_enviar` (função) — [hermes/tests/test_jev_hermes.py:108](../hermes/tests/test_jev_hermes.py#L108)
+- `test_invalid_rubrics_never_reach_transport` (função) — [integracao/tests/test_apoio.py:24](../integracao/tests/test_apoio.py#L24)
+- `test_isolamento_sem_rede_so_grava_na_pasta` (função) — [hermes/tests/test_fluxos.py:601](../hermes/tests/test_fluxos.py#L601)
+- `test_janela_das_semanas` (função) — [hermes/tests/test_fluxos.py:154](../hermes/tests/test_fluxos.py#L154)
+- `test_jev_que_insiste_em_programar_e_barrado_pela_guarda` (função) — [hermes/tests/test_fluxos.py:579](../hermes/tests/test_fluxos.py#L579)
+- `test_laco_sem_criterio_usa_o_padrao` (função) — [hermes/tests/test_fluxos.py:563](../hermes/tests/test_fluxos.py#L563)
+- `test_laudo_leva_ao_juiz_o_codigo_que_cita` (função) — [hermes/tests/test_fluxos.py:646](../hermes/tests/test_fluxos.py#L646)
 - `test_legacy_import_is_idempotent_and_fail_closed` (função) — [executor/tests/test_shared.py:61](../executor/tests/test_shared.py#L61)
-- `test_leitura_recorta_na_janela_dos_essenciais` (função) — [hermes/tests/test_jev_hermes.py:121](../hermes/tests/test_jev_hermes.py#L121)
-- `test_leitura_respeita_intervalo_pedido_pelo_agente` (função) — [hermes/tests/test_jev_hermes.py:133](../hermes/tests/test_jev_hermes.py#L133)
+- `test_leitura_nao_recorta_arquivo_estruturado` (função) — [hermes/tests/test_recortes.py:251](../hermes/tests/test_recortes.py#L251)
+- `test_leitura_recorta_na_janela_dos_essenciais` (função) — [hermes/tests/test_jev_hermes.py:120](../hermes/tests/test_jev_hermes.py#L120)
+- `test_leitura_respeita_intervalo_pedido_pelo_agente` (função) — [hermes/tests/test_jev_hermes.py:132](../hermes/tests/test_jev_hermes.py#L132)
+- `test_lembrete_so_cala_bloqueio_pessoal_com_confianca` (função) — [hermes/tests/test_fluxos.py:659](../hermes/tests/test_fluxos.py#L659)
+- `test_limite_da_assinatura_desce_de_nivel_ate_o_reinicio` (função) — [hermes/tests/test_fluxos.py:616](../hermes/tests/test_fluxos.py#L616)
+- `test_maps_model_choice_to_available_id` (função) — [integracao/tests/test_seletores.py:9](../integracao/tests/test_seletores.py#L9)
+- `test_mesmas_faltas_duas_vezes_vao_para_pessoa` (função) — [hermes/tests/test_fluxos.py:305](../hermes/tests/test_fluxos.py#L305)
+- `test_missing_wallet_blocks_before_credentials_or_network` (função) — [integracao/tests/test_apoio.py:39](../integracao/tests/test_apoio.py#L39)
+- `test_missing_wallet_status_creates_nothing` (função) — [integracao/tests/test_apoio.py:31](../integracao/tests/test_apoio.py#L31)
+- `test_modelo_pelo_tipo_escalada_por_falha_e_orcamento` (função) — [hermes/tests/test_fluxos.py:230](../hermes/tests/test_fluxos.py#L230)
+- `test_nao_conta_duas_vezes_e_recomeca_em_arquivo_novo` (função) — [integracao/tests/test_gateway_conciliar.py:39](../integracao/tests/test_gateway_conciliar.py#L39)
 - `test_nenhuma_hipotese_se_apoia_em_condicao_retratada_sem_avisar` (função) — [laboratorio/tests/test_h100.py:64](../laboratorio/tests/test_h100.py#L64)
 - `test_nenhuma_prova_quebra` (função) — [laboratorio/tests/test_h100.py:36](../laboratorio/tests/test_h100.py#L36)
 - `test_nenhuma_resposta_despeja_estrutura_de_dado_na_prosa` (função) — [laboratorio/tests/test_q100.py:98](../laboratorio/tests/test_q100.py#L98)
@@ -1491,17 +2002,59 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `test_o_teto_de_gasto_da_corrida_esta_declarado` (função) — [laboratorio/tests/test_canarios_de_comportamento.py:58](../laboratorio/tests/test_canarios_de_comportamento.py#L58)
 - `test_o_veredito_reprova_a_ausencia_de_resposta` (função) — [laboratorio/tests/test_canarios_de_comportamento.py:49](../laboratorio/tests/test_canarios_de_comportamento.py#L49)
 - `test_o_veredito_reprova_a_resposta_errada` (função) — [laboratorio/tests/test_canarios_de_comportamento.py:34](../laboratorio/tests/test_canarios_de_comportamento.py#L34)
+- `test_observar_testes_roda_o_comando_de_verdade` (função) — [hermes/tests/test_fluxos.py:324](../hermes/tests/test_fluxos.py#L324)
+- `test_oportunidade_vira_cartao_com_acompanhamento_e_lembrete_unico` (função) — [hermes/tests/test_fluxos.py:422](../hermes/tests/test_fluxos.py#L422)
 - `test_oversized_input_abstains_without_dispatch` (função) — [executor/tests/test_shared.py:45](../executor/tests/test_shared.py#L45)
-- `test_portao_acorda_quando_falha` (função) — [hermes/tests/test_jev_hermes.py:169](../hermes/tests/test_jev_hermes.py#L169)
-- `test_portao_termina_com_sinal_para_o_agendador` (função) — [hermes/tests/test_jev_hermes.py:160](../hermes/tests/test_jev_hermes.py#L160)
+- `test_pedido_longo_nao_estoura_o_limite_da_chamada` (função) — [hermes/tests/test_recortes.py:265](../hermes/tests/test_recortes.py#L265)
+- `test_pedido_recente_so_vale_quando_um_pedido_foi_feito` (função) — [hermes/tests/test_recortes.py:110](../hermes/tests/test_recortes.py#L110)
+- `test_pendencias_acha_quem_espera_e_ignora_social` (função) — [hermes/tests/test_jev_hermes.py:264](../hermes/tests/test_jev_hermes.py#L264)
+- `test_plugin_valida_operacao_e_lista_abertos` (função) — [hermes/tests/test_fluxos.py:494](../hermes/tests/test_fluxos.py#L494)
+- `test_ponte_traduz_chat_para_decisao` (função) — [hermes/tests/test_jev_hermes.py:184](../hermes/tests/test_jev_hermes.py#L184)
+- `test_portao_acorda_quando_falha` (função) — [hermes/tests/test_jev_hermes.py:168](../hermes/tests/test_jev_hermes.py#L168)
+- `test_portao_termina_com_sinal_para_o_agendador` (função) — [hermes/tests/test_jev_hermes.py:159](../hermes/tests/test_jev_hermes.py#L159)
+- `test_porteiro_academico_acorda_quando_a_coleta_falha` (função) — [hermes/tests/test_recortes.py:177](../hermes/tests/test_recortes.py#L177)
+- `test_porteiro_da_tese_acorda_com_candidatos_ordenados` (função) — [hermes/tests/test_recortes.py:150](../hermes/tests/test_recortes.py#L150)
+- `test_porteiro_do_boletim_descarta_fora_e_ruido` (função) — [hermes/tests/test_recortes.py:190](../hermes/tests/test_recortes.py#L190)
+- `test_prazos_acha_datas_e_decide_pelo_jev` (função) — [hermes/tests/test_jev_hermes.py:304](../hermes/tests/test_jev_hermes.py#L304)
+- `test_precifica_pela_tabela_local_e_ignora_turno_sem_jev` (função) — [integracao/tests/test_gateway_conciliar.py:27](../integracao/tests/test_gateway_conciliar.py#L27)
+- `test_profile_reuses_existing_wallet` (função) — [integracao/tests/test_runtime_profile.py:27](../integracao/tests/test_runtime_profile.py#L27)
+- `test_programador_recebe_o_comando_de_teste` (função) — [hermes/tests/test_fluxos.py:590](../hermes/tests/test_fluxos.py#L590)
+- `test_radar_tematico_usa_as_consultas_do_perfil_e_pede_tres` (função) — [hermes/tests/test_recortes.py:163](../hermes/tests/test_recortes.py#L163)
 - `test_rank_keeps_all_candidates_and_ids` (função) — [executor/tests/test_mcp.py:26](../executor/tests/test_mcp.py#L26)
-- `test_registro_nao_guarda_o_texto` (função) — [hermes/tests/test_jev_hermes.py:103](../hermes/tests/test_jev_hermes.py#L103)
-- `test_resposta_liquida_custo_e_segunda_vem_do_cache` (função) — [hermes/tests/test_jev_hermes.py:59](../hermes/tests/test_jev_hermes.py#L59)
+- `test_recorte_age_com_essencial_de_confianca_fraca` (função) — [hermes/tests/test_recortes.py:284](../hermes/tests/test_recortes.py#L284)
+- `test_recorte_deixa_inteira_saida_que_termina_em_falha` (função) — [hermes/tests/test_jev_hermes.py:229](../hermes/tests/test_jev_hermes.py#L229)
+- `test_recorte_mantem_essenciais_com_vizinhas_e_pontas` (função) — [hermes/tests/test_jev_hermes.py:215](../hermes/tests/test_jev_hermes.py#L215)
+- `test_refazer_devolve_as_faltas_e_depois_aprova` (função) — [hermes/tests/test_fluxos.py:298](../hermes/tests/test_fluxos.py#L298)
+- `test_registro_nao_guarda_o_texto` (função) — [hermes/tests/test_jev_hermes.py:102](../hermes/tests/test_jev_hermes.py#L102)
+- `test_relatorio_por_cliente_e_dia` (função) — [integracao/tests/test_gateway_conciliar.py:52](../integracao/tests/test_gateway_conciliar.py#L52)
+- `test_repeticao_sem_mudanca_e_limite_de_passos_levam_a_pessoa` (função) — [hermes/tests/test_fluxos.py:102](../hermes/tests/test_fluxos.py#L102)
+- `test_reserva_nao_confirmada_nao_conclui` (função) — [hermes/tests/test_fluxos.py:179](../hermes/tests/test_fluxos.py#L179)
+- `test_resposta_ambigua_pergunta_de_novo` (função) — [hermes/tests/test_fluxos.py:209](../hermes/tests/test_fluxos.py#L209)
+- `test_resposta_liquida_custo_e_segunda_vem_do_cache` (função) — [hermes/tests/test_jev_hermes.py:58](../hermes/tests/test_jev_hermes.py#L58)
+- `test_resposta_livre_e_recusa_passam_pelo_jev` (função) — [hermes/tests/test_fluxos.py:198](../hermes/tests/test_fluxos.py#L198)
 - `test_resposta_que_afirma_medida_carrega_a_medida_conferivel` (função) — [laboratorio/tests/test_q100.py:105](../laboratorio/tests/test_q100.py#L105)
 - `test_resposta_que_depende_de_parametro_nao_se_diz_de_alta_confianca` (função) — [laboratorio/tests/test_q100.py:80](../laboratorio/tests/test_q100.py#L80)
-- `test_sentinela_avisa_quando_o_texto_da_ordens` (função) — [hermes/tests/test_jev_hermes.py:151](../hermes/tests/test_jev_hermes.py#L151)
+- `test_resposta_simultanea_e_recusada` (função) — [hermes/tests/test_fluxos.py:537](../hermes/tests/test_fluxos.py#L537)
+- `test_resultado_preserva_o_envelope_externo` (função) — [hermes/tests/test_recortes.py:68](../hermes/tests/test_recortes.py#L68)
+- `test_resumo_conta_decisoes_e_escaladas` (função) — [hermes/tests/test_fluxos.py:245](../hermes/tests/test_fluxos.py#L245)
+- `test_rota_de_ferramenta_e_conselho_e_some_quando_incerta` (função) — [hermes/tests/test_jev_hermes.py:245](../hermes/tests/test_jev_hermes.py#L245)
+- `test_rota_externa_usa_a_chave_recebida` (função) — [hermes/tests/test_jev_hermes.py:176](../hermes/tests/test_jev_hermes.py#L176)
+- `test_roteador_pula_a_pesquisa_quando_o_estado_ja_diz_o_problema` (função) — [hermes/tests/test_fluxos.py:373](../hermes/tests/test_fluxos.py#L373)
+- `test_rotulos_por_destino_duvida_ordem_e_falha` (função) — [hermes/tests/test_fluxos.py:434](../hermes/tests/test_fluxos.py#L434)
+- `test_route_failure_keeps_agent_working` (função) — [integracao/tests/test_workflow.py:37](../integracao/tests/test_workflow.py#L37)
+- `test_sem_horario_o_jev_escolhe_entre_ampliar_e_perguntar` (função) — [hermes/tests/test_fluxos.py:218](../hermes/tests/test_fluxos.py#L218)
+- `test_sensivel_e_sem_evidencia_nao_refazem` (função) — [hermes/tests/test_fluxos.py:317](../hermes/tests/test_fluxos.py#L317)
+- `test_sentinela_avisa_quando_o_texto_da_ordens` (função) — [hermes/tests/test_jev_hermes.py:150](../hermes/tests/test_jev_hermes.py#L150)
+- `test_sessoes_encolhe_irrelevantes_e_encurta_complementares` (função) — [hermes/tests/test_recortes.py:78](../hermes/tests/test_recortes.py#L78)
+- `test_short_confirmation_does_not_route_again` (função) — [integracao/tests/test_workflow.py:33](../integracao/tests/test_workflow.py#L33)
+- `test_skill_fica_com_as_secoes_essenciais_e_o_cabecalho` (função) — [hermes/tests/test_recortes.py:50](../hermes/tests/test_recortes.py#L50)
+- `test_skill_nao_mexe_sem_essencial_nem_pequena` (função) — [hermes/tests/test_recortes.py:61](../hermes/tests/test_recortes.py#L61)
+- `test_stale_price_blocks_calls_but_allows_status` (função) — [integracao/tests/test_runtime_profile.py:43](../integracao/tests/test_runtime_profile.py#L43)
 - `test_stdio_handshake_and_catalog` (função) — [executor/tests/test_mcp.py:9](../executor/tests/test_mcp.py#L9)
-- `test_teto_recusa_antes_de_enviar` (função) — [hermes/tests/test_jev_hermes.py:85](../hermes/tests/test_jev_hermes.py#L85)
+- `test_tarefas_da_bancada_cobrem_os_quatro_tipos` (função) — [hermes/tests/test_fluxos.py:485](../hermes/tests/test_fluxos.py#L485)
+- `test_tema_de_pesquisa_sugere_delegar` (função) — [hermes/tests/test_jev_hermes.py:236](../hermes/tests/test_jev_hermes.py#L236)
+- `test_teste_que_falha_volta_para_o_programador_com_nivel_acima` (função) — [hermes/tests/test_fluxos.py:394](../hermes/tests/test_fluxos.py#L394)
+- `test_teto_recusa_antes_de_enviar` (função) — [hermes/tests/test_jev_hermes.py:84](../hermes/tests/test_jev_hermes.py#L84)
 - `test_timeout_keeps_reservation` (função) — [executor/tests/test_shared.py:52](../executor/tests/test_shared.py#L52)
 - `test_toda_hipotese_declara_previsao_fonte_e_criterio` (função) — [laboratorio/tests/test_h100.py:23](../laboratorio/tests/test_h100.py#L23)
 - `test_toda_hipotese_tem_prova` (função) — [laboratorio/tests/test_h100.py:31](../laboratorio/tests/test_h100.py#L31)
@@ -1512,74 +2065,191 @@ Toda função, classe e método de topo dos arquivos Python e JavaScript, em ord
 - `test_todo_numero_publicado_fecha_com_o_dado_bruto` (função) — [laboratorio/tests/test_auditoria.py:17](../laboratorio/tests/test_auditoria.py#L17)
 - `test_todo_parametro_declarado_existe_e_diz_o_que_e` (função) — [laboratorio/tests/test_q100.py:73](../laboratorio/tests/test_q100.py#L73)
 - `test_todo_veredito_vem_com_numero_ou_com_motivo` (função) — [laboratorio/tests/test_h100.py:41](../laboratorio/tests/test_h100.py#L41)
-- `tetos` (função) — [hermes/jev_hermes/nucleo.py:86](../hermes/jev_hermes/nucleo.py#L86)
+- `test_transcricao_curta_ou_sem_enchimento_fica_inteira` (função) — [hermes/tests/test_recortes.py:103](../hermes/tests/test_recortes.py#L103)
+- `test_transcricao_tira_o_enchimento_e_diz_a_frente` (função) — [hermes/tests/test_recortes.py:90](../hermes/tests/test_recortes.py#L90)
+- `test_triagem_sentinela_incerto_nao_age_e_conversa_e_a_chave` (função) — [hermes/tests/test_fluxos.py:569](../hermes/tests/test_fluxos.py#L569)
+- `test_triar_manda_as_duas_perguntas_num_pedido_so` (função) — [hermes/tests/test_fluxos.py:454](../hermes/tests/test_fluxos.py#L454)
+- `test_unknown_profile_cannot_fall_back` (função) — [integracao/tests/test_runtime_profile.py:36](../integracao/tests/test_runtime_profile.py#L36)
+- `test_user_explicit_choice_never_calls_provider` (função) — [integracao/tests/test_seletores.py:29](../integracao/tests/test_seletores.py#L29)
+- `test_wallet_cannot_silently_expand` (função) — [integracao/tests/test_runtime_profile.py:54](../integracao/tests/test_runtime_profile.py#L54)
+- `TestAgente` (classe) — [hermes/tests/test_workflows.py:462](../hermes/tests/test_workflows.py#L462)
+- `TestAgente.test_candidatos_demais` (método) — [hermes/tests/test_workflows.py:523](../hermes/tests/test_workflows.py#L523)
+- `TestAgente.test_confianca_baixa_marca_revisao` (método) — [hermes/tests/test_workflows.py:480](../hermes/tests/test_workflows.py#L480)
+- `TestAgente.test_escape_nenhum_adequado` (método) — [hermes/tests/test_workflows.py:475](../hermes/tests/test_workflows.py#L475)
+- `TestAgente.test_falha_do_jev_devolve_escolha_ao_chamador` (método) — [hermes/tests/test_workflows.py:485](../hermes/tests/test_workflows.py#L485)
+- `TestAgente.test_filtro_por_regra_e_escolha_do_jev` (método) — [hermes/tests/test_workflows.py:463](../hermes/tests/test_workflows.py#L463)
+- `TestAgente.test_id_com_injecao_e_recusado` (método) — [hermes/tests/test_workflows.py:508](../hermes/tests/test_workflows.py#L508)
+- `TestAgente.test_id_reservado_e_recusado` (método) — [hermes/tests/test_workflows.py:513](../hermes/tests/test_workflows.py#L513)
+- `TestAgente.test_ids_repetidos_sao_recusados` (método) — [hermes/tests/test_workflows.py:518](../hermes/tests/test_workflows.py#L518)
+- `TestAgente.test_tarefa_sensivel_exige_permissao_e_revisao` (método) — [hermes/tests/test_workflows.py:499](../hermes/tests/test_workflows.py#L499)
+- `TestAgente.test_unico_elegivel_dispensa_jev` (método) — [hermes/tests/test_workflows.py:491](../hermes/tests/test_workflows.py#L491)
+- `TestExperimento` (classe) — [hermes/tests/test_workflows.py:681](../hermes/tests/test_workflows.py#L681)
+- `TestExperimento.test_alternativa_sem_intervalo_impede_vencedor` (método) — [hermes/tests/test_workflows.py:779](../hermes/tests/test_workflows.py#L779)
+- `TestExperimento.test_amostra_insuficiente_nao_elege` (método) — [hermes/tests/test_workflows.py:717](../hermes/tests/test_workflows.py#L717)
+- `TestExperimento.test_denominadores_diferentes_geram_aviso` (método) — [hermes/tests/test_workflows.py:740](../hermes/tests/test_workflows.py#L740)
+- `TestExperimento.test_direcao_menor_tambem_exige_separar_de_todas` (método) — [hermes/tests/test_workflows.py:771](../hermes/tests/test_workflows.py#L771)
+- `TestExperimento.test_falha_do_jev_nao_afeta_comparacao` (método) — [hermes/tests/test_workflows.py:746](../hermes/tests/test_workflows.py#L746)
+- `TestExperimento.test_limite_declarado_exclui` (método) — [hermes/tests/test_workflows.py:725](../hermes/tests/test_workflows.py#L725)
+- `TestExperimento.test_melhor_precisa_separar_de_todas_as_alternativas` (método) — [hermes/tests/test_workflows.py:759](../hermes/tests/test_workflows.py#L759)
+- `TestExperimento.test_metodo_explicita_hipoteses_sem_linguagem_de_significancia` (método) — [hermes/tests/test_workflows.py:791](../hermes/tests/test_workflows.py#L791)
+- `TestExperimento.test_metrica_ausente_nao_e_imputada` (método) — [hermes/tests/test_workflows.py:733](../hermes/tests/test_workflows.py#L733)
+- `TestExperimento.test_sem_denominador_e_recusado` (método) — [hermes/tests/test_workflows.py:707](../hermes/tests/test_workflows.py#L707)
+- `TestExperimento.test_sobreposicao_e_inconclusiva_e_jev_nao_vira_metrica` (método) — [hermes/tests/test_workflows.py:696](../hermes/tests/test_workflows.py#L696)
+- `TestExperimento.test_sucessos_maior_que_total_e_recusado` (método) — [hermes/tests/test_workflows.py:712](../hermes/tests/test_workflows.py#L712)
+- `TestExperimento.test_uma_configuracao_so_e_recusada` (método) — [hermes/tests/test_workflows.py:800](../hermes/tests/test_workflows.py#L800)
+- `TestExperimento.test_vencedor_claro_e_jev_concordando` (método) — [hermes/tests/test_workflows.py:682](../hermes/tests/test_workflows.py#L682)
+- `TestExperimento.tres_medias` (método) — [hermes/tests/test_workflows.py:752](../hermes/tests/test_workflows.py#L752)
+- `TestJudge` (classe) — [hermes/tests/test_workflows.py:206](../hermes/tests/test_workflows.py#L206)
+- `TestJudge.test_confianca_ausente_nao_aprova` (método) — [hermes/tests/test_workflows.py:271](../hermes/tests/test_workflows.py#L271)
+- `TestJudge.test_confianca_baixa_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:265](../hermes/tests/test_workflows.py#L265)
+- `TestJudge.test_conflito_relato_contradito` (método) — [hermes/tests/test_workflows.py:277](../hermes/tests/test_workflows.py#L277)
+- `TestJudge.test_criterio_nao_atendido_pelo_jev_nao_vira_retry_nem_reprovacao` (método) — [hermes/tests/test_workflows.py:283](../hermes/tests/test_workflows.py#L283)
+- `TestJudge.test_desligado_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:256](../hermes/tests/test_workflows.py#L256)
+- `TestJudge.test_estado_total_grande_demais_e_recusado` (método) — [hermes/tests/test_workflows.py:367](../hermes/tests/test_workflows.py#L367)
+- `TestJudge.test_evidencia_grande_demais_e_recusada` (método) — [hermes/tests/test_workflows.py:361](../hermes/tests/test_workflows.py#L361)
+- `TestJudge.test_falha_do_jev_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:239](../hermes/tests/test_workflows.py#L239)
+- `TestJudge.test_falha_observada_com_tentativa_restante_vira_retry_sem_jev` (método) — [hermes/tests/test_workflows.py:290](../hermes/tests/test_workflows.py#L290)
+- `TestJudge.test_fonte_desconhecida_e_recusada` (método) — [hermes/tests/test_workflows.py:373](../hermes/tests/test_workflows.py#L373)
+- `TestJudge.test_injecao_na_evidencia_e_acusada` (método) — [hermes/tests/test_workflows.py:334](../hermes/tests/test_workflows.py#L334)
+- `TestJudge.test_limiar_frouxo_e_recusado` (método) — [hermes/tests/test_workflows.py:356](../hermes/tests/test_workflows.py#L356)
+- `TestJudge.test_limite_de_tentativas_tem_teto` (método) — [hermes/tests/test_workflows.py:313](../hermes/tests/test_workflows.py#L313)
+- `TestJudge.test_nenhum_teste_executado_observado_e_falta_objetiva` (método) — [hermes/tests/test_workflows.py:297](../hermes/tests/test_workflows.py#L297)
+- `TestJudge.test_observacao_vazia_e_recusada` (método) — [hermes/tests/test_workflows.py:234](../hermes/tests/test_workflows.py#L234)
+- `TestJudge.test_offline_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:250](../hermes/tests/test_workflows.py#L250)
+- `TestJudge.test_relato_do_agente_fica_fora_das_instrucoes` (método) — [hermes/tests/test_workflows.py:347](../hermes/tests/test_workflows.py#L347)
+- `TestJudge.test_resposta_fora_do_contrato_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:244](../hermes/tests/test_workflows.py#L244)
+- `TestJudge.test_retry_esgotado_vai_para_revisao` (método) — [hermes/tests/test_workflows.py:302](../hermes/tests/test_workflows.py#L302)
+- `TestJudge.test_rota_verificada_passa` (método) — [hermes/tests/test_workflows.py:207](../hermes/tests/test_workflows.py#L207)
+- `TestJudge.test_segredo_mascarado_e_registro_sem_texto` (método) — [hermes/tests/test_workflows.py:378](../hermes/tests/test_workflows.py#L378)
+- `TestJudge.test_sem_evidencia_alguma` (método) — [hermes/tests/test_workflows.py:230](../hermes/tests/test_workflows.py#L230)
+- `TestJudge.test_sem_limite_do_chamador_nao_ha_retry` (método) — [hermes/tests/test_workflows.py:307](../hermes/tests/test_workflows.py#L307)
+- `TestJudge.test_sensivel_com_falha_objetiva_nao_faz_retry` (método) — [hermes/tests/test_workflows.py:329](../hermes/tests/test_workflows.py#L329)
+- `TestJudge.test_sensivel_marcado_pelo_chamador` (método) — [hermes/tests/test_workflows.py:325](../hermes/tests/test_workflows.py#L325)
+- `TestJudge.test_sensivel_nunca_passa` (método) — [hermes/tests/test_workflows.py:319](../hermes/tests/test_workflows.py#L319)
+- `TestJudge.test_so_observacao_de_arquivo_basta_para_consultar` (método) — [hermes/tests/test_workflows.py:223](../hermes/tests/test_workflows.py#L223)
+- `TestJudgeFronteiraDeConfianca` (classe) — [hermes/tests/test_workflows.py:135](../hermes/tests/test_workflows.py#L135)
+- `TestJudgeFronteiraDeConfianca.test_campos_forjados_no_json_nao_viram_observacao` (método) — [hermes/tests/test_workflows.py:175](../hermes/tests/test_workflows.py#L175)
+- `TestJudgeFronteiraDeConfianca.test_cli_nao_aprova` (método) — [hermes/tests/test_workflows.py:198](../hermes/tests/test_workflows.py#L198)
+- `TestJudgeFronteiraDeConfianca.test_contagem_autodeclarada_nao_dispara_retry` (método) — [hermes/tests/test_workflows.py:165](../hermes/tests/test_workflows.py#L165)
+- `TestJudgeFronteiraDeConfianca.test_dict_no_lugar_de_observacao_e_recusado` (método) — [hermes/tests/test_workflows.py:185](../hermes/tests/test_workflows.py#L185)
+- `TestJudgeFronteiraDeConfianca.test_ferramenta_nao_repassa_observacoes` (método) — [hermes/tests/test_workflows.py:190](../hermes/tests/test_workflows.py#L190)
+- `TestJudgeFronteiraDeConfianca.test_nenhuma_fonte_declarada_da_confianca` (método) — [hermes/tests/test_workflows.py:157](../hermes/tests/test_workflows.py#L157)
+- `TestJudgeFronteiraDeConfianca.test_referencia_inexistente_com_jev_aprovando_nao_passa` (método) — [hermes/tests/test_workflows.py:138](../hermes/tests/test_workflows.py#L138)
+- `TestJudgeFronteiraDeConfianca.test_referencia_inexistente_pela_ferramenta_nao_passa` (método) — [hermes/tests/test_workflows.py:150](../hermes/tests/test_workflows.py#L150)
+- `TestModelo` (classe) — [hermes/tests/test_workflows.py:549](../hermes/tests/test_workflows.py#L549)
+- `TestModelo.test_custo_contexto_orcamento_por_regra` (método) — [hermes/tests/test_workflows.py:550](../hermes/tests/test_workflows.py#L550)
+- `TestModelo.test_nenhum_elegivel` (método) — [hermes/tests/test_workflows.py:562](../hermes/tests/test_workflows.py#L562)
+- `TestModelo.test_offline_mantem_conta` (método) — [hermes/tests/test_workflows.py:571](../hermes/tests/test_workflows.py#L571)
+- `TestModelo.test_preco_negativo_ou_nao_numerico_e_recusado` (método) — [hermes/tests/test_workflows.py:577](../hermes/tests/test_workflows.py#L577)
+- `TestObservarArquivo` (classe) — [hermes/tests/test_workflows.py:394](../hermes/tests/test_workflows.py#L394)
+- `TestObservarArquivo.recusa` (método) — [hermes/tests/test_workflows.py:399](../hermes/tests/test_workflows.py#L399)
+- `TestObservarArquivo.setUp` (método) — [hermes/tests/test_workflows.py:395](../hermes/tests/test_workflows.py#L395)
+- `TestObservarArquivo.test_fora_da_raiz_e_recusado` (método) — [hermes/tests/test_workflows.py:410](../hermes/tests/test_workflows.py#L410)
+- `TestObservarArquivo.test_hash_divergente_inexistente_grande_e_binario` (método) — [hermes/tests/test_workflows.py:430](../hermes/tests/test_workflows.py#L430)
+- `TestObservarArquivo.test_le_conteudo_e_hash_pelo_codigo` (método) — [hermes/tests/test_workflows.py:403](../hermes/tests/test_workflows.py#L403)
+- `TestObservarArquivo.test_nome_de_segredo_nao_e_aberto` (método) — [hermes/tests/test_workflows.py:420](../hermes/tests/test_workflows.py#L420)
+- `TestObservarArquivo.test_sem_raiz_e_recusado` (método) — [hermes/tests/test_workflows.py:416](../hermes/tests/test_workflows.py#L416)
+- `TestPlugin` (classe) — [hermes/tests/test_workflows.py:827](../hermes/tests/test_workflows.py#L827)
+- `TestPlugin.test_handler_offline_e_entradas_ruins` (método) — [hermes/tests/test_workflows.py:837](../hermes/tests/test_workflows.py#L837)
+- `TestPlugin.test_manifesto` (método) — [hermes/tests/test_workflows.py:848](../hermes/tests/test_workflows.py#L848)
+- `TestPlugin.test_registra_so_a_ferramenta_explicita` (método) — [hermes/tests/test_workflows.py:828](../hermes/tests/test_workflows.py#L828)
+- `TestSemRede` (classe) — [hermes/tests/test_workflows.py:855](../hermes/tests/test_workflows.py#L855)
+- `TestSemRede.test_transporte_real_bloqueado` (método) — [hermes/tests/test_workflows.py:856](../hermes/tests/test_workflows.py#L856)
+- `TestTriagem` (classe) — [hermes/tests/test_workflows.py:608](../hermes/tests/test_workflows.py#L608)
+- `TestTriagem.test_descricao_de_rota_vira_uma_linha_curta` (método) — [hermes/tests/test_workflows.py:639](../hermes/tests/test_workflows.py#L639)
+- `TestTriagem.test_falha_parcial_marca_so_o_item` (método) — [hermes/tests/test_workflows.py:623](../hermes/tests/test_workflows.py#L623)
+- `TestTriagem.test_limites` (método) — [hermes/tests/test_workflows.py:645](../hermes/tests/test_workflows.py#L645)
+- `TestTriagem.test_lote_com_revisao_por_confianca_escape_e_sensivel` (método) — [hermes/tests/test_workflows.py:609](../hermes/tests/test_workflows.py#L609)
+- `TestTriagem.test_offline` (método) — [hermes/tests/test_workflows.py:655](../hermes/tests/test_workflows.py#L655)
+- `TestTriagem.test_texto_do_item_so_no_estado` (método) — [hermes/tests/test_workflows.py:631](../hermes/tests/test_workflows.py#L631)
+- `tetos` (função) — [hermes/jev_hermes/nucleo.py:88](../hermes/jev_hermes/nucleo.py#L88)
 - `text` (função) — [lab/server.py:44](../lab/server.py#L44)
 - `textField` (função) — [lab/dashboard.js:158](../lab/dashboard.js#L158)
+- `_texto` (função) — [hermes/jev_hermes/workflows.py:91](../hermes/jev_hermes/workflows.py#L91)
 - `texto` (função) — [integracao/avaliacao/amostrar_com_contexto.py:27](../integracao/avaliacao/amostrar_com_contexto.py#L27)
 - `_texto` (função) — [laboratorio/auditoria.py:449](../laboratorio/auditoria.py#L449)
+- `texto_da_mensagem` (função) — [hermes/jev_hermes/ponte_openai.py:42](../hermes/jev_hermes/ponte_openai.py#L42)
+- `_texto_da_parte` (função) — [hermes/jev_hermes/prazos.py:107](../hermes/jev_hermes/prazos.py#L107)
 - `texto_da_replicacao` (função) — [executor/placar.py:487](../executor/placar.py#L487)
 - `texto_da_resposta` (função) — [integracao/camadas/busca.py:47](../integracao/camadas/busca.py#L47) · usado em 3: saida.py, sentinela.py, test_camadas.py
-- `texto_de` (função) — [hermes/jev_hermes/camadas.py:425](../hermes/jev_hermes/camadas.py#L425)
+- `texto_de` (função) — [hermes/jev_hermes/camadas.py:549](../hermes/jev_hermes/camadas.py#L549)
 - `texto_do_veredito` (função) — [executor/placar.py:524](../executor/placar.py#L524)
-- `texto_para_o_agente` (função) — [integracao/jev_router/politica.py:109](../integracao/jev_router/politica.py#L109) · usado em 3: jev_prompt_router.py, cli.py, test_roteador.py
+- `texto_para_o_agente` (função) — [integracao/jev_router/politica.py:135](../integracao/jev_router/politica.py#L135) · usado em 3: jev_prompt_router.py, cli.py, test_roteador.py
+- `textos_das_rodadas` (função) — [laboratorio/r30_hipotese_e_prova.py:56](../laboratorio/r30_hipotese_e_prova.py#L56)
 - `timeline` (função) — [lab/dashboard.js:53](../lab/dashboard.js#L53)
 - `timestamp` (função) — [lab/server.py:56](../lab/server.py#L56)
 - `titulo_do_veredito` (função) — [executor/placar.py:441](../executor/placar.py#L441) · usado em 1: test_achados_revisao4.py
+- `toast` (função) — [integracao/harness/web/app.js:7](../integracao/harness/web/app.js#L7)
 - `toast` (função) — [lab/dashboard.js:34](../lab/dashboard.js#L34)
 - `tokeniza` (função) — [laboratorio/r17_economia_de_contexto.py:198](../laboratorio/r17_economia_de_contexto.py#L198)
 - `tokeniza_prosa` (função) — [laboratorio/r21_generalizacao.py:328](../laboratorio/r21_generalizacao.py#L328)
 - `tokens` (função) — [executor/run_e4_ressalvas.py:50](../executor/run_e4_ressalvas.py#L50)
-- `tokens` (função) — [hermes/jev_hermes/camadas.py:36](../hermes/jev_hermes/camadas.py#L36)
+- `tokens` (função) — [hermes/jev_hermes/camadas.py:41](../hermes/jev_hermes/camadas.py#L41) · usado em 1: recortes.py
 - `tokens` (função) — [integracao/camadas/nucleo.py:91](../integracao/camadas/nucleo.py#L91) · usado em 3: leitura.py, ler.py, test_camadas.py
+- `tool_definition` (função) — [integracao/seletores.py:57](../integracao/seletores.py#L57) · usado em 1: jev_mcp.py
 - `totais` (função) — [laboratorio/caixa.py:56](../laboratorio/caixa.py#L56) · usado em 2: gerar_dossie.py, respostas.py
 - `_Transaction` (classe) — [executor/ledger.py:770](../executor/ledger.py#L770)
-- `_transform_terminal_output` (função) — [hermes/plugin/jev-camadas/__init__.py:96](../hermes/plugin/jev-camadas/__init__.py#L96)
-- `_transform_tool_result` (função) — [hermes/plugin/jev-camadas/__init__.py:68](../hermes/plugin/jev-camadas/__init__.py#L68)
+- `transcricao` (função) — [hermes/jev_hermes/recortes.py:282](../hermes/jev_hermes/recortes.py#L282) · usado em 1: test_recortes.py
+- `_transform_terminal_output` (função) — [hermes/plugin/jev-camadas/__init__.py:152](../hermes/plugin/jev-camadas/__init__.py#L152)
+- `_transform_tool_result` (função) — [hermes/plugin/jev-camadas/__init__.py:102](../hermes/plugin/jev-camadas/__init__.py#L102)
 - `transporte_direto` (função) — [executor/run_e5_provedores.py:48](../executor/run_e5_provedores.py#L48)
-- `transporte_http` (função) — [hermes/jev_hermes/nucleo.py:289](../hermes/jev_hermes/nucleo.py#L289)
+- `transporte_http` (função) — [hermes/jev_hermes/nucleo.py:305](../hermes/jev_hermes/nucleo.py#L305) · usado em 1: test_workflows.py
 - `transporte_http` (função) — [integracao/jev_router/cliente.py:41](../integracao/jev_router/cliente.py#L41)
-- `transporte_por_trecho` (função) — [integracao/tests/test_camadas.py:22](../integracao/tests/test_camadas.py#L22)
+- `transporte_por_trecho` (função) — [integracao/tests/test_camadas.py:22](../integracao/tests/test_camadas.py#L22) · usado em 1: test_shell.py
 - `TransportTimeout` (classe) — [executor/runner.py:21](../executor/runner.py#L21) · usado em 3: run_e5_provedores.py, test_runner.py, test_shared.py
+- `_trava` (função) — [hermes/jev_hermes/ciclo.py:195](../hermes/jev_hermes/ciclo.py#L195)
+- `_triar` (função) — [hermes/jev_hermes/anexos.py:125](../hermes/jev_hermes/anexos.py#L125)
+- `triar` (função) — [hermes/jev_hermes/triagem.py:190](../hermes/jev_hermes/triagem.py#L190)
+- `triar` (função) — [hermes/jev_hermes/workflows.py:612](../hermes/jev_hermes/workflows.py#L612) · usado em 1: test_workflows.py
+- `turnos_com_rota` (função) — [hermes/jev_hermes/aferir_rota.py:35](../hermes/jev_hermes/aferir_rota.py#L35)
 
 ## U
 
 - `ultima_corrida_de_canarios` (função) — [laboratorio/gerar_mapa_visual.py:106](../laboratorio/gerar_mapa_visual.py#L106)
+- `ultima_saida` (função) — [hermes/rotinas/jev_observar_porteiros.py:35](../hermes/rotinas/jev_observar_porteiros.py#L35)
 - `_unica` (função) — [hermes/plugin/jev-advisor/__init__.py:125](../hermes/plugin/jev-advisor/__init__.py#L125)
+- `_unicos` (função) — [hermes/jev_hermes/workflows.py:138](../hermes/jev_hermes/workflows.py#L138)
 - `url_for` (função) — [executor/runner.py:37](../executor/runner.py#L37) · usado em 1: test_credenciais.py
 - `usage_from` (função) — [executor/runner.py:150](../executor/runner.py#L150) · usado em 3: run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py
 - `usd` (função) — [laboratorio/gerar_bateria.py:41](../laboratorio/gerar_bateria.py#L41)
 - `usd` (função) — [laboratorio/q100/respostas.py:41](../laboratorio/q100/respostas.py#L41)
-- `usd_to_nusd` (função) — [executor/pricing.py:74](../executor/pricing.py#L74) · usado em 24: probe_contract.py, run_canaries.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e1_triagem.py …
+- `usd_to_nusd` (função) — [executor/pricing.py:74](../executor/pricing.py#L74) · usado em 27: probe_contract.py, run_canaries.py, run_e10_llm_economico.py, run_e11_desempate.py, run_e12_replicacao.py, run_e1_triagem.py …
 
 ## V
 
-- `validar` (função) — [hermes/jev_hermes/nucleo.py:261](../hermes/jev_hermes/nucleo.py#L261)
+- `validar` (função) — [hermes/jev_hermes/nucleo.py:277](../hermes/jev_hermes/nucleo.py#L277)
+- `validar_lista` (função) — [hermes/jev_hermes/checklist.py:60](../hermes/jev_hermes/checklist.py#L60)
 - `validate_contract` (função) — [executor/runner.py:103](../executor/runner.py#L103) · usado em 1: shared.py
 - `validate_run_update` (função) — [lab/server.py:179](../lab/server.py#L179)
-- `validate_state` (função) — [lab/server.py:64](../lab/server.py#L64)
+- `validate_state` (função) — [lab/server.py:64](../lab/server.py#L64) · usado em 2: publicar_continuacao.py, publicar_smoke.py
 - `validateRun` (função) — [lab/dashboard.js:161](../lab/dashboard.js#L161)
 - `validateState` (função) — [lab/dashboard.js:171](../lab/dashboard.js#L171)
 - `valor` (função) — [executor/credenciais.py:48](../executor/credenciais.py#L48) · usado em 1: test_credenciais.py
 - `valor_entre_gabaritos` (função) — [executor/placar.py:127](../executor/placar.py#L127)
-- `ver` (função) — [integracao/instalar.py:281](../integracao/instalar.py#L281)
+- `ver` (função) — [integracao/instalar.py:294](../integracao/instalar.py#L294)
 - `veredito_recomenda_corte` (função) — [executor/tests/test_coerencia_placar.py:26](../executor/tests/test_coerencia_placar.py#L26)
-- `verificar` (função) — [integracao/camadas/medir.py:178](../integracao/camadas/medir.py#L178)
+- `_verificadas` (função) — [hermes/jev_hermes/workflows.py:320](../hermes/jev_hermes/workflows.py#L320)
+- `verificar` (função) — [hermes/jev_hermes/bancada.py:62](../hermes/jev_hermes/bancada.py#L62)
+- `verificar` (função) — [integracao/camadas/medir.py:184](../integracao/camadas/medir.py#L184)
 - `verificar` (função) — [integracao/camadas/verificar.py:65](../integracao/camadas/verificar.py#L65) · usado em 1: test_camadas.py
-- `Verificar` (classe) — [integracao/tests/test_camadas.py:190](../integracao/tests/test_camadas.py#L190)
-- `Verificar.test_falha_nunca_vira_suportado` (método) — [integracao/tests/test_camadas.py:205](../integracao/tests/test_camadas.py#L205)
-- `Verificar.test_vereditos_por_afirmacao` (método) — [integracao/tests/test_camadas.py:198](../integracao/tests/test_camadas.py#L198)
-- `Verificar.transporte` (método) — [integracao/tests/test_camadas.py:192](../integracao/tests/test_camadas.py#L192)
+- `Verificar` (classe) — [integracao/tests/test_camadas.py:202](../integracao/tests/test_camadas.py#L202)
+- `Verificar.test_falha_nunca_vira_suportado` (método) — [integracao/tests/test_camadas.py:217](../integracao/tests/test_camadas.py#L217)
+- `Verificar.test_vereditos_por_afirmacao` (método) — [integracao/tests/test_camadas.py:210](../integracao/tests/test_camadas.py#L210)
+- `Verificar.transporte` (método) — [integracao/tests/test_camadas.py:204](../integracao/tests/test_camadas.py#L204)
 - `versionados` (função) — [executor/tests/test_achados_revisao16.py:30](../executor/tests/test_achados_revisao16.py#L30)
-- `_vetores_do_caixa` (função) — [laboratorio/h100/provas.py:339](../laboratorio/h100/provas.py#L339)
+- `versionados` (função) — [hermes/infra/conferir_sincronia.py:45](../hermes/infra/conferir_sincronia.py#L45)
+- `_vetores_do_caixa` (função) — [laboratorio/h100/provas.py:341](../laboratorio/h100/provas.py#L341)
 - `votar` (função) — [laboratorio/r24_votacao.py:90](../laboratorio/r24_votacao.py#L90)
 
 ## W
 
 - `wallet` (função) — [executor/tests/test_shared.py:15](../executor/tests/test_shared.py#L15)
+- `whatsapp` (função) — [hermes/rotinas/jev_rotina_painel_manha.py:109](../hermes/rotinas/jev_rotina_painel_manha.py#L109)
 - `wilson` (função) — [executor/run_e15.py:172](../executor/run_e15.py#L172)
 - `wilson` (função) — [executor/run_e1_triagem.py:45](../executor/run_e1_triagem.py#L45) · usado em 1: run_e3_evidencia.py
+- `_wilson` (função) — [hermes/jev_hermes/workflows.py:688](../hermes/jev_hermes/workflows.py#L688)
 - `wilson` (função) — [laboratorio/auditoria.py:42](../laboratorio/auditoria.py#L42) · usado em 1: test_auditoria.py
-- `wilson` (função) — [laboratorio/nucleo.py:156](../laboratorio/nucleo.py#L156) · usado em 25: provas.py, r0_calibracao.py, r10_injecao_comparada.py, r11_extremos.py, r12_r13_contexto.py, r15_adversario_externo.py …
+- `wilson` (função) — [laboratorio/nucleo.py:156](../laboratorio/nucleo.py#L156) · usado em 29: provas.py, r0_calibracao.py, r10_injecao_comparada.py, r11_extremos.py, r12_r13_contexto.py, r15_adversario_externo.py …
 - `wilson` (função) — [research/audit_hermes_pdf.py:20](../research/audit_hermes_pdf.py#L20)
 - `wilsonInterval` (função) — [lab/metrics.js:7](../lab/metrics.js#L7)
 - `worst_case_nusd` (função) — [executor/pricing.py:56](../executor/pricing.py#L56) · usado em 11: ledger.py, run_e10_llm_economico.py, run_e10b_piloto.py, run_e11_desempate.py, run_e12_replicacao.py, run_e5_provedores.py …

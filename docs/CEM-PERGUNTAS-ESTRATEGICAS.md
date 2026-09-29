@@ -6,7 +6,7 @@
 > na hora, a partir dos artefatos e do livro-caixa. Nenhum número desta página foi
 > digitado à mão.
 
-**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 85 alta, 9 média, 6 baixa.
+**76 respondidas por dado medido, 19 por conta sobre o medido, 5 por coleta nova.** Confiança: 86 alta, 8 média, 6 baixa.
 
 ## O que separa esta página das cem hipóteses
 
@@ -72,14 +72,14 @@ Dois modos de falha sistemáticos, e os dois são de desenho, não do modelo. Te
 ### Q073 — Qual a taxa de falha de transporte a esperar?
 
 **Decide:** o desenho da repescagem  
-**Responde:** **1,1%** das 24.473 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**Responde:** **1,0%** das 37.281 tentativas: 136 chamadas que saíram e nunca foram conciliadas, 131 estouros do timeout de 45 s do cliente, 112 erros HTTP do provedor, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 A operação precisa de repescagem, não de tolerância a erro. 2,7% das tentativas falharam, e a maioria é erro do provedor ou estouro do timeout de 45 s — coisas que uma segunda tentativa resolve. O que não pode acontecer é falha virar classe padrão: uma chamada que não voltou não é "informação", é ausência de decisão.
 
 ### Q096 — Quanto resta do orçamento, e o que ele compra?
 
 **Decide:** o tamanho do próximo programa  
-**Responde:** Restam **US$ 3,9815**, que compram cerca de 122.823 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.419 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+**Responde:** Restam **US$ 3,1030**, que compram cerca de 72.732 chamadas — mais de nove vezes tudo que foi gasto até aqui (44.465 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 O limite deste trabalho não é orçamento. Gastou-se 10,6% do teto autorizado, e o que resta compra mais de nove vezes tudo que já foi feito. O que falta é **dado real com gabarito humano** — duzentas mensagens anotadas por duas pessoas fecham de uma vez a maior ressalva do estudo, e custam tempo de gente, não dinheiro.
 
@@ -115,7 +115,7 @@ Não. Sob o gabarito desta casa o Jev ganha (98,9% contra 84,4%–91,1% no E12);
 
 **Q005 — Qual o volume mensal mínimo em que o custo de integrar se paga?**
 
-Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000032 contra US$ 0,4000 da revisão humana.
+Cerca de **480 decisões** para o investimento de integração se pagar — menos de um mês num canal de 10.000 decisões/mês. O número é dominado pelo tempo de pessoa, não pelo preço do modelo: o custo por decisão do Jev é US$ 0,000043 contra US$ 0,4000 da revisão humana.
 
 *Decide se vale integrar ou rodar na mão. Fonte: conta declarada; confiança baixa. Vira se o custo de integração declarado mudar de ordem de grandeza. Depende de: `horas_de_integracao`, `custo_hora_revisao_usd`, `tempo_revisao_s`, `volume_mensal_decisoes`.*
 
@@ -155,7 +155,7 @@ Ordenação de contexto para montar o prompt de um agente caro. É a única com 
 
 **Q011 — Quanto custa mil decisões, medido e não estimado?**
 
-**US$ 0,032 por mil decisões**, medido sobre 31.419 chamadas reais que somam US$ 1,0185 no livro-caixa. Não é estimativa: é o extrato.
+**US$ 0,043 por mil decisões**, medido sobre 44.465 chamadas reais que somam US$ 1,8970 no livro-caixa. Não é estimativa: é o extrato.
 
 *Decide a linha do orçamento. Fonte: dado medido; confiança alta. Vira se o preço do provedor mudar.*
 
@@ -191,19 +191,19 @@ Não neste corpus, e talvez em outro. O k adaptativo economiza 86,2% contra 73,7
 
 **Q017 — Que fração do orçamento do estudo virou chamada inútil?**
 
-266 tentativas de 24.473 terminaram em falha — **1,1%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
+387 tentativas de 37.281 terminaram em falha — **1,0%**. Some-se a isso o episódio do gerador da R18, em que 88 de 110 chamadas voltaram com conteúdo vazio porque o limite de tokens era consumido pelo campo de raciocínio: pagas e inúteis. Reserve 5% de folga e **meça o conteúdo da resposta, não só o código HTTP**.
 
 *Decide quanto reservar de folga no próximo programa. Fonte: dado medido; confiança alta. Vira se a taxa de falha do provedor subir.*
 
 **Q018 — O custo por decisão cresce com o texto de um jeito que quebre a conta?**
 
-Não quebra: o custo é quase linear no tamanho do estado (r = 0,26), e o quartil de textos maiores custa 1,5× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
+Não quebra: o custo é quase linear no tamanho do estado (r = 0,48), e o quartil de textos maiores custa 2,9× o dos menores. Como o preço de saída é zero e a entrada custa US$ 0,042 por milhão, mesmo um texto de 20 mil caracteres não muda a ordem de grandeza. Não há motivo econômico para impor limite de tamanho — há motivo de qualidade, que é outro.
 
 *Decide se há limite de tamanho a impor na entrada. Fonte: dado medido; confiança alta. Vira se a relação custo-tamanho deixar de ser aproximadamente linear.*
 
 **Q019 — Votar em três chamadas triplica o custo — isso cabe no custo por decisão?**
 
-Cabe folgado — três chamadas custam US$ 0,000097 por decisão contra US$ 200,00 de um erro grave — mas a R24 mostrou que votar a **mesma** pergunta três vezes não compra nada: em 148 casos, 0 oscilaram. O que vale o triplo do custo é perguntar de **três formulações** diferentes, que no jurídico levou de 79,7% para 92,8%. Para a classe irreversível, redundância de formulação, não de repetição.
+Cabe folgado — três chamadas custam US$ 0,000128 por decisão contra US$ 200,00 de um erro grave — mas a R24 mostrou que votar a **mesma** pergunta três vezes não compra nada: em 148 casos, 0 oscilaram. O que vale o triplo do custo é perguntar de **três formulações** diferentes, que no jurídico levou de 79,7% para 92,8%. Para a classe irreversível, redundância de formulação, não de repetição.
 
 *Decide se a política de votação é viável para a classe irreversível. Fonte: conta declarada; confiança média. Vira se o custo por decisão passar a ser material contra o custo do erro. Depende de: `custo_erro_grave_usd`.*
 
@@ -243,37 +243,37 @@ Sobrevive, e a primeira versão desta resposta dizia o contrário por um erro qu
 
 **Q025 — A classe de escape deve ser obrigatória em toda taxonomia?**
 
-Não vale a complexidade hoje. Ela empata com k = 1 fixo em acerto e em economia. Implemente a regra simples; a adaptativa fica como opção para corpus onde a ordenação erre mais, cenário que ainda não foi medido.
+Sim, sempre. Sem classe de escape, dez textos sem pedido nenhum foram classificados como `informacao` nas 10 vezes, com confiança média 0,987 — o único modo de falha medido em que a confiança **não avisa**. Com a classe, acerta 10 de 10. Custa uma linha.
 
-*Decide o padrão de desenho de taxonomia. Fonte: dado medido; confiança média. Vira se aparecer caso em que a classe de escape piora a decisão.*
+*Decide o padrão de desenho de taxonomia. Fonte: dado medido; confiança alta. Vira se aparecer caso em que a classe de escape piora a decisão.*
 
 **Q026 — A instrução de sujeito deve ser padrão em toda classificação de pedido?**
 
-Sim, sempre. Sem classe de escape, dez textos sem pedido nenhum foram classificados como `informacao` nas 10 vezes, com confiança média 0,987 — o único modo de falha medido em que a confiança **não avisa**. Com a classe, acerta 10 de 10. Custa uma linha.
+Sim, padrão. Ela leva 89,4% a 92,9% em atendimento sem piorar nenhum molde, e 78,5% a 90,9% no jurídico com **8 a 0, p = 0,0078**. Custa uma frase e é a única mitigação do estudo que replicou em dois domínios com ganho maior no segundo.
 
 *Decide o texto padrão da instrução. Fonte: dado medido; confiança alta. Vira se a instrução de sujeito piorar alguma família.*
 
 **Q027 — Sob que condição vale decompor a decisão em várias perguntas?**
 
-Sim, padrão. Ela leva 89,4% a 92,9% em atendimento sem piorar nenhum molde, e 78,5% a 90,9% no jurídico com **8 a 0, p = 0,0078**. Custa uma frase e é a única mitigação do estudo que replicou em dois domínios com ganho maior no segundo.
+Só quando a pergunta auxiliar for **mais confiável que a decisão que ela alimenta** — e isso é verificável antes de adotar, medindo a auxiliar sozinha. Na R19 a pergunta de sujeito acertava 68,7% sozinha, abaixo da decisão, e decompor destruiu o molde oposto (86% para 36%). A capacidade de várias perguntas no payload é gratuita e útil — mas para **observar** (ver a sentinela, Q043), não para encadear decisão.
 
 *Decide quando usar múltiplas perguntas no mesmo payload. Fonte: dado medido; confiança alta. Vira se a pergunta auxiliar passar a ser mais confiável que a decisão.*
 
 **Q028 — Mandar de oito em oito é seguro? Para quais classes?**
 
-Só quando a pergunta auxiliar for **mais confiável que a decisão que ela alimenta** — e isso é verificável antes de adotar, medindo a auxiliar sozinha. Na R19 a pergunta de sujeito acertava 68,7% sozinha, abaixo da decisão, e decompor destruiu o molde oposto (86% para 36%). A capacidade de várias perguntas no payload é gratuita e útil — mas para **observar** (ver a sentinela, Q043), não para encadear decisão.
+Sim para a média, não para a classe perigosa. O efeito de posição some ao embaralhar (p = 0,40), mas **3 de 40 casos** mudaram de resposta conforme os vizinhos. Use lote para baratear triagem comum; nunca para `cancelar`.
 
 *Decide se usar lote para baratear. Fonte: dado medido; confiança alta. Vira se o efeito de posição voltar a aparecer com significância.*
 
 **Q029 — Quantas repetições para decisão sem volta?**
 
-Sim para a média, não para a classe perigosa. O efeito de posição some ao embaralhar (p = 0,40), mas **3 de 40 casos** mudaram de resposta conforme os vizinhos. Use lote para baratear triagem comum; nunca para `cancelar`.
+Nenhuma repetição da **mesma** pergunta: em 148 casos com três chamadas idênticas, 0 oscilaram (R24), então repetir é pagar o triplo pela mesma resposta. No E6, de 40 casos repetidos cinco vezes, 1 oscilou. Para decisão sem volta o que vale são **três formulações diferentes** com maioria (Q040), e gente na confirmação.
 
 *Decide a política de repetição na classe irreversível. Fonte: dado medido; confiança alta. Vira se a taxa de oscilação medida subir.*
 
 **Q030 — A política recomendada muda se o canal tiver outra mistura de assuntos?**
 
-Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três estabiliza. O custo é desprezível (Q019) e a alternativa é aceitar que uma decisão sem volta dependa de um sorteio de baixa probabilidade.
+Pouco. Nas quatro distribuições simuladas no E9 a acurácia esperada vai de 95,0% a 97,2% — 2,2 pontos de amplitude, abaixo do gatilho de 5. A política não precisa ser por canal por causa da mistura de assuntos; precisa por causa do domínio (Q052).
 
 *Decide se a configuração precisa ser por canal. Fonte: dado medido; confiança alta. Vira se a variação entre misturas passar de 5 pontos.*
 
@@ -289,7 +289,7 @@ Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três
 
 **Q032 — Quanto custa um erro grave comparado ao custo da decisão?**
 
-Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000032 — razão de **6.169.680 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
+Um erro grave custa US$ 200,00 e uma decisão custa US$ 0,000043 — razão de **4.687.897 para 1**. Qualquer salvaguarda que custe chamadas é barata; a única salvaguarda cara é tempo de pessoa, e é exatamente essa que o corte de confiança economiza.
 
 *Decide quanto vale gastar em salvaguarda. Fonte: conta declarada; confiança baixa. Vira se o custo declarado do erro mudar de ordem de grandeza. Depende de: `custo_erro_grave_usd`.*
 
@@ -301,7 +301,7 @@ Ao corte de 0,99, **3,6 erros por mil decisões aceitas**, o que ao custo declar
 
 **Q034 — Qual família de erro é a mais cara?**
 
-**Ação atribuída a terceiro** — 75,0% de acerto, a pior família medida. É também a mais cara, porque o erro típico dela é agir sobre o pedido de outra pessoa. A mitigação existe e é uma frase (Q027).
+**Ação atribuída a terceiro** — 75,0% de acerto, a pior família medida. É também a mais cara, porque o erro típico dela é agir sobre o pedido de outra pessoa. A mitigação existe e é uma frase (Q026).
 
 *Decide onde pôr revisão humana. Fonte: dado medido; confiança alta. Vira se outra família passar a concentrar o erro.*
 
@@ -505,7 +505,7 @@ Contra aviso que imita sistema, vantagem grande: o Jev vira 0/50 e os comparador
 
 **Q066 — Contra revisão humana, qual a diferença de custo?**
 
-US$ 0,4000 contra US$ 0,000032 por decisão — o humano custa **12.339×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
+US$ 0,4000 contra US$ 0,000043 por decisão — o humano custa **9.376×**. Mas o parâmetro que domina é o tempo de revisão, declarado em 2 minutos e **nunca cronometrado**. Se forem 30 segundos, a economia é um quarto desta. Cronometrar é o passo 3 do guia e continua pendente.
 
 *Decide quanto a automação parcial economiza. Fonte: conta declarada; confiança baixa. Vira se o custo-hora declarado mudar. Depende de: `tempo_revisao_s`, `custo_hora_revisao_usd`.*
 
@@ -539,19 +539,19 @@ Sim, dois. **Prosa**: BM25 empata e custa zero. **Texto interno e confiável com
 
 **Q071 — Qual latência esperar, mediana e cauda?**
 
-Mediana **602 ms**, p90 1816 ms, p99 5640 ms, máximo 32256 ms, sobre 22.668 chamadas respondidas. Fora dessas, 135 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
+Mediana **753 ms**, p90 2538 ms, p99 6848 ms, máximo 32256 ms, sobre 35.259 chamadas respondidas. Fora dessas, 152 estouraram o timeout de 45 s do cliente e nunca voltaram — elas contam para o desenho da repescagem, não para o orçamento de tempo.
 
 *Decide o orçamento de tempo do fluxo. Fonte: dado medido; confiança alta. Vira se a latência mediana passar de 1 segundo.*
 
 **Q072 — A latência cabe num gancho interativo de editor?**
 
-Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 5640 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 135 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
+Sim, com uma ressalva que importa. O p99 das chamadas respondidas é 6848 ms, e o roteador em produção mediu 431 ms de mediana em 88 decisões reais. Mas 152 chamadas nunca voltaram, e num gancho interativo isso é pior que lentidão: **é preciso timeout curto e caminho de escape**, senão o editor congela esperando uma resposta que não vem.
 
 *Decide se dá para usar no caminho quente. Fonte: dado medido; confiança alta. Vira se a cauda passar do limite tolerável do gancho.*
 
 **Q073 — Qual a taxa de falha de transporte a esperar?**
 
-**1,1%** das 24.473 tentativas: 119 estouros do timeout de 45 s do cliente, 107 erros HTTP do provedor, 32 chamadas que saíram e nunca foram conciliadas, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
+**1,0%** das 37.281 tentativas: 136 chamadas que saíram e nunca foram conciliadas, 131 estouros do timeout de 45 s do cliente, 112 erros HTTP do provedor, 8 respostas fora do contrato. Três repescagens com espera crescente cobrem o caso comum; o que não pode é tratar falha como classe padrão.
 
 *Decide o desenho da repescagem. Fonte: dado medido; confiança alta. Vira se a taxa passar de 3%.*
 
@@ -609,7 +609,7 @@ Três itens. **Um:** o acerto do roteador em produção nunca foi medido — o r
 
 **Q082 — Quantas afirmações são demonstradas, e quantas são só direção?**
 
-Das cem hipóteses: **81 sustentadas**, 18 falsificadas, 1 inconclusiva. No dossiê de evidências, quatro afirmações são `demonstrado`, duas são `direção consistente`, uma é `medição única`, duas são `falsificado`, uma foi `corrigida` e uma `derivou`. Só as quatro primeiras podem ser ditas sem ressalva.
+Das cem hipóteses: **79 sustentadas**, 20 falsificadas, 1 inconclusiva. No dossiê de evidências, quatro afirmações são `demonstrado`, duas são `direção consistente`, uma é `medição única`, duas são `falsificado`, uma foi `corrigida` e uma `derivou`. Só as quatro primeiras podem ser ditas sem ressalva.
 
 *Decide o que pode ser dito sem ressalva. Fonte: dado medido; confiança alta. Vira se uma direção passar a ter significância.*
 
@@ -639,7 +639,7 @@ Sim, e está declarado. O gabarito das rodadas iniciais foi escrito por mim, que
 
 **Q087 — A taxa de falsificação das cem hipóteses é compatível com acaso?**
 
-Não. Foram 18 falsificações, contra 5 esperadas por acaso se todas as hipóteses fossem verdadeiras e o teste tivesse 5% de erro — **3,8× o acaso**. Ainda assim, nenhuma falsificação isolada decide sozinha, e por isso as que mudam recomendação foram refeitas com coleta nova antes de entrar no guia.
+Não. Foram 20 falsificações, contra 5 esperadas por acaso se todas as hipóteses fossem verdadeiras e o teste tivesse 5% de erro — **4,3× o acaso**. Ainda assim, nenhuma falsificação isolada decide sozinha, e por isso as que mudam recomendação foram refeitas com coleta nova antes de entrar no guia.
 
 *Decide se as falsificações merecem crédito individual. Fonte: conta declarada; confiança média. Vira se a taxa observada cair para o esperado sob acaso.*
 
@@ -657,7 +657,7 @@ A de que **a classe do topo prediz o acerto da resposta**. Ela se apoia em dois 
 
 **Q090 — O orçamento autorizado foi respeitado?**
 
-Sim. **US$ 1,0185 de US$ 5,00** autorizados, em 31.419 chamadas — 20,4% do teto, com US$ 3,9815 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
+Sim. **US$ 1,8970 de US$ 5,00** autorizados, em 44.465 chamadas — 37,9% do teto, com US$ 3,1030 restantes. O controle é persistente, a conferência é exata e está presa na suíte de testes.
 
 *Decide se há autorização para continuar. Fonte: dado medido; confiança alta. Vira se o gasto passar do teto.*
 
@@ -673,7 +673,7 @@ Sim. **US$ 1,0185 de US$ 5,00** autorizados, em 31.419 chamadas — 20,4% do tet
 
 **Q092 — Quanto custaria medir o acerto do roteador em produção?**
 
-Quase nada em dinheiro — 500 decisões custam US$ 0,0162 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
+Quase nada em dinheiro — 500 decisões custam US$ 0,0213 — e o obstáculo não é esse: é **gabarito**. Os pedidos redigidos já são guardados desde a correção do registro, mas alguém precisa dizer qual era a resposta certa. Sem isso, mede-se latência e custo, não acerto.
 
 *Decide se essa lacuna é barata de fechar. Fonte: conta declarada; confiança alta. Vira se o volume de pedidos registrados mudar.*
 
@@ -697,13 +697,13 @@ Cerca de 13,3 horas de duas pessoas, ou US$ 160 ao custo-hora declarado. É a co
 
 **Q096 — Quanto resta do orçamento, e o que ele compra?**
 
-Restam **US$ 3,9815**, que compram cerca de 122.823 chamadas — mais de nove vezes tudo que foi gasto até aqui (31.419 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
+Restam **US$ 3,1030**, que compram cerca de 72.732 chamadas — mais de nove vezes tudo que foi gasto até aqui (44.465 chamadas). O orçamento não é o limite deste trabalho; tempo e acesso a dado real são.
 
 *Decide o tamanho do próximo programa. Fonte: conta declarada; confiança alta. Vira se o teto ser revisto.*
 
 **Q097 — Que fração das cem hipóteses aponta para trabalho novo?**
 
-18 falsificadas e 1 inconclusiva — **19% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva declarada, que é a forma honesta de deixar trabalho em aberto.
+20 falsificadas e 1 inconclusiva — **21% das cem** apontam para trabalho. Metade já foi feita nesta rodada (as defesas, a generalização); a outra metade virou ressalva declarada, que é a forma honesta de deixar trabalho em aberto.
 
 *Decide quanto trabalho a varredura gerou. Fonte: dado medido; confiança alta. Vira se as pendências serem fechadas.*
 

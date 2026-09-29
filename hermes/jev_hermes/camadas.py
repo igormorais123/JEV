@@ -15,6 +15,8 @@ ganchos do Hermes. Cada função recebe o que o gancho recebeu e devolve uma dec
 Nenhuma camada autoriza ação, descarta evidência ou esconde item de uma listagem.
 """
 import json
+import os
+import hashlib
 import re
 import time
 from pathlib import Path
@@ -28,9 +30,12 @@ CORTE_DE_DESCARTE = 0.99
 TEMPO_DA_CAMADA = 6.0
 
 
+BUILD_HASH = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:16]
+
+
 def registrar(camada, **campos):
-    nucleo.registrar({'em': nucleo._agora().isoformat(timespec='seconds'), 'camada': camada, **campos},
-                     CAMADAS)
+    nucleo.registrar({'em': nucleo._agora().isoformat(timespec='seconds'), 'camada': camada, **campos,
+                     'pid': os.getpid(), 'build_hash': BUILD_HASH}, CAMADAS)
 
 
 def tokens(caracteres):
@@ -52,14 +57,67 @@ def guardar_pedido(sessao, mensagem):
         SESSOES.mkdir(parents=True, exist_ok=True)
         (SESSOES / f'{_seguro(sessao)}.json').write_text(
             json.dumps({'pedido': texto, 'em': time.time()}, ensure_ascii=False), encoding='utf-8')
+        _guardar_recente(sessao, texto)
     except OSError:
         pass
     return texto
 
 
+# O gancho do terminal recebe o task_id do contêiner, que o Hermes colapsa em "default" para
+# toda sessão comum (tools/terminal_tool.py, `_resolve_container_task_id`): o pedido guardado
+# pela sessão nunca é achado por ele — 6 de 6 recortes de terminal ficaram "sem pedido vigente"
+# em 21/09. A saída é a lista dos pedidos recentes: se nos últimos minutos só uma sessão falou,
+# o pedido dela é o vigente; se duas falaram (cron e WhatsApp ao mesmo tempo), é ambíguo e o
+# recorte não mexe — errar o pedido custaria uma releitura, não errar custa só a economia.
+# O consenso é pelo TEXTO do pedido, não pelo identificador da sessão: a mesma chamada grava duas
+# entradas (session_id e task_id), e contá-las como sessões diferentes deixava tudo ambíguo.
+RECENTES = 'default'
+JANELA_DE_RECENTES = 15 * 60
+JANELA_DO_CONSENSO = 4 * 60   # o terminal responde ao que se pediu agora, não ao de um quarto de hora
+
+
+def _guardar_recente(sessao, texto):
+    arquivo = SESSOES / f'{RECENTES}.json'
+    try:
+        lista = json.loads(arquivo.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        lista = []
+    agora = time.time()
+    lista = [r for r in lista if agora - r.get('em', 0) <= JANELA_DE_RECENTES][-8:]
+    lista.append({'sessao': str(sessao)[:80], 'pedido': texto, 'em': agora})
+    arquivo.write_text(json.dumps(lista, ensure_ascii=False), encoding='utf-8')
+
+
+def _pedido_recente():
+    try:
+        lista = json.loads((SESSOES / f'{RECENTES}.json').read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return None
+    agora = time.time()
+    vivas = [r for r in lista if agora - r.get('em', 0) <= JANELA_DO_CONSENSO]
+    if not vivas or len({r.get('pedido') for r in vivas}) != 1:
+        return None
+    return vivas[-1].get('pedido')
+
+
+# O estado de uma classificação é PEDIDO + trecho. Guardamos o pedido em até 3.000 caracteres
+# para a camada `tema`, mas mandá-lo inteiro junto de uma parte de 3.500 estoura o limite da
+# chamada: em 22/09, 7 de 12 resultados grandes reais falharam com "estado grande demais" antes
+# de sair. Os últimos 800 caracteres bastam para julgar relevância, e num prompt de cron — que
+# começa pelas skills e termina na tarefa — são a melhor parte.
+PEDIDO_PARA_CLASSIFICAR = 800
+
+
+def pedido_curto(pedido, maximo=PEDIDO_PARA_CLASSIFICAR):
+    pedido = (pedido or '').strip()
+    return pedido if len(pedido) <= maximo else '…' + pedido[-maximo:]
+
+
 def pedido_vigente(sessao, validade=6 * 3600):
     if not sessao:
         return None
+    if str(sessao) == RECENTES:
+        return _pedido_recente()
     try:
         dado = json.loads((SESSOES / f'{_seguro(sessao)}.json').read_text(encoding='utf-8'))
         if time.time() - dado.get('em', 0) <= validade:
@@ -143,7 +201,7 @@ TEMAS = {
     'nenhum': 'Nenhum dos temas acima: conversa, pergunta rapida ou assunto que nao se encaixa.',
 }
 SKILLS_DO_TEMA = {
-    'juridico': '`cicero`, `fabrica-melhoria-peticoes`',
+    'juridico': '`cicero`, `fabrica-melhoria-peticoes`; contrato ou edital: checklist do Jev (skill `jev`) antes de ler inteiro',
     'estrategia': '`helena`',
     'pesquisa': '`oracle`, `research`',
     'engenharia': '`efesto`, `devops`',
@@ -175,6 +233,46 @@ PERGUNTAS_DE_TEMA = {
     },
 }
 CORTE_DO_TEMA = 0.90
+# Pesquisa e relatório foram 42% dos tokens do WhatsApp em 60 dias; o subagente roda no
+# OmniRoute, fora da cota do modelo principal.
+TEMAS_DE_DELEGAR = ('pesquisa', 'relatorio')
+CORTE_DE_DELEGAR = 0.70   # soma das duas; é só sugestão. Pesquisa jurídica divide com `juridico` (0,81)
+
+# Orientação consultiva de ferramenta. O Jev não executa, autoriza, bloqueia nem remove
+# ferramentas: apenas acrescenta uma nota efêmera ao pedido do turno. As categorias são
+# estáveis e apontam para capacidades já existentes no Hermes default.
+ROTAS_DE_FERRAMENTA = {
+    'arquivos': ('Inspecionar arquivos locais, código ou configuração.',
+                 '`read_file`/`search_files`; para alterar, `patch` ou `write_file`.'),
+    'terminal': ('Executar comando, teste, build, git, serviço ou processo local.',
+                 '`terminal`; processos longos usam `process`.'),
+    'web': ('Pesquisar ou extrair conteúdo atual da web sem interação visual.',
+            '`web_search` e depois `web_extract`.'),
+    'navegador': ('Interagir com página dinâmica, formulário, login ou interface visual.',
+                  '`browser_navigate` e ferramentas `browser_*`.'),
+    'historico': ('Recuperar algo dito ou decidido em conversa anterior.',
+                  '`session_search`.'),
+    'imagem': ('Criar, editar ou analisar imagem.',
+               '`image_generate` para criar/editar; `vision_analyze` para analisar.'),
+    'delegacao': ('Trabalho amplo que pode ser isolado em subagente.',
+                  '`delegate_task` se disponível; o agente principal valida o artefato.'),
+    'especializada': ('A tarefa depende de integração ou ferramenta especializada não carregada.',
+                      'carregue a skill aplicável; use `tool_search`/`tool_describe` antes de `tool_call`.'),
+    'nenhuma': ('Responder diretamente sem ferramenta é suficiente.',
+                'nenhuma ferramenta.'),
+    'incerta': ('Não há evidência suficiente para escolher uma rota.',
+                'ignore esta orientação e selecione normalmente.'),
+}
+PERGUNTAS_DE_FERRAMENTA = {
+    'ferramenta': {
+        'type': 'choice',
+        'instructions': ('Qual categoria de ferramenta é a melhor PRIMEIRA ação para atender o PEDIDO? '
+                         'Escolha só pela necessidade operacional explícita; não invente acesso nem ação. '
+                         'Se resposta direta bastar, escolha nenhuma; se ambíguo, incerta.'),
+        'criteria': {k: v[0] for k, v in ROTAS_DE_FERRAMENTA.items()},
+    },
+}
+CORTE_DA_FERRAMENTA = 0.90  # guarda consultiva provisória; não é calibração nem autorização
 
 
 # ------------------------------------------------------------------------------- tema
@@ -185,7 +283,8 @@ def tema(mensagem):
     if not mensagem or len(mensagem.strip()) < 25:
         return None, {'acao': 'nada', 'motivo': 'mensagem curta'}
     texto = mensagem.strip()[:4000]
-    respostas, detalhe = nucleo.perguntar(f'PEDIDO:\n{texto}', PERGUNTAS_DE_TEMA, origem='camada-tema',
+    perguntas = {**PERGUNTAS_DE_TEMA, **PERGUNTAS_DE_FERRAMENTA}
+    respostas, detalhe = nucleo.perguntar(f'PEDIDO:\n{texto}', perguntas, origem='camada-tema-ferramenta-v1',
                                           timeout=4.0, limite=4200)
     decisao = {'custo_usd': detalhe.get('custo_usd'), 'cache': detalhe.get('cache'),
                'latencia_ms': round((time.time() - inicio) * 1000)}
@@ -196,9 +295,22 @@ def tema(mensagem):
     decisao.update({'tema': assunto, 'confianca': confianca, 'risco': risco,
                     'confianca_risco': confianca_risco})
     partes = []
+    ferramenta, confianca_ferramenta = nucleo.escolha(respostas, 'ferramenta')
+    decisao.update({'ferramenta': ferramenta, 'confianca_ferramenta': confianca_ferramenta})
+    if (ferramenta in ROTAS_DE_FERRAMENTA and ferramenta not in ('nenhuma', 'incerta')
+            and (confianca_ferramenta or 0) >= CORTE_DA_FERRAMENTA):
+        sugestao = ROTAS_DE_FERRAMENTA[ferramenta][1]
+        partes.append(f'[jev/ferramenta] primeira rota sugerida: {ferramenta} '
+                      f'(confiança {nucleo.dec(confianca_ferramenta)}): {sugestao} '
+                      'Isto é aconselhamento; valide no contexto e mantenha suas regras normais de autorização.')
     if assunto in SKILLS_DO_TEMA and (confianca or 0) >= CORTE_DO_TEMA:
         partes.append(f'[jev/tema] assunto {assunto} (confiança {nucleo.dec(confianca)}); '
                       f'skills para isto: {SKILLS_DO_TEMA[assunto]}.')
+    p_delegar = sum(((respostas.get('tema') or {}).get('probabilities') or {}).get(t) or 0 for t in TEMAS_DE_DELEGAR)
+    decisao['p_delegar'] = round(p_delegar, 3)
+    if p_delegar >= CORTE_DE_DELEGAR:
+        partes.append('[jev/economia] a coleta e a leitura de fontes cabem a um subagente (`delegate_task`, '
+                      'fora da sua cota); receba a síntese com evidência e faça você o julgamento e a redação final.')
     if risco == 'irreversivel':
         partes.append('[jev/risco] o pedido tem efeito que não se desfaz ou que sai do servidor: '
                       'confirme o alvo antes de executar.')
@@ -210,6 +322,10 @@ def tema(mensagem):
 # ---------------------------------------------------------------------------- leitura
 
 MINIMO_DE_LINHAS = 200
+# `read_file_tool(path, offset=1, limit=2000)`: o Hermes entrega os argumentos já com os padrões
+# preenchidos, então um `limit` de 2.000 não é escolha do agente — é a leitura inteira. Tratá-lo
+# como intervalo pedido anulava a camada (63 de 65 leituras ficaram "já delimitada" em 21/09).
+LIMITE_ABERTO = {'None', '2000'}
 CONFIANCA_ESSENCIAL = 0.90
 BLOCOS_NO_TOPO = 3
 ECONOMIA_MINIMA = 0.25
@@ -218,6 +334,11 @@ LIMITE_DO_BLOCO = 12000
 ORDEM = {'essencial': 3, 'complementar': 2, 'incerto': 1, 'irrelevante': 0}
 NAO_TOCAR = {'claude.md', 'agents.md', 'skill.md', 'memory.md', 'readme.md', 'soul.md', 'user.md',
              'hermes.md'}
+# Recortar por linhas um arquivo estruturado entrega um pedaço sintaticamente inválido: metade de
+# um objeto JSON, um YAML sem a chave-mãe, um CSV sem cabeçalho. O agente costuma querer o objeto
+# inteiro, e a economia não paga o risco. `.jsonl` e `.ndjson` ficam de fora da exclusão: cada
+# linha é um registro completo, e um pedaço deles continua válido.
+ESTRUTURADOS = {'.json', '.yaml', '.yml', '.xml', '.toml', '.csv', '.tsv', '.ini', '.cfg', '.plist'}
 LINHA_NUMERADA = re.compile(r'^\s*(\d+)\|')
 
 
@@ -268,12 +389,14 @@ def leitura(resultado, argumentos, pedido):
     argumentos = argumentos or {}
     caminho = str(argumentos.get('path') or '')
     base = {'acao': 'nada', 'arquivo': Path(caminho).name}
-    if (argumentos.get('offset') not in (None, 1, '1')) or argumentos.get('limit') is not None:
+    if (argumentos.get('offset') not in (None, 1, '1')) or str(argumentos.get('limit')) not in LIMITE_ABERTO:
         return None, {**base, 'motivo': 'leitura já delimitada'}
     if not pedido:
         return None, {**base, 'motivo': 'sem pedido vigente'}
     if Path(caminho).name.lower() in NAO_TOCAR:
         return None, {**base, 'motivo': 'arquivo de instrução'}
+    if Path(caminho).suffix.lower() in ESTRUTURADOS:
+        return None, {**base, 'motivo': 'formato estruturado: o recorte quebraria a sintaxe'}
     dado, cauda = _json_do_resultado(resultado)
     if not isinstance(dado, dict) or not isinstance(dado.get('content'), str) or dado.get('error'):
         return None, {**base, 'motivo': 'resultado sem conteúdo'}
@@ -290,7 +413,8 @@ def leitura(resultado, argumentos, pedido):
         casou = LINHA_NUMERADA.match(linhas[indice])
         return int(casou.group(1)) if casou else indice + 1
 
-    estados = [f'PEDIDO:\n{pedido}\n\nARQUIVO {Path(caminho).name}, linhas {numero(a)}-{numero(b - 1)} '
+    curto = pedido_curto(pedido)
+    estados = [f'PEDIDO:\n{curto}\n\nARQUIVO {Path(caminho).name}, linhas {numero(a)}-{numero(b - 1)} '
                f'de {total}:\n' + '\n'.join(linhas[a:b]) for a, b in blocos]
     resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-leitura',
                                                 tempo_total=TEMPO_DA_CAMADA, limite=LIMITE_DO_BLOCO + 4000)
@@ -386,7 +510,7 @@ def busca(ferramenta, resultado, argumentos, pedido):
     if len(itens) < MINIMO_DE_ITENS:
         return None, {**base, 'motivo': 'poucos itens'}
     escolhidos = itens[:MAXIMO_DE_ITENS]
-    estados = [f'PEDIDO:\n{pedido}\n\nITEM DA BUSCA "{padrao}" ({ferramenta}) — {rotulo}:\n{corpo}'
+    estados = [f'PEDIDO:\n{pedido_curto(pedido)}\n\nITEM DA BUSCA "{padrao}" ({ferramenta}) — {rotulo}:\n{corpo}'
                for rotulo, corpo in escolhidos]
     resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-busca',
                                                 tempo_total=TEMPO_DA_CAMADA, limite=6000)
@@ -518,3 +642,83 @@ def saida(comando, texto, codigo):
     nota = (f"\n\n[jev/saida] a causa da falha parece estar na parte {c['parte']} de {total} da saída "
             f"(caracteres {a}–{b}), confiança {nucleo.dec(c['confianca'])}. Confira antes de agir.")
     return nota, {**base, 'acao': 'apontar'}
+
+
+# --------------------------------------------------------------------------- recorte
+
+MINIMO_DO_RECORTE = 16000
+MAXIMO_DE_PARTES_DO_RECORTE = 30
+# Sinal de falha no fim da saída. A marca ampla da camada `saida` casaria com qualquer `cat` de
+# código (ValueError, 'not found'...), e aqui o código de saída já é 0; olha-se só a cauda,
+# onde `cmd | tail` com falha deixaria o rastro.
+FALHA_NA_CAUDA = re.compile(r'Traceback|FAILED|fatal:|panic:|npm ERR!|Unhandled|Segmentation fault')
+
+
+def recortar_terminal(comando, texto, pedido, *, vizinhas=True):
+    """Numa saída longa e sem erro (cat, grep, log, listagem), mantém só as partes que importam ao
+    pedido vigente, com vizinhas, mais a primeira e a última; as demais viram um marcador que diz
+    como recuperá-las. Saída que termina em falha fica inteira: a camada `saida` cuida dela.
+
+    `vizinhas=False` mantém só as partes essenciais e as pontas: serve ao resultado de ferramenta
+    de web, onde não há a continuidade que faz a linha de erro e seu contexto andarem juntos."""
+    inicio = time.time()
+    base = {'acao': 'nada', 'caracteres': len(texto or '')}
+    if not texto or len(texto) < MINIMO_DO_RECORTE:
+        return None, {**base, 'motivo': 'saída curta'}
+    if not pedido:
+        return None, {**base, 'motivo': 'sem pedido vigente'}
+    if FALHA_NA_CAUDA.search(texto[-TAMANHO_DA_PARTE:]):
+        return None, {**base, 'motivo': 'falha na cauda'}
+    partes = [texto[i:i + TAMANHO_DA_PARTE] for i in range(0, len(texto), TAMANHO_DA_PARTE)]
+    total = len(partes)
+    if total > MAXIMO_DE_PARTES_DO_RECORTE:
+        return None, {**base, 'motivo': 'saída grande demais'}
+    estados = [f'PEDIDO:\n{pedido_curto(pedido)}\n\nCOMANDO: {(comando or "")[:160]}\nSAIDA (parte {i} de {total}):\n{p}'
+               for i, p in enumerate(partes, 1)]
+    resultados = nucleo.classificar_em_paralelo(estados, RELEVANCIA, origem='camada-recorte',
+                                                tempo_total=TEMPO_DA_CAMADA,
+                                                limite=TAMANHO_DA_PARTE + PEDIDO_PARA_CLASSIFICAR + 1200)
+    resumo = nucleo.resumo_das_chamadas(resultados)
+    base.update({**resumo, 'partes': total, 'latencia_ms': round((time.time() - inicio) * 1000)})
+    if resumo['falha']:
+        return None, {**base, 'motivo': f"falha: {resumo['falha']}"}
+    classes = [nucleo.escolha(respostas, 'relevancia') for respostas, _ in resultados]
+    # A CLASSE decide, não a confiança: em 63 partes de seis resultados grandes reais, 50 vieram
+    # `essencial` entre 0,50 e 0,67 e nenhuma passou de 0,90 — o corte forte nunca disparava, e a
+    # camada gastava treze chamadas para não cortar nada. Sem nenhuma essencial, segue inteiro:
+    # separar por confianças que diferem em centésimos seria apostar em ruído.
+    essenciais = [i for i, (classe, _) in enumerate(classes) if classe == 'essencial']
+    base['essenciais'] = [i + 1 for i in essenciais]
+    base['confianca_media'] = nucleo.dec(sum(k or 0 for c, k in classes if c == 'essencial')
+                                  / len(essenciais)) if essenciais else None
+    if not essenciais:
+        return None, {**base, 'motivo': 'nenhuma parte essencial'}
+    manter = {0, total - 1}
+    for i in essenciais:
+        manter.update(j for j in ((i - 1, i, i + 1) if vizinhas else (i,)) if 0 <= j < total)
+    evitados = sum(len(partes[i]) for i in range(total) if i not in manter)
+    base.update({'partes_mantidas': len(manter), 'caracteres_evitados': evitados,
+                 'tokens_evitados_estimados': tokens(evitados)})
+    if evitados / len(texto) < ECONOMIA_MINIMA:
+        return None, {**base, 'motivo': 'economia pequena demais'}
+    pedacos, omitidas = [], []
+
+    def fechar():
+        if omitidas:
+            a, b = omitidas[0], omitidas[-1]
+            ini, fim = a * TAMANHO_DA_PARTE + 1, min(len(texto), (b + 1) * TAMANHO_DA_PARTE)
+            pedacos.append(f'\n[jev: partes {a + 1}–{b + 1} de {total} omitidas (caracteres {ini}–{fim}), '
+                           f'julgadas não essenciais ao pedido]\n')
+            omitidas.clear()
+
+    for i, parte in enumerate(partes):
+        if i in manter:
+            fechar()
+            pedacos.append(parte)
+        else:
+            omitidas.append(i)
+    fechar()
+    nota = (f'\n\n[jev/recorte] Saída de {len(texto)} caracteres reduzida às partes que o Jev julgou essenciais '
+            f'ao pedido vigente, com vizinhas, mais a primeira e a última. Se precisar do trecho omitido, rode '
+            f'o comando de novo filtrando (grep, sed -n, head/tail).')
+    return ''.join(pedacos) + nota, {**base, 'acao': 'recortar'}

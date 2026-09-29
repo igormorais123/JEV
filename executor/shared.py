@@ -23,7 +23,7 @@ DB = ROOT / 'runs/ledger.sqlite3'
 PRICE_URL = 'https://openrouter.ai/api/v1/models/typesafe/jev-1.13/endpoints'
 LEGACY = (ROOT / 'laboratorio/gastos.jsonl', ROOT / 'integracao/gastos.jsonl')
 PRICE_CACHE = ROOT / 'runs/shared-price.json'
-CAPS = {'e15': '2.00', 'lab': '2.00', 'router': '1.00', 'tools': '0.20'}
+CAPS = {'e15': '2.00', 'lab': '4.00', 'router': '1.00', 'tools': '0.20'}
 ACTIVE_PROFILE = ROOT / 'integracao/runtime.local.json'
 
 

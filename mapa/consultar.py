@@ -35,8 +35,9 @@ def carregar() -> tuple[dict, dict, dict]:
         nos[s['id']] = {'classe': 'símbolo', 'titulo': f'{s["tipo"]} em {s["arquivo"]}:{s["linha"]}', **s}
     saem, chegam = defaultdict(list), defaultdict(list)
     for a in g['arestas']:
-        saem[a['de']].append((a['para'], a['tipo'], a.get('peso')))
-        chegam[a['para']].append((a['de'], a['tipo'], a.get('peso')))
+        tipo = f'semelhante · {a["relacao"]}' if a['tipo'] == 'semelhante' and a.get('relacao') else a['tipo']
+        saem[a['de']].append((a['para'], tipo, a.get('peso')))
+        chegam[a['para']].append((a['de'], tipo, a.get('peso')))
     for s in g['simbolos']:  # o arquivo contém seus símbolos
         saem[s['arquivo']].append((s['id'], 'contém', None))
         chegam[s['id']].append((s['arquivo'], 'contém', None))
@@ -91,12 +92,12 @@ def mostrar(nos, saem, chegam, i: str) -> None:
         print(f'  {titulo}:')
         for tipo, itens in sorted(por_tipo.items(), key=lambda x: -len(x[1])):
             itens.sort(key=lambda x: (-(x[1] or 0), x[0]))
-            mostra = ', '.join(o + (f' ({p}×)' if p else '') for o, p in itens[:15])
+            mostra = ', '.join(o + ((f' ({p:.0%})' if isinstance(p, float) and p < 1 else f' ({p}×)') if p else '') for o, p in itens[:15])
             print(f'    {tipo} ({len(itens)}): {mostra}' + (' …' if len(itens) > 15 else ''))
 
 
 # Ligação fraca custa mais: um documento que cita tudo não deve virar o atalho de todo caminho.
-CUSTO = {'menciona': 4, 'cita': 3, 'link': 2, 'contém': 1}
+CUSTO = {'menciona': 4, 'cita': 3, 'link': 2, 'semelhante': 2, 'contém': 1}
 
 
 def caminho(saem, chegam, a: str, b: str) -> list[tuple[str, str, str]] | None:
@@ -111,7 +112,7 @@ def caminho(saem, chegam, a: str, b: str) -> list[tuple[str, str, str]] | None:
             continue
         vizinhos = [(o, t, '→') for o, t, _ in saem[atual]] + [(o, t, '←') for o, t, _ in chegam[atual]]
         for outro, tipo, sentido in vizinhos:
-            novo = c + CUSTO.get(tipo, 1)
+            novo = c + CUSTO.get(tipo.split(' · ')[0], 1)
             if novo < custo.get(outro, float('inf')):
                 custo[outro], anterior[outro] = novo, (atual, tipo, sentido)
                 heapq.heappush(fila, (novo, outro))

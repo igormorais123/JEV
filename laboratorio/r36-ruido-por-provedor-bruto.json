@@ -1,0 +1,4160 @@
+[
+ {
+  "i": 0,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1800.36
+ },
+ {
+  "i": 0,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 3460.92
+ },
+ {
+  "i": 0,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 10688.36
+ },
+ {
+  "i": 0,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 1245.63
+ },
+ {
+  "i": 0,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 1413.33
+ },
+ {
+  "i": 0,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 1230.8
+ },
+ {
+  "i": 1,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 987.71
+ },
+ {
+  "i": 1,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 10451.77
+ },
+ {
+  "i": 1,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 994.09
+ },
+ {
+  "i": 1,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 941.36
+ },
+ {
+  "i": 1,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 558.87
+ },
+ {
+  "i": 1,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 548.23
+ },
+ {
+  "i": 2,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0916e-05,
+  "latencia_ms": 948.85
+ },
+ {
+  "i": 2,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0916e-05,
+  "latencia_ms": 1010.23
+ },
+ {
+  "i": 2,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0916e-05,
+  "latencia_ms": 1619.63
+ },
+ {
+  "i": 2,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 1708.17
+ },
+ {
+  "i": 2,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 1769.59
+ },
+ {
+  "i": 2,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 745.27
+ },
+ {
+  "i": 3,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 2368.39
+ },
+ {
+  "i": 3,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 3576.66
+ },
+ {
+  "i": 3,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 8061.09
+ },
+ {
+  "i": 3,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9279e-05,
+  "latencia_ms": 786.24
+ },
+ {
+  "i": 3,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9279e-05,
+  "latencia_ms": 812.41
+ },
+ {
+  "i": 3,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9279e-05,
+  "latencia_ms": 800.6
+ },
+ {
+  "i": 4,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.121e-05,
+  "latencia_ms": 1051.31
+ },
+ {
+  "i": 4,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.121e-05,
+  "latencia_ms": 1014.8
+ },
+ {
+  "i": 4,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.121e-05,
+  "latencia_ms": 1245.99
+ },
+ {
+  "i": 4,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 758.02
+ },
+ {
+  "i": 4,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 1187.89
+ },
+ {
+  "i": 4,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 1460.05
+ },
+ {
+  "i": 5,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 4607.05
+ },
+ {
+  "i": 5,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1215.02
+ },
+ {
+  "i": 5,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 2266.5
+ },
+ {
+  "i": 5,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 754.33
+ },
+ {
+  "i": 5,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 744.55
+ },
+ {
+  "i": 5,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 731.58
+ },
+ {
+  "i": 6,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 965.02
+ },
+ {
+  "i": 6,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1232.43
+ },
+ {
+  "i": 6,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 996.14
+ },
+ {
+  "i": 6,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 1889.56
+ },
+ {
+  "i": 6,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 662.59
+ },
+ {
+  "i": 6,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 662.44
+ },
+ {
+  "i": 7,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2302e-05,
+  "latencia_ms": 6886.31
+ },
+ {
+  "i": 7,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2302e-05,
+  "latencia_ms": 2323.48
+ },
+ {
+  "i": 7,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2302e-05,
+  "latencia_ms": 1044.83
+ },
+ {
+  "i": 7,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9824e-05,
+  "latencia_ms": 3629.99
+ },
+ {
+  "i": 7,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9824e-05,
+  "latencia_ms": 1350.36
+ },
+ {
+  "i": 7,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9824e-05,
+  "latencia_ms": 811.72
+ },
+ {
+  "i": 8,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1021.64
+ },
+ {
+  "i": 8,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1037.1
+ },
+ {
+  "i": 8,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1022.56
+ },
+ {
+  "i": 8,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 756.79
+ },
+ {
+  "i": 8,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 3286.33
+ },
+ {
+  "i": 8,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.8942e-05,
+  "latencia_ms": 753.22
+ },
+ {
+  "i": 9,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1e-05,
+  "latencia_ms": 973.46
+ },
+ {
+  "i": 9,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1e-05,
+  "latencia_ms": 983.94
+ },
+ {
+  "i": 9,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1e-05,
+  "latencia_ms": 1983.28
+ },
+ {
+  "i": 9,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 2790.29
+ },
+ {
+  "i": 9,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 731.48
+ },
+ {
+  "i": 9,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.848e-05,
+  "latencia_ms": 788.22
+ },
+ {
+  "i": 10,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 1000.96
+ },
+ {
+  "i": 10,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 3246.69
+ },
+ {
+  "i": 10,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 957.99
+ },
+ {
+  "i": 10,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 718.83
+ },
+ {
+  "i": 10,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 764.76
+ },
+ {
+  "i": 10,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 2550.61
+ },
+ {
+  "i": 11,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 9929.29
+ },
+ {
+  "i": 11,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 3549.3
+ },
+ {
+  "i": 11,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1215.27
+ },
+ {
+  "i": 11,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 1740.37
+ },
+ {
+  "i": 11,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 965.84
+ },
+ {
+  "i": 11,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 797.3
+ },
+ {
+  "i": 12,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 5460.36
+ },
+ {
+  "i": 12,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2798.1
+ },
+ {
+  "i": 12,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1009.12
+ },
+ {
+  "i": 12,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 2005.58
+ },
+ {
+  "i": 12,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 741.45
+ },
+ {
+  "i": 12,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 755.5
+ },
+ {
+  "i": 13,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1503.78
+ },
+ {
+  "i": 13,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1809.96
+ },
+ {
+  "i": 13,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1010.35
+ },
+ {
+  "i": 13,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 755.38
+ },
+ {
+  "i": 13,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 3171.37
+ },
+ {
+  "i": 13,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 1835.57
+ },
+ {
+  "i": 14,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1033.18
+ },
+ {
+  "i": 14,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2900.23
+ },
+ {
+  "i": 14,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1327.71
+ },
+ {
+  "i": 14,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 791.37
+ },
+ {
+  "i": 14,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 830.25
+ },
+ {
+  "i": 14,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 2169.86
+ },
+ {
+  "i": 15,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 2168.9
+ },
+ {
+  "i": 15,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1047.0
+ },
+ {
+  "i": 15,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 2397.05
+ },
+ {
+  "i": 15,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 3055.18
+ },
+ {
+  "i": 15,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 4534.88
+ },
+ {
+  "i": 15,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 799.33
+ },
+ {
+  "i": 16,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1081.93
+ },
+ {
+  "i": 16,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1344.9
+ },
+ {
+  "i": 16,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1688.81
+ },
+ {
+  "i": 16,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": null,
+  "confianca": null,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 16,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.9111e-05,
+  "latencia_ms": 1731.66
+ },
+ {
+  "i": 16,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.9111e-05,
+  "latencia_ms": 3274.26
+ },
+ {
+  "i": 17,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1185.85
+ },
+ {
+  "i": 17,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 3195.49
+ },
+ {
+  "i": 17,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 8547.35
+ },
+ {
+  "i": 17,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 3150.09
+ },
+ {
+  "i": 17,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 777.02
+ },
+ {
+  "i": 17,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 2007.78
+ },
+ {
+  "i": 18,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 3396.64
+ },
+ {
+  "i": 18,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 1785.58
+ },
+ {
+  "i": 18,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.0958e-05,
+  "latencia_ms": 1674.89
+ },
+ {
+  "i": 18,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 1018.12
+ },
+ {
+  "i": 18,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 1378.19
+ },
+ {
+  "i": 18,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 2110.29
+ },
+ {
+  "i": 19,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2695.21
+ },
+ {
+  "i": 19,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 3987.06
+ },
+ {
+  "i": 19,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1018.89
+ },
+ {
+  "i": 19,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 767.57
+ },
+ {
+  "i": 19,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 2906.02
+ },
+ {
+  "i": 19,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 729.71
+ },
+ {
+  "i": 20,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1068.07
+ },
+ {
+  "i": 20,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 2913.78
+ },
+ {
+  "i": 20,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 2690.74
+ },
+ {
+  "i": 20,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 812.76
+ },
+ {
+  "i": 20,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 1301.37
+ },
+ {
+  "i": 20,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 3524.82
+ },
+ {
+  "i": 21,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1063.49
+ },
+ {
+  "i": 21,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1038.92
+ },
+ {
+  "i": 21,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1069.78
+ },
+ {
+  "i": 21,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 3297.29
+ },
+ {
+  "i": 21,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 1114.59
+ },
+ {
+  "i": 21,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 803.2
+ },
+ {
+  "i": 22,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1645.98
+ },
+ {
+  "i": 22,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1099.45
+ },
+ {
+  "i": 22,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 3758.66
+ },
+ {
+  "i": 22,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 1364.49
+ },
+ {
+  "i": 22,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 1626.91
+ },
+ {
+  "i": 22,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 801.27
+ },
+ {
+  "i": 23,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 4307.41
+ },
+ {
+  "i": 23,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 4574.08
+ },
+ {
+  "i": 23,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1083.1
+ },
+ {
+  "i": 23,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 1594.37
+ },
+ {
+  "i": 23,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 1029.72
+ },
+ {
+  "i": 23,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 1966.77
+ },
+ {
+  "i": 24,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.67,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1949.5
+ },
+ {
+  "i": 24,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.73,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1019.2
+ },
+ {
+  "i": 24,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.73,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1666.24
+ },
+ {
+  "i": 24,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.77,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 3236.2
+ },
+ {
+  "i": 24,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.73,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 2454.97
+ },
+ {
+  "i": 24,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.72,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 2956.44
+ },
+ {
+  "i": 25,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.59,
+  "custo_usd": 2.1924e-05,
+  "latencia_ms": 3080.86
+ },
+ {
+  "i": 25,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.59,
+  "custo_usd": 2.1924e-05,
+  "latencia_ms": 1000.03
+ },
+ {
+  "i": 25,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "custo_usd": 2.1924e-05,
+  "latencia_ms": 2877.19
+ },
+ {
+  "i": 25,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.61,
+  "custo_usd": 1.9404e-05,
+  "latencia_ms": 1554.53
+ },
+ {
+  "i": 25,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.63,
+  "custo_usd": 1.9404e-05,
+  "latencia_ms": 1302.94
+ },
+ {
+  "i": 25,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.63,
+  "custo_usd": 1.9404e-05,
+  "latencia_ms": 2577.77
+ },
+ {
+  "i": 26,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1798e-05,
+  "latencia_ms": 1005.31
+ },
+ {
+  "i": 26,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1798e-05,
+  "latencia_ms": 3745.65
+ },
+ {
+  "i": 26,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.1798e-05,
+  "latencia_ms": 1816.95
+ },
+ {
+  "i": 26,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9321e-05,
+  "latencia_ms": 785.98
+ },
+ {
+  "i": 26,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9321e-05,
+  "latencia_ms": 5868.05
+ },
+ {
+  "i": 26,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9321e-05,
+  "latencia_ms": 740.11
+ },
+ {
+  "i": 27,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1019.57
+ },
+ {
+  "i": 27,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1886.32
+ },
+ {
+  "i": 27,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 969.03
+ },
+ {
+  "i": 27,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 713.04
+ },
+ {
+  "i": 27,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 1368.24
+ },
+ {
+  "i": 27,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 3013.88
+ },
+ {
+  "i": 28,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 1156.95
+ },
+ {
+  "i": 28,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 2089.77
+ },
+ {
+  "i": 28,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 1078.66
+ },
+ {
+  "i": 28,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 1381.05
+ },
+ {
+  "i": 28,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 867.43
+ },
+ {
+  "i": 28,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 1586.47
+ },
+ {
+  "i": 29,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.51,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 2319.87
+ },
+ {
+  "i": 29,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.51,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 1785.89
+ },
+ {
+  "i": 29,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.52,
+  "custo_usd": 2.1504e-05,
+  "latencia_ms": 1558.36
+ },
+ {
+  "i": 29,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.56,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 1053.96
+ },
+ {
+  "i": 29,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.51,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 2535.79
+ },
+ {
+  "i": 29,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.48,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 757.35
+ },
+ {
+  "i": 30,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.84,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 2776.16
+ },
+ {
+  "i": 30,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.81,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 974.22
+ },
+ {
+  "i": 30,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.84,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1009.83
+ },
+ {
+  "i": 30,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.86,
+  "custo_usd": 1.9111e-05,
+  "latencia_ms": 5371.4
+ },
+ {
+  "i": 30,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.86,
+  "custo_usd": 1.9111e-05,
+  "latencia_ms": 753.02
+ },
+ {
+  "i": 30,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.82,
+  "custo_usd": 1.9111e-05,
+  "latencia_ms": 3027.61
+ },
+ {
+  "i": 31,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.43,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1042.34
+ },
+ {
+  "i": 31,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.46,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1031.02
+ },
+ {
+  "i": 31,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.45,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1496.57
+ },
+ {
+  "i": 31,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.51,
+  "custo_usd": 1.9699e-05,
+  "latencia_ms": 1779.76
+ },
+ {
+  "i": 31,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "custo_usd": 1.9699e-05,
+  "latencia_ms": 696.96
+ },
+ {
+  "i": 31,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.43,
+  "custo_usd": 1.9699e-05,
+  "latencia_ms": 696.62
+ },
+ {
+  "i": 32,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.63,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1133.67
+ },
+ {
+  "i": 32,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.64,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 3142.83
+ },
+ {
+  "i": 32,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.6,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1055.69
+ },
+ {
+  "i": 32,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 4114.35
+ },
+ {
+  "i": 32,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.56,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 789.54
+ },
+ {
+  "i": 32,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.66,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 773.3
+ },
+ {
+  "i": 33,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.93,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 2974.37
+ },
+ {
+  "i": 33,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.91,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 1003.15
+ },
+ {
+  "i": 33,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.9,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 987.39
+ },
+ {
+  "i": 33,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.94,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 818.35
+ },
+ {
+  "i": 33,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.89,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 659.57
+ },
+ {
+  "i": 33,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.91,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 671.04
+ },
+ {
+  "i": 34,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.52,
+  "custo_usd": 2.226e-05,
+  "latencia_ms": 3406.17
+ },
+ {
+  "i": 34,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "custo_usd": 2.226e-05,
+  "latencia_ms": 4684.3
+ },
+ {
+  "i": 34,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.55,
+  "custo_usd": 2.226e-05,
+  "latencia_ms": 1412.36
+ },
+ {
+  "i": 34,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.53,
+  "custo_usd": 1.9741e-05,
+  "latencia_ms": 2232.98
+ },
+ {
+  "i": 34,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.55,
+  "custo_usd": 1.9741e-05,
+  "latencia_ms": 3325.02
+ },
+ {
+  "i": 34,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.61,
+  "custo_usd": 1.9741e-05,
+  "latencia_ms": 5132.07
+ },
+ {
+  "i": 35,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": null,
+  "confianca": null,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 35,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1108.22
+ },
+ {
+  "i": 35,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1352.06
+ },
+ {
+  "i": 35,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 5921.27
+ },
+ {
+  "i": 35,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 1036.45
+ },
+ {
+  "i": 35,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 3261.66
+ },
+ {
+  "i": 36,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.66,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 4064.99
+ },
+ {
+  "i": 36,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.8,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1650.84
+ },
+ {
+  "i": 36,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.68,
+  "custo_usd": 2.184e-05,
+  "latencia_ms": 1340.67
+ },
+ {
+  "i": 36,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.77,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 1923.44
+ },
+ {
+  "i": 36,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.67,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 912.4
+ },
+ {
+  "i": 36,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.68,
+  "custo_usd": 1.9362e-05,
+  "latencia_ms": 729.83
+ },
+ {
+  "i": 37,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.65,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 2860.12
+ },
+ {
+  "i": 37,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.62,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 2920.14
+ },
+ {
+  "i": 37,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.65,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1727.93
+ },
+ {
+  "i": 37,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.65,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 1823.12
+ },
+ {
+  "i": 37,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.68,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 3571.27
+ },
+ {
+  "i": 37,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.63,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 787.33
+ },
+ {
+  "i": 38,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.78,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 1558.02
+ },
+ {
+  "i": 38,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.82,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 13398.58
+ },
+ {
+  "i": 38,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.8,
+  "custo_usd": 2.1714e-05,
+  "latencia_ms": 1261.09
+ },
+ {
+  "i": 38,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.79,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 3814.22
+ },
+ {
+  "i": 38,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.8,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 1427.9
+ },
+ {
+  "i": 38,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.8,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 4153.58
+ },
+ {
+  "i": 39,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.98,
+  "custo_usd": 2.2092e-05,
+  "latencia_ms": 1129.28
+ },
+ {
+  "i": 39,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.98,
+  "custo_usd": 2.2092e-05,
+  "latencia_ms": 2087.73
+ },
+ {
+  "i": 39,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 2.2092e-05,
+  "latencia_ms": 1024.85
+ },
+ {
+  "i": 39,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.98,
+  "custo_usd": 1.9614e-05,
+  "latencia_ms": 1197.46
+ },
+ {
+  "i": 39,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.9614e-05,
+  "latencia_ms": 744.86
+ },
+ {
+  "i": 39,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.9614e-05,
+  "latencia_ms": 2275.27
+ },
+ {
+  "i": 40,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.8,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 1135.4
+ },
+ {
+  "i": 40,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.8,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 2950.81
+ },
+ {
+  "i": 40,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "custo_usd": 2.2176e-05,
+  "latencia_ms": 9766.91
+ },
+ {
+  "i": 40,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.78,
+  "custo_usd": 1.9656e-05,
+  "latencia_ms": 651.39
+ },
+ {
+  "i": 40,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "custo_usd": 1.9656e-05,
+  "latencia_ms": 959.61
+ },
+ {
+  "i": 40,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.82,
+  "custo_usd": 1.9656e-05,
+  "latencia_ms": 2299.72
+ },
+ {
+  "i": 41,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1135.37
+ },
+ {
+  "i": 41,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 2317.95
+ },
+ {
+  "i": 41,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1159.69
+ },
+ {
+  "i": 41,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 904.11
+ },
+ {
+  "i": 41,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 896.34
+ },
+ {
+  "i": 41,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 877.84
+ },
+ {
+  "i": 42,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.48,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1145.99
+ },
+ {
+  "i": 42,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.46,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1121.41
+ },
+ {
+  "i": 42,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.43,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2128.11
+ },
+ {
+  "i": 42,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.44,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 799.99
+ },
+ {
+  "i": 42,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.44,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 2110.32
+ },
+ {
+  "i": 42,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.41,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 772.16
+ },
+ {
+  "i": 43,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.289e-05,
+  "latencia_ms": 2368.9
+ },
+ {
+  "i": 43,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.289e-05,
+  "latencia_ms": 1039.27
+ },
+ {
+  "i": 43,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.289e-05,
+  "latencia_ms": 1627.87
+ },
+ {
+  "i": 43,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 2.0455e-05,
+  "latencia_ms": 805.79
+ },
+ {
+  "i": 43,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 2.0455e-05,
+  "latencia_ms": 819.44
+ },
+ {
+  "i": 43,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 2.0455e-05,
+  "latencia_ms": 1098.18
+ },
+ {
+  "i": 44,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 1636.62
+ },
+ {
+  "i": 44,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 1086.77
+ },
+ {
+  "i": 44,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 2139.65
+ },
+ {
+  "i": 44,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9908e-05,
+  "latencia_ms": 822.54
+ },
+ {
+  "i": 44,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9908e-05,
+  "latencia_ms": 1603.38
+ },
+ {
+  "i": 44,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 1,
+  "custo_usd": 1.9908e-05,
+  "latencia_ms": 776.49
+ },
+ {
+  "i": 45,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1871.3
+ },
+ {
+  "i": 45,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 1059.76
+ },
+ {
+  "i": 45,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1588e-05,
+  "latencia_ms": 3507.71
+ },
+ {
+  "i": 45,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9069e-05,
+  "latencia_ms": 2444.61
+ },
+ {
+  "i": 45,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9069e-05,
+  "latencia_ms": 1615.84
+ },
+ {
+  "i": 45,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9069e-05,
+  "latencia_ms": 800.59
+ },
+ {
+  "i": 46,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.59,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1346.36
+ },
+ {
+  "i": 46,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.61,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 10030.14
+ },
+ {
+  "i": 46,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": null,
+  "confianca": null,
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "i": 46,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.69,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 785.62
+ },
+ {
+  "i": 46,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.63,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 1618.1
+ },
+ {
+  "i": 46,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.65,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 792.74
+ },
+ {
+  "i": 47,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.163e-05,
+  "latencia_ms": 1366.9
+ },
+ {
+  "i": 47,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.163e-05,
+  "latencia_ms": 6860.62
+ },
+ {
+  "i": 47,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 1.0,
+  "custo_usd": 2.163e-05,
+  "latencia_ms": 1112.26
+ },
+ {
+  "i": 47,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 2202.57
+ },
+ {
+  "i": 47,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 1,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 829.2
+ },
+ {
+  "i": 47,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.99,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 818.01
+ },
+ {
+  "i": 48,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1085.34
+ },
+ {
+  "i": 48,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1648.57
+ },
+ {
+  "i": 48,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1672e-05,
+  "latencia_ms": 1349.15
+ },
+ {
+  "i": 48,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 6968.38
+ },
+ {
+  "i": 48,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 2460.34
+ },
+ {
+  "i": 48,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9152e-05,
+  "latencia_ms": 1123.76
+ },
+ {
+  "i": 49,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.247e-05,
+  "latencia_ms": 1120.03
+ },
+ {
+  "i": 49,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.247e-05,
+  "latencia_ms": 1917.3
+ },
+ {
+  "i": 49,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.247e-05,
+  "latencia_ms": 2182.14
+ },
+ {
+  "i": 49,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9951e-05,
+  "latencia_ms": 2570.57
+ },
+ {
+  "i": 49,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9951e-05,
+  "latencia_ms": 712.9
+ },
+ {
+  "i": 49,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9951e-05,
+  "latencia_ms": 910.67
+ },
+ {
+  "i": 50,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 2663.2
+ },
+ {
+  "i": 50,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 1077.67
+ },
+ {
+  "i": 50,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.2386e-05,
+  "latencia_ms": 5866.89
+ },
+ {
+  "i": 50,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9866e-05,
+  "latencia_ms": 1309.51
+ },
+ {
+  "i": 50,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9866e-05,
+  "latencia_ms": 3513.8
+ },
+ {
+  "i": 50,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.9866e-05,
+  "latencia_ms": 1556.46
+ },
+ {
+  "i": 51,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1794.74
+ },
+ {
+  "i": 51,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1061.57
+ },
+ {
+  "i": 51,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1462e-05,
+  "latencia_ms": 1041.89
+ },
+ {
+  "i": 51,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 3141.51
+ },
+ {
+  "i": 51,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 757.1
+ },
+ {
+  "i": 51,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 1,
+  "custo_usd": 1.9027e-05,
+  "latencia_ms": 3612.04
+ },
+ {
+  "i": 52,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1870.84
+ },
+ {
+  "i": 52,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1025.11
+ },
+ {
+  "i": 52,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1073.19
+ },
+ {
+  "i": 52,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 13540.56
+ },
+ {
+  "i": 52,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 3383.31
+ },
+ {
+  "i": 52,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 933.92
+ },
+ {
+  "i": 53,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.91,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 1021.6
+ },
+ {
+  "i": 53,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.87,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 1061.96
+ },
+ {
+  "i": 53,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.92,
+  "custo_usd": 2.1756e-05,
+  "latencia_ms": 1018.13
+ },
+ {
+  "i": 53,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.9,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 2814.66
+ },
+ {
+  "i": 53,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.9,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 3773.7
+ },
+ {
+  "i": 53,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.9,
+  "custo_usd": 1.9237e-05,
+  "latencia_ms": 658.25
+ },
+ {
+  "i": 54,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1103.79
+ },
+ {
+  "i": 54,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1809.34
+ },
+ {
+  "i": 54,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1084e-05,
+  "latencia_ms": 1023.26
+ },
+ {
+  "i": 54,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 995.37
+ },
+ {
+  "i": 54,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 2757.03
+ },
+ {
+  "i": 54,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8565e-05,
+  "latencia_ms": 988.61
+ },
+ {
+  "i": 55,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.81,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 4967.23
+ },
+ {
+  "i": 55,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.79,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 983.55
+ },
+ {
+  "i": 55,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.86,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 3722.97
+ },
+ {
+  "i": 55,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.83,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 711.06
+ },
+ {
+  "i": 55,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.82,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 755.36
+ },
+ {
+  "i": 55,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.82,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 1737.03
+ },
+ {
+  "i": 56,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.47,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1239.81
+ },
+ {
+  "i": 56,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.56,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 991.28
+ },
+ {
+  "i": 56,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.67,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 988.98
+ },
+ {
+  "i": 56,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.59,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 752.66
+ },
+ {
+  "i": 56,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.58,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 752.94
+ },
+ {
+  "i": 56,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.61,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 1488.08
+ },
+ {
+  "i": 57,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.37,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 959.93
+ },
+ {
+  "i": 57,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.34,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 3540.05
+ },
+ {
+  "i": 57,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.36,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 3081.63
+ },
+ {
+  "i": 57,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.33,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 694.08
+ },
+ {
+  "i": 57,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.29,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 1386.01
+ },
+ {
+  "i": 57,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.33,
+  "custo_usd": 1.8775e-05,
+  "latencia_ms": 650.27
+ },
+ {
+  "i": 58,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 1835.96
+ },
+ {
+  "i": 58,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.8,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 1152.92
+ },
+ {
+  "i": 58,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.78,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 962.31
+ },
+ {
+  "i": 58,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.75,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 1758.97
+ },
+ {
+  "i": 58,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.76,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 723.59
+ },
+ {
+  "i": 58,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.74,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 754.69
+ },
+ {
+  "i": 59,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.78,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 2839.15
+ },
+ {
+  "i": 59,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.74,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1038.8
+ },
+ {
+  "i": 59,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.79,
+  "custo_usd": 2.142e-05,
+  "latencia_ms": 1308.12
+ },
+ {
+  "i": 59,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.77,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 854.62
+ },
+ {
+  "i": 59,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.78,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 1114.31
+ },
+ {
+  "i": 59,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.77,
+  "custo_usd": 1.8984e-05,
+  "latencia_ms": 7096.11
+ },
+ {
+  "i": 60,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.4,
+  "custo_usd": 2.1294e-05,
+  "latencia_ms": 1041.44
+ },
+ {
+  "i": 60,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.37,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1509.63
+ },
+ {
+  "i": 60,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.41,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 4006.02
+ },
+ {
+  "i": 60,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.47,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 1746.39
+ },
+ {
+  "i": 60,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.41,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 988.85
+ },
+ {
+  "i": 60,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.47,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 1484.61
+ },
+ {
+  "i": 61,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2037.84
+ },
+ {
+  "i": 61,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 995.71
+ },
+ {
+  "i": 61,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1049.0
+ },
+ {
+  "i": 61,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 2504.84
+ },
+ {
+  "i": 61,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 770.25
+ },
+ {
+  "i": 61,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 1233.13
+ },
+ {
+  "i": 62,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 3177.68
+ },
+ {
+  "i": 62,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 974.09
+ },
+ {
+  "i": 62,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 990.21
+ },
+ {
+  "i": 62,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 757.06
+ },
+ {
+  "i": 62,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 1707.0
+ },
+ {
+  "i": 62,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 961.03
+ },
+ {
+  "i": 63,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2173.32
+ },
+ {
+  "i": 63,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 3394.86
+ },
+ {
+  "i": 63,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 3630.83
+ },
+ {
+  "i": 63,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 680.73
+ },
+ {
+  "i": 63,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 722.74
+ },
+ {
+  "i": 63,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.99,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 956.33
+ },
+ {
+  "i": 64,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.38,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 2423.9
+ },
+ {
+  "i": 64,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.42,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1066.22
+ },
+ {
+  "i": 64,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.43,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1051.78
+ },
+ {
+  "i": 64,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.38,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 600.73
+ },
+ {
+  "i": 64,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.45,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 2248.4
+ },
+ {
+  "i": 64,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.4,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 704.98
+ },
+ {
+  "i": 65,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1846.62
+ },
+ {
+  "i": 65,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.52,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 9451.12
+ },
+ {
+  "i": 65,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.53,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 3302.3
+ },
+ {
+  "i": 65,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "agendar",
+  "confianca": 0.45,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 1134.32
+ },
+ {
+  "i": 65,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.54,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 1900.49
+ },
+ {
+  "i": 65,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.47,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 720.67
+ },
+ {
+  "i": 66,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.61,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1162.08
+ },
+ {
+  "i": 66,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.69,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 2675.02
+ },
+ {
+  "i": 66,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.67,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1959.8
+ },
+ {
+  "i": 66,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.6,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 4039.67
+ },
+ {
+  "i": 66,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.61,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 2029.39
+ },
+ {
+  "i": 66,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.59,
+  "custo_usd": 1.8817e-05,
+  "latencia_ms": 1047.25
+ },
+ {
+  "i": 67,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.74,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1009.97
+ },
+ {
+  "i": 67,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.74,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1011.4
+ },
+ {
+  "i": 67,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.76,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 3195.35
+ },
+ {
+  "i": 67,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.77,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 707.89
+ },
+ {
+  "i": 67,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.71,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 708.76
+ },
+ {
+  "i": 67,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.71,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 712.34
+ },
+ {
+  "i": 68,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.79,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1135.42
+ },
+ {
+  "i": 68,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.78,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 3449.23
+ },
+ {
+  "i": 68,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.86,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1068.88
+ },
+ {
+  "i": 68,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.79,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 1335.1
+ },
+ {
+  "i": 68,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.89,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 613.03
+ },
+ {
+  "i": 68,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.83,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 678.82
+ },
+ {
+  "i": 69,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.43,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 956.13
+ },
+ {
+  "i": 69,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "agendar",
+  "confianca": 0.42,
+  "custo_usd": 2.121e-05,
+  "latencia_ms": 2183.02
+ },
+ {
+  "i": 69,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.42,
+  "custo_usd": 2.1252e-05,
+  "latencia_ms": 1473.12
+ },
+ {
+  "i": 69,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.39,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 726.01
+ },
+ {
+  "i": 69,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.39,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 724.47
+ },
+ {
+  "i": 69,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "agendar",
+  "confianca": 0.42,
+  "custo_usd": 1.8732e-05,
+  "latencia_ms": 2168.25
+ },
+ {
+  "i": 70,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 4870.61
+ },
+ {
+  "i": 70,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 2614.56
+ },
+ {
+  "i": 70,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 956.25
+ },
+ {
+  "i": 70,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 2802.25
+ },
+ {
+  "i": 70,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 1674.15
+ },
+ {
+  "i": 70,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8607e-05,
+  "latencia_ms": 741.55
+ },
+ {
+  "i": 71,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 2995.57
+ },
+ {
+  "i": 71,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 2486.98
+ },
+ {
+  "i": 71,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1.0,
+  "custo_usd": 2.1042e-05,
+  "latencia_ms": 1776.41
+ },
+ {
+  "i": 71,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 673.96
+ },
+ {
+  "i": 71,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 650.92
+ },
+ {
+  "i": 71,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 1,
+  "custo_usd": 1.8522e-05,
+  "latencia_ms": 4468.16
+ },
+ {
+  "i": 72,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.97,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 2592.66
+ },
+ {
+  "i": 72,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.96,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1861.51
+ },
+ {
+  "i": 72,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.96,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 2825.84
+ },
+ {
+  "i": 72,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "documento",
+  "confianca": 0.96,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 714.6
+ },
+ {
+  "i": 72,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.98,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 2666.31
+ },
+ {
+  "i": 72,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "documento",
+  "confianca": 0.94,
+  "custo_usd": 1.89e-05,
+  "latencia_ms": 4216.15
+ },
+ {
+  "i": 73,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.87,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 981.75
+ },
+ {
+  "i": 73,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.88,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1245.28
+ },
+ {
+  "i": 73,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.92,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 2954.2
+ },
+ {
+  "i": 73,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.88,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 5294.59
+ },
+ {
+  "i": 73,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.91,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 801.92
+ },
+ {
+  "i": 73,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.89,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 724.73
+ },
+ {
+  "i": 74,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.62,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 953.94
+ },
+ {
+  "i": 74,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.61,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 971.51
+ },
+ {
+  "i": 74,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.63,
+  "custo_usd": 2.1168e-05,
+  "latencia_ms": 1002.24
+ },
+ {
+  "i": 74,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "remarcar",
+  "confianca": 0.56,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 767.83
+ },
+ {
+  "i": 74,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "remarcar",
+  "confianca": 0.6,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 805.34
+ },
+ {
+  "i": 74,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "remarcar",
+  "confianca": 0.59,
+  "custo_usd": 1.8648e-05,
+  "latencia_ms": 3535.57
+ },
+ {
+  "i": 75,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.78,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1774.13
+ },
+ {
+  "i": 75,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.75,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 3500.03
+ },
+ {
+  "i": 75,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.74,
+  "custo_usd": 2.1126e-05,
+  "latencia_ms": 1003.75
+ },
+ {
+  "i": 75,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "resultado",
+  "confianca": 0.75,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 757.08
+ },
+ {
+  "i": 75,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "resultado",
+  "confianca": 0.71,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 718.01
+ },
+ {
+  "i": 75,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "resultado",
+  "confianca": 0.76,
+  "custo_usd": 1.869e-05,
+  "latencia_ms": 706.27
+ },
+ {
+  "i": 76,
+  "provedor": "typesafe",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.46,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 979.58
+ },
+ {
+  "i": 76,
+  "provedor": "typesafe",
+  "repeticao": 1,
+  "escolha": "documento",
+  "confianca": 0.41,
+  "custo_usd": 2.1336e-05,
+  "latencia_ms": 1892.17
+ },
+ {
+  "i": 76,
+  "provedor": "typesafe",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.5,
+  "custo_usd": 2.1378e-05,
+  "latencia_ms": 1222.38
+ },
+ {
+  "i": 76,
+  "provedor": "openrouter",
+  "repeticao": 0,
+  "escolha": "informacao",
+  "confianca": 0.38,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 1019.38
+ },
+ {
+  "i": 76,
+  "provedor": "openrouter",
+  "repeticao": 1,
+  "escolha": "informacao",
+  "confianca": 0.4,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 1066.93
+ },
+ {
+  "i": 76,
+  "provedor": "openrouter",
+  "repeticao": 2,
+  "escolha": "informacao",
+  "confianca": 0.5,
+  "custo_usd": 1.8859e-05,
+  "latencia_ms": 634.36
+ }
+]

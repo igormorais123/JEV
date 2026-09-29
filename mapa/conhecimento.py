@@ -26,6 +26,7 @@ TIPOS = {
     'Q': ('pergunta', 'mapa/conhecimento/perguntas.md'),
     'S': ('sistema', 'mapa/conhecimento/sistemas.md'),
     'V': ('revisão', 'mapa/conhecimento/revisoes.md'),
+    'T': ('tema', 'mapa/conhecimento/temas.md'),  # criados por semelhanca.py, não lidos de fonte
 }
 
 # E13 e E14 não têm executor próprio: moram em pastas inteiras.
@@ -358,4 +359,4 @@ def extrair(nos: dict, textos: dict) -> dict:
 
 def ordem(cid: str):
     m = re.match(r'([A-Z])(\d+)(b?)', cid)
-    return ('ERHQSV'.index(m.group(1)) if m.group(1) in 'ERHQSV' else 9, int(m.group(2)), m.group(3))
+    return ('TERHQSV'.index(m.group(1)) if m.group(1) in 'TERHQSV' else 9, int(m.group(2)), m.group(3))

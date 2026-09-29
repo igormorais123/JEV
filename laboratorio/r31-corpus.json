@@ -1,0 +1,555 @@
+{
+ "gerador": "mistralai/mistral-nemo",
+ "moldes": [
+  [
+   "pedido-direto",
+   "{classe}",
+   "Escreva uma mensagem curta de um morador para a administradora do condominio pedindo claramente para {acao}. Sem saudacao longa."
+  ],
+  [
+   "terceiro-quer",
+   "informacao",
+   "Escreva uma mensagem curta de um morador para a administradora em que OUTRA PESSOA (vizinho, inquilino, a mae dele) quer {acao}, e quem escreve apenas pergunta como isso funciona, sem pedir nada para si."
+  ],
+  [
+   "terceiro-contra-eu-quero",
+   "{classe}",
+   "Escreva uma mensagem curta de um morador para a administradora em que OUTRA PESSOA aconselha a NAO fazer nada, mas quem escreve decide assim mesmo e pede para {acao}."
+  ],
+  [
+   "sem-pedido",
+   "informacao",
+   "Escreva uma mensagem curta de um morador para a administradora apenas contando que viu um aviso sobre {acao}, sem pedir nada e sem fazer pergunta nenhuma."
+  ]
+ ],
+ "casos": [
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Por favor, reserve o salão de festas para sábado. Agradeço antecipadamente."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Prezada, preciso da segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Preciso agendar a mudança para meu novo apartamento. Poderia nos ajudar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "“Preciso reservar o salão de festas para sábado. Obs: Serão cerca de 30 convidados.”"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Preciso de uma segunda via do boleto do condomínio. Pode providenciar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Peço conserto urgente do vazamento na garagem."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Preciso agendar mudança para meu apartamento, por favor me ajude a fazer isso."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Gostaria de reservar o salão de festas para sábado. Pode confirmar a disponibilidade?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Preciso de uma segunda via do boleto do condomínio, é possível? Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Peço conserto urgentemente do vazamento na garagem. Desde ontem jáინის formada poça e ainda aumento."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Preciso agendar mudança para meu apartamento. Por favor, marque uma data conveniente."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Por favor, reserve o salão de festas para o próximo sábado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Preciso da segunda via do boleto do condomínio, por favor."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Preciso comunicar um vazamento na garagem. Peço providências para conserto."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada senhora, gostaria de agendar a mudança para meu novo apartamento. Poderia fornecer algumas datas disponíveis?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Gostaria de reservar o salão de festas no próximo sábado. Por gentileza, pode confirmar a disponibilidade?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Por favor, posso receber a segunda via do boleto do condomínio? obrigado"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Preciso solicitar conserto de vazamento na garagem. Pode providenciar?"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada administradora, solicito agendamento da minha mudança para o apartamento.ур"
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Prezada, gostaria de reservar o salão de festas para sábado. Favor confirmar se estiver disponível. Grato."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Preciso da segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Peço o conserto do vazamento na garagem. Obrigado."
+  },
+  {
+   "molde": "pedido-direto",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Quellenoughty request to schedule my move to the apartment."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Caro administrador, sou vizinho de Pedro. Gostaria de saber como reservar o salão de festas para sábado. Obrigado pela informação."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, meu vizinho está com um vazamento na garagem e gostaria de saber o processo para solicitá-lo. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Oi, adm. Meu vizinho quer agendar mudança pro apto. Como funciona esse processo? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Preciso de informações sobre como reservar o salão de festas para outra pessoa no próximo sábado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Como posso ajudar outro morador a solicitar a segunda via do boleto do condomínio?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, meu vizinho está com um vazamento na garagem e gostaria de saber como proceder para solicitar o conserto. Obrigado pela atenção."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Prezado Helicourt, meu vizinho inquilino do apartamento 302 está interessado em mudar de imóvel e pediu-me para entrar em contato sobre o processo. Gostaria de saber como funciona para informá-lo. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Prezado(a) Administrador(a), meu vizinho gostaria de saber como reservar o salão de festas para o sábado. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Prezados, moro no prédio e gostaria de saber como pedir segunda via do boleto do condomínio para outra pessoa. Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, meu vizinho está tendo problemas com um vazamento na garagem. Ele não sabe como fazer o pedido de conserto. Poderia me-orientar sobre o processo? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Prezado(a), sou vizinho do inquilino do Ap 15. Sua mãe gostaria de saber como agendar uma mudança. Poderia me informar o processo, por favor? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Prezada Administradora, boa tarde. Pergunto apenas por curiosidade: como funciona o processo para outra pessoa reservar o salão de festas para este sábado? Obrigado pela atenção. deseja saber para outra pessoa."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Olá, minha mãe perdeu o boleto do condomínio e quer saber como pedir uma segunda via. Poderia me orientar sobre o procedimento, por favor?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, minha mãe gostaria de saber como pode solicitar conserto de vazamento na garagem. Atenciosamente, [Seu nome]."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Olá, boa tarde. Outra pessoa gostaria de agendar uma mudança para meuzimmer. Poderia me informar como funciona o processo?"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Prezados, Moro no prédio e outra pessoa quer reservar o salão de festas no sábado. Como posso ajudá-la a fazer isso? Agradeço pela informação."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Prezada administradora, uma pessoa interessada em solicitar a segunda via do boleto do condomínio entrou em contato comigo. Ela gostaria de entender o processo envolvido. Seria possível fornecer mais informações sobre isso? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Boa tarde, mora ao meu lado há meses e reparei em um vazamento na garagem. Era para 일어났다 question, não para mim, por favor. Como procedo para informar à administradora? Obrigado."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Querida administradora, Outra pessoa (meu vizinho) gostaria de agendar uma mudança para o apartamento. Poderia explicar como fazer isso? Atenciosoamente,"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Prezados, monet minha mae gostaria de agendar o salão de festas para sáb"
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Olá, posso pedir uma segunda via do boleto do condomínio para meu vizinho? Não sei como fazê-lo."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Olá, moradores! Gostaria de saber como posso solicitar reparos para um vazamento na garagem de um vizinho. Obrigado pela atenção."
+  },
+  {
+   "molde": "terceiro-quer",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Caro(a) administrador(a), meu vizinho/inquilino/ 기억 어머니 quer agendar uma mudança para o apartamento dele. Poderia me informar como funciona? Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Prezada administradora, passei por outra pessoa que aconselhou não fazer nada, mas eu decidi pedir a segunda via do boleto do condomínio. Grato pela ajuda."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Por favor, agende minha mudança. Ciente do conselho de outro morador, decidi prosseguir."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Prezada administradora, entendi o conselho de não fazer nada, mas meus encargos estão precisando da segunda via do boleto. Por favor, pode me enviar? Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Prezada(o) Administradora(o), amigo(a) me aconselhou a não incomodar, mas ∈ tenho um vazamento na garagem. Por favor, peço o conserto."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada administradora, réplicada pessoa sugere esperar mas decidi mudar. Por favor, agende mudança para o meu apartamento. Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Prezada administradora, meu amigo aconselha à não fazer nada, mas eu decidi prosseguir com minha festa de aniversário. Por favor, reserve o salão de festas para sábado. Agradeço desde já."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Prezada administradora, meu vizinho me aconselhou a não fazer nada, mas eu decido pedir a segunda via do boleto do condomínio. Poderia providenciar, por favor?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, meu vizinho aconselhou não fazer nada sobre o vazamento na garagem, mas decidi pedir o conserto. Por favor, providencie a reparação."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada administradora, gostaria de agendar minha mudança para o apartamento. japanischen aconselharam a não fazer nada, mas decidi seguir em frente. Por favor, marque uma data conveniente para mim. Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Prezada administradora, outro morador sugeriu que não fizéssemos nada, mas decidi reservar o salão de festas para sábado. Por favor, reserve para mim. Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Não posso concordar com outra pessoa que diz para não fazer nada. eu estou decidido a pedir a segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Prezada administradora, Apesar do aconselhamento contrário de outra pessoa, eu decidi pedir parabaikar o vazamento na garagem, por favor,Poderia providenciar o reparo imediatamente? Obrigado."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada administradora, em pesar do conselho de outra pessoa, desejo agendar a mudança para o novo apartamento. Por favor, faça os procedimentos necessários para viabilizar meu pedido. Grato pela atenção."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "reservar",
+   "classe": "reservar",
+   "texto": "Caros síndicos, Apesar das recomendações de alguém, decidi agendar o salão de festas para este sábado. Poderiam me ajudar com a reserva? Agradeço pela atenção."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Apesar do conselho contrário, gostaria de agendar minha mudança para o novo apartamento. Poderia me ajudar?"
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "boleto",
+   "classe": "boleto",
+   "texto": "Prezada administradora, meu colaborador recomendou que eu não fizesse nada, mas decidi solicitar a segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "manutencao",
+   "classe": "manutencao",
+   "texto": "Prezado(a) Administrador(a), meu vizinho aconselha não fazer nada, mas decidi pedir o conserto do vazamento na garagem o mais breve possível. Por favor, providencie."
+  },
+  {
+   "molde": "terceiro-contra-eu-quero",
+   "gold": "mudanca",
+   "classe": "mudanca",
+   "texto": "Prezada administradora, meu vizinho sugeriu que eu não mudasse de apartamento, mas eu já tomei minha decisão. Gostaria de agendar a mudança para o próximo mês, se possível. Aguardo seu contato. Obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Avistei aviso reservando salão de festas para sábado, informo apenas."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "V percutaneous vendo aviso para pedidos da 2 via do boleto do condominio."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "V tetapii aviso sobre conserto do vazamento na garagem."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Vi o aviso sobre agendar mudança para o apartamento."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Vi aviso sobre reservar salão de festas para sábado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Vi o aviso sobre a segunda via do boleto."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Vi aviso para solicitar conserto de vazamento na garagem."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Vi aviso sobre agendar mudança para meu apartamento."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Vi aviso sobre reservar salão de festas para sábado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Vi aviso sobre segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Vi aviso sobre vazamento na garagem."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Vi aviso para agendar mudança, entrarei em contato."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Vi aviso para reservar salão de festas no sábado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Vi aviso sobre segunda via do boleto do condomínio. Obrigado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Vi aviso sobre vazar na garagem, solicite conserto na administracao."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "V глубоко переживает я хочу быть с вами; я не упомню ничего, я пишу месье монverde. сложно pelo menos me dar a chance de explicar"
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Vi aviso de que salao de festas esta reservado para sabado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Viu aviso sobre segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Viu aviso sobre vazamento na garagem, solicitando conserto."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Vi aviso sobre agendar mudança para meu apartamento."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "reservar",
+   "texto": "Vi aviso sobre reserva do salão de festas para sábado."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "boleto",
+   "texto": "Vi o aviso sobre a segunda via do boleto do condomínio."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "manutencao",
+   "texto": "Vi aviso sobre vazamento na garagem."
+  },
+  {
+   "molde": "sem-pedido",
+   "gold": "informacao",
+   "classe": "mudanca",
+   "texto": "Avisei da necessidade de agendar a mudança para o meu novo apartamento."
+  }
+ ]
+}

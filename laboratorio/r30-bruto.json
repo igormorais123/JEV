@@ -1,0 +1,2354 @@
+[
+ {
+  "id": "H007",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H007",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.95
+ },
+ {
+  "id": "H007",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H007",
+  "chave": "R1",
+  "classe": "relacionado",
+  "confianca": 0.4
+ },
+ {
+  "id": "H007",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.5
+ },
+ {
+  "id": "H007",
+  "chave": "R26",
+  "classe": "relacionado",
+  "confianca": 0.33
+ },
+ {
+  "id": "H007",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.35
+ },
+ {
+  "id": "H007",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.71
+ },
+ {
+  "id": "H008",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.6
+ },
+ {
+  "id": "H008",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.55
+ },
+ {
+  "id": "H008",
+  "chave": "R7",
+  "classe": "outro-assunto",
+  "confianca": 0.46
+ },
+ {
+  "id": "H008",
+  "chave": "R17",
+  "classe": "outro-assunto",
+  "confianca": 0.56
+ },
+ {
+  "id": "H008",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.55
+ },
+ {
+  "id": "H008",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.84
+ },
+ {
+  "id": "H008",
+  "chave": "R18",
+  "classe": "outro-assunto",
+  "confianca": 0.66
+ },
+ {
+  "id": "H008",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.62
+ },
+ {
+  "id": "H009",
+  "chave": "R21",
+  "classe": "relacionado",
+  "confianca": 0.27
+ },
+ {
+  "id": "H009",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.66
+ },
+ {
+  "id": "H009",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.46
+ },
+ {
+  "id": "H009",
+  "chave": "R22",
+  "classe": "outro-assunto",
+  "confianca": 0.36
+ },
+ {
+  "id": "H009",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.85
+ },
+ {
+  "id": "H009",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.53
+ },
+ {
+  "id": "H009",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.72
+ },
+ {
+  "id": "H009",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.33
+ },
+ {
+  "id": "H010",
+  "chave": "R19",
+  "classe": "outro-assunto",
+  "confianca": 0.67
+ },
+ {
+  "id": "H010",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.89
+ },
+ {
+  "id": "H010",
+  "chave": "R22",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H010",
+  "chave": "R21b",
+  "classe": "outro-assunto",
+  "confianca": 0.42
+ },
+ {
+  "id": "H010",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.56
+ },
+ {
+  "id": "H010",
+  "chave": "R9",
+  "classe": "outro-assunto",
+  "confianca": 0.49
+ },
+ {
+  "id": "H010",
+  "chave": "R8",
+  "classe": "outro-assunto",
+  "confianca": 0.34
+ },
+ {
+  "id": "H010",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.89
+ },
+ {
+  "id": "H018",
+  "chave": "R18",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H018",
+  "chave": "R16b",
+  "classe": "outro-assunto",
+  "confianca": 0.4
+ },
+ {
+  "id": "H018",
+  "chave": "R12",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H018",
+  "chave": "R21",
+  "classe": "outro-assunto",
+  "confianca": 0.32
+ },
+ {
+  "id": "H018",
+  "chave": "R5",
+  "classe": "relacionado",
+  "confianca": 0.89
+ },
+ {
+  "id": "H018",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.66
+ },
+ {
+  "id": "H018",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H018",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.71
+ },
+ {
+  "id": "H020",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.88
+ },
+ {
+  "id": "H020",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.79
+ },
+ {
+  "id": "H020",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.62
+ },
+ {
+  "id": "H020",
+  "chave": "R23",
+  "classe": "outro-assunto",
+  "confianca": 0.62
+ },
+ {
+  "id": "H020",
+  "chave": "R20",
+  "classe": "outro-assunto",
+  "confianca": 0.36
+ },
+ {
+  "id": "H020",
+  "chave": "R9",
+  "classe": "relacionado",
+  "confianca": 0.6
+ },
+ {
+  "id": "H020",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.37
+ },
+ {
+  "id": "H020",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.25
+ },
+ {
+  "id": "H023",
+  "chave": "R18",
+  "classe": "outro-assunto",
+  "confianca": 0.64
+ },
+ {
+  "id": "H023",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.43
+ },
+ {
+  "id": "H023",
+  "chave": "R0",
+  "classe": "testa",
+  "confianca": 0.78
+ },
+ {
+  "id": "H023",
+  "chave": "R7",
+  "classe": "outro-assunto",
+  "confianca": 0.66
+ },
+ {
+  "id": "H023",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.73
+ },
+ {
+  "id": "H023",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.31
+ },
+ {
+  "id": "H023",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H023",
+  "chave": "R0b",
+  "classe": "testa",
+  "confianca": 0.74
+ },
+ {
+  "id": "H024",
+  "chave": "R18",
+  "classe": "relacionado",
+  "confianca": 0.38
+ },
+ {
+  "id": "H024",
+  "chave": "R5",
+  "classe": "relacionado",
+  "confianca": 0.52
+ },
+ {
+  "id": "H024",
+  "chave": "R15b",
+  "classe": "relacionado",
+  "confianca": 0.25
+ },
+ {
+  "id": "H024",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.45
+ },
+ {
+  "id": "H024",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.64
+ },
+ {
+  "id": "H024",
+  "chave": "R0",
+  "classe": "testa",
+  "confianca": 0.64
+ },
+ {
+  "id": "H024",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.66
+ },
+ {
+  "id": "H024",
+  "chave": "R21",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H043",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.23
+ },
+ {
+  "id": "H043",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.23
+ },
+ {
+  "id": "H043",
+  "chave": "R16",
+  "classe": "outro-assunto",
+  "confianca": 0.82
+ },
+ {
+  "id": "H043",
+  "chave": "R16b",
+  "classe": "outro-assunto",
+  "confianca": 0.83
+ },
+ {
+  "id": "H043",
+  "chave": "R22",
+  "classe": "outro-assunto",
+  "confianca": 0.45
+ },
+ {
+  "id": "H043",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.86
+ },
+ {
+  "id": "H043",
+  "chave": "R10",
+  "classe": "outro-assunto",
+  "confianca": 0.76
+ },
+ {
+  "id": "H043",
+  "chave": "R15",
+  "classe": "outro-assunto",
+  "confianca": 0.86
+ },
+ {
+  "id": "H049",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.95
+ },
+ {
+  "id": "H049",
+  "chave": "R26",
+  "classe": "testa",
+  "confianca": 0.92
+ },
+ {
+  "id": "H049",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.43
+ },
+ {
+  "id": "H049",
+  "chave": "R6",
+  "classe": "relacionado",
+  "confianca": 0.66
+ },
+ {
+  "id": "H049",
+  "chave": "R13",
+  "classe": "outro-assunto",
+  "confianca": 0.29
+ },
+ {
+  "id": "H049",
+  "chave": "R20",
+  "classe": null,
+  "confianca": null
+ },
+ {
+  "id": "H049",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.45
+ },
+ {
+  "id": "H049",
+  "chave": "R10",
+  "classe": "relacionado",
+  "confianca": 0.34
+ },
+ {
+  "id": "H050",
+  "chave": "R27",
+  "classe": "testa",
+  "confianca": 0.25
+ },
+ {
+  "id": "H050",
+  "chave": "R25",
+  "classe": "outro-assunto",
+  "confianca": 0.32
+ },
+ {
+  "id": "H050",
+  "chave": "R1",
+  "classe": "relacionado",
+  "confianca": 0.42
+ },
+ {
+  "id": "H050",
+  "chave": "R9",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H050",
+  "chave": "R20",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H050",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.32
+ },
+ {
+  "id": "H050",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.59
+ },
+ {
+  "id": "H050",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.89
+ },
+ {
+  "id": "H051",
+  "chave": "R20",
+  "classe": "testa",
+  "confianca": 0.97
+ },
+ {
+  "id": "H051",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.64
+ },
+ {
+  "id": "H051",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.3
+ },
+ {
+  "id": "H051",
+  "chave": "R10",
+  "classe": "relacionado",
+  "confianca": 0.58
+ },
+ {
+  "id": "H051",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.68
+ },
+ {
+  "id": "H051",
+  "chave": "R23",
+  "classe": "relacionado",
+  "confianca": 0.4
+ },
+ {
+  "id": "H051",
+  "chave": "R27",
+  "classe": "relacionado",
+  "confianca": 0.36
+ },
+ {
+  "id": "H051",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.94
+ },
+ {
+  "id": "H052",
+  "chave": "R13",
+  "classe": "outro-assunto",
+  "confianca": 0.89
+ },
+ {
+  "id": "H052",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.47
+ },
+ {
+  "id": "H052",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H052",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.54
+ },
+ {
+  "id": "H052",
+  "chave": "R17",
+  "classe": "testa",
+  "confianca": 0.96
+ },
+ {
+  "id": "H052",
+  "chave": "R5",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H052",
+  "chave": "R15",
+  "classe": "outro-assunto",
+  "confianca": 0.58
+ },
+ {
+  "id": "H052",
+  "chave": "R24",
+  "classe": "outro-assunto",
+  "confianca": 0.81
+ },
+ {
+  "id": "H053",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.91
+ },
+ {
+  "id": "H053",
+  "chave": "R0",
+  "classe": "relacionado",
+  "confianca": 0.58
+ },
+ {
+  "id": "H053",
+  "chave": "R17",
+  "classe": "testa",
+  "confianca": 0.44
+ },
+ {
+  "id": "H053",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.67
+ },
+ {
+  "id": "H053",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.55
+ },
+ {
+  "id": "H053",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.4
+ },
+ {
+  "id": "H053",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.72
+ },
+ {
+  "id": "H053",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H057",
+  "chave": "R15b",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H057",
+  "chave": "R20",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H057",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.74
+ },
+ {
+  "id": "H057",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.46
+ },
+ {
+  "id": "H057",
+  "chave": "R17",
+  "classe": "testa",
+  "confianca": 0.3
+ },
+ {
+  "id": "H057",
+  "chave": "R24",
+  "classe": "outro-assunto",
+  "confianca": 0.59
+ },
+ {
+  "id": "H057",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.44
+ },
+ {
+  "id": "H057",
+  "chave": "R25",
+  "classe": null,
+  "confianca": null
+ },
+ {
+  "id": "H058",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.47
+ },
+ {
+  "id": "H058",
+  "chave": "R22",
+  "classe": "outro-assunto",
+  "confianca": 0.27
+ },
+ {
+  "id": "H058",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.55
+ },
+ {
+  "id": "H058",
+  "chave": "R17",
+  "classe": "relacionado",
+  "confianca": 0.67
+ },
+ {
+  "id": "H058",
+  "chave": "R20",
+  "classe": "testa",
+  "confianca": 0.89
+ },
+ {
+  "id": "H058",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.72
+ },
+ {
+  "id": "H058",
+  "chave": "R21",
+  "classe": "relacionado",
+  "confianca": 0.3
+ },
+ {
+  "id": "H058",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.82
+ },
+ {
+  "id": "H059",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.52
+ },
+ {
+  "id": "H059",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.54
+ },
+ {
+  "id": "H059",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H059",
+  "chave": "R14",
+  "classe": "outro-assunto",
+  "confianca": 0.51
+ },
+ {
+  "id": "H059",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H059",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.31
+ },
+ {
+  "id": "H059",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.87
+ },
+ {
+  "id": "H059",
+  "chave": "R21",
+  "classe": "relacionado",
+  "confianca": 0.38
+ },
+ {
+  "id": "H061",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H061",
+  "chave": "R0",
+  "classe": "outro-assunto",
+  "confianca": 0.61
+ },
+ {
+  "id": "H061",
+  "chave": "R15b",
+  "classe": "testa",
+  "confianca": 0.96
+ },
+ {
+  "id": "H061",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H061",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.33
+ },
+ {
+  "id": "H061",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.39
+ },
+ {
+  "id": "H061",
+  "chave": "R10",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H061",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.6
+ },
+ {
+  "id": "H062",
+  "chave": "R8",
+  "classe": "outro-assunto",
+  "confianca": 0.25
+ },
+ {
+  "id": "H062",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.89
+ },
+ {
+  "id": "H062",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.62
+ },
+ {
+  "id": "H062",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.25
+ },
+ {
+  "id": "H062",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.28
+ },
+ {
+  "id": "H062",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.33
+ },
+ {
+  "id": "H062",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.56
+ },
+ {
+  "id": "H062",
+  "chave": "R15b",
+  "classe": "testa",
+  "confianca": 0.95
+ },
+ {
+  "id": "H063",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.42
+ },
+ {
+  "id": "H063",
+  "chave": "R6",
+  "classe": "relacionado",
+  "confianca": 0.28
+ },
+ {
+  "id": "H063",
+  "chave": "R19",
+  "classe": "outro-assunto",
+  "confianca": 0.77
+ },
+ {
+  "id": "H063",
+  "chave": "R26",
+  "classe": "relacionado",
+  "confianca": 0.55
+ },
+ {
+  "id": "H063",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.39
+ },
+ {
+  "id": "H063",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.39
+ },
+ {
+  "id": "H063",
+  "chave": "R23",
+  "classe": "testa",
+  "confianca": 0.19
+ },
+ {
+  "id": "H063",
+  "chave": "R15b",
+  "classe": "testa",
+  "confianca": 0.93
+ },
+ {
+  "id": "H064",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.28
+ },
+ {
+  "id": "H064",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.44
+ },
+ {
+  "id": "H064",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.69
+ },
+ {
+  "id": "H064",
+  "chave": "R0",
+  "classe": "relacionado",
+  "confianca": 0.68
+ },
+ {
+  "id": "H064",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H064",
+  "chave": "R15b",
+  "classe": "testa",
+  "confianca": 0.9
+ },
+ {
+  "id": "H064",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.92
+ },
+ {
+  "id": "H064",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.53
+ },
+ {
+  "id": "H065",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.35
+ },
+ {
+  "id": "H065",
+  "chave": "R19",
+  "classe": "outro-assunto",
+  "confianca": 0.48
+ },
+ {
+  "id": "H065",
+  "chave": "R15",
+  "classe": "testa",
+  "confianca": 0.77
+ },
+ {
+  "id": "H065",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.64
+ },
+ {
+  "id": "H065",
+  "chave": "R21b",
+  "classe": "testa",
+  "confianca": 0.76
+ },
+ {
+  "id": "H065",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.73
+ },
+ {
+  "id": "H065",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.45
+ },
+ {
+  "id": "H065",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.91
+ },
+ {
+  "id": "H066",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.71
+ },
+ {
+  "id": "H066",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.45
+ },
+ {
+  "id": "H066",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.67
+ },
+ {
+  "id": "H066",
+  "chave": "R7",
+  "classe": "outro-assunto",
+  "confianca": 0.57
+ },
+ {
+  "id": "H066",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.69
+ },
+ {
+  "id": "H066",
+  "chave": "R14",
+  "classe": "outro-assunto",
+  "confianca": 0.33
+ },
+ {
+  "id": "H066",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.54
+ },
+ {
+  "id": "H066",
+  "chave": "R15",
+  "classe": "testa",
+  "confianca": 0.61
+ },
+ {
+  "id": "H067",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.33
+ },
+ {
+  "id": "H067",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.82
+ },
+ {
+  "id": "H067",
+  "chave": "R8",
+  "classe": null,
+  "confianca": null
+ },
+ {
+  "id": "H067",
+  "chave": "R11",
+  "classe": "outro-assunto",
+  "confianca": 0.58
+ },
+ {
+  "id": "H067",
+  "chave": "R15b",
+  "classe": "relacionado",
+  "confianca": 0.47
+ },
+ {
+  "id": "H067",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.73
+ },
+ {
+  "id": "H067",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.67
+ },
+ {
+  "id": "H067",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.31
+ },
+ {
+  "id": "H068",
+  "chave": "R9",
+  "classe": "testa",
+  "confianca": 0.3
+ },
+ {
+  "id": "H068",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.41
+ },
+ {
+  "id": "H068",
+  "chave": "R17",
+  "classe": "testa",
+  "confianca": 0.72
+ },
+ {
+  "id": "H068",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.37
+ },
+ {
+  "id": "H068",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.52
+ },
+ {
+  "id": "H068",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.47
+ },
+ {
+  "id": "H068",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.58
+ },
+ {
+  "id": "H068",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H069",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H069",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.86
+ },
+ {
+  "id": "H069",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.37
+ },
+ {
+  "id": "H069",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.27
+ },
+ {
+  "id": "H069",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.94
+ },
+ {
+  "id": "H069",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H069",
+  "chave": "R16b",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H069",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.37
+ },
+ {
+  "id": "H070",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.72
+ },
+ {
+  "id": "H070",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.93
+ },
+ {
+  "id": "H070",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H070",
+  "chave": "R25",
+  "classe": "outro-assunto",
+  "confianca": 0.5
+ },
+ {
+  "id": "H070",
+  "chave": "R16",
+  "classe": "testa",
+  "confianca": 0.57
+ },
+ {
+  "id": "H070",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.39
+ },
+ {
+  "id": "H070",
+  "chave": "R10",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H070",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.41
+ },
+ {
+  "id": "H071",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.47
+ },
+ {
+  "id": "H071",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.77
+ },
+ {
+  "id": "H071",
+  "chave": "R16b",
+  "classe": "testa",
+  "confianca": 0.92
+ },
+ {
+  "id": "H071",
+  "chave": "R0",
+  "classe": "outro-assunto",
+  "confianca": 0.71
+ },
+ {
+  "id": "H071",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.33
+ },
+ {
+  "id": "H071",
+  "chave": "R14",
+  "classe": "outro-assunto",
+  "confianca": 0.36
+ },
+ {
+  "id": "H071",
+  "chave": "R10",
+  "classe": "outro-assunto",
+  "confianca": 0.28
+ },
+ {
+  "id": "H071",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.36
+ },
+ {
+  "id": "H073",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.33
+ },
+ {
+  "id": "H073",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H073",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.25
+ },
+ {
+  "id": "H073",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.68
+ },
+ {
+  "id": "H073",
+  "chave": "R5",
+  "classe": "relacionado",
+  "confianca": 0.67
+ },
+ {
+  "id": "H073",
+  "chave": "R8",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H073",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.67
+ },
+ {
+  "id": "H073",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.23
+ },
+ {
+  "id": "H074",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H074",
+  "chave": "R12",
+  "classe": "relacionado",
+  "confianca": 0.35
+ },
+ {
+  "id": "H074",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.19
+ },
+ {
+  "id": "H074",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.43
+ },
+ {
+  "id": "H074",
+  "chave": "R23",
+  "classe": "outro-assunto",
+  "confianca": 0.48
+ },
+ {
+  "id": "H074",
+  "chave": "R8",
+  "classe": "testa",
+  "confianca": 0.71
+ },
+ {
+  "id": "H074",
+  "chave": "R6",
+  "classe": "relacionado",
+  "confianca": 0.36
+ },
+ {
+  "id": "H074",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.3
+ },
+ {
+  "id": "H075",
+  "chave": "R14",
+  "classe": "relacionado",
+  "confianca": 0.41
+ },
+ {
+  "id": "H075",
+  "chave": "R18",
+  "classe": "outro-assunto",
+  "confianca": 0.82
+ },
+ {
+  "id": "H075",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H075",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.73
+ },
+ {
+  "id": "H075",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.45
+ },
+ {
+  "id": "H075",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.38
+ },
+ {
+  "id": "H075",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.38
+ },
+ {
+  "id": "H075",
+  "chave": "R8",
+  "classe": "testa",
+  "confianca": 0.74
+ },
+ {
+  "id": "H076",
+  "chave": "R1",
+  "classe": "relacionado",
+  "confianca": 0.41
+ },
+ {
+  "id": "H076",
+  "chave": "R0",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H076",
+  "chave": "R8",
+  "classe": "testa",
+  "confianca": 0.61
+ },
+ {
+  "id": "H076",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H076",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.53
+ },
+ {
+  "id": "H076",
+  "chave": "R9",
+  "classe": "outro-assunto",
+  "confianca": 0.45
+ },
+ {
+  "id": "H076",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.38
+ },
+ {
+  "id": "H076",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.51
+ },
+ {
+  "id": "H077",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H077",
+  "chave": "R25",
+  "classe": "testa",
+  "confianca": 0.87
+ },
+ {
+  "id": "H077",
+  "chave": "R9",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H077",
+  "chave": "R7",
+  "classe": "outro-assunto",
+  "confianca": 0.68
+ },
+ {
+  "id": "H077",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.29
+ },
+ {
+  "id": "H077",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.49
+ },
+ {
+  "id": "H077",
+  "chave": "R20",
+  "classe": "outro-assunto",
+  "confianca": 0.27
+ },
+ {
+  "id": "H077",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.25
+ },
+ {
+  "id": "H078",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.82
+ },
+ {
+  "id": "H078",
+  "chave": "R10",
+  "classe": "relacionado",
+  "confianca": 0.43
+ },
+ {
+  "id": "H078",
+  "chave": "R18",
+  "classe": "relacionado",
+  "confianca": 0.19
+ },
+ {
+  "id": "H078",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 0.39
+ },
+ {
+  "id": "H078",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.42
+ },
+ {
+  "id": "H078",
+  "chave": "R12",
+  "classe": "relacionado",
+  "confianca": 0.47
+ },
+ {
+  "id": "H078",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.28
+ },
+ {
+  "id": "H078",
+  "chave": "R0",
+  "classe": "outro-assunto",
+  "confianca": 0.83
+ },
+ {
+  "id": "H079",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.73
+ },
+ {
+  "id": "H079",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.65
+ },
+ {
+  "id": "H079",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H079",
+  "chave": "R21",
+  "classe": "relacionado",
+  "confianca": 0.59
+ },
+ {
+  "id": "H079",
+  "chave": "R10",
+  "classe": "outro-assunto",
+  "confianca": 0.37
+ },
+ {
+  "id": "H079",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.61
+ },
+ {
+  "id": "H079",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.65
+ },
+ {
+  "id": "H079",
+  "chave": "R15b",
+  "classe": "relacionado",
+  "confianca": 0.52
+ },
+ {
+  "id": "H080",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.45
+ },
+ {
+  "id": "H080",
+  "chave": "R12",
+  "classe": "outro-assunto",
+  "confianca": 0.42
+ },
+ {
+  "id": "H080",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H080",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.33
+ },
+ {
+  "id": "H080",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.38
+ },
+ {
+  "id": "H080",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.54
+ },
+ {
+  "id": "H080",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.49
+ },
+ {
+  "id": "H080",
+  "chave": "R23",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H082",
+  "chave": "R27",
+  "classe": "relacionado",
+  "confianca": 0.46
+ },
+ {
+  "id": "H082",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.5
+ },
+ {
+  "id": "H082",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.39
+ },
+ {
+  "id": "H082",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.39
+ },
+ {
+  "id": "H082",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.54
+ },
+ {
+  "id": "H082",
+  "chave": "R17",
+  "classe": "outro-assunto",
+  "confianca": 0.25
+ },
+ {
+  "id": "H082",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H082",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.52
+ },
+ {
+  "id": "H086",
+  "chave": "R3",
+  "classe": "testa",
+  "confianca": 0.8
+ },
+ {
+  "id": "H086",
+  "chave": "R24",
+  "classe": "outro-assunto",
+  "confianca": 0.77
+ },
+ {
+  "id": "H086",
+  "chave": "R21b",
+  "classe": "outro-assunto",
+  "confianca": 0.45
+ },
+ {
+  "id": "H086",
+  "chave": "R19",
+  "classe": "outro-assunto",
+  "confianca": 0.79
+ },
+ {
+  "id": "H086",
+  "chave": "R6",
+  "classe": "outro-assunto",
+  "confianca": 0.81
+ },
+ {
+  "id": "H086",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.96
+ },
+ {
+  "id": "H086",
+  "chave": "R8",
+  "classe": "outro-assunto",
+  "confianca": 0.55
+ },
+ {
+  "id": "H086",
+  "chave": "R2",
+  "classe": "outro-assunto",
+  "confianca": 0.98
+ },
+ {
+  "id": "H088",
+  "chave": "R24",
+  "classe": "outro-assunto",
+  "confianca": 0.64
+ },
+ {
+  "id": "H088",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.66
+ },
+ {
+  "id": "H088",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.9
+ },
+ {
+  "id": "H088",
+  "chave": "R10",
+  "classe": "outro-assunto",
+  "confianca": 0.5
+ },
+ {
+  "id": "H088",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.4
+ },
+ {
+  "id": "H088",
+  "chave": "R18",
+  "classe": "outro-assunto",
+  "confianca": 0.65
+ },
+ {
+  "id": "H088",
+  "chave": "R15b",
+  "classe": "outro-assunto",
+  "confianca": 0.33
+ },
+ {
+  "id": "H088",
+  "chave": "R21",
+  "classe": "outro-assunto",
+  "confianca": 0.6
+ },
+ {
+  "id": "H089",
+  "chave": "R26",
+  "classe": "outro-assunto",
+  "confianca": 0.58
+ },
+ {
+  "id": "H089",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.71
+ },
+ {
+  "id": "H089",
+  "chave": "R13",
+  "classe": "outro-assunto",
+  "confianca": 0.26
+ },
+ {
+  "id": "H089",
+  "chave": "R21",
+  "classe": "outro-assunto",
+  "confianca": 0.49
+ },
+ {
+  "id": "H089",
+  "chave": "R22",
+  "classe": "outro-assunto",
+  "confianca": 0.53
+ },
+ {
+  "id": "H089",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.65
+ },
+ {
+  "id": "H089",
+  "chave": "R3",
+  "classe": "relacionado",
+  "confianca": 0.7
+ },
+ {
+  "id": "H089",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.32
+ },
+ {
+  "id": "H090",
+  "chave": "R4",
+  "classe": "outro-assunto",
+  "confianca": 0.98
+ },
+ {
+  "id": "H090",
+  "chave": "R16",
+  "classe": "outro-assunto",
+  "confianca": 0.59
+ },
+ {
+  "id": "H090",
+  "chave": "R21",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H090",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.39
+ },
+ {
+  "id": "H090",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.4
+ },
+ {
+  "id": "H090",
+  "chave": "R24",
+  "classe": "outro-assunto",
+  "confianca": 0.84
+ },
+ {
+  "id": "H090",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.36
+ },
+ {
+  "id": "H090",
+  "chave": "R15b",
+  "classe": "outro-assunto",
+  "confianca": 0.49
+ },
+ {
+  "id": "H091",
+  "chave": "R17",
+  "classe": "relacionado",
+  "confianca": 0.53
+ },
+ {
+  "id": "H091",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.36
+ },
+ {
+  "id": "H091",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.31
+ },
+ {
+  "id": "H091",
+  "chave": "R16b",
+  "classe": "relacionado",
+  "confianca": 0.5
+ },
+ {
+  "id": "H091",
+  "chave": "R7",
+  "classe": "relacionado",
+  "confianca": 0.5
+ },
+ {
+  "id": "H091",
+  "chave": "R12",
+  "classe": "testa",
+  "confianca": 0.94
+ },
+ {
+  "id": "H091",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.64
+ },
+ {
+  "id": "H091",
+  "chave": "R13",
+  "classe": "relacionado",
+  "confianca": 0.56
+ },
+ {
+  "id": "H092",
+  "chave": "R12",
+  "classe": "relacionado",
+  "confianca": 0.47
+ },
+ {
+  "id": "H092",
+  "chave": "R0b",
+  "classe": "relacionado",
+  "confianca": 0.86
+ },
+ {
+  "id": "H092",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.71
+ },
+ {
+  "id": "H092",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.54
+ },
+ {
+  "id": "H092",
+  "chave": "R7",
+  "classe": "testa",
+  "confianca": 0.37
+ },
+ {
+  "id": "H092",
+  "chave": "R11",
+  "classe": "testa",
+  "confianca": 0.51
+ },
+ {
+  "id": "H092",
+  "chave": "R16",
+  "classe": "relacionado",
+  "confianca": 0.69
+ },
+ {
+  "id": "H092",
+  "chave": "R15",
+  "classe": "relacionado",
+  "confianca": 0.48
+ },
+ {
+  "id": "H093",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.55
+ },
+ {
+  "id": "H093",
+  "chave": "R11",
+  "classe": "outro-assunto",
+  "confianca": 0.48
+ },
+ {
+  "id": "H093",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.85
+ },
+ {
+  "id": "H093",
+  "chave": "R15b",
+  "classe": "relacionado",
+  "confianca": 0.25
+ },
+ {
+  "id": "H093",
+  "chave": "R0",
+  "classe": "outro-assunto",
+  "confianca": 0.95
+ },
+ {
+  "id": "H093",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.92
+ },
+ {
+  "id": "H093",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.63
+ },
+ {
+  "id": "H093",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.7
+ },
+ {
+  "id": "H095",
+  "chave": "R1",
+  "classe": "relacionado",
+  "confianca": 0.65
+ },
+ {
+  "id": "H095",
+  "chave": "R27",
+  "classe": "outro-assunto",
+  "confianca": 0.6
+ },
+ {
+  "id": "H095",
+  "chave": "R17",
+  "classe": "outro-assunto",
+  "confianca": 0.39
+ },
+ {
+  "id": "H095",
+  "chave": "R25",
+  "classe": "relacionado",
+  "confianca": 0.68
+ },
+ {
+  "id": "H095",
+  "chave": "R9",
+  "classe": "relacionado",
+  "confianca": 0.53
+ },
+ {
+  "id": "H095",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.64
+ },
+ {
+  "id": "H095",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 0.94
+ },
+ {
+  "id": "H095",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.74
+ },
+ {
+  "id": "H096",
+  "chave": "R24",
+  "classe": "relacionado",
+  "confianca": 0.27
+ },
+ {
+  "id": "H096",
+  "chave": "R20",
+  "classe": "relacionado",
+  "confianca": 0.42
+ },
+ {
+  "id": "H096",
+  "chave": "R1",
+  "classe": "outro-assunto",
+  "confianca": 0.53
+ },
+ {
+  "id": "H096",
+  "chave": "R3",
+  "classe": "relacionado",
+  "confianca": 0.49
+ },
+ {
+  "id": "H096",
+  "chave": "R8",
+  "classe": "relacionado",
+  "confianca": 0.67
+ },
+ {
+  "id": "H096",
+  "chave": "R19",
+  "classe": "relacionado",
+  "confianca": 0.32
+ },
+ {
+  "id": "H096",
+  "chave": "R21b",
+  "classe": "relacionado",
+  "confianca": 0.58
+ },
+ {
+  "id": "H096",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 1.0
+ },
+ {
+  "id": "H097",
+  "chave": "R18",
+  "classe": "relacionado",
+  "confianca": 0.26
+ },
+ {
+  "id": "H097",
+  "chave": "R0",
+  "classe": "outro-assunto",
+  "confianca": 0.4
+ },
+ {
+  "id": "H097",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 0.99
+ },
+ {
+  "id": "H097",
+  "chave": "R16b",
+  "classe": "outro-assunto",
+  "confianca": 0.47
+ },
+ {
+  "id": "H097",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.26
+ },
+ {
+  "id": "H097",
+  "chave": "R15",
+  "classe": "outro-assunto",
+  "confianca": 0.4
+ },
+ {
+  "id": "H097",
+  "chave": "R17",
+  "classe": "outro-assunto",
+  "confianca": 0.4
+ },
+ {
+  "id": "H097",
+  "chave": "R13",
+  "classe": "outro-assunto",
+  "confianca": 0.55
+ },
+ {
+  "id": "H099",
+  "chave": "R19",
+  "classe": "testa",
+  "confianca": 0.44
+ },
+ {
+  "id": "H099",
+  "chave": "R11",
+  "classe": "relacionado",
+  "confianca": 0.62
+ },
+ {
+  "id": "H099",
+  "chave": "R5",
+  "classe": "outro-assunto",
+  "confianca": 0.47
+ },
+ {
+  "id": "H099",
+  "chave": "R22",
+  "classe": "relacionado",
+  "confianca": 0.28
+ },
+ {
+  "id": "H099",
+  "chave": "R23",
+  "classe": "outro-assunto",
+  "confianca": 0.37
+ },
+ {
+  "id": "H099",
+  "chave": "R17",
+  "classe": "outro-assunto",
+  "confianca": 0.87
+ },
+ {
+  "id": "H099",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 0.93
+ },
+ {
+  "id": "H099",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.58
+ },
+ {
+  "id": "H100",
+  "chave": "R0b",
+  "classe": "outro-assunto",
+  "confianca": 0.77
+ },
+ {
+  "id": "H100",
+  "chave": "R15",
+  "classe": "outro-assunto",
+  "confianca": 0.71
+ },
+ {
+  "id": "H100",
+  "chave": "R4",
+  "classe": null,
+  "confianca": null
+ },
+ {
+  "id": "H100",
+  "chave": "R3",
+  "classe": "outro-assunto",
+  "confianca": 0.35
+ },
+ {
+  "id": "H100",
+  "chave": "R14",
+  "classe": "outro-assunto",
+  "confianca": 0.61
+ },
+ {
+  "id": "H100",
+  "chave": "R21",
+  "classe": "testa",
+  "confianca": 0.98
+ },
+ {
+  "id": "H100",
+  "chave": "R9",
+  "classe": "outro-assunto",
+  "confianca": 0.27
+ },
+ {
+  "id": "H100",
+  "chave": "R18",
+  "classe": "testa",
+  "confianca": 0.25
+ }
+]

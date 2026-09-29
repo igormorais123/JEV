@@ -31,6 +31,9 @@ flowchart LR
   n_docs_arquitetura_assets_inteia_marca_svg["docs/arquitetura-assets/inteia-marca.svg"]
   n_executor_tests_test_ledger_py["executor/tests/test_ledger.py"]
   n_executor_tests_test_liquidacao_429_py["executor/tests/test_liquidacao_429.py"]
+  n_integracao_harness_AGENT_GUIDE_md["integracao/harness/AGENT-GUIDE.md"]
+  n_integracao_harness_test_agents_py["integracao/harness/test_agents.py"]
+  n_integracao_tests_test_seletores_py["integracao/tests/test_seletores.py"]
   n_laboratorio_r18_r20_consolidado_json["laboratorio/r18-r20-consolidado.json"]
   n_laboratorio_r21b_cruzamento_json["laboratorio/r21b-cruzamento.json"]
   n_laboratorio_r26_dois_trechos_json["laboratorio/r26-dois-trechos.json"]
@@ -54,6 +57,9 @@ flowchart LR
   n_planning_arquitetura_VERIFICACAO_md -.-> n_docs_arquitetura_assets_inteia_marca_svg
   n_planning_arquitetura_VERIFICACAO_md -.-> n_executor_tests_test_ledger_py
   n_planning_arquitetura_VERIFICACAO_md -.-> n_executor_tests_test_liquidacao_429_py
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_integracao_harness_AGENT_GUIDE_md
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_integracao_harness_test_agents_py
+  n_planning_arquitetura_VERIFICACAO_md -.-> n_integracao_tests_test_seletores_py
   n_planning_arquitetura_VERIFICACAO_md -.-> n_laboratorio_r18_r20_consolidado_json
   n_planning_arquitetura_VERIFICACAO_md -.-> n_laboratorio_r21b_cruzamento_json
   n_planning_arquitetura_VERIFICACAO_md -.-> n_laboratorio_r26_dois_trechos_json
@@ -66,14 +72,16 @@ flowchart LR
 
 ### README.md
 
-- **usa** — link: [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html), [`output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf`](../../output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`planning/arquitetura/validacao-layout.json`](../../planning/arquitetura/validacao-layout.json); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt), [`planning/arquitetura/diagrams.mjs`](../../planning/arquitetura/diagrams.mjs), [`planning/arquitetura/style.css`](../../planning/arquitetura/style.css)
+- **usa** — link: [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html), [`output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf`](../../output/pdf/ARQUITETURA-DO-JEV-REVISAO.pdf), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`planning/arquitetura/validacao-layout.json`](../../planning/arquitetura/validacao-layout.json); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt), [`planning/arquitetura/diagrams.mjs`](../../planning/arquitetura/diagrams.mjs)
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
+- **parecidos (julgados pelo Jev)** — [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md) (não julgado, 0.30), [`docs/arquitetura-assets/fonte-original.md`](../../docs/arquitetura-assets/fonte-original.md) (não julgado, 0.20)
 - **conteúdo** — Arquivos (l. 3), Regenerar (l. 11), Editar (l. 24), Atualizar o mapa durante a edição (l. 32)
 
 ### VERIFICACAO.md
 
-- **usa** — link: [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`docs/arquitetura-assets/capa.png`](../../docs/arquitetura-assets/capa.png), [`docs/arquitetura-assets/inteia-marca.svg`](../../docs/arquitetura-assets/inteia-marca.svg), [`executor/tests/test_ledger.py`](../../executor/tests/test_ledger.py), [`executor/tests/test_liquidacao_429.py`](../../executor/tests/test_liquidacao_429.py), [`laboratorio/r18-r20-consolidado.json`](../../laboratorio/r18-r20-consolidado.json), [`laboratorio/r21b-cruzamento.json`](../../laboratorio/r21b-cruzamento.json), [`laboratorio/r26-dois-trechos.json`](../../laboratorio/r26-dois-trechos.json), [`planning/arquitetura/validacao-layout.json`](../../planning/arquitetura/validacao-layout.json), [`research/JEV-FLOW.md`](../../research/JEV-FLOW.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md); citação: [`docs/ARQUITETURA-DO-JEV.pdf`](../../docs/ARQUITETURA-DO-JEV.pdf), [`docs/arquitetura-assets/fonte-original.md`](../../docs/arquitetura-assets/fonte-original.md), [`laboratorio/tests/test_auditoria.py`](../../laboratorio/tests/test_auditoria.py)
+- **usa** — link: [`docs/DOSSIE-DE-EVIDENCIAS.md`](../../docs/DOSSIE-DE-EVIDENCIAS.md), [`docs/LIMITES-DO-JEV.md`](../../docs/LIMITES-DO-JEV.md), [`docs/arquitetura-assets/capa.png`](../../docs/arquitetura-assets/capa.png), [`docs/arquitetura-assets/inteia-marca.svg`](../../docs/arquitetura-assets/inteia-marca.svg), [`executor/tests/test_ledger.py`](../../executor/tests/test_ledger.py), [`executor/tests/test_liquidacao_429.py`](../../executor/tests/test_liquidacao_429.py), [`integracao/harness/AGENT-GUIDE.md`](../../integracao/harness/AGENT-GUIDE.md), [`integracao/harness/test_agents.py`](../../integracao/harness/test_agents.py), [`integracao/tests/test_seletores.py`](../../integracao/tests/test_seletores.py), [`laboratorio/r18-r20-consolidado.json`](../../laboratorio/r18-r20-consolidado.json), [`laboratorio/r21b-cruzamento.json`](../../laboratorio/r21b-cruzamento.json), [`laboratorio/r26-dois-trechos.json`](../../laboratorio/r26-dois-trechos.json), [`planning/arquitetura/validacao-layout.json`](../../planning/arquitetura/validacao-layout.json), [`research/JEV-FLOW.md`](../../research/JEV-FLOW.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md); citação: [`docs/ARQUITETURA-DO-JEV.pdf`](../../docs/ARQUITETURA-DO-JEV.pdf), [`docs/arquitetura-assets/fonte-original.md`](../../docs/arquitetura-assets/fonte-original.md), [`laboratorio/tests/test_auditoria.py`](../../laboratorio/tests/test_auditoria.py)
 - **é usado por** — link: [`README.md`](../../README.md), [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md); citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
+- **parecidos (julgados pelo Jev)** — [`integracao/camadas/verificar.py`](../../integracao/camadas/verificar.py) (não julgado, 0.23), [`research/FONTES.md`](../../research/FONTES.md) (não julgado, 0.21)
 - **menciona 1 conceito** — [V26](../../mapa/conhecimento/revisoes.md#v26) (1×)
 - **conteúdo** — Material de origem (l. 5), Decisões fundamentadas (l. 14), Verificações executadas (l. 31), Documento e diagramação (l. 43), Complemento de 28/09/2026 (l. 52), Identidade e autoria — 28/09/2026 (l. 69), Imagem da capa original (l. 73)
 
@@ -89,7 +97,7 @@ flowchart LR
 ### package.json
 
 - **usa** — citação: [`planning/arquitetura/render.mjs`](../../planning/arquitetura/render.mjs)
-- **é usado por** — citação: [`executor/simple_round.py`](../../executor/simple_round.py), [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/index.html`](../../lab/index.html), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt), [`research/FONTES.md`](../../research/FONTES.md), [`research/sources-manifest.json`](../../research/sources-manifest.json)
+- **é usado por** — citação: [`executor/simple_round.py`](../../executor/simple_round.py), [`integracao/harness/auditar_instalacoes.py`](../../integracao/harness/auditar_instalacoes.py), [`lab/data/execution.json`](../../lab/data/execution.json), [`lab/index.html`](../../lab/index.html), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt), [`research/FONTES.md`](../../research/FONTES.md), [`research/sources-manifest.json`](../../research/sources-manifest.json)
 
 ### render.mjs
 
@@ -97,7 +105,7 @@ flowchart LR
 
 ### style.css
 
-- **é usado por** — citação: [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
+- **é usado por** — citação: [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
 
 ### validacao-layout.json
 

@@ -90,6 +90,7 @@ flowchart LR
 ### fonte-original.md
 
 - **é usado por** — link: [`README.md`](../../README.md); citação: [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
+- **parecidos (julgados pelo Jev)** — [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md) (não julgado, 0.30), [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md) (não julgado, 0.20)
 - **conteúdo** — 0. Instruções para quem edita (l. 5), 1. Sistema visual (l. 40), 2. Conteúdo, página a página (l. 104), 3. Diagramas (l. 268), Apêndices: arquivos do montador (l. 1329)
 
 ### inteia-marca.svg

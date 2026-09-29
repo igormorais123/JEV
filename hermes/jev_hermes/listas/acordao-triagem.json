@@ -1,0 +1,71 @@
+{
+  "nome": "Acórdão ou decisão — triagem de precedente",
+  "nota": "Lista neutra: vermelho marca só obstáculos típicos para quem recorre (Súmula 7, multa, honorários majorados). Criada em 2026-09-21 a partir dos acórdãos que Igor reúne para memoriais e embargos; conferida à mão em acórdãos reais, sem gabarito medido.",
+  "itens": [
+    {
+      "id": "resultado",
+      "tipo": "choice",
+      "pergunta": "Qual foi o resultado do julgamento do recurso ou da acao neste acordao ou decisao?",
+      "opcoes": {
+        "provido": "O recurso foi provido ou o pedido foi julgado procedente.",
+        "parcialmente-provido": "O recurso foi provido em parte.",
+        "desprovido": "O recurso foi conhecido e desprovido, ou o pedido foi julgado improcedente.",
+        "nao-conhecido": "O recurso nao foi conhecido ou nao foi admitido."
+      },
+      "risco": []
+    },
+    {
+      "id": "votacao",
+      "tipo": "choice",
+      "pergunta": "A decisao foi tomada por unanimidade ou por maioria?",
+      "opcoes": {
+        "unanimidade": "Decisao unanime.",
+        "maioria": "Decisao por maioria, com voto vencido.",
+        "monocratica": "Decisao monocratica de um so relator."
+      },
+      "risco": []
+    },
+    {
+      "id": "sumula-7",
+      "tipo": "noul",
+      "pergunta": "O acordao aplica a Sumula 7 do STJ ou a vedacao de reexame de fatos e provas para nao conhecer ou negar o recurso?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "multa-protelatoria",
+      "tipo": "noul",
+      "pergunta": "O acordao aplica multa por recurso protelatorio ou manifestamente inadmissivel (art. 1.021, par. 4, ou art. 1.026, par. 2, do CPC)?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "honorarios-recursais",
+      "tipo": "noul",
+      "pergunta": "O acordao majora honorarios advocaticios recursais (art. 85, par. 11, do CPC)?",
+      "risco": [
+        "sim"
+      ]
+    },
+    {
+      "id": "tese-vinculante",
+      "tipo": "noul",
+      "pergunta": "O acordao aplica, como fundamento, tese de recurso repetitivo, tema de repercussao geral ou sumula vinculante?",
+      "risco": []
+    },
+    {
+      "id": "embargos",
+      "tipo": "choice",
+      "pergunta": "O recurso julgado NESTE acordao sao embargos de declaracao? Se forem, qual foi o resultado deles? Embargos julgados antes e apenas mencionados, ou outro recurso (agravo, apelacao, recurso especial), contam como nao-julga-embargos.",
+      "opcoes": {
+        "nao-julga-embargos": "O recurso julgado neste acordao nao sao embargos de declaracao.",
+        "acolhidos-com-efeito-modificativo": "Embargos acolhidos e o resultado do julgamento mudou.",
+        "acolhidos-sem-efeito-modificativo": "Embargos acolhidos so para esclarecer, sem mudar o resultado.",
+        "rejeitados": "Embargos rejeitados: nao ha omissao, contradicao ou obscuridade."
+      },
+      "risco": []
+    }
+  ]
+}

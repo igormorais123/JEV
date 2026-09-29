@@ -159,7 +159,9 @@ def h011():
     for linha in d.decisoes():
         for resposta in linha['respostas'].values():
             probabilidades = resposta.get('probabilities')
-            if not probabilidades:
+            # Só resposta de escolha: a de nota (`score`, que entrou no livro-caixa com o mapa de
+            # semelhança em 2026-09-21) também traz vetor, mas não tem classe escolhida.
+            if not probabilidades or 'choice' not in resposta:
                 continue
             total += 1
             if resposta['choice'] not in probabilidades:
@@ -177,7 +179,7 @@ def h012():
     for linha in d.decisoes():
         for resposta in linha['respostas'].values():
             probabilidades = resposta.get('probabilities')
-            if not probabilidades or resposta.get('confidence') is None:
+            if not probabilidades or resposta.get('confidence') is None                     or 'choice' not in resposta:  # resposta de nota não tem classe escolhida
                 continue
             total += 1
             diferenca = abs(probabilidades.get(resposta['choice'], 0) - resposta['confidence'])

@@ -1,0 +1,7 @@
+name: jev-workflows
+version: 0.1.0
+description: "Cinco fluxos consultivos com o Jev — judge de conclusão de tarefa, próximo agente, modelo, triagem em lote e comparação de experimentos. Só ferramenta explícita; nenhum gancho automático."
+author: INTEIA
+kind: standalone
+provides_tools:
+  - jev_workflows

@@ -1,0 +1,6572 @@
+[
+ {
+  "dominio": "juridico",
+  "i": 0,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 0,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 0,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 0,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 0,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 1,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 1,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 1,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 1,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 1,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 2,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 2,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 2,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 2,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 2,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 3,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 3,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 3,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 3,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 3,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 4,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 4,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 4,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 4,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 4,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 5,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 5,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 5,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 5,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 5,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 6,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 6,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 6,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 6,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 6,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 7,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 7,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 7,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 7,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 7,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 8,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 8,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "informacao",
+  "confianca": 0.37
+ },
+ {
+  "dominio": "juridico",
+  "i": 8,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 8,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 8,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 9,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "juridico",
+  "i": 9,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 9,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 9,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "juridico",
+  "i": 9,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "juridico",
+  "i": 10,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 10,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 10,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 10,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 10,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 11,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 11,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 11,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 11,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 11,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 12,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 12,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 12,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 12,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 12,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 13,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 13,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 13,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 13,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 13,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 14,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 14,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 14,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 14,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 14,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 15,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 15,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 15,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 15,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 15,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 16,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 16,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 16,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 16,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 16,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 17,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 17,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 17,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 17,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 17,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 18,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 18,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 18,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 18,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 18,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 19,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 19,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 19,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 19,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 19,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 20,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 20,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.48
+ },
+ {
+  "dominio": "juridico",
+  "i": 20,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 20,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 20,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 21,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 21,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 21,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 21,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 21,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 22,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 22,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 22,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 22,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 22,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 23,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 23,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "juridico",
+  "i": 23,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 23,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 23,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.45
+ },
+ {
+  "dominio": "juridico",
+  "i": 24,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 24,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 24,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 24,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 24,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 25,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.52
+ },
+ {
+  "dominio": "juridico",
+  "i": 25,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 25,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.6
+ },
+ {
+  "dominio": "juridico",
+  "i": 25,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.38
+ },
+ {
+  "dominio": "juridico",
+  "i": 25,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "juridico",
+  "i": 26,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 26,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "juridico",
+  "i": 26,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 26,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 26,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.53
+ },
+ {
+  "dominio": "juridico",
+  "i": 27,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 27,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 27,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 27,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "juridico",
+  "i": 27,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 28,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "juridico",
+  "i": 28,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "juridico",
+  "i": 28,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "juridico",
+  "i": 28,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.43
+ },
+ {
+  "dominio": "juridico",
+  "i": 28,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "juridico",
+  "i": 29,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 29,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.63
+ },
+ {
+  "dominio": "juridico",
+  "i": 29,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 29,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 29,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "juridico",
+  "i": 30,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 30,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 30,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 30,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 30,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 31,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 31,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.62
+ },
+ {
+  "dominio": "juridico",
+  "i": 31,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 31,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 31,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "juridico",
+  "i": 32,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "juridico",
+  "i": 32,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.53
+ },
+ {
+  "dominio": "juridico",
+  "i": 32,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "juridico",
+  "i": 32,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.67
+ },
+ {
+  "dominio": "juridico",
+  "i": 32,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.57
+ },
+ {
+  "dominio": "juridico",
+  "i": 33,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 33,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 33,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 33,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 33,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 34,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.59
+ },
+ {
+  "dominio": "juridico",
+  "i": 34,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "juridico",
+  "i": 34,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.39
+ },
+ {
+  "dominio": "juridico",
+  "i": 34,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.39
+ },
+ {
+  "dominio": "juridico",
+  "i": 34,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "juridico",
+  "i": 35,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.67
+ },
+ {
+  "dominio": "juridico",
+  "i": 35,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "juridico",
+  "i": 35,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 35,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "juridico",
+  "i": 35,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.39
+ },
+ {
+  "dominio": "juridico",
+  "i": 36,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 36,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "juridico",
+  "i": 36,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 36,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 36,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.56
+ },
+ {
+  "dominio": "juridico",
+  "i": 37,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 37,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 37,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 37,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 37,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 38,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "juridico",
+  "i": 38,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.69
+ },
+ {
+  "dominio": "juridico",
+  "i": 38,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "juridico",
+  "i": 38,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "juridico",
+  "i": 38,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.41
+ },
+ {
+  "dominio": "juridico",
+  "i": 39,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 39,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 39,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 39,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 39,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 40,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 40,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 40,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 40,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 40,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 41,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 41,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 41,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "juridico",
+  "i": 41,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "juridico",
+  "i": 41,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 42,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 42,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 42,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 42,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 42,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 43,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 43,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 43,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 43,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 43,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "encerrar",
+  "escolha": "encerrar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 44,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 44,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "juridico",
+  "i": 44,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 44,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 44,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "protocolar",
+  "escolha": "protocolar",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 45,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 45,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 45,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "juridico",
+  "i": 45,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 45,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 46,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 46,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 46,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 46,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 46,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "prazo",
+  "escolha": "prazo",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 47,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 47,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "juridico",
+  "i": 47,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 47,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "juridico",
+  "i": 47,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 48,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "juridico",
+  "i": 48,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "juridico",
+  "i": 48,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "juridico",
+  "i": 48,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 48,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "juridico",
+  "i": 49,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "juridico",
+  "i": 49,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.44
+ },
+ {
+  "dominio": "juridico",
+  "i": 49,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.55
+ },
+ {
+  "dominio": "juridico",
+  "i": 49,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.64
+ },
+ {
+  "dominio": "juridico",
+  "i": 49,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.77
+ },
+ {
+  "dominio": "juridico",
+  "i": 50,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.83
+ },
+ {
+  "dominio": "juridico",
+  "i": 50,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.75
+ },
+ {
+  "dominio": "juridico",
+  "i": 50,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.74
+ },
+ {
+  "dominio": "juridico",
+  "i": 50,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 50,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.44
+ },
+ {
+  "dominio": "juridico",
+  "i": 51,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 51,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "juridico",
+  "i": 51,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": null,
+  "confianca": null
+ },
+ {
+  "dominio": "juridico",
+  "i": 51,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "juridico",
+  "i": 51,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 52,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "juridico",
+  "i": 52,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.39
+ },
+ {
+  "dominio": "juridico",
+  "i": 52,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.6
+ },
+ {
+  "dominio": "juridico",
+  "i": 52,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.38
+ },
+ {
+  "dominio": "juridico",
+  "i": 52,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "juridico",
+  "i": 53,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "juridico",
+  "i": 53,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.37
+ },
+ {
+  "dominio": "juridico",
+  "i": 53,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 53,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "juridico",
+  "i": 53,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 54,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 54,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "juridico",
+  "i": 54,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "juridico",
+  "i": 54,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "juridico",
+  "i": 54,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "juridico",
+  "i": 55,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 55,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "juridico",
+  "i": 55,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 55,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 55,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 56,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.51
+ },
+ {
+  "dominio": "juridico",
+  "i": 56,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.41
+ },
+ {
+  "dominio": "juridico",
+  "i": 56,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.59
+ },
+ {
+  "dominio": "juridico",
+  "i": 56,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "prazo",
+  "confianca": 0.62
+ },
+ {
+  "dominio": "juridico",
+  "i": 56,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "juridico",
+  "i": 57,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 57,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 57,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 57,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 57,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "juridico",
+  "i": 58,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 58,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 58,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 58,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 58,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 59,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "juridico",
+  "i": 59,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "juridico",
+  "i": 59,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.87
+ },
+ {
+  "dominio": "juridico",
+  "i": 59,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "juridico",
+  "i": 59,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 60,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 60,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "juridico",
+  "i": 60,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.64
+ },
+ {
+  "dominio": "juridico",
+  "i": 60,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.65
+ },
+ {
+  "dominio": "juridico",
+  "i": 60,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 61,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.55
+ },
+ {
+  "dominio": "juridico",
+  "i": 61,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.38
+ },
+ {
+  "dominio": "juridico",
+  "i": 61,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "juridico",
+  "i": 61,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.72
+ },
+ {
+  "dominio": "juridico",
+  "i": 61,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.63
+ },
+ {
+  "dominio": "juridico",
+  "i": 62,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "juridico",
+  "i": 62,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.45
+ },
+ {
+  "dominio": "juridico",
+  "i": 62,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.86
+ },
+ {
+  "dominio": "juridico",
+  "i": 62,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 62,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.87
+ },
+ {
+  "dominio": "juridico",
+  "i": 63,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "juridico",
+  "i": 63,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.4
+ },
+ {
+  "dominio": "juridico",
+  "i": 63,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 63,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "juridico",
+  "i": 63,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "juridico",
+  "i": 64,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.83
+ },
+ {
+  "dominio": "juridico",
+  "i": 64,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.59
+ },
+ {
+  "dominio": "juridico",
+  "i": 64,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "juridico",
+  "i": 64,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.77
+ },
+ {
+  "dominio": "juridico",
+  "i": 64,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 65,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "juridico",
+  "i": 65,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": null,
+  "confianca": null
+ },
+ {
+  "dominio": "juridico",
+  "i": 65,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.5
+ },
+ {
+  "dominio": "juridico",
+  "i": 65,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.54
+ },
+ {
+  "dominio": "juridico",
+  "i": 65,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 66,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "juridico",
+  "i": 66,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.65
+ },
+ {
+  "dominio": "juridico",
+  "i": 66,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "juridico",
+  "i": 66,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "juridico",
+  "i": 66,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 67,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 67,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "juridico",
+  "i": 67,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 67,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "juridico",
+  "i": 67,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "juridico",
+  "i": 68,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.86
+ },
+ {
+  "dominio": "juridico",
+  "i": 68,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "encerrar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "juridico",
+  "i": 68,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "juridico",
+  "i": 68,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.75
+ },
+ {
+  "dominio": "juridico",
+  "i": 68,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "clinica",
+  "i": 0,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 0,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 0,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 0,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 0,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 1,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 1,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "clinica",
+  "i": 1,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 1,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 1,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 2,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 2,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 2,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 2,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 2,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 3,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 3,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 3,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 3,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 3,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 4,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 4,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 4,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 4,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 4,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 5,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 5,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "clinica",
+  "i": 5,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 5,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 5,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 6,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 6,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 6,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 6,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 6,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 7,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 7,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 7,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 7,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 7,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 8,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 8,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 8,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 8,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 8,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 9,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 9,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 9,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 9,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 9,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 10,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 10,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 10,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 10,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 10,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 11,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 11,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 11,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 11,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 11,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 12,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 12,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 12,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 12,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 12,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 13,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 13,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "clinica",
+  "i": 13,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 13,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 13,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 14,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 14,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 14,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 14,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 14,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 15,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 15,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 15,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 15,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 15,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 16,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 16,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 16,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 16,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 16,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 17,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 17,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 17,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 17,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 17,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 18,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 18,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 18,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 18,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 18,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 19,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 19,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 19,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 19,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 19,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 20,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 20,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 20,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 20,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 20,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 21,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 21,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 21,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 21,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 21,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 22,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 22,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 22,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 22,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 22,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 23,
+  "arranjo": "base",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 23,
+  "arranjo": "descr-iguais",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 23,
+  "arranjo": "rotulo-opaco",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 23,
+  "arranjo": "ordem-inversa",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 23,
+  "arranjo": "reescrita",
+  "molde": "pedido-direto",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 24,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "clinica",
+  "i": 24,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.46
+ },
+ {
+  "dominio": "clinica",
+  "i": 24,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "clinica",
+  "i": 24,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.86
+ },
+ {
+  "dominio": "clinica",
+  "i": 24,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "clinica",
+  "i": 25,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "clinica",
+  "i": 25,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.46
+ },
+ {
+  "dominio": "clinica",
+  "i": 25,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "clinica",
+  "i": 25,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 25,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 26,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 26,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 26,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 26,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 26,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.72
+ },
+ {
+  "dominio": "clinica",
+  "i": 27,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 27,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "clinica",
+  "i": 27,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 27,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 27,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "clinica",
+  "i": 28,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 28,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.37
+ },
+ {
+  "dominio": "clinica",
+  "i": 28,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 28,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 28,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.74
+ },
+ {
+  "dominio": "clinica",
+  "i": 29,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.53
+ },
+ {
+  "dominio": "clinica",
+  "i": 29,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "clinica",
+  "i": 29,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "clinica",
+  "i": 29,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.48
+ },
+ {
+  "dominio": "clinica",
+  "i": 29,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.35
+ },
+ {
+  "dominio": "clinica",
+  "i": 30,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "clinica",
+  "i": 30,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "clinica",
+  "i": 30,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "clinica",
+  "i": 30,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "clinica",
+  "i": 30,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "clinica",
+  "i": 31,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.45
+ },
+ {
+  "dominio": "clinica",
+  "i": 31,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.54
+ },
+ {
+  "dominio": "clinica",
+  "i": 31,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.6
+ },
+ {
+  "dominio": "clinica",
+  "i": 31,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "clinica",
+  "i": 31,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "clinica",
+  "i": 32,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.54
+ },
+ {
+  "dominio": "clinica",
+  "i": 32,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.44
+ },
+ {
+  "dominio": "clinica",
+  "i": 32,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.6
+ },
+ {
+  "dominio": "clinica",
+  "i": 32,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "clinica",
+  "i": 32,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 33,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "clinica",
+  "i": 33,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 33,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 33,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "clinica",
+  "i": 33,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.67
+ },
+ {
+  "dominio": "clinica",
+  "i": 34,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "clinica",
+  "i": 34,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.56
+ },
+ {
+  "dominio": "clinica",
+  "i": 34,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.46
+ },
+ {
+  "dominio": "clinica",
+  "i": 34,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.63
+ },
+ {
+  "dominio": "clinica",
+  "i": 34,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "clinica",
+  "i": 35,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 35,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "clinica",
+  "i": 35,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 35,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 35,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.48
+ },
+ {
+  "dominio": "clinica",
+  "i": 36,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "clinica",
+  "i": 36,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.57
+ },
+ {
+  "dominio": "clinica",
+  "i": 36,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 36,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.94
+ },
+ {
+  "dominio": "clinica",
+  "i": 36,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.75
+ },
+ {
+  "dominio": "clinica",
+  "i": 37,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.59
+ },
+ {
+  "dominio": "clinica",
+  "i": 37,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.55
+ },
+ {
+  "dominio": "clinica",
+  "i": 37,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.41
+ },
+ {
+  "dominio": "clinica",
+  "i": 37,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "clinica",
+  "i": 37,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "clinica",
+  "i": 38,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "clinica",
+  "i": 38,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.47
+ },
+ {
+  "dominio": "clinica",
+  "i": 38,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "clinica",
+  "i": 38,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.4
+ },
+ {
+  "dominio": "clinica",
+  "i": 38,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.72
+ },
+ {
+  "dominio": "clinica",
+  "i": 39,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 39,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.93
+ },
+ {
+  "dominio": "clinica",
+  "i": 39,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 39,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 39,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "clinica",
+  "i": 40,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "clinica",
+  "i": 40,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "clinica",
+  "i": 40,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "clinica",
+  "i": 40,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 40,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.44
+ },
+ {
+  "dominio": "clinica",
+  "i": 41,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 41,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 41,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 41,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 41,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "clinica",
+  "i": 42,
+  "arranjo": "base",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "clinica",
+  "i": 42,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.72
+ },
+ {
+  "dominio": "clinica",
+  "i": 42,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "clinica",
+  "i": 42,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.4
+ },
+ {
+  "dominio": "clinica",
+  "i": 42,
+  "arranjo": "reescrita",
+  "molde": "terceiro-quer",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.77
+ },
+ {
+  "dominio": "clinica",
+  "i": 43,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 43,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 43,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 43,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 43,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 44,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 44,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 44,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 44,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 44,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "documento",
+  "escolha": "documento",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 45,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 45,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 45,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 45,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 45,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 46,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": null,
+  "confianca": null
+ },
+ {
+  "dominio": "clinica",
+  "i": 46,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "agendar",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "clinica",
+  "i": 46,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 46,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "clinica",
+  "i": 46,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 0.38
+ },
+ {
+  "dominio": "clinica",
+  "i": 47,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 47,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 47,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 47,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 47,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "agendar",
+  "escolha": "agendar",
+  "confianca": 0.87
+ },
+ {
+  "dominio": "clinica",
+  "i": 48,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 48,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 48,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 48,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 48,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 49,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 49,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "clinica",
+  "i": 49,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 49,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 49,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 50,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 50,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 50,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 50,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 50,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 51,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 51,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 51,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 51,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 51,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "resultado",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 52,
+  "arranjo": "base",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 52,
+  "arranjo": "descr-iguais",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 52,
+  "arranjo": "rotulo-opaco",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 52,
+  "arranjo": "ordem-inversa",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 52,
+  "arranjo": "reescrita",
+  "molde": "terceiro-contra-eu-quero",
+  "gold": "remarcar",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 53,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.91
+ },
+ {
+  "dominio": "clinica",
+  "i": 53,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 53,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "clinica",
+  "i": 53,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 53,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "clinica",
+  "i": 54,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 54,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.51
+ },
+ {
+  "dominio": "clinica",
+  "i": 54,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 54,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 54,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "clinica",
+  "i": 55,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "clinica",
+  "i": 55,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.9
+ },
+ {
+  "dominio": "clinica",
+  "i": 55,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "clinica",
+  "i": 55,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.86
+ },
+ {
+  "dominio": "clinica",
+  "i": 55,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.4
+ },
+ {
+  "dominio": "clinica",
+  "i": 56,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "clinica",
+  "i": 56,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "clinica",
+  "i": 56,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.62
+ },
+ {
+  "dominio": "clinica",
+  "i": 56,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.52
+ },
+ {
+  "dominio": "clinica",
+  "i": 56,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "clinica",
+  "i": 57,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.27
+ },
+ {
+  "dominio": "clinica",
+  "i": 57,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.23
+ },
+ {
+  "dominio": "clinica",
+  "i": 57,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "clinica",
+  "i": 57,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.42
+ },
+ {
+  "dominio": "clinica",
+  "i": 57,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "clinica",
+  "i": 58,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.77
+ },
+ {
+  "dominio": "clinica",
+  "i": 58,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": null,
+  "confianca": null
+ },
+ {
+  "dominio": "clinica",
+  "i": 58,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "clinica",
+  "i": 58,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.81
+ },
+ {
+  "dominio": "clinica",
+  "i": 58,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.48
+ },
+ {
+  "dominio": "clinica",
+  "i": 59,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "clinica",
+  "i": 59,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "clinica",
+  "i": 59,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.54
+ },
+ {
+  "dominio": "clinica",
+  "i": 59,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 59,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.56
+ },
+ {
+  "dominio": "clinica",
+  "i": 60,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.37
+ },
+ {
+  "dominio": "clinica",
+  "i": 60,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "clinica",
+  "i": 60,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "clinica",
+  "i": 60,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.41
+ },
+ {
+  "dominio": "clinica",
+  "i": 60,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.7
+ },
+ {
+  "dominio": "clinica",
+  "i": 61,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 61,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 61,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 61,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 61,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 62,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 62,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.48
+ },
+ {
+  "dominio": "clinica",
+  "i": 62,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 62,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 62,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "clinica",
+  "i": 63,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 63,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "clinica",
+  "i": 63,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 63,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 63,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "clinica",
+  "i": 64,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.5
+ },
+ {
+  "dominio": "clinica",
+  "i": 64,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.69
+ },
+ {
+  "dominio": "clinica",
+  "i": 64,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.67
+ },
+ {
+  "dominio": "clinica",
+  "i": 64,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.45
+ },
+ {
+  "dominio": "clinica",
+  "i": 64,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.75
+ },
+ {
+  "dominio": "clinica",
+  "i": 65,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.53
+ },
+ {
+  "dominio": "clinica",
+  "i": 65,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.51
+ },
+ {
+  "dominio": "clinica",
+  "i": 65,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "clinica",
+  "i": 65,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.84
+ },
+ {
+  "dominio": "clinica",
+  "i": 65,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.64
+ },
+ {
+  "dominio": "clinica",
+  "i": 66,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.59
+ },
+ {
+  "dominio": "clinica",
+  "i": 66,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "clinica",
+  "i": 66,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.65
+ },
+ {
+  "dominio": "clinica",
+  "i": 66,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.75
+ },
+ {
+  "dominio": "clinica",
+  "i": 66,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.71
+ },
+ {
+  "dominio": "clinica",
+  "i": 67,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.73
+ },
+ {
+  "dominio": "clinica",
+  "i": 67,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "clinica",
+  "i": 67,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.58
+ },
+ {
+  "dominio": "clinica",
+  "i": 67,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "clinica",
+  "i": 67,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.62
+ },
+ {
+  "dominio": "clinica",
+  "i": 68,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.8
+ },
+ {
+  "dominio": "clinica",
+  "i": 68,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.89
+ },
+ {
+  "dominio": "clinica",
+  "i": 68,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "clinica",
+  "i": 68,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.79
+ },
+ {
+  "dominio": "clinica",
+  "i": 68,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.43
+ },
+ {
+  "dominio": "clinica",
+  "i": 69,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.4
+ },
+ {
+  "dominio": "clinica",
+  "i": 69,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.41
+ },
+ {
+  "dominio": "clinica",
+  "i": 69,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.43
+ },
+ {
+  "dominio": "clinica",
+  "i": 69,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "agendar",
+  "confianca": 0.68
+ },
+ {
+  "dominio": "clinica",
+  "i": 69,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.78
+ },
+ {
+  "dominio": "clinica",
+  "i": 70,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 70,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 70,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 70,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 70,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 71,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 71,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "clinica",
+  "i": 71,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 71,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 71,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 1.0
+ },
+ {
+  "dominio": "clinica",
+  "i": 72,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.97
+ },
+ {
+  "dominio": "clinica",
+  "i": 72,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 72,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.99
+ },
+ {
+  "dominio": "clinica",
+  "i": 72,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.95
+ },
+ {
+  "dominio": "clinica",
+  "i": 72,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.96
+ },
+ {
+  "dominio": "clinica",
+  "i": 73,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.92
+ },
+ {
+  "dominio": "clinica",
+  "i": 73,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.88
+ },
+ {
+  "dominio": "clinica",
+  "i": 73,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.83
+ },
+ {
+  "dominio": "clinica",
+  "i": 73,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.86
+ },
+ {
+  "dominio": "clinica",
+  "i": 73,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.98
+ },
+ {
+  "dominio": "clinica",
+  "i": 74,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "clinica",
+  "i": 74,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "clinica",
+  "i": 74,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.65
+ },
+ {
+  "dominio": "clinica",
+  "i": 74,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "remarcar",
+  "confianca": 0.77
+ },
+ {
+  "dominio": "clinica",
+  "i": 74,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.61
+ },
+ {
+  "dominio": "clinica",
+  "i": 75,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.76
+ },
+ {
+  "dominio": "clinica",
+  "i": 75,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.82
+ },
+ {
+  "dominio": "clinica",
+  "i": 75,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.66
+ },
+ {
+  "dominio": "clinica",
+  "i": 75,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.85
+ },
+ {
+  "dominio": "clinica",
+  "i": 75,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "resultado",
+  "confianca": 0.67
+ },
+ {
+  "dominio": "clinica",
+  "i": 76,
+  "arranjo": "base",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.38
+ },
+ {
+  "dominio": "clinica",
+  "i": 76,
+  "arranjo": "descr-iguais",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.69
+ },
+ {
+  "dominio": "clinica",
+  "i": 76,
+  "arranjo": "rotulo-opaco",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.69
+ },
+ {
+  "dominio": "clinica",
+  "i": 76,
+  "arranjo": "ordem-inversa",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "documento",
+  "confianca": 0.39
+ },
+ {
+  "dominio": "clinica",
+  "i": 76,
+  "arranjo": "reescrita",
+  "molde": "sem-pedido",
+  "gold": "informacao",
+  "escolha": "informacao",
+  "confianca": 0.76
+ }
+]

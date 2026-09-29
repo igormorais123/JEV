@@ -1,0 +1,7 @@
+name: jev-fluxos
+version: 1.0.0
+description: "Fluxos determinísticos do JEV que agem: ciclo agêntico de agenda (buscar, perguntar a Igor, reservar, confirmar) e roteador de modelos com orçamento."
+author: INTEIA
+kind: standalone
+provides_tools:
+  - jev_fluxos

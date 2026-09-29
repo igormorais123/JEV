@@ -45,7 +45,7 @@ class Rotina(unittest.TestCase):
             so_medir = rotina.executar(so_medir=True)
         self.assertTrue(completa['commit'])
         self.assertEqual(len(completa['passos']), len(rotina.PASSOS_COMPLETOS))
-        self.assertEqual([p['passo'] for p in so_medir['passos']], ['medir'])
+        self.assertEqual([p['passo'] for p in so_medir['passos']], ['medir', 'gateway'])
         self.assertFalse(so_medir['commit'])
         self.assertEqual(commit.call_count, 1)
 

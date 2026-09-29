@@ -188,8 +188,16 @@ def classificar_em_paralelo(estados, perguntas, *, origem, tempo_total=TEMPO_TOT
         restante = tempo_total - (time.time() - inicio)
         if restante <= 0.3:
             return None, {'erro': 'sem tempo', 'sent': False}
-        return cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
-                                 transporte=transporte, origem=origem, limite=limite)
+        resultado = cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
+                                      transporte=transporte, origem=origem, limite=limite)
+        # O livro-caixa é um SQLite partilhado por todos os hooks; com dois hooks classificando
+        # ao mesmo tempo, uma escrita pode bater no bloqueio (visto uma vez, em 2026-09-21: 13
+        # chamadas pagas jogadas fora por uma que falhou). Uma segunda tentativa, se há tempo.
+        restante = tempo_total - (time.time() - inicio)
+        if resultado[0] is None and (resultado[1] or {}).get('erro') == 'OperationalError'                 and restante > 1.0:
+            resultado = cliente.perguntar(estado, perguntas, timeout=min(por_chamada, restante),
+                                          transporte=transporte, origem=origem, limite=limite)
+        return resultado
 
     with ThreadPoolExecutor(max_workers=min(TRABALHADORES, max(1, len(estados)))) as pool:
         return list(pool.map(uma, estados))
@@ -240,8 +248,21 @@ def dividir_em_blocos(linhas, alvo_de_linhas=60, maximo_de_blocos=24, limite=LIM
     return blocos
 
 
+# O estado de uma classificação é PEDIDO + trecho, e o limite vale para a soma. Um pedido longo
+# — texto colado, prompt de sistema, pedido que já veio com contexto — empurra o estado para fora
+# do limite e derruba a camada inteira antes de a chamada sair. No Hermes isso aconteceu em 7 de
+# 12 resultados grandes reais (medição de 22/09). Os últimos 800 caracteres bastam para julgar
+# relevância, e num pedido que começa por preâmbulo é onde a tarefa está.
+PEDIDO_PARA_CLASSIFICAR = 800
+
+
+def pedido_curto(pedido, maximo=PEDIDO_PARA_CLASSIFICAR):
+    pedido = (pedido or '').strip()
+    return pedido if len(pedido) <= maximo else '…' + pedido[-maximo:]
+
+
 def estado_do_trecho(pedido, rotulo, texto):
-    return f'PEDIDO:\n{pedido}\n\n{rotulo}\n{texto}'
+    return f'PEDIDO:\n{pedido_curto(pedido)}\n\n{rotulo}\n{texto}'
 
 
 def escolha(respostas, nome):

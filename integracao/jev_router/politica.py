@@ -23,6 +23,8 @@ custa uma skill não carregada, e uma sugestão errada custa três linhas de con
 calibrado neste dado, que é a regra número 2 do guia prático.
 """
 
+from pathlib import Path
+
 # Calibrado em `avaliacao/skills-resultado.json`: em 0,90 são 9 acertos e 0 falsos; em 0,95 a
 # cobertura cai para 5 sem nenhum ganho de precisão.
 CORTE_DO_TEMA = 0.90
@@ -39,18 +41,40 @@ TEMAS = {
     'nenhum': 'Nenhum dos temas acima: e programacao comum, conversa, ajuste de codigo ou operacao do projeto.',
 }
 
-# As skills que cada tema oferece, copiadas do que os hooks `hookify.suggest-skill-*` já
-# anunciam. O roteador não inventa skill: ele só escolhe melhor entre as que já existem.
+# As skills que cada tema oferece. Revisto em 23/09/2026: a lista antiga, copiada dos hookify,
+# apontava para skills que não existem (`/ash`, `/themis`, `/google`, `/infra`, `/midas`) ou
+# estão desligadas (`oracle`, `mel`, `apify-operacional`, `investigador-provas`), e a nota
+# injetada mandava o agente atrás de nada. Agora cada nome é conferido na pasta de skills do
+# agente que está rodando (Claude Code ou Codex têm pastas diferentes) antes de ser sugerido.
 SKILLS = {
-    'juridico': '`/ash` (advogado), `/themis` (normas e jurisprudência), `/investigador-provas`',
-    'comunicacao': '`/diana` (comunicação), `/relatorio-inteia`',
-    'estrategia': '`/midas` (estratégia), `/helena` (decisão)',
-    'google': '`/google` (Gmail, Drive, Agenda, Apps Script)',
-    'infra': '`/hermes` (VPS e infraestrutura), `/infra`',
-    'pesquisa': '`/oracle` (pesquisa), `/apify-operacional` (coleta web)',
-    'relatorio': '`/relatorio-inteia`',
-    'receita': '`/mel` (comercial), `/iris` (concierge)',
+    'juridico': [('cicero', 'engenharia jurídica'), ('arcano', 'esteira do escritório')],
+    'comunicacao': [('diana-comunicacao', 'comunicação'), ('relatorio-inteia', 'relatório')],
+    'estrategia': [('helena', 'estratégia e decisão')],
+    'infra': [('vps-server-management', 'VPS'), ('hermes', 'Hermes')],
+    'pesquisa': [('deep-research', 'pesquisa com fontes'), ('helena', 'dados e cenários')],
+    'relatorio': [('relatorio-inteia', 'relatório INTEIA')],
+    'receita': [('iris', 'concierge')],
 }
+
+
+def _desligadas(configuracao):
+    try:
+        import json
+        dado = json.loads(Path(configuracao).read_text(encoding='utf-8'))
+        return {k for k, v in (dado.get('skillOverrides') or {}).items() if v in ('off', False)}
+    except (OSError, ValueError):
+        return set()
+
+
+def disponiveis(tema, pasta=None, configuracao=None):
+    """As skills do tema que existem na pasta do agente e não estão desligadas, como texto."""
+    pasta = Path(pasta) if pasta else Path.home() / '.claude' / 'skills'
+    desligadas = _desligadas(configuracao or Path.home() / '.claude' / 'settings.json')
+    achadas = [f'`/{nome}` ({rotulo})' for nome, rotulo in SKILLS.get(tema, [])
+               if nome not in desligadas and ((pasta / nome / 'SKILL.md').exists()
+                                              or any(pasta.glob(f'synced/*/{nome}/SKILL.md')))]
+    return ', '.join(achadas)
+
 
 PERGUNTAS = {
     'tema': {
@@ -81,7 +105,7 @@ AVISO_DE_RISCO = {
 }
 
 
-def decidir(respostas):
+def decidir(respostas, pasta_de_skills=None, configuracao=None):
     """Traduz as respostas do Jev numa sugestão, ou em silêncio.
 
     Silêncio é o resultado mais comum e é o certo: em 37 dos 60 pedidos reais não havia tema
@@ -93,7 +117,9 @@ def decidir(respostas):
 
     decisao = {'tema': tema, 'confianca': confianca, 'risco': risco, 'sugere': False}
     if tema in SKILLS and (confianca or 0) >= CORTE_DO_TEMA:
-        decisao.update({'sugere': True, 'skills': SKILLS[tema]})
+        decisao.update({'sugere': True, 'skills': disponiveis(tema, pasta_de_skills, configuracao)})
+        if not decisao['skills']:
+            decisao.update({'sugere': False, 'motivo': 'nenhuma skill do tema disponível neste agente'})
     elif tema in SKILLS:
         decisao['motivo'] = f'confiança {confianca} abaixo do corte {CORTE_DO_TEMA}'
     else:

@@ -66,7 +66,8 @@ flowchart LR
 ### FONTES.md
 
 - **usa** — link: [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`research/JEV-FLOW.md`](../../research/JEV-FLOW.md), [`research/TEN-LEVELS-OF-JEV.md`](../../research/TEN-LEVELS-OF-JEV.md), [`research/sources-manifest.json`](../../research/sources-manifest.json); citação: [`.gitattributes`](../../.gitattributes), [`.gitignore`](../../.gitignore), [`AGENTS.md`](../../AGENTS.md), [`README.md`](../../README.md), [`planning/arquitetura/package.json`](../../planning/arquitetura/package.json)
-- **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`lab/dashboard.js`](../../lab/dashboard.js), [`lab/index.html`](../../lab/index.html), [`lab/server.py`](../../lab/server.py)
+- **é usado por** — link: [`README.md`](../../README.md), [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`docs/TRIAGEM-JEV-HELENA.md`](../../docs/TRIAGEM-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`integracao/skill/jev-completo/SKILL.md`](../../integracao/skill/jev-completo/SKILL.md), [`lab/dashboard.js`](../../lab/dashboard.js), [`lab/index.html`](../../lab/index.html), [`lab/server.py`](../../lab/server.py)
+- **parecidos (julgados pelo Jev)** — [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md) (não julgado, 0.21)
 - **conteúdo** — Documentação externa consultada (l. 9), Catálogo por revisão (l. 19), Referência complementar de 28/09/2026 (l. 270), Enquadramento da análise original (l. 276)
 
 ### JEV-FLOW.md
@@ -79,12 +80,14 @@ flowchart LR
 
 - **usa** — link: [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md)
 - **é usado por** — link: [`README.md`](../../README.md), [`docs/ARQUITETURA-DO-JEV-REVISAO.md`](../../docs/ARQUITETURA-DO-JEV-REVISAO.md), [`planning/arquitetura/VERIFICACAO.md`](../../planning/arquitetura/VERIFICACAO.md), [`research/FONTES.md`](../../research/FONTES.md); citação: [`output/arquitetura-jev.html`](../../output/arquitetura-jev.html), [`planning/arquitetura/arquivos-mapa.txt`](../../planning/arquitetura/arquivos-mapa.txt)
+- **parecidos (julgados pelo Jev)** — [`planning/arquitetura/README.md`](../../planning/arquitetura/README.md) (não julgado, 0.30)
 - **conteúdo** — Seleção das contribuições (l. 8), Conferência no código associado (l. 23), Conteúdo excluído da edição (l. 33), Registro da análise (l. 42)
 
 ### audit_hermes_pdf.py
 
 - **usa** — citação: [`research/hermes/Jev-Dossie-Quantitativo.txt`](../../research/hermes/Jev-Dossie-Quantitativo.txt), [`research/hermes/auditoria-local.json`](../../research/hermes/auditoria-local.json), [`research/hermes/fase2-decisoes-do-pdf.csv`](../../research/hermes/fase2-decisoes-do-pdf.csv)
 - **é usado por** — link: [`docs/PLANO-CIENTIFICO-JEV-HELENA.md`](../../docs/PLANO-CIENTIFICO-JEV-HELENA.md), [`planning/protocolo.md`](../../planning/protocolo.md); citação: [`README.md`](../../README.md)
+- **parecidos (julgados pelo Jev)** — [`planning/build_deliverables.py`](../../planning/build_deliverables.py) (complementar, 0.34)
 - **conteúdo** — [wilson](../../research/audit_hermes_pdf.py#L20) (l. 20), [main](../../research/audit_hermes_pdf.py#L27) (l. 27)
 
 ### collect_sources.py

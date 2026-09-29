@@ -1,0 +1,1388 @@
+[
+ {
+  "gold": "Refund_not_showing_up",
+  "escolha": "Refund_not_showing_up",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I still haven't seen a refund on my account",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 4893.36
+ },
+ {
+  "gold": "Refund_not_showing_up",
+  "escolha": "Refund_not_showing_up",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I am missing a refund.",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 3266.82
+ },
+ {
+  "gold": "activate_my_card",
+  "escolha": "activate_my_card",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What is the activation process on my new card?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1398.59
+ },
+ {
+  "gold": "activate_my_card",
+  "escolha": "activate_my_card",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How do I activate a new card?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 1128.51
+ },
+ {
+  "gold": "age_limit",
+  "escolha": "age_limit",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Is there an age minimum?",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 1949.55
+ },
+ {
+  "gold": "age_limit",
+  "escolha": "age_limit",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What is the youngest someone can be to open an account?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1664.94
+ },
+ {
+  "gold": "apple_pay_or_google_pay",
+  "escolha": "apple_pay_or_google_pay",
+  "confianca": 0.77,
+  "p": 0.78,
+  "texto": "is apple pay eligible for top up",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 8785.99
+ },
+ {
+  "gold": "apple_pay_or_google_pay",
+  "escolha": "apple_pay_or_google_pay",
+  "confianca": 0.9,
+  "p": 0.91,
+  "texto": "How do I troubleshoot Google pay top up?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 5419.13
+ },
+ {
+  "gold": "atm_support",
+  "escolha": "atm_support",
+  "confianca": 0.72,
+  "p": 0.73,
+  "texto": "Which ATM's will accept my card?",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 4580.59
+ },
+ {
+  "gold": "atm_support",
+  "escolha": "atm_support",
+  "confianca": 0.93,
+  "p": 0.9400000000000001,
+  "texto": "Where can I use this card at an ATM?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1024.73
+ },
+ {
+  "gold": "automatic_top_up",
+  "escolha": "automatic_top_up",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Is there an auto top-up option?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 1030.69
+ },
+ {
+  "gold": "automatic_top_up",
+  "escolha": "automatic_top_up",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Can I set up an automatic top-up for travel.",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1056.64
+ },
+ {
+  "gold": "balance_not_updated_after_bank_transfer",
+  "escolha": "balance_not_updated_after_bank_transfer",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Why didn't my balance change after I transferred some money?",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1154.8
+ },
+ {
+  "gold": "balance_not_updated_after_bank_transfer",
+  "escolha": "pending_transfer",
+  "confianca": 0.64,
+  "p": 0.65,
+  "texto": "I made a transfer a few hours ago from a UK banking account.  I do not yet see the transfer.  Please check on this for me.",
+  "custo_usd": 0.000125412,
+  "latencia_ms": 4327.95
+ },
+ {
+  "gold": "balance_not_updated_after_cheque_or_cash_deposit",
+  "escolha": "balance_not_updated_after_cheque_or_cash_deposit",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "A cheque deposit hasn't posted to my account, when will my balance update?",
+  "custo_usd": 0.00012516,
+  "latencia_ms": 1067.68
+ },
+ {
+  "gold": "balance_not_updated_after_cheque_or_cash_deposit",
+  "escolha": "balance_not_updated_after_cheque_or_cash_deposit",
+  "confianca": 0.96,
+  "p": 0.97,
+  "texto": "I sent a cheque  a few days ago and nothing has happened to my account yet. Can you please check on this for me?",
+  "custo_usd": 0.000125622,
+  "latencia_ms": 1096.52
+ },
+ {
+  "gold": "beneficiary_not_allowed",
+  "escolha": "declined_transfer",
+  "confianca": 0.55,
+  "p": 0.56,
+  "texto": "A transfer to an account was not allowed",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1035.97
+ },
+ {
+  "gold": "beneficiary_not_allowed",
+  "escolha": "failed_transfer",
+  "confianca": 0.94,
+  "p": 0.94,
+  "texto": "I've tried numerous times to submit a transfer of funds. Why isn't it going through?",
+  "custo_usd": 0.000124908,
+  "latencia_ms": 1065.87
+ },
+ {
+  "gold": "cancel_transfer",
+  "escolha": "cancel_transfer",
+  "confianca": 0.34,
+  "p": 0.36,
+  "texto": "I made a mistake with a transaction!",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1319.7
+ },
+ {
+  "gold": "cancel_transfer",
+  "escolha": "cancel_transfer",
+  "confianca": 0.99,
+  "p": 1.0,
+  "texto": "This is URGENT, I typed the wrong payment information for a payment I needed to make and have clicked send, I need to reverse the transaction immediately.",
+  "custo_usd": 0.000125454,
+  "latencia_ms": 8050.7
+ },
+ {
+  "gold": "card_about_to_expire",
+  "escolha": "get_physical_card",
+  "confianca": 0.44,
+  "p": 0.46,
+  "texto": "how long and how much does it cost for new card",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 1035.22
+ },
+ {
+  "gold": "card_about_to_expire",
+  "escolha": "card_about_to_expire",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My card is about to expire.",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1042.65
+ },
+ {
+  "gold": "card_acceptance",
+  "escolha": "card_acceptance",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Where is my card accepted?",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1064.12
+ },
+ {
+  "gold": "card_acceptance",
+  "escolha": "card_acceptance",
+  "confianca": 0.97,
+  "p": 0.97,
+  "texto": "Will my card be accepted all over the world?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1061.95
+ },
+ {
+  "gold": "card_arrival",
+  "escolha": "card_arrival",
+  "confianca": 0.6,
+  "p": 0.61,
+  "texto": "Do you know if there is a tracking number for the new card you sent me?",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 1049.32
+ },
+ {
+  "gold": "card_arrival",
+  "escolha": "card_arrival",
+  "confianca": 0.82,
+  "p": 0.83,
+  "texto": "I am still waiting for my card after 1 week.  Is this ok?",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 3667.86
+ },
+ {
+  "gold": "card_delivery_estimate",
+  "escolha": "card_delivery_estimate",
+  "confianca": 0.72,
+  "p": 0.73,
+  "texto": "How long will it take for the card to arrive?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1048.99
+ },
+ {
+  "gold": "card_delivery_estimate",
+  "escolha": "card_delivery_estimate",
+  "confianca": 0.97,
+  "p": 0.98,
+  "texto": "When can I expect my card to be delivered to the US?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 1017.76
+ },
+ {
+  "gold": "card_linking",
+  "escolha": "card_linking",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How do I link one your card if I have one already?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 2013.86
+ },
+ {
+  "gold": "card_linking",
+  "escolha": "card_linking",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Where on the website do I go to link my card?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1012.8
+ },
+ {
+  "gold": "card_not_working",
+  "escolha": "card_not_working",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My card is broke, what do I do?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1027.49
+ },
+ {
+  "gold": "card_not_working",
+  "escolha": "card_not_working",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My actual card isn't working.",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 2881.16
+ },
+ {
+  "gold": "card_payment_fee_charged",
+  "escolha": "extra_charge_on_statement",
+  "confianca": 0.76,
+  "p": 0.77,
+  "texto": "I would appreciate that someone let me know when there is an extra charge for payments. I was checking the app earlier and saying a charge on one of my payments that was additional that no one made me aware of before.",
+  "custo_usd": 0.000126042,
+  "latencia_ms": 1089.43
+ },
+ {
+  "gold": "card_payment_fee_charged",
+  "escolha": "card_payment_fee_charged",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Is there a reason I was charged a fee for using my card as payment? I've never had an extra fee before.",
+  "custo_usd": 0.000125328,
+  "latencia_ms": 5163.49
+ },
+ {
+  "gold": "card_payment_not_recognised",
+  "escolha": "compromised_card",
+  "confianca": 0.76,
+  "p": 0.77,
+  "texto": "I see a charge on my account that I don't recall making. I feel like my account may have been compromised.",
+  "custo_usd": 0.000125202,
+  "latencia_ms": 1052.79
+ },
+ {
+  "gold": "card_payment_not_recognised",
+  "escolha": "card_payment_not_recognised",
+  "confianca": 0.97,
+  "p": 0.97,
+  "texto": "There is a charge on my card that I did not make",
+  "custo_usd": 0.000124824,
+  "latencia_ms": 9394.62
+ },
+ {
+  "gold": "card_payment_wrong_exchange_rate",
+  "escolha": "extra_charge_on_statement",
+  "confianca": 0.97,
+  "p": 0.98,
+  "texto": "Why am I being charged more ?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 2100.01
+ },
+ {
+  "gold": "card_payment_wrong_exchange_rate",
+  "escolha": "card_payment_wrong_exchange_rate",
+  "confianca": 0.78,
+  "p": 0.79,
+  "texto": "They charged me wrong for a currency exchange on a purchase.",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 997.07
+ },
+ {
+  "gold": "card_swallowed",
+  "escolha": "card_swallowed",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Atm took my card",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1248.03
+ },
+ {
+  "gold": "card_swallowed",
+  "escolha": "card_swallowed",
+  "confianca": 0.55,
+  "p": 0.56,
+  "texto": "How can I get my card back out?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 981.98
+ },
+ {
+  "gold": "cash_withdrawal_charge",
+  "escolha": "cash_withdrawal_charge",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How come I was charged extra when I withdrew cash?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 1229.98
+ },
+ {
+  "gold": "cash_withdrawal_charge",
+  "escolha": "cash_withdrawal_charge",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Is there a limit on how much I can withdraw from my account without being charged?",
+  "custo_usd": 0.000124992,
+  "latencia_ms": 1001.45
+ },
+ {
+  "gold": "cash_withdrawal_not_recognised",
+  "escolha": "compromised_card",
+  "confianca": 0.72,
+  "p": 0.73,
+  "texto": "There is a problem with my card. Somebody has removed money from my account in a town I haven't been to. Can you please freeze my account immediately?",
+  "custo_usd": 0.000125538,
+  "latencia_ms": 1009.01
+ },
+ {
+  "gold": "cash_withdrawal_not_recognised",
+  "escolha": "cash_withdrawal_not_recognised",
+  "confianca": 0.94,
+  "p": 0.95,
+  "texto": "I didn't get cash from an ATM, but the app says I did",
+  "custo_usd": 0.000125076,
+  "latencia_ms": 1054.56
+ },
+ {
+  "gold": "change_pin",
+  "escolha": "change_pin",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I need to change my PIN. Can I do that at a cash machine?",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1058.29
+ },
+ {
+  "gold": "change_pin",
+  "escolha": "change_pin",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How to change the PIN on my card?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 1030.7
+ },
+ {
+  "gold": "compromised_card",
+  "escolha": "compromised_card",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Someone has my card number, freeze my account.",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1008.44
+ },
+ {
+  "gold": "compromised_card",
+  "escolha": "compromised_card",
+  "confianca": 0.9,
+  "p": 0.91,
+  "texto": "Someone else may be using my card.  There are transactions I don't recognize.",
+  "custo_usd": 0.000124908,
+  "latencia_ms": 4664.79
+ },
+ {
+  "gold": "contactless_not_working",
+  "escolha": "contactless_not_working",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I wanted to use my card contactless but it doesn't seem to be working, what could be the problem?",
+  "custo_usd": 0.000125328,
+  "latencia_ms": 1023.55
+ },
+ {
+  "gold": "contactless_not_working",
+  "escolha": "contactless_not_working",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "For some reason my contactless won't work for me.",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 1033.71
+ },
+ {
+  "gold": "country_support",
+  "escolha": "country_support",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What are the countries you operate in.",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1041.59
+ },
+ {
+  "gold": "country_support",
+  "escolha": "get_physical_card",
+  "confianca": 0.59,
+  "p": 0.61,
+  "texto": "Now that I live in the US how can I get a card?",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1013.6
+ },
+ {
+  "gold": "declined_card_payment",
+  "escolha": "declined_card_payment",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Why has my card payment been declined?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1042.84
+ },
+ {
+  "gold": "declined_card_payment",
+  "escolha": "declined_card_payment",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My credit card was declined.",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 2866.9
+ },
+ {
+  "gold": "declined_cash_withdrawal",
+  "escolha": "declined_cash_withdrawal",
+  "confianca": 0.51,
+  "p": 0.53,
+  "texto": "Why did the ATM machine fail to give me a cash withdrawal?",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 6573.98
+ },
+ {
+  "gold": "declined_cash_withdrawal",
+  "escolha": "declined_cash_withdrawal",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Why was I declined getting cash?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1817.47
+ },
+ {
+  "gold": "declined_transfer",
+  "escolha": null,
+  "confianca": null,
+  "p": null,
+  "texto": "Why do you keep declining my transfers?it was always been working really well so far but when I tried to buy something just now the card got declined . I tried couple of times already  but same thing is happening.",
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "gold": "declined_transfer",
+  "escolha": "declined_card_payment",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Good morning. I tried to make a purchase with my credit card last night and again this morning. Both times it was declined. Can you investigate?",
+  "custo_usd": 0.000125454,
+  "latencia_ms": 1038.51
+ },
+ {
+  "gold": "direct_debit_payment_not_recognised",
+  "escolha": "card_payment_not_recognised",
+  "confianca": 0.89,
+  "p": 0.9,
+  "texto": "Even though it's late, I wanted to see about disputing a charge. I was just looking through my transactions over the past couple of months and noticed a pretty large amount that was not completed by me. Is this possibly something I can still do.",
+  "custo_usd": 0.000126462,
+  "latencia_ms": 1068.36
+ },
+ {
+  "gold": "direct_debit_payment_not_recognised",
+  "escolha": null,
+  "confianca": null,
+  "p": null,
+  "texto": "What is this direct debit I am seeing?",
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "gold": "disposable_card_limits",
+  "escolha": "disposable_card_limits",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What's the most disposable cards I can have?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1334.68
+ },
+ {
+  "gold": "disposable_card_limits",
+  "escolha": "disposable_card_limits",
+  "confianca": 0.8,
+  "p": 0.81,
+  "texto": "What if I need multiple disposable cards?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1796.0
+ },
+ {
+  "gold": "edit_personal_details",
+  "escolha": "edit_personal_details",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How to change my address.",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 2861.45
+ },
+ {
+  "gold": "edit_personal_details",
+  "escolha": "edit_personal_details",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "got married, need to change account name",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1020.29
+ },
+ {
+  "gold": "exchange_charge",
+  "escolha": "exchange_charge",
+  "confianca": 0.93,
+  "p": 0.9400000000000001,
+  "texto": "How much does it cost to exchange currencies?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 991.43
+ },
+ {
+  "gold": "exchange_charge",
+  "escolha": "exchange_charge",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "Can I exchange money from abroad without additional costs?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1544.0
+ },
+ {
+  "gold": "exchange_rate",
+  "escolha": "exchange_rate",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How did you come up with your exchange rates?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1031.49
+ },
+ {
+  "gold": "exchange_rate",
+  "escolha": "exchange_rate",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What exchange rate do you use?",
+  "custo_usd": 0.000124404,
+  "latencia_ms": 2651.83
+ },
+ {
+  "gold": "exchange_via_app",
+  "escolha": "country_support",
+  "confianca": 0.86,
+  "p": 0.87,
+  "texto": "How would I use my money in a different country?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1096.14
+ },
+ {
+  "gold": "exchange_via_app",
+  "escolha": "exchange_via_app",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How do I convert currencies with the app?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1068.53
+ },
+ {
+  "gold": "extra_charge_on_statement",
+  "escolha": "extra_charge_on_statement",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What is this €1 fee in my statement?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 4560.99
+ },
+ {
+  "gold": "extra_charge_on_statement",
+  "escolha": "extra_charge_on_statement",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My statement has a dollar I have been charged showing up on it.",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1560.8
+ },
+ {
+  "gold": "failed_transfer",
+  "escolha": "failed_transfer",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Why has my transfer failed?",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 2965.73
+ },
+ {
+  "gold": "failed_transfer",
+  "escolha": "failed_transfer",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "I can not seem to make a successful transfer, can you tell me what I'm doing wrong?",
+  "custo_usd": 0.00012495,
+  "latencia_ms": 1593.88
+ },
+ {
+  "gold": "fiat_currency_support",
+  "escolha": "fiat_currency_support",
+  "confianca": 0.39,
+  "p": 0.41000000000000003,
+  "texto": "How do I change currencies to euros?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 4559.87
+ },
+ {
+  "gold": "fiat_currency_support",
+  "escolha": "exchange_rate",
+  "confianca": 0.67,
+  "p": 0.6900000000000001,
+  "texto": "Can I exchange to EUR?",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 1334.87
+ },
+ {
+  "gold": "get_disposable_virtual_card",
+  "escolha": "get_disposable_virtual_card",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "When can I order a disposable virtual card?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1372.71
+ },
+ {
+  "gold": "get_disposable_virtual_card",
+  "escolha": "get_disposable_virtual_card",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I want to get a disposable virtual card.",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 2700.0
+ },
+ {
+  "gold": "get_physical_card",
+  "escolha": "change_pin",
+  "confianca": 0.53,
+  "p": 0.54,
+  "texto": "Where is the card PIN?",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 1088.08
+ },
+ {
+  "gold": "get_physical_card",
+  "escolha": "card_arrival",
+  "confianca": 0.87,
+  "p": 0.88,
+  "texto": "I received my card but not my PIN.",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1612.28
+ },
+ {
+  "gold": "getting_spare_card",
+  "escolha": "getting_spare_card",
+  "confianca": 0.62,
+  "p": 0.64,
+  "texto": "My daughter needs a card. Can I give her one of mine that's linked to my account?",
+  "custo_usd": 0.000125034,
+  "latencia_ms": 1075.07
+ },
+ {
+  "gold": "getting_spare_card",
+  "escolha": "getting_spare_card",
+  "confianca": 0.93,
+  "p": 0.93,
+  "texto": "If you send me more cards, are there any charges?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 1068.66
+ },
+ {
+  "gold": "getting_virtual_card",
+  "escolha": "getting_virtual_card",
+  "confianca": 0.97,
+  "p": 0.97,
+  "texto": "Is this where I order a virtual card?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1034.93
+ },
+ {
+  "gold": "getting_virtual_card",
+  "escolha": "getting_virtual_card",
+  "confianca": 0.99,
+  "p": 1.0,
+  "texto": "Where can I obtain my virtual card?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 2381.61
+ },
+ {
+  "gold": "lost_or_stolen_card",
+  "escolha": "lost_or_stolen_card",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "Someone stole my card. I need to report it stolen. I made a police report already, but how do I report it with you?",
+  "custo_usd": 0.000125412,
+  "latencia_ms": 1039.54
+ },
+ {
+  "gold": "lost_or_stolen_card",
+  "escolha": "lost_or_stolen_card",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "I believe my card has been stolen, what can I do about this situation? It's urgent.",
+  "custo_usd": 0.000125076,
+  "latencia_ms": 1050.85
+ },
+ {
+  "gold": "lost_or_stolen_phone",
+  "escolha": "lost_or_stolen_phone",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "The hotel called and said I left my phone in the room.",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1338.48
+ },
+ {
+  "gold": "lost_or_stolen_phone",
+  "escolha": "lost_or_stolen_phone",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I think my phone is either lost or stolen.",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 2373.96
+ },
+ {
+  "gold": "order_physical_card",
+  "escolha": "get_physical_card",
+  "confianca": 0.9,
+  "p": 0.91,
+  "texto": "Is there a charge for physical cards",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1060.59
+ },
+ {
+  "gold": "order_physical_card",
+  "escolha": "get_physical_card",
+  "confianca": 0.85,
+  "p": 0.86,
+  "texto": "What are the fees for a physical card?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 2112.93
+ },
+ {
+  "gold": "passcode_forgotten",
+  "escolha": "passcode_forgotten",
+  "confianca": 0.98,
+  "p": 0.98,
+  "texto": "Can you help me reset my password?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1315.16
+ },
+ {
+  "gold": "passcode_forgotten",
+  "escolha": "passcode_forgotten",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I can't find my password",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 6128.83
+ },
+ {
+  "gold": "pending_card_payment",
+  "escolha": "pending_card_payment",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My card payment is showing pending.",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1059.16
+ },
+ {
+  "gold": "pending_card_payment",
+  "escolha": "pending_card_payment",
+  "confianca": 0.94,
+  "p": 0.95,
+  "texto": "what does pending mean?",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 1591.46
+ },
+ {
+  "gold": "pending_cash_withdrawal",
+  "escolha": "cash_withdrawal_not_recognised",
+  "confianca": 0.5,
+  "p": 0.52,
+  "texto": "Where's accounting for my cash withdrawal?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 2107.67
+ },
+ {
+  "gold": "pending_cash_withdrawal",
+  "escolha": "pending_cash_withdrawal",
+  "confianca": 0.62,
+  "p": 0.63,
+  "texto": "Hey, my card was declined at an ATM in the city centre theatre. My account says the transaction is pending, though. I didn't get the money, though, so what does that mean?",
+  "custo_usd": 0.000125958,
+  "latencia_ms": 1049.35
+ },
+ {
+  "gold": "pending_top_up",
+  "escolha": "pending_top_up",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "I topped up by card a while ago and it's still pending, surely it should be done by now?",
+  "custo_usd": 0.000125076,
+  "latencia_ms": 2298.37
+ },
+ {
+  "gold": "pending_top_up",
+  "escolha": "top_up_failed",
+  "confianca": 0.6,
+  "p": 0.62,
+  "texto": "My card was topped this morning but I can't see the funds. Why didn't it complete?",
+  "custo_usd": 0.000124992,
+  "latencia_ms": 6543.62
+ },
+ {
+  "gold": "pending_transfer",
+  "escolha": "pending_transfer",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Pending transfer?",
+  "custo_usd": 0.000124236,
+  "latencia_ms": 1039.14
+ },
+ {
+  "gold": "pending_transfer",
+  "escolha": "pending_transfer",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I have a pending transfer",
+  "custo_usd": 0.000124362,
+  "latencia_ms": 1778.93
+ },
+ {
+  "gold": "pin_blocked",
+  "escolha": "pin_blocked",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How do I get my PIN unlocked?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1259.53
+ },
+ {
+  "gold": "pin_blocked",
+  "escolha": "pin_blocked",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What can you do to unblock my pin?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 3245.73
+ },
+ {
+  "gold": "receiving_money",
+  "escolha": "transfer_into_account",
+  "confianca": 0.54,
+  "p": 0.55,
+  "texto": "Can i deposit my salary to this account?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1211.88
+ },
+ {
+  "gold": "receiving_money",
+  "escolha": "fiat_currency_support",
+  "confianca": 0.52,
+  "p": 0.54,
+  "texto": "Is GBP a supported currency?",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 1173.5
+ },
+ {
+  "gold": "request_refund",
+  "escolha": "request_refund",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Would I be able to get a refund for something I bought?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 3837.09
+ },
+ {
+  "gold": "request_refund",
+  "escolha": "request_refund",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I would appreciate it if I could get an item refunded",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1442.27
+ },
+ {
+  "gold": "reverted_card_payment?",
+  "escolha": "declined_card_payment",
+  "confianca": 0.77,
+  "p": 0.78,
+  "texto": "Why was my card payment cancelled?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 983.8
+ },
+ {
+  "gold": "reverted_card_payment?",
+  "escolha": "cancel_transfer",
+  "confianca": 0.69,
+  "p": 0.71,
+  "texto": "I have a payment listed as cancelled.",
+  "custo_usd": 0.000124446,
+  "latencia_ms": 2036.24
+ },
+ {
+  "gold": "supported_cards_and_currencies",
+  "escolha": "fiat_currency_support",
+  "confianca": 0.55,
+  "p": 0.56,
+  "texto": "What currencies are accepted for adding money?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 2010.25
+ },
+ {
+  "gold": "supported_cards_and_currencies",
+  "escolha": "card_acceptance",
+  "confianca": 0.92,
+  "p": 0.93,
+  "texto": "I only own one other credit card from the USA. Will it be accepted?",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 983.59
+ },
+ {
+  "gold": "terminate_account",
+  "escolha": "terminate_account",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I am extremely unhappy with this app and want to get rid of my account?",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1211.84
+ },
+ {
+  "gold": "terminate_account",
+  "escolha": "terminate_account",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I'm tired of all the problems I've had. I want to quit this account!",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 1618.18
+ },
+ {
+  "gold": "top_up_by_bank_transfer_charge",
+  "escolha": "transfer_into_account",
+  "confianca": 0.84,
+  "p": 0.86,
+  "texto": "Please tell me about SWIFT transfers at this bank.",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1110.8
+ },
+ {
+  "gold": "top_up_by_bank_transfer_charge",
+  "escolha": "transfer_into_account",
+  "confianca": 0.96,
+  "p": 0.97,
+  "texto": "Can I also transfer with SWIFT?",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 1343.69
+ },
+ {
+  "gold": "top_up_by_card_charge",
+  "escolha": "top_up_by_card_charge",
+  "confianca": 0.97,
+  "p": 0.97,
+  "texto": "Are there fees for adding money using an international card",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 911.47
+ },
+ {
+  "gold": "top_up_by_card_charge",
+  "escolha": "top_up_by_card_charge",
+  "confianca": 0.98,
+  "p": 0.98,
+  "texto": "What are the fees of using an international card to add money?",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1130.77
+ },
+ {
+  "gold": "top_up_by_cash_or_cheque",
+  "escolha": "top_up_by_cash_or_cheque",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Can you top-up a card with a cheque?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 924.18
+ },
+ {
+  "gold": "top_up_by_cash_or_cheque",
+  "escolha": "top_up_by_cash_or_cheque",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "is there a way to do top up with cash deposit",
+  "custo_usd": 0.000124824,
+  "latencia_ms": 1572.98
+ },
+ {
+  "gold": "top_up_failed",
+  "escolha": "top_up_failed",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My top-up has failed.",
+  "custo_usd": 0.000124404,
+  "latencia_ms": 2277.79
+ },
+ {
+  "gold": "top_up_failed",
+  "escolha": "top_up_failed",
+  "confianca": 0.95,
+  "p": 0.96,
+  "texto": "I don't think my top up is working correctly",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1803.38
+ },
+ {
+  "gold": "top_up_limits",
+  "escolha": "top_up_limits",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "How can I tell what the limit is to top-ups?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 2547.38
+ },
+ {
+  "gold": "top_up_limits",
+  "escolha": "top_up_limits",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "How much can I top-up to my card at a time?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 2282.8
+ },
+ {
+  "gold": "top_up_reverted",
+  "escolha": "top_up_reverted",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I topped up but the app reverted it",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1121.89
+ },
+ {
+  "gold": "top_up_reverted",
+  "escolha": "top_up_reverted",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "My top-up was revoked.",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 3673.73
+ },
+ {
+  "gold": "topping_up_by_card",
+  "escolha": "top_up_failed",
+  "confianca": 0.46,
+  "p": 0.48,
+  "texto": "i know i entered the right info, but my top up isn't in my balance",
+  "custo_usd": 0.000124908,
+  "latencia_ms": 1155.15
+ },
+ {
+  "gold": "topping_up_by_card",
+  "escolha": "topping_up_by_card",
+  "confianca": 0.36,
+  "p": 0.38,
+  "texto": "Are my friends able to top up my account?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 2164.2
+ },
+ {
+  "gold": "transaction_charged_twice",
+  "escolha": "transaction_charged_twice",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I recently got charged twice from a restaurant that I was at this week and I would like for one of those payments to be removed from my account.",
+  "custo_usd": 0.000125538,
+  "latencia_ms": 924.96
+ },
+ {
+  "gold": "transaction_charged_twice",
+  "escolha": "transaction_charged_twice",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I see that I have been charged multiple times for the same transaction.",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 3458.93
+ },
+ {
+  "gold": "transfer_fee_charged",
+  "escolha": "extra_charge_on_statement",
+  "confianca": 0.96,
+  "p": 0.97,
+  "texto": "I recently got a new place while I'm staying abroad and have been using this account to manage payments, but suddenly I am seeing fees increase. Where are these additional fees coming from?",
+  "custo_usd": 0.000125748,
+  "latencia_ms": 1223.48
+ },
+ {
+  "gold": "transfer_fee_charged",
+  "escolha": "transfer_fee_charged",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I got charged and extra fee when I transferred money so why was I charged?",
+  "custo_usd": 0.000124908,
+  "latencia_ms": 1190.61
+ },
+ {
+  "gold": "transfer_into_account",
+  "escolha": "transfer_into_account",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I would like to transfer some money from my other bank account into this one.",
+  "custo_usd": 0.000124824,
+  "latencia_ms": 7516.51
+ },
+ {
+  "gold": "transfer_into_account",
+  "escolha": "top_up_by_bank_transfer_charge",
+  "confianca": 0.51,
+  "p": 0.52,
+  "texto": "How can I fund my top-up account using my bank account?",
+  "custo_usd": 0.000124824,
+  "latencia_ms": 5554.4
+ },
+ {
+  "gold": "transfer_not_received_by_recipient",
+  "escolha": "pending_transfer",
+  "confianca": 0.91,
+  "p": 0.92,
+  "texto": "I am still awaiting the completion of the transaction.",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 930.35
+ },
+ {
+  "gold": "transfer_not_received_by_recipient",
+  "escolha": "receiving_money",
+  "confianca": 0.33,
+  "p": 0.35000000000000003,
+  "texto": "I transferred some money but the recipient is having trouble withdrawing.",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 1077.2
+ },
+ {
+  "gold": "transfer_timing",
+  "escolha": "transfer_timing",
+  "confianca": 0.95,
+  "p": 0.96,
+  "texto": "How long do I have to wait for a transfer from the US?",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 1094.92
+ },
+ {
+  "gold": "transfer_timing",
+  "escolha": "transfer_timing",
+  "confianca": 0.96,
+  "p": 0.97,
+  "texto": "how soon will I see the transfer in my account?",
+  "custo_usd": 0.000124614,
+  "latencia_ms": 1103.11
+ },
+ {
+  "gold": "unable_to_verify_identity",
+  "escolha": "passcode_forgotten",
+  "confianca": 0.57,
+  "p": 0.59,
+  "texto": "The app won't let me log in as myself.",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 1117.53
+ },
+ {
+  "gold": "unable_to_verify_identity",
+  "escolha": "unable_to_verify_identity",
+  "confianca": 0.88,
+  "p": 0.89,
+  "texto": "The app doesn't know it's me.",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1123.93
+ },
+ {
+  "gold": "verify_my_identity",
+  "escolha": "verify_my_identity",
+  "confianca": 0.98,
+  "p": 0.99,
+  "texto": "What do I need to show who I am?",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 921.21
+ },
+ {
+  "gold": "verify_my_identity",
+  "escolha": "verify_my_identity",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "What are the steps I need to take to verify my identity?",
+  "custo_usd": 0.000124698,
+  "latencia_ms": 1121.07
+ },
+ {
+  "gold": "verify_source_of_funds",
+  "escolha": "verify_source_of_funds",
+  "confianca": 0.63,
+  "p": 0.65,
+  "texto": "How can I see where my money comes from?",
+  "custo_usd": 0.000124656,
+  "latencia_ms": 2992.61
+ },
+ {
+  "gold": "verify_source_of_funds",
+  "escolha": "verify_source_of_funds",
+  "confianca": 0.61,
+  "p": 0.63,
+  "texto": "Where are my funds coming from? I need to know.",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 1102.22
+ },
+ {
+  "gold": "verify_top_up",
+  "escolha": "verify_top_up",
+  "confianca": 0.99,
+  "p": 0.99,
+  "texto": "Why am i to verify the top-ups?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 3428.54
+ },
+ {
+  "gold": "verify_top_up",
+  "escolha": "verify_top_up",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I don't understand why it says I have to verify the top-up.",
+  "custo_usd": 0.000124782,
+  "latencia_ms": 1334.43
+ },
+ {
+  "gold": "virtual_card_not_working",
+  "escolha": null,
+  "confianca": null,
+  "p": null,
+  "texto": "How do I make my virtual card work?",
+  "custo_usd": 0.0,
+  "latencia_ms": null
+ },
+ {
+  "gold": "virtual_card_not_working",
+  "escolha": "virtual_card_not_working",
+  "confianca": 0.99,
+  "p": 1.0,
+  "texto": "My disposable virtual card is not working when I try to use it at a point of sale transaction. What do I do now?",
+  "custo_usd": 0.00012537,
+  "latencia_ms": 1205.23
+ },
+ {
+  "gold": "visa_or_mastercard",
+  "escolha": "visa_or_mastercard",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "I would rather the Mastercard.",
+  "custo_usd": 0.000124488,
+  "latencia_ms": 1380.32
+ },
+ {
+  "gold": "visa_or_mastercard",
+  "escolha": "visa_or_mastercard",
+  "confianca": 0.96,
+  "p": 0.97,
+  "texto": "Can you give me a visa?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1159.15
+ },
+ {
+  "gold": "why_verify_identity",
+  "escolha": "why_verify_identity",
+  "confianca": 0.95,
+  "p": 0.95,
+  "texto": "Why is it asking me to verify my identity",
+  "custo_usd": 0.000124572,
+  "latencia_ms": 1148.6
+ },
+ {
+  "gold": "why_verify_identity",
+  "escolha": "verify_my_identity",
+  "confianca": 0.64,
+  "p": 0.65,
+  "texto": "Do I have to do the identity check?",
+  "custo_usd": 0.00012453,
+  "latencia_ms": 1157.38
+ },
+ {
+  "gold": "wrong_amount_of_cash_received",
+  "escolha": "wrong_amount_of_cash_received",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "The ATM gave me the wrong amount of cash today when I went to withdraw. The app says it was more.",
+  "custo_usd": 0.000125202,
+  "latencia_ms": 1586.47
+ },
+ {
+  "gold": "wrong_amount_of_cash_received",
+  "escolha": "wrong_amount_of_cash_received",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "The ATM didn't give me the the withdraw amount requested.",
+  "custo_usd": 0.00012474,
+  "latencia_ms": 1320.04
+ },
+ {
+  "gold": "wrong_exchange_rate_for_cash_withdrawal",
+  "escolha": "cash_withdrawal_charge",
+  "confianca": 0.98,
+  "p": 0.98,
+  "texto": "It seems I was overcharged when I used an ATM while on vacation. If I knew about your fees in advance I sure would have gone somewhere else.",
+  "custo_usd": 0.000125622,
+  "latencia_ms": 1063.98
+ },
+ {
+  "gold": "wrong_exchange_rate_for_cash_withdrawal",
+  "escolha": "wrong_exchange_rate_for_cash_withdrawal",
+  "confianca": 1.0,
+  "p": 1.0,
+  "texto": "Why is the exchange rate wrong for my international withdrawal?",
+  "custo_usd": 0.000124866,
+  "latencia_ms": 1088.78
+ }
+]

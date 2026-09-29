@@ -585,14 +585,6 @@ def q024():
 
 @resposta('Q025')
 def q025():
-    return R('Não vale a complexidade hoje. Ela empata com k = 1 fixo em acerto e em economia. '
-             'Implemente a regra simples; a adaptativa fica como opção para corpus onde a '
-             'ordenação erre mais, cenário que ainda não foi medido.',
-             {}, confianca='media')
-
-
-@resposta('Q026')
-def q026():
     bloco = _artefato('mapa-de-limites.json')['sem_pedido']
     return R('Sim, sempre. Sem classe de escape, dez textos sem pedido nenhum foram '
              f"classificados como `informacao` nas {bloco['sem-saida']['n']} vezes, com "
@@ -602,8 +594,8 @@ def q026():
               'com_escape_acertos': bloco['com-saida']['n']})
 
 
-@resposta('Q027')
-def q027():
+@resposta('Q026')
+def q026():
     r19 = _artefato('r19-armadilha.json')['formulacoes']
     return R('Sim, padrão. Ela leva 89,4% a 92,9% em atendimento sem piorar nenhum molde, e '
              '78,5% a 90,9% no jurídico com **8 a 0, p = 0,0078**. Custa uma frase e é a única '
@@ -612,8 +604,8 @@ def q027():
               'juridico': [0.7846, 0.9091]})
 
 
-@resposta('Q028')
-def q028():
+@resposta('Q027')
+def q027():
     r19 = _artefato('r19-armadilha.json')
     return R('Só quando a pergunta auxiliar for **mais confiável que a decisão que ela '
              'alimenta** — e isso é verificável antes de adotar, medindo a auxiliar sozinha. Na '
@@ -624,20 +616,32 @@ def q028():
              {'pergunta_de_sujeito': r19['pergunta_de_sujeito']['taxa']})
 
 
-@resposta('Q029')
-def q029():
+@resposta('Q028')
+def q028():
     return R('Sim para a média, não para a classe perigosa. O efeito de posição some ao '
              'embaralhar (p = 0,40), mas **3 de 40 casos** mudaram de resposta conforme os '
              'vizinhos. Use lote para baratear triagem comum; nunca para `cancelar`.',
              {'casos_que_mudaram': 3, 'de': 40, 'p': 0.40})
 
 
+@resposta('Q029')
+def q029():
+    r24 = _r24()['corpora']
+    n = sum(c['oscilacao']['n'] for c in r24.values())
+    oscilaram = sum(c['oscilacao']['oscilaram'] for c in r24.values())
+    return R(f'Nenhuma repetição da **mesma** pergunta: em {n} casos com três chamadas idênticas, '
+             f'{oscilaram} oscilaram (R24), então repetir é pagar o triplo pela mesma resposta. No E6, '
+             'de 40 casos repetidos cinco vezes, 1 oscilou. Para decisão sem volta o que vale são '
+             '**três formulações diferentes** com maioria (Q040), e gente na confirmação.',
+             {'casos': n, 'oscilaram': oscilaram, 'e6_oscilaram': 1, 'e6_de': 40})
+
+
 @resposta('Q030')
 def q030():
-    return R('Três, com maioria. Repetindo 40 casos cinco vezes, 1 oscilou — votar em três '
-             'estabiliza. O custo é desprezível (Q019) e a alternativa é aceitar que uma decisão '
-             'sem volta dependa de um sorteio de baixa probabilidade.',
-             {'oscilaram': 1, 'de': 40})
+    return R('Pouco. Nas quatro distribuições simuladas no E9 a acurácia esperada vai de 95,0% a '
+             '97,2% — 2,2 pontos de amplitude, abaixo do gatilho de 5. A política não precisa ser '
+             'por canal por causa da mistura de assuntos; precisa por causa do domínio (Q052).',
+             {'faixa': [0.950, 0.972]})
 
 
 # ===================================================================== D · risco
@@ -680,7 +684,7 @@ def q034():
     pior = min(familias, key=lambda n: familias[n]['acuracia'])
     return R(f'**Ação atribuída a terceiro** — {familias[pior]["acuracia"]:.1%} de acerto, a '
              'pior família medida. É também a mais cara, porque o erro típico dela é agir sobre '
-             'o pedido de outra pessoa. A mitigação existe e é uma frase (Q027).',
+             'o pedido de outra pessoa. A mitigação existe e é uma frase (Q026).',
              {n: b['acuracia'] for n, b in familias.items()})
 
 

@@ -1,59 +1,96 @@
 {
  "leitura": {
-  "reads": 6,
-  "com_pedido": 6,
-  "classificados": 3,
-  "estreitados": 3,
-  "estreitados_ativos": 3,
-  "motivos": {
-   "read ja delimitado": 1,
-   "tipo de arquivo fora da camada": 2
+  "reads": 1430,
+  "com_pedido": 1418,
+  "classificados": 50,
+  "estreitados": 15,
+  "estreitados_ativos": 15,
+  "por_via": {
+   "read": {
+    "vistos": 1175,
+    "estreitados_ativos": 13,
+    "tokens_evitados": 75922
+   },
+   "bash": {
+    "vistos": 255,
+    "estreitados_ativos": 2,
+    "tokens_evitados": 14010
+   }
   },
-  "linhas_evitadas": 988,
-  "tokens_evitados": 16480,
-  "releituras": 1,
-  "linhas_relidas": 0,
+  "motivos": {
+   "read ja delimitado": 314,
+   "tipo de arquivo fora da camada": 911,
+   "metade ou mais dos blocos e essencial; arquivo inteiro interessa": 20,
+   "arquivo pequeno": 103,
+   "economia pequena demais para valer o intervalo": 13,
+   "falha: http_error": 1,
+   "falha: sem tempo": 1,
+   "nao coube em blocos": 2,
+   "falha: BudgetError": 36,
+   "sem pedido vigente": 12,
+   "nao foi possivel ler": 2
+  },
+  "linhas_evitadas": 5681,
+  "tokens_evitados": 89932,
+  "releituras": 8,
+  "linhas_relidas": 2457,
   "releituras_sem_intervalo_registrado": 1,
-  "custo_usd": 0.001043,
-  "chamadas": 27,
-  "latencia_mediana_ms": 2148,
-  "latencia_p90_ms": 3035,
+  "custo_usd": 0.036574,
+  "chamadas": 456,
+  "latencia_mediana_ms": 3556,
+  "latencia_p90_ms": 5761,
   "blocos_por_classe": {
-   "essencial": 4,
-   "complementar": 20,
-   "irrelevante": 2,
-   "incerto": 1
+   "essencial": 146,
+   "complementar": 147,
+   "irrelevante": 136,
+   "incerto": 2
   },
   "descartaveis_a_099": 0
  },
  "busca": {
-  "greps": 1,
+  "greps": 60,
   "por_ferramenta": {
-   "Grep": 1
+   "Grep": 18,
+   "Glob": 1,
+   "WebSearch": 40,
+   "mcp__claude_ai_Gmail__search_threads": 1
   },
-  "classificados": 0,
-  "sugeridos": 0,
-  "sugeridos_ativos": 0,
-  "arquivos_no_topo": 0,
-  "arquivos_no_topo_lidos_depois": 0,
-  "arquivos_fora": 0,
+  "classificados": 36,
+  "sugeridos": 8,
+  "sugeridos_ativos": 8,
+  "arquivos_no_topo": 41,
+  "arquivos_no_topo_lidos_depois": 2,
+  "arquivos_fora": 1,
   "motivos": {
-   "poucos itens": 1
+   "poucos itens": 4,
+   "nada a ordenar: nenhum essencial nem descartável": 23,
+   "falha: timeout": 2,
+   "falha: OperationalError": 1,
+   "falha: BudgetError": 22
   },
-  "custo_usd": 0,
-  "chamadas": 0,
-  "latencia_mediana_ms": null
+  "custo_usd": 0.010062,
+  "chamadas": 375,
+  "latencia_mediana_ms": 6788
  },
  "sentinela": {
-  "conteudos": 1,
-  "inspecionados": 0,
-  "partes": 0,
-  "acusados": 0,
-  "por_ferramenta": {},
-  "acusados_por_ferramenta": {},
-  "custo_usd": 0,
-  "chamadas": 0,
-  "latencia_mediana_ms": null
+  "conteudos": 302,
+  "inspecionados": 151,
+  "partes": 194,
+  "acusados": 12,
+  "por_ferramenta": {
+   "prompt/pasted_content": 8,
+   "WebFetch": 140,
+   "mcp__claude_ai_Gmail__search_threads": 1,
+   "mcp__claude_ai_Gmail__get_thread": 2
+  },
+  "acusados_por_ferramenta": {
+   "prompt/pasted_content": 4,
+   "WebFetch": 7,
+   "mcp__claude_ai_Gmail__get_thread": 1
+  },
+  "custo_usd": 0.006613,
+  "chamadas": 194,
+  "latencia_mediana_ms": 1079
  },
  "ler": {
   "usos": 2,
@@ -67,21 +104,23 @@
   "chamadas": 6
  },
  "saida": {
-  "saidas_com_erro": 25,
-  "classificadas": 25,
-  "apontadas": 1,
+  "saidas_com_erro": 104,
+  "classificadas": 100,
+  "apontadas": 13,
   "partes_por_classe": {
-   "normal": 95,
-   "consequencia": 2,
-   "causa": 1,
-   "incerto": 1
+   "normal": 218,
+   "consequencia": 17,
+   "causa": 39,
+   "incerto": 3
   },
   "motivos": {
-   "nenhuma parte com causa acima do corte": 24
+   "nenhuma parte com causa acima do corte": 86,
+   "falha: timeout": 1,
+   "falha: BudgetError": 4
   },
-  "custo_usd": 0.003532,
-  "chamadas": 99,
-  "latencia_mediana_ms": 1381
+  "custo_usd": 0.014181,
+  "chamadas": 286,
+  "latencia_mediana_ms": 1462
  },
  "verificar": {
   "usos": 1,
@@ -94,15 +133,15 @@
   "chamadas": 3
  },
  "roteador": {
-  "decisoes": 113,
-  "sugeriu": 77,
-  "cache": 71,
-  "custo_usd": 0.001263,
-  "latencia_mediana_ms": 690
+  "decisoes": 524,
+  "sugeriu": 119,
+  "cache": 117,
+  "custo_usd": 0.012742,
+  "latencia_mediana_ms": 841
  },
  "guarda": {
-  "chamadas": 42,
-  "custo_usd": 0.001123
+  "chamadas": 906,
+  "custo_usd": 0.039159
  },
  "parametros": {
   "caracteres_por_token": 4,
@@ -111,12 +150,12 @@
   "janela_de_concordancia": 8
  },
  "total": {
-  "tokens_evitados": 17219,
-  "valor_evitado_usd_ao_preco_declarado": 0.2583,
-  "custo_jev_usd": 0.007507,
-  "chamadas_jev": 135,
-  "registros": 36,
+  "tokens_evitados": 90671,
+  "valor_evitado_usd_ao_preco_declarado": 1.3601,
+  "custo_jev_usd": 0.119877,
+  "chamadas_jev": 1320,
+  "registros": 1900,
   "primeiro_registro": "2026-09-20T20:44:33",
-  "ultimo_registro": "2026-09-20T23:58:57"
+  "ultimo_registro": "2026-09-26T22:34:03"
  }
 }

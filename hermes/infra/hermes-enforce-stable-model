@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Guarda do modelo do Hermes (roda antes do gateway e a cada ciclo do stability-guard).
+
+Desde 2026-09-21: modelo principal gpt-6-astra (conta Pro primeiro no pool, team depois),
+esforço baixo, porque o Jev faz o Sistema 1. A cota do Astra fica para a conversa com o Igor:
+- reserva (fallback) pelo OmniRoute: `sol`, depois `luna`, quando a cota do Codex acaba;
+- tarefas auxiliares (compressão, resumo de página, títulos, aprovação...) na `luna` do OmniRoute;
+- subagentes (delegation) e jobs de cron sem modelo fixado no `sol` do OmniRoute.
+Backup e restauração: /root/backups/hermes-astra-jev-20260921T041649Z.
+"""
+from pathlib import Path
+
+import yaml
+
+CODEX_BASE_URL = "https://chatgpt.com/backend-api/codex"
+MODEL = "gpt-6-astra"
+PROVIDER = "openai-codex"
+API_MODE = "codex_responses"
+REASONING_EFFORT = "low"
+CONFIG_PATH = Path("/root/.hermes/config.yaml")
+
+OMNIROUTE = {
+    "name": "omniroute",
+    "base_url": "http://127.0.0.1:20128/v1",
+    "key_env": "OMNIROUTE_API_KEY",
+    "api_mode": "chat_completions",
+    "default_model": "luna",
+}
+FALLBACKS = [
+    {"provider": "omniroute", "model": "sol"},
+    {"provider": "omniroute", "model": "luna"},
+    # Para o cron e os subagentes (que rodam no OmniRoute), a última saída é o Astra.
+    {"provider": PROVIDER, "model": MODEL},
+]
+AUX_NO_OMNIROUTE = ("web_extract", "compression", "skills_hub", "approval", "mcp", "title_generation",
+                    "triage_specifier", "kanban_decomposer", "curator")
+AUX_MODEL = "luna"
+DELEGATION_MODEL = "sol"
+DELEGATION_EFFORT = "medium"
+CRON_MODEL = "sol"   # jobs de cron sem modelo fixado rodam no OmniRoute, fora da cota do Astra
+# Blocos que esta guarda escreve por inteiro; a normalização genérica não entra neles.
+PROPRIOS = {"model", "fallback_providers", "providers", "auxiliary", "delegation", "cron"}
+
+
+def _codex_block(model_key: str = "model") -> dict:
+    return {model_key: MODEL, "provider": PROVIDER, "base_url": CODEX_BASE_URL, "api_mode": API_MODE}
+
+
+def _normalize_model_dict(obj: dict) -> bool:
+    if not isinstance(obj, dict):
+        return False
+    marker_model = str(obj.get("model") or obj.get("default") or "").strip()
+    marker_provider = str(obj.get("provider") or "").strip().lower()
+    marker_base = str(obj.get("base_url") or "").strip()
+    if (
+        marker_provider in {"custom", "copilot-acp", PROVIDER}
+        or marker_model == "hermes-whatsapp-stable"
+        or marker_model.startswith("cursor-grok-")
+        or "127.0.0.1:20128" in marker_base
+    ):
+        desired = _codex_block("default" if "default" in obj and "model" not in obj else "model")
+        changed = False
+        for key in ("default", "model", "provider", "base_url", "api_mode"):
+            if key in obj and key not in desired:
+                obj.pop(key, None)
+                changed = True
+        for key in ("api_key", "key_env", "api_key_env"):
+            if key in obj:
+                obj.pop(key, None)
+                changed = True
+        for key, value in desired.items():
+            if obj.get(key) != value:
+                obj[key] = value
+                changed = True
+        return changed
+    return False
+
+
+def _walk(obj) -> bool:
+    changed = False
+    if isinstance(obj, dict):
+        changed = _normalize_model_dict(obj) or changed
+        for value in list(obj.values()):
+            changed = _walk(value) or changed
+    elif isinstance(obj, list):
+        for value in obj:
+            changed = _walk(value) or changed
+    return changed
+
+
+def _aux(cfg: dict) -> None:
+    aux = cfg.get("auxiliary")
+    if not isinstance(aux, dict):
+        aux = {}
+        cfg["auxiliary"] = aux
+    for task, bloco in list(aux.items()):
+        if not isinstance(bloco, dict):
+            continue
+        if task in AUX_NO_OMNIROUTE:
+            for key in ("base_url", "api_key", "api_mode", "key_env", "api_key_env"):
+                bloco.pop(key, None)
+            bloco.update({"provider": "omniroute", "model": AUX_MODEL})
+        elif str(bloco.get("provider") or "") in {PROVIDER, "custom"}:
+            bloco.update(_codex_block("model"))
+
+
+def enforce_config() -> bool:
+    cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8")) or {}
+    before = yaml.safe_dump(cfg, sort_keys=False, allow_unicode=False, width=1000)
+
+    agent = cfg.get("agent")
+    if not isinstance(agent, dict):
+        agent = {}
+        cfg["agent"] = agent
+    agent["reasoning_effort"] = REASONING_EFFORT
+    smart = cfg.get("smart_model_routing")
+    if isinstance(smart, dict):
+        smart["cheap_model"] = MODEL
+    for key, value in cfg.items():
+        if key not in PROPRIOS:
+            _walk(value)
+    cfg["model"] = _codex_block("default")
+    providers = cfg.get("providers")
+    if not isinstance(providers, dict):
+        providers = {}
+        cfg["providers"] = providers
+    providers["omniroute"] = dict(OMNIROUTE)
+    cfg["fallback_providers"] = [dict(f) for f in FALLBACKS]
+    _aux(cfg)
+    delegation = cfg.get("delegation")
+    if not isinstance(delegation, dict):
+        delegation = {}
+        cfg["delegation"] = delegation
+    for key in ("base_url", "api_mode", "api_key", "key_env"):
+        delegation.pop(key, None)
+    delegation.update({"provider": "omniroute", "model": DELEGATION_MODEL, "reasoning_effort": DELEGATION_EFFORT})
+    cron = cfg.get("cron")
+    if not isinstance(cron, dict):
+        cron = {}
+        cfg["cron"] = cron
+    cron.update({"model": CRON_MODEL, "model_provider": "omniroute"})
+
+    after = yaml.safe_dump(cfg, sort_keys=False, allow_unicode=False, width=1000)
+    if after != before:
+        CONFIG_PATH.write_text(after, encoding="utf-8")
+        return True
+    return False
+
+
+def main() -> None:
+    changed_config = enforce_config()
+    print(
+        "codex_model_enforced "
+        f"provider={PROVIDER} model={MODEL} reasoning_effort={REASONING_EFFORT} "
+        f"fallback=omniroute:sol,luna config_changed={changed_config}"
+    )
+
+
+if __name__ == "__main__":
+    main()
