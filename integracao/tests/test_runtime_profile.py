@@ -30,7 +30,7 @@ def test_profile_reuses_existing_wallet(profile):
     assert runtime['db_path'] == folder / 'ledger.sqlite3'
     assert runtime['provider'] == 'typesafe'
     assert runtime['legacy_paths'] == ()
-    assert shared.CAPS[runtime['consumer']] == '0.03'
+    assert shared.CAPS[runtime['consumer']] == '1.00'
 
 
 def test_unknown_profile_cannot_fall_back(profile):

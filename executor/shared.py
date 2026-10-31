@@ -28,7 +28,7 @@ ACTIVE_PROFILE = ROOT / 'integracao/runtime.local.json'
 
 
 def active_runtime(require_fresh=True):
-    """Explicit local opt-in to the separately authorized USD 0.03 wallet. Never initializes it."""
+    """Explicit local opt-in to the separately authorized USD 1.00 wallet (Igor, 30/10/2026). Never initializes it."""
     if not ACTIVE_PROFILE.exists():
         return None
     config = json.loads(ACTIVE_PROFILE.read_text(encoding='utf-8'))
@@ -45,10 +45,10 @@ def active_runtime(require_fresh=True):
     import sqlite3
     with sqlite3.connect(f'file:{db.as_posix()}?mode=ro', uri=True) as connection:
         cap = connection.execute("SELECT cap_nusd FROM wallet WHERE wallet_id='default'").fetchone()
-    if not cap or not 0 < cap[0] <= usd_to_nusd('0.03'):
-        raise BudgetError('Teto da carteira local excede autorização de US$ 0,03')
+    if not cap or not 0 < cap[0] <= usd_to_nusd('1.00'):
+        raise BudgetError('Teto da carteira local excede autorização de US$ 1,00')
     consumer = 'typesafe-smoke-20260921'
-    CAPS[consumer] = '0.03'
+    CAPS[consumer] = '1.00'
     return {'db_path': db, 'prices': prices, 'consumer': consumer,
             'provider': 'typesafe', 'legacy_paths': ()}
 
